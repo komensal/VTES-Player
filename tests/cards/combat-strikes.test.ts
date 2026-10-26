@@ -275,3 +275,70 @@ describe("Pursuit / Shadow Shift — maneuver or additional strike", () => {
     expect(state.eventLog.some((e) => e.type === "RangeSet" && e.range === "long")).toBe(true);
   });
 });
+
+describe("additional strikes and weapon maneuvers (Rulebook p. 30)", () => {
+  it("allows choosing hand strike for an additional strike even if a weapon maneuver was used", () => {
+    const state = threeSeatGame();
+    const v1 = state.seats[0]!.minions[0]!;
+    v1.disciplines = { cel: "superior" };
+    v1.blood = 5;
+    const m = bobM(state);
+    m.blood = 10;
+    const h = testRegistry[".44 Magnum"];
+    v1.attached.push({
+      card: { id: "gun1", name: ".44 Magnum" },
+      locked: false,
+      usedThisPhase: false,
+      statics: h?.permanentStatics ?? {},
+      tags: h?.permanentTags ?? ["weapon", "gun"],
+    });
+    state.seats[0]!.hand.push({ id: "bl1", name: "Blur" });
+    const engine = new VtesEngine(state, testRegistry);
+    enterCombat(engine);
+
+    // Before range quiet
+    runTrace(engine, [["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"]]);
+
+    // In Determine Range: Alice uses .44 Magnum maneuver
+    runTrace(engine, [
+      ["Alice", "ability:.44 Magnum:gun1:maneuver"],
+      ["Bob", "pass"], // Bob declines to counter-maneuver
+      ["Alice", "pass"], // Alice declines to maneuver again -> range is set
+    ]);
+
+    // Before strikes quiet
+    runTrace(engine, [["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"]]);
+
+    // Choose strike: Alice plays Blur (superior: 2 additional strikes)
+    // Alice plays Blur:superior
+    let dp = engine.decision()!;
+    expect(dp.options.some((o) => o.id.startsWith("play:Blur:superior"))).toBe(true);
+    // Strike is committed to gun (maneuver used) -> hand strike is NOT legal here!
+    expect(dp.options.map((o) => o.id)).not.toContain("strike:hand");
+
+    runTrace(engine, [["Alice", "play:Blur:superior"]]);
+    // Pass until we are back to choosing strike
+    while (engine.decision() && engine.decision()!.window !== "combat.chooseStrike") {
+      dp = engine.decision()!;
+      runTrace(engine, [[dp.seat, "pass"]]);
+    }
+
+    dp = engine.decision()!;
+    expect(dp.window).toBe("combat.chooseStrike");
+    expect(dp.seat).toBe("Alice");
+    expect(dp.options.map((o) => o.id)).not.toContain("strike:hand");
+    expect(dp.options.some((o) => o.id.startsWith("ability:.44 Magnum"))).toBe(true);
+
+    runTrace(engine, [
+      ["Alice", "ability:.44 Magnum:gun1:strike"],
+      ["Bob", "strike:hand"],
+      ["Bob", "pass"], // Bob mends gun damage (2); Alice took 0 at long range
+    ]);
+
+    // Additional sub-round 1:
+    // Rulebook p. 30: "For additional strikes, any strike can be chosen, even if a maneuver of a strike card or a weapon has been used."
+    dp = engine.decision()!;
+    expect(dp.seat).toBe("Alice");
+    expect(dp.options.map((o) => o.id)).toContain("strike:hand");
+  });
+});

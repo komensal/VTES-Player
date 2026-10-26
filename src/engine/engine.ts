@@ -5363,6 +5363,24 @@ export class VtesEngine implements EngineOps {
       // commitment to a card that has gone as no commitment.
       if (load.burnGunAfterStrike) this.burnPermanent(strike.weaponCard);
     };
+    // The initial strike commitment (from a weapon maneuver or Sniper Rifle)
+    // is satisfied once the normal strike resolves (p. 30: "For additional
+    // strikes, any strike can be chosen, even if a maneuver of a strike card
+    // or a weapon has been used").
+    // Weapons like AK-47 with an inherent additional strike restriction keep
+    // their commitment for the additional strike sub-round.
+    if (cf.strikeRound === "normal") {
+      const clearManeuverCommitment = (side: "acting" | "opposing"): void => {
+        if (cf.committedStrike[side] && cf.committedStrike[side] === cf.usedWeaponManeuver[side]) {
+          const entry = this.findEntry(cf.committedStrike[side]!);
+          if (entry?.card.name !== "AK-47") {
+            cf.committedStrike[side] = null;
+          }
+        }
+      };
+      if (resolves("opposing")) clearManeuverCommitment("opposing");
+      if (resolves("acting")) clearManeuverCommitment("acting");
+    }
     if (resolves("opposing")) ammoRiders("opposing", so);
     if (resolves("acting")) ammoRiders("acting", sa);
     // ONE-SHOT WEAPONS — the weapon's own riders, in the same place and
@@ -5465,8 +5483,14 @@ export class VtesEngine implements EngineOps {
       // A forced strike belongs to the additional strike it came with, so
       // it is spent alongside it: a second extra strike from another
       // source is a free choice again (Wind Dance superior).
-      if (sa && cf.additionalStrikes.acting === 0) cf.forcedAdditionalStrike.acting = null;
-      if (so && cf.additionalStrikes.opposing === 0) cf.forcedAdditionalStrike.opposing = null;
+      if (sa && cf.additionalStrikes.acting === 0) {
+        cf.forcedAdditionalStrike.acting = null;
+        cf.committedStrike.acting = null;
+      }
+      if (so && cf.additionalStrikes.opposing === 0) {
+        cf.forcedAdditionalStrike.opposing = null;
+        cf.committedStrike.opposing = null;
+      }
     }
     // Retainer combat output ("inflicts N damage on the opposing minion
     // each round during normal strike resolution") — environmental
@@ -10722,8 +10746,8 @@ export class VtesEngine implements EngineOps {
               });
             }
           }
-          options.push(...this.handlerOptions(seat, "combat.chooseStrike"));
         }
+        options.push(...this.handlerOptions(seat, "combat.chooseStrike"));
         options.push(...this.abilityOptionsFor(seat, "combat.chooseStrike"));
         // WHICH OF THESE ACTUALLY REACHES. A weapon's strike arrives as an
         // ability, so without this an agent at long range could tell only

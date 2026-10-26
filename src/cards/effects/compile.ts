@@ -3159,6 +3159,15 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             ) {
               continue;
             }
+            // A committed strike (e.g. from a weapon maneuver or Caseless Rounds)
+            // bars choosing a DIFFERENT strike (p. 30), but does not bar non-strike
+            // combat cards like Blur or Quickness.
+            if (
+              cf.committedStrike[side] !== null &&
+              mode.effects.some((e) => e.kind.startsWith("strike"))
+            ) {
+              continue;
+            }
             // "Only usable AS THIS MINION CHOOSES A STRIKE" plus "a
             // minion can play only one AIM each strike" — a per-KEYWORD
             // limit, where `combatLimit` counts by card name (§3).
@@ -3198,10 +3207,9 @@ function compileCombatCard(spec: CardSpec): CardHandler {
               // from another effect", so this is a gate on the OPTION and
               // not merely on the grant. docs/aim-design.md §5
               if (cf.noAdditionalStrikes?.[side]) continue;
-              // Additional strikes are granted in the normal strike pair,
-              // not during an additional sub-round; the "(limited)" source
-              // is spent once per round (p. 32).
-              if (cf.strikeRound !== "normal") continue;
+              // Additional strikes: the "(limited)" source is spent once per round (p. 32).
+              // In an additional sub-round, non-limited sources (or limited sources if not yet used)
+              // remain legal options.
               if (addl.limited && cf.usedLimitedAddl[side]) continue;
               if (addl.perBloodX) {
                 // "Burn X blood to get X additional strikes" — X beyond the
