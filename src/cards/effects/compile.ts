@@ -3220,6 +3220,11 @@ function compileCombatCard(spec: CardSpec): CardHandler {
                 }
                 break;
               }
+              // A plain additional strike (Blur, Pursuit, Quickness, etc.)
+              // — offer the card itself as a play option. The grant happens
+              // in `grantAdditionalStrike` when the card resolves.
+              options.push(makeOption(spec, card, m, mode, {}));
+              break;
             }
             // "Strike: hand strike OR USE A MELEE WEAPON STRIKE, at +N
             // damage" (Anticipation) — one option per legal weapon
