@@ -16,6 +16,7 @@
 
 import { describe, expect, it } from "vitest";
 import { DEFAULT_WEIGHTS } from "../../src/ai/heuristic.ts";
+import { createInitialMlModel, MlAgent } from "../../src/ai/ml-agent.ts";
 import { PLAYSTYLES, PLAYSTYLES_LIST, PLAYSTYLE_LABELS, isPlaystyle } from "../../src/ai/playstyles.ts";
 import registry from "../../src/cards/registry.json" with { type: "json" };
 import deckPlaystyles from "../../config/deck-playstyles.json" with { type: "json" };
@@ -31,10 +32,7 @@ const settings = (styles: string[]): UiSettings => ({
 });
 
 describe("the styles themselves", () => {
-  it("has exactly the six the owner chose", () => {
-    // Four on 2026-09-18; Stalker and Builder added 2026-09-19 after
-    // measuring what the precons actually play rather than what their
-    // card types suggested.
+  it("has six built-in styles plus the saved heuristic and neural profiles", () => {
     expect([...PLAYSTYLES_LIST]).toEqual([
       "balanced",
       "bruiser",
@@ -42,6 +40,8 @@ describe("the styles themselves", () => {
       "turtle",
       "politician",
       "builder",
+      "trained",
+      "neural",
     ]);
     expect(Object.values(PLAYSTYLE_LABELS)).toEqual([
       "Balanced",
@@ -50,6 +50,8 @@ describe("the styles themselves", () => {
       "Turtle",
       "Politician",
       "Builder",
+      "Trained (AI Lab)",
+      "Neural network (PyTorch)",
     ]);
   });
 
@@ -122,6 +124,25 @@ describe("the agent the factory builds", () => {
     expect(playstyleOf(agent)).toBe("bruiser");
   });
 
+  it("uses the saved AI Lab weights for the trained style", () => {
+    const agent = botAgentFor("Alice", {
+      playstyle: "trained",
+      settings: { ...DEFAULT_SETTINGS, trainedBotWeights: { bleedPrey: 99 } },
+    });
+    expect(playstyleOf(agent)).toBe("trained");
+    expect(Reflect.get(agent, "w").bleedPrey).toBe(99);
+  });
+
+  it("uses the saved neural model for the neural playstyle", () => {
+    const settingsWithModel: UiSettings = {
+      ...DEFAULT_SETTINGS,
+      trainedMlModel: createInitialMlModel(13),
+    };
+    const agent = botAgentFor("Alice", { playstyle: "neural", settings: settingsWithModel });
+    expect(playstyleOf(agent)).toBe("neural");
+    expect(agent).toBeInstanceOf(MlAgent);
+  });
+
   it("reports null for an agent built elsewhere", () => {
     expect(playstyleOf({})).toBeNull();
     expect(playstyleOf(null)).toBeNull();
@@ -188,7 +209,9 @@ describe("the deck config", () => {
     expect(bad).toEqual([]);
   });
 
-  it("uses every style, so the assignment is not degenerate", () => {
-    expect(new Set(Object.values(styles)).size).toBe(PLAYSTYLES_LIST.length);
+  it("uses every deck-assigned built-in style; trained profiles are user-selected", () => {
+    expect(new Set(Object.values(styles)).size).toBe(6);
+    expect(Object.values(styles)).not.toContain("trained");
+    expect(Object.values(styles)).not.toContain("neural");
   });
 });

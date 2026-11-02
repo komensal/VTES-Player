@@ -41,6 +41,7 @@ function combat(state: GameState): {
   round: number;
   strengthBonus: { acting: number; opposing: number };
   strengthBonusRound: { acting: number; opposing: number };
+  strengthBonusPerRound?: Array<{ side: "acting" | "opposing"; amount: number; startRound: number }>;
   additionalStrikes: { acting: number; opposing: number };
   presses: { acting: number; opposing: number };
   pressesCombat: { acting: number; opposing: number };
@@ -114,6 +115,36 @@ function fightOneRound(
 
 // ---------------------------------------------------------------------------
 
+describe("Fire in the Blood (100734) — superior strength grows each round", () => {
+  it("starts at +1 and reaches +2 on the next round", () => {
+    const a = inCombat("Fire in the Blood", { pot: "superior" });
+    const beforeRange = walkTo(a.engine, "combat.beforeRange");
+    const play = beforeRange.find((id) => id.startsWith("play:Fire in the Blood:superior:V1:st1"));
+    expect(play).toBeDefined();
+    a.engine.choose(play!);
+    settle(a.engine);
+
+    expect(combat(a.state).strengthBonusPerRound).toEqual([
+      { side: "acting", amount: 1, startRound: 1 },
+    ]);
+    // Advance the frame to the next round and resolve hand strikes; the
+    // round-scaled rider should now contribute +2 rather than a flat +2
+    // that applied immediately in round one.
+    combat(a.state).round = 2;
+    for (let i = 0; i < 50; i++) {
+      const dp = a.engine.decision();
+      if (!dp || dp.window === "combat.press" || dp.window === "combat.endOfRound") break;
+      const option = dp.window === "combat.chooseStrike"
+        ? dp.options.find((o) => o.id === "strike:hand")
+        : dp.options.find((o) => o.id === "pass");
+      if (!option) throw new Error(`no usable option in ${dp.window}`);
+      a.engine.choose(option.id);
+    }
+    const hit = a.state.eventLog.find((event) => event.type === "DamageInflicted" && event.minion === "M");
+    expect(hit).toMatchObject({ amount: 3 });
+  });
+});
+
 describe("Fists of Death (100738) — own strength, for the COMBAT", () => {
   it("adds 1 then 2 to the hand strike, and records the combat-long field", () => {
     for (const [mode, dmg] of [
@@ -129,6 +160,40 @@ describe("Fists of Death (100738) — own strength, for the COMBAT", () => {
       expect(cf.strengthBonus.acting, `${mode} combat field`).toBe(dmg - 1);
       expect(cf.strengthBonusRound.acting, `${mode} round field`).toBe(0);
     }
+  });
+});
+
+describe("Strength of the Bear (101883) — round vs combat strength", () => {
+  it("Animalism lasts one round, while Spiritus lasts the whole combat", () => {
+    const ani = fightOneRound("Strength of the Bear", "basic", { ani: "basic" });
+    expect(combat(ani.state).strengthBonusRound.acting).toBe(1);
+    expect(combat(ani.state).strengthBonus.acting).toBe(0);
+
+    const spi = fightOneRound("Strength of the Bear", "basic", { spi: "basic" });
+    expect(combat(spi.state).strengthBonusRound.acting).toBe(0);
+    expect(combat(spi.state).strengthBonus.acting).toBe(1);
+  });
+
+  it("superior Spiritus grants an optional press", () => {
+    const a = inCombat("Strength of the Bear", { spi: "superior" });
+    const ids = walkTo(a.engine, "combat.beforeRange");
+    a.engine.choose(ids.find((x) => x.startsWith("play:Strength of the Bear:superior"))!);
+    settle(a.engine);
+    expect(combat(a.state).presses.acting).toBe(1);
+    expect(combat(a.state).strengthBonus.acting).toBe(1);
+  });
+});
+
+describe("Typhonic Beast (102054) — optional press rider", () => {
+  it("superior Potence/Serpentis grants a press rather than forcing continuation", () => {
+    const a = inCombat("Typhonic Beast", { pot: "superior", ser: "superior" });
+    const ids = walkTo(a.engine, "combat.beforeRange");
+    const id = ids.find((x) => x.startsWith("play:Typhonic Beast:superior"));
+    expect(id).toBeDefined();
+    a.engine.choose(id!);
+    settle(a.engine);
+    expect(combat(a.state).strengthBonus.acting).toBe(1);
+    expect(combat(a.state).presses.acting).toBe(1);
   });
 });
 

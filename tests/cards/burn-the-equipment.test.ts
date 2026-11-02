@@ -126,7 +126,9 @@ describe("Vial of Elder Vitae (102114)", () => {
         for (const x of Object.keys(d)) onVampires.add(x.toLowerCase());
       }
     }
-    expect([...onVampires].sort()).toEqual([...DISCIPLINES].sort());
-    expect([...onLibrary].sort()).toEqual([...DISCIPLINES].sort());
+    // DISCIPLINES must cover every Discipline used anywhere in the pool:
+    // crypt cards (vampires HAVE them) and library cards (cards REQUIRE them).
+    const allPoolDisciplines = new Set([...onVampires, ...onLibrary]);
+    expect([...DISCIPLINES].sort()).toEqual([...allPoolDisciplines].sort());
   });
 });

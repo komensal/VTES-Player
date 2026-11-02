@@ -120,7 +120,7 @@ describe("the table: each mode is offered in the window its effect belongs to", 
       card: "Nimble Feet",
       mode: "superior",
       d: { cel: "superior" },
-      window: "combat.chooseStrike",
+      window: "combat.grantAdditionalStrikes",
     },
   ];
 

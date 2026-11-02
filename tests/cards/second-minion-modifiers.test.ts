@@ -111,6 +111,19 @@ describe("Suppressing Fire (101907)", () => {
     expect(currentIntercept(state, aid, "W")).toBe(-1);
   });
 
+  it("a ready unlocked ally with a gun is also a legal source minion", () => {
+    const { state, engine } = setup("Suppressing Fire", {}, true);
+    state.seats[0]!.minions.push(
+      makeMinion("A1", "Alice", {
+        kind: "ally",
+        capacity: 0,
+        blood: 1,
+        attached: [entry("ally-gun", "Submachine Gun", { tags: ["equipment", "weapon", "gun"] })],
+      }),
+    );
+    expect(walkTo(engine, "play:Suppressing Fire:basic:A1")).toBe(true);
+  });
+
   it("NEGATIVE SPACE: no gun, no card", () => {
     const { engine } = setup("Suppressing Fire", {}, true);
     expect(walkTo(engine, "play:Suppressing Fire")).toBe(false);

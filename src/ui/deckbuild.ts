@@ -17,7 +17,7 @@
 
 import type { CatalogCard, CatalogFile } from "../cards/catalog.ts";
 import { cryptGroupProblem, MAX_LIBRARY, MIN_CRYPT, MIN_LIBRARY } from "./decks.ts";
-import { findHalfDeck } from "./deckimport.ts";
+import { findHalfDeck, normalise } from "./deckimport.ts";
 import type { ScopeMiss } from "./cardsearch.ts";
 import { scopeMiss, scopeOf } from "./cardsearch.ts";
 
@@ -408,8 +408,11 @@ export function parseDraft(
     // Not a claim to be a card — a section header, a title, a note.
     if (!m) continue;
     const copies = Number(m[1]);
-    const name = m[2]!.trim();
-    const card = byName.get(name.toLowerCase());
+    let name = m[2]!.trim();
+    // Some deck exports write "Barrens, The" instead of "The Barrens".
+    // Move a trailing article from after the comma to the front.
+    const inverted = normalise(name).replace(/^(.+),\s*(the|a|an)\s*$/, "$2 $1");
+    const card = byName.get(normalise(name)) ?? byName.get(inverted);
     if (!card) {
       unreadable.push(line);
       continue;
@@ -428,12 +431,20 @@ export function indexCatalog(file: CatalogFile): {
   const byName = new Map<string, CatalogCard>();
   for (const c of file.cards) {
     byId.set(c.id, c);
-    byName.set(c.name.toLowerCase(), c);
+    // Normalise so "Saku Pihlajamaki" matches "Saku Pihlajamäki (G6)".
+    const normName = normalise(c.name);
+    byName.set(normName, c);
     // The printed name too, so a list written by hand ("Anneke") finds a
     // card the catalogue calls "Anneke (G4)" — but never OVERWRITING a
     // full name, which is the more specific answer.
-    const printed = c.printedName.toLowerCase();
+    const printed = normalise(c.printedName);
     if (!byName.has(printed)) byName.set(printed, c);
+    // Crypt cards also register without the group suffix, so a bare name
+    // like "Saku Pihlajamaki" finds "Saku Pihlajamäki (G6)".
+    if (c.kind === "crypt") {
+      const bare = normalise(c.name.replace(/\s*\((?:g\s*\d+(?:\s+adv)?|adv)\)\s*$/i, ""));
+      if (!byName.has(bare)) byName.set(bare, c);
+    }
   }
   return { byId, byName };
 }

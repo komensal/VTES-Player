@@ -38,6 +38,13 @@ export type WindowId =
    *  docs/ammo-design.md §2 */
   | "combat.beforeResolution"
   | "combat.damageResolution"
+  /** After prevention, when the pending damage would send a vampire to torpor. */
+  | "combat.wouldGoTorpor"
+  /** Immediately after a hand/melee strike has inflicted damage, for strike-triggered riders such as Twisting the Knife. */
+  | "combat.afterStrikeDamage"
+  /** After the first strike pair resolves, before additional strikes —
+   *  only cards granting additional strikes may be played here (p. 32). */
+  | "combat.grantAdditionalStrikes"
   | "combat.press"
   | "combat.endOfRound"
   | "referendum.terms"
@@ -167,7 +174,19 @@ export type LegalOption =
        *  answer, not a missing one. */
       effects?: PlayEffect[];
     }
-  /** An answer to a ChoiceFrame;  carries the picked value(s). */
+  /** Open a card-owned ChoiceFrame from a delayed combat-card effect. */
+  | {
+      id: string;
+      kind: "raiseChoice";
+      label: string;
+      seat: SeatId;
+      cardName: string;
+      cardId: CardInstanceId;
+      key: string;
+      params?: Record<string, string>;
+      optional?: boolean;
+    }
+  /** An answer to a ChoiceFrame; carries the picked value(s). */
   | {
       id: string;
       kind: "answerChoice";

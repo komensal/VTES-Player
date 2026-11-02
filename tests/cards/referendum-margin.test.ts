@@ -64,6 +64,59 @@ function passedReferendum(
 }
 
 describe("the window itself", () => {
+  it("offers Touch of Pain to a reacting vampire after a passed political referendum", () => {
+    const state = threeSeatGame();
+    Object.assign(find(state, "V1"), { title: "prince", blood: 4, capacity: 8 });
+    Object.assign(find(state, "W"), { disciplines: { pot: "basic" }, blood: 3 });
+    Object.assign(find(state, "M"), { disciplines: { pot: "basic" }, blood: 3 });
+    state.seats[0]!.hand.push({ id: "kr", name: "Kine Resources Contested" });
+    state.seats[1]!.hand.push(
+      { id: "tp", name: "Touch of Pain" },
+      { id: "tp2", name: "Touch of Pain" },
+    );
+    const engine = new VtesEngine(state, testRegistry);
+    const call = engine.decision()!.options.find((o) => o.id.startsWith("play:Kine Resources Contested"));
+    if (!call) throw new Error("no KRC option");
+    runTrace(engine, [
+      ["Alice", call.id],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+    ]);
+    for (let i = 0; i < 8; i++) {
+      const dp = engine.decision()!;
+      if (dp.window === "referendum.polling") break;
+      runTrace(engine, [[dp.seat, dp.options[0]!.id]]);
+    }
+    runTrace(engine, [["Alice", "vote:V1:for"]]);
+    for (let i = 0; i < 8; i++) {
+      const dp = engine.decision()!;
+      if (dp.window !== "referendum.polling") break;
+      runTrace(engine, [[dp.seat, "pass"]]);
+    }
+    const first = engine.decision()!;
+    expect(first.window).toBe("referendum.afterResolution");
+    if (first.seat === "Alice") runTrace(engine, [["Alice", "pass"]]);
+    const reaction = engine.decision()!;
+    expect(reaction.seat).toBe("Bob");
+    expect(reaction.options.some((o) => o.id.startsWith("play:Touch of Pain:basic:W:tp"))).toBe(true);
+    runTrace(engine, [["Bob", "play:Touch of Pain:basic:W:tp"]]);
+    for (let i = 0; i < 6 && !state.eventLog.some((e) => e.type === "CardResolved" && e.cardId === "tp"); i++) {
+      const pending = engine.decision()!;
+      runTrace(engine, [[pending.seat, "pass"]]);
+    }
+    expect(state.eventLog.some((e) => e.type === "CardResolved" && e.cardId === "tp")).toBe(true);
+    expect(find(state, "V1").blood).toBe(3);
+    let resumed = engine.decision()!;
+    for (let i = 0; i < 8 && !(resumed.window === "referendum.afterResolution" && resumed.seat === "Bob"); i++) {
+      runTrace(engine, [[resumed.seat, "pass"]]);
+      resumed = engine.decision()!;
+    }
+    expect(resumed.window).toBe("referendum.afterResolution");
+    expect(resumed.seat).toBe("Bob");
+    expect(resumed.options.some((o) => o.id.startsWith("play:Touch of Pain:basic:M:tp2"))).toBe(false);
+  });
   it("does NOT open when nobody can use it", () => {
     const { state, engine } = passedReferendum([]);
     expect(state.frames.some((f) => f.kind === "referendum")).toBe(false);

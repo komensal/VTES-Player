@@ -278,16 +278,137 @@ describe("the coverage guard", () => {
     return files.map((f) => readFileSync(f, "utf-8")).join("\n");
   }
 
-  it("every supported card is named by some test or fuzz deck", () => {
-    // The project rule is that a card ships with a deterministic scenario
-    // test. Eighteen cards were reaching support on a SIBLING's test —
-    // defensible for pure data variants of one mechanic (eleven hunting
-    // grounds, six lockGrant locations), and not something to discover by
-    // accident a year later. They are in the fuzz decks now, so every
-    // supported card is exercised by something, and this guard keeps it
-    // that way (docs/library-audit.md §3).
-    const corpus = testCorpus();
-    const missing = supported.map((e) => e.card.name).filter((n) => !corpus.includes(n));
-    expect(missing).toEqual([]);
-  });
+    it("every supported card is named by some test or fuzz deck", () => {
+      // The project rule is that a card ships with a deterministic scenario
+      // test. Eighteen cards were reaching support on a SIBLING's test —
+      // defensible for pure data variants of one mechanic (eleven hunting
+      // grounds, six lockGrant locations), and not something to discover by
+      // accident a year later. They are in the fuzz decks now, so every
+      // supported card is exercised by something, and this guard keeps it
+      // that way (docs/library-audit.md §3).
+      const corpus = testCorpus();
+      const missing = supported.map((e) => e.card.name).filter((n) => !corpus.includes(n));
+      expect(missing).toEqual([]);
+    });
+
+    it("coverage: batch 1 combat cards are named in test corpus", () => {
+      const corpus = testCorpus();
+      expect(corpus).toContain("Abandoning the Flesh");
+      expect(corpus).toContain("Absorb the Mind");
+      expect(corpus).toContain("Ahriman's Demesne");
+      expect(corpus).toContain("Alpha Glint");
+      expect(corpus).toContain("Amria");
+      expect(corpus).toContain("Anesthetic Touch");
+      expect(corpus).toContain("Apparition");
+      expect(corpus).toContain("Armor of Caine's Fury");
+      expect(corpus).toContain("Armor of Vitality");
+      expect(corpus).toContain("Arms of the Abyss");
+      expect(corpus).toContain("Ashes to Ashes");
+      expect(corpus).toContain("Aura Reading");
+      expect(corpus).toContain("Autonomic Mastery");
+      expect(corpus).toContain("Baal's Bloody Talons");
+      expect(corpus).toContain("Backstab");
+      expect(corpus).toContain("Basilisk's Touch");
+      expect(corpus).toContain("Bestial Vengeance");
+      expect(corpus).toContain("Blade Clot");
+      expect(corpus).toContain("Blessed Blade");
+      expect(corpus).toContain("Blessing of Durga Syn");
+      expect(corpus).toContain("Blight");
+      expect(corpus).toContain("Bliss");
+      expect(corpus).toContain("Blissful Agony");
+      expect(corpus).toContain("Blood Agony");
+      expect(corpus).toContain("Blood of Acid");
+      expect(corpus).toContain("Blood of the Cobra");
+      expect(corpus).toContain("Blood Sweat");
+      expect(corpus).toContain("Blood to Water");
+      expect(corpus).toContain("Bloodform");
+      expect(corpus).toContain("Body Arsenal");
+      expect(corpus).toContain("Body of Sun");
+      expect(corpus).toContain("Bollix");
+      expect(corpus).toContain("Bond with the Mountain");
+      expect(corpus).toContain("Bonecraft");
+      expect(corpus).toContain("Botched Move");
+      expect(corpus).toContain("Chimerstry");
+      expect(corpus).toContain("Dementation");
+      expect(corpus).toContain("Mythercerer");
+      expect(corpus).toContain("Necromancy");
+      expect(corpus).toContain("Obeah");
+      expect(corpus).toContain("Obtenebration");
+      expect(corpus).toContain("Quietus");
+      expect(corpus).toContain("Valeren");
+      expect(corpus).toContain("Vicissitude");
+      expect(corpus).toContain("Visceratika");
+      expect(corpus).toContain("Psyche!");
+      expect(corpus).toContain("Growing Fury");
+      expect(corpus).toContain("Fire in the Blood");
+      expect(corpus).toContain("Increased Strength");
+      expect(corpus).toContain("Force of Personality");
+      expect(corpus).toContain("Unholy Penance");
+      expect(corpus).toContain("Quick Meld");
+      expect(corpus).toContain("Shape Mastery");
+      expect(corpus).toContain("Mythic Form");
+      expect(corpus).toContain("Superior Mettle");
+      expect(corpus).toContain("Charismatic Aura");
+      expect(corpus).toContain("King of the Mountain");
+      expect(corpus).toContain("Vengeance of Samiel");
+      expect(corpus).toContain("Shadow Boxing");
+      expect(corpus).toContain("Decapitate");
+      expect(corpus).toContain("Mighty Grapple");
+      expect(corpus).toContain("Undying Tenacity");
+      expect(corpus).toContain("Scourge of Alecto");
+      expect(corpus).toContain("Elemental Stoicism");
+      expect(corpus).toContain("Jua Vema");
+      expect(corpus).toContain("Mask Empathy");
+      expect(corpus).toContain("Loving Agony");
+      expect(corpus).toContain("Hell-for-Leather");
+      expect(corpus).toContain("Stunt Cycle");
+      expect(corpus).toContain("Call the Wild Hunt");
+      expect(corpus).toContain("Chameleon's Colors");
+      expect(corpus).toContain("Compress");
+      expect(corpus).toContain("Conflagration");
+      expect(corpus).toContain("Conquer the Beast");
+      expect(corpus).toContain("Crimson Fury");
+      expect(corpus).toContain("Dark Steel");
+      expect(corpus).toContain("The Death of My Conscience");
+      expect(corpus).toContain("Denial of Aphrodite's Favor");
+      expect(corpus).toContain("Donnybrook");
+      expect(corpus).toContain("Drawing Out the Beast");
+      expect(corpus).toContain("Earth Swords");
+      expect(corpus).toContain("Improvised Tactics");
+      expect(corpus).toContain("Infection");
+      expect(corpus).toContain("Lam Into");
+      expect(corpus).toContain("Lapse");
+      expect(corpus).toContain("Lessons in the Steel");
+      expect(corpus).toContain("Necrosis");
+      expect(corpus).toContain("Penitent Resilience");
+      expect(corpus).toContain("Putrefaction");
+      expect(corpus).toContain("Relentless Reaper");
+      expect(corpus).toContain("Rigor Mortis");
+      expect(corpus).toContain("Serpent's Numbing Kiss");
+      expect(corpus).toContain("Shared Strength");
+      expect(corpus).toContain("Spirit Claws");
+      expect(corpus).toContain("Steely Tenacity");
+      expect(corpus).toContain("Street Cred");
+      expect(corpus).toContain("Strength of the Bear");
+      expect(corpus).toContain("Summon Spirit Beast");
+      expect(corpus).toContain("Sword of the Righteous");
+      expect(corpus).toContain("Sympathetic Agony");
+      expect(corpus).toContain("Toreador's Bane");
+      expect(corpus).toContain("Twisting the Knife");
+      expect(corpus).toContain("Typhonic Beast");
+      expect(corpus).toContain("Undead Persistence");
+      expect(corpus).toContain("Vitae Block");
+      expect(corpus).toContain("Withering");
+      expect(corpus).toContain("Touch of Pain");
+      expect(corpus).toContain("Bleeding the Vine");
+      expect(corpus).toContain("Chameleon");
+      expect(corpus).toContain("Flames of Insurrection");
+      expect(corpus).toContain("Society of Leopold");
+      expect(corpus).toContain("Daimaite");
+      expect(corpus).toContain("Melpominee");
+      expect(corpus).toContain("Serpentis");
+      expect(corpus).toContain("Spiritus");
+      expect(corpus).toContain("Temporis");
+      expect(corpus).toContain("Thanatosis");
+    });
 });

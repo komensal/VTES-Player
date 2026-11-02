@@ -25,7 +25,7 @@
 
 import type { Agent, PlayerView } from "../engine/agent.ts";
 import type { DecisionPoint, LegalOption, PlayEffect, PlayEffectTag, WindowId } from "../engine/options.ts";
-import type { MinionState, SeatId } from "../engine/state.ts";
+import { TITLE_VOTES, type MinionState, type SeatId } from "../engine/state.ts";
 import { predatorOf, preyOf, relationTo } from "./seats.ts";
 
 /**
@@ -824,6 +824,11 @@ export class HeuristicAgent implements Agent {
         // referendum have all been paid for.
         return this.scoreTerms(o, view, me);
 
+      case "raiseChoice":
+        // A delayed Call the Wild Hunt trigger opens a mandatory X/card
+        // selection after the player accepts this ranged environmental hit.
+        return w.playCard + w.strikeDamage;
+
       case "answerChoice":
         return this.scoreChoice(o, view, me);
 
@@ -914,6 +919,8 @@ export class HeuristicAgent implements Agent {
   ): number {
     const w = this.w;
     const base = w.answerChoice;
+    const wildHuntX = o.params["wildHuntX"];
+    if (wildHuntX !== undefined) return base + Number(wildHuntX) * w.strikeDamage;
 
     // A COST, with a choice of currency. Pool is life (p. 4); blood is
     // fuel — so blood, unless the vampire cannot spare it.
@@ -1082,6 +1089,101 @@ export class HeuristicAgent implements Agent {
     );
   }
 
+  /**
+   * Estimate whether the automatic blood hunt after a successful diablerie
+   * would burn the acting vampire. Only uses face-up minions, titles,
+   * attached vote statics, public vote auras and the Edge — never hidden
+   * hands or the engine's full GameState. Opponents are assumed to prefer
+   * burning the diablerist; our own sources are assumed to oppose it.
+   */
+  private estimatedBloodHuntPassChance(
+    view: PlayerView,
+    me: SeatId,
+    diablerist: MinionState,
+    victimId: string,
+  ): number {
+    // The engine skips the referendum entirely for this public protection.
+    if (diablerist.attached.some((p) => p.statics.noBloodHunt)) return 0;
+
+    let votesAgainst = 0;
+    let votesFor = 0;
+    const auraVotes = (minion: MinionState): number => {
+      let total = 0;
+      for (const holder of view.seats) {
+        const cards = [
+          ...holder.permanents,
+          ...holder.minions.filter((m) => m.id !== victimId).flatMap((m) => m.attached),
+        ];
+        for (const card of cards) {
+          const controller = card.controller ?? holder.id;
+          for (const aura of [...(card.aura ? [card.aura] : []), ...(card.auras ?? [])]) {
+            if (aura.scope === "controller" && minion.controller !== controller) continue;
+            if (aura.clan !== undefined && minion.clan !== aura.clan) continue;
+            if (aura.sect !== undefined && minion.sect !== aura.sect) continue;
+            if (aura.titledOnly && minion.title === null) continue;
+            if (aura.title !== undefined && minion.title !== aura.title) continue;
+            if (aura.whilePreyHasTorporVampire) {
+              const prey = preyOf(view, controller);
+              if (!seatOf(view, prey ?? "")?.minions.some((m) => m.kind === "vampire" && m.inTorpor)) {
+                continue;
+              }
+            }
+            total += aura.votes ?? 0;
+          }
+        }
+      }
+      return total;
+    };
+
+    for (const seat of view.seats) {
+      if (seat.ousted) continue;
+      for (const m of seat.minions) {
+        // The diablerized vampire is burned before the blood hunt starts,
+        // so its own title and attached vote sources will not be available.
+        if (m.id === victimId) continue;
+        if (m.inTorpor || m.torporPending || m.expelledThisTurn) continue;
+        if (m.attached.some((p) => p.statics.cannotCastVotes)) continue;
+        // The Hunt Club can bar the hunted vampire from voting in its own
+        // blood hunt; other vampires controlled by the same seat still vote.
+        if (
+          m.id === diablerist.id &&
+          m.attached.some((p) => p.statics.cannotCastVotesInOwnBloodHunt)
+        ) {
+          continue;
+        }
+
+        const baseVotes = Math.max(
+          0,
+          (m.title === null ? 0 : TITLE_VOTES[m.title]) +
+            m.attached.reduce((n, p) => n + (p.statics.votes ?? 0), 0) +
+            auraVotes(m),
+        );
+        let forBonus = 0;
+        let againstBonus = 0;
+        for (const p of m.attached) {
+          const bonus = p.statics.voteBonus;
+          if (!bonus || (bonus.variant !== undefined && bonus.variant !== "bloodHunt")) continue;
+          if (bonus.direction !== "against") forBonus += bonus.amount;
+          if (bonus.direction !== "for") againstBonus += bonus.amount;
+        }
+        if (seat.id === me) votesAgainst += baseVotes + againstBonus;
+        else votesFor += baseVotes + forBonus;
+      }
+    }
+
+    // The Edge is one additional flexible vote for its controller.
+    if (view.edge === me) votesAgainst += 1;
+    else if (view.edge) votesFor += 1;
+
+    const total = votesAgainst + votesFor;
+    if (total === 0) return 0;
+    // A smooth, deterministic estimate rather than pretending the public
+    // counts guarantee an outcome: one vote of advantage is meaningful,
+    // while a large hostile majority makes the burn increasingly likely.
+    const margin = votesFor - votesAgainst;
+    return 1 / (1 + Math.exp(-margin / 1.5));
+  }
+
   private scoreAction(
     o: Extract<LegalOption, { kind: "takeAction" }>,
     view: PlayerView,
@@ -1136,8 +1238,40 @@ export class HeuristicAgent implements Agent {
         return w.rescue;
       case "rescue":
         return w.rescue;
-      case "diablerize":
-        return w.diablerize;
+      case "diablerize": {
+        // Diablerising your own vampire destroys one of your own assets and
+        // brings a blood hunt back on you — never worth it. The engine
+        // allows any torpid vampire as a target (only self is excluded), so
+        // the policy must say no here.
+        const found = findMinion(view, o.targetMinion ?? "");
+        const victim = found?.m;
+        if (!victim) return w.diablerize;
+        if (found.seat === me) return w.selfOustGuard;
+        // A bigger vampire is more blood and a bigger trophy; the prey's
+        // vampire is worth slightly more still.
+        const rel = relationTo(view, me, found.seat);
+        const relationBonus = rel === "prey" ? 2 : rel === "predator" ? 1 : 0;
+        const reward = w.diablerize + victim.capacity * 0.5 + relationBonus;
+        // The blood hunt targets the DIABLERIST, not the victim. Price the
+        // chance that hostile table votes burn our acting vampire as an
+        // expected loss; a noBloodHunt protection makes this cost zero.
+        const bloodHuntShielded =
+          actor !== undefined &&
+          victim.capacity < actor.capacity &&
+          view.seats.some((s) =>
+            s.permanents.some(
+              (p) =>
+                p.statics.barsBloodHuntAboveCounters &&
+                actor.capacity > (p.counters ?? 0),
+            ),
+          );
+        const burnChance =
+          actor && !bloodHuntShielded
+            ? this.estimatedBloodHuntPassChance(view, me, actor, victim.id)
+            : 0;
+        const burnCost = actor ? 10 + actor.capacity * 2.5 : 0;
+        return reward - burnChance * burnCost;
+      }
       case "cardEffect":
         return w.playCard;
     }
@@ -1229,7 +1363,12 @@ export class HeuristicAgent implements Agent {
     if (ref.variant === "bloodHunt") {
       const target = ref.bloodHuntTarget ? findMinion(view, ref.bloodHuntTarget) : null;
       if (!target) return 0;
-      return target.seat === me ? w.voteBurnMyMinion : w.voteBurnTheirMinion;
+      const cap = target.m.capacity ?? 0;
+      // Burning an 11-capacity vampire is a bigger deal than burning a
+      // 1-capacity one, whichever seat it belongs to — so the urgency to
+      // vote one way or the other scales with what would be lost or gained.
+      if (target.seat === me) return w.voteBurnMyMinion - cap;
+      return w.voteBurnTheirMinion + cap * 0.5;
     }
 
     let value = 0;

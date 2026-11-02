@@ -168,6 +168,11 @@ export interface EngineOps {
   /** Ability-based prevention (War Ghoul's "prevent 1 each round"):
    *  prevents on the current pending damage and marks the card's
    *  per-round use in the combat frame. */
+  /** Add Twisting the Knife's extra damage as its own preventable packet,
+   *  immediately after the qualifying strike packet resolved. */
+  addTwistingKnifeDamage(play: CardPlayFrame, amount: number): void;
+  /** Keep a vampire in combat instead of sending them to torpor now. */
+  deferTorporUntilCombatEnds(play: CardPlayFrame, threeCardlessRounds?: boolean): void;
   preventDamageAbility(
     minion: MinionId,
     cardId: CardInstanceId,
@@ -178,9 +183,13 @@ export interface EngineOps {
   setCombatStrength(play: CardPlayFrame, value: number): void;
   /** "Gets +N strength this combat" — additive, whole-combat. */
   addCombatStrength(play: CardPlayFrame, amount: number): void;
+  /** Add strength that grows by the given amount each later round, starting now. */
+  addCombatStrengthPerRound(play: CardPlayFrame, amount: number): void;
+  addPotenceStrikeDamageBonus(play: CardPlayFrame, amount: number): void;
   /** "Damage from this vampire's hand strikes is aggravated this round"
    *  (Claws of the Dead, Wolf Claws). */
   setHandStrikesAggravated(play: CardPlayFrame): void;
+  aggravateNextHandOrMeleeStrike(play: CardPlayFrame): void;
   /** The same, keyed on the MINION — an ability of a card in play has no
    *  CardPlayFrame (Crossbreaker). */
   setHandStrikesAggravatedFor(minion: MinionId | null): void;
@@ -246,7 +255,13 @@ export interface EngineOps {
    *  equipment" (Terror Frenzy). */
   restrictCombatOpponent(
     play: CardPlayFrame,
-    r: { maneuver: boolean; press: boolean; equipment: boolean },
+    r: {
+      maneuver: boolean;
+      press: boolean;
+      equipment: boolean;
+      additionalStrikes?: boolean;
+      strengthPenalty?: number;
+    },
   ): void;
   /** Grant N additional strikes this round (Blur etc.); a "(limited)"
    *  source consumes the one-per-round allowance (p. 32). */
@@ -351,7 +366,7 @@ export interface EngineOps {
   grantManeuverCreditTo(minion: MinionId): void;
   grantCombatPressToMinion(minion: MinionId): void;
   /** "…with 1 optional maneuver" — a combat maneuver credit. */
-  grantManeuverCredit(play: CardPlayFrame): void;
+  grantManeuverCredit(play: CardPlayFrame, onlyToClose?: boolean, requires?: string[]): void;
   /** "This round, this vampire gets +N strength" (Obedient Flesh) — reset
    *  each round, unlike addCombatStrength. */
   addRoundStrength(play: CardPlayFrame, amount: number): void;
@@ -393,6 +408,9 @@ export interface EngineOps {
     play: CardPlayFrame,
     r: Omit<CombatRoundDamageRider, "from" | "startRound">,
   ): void;
+  /** Queue the environmental damage selected by a delayed combat-card
+   *  trigger for the current strike-resolution phase. */
+  addInitialStrikeDamage(args: { cardId: CardInstanceId; minion: MinionId; amount: number }): void;
   /** "…if a damage is inflicted on this vampire in a round, any
    *  additional damage that round is automatically prevented" (Flesh of
    *  Marble). §5 */
@@ -970,6 +988,8 @@ export interface EngineOps {
 
 export interface CardStrikeParams {
   handBonus?: number;
+  /** This is still a hand strike even though a combat card declared it. */
+  handStrike?: boolean;
   /** "Strike: put this card on the opposing minion with N counters". */
   attachToVictim?: {
     counters?: number;
@@ -1004,6 +1024,8 @@ export interface CardStrikeParams {
   damage?: number;
   ranged?: boolean;
   aggravated?: boolean;
+  /** "This strike's damage cannot be prevented." */
+  unpreventable?: boolean;
   /** "Strike: steal N blood" (Theft of Vitae). */
   stealBlood?: number;
   /** "Damage from this strike cannot be prevented by cards requiring
@@ -1245,6 +1267,14 @@ export interface CardHandler {
    *  so no card reads another card's spec.
    *  docs/vozhd-allies-design.md §5 */
   isStrikeCard?(mode: DisciplineLevel | null, variant?: string): boolean;
+  /** Does this MODE grant additional strikes (an `additionalStrike` effect)?
+   *  Used to offer the card in the post-first-pair grant window rather than
+   *  in the initial choose-strike window (p. 32). */
+  grantsAdditionalStrikes?(mode: DisciplineLevel | null, variant?: string): boolean;
+  /** Returns the additional-strike grant details for this MODE, if any.
+   *  Used after the first strike pair resolves to grant additional strikes
+   *  from cards played as strikes (V5 p. 32). */
+  getAdditionalStrikeInfo?(mode: DisciplineLevel | null, variant?: string): { count: number; limited: boolean } | null;
   /** Printed keywords ("Grapple.", "Aim.") — neither a card type nor a
    *  Discipline. Answered centrally in `compileSpec` and stamped onto
    *  `CardPlayFrame.keywords` at push, so a card filtering on one never
@@ -1977,6 +2007,9 @@ export interface CardHandler {
   ): void;
   /** Enumerate legal plays for `seat` at this window. Pure. */
   options(card: CardInstance, ctx: PlayContext): LegalOption[];
+  /** Effects on a combat card that remain available after it has left hand
+   *  (Call the Wild Hunt's superior strike-resolution trigger). */
+  combatTriggeredOptions?(ctx: PlayContext): LegalOption[];
   /** Apply the card's effect after its as-played window closes. For
    *  action cards this announces the action via ops.announceCardAction. */
   resolve(play: CardPlayFrame, ops: EngineOps): void;

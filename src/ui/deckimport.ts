@@ -42,7 +42,7 @@ const reg = registry as unknown as CardRegistry;
  * Pentex, or how many spaces someone left in. What it MUST keep is the
  * letters, because two card names can differ by nothing else.
  */
-function normalise(name: string): string {
+export function normalise(name: string): string {
   return name
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "") // accents, after NFD splits them off
@@ -117,6 +117,13 @@ export function findCards(name: string): CardDef[] {
   // An exact hit on the FULL name is unambiguous by construction: the
   // group (and the ADV marker) are part of it.
   if (exact && normalise(name) === normalise(exact.name)) return [exact];
+  // Some deck exports write "Barrens, The" instead of "The Barrens". Try
+  // moving a leading article from after the comma to the front.
+  const inverted = normalise(name).replace(/^(.+),\s*(the|a|an)\s*$/, "$2 $1");
+  if (inverted !== normalise(name)) {
+    const hit = byName.get(inverted);
+    if (hit && normalise(inverted) === normalise(hit.name)) return [hit];
+  }
   const bare = cryptByBare.get(normalise(stripCryptSuffix(name)));
   if (bare) {
     const adv = wantsAdvanced(name);
@@ -337,7 +344,11 @@ export function importDeck(text: string, seat: string): { deck: DeckList | null;
     // pattern eats the first character of a card whose name begins with
     // one: `.44 Magnum` imported as "44 Magnum" and was reported as not
     // being in the pool. Found by round-tripping a real precon.
-    const m = /^(\d+)\s*(?:x\b)?\s*(?:[:.\-]\s+)?\s*(.+)$/i.exec(line);
+    // "2xTheo Bell" (no space after x) — the /i flag would otherwise make
+    // `x?` swallow the leading X of a name like "Ximena". Insert a space so
+    // the original `(?:x\b)?` multiplier rule can do its job safely.
+    const fixed = line.replace(/^(\d+)x(?=[a-zA-Z])/i, "$1 x ");
+    const m = /^(\d+)\s*(?:x\b)?\s*(?:[:.\-]\s+)?\s*(.+)$/i.exec(fixed);
     if (!m) return;
     const copies = Number(m[1]);
     const rest = (m[2] ?? "").trim();

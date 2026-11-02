@@ -219,7 +219,9 @@ describe("Acrobatics (100020) — the mirror: the BASIC has no dodge", () => {
   it("basic grants an additional strike and is not a dodge", () => {
     const a = inCombat(["Acrobatics"], { cel: "superior" });
     const before = a.v1.blood;
-    const ids = walkTo(a.engine, "combat.chooseStrike");
+    // Acrobatics basic grants only an additional strike — played at the
+    // post-first-pair grant window (p. 32), not at chooseStrike.
+    const ids = walkTo(a.engine, "combat.grantAdditionalStrikes");
     a.engine.choose(ids.find((x) => x.startsWith("play:Acrobatics:basic"))!);
     settle(a.engine);
     expect(combat(a.state).additionalStrikes.acting).toBe(1);

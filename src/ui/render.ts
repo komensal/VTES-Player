@@ -896,7 +896,17 @@ function eventLine(ev: GameEvent, state: GameState, raw: boolean): string {
   const line = narrate(ev, state);
   if (!line) return "";
   const tag = raw ? ` <span class="evtype">${esc(ev.type)}</span>` : "";
-  return `<div class="ev ${line.weight}">${linkifyCards(line.text)}${tag}</div>`;
+  // Card images in the log: a played card's KRCG scan sits beside its
+  // line, and the same `data-zoom` hook the table uses opens the
+  // magnifier on hover.
+  let image = "";
+  if (ev.type === "CardPlayed") {
+    const src = imageFor(ev.name);
+    if (src) {
+      image = ` <img class="evimg" src="${esc(src)}" alt="" data-zoom="${esc(src)}" data-name="${esc(ev.name)}" />`;
+    }
+  }
+  return `<div class="ev ${line.weight}">${linkifyCards(line.text)}${image}${tag}</div>`;
 }
 
 /**

@@ -88,6 +88,19 @@ function atStrike(engine: VtesEngine): string[] {
   return [];
 }
 
+/** Walk to the range window and return Alice's options there. */
+function atRange(engine: VtesEngine): string[] {
+  for (let i = 0; i < 12; i++) {
+    const dp = engine.decision();
+    if (!dp) return [];
+    if (dp.window === "combat.range") return dp.options.map((o) => o.id);
+    const pick = dp.options.find((o) => o.id === "pass");
+    if (!pick) return [];
+    engine.choose(pick.id);
+  }
+  return [];
+}
+
 /** Set the range before the strike step is reached. A maneuver credit spent
  *  by Alice is the in-game way there; this is the fixture way, and the two
  *  agree because `cf.range` is what the gate reads. */
@@ -151,7 +164,7 @@ describe("the maneuver rider", () => {
         ["superior", supHasRider],
       ] as const) {
         const a = armed(card, d);
-        const ids = atStrike(a.engine);
+        const ids = expected ? atRange(a.engine) : atStrike(a.engine);
         const id = ids.find((x) => x.startsWith(`play:${card}:${mode}`));
         expect(id, `${card} ${mode} not offered`).toBeDefined();
         a.engine.choose(id!);
@@ -160,6 +173,8 @@ describe("the maneuver rider", () => {
           combat(a.state).maneuverCredits.acting,
           `${card} ${mode} maneuver credit`,
         ).toBe(expected ? 1 : 0);
+        const cf = a.state.frames.find((f) => f.kind === "combat");
+        expect(cf?.kind === "combat" ? cf.strikes.acting?.name : null).toBe(card);
       }
     }
   });

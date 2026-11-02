@@ -211,7 +211,10 @@ describe("LocalTransport auto-pass", () => {
     // re-answered instantly and the button would look broken.
     expect(after).toBeLessThan(before);
     const dp = t.decision();
-    if (dp) expect(dp.options.length).toBeGreaterThan(1);
+    if (dp) {
+      // Must not be a lone Pass that auto-pass would immediately consume again.
+      expect(dp.options.length === 1 && dp.options[0]!.kind === "pass").toBe(false);
+    }
   });
 });
 

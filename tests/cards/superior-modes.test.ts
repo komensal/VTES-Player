@@ -12,7 +12,8 @@
  * only at inferior on the next, depending on who is acting.
  *
  * Slam is the fixture because it is the plainest case in the pool: one
- * discipline, one clause at each level, no timing riders.
+ * discipline and one clause at each level. Superior has a close-only
+ * maneuver rider and is therefore checked in the range window.
  */
 
 import { describe, expect, it } from "vitest";
@@ -20,12 +21,21 @@ import { VtesEngine } from "../../src/engine/index.ts";
 import { runTrace, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
 
 /** The Slam plays the engine is offering right now, by level. */
-function slamModes(engine: VtesEngine): string[] {
-  return (engine.decision()?.options ?? [])
-    .flatMap((o) =>
-      o.kind === "playCard" && o.name === "Slam" ? [`${o.mode}:${o.minion}`] : [],
-    )
-    .sort();
+function slamModes(engine: VtesEngine, wanted: "combat.range" | "combat.chooseStrike"): string[] {
+  for (let i = 0; i < 24; i++) {
+    const dp = engine.decision();
+    if (!dp) return [];
+    if (dp.window === wanted && dp.seat === "Alice") {
+      return dp.options
+        .flatMap((o) => o.kind === "playCard" && o.name === "Slam" ? [`${o.mode}:${o.minion}`] : [])
+        .sort();
+    }
+    if (wanted === "combat.range" && dp.window === "combat.chooseStrike") return [];
+    const pass = dp.options.find((o) => o.id === "pass");
+    if (!pass) return [];
+    runTrace(engine, [[dp.seat, pass.id]]);
+  }
+  return [];
 }
 
 /** A game where V1 strikes M, with V1's Potence at the given level. */
@@ -58,8 +68,6 @@ function combatWith(level: "basic" | "superior"): VtesEngine {
     ["Bob", "block:M"],
     ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
     ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
-    ["Alice", "pass"], ["Bob", "pass"],
-    ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
   ]);
   return engine;
 }
@@ -68,13 +76,17 @@ describe("a card's superior mode follows the ACTING vampire", () => {
   it("offers BOTH levels when the vampire playing it has the superior", () => {
     // The positive control. Without this, the assertion below could pass
     // because superior is never offered to anybody, ever.
-    expect(slamModes(combatWith("superior"))).toEqual(["basic:V1", "superior:V1"]);
+    const engine = combatWith("superior");
+    expect(slamModes(engine, "combat.range")).toEqual(["superior:V1"]);
+    expect(slamModes(engine, "combat.chooseStrike")).toEqual(["basic:V1"]);
   });
 
   it("offers only the inferior when that vampire has it at basic", () => {
     // …even though V2, standing right there, has Potence at superior.
     // That is the rule, and it is the answer to the owner's question.
-    expect(slamModes(combatWith("basic"))).toEqual(["basic:V1"]);
+    const engine = combatWith("basic");
+    expect(slamModes(engine, "combat.range")).toEqual([]);
+    expect(slamModes(engine, "combat.chooseStrike")).toEqual(["basic:V1"]);
   });
 
   it("is not offered at all to a vampire without the discipline", () => {
@@ -82,6 +94,7 @@ describe("a card's superior mode follows the ACTING vampire", () => {
     const state = engine.state;
     const v1 = state.seats[0]!.minions.find((m) => m.id === "V1")!;
     v1.disciplines = {};
-    expect(slamModes(engine)).toEqual([]);
+    expect(slamModes(engine, "combat.range")).toEqual([]);
+    expect(slamModes(engine, "combat.chooseStrike")).toEqual([]);
   });
 });

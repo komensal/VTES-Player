@@ -71,6 +71,41 @@ describe("the window itself", () => {
   });
 });
 
+describe("Touch of Pain (101999)", () => {
+  it("allows another Methuselah's successful bleed and enforces one per action", () => {
+    const state = threeSeatGame();
+    Object.assign(find(state, "V1"), { blood: 3 });
+    Object.assign(find(state, "W"), { disciplines: { pot: "basic" }, blood: 3 });
+    Object.assign(find(state, "M"), { disciplines: { pot: "basic" }, blood: 3 });
+    state.seats[1]!.hand.push(
+      { id: "tp1", name: "Touch of Pain" },
+      { id: "tp2", name: "Touch of Pain" },
+    );
+    const engine = new VtesEngine(state, testRegistry);
+    runTrace(engine, [
+      ["Alice", "bleed:V1"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+    ]);
+    runTrace(engine, [["Alice", "pass"]]);
+    const dp = engine.decision()!;
+    expect(dp.seat).toBe("Bob");
+    expect(dp.window).toBe("action.afterResolution");
+    expect(dp.options.some((o) => o.id.startsWith("play:Touch of Pain:basic:W:tp1"))).toBe(true);
+    runTrace(engine, [["Bob", "play:Touch of Pain:basic:W:tp1"]]);
+    let next = engine.decision()!;
+    for (let i = 0; i < 8 && !(next.window === "action.afterResolution" && next.seat === "Bob"); i++) {
+      runTrace(engine, [[next.seat, "pass"]]);
+      next = engine.decision()!;
+    }
+    expect(next.window).toBe("action.afterResolution");
+    expect(next.seat).toBe("Bob");
+    expect(next.options.some((o) => o.id.startsWith("play:Touch of Pain:basic:M:tp2"))).toBe(false);
+    expect(find(state, "V1").blood).toBe(2);
+  });
+});
+
 describe("Freak Drive (100788)", () => {
   it("basic unlocks the vampire after a successful action", () => {
     const { state, engine } = unopposedBleed([{ id: "fd", name: "Freak Drive" }], {

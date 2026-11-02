@@ -15,11 +15,13 @@
  * make a replay a lie (architecture principle 2).
  */
 
+import type { Agent } from "../engine/agent.ts";
 import { HeuristicAgent } from "../ai/heuristic.ts";
+import { MlAgent } from "../ai/ml-agent.ts";
 import { PLAYSTYLES, isPlaystyle, type Playstyle } from "../ai/playstyles.ts";
 import deckPlaystyles from "../../config/deck-playstyles.json" with { type: "json" };
 import type { DeckSource } from "./newgame.ts";
-import { botPlaystyleFor, seatSeed, type UiSettings } from "./settings.ts";
+import { botPlaystyleFor, loadSettings, seatSeed, type UiSettings } from "./settings.ts";
 
 const STYLES = (deckPlaystyles as { styles: Record<string, string> }).styles;
 
@@ -72,7 +74,7 @@ export interface BotAgentOptions {
  * in step with `setAgent`, and it would get out of step the first time a
  * seat was handed back to a human.
  */
-export type StyledAgent = HeuristicAgent & { readonly playstyle: Playstyle };
+export type StyledAgent = Agent & { readonly playstyle: Playstyle };
 
 /** The style an agent was built with, or null for one that was not built
  *  here (a test's bare `HeuristicAgent`, or a human seat). */
@@ -88,11 +90,20 @@ export function botAgentFor(seat: string, opts: BotAgentOptions = {}): StyledAge
     (opts.settings && opts.botIndex !== undefined
       ? playstyleFor(opts.settings, opts.botIndex, opts.deck)
       : (deckPlaystyle(opts.deck) ?? "balanced"));
+  const settings = opts.settings ?? loadSettings();
+  const trainedWeights =
+    style === "trained"
+      ? (opts.settings?.trainedBotWeights ?? loadSettings().trainedBotWeights)
+      : null;
+  if (style === "neural" && settings.trainedMlModel) {
+    return Object.assign(new MlAgent({ model: settings.trainedMlModel, seed: seatSeed(seat) }), { playstyle: style });
+  }
   const agent = new HeuristicAgent({
     seed: seatSeed(seat),
     // `balanced` is `{}`, so this is the tuned default and the object is
-    // passed anyway — one path, not two.
-    weights: PLAYSTYLES[style],
+    // passed anyway — one path, not two. The trained style uses its saved
+    // profile when present and a conservative static fallback otherwise.
+    weights: trainedWeights ?? PLAYSTYLES[style],
   });
   return Object.assign(agent, { playstyle: style }) as StyledAgent;
 }

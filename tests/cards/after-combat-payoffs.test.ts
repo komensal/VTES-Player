@@ -194,10 +194,10 @@ describe("Torrent (101995) — the same cancellation, on a different payoff", ()
   });
 
   it("its basic grants an additional strike and queues nothing", () => {
-    // The pair: both modes are played at the strike step, so "the combat ended"
-    // and "a rider exists" have to be checked separately.
+    // Torrent basic grants an additional strike — it is played in the
+    // post-first-pair grant window (p. 32), not at chooseStrike.
     const a = inCombat(["Torrent"], { cel: "superior" });
-    const ids = reach(a.engine, "combat.chooseStrike");
+    const ids = reach(a.engine, "combat.grantAdditionalStrikes");
     a.engine.choose(ids.find((x) => x.startsWith("play:Torrent:basic"))!);
     settle(a.engine);
     const cf = combat(a.state)!;

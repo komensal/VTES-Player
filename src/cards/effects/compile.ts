@@ -57,6 +57,7 @@ import {
   disciplinesOf,
   currentBleed,
   currentIntercept,
+  isToreadorOrAntitribuClan,
   isUndeadAlly,
   minionHasTag,
   cardRequiresDiscipline,
@@ -201,6 +202,10 @@ function rulesHold(
         if (af.actionKind !== "bleed" || af.resolvedSuccess !== true) return false;
         if (currentBleed(ctx.state, af) < 1) return false;
         break;
+      case "whenReferendumPasses":
+        // Evaluated in the referendum-specific option branch below; inert
+        // while an action-resolution window is being checked.
+        break;
       case "onlyIfNoActionsYet": {
         // "Not usable if any NON-MANDATORY actions have been performed this
         // turn" (Uncontrolled Impulse). THIS action is already counted — it has
@@ -222,6 +227,7 @@ function rulesHold(
       case "onlyAfterFirstRound":
       case "onlyFirstRound":
       case "onlyIfMoreBloodThanFoe":
+      case "onlyAgainstToreadorAllyOrYounger":
       case "afterBlockResolution":
         break; // per-minion / combat rules, checked elsewhere
     }
@@ -405,7 +411,7 @@ function costOf(
   target?: MinionId | null,
 ): { blood: number; pool: number } {
   const types = [...COST_TYPES_BY_CARD_TYPE[spec.cardType]];
-  if (mode && combatWindowFor(mode) === "combat.chooseStrike") types.push("strike");
+  if (mode && isStrikeMode(mode)) types.push("strike");
   // A bleed action card's announcement costs Tainted Vitae's blood on top
   // of the card's own, which is paid later, at resolution (p. 27) — so the
   // GATE asks for both and the payment sites each charge their own.
@@ -2819,13 +2825,44 @@ export function frenzyTargetSide(
     : playerSide;
 }
 
+function strikeManeuverRider(
+  mode: CardMode,
+): { count: number; onlyToClose: boolean } | null {
+  let count = 0;
+  let onlyToClose = false;
+  for (const e of mode.effects) {
+    let rider:
+      | { maneuver?: number; maneuverOnlyToClose?: boolean }
+      | undefined;
+    switch (e.kind) {
+      case "strikeHandBonus":
+      case "strikeDamage":
+      case "strikeStealBlood":
+      case "strikeDodge":
+        rider = e.riders;
+        break;
+      default:
+        break;
+    }
+    if (rider?.maneuver) {
+      count += rider.maneuver;
+      onlyToClose ||= rider.maneuverOnlyToClose ?? false;
+    }
+  }
+  return count > 0 ? { count, onlyToClose } : null;
+}
+
 function combatWindowFor(mode: CardMode): WindowId | null {
+  // A strike card with an optional maneuver is declared in the range step,
+  // where the minion commits to that strike before using the maneuver.
+  if (strikeManeuverRider(mode)) return "combat.range";
   for (const e of mode.effects) {
     switch (e.kind) {
       case "strikeHandBonus":
       case "strikeCombatEnds":
       case "strikeDodge":
       case "strikeDamage":
+      case "strikeDamageCapacityDiff":
       case "strikeWeaponCost":
       case "strikeWeaponDamage":
       case "strikeDestroyEquipment":
@@ -2837,6 +2874,8 @@ function combatWindowFor(mode: CardMode): WindowId | null {
       case "strikeIncapacitate":
       case "additionalStrike":
         return "combat.chooseStrike";
+      case "burnTorporOpponent":
+        return "torpor";
       // The only primitive whose window is DATA. One printed mechanic
       // ("put this card on <a combatant>") arrives with two different
       // timings — Wall of Filth before range, Disarm at end of round —
@@ -2856,6 +2895,7 @@ function combatWindowFor(mode: CardMode): WindowId | null {
         return e.when === "endOfRound" ? "combat.endOfRound" : "combat.beforeRange";
       case "setStrength":
       case "addStrength":
+      case "potenceStrikeDamageBonus":
       // "The OPPOSING minion gets -N strength" — same window as its
       // self-facing siblings (§2).
       case "opposingStrength":
@@ -2889,6 +2929,7 @@ function combatWindowFor(mode: CardMode): WindowId | null {
       case "swapStrikeOrder":
         return "combat.chooseStrike";
       case "handStrikesAggravated":
+      case "aggravateNextHandOrMeleeStrike":
       // The combat-long sibling, same window (Bone Spur's two modes).
       case "handStrikesAggravatedCombat":
       // "…strikes with weapons inflict no damage this round" is a rider
@@ -2902,6 +2943,7 @@ function combatWindowFor(mode: CardMode): WindowId | null {
       // "Only usable BEFORE RESOLUTION OF A GUN'S STRIKE" — after strikes
       // are declared, before they resolve ([RTR 19990105]).
       case "loadAmmo":
+      case "bloodToWater":
         return "combat.beforeResolution";
       // "Only usable BEFORE RANGE IS DETERMINED" (Hunger of Marduk).
       case "grantStealBloodStrike":
@@ -2909,6 +2951,12 @@ function combatWindowFor(mode: CardMode): WindowId | null {
       // "Only usable at the END OF A ROUND of combat" (Taste of Vitae).
       case "gainOpposingBloodLost":
         return "combat.endOfRound";
+      case "twistingDamage":
+        return "combat.afterStrikeDamage";
+      case "deferTorporUntilCombatEnds":
+        return "combat.wouldGoTorpor";
+      case "preventDamage":
+        return "combat.damageResolution";
       // A combat card that acts inside ANOTHER card's as-played period,
       // which p. 7 reserves for cancels — and this is one (§4).
       case "cancelStrikeCard":
@@ -2925,6 +2973,9 @@ function combatWindowFor(mode: CardMode): WindowId | null {
       // "Only usable if combat would end" — the End of Round window,
       // where `willContinue` is already decided (§1).
       case "startNewRound":
+        return "combat.endOfRound";
+      // "[CEL] Queue a combat with the opposing minion" (Psyche! superior).
+      case "queueCombat":
         return "combat.endOfRound";
       // "Only usable AS THIS MINION CHOOSES A STRIKE" (Target Vitals, §3).
       case "aimRider":
@@ -2949,6 +3000,12 @@ function combatWindowFor(mode: CardMode): WindowId | null {
     }
   }
   return null;
+}
+
+function isStrikeMode(mode: CardMode): boolean {
+  // Preserve the existing choose-strike classification and include modes
+  // whose strike is committed in the range window with an optional maneuver.
+  return combatWindowFor(mode) === "combat.chooseStrike" || strikeManeuverRider(mode) !== null;
 }
 
 /** Combat cards: playable only by the two combatants; being locked does
@@ -3025,6 +3082,20 @@ function outsidePreventOptions(
   return out;
 }
 
+const CALL_WILD_HUNT_COUNT = "callWildHuntCount";
+const CALL_WILD_HUNT_PICK = "callWildHuntPick";
+
+function animalRetainersInHand(
+  state: GameState,
+  seat: SeatId,
+  registry: HandlerRegistry,
+): CardInstance[] {
+  return getSeat(state, seat).hand.filter((card) => {
+    const handler = registry[card.name];
+    return handler?.isRetainer === true && (handler.permanentTags ?? []).includes("animal");
+  });
+}
+
 function compileCombatCard(spec: CardSpec): CardHandler {
   const handler: CardHandler = {
     name: spec.name,
@@ -3057,6 +3128,34 @@ function compileCombatCard(spec: CardSpec): CardHandler {
     },
 
     options(card, ctx) {
+      // Some combat cards have a printed use after combat, in the shared
+      // torpor window. Decapitate's superior mode is offered only to the
+      // ready vampire who fought the vampire currently pending torpor.
+      // `torporPending.other` is populated during preflight as well as the
+      // real window, so this option can cause that window to be opened.
+      if (ctx.window === "torpor") {
+        const torporOptions: LegalOption[] = [];
+        for (const mode of spec.modes) {
+          if (!mode.effects.some((effect) => effect.kind === "burnTorporOpponent")) continue;
+          for (const seat of ctx.state.seats) {
+            for (const target of seat.minions) {
+              if (target.kind !== "vampire" || !target.torporPending) continue;
+              const actorId = target.torporPending.other;
+              if (!actorId) continue;
+              const actor = findMinion(ctx.state, actorId);
+              if (
+                !actor || actor.controller !== ctx.seat || actor.kind !== "vampire" ||
+                !isReady(actor) || actor.controller === target.controller
+              ) continue;
+              if (actor.blood < costOf(spec, ctx, actor, mode).blood) continue;
+              if (!meetsRequirements(actor, spec) || !canPlayMode(actor, mode, spec)) continue;
+              torporOptions.push(makeOption(spec, card, actor, mode, { target: target.id }));
+            }
+          }
+        }
+        return torporOptions;
+      }
+
       const cf = ctx.combat;
       if (!cf) return [];
 
@@ -3132,7 +3231,39 @@ function compileCombatCard(spec: CardSpec): CardHandler {
 
       const options: LegalOption[] = [...outside];
       for (const mode of spec.modes) {
-        if (combatWindowFor(mode) !== ctx.window) continue;
+        const window = combatWindowFor(mode);
+        // Additional strikes are GAINED only after the first pair resolves
+        // (p. 32): a mode whose ONLY combat effect is additionalStrike is
+        // offered in the post-first-pair grant window, not in the initial
+        // choose-strike pair. A mode that ALSO declares a strike (e.g.
+        // Acrobatics superior: dodge + additional strike) is offered in
+        // BOTH windows — chooseStrike for the strike, grant window for the
+        // additional strike.
+        const hasAddl = mode.effects.some((e) => e.kind === "additionalStrike");
+        const hasStrikeEffect = mode.effects.some((e) =>
+          e.kind === "strikeDodge" ||
+          e.kind === "strikeDamage" ||
+          e.kind === "strikeCombatEnds" ||
+          e.kind === "strikeStealBlood" ||
+          e.kind === "strikeWeaponDamage" ||
+          e.kind === "strikeWeaponCost",
+        );
+        if (ctx.window === "combat.grantAdditionalStrikes") {
+          // Post-first-pair grant window: ONLY additional-strike modes are
+          // offered here (p. 32). combatWindowFor returns chooseStrike for
+          // additionalStrike, so bypass the window-mismatch check below.
+          if (!hasAddl) continue;
+          // "Only one limited additional-strike source per round" (V5 p. 32).
+          // If this minion already used their limited slot (e.g. Pursuit
+          // superior), bar every other limited additional-strike card.
+          const limited = mode.effects.some(
+            (e) => e.kind === "additionalStrike" && e.limited,
+          );
+          if (limited && cf.usedLimitedAddl?.[side]) continue;
+        } else {
+          if (ctx.window === "combat.chooseStrike" && hasAddl && !hasStrikeEffect) continue;
+          if (window !== ctx.window) continue;
+        }
         // An outside-the-combat mode was enumerated above, from a vampire
         // that is NOT in this combat; a combatant may not play it.
         if (
@@ -3197,6 +3328,17 @@ function compileCombatCard(spec: CardSpec): CardHandler {
           if (!foe || foe.kind !== "vampire") continue;
           if (m.blood <= foe.blood) continue;
         }
+        if (mode.usable?.includes("onlyAgainstVampire")) {
+          const foe = findMinion(ctx.state, side === "acting" ? cf.opposing : cf.acting);
+          if (!foe || foe.kind !== "vampire") continue;
+        }
+        if (mode.usable?.includes("onlyAgainstToreadorAllyOrYounger")) {
+          const foe = findMinion(ctx.state, side === "acting" ? cf.opposing : cf.acting);
+          if (!foe) continue;
+          const namedClan = isToreadorOrAntitribuClan(foe.clan);
+          const younger = capacityOf(foe) < capacityOf(m);
+          if (foe.kind !== "ally" && !namedClan && !younger) continue;
+        }
         switch (ctx.window) {
           case "combat.chooseStrike": {
             if (cf.strikes[side] !== null) continue;
@@ -3260,10 +3402,11 @@ function compileCombatCard(spec: CardSpec): CardHandler {
               // from another effect", so this is a gate on the OPTION and
               // not merely on the grant. docs/aim-design.md §5
               if (cf.noAdditionalStrikes?.[side]) continue;
-              // Additional strikes are granted in the normal strike pair,
-              // not during an additional sub-round; the "(limited)" source
-              // is spent once per round (p. 32).
-              if (cf.strikeRound !== "normal") continue;
+              // Additional strikes are GAINED only after the first pair
+              // resolves (p. 32), never before it. The engine offers the
+              // card in `combat.grantAdditionalStrikes` (see combatDecision),
+              // not here — the compiler only decides whether the mode IS an
+              // additional-strike grant; the engine decides the timing.
               if (addl.limited && cf.usedLimitedAddl[side]) continue;
               if (addl.perBloodX) {
                 // "Burn X blood to get X additional strikes" — X beyond the
@@ -3279,6 +3422,16 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             // damage" (Anticipation) — one option per legal weapon
             // alongside the hand strike, the choice in the option id (§4).
             const hb = mode.effects.find((x) => x.kind === "strikeHandBonus");
+            if (hb?.kind === "strikeHandBonus" && hb.weaponOnly) {
+              // "Use a melee weapon strike" (Blessed Blade): no hand-strike
+              // fallback. If the minion has no melee weapon there is no
+              // legal strike option, so the card is not offered.
+              for (const p of m.attached) {
+                if (!p.tags.includes("weapon") || !p.tags.includes("melee")) continue;
+                options.push(makeOption(spec, card, m, mode, { weapon: p.card.id }));
+              }
+              break;
+            }
             if (hb?.kind === "strikeHandBonus" && hb.orMeleeWeapon) {
               for (const p of m.attached) {
                 if (!p.tags.includes("weapon") || !p.tags.includes("melee")) continue;
@@ -3308,6 +3461,13 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             ) {
               const foe = findMinion(ctx.state, side === "acting" ? cf.opposing : cf.acting);
               if (foe?.attached.some((p) => p.tags.includes("flight"))) continue;
+            }
+            // "Not usable first round of combat" (Growing Fury) — a gate on
+            // the strike option itself.
+            if (
+              mode.effects.some((x) => x.kind === "strikeHandBonus" && x.notFirstRound)
+            ) {
+              if (cf.round <= 1) continue;
             }
             // "Choose A WEAPON POSSESSED BY THE OPPOSING MINION. Strike:
             // X damage, where X is its pool cost" (Up Yours!, §2). One
@@ -3352,7 +3512,9 @@ function compileCombatCard(spec: CardSpec): CardHandler {
                 const foe = findMinion(ctx.state, side === "acting" ? cf.opposing : cf.acting);
                 // Destroying takes any EQUIPMENT; stealing takes a WEAPON.
                 const wants =
-                  strip.kind === "strikeStealEquipment" ? "weapon" : "equipment";
+                  strip.kind === "strikeStealEquipment" && strip.weaponOnly !== false
+                    ? "weapon"
+                    : "equipment";
                 for (const p of foe?.attached ?? []) {
                   if (!p.tags.includes(wants)) continue;
                   options.push(makeOption(spec, card, m, mode, { equipment: p.card.id }));
@@ -3417,11 +3579,15 @@ function compileCombatCard(spec: CardSpec): CardHandler {
           }
           case "combat.range": {
             if (cf.awaiting !== side) continue;
-            // "The opposing minion cannot maneuver" (Terror Frenzy).
-            if (cf.restrict[side].maneuver) continue;
-            // "…may use maneuvers only if they REQUIRE Obfuscate, Blood
-            // Sorcery or Flight this action" (Target Leg). §5
-            if (!modeRequiresOneOf(mode, cf.moveDisciplines?.[side])) continue;
+            const strikeManeuver = strikeManeuverRider(mode);
+            // A strike with an optional maneuver is committed here. The
+            // printed strike remains usable even if the optional maneuver
+            // itself is barred; its maneuver credit is simply not granted.
+            if (cf.restrict[side].maneuver && !strikeManeuver) continue;
+            // Target Leg restricts the maneuver, not the strike card that
+            // happens to carry an optional maneuver rider.
+            if (!modeRequiresOneOf(mode, cf.moveDisciplines?.[side]) && !strikeManeuver) continue;
+            if (strikeManeuver && cf.strikes[side] !== null) continue;
             // "Maneuver, ONLY USABLE TO GET TO CLOSE RANGE" (Dance with
             // the Devil) — worth nothing once the range is already close,
             // the same gate `closeManeuvers` uses (§4).
@@ -3566,6 +3732,11 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             break;
           }
           case "combat.beforeResolution": {
+            const bloodToWater = mode.effects.find((e) => e.kind === "bloodToWater");
+            if (bloodToWater?.kind === "bloodToWater") {
+              options.push(makeOption(spec, card, m, mode, {}));
+              break;
+            }
             const load = mode.effects.find((e) => e.kind === "loadAmmo");
             if (load?.kind !== "loadAmmo") continue;
             const gun = ammoTargetGun(cf, side, m, load.minGunUses);
@@ -3635,6 +3806,14 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             // Fortitude" — a gate on the OPTION, so the card is never
             // offered against damage it cannot touch (§3).
             if (blockedByNoPrevent(mode, pd)) continue;
+            // Fixed-point prevention (Undead Persistence superior,
+            // Undying Tenacity superior) is the same window as `prevent`.
+            const fixedPrevent = mode.effects.find((e) => e.kind === "preventDamage");
+            if (fixedPrevent?.kind === "preventDamage") {
+              if (pd.amount <= 0 || m.blood < costOf(spec, ctx, m, mode).blood) continue;
+              options.push(makeOption(spec, card, m, mode, {}));
+              break;
+            }
             // "Prevent ALL damage from the opposing minion's strike"
             // (Touch of Valeren basic combat) and "…all damage from their
             // strikes THIS ROUND" (Rolling with the Punches superior) are
@@ -3704,6 +3883,68 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             }
             break;
           }
+          case "combat.wouldGoTorpor": {
+            const pd = cf.pendingDamage[0];
+            const delay = mode.effects.find((e) => e.kind === "deferTorporUntilCombatEnds");
+            if (
+              !pd ||
+              pd.minion !== m.id ||
+              m.kind !== "vampire" ||
+              !delay ||
+              cf.deferredTorpor?.some((d) => d.minion === m.id) ||
+              m.inTorpor ||
+              m.torporPending
+            ) continue;
+            const asNormal =
+              !pd.aggravated ||
+              pd.treatAsNormal ||
+              cf.aggravatedAsNormalRound?.includes(m.id);
+            const wouldTorpor = asNormal
+              ? pd.amount > m.blood
+              : Math.max(0, pd.amount - 1) <= m.blood;
+            if (!wouldTorpor || m.blood < costOf(spec, ctx, m, mode).blood) continue;
+            options.push(makeOption(spec, card, m, mode, {}));
+            break;
+          }
+          case "combat.afterStrikeDamage": {
+            const resolved = cf.afterStrikeDamage;
+            const twist = mode.effects.find((e) => e.kind === "twistingDamage");
+            if (
+              !resolved ||
+              !twist ||
+              twist.kind !== "twistingDamage" ||
+              resolved.source !== m.id ||
+              (resolved.amount < 3) ||
+              (!resolved.fromHandStrike && !resolved.fromMeleeWeaponStrike) ||
+              resolved.strikePhase !== cf.strikePhaseId ||
+              !findMinion(ctx.state, resolved.minion) ||
+              (cf.playedHistory ?? []).some(
+                (p) => p.name === spec.name && p.minion === m.id && p.strikePhase === cf.strikePhaseId,
+              )
+            ) continue;
+            options.push(makeOption(spec, card, m, mode, {}));
+            break;
+          }
+          case "combat.grantAdditionalStrikes": {
+            // Post-first-pair grant window: offer modes whose only combat
+            // effect is additionalStrike (Blur, Quickness, etc.) or that
+            // ALSO declare a strike (Wind Dance: dodge + additional strike).
+            const addl = mode.effects.find((e) => e.kind === "additionalStrike");
+            if (!addl || addl.kind !== "additionalStrike") continue;
+            if (cf.noAdditionalStrikes?.[side]) continue;
+            if (addl.limited && cf.usedLimitedAddl[side]) continue;
+            if (addl.perBloodX) {
+              // "Burn X blood to get X additional strikes" — X beyond the
+              // card's own blood cost.
+              const maxX = m.blood - costOf(spec, ctx, m, mode).blood;
+              for (let x = 1; x <= maxX; x++) {
+                options.push(makeOption(spec, card, m, mode, { x: String(x) }));
+              }
+              break;
+            }
+            options.push(makeOption(spec, card, m, mode, {}));
+            break;
+          }
           default:
             break;
         }
@@ -3724,6 +3965,7 @@ function compileCombatCard(spec: CardSpec): CardHandler {
                 play.params["weapon"] && e.weaponBonus !== undefined
                   ? e.weaponBonus
                   : e.bonus,
+              handStrike: !play.params["weapon"],
               ...(e.aggravated ? { aggravated: true } : {}),
               ...(e.undodgeable ? { undodgeable: true } : {}),
               ...(e.firstStrike ? { firstStrike: true } : {}),
@@ -3735,7 +3977,9 @@ function compileCombatCard(spec: CardSpec): CardHandler {
               ...(e.riders?.noPreventBy ? { noPreventBy: e.riders.noPreventBy } : {}),
             });
             if (e.riders?.maneuver) {
-              for (let i = 0; i < e.riders.maneuver; i++) ops.grantManeuverCredit(play);
+              for (let i = 0; i < e.riders.maneuver; i++) {
+                ops.grantManeuverCredit(play, e.riders.maneuverOnlyToClose, modeDisciplines(mode));
+              }
             }
             // "…with an optional press" — the PER-ROUND pool. All four
             // rider sites used to grant a combat-long press, so the credit
@@ -3778,7 +4022,9 @@ function compileCombatCard(spec: CardSpec): CardHandler {
           case "strikeDodge":
             ops.chooseCardStrike(play, { dodge: true });
             for (let i = 0; i < (e.riders?.press ?? 0); i++) ops.grantPress(play);
-            for (let i = 0; i < (e.riders?.maneuver ?? 0); i++) ops.grantManeuverCredit(play);
+            for (let i = 0; i < (e.riders?.maneuver ?? 0); i++) {
+              ops.grantManeuverCredit(play, e.riders?.maneuverOnlyToClose, modeDisciplines(mode));
+            }
             break;
           case "grantStealBloodStrike":
             // A grant, not a strike: offered later in the round, and
@@ -3793,6 +4039,14 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             break;
           case "gainOpposingBloodLost":
             ops.gainOpposingBloodLost(play);
+            break;
+          case "twistingDamage":
+            ops.addTwistingKnifeDamage(play, e.amount);
+            if (e.press) ops.grantPress(play);
+            break;
+          case "deferTorporUntilCombatEnds":
+            ops.deferTorporUntilCombatEnds(play, e.endAfterThreeCardlessRounds);
+            if (e.press) ops.grantPress(play);
             break;
           case "cancelStrikeCard":
             if (e.bloodCost > 0 && play.minion) {
@@ -3853,6 +4107,11 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             }
             ops.preventAllFromOpponentThisRound(play);
             break;
+          case "preventDamage": {
+            // "Prevent N damage from the next strike this round" (Undying Tenacity).
+            if (play.minion) ops.preventDamageFor(play.minion, e.amount);
+            break;
+          }
           case "afterCombatEnds": {
             if (!play.minion) break;
             if (e.damage) {
@@ -3885,6 +4144,8 @@ function compileCombatCard(spec: CardSpec): CardHandler {
                 minion: play.minion,
                 bloodCost: e.continueAction.bloodCost,
                 stealth: e.continueAction.stealth,
+                ...(e.continueAction.excludeBleed ? { excludeBleed: true } : {}),
+                ...(e.continueAction.excludePolitical ? { excludePolitical: true } : {}),
               });
             }
             // "Opposing vampire gains N blood (even at long range)" (Mercy for
@@ -3956,6 +4217,7 @@ function compileCombatCard(spec: CardSpec): CardHandler {
                 damage: e.amount + x,
                 ranged: e.ranged,
                 aggravated: e.aggravated,
+                ...(e.unpreventable ? { unpreventable: true } : {}),
                 ...(e.undodgeable ? { undodgeable: true } : {}),
               });
               break;
@@ -3964,18 +4226,39 @@ function compileCombatCard(spec: CardSpec): CardHandler {
               damage: e.amount,
               ranged: e.ranged,
               aggravated: e.aggravated,
+              ...(e.unpreventable ? { unpreventable: true } : {}),
               ...(e.undodgeable ? { undodgeable: true } : {}),
               ...(play.params["weapon"] ? { useWeapon: play.params["weapon"] } : {}),
               ...(e.riders?.noPreventBy ? { noPreventBy: e.riders.noPreventBy } : {}),
               ...(e.riders?.selfDamage ? { selfDamage: e.riders.selfDamage } : {}),
             });
             if (e.riders?.maneuver) {
-              for (let i = 0; i < e.riders.maneuver; i++) ops.grantManeuverCredit(play);
+              for (let i = 0; i < e.riders.maneuver; i++) {
+                ops.grantManeuverCredit(play, e.riders.maneuverOnlyToClose, modeDisciplines(mode));
+              }
             }
             if (e.riders?.press) {
               for (let i = 0; i < e.riders.press; i++) ops.grantPress(play);
             }
             break;
+          case "strikeDamageCapacityDiff": {
+            // "Strike: X-2 ranged damage, where X is this vampire's capacity
+            // minus the target's capacity or cost" (Scourge of Alecto).
+            const cf = [...ops.state.frames].reverse().find((f) => f.kind === "combat");
+            if (cf?.kind !== "combat") break;
+            const acting = findMinion(ops.state, cf.acting);
+            const opposing = findMinion(ops.state, cf.opposing);
+            const actingCap = acting?.capacity ?? 0;
+            const opposingCap = opposing?.capacity ?? 0;
+            const damage = Math.max(0, actingCap - opposingCap - e.base);
+            ops.chooseCardStrike(play, {
+              damage,
+              ranged: e.ranged,
+              aggravated: e.aggravated,
+              ...(e.capDamage !== undefined ? { capDamage: e.capDamage } : {}),
+            });
+            break;
+          }
           case "playFromHand":
             applyPlayFromHand(ops, e, play.seat, play.minion, play.params);
             break;
@@ -4050,6 +4333,21 @@ function compileCombatCard(spec: CardSpec): CardHandler {
           case "strikeIncapacitate":
             ops.chooseCardStrike(play, { incapacitate: true });
             break;
+          case "burnTorporOpponent": {
+            const targetId = play.params["target"];
+            const actor = play.minion ? findMinion(ops.state, play.minion) : null;
+            const target = targetId ? findMinion(ops.state, targetId) : null;
+            // Revalidate at resolution: an actor going to torpor cannot use
+            // Decapitate, and the marked vampire must still be that actor's
+            // opposing vampire. Burning it consumes its pending torpor.
+            if (
+              actor?.kind === "vampire" && isReady(actor) && target?.kind === "vampire" &&
+              target.torporPending?.other === actor.id && target.controller !== actor.controller
+            ) {
+              ops.burnMinion(target.id);
+            }
+            break;
+          }
           case "attachInCombat": {
             // The prevention clause travels ON THE ENTRY, not on the
             // handler: Wall of Filth's two modes differ by exactly the
@@ -4096,13 +4394,22 @@ function compileCombatCard(spec: CardSpec): CardHandler {
           case "strikeStealBlood":
             ops.chooseCardStrike(play, { stealBlood: e.amount, ranged: true });
             if (e.riders?.maneuver) {
-              for (let i = 0; i < e.riders.maneuver; i++) ops.grantManeuverCredit(play);
+              for (let i = 0; i < e.riders.maneuver; i++) {
+                ops.grantManeuverCredit(play, e.riders.maneuverOnlyToClose, modeDisciplines(mode));
+              }
             }
             if (e.riders?.press) {
               for (let i = 0; i < e.riders.press; i++) ops.grantPress(play);
             }
             break;
           case "additionalStrike": {
+            // Additional strikes are GAINED during strike resolution so
+            // that tests and intermediate state see them immediately.
+            // However, `usedLimitedAddl` is deliberately NOT set here — it
+            // is set after damageResolution (in engine.ts) from
+            // cf.playedHistory, so that the grant window (which opens after
+            // damageResolution) correctly limits a minion to one limited
+            // additional-strike source per round (V5 p. 32).
             let count = e.count;
             if (e.perBloodX) {
               const x = Number(play.params["x"] ?? "0");
@@ -4111,7 +4418,9 @@ function compileCombatCard(spec: CardSpec): CardHandler {
               }
               count = x;
             }
-            ops.grantAdditionalStrike(play, count, e.limited);
+            // Pass limited=false so usedLimitedAddl is NOT set now; it will
+            // be set after damageResolution from playedHistory.
+            ops.grantAdditionalStrike(play, count, false);
             // "…: burn weapon" — the extra strike is specified, offered
             // in the chooseStrike step the way a granted combat-ends
             // strike is (§4).
@@ -4124,8 +4433,25 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             ops.setCombatStrength(play, e.value);
             break;
           case "addStrength":
-            ops.addCombatStrength(play, e.amount);
+            if (e.perRound) ops.addCombatStrengthPerRound(play, e.amount);
+            else ops.addCombatStrength(play, e.amount);
             break;
+          case "potenceStrikeDamageBonus":
+            ops.addPotenceStrikeDamageBonus(play, e.amount);
+            break;
+          case "bloodToWater": {
+            const frame = [...ops.state.frames].reverse().find((f) => f.kind === "combat");
+            if (frame?.kind !== "combat" || !play.minion) break;
+            const targetId = play.minion === frame.acting ? frame.opposing : frame.acting;
+            const target = findMinion(ops.state, targetId);
+            if (!target) break;
+            if (target.kind === "ally") {
+              if (e.burnAlly) ops.burnMinion(target.id);
+            } else {
+              ops.emit({ type: "BloodBurned", minion: target.id, amount: e.vampireBlood });
+            }
+            break;
+          }
           case "handSizeBonus":
             // "YOU get +1 hand size" — the card's player. They draw up
             // now and shed the excess when the combat ends (p. 7).
@@ -4142,10 +4468,15 @@ function compileCombatCard(spec: CardSpec): CardHandler {
               maneuver: e.maneuver ?? false,
               press: e.press ?? false,
               equipment: e.equipment ?? false,
+              ...(e.additionalStrikes ? { additionalStrikes: true } : {}),
+              ...(e.strengthPenalty !== undefined ? { strengthPenalty: e.strengthPenalty } : {}),
             });
             break;
           case "handStrikesAggravated":
             ops.setHandStrikesAggravated(play);
+            break;
+          case "aggravateNextHandOrMeleeStrike":
+            ops.aggravateNextHandOrMeleeStrike(play);
             break;
           case "maneuver":
             ops.applyManeuver(play);
@@ -4165,6 +4496,16 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             }
             ops.startNewRound();
             break;
+          case "queueCombat": {
+            // "[CEL] Queue a combat with the opposing minion" (Psyche! superior).
+            // Find the opposing minion in the current combat frame.
+            const cf = [...ops.state.frames].reverse().find((f) => f.kind === "combat");
+            if (cf?.kind === "combat" && play.minion) {
+              const opposing = cf.acting === play.minion ? cf.opposing : cf.acting;
+              ops.queueCombat(play.minion, opposing);
+            }
+            break;
+          }
           case "handStrikesOnly":
             ops.restrictToHandStrikes();
             if (e.skipNextRange) ops.skipNextRangeStep();
@@ -4322,6 +4663,47 @@ function compileCombatCard(spec: CardSpec): CardHandler {
       }
     },
   };
+  if (spec.modes.some((mode) => mode.effects.some((e) => e.kind === "burnAnimalsForDamage"))) {
+    handler.combatTriggeredOptions = (ctx) => {
+      const cf = ctx.combat;
+      if (
+        ctx.window !== "combat.beforeResolution" ||
+        !cf ||
+        cf.strikeRound !== "normal" ||
+        cf.pendingSecondStrike ||
+        cf.strikes.acting?.combatEnds ||
+        cf.strikes.opposing?.combatEnds
+      ) return [];
+      const play = (cf.playedHistory ?? []).find((entry) =>
+        entry.name === spec.name &&
+        entry.mode === "superior" &&
+        entry.seat === ctx.seat &&
+        entry.cardId !== undefined &&
+        entry.round === cf.round &&
+        entry.strikePhase === cf.strikePhaseId &&
+        !cf.initialStrikeDamageUsed?.includes(entry.cardId),
+      );
+      if (
+        !play?.cardId ||
+        !ctx.state.eventLog.some((event) => event.type === "CardResolved" && event.cardId === play.cardId)
+      ) return [];
+      const side = play.minion === cf.acting ? "acting" : play.minion === cf.opposing ? "opposing" : null;
+      if (!side) return [];
+      const victim = side === "acting" ? cf.opposing : cf.acting;
+      const animals = animalRetainersInHand(ctx.state, ctx.seat, ctx.registry);
+      if (animals.length === 0) return [];
+      return [{
+        id: `trigger:${spec.name}:${play.cardId}:animal-damage`,
+        kind: "raiseChoice",
+        label: `${spec.name}: choose animals to burn for ranged damage`,
+        seat: ctx.seat,
+        cardName: spec.name,
+        cardId: play.cardId,
+        key: CALL_WILD_HUNT_COUNT,
+        params: { victim, minion: play.minion },
+      }];
+    };
+  }
   if (spec.combatLimit) handler.combatLimit = spec.combatLimit;
   // A combat card that BECOMES a weapon (Zip Gun, Molotov Cocktail) gets
   // the same ability block an equipment card does. Until wave 55 this
@@ -4788,6 +5170,35 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
         }
         return out;
       }
+      if (wantsRef("whenReferendumPasses") && ctx.window === "referendum.afterResolution") {
+        const rf = ctx.referendum;
+        if (
+          !rf ||
+          rf.step !== "afterResolution" ||
+          rf.passed !== true ||
+          rf.variant !== "political" ||
+          rf.callingMinion === null ||
+          ctx.seat === rf.caller
+        ) return [];
+        // Touch of Pain says one per action, across all minions. The action
+        // frame has already been replaced by the referendum, whose `played`
+        // record is scoped to the same actionId.
+        const oncePerAction =
+          spec.usable.includes("oncePerAction") ||
+          spec.modes.some((mo) => mo.usable?.includes("oncePerAction") ?? false);
+        if (oncePerAction && rf.played?.some((p) => p.card === spec.name)) return [];
+        const out: LegalOption[] = [];
+        for (const m of getSeat(ctx.state, ctx.seat).minions) {
+          if (m.kind !== "vampire" || !canReact(m) || !meetsRequirements(m, spec)) continue;
+          for (const mode of spec.modes) {
+            if (!mode.usable?.includes("whenReferendumPasses")) continue;
+            if (!canPlayMode(m, mode, spec)) continue;
+            if (m.blood < costOf(spec, ctx, m, mode).blood) continue;
+            out.push(makeOption(spec, card, m, mode, {}));
+          }
+        }
+        return out;
+      }
       const afterRef = wantsRef("afterReferendumPassed");
       if (ctx.window === "referendum.afterResolution" || afterRef) {
         if (!afterRef || ctx.window !== "referendum.afterResolution") return [];
@@ -4881,13 +5292,14 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
           spec.usable.includes(r) || spec.modes.some((mo) => mo.usable?.includes(r) ?? false);
         const anyReady = wantsOther("byOtherVampire");
         const anyUnlocked = wantsOther("byOtherUnlockedVampire");
-        if (anyReady || anyUnlocked) {
+        const anyOtherMinion = wantsOther("byOtherUnlockedMinion");
+        if (anyReady || anyUnlocked || anyOtherMinion) {
           const others = getSeat(ctx.state, ctx.seat).minions.filter(
             (m) =>
               m.id !== af.acting &&
-              m.kind === "vampire" && // all four cards say "vampire"
+              (anyOtherMinion || m.kind === "vampire") &&
               isReady(m) &&
-              (anyUnlocked && !anyReady ? !m.locked : true),
+              ((anyUnlocked || anyOtherMinion) && !anyReady ? !m.locked : true),
           );
           candidates = [...candidates, ...others];
         }
@@ -4986,9 +5398,13 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             const unlockedOther =
               spec.usable.includes("byOtherUnlockedVampire") ||
               (mode.usable?.includes("byOtherUnlockedVampire") ?? false);
-            if (readyOther || unlockedOther) {
+            const unlockedOtherMinion =
+              spec.usable.includes("byOtherUnlockedMinion") ||
+              (mode.usable?.includes("byOtherUnlockedMinion") ?? false);
+            if (readyOther || unlockedOther || unlockedOtherMinion) {
               if (m.id === af.acting) continue;
-              if (unlockedOther && m.locked) continue;
+              if ((unlockedOther || unlockedOtherMinion) && m.locked) continue;
+              if (!unlockedOtherMinion && m.kind !== "vampire") continue;
             } else if (m.id !== af.acting) {
               continue;
             }
@@ -5371,6 +5787,25 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
         }
         return;
       }
+      // A reaction after a passed referendum resolves without an action
+      // frame. Touch of Pain's recipient is the calling vampire, carried by
+      // the referendum frame instead of the already-popped action frame.
+      const activeReferendum = [...ops.state.frames].reverse().find((f) => f.kind === "referendum");
+      if (
+        mode.usable?.includes("whenReferendumPasses") &&
+        activeReferendum?.kind === "referendum" &&
+        activeReferendum.step === "afterResolution" &&
+        activeReferendum.passed === true
+      ) {
+        if (activeReferendum.callingMinion) {
+          const damage = mode.effects.find((e) => e.kind === "damageActingMinion");
+          const caller = findMinion(ops.state, activeReferendum.callingMinion);
+          if (damage?.kind === "damageActingMinion" && caller) {
+            ops.applyEnvironmentalDamage(caller.id, damage.amount, false);
+          }
+        }
+        return;
+      }
       // The after-referendum payouts resolve with NO action frame at all —
       // a political action pops before its referendum is pushed
       // (docs/referendum-margin-design.md §2).
@@ -5748,6 +6183,15 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             // frame cannot disagree with a second ring walk. §2
             const afP = ops.action();
             if (afP) ops.emit({ type: "PoolBurned", seat: afP.actingSeat, amount: e.amount });
+            break;
+          }
+          case "damageActingMinion": {
+            // "This vampire inflicts N damage on the acting minion" — the
+            // vampire who performed the action, environmental damage (no
+            // prevention window, no strike). §2
+            const afD = ops.action();
+            const m = afD ? findMinion(ops.state, afD.acting) : null;
+            if (m) ops.applyEnvironmentalDamage(m.id, e.amount, false);
             break;
           }
           case "removeTopOfTargetCrypt": {
@@ -10032,7 +10476,7 @@ export function compileSpec(spec: CardSpec): CardHandler {
     // CHOSEN mode sets a strike (Ensnare a Beast names these).
     if (spec.modes.length > 0) {
       const m = modeOf(spec, mode, variant);
-      if (combatWindowFor(m) === "combat.chooseStrike") types.push("strike");
+      if (isStrikeMode(m)) types.push("strike");
     }
     return types;
   };
@@ -10096,7 +10540,22 @@ export function compileSpec(spec: CardSpec): CardHandler {
   // one that is not.
   handler.isStrikeCard = (mode, variant) => {
     if (spec.modes.length === 0) return false;
-    return combatWindowFor(modeOf(spec, mode, variant)) === "combat.chooseStrike";
+    return isStrikeMode(modeOf(spec, mode, variant));
+  };
+  // Does this MODE grant additional strikes (an `additionalStrike` effect)?
+  // Offered in the post-first-pair grant window (p. 32), not in the
+  // initial choose-strike window.
+  handler.grantsAdditionalStrikes = (mode, variant) => {
+    if (spec.modes.length === 0) return false;
+    const m = modeOf(spec, mode, variant);
+    return m.effects.some((e) => e.kind === "additionalStrike");
+  };
+  handler.getAdditionalStrikeInfo = (mode, variant) => {
+    if (spec.modes.length === 0) return null;
+    const m = modeOf(spec, mode, variant);
+    const addl = m.effects.find((e) => e.kind === "additionalStrike");
+    if (!addl) return null;
+    return { count: addl.count, limited: addl.limited };
   };
   // Printed keywords ("Grapple.", "Aim."), central for the same reason as
   // the queries above (docs/weapon-riders-design.md §5).
@@ -10201,6 +10660,69 @@ export function compileSpec(spec: CardSpec): CardHandler {
       ) => void;
     }
   > = {};
+
+  if (spec.modes.some((mode) => mode.effects.some((e) => e.kind === "burnAnimalsForDamage"))) {
+    choiceByKey[CALL_WILD_HUNT_COUNT] = {
+      options: (frame, state, registry) => {
+        const count = animalRetainersInHand(state, frame.seat, registry).length;
+        return Array.from({ length: count }, (_, index) => index + 1).map((x) => ({
+          id: `choice:${frame.cardName}:${frame.cardId}:${CALL_WILD_HUNT_COUNT}:${x}`,
+          kind: "answerChoice" as const,
+          label: `Burn ${x} animal${x === 1 ? "" : "s"} for ${x} ranged environmental damage`,
+          params: { wildHuntX: String(x) },
+        }));
+      },
+      apply: (frame, choice, ops) => {
+        const x = Number(choice.params["wildHuntX"] ?? "0");
+        const victim = frame.params["victim"];
+        if (!Number.isInteger(x) || x < 1 || !victim) return;
+        ops.raiseChoice({
+          seat: frame.seat,
+          cardName: frame.cardName,
+          cardId: frame.cardId,
+          key: CALL_WILD_HUNT_PICK,
+          params: { ...frame.params, x: String(x), selected: "" },
+        });
+      },
+    };
+    choiceByKey[CALL_WILD_HUNT_PICK] = {
+      options: (frame, state, registry) => {
+        const selected = (frame.params["selected"] ?? "").split(",").filter(Boolean);
+        const remaining = animalRetainersInHand(state, frame.seat, registry)
+          .filter((card) => !selected.includes(card.id));
+        const x = Number(frame.params["x"] ?? "0");
+        return remaining.map((card) => ({
+          id: `choice:${frame.cardName}:${frame.cardId}:${CALL_WILD_HUNT_PICK}:${card.id}`,
+          kind: "answerChoice" as const,
+          label: `Select ${card.name} (${selected.length + 1} of ${x})`,
+          params: { card: card.id },
+          cardName: card.name,
+        }));
+      },
+      apply: (frame, choice, ops) => {
+        const card = choice.params["card"];
+        const victim = frame.params["victim"];
+        const x = Number(frame.params["x"] ?? "0");
+        if (!card || !victim || !Number.isInteger(x) || x < 1) return;
+        const selected = [...(frame.params["selected"] ?? "").split(",").filter(Boolean), card];
+        if (selected.length < x) {
+          ops.raiseChoice({
+            seat: frame.seat,
+            cardName: frame.cardName,
+            cardId: frame.cardId,
+            key: CALL_WILD_HUNT_PICK,
+            params: { ...frame.params, selected: selected.join(",") },
+          });
+          return;
+        }
+        // Fix the entire X-card selection before discarding any of them:
+        // discards do not draw replacements, and a discard trigger cannot
+        // turn a newly drawn animal into another selection for this effect.
+        for (const id of selected) ops.discardFromHand(frame.seat, id, false);
+        ops.addInitialStrikeDamage({ cardId: frame.cardId, minion: victim, amount: x });
+      },
+    };
+  }
 
   // "This vampire can burn N blood to be IMMUNE to this damage" (Rutor's
   // Hand superior). The engine raises this frame from the

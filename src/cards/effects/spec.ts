@@ -728,6 +728,9 @@ export type EffectPrimitive =
        *  (Anticipation) — one option per legal weapon alongside the hand
        *  strike, the choice riding in the option id. §4 */
       orMeleeWeapon?: boolean;
+      /** "Strike: use a melee weapon strike at +N" (Blessed Blade) — do not
+       *  offer the hand-strike variant when the card names a weapon only. */
+      weaponOnly?: boolean;
       /**
        * "Strike: hand strike at +1 damage OR use a melee weapon strike AT +2
        * DAMAGE" (Brute Force) — the weapon variant's bonus, when it differs
@@ -755,8 +758,13 @@ export type EffectPrimitive =
        *  gate on the option. Flight only ever arrives from a card in this
        *  pool, since no V5 vampire prints it. §4 */
       notVsFlight?: boolean;
+      /** \"Not usable first round of combat\" (Growing Fury) — gate on the
+       *  strike option itself. */
+      notFirstRound?: boolean;
       riders?: {
         maneuver?: number;
+        /** "…maneuver, only usable to get to close range" (Slam superior). */
+        maneuverOnlyToClose?: boolean;
         press?: number;
         /** "Damage from this strike cannot be prevented by cards
          *  requiring Fortitude [for]" — KRCG abbreviations.
@@ -837,7 +845,10 @@ export type EffectPrimitive =
    *  because the mode resolves in ONE window and a standalone `press`
    *  belongs to the press step. The shape `strikeDamage` already uses.
    *  docs/strike-sources-design.md §3 */
-  | { kind: "strikeDodge"; riders?: { press?: number; maneuver?: number } }
+  | {
+      kind: "strikeDodge";
+      riders?: { press?: number; maneuver?: number; maneuverOnlyToClose?: boolean };
+    }
   /** "Strike: N (R) (aggravated) damage" — a card weapon-like strike
    *  (Body Flare); optional maneuver/press riders (Aid from Bats). */
   | {
@@ -845,6 +856,8 @@ export type EffectPrimitive =
       amount: number;
       ranged: boolean;
       aggravated: boolean;
+      /** Damage from this strike bypasses all damage prevention (Blood Sweat). */
+      unpreventable?: boolean;
       /** "This strike CANNOT BE DODGED" (Projectile) — the same property
        *  `strikeHandBonus` already carries, on the fixed-damage sibling.
        *  docs/undodgeable-strikes-design.md §1 */
@@ -858,6 +871,8 @@ export type EffectPrimitive =
       perBloodX?: boolean;
       riders?: {
         maneuver?: number;
+        /** "…maneuver, only usable to get to close range" (Slam superior). */
+        maneuverOnlyToClose?: boolean;
         press?: number;
         noPreventBy?: string[];
         /** "This striking vampire ALSO takes N aggravated damage" (Burst of
@@ -867,6 +882,22 @@ export type EffectPrimitive =
         selfDamage?: { amount: number; aggravated?: boolean };
       };
     }
+
+  /** "Strike: X-2 ranged damage, where X is this vampire's capacity minus
+   * the target's capacity or cost" (Scourge of Alecto). Damage is
+   * computed from the combatants' capacities at resolution. */
+  | {
+      kind: "strikeDamageCapacityDiff";
+      base: number;
+      ranged: boolean;
+      aggravated: boolean;
+      capDamage?: number;
+    }
+  /** Twisting the Knife: after a qualifying hand/melee strike has actually
+   *  inflicted at least three damage, inflict one additional point; superior
+   *  also grants an optional press. */
+  | { kind: "twistingDamage"; amount: number; press?: boolean }
+
   /** "The opposing vampire's strikes with weapons inflict no damage this
    *  round" (Blood Fury, Blood Rage, Soul Burn) — the strike still
    *  happens, it just deals nothing. docs/discipline-filtered-design.md §4 */
@@ -885,10 +916,10 @@ export type EffectPrimitive =
       firstStrike?: boolean;
       ranged?: boolean;
     }
-  /** "Strike: STEAL weapon" (Fast Hands) — the same choice, except the card
-   *  changes bearer rather than leaving play. Weapons only, where
-   *  `strikeDestroyEquipment` takes any equipment. §3 */
-  | { kind: "strikeStealEquipment"; firstStrike?: boolean }
+  /** "Strike: STEAL equipment" — the same choice, except the card changes
+   *  bearer rather than leaving play. Defaults to weapons only (Fast Hands);
+   *  `weaponOnly: false` permits any equipment (Blessing of Durga Syn). §3 */
+  | { kind: "strikeStealEquipment"; firstStrike?: boolean; weaponOnly?: boolean }
   | { kind: "nullifyOpposingWeaponDamage" }
   /** "After combat ends, <do X>" — a rider on a "Strike: combat ends"
    *  card (Catatonic Fear, Pass Through Shadow, Form of Mist).
@@ -901,7 +932,14 @@ export type EffectPrimitive =
       attachSelf?: boolean;
       /** "…if this vampire was blocked, they can burn N blood to continue
        *  the action as if unblocked, with +M stealth." */
-      continueAction?: { bloodCost: number; stealth: number };
+      continueAction?: {
+        bloodCost: number;
+        stealth: number;
+        /** Toreador's Bane [mel] cannot continue bleeds. */
+        excludeBleed?: boolean;
+        /** Toreador's Bane [mel] cannot continue political actions. */
+        excludePolitical?: boolean;
+      };
       /** "Opposing vampire gains N blood (even at long range)" (Mercy for the
        *  Weak). docs/after-combat-payoffs-design.md §2 */
       gainBloodOpposing?: number;
@@ -1006,7 +1044,12 @@ export type EffectPrimitive =
    * docs/reading-the-outcome-design.md §2
    */
   | { kind: "burnActingSeatPool"; amount: number }
-  /** "Reduce the acting minion's stealth to 0. (The acting minion can
+/** "This vampire inflicts N damage on the acting minion" (Touch of Pain)
+ *  — read off the action frame after resolution, so the damage lands on
+ *  the vampire that performed the action, not the bleed's target.
+ */
+  | { kind: "damageActingMinion"; amount: number }
+/** "Reduce the acting minion's stealth to 0. (The acting minion can
    *  still increase their stealth.)" (Night Terrors) — an ordinary
    *  `StealthModified` of minus the current total, because
    *  `currentStealth` is a fold: anything played afterwards still adds on
@@ -1127,8 +1170,16 @@ export type EffectPrimitive =
   /** "Strike: send the opposing vampire to torpor or burn the opposing
    *  ally" (Touch of Oblivion superior). */
   | { kind: "strikeIncapacitate" }
+  /** "Only usable when the opposing vampire is going into torpor; burn
+   *  that vampire instead" (Decapitate superior). This is a torpor-window
+   *  effect, not a strike rider. */
+  | { kind: "burnTorporOpponent" }
   /** "Strike, ranged: steal N blood" (Theft of Vitae). */
-  | { kind: "strikeStealBlood"; amount: number; riders?: { maneuver?: number; press?: number } }
+  | {
+      kind: "strikeStealBlood";
+      amount: number;
+      riders?: { maneuver?: number; maneuverOnlyToClose?: boolean; press?: number };
+    }
   /**
    * "Choose a weapon possessed by the opposing minion. Strike: ranged; X
    * damage, where X is the amount of damage the chosen weapon would inflict
@@ -1301,7 +1352,14 @@ export type EffectPrimitive =
     }
   /** "This combat, the opposing minion cannot maneuver / press / use
    *  equipment" (Terror Frenzy) — set on the opposing side, before range. */
-  | { kind: "restrictOpponent"; maneuver?: boolean; press?: boolean; equipment?: boolean }
+  | {
+      kind: "restrictOpponent";
+      maneuver?: boolean;
+      press?: boolean;
+      equipment?: boolean;
+      additionalStrikes?: boolean;
+      strengthPenalty?: number;
+    }
   /** "Damage from this vampire's hand strikes is aggravated this round"
    *  (Claws of the Dead, Wolf Claws) — before strikes. */
   /**
@@ -1331,7 +1389,13 @@ export type EffectPrimitive =
   | { kind: "setStrength"; value: number }
   /** "Gets +N strength this combat" — additive, before range (Form of
    *  the Wolf). */
-  | { kind: "addStrength"; amount: number }
+  | { kind: "addStrength"; amount: number; perRound?: boolean }
+  /** Add damage only to this minion's damaging strike cards requiring Potence. */
+  | { kind: "potenceStrikeDamageBonus"; amount: number }
+  /** Blood to Water: burn blood from the opposing vampire, or burn an opposing ally. */
+  | { kind: "bloodToWater"; vampireBlood: number; burnAlly: boolean }
+  /** Blood Agony basic: aggravate only the next hand or melee-weapon strike. */
+  | { kind: "aggravateNextHandOrMeleeStrike" }
   /**
    * "The OPPOSING minion gets -1 strength this round / for the remainder of
    * combat" (Song of Serenity) — the missing quadrant of a 2×2 the pool had
@@ -1437,6 +1501,10 @@ export type EffectPrimitive =
    *  (Hunting the Quarry superior, Telepathic Tracking superior).
    *  docs/round-end-design.md §1 */
   | { kind: "startNewRound"; bloodCost?: number }
+  /** "[CEL] Queue a combat with the opposing minion" (Psyche! superior).
+   *  Queues a new combat after the current action ends. Only usable if
+   *  both combatants are still ready and combat would end. */
+  | { kind: "queueCombat"; bloodCost?: number }
   /** "Strikes that are not hand strikes cannot be used this round (by
    *  EITHER combatant)" (Immortal Grapple). §2 */
   | { kind: "handStrikesOnly"; skipNextRange?: boolean }
@@ -1475,6 +1543,11 @@ export type EffectPrimitive =
    *  cannot touch this damage is never offered against it.
    *  docs/combat-attachments-design.md §3 */
   | { kind: "prevent"; base: number; perBloodX: boolean; nonAggravated?: boolean }
+  /** "Prevent N damage from the next strike this round" (Undying Tenacity
+   * superior) — a one-off prevention applied at strike resolution. */
+  | { kind: "preventDamage"; amount: number }
+  /** Delay this combatant's torpor until combat ends; some cards also grant a press or end combat after three cardless rounds. */
+  | { kind: "deferTorporUntilCombatEnds"; press?: boolean; endAfterThreeCardlessRounds?: boolean }
   /**
    * "This vampire treats aggravated damage as normal damage for the
    * remainder of this round" (Skin of Night, Jua Vema).
@@ -1498,6 +1571,10 @@ export type EffectPrimitive =
    *  (Adaptability superior) — `preventAll` narrowed to the aggravated
    *  items, so normal damage from the same strike still lands. */
   | { kind: "preventAllAggravated" }
+  /** "For the remainder of combat, the chosen minion can play cards
+   *  requiring <discipline> as if they have basic/superior level"
+   *  (Shared Strength) — grants a discipline level for combat scope. */
+  | { kind: "grantDisciplineLevel"; discipline: string; superior: boolean }
   /** "For the remainder of this COMBAT, this vampire's hand damage is
    *  aggravated" (Bone Spur superior) — the combat-long sibling of
    *  `handStrikesAggravated`, which is a round. §2 */
@@ -1632,6 +1709,11 @@ export type EffectPrimitive =
    *  (Tranquility Shield) — closes the deferral in docs/frenzy-design.md.
    *  docs/round-recurring-combat-design.md §6 */
   | { kind: "frenzyShield" }
+  /** Superior Call the Wild Hunt: during the initial strike-resolution
+   *  phase, choose X animal retainers from hand to discard and inflict X
+   *  ranged ENVIRONMENTAL damage. This is a delayed trigger on the combat
+   *  frame, not a strikeDamage rider. */
+  | { kind: "burnAnimalsForDamage" }
   // Referendum effects (docs/politics-design.md §3): what a passed
   // referendum does; terms enumeration derives from the same primitive.
   | { kind: "refBurnPerMinion"; lockedOnly: boolean }
@@ -2297,6 +2379,8 @@ export type UsabilityRule =
   /** As above, but "a ready UNLOCKED vampire" (Veil the Legions,
    *  Hedonism) — a vampire that has already acted this turn cannot. */
   | "byOtherUnlockedVampire"
+  /** "Only usable by a ready unlocked minion other than the acting minion" — includes allies (Suppressing Fire). */
+  | "byOtherUnlockedMinion"
   /** "Only one <card> can be played each action" — across every minion,
    *  which is stricter than the per-minion p. 10 limit (Veil the
    *  Legions). */
@@ -2309,6 +2393,8 @@ export type UsabilityRule =
    *  discipline requirement would stop them (Wake with Evening's
    *  Freshness, Forced Awakening). */
   | "byVampire"
+  /** Toreador's Bane: only in combat with Toreador, Toreador antitribu, ally, or younger minion. */
+  | "onlyAgainstToreadorAllyOrYounger"
   /** Combat card mode only usable at long range (No Trace basic). */
   | "onlyAtLongRange"
   /** "Only usable at close range" (Blood Fury, Blood Rage) — the mirror
@@ -2331,6 +2417,8 @@ export type UsabilityRule =
    *  ally's life is not blood for this comparison.
    *  docs/after-combat-payoffs-design.md §4 */
   | "onlyIfMoreBloodThanFoe"
+  /** Only playable when the opposing combatant is a vampire. */
+  | "onlyAgainstVampire"
   /** "+1 stealth, EVEN IF stealth is not yet needed" (Form of the Cobra)
    *  — overrides the p. 26 "only when needed" gate for this mode. */
   | "evenIfNotNeeded"
@@ -2362,6 +2450,7 @@ export type UsabilityRule =
    *  blood hunt, which has no acting vampire.
    *  docs/referendum-outcomes-design.md §4.4 */
   | "whenReferendumFails"
+  | "whenReferendumPasses"
   /** "Only usable during a referendum BEFORE (any) votes and ballots are
    *  cast" — read by the polling branch through `referendumOpenToPlay`,
    *  which also refuses an automatic pass [PIB 20150105].

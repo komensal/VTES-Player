@@ -28,6 +28,8 @@ export const PLAYSTYLES_LIST = [
   "turtle",
   "politician",
   "builder",
+  "trained",
+  "neural",
 ] as const;
 export type Playstyle = (typeof PLAYSTYLES_LIST)[number];
 
@@ -40,6 +42,8 @@ export const PLAYSTYLE_LABELS: Record<Playstyle, string> = {
   turtle: "Turtle",
   politician: "Politician",
   builder: "Builder",
+  trained: "Trained (AI Lab)",
+  neural: "Neural network (PyTorch)",
 };
 
 export function isPlaystyle(value: unknown): value is Playstyle {
@@ -217,5 +221,23 @@ export const PLAYSTYLES: Record<Playstyle, Partial<Weights>> = {
     poolFloor: 3,
     lowPoolThreshold: 11,
     lowPoolCaution: 0.8,
+  },
+
+  /**
+   * A locally learned weight profile. The static fallback is deliberately
+   * conservative; botAgentFor replaces it with the saved AI Lab weights
+   * when one is available.
+   */
+  trained: {
+    poolFloor: 2,
+    lowPoolThreshold: 8,
+    lowPoolCaution: 1,
+  },
+
+  /** When no network has been trained yet, use a safe balanced baseline. */
+  neural: {
+    poolFloor: 3,
+    lowPoolThreshold: 9,
+    lowPoolCaution: 1,
   },
 };

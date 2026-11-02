@@ -14,6 +14,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import playtestDecks from "../../config/playtest-decks.json";
 import { HeuristicAgent } from "../../src/ai/heuristic.ts";
+import { createInitialMlModel } from "../../src/ai/ml-agent.ts";
 import type { DeckDef, GameSetup } from "../../src/ui/decks.ts";
 import { isSavedGame, readSaveFile, toSave } from "../../src/ui/history.ts";
 import type { SavedGame } from "../../src/ui/history.ts";
@@ -397,6 +398,32 @@ describe("default bot names", () => {
     expect(read.botNames).toEqual(["Bea", "", "", "Dax"]);
     expect(botNameFor(read, 2)).toBe("Bot 2");
     expect(botNameFor(read, 4)).toBe("Dax");
+  });
+
+  it("sanitizes a locally trained weight profile before using it", () => {
+    const settings = loadSettings();
+    settings.trainedBotWeights = {
+      bleedPrey: 1000,
+      diablerize: 12.5,
+      selfOustGuard: 0,
+    };
+    saveSettings(settings);
+    expect(loadSettings().trainedBotWeights).toEqual({ bleedPrey: 100, diablerize: 12.5 });
+  });
+
+  it("round-trips a validated neural model through local settings", () => {
+    const settings = loadSettings();
+    const model = createInitialMlModel(123);
+    model.w1[0] = 100;
+    model.w2[0] = Number.NaN;
+    model.training = { rounds: 2, games: 8, device: "cuda", updatedAt: "2026-11-02T00:00:00Z" };
+    settings.trainedMlModel = model;
+    saveSettings(settings);
+    const stored = loadSettings().trainedMlModel!;
+    expect(stored.format).toBe("vtes-mlp-v1");
+    expect(stored.w1[0]).toBe(10);
+    expect(stored.w2[0]).toBe(0);
+    expect(stored.training).toEqual(model.training);
   });
 
   it("stores no more names than a table has bot seats", () => {

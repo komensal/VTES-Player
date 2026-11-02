@@ -2,7 +2,7 @@
  * Stripping the gear (docs/equipment-stripping-design.md).
  *
  * Fractured Armament (100784), Shattering Blow (101760),
- * Canine Horde (100290), Fast Hands (100704).
+ * Canine Horde (100290), Fast Hands (100704), Blessing of Durga Syn (100183).
  *
  * Four strikes that take an opponent's equipment away. The tests are about
  * the contrasts: destroy versus STEAL (where the card survives and changes
@@ -216,6 +216,7 @@ describe("the first-strike flag reaches the strike", () => {
       { cel: "superior" as const },
       { name: "Bowl of Convergence", tags: ["equipment", "weapon", "melee"] },
     ],
+    ["Blessing of Durga Syn", { chi: "superior" as const }, null],
   ] as const) {
     it(`${card}: superior strikes first, basic does not`, () => {
       const sup = inCombat(card, d, gear ?? undefined);
@@ -265,5 +266,86 @@ describe("Fast Hands (100704) — STEALING, not destroying", () => {
     const ids = atStrike(inCombat("Fast Hands", { cel: "superior" }, null).engine);
     expect(ids).toContain("strike:hand");
     expect(ids.some((x) => x.startsWith("play:Fast Hands"))).toBe(false);
+  });
+});
+
+describe("Blessed Blade (100180)", () => {
+  it("offers only a melee-weapon strike, at +2 damage", () => {
+    const a = inCombat("Blessed Blade", { val: "basic" });
+    const v1 = a.state.seats[0]!.minions.find((m) => m.id === "V1")!;
+    v1.attached.push({
+      card: { id: "own-melee", name: "Bowl of Convergence" },
+      locked: false,
+      usedThisPhase: false,
+      statics: {},
+      tags: ["equipment", "weapon", "melee"],
+    });
+    const ids = atStrike(a.engine);
+    const id = ids.find((x) => x.startsWith("play:Blessed Blade:basic"));
+    expect(id).toBeDefined();
+    expect(id).toContain("own-melee");
+    a.engine.choose(id!);
+    settle(a.engine);
+    const cf = a.state.frames.find((f) => f.kind === "combat");
+    if (cf?.kind !== "combat") throw new Error("no combat frame");
+    expect(cf.strikes.acting?.source).toBe("weapon");
+    expect(cf.strikes.acting?.name).toBe("Bowl of Convergence");
+    expect(cf.strikes.acting?.handBonus).toBe(2);
+  });
+
+  it("is not offered without a melee weapon", () => {
+    const a = inCombat("Blessed Blade", { val: "basic" }, null);
+    const ids = atStrike(a.engine);
+    expect(ids).toContain("strike:hand");
+    expect(ids.some((x) => x.startsWith("play:Blessed Blade:basic"))).toBe(false);
+  });
+
+  it("offers the reflex variant only against an opposing grapple as played", () => {
+    const a = inCombat("Blessed Blade", { val: "basic" }, null);
+    const alice = a.state.seats[0]!.minions.find((m) => m.id === "V1")!;
+    alice.disciplines = { ...alice.disciplines, pot: "basic" };
+    a.state.seats[0]!.hand.push({ id: "grapple", name: "Immortal Grapple" });
+    const bob = a.state.seats[1]!.minions.find((m) => m.id === "M")!;
+    bob.disciplines = { ...bob.disciplines, val: "basic" };
+    a.state.seats[0]!.hand = a.state.seats[0]!.hand.filter((c) => c.name !== "Blessed Blade");
+    a.state.seats[1]!.hand.push({ id: "bb-reflex", name: "Blessed Blade" });
+
+    const findWindow = (window: string, seat: string, limit = 50) => {
+      for (let i = 0; i < limit; i++) {
+        const dp = a.engine.decision();
+        if (!dp) return null;
+        if (dp.window === window && dp.seat === seat) return dp;
+        const pass = dp.options.find((o) => o.id === "pass");
+        if (!pass) return null;
+        a.engine.choose(pass.id);
+      }
+      return null;
+    };
+    const strikeStep = findWindow("combat.beforeStrikes", "Alice");
+    const grapple = strikeStep?.options.find((o) => o.id.startsWith("play:Immortal Grapple"));
+    expect(grapple).toBeDefined();
+    a.engine.choose(grapple!.id);
+    const response = findWindow("card.asPlayed", "Bob");
+    const cancel = response?.options.find((o) => o.kind === "playCard" && o.id.startsWith("play:Blessed Blade") && o.params["variant"] === "cancelGrapple");
+    expect(cancel).toBeDefined();
+  });
+});
+
+describe("Blessing of Durga Syn (100183)", () => {
+  it("steals the opposing minion's equipment", () => {
+    const a = inCombat("Blessing of Durga Syn", { chi: "basic" });
+    const ids = atStrike(a.engine);
+    const id = ids.find((x) => x.startsWith("play:Blessing of Durga Syn:basic"));
+    expect(id).toBeDefined();
+    a.engine.choose(id!);
+    playOut(a.engine, a.state);
+    expect(inPlay(a.state, "gear1")).toBe(true);
+    expect(heldBy(a.state, "gear1")).toBe("V1");
+  });
+
+  it("is not offered if the opposing minion has no equipment", () => {
+    const ids = atStrike(inCombat("Blessing of Durga Syn", { chi: "superior" }, null).engine);
+    expect(ids).toContain("strike:hand");
+    expect(ids.some((x) => x.startsWith("play:Blessing of Durga Syn"))).toBe(false);
   });
 });

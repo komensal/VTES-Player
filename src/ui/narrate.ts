@@ -112,13 +112,17 @@ export function narrate(ev: GameEvent, state: GameState): LogLine | null {
         text: ev.success ? "The action succeeds." : "The action fails.",
         weight: "normal",
       };
-    case "CardPlayed":
+    case "CardPlayed": {
+      const who = ev.minion ? M(ev.minion) : ev.seat;
+      const discipline = ev.discipline ? ` [${ev.discipline}]` : "";
+      const target = ev.target ? ` on ${ev.target}` : "";
       return {
-        text: `${ev.minion ? M(ev.minion) : ev.seat} plays ${ev.name}${
+        text: `${who} plays ${ev.name}${discipline}${
           ev.mode === "superior" ? " (superior)" : ""
-        }.`,
+        }${target}.`,
         weight: "normal",
       };
+    }
     case "CardCanceled":
       return { text: `${ev.name} is cancelled.`, weight: "major" };
     case "TargetChanged":

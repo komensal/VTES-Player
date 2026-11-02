@@ -12,6 +12,8 @@
  */
 
 import { isPlaystyle, type Playstyle } from "../ai/playstyles.ts";
+import type { Weights } from "../ai/heuristic.ts";
+import { isMlModel, type MlModel } from "../ai/ml-agent.ts";
 import { cleanKeybinds, DEFAULT_KEYBINDS, type KeyAction } from "./keybinds.ts";
 import { nameProblem } from "./profile.ts";
 
@@ -91,6 +93,10 @@ export interface UiSettings {
    * so the host's settings decide, and nothing here crosses the wire.
    */
   botPlaystyles: string[];
+  /** Best custom policy saved from the local AI Training Lab. */
+  trainedBotWeights?: Partial<Weights> | null;
+  /** Locally trained PyTorch network, exported to browser inference weights. */
+  trainedMlModel?: MlModel | null;
   /** Keyboard shortcuts, action → key name ("" = unbound). See keybinds.ts. */
   keybinds: Record<KeyAction, string>;
 }
@@ -207,6 +213,8 @@ export const DEFAULT_SETTINGS: UiSettings = {
   // Empty rather than five "default" strings, for the reason above it: an
   // unset entry and a chosen "Default" must behave identically.
   botPlaystyles: [],
+  trainedBotWeights: null,
+  trainedMlModel: null,
   keybinds: { ...DEFAULT_KEYBINDS },
 };
 
@@ -259,6 +267,55 @@ function cleanBotPlaystyles(value: unknown): string[] {
     .map((s) => (isPlaystyle(s) ? s : PLAYSTYLE_DEFAULT));
 }
 
+const TRAINED_WEIGHT_KEYS = [
+  "bleedPrey", "bleedPerPoint", "bleedNonPrey", "huntWhenEmpty", "hunt",
+  "influenceTransfer", "influenceProgress", "influenceOut", "rescue", "diablerize",
+  "blockBleed", "blockPerBleedPoint", "blockDiablerize", "playCard", "poolCost",
+  "voteOwn", "voteAgainstOthers", "votePoolMe", "votePoolPrey", "votePoolPredator",
+  "voteBurnMyMinion", "voteBurnTheirMinion",
+] as const satisfies readonly (keyof Omit<Weights, "effectValue">)[];
+
+function cleanTrainedWeights(value: unknown): Partial<Weights> | null {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  const input = value as Record<string, unknown>;
+  const out: Partial<Weights> = {};
+  for (const key of TRAINED_WEIGHT_KEYS) {
+    const n = input[key];
+    if (typeof n === "number" && Number.isFinite(n)) out[key] = Math.max(-100, Math.min(100, n));
+  }
+  return Object.keys(out).length ? out : null;
+}
+
+function cleanTrainedMlModel(value: unknown): MlModel | null {
+  if (!isMlModel(value)) return null;
+  const input = value as MlModel;
+  const cleanArray = (values: number[]): number[] => values.map((n) =>
+    Number.isFinite(n) ? Math.max(-10, Math.min(10, n)) : 0,
+  );
+  const training = input.training;
+  return {
+    format: "vtes-mlp-v1",
+    featureSize: 96,
+    hidden1: 256,
+    hidden2: 128,
+    w1: cleanArray(input.w1),
+    b1: cleanArray(input.b1),
+    w2: cleanArray(input.w2),
+    b2: cleanArray(input.b2),
+    w3: cleanArray(input.w3),
+    b3: Number.isFinite(input.b3) ? Math.max(-10, Math.min(10, input.b3)) : 0,
+    expertScale: Number.isFinite(input.expertScale) ? Math.max(-5, Math.min(5, input.expertScale)) : 1.4,
+    ...(training && typeof training === "object" ? {
+      training: {
+        rounds: Number.isFinite(training.rounds) ? Math.max(0, Math.floor(training.rounds)) : 0,
+        games: Number.isFinite(training.games) ? Math.max(0, Math.floor(training.games)) : 0,
+        device: typeof training.device === "string" ? training.device.slice(0, 20) : "unknown",
+        updatedAt: typeof training.updatedAt === "string" ? training.updatedAt.slice(0, 40) : "",
+      },
+    } : {}),
+  };
+}
+
 export function loadSettings(): UiSettings {
   try {
     const raw = localStorage.getItem(KEY);
@@ -294,6 +351,8 @@ export function loadSettings(): UiSettings {
       omniscient: parsed.omniscient === true,
       botNames: cleanBotNames(parsed.botNames),
       botPlaystyles: cleanBotPlaystyles(parsed.botPlaystyles),
+      trainedBotWeights: cleanTrainedWeights(parsed.trainedBotWeights),
+      trainedMlModel: cleanTrainedMlModel(parsed.trainedMlModel),
       keybinds: cleanKeybinds(parsed.keybinds),
     };
   } catch {

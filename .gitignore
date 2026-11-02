@@ -14,3 +14,11 @@ saves/
 
 # Local Claude Code settings for this machine.
 .claude/
+
+# Local reference materials and scratch files
+*.pdf
+rulebook_text.txt
+extract_pdf.py
+impl_ids.ts
+.roo/
+

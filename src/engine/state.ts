@@ -155,6 +155,13 @@ export const CLANS: string[] = [
   "Ventrue",
 ];
 
+/** Printed lineage queried by Toreador's Bane. Antitribu are a named
+ *  extension of the Toreador family for this card rule, even when the
+ *  current supported crypt registry has no antitribu vampire entry. */
+export function isToreadorOrAntitribuClan(clan: string | null | undefined): boolean {
+  return clan === "Toreador" || clan === "Toreador antitribu";
+}
+
 /**
  * Every Discipline IN THE POOL, as the 3-letter codes a minion's
  * `disciplines` record is keyed by — what "any one Discipline" offers
@@ -172,14 +179,30 @@ export const DISCIPLINES: string[] = [
   "ani",
   "aus",
   "cel",
+  "chi",
+  "dai",
+  "dem",
   "dom",
   "for",
+  "mel",
+  "myt",
+  "nec",
   "obf",
+  "obe",
   "obl",
+  "obt",
   "pot",
   "pre",
   "pro",
+  "qui",
+  "ser",
+  "spi",
+  "tem",
   "tha",
+  "thn",
+  "val",
+  "vic",
+  "vis",
 ];
 
 export const TITLE_VOTES: Record<VampireTitle, number> = {
@@ -1706,7 +1729,20 @@ export type GameEvent =
    *  said which — the commonest line in the game, saying the least
    *  (owner report). */
   | { type: "ActionAnnounced"; actionId: ActionId; actionKind: ActionKind; acting: MinionId; seat: SeatId; target: SeatId | null; directed: boolean; targetMinion?: MinionId | null; cardName?: string; cardTypes?: PlayCostCardType[]; cardTags?: string[] }
-  | { type: "CardPlayed"; cardId: CardInstanceId; name: string; seat: SeatId; minion: MinionId | null; mode: DisciplineLevel | null }
+  | {
+      type: "CardPlayed";
+      cardId: CardInstanceId;
+      name: string;
+      seat: SeatId;
+      minion: MinionId | null;
+      mode: DisciplineLevel | null;
+      /** The discipline code the card was played with (e.g. "pot"), when
+       *  it can be determined at play time. */
+      discipline?: string;
+      /** The target of the play, when known (e.g. the opposing minion in
+       *  combat). */
+      target?: string;
+    }
   | { type: "CardResolved"; cardId: CardInstanceId; name: string; seat?: SeatId }
   | { type: "CardCanceled"; cardId: CardInstanceId; name: string }
   | { type: "CardDrawn"; seat: SeatId; cardId: CardInstanceId }
@@ -2763,6 +2799,9 @@ export type CombatStep =
   | "chooseStrike"
   | "beforeResolution"
   | "damageResolution"
+  | "wouldGoTorpor"
+  | "afterStrikeDamage"
+  | "grantAdditionalStrikes"
   | "press"
   | "endOfRound";
 
@@ -2776,7 +2815,14 @@ export type AfterCombatRider =
   | { kind: "attachSelf"; minion: MinionId; seat: SeatId; cardId: CardInstanceId; name: string }
   /** "…if this vampire was blocked, they can burn N blood to continue the
    *  action as if unblocked, with +M stealth" (Form of Mist). */
-  | { kind: "continueAction"; minion: MinionId; bloodCost: number; stealth: number }
+  | {
+      kind: "continueAction";
+      minion: MinionId;
+      bloodCost: number;
+      stealth: number;
+      excludeBleed?: boolean;
+      excludePolitical?: boolean;
+    }
   /**
    * "Opposing vampire gains N blood" after the combat ends (Mercy for the
    * Weak) — "the blood gain takes place AFTER the end of combat"
@@ -2895,6 +2941,14 @@ export interface PendingDamage {
    *  strike"). Read off `strike.source`, so a melee weapon is not one.
    *  docs/first-strike-cards-design.md §2 */
   fromHandStrike?: boolean;
+  /** Damage from a melee-weapon strike; Twisting the Knife applies only
+   *  to hand and melee strikes, not ranged firearms. */
+  fromMeleeWeaponStrike?: boolean;
+  /** Identity of the resolution phase that created this strike packet. */
+  strikePhase?: number;
+  /** The extra point from Twisting the Knife must not recursively open its
+   *  own post-strike trigger. */
+  fromTwistingTheKnife?: boolean;
   /**
    * "This vampire treats all aggravated damage from the opposing minion's
    * STRIKE as normal damage" (Adaptability basic) — recorded on the ITEM,
@@ -2945,6 +2999,8 @@ export interface CombatRoundDamageRider {
  *  or a weapon's strike. */
 export interface Strike {
   source: "hand" | "card" | "weapon";
+  /** True when a combat card declares a hand strike instead of replacing it. */
+  handStrike?: boolean;
   /** Card name when not a plain hand strike. */
   name: string | null;
   /** Added to effective strength for hand-based damage (Roundhouse). */
@@ -2963,6 +3019,8 @@ export interface Strike {
   dodge: boolean;
   /** Damage this strike inflicts is aggravated (p. 34). */
   aggravated: boolean;
+  /** This strike's damage cannot be prevented. */
+  unpreventable?: boolean;
   /** "This strike CANNOT BE DODGED" (Dust Up) — a property of the blow,
    *  not of the round. It defeats only the dodge's cancellation of THIS
    *  strike; everything else about the dodge is unchanged.
@@ -3182,6 +3240,13 @@ export interface CombatFrame {
    *  its own vampire's (owner ruling 2026-10-23). docs/archetypes-design.md §7 */
   leftReady?: { minion: MinionId; by: MinionId | null }[];
   round: number;
+  /** Monotonic strike-resolution phase id; additional strikes and first/second-strike phases are distinct. */
+  strikePhaseId: number;
+  /** The just-resolved qualifying strike damage, awaiting any post-damage rider. */
+  afterStrikeDamage?: PendingDamage;
+  /** Vampires whose torpor arrival is deferred until this combat ends. */
+  deferredTorpor?: Array<{ minion: MinionId; by: MinionId | null; threeCardlessRounds?: boolean }>;
+  torporNoCardRounds?: number;
   step: CombatStep;
   range: Range;
   /** Alternation protocol for maneuvers/presses: "cannot play two in a
@@ -3221,6 +3286,10 @@ export interface CombatFrame {
   /** "A minion cannot use more than one card or effect to gain additional
    *  strikes per round" (p. 32) — the "(limited)" source is spent. */
   usedLimitedAddl: { acting: boolean; opposing: boolean };
+  /** Has the post-first-pair additional-strike grant window been completed
+   *  for this round? Additional strikes may only be GAINED after the first
+   *  pair resolves (p. 32), not before it. */
+  additionalStrikesGranted?: boolean;
   /** "Gets a strength of N this combat" (Torn Signpost) — frame-local so
    *  it reverts automatically when combat ends. */
   strengthOverride: { acting: number | null; opposing: number | null };
@@ -3235,6 +3304,11 @@ export interface CombatFrame {
   /** "THIS ROUND, this vampire gets +1 strength" (Obedient Flesh) — reset
    *  when a new round begins, unlike strengthBonus. */
   strengthBonusRound: { acting: number; opposing: number };
+  /** "Gain +N strength each round for the remainder of combat" — each rider
+   *  records the round it began so later rounds scale from that point. */
+  strengthBonusPerRound?: Array<{ side: "acting" | "opposing"; amount: number; startRound: number }>;
+  /** Extra damage applied only to damaging strike cards requiring Potence. */
+  potenceStrikeDamageBonus?: { acting: number; opposing: number };
   /** "Damage from this vampire's hand strikes is aggravated this round"
    *  (Claws of the Dead, Wolf Claws) — per-round, reset each round. */
   handStrikesAggravated: { acting: boolean; opposing: boolean };
@@ -3284,6 +3358,8 @@ export interface CombatFrame {
    * docs/aggravated-damage-design.md §2
    */
   handStrikesAggravatedCombat?: { acting: boolean; opposing: boolean };
+  /** One-shot Blood Agony basic rider, consumed by the next qualifying hand/melee strike. */
+  nextHandOrMeleeStrikeAggravated?: { acting: boolean; opposing: boolean };
   /** "…that minion's initial strike this round gets FIRST STRIKE"
    *  (Haymaker, Forearm Block's next-round clause) — a round-scoped
    *  grant, reset with the rest of the round's riders. The other two
@@ -3505,6 +3581,10 @@ export interface CombatFrame {
   /** "This combat, <X> takes N damage each round" (Carrion Crows, Weather
    *  Control). docs/round-recurring-combat-design.md §3 */
   roundDamage: CombatRoundDamageRider[];
+  /** One-shot environmental damage selected during the initial strike
+   *  resolution phase (Call the Wild Hunt superior). */
+  initialStrikeDamage?: Array<{ cardId: CardInstanceId; minion: MinionId; amount: number }>;
+  initialStrikeDamageUsed?: CardInstanceId[];
   /** "If a damage is successfully inflicted on this vampire in a given
    *  round, any ADDITIONAL damage inflicted on them in the same round is
    *  automatically prevented" (Flesh of Marble) — "nonAgg" at [pro],
@@ -3544,7 +3624,20 @@ export interface CombatFrame {
    *  WHICH ROUND — the only record that survives the round reset, and so
    *  the only one able to answer "not usable if this minion played a
    *  Haymaker LAST round". docs/first-strike-cards-design.md §3 */
-  playedHistory?: Array<{ name: string; minion: MinionId; round: number }>;
+  playedHistory?: Array<{
+    name: string;
+    minion: MinionId;
+    round: number;
+    /** Identity/controller retained for delayed effects after the card leaves hand. */
+    cardId?: CardInstanceId;
+    seat?: SeatId;
+    strikePhase?: number;
+    mode?: DisciplineLevel | null;
+    // Additional strike granted by this mode, if any — used after the first
+    // strike pair resolves (V5 p. 32), not during strike resolution.
+    addlCount?: number;
+    addlLimited?: boolean;
+  }>;
   /** Using a weapon's maneuver commits that weapon's strike for the
    *  round (.44 ruling, p. 47); one weapon maneuver per combat. */
   committedStrike: { acting: CardInstanceId | null; opposing: CardInstanceId | null };

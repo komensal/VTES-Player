@@ -245,6 +245,19 @@ describe("a blood hunt is priced by whose vampire it is", () => {
     }, undefined, { omitSeatMap: true });
     expect(decide(state, fork())).toBe("vote:V1:for");
   });
+
+  it("still refuses to burn its own high-capacity vampire", () => {
+    const state = withReferendum({
+      variant: "bloodHunt",
+      cardName: "",
+      callingMinion: null,
+      bloodHuntTarget: "V1",
+      effectKind: "other",
+      terms: {},
+    }, undefined, { omitSeatMap: true });
+    state.seats[0]!.minions[0]!.capacity = 11;
+    expect(decide(state, fork())).toBe("vote:V1:against");
+  });
 });
 
 describe("a DIRECTED GRANT is cast-or-decline, not for-or-against", () => {

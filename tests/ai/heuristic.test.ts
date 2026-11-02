@@ -811,3 +811,101 @@ describe("an influence transfer says what the vampire would unlock", () => {
     expect(DEFAULT_WEIGHTS.influenceUnlocks).toBe(0);
   });
 });
+
+/** DIABLERIE — the bug report: bots used to eat their own vampires and then
+ *  lose them in the resulting blood hunt. The engine lets any torpid vampire
+ *  be a target (only self is excluded), so the policy must refuse own targets
+ *  and prefer bigger enemy ones. */
+describe("diablerise targets the right vampire", () => {
+  /** A diablerize option aimed at `target`, plus a pass to fall back to. */
+  function diablerizeOptions(target: string): LegalOption[] {
+    return [
+      {
+        id: `diablerize:V1:${target}`,
+        kind: "takeAction",
+        label: "diablerise",
+        minion: "V1",
+        action: "diablerize",
+        targetMinion: target,
+      },
+      passOption(),
+    ];
+  }
+
+  it("never diablerises its own vampire", () => {
+    const state = threeSeatGame();
+    // Alice's own torpid vampire V2 is a legal target for the engine, but
+    // diablerising it destroys her own asset and brings a blood hunt on her
+    // own vampire — pass must win.
+    state.seats[0]!.minions.push(makeMinion("V2", "Alice", { blood: 0, inTorpor: true }));
+    const dp = {
+      seq: 0,
+      seat: "Alice",
+      window: "turn.minion",
+      options: diablerizeOptions("V2"),
+    };
+    expect(
+      new HeuristicAgent({ seed: 1 }).decide(dp as never, dp.options, viewFor(state, "Alice")),
+    ).toBe("pass");
+  });
+
+  it("backs off when public enemy votes make its diablerist likely to burn", () => {
+    const state = threeSeatGame();
+    // Bob and Carol each have a public Prince (two votes). Alice has no
+    // title, so the opponents can overwhelmingly vote FOR burning V1.
+    state.seats[1]!.minions[0]!.title = "prince";
+    state.seats[2]!.minions[0]!.title = "prince";
+    state.seats[1]!.minions.push(makeMinion("W-TORPOR", "Bob", { blood: 0, inTorpor: true }));
+    const options = diablerizeOptions("W-TORPOR");
+    const dp = { seq: 0, seat: "Alice", window: "turn.minion", options };
+    expect(
+      new HeuristicAgent({ seed: 1 }).decide(dp as never, options, viewFor(state, "Alice")),
+    ).toBe("pass");
+  });
+
+  it("still diablerises an enemy's torpid vampire, bigger first", () => {
+    const state = threeSeatGame();
+    // Bob's W already exists (controller "Bob", capacity 5) — Alice's prey,
+    // so a desirable diablerie target.
+    const small = {
+      seq: 0,
+      seat: "Alice",
+      window: "turn.minion",
+      options: diablerizeOptions("W"),
+    };
+    expect(
+      new HeuristicAgent({ seed: 1 }).decide(
+        small as never,
+        small.options,
+        viewFor(state, "Alice"),
+      ),
+    ).toBe("diablerize:V1:W");
+
+    // A bigger enemy vampire scores higher than a smaller one.
+    state.seats[1]!.minions.push(makeMinion("BIG", "Bob", { blood: 0, inTorpor: true, capacity: 11 }));
+    const smaller = makeMinion("SMALL", "Bob", { blood: 0, inTorpor: true, capacity: 2 });
+    const options: LegalOption[] = [
+      {
+        id: "diablerize:V1:SMALL",
+        kind: "takeAction",
+        label: "diablerise",
+        minion: "V1",
+        action: "diablerize",
+        targetMinion: "SMALL",
+      },
+      {
+        id: "diablerize:V1:BIG",
+        kind: "takeAction",
+        label: "diablerise",
+        minion: "V1",
+        action: "diablerize",
+        targetMinion: "BIG",
+      },
+      passOption(),
+    ];
+    const dp = { seq: 0, seat: "Alice", window: "turn.minion", options };
+    expect(
+      new HeuristicAgent({ seed: 1 }).decide(dp as never, options, viewFor(state, "Alice")),
+    ).toBe("diablerize:V1:BIG");
+  });
+});
