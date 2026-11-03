@@ -32208,19 +32208,18 @@ export const cardSpecs: CardSpec[] = [
   },
 
   {
-    // 419 Operation [100002] — fala 8 wierna (trudne, heurystyka)
+    // 419 Operation [100002] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100002,
     name: "419 Operation",
     cardType: "action",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Abactor [100004] — fala 8 wierna (trudne, heurystyka)
+    // Abactor [100004] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100004,
     name: "Abactor",
     cardType: "action",
@@ -32402,41 +32401,40 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Aye [100120] — fala 8 wierna (trudne, heurystyka)
+    // Aye [100120] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100120,
     name: "Aye",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
-    ],
-  },
-  {
-    // Bamba [100129] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100129,
-    name: "Bamba",
-    cardType: "action",
-    bloodCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
-    usable: [],
-    modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Battle Frenzy [100141] — fala 8 wierna (trudne, heurystyka)
+    // Bamba [100129] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100129,
+    name: "Bamba",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Battle Frenzy [100141] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100141,
     name: "Battle Frenzy",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Bauble [100142] — fala 8 wierna (trudne, heurystyka)
+    // Bauble [100142] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100142,
     name: "Bauble",
     cardType: "action",
@@ -32447,19 +32445,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Black Hand Ritual [100168] — fala 8 wierna (trudne, heurystyka)
+    // Black Hand Ritual [100168] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100168,
     name: "Black Hand Ritual",
     cardType: "action",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Blade of Enoch [100176] — fala 8 wierna (trudne, heurystyka)
+    // Blade of Enoch [100176] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100176,
     name: "Blade of Enoch",
     cardType: "equipment",
@@ -32467,11 +32464,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Bond [100234] — fala 8 wierna (trudne, heurystyka)
+    // Bond [100234] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100234,
     name: "Bond",
     cardType: "action",
@@ -32482,64 +32479,62 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bounty [100242] — fala 8 wierna (trudne, heurystyka)
+    // Bounty [100242] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100242,
     name: "Bounty",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Brainwash [100245] — fala 8 wierna (trudne, heurystyka)
+    // Brainwash [100245] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100245,
     name: "Brainwash",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Brujah Frenzy [100261] — fala 8 wierna (trudne, heurystyka)
+    // Brujah Frenzy [100261] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100261,
     name: "Brujah Frenzy",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Bujo [100265] — fala 8 wierna (trudne, heurystyka)
+    // Bujo [100265] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100265,
     name: "Bujo",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Call the Great Beast [100280] — fala 8 wierna (trudne, heurystyka)
+    // Call the Great Beast [100280] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100280,
     name: "Call the Great Beast",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Chair of Hades [100318] — fala 8 wierna (trudne, heurystyka)
+    // Chair of Hades [100318] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100318,
     name: "Chair of Hades",
     cardType: "action",
@@ -32550,19 +32545,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Charigger, The Axe [100331] — fala 8 wierna (trudne, heurystyka)
+    // Charigger, The Axe [100331] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100331,
     name: "Charigger, The Axe",
     cardType: "retainer",
     bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["retainer"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Children of Stone [100340] — fala 8 wierna (trudne, heurystyka)
+    // Children of Stone [100340] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100340,
     name: "Children of Stone",
     cardType: "action",
@@ -32574,20 +32568,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Church of Vindicated Faith [100348] — fala 8 wierna (trudne, heurystyka)
+    // The Church of Vindicated Faith [100348] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100348,
     name: "The Church of Vindicated Faith",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Cleave [100358] — fala 8 wierna (trudne, heurystyka)
+    // Cleave [100358] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100358,
     name: "Cleave",
     cardType: "combat",
@@ -32598,19 +32591,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Code of Milan Suspended [100371] — fala 8 wierna (trudne, heurystyka)
+    // Code of Milan Suspended [100371] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100371,
     name: "Code of Milan Suspended",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Cold Amber's Hold [100375] — fala 8 wierna (trudne, heurystyka)
+    // Cold Amber's Hold [100375] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100375,
     name: "Cold Amber's Hold",
     cardType: "action",
@@ -32621,19 +32613,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Concordance [100395] — fala 8 wierna (trudne, heurystyka)
+    // Concordance [100395] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100395,
     name: "Concordance",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Condemnation: Betrayed [100397] — fala 8 wierna (trudne, heurystyka)
+    // Condemnation: Betrayed [100397] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100397,
     name: "Condemnation: Betrayed",
     cardType: "action",
@@ -32645,7 +32637,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Condemnation: Doomed [100398] — fala 8 wierna (trudne, heurystyka)
+    // Condemnation: Doomed [100398] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100398,
     name: "Condemnation: Doomed",
     cardType: "action",
@@ -32657,19 +32649,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Condemnation: Languid [100399] — fala 8 wierna (trudne, heurystyka)
+    // Condemnation: Languid [100399] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100399,
     name: "Condemnation: Languid",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "dai", effects: [{ kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Condemnation: Mute [100400] — fala 8 wierna (trudne, heurystyka)
+    // Condemnation: Mute [100400] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100400,
     name: "Condemnation: Mute",
     cardType: "action",
@@ -32681,7 +32673,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Consume the Dead [100417] — fala 8 wierna (trudne, heurystyka)
+    // Consume the Dead [100417] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100417,
     name: "Consume the Dead",
     cardType: "action",
@@ -32692,7 +32684,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Contagion [100418] — fala 8 wierna (trudne, heurystyka)
+    // Contagion [100418] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100418,
     name: "Contagion",
     cardType: "action",
@@ -32703,46 +32695,43 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Cooler [100422] — fala 8 wierna (trudne, heurystyka)
+    // Cooler [100422] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100422,
     name: "Cooler",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Coroner's Contact [100424] — fala 8 wierna (trudne, heurystyka)
+    // Coroner's Contact [100424] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100424,
     name: "Coroner's Contact",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Corrupt Construction [100429] — fala 8 wierna (trudne, heurystyka)
+    // Corrupt Construction [100429] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100429,
     name: "Corrupt Construction",
     cardType: "ally",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // Corruption [100430] — fala 8 wierna (trudne, heurystyka)
+    // Corruption [100430] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100430,
     name: "Corruption",
     cardType: "action",
@@ -32753,144 +32742,140 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Courier [100434] — fala 8 wierna (trudne, heurystyka)
+    // Courier [100434] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100434,
     name: "Courier",
     cardType: "ally",
     bloodCost: 2,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Crusade: Amsterdam [100451] — fala 8 wierna (trudne, heurystyka)
+    // Crusade: Amsterdam [100451] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100451,
     name: "Crusade: Amsterdam",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Crusade: Barcelona [100454] — fala 8 wierna (trudne, heurystyka)
+    // Crusade: Barcelona [100454] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100454,
     name: "Crusade: Barcelona",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Crusade: Brussels [100456] — fala 8 wierna (trudne, heurystyka)
+    // Crusade: Brussels [100456] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100456,
     name: "Crusade: Brussels",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Crusade: Dublin [100459] — fala 8 wierna (trudne, heurystyka)
+    // Crusade: Dublin [100459] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100459,
     name: "Crusade: Dublin",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Crusade: London [100464] — fala 8 wierna (trudne, heurystyka)
+    // Crusade: London [100464] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100464,
     name: "Crusade: London",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Crusade: Rome [100471] — fala 8 wierna (trudne, heurystyka)
+    // Crusade: Rome [100471] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100471,
     name: "Crusade: Rome",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Crusade: Washington, D.C. [100473] — fala 8 wierna (trudne, heurystyka)
+    // Crusade: Washington, D.C. [100473] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100473,
     name: "Crusade: Washington, D.C.",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // The Crusader Sword [100474] — fala 8 wierna (trudne, heurystyka)
+    // The Crusader Sword [100474] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100474,
     name: "The Crusader Sword",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Curse of Nitocris [100483] — fala 8 wierna (trudne, heurystyka)
+    // Curse of Nitocris [100483] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100483,
     name: "Curse of Nitocris",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Dam the Heart's River [100489] — fala 8 wierna (trudne, heurystyka)
+    // Dam the Heart's River [100489] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100489,
     name: "Dam the Heart's River",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Deploy the Hand [100525] — fala 8 wierna (trudne, heurystyka)
+    // Deploy the Hand [100525] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100525,
     name: "Deploy the Hand",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Determine [100534] — fala 8 wierna (trudne, heurystyka)
+    // Determine [100534] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100534,
     name: "Determine",
     cardType: "reaction",
@@ -32901,63 +32886,62 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Deviki Prasanta [100536] — fala 8 wierna (trudne, heurystyka)
+    // Deviki Prasanta [100536] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100536,
     name: "Deviki Prasanta",
     cardType: "ally",
     bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Devil-Channel: Back [100537] — fala 8 wierna (trudne, heurystyka)
+    // Devil-Channel: Back [100537] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100537,
     name: "Devil-Channel: Back",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "abo", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
     ],
   },
   {
-    // Devil-Channel: Feet [100538] — fala 8 wierna (trudne, heurystyka)
+    // Devil-Channel: Feet [100538] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100538,
     name: "Devil-Channel: Feet",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "abo", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Devil-Channel: Hands [100539] — fala 8 wierna (trudne, heurystyka)
+    // Devil-Channel: Hands [100539] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100539,
     name: "Devil-Channel: Hands",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Devil-Channel: Throat [100540] — fala 8 wierna (trudne, heurystyka)
+    // Devil-Channel: Throat [100540] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100540,
     name: "Devil-Channel: Throat",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "abo", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Diabolic Lure [100542] — fala 8 wierna (trudne, heurystyka)
+    // Diabolic Lure [100542] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100542,
     name: "Diabolic Lure",
     cardType: "reaction",
@@ -32969,80 +32953,54 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Din of the Damned [100544] — fala 8 wierna (trudne, heurystyka)
+    // Din of the Damned [100544] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100544,
     name: "Din of the Damned",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Dirty Little Secrets [100547] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100547,
-    name: "Dirty Little Secrets",
-    cardType: "actionModifier",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Dis Pater [100548] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100548,
-    name: "Dis Pater",
-    cardType: "master",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Disciple of Lazarus [100552] — fala 8 wierna (trudne, heurystyka)
+    // Dirty Little Secrets [100547] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100547,
+    name: "Dirty Little Secrets",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dis Pater [100548] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100548,
+    name: "Dis Pater",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Disciple of Lazarus [100552] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100552,
     name: "Disciple of Lazarus",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Dogs of War [100569] — fala 8 wierna (trudne, heurystyka)
+    // Dogs of War [100569] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100569,
     name: "Dogs of War",
-    cardType: "action",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Drop Point Network [100590] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100590,
-    name: "Drop Point Network",
-    cardType: "master",
-    bloodCost: 0,
-    poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Dusk Work [100595] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100595,
-    name: "Dusk Work",
-    cardType: "actionModifier",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -33050,57 +33008,111 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Earth-Feeder [100603] — fala 8 wierna (trudne, heurystyka)
+    // Drop Point Network [100590] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100590,
+    name: "Drop Point Network",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dusk Work [100595] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100595,
+    name: "Dusk Work",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Earth-Feeder [100603] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100603,
     name: "Earth-Feeder",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Ebony Fox Hunt [100606] — fala 8 wierna (trudne, heurystyka)
+    // Ebony Fox Hunt [100606] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100606,
     name: "Ebony Fox Hunt",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Edge of the World [100613] — fala 8 wierna (trudne, heurystyka)
+    // Edge of the World [100613] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100613,
     name: "Edge of the World",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Edge Vitiation [100614] — fala 8 wierna (trudne, heurystyka)
+    // Edge Vitiation [100614] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100614,
     name: "Edge Vitiation",
     cardType: "action",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
       { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // The Eldest Command Undeath [100623] — fala 8 wierna (trudne, heurystyka)
+    // The Eldest Command Undeath [100623] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100623,
     name: "The Eldest Command Undeath",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Elephant Guardian [100626] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100626,
+    name: "Elephant Guardian",
+    cardType: "retainer",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Emerald Legionnaire [100634] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100634,
+    name: "Emerald Legionnaire",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Emergency Powers [100635] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100635,
+    name: "Emergency Powers",
     cardType: "action",
     bloodCost: 0,
     usable: [],
@@ -33109,44 +33121,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Elephant Guardian [100626] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100626,
-    name: "Elephant Guardian",
-    cardType: "retainer",
-    bloodCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["retainer"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Emerald Legionnaire [100634] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100634,
-    name: "Emerald Legionnaire",
-    cardType: "ally",
-    bloodCost: 0,
-    poolCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Emergency Powers [100635] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100635,
-    name: "Emergency Powers",
-    cardType: "action",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Emergency Rations [100637] — fala 8 wierna (trudne, heurystyka)
+    // Emergency Rations [100637] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100637,
     name: "Emergency Rations",
     cardType: "action",
@@ -33157,32 +33132,30 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Enticement [100650] — fala 8 wierna (trudne, heurystyka)
+    // Enticement [100650] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100650,
     name: "Enticement",
     cardType: "action",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
       { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Ephor [100654] — fala 8 wierna (trudne, heurystyka)
+    // Ephor [100654] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100654,
     name: "Ephor",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Epiphany [100655] — fala 8 wierna (trudne, heurystyka)
+    // Epiphany [100655] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100655,
     name: "Epiphany",
     cardType: "action",
@@ -33193,18 +33166,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Excellent Thirst [100670] — fala 8 wierna (trudne, heurystyka)
+    // Excellent Thirst [100670] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100670,
     name: "Excellent Thirst",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Exile [100673] — fala 8 wierna (trudne, heurystyka)
+    // Exile [100673] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100673,
     name: "Exile",
     cardType: "action",
@@ -33215,30 +33188,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Expiate [100674] — fala 8 wierna (trudne, heurystyka)
+    // Expiate [100674] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100674,
     name: "Expiate",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mar", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "mar", effects: [{ kind: "press", continues: "optional" }, { kind: "combatEnds" }] }
     ],
   },
   {
-    // Extortion [100675] — fala 8 wierna (trudne, heurystyka)
+    // Extortion [100675] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100675,
     name: "Extortion",
     cardType: "reaction",
     bloodCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Familial Bond [100699] — fala 8 wierna (trudne, heurystyka)
+    // Familial Bond [100699] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100699,
     name: "Familial Bond",
     cardType: "reaction",
@@ -33249,7 +33221,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Feline Saboteur [100718] — fala 8 wierna (trudne, heurystyka)
+    // Feline Saboteur [100718] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100718,
     name: "Feline Saboteur",
     cardType: "action",
@@ -33261,7 +33233,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Fire on the Mountain [100735] — fala 8 wierna (trudne, heurystyka)
+    // Fire on the Mountain [100735] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100735,
     name: "Fire on the Mountain",
     cardType: "action",
@@ -33272,54 +33244,51 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Form of Corruption [100770] — fala 8 wierna (trudne, heurystyka)
+    // Form of Corruption [100770] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100770,
     name: "Form of Corruption",
     cardType: "action",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
       { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Fortschritt Library [100775] — fala 8 wierna (trudne, heurystyka)
+    // Fortschritt Library [100775] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100775,
     name: "Fortschritt Library",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Free States Rant [100790] — fala 8 wierna (trudne, heurystyka)
+    // Free States Rant [100790] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100790,
     name: "Free States Rant",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Frenzy [100791] — fala 8 wierna (trudne, heurystyka)
+    // Frenzy [100791] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100791,
     name: "Frenzy",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Game of Malkav [100800] — fala 8 wierna (trudne, heurystyka)
+    // Game of Malkav [100800] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100800,
     name: "Game of Malkav",
     cardType: "master",
@@ -33330,92 +33299,87 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Gangrel Conspiracy [100805] — fala 8 wierna (trudne, heurystyka)
+    // Gangrel Conspiracy [100805] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100805,
     name: "Gangrel Conspiracy",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Gangrel Justicar [100806] — fala 8 wierna (trudne, heurystyka)
+    // Gangrel Justicar [100806] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100806,
     name: "Gangrel Justicar",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Ghost-Eater [100816] — fala 8 wierna (trudne, heurystyka)
+    // Ghost-Eater [100816] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100816,
     name: "Ghost-Eater",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
 
   {
-    // Ghoul Messenger [100818] — fala 9 wierna (trudne)
+    // Ghoul Messenger [100818] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100818,
     name: "Ghoul Messenger",
     cardType: "retainer",
     bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["retainer"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // The Ghouls of Plaza Morería [100822] — fala 9 wierna (trudne)
+    // The Ghouls of Plaza Morería [100822] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100822,
     name: "The Ghouls of Plaza Morería",
     cardType: "ally",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Gift of Experience [100826] — fala 9 wierna (trudne)
+    // Gift of Experience [100826] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100826,
     name: "Gift of Experience",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Glass Walker Pact [100837] — fala 9 wierna (trudne)
+    // Glass Walker Pact [100837] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100837,
     name: "Glass Walker Pact",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Goblinism [100841] — fala 9 wierna (trudne)
+    // Goblinism [100841] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100841,
     name: "Goblinism",
     cardType: "action",
@@ -33427,7 +33391,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Gramle [100846] — fala 9 wierna (trudne)
+    // Gramle [100846] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100846,
     name: "Gramle",
     cardType: "action",
@@ -33439,7 +33403,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Grasp the Ghostly [100851] — fala 9 wierna (trudne)
+    // Grasp the Ghostly [100851] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100851,
     name: "Grasp the Ghostly",
     cardType: "action",
@@ -33450,96 +33414,90 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Great Symposium [100853] — fala 9 wierna (trudne)
+    // Great Symposium [100853] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100853,
     name: "Great Symposium",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Guarded Rubrics [100865] — fala 9 wierna (trudne)
+    // Guarded Rubrics [100865] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100865,
     name: "Guarded Rubrics",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 2 }] }
     ],
   },
   {
-    // Guide and Mentor [100869] — fala 9 wierna (trudne)
+    // Guide and Mentor [100869] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100869,
     name: "Guide and Mentor",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Hand Intervention [100881] — fala 9 wierna (trudne)
-    krcgId: 100881,
-    name: "Hand Intervention",
-    cardType: "action",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Herald of Topheth [100912] — fala 9 wierna (trudne)
+    // Hand Intervention [100881] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100881,
+    name: "Hand Intervention",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Herald of Topheth [100912] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100912,
     name: "Herald of Topheth",
     cardType: "ally",
     bloodCost: 0,
     poolCost: 3,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Hexaped [100914] — fala 9 wierna (trudne)
+    // Hexaped [100914] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100914,
     name: "Hexaped",
     cardType: "ally",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Hiding in the Open [100922] — fala 9 wierna (trudne)
+    // Hiding in the Open [100922] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100922,
     name: "Hiding in the Open",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // High Aye [100924] — fala 9 wierna (trudne)
+    // High Aye [100924] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100924,
     name: "High Aye",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -33547,31 +33505,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // High Museum of Art, Atlanta [100926] — fala 9 wierna (trudne)
+    // High Museum of Art, Atlanta [100926] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100926,
     name: "High Museum of Art, Atlanta",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // High Orun [100927] — fala 9 wierna (trudne)
+    // High Orun [100927] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100927,
     name: "High Orun",
-    cardType: "actionModifier",
+    cardType: "modifierOrReaction",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Hourglass of the Mind [100941] — fala 9 wierna (trudne)
+    // Hourglass of the Mind [100941] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100941,
     name: "Hourglass of the Mind",
     cardType: "action",
@@ -33583,248 +33539,109 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Illusions of the Kindred [100954] — fala 9 wierna (trudne)
+    // Illusions of the Kindred [100954] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100954,
     name: "Illusions of the Kindred",
     cardType: "combat",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "combatEnds" }] }
     ],
   },
   {
-    // Illusory Resources [100955] — fala 9 wierna (trudne)
+    // Illusory Resources [100955] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100955,
     name: "Illusory Resources",
     cardType: "action",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Ilomba [100956] — fala 9 wierna (trudne)
+    // Ilomba [100956] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100956,
     name: "Ilomba",
     cardType: "retainer",
     bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["retainer"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Imperator [100960] — fala 9 wierna (trudne)
-    krcgId: 100960,
-    name: "Imperator",
-    cardType: "action",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // In Memory of the Two Lands [100967] — fala 9 wierna (trudne)
-    krcgId: 100967,
-    name: "In Memory of the Two Lands",
-    cardType: "master",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Infamous Insurgent [100975] — fala 9 wierna (trudne)
-    krcgId: 100975,
-    name: "Infamous Insurgent",
-    cardType: "master",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Infernal Familiar [100978] — fala 9 wierna (trudne)
-    krcgId: 100978,
-    name: "Infernal Familiar",
-    cardType: "retainer",
-    bloodCost: 2,
-    permanent: { where: "bearer", statics: {}, tags: ["retainer"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Infernal Servitor [100981] — fala 9 wierna (trudne)
-    krcgId: 100981,
-    name: "Infernal Servitor",
-    cardType: "ally",
-    bloodCost: 0,
-    poolCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Inflict [100982] — fala 9 wierna (trudne)
-    krcgId: 100982,
-    name: "Inflict",
-    cardType: "combat",
-    bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "mar", effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Inside Dirt [100990] — fala 9 wierna (trudne)
-    krcgId: 100990,
-    name: "Inside Dirt",
-    cardType: "action",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Invoke Poison Glands [101005] — fala 9 wierna (trudne)
-    krcgId: 101005,
-    name: "Invoke Poison Glands",
-    cardType: "combat",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
-    ],
-  },
-  {
-    // Invoking the Beast [101006] — fala 9 wierna (trudne)
-    krcgId: 101006,
-    name: "Invoking the Beast",
-    cardType: "combat",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
-    ],
-  },
-  {
-    // Journal of Hrorsh [101026] — fala 9 wierna (trudne)
-    krcgId: 101026,
-    name: "Journal of Hrorsh",
-    cardType: "equipment",
-    bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Kaymakli Fragment [101035] — fala 9 wierna (trudne)
-    krcgId: 101035,
-    name: "Kaymakli Fragment",
-    cardType: "equipment",
-    bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Kduva's Mask [101037] — fala 9 wierna (trudne)
-    krcgId: 101037,
-    name: "Kduva's Mask",
-    cardType: "equipment",
-    bloodCost: 0,
-    poolCost: 2,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Kerrie [101039] — fala 9 wierna (trudne)
-    krcgId: 101039,
-    name: "Kerrie",
-    cardType: "equipment",
-    bloodCost: 0,
-    poolCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Khazar's Diary (Endless Night) [101046] — fala 9 wierna (trudne)
-    krcgId: 101046,
-    name: "Khazar's Diary (Endless Night)",
-    cardType: "action",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Khobar Towers, Al-Khubar [101048] — fala 9 wierna (trudne)
-    krcgId: 101048,
-    name: "Khobar Towers, Al-Khubar",
-    cardType: "master",
-    bloodCost: 0,
-    poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // King's Favor [101058] — fala 9 wierna (trudne)
-    krcgId: 101058,
-    name: "King's Favor",
-    cardType: "reaction",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Knotted Cord [101064] — fala 9 wierna (trudne)
-    krcgId: 101064,
-    name: "Knotted Cord",
-    cardType: "actionModifier",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Kuta [101069] — fala 9 wierna (trudne)
-    krcgId: 101069,
-    name: "Kuta",
+    // Imperator [100960] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100960,
+    name: "Imperator",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // In Memory of the Two Lands [100967] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100967,
+    name: "In Memory of the Two Lands",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Infamous Insurgent [100975] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100975,
+    name: "Infamous Insurgent",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Infernal Familiar [100978] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100978,
+    name: "Infernal Familiar",
+    cardType: "retainer",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Infernal Servitor [100981] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100981,
+    name: "Infernal Servitor",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inflict [100982] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100982,
+    name: "Inflict",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mar", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Inside Dirt [100990] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100990,
+    name: "Inside Dirt",
     cardType: "action",
     bloodCost: 0,
     usable: [],
@@ -33833,19 +33650,142 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Leadership Vacuum [101078] — fala 9 wierna (trudne)
-    krcgId: 101078,
-    name: "Leadership Vacuum",
-    cardType: "master",
+    // Invoke Poison Glands [101005] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101005,
+    name: "Invoke Poison Glands",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Invoking the Beast [101006] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101006,
+    name: "Invoking the Beast",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continues: "optional" }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Journal of Hrorsh [101026] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101026,
+    name: "Journal of Hrorsh",
+    cardType: "equipment",
+    bloodCost: 0,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Leech [101083] — fala 9 wierna (trudne)
+    // Kaymakli Fragment [101035] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101035,
+    name: "Kaymakli Fragment",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Kduva's Mask [101037] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101037,
+    name: "Kduva's Mask",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Kerrie [101039] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101039,
+    name: "Kerrie",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Khazar's Diary (Endless Night) [101046] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101046,
+    name: "Khazar's Diary (Endless Night)",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Khobar Towers, Al-Khubar [101048] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101048,
+    name: "Khobar Towers, Al-Khubar",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // King's Favor [101058] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101058,
+    name: "King's Favor",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Knotted Cord [101064] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101064,
+    name: "Knotted Cord",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Kuta [101069] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101069,
+    name: "Kuta",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Leadership Vacuum [101078] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101078,
+    name: "Leadership Vacuum",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Leech [101083] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101083,
     name: "Leech",
     cardType: "action",
@@ -33856,7 +33796,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Legacy [101085] — fala 9 wierna (trudne)
+    // Legacy [101085] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101085,
     name: "Legacy",
     cardType: "action",
@@ -33867,165 +33807,154 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lifeless Tongues [101105] — fala 9 wierna (trudne)
+    // Lifeless Tongues [101105] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101105,
     name: "Lifeless Tongues",
     cardType: "action",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Light Intensifying Goggles [101106] — fala 9 wierna (trudne)
+    // Light Intensifying Goggles [101106] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101106,
     name: "Light Intensifying Goggles",
     cardType: "equipment",
     bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Lilith's Blessing [101108] — fala 9 wierna (trudne)
+    // Lilith's Blessing [101108] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101108,
     name: "Lilith's Blessing",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Liquidation [101112] — fala 9 wierna (trudne)
+    // Liquidation [101112] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101112,
     name: "Liquidation",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Living Wood Staff [101115] — fala 9 wierna (trudne)
+    // Living Wood Staff [101115] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101115,
     name: "Living Wood Staff",
     cardType: "equipment",
     bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Maleficia [101149] — fala 9 wierna (trudne)
+    // Maleficia [101149] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101149,
     name: "Maleficia",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Mapatano Utando [101163] — fala 9 wierna (trudne)
+    // Mapatano Utando [101163] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101163,
     name: "Mapatano Utando",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // The Marrakesh Codex [101172] — fala 9 wierna (trudne)
-    krcgId: 101172,
-    name: "The Marrakesh Codex",
-    cardType: "master",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Masai Blood Milk [101176] — fala 9 wierna (trudne)
+    // The Marrakesh Codex [101172] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101172,
+    name: "The Marrakesh Codex",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Masai Blood Milk [101176] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101176,
     name: "Masai Blood Milk",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Mesu Bedshet [101206] — fala 9 wierna (trudne)
+    // Mesu Bedshet [101206] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101206,
     name: "Mesu Bedshet",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Mistrust [101228] — fala 9 wierna (trudne)
+    // Mistrust [101228] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101228,
     name: "Mistrust",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Moise Kasavubu [101231] — fala 9 wierna (trudne)
+    // Moise Kasavubu [101231] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101231,
     name: "Moise Kasavubu",
     cardType: "ally",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Mokolé Blood [101232] — fala 9 wierna (trudne)
+    // Mokolé Blood [101232] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101232,
     name: "Mokolé Blood",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Mozambique Allure [101248] — fala 9 wierna (trudne)
+    // Mozambique Allure [101248] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101248,
     name: "Mozambique Allure",
     cardType: "action",
@@ -34036,19 +33965,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Muricia's Call [101255] — fala 9 wierna (trudne)
+    // Muricia's Call [101255] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101255,
     name: "Muricia's Call",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Muse of Flame [101257] — fala 9 wierna (trudne)
+    // Muse of Flame [101257] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101257,
     name: "Muse of Flame",
     cardType: "action",
@@ -34059,101 +33988,95 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Name Forgotten [101263] — fala 9 wierna (trudne)
+    // The Name Forgotten [101263] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101263,
     name: "The Name Forgotten",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // National Guard Support [101266] — fala 9 wierna (trudne)
+    // National Guard Support [101266] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101266,
     name: "National Guard Support",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Neebi [101269] — fala 9 wierna (trudne)
-    krcgId: 101269,
-    name: "Neebi",
-    cardType: "combat",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Nkishi [101289] — fala 9 wierna (trudne)
-    krcgId: 101289,
-    name: "Nkishi",
-    cardType: "equipment",
-    bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Notorious Brutality [101304] — fala 9 wierna (trudne)
-    krcgId: 101304,
-    name: "Notorious Brutality",
-    cardType: "actionModifier",
-    bloodCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Off Kilter [101316] — fala 9 wierna (trudne)
-    krcgId: 101316,
-    name: "Off Kilter",
-    cardType: "action",
+    // Neebi [101269] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101269,
+    name: "Neebi",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Overseer [101339] — fala 9 wierna (trudne)
-    krcgId: 101339,
-    name: "Overseer",
-    cardType: "action",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Palla Grande [101346] — fala 9 wierna (trudne)
-    krcgId: 101346,
-    name: "Palla Grande",
-    cardType: "master",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Pandora's Whisper [101349] — fala 9 wierna (trudne)
+    // Nkishi [101289] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101289,
+    name: "Nkishi",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Notorious Brutality [101304] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101304,
+    name: "Notorious Brutality",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Off Kilter [101316] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101316,
+    name: "Off Kilter",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Overseer [101339] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101339,
+    name: "Overseer",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Palla Grande [101346] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101346,
+    name: "Palla Grande",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Pandora's Whisper [101349] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101349,
     name: "Pandora's Whisper",
     cardType: "action",
@@ -34165,81 +34088,54 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Path of Death and the Soul [101360] — fala 9 wierna (trudne)
+    // Path of Death and the Soul [101360] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101360,
     name: "Path of Death and the Soul",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Path of Evil Revelations [101361] — fala 9 wierna (trudne)
+    // Path of Evil Revelations [101361] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101361,
     name: "Path of Evil Revelations",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // The Path of Lilith [101363] — fala 9 wierna (trudne)
+    // The Path of Lilith [101363] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101363,
     name: "The Path of Lilith",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // The Path of the Scorched Heart [101371] — fala 9 wierna (trudne)
+    // The Path of the Scorched Heart [101371] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101371,
     name: "The Path of the Scorched Heart",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
-    ],
-  },
-  {
-    // Patsy [101377] — fala 9 wierna (trudne)
-    krcgId: 101377,
-    name: "Patsy",
-    cardType: "action",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
-    usable: [],
-    modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Patterns in the Chaos [101378] — fala 9 wierna (trudne)
-    krcgId: 101378,
-    name: "Patterns in the Chaos",
-    cardType: "actionModifier",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Petra Resonance [101396] — fala 9 wierna (trudne)
-    krcgId: 101396,
-    name: "Petra Resonance",
-    cardType: "action",
+    // Patsy [101377] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101377,
+    name: "Patsy",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -34247,7 +34143,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Phobia [101399] — fala 9 wierna (trudne)
+    // Patterns in the Chaos [101378] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101378,
+    name: "Patterns in the Chaos",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Petra Resonance [101396] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101396,
+    name: "Petra Resonance",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Phobia [101399] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101399,
     name: "Phobia",
     cardType: "action",
@@ -34258,134 +34176,128 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Polaris Coach [101409] — fala 9 wierna (trudne)
+    // Polaris Coach [101409] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101409,
     name: "Polaris Coach",
     cardType: "equipment",
     bloodCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Political Struggle [101418] — fala 9 wierna (trudne)
+    // Political Struggle [101418] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101418,
     name: "Political Struggle",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Powerbase: Luanda [101436] — fala 9 wierna (trudne)
+    // Powerbase: Luanda [101436] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101436,
     name: "Powerbase: Luanda",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Powerbase: Rome [101441] — fala 9 wierna (trudne)
+    // Powerbase: Rome [101441] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101441,
     name: "Powerbase: Rome",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Powerbase: Tshwane [101443] — fala 9 wierna (trudne)
+    // Powerbase: Tshwane [101443] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101443,
     name: "Powerbase: Tshwane",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Powerbase: Zürich [101445] — fala 9 wierna (trudne)
+    // Powerbase: Zürich [101445] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101445,
     name: "Powerbase: Zürich",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Praxis Solomon [101473] — fala 9 wierna (trudne)
+    // Praxis Solomon [101473] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101473,
     name: "Praxis Solomon",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Predator's Communion [101477] — fala 9 wierna (trudne)
+    // Predator's Communion [101477] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101477,
     name: "Predator's Communion",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Predator's Mastery [101478] — fala 9 wierna (trudne)
+    // Predator's Mastery [101478] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101478,
     name: "Predator's Mastery",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Predator's Transformation [101479] — fala 9 wierna (trudne)
+    // Predator's Transformation [101479] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101479,
     name: "Predator's Transformation",
-    cardType: "combat",
+    cardType: "actionmodifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Prophecies of Gehenna [101497] — fala 9 wierna (trudne)
+    // Prophecies of Gehenna [101497] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101497,
     name: "Prophecies of Gehenna",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Public Enemy [101512] — fala 9 wierna (trudne)
+    // Public Enemy [101512] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101512,
     name: "Public Enemy",
     cardType: "action",
@@ -34396,79 +34308,74 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Raw Recruit [101554] — fala 9 wierna (trudne)
+    // Raw Recruit [101554] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101554,
     name: "Raw Recruit",
     cardType: "action",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Reanimated Corpse [101563] — fala 9 wierna (trudne)
+    // Reanimated Corpse [101563] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101563,
     name: "Reanimated Corpse",
     cardType: "ally",
     bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
     usable: [],
     modes: [
       { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Rebirth [101565] — fala 9 wierna (trudne)
+    // Rebirth [101565] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101565,
     name: "Rebirth",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Recruitment [101569] — fala 9 wierna (trudne)
-    krcgId: 101569,
-    name: "Recruitment",
-    cardType: "master",
-    bloodCost: 0,
-    poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Recruitment Exercise [101570] — fala 9 wierna (trudne)
+    // Recruitment [101569] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101569,
+    name: "Recruitment",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Recruitment Exercise [101570] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101570,
     name: "Recruitment Exercise",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Redline [101580] — fala 9 wierna (trudne)
+    // Redline [101580] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101580,
     name: "Redline",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Reformation [101582] — fala 9 wierna (trudne)
+    // Reformation [101582] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101582,
     name: "Reformation",
     cardType: "action",
@@ -34481,73 +34388,68 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Regarhagan's Hold [101584] — fala 9 wierna (trudne)
+    // Regarhagan's Hold [101584] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101584,
     name: "Regarhagan's Hold",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Reinforcements [101590] — fala 9 wierna (trudne)
+    // Reinforcements [101590] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101590,
     name: "Reinforcements",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Reliquary: Akunanse Remains [101596] — fala 9 wierna (trudne)
+    // Reliquary: Akunanse Remains [101596] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101596,
     name: "Reliquary: Akunanse Remains",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Reliquary: Biague [101597] — fala 9 wierna (trudne)
+    // Reliquary: Biague [101597] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101597,
     name: "Reliquary: Biague",
     cardType: "equipment",
     bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Reliquary: Shango Remains [101598] — fala 9 wierna (trudne)
+    // Reliquary: Shango Remains [101598] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101598,
     name: "Reliquary: Shango Remains",
     cardType: "equipment",
     bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Research [101607] — fala 9 wierna (trudne)
+    // Research [101607] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101607,
     name: "Research",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
@@ -34555,7 +34457,7 @@ export const cardSpecs: CardSpec[] = [
   },
 
   {
-    // The Return to Innocence [101620] — fala 10 wierna
+    // The Return to Innocence [101620] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101620,
     name: "The Return to Innocence",
     cardType: "action",
@@ -34566,18 +34468,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Revelation of Desire [101622] — fala 10 wierna
+    // Revelation of Desire [101622] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101622,
     name: "Revelation of Desire",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Revelation of Despair [101623] — fala 10 wierna
+    // Revelation of Despair [101623] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101623,
     name: "Revelation of Despair",
     cardType: "reaction",
@@ -34588,7 +34490,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Revelation of Ecstasy [101624] — fala 10 wierna
+    // Revelation of Ecstasy [101624] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101624,
     name: "Revelation of Ecstasy",
     cardType: "action",
@@ -34599,7 +34501,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Riddle Phantastique [101634] — fala 10 wierna
+    // Riddle Phantastique [101634] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101634,
     name: "Riddle Phantastique",
     cardType: "action",
@@ -34610,7 +34512,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rise of the Fallen [101638] — fala 10 wierna
+    // Rise of the Fallen [101638] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101638,
     name: "Rise of the Fallen",
     cardType: "action",
@@ -34621,69 +34523,64 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Rose Foundation [101653] — fala 10 wierna
+    // The Rose Foundation [101653] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101653,
     name: "The Rose Foundation",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Rötschreck [101654] — fala 10 wierna
+    // Rötschreck [101654] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101654,
     name: "Rötschreck",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [{ kind: "combatEnds" }] }
     ],
   },
   {
-    // Rowan Ring [101655] — fala 10 wierna
+    // Rowan Ring [101655] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101655,
     name: "Rowan Ring",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Ruins of Charizel [101659] — fala 10 wierna
+    // Ruins of Charizel [101659] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101659,
     name: "Ruins of Charizel",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Sabbat Threat [101668] — fala 10 wierna
+    // Sabbat Threat [101668] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101668,
     name: "Sabbat Threat",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Sacrificial Lamb [101672] — fala 10 wierna
+    // Sacrificial Lamb [101672] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101672,
     name: "Sacrificial Lamb",
     cardType: "action",
@@ -34694,43 +34591,41 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // San Nicolás de los Servitas [101677] — fala 10 wierna
+    // San Nicolás de los Servitas [101677] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101677,
     name: "San Nicolás de los Servitas",
     cardType: "equipment",
     bloodCost: 2,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Savannah Runner [101683] — fala 10 wierna
+    // Savannah Runner [101683] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101683,
     name: "Savannah Runner",
     cardType: "reaction",
     bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
       { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Scarlet Lore [101688] — fala 10 wierna
+    // Scarlet Lore [101688] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101688,
     name: "Scarlet Lore",
     cardType: "action",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Scrounging [101700] — fala 10 wierna
+    // Scrounging [101700] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101700,
     name: "Scrounging",
     cardType: "action",
@@ -34741,21 +34636,53 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Secret Horde [101707] — fala 10 wierna
+    // Secret Horde [101707] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101707,
     name: "Secret Horde",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // The Secret Must Be Kept [101709] — fala 10 wierna
+    // The Secret Must Be Kept [101709] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101709,
     name: "The Secret Must Be Kept",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shaman [101750] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101750,
+    name: "Shaman",
+    cardType: "retainer",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Shambling Hordes [101751] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101751,
+    name: "Shambling Hordes",
+    cardType: "ally",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Shatter the Gate [101757] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101757,
+    name: "Shatter the Gate",
     cardType: "action",
     bloodCost: 0,
     usable: [],
@@ -34764,55 +34691,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shaman [101750] — fala 10 wierna
-    krcgId: 101750,
-    name: "Shaman",
-    cardType: "retainer",
-    bloodCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["retainer"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Shambling Hordes [101751] — fala 10 wierna
-    krcgId: 101751,
-    name: "Shambling Hordes",
-    cardType: "ally",
-    bloodCost: 3,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    // Shroudsight [101776] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101776,
+    name: "Shroudsight",
+    cardType: "modifier",
+    bloodCost: 0,
     usable: [],
     modes: [
       { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Shatter the Gate [101757] — fala 10 wierna
-    krcgId: 101757,
-    name: "Shatter the Gate",
-    cardType: "action",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Shroudsight [101776] — fala 10 wierna
-    krcgId: 101776,
-    name: "Shroudsight",
-    cardType: "actionModifier",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Sibyl's Tongue [101777] — fala 10 wierna
+    // Sibyl's Tongue [101777] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101777,
     name: "Sibyl's Tongue",
     cardType: "action",
@@ -34823,31 +34713,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Siphon [101784] — fala 10 wierna
+    // Siphon [101784] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101784,
     name: "Siphon",
     cardType: "action",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sire's Index Finger [101785] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101785,
+    name: "Sire's Index Finger",
+    cardType: "equipment",
+    bloodCost: 0,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Sire's Index Finger [101785] — fala 10 wierna
-    krcgId: 101785,
-    name: "Sire's Index Finger",
-    cardType: "equipment",
-    bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
-    ],
-  },
-  {
-    // Sires Command, Childer Inherit [101787] — fala 10 wierna
+    // Sires Command, Childer Inherit [101787] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101787,
     name: "Sires Command, Childer Inherit",
     cardType: "action",
@@ -34858,20 +34746,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Slaughterhouse [101800] — fala 10 wierna
+    // The Slaughterhouse [101800] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101800,
     name: "The Slaughterhouse",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Soul Scan [101835] — fala 10 wierna
+    // Soul Scan [101835] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101835,
     name: "Soul Scan",
     cardType: "action",
@@ -34882,105 +34769,97 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spirit Summoning Chamber [101849] — fala 10 wierna
+    // Spirit Summoning Chamber [101849] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101849,
     name: "Spirit Summoning Chamber",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Spiritual Guidance [101851] — fala 10 wierna
+    // Spiritual Guidance [101851] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101851,
     name: "Spiritual Guidance",
     cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Static Virtue [101862] — fala 10 wierna
+    // Static Virtue [101862] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101862,
     name: "Static Virtue",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Steam Tunnels [101868] — fala 10 wierna
+    // Steam Tunnels [101868] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101868,
     name: "Steam Tunnels",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Strange Day [101880] — fala 10 wierna
+    // Strange Day [101880] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101880,
     name: "Strange Day",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // The Stranger Among Us [101881] — fala 10 wierna
+    // The Stranger Among Us [101881] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101881,
     name: "The Stranger Among Us",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Striga [101884] — fala 10 wierna
+    // Striga [101884] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101884,
     name: "Striga",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Subdued by the Blood [101890] — fala 10 wierna
+    // Subdued by the Blood [101890] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101890,
     name: "Subdued by the Blood",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Sudario Refraction [101895] — fala 10 wierna
+    // Sudario Refraction [101895] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101895,
     name: "Sudario Refraction",
     cardType: "action",
@@ -34991,7 +34870,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Summon History [101897] — fala 10 wierna
+    // Summon History [101897] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101897,
     name: "Summon History",
     cardType: "action",
@@ -35002,7 +34881,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Summon Soul [101898] — fala 10 wierna
+    // Summon Soul [101898] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101898,
     name: "Summon Soul",
     cardType: "action",
@@ -35013,7 +34892,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Summon the Serpent [101901] — fala 10 wierna
+    // Summon the Serpent [101901] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101901,
     name: "Summon the Serpent",
     cardType: "action",
@@ -35024,7 +34903,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Summoning [101902] — fala 10 wierna
+    // The Summoning [101902] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101902,
     name: "The Summoning",
     cardType: "action",
@@ -35035,7 +34914,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Supernatural Resistance [101906] — fala 10 wierna
+    // Supernatural Resistance [101906] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101906,
     name: "Supernatural Resistance",
     cardType: "modifierOrReaction",
@@ -35046,75 +34925,73 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Swarm [101914] — fala 10 wierna
+    // Swarm [101914] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101914,
     name: "Swarm",
     cardType: "retainer",
     bloodCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["retainer"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sweeper [101915] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101915,
+    name: "Sweeper",
+    cardType: "politicalAction",
+    bloodCost: 0,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Sweeper [101915] — fala 10 wierna
-    krcgId: 101915,
-    name: "Sweeper",
-    cardType: "action",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Taking the Skin: Minion [101928] — fala 10 wierna
+    // Taking the Skin: Minion [101928] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101928,
     name: "Taking the Skin: Minion",
-    cardType: "combat",
+    cardType: "actionmodifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Taking the Skin: Vulture [101929] — fala 10 wierna
+    // Taking the Skin: Vulture [101929] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101929,
     name: "Taking the Skin: Vulture",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Taming the Beast [101934] — fala 10 wierna
+    // Taming the Beast [101934] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101934,
     name: "Taming the Beast",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Tapestry of Blood [101936] — fala 10 wierna
+    // Tapestry of Blood [101936] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101936,
     name: "Tapestry of Blood",
     cardType: "equipment",
     bloodCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Temptation [101954] — fala 10 wierna
+    // Temptation [101954] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101954,
     name: "Temptation",
     cardType: "action",
@@ -35125,44 +35002,41 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tend the Flock [101956] — fala 10 wierna
+    // Tend the Flock [101956] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101956,
     name: "Tend the Flock",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Terra Incognita [101959] — fala 10 wierna
+    // Terra Incognita [101959] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101959,
     name: "Terra Incognita",
     cardType: "reaction",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // The Textbook Damnation [101962] — fala 10 wierna
+    // The Textbook Damnation [101962] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101962,
     name: "The Textbook Damnation",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Thanks for the Donation [101964] — fala 10 wierna
+    // Thanks for the Donation [101964] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101964,
     name: "Thanks for the Donation",
     cardType: "action",
@@ -35173,7 +35047,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Thin-Blooded Seer [101971] — fala 10 wierna
+    // Thin-Blooded Seer [101971] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101971,
     name: "Thin-Blooded Seer",
     cardType: "action",
@@ -35184,18 +35058,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Those Who Endure Judge [101975] — fala 10 wierna
+    // Those Who Endure Judge [101975] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101975,
     name: "Those Who Endure Judge",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Total Insanity [101997] — fala 10 wierna
+    // Total Insanity [101997] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101997,
     name: "Total Insanity",
     cardType: "action",
@@ -35206,150 +35080,142 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Toy Chest Test [102002] — fala 10 wierna
+    // Toy Chest Test [102002] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102002,
     name: "Toy Chest Test",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Tragic Love Affair [102006] — fala 10 wierna
+    // Tragic Love Affair [102006] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102006,
     name: "Tragic Love Affair",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Tranquility [102008] — fala 10 wierna
+    // Tranquility [102008] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102008,
     name: "Tranquility",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "dom", effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Trap [102012] — fala 10 wierna
+    // Trap [102012] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102012,
     name: "Trap",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Trochomancy [102026] — fala 10 wierna
+    // Trochomancy [102026] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102026,
     name: "Trochomancy",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Trophy: Diablerie [102029] — fala 10 wierna
+    // Trophy: Diablerie [102029] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102029,
     name: "Trophy: Diablerie",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Trophy: No Questions [102034] — fala 10 wierna
+    // Trophy: No Questions [102034] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102034,
     name: "Trophy: No Questions",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Trophy: Retainers [102036] — fala 10 wierna
+    // Trophy: Retainers [102036] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102036,
     name: "Trophy: Retainers",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Trophy: Wealth [102039] — fala 10 wierna
+    // Trophy: Wealth [102039] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102039,
     name: "Trophy: Wealth",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // True Faith [102040] — fala 10 wierna
+    // True Faith [102040] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102040,
     name: "True Faith",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Unholy Radiance [102073] — fala 10 wierna
+    // Unholy Radiance [102073] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102073,
     name: "Unholy Radiance",
-    cardType: "action",
+    cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Unity [102074] — fala 10 wierna
+    // Unity [102074] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102074,
     name: "Unity",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Unleash Hell's Fury [102076] — fala 10 wierna
+    // Unleash Hell's Fury [102076] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102076,
     name: "Unleash Hell's Fury",
     cardType: "action",
@@ -35357,84 +35223,80 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "dai", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Unseen Hibernation [102081] — fala 10 wierna
+    // Unseen Hibernation [102081] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102081,
     name: "Unseen Hibernation",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Using the Advantage [102086] — fala 10 wierna
+    // Using the Advantage [102086] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102086,
     name: "Using the Advantage",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Vampiric Disease [102088] — fala 10 wierna
-    krcgId: 102088,
-    name: "Vampiric Disease",
-    cardType: "master",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Veles' Hunt [102099] — fala 10 wierna
+    // Vampiric Disease [102088] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102088,
+    name: "Vampiric Disease",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Veles' Hunt [102099] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102099,
     name: "Veles' Hunt",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 3,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Veneficti [102103] — fala 10 wierna
+    // Veneficti [102103] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102103,
     name: "Veneficti",
     cardType: "ally",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Venenation [102104] — fala 10 wierna
+    // Venenation [102104] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102104,
     name: "Venenation",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Victim of Habit [102118] — fala 10 wierna
+    // Victim of Habit [102118] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102118,
     name: "Victim of Habit",
     cardType: "action",
@@ -35445,19 +35307,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Virolax Facility [102123] — fala 10 wierna
+    // Virolax Facility [102123] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102123,
     name: "Virolax Facility",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Vulture's Buffet [102135] — fala 10 wierna
+    // Vulture's Buffet [102135] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102135,
     name: "Vulture's Buffet",
     cardType: "action",
@@ -35469,7 +35330,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Warding the Beast [102146] — fala 10 wierna
+    // Warding the Beast [102146] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102146,
     name: "Warding the Beast",
     cardType: "action",
@@ -35481,20 +35342,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Watchtower: The Wolves Feed [102158] — fala 10 wierna
+    // Watchtower: The Wolves Feed [102158] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102158,
     name: "Watchtower: The Wolves Feed",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Web of Knives Recruit [102165] — fala 10 wierna
+    // Web of Knives Recruit [102165] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102165,
     name: "Web of Knives Recruit",
     cardType: "action",
@@ -35506,113 +35366,106 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Weirding Stone [102170] — fala 10 wierna
+    // Weirding Stone [102170] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102170,
     name: "Weirding Stone",
     cardType: "equipment",
     bloodCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Well-Marked [102172] — fala 10 wierna
+    // Well-Marked [102172] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102172,
     name: "Well-Marked",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Whistling Up the Beast [102177] — fala 10 wierna
+    // Whistling Up the Beast [102177] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102177,
     name: "Whistling Up the Beast",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "abo", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Wooden Stake [102192] — fala 10 wierna
+    // Wooden Stake [102192] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102192,
     name: "Wooden Stake",
     cardType: "equipment",
     bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Dark Web Procurer [102235] — fala 10 wierna
+    // Dark Web Procurer [102235] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102235,
     name: "Dark Web Procurer",
     cardType: "ally",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Michael Harris, the Incinerator [102239] — fala 10 wierna
-    krcgId: 102239,
-    name: "Michael Harris, the Incinerator",
-    cardType: "ally",
-    bloodCost: 0,
-    poolCost: 3,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // The Mithraeum, London [102240] — fala 10 wierna
-    krcgId: 102240,
-    name: "The Mithraeum, London",
-    cardType: "master",
-    bloodCost: 0,
-    poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // The Shard, London [102244] — fala 10 wierna
-    krcgId: 102244,
-    name: "The Shard, London",
-    cardType: "master",
-    bloodCost: 0,
-    poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["edge"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Camarilla Conclave [102269] — fala 10 wierna
+    // Michael Harris, the Incinerator [102239] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102239,
+    name: "Michael Harris, the Incinerator",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Mithraeum, London [102240] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102240,
+    name: "The Mithraeum, London",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Shard, London [102244] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102244,
+    name: "The Shard, London",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Camarilla Conclave [102269] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102269,
     name: "Camarilla Conclave",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
 
@@ -35687,39 +35540,36 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Champion [100322] — fala 11 wierna
+    // Champion [100322] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100322,
     name: "Champion",
-    cardType: "master",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: "def", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Discern [100551] — fala 11 wierna
+    // Discern [100551] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100551,
     name: "Discern",
-    cardType: "master",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "jud", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "jud", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Donate [100575] — fala 11 wierna
+    // Donate [100575] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100575,
     name: "Donate",
-    cardType: "master",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "mar", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "mar", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyIntercept", amount: 1 }, { kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
@@ -35759,12 +35609,11 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Foresee [100764] — fala 11 wierna
+    // Foresee [100764] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100764,
     name: "Foresee",
-    cardType: "master",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: "viz", effects: [{ kind: "maneuver" }] }
@@ -35783,39 +35632,36 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hide [100919] — fala 11 wierna
+    // Hide [100919] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100919,
     name: "Hide",
-    cardType: "master",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: "inn", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Illuminate [100953] — fala 11 wierna
+    // Illuminate [100953] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100953,
     name: "Illuminate",
-    cardType: "master",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "inn", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "inn", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Inspire [100991] — fala 11 wierna
+    // Inspire [100991] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100991,
     name: "Inspire",
-    cardType: "master",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "inn", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "inn", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -35831,216 +35677,198 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // NSA Trio [101306] — fala 11 wierna
+    // NSA Trio [101306] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101306,
     name: "NSA Trio",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Project [101492] — fala 11 wierna
+    // Project [101492] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101492,
     name: "Project",
-    cardType: "master",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: "mar", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // React with Conviction [101557] — fala 11 wierna
+    // React with Conviction [101557] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101557,
     name: "React with Conviction",
-    cardType: "master",
+    cardType: "conviction",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Rejuvenate [101592] — fala 11 wierna
+    // Rejuvenate [101592] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101592,
     name: "Rejuvenate",
-    cardType: "master",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "def", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "def", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Respire [101611] — fala 11 wierna
+    // Respire [101611] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101611,
     name: "Respire",
-    cardType: "master",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "red", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "red", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Rise of the Nephtali [101639] — fala 11 wierna
+    // Rise of the Nephtali [101639] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101639,
     name: "Rise of the Nephtali",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Scourge of the Enochians [101697] — fala 11 wierna
+    // Scourge of the Enochians [101697] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101697,
     name: "Scourge of the Enochians",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Second Sight [101705] — fala 11 wierna
+    // Second Sight [101705] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101705,
     name: "Second Sight",
-    cardType: "master",
+    cardType: "conviction",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Shame [101752] — fala 11 wierna
+    // Shame [101752] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101752,
     name: "Shame",
-    cardType: "master",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "red", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "red", effects: [{ kind: "combatEnds" }] }
     ],
   },
   {
-    // Strike with Conviction [101886] — fala 11 wierna
+    // Strike with Conviction [101886] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101886,
     name: "Strike with Conviction",
-    cardType: "master",
+    cardType: "conviction",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Surge [101908] — fala 11 wierna
+    // Surge [101908] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101908,
     name: "Surge",
-    cardType: "master",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "ven", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "ven", effects: [{ kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // The Uncoiling [102057] — fala 11 wierna
+    // The Uncoiling [102057] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102057,
     name: "The Uncoiling",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // The Unmasking [102079] — fala 11 wierna
+    // The Unmasking [102079] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102079,
     name: "The Unmasking",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Veil of Darkness [102095] — fala 11 wierna
+    // Veil of Darkness [102095] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102095,
     name: "Veil of Darkness",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Vigilance [102120] — fala 11 wierna
+    // Vigilance [102120] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102120,
     name: "Vigilance",
-    cardType: "master",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: "jud", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Waiting Game [102136] — fala 11 wierna
+    // Waiting Game [102136] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102136,
     name: "Waiting Game",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // White Nights Massacre [102178] — fala 11 wierna
+    // White Nights Massacre [102178] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102178,
     name: "White Nights Massacre",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Wormwood [102194] — fala 11 wierna
+    // Wormwood [102194] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 102194,
     name: "Wormwood",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
