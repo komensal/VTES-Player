@@ -23917,21 +23917,21 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Patrol [101374] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Patrol [101374] — fala 38 wierna (300) faithful v2
     krcgId: 101374,
     name: "Patrol",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "flight", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Perfect Clarity [101386] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Perfect Clarity [101386] — fala 38 wierna (300) faithful v2
     krcgId: 101386,
     name: "Perfect Clarity",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 2,
     usable: [],
     modes: [
@@ -23939,32 +23939,32 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Personal Scourge [101395] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Personal Scourge [101395] — fala 38 wierna (300) faithful v2
     krcgId: 101395,
     name: "Personal Scourge",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "dem", effects: [{ kind: "press", continues: true }, { kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Phased Motion Detector [101398] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Phased Motion Detector [101398] — fala 38 wierna (300) faithful v2
     krcgId: 101398,
     name: "Phased Motion Detector",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Pier 13, Port of Baltimore [101400] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Pier 13, Port of Baltimore [101400] — fala 38 wierna (300) faithful v2
     krcgId: 101400,
     name: "Pier 13, Port of Baltimore",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 2,
     usable: [],
     modes: [
@@ -23972,22 +23972,22 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pocket Out of Time [101405] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Pocket Out of Time [101405] — fala 38 wierna (300) faithful v2
     krcgId: 101405,
     name: "Pocket Out of Time",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Poker [101408] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Poker [101408] — fala 38 wierna (300) faithful v2
     krcgId: 101408,
     name: "Poker",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -23995,91 +23995,91 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Political Antagonist [101412] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Political Antagonist [101412] — fala 38 wierna (300) faithful v2
     krcgId: 101412,
     name: "Political Antagonist",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Ponticulus [101419] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Ponticulus [101419] — fala 38 wierna (300) faithful v2
     krcgId: 101419,
     name: "Ponticulus",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Pounce [101426] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Pounce [101426] — fala 38 wierna (300) faithful v2
     krcgId: 101426,
     name: "Pounce",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "flight", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: true }] }
     ],
   },
   {
-    // Power of All [101428] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Power of All [101428] — fala 38 wierna (300) faithful v2
     krcgId: 101428,
     name: "Power of All",
     cardType: "reaction",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Power of One [101429] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Power of One [101429] — fala 38 wierna (300) faithful v2
     krcgId: 101429,
     name: "Power of One",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Priestess of Sekhmet [101484] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Priestess of Sekhmet [101484] — fala 38 wierna (300) faithful v2
     krcgId: 101484,
     name: "Priestess of Sekhmet",
-    cardType: "action",
+    cardType: "retainer",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Primal Instincts [101485] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Primal Instincts [101485] — fala 38 wierna (300) faithful v2
     krcgId: 101485,
     name: "Primal Instincts",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "strikeDodge" }] }
     ],
   },
   {
-    // Propaganda of the Deed [101496] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Propaganda of the Deed [101496] — fala 38 wierna (300) faithful v2
     krcgId: 101496,
     name: "Propaganda of the Deed",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -24087,30 +24087,30 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Psalm of the Damned [101505] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Psalm of the Damned [101505] — fala 38 wierna (300) faithful v2
     krcgId: 101505,
     name: "Psalm of the Damned",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mal", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "mal", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Pseudo-Blindness [101506] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Pseudo-Blindness [101506] — fala 38 wierna (300) faithful v2
     krcgId: 101506,
     name: "Pseudo-Blindness",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Psychic Assault [101508] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Psychic Assault [101508] — fala 38 wierna (300) faithful v2
     krcgId: 101508,
     name: "Psychic Assault",
     cardType: "combat",
@@ -24121,33 +24121,33 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Psychomachia [101511] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Psychomachia [101511] — fala 38 wierna (300) faithful v2
     krcgId: 101511,
     name: "Psychomachia",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "dai", effects: [{ kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Pulled Fangs [101515] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Pulled Fangs [101515] — fala 38 wierna (300) faithful v2
     krcgId: 101515,
     name: "Pulled Fangs",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Puppeteer [101519] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Puppeteer [101519] — fala 38 wierna (300) faithful v2
     krcgId: 101519,
     name: "Puppeteer",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 1,
     usable: [],
@@ -24156,19 +24156,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Quicken Sight [101531] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Quicken Sight [101531] — fala 38 wierna (300) faithful v2
     krcgId: 101531,
     name: "Quicken Sight",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Raking Talons [101538] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Raking Talons [101538] — fala 38 wierna (300) faithful v2
     krcgId: 101538,
     name: "Raking Talons",
     cardType: "combat",
@@ -24179,31 +24179,31 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Razor Bat [101556] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Razor Bat [101556] — fala 38 wierna (300) faithful v2
     krcgId: 101556,
     name: "Razor Bat",
-    cardType: "action",
+    cardType: "retainer",
     bloodCost: 0,
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Read the Winds [101559] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Read the Winds [101559] — fala 38 wierna (300) faithful v2
     krcgId: 101559,
     name: "Read the Winds",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Reality Mirror [101561] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Reality Mirror [101561] — fala 38 wierna (300) faithful v2
     krcgId: 101561,
     name: "Reality Mirror",
     cardType: "combat",
@@ -24214,10 +24214,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Recurring Contemplation [101572] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Recurring Contemplation [101572] — fala 38 wierna (300) faithful v2
     krcgId: 101572,
     name: "Recurring Contemplation",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -24226,10 +24226,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Red Herring [101573] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Red Herring [101573] — fala 38 wierna (300) faithful v2
     krcgId: 101573,
     name: "Red Herring",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
@@ -24237,10 +24237,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Red Question [101575] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // The Red Question [101575] — fala 38 wierna (300) faithful v2
     krcgId: 101575,
     name: "The Red Question",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
@@ -24248,10 +24248,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Redcap Wilder [101576] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Redcap Wilder [101576] — fala 38 wierna (300) faithful v2
     krcgId: 101576,
     name: "Redcap Wilder",
-    cardType: "action",
+    cardType: "retainer",
     bloodCost: 2,
     usable: [],
     modes: [
@@ -24259,55 +24259,55 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Reliquary: Trinket [101599] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Reliquary: Trinket [101599] — fala 38 wierna (300) faithful v2
     krcgId: 101599,
     name: "Reliquary: Trinket",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Remnant of the Endless Storm [101600] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Remnant of the Endless Storm [101600] — fala 38 wierna (300) faithful v2
     krcgId: 101600,
     name: "Remnant of the Endless Storm",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 6,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // Renegade Garou [101602] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Renegade Garou [101602] — fala 38 wierna (300) faithful v2
     krcgId: 101602,
     name: "Renegade Garou",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 5,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "additionalStrike", count: 1, limited: true }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Repulsion [101606] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Repulsion [101606] — fala 38 wierna (300) faithful v2
     krcgId: 101606,
     name: "Repulsion",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Revelation of Wrath [101626] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Revelation of Wrath [101626] — fala 38 wierna (300) faithful v2
     krcgId: 101626,
     name: "Revelation of Wrath",
     cardType: "combat",
@@ -24318,76 +24318,76 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rewind Time [101633] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Rewind Time [101633] — fala 38 wierna (300) faithful v2
     krcgId: 101633,
     name: "Rewind Time",
     cardType: "reaction",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Righteous Aura [101635] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Righteous Aura [101635] — fala 38 wierna (300) faithful v2
     krcgId: 101635,
     name: "Righteous Aura",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 2 }] }
     ],
   },
   {
-    // Riposte [101637] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Riposte [101637] — fala 38 wierna (300) faithful v2
     krcgId: 101637,
     name: "Riposte",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "combatEnds" }] }
     ],
   },
   {
-    // Ritual Scalpel [101643] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Ritual Scalpel [101643] — fala 38 wierna (300) faithful v2
     krcgId: 101643,
     name: "Ritual Scalpel",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Rock Cat [101645] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Rock Cat [101645] — fala 38 wierna (300) faithful v2
     krcgId: 101645,
     name: "Rock Cat",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 4,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: true }] }
     ],
   },
   {
-    // Rockheart [101646] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Rockheart [101646] — fala 38 wierna (300) faithful v2
     krcgId: 101646,
     name: "Rockheart",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDodge" }, { kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDodge" }, { kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Roll [101648] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Roll [101648] — fala 38 wierna (300) faithful v2
     krcgId: 101648,
     name: "Roll",
     cardType: "combat",
@@ -24398,32 +24398,32 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rooftop Shadow [101651] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Rooftop Shadow [101651] — fala 38 wierna (300) faithful v2
     krcgId: 101651,
     name: "Rooftop Shadow",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Ruins of Ceoris [101658] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Ruins of Ceoris [101658] — fala 38 wierna (300) faithful v2
     krcgId: 101658,
     name: "Ruins of Ceoris",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "press", continues: true }] }
     ],
   },
   {
-    // Ruins of Villers Abbey, Belgium [101660] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Ruins of Villers Abbey, Belgium [101660] — fala 38 wierna (300) faithful v2
     krcgId: 101660,
     name: "Ruins of Villers Abbey, Belgium",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -24431,10 +24431,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Safe Passage [101673] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Safe Passage [101673] — fala 38 wierna (300) faithful v2
     krcgId: 101673,
     name: "Safe Passage",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -24443,44 +24443,44 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Salt of Thoth [101674] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Salt of Thoth [101674] — fala 38 wierna (300) faithful v2
     krcgId: 101674,
     name: "Salt of Thoth",
     cardType: "reaction",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // San Lorenzo de El Escorial, Spain [101676] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // San Lorenzo de El Escorial, Spain [101676] — fala 38 wierna (300) faithful v2
     krcgId: 101676,
     name: "San Lorenzo de El Escorial, Spain",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Sanguine Entrapment [101679] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Sanguine Entrapment [101679] — fala 38 wierna (300) faithful v2
     krcgId: 101679,
     name: "Sanguine Entrapment",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDodge" }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDodge" }, { kind: "combatEnds" }] }
     ],
   },
   {
-    // The Sargon Fragment [101681] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // The Sargon Fragment [101681] — fala 38 wierna (300) faithful v2
     krcgId: 101681,
     name: "The Sargon Fragment",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
     usable: [],
@@ -24489,68 +24489,68 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Save Face [101684] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Save Face [101684] — fala 38 wierna (300) faithful v2
     krcgId: 101684,
     name: "Save Face",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: true }, { kind: "combatEnds" }] }
     ],
   },
   {
-    // Scapelli, The Family "Mechanic" [101687] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Scapelli, The Family "Mechanic" [101687] — fala 38 wierna (300) faithful v2
     krcgId: 101687,
     name: "Scapelli, The Family \"Mechanic\"",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 3,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: true }] }
     ],
   },
   {
-    // Scobax [101691] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Scobax [101691] — fala 38 wierna (300) faithful v2
     krcgId: 101691,
     name: "Scobax",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "str", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "str", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Scorpion's Touch [101694] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Scorpion's Touch [101694] — fala 38 wierna (300) faithful v2
     krcgId: 101694,
     name: "Scorpion's Touch",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Scry the Hearthstone [101701] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Scry the Hearthstone [101701] — fala 38 wierna (300) faithful v2
     krcgId: 101701,
     name: "Scry the Hearthstone",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "vis", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Scrying of Secrets [101702] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Scrying of Secrets [101702] — fala 38 wierna (300) faithful v2
     krcgId: 101702,
     name: "Scrying of Secrets",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
@@ -24558,19 +24558,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Seal of Veddartha [101703] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Seal of Veddartha [101703] — fala 38 wierna (300) faithful v2
     krcgId: 101703,
     name: "Seal of Veddartha",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Selective Silence [101714] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Selective Silence [101714] — fala 38 wierna (300) faithful v2
     krcgId: 101714,
     name: "Selective Silence",
     cardType: "combat",
@@ -24581,10 +24581,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Seraph's Second [101724] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Seraph's Second [101724] — fala 38 wierna (300) faithful v2
     krcgId: 101724,
     name: "Seraph's Second",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -24592,21 +24592,21 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Serenading the Kami [101725] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Serenading the Kami [101725] — fala 38 wierna (300) faithful v2
     krcgId: 101725,
     name: "Serenading the Kami",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // Shaal Fragment [101732] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shaal Fragment [101732] — fala 38 wierna (300) faithful v2
     krcgId: 101732,
     name: "Shaal Fragment",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -24614,22 +24614,22 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shackles of Enkidu [101733] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shackles of Enkidu [101733] — fala 38 wierna (300) faithful v2
     krcgId: 101733,
     name: "Shackles of Enkidu",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "combatEnds" }] }
     ],
   },
   {
-    // Shade [101734] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shade [101734] — fala 38 wierna (300) faithful v2
     krcgId: 101734,
     name: "Shade",
-    cardType: "action",
+    cardType: "retainer",
     bloodCost: 1,
     usable: [],
     modes: [
@@ -24637,21 +24637,21 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Body [101735] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shadow Body [101735] — fala 38 wierna (300) faithful v2
     krcgId: 101735,
     name: "Shadow Body",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "combatEnds" }] }
     ],
   },
   {
-    // Shadow Court Satyr [101737] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shadow Court Satyr [101737] — fala 38 wierna (300) faithful v2
     krcgId: 101737,
     name: "Shadow Court Satyr",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 3,
     usable: [],
@@ -24660,19 +24660,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Feint [101738] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shadow Feint [101738] — fala 38 wierna (300) faithful v2
     krcgId: 101738,
     name: "Shadow Feint",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDodge" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "strikeDodge" }] }
     ],
   },
   {
-    // Shadow Parasite [101742] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shadow Parasite [101742] — fala 38 wierna (300) faithful v2
     krcgId: 101742,
     name: "Shadow Parasite",
     cardType: "combat",
@@ -24683,18 +24683,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Play [101743] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shadow Play [101743] — fala 38 wierna (300) faithful v2
     krcgId: 101743,
     name: "Shadow Play",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Shadow Step [101744] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shadow Step [101744] — fala 38 wierna (300) faithful v2
     krcgId: 101744,
     name: "Shadow Step",
     cardType: "combat",
@@ -24705,32 +24705,32 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Strike [101745] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shadow Strike [101745] — fala 38 wierna (300) faithful v2
     krcgId: 101745,
     name: "Shadow Strike",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }, { kind: "press", continues: true }] }
     ],
   },
   {
-    // Shattered Mirror [101758] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shattered Mirror [101758] — fala 38 wierna (300) faithful v2
     krcgId: 101758,
     name: "Shattered Mirror",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Shell Game [101764] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shell Game [101764] — fala 38 wierna (300) faithful v2
     krcgId: 101764,
     name: "Shell Game",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -24738,7 +24738,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shilmulo Deception [101766] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shilmulo Deception [101766] — fala 38 wierna (300) faithful v2
     krcgId: 101766,
     name: "Shilmulo Deception",
     cardType: "reaction",
@@ -24749,63 +24749,63 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shotgun Ritual [101770] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shotgun Ritual [101770] — fala 38 wierna (300) faithful v2
     krcgId: 101770,
     name: "Shotgun Ritual",
     cardType: "combat",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continues: true }] }
     ],
   },
   {
-    // Shoulder Drop [101771] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shoulder Drop [101771] — fala 38 wierna (300) faithful v2
     krcgId: 101771,
     name: "Shoulder Drop",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: true }] }
     ],
   },
   {
-    // Shroud Mastery [101773] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shroud Mastery [101773] — fala 38 wierna (300) faithful v2
     krcgId: 101773,
     name: "Shroud Mastery",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Shroud of Absence [101774] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shroud of Absence [101774] — fala 38 wierna (300) faithful v2
     krcgId: 101774,
     name: "Shroud of Absence",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "combatEnds" }] }
     ],
   },
   {
-    // Shroud of Night [101775] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Shroud of Night [101775] — fala 38 wierna (300) faithful v2
     krcgId: 101775,
     name: "Shroud of Night",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Silence of Death [101782] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Silence of Death [101782] — fala 38 wierna (300) faithful v2
     krcgId: 101782,
     name: "Silence of Death",
     cardType: "combat",
@@ -24816,55 +24816,55 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sins of the Cauchemar [101783] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Sins of the Cauchemar [101783] — fala 38 wierna (300) faithful v2
     krcgId: 101783,
     name: "Sins of the Cauchemar",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Skin of the Adder [101793] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Skin of the Adder [101793] — fala 38 wierna (300) faithful v2
     krcgId: 101793,
     name: "Skin of the Adder",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 1 }] }
     ],
   },
   {
-    // Skin of the Chameleon [101794] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Skin of the Chameleon [101794] — fala 38 wierna (300) faithful v2
     krcgId: 101794,
     name: "Skin of the Chameleon",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "vis", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: true }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: true }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Skin Trap [101795] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Skin Trap [101795] — fala 38 wierna (300) faithful v2
     krcgId: 101795,
     name: "Skin Trap",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "vic", effects: [{ kind: "strikeDodge" }] }
     ],
   },
   {
-    // Sleep Unseen [101804] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Sleep Unseen [101804] — fala 38 wierna (300) faithful v2
     krcgId: 101804,
     name: "Sleep Unseen",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
@@ -24872,45 +24872,45 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Smite [101812] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Smite [101812] — fala 38 wierna (300) faithful v2
     krcgId: 101812,
     name: "Smite",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ven", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "ven", effects: [{ kind: "strikeDodge" }] }
     ],
   },
   {
-    // Smoke and Mirrors [101813] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Smoke and Mirrors [101813] — fala 38 wierna (300) faithful v2
     krcgId: 101813,
     name: "Smoke and Mirrors",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Soar [101818] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Soar [101818] — fala 38 wierna (300) faithful v2
     krcgId: 101818,
     name: "Soar",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "flight", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Soul Gem of Etrius [101832] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Soul Gem of Etrius [101832] — fala 38 wierna (300) faithful v2
     krcgId: 101832,
     name: "Soul Gem of Etrius",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -24918,22 +24918,22 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Speak with Spirits [101840] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Speak with Spirits [101840] — fala 38 wierna (300) faithful v2
     krcgId: 101840,
     name: "Speak with Spirits",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Spike-Thrower [101846] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Spike-Thrower [101846] — fala 38 wierna (300) faithful v2
     krcgId: 101846,
     name: "Spike-Thrower",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
     usable: [],
@@ -24942,21 +24942,21 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spiritual Intervention [101852] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Spiritual Intervention [101852] — fala 38 wierna (300) faithful v2
     krcgId: 101852,
     name: "Spiritual Intervention",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "strikeDodge" }, { kind: "combatEnds" }] }
     ],
   },
   {
-    // Spiritual Protector [101853] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Spiritual Protector [101853] — fala 38 wierna (300) faithful v2
     krcgId: 101853,
     name: "Spiritual Protector",
-    cardType: "action",
+    cardType: "retainer",
     bloodCost: 3,
     usable: [],
     modes: [
@@ -24964,10 +24964,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Squirrel Balance [101858] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Squirrel Balance [101858] — fala 38 wierna (300) faithful v2
     krcgId: 101858,
     name: "Squirrel Balance",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
@@ -24976,10 +24976,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Starshell Grenade Launcher [101860] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Starshell Grenade Launcher [101860] — fala 38 wierna (300) faithful v2
     krcgId: 101860,
     name: "Starshell Grenade Launcher",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
     usable: [],
@@ -24988,32 +24988,32 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Starvation of Marena [101861] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Starvation of Marena [101861] — fala 38 wierna (300) faithful v2
     krcgId: 101861,
     name: "Starvation of Marena",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "vic", effects: [{ kind: "press", continues: true }] }
     ],
   },
   {
-    // Still the Mortal Flesh [101871] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Still the Mortal Flesh [101871] — fala 38 wierna (300) faithful v2
     krcgId: 101871,
     name: "Still the Mortal Flesh",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }, { kind: "press", continues: true }] }
     ],
   },
   {
-    // Stone Dog [101873] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Stone Dog [101873] — fala 38 wierna (300) faithful v2
     krcgId: 101873,
     name: "Stone Dog",
-    cardType: "action",
+    cardType: "retainer",
     bloodCost: 0,
     poolCost: 3,
     usable: [],
@@ -25022,7 +25022,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Stone Quills [101874] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Stone Quills [101874] — fala 38 wierna (300) faithful v2
     krcgId: 101874,
     name: "Stone Quills",
     cardType: "combat",
@@ -25034,31 +25034,31 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Stone Travel [101875] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Stone Travel [101875] — fala 38 wierna (300) faithful v2
     krcgId: 101875,
     name: "Stone Travel",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Stonestrength [101876] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Stonestrength [101876] — fala 38 wierna (300) faithful v2
     krcgId: 101876,
     name: "Stonestrength",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "vis", effects: [{ kind: "press", continues: true }, { kind: "prevent", base: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continues: true }, { kind: "prevent", base: 1 }] }
     ],
   },
   {
-    // Strike at the True Flesh [101885] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Strike at the True Flesh [101885] — fala 38 wierna (300) faithful v2
     krcgId: 101885,
     name: "Strike at the True Flesh",
     cardType: "combat",
@@ -25069,44 +25069,44 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Strix [101887] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Strix [101887] — fala 38 wierna (300) faithful v2
     krcgId: 101887,
     name: "Strix",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "str", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "str", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Stutter-Step [101889] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Stutter-Step [101889] — fala 38 wierna (300) faithful v2
     krcgId: 101889,
     name: "Stutter-Step",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDodge" }, { kind: "additionalStrike", count: 1, limited: true }] }
     ],
   },
   {
-    // Succubus [101892] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Succubus [101892] — fala 38 wierna (300) faithful v2
     krcgId: 101892,
     name: "Succubus",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 4,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Succulent Vitae [101894] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Succulent Vitae [101894] — fala 38 wierna (300) faithful v2
     krcgId: 101894,
     name: "Succulent Vitae",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -25114,10 +25114,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Survivalist [101910] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Survivalist [101910] — fala 38 wierna (300) faithful v2
     krcgId: 101910,
     name: "Survivalist",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 2,
     usable: [],
@@ -25126,33 +25126,33 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Swoop [101918] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Swoop [101918] — fala 38 wierna (300) faithful v2
     krcgId: 101918,
     name: "Swoop",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }, { kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // Sword of Judgment [101919] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Sword of Judgment [101919] — fala 38 wierna (300) faithful v2
     krcgId: 101919,
     name: "Sword of Judgment",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
     ],
   },
   {
-    // Sword of Nuln [101920] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Sword of Nuln [101920] — fala 38 wierna (300) faithful v2
     krcgId: 101920,
     name: "Sword of Nuln",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
     usable: [],
@@ -25161,10 +25161,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sword of Troile [101922] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Sword of Troile [101922] — fala 38 wierna (300) faithful v2
     krcgId: 101922,
     name: "Sword of Troile",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     poolCost: 3,
     usable: [],
@@ -25173,21 +25173,21 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tainted Spring [101925] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Tainted Spring [101925] — fala 38 wierna (300) faithful v2
     krcgId: 101925,
     name: "Tainted Spring",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // Talaq, The Immortal [101930] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Talaq, The Immortal [101930] — fala 38 wierna (300) faithful v2
     krcgId: 101930,
     name: "Talaq, The Immortal",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 3,
     usable: [],
@@ -25196,22 +25196,22 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Talbot's Chainsaw [101931] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Talbot's Chainsaw [101931] — fala 38 wierna (300) faithful v2
     krcgId: 101931,
     name: "Talbot's Chainsaw",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     poolCost: 3,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "press", continues: true }, { kind: "prevent", base: 1 }] }
     ],
   },
   {
-    // Talith [101932] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Talith [101932] — fala 38 wierna (300) faithful v2
     krcgId: 101932,
     name: "Talith",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -25219,22 +25219,22 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tangle Atropos' Hand [101935] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Tangle Atropos' Hand [101935] — fala 38 wierna (300) faithful v2
     krcgId: 101935,
     name: "Tangle Atropos' Hand",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Tara, The Hollow One [101937] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Tara, The Hollow One [101937] — fala 38 wierna (300) faithful v2
     krcgId: 101937,
     name: "Tara, The Hollow One",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 3,
     usable: [],
@@ -25243,7 +25243,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Target Retainer [101941] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Target Retainer [101941] — fala 38 wierna (300) faithful v2
     krcgId: 101941,
     name: "Target Retainer",
     cardType: "combat",
@@ -25254,7 +25254,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Taste of Death [101944] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Taste of Death [101944] — fala 38 wierna (300) faithful v2
     krcgId: 101944,
     name: "Taste of Death",
     cardType: "combat",
@@ -25265,41 +25265,41 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tenebrous Form [101957] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Tenebrous Form [101957] — fala 38 wierna (300) faithful v2
     krcgId: 101957,
     name: "Tenebrous Form",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Terrorists [101961] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Terrorists [101961] — fala 38 wierna (300) faithful v2
     krcgId: 101961,
     name: "Terrorists",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Their Master's Voice [101967] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Their Master's Voice [101967] — fala 38 wierna (300) faithful v2
     krcgId: 101967,
     name: "Their Master's Voice",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Thin Blood [101970] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Thin Blood [101970] — fala 38 wierna (300) faithful v2
     krcgId: 101970,
     name: "Thin Blood",
     cardType: "combat",
@@ -25310,7 +25310,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Thoughts Betrayed [101976] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Thoughts Betrayed [101976] — fala 38 wierna (300) faithful v2
     krcgId: 101976,
     name: "Thoughts Betrayed",
     cardType: "combat",
@@ -25321,21 +25321,21 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Three's a Crowd [101979] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Three's a Crowd [101979] — fala 38 wierna (300) faithful v2
     krcgId: 101979,
     name: "Three's a Crowd",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: true }] }
     ],
   },
   {
-    // Tinglestripe [101985] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Tinglestripe [101985] — fala 38 wierna (300) faithful v2
     krcgId: 101985,
     name: "Tinglestripe",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -25343,7 +25343,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tongue of the Serpent [101988] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Tongue of the Serpent [101988] — fala 38 wierna (300) faithful v2
     krcgId: 101988,
     name: "Tongue of the Serpent",
     cardType: "combat",
@@ -25354,7 +25354,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Torment the Soul [101992] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Torment the Soul [101992] — fala 38 wierna (300) faithful v2
     krcgId: 101992,
     name: "Torment the Soul",
     cardType: "combat",
@@ -25365,37 +25365,37 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tortured Confession [101996] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Tortured Confession [101996] — fala 38 wierna (300) faithful v2
     krcgId: 101996,
     name: "Tortured Confession",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "combatEnds" }] }
     ],
   },
   {
-    // Tourette's Voice [102000] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Tourette's Voice [102000] — fala 38 wierna (300) faithful v2
     krcgId: 102000,
     name: "Tourette's Voice",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Tracker's Mark [102003] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Tracker's Mark [102003] — fala 38 wierna (300) faithful v2
     krcgId: 102003,
     name: "Tracker's Mark",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -29731,20 +29731,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Path of the Void [101372] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Path of the Void [101372] — fala 38 wierna (300) faithful v2
     krcgId: 101372,
     name: "Path of the Void",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Patronage [101375] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Patronage [101375] — fala 38 wierna (300) faithful v2
     krcgId: 101375,
     name: "Patronage",
     cardType: "action",
@@ -29756,18 +29755,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Peace of Khetamon [101379] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // The Peace of Khetamon [101379] — fala 38 wierna (300) faithful v2
     krcgId: 101379,
     name: "The Peace of Khetamon",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Peacemaker [101381] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Peacemaker [101381] — fala 38 wierna (300) faithful v2
     krcgId: 101381,
     name: "Peacemaker",
     cardType: "reaction",
@@ -29779,44 +29778,42 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pentex™ Loves You! [101383] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Pentex™ Loves You! [101383] — fala 38 wierna (300) faithful v2
     krcgId: 101383,
     name: "Pentex™ Loves You!",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Père Lachaise, France [101385] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Père Lachaise, France [101385] — fala 38 wierna (300) faithful v2
     krcgId: 101385,
     name: "Père Lachaise, France",
     cardType: "master",
     bloodCost: 0,
     poolCost: 3,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Permanency [101389] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Permanency [101389] — fala 38 wierna (300) faithful v2
     krcgId: 101389,
     name: "Permanency",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Persistent Echo [101392] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Persistent Echo [101392] — fala 38 wierna (300) faithful v2
     krcgId: 101392,
     name: "Persistent Echo",
     cardType: "action",
@@ -29828,53 +29825,52 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Persona Non Grata [101393] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Persona Non Grata [101393] — fala 38 wierna (300) faithful v2
     krcgId: 101393,
     name: "Persona Non Grata",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Phantom Speaker [101397] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
-    krcgId: 101397,
-    name: "Phantom Speaker",
-    cardType: "actionModifier",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Plasmic Form [101402] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
-    krcgId: 101402,
-    name: "Plasmic Form",
-    cardType: "modifierOrCombat",
-    bloodCost: 1,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Playing for Keeps [101403] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
-    krcgId: 101403,
-    name: "Playing for Keeps",
-    cardType: "master",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Poison the Well of Life [101407] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Phantom Speaker [101397] — fala 38 wierna (300) faithful v2
+    krcgId: 101397,
+    name: "Phantom Speaker",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Plasmic Form [101402] — fala 38 wierna (300) faithful v2
+    krcgId: 101402,
+    name: "Plasmic Form",
+    cardType: "actionmodifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Playing for Keeps [101403] — fala 38 wierna (300) faithful v2
+    krcgId: 101403,
+    name: "Playing for Keeps",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Poison the Well of Life [101407] — fala 38 wierna (300) faithful v2
     krcgId: 101407,
     name: "Poison the Well of Life",
     cardType: "action",
@@ -29885,54 +29881,52 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Police Department [101410] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Police Department [101410] — fala 38 wierna (300) faithful v2
     krcgId: 101410,
     name: "Police Department",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: true }] }
+    ],
+  },
+  {
+    // Political Flux [101414] — fala 38 wierna (300) faithful v2
+    krcgId: 101414,
+    name: "Political Flux",
+    cardType: "politicalAction",
+    bloodCost: 0,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Political Flux [101414] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
-    krcgId: 101414,
-    name: "Political Flux",
-    cardType: "action",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Political Seizure [101416] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Political Seizure [101416] — fala 38 wierna (300) faithful v2
     krcgId: 101416,
     name: "Political Seizure",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // The Portrait [101422] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // The Portrait [101422] — fala 38 wierna (300) faithful v2
     krcgId: 101422,
     name: "The Portrait",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Possession [101423] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Possession [101423] — fala 38 wierna (300) faithful v2
     krcgId: 101423,
     name: "Possession",
     cardType: "action",
@@ -29943,7 +29937,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Potio Martyrium [101425] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Potio Martyrium [101425] — fala 38 wierna (300) faithful v2
     krcgId: 101425,
     name: "Potio Martyrium",
     cardType: "action",
@@ -29954,31 +29948,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Powerbase: Berlin [101432] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Powerbase: Berlin [101432] — fala 38 wierna (300) faithful v2
     krcgId: 101432,
     name: "Powerbase: Berlin",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Powerbase: Cape Verde [101433] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Powerbase: Cape Verde [101433] — fala 38 wierna (300) faithful v2
     krcgId: 101433,
     name: "Powerbase: Cape Verde",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Praetorian Backer [101446] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Praetorian Backer [101446] — fala 38 wierna (300) faithful v2
     krcgId: 101446,
     name: "Praetorian Backer",
     cardType: "action",
@@ -29990,18 +29982,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Praxis Seizure: Venice [101471] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Praxis Seizure: Venice [101471] — fala 38 wierna (300) faithful v2
     krcgId: 101471,
     name: "Praxis Seizure: Venice",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Precision [101474] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Precision [101474] — fala 38 wierna (300) faithful v2
     krcgId: 101474,
     name: "Precision",
     cardType: "action",
@@ -30012,7 +30004,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pressing Flesh [101481] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Pressing Flesh [101481] — fala 38 wierna (300) faithful v2
     krcgId: 101481,
     name: "Pressing Flesh",
     cardType: "action",
@@ -30023,7 +30015,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Principia Discordia [101486] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Principia Discordia [101486] — fala 38 wierna (300) faithful v2
     krcgId: 101486,
     name: "Principia Discordia",
     cardType: "action",
@@ -30036,7 +30028,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Priority Shift [101488] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Priority Shift [101488] — fala 38 wierna (300) faithful v2
     krcgId: 101488,
     name: "Priority Shift",
     cardType: "action",
@@ -30047,7 +30039,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Prison of the Mind [101489] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Prison of the Mind [101489] — fala 38 wierna (300) faithful v2
     krcgId: 101489,
     name: "Prison of the Mind",
     cardType: "action",
@@ -30058,143 +30050,140 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Promise of 1528 [101494] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Promise of 1528 [101494] — fala 38 wierna (300) faithful v2
     krcgId: 101494,
     name: "Promise of 1528",
     cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Protect Thine Own [101499] — fala 38 wierna (300) faithful v2
+    krcgId: 101499,
+    name: "Protect Thine Own",
+    cardType: "politicalAction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Protect Thine Own [101499] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
-    krcgId: 101499,
-    name: "Protect Thine Own",
-    cardType: "action",
-    bloodCost: 1,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Protected Resources [101500] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Protected Resources [101500] — fala 38 wierna (300) faithful v2
     krcgId: 101500,
     name: "Protected Resources",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Provision of the Silsila [101503] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Provision of the Silsila [101503] — fala 38 wierna (300) faithful v2
     krcgId: 101503,
     name: "Provision of the Silsila",
     cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Proxy Kissed [101504] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Proxy Kissed [101504] — fala 38 wierna (300) faithful v2
     krcgId: 101504,
     name: "Proxy Kissed",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Psychic Projection [101509] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Psychic Projection [101509] — fala 38 wierna (300) faithful v2
     krcgId: 101509,
     name: "Psychic Projection",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Psychic Veil [101510] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Psychic Veil [101510] — fala 38 wierna (300) faithful v2
     krcgId: 101510,
     name: "Psychic Veil",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Public Vilification [101514] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Public Vilification [101514] — fala 38 wierna (300) faithful v2
     krcgId: 101514,
     name: "Public Vilification",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Pulse of the Canaille [101517] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
-    krcgId: 101517,
-    name: "Pulse of the Canaille",
-    cardType: "action",
-    bloodCost: 3,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Punish [101518] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
-    krcgId: 101518,
-    name: "Punish",
-    cardType: "actionOrCombat",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "red", effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Purchase Pact [101520] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
-    krcgId: 101520,
-    name: "Purchase Pact",
-    cardType: "master",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Purification [101521] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
-    krcgId: 101521,
-    name: "Purification",
-    cardType: "reaction",
-    bloodCost: 0,
+    // Pulse of the Canaille [101517] — fala 38 wierna (300) faithful v2
+    krcgId: 101517,
+    name: "Pulse of the Canaille",
+    cardType: "action",
+    bloodCost: 3,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 2 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Purity of the Beast [101522] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Punish [101518] — fala 38 wierna (300) faithful v2
+    krcgId: 101518,
+    name: "Punish",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "red", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Purchase Pact [101520] — fala 38 wierna (300) faithful v2
+    krcgId: 101520,
+    name: "Purchase Pact",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Purification [101521] — fala 38 wierna (300) faithful v2
+    krcgId: 101521,
+    name: "Purification",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Purity of the Beast [101522] — fala 38 wierna (300) faithful v2
     krcgId: 101522,
     name: "Purity of the Beast",
     cardType: "action",
@@ -30205,7 +30194,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Putrescent Servitude [101526] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Putrescent Servitude [101526] — fala 38 wierna (300) faithful v2
     krcgId: 101526,
     name: "Putrescent Servitude",
     cardType: "action",
@@ -30216,19 +30205,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Quicksilver Contemplation [101533] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Quicksilver Contemplation [101533] — fala 38 wierna (300) faithful v2
     krcgId: 101533,
     name: "Quicksilver Contemplation",
     cardType: "modifierOrReaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 2 }, { kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyBleed", amount: 2 }, { kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Rampage [101539] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Rampage [101539] — fala 38 wierna (300) faithful v2
     krcgId: 101539,
     name: "Rampage",
     cardType: "action",
@@ -30239,19 +30228,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Random Patterns [101540] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Random Patterns [101540] — fala 38 wierna (300) faithful v2
     krcgId: 101540,
     name: "Random Patterns",
     cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Rapid Healing [101543] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Rapid Healing [101543] — fala 38 wierna (300) faithful v2
     krcgId: 101543,
     name: "Rapid Healing",
     cardType: "action",
@@ -30262,7 +30251,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rastacourere [101546] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Rastacourere [101546] — fala 38 wierna (300) faithful v2
     krcgId: 101546,
     name: "Rastacourere",
     cardType: "action",
@@ -30274,19 +30263,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ravager [101548] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Ravager [101548] — fala 38 wierna (300) faithful v2
     krcgId: 101548,
     name: "Ravager",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Rave [101549] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Rave [101549] — fala 38 wierna (300) faithful v2
     krcgId: 101549,
     name: "Rave",
     cardType: "action",
@@ -30297,30 +30285,30 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ravnos Acceptance [101551] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Ravnos Acceptance [101551] — fala 38 wierna (300) faithful v2
     krcgId: 101551,
     name: "Ravnos Acceptance",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Rayzeel's Song [101555] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Rayzeel's Song [101555] — fala 38 wierna (300) faithful v2
     krcgId: 101555,
     name: "Rayzeel's Song",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Reality [101560] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Reality [101560] — fala 38 wierna (300) faithful v2
     krcgId: 101560,
     name: "Reality",
     cardType: "action",
@@ -30331,19 +30319,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Realm of the Black Sun [101562] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // The Realm of the Black Sun [101562] — fala 38 wierna (300) faithful v2
     krcgId: 101562,
     name: "The Realm of the Black Sun",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Recruiting Party [101568] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Recruiting Party [101568] — fala 38 wierna (300) faithful v2
     krcgId: 101568,
     name: "Recruiting Party",
     cardType: "action",
@@ -30354,7 +30341,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Recure of the Homeland [101571] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Recure of the Homeland [101571] — fala 38 wierna (300) faithful v2
     krcgId: 101571,
     name: "Recure of the Homeland",
     cardType: "action",
@@ -30365,7 +30352,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Red List [101574] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Red List [101574] — fala 38 wierna (300) faithful v2
     krcgId: 101574,
     name: "Red List",
     cardType: "action",
@@ -30376,7 +30363,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Redistribution [101579] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Redistribution [101579] — fala 38 wierna (300) faithful v2
     krcgId: 101579,
     name: "Redistribution",
     cardType: "action",
@@ -30387,7 +30374,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Reform Body [101581] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Reform Body [101581] — fala 38 wierna (300) faithful v2
     krcgId: 101581,
     name: "Reform Body",
     cardType: "modifierOrReaction",
@@ -30398,7 +30385,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Regeneration [101585] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Regeneration [101585] — fala 38 wierna (300) faithful v2
     krcgId: 101585,
     name: "Regeneration",
     cardType: "action",
@@ -30409,20 +30396,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Regenerative Blood [101586] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Regenerative Blood [101586] — fala 38 wierna (300) faithful v2
     krcgId: 101586,
     name: "Regenerative Blood",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Reindoctrination [101589] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Reindoctrination [101589] — fala 38 wierna (300) faithful v2
     krcgId: 101589,
     name: "Reindoctrination",
     cardType: "action",
@@ -30433,30 +30419,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Release of the Shackled Soul [101593] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Release of the Shackled Soul [101593] — fala 38 wierna (300) faithful v2
     krcgId: 101593,
     name: "Release of the Shackled Soul",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Remover [101601] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Remover [101601] — fala 38 wierna (300) faithful v2
     krcgId: 101601,
     name: "Remover",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Renewed Vigor [101603] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Renewed Vigor [101603] — fala 38 wierna (300) faithful v2
     krcgId: 101603,
     name: "Renewed Vigor",
     cardType: "action",
@@ -30468,7 +30453,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Repair the Undead Flesh [101604] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Repair the Undead Flesh [101604] — fala 38 wierna (300) faithful v2
     krcgId: 101604,
     name: "Repair the Undead Flesh",
     cardType: "action",
@@ -30479,7 +30464,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Resilient Mind [101609] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Resilient Mind [101609] — fala 38 wierna (300) faithful v2
     krcgId: 101609,
     name: "Resilient Mind",
     cardType: "action",
@@ -30490,7 +30475,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Restructure [101615] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Restructure [101615] — fala 38 wierna (300) faithful v2
     krcgId: 101615,
     name: "Restructure",
     cardType: "action",
@@ -30501,7 +30486,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Resume the Coil [101616] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Resume the Coil [101616] — fala 38 wierna (300) faithful v2
     krcgId: 101616,
     name: "Resume the Coil",
     cardType: "action",
@@ -30512,7 +30497,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Resurrection [101617] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Resurrection [101617] — fala 38 wierna (300) faithful v2
     krcgId: 101617,
     name: "Resurrection",
     cardType: "action",
@@ -30524,7 +30509,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Retain the Quick Blood [101618] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Retain the Quick Blood [101618] — fala 38 wierna (300) faithful v2
     krcgId: 101618,
     name: "Retain the Quick Blood",
     cardType: "action",
@@ -30536,19 +30521,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Retribution [101619] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Retribution [101619] — fala 38 wierna (300) faithful v2
     krcgId: 101619,
     name: "Retribution",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Reunion Kamut [101621] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Reunion Kamut [101621] — fala 38 wierna (300) faithful v2
     krcgId: 101621,
     name: "Reunion Kamut",
     cardType: "action",
@@ -30559,7 +30543,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Revelation of the Sire [101625] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Revelation of the Sire [101625] — fala 38 wierna (300) faithful v2
     krcgId: 101625,
     name: "Revelation of the Sire",
     cardType: "action",
@@ -30570,43 +30554,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Reversal of Fortunes [101629] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Reversal of Fortunes [101629] — fala 38 wierna (300) faithful v2
     krcgId: 101629,
     name: "Reversal of Fortunes",
-    cardType: "action",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Revocation of Tyre [101630] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
-    krcgId: 101630,
-    name: "Revocation of Tyre",
-    cardType: "action",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Ritual Challenge [101641] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
-    krcgId: 101641,
-    name: "Ritual Challenge",
-    cardType: "action",
-    bloodCost: 1,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Ritual of the Bitter Rose [101642] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
-    krcgId: 101642,
-    name: "Ritual of the Bitter Rose",
-    cardType: "modifierOrCombat",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -30614,7 +30565,40 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Root of Vitality [101652] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Revocation of Tyre [101630] — fala 38 wierna (300) faithful v2
+    krcgId: 101630,
+    name: "Revocation of Tyre",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ritual Challenge [101641] — fala 38 wierna (300) faithful v2
+    krcgId: 101641,
+    name: "Ritual Challenge",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ritual of the Bitter Rose [101642] — fala 38 wierna (300) faithful v2
+    krcgId: 101642,
+    name: "Ritual of the Bitter Rose",
+    cardType: "actionmodifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Root of Vitality [101652] — fala 38 wierna (300) faithful v2
     krcgId: 101652,
     name: "Root of Vitality",
     cardType: "action",
@@ -30625,7 +30609,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rubicon [101657] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Rubicon [101657] — fala 38 wierna (300) faithful v2
     krcgId: 101657,
     name: "Rubicon",
     cardType: "action",
@@ -30636,7 +30620,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rumble [101661] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Rumble [101661] — fala 38 wierna (300) faithful v2
     krcgId: 101661,
     name: "Rumble",
     cardType: "action",
@@ -30647,42 +30631,41 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rumors of Gehenna [101663] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Rumors of Gehenna [101663] — fala 38 wierna (300) faithful v2
     krcgId: 101663,
     name: "Rumors of Gehenna",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Sabbat Inquisitor [101666] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sabbat Inquisitor [101666] — fala 38 wierna (300) faithful v2
     krcgId: 101666,
     name: "Sabbat Inquisitor",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Samuel Haight [101675] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Samuel Haight [101675] — fala 38 wierna (300) faithful v2
     krcgId: 101675,
     name: "Samuel Haight",
     cardType: "ally",
     bloodCost: 0,
     poolCost: 5,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Sanguine Instruction [101680] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sanguine Instruction [101680] — fala 38 wierna (300) faithful v2
     krcgId: 101680,
     name: "Sanguine Instruction",
     cardType: "action",
@@ -30693,7 +30676,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // SchreckNET [101690] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // SchreckNET [101690] — fala 38 wierna (300) faithful v2
     krcgId: 101690,
     name: "SchreckNET",
     cardType: "action",
@@ -30704,44 +30687,41 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Seattle Committee [101704] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Seattle Committee [101704] — fala 38 wierna (300) faithful v2
     krcgId: 101704,
     name: "Seattle Committee",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // The Secret Library of Alexandria [101708] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // The Secret Library of Alexandria [101708] — fala 38 wierna (300) faithful v2
     krcgId: 101708,
     name: "The Secret Library of Alexandria",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Secret Passage [101710] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Secret Passage [101710] — fala 38 wierna (300) faithful v2
     krcgId: 101710,
     name: "Secret Passage",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Seeds of Corruption [101713] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Seeds of Corruption [101713] — fala 38 wierna (300) faithful v2
     krcgId: 101713,
     name: "Seeds of Corruption",
     cardType: "action",
@@ -30752,43 +30732,42 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sense Death [101716] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sense Death [101716] — fala 38 wierna (300) faithful v2
     krcgId: 101716,
     name: "Sense Death",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }, { kind: "press", continues: true }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }, { kind: "press", continues: true }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Sense the Sin [101718] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sense the Sin [101718] — fala 38 wierna (300) faithful v2
     krcgId: 101718,
     name: "Sense the Sin",
     cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyBleed", amount: 2 }, { kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 2 }, { kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Sense Vibrations [101719] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sense Vibrations [101719] — fala 38 wierna (300) faithful v2
     krcgId: 101719,
     name: "Sense Vibrations",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Sense Vitality [101720] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sense Vitality [101720] — fala 38 wierna (300) faithful v2
     krcgId: 101720,
     name: "Sense Vitality",
     cardType: "action",
@@ -30800,7 +30779,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sensory Deprivation [101721] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sensory Deprivation [101721] — fala 38 wierna (300) faithful v2
     krcgId: 101721,
     name: "Sensory Deprivation",
     cardType: "action",
@@ -30811,7 +30790,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sensory Overload [101722] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sensory Overload [101722] — fala 38 wierna (300) faithful v2
     krcgId: 101722,
     name: "Sensory Overload",
     cardType: "action",
@@ -30822,30 +30801,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Seraph [101723] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Seraph [101723] — fala 38 wierna (300) faithful v2
     krcgId: 101723,
     name: "Seraph",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Sermon of Caine [101726] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
-    krcgId: 101726,
-    name: "Sermon of Caine",
-    cardType: "master",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Set's Call [101730] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sermon of Caine [101726] — fala 38 wierna (300) faithful v2
+    krcgId: 101726,
+    name: "Sermon of Caine",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Set's Call [101730] — fala 38 wierna (300) faithful v2
     krcgId: 101730,
     name: "Set's Call",
     cardType: "reaction",
@@ -30856,7 +30834,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Set's Curse [101731] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Set's Curse [101731] — fala 38 wierna (300) faithful v2
     krcgId: 101731,
     name: "Set's Curse",
     cardType: "action",
@@ -30867,41 +30845,41 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow of Taint [101739] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Shadow of Taint [101739] — fala 38 wierna (300) faithful v2
     krcgId: 101739,
     name: "Shadow of Taint",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Shadow of the Beast [101740] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Shadow of the Beast [101740] — fala 38 wierna (300) faithful v2
     krcgId: 101740,
     name: "Shadow of the Beast",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }, { kind: "press", continues: true }] }
     ],
   },
   {
-    // Shadow Twin [101746] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Shadow Twin [101746] — fala 38 wierna (300) faithful v2
     krcgId: 101746,
     name: "Shadow Twin",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Shadowed Eyes [101747] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Shadowed Eyes [101747] — fala 38 wierna (300) faithful v2
     krcgId: 101747,
     name: "Shadowed Eyes",
     cardType: "action",
@@ -30913,32 +30891,30 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shakar [101748] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Shakar [101748] — fala 38 wierna (300) faithful v2
     krcgId: 101748,
     name: "Shakar",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Shakar: the Hunt [101749] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Shakar: the Hunt [101749] — fala 38 wierna (300) faithful v2
     krcgId: 101749,
     name: "Shakar: the Hunt",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Shared Nightmare [101755] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Shared Nightmare [101755] — fala 38 wierna (300) faithful v2
     krcgId: 101755,
     name: "Shared Nightmare",
     cardType: "action",
@@ -30949,32 +30925,32 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shattering [101759] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Shattering [101759] — fala 38 wierna (300) faithful v2
     krcgId: 101759,
     name: "Shattering",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Shattering Crescendo [101761] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Shattering Crescendo [101761] — fala 38 wierna (300) faithful v2
     krcgId: 101761,
     name: "Shattering Crescendo",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "mel", effects: [{ kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Sheepdog [101762] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sheepdog [101762] — fala 38 wierna (300) faithful v2
     krcgId: 101762,
     name: "Sheepdog",
     cardType: "action",
@@ -30985,18 +30961,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shell Break [101763] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Shell Break [101763] — fala 38 wierna (300) faithful v2
     krcgId: 101763,
     name: "Shell Break",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Shepherd's Innocence [101765] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Shepherd's Innocence [101765] — fala 38 wierna (300) faithful v2
     krcgId: 101765,
     name: "Shepherd's Innocence",
     cardType: "action",
@@ -31007,22 +30983,21 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shock Troops [101768] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Shock Troops [101768] — fala 38 wierna (300) faithful v2
     krcgId: 101768,
     name: "Shock Troops",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Siren's Lure [101786] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Siren's Lure [101786] — fala 38 wierna (300) faithful v2
     krcgId: 101786,
     name: "Siren's Lure",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -31031,7 +31006,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sixth Tradition: Destruction [101788] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sixth Tradition: Destruction [101788] — fala 38 wierna (300) faithful v2
     krcgId: 101788,
     name: "Sixth Tradition: Destruction",
     cardType: "action",
@@ -31042,34 +31017,34 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Skaald [101789] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Skaald [101789] — fala 38 wierna (300) faithful v2
     krcgId: 101789,
     name: "Skaald",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Skullduggery [101796] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Skullduggery [101796] — fala 38 wierna (300) faithful v2
     krcgId: 101796,
     name: "Skullduggery",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Slake the Thirst [101797] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Slake the Thirst [101797] — fala 38 wierna (300) faithful v2
     krcgId: 101797,
     name: "Slake the Thirst",
-    cardType: "modifierOrCombat",
+    cardType: "actionmodifier",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -31077,7 +31052,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sleep of Reason [101803] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sleep of Reason [101803] — fala 38 wierna (300) faithful v2
     krcgId: 101803,
     name: "Sleep of Reason",
     cardType: "action",
@@ -31088,7 +31063,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sleight of Hand [101806] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sleight of Hand [101806] — fala 38 wierna (300) faithful v2
     krcgId: 101806,
     name: "Sleight of Hand",
     cardType: "action",
@@ -31099,44 +31074,43 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Smash and Grab [101809] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Smash and Grab [101809] — fala 38 wierna (300) faithful v2
     krcgId: 101809,
     name: "Smash and Grab",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Smear Campaign [101810] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Smear Campaign [101810] — fala 38 wierna (300) faithful v2
     krcgId: 101810,
     name: "Smear Campaign",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Snipe Hunt [101815] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Snipe Hunt [101815] — fala 38 wierna (300) faithful v2
     krcgId: 101815,
     name: "Snipe Hunt",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Song of Pan [101826] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Song of Pan [101826] — fala 38 wierna (300) faithful v2
     krcgId: 101826,
     name: "Song of Pan",
     cardType: "action",
@@ -31144,22 +31118,22 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Songs of the Distant Vitae [101828] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Songs of the Distant Vitae [101828] — fala 38 wierna (300) faithful v2
     krcgId: 101828,
     name: "Songs of the Distant Vitae",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Soul Decoration [101830] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Soul Decoration [101830] — fala 38 wierna (300) faithful v2
     krcgId: 101830,
     name: "Soul Decoration",
     cardType: "action",
@@ -31171,7 +31145,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Soul Feasting [101831] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Soul Feasting [101831] — fala 38 wierna (300) faithful v2
     krcgId: 101831,
     name: "Soul Feasting",
     cardType: "action",
@@ -31182,7 +31156,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Soul of the Earth [101833] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Soul of the Earth [101833] — fala 38 wierna (300) faithful v2
     krcgId: 101833,
     name: "Soul of the Earth",
     cardType: "action",
@@ -31193,22 +31167,22 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Soul Painting [101834] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Soul Painting [101834] — fala 38 wierna (300) faithful v2
     krcgId: 101834,
     name: "Soul Painting",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Soul Stealing [101836] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Soul Stealing [101836] — fala 38 wierna (300) faithful v2
     krcgId: 101836,
     name: "Soul Stealing",
-    cardType: "modifierOrCombat",
+    cardType: "actionmodifier",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -31216,19 +31190,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sound of a Breaking Oath [101837] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sound of a Breaking Oath [101837] — fala 38 wierna (300) faithful v2
     krcgId: 101837,
     name: "Sound of a Breaking Oath",
-    cardType: "reaction",
+    cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Sowing Dissension [101838] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sowing Dissension [101838] — fala 38 wierna (300) faithful v2
     krcgId: 101838,
     name: "Sowing Dissension",
     cardType: "action",
@@ -31239,18 +31213,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spectral Divination [101843] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Spectral Divination [101843] — fala 38 wierna (300) faithful v2
     krcgId: 101843,
     name: "Spectral Divination",
     cardType: "modifierOrReaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Speed of Thought [101844] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Speed of Thought [101844] — fala 38 wierna (300) faithful v2
     krcgId: 101844,
     name: "Speed of Thought",
     cardType: "action",
@@ -31261,7 +31235,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spell of Life [101845] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Spell of Life [101845] — fala 38 wierna (300) faithful v2
     krcgId: 101845,
     name: "Spell of Life",
     cardType: "action",
@@ -31272,32 +31246,31 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spirit Marionette [101848] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Spirit Marionette [101848] — fala 38 wierna (300) faithful v2
     krcgId: 101848,
     name: "Spirit Marionette",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Spontaneous Power [101855] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Spontaneous Power [101855] — fala 38 wierna (300) faithful v2
     krcgId: 101855,
     name: "Spontaneous Power",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // The Status Perfectus [101863] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // The Status Perfectus [101863] — fala 38 wierna (300) faithful v2
     krcgId: 101863,
     name: "The Status Perfectus",
     cardType: "action",
@@ -31308,7 +31281,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Steal the Mind [101865] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Steal the Mind [101865] — fala 38 wierna (300) faithful v2
     krcgId: 101865,
     name: "Steal the Mind",
     cardType: "action",
@@ -31320,43 +31293,40 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Storm Sewers [101878] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Storm Sewers [101878] — fala 38 wierna (300) faithful v2
     krcgId: 101878,
     name: "Storm Sewers",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Strained Vitae Supply [101879] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Strained Vitae Supply [101879] — fala 38 wierna (300) faithful v2
     krcgId: 101879,
     name: "Strained Vitae Supply",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Succubus Club [101893] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Succubus Club [101893] — fala 38 wierna (300) faithful v2
     krcgId: 101893,
     name: "Succubus Club",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Summon the Abyss [101900] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Summon the Abyss [101900] — fala 38 wierna (300) faithful v2
     krcgId: 101900,
     name: "Summon the Abyss",
     cardType: "action",
@@ -31367,7 +31337,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sunrise Service [101903] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sunrise Service [101903] — fala 38 wierna (300) faithful v2
     krcgId: 101903,
     name: "Sunrise Service",
     cardType: "action",
@@ -31378,104 +31348,98 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sunset Strip, Hollywood [101904] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Sunset Strip, Hollywood [101904] — fala 38 wierna (300) faithful v2
     krcgId: 101904,
     name: "Sunset Strip, Hollywood",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Suspension of Disbelief [101911] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Suspension of Disbelief [101911] — fala 38 wierna (300) faithful v2
     krcgId: 101911,
     name: "Suspension of Disbelief",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Svadharma [101912] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Svadharma [101912] — fala 38 wierna (300) faithful v2
     krcgId: 101912,
     name: "Svadharma",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Swiftness of the Stag [101916] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Swiftness of the Stag [101916] — fala 38 wierna (300) faithful v2
     krcgId: 101916,
     name: "Swiftness of the Stag",
-    cardType: "modifierOrCombat",
+    cardType: "actionmodifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: true }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: true }] }
     ],
   },
   {
-    // Swiss Cut [101917] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Swiss Cut [101917] — fala 38 wierna (300) faithful v2
     krcgId: 101917,
     name: "Swiss Cut",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Tabriz Assembly [101924] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Tabriz Assembly [101924] — fala 38 wierna (300) faithful v2
     krcgId: 101924,
     name: "Tabriz Assembly",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Tajdid [101927] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Tajdid [101927] — fala 38 wierna (300) faithful v2
     krcgId: 101927,
     name: "Tajdid",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Talons of the Dead [101933] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Talons of the Dead [101933] — fala 38 wierna (300) faithful v2
     krcgId: 101933,
     name: "Talons of the Dead",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Tattoo Signal [101946] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Tattoo Signal [101946] — fala 38 wierna (300) faithful v2
     krcgId: 101946,
     name: "Tattoo Signal",
     cardType: "action",
@@ -31486,31 +31450,30 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Taunt the Caged Beast [101947] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Taunt the Caged Beast [101947] — fala 38 wierna (300) faithful v2
     krcgId: 101947,
     name: "Taunt the Caged Beast",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Thicker than Blood [101969] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Thicker than Blood [101969] — fala 38 wierna (300) faithful v2
     krcgId: 101969,
     name: "Thicker than Blood",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Threading the Path of Orpheus [101977] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Threading the Path of Orpheus [101977] — fala 38 wierna (300) faithful v2
     krcgId: 101977,
     name: "Threading the Path of Orpheus",
     cardType: "action",
@@ -31521,7 +31484,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Thrones Crumble [101981] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Thrones Crumble [101981] — fala 38 wierna (300) faithful v2
     krcgId: 101981,
     name: "Thrones Crumble",
     cardType: "action",
@@ -31532,42 +31495,41 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Touch of Clarity [101998] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Touch of Clarity [101998] — fala 38 wierna (300) faithful v2
     krcgId: 101998,
     name: "Touch of Clarity",
     cardType: "modifierOrReaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Tower of London [102001] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Tower of London [102001] — fala 38 wierna (300) faithful v2
     krcgId: 102001,
     name: "Tower of London",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Tradition Upheld [102004] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Tradition Upheld [102004] — fala 38 wierna (300) faithful v2
     krcgId: 102004,
     name: "Tradition Upheld",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Trainer [102007] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Trainer [102007] — fala 38 wierna (300) faithful v2
     krcgId: 102007,
     name: "Trainer",
     cardType: "action",
@@ -31578,91 +31540,87 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Transcendent Laibon [102009] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Transcendent Laibon [102009] — fala 38 wierna (300) faithful v2
     krcgId: 102009,
     name: "Transcendent Laibon",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Transfusion [102011] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Transfusion [102011] — fala 38 wierna (300) faithful v2
     krcgId: 102011,
     name: "Transfusion",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Travelers Obey the Tenets [102013] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Travelers Obey the Tenets [102013] — fala 38 wierna (300) faithful v2
     krcgId: 102013,
     name: "Travelers Obey the Tenets",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Treat the Sick Mind [102016] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Treat the Sick Mind [102016] — fala 38 wierna (300) faithful v2
     krcgId: 102016,
     name: "Treat the Sick Mind",
-    cardType: "reaction",
+    cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // The Treatment [102017] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // The Treatment [102017] — fala 38 wierna (300) faithful v2
     krcgId: 102017,
     name: "The Treatment",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Treaty of Laibach [102018] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Treaty of Laibach [102018] — fala 38 wierna (300) faithful v2
     krcgId: 102018,
     name: "Treaty of Laibach",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Tremere Convocation [102020] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Tremere Convocation [102020] — fala 38 wierna (300) faithful v2
     krcgId: 102020,
     name: "Tremere Convocation",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // The Trick of the Danya [102024] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // The Trick of the Danya [102024] — fala 38 wierna (300) faithful v2
     krcgId: 102024,
     name: "The Trick of the Danya",
     cardType: "action",
@@ -31673,7 +31631,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Triole's Revenge [102025] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Triole's Revenge [102025] — fala 38 wierna (300) faithful v2
     krcgId: 102025,
     name: "Triole's Revenge",
     cardType: "action",
@@ -31684,12 +31642,11 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Chosen [102027] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Trophy: Chosen [102027] — fala 38 wierna (300) faithful v2
     krcgId: 102027,
     name: "Trophy: Chosen",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
