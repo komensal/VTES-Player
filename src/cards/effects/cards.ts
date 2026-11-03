@@ -20881,6 +20881,5016 @@ export const cardSpecs: CardSpec[] = [
     modes: [],
   },
 
+  {
+    // Abyssal Hunter [100014] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100014,
+    name: "Abyssal Hunter",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Adhocracy [100022] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100022,
+    name: "Adhocracy",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Agate Talisman [100024] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100024,
+    name: "Agate Talisman",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Alacrity [100036] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100036,
+    name: "Alacrity",
+    cardType: "actionModifier",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Amulet of Temporal Perception [100048] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100048,
+    name: "Amulet of Temporal Perception",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ananasi Vampirephile [100051] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100051,
+    name: "Ananasi Vampirephile",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Anarch Manifesto, An [100053] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100053,
+    name: "Anarch Manifesto, An",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Ancestor's Talisman [100063] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100063,
+    name: "The Ancestor's Talisman",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Animal Magnetism [100069] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100069,
+    name: "Animal Magnetism",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Ankara Citadel, Turkey [100071] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100071,
+    name: "The Ankara Citadel, Turkey",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Approximation of Loyalty [100078] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100078,
+    name: "Approximation of Loyalty",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Arcane Appraiser [100080] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100080,
+    name: "Arcane Appraiser",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Argent Baton [100086] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100086,
+    name: "Argent Baton",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Army of Apparitions [100092] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100092,
+    name: "Army of Apparitions",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // As the Crow [100102] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100102,
+    name: "As the Crow",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Asanbonsam Ghoul [100103] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100103,
+    name: "Asanbonsam Ghoul",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Aversion [100118] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100118,
+    name: "Aversion",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Awe [100119] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100119,
+    name: "Awe",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Babble [100122] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100122,
+    name: "Babble",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Baleful Doll [100127] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100127,
+    name: "Baleful Doll",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Banshee Ironwail [100133] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100133,
+    name: "Banshee Ironwail",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Beretta 9mm [100152] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100152,
+    name: "Beretta 9mm",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bima [100160] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100160,
+    name: "Bima",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bind the Night-Walker [100161] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100161,
+    name: "Bind the Night-Walker",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Black Beast [100164] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100164,
+    name: "The Black Beast",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Black Gloves [100166] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100166,
+    name: "Black Gloves",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Black Spiral Buddy [100170] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100170,
+    name: "Black Spiral Buddy",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Black Sunrise [100171] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100171,
+    name: "Black Sunrise",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blanket of Night [100177] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100177,
+    name: "Blanket of Night",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blood Shield [100209] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100209,
+    name: "Blood Shield",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bloodstone [100223] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100223,
+    name: "Bloodstone",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bloodstorm of Chorazin [100224] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100224,
+    name: "Bloodstorm of Chorazin",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bomb [100233] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100233,
+    name: "Bomb",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Book of Going Forth by Night [100239] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100239,
+    name: "The Book of Going Forth by Night",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Breath of the Dragon [100250] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100250,
+    name: "Breath of the Dragon",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brick by Brick [100252] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100252,
+    name: "Brick by Brick",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brigitte Gebauer [100254] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100254,
+    name: "Brigitte Gebauer",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brother's Blood [100257] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100257,
+    name: "Brother's Blood",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bundi [100267] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100267,
+    name: "Bundi",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Business Pressure [100274] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100274,
+    name: "Business Pressure",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Caiaphas Smith [100276] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100276,
+    name: "Caiaphas Smith",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Call of the Hungry Dead [100279] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100279,
+    name: "Call of the Hungry Dead",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Call the Lamprey [100281] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100281,
+    name: "Call the Lamprey",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Camaraderie [100283] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100283,
+    name: "Camaraderie",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Camarilla Vitae Slave [100286] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100286,
+    name: "Camarilla Vitae Slave",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Camera Phone [100287] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100287,
+    name: "Camera Phone",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Canopic Jar [100291] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100291,
+    name: "Canopic Jar",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Car Bomb [100293] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100293,
+    name: "Car Bomb",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cardinal Sin: Failure of Mission [100295] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100295,
+    name: "Cardinal Sin: Failure of Mission",
+    cardType: "reaction",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cardinal Sin: Insubordination [100296] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100296,
+    name: "Cardinal Sin: Insubordination",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Carlton Van Wyk [100298] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100298,
+    name: "Carlton Van Wyk",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Catacombs [100306] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100306,
+    name: "Catacombs",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Chalice of Kinship [100319] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100319,
+    name: "Chalice of Kinship",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Changeling [100324] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100324,
+    name: "Changeling",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Charnas the Imp [100335] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100335,
+    name: "Charnas the Imp",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Chiram's Hold [100343] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100343,
+    name: "Chiram's Hold",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Chiropteran Marauder [100344] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100344,
+    name: "Chiropteran Marauder",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Circle [100349] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100349,
+    name: "Circle",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Circumspect Revelation [100350] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100350,
+    name: "Circumspect Revelation",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Claiming the Body [100352] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100352,
+    name: "Claiming the Body",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Clockwerx [100363] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100363,
+    name: "Clockwerx",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Coagulate Blood [100368] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100368,
+    name: "Coagulate Blood",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cobra Fangs [100370] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100370,
+    name: "Cobra Fangs",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Codex of the Damned [100373] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100373,
+    name: "Codex of the Damned",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cold Aura [100376] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100376,
+    name: "Cold Aura",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Collapse the Arches [100377] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100377,
+    name: "Collapse the Arches",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Coma [100378] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100378,
+    name: "Coma",
+    cardType: "combat",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Command [100380] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100380,
+    name: "Command",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Command of the Beast [100381] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100381,
+    name: "Command of the Beast",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Concoction of Vitality [100394] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100394,
+    name: "Concoction of Vitality",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Confusion [100405] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100405,
+    name: "Confusion",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Confusion of the Eye [100406] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100406,
+    name: "Confusion of the Eye",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Coordinate Attacks [100423] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100423,
+    name: "Coordinate Attacks",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Corpse Balloon [100427] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100427,
+    name: "Corpse Balloon",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Coterie Tactics [100432] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100432,
+    name: "Coterie Tactics",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Council of Seraphim [100433] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100433,
+    name: "Council of Seraphim",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Covincraft [100437] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100437,
+    name: "Covincraft",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Crawling Chamber [100439] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100439,
+    name: "Crawling Chamber",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Creeping Infection [100443] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100443,
+    name: "Creeping Infection",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // CrimethInc. [100446] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100446,
+    name: "CrimethInc.",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Crimson Sentinel [100448] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100448,
+    name: "The Crimson Sentinel",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Crocodile's Tongue [100450] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100450,
+    name: "Crocodile's Tongue",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // D'habi Revenant [100484] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100484,
+    name: "D'habi Revenant",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dagger [100487] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100487,
+    name: "Dagger",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dagon's Call [100488] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100488,
+    name: "Dagon's Call",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Darkling Trickery [100496] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100496,
+    name: "Darkling Trickery",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Darkness Within [100497] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100497,
+    name: "Darkness Within",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Darksight [100498] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100498,
+    name: "Darksight",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dartmoor, England [100499] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100499,
+    name: "Dartmoor, England",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dauntain Black Magician [100500] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100500,
+    name: "Dauntain Black Magician",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Day Operation [100502] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100502,
+    name: "Day Operation",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dead Hand [100503] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100503,
+    name: "Dead Hand",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Deadliest Sin [100505] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100505,
+    name: "The Deadliest Sin",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Death of the Drum [100508] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100508,
+    name: "Death of the Drum",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Deed the Heart's Desire [100513] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100513,
+    name: "Deed the Heart's Desire",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Detect Authority [100532] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100532,
+    name: "Detect Authority",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Disease [100553] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100553,
+    name: "Disease",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Disguised Weapon [100555] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100555,
+    name: "Disguised Weapon",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Divine Image [100565] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100565,
+    name: "Divine Image",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Domain of Evernight [100571] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100571,
+    name: "Domain of Evernight",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Draeven Softfoot [100579] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100579,
+    name: "Draeven Softfoot",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Duma Rafiki [100593] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100593,
+    name: "Duma Rafiki",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dust to Dust [100596] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100596,
+    name: "Dust to Dust",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ears of the Hare [100599] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100599,
+    name: "Ears of the Hare",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Eccentric Billionaire [100607] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100607,
+    name: "Eccentric Billionaire",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ecstasy [100610] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100610,
+    name: "Ecstasy",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Elixir of Distillation [100627] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100627,
+    name: "Elixir of Distillation",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Empowering the Puppet King [100639] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100639,
+    name: "Empowering the Puppet King",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Enchanted Marionette [100641] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100641,
+    name: "Enchanted Marionette",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Enkil Cog [100645] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100645,
+    name: "Enkil Cog",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ensemble [100649] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100649,
+    name: "Ensemble",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Entombment [100651] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100651,
+    name: "Entombment",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Erebus Mask [100657] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100657,
+    name: "Erebus Mask",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Eruption of Vitae [100659] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100659,
+    name: "Eruption of Vitae",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Escaped Mental Patient [100661] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100661,
+    name: "Escaped Mental Patient",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Exuding Blood [100677] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100677,
+    name: "Exuding Blood",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Eye of Hazimel [100678] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100678,
+    name: "Eye of Hazimel",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Eye of Unforgiving Heaven [100679] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100679,
+    name: "Eye of Unforgiving Heaven",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Eyes of Blades [100681] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100681,
+    name: "Eyes of Blades",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Eyes of Chaos [100682] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100682,
+    name: "Eyes of Chaos",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Eyes of the Beast [100683] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100683,
+    name: "Eyes of the Beast",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Eyes of the Dead [100684] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100684,
+    name: "Eyes of the Dead",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Eyes of the Night [100685] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100685,
+    name: "Eyes of the Night",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Faerie Wards [100690] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100690,
+    name: "Faerie Wards",
+    cardType: "reaction",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Falcon's Eye [100694] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100694,
+    name: "Falcon's Eye",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // False Resonance [100697] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100697,
+    name: "False Resonance",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Far Fatuus [100702] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100702,
+    name: "Far Fatuus",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fast Reaction [100705] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100705,
+    name: "Fast Reaction",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fata Morgana [100707] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100707,
+    name: "Fata Morgana",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fear of the Void Below [100711] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100711,
+    name: "Fear of the Void Below",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Final Loosening [100730] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100730,
+    name: "Final Loosening",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Flak Jacket [100739] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100739,
+    name: "Flak Jacket",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Flames of the Netherworld [100741] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100741,
+    name: "Flames of the Netherworld",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Flash Grenade [100745] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100745,
+    name: "Flash Grenade",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fleshcraft [100750] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100750,
+    name: "Fleshcraft",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Flow Within the Mountain [100751] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100751,
+    name: "Flow Within the Mountain",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Foldable Machine Gun [100754] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100754,
+    name: "Foldable Machine Gun",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Folderol [100755] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100755,
+    name: "Folderol",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Follow the Alpha [100756] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100756,
+    name: "Follow the Alpha",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Follow the Blood [100757] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100757,
+    name: "Follow the Blood",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Forced March [100761] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100761,
+    name: "Forced March",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Forger's Hammer [100767] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100767,
+    name: "Forger's Hammer",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Foul Blood [100778] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100778,
+    name: "Foul Blood",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fractura [100783] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100783,
+    name: "Fractura",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Free Fight [100789] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100789,
+    name: "Free Fight",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Friend of Mine [100792] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100792,
+    name: "Friend of Mine",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Funeral Wake [100797] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100797,
+    name: "Funeral Wake",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gang Tactics [100802] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100802,
+    name: "Gang Tactics",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gargoyle Slave [100808] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100808,
+    name: "Gargoyle Slave",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Garrote [100810] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100810,
+    name: "Garrote",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gemini's Mirror [100814] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100814,
+    name: "Gemini's Mirror",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gestalt [100815] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100815,
+    name: "Gestalt",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ghoul Retainer [100819] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100819,
+    name: "Ghoul Retainer",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ghouled [100820] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100820,
+    name: "Ghouled",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ghouled Street Thug [100821] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100821,
+    name: "Ghouled Street Thug",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gianna di Canneto [100823] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100823,
+    name: "Gianna di Canneto",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Giulia Giovanni Abruzzina [100832] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100832,
+    name: "Giulia Giovanni Abruzzina",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Giuseppe, Gravedigger [100833] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100833,
+    name: "Giuseppe, Gravedigger",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Glare of Lies [100835] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100835,
+    name: "Glare of Lies",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obe", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Goth Band [100844] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100844,
+    name: "Goth Band",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gran Madre di Dio, Italy [100847] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100847,
+    name: "Gran Madre di Dio, Italy",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Grasp of the Python [100850] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100850,
+    name: "Grasp of the Python",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Grey Thorne [100858] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100858,
+    name: "Grey Thorne",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Groaning Corpse [100859] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100859,
+    name: "Groaning Corpse",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Guardian Ghoul [100867] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100867,
+    name: "Guardian Ghoul",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Guardian Vigil [100868] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100868,
+    name: "Guardian Vigil",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Guruhi Are the Land [100873] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100873,
+    name: "The Guruhi Are the Land",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hag's Wrinkles [100877] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100877,
+    name: "Hag's Wrinkles",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hall of Mirrors [100879] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100879,
+    name: "Hall of Mirrors",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hand of Conrad [100882] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100882,
+    name: "Hand of Conrad",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hard Case [100887] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100887,
+    name: "Hard Case",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Harzomatuili [100890] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100890,
+    name: "Harzomatuili",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 5,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hatch the Viper [100891] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100891,
+    name: "Hatch the Viper",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hay Ride [100899] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100899,
+    name: "Hay Ride",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Heart's Desire [100905] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100905,
+    name: "Heart's Desire",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Heaven's Gate [100907] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100907,
+    name: "Heaven's Gate",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hellhound [100911] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100911,
+    name: "Hellhound",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hexe [100915] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100915,
+    name: "Hexe",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hidden Lurker [100916] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100916,
+    name: "Hidden Lurker",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hide the Heart [100920] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100920,
+    name: "Hide the Heart",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Highway Haven: RV [100930] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100930,
+    name: "Highway Haven: RV",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Horrid Form [100934] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100934,
+    name: "Horrid Form",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Horrid Reality [100935] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100935,
+    name: "Horrid Reality",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // I am Legion [100947] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100947,
+    name: "I am Legion",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ignis Fatuus [100948] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100948,
+    name: "Ignis Fatuus",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ignore the Searing Flames [100949] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100949,
+    name: "Ignore the Searing Flames",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Immaculate Vitae [100957] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100957,
+    name: "Immaculate Vitae",
+    cardType: "reaction",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Immense Size [100958] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100958,
+    name: "Immense Size",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Imposing Phantasm [100962] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100962,
+    name: "Imposing Phantasm",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Imprison [100963] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100963,
+    name: "Imprison",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "jud", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Improvised Flamethrower [100964] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100964,
+    name: "Improvised Flamethrower",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Impundulu [100966] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100966,
+    name: "Impundulu",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Incriminating Videotape [100972] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100972,
+    name: "Incriminating Videotape",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inevitability of the Void [100974] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100974,
+    name: "Inevitability of the Void",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Infernal Pursuit [100980] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100980,
+    name: "Infernal Pursuit",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Informant [100983] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100983,
+    name: "Informant",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inner Essence [100986] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100986,
+    name: "Inner Essence",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inscription [100989] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100989,
+    name: "Inscription",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inspire Greatness [100992] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100992,
+    name: "Inspire Greatness",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Instantaneous Transformation [100994] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 100994,
+    name: "Instantaneous Transformation",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Into Thin Air [101001] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101001,
+    name: "Into Thin Air",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inveraray, Scotland [101002] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101002,
+    name: "Inveraray, Scotland",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Iron Heart [101009] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101009,
+    name: "Iron Heart",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Jackal [101017] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101017,
+    name: "Jackal",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Jar of Skin Eaters [101020] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101020,
+    name: "Jar of Skin Eaters",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Jones [101023] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101023,
+    name: "The Jones",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Joumlon's Axe [101025] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101025,
+    name: "Joumlon's Axe",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Karavalanisha Vrana [101033] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101033,
+    name: "Karavalanisha Vrana",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Khabar: Honor [101044] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101044,
+    name: "The Khabar: Honor",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Kindred Manipulation [101051] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101051,
+    name: "Kindred Manipulation",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Kiss of Ra [101062] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101062,
+    name: "The Kiss of Ra",
+    cardType: "actionModifier",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Kpist m/45 [101065] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101065,
+    name: "Kpist m/45",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Kraken's Kiss [101066] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101066,
+    name: "Kraken's Kiss",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Lead Fist [101077] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101077,
+    name: "Lead Fist",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Leapfrog [101079] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101079,
+    name: "Leapfrog",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Learjet [101080] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101080,
+    name: "Learjet",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Legacy of Power [101088] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101088,
+    name: "Legacy of Power",
+    cardType: "reaction",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Leonardo, Mortician [101094] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101094,
+    name: "Leonardo, Mortician",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Liquefy the Mortal Coil [101111] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101111,
+    name: "Liquefy the Mortal Coil",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Lobotomy [101116] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101116,
+    name: "Lobotomy",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Local 1111 [101117] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101117,
+    name: "Local 1111",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Loyalist [101130] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101130,
+    name: "Loyalist",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Lyndhurst Estate, New York [101135] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101135,
+    name: "Lyndhurst Estate, New York",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Make an Example [101146] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101146,
+    name: "Make an Example",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Malleable Visage [101159] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101159,
+    name: "Malleable Visage",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Marijava Ghoul [101164] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101164,
+    name: "Marijava Ghoul",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Marijava Thuggee [101165] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101165,
+    name: "Marijava Thuggee",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Marked Path [101169] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101169,
+    name: "Marked Path",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Martinelli's Ring [101174] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101174,
+    name: "Martinelli's Ring",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Masca [101177] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101177,
+    name: "Masca",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Masque of Judas [101181] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101181,
+    name: "Masque of Judas",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Masquer [101182] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101182,
+    name: "Masquer",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mayaparisatya [101188] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101188,
+    name: "Mayaparisatya",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Meat Hook [101191] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101191,
+    name: "Meat Hook",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mehemet of the Ahl-i-Batin [101194] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101194,
+    name: "Mehemet of the Ahl-i-Batin",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Meld with the Land [101196] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101196,
+    name: "Meld with the Land",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Member of the Entourage [101197] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101197,
+    name: "Member of the Entourage",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Memory Rift [101199] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101199,
+    name: "Memory Rift",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mental Maze [101201] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101201,
+    name: "Mental Maze",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mercy for Seth [101203] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101203,
+    name: "Mercy for Seth",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mind of the Wilds [101214] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101214,
+    name: "Mind of the Wilds",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mind Tricks [101216] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101216,
+    name: "Mind Tricks",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ministry [101218] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101218,
+    name: "Ministry",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mirror's Visage [101224] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101224,
+    name: "Mirror's Visage",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Missing Voice [101226] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101226,
+    name: "The Missing Voice",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mistaken Identity [101227] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101227,
+    name: "Mistaken Identity",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Mole [101233] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101233,
+    name: "The Mole",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mole's Tunneling [101234] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101234,
+    name: "Mole's Tunneling",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Momentary Delay [101236] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101236,
+    name: "Momentary Delay",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Monocle of Clarity [101240] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101240,
+    name: "Monocle of Clarity",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Morphean Blow [101244] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101244,
+    name: "Morphean Blow",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mouthpiece [101245] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101245,
+    name: "Mouthpiece",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mummify [101251] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101251,
+    name: "Mummify",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mylan Horseed [101261] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101261,
+    name: "Mylan Horseed",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nar-Sheptha [101264] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101264,
+    name: "Nar-Sheptha",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Neighborhood Watch Commander [101270] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101270,
+    name: "Neighborhood Watch Commander",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nephandus [101272] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101272,
+    name: "Nephandus",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Netwar [101275] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101275,
+    name: "Netwar",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Neutral Guard [101276] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101276,
+    name: "Neutral Guard",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ni Dieu ni Maître [101282] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101282,
+    name: "Ni Dieu ni Maître",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nightshades [101286] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101286,
+    name: "Nightshades",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nightstick [101287] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101287,
+    name: "Nightstick",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // No Confidence [101290] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101290,
+    name: "No Confidence",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Octopod [101314] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101314,
+    name: "Octopod",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ohoyo Hopoksia (Bastet) [101317] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101317,
+    name: "Ohoyo Hopoksia (Bastet)",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Olid Loa [101319] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101319,
+    name: "Olid Loa",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Open Dossier [101322] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101322,
+    name: "Open Dossier",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ophidian Gaze [101325] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101325,
+    name: "Ophidian Gaze",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Orb of Ulain [101328] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101328,
+    name: "Orb of Ulain",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Order of Hermes Cabal [101329] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101329,
+    name: "Order of Hermes Cabal",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Orgy of Blood [101330] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101330,
+    name: "Orgy of Blood",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Oubliette [101334] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101334,
+    name: "Oubliette",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Outside the Hourglass [101338] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101338,
+    name: "Outside the Hourglass",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Palatial Estate [101345] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101345,
+    name: "Palatial Estate",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Patrol [101374] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101374,
+    name: "Patrol",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Perfect Clarity [101386] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101386,
+    name: "Perfect Clarity",
+    cardType: "actionModifier",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Personal Scourge [101395] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101395,
+    name: "Personal Scourge",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Phased Motion Detector [101398] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101398,
+    name: "Phased Motion Detector",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Pier 13, Port of Baltimore [101400] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101400,
+    name: "Pier 13, Port of Baltimore",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Pocket Out of Time [101405] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101405,
+    name: "Pocket Out of Time",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Poker [101408] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101408,
+    name: "Poker",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Political Antagonist [101412] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101412,
+    name: "Political Antagonist",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ponticulus [101419] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101419,
+    name: "Ponticulus",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Pounce [101426] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101426,
+    name: "Pounce",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Power of All [101428] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101428,
+    name: "Power of All",
+    cardType: "reaction",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Power of One [101429] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101429,
+    name: "Power of One",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Priestess of Sekhmet [101484] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101484,
+    name: "Priestess of Sekhmet",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Primal Instincts [101485] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101485,
+    name: "Primal Instincts",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Propaganda of the Deed [101496] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101496,
+    name: "Propaganda of the Deed",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Psalm of the Damned [101505] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101505,
+    name: "Psalm of the Damned",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Pseudo-Blindness [101506] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101506,
+    name: "Pseudo-Blindness",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Psychic Assault [101508] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101508,
+    name: "Psychic Assault",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Psychomachia [101511] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101511,
+    name: "Psychomachia",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Pulled Fangs [101515] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101515,
+    name: "Pulled Fangs",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Puppeteer [101519] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101519,
+    name: "Puppeteer",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Quicken Sight [101531] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101531,
+    name: "Quicken Sight",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Raking Talons [101538] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101538,
+    name: "Raking Talons",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Razor Bat [101556] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101556,
+    name: "Razor Bat",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Read the Winds [101559] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101559,
+    name: "Read the Winds",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reality Mirror [101561] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101561,
+    name: "Reality Mirror",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Recurring Contemplation [101572] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101572,
+    name: "Recurring Contemplation",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Red Herring [101573] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101573,
+    name: "Red Herring",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Red Question [101575] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101575,
+    name: "The Red Question",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Redcap Wilder [101576] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101576,
+    name: "Redcap Wilder",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reliquary: Trinket [101599] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101599,
+    name: "Reliquary: Trinket",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Remnant of the Endless Storm [101600] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101600,
+    name: "Remnant of the Endless Storm",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 6,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Renegade Garou [101602] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101602,
+    name: "Renegade Garou",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 5,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Repulsion [101606] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101606,
+    name: "Repulsion",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Revelation of Wrath [101626] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101626,
+    name: "Revelation of Wrath",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rewind Time [101633] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101633,
+    name: "Rewind Time",
+    cardType: "reaction",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Righteous Aura [101635] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101635,
+    name: "Righteous Aura",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Riposte [101637] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101637,
+    name: "Riposte",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ritual Scalpel [101643] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101643,
+    name: "Ritual Scalpel",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rock Cat [101645] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101645,
+    name: "Rock Cat",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rockheart [101646] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101646,
+    name: "Rockheart",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Roll [101648] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101648,
+    name: "Roll",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rooftop Shadow [101651] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101651,
+    name: "Rooftop Shadow",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ruins of Ceoris [101658] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101658,
+    name: "Ruins of Ceoris",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ruins of Villers Abbey, Belgium [101660] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101660,
+    name: "Ruins of Villers Abbey, Belgium",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Safe Passage [101673] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101673,
+    name: "Safe Passage",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Salt of Thoth [101674] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101674,
+    name: "Salt of Thoth",
+    cardType: "reaction",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // San Lorenzo de El Escorial, Spain [101676] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101676,
+    name: "San Lorenzo de El Escorial, Spain",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sanguine Entrapment [101679] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101679,
+    name: "Sanguine Entrapment",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Sargon Fragment [101681] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101681,
+    name: "The Sargon Fragment",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Save Face [101684] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101684,
+    name: "Save Face",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Scapelli, The Family "Mechanic" [101687] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101687,
+    name: "Scapelli, The Family \"Mechanic\"",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Scobax [101691] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101691,
+    name: "Scobax",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Scorpion's Touch [101694] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101694,
+    name: "Scorpion's Touch",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Scry the Hearthstone [101701] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101701,
+    name: "Scry the Hearthstone",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Scrying of Secrets [101702] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101702,
+    name: "Scrying of Secrets",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Seal of Veddartha [101703] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101703,
+    name: "Seal of Veddartha",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Selective Silence [101714] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101714,
+    name: "Selective Silence",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Seraph's Second [101724] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101724,
+    name: "Seraph's Second",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Serenading the Kami [101725] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101725,
+    name: "Serenading the Kami",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shaal Fragment [101732] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101732,
+    name: "Shaal Fragment",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shackles of Enkidu [101733] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101733,
+    name: "Shackles of Enkidu",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shade [101734] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101734,
+    name: "Shade",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shadow Body [101735] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101735,
+    name: "Shadow Body",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shadow Court Satyr [101737] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101737,
+    name: "Shadow Court Satyr",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shadow Feint [101738] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101738,
+    name: "Shadow Feint",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shadow Parasite [101742] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101742,
+    name: "Shadow Parasite",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shadow Play [101743] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101743,
+    name: "Shadow Play",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shadow Step [101744] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101744,
+    name: "Shadow Step",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shadow Strike [101745] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101745,
+    name: "Shadow Strike",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shattered Mirror [101758] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101758,
+    name: "Shattered Mirror",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shell Game [101764] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101764,
+    name: "Shell Game",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shilmulo Deception [101766] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101766,
+    name: "Shilmulo Deception",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shotgun Ritual [101770] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101770,
+    name: "Shotgun Ritual",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shoulder Drop [101771] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101771,
+    name: "Shoulder Drop",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shroud Mastery [101773] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101773,
+    name: "Shroud Mastery",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shroud of Absence [101774] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101774,
+    name: "Shroud of Absence",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shroud of Night [101775] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101775,
+    name: "Shroud of Night",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Silence of Death [101782] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101782,
+    name: "Silence of Death",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sins of the Cauchemar [101783] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101783,
+    name: "Sins of the Cauchemar",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Skin of the Adder [101793] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101793,
+    name: "Skin of the Adder",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Skin of the Chameleon [101794] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101794,
+    name: "Skin of the Chameleon",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Skin Trap [101795] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101795,
+    name: "Skin Trap",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sleep Unseen [101804] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101804,
+    name: "Sleep Unseen",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Smite [101812] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101812,
+    name: "Smite",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ven", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Smoke and Mirrors [101813] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101813,
+    name: "Smoke and Mirrors",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Soar [101818] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101818,
+    name: "Soar",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Soul Gem of Etrius [101832] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101832,
+    name: "Soul Gem of Etrius",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Speak with Spirits [101840] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101840,
+    name: "Speak with Spirits",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Spike-Thrower [101846] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101846,
+    name: "Spike-Thrower",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Spiritual Intervention [101852] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101852,
+    name: "Spiritual Intervention",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Spiritual Protector [101853] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101853,
+    name: "Spiritual Protector",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Squirrel Balance [101858] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101858,
+    name: "Squirrel Balance",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Starshell Grenade Launcher [101860] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101860,
+    name: "Starshell Grenade Launcher",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Starvation of Marena [101861] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101861,
+    name: "Starvation of Marena",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Still the Mortal Flesh [101871] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101871,
+    name: "Still the Mortal Flesh",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Stone Dog [101873] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101873,
+    name: "Stone Dog",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Stone Quills [101874] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101874,
+    name: "Stone Quills",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Stone Travel [101875] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101875,
+    name: "Stone Travel",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Stonestrength [101876] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101876,
+    name: "Stonestrength",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Strike at the True Flesh [101885] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101885,
+    name: "Strike at the True Flesh",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Strix [101887] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101887,
+    name: "Strix",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Stutter-Step [101889] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101889,
+    name: "Stutter-Step",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Succubus [101892] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101892,
+    name: "Succubus",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Succulent Vitae [101894] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101894,
+    name: "Succulent Vitae",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Survivalist [101910] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101910,
+    name: "Survivalist",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Swoop [101918] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101918,
+    name: "Swoop",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sword of Judgment [101919] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101919,
+    name: "Sword of Judgment",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sword of Nuln [101920] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101920,
+    name: "Sword of Nuln",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sword of Troile [101922] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101922,
+    name: "Sword of Troile",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tainted Spring [101925] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101925,
+    name: "Tainted Spring",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Talaq, The Immortal [101930] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101930,
+    name: "Talaq, The Immortal",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Talbot's Chainsaw [101931] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101931,
+    name: "Talbot's Chainsaw",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Talith [101932] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101932,
+    name: "Talith",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tangle Atropos' Hand [101935] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101935,
+    name: "Tangle Atropos' Hand",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tara, The Hollow One [101937] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101937,
+    name: "Tara, The Hollow One",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Target Retainer [101941] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101941,
+    name: "Target Retainer",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Taste of Death [101944] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101944,
+    name: "Taste of Death",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tenebrous Form [101957] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101957,
+    name: "Tenebrous Form",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Terrorists [101961] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101961,
+    name: "Terrorists",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Their Master's Voice [101967] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101967,
+    name: "Their Master's Voice",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Thin Blood [101970] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101970,
+    name: "Thin Blood",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Thoughts Betrayed [101976] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101976,
+    name: "Thoughts Betrayed",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Three's a Crowd [101979] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101979,
+    name: "Three's a Crowd",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tinglestripe [101985] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101985,
+    name: "Tinglestripe",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tongue of the Serpent [101988] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101988,
+    name: "Tongue of the Serpent",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Torment the Soul [101992] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101992,
+    name: "Torment the Soul",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tortured Confession [101996] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 101996,
+    name: "Tortured Confession",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tourette's Voice [102000] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102000,
+    name: "Tourette's Voice",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tracker's Mark [102003] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102003,
+    name: "Tracker's Mark",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Truth in Ink [102043] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102043,
+    name: "Truth in Ink",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Truth of a Thousand Lies [102044] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102044,
+    name: "Truth of a Thousand Lies",
+    cardType: "actionModifier",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tunnel Runner [102047] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102047,
+    name: "Tunnel Runner",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tye Cooper [102053] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102053,
+    name: "Tye Cooper",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Uncontrollable Rage [102058] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102058,
+    name: "Uncontrollable Rage",
+    cardType: "actionModifier",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Under My Skin [102062] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102062,
+    name: "Under My Skin",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Undying Thirst [102069] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102069,
+    name: "Undying Thirst",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Unleash the Hounds [102077] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102077,
+    name: "Unleash the Hounds",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Vascular Explosion [102091] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102091,
+    name: "Vascular Explosion",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Veil of Silence [102096] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102096,
+    name: "Veil of Silence",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Veiled Sight [102098] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102098,
+    name: "Veiled Sight",
+    cardType: "reaction",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Vendetta [102101] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102101,
+    name: "Vendetta",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Vial of Garou Blood [102115] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102115,
+    name: "Vial of Garou Blood",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Virtuosa [102124] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102124,
+    name: "Virtuosa",
+    cardType: "actionModifier",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Vivienne Géroux [102128] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102128,
+    name: "Vivienne Géroux",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Voice of Madness [102129] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102129,
+    name: "Voice of Madness",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Voices of the Castle [102130] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102130,
+    name: "Voices of the Castle",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Walk of Caine [102138] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102138,
+    name: "Walk of Caine",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Walks-With-Might [102141] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102141,
+    name: "Walks-With-Might",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Watch Commander [102154] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102154,
+    name: "Watch Commander",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Wave of Lethargy [102161] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102161,
+    name: "Wave of Lethargy",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Weakness [102163] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102163,
+    name: "Weakness",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Weigh the Heart [102168] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102168,
+    name: "Weigh the Heart",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Wendell Delburton [102173] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102173,
+    name: "Wendell Delburton",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Werewolf Pack [102174] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102174,
+    name: "Werewolf Pack",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Will-o'-the-Wisp [102183] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102183,
+    name: "Will-o'-the-Wisp",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Winchester Mansion [102184] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102184,
+    name: "Winchester Mansion",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Wolf Companion [102191] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102191,
+    name: "Wolf Companion",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Writ of Acceptance [102196] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102196,
+    name: "Writ of Acceptance",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Wrong and Crosswise [102197] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102197,
+    name: "Wrong and Crosswise",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Zaire River Ferry [102203] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102203,
+    name: "Zaire River Ferry",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Enhanced Coagulant [102238] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102238,
+    name: "Enhanced Coagulant",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ritual Goblet [102243] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102243,
+    name: "Ritual Goblet",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Valerie Diaz, Antigen Commander [102245] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102245,
+    name: "Valerie Diaz, Antigen Commander",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Loup [102273] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    krcgId: 102273,
+    name: "Loup",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+
 ];
 
 /**
@@ -29447,50 +34457,66 @@ export const implementedIds: number[] = [
   100006,
   100012,
   100013,
+  100014,
   100015,
   100016,
   100018,
   100020,
   100021,
+  100022,
+  100024,
   100027,
   100029,
   100031,
   100032,
   100033,
+  100036,
   100037,
   100040,
   100042,
   100043,
   100046,
   100047,
+  100048,
   100049,
+  100051,
   100052,
+  100053,
   100054,
   100055,
   100056,
   100058,
   100059,
+  100063,
   100064,
   100065,
   100066,
+  100069,
   100070,
+  100071,
   100076,
   100077,
+  100078,
   100079,
+  100080,
   100081,
   100082,
   100083,
   100084,
   100085,
+  100086,
   100087,
   100089,
   100091,
+  100092,
   100093,
   100094,
   100095,
   100096,
   100099,
   100101,
+  100102,
+  100103,
   100104,
   100105,
   100107,
@@ -29501,14 +34527,19 @@ export const implementedIds: number[] = [
   100114,
   100115,
   100117,
+  100118,
+  100119,
   100121,
+  100122,
   100123,
   100124,
   100125,
   100126,
+  100127,
   100130,
   100131,
   100132,
+  100133,
   100135,
   100136,
   100137,
@@ -29518,15 +34549,24 @@ export const implementedIds: number[] = [
   100146,
   100148,
   100149,
+  100152,
   100153,
   100157,
   100158,
+  100160,
+  100161,
   100162,
   100163,
+  100164,
   100165,
+  100166,
+  100170,
+  100171,
   100172,
   100174,
   100175,
+  100177,
+  100178,
   100180,
   100183,
   100187,
@@ -29541,12 +34581,15 @@ export const implementedIds: number[] = [
   100203,
   100205,
   100208,
+  100209,
   100211,
   100212,
   100214,
   100215,
   100219,
   100222,
+  100223,
+  100224,
   100226,
   100227,
   100228,
@@ -29554,38 +34597,58 @@ export const implementedIds: number[] = [
   100230,
   100231,
   100232,
+  100233,
   100235,
   100236,
   100237,
   100238,
+  100239,
   100241,
   100243,
   100244,
   100246,
   100247,
+  100250,
   100251,
+  100252,
+  100254,
+  100257,
   100259,
   100260,
   100262,
   100264,
   100266,
+  100267,
   100268,
   100269,
   100271,
   100272,
   100273,
+  100274,
+  100276,
+  100279,
+  100281,
   100282,
+  100283,
   100284,
   100285,
+  100286,
+  100287,
   100288,
   100289,
   100290,
+  100291,
   100292,
+  100293,
   100294,
+  100295,
+  100296,
   100297,
+  100298,
   100301,
   100303,
   100304,
+  100306,
   100307,
   100308,
   100309,
@@ -29593,37 +34656,58 @@ export const implementedIds: number[] = [
   100312,
   100315,
   100317,
+  100319,
+  100320,
   100321,
   100323,
+  100324,
   100325,
   100327,
   100328,
   100329,
   100332,
   100333,
+  100335,
   100337,
   100338,
   100339,
   100342,
+  100343,
+  100344,
+  100349,
+  100350,
+  100352,
   100354,
   100356,
   100360,
   100361,
   100362,
+  100363,
   100364,
   100366,
   100367,
+  100368,
+  100370,
+  100373,
   100374,
+  100376,
+  100377,
+  100378,
   100379,
+  100380,
+  100381,
   100382,
   100385,
   100389,
   100390,
   100391,
   100392,
+  100394,
   100401,
   100403,
   100404,
+  100405,
+  100406,
   100408,
   100409,
   100410,
@@ -29632,15 +34716,25 @@ export const implementedIds: number[] = [
   100416,
   100419,
   100420,
+  100423,
   100426,
+  100427,
   100428,
   100431,
+  100432,
+  100433,
   100435,
+  100437,
+  100439,
   100441,
   100442,
+  100443,
   100444,
   100445,
+  100446,
   100447,
+  100448,
+  100450,
   100453,
   100455,
   100457,
@@ -29657,17 +34751,30 @@ export const implementedIds: number[] = [
   100472,
   100476,
   100478,
+  100484,
   100485,
+  100487,
+  100488,
   100492,
   100493,
   100494,
   100495,
+  100496,
+  100497,
+  100498,
+  100499,
+  100500,
   100501,
+  100502,
+  100503,
   100504,
+  100505,
   100506,
   100507,
+  100508,
   100510,
   100511,
+  100513,
   100515,
   100516,
   100518,
@@ -29677,25 +34784,31 @@ export const implementedIds: number[] = [
   100523,
   100526,
   100529,
+  100532,
   100533,
   100541,
   100545,
   100549,
   100550,
+  100553,
   100554,
+  100555,
   100557,
   100558,
   100559,
   100560,
   100563,
   100564,
+  100565,
   100567,
   100568,
   100570,
+  100571,
   100572,
   100573,
   100576,
   100577,
+  100579,
   100580,
   100581,
   100582,
@@ -29703,15 +34816,20 @@ export const implementedIds: number[] = [
   100586,
   100588,
   100591,
+  100593,
   100594,
+  100596,
   100597,
   100598,
+  100599,
   100600,
   100601,
   100602,
   100604,
   100605,
+  100607,
   100609,
+  100610,
   100616,
   100617,
   100618,
@@ -29719,6 +34837,7 @@ export const implementedIds: number[] = [
   100620,
   100624,
   100625,
+  100627,
   100628,
   100629,
   100630,
@@ -29727,28 +34846,51 @@ export const implementedIds: number[] = [
   100633,
   100636,
   100638,
+  100639,
   100640,
+  100641,
   100644,
+  100645,
   100646,
   100647,
+  100649,
+  100651,
   100652,
   100653,
   100656,
+  100657,
+  100659,
   100660,
+  100661,
   100664,
   100666,
   100671,
   100672,
   100676,
+  100677,
+  100678,
+  100679,
   100680,
+  100681,
+  100682,
+  100683,
+  100684,
+  100685,
   100687,
   100688,
+  100690,
   100692,
   100693,
+  100694,
+  100697,
   100698,
+  100702,
   100703,
   100704,
+  100705,
+  100707,
   100709,
+  100711,
   100712,
   100713,
   100714,
@@ -29763,23 +34905,36 @@ export const implementedIds: number[] = [
   100726,
   100727,
   100729,
+  100730,
   100731,
   100734,
   100736,
   100738,
+  100739,
+  100740,
+  100741,
   100742,
   100743,
   100744,
+  100745,
   100747,
   100748,
   100749,
+  100750,
+  100751,
   100752,
   100753,
+  100754,
+  100755,
+  100756,
+  100757,
   100758,
   100760,
+  100761,
   100762,
   100763,
   100765,
+  100767,
   100768,
   100769,
   100771,
@@ -29787,53 +34942,94 @@ export const implementedIds: number[] = [
   100774,
   100776,
   100777,
+  100778,
   100782,
+  100783,
   100784,
   100785,
   100788,
+  100789,
+  100792,
   100793,
   100794,
   100796,
+  100797,
   100799,
+  100802,
   100807,
+  100808,
   100809,
+  100810,
   100811,
   100812,
+  100814,
+  100815,
   100817,
+  100819,
+  100820,
+  100821,
+  100823,
   100824,
   100827,
+  100832,
+  100833,
   100834,
+  100835,
   100836,
   100838,
   100842,
+  100844,
   100845,
+  100847,
   100848,
+  100850,
   100852,
   100855,
   100857,
+  100858,
+  100859,
   100860,
   100861,
   100862,
   100863,
   100864,
   100866,
+  100867,
+  100868,
   100871,
   100872,
+  100873,
   100875,
+  100877,
+  100879,
+  100882,
+  100887,
   100889,
+  100890,
+  100891,
   100897,
   100898,
+  100899,
   100900,
   100903,
   100904,
+  100905,
   100906,
+  100907,
   100909,
   100910,
+  100911,
   100913,
+  100915,
+  100916,
   100918,
+  100920,
   100921,
   100925,
+  100930,
   100932,
+  100934,
+  100935,
   100936,
   100937,
   100938,
@@ -29841,45 +35037,75 @@ export const implementedIds: number[] = [
   100944,
   100945,
   100946,
+  100947,
+  100948,
+  100949,
+  100957,
+  100958,
   100959,
+  100962,
+  100963,
+  100964,
   100965,
+  100966,
   100968,
   100970,
   100971,
+  100972,
   100973,
+  100974,
   100977,
+  100980,
+  100983,
   100984,
+  100986,
   100987,
+  100989,
+  100992,
   100993,
+  100994,
   100995,
   100996,
   100999,
+  101001,
+  101002,
   101003,
   101007,
   101008,
+  101009,
   101010,
   101014,
   101015,
+  101017,
   101018,
+  101020,
   101022,
+  101023,
+  101025,
   101027,
   101028,
   101032,
+  101033,
   101034,
   101038,
   101040,
   101042,
   101043,
+  101044,
   101045,
   101047,
   101049,
   101050,
+  101051,
   101053,
   101056,
   101057,
   101059,
   101060,
+  101062,
   101063,
+  101065,
+  101066,
   101067,
   101068,
   101070,
@@ -29887,10 +35113,15 @@ export const implementedIds: number[] = [
   101072,
   101073,
   101075,
+  101077,
+  101079,
+  101080,
   101081,
   101082,
+  101088,
   101089,
   101093,
+  101094,
   101095,
   101096,
   101097,
@@ -29902,76 +35133,121 @@ export const implementedIds: number[] = [
   101104,
   101107,
   101110,
+  101111,
   101114,
+  101116,
+  101117,
   101120,
   101125,
   101126,
   101127,
   101128,
   101129,
+  101130,
   101131,
   101133,
+  101135,
   101136,
   101137,
   101142,
   101143,
   101144,
   101145,
+  101146,
   101147,
   101148,
   101150,
   101154,
   101156,
   101158,
+  101159,
   101160,
   101162,
+  101164,
+  101165,
   101167,
   101168,
+  101169,
   101171,
+  101174,
   101175,
+  101177,
   101178,
+  101181,
+  101182,
   101183,
   101184,
   101187,
+  101188,
   101190,
+  101191,
   101193,
+  101194,
   101195,
+  101196,
+  101197,
+  101199,
+  101201,
   101202,
+  101203,
   101204,
   101209,
   101211,
+  101214,
   101215,
+  101216,
   101217,
+  101218,
   101219,
   101221,
   101223,
+  101224,
   101225,
+  101226,
+  101227,
   101229,
   101230,
+  101233,
+  101234,
   101235,
+  101236,
   101237,
   101238,
   101239,
+  101240,
   101242,
   101243,
+  101244,
+  101245,
   101246,
   101249,
   101250,
+  101251,
   101252,
   101254,
   101256,
   101259,
+  101261,
   101262,
+  101264,
   101265,
   101267,
   101268,
+  101270,
   101271,
+  101272,
   101273,
   101274,
+  101275,
+  101276,
   101277,
   101279,
   101280,
+  101282,
+  101286,
+  101287,
   101288,
+  101290,
   101292,
   101299,
   101302,
@@ -29980,17 +35256,28 @@ export const implementedIds: number[] = [
   101309,
   101310,
   101312,
+  101314,
+  101317,
   101318,
+  101319,
   101320,
   101321,
+  101322,
   101323,
   101324,
+  101325,
   101326,
+  101328,
+  101329,
+  101330,
+  101334,
   101337,
+  101338,
   101340,
   101341,
   101342,
   101343,
+  101345,
   101350,
   101353,
   101354,
@@ -29998,26 +35285,38 @@ export const implementedIds: number[] = [
   101365,
   101366,
   101373,
+  101374,
   101376,
   101380,
   101382,
   101384,
+  101386,
   101387,
   101388,
   101390,
   101391,
   101394,
+  101395,
+  101398,
+  101400,
   101401,
   101404,
+  101405,
   101406,
+  101408,
   101411,
+  101412,
   101413,
   101415,
   101417,
+  101419,
   101420,
   101421,
   101424,
+  101426,
   101427,
+  101428,
+  101429,
   101430,
   101431,
   101434,
@@ -30058,17 +35357,26 @@ export const implementedIds: number[] = [
   101480,
   101482,
   101483,
+  101484,
+  101485,
   101487,
   101490,
   101491,
   101493,
   101495,
+  101496,
   101498,
   101501,
   101502,
+  101505,
+  101506,
   101507,
+  101508,
+  101511,
   101513,
+  101515,
   101516,
+  101519,
   101523,
   101524,
   101525,
@@ -30076,11 +35384,13 @@ export const implementedIds: number[] = [
   101528,
   101529,
   101530,
+  101531,
   101532,
   101534,
   101535,
   101536,
   101537,
+  101538,
   101541,
   101542,
   101544,
@@ -30089,10 +35399,17 @@ export const implementedIds: number[] = [
   101550,
   101552,
   101553,
+  101556,
   101558,
+  101559,
+  101561,
   101564,
   101566,
   101567,
+  101572,
+  101573,
+  101575,
+  101576,
   101577,
   101578,
   101583,
@@ -30101,23 +35418,38 @@ export const implementedIds: number[] = [
   101591,
   101594,
   101595,
+  101599,
+  101600,
+  101602,
   101605,
+  101606,
   101608,
   101610,
   101612,
   101613,
   101614,
+  101626,
   101627,
   101628,
   101631,
   101632,
+  101633,
+  101635,
   101636,
+  101637,
   101640,
+  101643,
   101644,
+  101645,
+  101646,
   101647,
+  101648,
   101649,
   101650,
+  101651,
   101656,
+  101658,
+  101660,
   101662,
   101664,
   101665,
@@ -30125,94 +35457,168 @@ export const implementedIds: number[] = [
   101669,
   101670,
   101671,
+  101673,
+  101674,
+  101676,
   101678,
+  101679,
+  101681,
   101682,
+  101684,
   101685,
   101686,
+  101687,
   101689,
+  101691,
   101692,
   101693,
+  101694,
   101695,
   101696,
   101698,
   101699,
+  101701,
+  101702,
+  101703,
   101706,
   101711,
   101712,
+  101714,
   101715,
   101717,
+  101724,
+  101725,
   101727,
   101728,
   101729,
+  101732,
+  101733,
+  101734,
+  101735,
   101736,
+  101737,
+  101738,
   101741,
+  101742,
+  101743,
+  101744,
+  101745,
   101753,
   101754,
   101756,
+  101758,
   101760,
+  101764,
+  101766,
   101767,
   101769,
+  101770,
+  101771,
   101772,
+  101773,
+  101774,
+  101775,
   101778,
   101779,
   101780,
   101781,
+  101782,
+  101783,
   101790,
   101791,
   101792,
+  101793,
+  101794,
+  101795,
   101798,
   101799,
   101801,
   101802,
+  101804,
   101805,
   101807,
   101808,
   101811,
+  101812,
+  101813,
   101814,
   101816,
   101817,
+  101818,
   101819,
   101820,
   101821,
+  101822,
   101823,
   101824,
   101825,
   101827,
   101829,
+  101832,
   101839,
+  101840,
   101841,
   101842,
+  101846,
   101847,
   101850,
+  101852,
+  101853,
   101854,
   101856,
   101857,
+  101858,
   101859,
+  101860,
+  101861,
   101864,
   101866,
   101867,
   101869,
   101870,
+  101871,
   101872,
+  101873,
+  101874,
+  101875,
+  101876,
   101877,
   101882,
   101883,
+  101885,
+  101887,
   101888,
+  101889,
   101891,
+  101892,
+  101894,
   101896,
   101899,
   101905,
   101907,
   101909,
+  101910,
   101913,
+  101918,
+  101919,
+  101920,
   101921,
+  101922,
   101923,
+  101925,
   101926,
+  101930,
+  101931,
+  101932,
+  101935,
+  101937,
   101938,
   101939,
   101940,
+  101941,
   101942,
   101943,
+  101944,
   101945,
   101948,
   101949,
@@ -30221,28 +35627,41 @@ export const implementedIds: number[] = [
   101952,
   101953,
   101955,
+  101957,
   101958,
   101960,
+  101961,
   101963,
   101965,
   101966,
+  101967,
   101968,
+  101970,
   101972,
   101973,
   101974,
+  101976,
   101978,
+  101979,
   101980,
   101982,
   101983,
   101984,
+  101985,
   101986,
   101987,
+  101988,
   101989,
   101990,
   101991,
+  101992,
   101993,
   101994,
   101995,
+  101996,
+  101999,
+  102000,
+  102003,
   102005,
   102010,
   102014,
@@ -30252,22 +35671,30 @@ export const implementedIds: number[] = [
   102022,
   102023,
   102041,
+  102043,
+  102044,
   102046,
+  102047,
   102048,
   102051,
   102052,
+  102053,
   102054,
+  102058,
   102059,
   102060,
   102061,
+  102062,
   102063,
   102064,
   102065,
   102066,
   102068,
+  102069,
   102071,
   102072,
   102075,
+  102077,
   102078,
   102080,
   102083,
@@ -30276,8 +35703,12 @@ export const implementedIds: number[] = [
   102087,
   102089,
   102090,
+  102091,
   102092,
+  102096,
   102097,
+  102098,
+  102101,
   102102,
   102105,
   102106,
@@ -30287,16 +35718,23 @@ export const implementedIds: number[] = [
   102112,
   102113,
   102114,
+  102115,
   102116,
   102121,
+  102124,
   102126,
   102127,
+  102128,
+  102129,
+  102130,
   102131,
   102132,
   102134,
   102137,
+  102138,
   102139,
   102140,
+  102141,
   102142,
   102144,
   102145,
@@ -30307,23 +35745,35 @@ export const implementedIds: number[] = [
   102151,
   102152,
   102153,
+  102154,
   102159,
+  102161,
   102162,
+  102163,
   102164,
   102166,
+  102168,
   102169,
   102171,
+  102173,
+  102174,
   102176,
   102179,
   102180,
+  102183,
+  102184,
   102185,
   102188,
   102189,
   102190,
+  102191,
+  102196,
+  102197,
   102198,
   102199,
   102201,
   102202,
+  102203,
   102204,
   102205,
   102208,
@@ -30352,6 +35802,9 @@ export const implementedIds: number[] = [
   102233,
   102234,
   102237,
+  102238,
+  102243,
+  102245,
   102246,
   102247,
   102248,
@@ -30377,6 +35830,7 @@ export const implementedIds: number[] = [
   102268,
   102270,
   102272,
+  102273,
   102274,
   102275,
   102276,
@@ -30467,11 +35921,6 @@ export const implementedIds: number[] = [
   102362,
   102363,
   102364,
-  100178,
-  100320,
-  100740,
-  101822,
-  101999,
   102365,
   200001,
   200002,
@@ -30591,5 +36040,5 @@ export const implementedIds: number[] = [
   900006,
   900007,
   900008,
-  900009,
+  900009
 ];
