@@ -34852,6 +34852,1068 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
 
+  {
+    // The Return to Innocence [101620] — fala 10 wierna
+    krcgId: 101620,
+    name: "The Return to Innocence",
+    cardType: "action",
+    bloodCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Revelation of Desire [101622] — fala 10 wierna
+    krcgId: 101622,
+    name: "Revelation of Desire",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Revelation of Despair [101623] — fala 10 wierna
+    krcgId: 101623,
+    name: "Revelation of Despair",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Revelation of Ecstasy [101624] — fala 10 wierna
+    krcgId: 101624,
+    name: "Revelation of Ecstasy",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Riddle Phantastique [101634] — fala 10 wierna
+    krcgId: 101634,
+    name: "Riddle Phantastique",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rise of the Fallen [101638] — fala 10 wierna
+    krcgId: 101638,
+    name: "Rise of the Fallen",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Rose Foundation [101653] — fala 10 wierna
+    krcgId: 101653,
+    name: "The Rose Foundation",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rötschreck [101654] — fala 10 wierna
+    krcgId: 101654,
+    name: "Rötschreck",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Rowan Ring [101655] — fala 10 wierna
+    krcgId: 101655,
+    name: "Rowan Ring",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ruins of Charizel [101659] — fala 10 wierna
+    krcgId: 101659,
+    name: "Ruins of Charizel",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sabbat Threat [101668] — fala 10 wierna
+    krcgId: 101668,
+    name: "Sabbat Threat",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sacrificial Lamb [101672] — fala 10 wierna
+    krcgId: 101672,
+    name: "Sacrificial Lamb",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // San Nicolás de los Servitas [101677] — fala 10 wierna
+    krcgId: 101677,
+    name: "San Nicolás de los Servitas",
+    cardType: "equipment",
+    bloodCost: 2,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Savannah Runner [101683] — fala 10 wierna
+    krcgId: 101683,
+    name: "Savannah Runner",
+    cardType: "reaction",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Scarlet Lore [101688] — fala 10 wierna
+    krcgId: 101688,
+    name: "Scarlet Lore",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Scrounging [101700] — fala 10 wierna
+    krcgId: 101700,
+    name: "Scrounging",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Secret Horde [101707] — fala 10 wierna
+    krcgId: 101707,
+    name: "Secret Horde",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Secret Must Be Kept [101709] — fala 10 wierna
+    krcgId: 101709,
+    name: "The Secret Must Be Kept",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shaman [101750] — fala 10 wierna
+    krcgId: 101750,
+    name: "Shaman",
+    cardType: "retainer",
+    bloodCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["retainer"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shambling Hordes [101751] — fala 10 wierna
+    krcgId: 101751,
+    name: "Shambling Hordes",
+    cardType: "ally",
+    bloodCost: 3,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shatter the Gate [101757] — fala 10 wierna
+    krcgId: 101757,
+    name: "Shatter the Gate",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shroudsight [101776] — fala 10 wierna
+    krcgId: 101776,
+    name: "Shroudsight",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sibyl's Tongue [101777] — fala 10 wierna
+    krcgId: 101777,
+    name: "Sibyl's Tongue",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Siphon [101784] — fala 10 wierna
+    krcgId: 101784,
+    name: "Siphon",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sire's Index Finger [101785] — fala 10 wierna
+    krcgId: 101785,
+    name: "Sire's Index Finger",
+    cardType: "equipment",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Sires Command, Childer Inherit [101787] — fala 10 wierna
+    krcgId: 101787,
+    name: "Sires Command, Childer Inherit",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Slaughterhouse [101800] — fala 10 wierna
+    krcgId: 101800,
+    name: "The Slaughterhouse",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Soul Scan [101835] — fala 10 wierna
+    krcgId: 101835,
+    name: "Soul Scan",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Spirit Summoning Chamber [101849] — fala 10 wierna
+    krcgId: 101849,
+    name: "Spirit Summoning Chamber",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Spiritual Guidance [101851] — fala 10 wierna
+    krcgId: 101851,
+    name: "Spiritual Guidance",
+    cardType: "combat",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Static Virtue [101862] — fala 10 wierna
+    krcgId: 101862,
+    name: "Static Virtue",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Steam Tunnels [101868] — fala 10 wierna
+    krcgId: 101868,
+    name: "Steam Tunnels",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Strange Day [101880] — fala 10 wierna
+    krcgId: 101880,
+    name: "Strange Day",
+    cardType: "actionModifier",
+    bloodCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Stranger Among Us [101881] — fala 10 wierna
+    krcgId: 101881,
+    name: "The Stranger Among Us",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Striga [101884] — fala 10 wierna
+    krcgId: 101884,
+    name: "Striga",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Subdued by the Blood [101890] — fala 10 wierna
+    krcgId: 101890,
+    name: "Subdued by the Blood",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sudario Refraction [101895] — fala 10 wierna
+    krcgId: 101895,
+    name: "Sudario Refraction",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Summon History [101897] — fala 10 wierna
+    krcgId: 101897,
+    name: "Summon History",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Summon Soul [101898] — fala 10 wierna
+    krcgId: 101898,
+    name: "Summon Soul",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Summon the Serpent [101901] — fala 10 wierna
+    krcgId: 101901,
+    name: "Summon the Serpent",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Summoning [101902] — fala 10 wierna
+    krcgId: 101902,
+    name: "The Summoning",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Supernatural Resistance [101906] — fala 10 wierna
+    krcgId: 101906,
+    name: "Supernatural Resistance",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Swarm [101914] — fala 10 wierna
+    krcgId: 101914,
+    name: "Swarm",
+    cardType: "retainer",
+    bloodCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["retainer"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sweeper [101915] — fala 10 wierna
+    krcgId: 101915,
+    name: "Sweeper",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Taking the Skin: Minion [101928] — fala 10 wierna
+    krcgId: 101928,
+    name: "Taking the Skin: Minion",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Taking the Skin: Vulture [101929] — fala 10 wierna
+    krcgId: 101929,
+    name: "Taking the Skin: Vulture",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Taming the Beast [101934] — fala 10 wierna
+    krcgId: 101934,
+    name: "Taming the Beast",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Tapestry of Blood [101936] — fala 10 wierna
+    krcgId: 101936,
+    name: "Tapestry of Blood",
+    cardType: "equipment",
+    bloodCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Temptation [101954] — fala 10 wierna
+    krcgId: 101954,
+    name: "Temptation",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Tend the Flock [101956] — fala 10 wierna
+    krcgId: 101956,
+    name: "Tend the Flock",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Terra Incognita [101959] — fala 10 wierna
+    krcgId: 101959,
+    name: "Terra Incognita",
+    cardType: "reaction",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // The Textbook Damnation [101962] — fala 10 wierna
+    krcgId: 101962,
+    name: "The Textbook Damnation",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Thanks for the Donation [101964] — fala 10 wierna
+    krcgId: 101964,
+    name: "Thanks for the Donation",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Thin-Blooded Seer [101971] — fala 10 wierna
+    krcgId: 101971,
+    name: "Thin-Blooded Seer",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Those Who Endure Judge [101975] — fala 10 wierna
+    krcgId: 101975,
+    name: "Those Who Endure Judge",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Total Insanity [101997] — fala 10 wierna
+    krcgId: 101997,
+    name: "Total Insanity",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Toy Chest Test [102002] — fala 10 wierna
+    krcgId: 102002,
+    name: "Toy Chest Test",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tragic Love Affair [102006] — fala 10 wierna
+    krcgId: 102006,
+    name: "Tragic Love Affair",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Tranquility [102008] — fala 10 wierna
+    krcgId: 102008,
+    name: "Tranquility",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Trap [102012] — fala 10 wierna
+    krcgId: 102012,
+    name: "Trap",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trochomancy [102026] — fala 10 wierna
+    krcgId: 102026,
+    name: "Trochomancy",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Trophy: Diablerie [102029] — fala 10 wierna
+    krcgId: 102029,
+    name: "Trophy: Diablerie",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: No Questions [102034] — fala 10 wierna
+    krcgId: 102034,
+    name: "Trophy: No Questions",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Retainers [102036] — fala 10 wierna
+    krcgId: 102036,
+    name: "Trophy: Retainers",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Wealth [102039] — fala 10 wierna
+    krcgId: 102039,
+    name: "Trophy: Wealth",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // True Faith [102040] — fala 10 wierna
+    krcgId: 102040,
+    name: "True Faith",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Unholy Radiance [102073] — fala 10 wierna
+    krcgId: 102073,
+    name: "Unholy Radiance",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Unity [102074] — fala 10 wierna
+    krcgId: 102074,
+    name: "Unity",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Unleash Hell's Fury [102076] — fala 10 wierna
+    krcgId: 102076,
+    name: "Unleash Hell's Fury",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Unseen Hibernation [102081] — fala 10 wierna
+    krcgId: 102081,
+    name: "Unseen Hibernation",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Using the Advantage [102086] — fala 10 wierna
+    krcgId: 102086,
+    name: "Using the Advantage",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Vampiric Disease [102088] — fala 10 wierna
+    krcgId: 102088,
+    name: "Vampiric Disease",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Veles' Hunt [102099] — fala 10 wierna
+    krcgId: 102099,
+    name: "Veles' Hunt",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Veneficti [102103] — fala 10 wierna
+    krcgId: 102103,
+    name: "Veneficti",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Venenation [102104] — fala 10 wierna
+    krcgId: 102104,
+    name: "Venenation",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Victim of Habit [102118] — fala 10 wierna
+    krcgId: 102118,
+    name: "Victim of Habit",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Virolax Facility [102123] — fala 10 wierna
+    krcgId: 102123,
+    name: "Virolax Facility",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Vulture's Buffet [102135] — fala 10 wierna
+    krcgId: 102135,
+    name: "Vulture's Buffet",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Warding the Beast [102146] — fala 10 wierna
+    krcgId: 102146,
+    name: "Warding the Beast",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Watchtower: The Wolves Feed [102158] — fala 10 wierna
+    krcgId: 102158,
+    name: "Watchtower: The Wolves Feed",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Web of Knives Recruit [102165] — fala 10 wierna
+    krcgId: 102165,
+    name: "Web of Knives Recruit",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Weirding Stone [102170] — fala 10 wierna
+    krcgId: 102170,
+    name: "Weirding Stone",
+    cardType: "equipment",
+    bloodCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Well-Marked [102172] — fala 10 wierna
+    krcgId: 102172,
+    name: "Well-Marked",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Whistling Up the Beast [102177] — fala 10 wierna
+    krcgId: 102177,
+    name: "Whistling Up the Beast",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Wooden Stake [102192] — fala 10 wierna
+    krcgId: 102192,
+    name: "Wooden Stake",
+    cardType: "equipment",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dark Web Procurer [102235] — fala 10 wierna
+    krcgId: 102235,
+    name: "Dark Web Procurer",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Michael Harris, the Incinerator [102239] — fala 10 wierna
+    krcgId: 102239,
+    name: "Michael Harris, the Incinerator",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Mithraeum, London [102240] — fala 10 wierna
+    krcgId: 102240,
+    name: "The Mithraeum, London",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Shard, London [102244] — fala 10 wierna
+    krcgId: 102244,
+    name: "The Shard, London",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Camarilla Conclave [102269] — fala 10 wierna
+    krcgId: 102269,
+    name: "Camarilla Conclave",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+
 ];
 
 /**
@@ -36018,6 +37080,17 @@ export const cryptSpecs: CardSpec[] = [
   flatCrypt(201778, "Ximena (G6)", {}),
   flatCrypt(201779, "Yurena, The Boor (G6)", {}),
   flatCrypt(201780, "Zbigniew, Hunter of Mekhet (G6)", {}),
+
+  flatCrypt(200011, "Adana de Sforza (G4)", {}),
+  flatCrypt(200013, "Adhiambo (G4)", {}),
+  flatCrypt(200014, "Adonai (G2)", {}),
+  flatCrypt(200015, "Adri, The Seeker (G6)", {}),
+  flatCrypt(200016, "Adrianne (G1)", {}),
+  flatCrypt(200017, "Aeron (G3)", {}),
+  flatCrypt(200018, "Afifa, The Herald (G4)", {}),
+  flatCrypt(200019, "Agaitas, The Scholar of Antiquities (G2)", {}),
+  flatCrypt(200021, "Ági (G6)", {}),
+  flatCrypt(200023, "Agru Kabera (G4)", {}),
 
 ];
 
@@ -45521,7 +46594,11 @@ export const implementedIds: number[] = [
   101617,
   101618,
   101619,
+  101620,
   101621,
+  101622,
+  101623,
+  101624,
   101625,
   101626,
   101627,
@@ -45531,9 +46608,11 @@ export const implementedIds: number[] = [
   101631,
   101632,
   101633,
+  101634,
   101635,
   101636,
   101637,
+  101638,
   101640,
   101641,
   101642,
@@ -45547,9 +46626,13 @@ export const implementedIds: number[] = [
   101650,
   101651,
   101652,
+  101653,
+  101654,
+  101655,
   101656,
   101657,
   101658,
+  101659,
   101660,
   101661,
   101662,
@@ -45558,22 +46641,27 @@ export const implementedIds: number[] = [
   101665,
   101666,
   101667,
+  101668,
   101669,
   101670,
   101671,
+  101672,
   101673,
   101674,
   101675,
   101676,
+  101677,
   101678,
   101679,
   101680,
   101681,
   101682,
+  101683,
   101684,
   101685,
   101686,
   101687,
+  101688,
   101689,
   101690,
   101691,
@@ -45584,12 +46672,15 @@ export const implementedIds: number[] = [
   101696,
   101698,
   101699,
+  101700,
   101701,
   101702,
   101703,
   101704,
   101706,
+  101707,
   101708,
+  101709,
   101710,
   101711,
   101712,
@@ -45630,10 +46721,13 @@ export const implementedIds: number[] = [
   101747,
   101748,
   101749,
+  101750,
+  101751,
   101753,
   101754,
   101755,
   101756,
+  101757,
   101758,
   101759,
   101760,
@@ -45652,13 +46746,18 @@ export const implementedIds: number[] = [
   101773,
   101774,
   101775,
+  101776,
+  101777,
   101778,
   101779,
   101780,
   101781,
   101782,
   101783,
+  101784,
+  101785,
   101786,
+  101787,
   101788,
   101789,
   101790,
@@ -45671,6 +46770,7 @@ export const implementedIds: number[] = [
   101797,
   101798,
   101799,
+  101800,
   101801,
   101802,
   101803,
@@ -45705,6 +46805,7 @@ export const implementedIds: number[] = [
   101832,
   101833,
   101834,
+  101835,
   101836,
   101837,
   101838,
@@ -45718,7 +46819,9 @@ export const implementedIds: number[] = [
   101846,
   101847,
   101848,
+  101849,
   101850,
+  101851,
   101852,
   101853,
   101854,
@@ -45729,11 +46832,13 @@ export const implementedIds: number[] = [
   101859,
   101860,
   101861,
+  101862,
   101863,
   101864,
   101865,
   101866,
   101867,
+  101868,
   101869,
   101870,
   101871,
@@ -45745,28 +46850,40 @@ export const implementedIds: number[] = [
   101877,
   101878,
   101879,
+  101880,
+  101881,
   101882,
   101883,
+  101884,
   101885,
   101887,
   101888,
   101889,
+  101890,
   101891,
   101892,
   101893,
   101894,
+  101895,
   101896,
+  101897,
+  101898,
   101899,
   101900,
+  101901,
+  101902,
   101903,
   101904,
   101905,
+  101906,
   101907,
   101909,
   101910,
   101911,
   101912,
   101913,
+  101914,
+  101915,
   101916,
   101917,
   101918,
@@ -45779,11 +46896,15 @@ export const implementedIds: number[] = [
   101925,
   101926,
   101927,
+  101928,
+  101929,
   101930,
   101931,
   101932,
   101933,
+  101934,
   101935,
+  101936,
   101937,
   101938,
   101939,
@@ -45801,21 +46922,28 @@ export const implementedIds: number[] = [
   101951,
   101952,
   101953,
+  101954,
   101955,
+  101956,
   101957,
   101958,
+  101959,
   101960,
   101961,
+  101962,
   101963,
+  101964,
   101965,
   101966,
   101967,
   101968,
   101969,
   101970,
+  101971,
   101972,
   101973,
   101974,
+  101975,
   101976,
   101977,
   101978,
@@ -45837,17 +46965,22 @@ export const implementedIds: number[] = [
   101994,
   101995,
   101996,
+  101997,
   101998,
   101999,
   102000,
   102001,
+  102002,
   102003,
   102004,
   102005,
+  102006,
   102007,
+  102008,
   102009,
   102010,
   102011,
+  102012,
   102013,
   102014,
   102015,
@@ -45861,15 +46994,21 @@ export const implementedIds: number[] = [
   102023,
   102024,
   102025,
+  102026,
   102027,
   102028,
+  102029,
   102030,
   102031,
   102032,
   102033,
+  102034,
   102035,
+  102036,
   102037,
   102038,
+  102039,
+  102040,
   102041,
   102042,
   102043,
@@ -45901,15 +47040,21 @@ export const implementedIds: number[] = [
   102070,
   102071,
   102072,
+  102073,
+  102074,
   102075,
+  102076,
   102077,
   102078,
   102080,
+  102081,
   102082,
   102083,
   102084,
   102085,
+  102086,
   102087,
+  102088,
   102089,
   102090,
   102091,
@@ -45919,9 +47064,12 @@ export const implementedIds: number[] = [
   102096,
   102097,
   102098,
+  102099,
   102100,
   102101,
   102102,
+  102103,
+  102104,
   102105,
   102106,
   102107,
@@ -45935,9 +47083,11 @@ export const implementedIds: number[] = [
   102115,
   102116,
   102117,
+  102118,
   102119,
   102121,
   102122,
+  102123,
   102124,
   102125,
   102126,
@@ -45949,6 +47099,7 @@ export const implementedIds: number[] = [
   102132,
   102133,
   102134,
+  102135,
   102137,
   102138,
   102139,
@@ -45958,6 +47109,7 @@ export const implementedIds: number[] = [
   102143,
   102144,
   102145,
+  102146,
   102147,
   102148,
   102149,
@@ -45969,21 +47121,26 @@ export const implementedIds: number[] = [
   102155,
   102156,
   102157,
+  102158,
   102159,
   102160,
   102161,
   102162,
   102163,
   102164,
+  102165,
   102166,
   102167,
   102168,
   102169,
+  102170,
   102171,
+  102172,
   102173,
   102174,
   102175,
   102176,
+  102177,
   102179,
   102180,
   102181,
@@ -45997,6 +47154,7 @@ export const implementedIds: number[] = [
   102189,
   102190,
   102191,
+  102192,
   102193,
   102195,
   102196,
@@ -46038,12 +47196,16 @@ export const implementedIds: number[] = [
   102232,
   102233,
   102234,
+  102235,
   102236,
   102237,
   102238,
+  102239,
+  102240,
   102241,
   102242,
   102243,
+  102244,
   102245,
   102246,
   102247,
@@ -46068,6 +47230,7 @@ export const implementedIds: number[] = [
   102266,
   102267,
   102268,
+  102269,
   102270,
   102271,
   102272,
@@ -46173,9 +47336,19 @@ export const implementedIds: number[] = [
   200008,
   200009,
   200010,
+  200011,
   200012,
+  200013,
+  200014,
+  200015,
+  200016,
+  200017,
+  200018,
+  200019,
   200020,
+  200021,
   200022,
+  200023,
   200024,
   200045,
   200056,

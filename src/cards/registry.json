@@ -29970,7 +29970,7 @@
           "Keepers of Tradition Reprint"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "200012": {
       "card": {
@@ -30039,7 +30039,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "100022": {
       "card": {
@@ -30107,7 +30107,7 @@
           "Bloodlines"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "200015": {
       "card": {
@@ -30127,7 +30127,7 @@
           "The Unaligned"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "200016": {
       "card": {
@@ -30152,7 +30152,7 @@
           "Tenth Anniversary"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "200017": {
       "card": {
@@ -30176,7 +30176,7 @@
           "Gehenna"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "200018": {
       "card": {
@@ -30196,7 +30196,7 @@
           "Gehenna"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "200019": {
       "card": {
@@ -30218,7 +30218,7 @@
           "Bloodlines"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "100024": {
       "card": {
@@ -30352,7 +30352,7 @@
           "Legacies of Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "200024": {
       "card": {
@@ -38452,7 +38452,7 @@
           "Thirtieth Anniversary"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "100286": {
       "card": {
@@ -43295,7 +43295,7 @@
           "2021 Kickstarter Promo"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "100496": {
       "card": {
@@ -69128,7 +69128,7 @@
           "Fall of London"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "200982": {
       "card": {
@@ -79482,7 +79482,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101623": {
       "card": {
@@ -79507,7 +79507,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101624": {
       "card": {
@@ -79531,7 +79531,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101626": {
       "card": {
@@ -79921,7 +79921,7 @@
           "Legacies of Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201190": {
       "card": {
@@ -80040,7 +80040,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101639": {
       "card": {
@@ -80648,7 +80648,7 @@
           "Keepers of Tradition"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201651": {
       "card": {
@@ -80831,7 +80831,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101660": {
       "card": {
@@ -81092,7 +81092,7 @@
           "Third Edition"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101666": {
       "card": {
@@ -81138,7 +81138,7 @@
           "Kindred Most Wanted"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201217": {
       "card": {
@@ -81210,7 +81210,7 @@
           "Camarilla Edition"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201219": {
       "card": {
@@ -81626,7 +81626,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201232": {
       "card": {
@@ -82094,7 +82094,7 @@
           "Ebony Kingdom"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101684": {
       "card": {
@@ -82233,7 +82233,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101690": {
       "card": {
@@ -82397,7 +82397,7 @@
           "Keepers of Tradition"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101701": {
       "card": {
@@ -82606,7 +82606,7 @@
         ],
         "rawCost": "X"
       },
-      "supported": false
+      "supported": true
     },
     "101710": {
       "card": {
@@ -83765,7 +83765,7 @@
           "Legacies of Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101751": {
       "card": {
@@ -83790,7 +83790,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101752": {
       "card": {
@@ -83928,7 +83928,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101758": {
       "card": {
@@ -84456,7 +84456,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101777": {
       "card": {
@@ -84482,7 +84482,7 @@
         ],
         "rawCost": "X"
       },
-      "supported": false
+      "supported": true
     },
     "201286": {
       "card": {
@@ -84648,7 +84648,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201289": {
       "card": {
@@ -84765,7 +84765,7 @@
           "Third Edition"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101786": {
       "card": {
@@ -84812,7 +84812,7 @@
           "Legacies of Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201293": {
       "card": {
@@ -85713,7 +85713,7 @@
           "Keepers of Tradition Reprint"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101836": {
       "card": {
@@ -86056,7 +86056,7 @@
           "Third Edition"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101851": {
       "card": {
@@ -86080,7 +86080,7 @@
           "Anthology"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101852": {
       "card": {
@@ -86313,7 +86313,7 @@
           "Legacies of Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201313": {
       "card": {
@@ -86386,7 +86386,7 @@
           "Black Hand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201314": {
       "card": {
@@ -86697,7 +86697,7 @@
           "Legacies of Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201319": {
       "card": {
@@ -86743,7 +86743,7 @@
           "Heirs to the Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101885": {
       "card": {
@@ -86905,7 +86905,7 @@
           "2008 Tournament promo"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101892": {
       "card": {
@@ -87002,7 +87002,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201322": {
       "card": {
@@ -87074,7 +87074,7 @@
         ],
         "rawCost": "X"
       },
-      "supported": false
+      "supported": true
     },
     "101898": {
       "card": {
@@ -87098,7 +87098,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101900": {
       "card": {
@@ -87147,7 +87147,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201324": {
       "card": {
@@ -87284,7 +87284,7 @@
           "Ebony Kingdom"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101908": {
       "card": {
@@ -87453,7 +87453,7 @@
           "Legacies of Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101915": {
       "card": {
@@ -87474,7 +87474,7 @@
           "Anarchs"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101916": {
       "card": {
@@ -87938,7 +87938,7 @@
           "Ebony Kingdom"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101929": {
       "card": {
@@ -87961,7 +87961,7 @@
           "Ebony Kingdom"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101930": {
       "card": {
@@ -88129,7 +88129,7 @@
           "Ebony Kingdom"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201338": {
       "card": {
@@ -88250,7 +88250,7 @@
           "Keepers of Tradition"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201341": {
       "card": {
@@ -88730,7 +88730,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101956": {
       "card": {
@@ -88755,7 +88755,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101957": {
       "card": {
@@ -88850,7 +88850,7 @@
           "Legacies of Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201356": {
       "card": {
@@ -88993,7 +88993,7 @@
           "Sabbat War"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "100023": {
       "card": {
@@ -90076,7 +90076,7 @@
           "Fall of London"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101233": {
       "card": {
@@ -90501,7 +90501,7 @@
           "Ancient Hearts"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201205": {
       "card": {
@@ -90546,7 +90546,7 @@
           "Nights of Reckoning"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101681": {
       "card": {
@@ -90615,7 +90615,7 @@
           "Legacies of Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102244": {
       "card": {
@@ -90636,7 +90636,7 @@
           "Fall of London"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201285": {
       "card": {
@@ -90683,7 +90683,7 @@
           "Legacies of Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101863": {
       "card": {
@@ -90725,7 +90725,7 @@
           "Bloodlines"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101902": {
       "card": {
@@ -90750,7 +90750,7 @@
           "Keepers of Tradition"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101962": {
       "card": {
@@ -90772,7 +90772,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102017": {
       "card": {
@@ -91183,7 +91183,7 @@
           "Black Hand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201366": {
       "card": {
@@ -91298,7 +91298,7 @@
           "Legacies of Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101976": {
       "card": {
@@ -91869,7 +91869,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "101998": {
       "card": {
@@ -91992,7 +91992,7 @@
           "Third Edition"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102003": {
       "card": {
@@ -92059,7 +92059,7 @@
           "Vampire: The Eternal Struggle"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102007": {
       "card": {
@@ -92105,7 +92105,7 @@
           "Kindred Most Wanted"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102009": {
       "card": {
@@ -92181,7 +92181,7 @@
           "Sabbat Preconstructed"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102013": {
       "card": {
@@ -92347,7 +92347,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201387": {
       "card": {
@@ -92461,7 +92461,7 @@
           "Kindred Most Wanted"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102030": {
       "card": {
@@ -92566,7 +92566,7 @@
           "Lords of the Night"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102035": {
       "card": {
@@ -92608,7 +92608,7 @@
           "Kindred Most Wanted"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102037": {
       "card": {
@@ -92671,7 +92671,7 @@
           "Kindred Most Wanted"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102040": {
       "card": {
@@ -92693,7 +92693,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201389": {
       "card": {
@@ -93574,7 +93574,7 @@
           "Ebony Kingdom"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102074": {
       "card": {
@@ -93597,7 +93597,7 @@
           "Nights of Reckoning"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102076": {
       "card": {
@@ -93622,7 +93622,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102077": {
       "card": {
@@ -93720,7 +93720,7 @@
           "Legacies of Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102082": {
       "card": {
@@ -93888,7 +93888,7 @@
           "Third Edition"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201418": {
       "card": {
@@ -94146,7 +94146,7 @@
           "Promo"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201425": {
       "card": {
@@ -94522,7 +94522,7 @@
           "Keepers of Tradition"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102100": {
       "card": {
@@ -94620,7 +94620,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102104": {
       "card": {
@@ -94644,7 +94644,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201435": {
       "card": {
@@ -94830,7 +94830,7 @@
           "Keepers of Tradition"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201438": {
       "card": {
@@ -95321,7 +95321,7 @@
           "Gehenna"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201454": {
       "card": {
@@ -95660,7 +95660,7 @@
           "Legacies of Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201461": {
       "card": {
@@ -95844,7 +95844,7 @@
           "Heirs to the Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102154": {
       "card": {
@@ -95949,7 +95949,7 @@
           "Sword of Caine"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201464": {
       "card": {
@@ -96065,7 +96065,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102167": {
       "card": {
@@ -96136,7 +96136,7 @@
           "Print on Demand"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201465": {
       "card": {
@@ -96181,7 +96181,7 @@
           "Ebony Kingdom"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102173": {
       "card": {
@@ -96298,7 +96298,7 @@
           "Legacies of Blood"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "201467": {
       "card": {
@@ -96683,7 +96683,7 @@
           "Keepers of Tradition"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "102194": {
       "card": {
@@ -97816,7 +97816,7 @@
           "Lost Kindred"
         ]
       },
-      "supported": false
+      "supported": true
     },
     "200439": {
       "card": {
