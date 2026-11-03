@@ -38162,432 +38162,432 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201012, "Morrow the Sage (G4)", { stealth: 1 }), // wierna fala 31 (500)
     flatCrypt(201013, "Mosfair (G4)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(201015, "Mowgli (G4)", {}), // wierna fala 31 (500): przejrzane
-  flatCrypt(201016, "Mr. Noir (G4)", {}),
-  flatCrypt(201017, "Muaziz, Archon of Ulugh Beg (G2)", {}),
-  flatCrypt(201018, "Mugur Sabau (G4)", {}),
-  flatCrypt(201019, "Muhandis (G4)", {}),
-  flatCrypt(201021, "Mukhtar Bey (G4)", {}),
-  flatCrypt(201022, "Murat (G2)", {}),
-  flatCrypt(201023, "Muricia (G4)", {}),
-  flatCrypt(201024, "Muriel Foucade (G2)", {}),
-  flatCrypt(201025, "Muse (G2)", {}),
-  flatCrypt(201026, "Mustafa, The Heir (G4)", {}),
-  flatCrypt(201028, "Myrna Goldman (G6)", {}),
-  flatCrypt(201029, "Nadima (G3)", {}),
-  flatCrypt(201030, "Nahir (G3)", {}),
-  flatCrypt(201031, "Nahum Enosh (G6)", {}),
-  flatCrypt(201032, "Nails (G4)", {}),
-  flatCrypt(201033, "Nakhthorheb (G4)", {}),
-  flatCrypt(201034, "Nakova, Advocate of Golconda (G2)", {}),
-  flatCrypt(201035, "Nana Buruku (G4)", {}),
-  flatCrypt(201036, "Nangila Were (G4)", {}),
-  flatCrypt(201037, "Natalia (G2)", {}),
-  flatCrypt(201038, "Natasha Volfchek (G1)", {}),
-  flatCrypt(201039, "Navar McClaren (G1)", {}),
-  flatCrypt(201040, "Nedal, The Careless (G3)", {}),
-  flatCrypt(201042, "Nefertiti (G2)", {}),
-  flatCrypt(201043, "Neferu (G4)", {}),
-  flatCrypt(201044, "Nehemiah (G4)", {}),
-  flatCrypt(201045, "Nehsi (G2)", {}),
-  flatCrypt(201046, "Neighbor John (G4)", {}),
-  flatCrypt(201048, "Nergal (G5)", {}),
-  flatCrypt(201049, "Nergal (G5 ADV)", {}),
-  flatCrypt(201051, "Nettie Hale (G2)", {}),
-  flatCrypt(201052, "New Blood (ANY)", {}),
-  flatCrypt(201053, "Ngozi Ekwensu (G5)", {}),
+    flatCrypt(201016, "Mr. Noir (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201017, "Muaziz, Archon of Ulugh Beg (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201018, "Mugur Sabau (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201019, "Muhandis (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201021, "Mukhtar Bey (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201022, "Murat (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201023, "Muricia (G4)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201024, "Muriel Foucade (G2)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201025, "Muse (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201026, "Mustafa, The Heir (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201028, "Myrna Goldman (G6)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201029, "Nadima (G3)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201030, "Nahir (G3)", { bleed: 1, handSize: 1 }), // fala 32 wierna (421)
+    flatCrypt(201031, "Nahum Enosh (G6)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201032, "Nails (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201033, "Nakhthorheb (G4)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201034, "Nakova, Advocate of Golconda (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201035, "Nana Buruku (G4)", { handSize: 1 }), // fala 32 wierna (421)
+    flatCrypt(201036, "Nangila Were (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201037, "Natalia (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201038, "Natasha Volfchek (G1)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201039, "Navar McClaren (G1)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201040, "Nedal, The Careless (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201042, "Nefertiti (G2)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201043, "Neferu (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201044, "Nehemiah (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201045, "Nehsi (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201046, "Neighbor John (G4)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201048, "Nergal (G5)", { bleed: 2 }), // fala 32 wierna (421)
+    flatCrypt(201049, "Nergal (G5 ADV)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201051, "Nettie Hale (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201052, "New Blood (ANY)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201053, "Ngozi Ekwensu (G5)", {}), // fala 32 wierna (421): przejrzane
 
-  flatCrypt(201056, "Nickolai, The Survivor (G4)", {}),
-  flatCrypt(201057, "Nicomedes (G4)", {}),
-  flatCrypt(201059, "Nik (G1)", {}),
-  flatCrypt(201060, "Nikolaus Vermeulen (G2)", {}),
-  flatCrypt(201061, "Nitidas (G6)", {}),
-  flatCrypt(201062, "Nizzam al-Latif (G5)", {}),
-  flatCrypt(201063, "Nkechi (G4)", {}),
-  flatCrypt(201064, "Nkule Galadima (G4)", {}),
-  flatCrypt(201066, "Nostoket (G4)", {}),
-  flatCrypt(201067, "Nu, The Pillar (G2)", {}),
-  flatCrypt(201069, "Nuriel (G6)", {}),
-  flatCrypt(201070, "Obaluaye (G5)", {}),
-  flatCrypt(201071, "Obsidian (G2)", {}),
-  flatCrypt(201072, "Ogwon (G5)", {}),
-  flatCrypt(201075, "Olga Triminov (G3)", {}),
-  flatCrypt(201076, "Oliver Thrace (G3)", {}),
-  flatCrypt(201078, "Olugbenga (G4)", {}),
-  flatCrypt(201079, "Omaya (G2)", {}),
-  flatCrypt(201080, "Omer (G6)", {}),
-  flatCrypt(201081, "Omme Enberbenight (G4)", {}),
-  flatCrypt(201082, "Onaedo (G4)", {}),
+    flatCrypt(201056, "Nickolai, The Survivor (G4)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201057, "Nicomedes (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201059, "Nik (G1)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201060, "Nikolaus Vermeulen (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201061, "Nitidas (G6)", { handSize: 1 }), // fala 32 wierna (421)
+    flatCrypt(201062, "Nizzam al-Latif (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201063, "Nkechi (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201064, "Nkule Galadima (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201066, "Nostoket (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201067, "Nu, The Pillar (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201069, "Nuriel (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201070, "Obaluaye (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201071, "Obsidian (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201072, "Ogwon (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201075, "Olga Triminov (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201076, "Oliver Thrace (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201078, "Olugbenga (G4)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201079, "Omaya (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201080, "Omer (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201081, "Omme Enberbenight (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201082, "Onaedo (G4)", { stealth: 1 }), // fala 32 wierna (421)
   flatCrypt(201083, "Ondine \"Boudicca\" Sinclair (G5)", {}),
-  flatCrypt(201084, "Orlando Oriundus (G4)", {}),
-  flatCrypt(201085, "Osric Vladislav (G5)", {}),
-  flatCrypt(201086, "Otieno (G4)", {}),
-  flatCrypt(201087, "Owain Evans, The Wanderer (G3)", {}),
-  flatCrypt(201089, "Ozmo (G1)", {}),
-  flatCrypt(201092, "Paolo Sardenzo (G5)", {}),
-  flatCrypt(201093, "Papa Legba (G5)", {}),
-  flatCrypt(201094, "Pariah (G2)", {}),
-  flatCrypt(201095, "Parmenides (G2)", {}),
-  flatCrypt(201096, "Parnassus (G2)", {}),
-  flatCrypt(201098, "Patrizia Giovanni, Collector of Secrets (G2)", {}),
-  flatCrypt(201100, "Paul Cordwood (G4)", {}),
-  flatCrypt(201102, "Paul Forrest, False Prophet (G4)", {}),
-  flatCrypt(201104, "Paulo de Castille (G4)", {}),
-  flatCrypt(201105, "Pavlo (G5)", {}),
-  flatCrypt(201107, "Pedrag Hasek (G5)", {}),
-  flatCrypt(201108, "Pedro Cortez (G4)", {}),
-  flatCrypt(201109, "Pentweret (G5)", {}),
-  flatCrypt(201110, "Persephone Tar-Anis (G4)", {}),
-  flatCrypt(201111, "Persia, The Beautiful Statue (G3)", {}),
-  flatCrypt(201112, "Petaniqua (G4)", {}),
-  flatCrypt(201113, "Petaniqua (G4 ADV)", {}),
-  flatCrypt(201114, "Peter Blaine (G2)", {}),
-  flatCrypt(201116, "Petra (G4)", {}),
-  flatCrypt(201117, "Petru Sipos (G2)", {}),
-  flatCrypt(201118, "Phaedyme (G5)", {}),
-  flatCrypt(201119, "Phagian (G4)", {}),
-  flatCrypt(201120, "Pherydima (G4)", {}),
-  flatCrypt(201121, "Philip van Vermeer IV (G2)", {}),
-  flatCrypt(201122, "Philippe de Marseilles (G5)", {}),
-  flatCrypt(201123, "Phillipe Rigaud (G4)", {}),
-  flatCrypt(201125, "Pieter van Dorn (G3)", {}),
-  flatCrypt(201126, "Piotr Andreikov (G3)", {}),
-  flatCrypt(201127, "Pochtli (G2)", {}),
-  flatCrypt(201129, "Porphyrion (G5)", {}),
-  flatCrypt(201130, "Porphyry (G6)", {}),
-  flatCrypt(201131, "Portia (G5)", {}),
-  flatCrypt(201132, "Prejudice (G4)", {}),
-  flatCrypt(201133, "Preston Varrick (G4)", {}),
-  flatCrypt(201136, "Pugfar (G2)", {}),
-  flatCrypt(201137, "Qadir ul-Ghani (G2)", {}),
-  flatCrypt(201138, "Qawiyya el-Ghaduba (G5)", {}),
-  flatCrypt(201139, "Queen Anne (G2)", {}),
-  flatCrypt(201140, "Quentin (G2)", {}),
-  flatCrypt(201142, "Quentin King III (G3 ADV)", {}),
-  flatCrypt(201143, "Qufur am-Heru (G2)", {}),
-  flatCrypt(201144, "Quincy, The Trapper (G3)", {}),
-  flatCrypt(201145, "Quinton McDonnell (G1)", {}),
-  flatCrypt(201146, "Quira, The Bitch Queen (G2)", {}),
-  flatCrypt(201147, "Rabbat, The Sewer Goddess (G4)", {}),
-  flatCrypt(201148, "Rachel Brandywine (G3)", {}),
-  flatCrypt(201149, "Radeyah (G2)", {}),
-  flatCrypt(201150, "Radu Bistri (G4)", {}),
-  flatCrypt(201151, "Rafael de Corazon (G4)", {}),
-  flatCrypt(201152, "Rafaele Giovanni (G2)", {}),
-  flatCrypt(201153, "Raful al-Zarqa (G2)", {}),
-  flatCrypt(201154, "Rain (G4)", {}),
-  flatCrypt(201155, "Rake (G1)", {}),
-  flatCrypt(201158, "Ramona (G2)", {}),
-  flatCrypt(201159, "Ramona (G2 ADV)", {}),
-  flatCrypt(201160, "Randall (G4)", {}),
-  flatCrypt(201162, "Ranjan Rishi, Camarilla Scholar (G2)", {}),
-  flatCrypt(201163, "Ransam, The Old Man (G4)", {}),
-  flatCrypt(201164, "Raphael Catarari (G4)", {}),
-  flatCrypt(201166, "Rashid Stockton (G5)", {}),
-  flatCrypt(201168, "Rathmere (G5)", {}),
-  flatCrypt(201170, "Rebekah (G3)", {}),
-  flatCrypt(201171, "Rebekka, Chantry Elder of Munich (G2)", {}),
-  flatCrypt(201172, "Redbone McCray (G4)", {}),
-  flatCrypt(201173, "Reg Driscoll (G2)", {}),
-  flatCrypt(201175, "Regina Giovanni, The Right Hand of Augustus (G2)", {}),
-  flatCrypt(201176, "Reginald Moore (G4)", {}),
-  flatCrypt(201177, "Reiner Stoschka (G5)", {}),
-  flatCrypt(201180, "Reverend Adams (G4)", {}),
-  flatCrypt(201181, "Reverend Adams (G4 ADV)", {}),
-  flatCrypt(201182, "Reverend Blackwood (G2)", {}),
-  flatCrypt(201184, "Rex, The Necronomist (G2)", {}),
-  flatCrypt(201185, "Reza Fatir, The Dark Angel (G4)", {}),
+    flatCrypt(201084, "Orlando Oriundus (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201085, "Osric Vladislav (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201086, "Otieno (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201087, "Owain Evans, The Wanderer (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201089, "Ozmo (G1)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201092, "Paolo Sardenzo (G5)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201093, "Papa Legba (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201094, "Pariah (G2)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201095, "Parmenides (G2)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201096, "Parnassus (G2)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201098, "Patrizia Giovanni, Collector of Secrets (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201100, "Paul Cordwood (G4)", { intercept: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201102, "Paul Forrest, False Prophet (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201104, "Paulo de Castille (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201105, "Pavlo (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201107, "Pedrag Hasek (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201108, "Pedro Cortez (G4)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201109, "Pentweret (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201110, "Persephone Tar-Anis (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201111, "Persia, The Beautiful Statue (G3)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201112, "Petaniqua (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201113, "Petaniqua (G4 ADV)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201114, "Peter Blaine (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201116, "Petra (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201117, "Petru Sipos (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201118, "Phaedyme (G5)", { stealth: 1, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201119, "Phagian (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201120, "Pherydima (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201121, "Philip van Vermeer IV (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201122, "Philippe de Marseilles (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201123, "Phillipe Rigaud (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201125, "Pieter van Dorn (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201126, "Piotr Andreikov (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201127, "Pochtli (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201129, "Porphyrion (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201130, "Porphyry (G6)", { bleed: 2 }), // fala 32 wierna (421)
+    flatCrypt(201131, "Portia (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201132, "Prejudice (G4)", { bleed: 2 }), // fala 32 wierna (421)
+    flatCrypt(201133, "Preston Varrick (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201136, "Pugfar (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201137, "Qadir ul-Ghani (G2)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201138, "Qawiyya el-Ghaduba (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201139, "Queen Anne (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201140, "Quentin (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201142, "Quentin King III (G3 ADV)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201143, "Qufur am-Heru (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201144, "Quincy, The Trapper (G3)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201145, "Quinton McDonnell (G1)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201146, "Quira, The Bitch Queen (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201147, "Rabbat, The Sewer Goddess (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201148, "Rachel Brandywine (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201149, "Radeyah (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201150, "Radu Bistri (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201151, "Rafael de Corazon (G4)", { bleed: 2 }), // fala 32 wierna (421)
+    flatCrypt(201152, "Rafaele Giovanni (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201153, "Raful al-Zarqa (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201154, "Rain (G4)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201155, "Rake (G1)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201158, "Ramona (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201159, "Ramona (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201160, "Randall (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201162, "Ranjan Rishi, Camarilla Scholar (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201163, "Ransam, The Old Man (G4)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201164, "Raphael Catarari (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201166, "Rashid Stockton (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201168, "Rathmere (G5)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201170, "Rebekah (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201171, "Rebekka, Chantry Elder of Munich (G2)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201172, "Redbone McCray (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201173, "Reg Driscoll (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201175, "Regina Giovanni, The Right Hand of Augustus (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201176, "Reginald Moore (G4)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201177, "Reiner Stoschka (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201180, "Reverend Adams (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201181, "Reverend Adams (G4 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201182, "Reverend Blackwood (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201184, "Rex, The Necronomist (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201185, "Reza Fatir, The Dark Angel (G4)", {}), // fala 32 wierna (421): przejrzane
 
-  flatCrypt(201186, "Richard Tauber, Ayelea's Puppet (G2)", {}),
-  flatCrypt(201187, "Richter, The Templar of Du Mont (G2)", {}),
-  flatCrypt(201189, "Rico Loco (G4)", {}),
-  flatCrypt(201190, "Rigby, Crusade Vanguard (G2)", {}),
-  flatCrypt(201191, "Righteous Endeavor (G5)", {}),
-  flatCrypt(201194, "Rocia (G4)", {}),
-  flatCrypt(201195, "Roderick Phillips March (G4)", {}),
-  flatCrypt(201196, "Rodolfo (G3)", {}),
-  flatCrypt(201198, "Roger Farnsworth (G3)", {}),
-  flatCrypt(201203, "Rosa Hernández (G4)", {}),
-  flatCrypt(201204, "Rosa Martínez (G3)", {}),
-  flatCrypt(201206, "Rosemarie (G4)", {}),
-  flatCrypt(201207, "Roxanne, Rectrix of the 13th Floor (G1)", {}),
-  flatCrypt(201208, "Royce (G2)", {}),
-  flatCrypt(201211, "Rusticus (G5)", {}),
-  flatCrypt(201212, "Ruth McGinley (G3)", {}),
-  flatCrypt(201213, "Rutor (G5)", {}),
-  flatCrypt(201214, "Ruxandra (G5)", {}),
-  flatCrypt(201215, "Ryder (G4)", {}),
-  flatCrypt(201216, "Ryszard (G4)", {}),
-  flatCrypt(201217, "Sabine Lafitte (G1)", {}),
-  flatCrypt(201220, "Sahana (G4)", {}),
-  flatCrypt(201223, "Sajid al Misbah (G5)", {}),
-  flatCrypt(201225, "Salinger (G2)", {}),
-  flatCrypt(201226, "Salvador Garcia (G4)", {}),
-  flatCrypt(201228, "Samantha (G2)", {}),
-  flatCrypt(201229, "Samat Ramal-Ra, Archon (G2)", {}),
-  flatCrypt(201232, "Sandra White (G3)", {}),
-  flatCrypt(201235, "Santaleous (G5)", {}),
-  flatCrypt(201236, "Saqqaf, Keeper of the Grand Temple of Set (G2)", {}),
-  flatCrypt(201237, "Sarah Brando (G2)", {}),
-  flatCrypt(201239, "Sarah Raines (G3)", {}),
-  flatCrypt(201240, "Sargon (G2)", {}),
-  flatCrypt(201242, "Sarrasine (G2)", {}),
-  flatCrypt(201243, "Sarrasine (G2 ADV)", {}),
-  flatCrypt(201244, "Sascha Vykos, The Angel of Caine (G2)", {}),
-  flatCrypt(201245, "Sascha Vykos, The Angel of Caine (G2 ADV)", {}),
-  flatCrypt(201247, "Saul Meira (G5)", {}),
-  flatCrypt(201248, "Saulot, The Wanderer (G4)", {}),
-  flatCrypt(201249, "Saxum, Master of Slaves (G2)", {}),
-  flatCrypt(201250, "Sayshila (G4)", {}),
-  flatCrypt(201252, "Schuyler (G4)", {}),
-  flatCrypt(201253, "Scout Youngwood (G6)", {}),
-  flatCrypt(201255, "Sean Rycek (G4)", {}),
-  flatCrypt(201256, "Sebastian Marley (G1)", {}),
-  flatCrypt(201257, "Sébastien Goulet (G3)", {}),
-  flatCrypt(201258, "Sébastien Goulet (G3 ADV)", {}),
-  flatCrypt(201259, "Sela (G2)", {}),
-  flatCrypt(201260, "Sela (G2 ADV)", {}),
-  flatCrypt(201261, "Selena (G3)", {}),
-  flatCrypt(201262, "Selma the Repugnant (G1)", {}),
-  flatCrypt(201263, "Sennadurek (G4)", {}),
-  flatCrypt(201265, "Seren Sukardi (G4)", {}),
-  flatCrypt(201266, "Serenna the White (G6)", {}),
-  flatCrypt(201267, "Sergei Voshkov, The Eye (G5)", {}),
-  flatCrypt(201268, "Servius Marius Pustula (G4)", {}),
-  flatCrypt(201269, "Seterpenre (G5)", {}),
-  flatCrypt(201270, "Sha-Ennu (G4)", {}),
-  flatCrypt(201271, "Shaggydog (G5)", {}),
-  flatCrypt(201273, "Shahid (G4)", {}),
-  flatCrypt(201274, "Shalmath (G6)", {}),
-  flatCrypt(201277, "Shasa Abu Badr (G4)", {}),
-  flatCrypt(201279, "Sheela Na Gig (G5)", {}),
-  flatCrypt(201280, "Sheila Mezarin (G2)", {}),
-  flatCrypt(201282, "Shemti (G5)", {}),
-  flatCrypt(201283, "Sheva Carr (G5)", {}),
-  flatCrypt(201284, "Shiloh Marie, Vengeance (G5)", {}),
-  flatCrypt(201285, "The Siamese (G2)", {}),
-  flatCrypt(201286, "Sigrid Bekker (G2)", {}),
-  flatCrypt(201287, "Silas (G6)", {}),
-  flatCrypt(201288, "Silvia Giovanni (G2)", {}),
-  flatCrypt(201291, "Sir Ralph Hamilton (G3)", {}),
-  flatCrypt(201295, "Skidmark (G4)", {}),
-  flatCrypt(201296, "Skryta Zyleta (G3)", {}),
-  flatCrypt(201298, "Slag (G5)", {}),
-  flatCrypt(201299, "Smallpox Griet (G3)", {}),
-  flatCrypt(201301, "Smudge the Ignored (G1)", {}),
-  flatCrypt(201304, "Soldat (G3)", {}),
-  flatCrypt(201305, "Solomon Batanea (G4)", {}),
-  flatCrypt(201306, "Sonja Blue (G4)", {}),
-  flatCrypt(201308, "Spider (G4)", {}),
-  flatCrypt(201309, "Spider-Killer (G2)", {}),
-  flatCrypt(201310, "Spiridonas (G2)", {}),
-  flatCrypt(201311, "Spleen, Georgio Gutterpunk (G2)", {}),
-  flatCrypt(201312, "Stanislava (G2)", {}),
-  flatCrypt(201314, "Stefano Giovanni (G2)", {}),
-  flatCrypt(201315, "Stephen Bateson (G5)", {}),
-  flatCrypt(201319, "Stravinsky (G2)", {}),
-  flatCrypt(201320, "Strohmann (G5)", {}),
-  flatCrypt(201321, "Styles Margs (G5)", {}),
-  flatCrypt(201322, "Suhailah (G2)", {}),
-  flatCrypt(201323, "Sukainah (G5)", {}),
-  flatCrypt(201324, "Sundervere, The Devil Brahmin (G4)", {}),
-  flatCrypt(201325, "Sundown (G3)", {}),
-  flatCrypt(201326, "Sundown (G3 ADV)", {}),
-  flatCrypt(201327, "Sutekh, The Dark God (G2)", {}),
-  flatCrypt(201328, "Suzanne Kadim (G3)", {}),
-  flatCrypt(201329, "Sylvester Simms (G1)", {}),
-  flatCrypt(201330, "Sylvie Helgon (G6)", {}),
-  flatCrypt(201331, "Synesios (G2)", {}),
+    flatCrypt(201186, "Richard Tauber, Ayelea's Puppet (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201187, "Richter, The Templar of Du Mont (G2)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201189, "Rico Loco (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201190, "Rigby, Crusade Vanguard (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201191, "Righteous Endeavor (G5)", { intercept: 1, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201194, "Rocia (G4)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201195, "Roderick Phillips March (G4)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201196, "Rodolfo (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201198, "Roger Farnsworth (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201203, "Rosa Hernández (G4)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201204, "Rosa Martínez (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201206, "Rosemarie (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201207, "Roxanne, Rectrix of the 13th Floor (G1)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201208, "Royce (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201211, "Rusticus (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201212, "Ruth McGinley (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201213, "Rutor (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201214, "Ruxandra (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201215, "Ryder (G4)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201216, "Ryszard (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201217, "Sabine Lafitte (G1)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201220, "Sahana (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201223, "Sajid al Misbah (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201225, "Salinger (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201226, "Salvador Garcia (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201228, "Samantha (G2)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201229, "Samat Ramal-Ra, Archon (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201232, "Sandra White (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201235, "Santaleous (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201236, "Saqqaf, Keeper of the Grand Temple of Set (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201237, "Sarah Brando (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201239, "Sarah Raines (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201240, "Sargon (G2)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201242, "Sarrasine (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201243, "Sarrasine (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201244, "Sascha Vykos, The Angel of Caine (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201245, "Sascha Vykos, The Angel of Caine (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201247, "Saul Meira (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201248, "Saulot, The Wanderer (G4)", { bleed: 1, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201249, "Saxum, Master of Slaves (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201250, "Sayshila (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201252, "Schuyler (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201253, "Scout Youngwood (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201255, "Sean Rycek (G4)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201256, "Sebastian Marley (G1)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201257, "Sébastien Goulet (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201258, "Sébastien Goulet (G3 ADV)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201259, "Sela (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201260, "Sela (G2 ADV)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201261, "Selena (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201262, "Selma the Repugnant (G1)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201263, "Sennadurek (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201265, "Seren Sukardi (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201266, "Serenna the White (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201267, "Sergei Voshkov, The Eye (G5)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201268, "Servius Marius Pustula (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201269, "Seterpenre (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201270, "Sha-Ennu (G4)", { bleed: 2 }), // fala 32 wierna (421)
+    flatCrypt(201271, "Shaggydog (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201273, "Shahid (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201274, "Shalmath (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201277, "Shasa Abu Badr (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201279, "Sheela Na Gig (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201280, "Sheila Mezarin (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201282, "Shemti (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201283, "Sheva Carr (G5)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201284, "Shiloh Marie, Vengeance (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201285, "The Siamese (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201286, "Sigrid Bekker (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201287, "Silas (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201288, "Silvia Giovanni (G2)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201291, "Sir Ralph Hamilton (G3)", { bleed: 1, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201295, "Skidmark (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201296, "Skryta Zyleta (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201298, "Slag (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201299, "Smallpox Griet (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201301, "Smudge the Ignored (G1)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201304, "Soldat (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201305, "Solomon Batanea (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201306, "Sonja Blue (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201308, "Spider (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201309, "Spider-Killer (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201310, "Spiridonas (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201311, "Spleen, Georgio Gutterpunk (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201312, "Stanislava (G2)", { bleed: 2 }), // fala 32 wierna (421)
+    flatCrypt(201314, "Stefano Giovanni (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201315, "Stephen Bateson (G5)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201319, "Stravinsky (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201320, "Strohmann (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201321, "Styles Margs (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201322, "Suhailah (G2)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201323, "Sukainah (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201324, "Sundervere, The Devil Brahmin (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201325, "Sundown (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201326, "Sundown (G3 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201327, "Sutekh, The Dark God (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201328, "Suzanne Kadim (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201329, "Sylvester Simms (G1)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201330, "Sylvie Helgon (G6)", { intercept: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201331, "Synesios (G2)", {}), // fala 32 wierna (421): przejrzane
 
-  flatCrypt(201332, "Synner-G (G5)", {}),
-  flatCrypt(201333, "Szechenyi Jolán, Mother of Horrors (G3)", {}),
-  flatCrypt(201334, "T.J. (G4)", {}),
-  flatCrypt(201335, "Tabitha Fisk (G3)", {}),
-  flatCrypt(201336, "Talbot (G5)", {}),
-  flatCrypt(201337, "Talley, The Hound (G2)", {}),
-  flatCrypt(201338, "Tammy Walenski (G3)", {}),
-  flatCrypt(201339, "Tanginé (G4)", {}),
-  flatCrypt(201340, "Tansu Bekir (G2)", {}),
-  flatCrypt(201342, "Tarautas (G4)", {}),
-  flatCrypt(201343, "Tarbaby Jack (G3)", {}),
-  flatCrypt(201344, "Tariq, The Silent (G2)", {}),
-  flatCrypt(201345, "Tariq, The Silent (G2 ADV)", {}),
-  flatCrypt(201347, "Tatiana Romanov (G1)", {}),
-  flatCrypt(201348, "Tatiana Stepanova, Alastor (G4)", {}),
-  flatCrypt(201349, "Tatu Sawosa (G4)", {}),
-  flatCrypt(201351, "Tears, The Dark Pierrot (G4)", {}),
-  flatCrypt(201352, "Tegyrius, Vizier (G2)", {}),
-  flatCrypt(201353, "Tegyrius, Vizier (G2 ADV)", {}),
-  flatCrypt(201354, "Teresita, The Godmother (G3)", {}),
-  flatCrypt(201355, "Tereza Rostas (G2)", {}),
-  flatCrypt(201356, "Terrell Harding (G3)", {}),
-  flatCrypt(201358, "Terrifisto (G4)", {}),
-  flatCrypt(201359, "Terry (G2)", {}),
-  flatCrypt(201361, "Themistocles (G5)", {}),
-  flatCrypt(201362, "Theo Bell (G2)", {}),
-  flatCrypt(201363, "Theo Bell (G2 ADV)", {}),
-  flatCrypt(201364, "Theron (G2)", {}),
-  flatCrypt(201365, "Thetmes, Caliph of Alamut (G2)", {}),
-  flatCrypt(201366, "Thomas De Lutrius (G4)", {}),
-  flatCrypt(201367, "Thomas Steed, The Angry (G2)", {}),
-  flatCrypt(201369, "Thomasso Ghiberti (G4)", {}),
-  flatCrypt(201370, "Thucimia (G4)", {}),
-  flatCrypt(201371, "Tiberius, The Scandalmonger (G1)", {}),
-  flatCrypt(201374, "Titus Camille (G4)", {}),
-  flatCrypt(201375, "Tobias Smith (G3)", {}),
-  flatCrypt(201376, "Toby (G4)", {}),
-  flatCrypt(201378, "Tom (G2)", {}),
-  flatCrypt(201379, "Tomaine (G4)", {}),
-  flatCrypt(201382, "Topaz (G4)", {}),
-  flatCrypt(201383, "Tori Longwood (G2)", {}),
-  flatCrypt(201384, "Torvus Bloodbeard (G3)", {}),
-  flatCrypt(201385, "Toy (G5)", {}),
-  flatCrypt(201387, "Troglodytia (G4)", {}),
-  flatCrypt(201388, "Troius (G4)", {}),
-  flatCrypt(201389, "Truman (G2)", {}),
-  flatCrypt(201390, "Tryphosa (G4)", {}),
-  flatCrypt(201393, "Tupdog (G3)", {}),
-  flatCrypt(201394, "Tura Vaughn (G1)", {}),
-  flatCrypt(201395, "Tusk, The Talebearer (G1)", {}),
-  flatCrypt(201396, "Tusk, The Talebearer (G1 ADV)", {}),
-  flatCrypt(201397, "Tyler (G3)", {}),
-  flatCrypt(201398, "Tyler McGill (G5)", {}),
-  flatCrypt(201400, "Ublo-Satha (G2)", {}),
-  flatCrypt(201401, "Uchenna (G4)", {}),
-  flatCrypt(201402, "Ugadja (G4)", {}),
-  flatCrypt(201404, "Ulugh Beg, The Watcher (G1)", {}),
-  flatCrypt(201406, "Umdava (G4)", {}),
-  flatCrypt(201407, "Una (G3)", {}),
-  flatCrypt(201409, "Undele (G5)", {}),
-  flatCrypt(201410, "Unmada (G5)", {}),
-  flatCrypt(201411, "The unnamed (G6)", {}),
-  flatCrypt(201412, "Unre, Keeper of Golgotha (G2)", {}),
-  flatCrypt(201413, "Ur-Shulgi, The Shepherd (G2)", {}),
-  flatCrypt(201415, "Uriah Winter (G1)", {}),
-  flatCrypt(201416, "Uriel (G4)", {}),
-  flatCrypt(201417, "Urraca (G4)", {}),
-  flatCrypt(201418, "Uta Kovacs (G4)", {}),
-  flatCrypt(201420, "Vaclav Petalengro (G2)", {}),
-  flatCrypt(201421, "Valerius Maior, Hell's Fool (G4)", {}),
-  flatCrypt(201422, "Valerius Maior, Hell's Fool (G4 ADV)", {}),
-  flatCrypt(201423, "Valkyrie (G3)", {}),
-  flatCrypt(201426, "Vardar Vardarian (G4)", {}),
-  flatCrypt(201427, "Vasantasena (G2)", {}),
-  flatCrypt(201428, "Vasilis, The Traitor of Don Cruez (G2)", {}),
-  flatCrypt(201429, "Vasiliy Vasilevich (G5)", {}),
-  flatCrypt(201430, "Vasily (G5)", {}),
-  flatCrypt(201431, "Vassily Taltos (G4)", {}),
-  flatCrypt(201433, "Veejay Vinod (G6)", {}),
-  flatCrypt(201434, "Velya, The Flayer (G3)", {}),
-  flatCrypt(201435, "Venere Carboni (G3)", {}),
-  flatCrypt(201436, "Verbruch (G5)", {}),
-  flatCrypt(201437, "Vestgeir (G6)", {}),
-  flatCrypt(201438, "Victor Donaldson (G5)", {}),
-  flatCrypt(201439, "Victor Gerard (G2)", {}),
-  flatCrypt(201440, "Victor Pelletier (G4)", {}),
-  flatCrypt(201443, "Victoria (G2)", {}),
-  flatCrypt(201444, "Victoria Ash (G2)", {}),
-  flatCrypt(201445, "Victorine Lafourcade (G3)", {}),
-  flatCrypt(201446, "Vidal Jarbeaux (G5)", {}),
-  flatCrypt(201447, "Viktor, The Night General (G5)", {}),
-  flatCrypt(201448, "Vincent Day, Paladin and Paragon (G2)", {}),
-  flatCrypt(201449, "Violet Tremain (G2)", {}),
-  flatCrypt(201451, "Virgil (G2)", {}),
-  flatCrypt(201452, "Virginie, Prodigy (G4)", {}),
-  flatCrypt(201453, "Viri (G6)", {}),
-  flatCrypt(201454, "Virstania, The Great Mother (G3)", {}),
-  flatCrypt(201456, "Vlad Tepes (G3)", {}),
-  flatCrypt(201458, "Volker, The Puppet Prince (G2)", {}),
-  flatCrypt(201459, "Volo (G5)", {}),
+    cryptPerm(201332, "Synner-G (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 32 wierna (421)
+    flatCrypt(201333, "Szechenyi Jolán, Mother of Horrors (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201334, "T.J. (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201335, "Tabitha Fisk (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201336, "Talbot (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201337, "Talley, The Hound (G2)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201338, "Tammy Walenski (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201339, "Tanginé (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201340, "Tansu Bekir (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201342, "Tarautas (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201343, "Tarbaby Jack (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201344, "Tariq, The Silent (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201345, "Tariq, The Silent (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201347, "Tatiana Romanov (G1)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201348, "Tatiana Stepanova, Alastor (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201349, "Tatu Sawosa (G4)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201351, "Tears, The Dark Pierrot (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201352, "Tegyrius, Vizier (G2)", { stealth: 1, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201353, "Tegyrius, Vizier (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201354, "Teresita, The Godmother (G3)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201355, "Tereza Rostas (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201356, "Terrell Harding (G3)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201358, "Terrifisto (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201359, "Terry (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201361, "Themistocles (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201362, "Theo Bell (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201363, "Theo Bell (G2 ADV)", { stealth: 1, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201364, "Theron (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201365, "Thetmes, Caliph of Alamut (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201366, "Thomas De Lutrius (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201367, "Thomas Steed, The Angry (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201369, "Thomasso Ghiberti (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201370, "Thucimia (G4)", { bleed: 1, handSize: 1 }), // fala 32 wierna (421)
+    flatCrypt(201371, "Tiberius, The Scandalmonger (G1)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201374, "Titus Camille (G4)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201375, "Tobias Smith (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201376, "Toby (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201378, "Tom (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201379, "Tomaine (G4)", { handSize: 1 }), // fala 32 wierna (421)
+    flatCrypt(201382, "Topaz (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201383, "Tori Longwood (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201384, "Torvus Bloodbeard (G3)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201385, "Toy (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201387, "Troglodytia (G4)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201388, "Troius (G4)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201389, "Truman (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201390, "Tryphosa (G4)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201393, "Tupdog (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201394, "Tura Vaughn (G1)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201395, "Tusk, The Talebearer (G1)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201396, "Tusk, The Talebearer (G1 ADV)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201397, "Tyler (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201398, "Tyler McGill (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201400, "Ublo-Satha (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201401, "Uchenna (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201402, "Ugadja (G4)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201404, "Ulugh Beg, The Watcher (G1)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201406, "Umdava (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201407, "Una (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201409, "Undele (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201410, "Unmada (G5)", { handSize: 1 }), // fala 32 wierna (421)
+    flatCrypt(201411, "The unnamed (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201412, "Unre, Keeper of Golgotha (G2)", { bleed: 1, intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201413, "Ur-Shulgi, The Shepherd (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201415, "Uriah Winter (G1)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201416, "Uriel (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201417, "Urraca (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201418, "Uta Kovacs (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201420, "Vaclav Petalengro (G2)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201421, "Valerius Maior, Hell's Fool (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201422, "Valerius Maior, Hell's Fool (G4 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201423, "Valkyrie (G3)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201426, "Vardar Vardarian (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201427, "Vasantasena (G2)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201428, "Vasilis, The Traitor of Don Cruez (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201429, "Vasiliy Vasilevich (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201430, "Vasily (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201431, "Vassily Taltos (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201433, "Veejay Vinod (G6)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201434, "Velya, The Flayer (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201435, "Venere Carboni (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201436, "Verbruch (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201437, "Vestgeir (G6)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201438, "Victor Donaldson (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201439, "Victor Gerard (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201440, "Victor Pelletier (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201443, "Victoria (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201444, "Victoria Ash (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201445, "Victorine Lafourcade (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201446, "Vidal Jarbeaux (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201447, "Viktor, The Night General (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201448, "Vincent Day, Paladin and Paragon (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201449, "Violet Tremain (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201451, "Virgil (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201452, "Virginie, Prodigy (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201453, "Viri (G6)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201454, "Virstania, The Great Mother (G3)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201456, "Vlad Tepes (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201458, "Volker, The Puppet Prince (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201459, "Volo (G5)", {}), // fala 32 wierna (421): przejrzane
 
-  flatCrypt(201460, "Vulture (G2)", {}),
-  flatCrypt(201461, "Wah Chun-Yuen (G3)", {}),
-  flatCrypt(201462, "Walker Grimes (G5)", {}),
-  flatCrypt(201463, "Wamukota (G4)", {}),
-  flatCrypt(201464, "Watenda (G2)", {}),
-  flatCrypt(201465, "Weirich Waldburg (G3)", {}),
-  flatCrypt(201467, "White Lily (G4)", {}),
-  flatCrypt(201468, "Wilhelm Waldburg (G2)", {}),
-  flatCrypt(201469, "William Biltmore (G3)", {}),
-  flatCrypt(201470, "William Thorbecke (G5)", {}),
-  flatCrypt(201471, "Winterlich (G6)", {}),
-  flatCrypt(201472, "Wise Frog (G6)", {}),
-  flatCrypt(201473, "Wolf Valentine (G2)", {}),
-  flatCrypt(201476, "Wynn (G1)", {}),
-  flatCrypt(201477, "Xaviar (G3)", {}),
-  flatCrypt(201478, "Xaviar (G3 ADV)", {}),
-  flatCrypt(201480, "Xeper, Sultan of Lepers (G6)", {}),
-  flatCrypt(201482, "Xipe Totec (G5)", {}),
-  flatCrypt(201483, "Yasmin the Black (G3)", {}),
-  flatCrypt(201484, "Yavu Matebo (G4)", {}),
-  flatCrypt(201485, "Yazid Tamari (G3)", {}),
-  flatCrypt(201486, "Yazid Tamari (G3 ADV)", {}),
-  flatCrypt(201487, "Yitzak (G3)", {}),
-  flatCrypt(201488, "Yong-Sun, Harmonist (G2)", {}),
-  flatCrypt(201489, "Yong-Sun, Harmonist (G2 ADV)", {}),
-  flatCrypt(201491, "Ysador the Foul (G4)", {}),
-  flatCrypt(201492, "Yseult (G3)", {}),
-  flatCrypt(201495, "Yusuf, Scribe of Alamut (G2)", {}),
-  flatCrypt(201498, "Zack North (G1)", {}),
-  flatCrypt(201499, "Zack North (G1 ADV)", {}),
-  flatCrypt(201500, "Zahir, Hand of the Silsila (G2)", {}),
-  flatCrypt(201501, "Zane (G5)", {}),
-  flatCrypt(201502, "Zayyat, The Sandstorm (G3)", {}),
-  flatCrypt(201504, "Zelios (G5)", {}),
-  flatCrypt(201505, "Zhara (G3)", {}),
-  flatCrypt(201506, "Zhenga (G4)", {}),
-  flatCrypt(201508, "Zizi (G6)", {}),
-  flatCrypt(201509, "Zöe (G2)", {}),
-  flatCrypt(201510, "Zubeida (G5)", {}),
-  flatCrypt(201511, "Zygodat (G4)", {}),
-  flatCrypt(201513, "Charles Delmare (G5)", {}),
-  flatCrypt(201516, "Lady Vadislava (G5)", {}),
-  flatCrypt(201517, "Lord Leopold Valdemar (G5)", {}),
-  flatCrypt(201519, "Rurik Rakoczy (G5)", {}),
-  flatCrypt(201520, "Nefertiti (G2 ADV)", {}),
-  flatCrypt(201522, "Grimgroth (G6)", {}),
-  flatCrypt(201527, "Gabriel Tremblay (G6)", {}),
-  flatCrypt(201528, "Bolesław Gutowski (G6)", {}),
-  flatCrypt(201575, "Alicia Cortez (G4)", {}),
-  flatCrypt(201616, "Fiorenza Savona (G6)", {}),
-  flatCrypt(201617, "Gilbert Duane (G6)", {}),
-  flatCrypt(201618, "Okulos (G7)", {}),
-  flatCrypt(201619, "Victoria Ash (G7)", {}),
-  flatCrypt(201621, "Karl Schrekt (G6)", {}),
-  flatCrypt(201622, "Len Konopka (G3)", {}),
-  flatCrypt(201633, "Maila (G6)", {}),
-  flatCrypt(201634, "Abraham Mellon (G6)", {}),
-  flatCrypt(201635, "Adelino Da Silva (G6)", {}),
-  flatCrypt(201636, "Adisa (G6)", {}),
-  flatCrypt(201637, "Ayse Dhanial (G6)", {}),
-  flatCrypt(201638, "Chun Hei (G6)", {}),
-  flatCrypt(201639, "Daria (G6)", {}),
-  flatCrypt(201640, "Darius Shirazi (G5)", {}),
-  flatCrypt(201641, "The Guardian (G6)", {}),
-  flatCrypt(201642, "Gwenllian Arwyn (G6)", {}),
-  flatCrypt(201643, "Lady Scarlett Churchill (G6)", {}),
-  flatCrypt(201644, "Mickey Wheeler (G6)", {}),
-  flatCrypt(201645, "Mithras (G6)", {}),
-  flatCrypt(201646, "Oskar Anasov (G6)", {}),
-  flatCrypt(201647, "Queen Anne (G6)", {}),
-  flatCrypt(201648, "Regina Blake (G6)", {}),
-  flatCrypt(201649, "Richard de Worde (G6)", {}),
-  flatCrypt(201650, "Rose Abawi (G6)", {}),
-  flatCrypt(201651, "Rowena (G6)", {}),
-  flatCrypt(201652, "Sri Sansa (G6)", {}),
-  flatCrypt(201653, "Valerius (G6)", {}),
-  flatCrypt(201654, "Tegyrius, Vizier (G6)", {}),
-  flatCrypt(201693, "Annabelle Triabell (G6)", {}),
-  flatCrypt(201694, "Diana Iadanza (G7)", {}),
-  flatCrypt(201695, "Dónal O'Connor (G6)", {}),
-  flatCrypt(201696, "François Villon (G6)", {}),
-  flatCrypt(201697, "Ian Carfax (G7)", {}),
-  flatCrypt(201698, "Juliet Parr (G7)", {}),
-  flatCrypt(201700, "Lucinde, Alastor (G7)", {}),
-  flatCrypt(201702, "Marcos Belegrad (G7)", {}),
-  flatCrypt(201703, "Modius (G7)", {}),
-  flatCrypt(201704, "Molly MacDonald (G7)", {}),
-  flatCrypt(201705, "Nikolaus Vermeulen (G6)", {}),
-  flatCrypt(201706, "Silvian Popescu (G7)", {}),
+    cryptPerm(201460, "Vulture (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 32 wierna (421)
+    flatCrypt(201461, "Wah Chun-Yuen (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201462, "Walker Grimes (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201463, "Wamukota (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201464, "Watenda (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201465, "Weirich Waldburg (G3)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201467, "White Lily (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201468, "Wilhelm Waldburg (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201469, "William Biltmore (G3)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201470, "William Thorbecke (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201471, "Winterlich (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201472, "Wise Frog (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201473, "Wolf Valentine (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201476, "Wynn (G1)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201477, "Xaviar (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201478, "Xaviar (G3 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201480, "Xeper, Sultan of Lepers (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201482, "Xipe Totec (G5)", { stealth: 1, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201483, "Yasmin the Black (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201484, "Yavu Matebo (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201485, "Yazid Tamari (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201486, "Yazid Tamari (G3 ADV)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201487, "Yitzak (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201488, "Yong-Sun, Harmonist (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201489, "Yong-Sun, Harmonist (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201491, "Ysador the Foul (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201492, "Yseult (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201495, "Yusuf, Scribe of Alamut (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201498, "Zack North (G1)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201499, "Zack North (G1 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201500, "Zahir, Hand of the Silsila (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201501, "Zane (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201502, "Zayyat, The Sandstorm (G3)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201504, "Zelios (G5)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201505, "Zhara (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201506, "Zhenga (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201508, "Zizi (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201509, "Zöe (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201510, "Zubeida (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201511, "Zygodat (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201513, "Charles Delmare (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201516, "Lady Vadislava (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201517, "Lord Leopold Valdemar (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201519, "Rurik Rakoczy (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201520, "Nefertiti (G2 ADV)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201522, "Grimgroth (G6)", { bleed: 2 }), // fala 32 wierna (421)
+    flatCrypt(201527, "Gabriel Tremblay (G6)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201528, "Bolesław Gutowski (G6)", { stealth: 1, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201575, "Alicia Cortez (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201616, "Fiorenza Savona (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201617, "Gilbert Duane (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201618, "Okulos (G7)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201619, "Victoria Ash (G7)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201621, "Karl Schrekt (G6)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201622, "Len Konopka (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201633, "Maila (G6)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201634, "Abraham Mellon (G6)", { handSize: 1 }), // fala 32 wierna (421)
+    flatCrypt(201635, "Adelino Da Silva (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201636, "Adisa (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201637, "Ayse Dhanial (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201638, "Chun Hei (G6)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201639, "Daria (G6)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201640, "Darius Shirazi (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201641, "The Guardian (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201642, "Gwenllian Arwyn (G6)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201643, "Lady Scarlett Churchill (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201644, "Mickey Wheeler (G6)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201645, "Mithras (G6)", { bleed: 2, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201646, "Oskar Anasov (G6)", { intercept: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201647, "Queen Anne (G6)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201648, "Regina Blake (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201649, "Richard de Worde (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201650, "Rose Abawi (G6)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201651, "Rowena (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201652, "Sri Sansa (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201653, "Valerius (G6)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201654, "Tegyrius, Vizier (G6)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201693, "Annabelle Triabell (G6)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201694, "Diana Iadanza (G7)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201695, "Dónal O'Connor (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201696, "François Villon (G6)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201697, "Ian Carfax (G7)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201698, "Juliet Parr (G7)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201700, "Lucinde, Alastor (G7)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201702, "Marcos Belegrad (G7)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201703, "Modius (G7)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201704, "Molly MacDonald (G7)", { bleed: 1, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201705, "Nikolaus Vermeulen (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201706, "Silvian Popescu (G7)", {}), // fala 32 wierna (421): przejrzane
 
 ];
 
