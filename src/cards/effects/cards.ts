@@ -19833,15 +19833,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Elemental Stoicism [for]/[obf] — Action+Combat, for/obf
+    // Elemental Stoicism [for]/[obf] — Action/Combat, for/obf
+    // "[for] Prevent 1 non-aggravated damage."
+    // "[for][obf] This vampire treats all aggravated damage as normal damage for the remainder of combat."
+    // "[FOR][obf] +1 stealth action. Put this card on this acting vampire. The vampire with this card treats aggravated damage done in combat as normal damage. Burn this card if the vampire goes to torpor."
     krcgId: 100625,
     name: "Elemental Stoicism",
-    cardType: "combat",
+    cardType: "actionOrCombat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "treatAggravatedAsNormal" }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "treatAggravatedAsNormal" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 1, perBloodX: false, nonAggravated: true }] },
+      { level: "basic", discipline: { all: ["for", "obf"] }, effects: [{ kind: "treatAggravatedAsNormal", scope: "combat" }] },
+      { level: "superior", discipline: { all: ["for", "obf"] }, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "attachSelf", statics: { treatsAggravatedAsNormalInCombat: true }, burnWhenBearerLeavesReady: true }] },
     ],
   },
   {

@@ -1055,6 +1055,8 @@ export interface PermanentStatics {
    *  idea is how `modifyVotes`/`restrictVotes` drifted apart.
    *  docs/crypt-wave-5.md §3 */
   opposingCannotCombatEnds?: boolean | { yourCorruption: true };
+  /** "The vampire with this card treats aggravated damage done in combat as normal damage. Burn this card if the vampire goes to torpor" (Elemental Stoicism [FOR][obf]) — persistent until torpor burns it. Checked at damage resolution alongside round/combat treatAgg. */
+  treatsAggravatedAsNormalInCombat?: boolean;
   /** "+1 capacity" (the Discipline master cards) — read through
    *  capacityOf(), never off the printed MinionState.capacity. */
   capacityBonus?: number;

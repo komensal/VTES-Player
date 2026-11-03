@@ -12568,6 +12568,15 @@ export class VtesEngine implements EngineOps {
     }
   }
 
+  private bearerTreatsAggAsNormal(minionId: MinionId): boolean {
+    const m = findMinion(this.state, minionId);
+    if (!m) return false;
+    // Attached permanents (Elemental Stoicism [FOR][obf]) — until torpor burns it
+    if (m.attached?.some((p) => p.statics.treatsAggravatedAsNormalInCombat)) return true;
+    // Seat permanents attached to any bearer are in seat.permanents, not m.attached
+    return this.state.seats.some((s) => s.permanents.some((p) => p.attachedTo === minionId && p.statics.treatsAggravatedAsNormalInCombat));
+  }
+
   private pendingDamageWouldSendToTorpor(cf: CombatFrame, pd: PendingDamage): boolean {
     const victim = findMinion(this.state, pd.minion);
     if (
@@ -12580,7 +12589,7 @@ export class VtesEngine implements EngineOps {
     ) return false;
     const aggravated = pd.aggravated || !!cf.allDamageAggravated;
     const asNormal =
-      pd.treatAsNormal || (cf.aggravatedAsNormalRound ?? []).includes(victim.id);
+      pd.treatAsNormal || (cf.aggravatedAsNormalRound ?? []).includes(victim.id) || (cf.aggravatedAsNormalCombat ?? []).includes(victim.id) || this.bearerTreatsAggAsNormal(victim.id);
     if (aggravated && !asNormal) {
       return Math.max(0, pd.amount - 1) <= victim.blood;
     }
@@ -12997,7 +13006,9 @@ export class VtesEngine implements EngineOps {
     const cf = this.state.frames.find((f) => f.kind === "combat");
     const asNormal =
       pd.treatAsNormal ||
-      (cf?.kind === "combat" && (cf.aggravatedAsNormalRound ?? []).includes(pd.minion));
+      (cf?.kind === "combat" && (cf.aggravatedAsNormalRound ?? []).includes(pd.minion)) ||
+      (cf?.kind === "combat" && (cf as any).aggravatedAsNormalCombat?.includes(pd.minion)) ||
+      this.bearerTreatsAggAsNormal(pd.minion);
     if (pd.aggravated && !asNormal) {
       // Aggravated cannot be mended (p. 34). An already-wounded (in
       // torpor) vampire burns 1 blood per point to prevent destruction,
