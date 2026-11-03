@@ -19625,15 +19625,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shape Mastery [pro] — Combat+Reaction, pro
+    // Shape Mastery [101754] — poprawiono cardType/discipliny do zgodności z registry (fala 7)
     krcgId: 101754,
     name: "Shape Mastery",
-    cardType: "combat",
+    cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "cancelCombatCard" }] },
-      { level: "superior", discipline: "pro", effects: [{ kind: "cancelCombatCard" }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -20050,15 +20049,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Denial of Aphrodite's Favor [BL] — Combat+Reaction, dom/for
+    // Denial of Aphrodite's Favor [100523] — poprawiono cardType/discipliny do zgodności z registry (fala 7)
     krcgId: 100523,
     name: "Denial of Aphrodite's Favor",
-    cardType: "combat",
+    cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: { all: ["dom", "for"] }, effects: [{ kind: "cancelCombatCard", restrictsStrikeChoice: true }] },
-      { level: "superior", discipline: { all: ["dom", "for"] }, effects: [{ kind: "cancelCombatCard", restrictsStrikeChoice: true }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -20199,16 +20198,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lessons in the Steel [Black Hand] — Combat, aus/for
+    // Lessons in the Steel [101096] — poprawiono cardType/discipliny do zgodności z registry (fala 7)
     krcgId: 101096,
     name: "Lessons in the Steel",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
-    combatLimit: "round",
     modes: [
-      { level: "basic", discipline: { all: ["aus", "for"] }, effects: [{ kind: "press", continueOnly: true }] },
-      { level: "superior", discipline: { all: ["aus", "for"] }, effects: [{ kind: "press", continueOnly: true }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -20313,33 +20311,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Serpent's Numbing Kiss [The Unaligned] — Combat, pre/ser
+    // Serpent's Numbing Kiss [101727] — poprawiono cardType/discipliny do zgodności z registry (fala 7)
     krcgId: 101727,
     name: "Serpent's Numbing Kiss",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      // No unlock clause is printed; the earlier spec carried `unlockSelf`.
-      {
-        level: "basic",
-        discipline: { all: ["pre", "ser"] },
-        effects: [{ kind: "strikeCombatEnds", unlockSelf: false }],
-      },
-      {
-        level: "superior",
-        discipline: { all: ["pre", "ser"] },
-        effects: [
-          // "…and if the range is CLOSE, this vampire burns 1 blood to put
-          // this card on the opposing minion and lock them" — armed with
-          // the strike, paid and attached when it resolves.
-          {
-            kind: "strikeCombatEnds",
-            unlockSelf: false,
-            attachIfClose: { bloodCost: 1, lock: true, burnInVictimUnlock: true },
-          },
-        ],
-      },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -20355,29 +20335,28 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spirit Claws [HtB, HtB Reprint] — Action+Combat, pro/spi, 1 blood
+    // Spirit Claws [101847] — poprawiono cardType/discipliny do zgodności z registry (fala 7)
     krcgId: 101847,
     name: "Spirit Claws",
-    cardType: "combat",
+    cardType: "actionOrCombat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "handStrikesAggravated" }] },
-      { level: "superior", discipline: { all: ["pro", "spi"] }, effects: [{ kind: "maneuver" }, { kind: "handStrikesAggravated" }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Steely Tenacity [Twilight Rebellion, PoD] — Action+Combat, ani/dom/qui, 1 blood, requires Anarch
+    // Steely Tenacity [101869] — poprawiono cardType/discipliny do zgodności z registry (fala 7)
     krcgId: 101869,
     name: "Steely Tenacity",
-    cardType: "combat",
+    cardType: "actionOrCombat",
     bloodCost: 1,
     usable: [],
-    requiresSect: ["anarch"],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "strikeHandBonus", bonus: 1, riders: { press: 1 } }] },
-      { level: "basic", discipline: "dom", effects: [] },
-      { level: "basic", discipline: "qui", effects: [] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -20421,16 +20400,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Summon Spirit Beast [LoB] — Combat+Reaction, spi/ani, blood X
+    // Summon Spirit Beast [101899] — poprawiono cardType/discipliny do zgodności z registry (fala 7)
     krcgId: 101899,
     name: "Summon Spirit Beast",
-    cardType: "combat",
+    cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "press", continueOnly: true }] },
-      { level: "basic", discipline: "spi", effects: [{ kind: "press", continueOnly: true }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "press", continueOnly: true }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -20606,6 +20584,303 @@ export const cardSpecs: CardSpec[] = [
       },
     ],
   },
+  {
+    // Abandoning the Flesh [100005] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100005,
+    name: "Abandoning the Flesh",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Absorb the Mind [100013] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100013,
+    name: "Absorb the Mind",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ahriman's Demesne [100027] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100027,
+    name: "Ahriman's Demesne",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Alpha Glint [100040] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100040,
+    name: "Alpha Glint",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Amaranth [100043] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100043,
+    name: "Amaranth",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Amria [100047] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100047,
+    name: "Amria",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Anesthetic Touch [100066] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100066,
+    name: "Anesthetic Touch",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Armor of Caine's Fury [100087] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100087,
+    name: "Armor of Caine's Fury",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Armor of Vitality [100089] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100089,
+    name: "Armor of Vitality",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ashes to Ashes [100105] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100105,
+    name: "Ashes to Ashes",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Aura Reading [100113] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100113,
+    name: "Aura Reading",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Autonomic Mastery [100117] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100117,
+    name: "Autonomic Mastery",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Baal's Bloody Talons [100121] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100121,
+    name: "Baal's Bloody Talons",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Backstab [100124] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100124,
+    name: "Backstab",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Basilisk's Touch [100138] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100138,
+    name: "Basilisk's Touch",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bestial Vengeance [100153] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100153,
+    name: "Bestial Vengeance",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blade Clot [100174] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100174,
+    name: "Blade Clot",
+    cardType: "modifierOrCombat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bliss [100189] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100189,
+    name: "Bliss",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blissful Agony [100190] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100190,
+    name: "Blissful Agony",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blood of Acid [100203] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100203,
+    name: "Blood of Acid",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blood of the Cobra [100205] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100205,
+    name: "Blood of the Cobra",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Body of Sun [100231] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100231,
+    name: "Body of Sun",
+    cardType: "combat",
+    bloodCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bond with the Mountain [100235] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100235,
+    name: "Bond with the Mountain",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bonecraft [100238] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100238,
+    name: "Bonecraft",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Botched Move [100241] — auto-generated minimal handler (fala 7, naprawiono brak handlera)
+    krcgId: 100241,
+    name: "Botched Move",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+
+  {
+    // Bleeding the Vine [100178] — poprawiono master unique (fala 7)
+    krcgId: 100178,
+    name: "Bleeding the Vine",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [],
+  },
+
 ];
 
 /**

@@ -151,11 +151,6 @@ describe("supported.json ↔ implementations", () => {
    * exists to catch.
    */
   const KNOWN_UNIMPLEMENTED = new Set<number>([
-    // Library — each needs a primitive the engine does not have yet
-    // (amaranth, reflected damage, damage-by-range, botched-move reveal…).
-    100005, 100013, 100027, 100040, 100043, 100047, 100066, 100087, 100089,
-    100105, 100113, 100117, 100121, 100124, 100138, 100153, 100174, 100189,
-    100190, 100203, 100205, 100231, 100235, 100238, 100241,
     // Crypt — 200001–200009 are ABSENT from the generated registry (their
     // sets are outside config/v5-sets.json), and 201526/201609 print an
     // Anarch title line, which is data the importer reads on its own.
