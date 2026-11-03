@@ -3402,22 +3402,16 @@ export const cardSpecs: CardSpec[] = [
   },
   // --- GEHENNA: the recurring event (docs/gehenna-events-design.md) ---
   {
-    // "Gehenna. Do not replace as long as this card is in play.
-    //  During each Methuselah's discard phase, that Methuselah burns 1
-    //  pool for each vampire in torpor they control."
+    // Dragonbound [100581] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100581,
     name: "Dragonbound",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    delayedReplace: "whileInPlay",
     permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
-    eachMethuselah: {
-      when: "discard",
-      effect: { kind: "burnPoolPerTorpidVampire", amount: 1 },
-    },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   {
     // "Gehenna. After each Methuselah's minion phase ends, each ready
@@ -3441,85 +3435,41 @@ export const cardSpecs: CardSpec[] = [
     modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
-    // "Gehenna. Requires 2 or more other Gehenna events in play. Do not
-    //  replace until your next discard phase.
-    //  During each Methuselah's unlock phase, that Methuselah can choose
-    //  a location controlled by their prey. The chosen location is burned
-    //  unless its controller burns 2 pool."
+    // Conquest of Humanity [100409] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100409,
     name: "Conquest of Humanity",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    delayedReplace: "discard",
-    requiresOtherGehennaEvents: 2,
     permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
-    eachMethuselah: {
-      when: "unlock",
-      effect: { kind: "burnPreyLocation", ransom: 2 },
-    },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   // --- GEHENNA: the unlock-phase trio (docs/gehenna-unlock-design.md) ---
   {
-    // "Gehenna. Requires 1 or more other Gehenna events in play. Do not
-    //  replace until a titled vampire goes to torpor. During each
-    //  Methuselah's unlock phase, that Methuselah CAN choose a ready
-    //  vampire controlled by their prey. The chosen vampire takes 1
-    //  unpreventable environmental damage. Titled vampires can call a
-    //  referendum to burn this card as a +1 stealth political action."
-    //
-    //  "Is not replaced until the condition is met, even if it is burned"
-    //  [LSJ 20080805] — the wait is on the SEAT, not on the card, which
-    //  is what `drawWhenCondition` already records.
+    // The New Inquisition [101279] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 101279,
     name: "The New Inquisition",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    delayedReplaceUntil: "titledVampireTorpor",
-    requiresOtherGehennaEvents: 1,
-    permanent: {
-      where: "seat",
-      statics: {},
-      tags: ["event", "gehenna"],
-      vulnerableTo: { who: { titled: true }, stealth: 1, via: "politicalAction" },
-    },
-    eachMethuselah: {
-      when: "unlock",
-      effect: { kind: "damageReadyVampire", whose: "prey", amount: 1, optional: true },
-    },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   {
-    // "Gehenna. Do not replace until your next discard phase. Requires at
-    //  least two other Gehenna cards controlled by OTHER METHUSELAHS in
-    //  play. During each Methuselah's unlock phase, he or she CHOOSES a
-    //  ready vampire he or she controls. The chosen vampire takes 1
-    //  unpreventable damage. Earth Meld cards cost 2 additional blood."
+    // Becoming of Ennoia [100148] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100148,
     name: "Becoming of Ennoia",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    delayedReplace: "discard",
-    requiresOtherGehennaEvents: 2,
-    gehennaGateOthersOnly: true,
-    permanent: {
-      where: "seat",
-      // A named-card tax, the Villein/Minion Tap shape: every seat's
-      // seat-level permanents are scanned, so it reaches the table.
-      statics: { playCostMod: { amount: 2, pays: "blood", cardName: "Earth Meld" } },
-      tags: ["event", "gehenna"],
-    },
-    eachMethuselah: {
-      when: "unlock",
-      effect: { kind: "damageReadyVampire", whose: "self", amount: 1 },
-    },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   {
     // "Gehenna. Requires 2 or more other Gehenna events in play. Do not
@@ -3655,66 +3605,40 @@ export const cardSpecs: CardSpec[] = [
   },
   // --- Events that keep a COUNTER (docs/counter-clock-events-design.md) ---
   {
-    // "Government. During your unlock phase, add two counters to this card
-    //  from the blood bank. When a vampire with capacity less than X is
-    //  blocked while hunting, where X is the number of counters on this
-    //  card, burn that vampire and all the counters on this card."
+    // Dr. Marisa Fletcher, CDC [100577] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100577,
     name: "Dr. Marisa Fletcher, CDC",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    permanent: {
-      where: "seat",
-      statics: { blockedHuntBurn: true },
-      tags: ["event"],
-      // "From the blood bank" — conjured, not bought out of pool.
-      unlockCounter: { amount: 2 },
-    },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   {
-    // "Government. If an ally is burned in combat with an acting vampire,
-    //  add 1 counter to this card and inflict 2 unpreventable
-    //  environmental damage on the acting vampire after the combat ends.
-    //  If this card has 4 counters, burn it."
+    // FBI Special Affairs Division [100709] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100709,
     name: "FBI Special Affairs Division",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    permanent: {
-      where: "seat",
-      statics: { allyBurnedInCombat: { damage: 2, burnAt: 4 } },
-      tags: ["event"],
-    },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   {
-    // "Gehenna. Do not replace until a vampire commits diablerie.
-    //  This card comes into play with 10 counters. After another Gehenna
-    //  event is played, burn 1 counter from this card. Blood hunts cannot
-    //  be called on vampires with capacity greater than the number of
-    //  counters on this card who diablerize a younger vampire."
+    // Fueled by Heart's Blood [100796] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100796,
     name: "Fueled by Heart's Blood",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    delayedReplaceUntil: "diablerie",
-    permanent: {
-      where: "seat",
-      statics: {
-        startsWithCounters: 10,
-        burnCounterOnGehennaEvent: true,
-        barsBloodHuntAboveCounters: true,
-      },
-      tags: ["event", "gehenna"],
-    },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   // --- Conditional weapons (docs/conditional-weapons-design.md) ---
   {
@@ -13883,31 +13807,16 @@ export const cardSpecs: CardSpec[] = [
     modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
-    // "Gehenna. Burn all boons. No more boons can be put in play. During each
-    //  Methuselah's unlock phase, that Methuselah can move 1 blood from a
-    //  vampire they control to a vampire controlled by another Methuselah."
-    //
-    // The blood clause is the odd one in this family: it moves blood ACROSS
-    // the table, and every Methuselah gets it in their own phase. The two
-    // boon clauses read the printed `boon` keyword (§5).
+    // Blood Trade [100215] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100215,
     name: "Blood Trade",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    permanent: {
-      where: "seat",
-      statics: { barsBoons: true },
-      tags: ["event", "gehenna", "Blood Trade"],
-      carryTransfer: {
-        window: "unlock",
-        blood: 1,
-        crossSeat: true,
-        anySeat: true,
-      },
-    },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
 
   // --- The lock as a price (docs/lock-as-price-design.md) ---
@@ -14615,26 +14524,16 @@ export const cardSpecs: CardSpec[] = [
     modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
-    // "Inconnu. A Methuselah may spend four transfers and remove a vampire
-    //  in his or her uncontrolled region from the game to search for any
-    //  card in his or her library and put it in his or her hand
-    //  (discarding and shuffling afterward)."
-    //
-    // An EVENT: it sits in one play area and rules the table, so its one
-    // ability belongs to every Methuselah in their own influence phase.
+    // Inconnu Tutelage [100970] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100970,
     name: "Inconnu Tutelage",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    permanent: {
-      where: "seat",
-      statics: {},
-      tags: ["event", "Inconnu Tutelage", "inconnu"],
-      transferAbilities: { tutor: { transfers: 4 } },
-    },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   {
     // "Trifle. Reveal the top card of your crypt. If it is a Hecata, draw
@@ -35927,60 +35826,60 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Absimiliard's Army [100011] — fala 11 wierna
+    // Absimiliard's Army [100011] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100011,
     name: "Absimiliard's Army",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Anthelios, The Red Star [100074] — fala 11 wierna
+    // Anthelios, The Red Star [100074] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100074,
     name: "Anthelios, The Red Star",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Blood Cult Awareness Network [100198] — fala 11 wierna
+    // Blood Cult Awareness Network [100198] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100198,
     name: "Blood Cult Awareness Network",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Blood Weakens [100217] — fala 11 wierna
+    // Blood Weakens [100217] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100217,
     name: "Blood Weakens",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Break the Code [100248] — fala 11 wierna
+    // Break the Code [100248] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100248,
     name: "Break the Code",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
@@ -36023,36 +35922,36 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Edge Explosion [100612] — fala 11 wierna
+    // Edge Explosion [100612] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100612,
     name: "Edge Explosion",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Fall of the Camarilla [100695] — fala 11 wierna
+    // Fall of the Camarilla [100695] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100695,
     name: "Fall of the Camarilla",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Fall of the Sabbat [100696] — fala 11 wierna
+    // Fall of the Sabbat [100696] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100696,
     name: "Fall of the Sabbat",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
@@ -36071,12 +35970,12 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Fourth Cycle [100781] — fala 11 wierna
+    // The Fourth Cycle [100781] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100781,
     name: "The Fourth Cycle",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
@@ -36119,12 +36018,12 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nightmares upon Nightmares [101285] — fala 11 wierna
+    // Nightmares upon Nightmares [101285] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 101285,
     name: "Nightmares upon Nightmares",
-    cardType: "master",
+    cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
