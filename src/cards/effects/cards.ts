@@ -23345,7 +23345,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Legacy of Power [101088] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Legacy of Power [101088] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101088,
     name: "Legacy of Power",
     cardType: "reaction",
@@ -23356,7 +23356,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Leonardo, Mortician [101094] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Leonardo, Mortician [101094] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101094,
     name: "Leonardo, Mortician",
     cardType: "action",
@@ -23368,7 +23368,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Liquefy the Mortal Coil [101111] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Liquefy the Mortal Coil [101111] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101111,
     name: "Liquefy the Mortal Coil",
     cardType: "combat",
@@ -23379,7 +23379,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lobotomy [101116] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Lobotomy [101116] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101116,
     name: "Lobotomy",
     cardType: "actionModifier",
@@ -23390,7 +23390,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Local 1111 [101117] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Local 1111 [101117] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101117,
     name: "Local 1111",
     cardType: "action",
@@ -23401,7 +23401,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Loyalist [101130] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Loyalist [101130] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101130,
     name: "Loyalist",
     cardType: "reaction",
@@ -23412,7 +23412,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lyndhurst Estate, New York [101135] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Lyndhurst Estate, New York [101135] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101135,
     name: "Lyndhurst Estate, New York",
     cardType: "action",
@@ -23423,7 +23423,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Make an Example [101146] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Make an Example [101146] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101146,
     name: "Make an Example",
     cardType: "actionModifier",
@@ -23434,7 +23434,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Malleable Visage [101159] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Malleable Visage [101159] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101159,
     name: "Malleable Visage",
     cardType: "actionModifier",
@@ -23445,7 +23445,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Marijava Ghoul [101164] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Marijava Ghoul [101164] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101164,
     name: "Marijava Ghoul",
     cardType: "action",
@@ -23456,7 +23456,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Marijava Thuggee [101165] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Marijava Thuggee [101165] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101165,
     name: "Marijava Thuggee",
     cardType: "action",
@@ -23468,7 +23468,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Marked Path [101169] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Marked Path [101169] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101169,
     name: "Marked Path",
     cardType: "actionModifier",
@@ -23479,7 +23479,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Martinelli's Ring [101174] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Martinelli's Ring [101174] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101174,
     name: "Martinelli's Ring",
     cardType: "action",
@@ -23490,7 +23490,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Masca [101177] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Masca [101177] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101177,
     name: "Masca",
     cardType: "actionModifier",
@@ -23502,7 +23502,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Masque of Judas [101181] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Masque of Judas [101181] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101181,
     name: "Masque of Judas",
     cardType: "combat",
@@ -23514,7 +23514,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Masquer [101182] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Masquer [101182] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101182,
     name: "Masquer",
     cardType: "action",
@@ -23525,7 +23525,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mayaparisatya [101188] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Mayaparisatya [101188] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101188,
     name: "Mayaparisatya",
     cardType: "combat",
@@ -23536,7 +23536,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Meat Hook [101191] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Meat Hook [101191] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101191,
     name: "Meat Hook",
     cardType: "action",
@@ -23547,7 +23547,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mehemet of the Ahl-i-Batin [101194] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Mehemet of the Ahl-i-Batin [101194] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101194,
     name: "Mehemet of the Ahl-i-Batin",
     cardType: "action",
@@ -23559,7 +23559,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Meld with the Land [101196] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Meld with the Land [101196] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101196,
     name: "Meld with the Land",
     cardType: "combat",
@@ -23570,7 +23570,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Member of the Entourage [101197] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Member of the Entourage [101197] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101197,
     name: "Member of the Entourage",
     cardType: "action",
@@ -23581,7 +23581,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Memory Rift [101199] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Memory Rift [101199] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101199,
     name: "Memory Rift",
     cardType: "actionModifier",
@@ -23594,7 +23594,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mental Maze [101201] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Mental Maze [101201] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101201,
     name: "Mental Maze",
     cardType: "reaction",
@@ -23605,7 +23605,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mercy for Seth [101203] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Mercy for Seth [101203] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101203,
     name: "Mercy for Seth",
     cardType: "combat",
@@ -23616,7 +23616,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mind of the Wilds [101214] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Mind of the Wilds [101214] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101214,
     name: "Mind of the Wilds",
     cardType: "actionModifier",
@@ -23628,7 +23628,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mind Tricks [101216] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Mind Tricks [101216] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101216,
     name: "Mind Tricks",
     cardType: "actionModifier",
@@ -23639,7 +23639,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ministry [101218] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Ministry [101218] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101218,
     name: "Ministry",
     cardType: "reaction",
@@ -23650,7 +23650,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mirror's Visage [101224] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Mirror's Visage [101224] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101224,
     name: "Mirror's Visage",
     cardType: "actionModifier",
@@ -23661,7 +23661,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Missing Voice [101226] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // The Missing Voice [101226] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101226,
     name: "The Missing Voice",
     cardType: "actionModifier",
@@ -23673,7 +23673,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mistaken Identity [101227] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Mistaken Identity [101227] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101227,
     name: "Mistaken Identity",
     cardType: "reaction",
@@ -23684,7 +23684,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Mole [101233] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // The Mole [101233] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101233,
     name: "The Mole",
     cardType: "reaction",
@@ -23697,7 +23697,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mole's Tunneling [101234] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Mole's Tunneling [101234] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101234,
     name: "Mole's Tunneling",
     cardType: "actionModifier",
@@ -23709,7 +23709,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Momentary Delay [101236] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Momentary Delay [101236] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101236,
     name: "Momentary Delay",
     cardType: "actionModifier",
@@ -23720,7 +23720,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Monocle of Clarity [101240] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Monocle of Clarity [101240] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101240,
     name: "Monocle of Clarity",
     cardType: "action",
@@ -23731,7 +23731,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Morphean Blow [101244] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Morphean Blow [101244] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101244,
     name: "Morphean Blow",
     cardType: "combat",
@@ -23743,7 +23743,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mouthpiece [101245] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Mouthpiece [101245] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101245,
     name: "Mouthpiece",
     cardType: "actionModifier",
@@ -23754,7 +23754,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mummify [101251] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Mummify [101251] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101251,
     name: "Mummify",
     cardType: "combat",
@@ -23765,7 +23765,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mylan Horseed [101261] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Mylan Horseed [101261] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101261,
     name: "Mylan Horseed",
     cardType: "action",
@@ -23777,7 +23777,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nar-Sheptha [101264] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Nar-Sheptha [101264] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101264,
     name: "Nar-Sheptha",
     cardType: "action",
@@ -23789,7 +23789,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Neighborhood Watch Commander [101270] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Neighborhood Watch Commander [101270] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101270,
     name: "Neighborhood Watch Commander",
     cardType: "action",
@@ -23800,7 +23800,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nephandus [101272] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Nephandus [101272] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101272,
     name: "Nephandus",
     cardType: "action",
@@ -23812,7 +23812,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Netwar [101275] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Netwar [101275] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101275,
     name: "Netwar",
     cardType: "reaction",
@@ -23825,7 +23825,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Neutral Guard [101276] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Neutral Guard [101276] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101276,
     name: "Neutral Guard",
     cardType: "actionModifier",
@@ -23837,7 +23837,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ni Dieu ni Maître [101282] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Ni Dieu ni Maître [101282] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101282,
     name: "Ni Dieu ni Maître",
     cardType: "actionModifier",
@@ -23850,7 +23850,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nightshades [101286] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Nightshades [101286] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101286,
     name: "Nightshades",
     cardType: "actionModifier",
@@ -23861,7 +23861,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nightstick [101287] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Nightstick [101287] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101287,
     name: "Nightstick",
     cardType: "action",
@@ -23873,7 +23873,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // No Confidence [101290] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // No Confidence [101290] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101290,
     name: "No Confidence",
     cardType: "actionModifier",
@@ -23884,7 +23884,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Octopod [101314] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Octopod [101314] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101314,
     name: "Octopod",
     cardType: "combat",
@@ -23895,7 +23895,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ohoyo Hopoksia (Bastet) [101317] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Ohoyo Hopoksia (Bastet) [101317] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101317,
     name: "Ohoyo Hopoksia (Bastet)",
     cardType: "action",
@@ -23907,7 +23907,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Olid Loa [101319] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Olid Loa [101319] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101319,
     name: "Olid Loa",
     cardType: "combat",
@@ -23918,7 +23918,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Open Dossier [101322] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Open Dossier [101322] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101322,
     name: "Open Dossier",
     cardType: "reaction",
@@ -23929,7 +23929,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ophidian Gaze [101325] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Ophidian Gaze [101325] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101325,
     name: "Ophidian Gaze",
     cardType: "reaction",
@@ -23941,7 +23941,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Orb of Ulain [101328] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Orb of Ulain [101328] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101328,
     name: "Orb of Ulain",
     cardType: "action",
@@ -23952,7 +23952,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Order of Hermes Cabal [101329] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Order of Hermes Cabal [101329] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101329,
     name: "Order of Hermes Cabal",
     cardType: "action",
@@ -23964,7 +23964,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Orgy of Blood [101330] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Orgy of Blood [101330] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101330,
     name: "Orgy of Blood",
     cardType: "combat",
@@ -23975,7 +23975,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Oubliette [101334] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Oubliette [101334] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101334,
     name: "Oubliette",
     cardType: "combat",
@@ -23986,7 +23986,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Outside the Hourglass [101338] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Outside the Hourglass [101338] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101338,
     name: "Outside the Hourglass",
     cardType: "combat",
@@ -23998,7 +23998,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Palatial Estate [101345] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Palatial Estate [101345] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101345,
     name: "Palatial Estate",
     cardType: "action",
@@ -24009,7 +24009,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Patrol [101374] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Patrol [101374] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101374,
     name: "Patrol",
     cardType: "reaction",
@@ -24020,7 +24020,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Perfect Clarity [101386] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Perfect Clarity [101386] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101386,
     name: "Perfect Clarity",
     cardType: "actionModifier",
@@ -24031,7 +24031,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Personal Scourge [101395] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Personal Scourge [101395] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101395,
     name: "Personal Scourge",
     cardType: "combat",
@@ -24042,7 +24042,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Phased Motion Detector [101398] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Phased Motion Detector [101398] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101398,
     name: "Phased Motion Detector",
     cardType: "action",
@@ -24053,7 +24053,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pier 13, Port of Baltimore [101400] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Pier 13, Port of Baltimore [101400] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101400,
     name: "Pier 13, Port of Baltimore",
     cardType: "action",
@@ -24064,7 +24064,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pocket Out of Time [101405] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Pocket Out of Time [101405] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101405,
     name: "Pocket Out of Time",
     cardType: "actionModifier",
@@ -24076,7 +24076,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Poker [101408] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Poker [101408] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101408,
     name: "Poker",
     cardType: "action",
@@ -24087,7 +24087,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Political Antagonist [101412] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Political Antagonist [101412] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101412,
     name: "Political Antagonist",
     cardType: "action",
@@ -24099,7 +24099,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ponticulus [101419] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Ponticulus [101419] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101419,
     name: "Ponticulus",
     cardType: "action",
@@ -24111,7 +24111,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pounce [101426] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Pounce [101426] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101426,
     name: "Pounce",
     cardType: "combat",
@@ -24122,7 +24122,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Power of All [101428] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Power of All [101428] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101428,
     name: "Power of All",
     cardType: "reaction",
@@ -24133,7 +24133,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Power of One [101429] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Power of One [101429] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101429,
     name: "Power of One",
     cardType: "actionModifier",
@@ -24146,7 +24146,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Priestess of Sekhmet [101484] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Priestess of Sekhmet [101484] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101484,
     name: "Priestess of Sekhmet",
     cardType: "action",
@@ -24157,7 +24157,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Primal Instincts [101485] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Primal Instincts [101485] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101485,
     name: "Primal Instincts",
     cardType: "combat",
@@ -24168,7 +24168,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Propaganda of the Deed [101496] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Propaganda of the Deed [101496] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101496,
     name: "Propaganda of the Deed",
     cardType: "actionModifier",
@@ -24179,7 +24179,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Psalm of the Damned [101505] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Psalm of the Damned [101505] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101505,
     name: "Psalm of the Damned",
     cardType: "actionModifier",
@@ -24191,7 +24191,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pseudo-Blindness [101506] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Pseudo-Blindness [101506] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101506,
     name: "Pseudo-Blindness",
     cardType: "reaction",
@@ -24202,7 +24202,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Psychic Assault [101508] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Psychic Assault [101508] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101508,
     name: "Psychic Assault",
     cardType: "combat",
@@ -24213,7 +24213,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Psychomachia [101511] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Psychomachia [101511] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101511,
     name: "Psychomachia",
     cardType: "actionModifier",
@@ -24225,7 +24225,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pulled Fangs [101515] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Pulled Fangs [101515] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101515,
     name: "Pulled Fangs",
     cardType: "combat",
@@ -24236,7 +24236,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Puppeteer [101519] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Puppeteer [101519] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101519,
     name: "Puppeteer",
     cardType: "action",
@@ -24248,7 +24248,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Quicken Sight [101531] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Quicken Sight [101531] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101531,
     name: "Quicken Sight",
     cardType: "reaction",
@@ -24260,7 +24260,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Raking Talons [101538] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Raking Talons [101538] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101538,
     name: "Raking Talons",
     cardType: "combat",
@@ -24271,7 +24271,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Razor Bat [101556] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Razor Bat [101556] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101556,
     name: "Razor Bat",
     cardType: "action",
@@ -24283,7 +24283,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Read the Winds [101559] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Read the Winds [101559] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101559,
     name: "Read the Winds",
     cardType: "reaction",
@@ -24295,7 +24295,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Reality Mirror [101561] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Reality Mirror [101561] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101561,
     name: "Reality Mirror",
     cardType: "combat",
@@ -24306,7 +24306,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Recurring Contemplation [101572] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Recurring Contemplation [101572] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101572,
     name: "Recurring Contemplation",
     cardType: "actionModifier",
@@ -24318,7 +24318,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Red Herring [101573] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Red Herring [101573] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101573,
     name: "Red Herring",
     cardType: "actionModifier",
@@ -24329,7 +24329,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Red Question [101575] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // The Red Question [101575] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101575,
     name: "The Red Question",
     cardType: "actionModifier",
@@ -24340,7 +24340,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Redcap Wilder [101576] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Redcap Wilder [101576] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101576,
     name: "Redcap Wilder",
     cardType: "action",
@@ -24351,7 +24351,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Reliquary: Trinket [101599] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Reliquary: Trinket [101599] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101599,
     name: "Reliquary: Trinket",
     cardType: "action",
@@ -24363,7 +24363,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Remnant of the Endless Storm [101600] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Remnant of the Endless Storm [101600] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101600,
     name: "Remnant of the Endless Storm",
     cardType: "action",
@@ -24375,7 +24375,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Renegade Garou [101602] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Renegade Garou [101602] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101602,
     name: "Renegade Garou",
     cardType: "action",
@@ -24387,7 +24387,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Repulsion [101606] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Repulsion [101606] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101606,
     name: "Repulsion",
     cardType: "actionModifier",
@@ -24399,7 +24399,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Revelation of Wrath [101626] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Revelation of Wrath [101626] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101626,
     name: "Revelation of Wrath",
     cardType: "combat",
@@ -24410,7 +24410,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rewind Time [101633] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Rewind Time [101633] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101633,
     name: "Rewind Time",
     cardType: "reaction",
@@ -24422,7 +24422,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Righteous Aura [101635] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Righteous Aura [101635] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101635,
     name: "Righteous Aura",
     cardType: "combat",
@@ -24433,7 +24433,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Riposte [101637] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Riposte [101637] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101637,
     name: "Riposte",
     cardType: "combat",
@@ -24444,7 +24444,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ritual Scalpel [101643] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Ritual Scalpel [101643] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101643,
     name: "Ritual Scalpel",
     cardType: "action",
@@ -24455,7 +24455,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rock Cat [101645] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Rock Cat [101645] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101645,
     name: "Rock Cat",
     cardType: "action",
@@ -24467,7 +24467,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rockheart [101646] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Rockheart [101646] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101646,
     name: "Rockheart",
     cardType: "combat",
@@ -24479,7 +24479,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Roll [101648] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Roll [101648] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101648,
     name: "Roll",
     cardType: "combat",
@@ -24490,7 +24490,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rooftop Shadow [101651] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Rooftop Shadow [101651] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101651,
     name: "Rooftop Shadow",
     cardType: "reaction",
@@ -24501,7 +24501,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ruins of Ceoris [101658] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Ruins of Ceoris [101658] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101658,
     name: "Ruins of Ceoris",
     cardType: "action",
@@ -24512,7 +24512,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ruins of Villers Abbey, Belgium [101660] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Ruins of Villers Abbey, Belgium [101660] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101660,
     name: "Ruins of Villers Abbey, Belgium",
     cardType: "action",
@@ -24523,7 +24523,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Safe Passage [101673] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Safe Passage [101673] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101673,
     name: "Safe Passage",
     cardType: "actionModifier",
@@ -24535,7 +24535,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Salt of Thoth [101674] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Salt of Thoth [101674] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101674,
     name: "Salt of Thoth",
     cardType: "reaction",
@@ -24546,7 +24546,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // San Lorenzo de El Escorial, Spain [101676] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // San Lorenzo de El Escorial, Spain [101676] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101676,
     name: "San Lorenzo de El Escorial, Spain",
     cardType: "action",
@@ -24557,7 +24557,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sanguine Entrapment [101679] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Sanguine Entrapment [101679] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101679,
     name: "Sanguine Entrapment",
     cardType: "combat",
@@ -24569,7 +24569,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Sargon Fragment [101681] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // The Sargon Fragment [101681] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101681,
     name: "The Sargon Fragment",
     cardType: "action",
@@ -24581,7 +24581,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Save Face [101684] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Save Face [101684] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101684,
     name: "Save Face",
     cardType: "combat",
@@ -24592,7 +24592,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Scapelli, The Family "Mechanic" [101687] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Scapelli, The Family "Mechanic" [101687] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101687,
     name: "Scapelli, The Family \"Mechanic\"",
     cardType: "action",
@@ -24604,7 +24604,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Scobax [101691] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Scobax [101691] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101691,
     name: "Scobax",
     cardType: "reaction",
@@ -24616,7 +24616,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Scorpion's Touch [101694] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Scorpion's Touch [101694] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101694,
     name: "Scorpion's Touch",
     cardType: "combat",
@@ -24627,7 +24627,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Scry the Hearthstone [101701] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Scry the Hearthstone [101701] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101701,
     name: "Scry the Hearthstone",
     cardType: "reaction",
@@ -24639,7 +24639,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Scrying of Secrets [101702] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Scrying of Secrets [101702] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101702,
     name: "Scrying of Secrets",
     cardType: "actionModifier",
@@ -24650,7 +24650,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Seal of Veddartha [101703] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Seal of Veddartha [101703] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101703,
     name: "Seal of Veddartha",
     cardType: "action",
@@ -24662,7 +24662,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Selective Silence [101714] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Selective Silence [101714] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101714,
     name: "Selective Silence",
     cardType: "combat",
@@ -24673,7 +24673,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Seraph's Second [101724] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Seraph's Second [101724] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101724,
     name: "Seraph's Second",
     cardType: "actionModifier",
@@ -24684,7 +24684,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Serenading the Kami [101725] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Serenading the Kami [101725] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101725,
     name: "Serenading the Kami",
     cardType: "actionModifier",
@@ -24695,7 +24695,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shaal Fragment [101732] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shaal Fragment [101732] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101732,
     name: "Shaal Fragment",
     cardType: "action",
@@ -24706,7 +24706,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shackles of Enkidu [101733] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shackles of Enkidu [101733] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101733,
     name: "Shackles of Enkidu",
     cardType: "action",
@@ -24718,7 +24718,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shade [101734] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shade [101734] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101734,
     name: "Shade",
     cardType: "action",
@@ -24729,7 +24729,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Body [101735] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shadow Body [101735] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101735,
     name: "Shadow Body",
     cardType: "combat",
@@ -24740,7 +24740,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Court Satyr [101737] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shadow Court Satyr [101737] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101737,
     name: "Shadow Court Satyr",
     cardType: "action",
@@ -24752,7 +24752,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Feint [101738] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shadow Feint [101738] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101738,
     name: "Shadow Feint",
     cardType: "combat",
@@ -24764,7 +24764,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Parasite [101742] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shadow Parasite [101742] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101742,
     name: "Shadow Parasite",
     cardType: "combat",
@@ -24775,7 +24775,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Play [101743] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shadow Play [101743] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101743,
     name: "Shadow Play",
     cardType: "actionModifier",
@@ -24786,7 +24786,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Step [101744] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shadow Step [101744] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101744,
     name: "Shadow Step",
     cardType: "combat",
@@ -24797,7 +24797,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Strike [101745] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shadow Strike [101745] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101745,
     name: "Shadow Strike",
     cardType: "combat",
@@ -24808,7 +24808,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shattered Mirror [101758] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shattered Mirror [101758] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101758,
     name: "Shattered Mirror",
     cardType: "reaction",
@@ -24819,7 +24819,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shell Game [101764] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shell Game [101764] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101764,
     name: "Shell Game",
     cardType: "actionModifier",
@@ -24830,7 +24830,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shilmulo Deception [101766] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shilmulo Deception [101766] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101766,
     name: "Shilmulo Deception",
     cardType: "reaction",
@@ -24841,7 +24841,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shotgun Ritual [101770] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shotgun Ritual [101770] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101770,
     name: "Shotgun Ritual",
     cardType: "combat",
@@ -24852,7 +24852,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shoulder Drop [101771] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shoulder Drop [101771] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101771,
     name: "Shoulder Drop",
     cardType: "combat",
@@ -24863,7 +24863,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shroud Mastery [101773] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shroud Mastery [101773] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101773,
     name: "Shroud Mastery",
     cardType: "actionModifier",
@@ -24874,7 +24874,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shroud of Absence [101774] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shroud of Absence [101774] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101774,
     name: "Shroud of Absence",
     cardType: "actionModifier",
@@ -24886,7 +24886,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shroud of Night [101775] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Shroud of Night [101775] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101775,
     name: "Shroud of Night",
     cardType: "actionModifier",
@@ -24897,7 +24897,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Silence of Death [101782] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Silence of Death [101782] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101782,
     name: "Silence of Death",
     cardType: "combat",
@@ -24908,7 +24908,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sins of the Cauchemar [101783] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Sins of the Cauchemar [101783] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101783,
     name: "Sins of the Cauchemar",
     cardType: "reaction",
@@ -24919,7 +24919,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Skin of the Adder [101793] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Skin of the Adder [101793] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101793,
     name: "Skin of the Adder",
     cardType: "combat",
@@ -24930,7 +24930,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Skin of the Chameleon [101794] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Skin of the Chameleon [101794] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101794,
     name: "Skin of the Chameleon",
     cardType: "actionModifier",
@@ -24942,7 +24942,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Skin Trap [101795] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Skin Trap [101795] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101795,
     name: "Skin Trap",
     cardType: "combat",
@@ -24953,7 +24953,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sleep Unseen [101804] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Sleep Unseen [101804] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101804,
     name: "Sleep Unseen",
     cardType: "actionModifier",
@@ -24964,7 +24964,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Smite [101812] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Smite [101812] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101812,
     name: "Smite",
     cardType: "combat",
@@ -24975,7 +24975,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Smoke and Mirrors [101813] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Smoke and Mirrors [101813] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101813,
     name: "Smoke and Mirrors",
     cardType: "actionModifier",
@@ -24988,7 +24988,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Soar [101818] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Soar [101818] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101818,
     name: "Soar",
     cardType: "actionModifier",
@@ -24999,7 +24999,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Soul Gem of Etrius [101832] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Soul Gem of Etrius [101832] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101832,
     name: "Soul Gem of Etrius",
     cardType: "action",
@@ -25010,7 +25010,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Speak with Spirits [101840] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Speak with Spirits [101840] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101840,
     name: "Speak with Spirits",
     cardType: "reaction",
@@ -25022,7 +25022,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spike-Thrower [101846] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Spike-Thrower [101846] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101846,
     name: "Spike-Thrower",
     cardType: "action",
@@ -25034,7 +25034,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spiritual Intervention [101852] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Spiritual Intervention [101852] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101852,
     name: "Spiritual Intervention",
     cardType: "combat",
@@ -25045,7 +25045,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spiritual Protector [101853] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Spiritual Protector [101853] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101853,
     name: "Spiritual Protector",
     cardType: "action",
@@ -25056,7 +25056,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Squirrel Balance [101858] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Squirrel Balance [101858] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101858,
     name: "Squirrel Balance",
     cardType: "actionModifier",
@@ -25068,7 +25068,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Starshell Grenade Launcher [101860] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Starshell Grenade Launcher [101860] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101860,
     name: "Starshell Grenade Launcher",
     cardType: "action",
@@ -25080,7 +25080,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Starvation of Marena [101861] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Starvation of Marena [101861] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101861,
     name: "Starvation of Marena",
     cardType: "combat",
@@ -25091,7 +25091,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Still the Mortal Flesh [101871] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Still the Mortal Flesh [101871] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101871,
     name: "Still the Mortal Flesh",
     cardType: "combat",
@@ -25102,7 +25102,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Stone Dog [101873] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Stone Dog [101873] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101873,
     name: "Stone Dog",
     cardType: "action",
@@ -25114,7 +25114,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Stone Quills [101874] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Stone Quills [101874] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101874,
     name: "Stone Quills",
     cardType: "combat",
@@ -25126,7 +25126,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Stone Travel [101875] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Stone Travel [101875] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101875,
     name: "Stone Travel",
     cardType: "actionModifier",
@@ -25138,7 +25138,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Stonestrength [101876] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Stonestrength [101876] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101876,
     name: "Stonestrength",
     cardType: "combat",
@@ -25150,7 +25150,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Strike at the True Flesh [101885] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Strike at the True Flesh [101885] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101885,
     name: "Strike at the True Flesh",
     cardType: "combat",
@@ -25161,7 +25161,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Strix [101887] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Strix [101887] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101887,
     name: "Strix",
     cardType: "reaction",
@@ -25172,7 +25172,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Stutter-Step [101889] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Stutter-Step [101889] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101889,
     name: "Stutter-Step",
     cardType: "combat",
@@ -25183,7 +25183,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Succubus [101892] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Succubus [101892] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101892,
     name: "Succubus",
     cardType: "action",
@@ -25195,7 +25195,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Succulent Vitae [101894] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Succulent Vitae [101894] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101894,
     name: "Succulent Vitae",
     cardType: "actionModifier",
@@ -25206,7 +25206,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Survivalist [101910] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Survivalist [101910] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101910,
     name: "Survivalist",
     cardType: "action",
@@ -25218,7 +25218,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Swoop [101918] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Swoop [101918] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101918,
     name: "Swoop",
     cardType: "combat",
@@ -25229,7 +25229,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sword of Judgment [101919] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Sword of Judgment [101919] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101919,
     name: "Sword of Judgment",
     cardType: "action",
@@ -25241,7 +25241,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sword of Nuln [101920] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Sword of Nuln [101920] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101920,
     name: "Sword of Nuln",
     cardType: "action",
@@ -25253,7 +25253,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sword of Troile [101922] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Sword of Troile [101922] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101922,
     name: "Sword of Troile",
     cardType: "action",
@@ -25265,7 +25265,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tainted Spring [101925] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Tainted Spring [101925] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101925,
     name: "Tainted Spring",
     cardType: "actionModifier",
@@ -25276,7 +25276,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Talaq, The Immortal [101930] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Talaq, The Immortal [101930] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101930,
     name: "Talaq, The Immortal",
     cardType: "action",
@@ -25288,7 +25288,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Talbot's Chainsaw [101931] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Talbot's Chainsaw [101931] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101931,
     name: "Talbot's Chainsaw",
     cardType: "action",
@@ -25300,7 +25300,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Talith [101932] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Talith [101932] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101932,
     name: "Talith",
     cardType: "action",
@@ -25311,7 +25311,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tangle Atropos' Hand [101935] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Tangle Atropos' Hand [101935] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101935,
     name: "Tangle Atropos' Hand",
     cardType: "actionModifier",
@@ -25323,7 +25323,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tara, The Hollow One [101937] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Tara, The Hollow One [101937] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101937,
     name: "Tara, The Hollow One",
     cardType: "action",
@@ -25335,7 +25335,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Target Retainer [101941] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Target Retainer [101941] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101941,
     name: "Target Retainer",
     cardType: "combat",
@@ -25346,7 +25346,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Taste of Death [101944] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Taste of Death [101944] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101944,
     name: "Taste of Death",
     cardType: "combat",
@@ -25357,7 +25357,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tenebrous Form [101957] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Tenebrous Form [101957] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101957,
     name: "Tenebrous Form",
     cardType: "actionModifier",
@@ -25368,7 +25368,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Terrorists [101961] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Terrorists [101961] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101961,
     name: "Terrorists",
     cardType: "action",
@@ -25380,7 +25380,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Their Master's Voice [101967] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Their Master's Voice [101967] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101967,
     name: "Their Master's Voice",
     cardType: "reaction",
@@ -25391,7 +25391,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Thin Blood [101970] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Thin Blood [101970] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101970,
     name: "Thin Blood",
     cardType: "combat",
@@ -25402,7 +25402,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Thoughts Betrayed [101976] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Thoughts Betrayed [101976] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101976,
     name: "Thoughts Betrayed",
     cardType: "combat",
@@ -25413,7 +25413,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Three's a Crowd [101979] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Three's a Crowd [101979] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101979,
     name: "Three's a Crowd",
     cardType: "combat",
@@ -25424,7 +25424,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tinglestripe [101985] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Tinglestripe [101985] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101985,
     name: "Tinglestripe",
     cardType: "action",
@@ -25435,7 +25435,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tongue of the Serpent [101988] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Tongue of the Serpent [101988] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101988,
     name: "Tongue of the Serpent",
     cardType: "combat",
@@ -25446,7 +25446,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Torment the Soul [101992] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Torment the Soul [101992] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101992,
     name: "Torment the Soul",
     cardType: "combat",
@@ -25457,7 +25457,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tortured Confession [101996] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Tortured Confession [101996] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 101996,
     name: "Tortured Confession",
     cardType: "combat",
@@ -25468,7 +25468,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tourette's Voice [102000] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Tourette's Voice [102000] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102000,
     name: "Tourette's Voice",
     cardType: "reaction",
@@ -25480,7 +25480,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tracker's Mark [102003] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Tracker's Mark [102003] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102003,
     name: "Tracker's Mark",
     cardType: "combat",
@@ -25491,7 +25491,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Truth in Ink [102043] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Truth in Ink [102043] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102043,
     name: "Truth in Ink",
     cardType: "reaction",
@@ -25502,7 +25502,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Truth of a Thousand Lies [102044] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Truth of a Thousand Lies [102044] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102044,
     name: "Truth of a Thousand Lies",
     cardType: "actionModifier",
@@ -25513,7 +25513,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tunnel Runner [102047] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Tunnel Runner [102047] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102047,
     name: "Tunnel Runner",
     cardType: "action",
@@ -25525,7 +25525,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tye Cooper [102053] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Tye Cooper [102053] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102053,
     name: "Tye Cooper",
     cardType: "action",
@@ -25537,7 +25537,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Uncontrollable Rage [102058] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Uncontrollable Rage [102058] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102058,
     name: "Uncontrollable Rage",
     cardType: "actionModifier",
@@ -25548,7 +25548,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Under My Skin [102062] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Under My Skin [102062] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102062,
     name: "Under My Skin",
     cardType: "actionModifier",
@@ -25560,7 +25560,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Undying Thirst [102069] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Undying Thirst [102069] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102069,
     name: "Undying Thirst",
     cardType: "reaction",
@@ -25571,7 +25571,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Unleash the Hounds [102077] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Unleash the Hounds [102077] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102077,
     name: "Unleash the Hounds",
     cardType: "actionModifier",
@@ -25583,7 +25583,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vascular Explosion [102091] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Vascular Explosion [102091] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102091,
     name: "Vascular Explosion",
     cardType: "combat",
@@ -25594,7 +25594,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Veil of Silence [102096] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Veil of Silence [102096] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102096,
     name: "Veil of Silence",
     cardType: "reaction",
@@ -25605,7 +25605,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Veiled Sight [102098] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Veiled Sight [102098] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102098,
     name: "Veiled Sight",
     cardType: "reaction",
@@ -25616,7 +25616,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vendetta [102101] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Vendetta [102101] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102101,
     name: "Vendetta",
     cardType: "reaction",
@@ -25627,7 +25627,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vial of Garou Blood [102115] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Vial of Garou Blood [102115] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102115,
     name: "Vial of Garou Blood",
     cardType: "action",
@@ -25639,7 +25639,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Virtuosa [102124] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Virtuosa [102124] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102124,
     name: "Virtuosa",
     cardType: "actionModifier",
@@ -25651,7 +25651,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vivienne Géroux [102128] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Vivienne Géroux [102128] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102128,
     name: "Vivienne Géroux",
     cardType: "action",
@@ -25663,7 +25663,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Voice of Madness [102129] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Voice of Madness [102129] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102129,
     name: "Voice of Madness",
     cardType: "reaction",
@@ -25674,7 +25674,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Voices of the Castle [102130] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Voices of the Castle [102130] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102130,
     name: "Voices of the Castle",
     cardType: "reaction",
@@ -25686,7 +25686,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Walk of Caine [102138] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Walk of Caine [102138] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102138,
     name: "Walk of Caine",
     cardType: "actionModifier",
@@ -25697,7 +25697,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Walks-With-Might [102141] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Walks-With-Might [102141] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102141,
     name: "Walks-With-Might",
     cardType: "action",
@@ -25709,7 +25709,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Watch Commander [102154] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Watch Commander [102154] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102154,
     name: "Watch Commander",
     cardType: "reaction",
@@ -25720,7 +25720,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Wave of Lethargy [102161] — auto-generated easy/trivial (pełna pula, placeholder maneuver)
+    // Wave of Lethargy [102161] — fala 25 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
     krcgId: 102161,
     name: "Wave of Lethargy",
     cardType: "combat",
@@ -28905,7 +28905,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Legacy of Caine [101086] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Legacy of Caine [101086] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101086,
     name: "Legacy of Caine",
     cardType: "master",
@@ -28917,7 +28917,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Legacy of Pander [101087] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Legacy of Pander [101087] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101087,
     name: "Legacy of Pander",
     cardType: "action",
@@ -28928,7 +28928,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Legend of the Leopard [101090] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Legend of the Leopard [101090] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101090,
     name: "Legend of the Leopard",
     cardType: "action",
@@ -28939,7 +28939,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Legendary Vampire [101091] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Legendary Vampire [101091] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101091,
     name: "Legendary Vampire",
     cardType: "master",
@@ -28952,7 +28952,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Legion [101092] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Legion [101092] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101092,
     name: "Legion",
     cardType: "action",
@@ -28963,7 +28963,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Liberty Club Intrigue [101101] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Liberty Club Intrigue [101101] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101101,
     name: "Liberty Club Intrigue",
     cardType: "action",
@@ -28974,7 +28974,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lily Prelude [101109] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Lily Prelude [101109] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101109,
     name: "Lily Prelude",
     cardType: "action",
@@ -28985,7 +28985,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Little Mountain Cemetery [101113] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Little Mountain Cemetery [101113] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101113,
     name: "Little Mountain Cemetery",
     cardType: "action",
@@ -28996,7 +28996,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lock [101118] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Lock [101118] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101118,
     name: "Lock",
     cardType: "action",
@@ -29007,7 +29007,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Loki's Gift [101119] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Loki's Gift [101119] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101119,
     name: "Loki's Gift",
     cardType: "action",
@@ -29018,7 +29018,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Loner [101121] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Loner [101121] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101121,
     name: "Loner",
     cardType: "master",
@@ -29030,7 +29030,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Loose Cannon [101122] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Loose Cannon [101122] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101122,
     name: "Loose Cannon",
     cardType: "actionModifier",
@@ -29043,7 +29043,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lord of Serenity [101123] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Lord of Serenity [101123] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101123,
     name: "Lord of Serenity",
     cardType: "action",
@@ -29055,7 +29055,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Loss [101124] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Loss [101124] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101124,
     name: "Loss",
     cardType: "action",
@@ -29066,7 +29066,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lunatic Eruption [101132] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Lunatic Eruption [101132] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101132,
     name: "Lunatic Eruption",
     cardType: "action",
@@ -29077,7 +29077,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lure of the Serpent [101134] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Lure of the Serpent [101134] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101134,
     name: "Lure of the Serpent",
     cardType: "action",
@@ -29088,7 +29088,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Madman's Quill [101138] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Madman's Quill [101138] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101138,
     name: "Madman's Quill",
     cardType: "action",
@@ -29100,7 +29100,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Madness Network [101139] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Madness Network [101139] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101139,
     name: "Madness Network",
     cardType: "master",
@@ -29112,7 +29112,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Madness of the Bard [101140] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Madness of the Bard [101140] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101140,
     name: "Madness of the Bard",
     cardType: "master",
@@ -29125,7 +29125,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Madrigal [101141] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Madrigal [101141] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101141,
     name: "Madrigal",
     cardType: "modifierOrReaction",
@@ -29137,7 +29137,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Malkavian Derangement: Alternate Personality [101151] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Malkavian Derangement: Alternate Personality [101151] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101151,
     name: "Malkavian Derangement: Alternate Personality",
     cardType: "master",
@@ -29150,7 +29150,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Malkavian Derangement: Paranoia [101152] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Malkavian Derangement: Paranoia [101152] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101152,
     name: "Malkavian Derangement: Paranoia",
     cardType: "master",
@@ -29162,7 +29162,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Malkavian Game [101153] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Malkavian Game [101153] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101153,
     name: "Malkavian Game",
     cardType: "master",
@@ -29174,7 +29174,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Malkavian Prank [101155] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Malkavian Prank [101155] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101155,
     name: "Malkavian Prank",
     cardType: "master",
@@ -29186,7 +29186,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Malkavian Seven Miseries [101157] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Malkavian Seven Miseries [101157] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101157,
     name: "The Malkavian Seven Miseries",
     cardType: "master",
@@ -29199,7 +29199,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mantle of the Bestial Majesty [101161] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Mantle of the Bestial Majesty [101161] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101161,
     name: "Mantle of the Bestial Majesty",
     cardType: "action",
@@ -29210,7 +29210,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mark of Damnation [101166] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Mark of Damnation [101166] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101166,
     name: "Mark of Damnation",
     cardType: "action",
@@ -29221,7 +29221,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Marked Territory [101170] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Marked Territory [101170] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101170,
     name: "Marked Territory",
     cardType: "action",
@@ -29232,7 +29232,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Martial Ritus [101173] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Martial Ritus [101173] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101173,
     name: "Martial Ritus",
     cardType: "action",
@@ -29243,7 +29243,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mask of a Thousand Faces [101179] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Mask of a Thousand Faces [101179] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101179,
     name: "Mask of a Thousand Faces",
     cardType: "actionModifier",
@@ -29254,7 +29254,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Masochism [101180] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Masochism [101180] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101180,
     name: "Masochism",
     cardType: "action",
@@ -29265,7 +29265,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mass Reality [101185] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Mass Reality [101185] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101185,
     name: "Mass Reality",
     cardType: "action",
@@ -29276,7 +29276,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Massassi's Honor [101186] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Massassi's Honor [101186] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101186,
     name: "Massassi's Honor",
     cardType: "actionModifier",
@@ -29287,7 +29287,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mbare Market, Harare [101189] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Mbare Market, Harare [101189] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101189,
     name: "Mbare Market, Harare",
     cardType: "master",
@@ -29300,7 +29300,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Meddling of Semsith [101192] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Meddling of Semsith [101192] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101192,
     name: "The Meddling of Semsith",
     cardType: "action",
@@ -29311,7 +29311,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Memories of Mortality [101198] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Memories of Mortality [101198] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101198,
     name: "Memories of Mortality",
     cardType: "master",
@@ -29324,7 +29324,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Memory's Fading Glimpse [101200] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Memory's Fading Glimpse [101200] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101200,
     name: "Memory's Fading Glimpse",
     cardType: "action",
@@ -29335,7 +29335,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mesmerize [101205] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Mesmerize [101205] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101205,
     name: "Mesmerize",
     cardType: "action",
@@ -29346,7 +29346,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Metro Underground [101207] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Metro Underground [101207] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101207,
     name: "Metro Underground",
     cardType: "master",
@@ -29358,7 +29358,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Might of the Camarilla [101208] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Might of the Camarilla [101208] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101208,
     name: "Might of the Camarilla",
     cardType: "action",
@@ -29369,7 +29369,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Millicent Smith, Puritan Vampire Hunter [101210] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Millicent Smith, Puritan Vampire Hunter [101210] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101210,
     name: "Millicent Smith, Puritan Vampire Hunter",
     cardType: "master",
@@ -29381,7 +29381,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mind of a Child [101212] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Mind of a Child [101212] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101212,
     name: "Mind of a Child",
     cardType: "action",
@@ -29392,7 +29392,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mind of a Killer [101213] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Mind of a Killer [101213] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101213,
     name: "Mind of a Killer",
     cardType: "action",
@@ -29403,7 +29403,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Minor Curse [101220] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Minor Curse [101220] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101220,
     name: "Minor Curse",
     cardType: "action",
@@ -29414,7 +29414,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mirror Image [101222] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Mirror Image [101222] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101222,
     name: "Mirror Image",
     cardType: "modifierOrCombat",
@@ -29425,7 +29425,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Monomancy [101241] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Monomancy [101241] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101241,
     name: "Monomancy",
     cardType: "action",
@@ -29436,7 +29436,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Movement of the Slow Body [101247] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Movement of the Slow Body [101247] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101247,
     name: "Movement of the Slow Body",
     cardType: "action",
@@ -29447,7 +29447,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mundane [101253] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Mundane [101253] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101253,
     name: "Mundane",
     cardType: "master",
@@ -29459,7 +29459,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mustajib [101258] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Mustajib [101258] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101258,
     name: "Mustajib",
     cardType: "action",
@@ -29470,7 +29470,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // My Kin Against the World [101260] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // My Kin Against the World [101260] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101260,
     name: "My Kin Against the World",
     cardType: "action",
@@ -29481,7 +29481,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // New in Town [101278] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // New in Town [101278] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101278,
     name: "New in Town",
     cardType: "master",
@@ -29493,7 +29493,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // New Moon Sigil [101281] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // New Moon Sigil [101281] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101281,
     name: "New Moon Sigil",
     cardType: "action",
@@ -29504,7 +29504,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Night Moves [101283] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Night Moves [101283] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101283,
     name: "Night Moves",
     cardType: "action",
@@ -29515,7 +29515,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nightmare Curse [101284] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Nightmare Curse [101284] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101284,
     name: "Nightmare Curse",
     cardType: "action",
@@ -29527,7 +29527,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // No Secrets From the Magaji [101291] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // No Secrets From the Magaji [101291] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101291,
     name: "No Secrets From the Magaji",
     cardType: "action",
@@ -29538,7 +29538,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nocturn [101293] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Nocturn [101293] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101293,
     name: "Nocturn",
     cardType: "ally",
@@ -29550,7 +29550,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nocturn Theater [101294] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Nocturn Theater [101294] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101294,
     name: "Nocturn Theater",
     cardType: "master",
@@ -29563,7 +29563,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nod [101295] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Nod [101295] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101295,
     name: "Nod",
     cardType: "master",
@@ -29575,7 +29575,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nose of the Hound [101296] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Nose of the Hound [101296] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101296,
     name: "Nose of the Hound",
     cardType: "action",
@@ -29587,7 +29587,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nosferatu Bestial [101297] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Nosferatu Bestial [101297] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101297,
     name: "Nosferatu Bestial",
     cardType: "action",
@@ -29599,7 +29599,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nosferatu Hosting [101298] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Nosferatu Hosting [101298] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101298,
     name: "Nosferatu Hosting",
     cardType: "master",
@@ -29612,7 +29612,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nosferatu Kingdom [101300] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Nosferatu Kingdom [101300] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101300,
     name: "Nosferatu Kingdom",
     cardType: "master",
@@ -29625,7 +29625,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nosferatu Performance Art [101301] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Nosferatu Performance Art [101301] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101301,
     name: "Nosferatu Performance Art",
     cardType: "action",
@@ -29636,7 +29636,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Oath [101307] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Oath [101307] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101307,
     name: "The Oath",
     cardType: "modifierOrReaction",
@@ -29647,7 +29647,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Oath of Loyalty [101308] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Oath of Loyalty [101308] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101308,
     name: "Oath of Loyalty",
     cardType: "master",
@@ -29659,7 +29659,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Obsession [101311] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Obsession [101311] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101311,
     name: "Obsession",
     cardType: "master",
@@ -29672,7 +29672,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Occlusion [101313] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Occlusion [101313] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101313,
     name: "Occlusion",
     cardType: "modifierOrCombat",
@@ -29683,7 +29683,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Of Noble Blood [101315] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Of Noble Blood [101315] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101315,
     name: "Of Noble Blood",
     cardType: "action",
@@ -29694,7 +29694,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Oppugnant Night [101327] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Oppugnant Night [101327] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101327,
     name: "Oppugnant Night",
     cardType: "action",
@@ -29705,7 +29705,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Orun [101331] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Orun [101331] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101331,
     name: "Orun",
     cardType: "master",
@@ -29717,7 +29717,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Osebo Kholo [101332] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Osebo Kholo [101332] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101332,
     name: "Osebo Kholo",
     cardType: "modifierOrReaction",
@@ -29728,7 +29728,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ossian [101333] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Ossian [101333] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101333,
     name: "Ossian",
     cardType: "ally",
@@ -29741,7 +29741,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Out of Control [101335] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Out of Control [101335] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101335,
     name: "Out of Control",
     cardType: "master",
@@ -29754,7 +29754,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Out of the Frying Pan [101336] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Out of the Frying Pan [101336] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101336,
     name: "Out of the Frying Pan",
     cardType: "master",
@@ -29766,7 +29766,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Palace Hunting Ground [101344] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Palace Hunting Ground [101344] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101344,
     name: "Palace Hunting Ground",
     cardType: "master",
@@ -29779,7 +29779,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pallid [101347] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Pallid [101347] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101347,
     name: "Pallid",
     cardType: "master",
@@ -29791,7 +29791,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Panacea [101348] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Panacea [101348] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101348,
     name: "Panacea",
     cardType: "action",
@@ -29803,7 +29803,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Paragon [101351] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Paragon [101351] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101351,
     name: "Paragon",
     cardType: "master",
@@ -29815,7 +29815,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Paris Opera House [101352] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Paris Opera House [101352] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101352,
     name: "Paris Opera House",
     cardType: "master",
@@ -29828,7 +29828,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Parthenon [101355] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Parthenon [101355] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101355,
     name: "The Parthenon",
     cardType: "master",
@@ -29841,7 +29841,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Passion [101356] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Passion [101356] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101356,
     name: "Passion",
     cardType: "action",
@@ -29852,7 +29852,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Patagia: Flaps Allowing Limited Flight [101357] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Patagia: Flaps Allowing Limited Flight [101357] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101357,
     name: "Patagia: Flaps Allowing Limited Flight",
     cardType: "action",
@@ -29863,7 +29863,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Path of Blood [101358] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Path of Blood [101358] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101358,
     name: "The Path of Blood",
     cardType: "master",
@@ -29876,7 +29876,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Path of Bone [101359] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Path of Bone [101359] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101359,
     name: "The Path of Bone",
     cardType: "master",
@@ -29889,7 +29889,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Path of Harmony [101362] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Path of Harmony [101362] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101362,
     name: "The Path of Harmony",
     cardType: "master",
@@ -29902,7 +29902,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Path of Retribution [101367] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Path of Retribution [101367] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101367,
     name: "The Path of Retribution",
     cardType: "master",
@@ -29915,7 +29915,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Path of Service [101368] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Path of Service [101368] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101368,
     name: "The Path of Service",
     cardType: "master",
@@ -29928,7 +29928,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Path of Tears [101369] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Path of Tears [101369] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101369,
     name: "The Path of Tears",
     cardType: "master",
@@ -29941,7 +29941,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Path of the Feral Heart [101370] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Path of the Feral Heart [101370] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101370,
     name: "The Path of the Feral Heart",
     cardType: "master",
@@ -29954,7 +29954,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Path of the Void [101372] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Path of the Void [101372] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101372,
     name: "Path of the Void",
     cardType: "master",
@@ -29967,7 +29967,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Patronage [101375] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Patronage [101375] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101375,
     name: "Patronage",
     cardType: "action",
@@ -29979,7 +29979,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Peace of Khetamon [101379] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Peace of Khetamon [101379] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101379,
     name: "The Peace of Khetamon",
     cardType: "action",
@@ -29990,7 +29990,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Peacemaker [101381] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Peacemaker [101381] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101381,
     name: "Peacemaker",
     cardType: "reaction",
@@ -30002,7 +30002,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pentex™ Loves You! [101383] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Pentex™ Loves You! [101383] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101383,
     name: "Pentex™ Loves You!",
     cardType: "master",
@@ -30015,7 +30015,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Père Lachaise, France [101385] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Père Lachaise, France [101385] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101385,
     name: "Père Lachaise, France",
     cardType: "master",
@@ -30028,7 +30028,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Permanency [101389] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Permanency [101389] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101389,
     name: "Permanency",
     cardType: "actionModifier",
@@ -30039,7 +30039,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Persistent Echo [101392] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Persistent Echo [101392] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101392,
     name: "Persistent Echo",
     cardType: "action",
@@ -30051,7 +30051,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Persona Non Grata [101393] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Persona Non Grata [101393] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101393,
     name: "Persona Non Grata",
     cardType: "action",
@@ -30062,7 +30062,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Phantom Speaker [101397] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Phantom Speaker [101397] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101397,
     name: "Phantom Speaker",
     cardType: "actionModifier",
@@ -30074,7 +30074,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Plasmic Form [101402] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Plasmic Form [101402] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101402,
     name: "Plasmic Form",
     cardType: "modifierOrCombat",
@@ -30085,7 +30085,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Playing for Keeps [101403] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Playing for Keeps [101403] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101403,
     name: "Playing for Keeps",
     cardType: "master",
@@ -30097,7 +30097,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Poison the Well of Life [101407] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Poison the Well of Life [101407] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101407,
     name: "Poison the Well of Life",
     cardType: "action",
@@ -30108,7 +30108,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Police Department [101410] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Police Department [101410] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101410,
     name: "Police Department",
     cardType: "master",
@@ -30120,7 +30120,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Political Flux [101414] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Political Flux [101414] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101414,
     name: "Political Flux",
     cardType: "action",
@@ -30131,7 +30131,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Political Seizure [101416] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Political Seizure [101416] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101416,
     name: "Political Seizure",
     cardType: "master",
@@ -30144,7 +30144,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Portrait [101422] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Portrait [101422] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101422,
     name: "The Portrait",
     cardType: "action",
@@ -30155,7 +30155,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Possession [101423] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Possession [101423] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101423,
     name: "Possession",
     cardType: "action",
@@ -30166,7 +30166,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Potio Martyrium [101425] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Potio Martyrium [101425] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101425,
     name: "Potio Martyrium",
     cardType: "action",
@@ -30177,7 +30177,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Powerbase: Berlin [101432] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Powerbase: Berlin [101432] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101432,
     name: "Powerbase: Berlin",
     cardType: "master",
@@ -30189,7 +30189,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Powerbase: Cape Verde [101433] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Powerbase: Cape Verde [101433] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101433,
     name: "Powerbase: Cape Verde",
     cardType: "master",
@@ -30201,7 +30201,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Praetorian Backer [101446] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Praetorian Backer [101446] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101446,
     name: "Praetorian Backer",
     cardType: "action",
@@ -30213,7 +30213,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Praxis Seizure: Venice [101471] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Praxis Seizure: Venice [101471] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101471,
     name: "Praxis Seizure: Venice",
     cardType: "action",
@@ -30224,7 +30224,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Precision [101474] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Precision [101474] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101474,
     name: "Precision",
     cardType: "action",
@@ -30235,7 +30235,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pressing Flesh [101481] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Pressing Flesh [101481] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101481,
     name: "Pressing Flesh",
     cardType: "action",
@@ -30246,7 +30246,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Principia Discordia [101486] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Principia Discordia [101486] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101486,
     name: "Principia Discordia",
     cardType: "action",
@@ -30259,7 +30259,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Priority Shift [101488] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Priority Shift [101488] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101488,
     name: "Priority Shift",
     cardType: "action",
@@ -30270,7 +30270,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Prison of the Mind [101489] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Prison of the Mind [101489] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101489,
     name: "Prison of the Mind",
     cardType: "action",
@@ -30281,7 +30281,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Promise of 1528 [101494] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Promise of 1528 [101494] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101494,
     name: "Promise of 1528",
     cardType: "modifierOrReaction",
@@ -30292,7 +30292,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Protect Thine Own [101499] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Protect Thine Own [101499] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101499,
     name: "Protect Thine Own",
     cardType: "action",
@@ -30303,7 +30303,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Protected Resources [101500] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Protected Resources [101500] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101500,
     name: "Protected Resources",
     cardType: "master",
@@ -30316,7 +30316,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Provision of the Silsila [101503] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Provision of the Silsila [101503] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101503,
     name: "Provision of the Silsila",
     cardType: "modifierOrReaction",
@@ -30327,7 +30327,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Proxy Kissed [101504] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Proxy Kissed [101504] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101504,
     name: "Proxy Kissed",
     cardType: "master",
@@ -30339,7 +30339,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Psychic Projection [101509] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Psychic Projection [101509] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101509,
     name: "Psychic Projection",
     cardType: "action",
@@ -30350,7 +30350,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Psychic Veil [101510] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Psychic Veil [101510] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101510,
     name: "Psychic Veil",
     cardType: "action",
@@ -30361,7 +30361,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Public Vilification [101514] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Public Vilification [101514] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101514,
     name: "Public Vilification",
     cardType: "action",
@@ -30372,7 +30372,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pulse of the Canaille [101517] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Pulse of the Canaille [101517] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101517,
     name: "Pulse of the Canaille",
     cardType: "action",
@@ -30383,7 +30383,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Punish [101518] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Punish [101518] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101518,
     name: "Punish",
     cardType: "actionOrCombat",
@@ -30394,7 +30394,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Purchase Pact [101520] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Purchase Pact [101520] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101520,
     name: "Purchase Pact",
     cardType: "master",
@@ -30406,7 +30406,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Purification [101521] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Purification [101521] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101521,
     name: "Purification",
     cardType: "reaction",
@@ -30417,7 +30417,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Purity of the Beast [101522] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Purity of the Beast [101522] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101522,
     name: "Purity of the Beast",
     cardType: "action",
@@ -30428,7 +30428,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Putrescent Servitude [101526] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Putrescent Servitude [101526] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101526,
     name: "Putrescent Servitude",
     cardType: "action",
@@ -30439,7 +30439,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Quicksilver Contemplation [101533] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Quicksilver Contemplation [101533] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101533,
     name: "Quicksilver Contemplation",
     cardType: "modifierOrReaction",
@@ -30451,7 +30451,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rampage [101539] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Rampage [101539] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101539,
     name: "Rampage",
     cardType: "action",
@@ -30462,7 +30462,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Random Patterns [101540] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Random Patterns [101540] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101540,
     name: "Random Patterns",
     cardType: "modifierOrReaction",
@@ -30474,7 +30474,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rapid Healing [101543] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Rapid Healing [101543] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101543,
     name: "Rapid Healing",
     cardType: "action",
@@ -30485,7 +30485,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rastacourere [101546] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Rastacourere [101546] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101546,
     name: "Rastacourere",
     cardType: "action",
@@ -30497,7 +30497,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ravager [101548] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Ravager [101548] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101548,
     name: "Ravager",
     cardType: "master",
@@ -30509,7 +30509,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rave [101549] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Rave [101549] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101549,
     name: "Rave",
     cardType: "action",
@@ -30520,7 +30520,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ravnos Acceptance [101551] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Ravnos Acceptance [101551] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101551,
     name: "Ravnos Acceptance",
     cardType: "action",
@@ -30531,7 +30531,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rayzeel's Song [101555] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Rayzeel's Song [101555] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101555,
     name: "Rayzeel's Song",
     cardType: "action",
@@ -30543,7 +30543,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Reality [101560] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Reality [101560] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101560,
     name: "Reality",
     cardType: "action",
@@ -30554,7 +30554,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Realm of the Black Sun [101562] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Realm of the Black Sun [101562] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101562,
     name: "The Realm of the Black Sun",
     cardType: "master",
@@ -30566,7 +30566,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Recruiting Party [101568] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Recruiting Party [101568] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101568,
     name: "Recruiting Party",
     cardType: "action",
@@ -30577,7 +30577,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Recure of the Homeland [101571] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Recure of the Homeland [101571] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101571,
     name: "Recure of the Homeland",
     cardType: "action",
@@ -30588,7 +30588,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Red List [101574] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Red List [101574] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101574,
     name: "Red List",
     cardType: "action",
@@ -30599,7 +30599,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Redistribution [101579] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Redistribution [101579] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101579,
     name: "Redistribution",
     cardType: "action",
@@ -30610,7 +30610,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Reform Body [101581] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Reform Body [101581] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101581,
     name: "Reform Body",
     cardType: "modifierOrReaction",
@@ -30621,7 +30621,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Regeneration [101585] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Regeneration [101585] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101585,
     name: "Regeneration",
     cardType: "action",
@@ -30632,7 +30632,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Regenerative Blood [101586] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Regenerative Blood [101586] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101586,
     name: "Regenerative Blood",
     cardType: "master",
@@ -30645,7 +30645,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Reindoctrination [101589] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Reindoctrination [101589] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101589,
     name: "Reindoctrination",
     cardType: "action",
@@ -30656,7 +30656,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Release of the Shackled Soul [101593] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Release of the Shackled Soul [101593] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101593,
     name: "Release of the Shackled Soul",
     cardType: "action",
@@ -30667,7 +30667,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Remover [101601] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Remover [101601] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101601,
     name: "Remover",
     cardType: "master",
@@ -30679,7 +30679,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Renewed Vigor [101603] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Renewed Vigor [101603] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101603,
     name: "Renewed Vigor",
     cardType: "action",
@@ -30691,7 +30691,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Repair the Undead Flesh [101604] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Repair the Undead Flesh [101604] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101604,
     name: "Repair the Undead Flesh",
     cardType: "action",
@@ -30702,7 +30702,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Resilient Mind [101609] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Resilient Mind [101609] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101609,
     name: "Resilient Mind",
     cardType: "action",
@@ -30713,7 +30713,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Restructure [101615] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Restructure [101615] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101615,
     name: "Restructure",
     cardType: "action",
@@ -30724,7 +30724,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Resume the Coil [101616] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Resume the Coil [101616] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101616,
     name: "Resume the Coil",
     cardType: "action",
@@ -30735,7 +30735,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Resurrection [101617] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Resurrection [101617] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101617,
     name: "Resurrection",
     cardType: "action",
@@ -30747,7 +30747,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Retain the Quick Blood [101618] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Retain the Quick Blood [101618] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101618,
     name: "Retain the Quick Blood",
     cardType: "action",
@@ -30759,7 +30759,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Retribution [101619] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Retribution [101619] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101619,
     name: "Retribution",
     cardType: "master",
@@ -30771,7 +30771,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Reunion Kamut [101621] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Reunion Kamut [101621] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101621,
     name: "Reunion Kamut",
     cardType: "action",
@@ -30782,7 +30782,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Revelation of the Sire [101625] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Revelation of the Sire [101625] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101625,
     name: "Revelation of the Sire",
     cardType: "action",
@@ -30793,7 +30793,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Reversal of Fortunes [101629] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Reversal of Fortunes [101629] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101629,
     name: "Reversal of Fortunes",
     cardType: "action",
@@ -30804,7 +30804,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Revocation of Tyre [101630] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Revocation of Tyre [101630] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101630,
     name: "Revocation of Tyre",
     cardType: "action",
@@ -30815,7 +30815,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ritual Challenge [101641] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Ritual Challenge [101641] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101641,
     name: "Ritual Challenge",
     cardType: "action",
@@ -30826,7 +30826,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ritual of the Bitter Rose [101642] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Ritual of the Bitter Rose [101642] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101642,
     name: "Ritual of the Bitter Rose",
     cardType: "modifierOrCombat",
@@ -30837,7 +30837,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Root of Vitality [101652] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Root of Vitality [101652] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101652,
     name: "Root of Vitality",
     cardType: "action",
@@ -30848,7 +30848,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rubicon [101657] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Rubicon [101657] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101657,
     name: "Rubicon",
     cardType: "action",
@@ -30859,7 +30859,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rumble [101661] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Rumble [101661] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101661,
     name: "Rumble",
     cardType: "action",
@@ -30870,7 +30870,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rumors of Gehenna [101663] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Rumors of Gehenna [101663] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101663,
     name: "Rumors of Gehenna",
     cardType: "action",
@@ -30881,7 +30881,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sabbat Inquisitor [101666] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sabbat Inquisitor [101666] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101666,
     name: "Sabbat Inquisitor",
     cardType: "action",
@@ -30892,7 +30892,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Samuel Haight [101675] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Samuel Haight [101675] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101675,
     name: "Samuel Haight",
     cardType: "ally",
@@ -30905,7 +30905,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sanguine Instruction [101680] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sanguine Instruction [101680] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101680,
     name: "Sanguine Instruction",
     cardType: "action",
@@ -30916,7 +30916,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // SchreckNET [101690] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // SchreckNET [101690] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101690,
     name: "SchreckNET",
     cardType: "action",
@@ -30927,7 +30927,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Seattle Committee [101704] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Seattle Committee [101704] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101704,
     name: "Seattle Committee",
     cardType: "master",
@@ -30939,7 +30939,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Secret Library of Alexandria [101708] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Secret Library of Alexandria [101708] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101708,
     name: "The Secret Library of Alexandria",
     cardType: "master",
@@ -30952,7 +30952,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Secret Passage [101710] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Secret Passage [101710] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101710,
     name: "Secret Passage",
     cardType: "master",
@@ -30964,7 +30964,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Seeds of Corruption [101713] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Seeds of Corruption [101713] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101713,
     name: "Seeds of Corruption",
     cardType: "action",
@@ -30975,7 +30975,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sense Death [101716] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sense Death [101716] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101716,
     name: "Sense Death",
     cardType: "action",
@@ -30987,7 +30987,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sense the Sin [101718] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sense the Sin [101718] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101718,
     name: "Sense the Sin",
     cardType: "modifierOrReaction",
@@ -30999,7 +30999,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sense Vibrations [101719] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sense Vibrations [101719] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101719,
     name: "Sense Vibrations",
     cardType: "master",
@@ -31011,7 +31011,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sense Vitality [101720] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sense Vitality [101720] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101720,
     name: "Sense Vitality",
     cardType: "action",
@@ -31023,7 +31023,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sensory Deprivation [101721] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sensory Deprivation [101721] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101721,
     name: "Sensory Deprivation",
     cardType: "action",
@@ -31034,7 +31034,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sensory Overload [101722] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sensory Overload [101722] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101722,
     name: "Sensory Overload",
     cardType: "action",
@@ -31045,7 +31045,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Seraph [101723] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Seraph [101723] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101723,
     name: "Seraph",
     cardType: "action",
@@ -31056,7 +31056,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sermon of Caine [101726] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sermon of Caine [101726] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101726,
     name: "Sermon of Caine",
     cardType: "master",
@@ -31068,7 +31068,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Set's Call [101730] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Set's Call [101730] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101730,
     name: "Set's Call",
     cardType: "reaction",
@@ -31079,7 +31079,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Set's Curse [101731] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Set's Curse [101731] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101731,
     name: "Set's Curse",
     cardType: "action",
@@ -31090,7 +31090,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow of Taint [101739] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Shadow of Taint [101739] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101739,
     name: "Shadow of Taint",
     cardType: "action",
@@ -31102,7 +31102,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow of the Beast [101740] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Shadow of the Beast [101740] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101740,
     name: "Shadow of the Beast",
     cardType: "action",
@@ -31113,7 +31113,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Twin [101746] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Shadow Twin [101746] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101746,
     name: "Shadow Twin",
     cardType: "action",
@@ -31124,7 +31124,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadowed Eyes [101747] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Shadowed Eyes [101747] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101747,
     name: "Shadowed Eyes",
     cardType: "action",
@@ -31136,7 +31136,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shakar [101748] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Shakar [101748] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101748,
     name: "Shakar",
     cardType: "master",
@@ -31149,7 +31149,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shakar: the Hunt [101749] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Shakar: the Hunt [101749] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101749,
     name: "Shakar: the Hunt",
     cardType: "master",
@@ -31161,7 +31161,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shared Nightmare [101755] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Shared Nightmare [101755] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101755,
     name: "Shared Nightmare",
     cardType: "action",
@@ -31172,7 +31172,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shattering [101759] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Shattering [101759] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101759,
     name: "Shattering",
     cardType: "action",
@@ -31185,7 +31185,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shattering Crescendo [101761] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Shattering Crescendo [101761] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101761,
     name: "Shattering Crescendo",
     cardType: "action",
@@ -31197,7 +31197,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sheepdog [101762] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sheepdog [101762] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101762,
     name: "Sheepdog",
     cardType: "action",
@@ -31208,7 +31208,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shell Break [101763] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Shell Break [101763] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101763,
     name: "Shell Break",
     cardType: "action",
@@ -31219,7 +31219,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shepherd's Innocence [101765] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Shepherd's Innocence [101765] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101765,
     name: "Shepherd's Innocence",
     cardType: "action",
@@ -31230,7 +31230,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shock Troops [101768] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Shock Troops [101768] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101768,
     name: "Shock Troops",
     cardType: "master",
@@ -31242,7 +31242,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Siren's Lure [101786] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Siren's Lure [101786] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101786,
     name: "Siren's Lure",
     cardType: "actionModifier",
@@ -31254,7 +31254,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sixth Tradition: Destruction [101788] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sixth Tradition: Destruction [101788] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101788,
     name: "Sixth Tradition: Destruction",
     cardType: "action",
@@ -31265,7 +31265,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Skaald [101789] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Skaald [101789] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101789,
     name: "Skaald",
     cardType: "action",
@@ -31276,7 +31276,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Skullduggery [101796] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Skullduggery [101796] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101796,
     name: "Skullduggery",
     cardType: "action",
@@ -31289,7 +31289,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Slake the Thirst [101797] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Slake the Thirst [101797] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101797,
     name: "Slake the Thirst",
     cardType: "modifierOrCombat",
@@ -31300,7 +31300,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sleep of Reason [101803] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sleep of Reason [101803] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101803,
     name: "Sleep of Reason",
     cardType: "action",
@@ -31311,7 +31311,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sleight of Hand [101806] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sleight of Hand [101806] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101806,
     name: "Sleight of Hand",
     cardType: "action",
@@ -31322,7 +31322,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Smash and Grab [101809] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Smash and Grab [101809] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101809,
     name: "Smash and Grab",
     cardType: "action",
@@ -31335,7 +31335,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Smear Campaign [101810] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Smear Campaign [101810] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101810,
     name: "Smear Campaign",
     cardType: "master",
@@ -31348,7 +31348,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Snipe Hunt [101815] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Snipe Hunt [101815] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101815,
     name: "Snipe Hunt",
     cardType: "action",
@@ -31359,7 +31359,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Song of Pan [101826] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Song of Pan [101826] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101826,
     name: "Song of Pan",
     cardType: "action",
@@ -31371,7 +31371,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Songs of the Distant Vitae [101828] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Songs of the Distant Vitae [101828] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101828,
     name: "Songs of the Distant Vitae",
     cardType: "action",
@@ -31382,7 +31382,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Soul Decoration [101830] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Soul Decoration [101830] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101830,
     name: "Soul Decoration",
     cardType: "action",
@@ -31394,7 +31394,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Soul Feasting [101831] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Soul Feasting [101831] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101831,
     name: "Soul Feasting",
     cardType: "action",
@@ -31405,7 +31405,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Soul of the Earth [101833] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Soul of the Earth [101833] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101833,
     name: "Soul of the Earth",
     cardType: "action",
@@ -31416,7 +31416,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Soul Painting [101834] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Soul Painting [101834] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101834,
     name: "Soul Painting",
     cardType: "action",
@@ -31428,7 +31428,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Soul Stealing [101836] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Soul Stealing [101836] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101836,
     name: "Soul Stealing",
     cardType: "modifierOrCombat",
@@ -31439,7 +31439,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sound of a Breaking Oath [101837] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sound of a Breaking Oath [101837] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101837,
     name: "Sound of a Breaking Oath",
     cardType: "reaction",
@@ -31451,7 +31451,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sowing Dissension [101838] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sowing Dissension [101838] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101838,
     name: "Sowing Dissension",
     cardType: "action",
@@ -31462,7 +31462,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spectral Divination [101843] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Spectral Divination [101843] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101843,
     name: "Spectral Divination",
     cardType: "modifierOrReaction",
@@ -31473,7 +31473,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Speed of Thought [101844] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Speed of Thought [101844] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101844,
     name: "Speed of Thought",
     cardType: "action",
@@ -31484,7 +31484,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spell of Life [101845] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Spell of Life [101845] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101845,
     name: "Spell of Life",
     cardType: "action",
@@ -31495,7 +31495,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spirit Marionette [101848] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Spirit Marionette [101848] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101848,
     name: "Spirit Marionette",
     cardType: "action",
@@ -31507,7 +31507,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spontaneous Power [101855] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Spontaneous Power [101855] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101855,
     name: "Spontaneous Power",
     cardType: "master",
@@ -31520,7 +31520,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Status Perfectus [101863] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Status Perfectus [101863] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101863,
     name: "The Status Perfectus",
     cardType: "action",
@@ -31531,7 +31531,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Steal the Mind [101865] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Steal the Mind [101865] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101865,
     name: "Steal the Mind",
     cardType: "action",
@@ -31543,7 +31543,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Storm Sewers [101878] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Storm Sewers [101878] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101878,
     name: "Storm Sewers",
     cardType: "master",
@@ -31555,7 +31555,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Strained Vitae Supply [101879] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Strained Vitae Supply [101879] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101879,
     name: "Strained Vitae Supply",
     cardType: "master",
@@ -31567,7 +31567,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Succubus Club [101893] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Succubus Club [101893] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101893,
     name: "Succubus Club",
     cardType: "master",
@@ -31579,7 +31579,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Summon the Abyss [101900] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Summon the Abyss [101900] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101900,
     name: "Summon the Abyss",
     cardType: "action",
@@ -31590,7 +31590,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sunrise Service [101903] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sunrise Service [101903] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101903,
     name: "Sunrise Service",
     cardType: "action",
@@ -31601,7 +31601,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sunset Strip, Hollywood [101904] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Sunset Strip, Hollywood [101904] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101904,
     name: "Sunset Strip, Hollywood",
     cardType: "master",
@@ -31614,7 +31614,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Suspension of Disbelief [101911] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Suspension of Disbelief [101911] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101911,
     name: "Suspension of Disbelief",
     cardType: "action",
@@ -31625,7 +31625,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Svadharma [101912] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Svadharma [101912] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101912,
     name: "Svadharma",
     cardType: "master",
@@ -31637,7 +31637,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Swiftness of the Stag [101916] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Swiftness of the Stag [101916] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101916,
     name: "Swiftness of the Stag",
     cardType: "modifierOrCombat",
@@ -31649,7 +31649,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Swiss Cut [101917] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Swiss Cut [101917] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101917,
     name: "Swiss Cut",
     cardType: "master",
@@ -31661,7 +31661,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tabriz Assembly [101924] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Tabriz Assembly [101924] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101924,
     name: "Tabriz Assembly",
     cardType: "master",
@@ -31673,7 +31673,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tajdid [101927] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Tajdid [101927] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101927,
     name: "Tajdid",
     cardType: "master",
@@ -31685,7 +31685,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Talons of the Dead [101933] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Talons of the Dead [101933] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101933,
     name: "Talons of the Dead",
     cardType: "master",
@@ -31698,7 +31698,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tattoo Signal [101946] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Tattoo Signal [101946] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101946,
     name: "Tattoo Signal",
     cardType: "action",
@@ -31709,7 +31709,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Taunt the Caged Beast [101947] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Taunt the Caged Beast [101947] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101947,
     name: "Taunt the Caged Beast",
     cardType: "action",
@@ -31720,7 +31720,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Thicker than Blood [101969] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Thicker than Blood [101969] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101969,
     name: "Thicker than Blood",
     cardType: "master",
@@ -31733,7 +31733,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Threading the Path of Orpheus [101977] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Threading the Path of Orpheus [101977] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101977,
     name: "Threading the Path of Orpheus",
     cardType: "action",
@@ -31744,7 +31744,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Thrones Crumble [101981] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Thrones Crumble [101981] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101981,
     name: "Thrones Crumble",
     cardType: "action",
@@ -31755,7 +31755,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Touch of Clarity [101998] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Touch of Clarity [101998] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 101998,
     name: "Touch of Clarity",
     cardType: "modifierOrReaction",
@@ -31766,7 +31766,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tower of London [102001] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Tower of London [102001] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102001,
     name: "Tower of London",
     cardType: "master",
@@ -31779,7 +31779,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tradition Upheld [102004] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Tradition Upheld [102004] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102004,
     name: "Tradition Upheld",
     cardType: "action",
@@ -31790,7 +31790,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trainer [102007] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Trainer [102007] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102007,
     name: "Trainer",
     cardType: "action",
@@ -31801,7 +31801,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Transcendent Laibon [102009] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Transcendent Laibon [102009] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102009,
     name: "Transcendent Laibon",
     cardType: "master",
@@ -31813,7 +31813,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Transfusion [102011] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Transfusion [102011] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102011,
     name: "Transfusion",
     cardType: "actionModifier",
@@ -31825,7 +31825,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Travelers Obey the Tenets [102013] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Travelers Obey the Tenets [102013] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102013,
     name: "Travelers Obey the Tenets",
     cardType: "action",
@@ -31836,7 +31836,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Treat the Sick Mind [102016] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Treat the Sick Mind [102016] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102016,
     name: "Treat the Sick Mind",
     cardType: "reaction",
@@ -31848,7 +31848,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Treatment [102017] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Treatment [102017] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102017,
     name: "The Treatment",
     cardType: "master",
@@ -31861,7 +31861,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Treaty of Laibach [102018] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Treaty of Laibach [102018] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102018,
     name: "Treaty of Laibach",
     cardType: "master",
@@ -31873,7 +31873,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tremere Convocation [102020] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Tremere Convocation [102020] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102020,
     name: "Tremere Convocation",
     cardType: "master",
@@ -31885,7 +31885,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Trick of the Danya [102024] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // The Trick of the Danya [102024] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102024,
     name: "The Trick of the Danya",
     cardType: "action",
@@ -31896,7 +31896,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Triole's Revenge [102025] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Triole's Revenge [102025] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102025,
     name: "Triole's Revenge",
     cardType: "action",
@@ -31907,7 +31907,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Chosen [102027] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Trophy: Chosen [102027] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102027,
     name: "Trophy: Chosen",
     cardType: "master",
@@ -31919,7 +31919,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Clan Respect [102028] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Trophy: Clan Respect [102028] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102028,
     name: "Trophy: Clan Respect",
     cardType: "master",
@@ -31931,7 +31931,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Discipline [102030] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Trophy: Discipline [102030] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102030,
     name: "Trophy: Discipline",
     cardType: "master",
@@ -31943,7 +31943,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Domain [102031] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Trophy: Domain [102031] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102031,
     name: "Trophy: Domain",
     cardType: "master",
@@ -31955,7 +31955,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Hunting Ground [102032] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Trophy: Hunting Ground [102032] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102032,
     name: "Trophy: Hunting Ground",
     cardType: "master",
@@ -31967,7 +31967,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Library [102033] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Trophy: Library [102033] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102033,
     name: "Trophy: Library",
     cardType: "master",
@@ -31979,7 +31979,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Progeny [102035] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Trophy: Progeny [102035] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102035,
     name: "Trophy: Progeny",
     cardType: "master",
@@ -31991,7 +31991,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Revered [102037] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Trophy: Revered [102037] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102037,
     name: "Trophy: Revered",
     cardType: "master",
@@ -32003,7 +32003,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Safe Passage [102038] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Trophy: Safe Passage [102038] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102038,
     name: "Trophy: Safe Passage",
     cardType: "master",
@@ -32015,7 +32015,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trumped-Up Charges [102042] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Trumped-Up Charges [102042] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102042,
     name: "Trumped-Up Charges",
     cardType: "action",
@@ -32026,7 +32026,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Truth of Blood [102045] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Truth of Blood [102045] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102045,
     name: "Truth of Blood",
     cardType: "action",
@@ -32038,7 +32038,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Twilight Camp [102049] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Twilight Camp [102049] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102049,
     name: "Twilight Camp",
     cardType: "master",
@@ -32050,7 +32050,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Twisted Forest [102050] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Twisted Forest [102050] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102050,
     name: "Twisted Forest",
     cardType: "master",
@@ -32063,7 +32063,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Unacceptable Appearance [102055] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Unacceptable Appearance [102055] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102055,
     name: "Unacceptable Appearance",
     cardType: "master",
@@ -32075,7 +32075,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Unburdening the Bestial Soul [102056] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Unburdening the Bestial Soul [102056] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102056,
     name: "Unburdening the Bestial Soul",
     cardType: "action",
@@ -32087,7 +32087,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Undue Influence [102067] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Undue Influence [102067] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102067,
     name: "Undue Influence",
     cardType: "action",
@@ -32100,7 +32100,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Unexpected Coalition [102070] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Unexpected Coalition [102070] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102070,
     name: "Unexpected Coalition",
     cardType: "modifierOrReaction",
@@ -32111,7 +32111,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Unwholesome Bond [102082] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Unwholesome Bond [102082] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102082,
     name: "Unwholesome Bond",
     cardType: "action",
@@ -32122,7 +32122,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vaticination [102093] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Vaticination [102093] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102093,
     name: "Vaticination",
     cardType: "action",
@@ -32133,7 +32133,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vaulderie [102094] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Vaulderie [102094] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102094,
     name: "Vaulderie",
     cardType: "action",
@@ -32144,7 +32144,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Velvet Tongue [102100] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Velvet Tongue [102100] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102100,
     name: "Velvet Tongue",
     cardType: "modifierOrReaction",
@@ -32155,7 +32155,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ventrue Directorate Assembly [102108] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Ventrue Directorate Assembly [102108] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102108,
     name: "Ventrue Directorate Assembly",
     cardType: "master",
@@ -32168,7 +32168,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ventrue Investment [102110] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Ventrue Investment [102110] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102110,
     name: "Ventrue Investment",
     cardType: "master",
@@ -32180,7 +32180,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vicissitude Poisoning [102117] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Vicissitude Poisoning [102117] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102117,
     name: "Vicissitude Poisoning",
     cardType: "master",
@@ -32192,7 +32192,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vigil: The Thin Line [102119] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Vigil: The Thin Line [102119] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102119,
     name: "Vigil: The Thin Line",
     cardType: "master",
@@ -32204,7 +32204,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Violation of Trust [102122] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Violation of Trust [102122] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102122,
     name: "Violation of Trust",
     cardType: "action",
@@ -32215,7 +32215,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Visionquest [102125] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Visionquest [102125] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102125,
     name: "Visionquest",
     cardType: "action",
@@ -32226,7 +32226,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vox Senis [102133] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Vox Senis [102133] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102133,
     name: "Vox Senis",
     cardType: "master",
@@ -32238,7 +32238,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Wanderer's Counsel [102143] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Wanderer's Counsel [102143] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102143,
     name: "Wanderer's Counsel",
     cardType: "modifierOrReaction",
@@ -32249,7 +32249,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Watchtower: Chosen are Called [102155] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Watchtower: Chosen are Called [102155] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102155,
     name: "Watchtower: Chosen are Called",
     cardType: "master",
@@ -32262,7 +32262,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Watchtower: Four Ride Forth [102156] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Watchtower: Four Ride Forth [102156] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102156,
     name: "Watchtower: Four Ride Forth",
     cardType: "master",
@@ -32275,7 +32275,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Watchtower: Greatest Fall [102157] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Watchtower: Greatest Fall [102157] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102157,
     name: "Watchtower: Greatest Fall",
     cardType: "action",
@@ -32287,7 +32287,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Wave of Insanity [102160] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    // Wave of Insanity [102160] — fala 25 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
     krcgId: 102160,
     name: "Wave of Insanity",
     cardType: "action",
