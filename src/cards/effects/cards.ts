@@ -36069,14 +36069,14 @@ export const cardSpecs: CardSpec[] = [
  */
 export const cryptSpecs: CardSpec[] = [
   // --- Flat traits. The whole ability is one printed line. ---
-  flatCrypt(201540, "Catalina Vega (G6)", { bleed: 1 }),
-  flatCrypt(201555, "Lenny Burkhead (G6)", { bleed: 1 }),
-  flatCrypt(201597, "Kamile Paukstys (G6)", { bleed: 1 }),
-  flatCrypt(201602, "Massimiliano (G6)", { strength: 1 }),
-  flatCrypt(201614, "Valeriya Zinovieva (G6)", { strength: 1 }),
-  flatCrypt(201715, "Rinaldo Albizzi (G6)", { intercept: 1 }),
-  flatCrypt(201739, "Anousha, The Maniac (G6)", { strength: 1 }),
-  flatCrypt(201783, "Hafthor Thorsteinsson (G7)", { intercept: 1 }),
+  flatCrypt(201540, "Catalina Vega (G6)", { bleed: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201555, "Lenny Burkhead (G6)", { bleed: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201597, "Kamile Paukstys (G6)", { bleed: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201602, "Massimiliano (G6)", { strength: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201614, "Valeriya Zinovieva (G6)", { strength: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201715, "Rinaldo Albizzi (G6)", { intercept: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201739, "Anousha, The Maniac (G6)", { strength: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201783, "Hafthor Thorsteinsson (G7)", { intercept: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
 
   // --- Conditioned on the ACTION being performed. ---
   condCrypt(200132, "Ariane (G5)", [{ stealth: -1, actionDirected: false }]),
@@ -36139,18 +36139,18 @@ export const cryptSpecs: CardSpec[] = [
   ]),
 
   // --- Combat statics the engine already grants from a card in play. ---
-  flatCrypt(201658, "Saku Pihlajamäki (G6)", { maneuverPerCombat: 1 }),
-  flatCrypt(201772, "Serhat Gunde, Combat Junkie (G6)", { pressPerCombat: 1 }),
-  flatCrypt(201663, "Abaddon (G7)", { maneuverPerCombat: 1, pressPerCombat: 1 }),
+  flatCrypt(201658, "Saku Pihlajamäki (G6)", { maneuverPerCombat: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201772, "Serhat Gunde, Combat Junkie (G6)", { pressPerCombat: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201663, "Abaddon (G7)", { maneuverPerCombat: 1, pressPerCombat: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
 
   // --- Blocking. All three statics already exist; one was built the day
   //     before this wave for a library card that prints Aelswith's line. ---
-  flatCrypt(201758, "Jürgen, The Libertine (G6)", {
+  flatCrypt(201758, "Jürgen, The Libertine (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     // "Minions must burn 1 blood OR LIFE to attempt to block" — the
     // or-life half is what lets an ALLY pay at all (p. 22).
     blockToll: { amount: 1, payWith: "bloodOrLife" },
   }),
-  flatCrypt(201735, "Aelswith, The Irresistible (G6)", {
+  flatCrypt(201735, "Aelswith, The Irresistible (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     // Word for word Terrifying Visage's clause (docs/path-cards-design.md
     // §3), which is why this card cost nothing to add.
     blockedPoolToll: { amount: 1 },
@@ -36254,13 +36254,13 @@ export const cryptSpecs: CardSpec[] = [
   // "Rescuing a vampire from torpor costs Doc Martina −1 blood" — the
   // static built for Saulot's Healing Touch, read at BOTH the enumeration
   // and the payment site (docs/minion-target-actions-design.md).
-  flatCrypt(201670, "Doc Martina (G7)", { rescueDiscount: { amount: 1 } }),
+  flatCrypt(201670, "Doc Martina (G7)", { rescueDiscount: { amount: 1 } }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
 
   // --- WAVE 3: combat and blocking (docs/crypt-wave-3.md).
 
   // "If <this vampire> is blocked, they burn 1 blood before block
   // resolution" — Phantasmagoria's `blockedToll`, word for word.
-  flatCrypt(201677, "Marialena (G6)", {
+  flatCrypt(201677, "Marialena (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     blockedToll: { amount: 1, payWith: "blood" },
   }),
 
@@ -36332,12 +36332,12 @@ export const cryptSpecs: CardSpec[] = [
 
   // "1 press (mandatory) each combat, only usable to continue combat" —
   // `continuePressPerCombat`, built for Righteous Blade.
-  flatCrypt(201664, "Adrino Manauara (G6)", { continuePressPerCombat: 1 }),
+  flatCrypt(201664, "Adrino Manauara (G6)", { continuePressPerCombat: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
 
   // "Inflicts +1 damage with ranged strikes (even at close range)."
-  flatCrypt(201785, "Noluthando (G7)", { rangedDamageBonus: 1 }),
+  flatCrypt(201785, "Noluthando (G7)", { rangedDamageBonus: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
 
-  flatCrypt(201770, 'Rexton "Savage" Abernathy (G6)', {
+  flatCrypt(201770, 'Rexton "Savage" Abernathy (G6)', { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     // "Allies AND vampires with capacity 3 or less cannot block" — the
     // English "and" is a UNION of two groups, the reading recorded in
     // docs/opposing-statics-design.md.
@@ -36435,13 +36435,13 @@ export const cryptSpecs: CardSpec[] = [
 
   // "Animals (allies and retainers) cost Kuyén −1 blood or pool."
   // "Animal" is a printed sub-type, already in the tag vocabulary.
-  flatCrypt(201574, "Kuyén (G6)", {
+  flatCrypt(201574, "Kuyén (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     playCostMod: { amount: -1, pays: "bloodOrPool", tags: ["animal"], minions: "bearer" },
   }),
 
   // "Allies and retainers requiring a Tzimisce cost Máddji −1 blood or
   // pool" — the clan half off the `requiresClans` central query.
-  flatCrypt(201784, "Máddji, Mistress of Szlachtas (G6)", {
+  flatCrypt(201784, "Máddji, Mistress of Szlachtas (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     playCostMod: {
       amount: -1,
       pays: "bloodOrPool",
@@ -36453,7 +36453,7 @@ export const cryptSpecs: CardSpec[] = [
 
   // "Hesha gets +1 bleed for each UNIQUE equipment attached to him" — a
   // count over his own attachments, uniqueness carried as a tag (§3).
-  flatCrypt(201591, "Hesha Ruhadze (G6)", {
+  flatCrypt(201591, "Hesha Ruhadze (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     bleedPerAttached: { tags: ["equipment", "unique"], amount: 1 },
   }),
 
@@ -36550,7 +36550,7 @@ export const cryptSpecs: CardSpec[] = [
   // "In combat, strike cards cost the opposing minion +1 blood or life.
   // +1 stealth." `bloodOrLife` is load-bearing: p. 22 gives allies life,
   // so a cost printed in blood alone would exempt them entirely.
-  flatCrypt(201782, "Djeneba (G7)", {
+  flatCrypt(201782, "Djeneba (G7)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     stealth: 1,
     playCostMod: {
       amount: 1,
@@ -36562,7 +36562,7 @@ export const cryptSpecs: CardSpec[] = [
 
   // "Strike cards cost opposing YOUNGER vampires +1 blood." Blood, not
   // blood-or-life — and "younger vampires" excludes allies twice over.
-  flatCrypt(201738, "Algirdas, The Solar Prophet (G6)", {
+  flatCrypt(201738, "Algirdas, The Solar Prophet (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     playCostMod: {
       amount: 1,
       pays: "blood",
@@ -36573,14 +36573,14 @@ export const cryptSpecs: CardSpec[] = [
 
   // "Minions with any of your corruption counters in combat with Faruq
   // cannot strike: combat ends. +1 strength."
-  flatCrypt(201588, "Faruq Abd al-Qadir (G6)", {
+  flatCrypt(201588, "Faruq Abd al-Qadir (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     strength: 1,
     opposingCannotCombatEnds: { yourCorruption: true },
   }),
 
   // "Minions with 1 or more of your corruption counters must burn 1 blood
   // or life to attempt to block Sergio."
-  flatCrypt(201662, "Sergio Bueno (G6)", {
+  flatCrypt(201662, "Sergio Bueno (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     blockToll: { amount: 1, payWith: "bloodOrLife", yourCorruption: true },
   }),
 
@@ -36611,7 +36611,7 @@ export const cryptSpecs: CardSpec[] = [
   // "Jason gets +2 votes when casting votes AGAINST BLOOD HUNT
   // referendums. +1 bleed." The only vote static that depends on which
   // way the vote is being cast.
-  flatCrypt(201628, 'Jason "Son" Newberry (G6)', {
+  flatCrypt(201628, 'Jason "Son" Newberry (G6)', { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     bleed: 1,
     voteBonus: { amount: 2, direction: "against", variant: "bloodHunt" },
   }),
@@ -36619,7 +36619,7 @@ export const cryptSpecs: CardSpec[] = [
   // "Vampires must burn 1 blood to cast votes and ballots against
   // referendums called by Alexander." Carried by the CALLING minion and
   // paid by each voter — the block-tax shape one frame over.
-  flatCrypt(201530, "Alexander Silverson (G6)", {
+  flatCrypt(201530, "Alexander Silverson (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     voteTollAgainst: { blood: 1 },
   }),
 
@@ -36633,7 +36633,7 @@ export const cryptSpecs: CardSpec[] = [
   // recruit or employ get +1 starting life. +1 bleed." Read at the entry
   // path, and it raises `capacity` too — for an ally that field IS the
   // printed starting life (p. 11).
-  flatCrypt(201741, "Ashur-uballit, Son of the Abyss (G6)", {
+  flatCrypt(201741, "Ashur-uballit, Son of the Abyss (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     bleed: 1,
     recruitLifeBonus: { amount: 1, tag: "zombie" },
   }),
@@ -36657,7 +36657,7 @@ export const cryptSpecs: CardSpec[] = [
   // action unless she must hunt." A STATIC, not a `permanent` clause: it
   // is read straight off the entry by `minionPhaseOptions` and
   // `currentBleed`, neither of which consults a card's spec.
-  flatCrypt(201585, "Elen Kamjian (G6)", {
+  flatCrypt(201585, "Elen Kamjian (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     mustBleed: { bonus: 1, whileControlsLocked: true },
   }),
 
@@ -36687,7 +36687,7 @@ export const cryptSpecs: CardSpec[] = [
 
   // "While Parijat is ready, minions must BURN THE TOP CARD OF THEIR
   // LIBRARY to attempt to block wraith or zombie allies."
-  flatCrypt(201726, "Parijat, the Dark Oracle (G6)", {
+  flatCrypt(201726, "Parijat, the Dark Oracle (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     globalBlockToll: { payWith: "libraryCard", actorTags: ["wraith", "zombie"] },
   }),
 
@@ -38394,7 +38394,7 @@ export const cryptSpecs: CardSpec[] = [
 ];
 
 /** A crypt card whose whole ability is unconditional statics. */
-function flatCrypt(krcgId: number, name: string, statics: PermanentStatics): CardSpec {
+function flatCrypt(krcgId: number, name: string, statics: PermanentStatics): CardSpec { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
   return {
     krcgId,
     name,
