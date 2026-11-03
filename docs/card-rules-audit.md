@@ -82,7 +82,7 @@ Każdą rozbieżność należy odtworzyć scenariuszem, naprawić i zabezpieczy�
 | 100065 | Ancilla Empowerment | Zgodna w sprawdzonych klauzulach | Ten sam pool-burn-per-minion prymityw co tekst; ręczny przegląd specyfikacji, uzupełniające testy prymitywu. |
 | 100066 | Anesthetic Touch | **Błąd potwierdzony — brak handlera** | Wspierana, lecz brak wpisu/specyfikacji; close-range gate, [aus] dodge, [obe] hand strike + natychmiastowe zakończenie combatu i [OBE] first strike nie są dostępne. |
 | 100070 | Animalism | Zgodna w sprawdzonych klauzulach | Ogólny Discipline skill-card flow pokrywa +1 level/capacity oraz zakaz na vampire z superior Animalism; `discipline-cards.test.ts`. |
-| 100076 | Apparition | **Błąd potwierdzony — brak handlera** | Wspierana, lecz brak wpisu/specyfikacji; do końca combatu nieodrzucana karta, która daje [chi] prevent 1 lub [CHI] prevent 2 damage per round, nie jest dostępna. |
+| 100076 | Apparition | **Naprawiono — dodano roundPrevent i delayedReplace; regression test** | [chi] prevent 1 / [CHI] prevent 2 co rundę, `delayedReplace: "afterCombat"`, `roundPrevent` 1/2. Cover `third-wave` i `combat-prevention` suite. |
 
 Dla tej partii sprawdzono 8 powiązanych suites: **140 testów przeszło**. Potwierdzone braki handlera (Anesthetic Touch, Apparition) są już w puli 51 braków.
 
@@ -250,7 +250,7 @@ W tej partii zidentyfikowano **trzy nowe karty wymagające poprawy**: Call the W
 | ID | Karta | Wynik | Podstawa / uwagi |
 |---:|---|---|---|
 | 100332 | Charisma | Zgodna w sprawdzonych klauzulach | Unique archetype on ready vampire; ally-recruit actions reduce this vampire's blood/pool cost by 1; `play-cost.test.ts`. |
-| 100333 | Charismatic Aura | **Błąd potwierdzony — wymagania/koszt/limit i superior strike błędne** | Basic cancel spec requires only [aus], omitting [pre]; `cancelCombatCard` has no 1-blood effect; no one-per-round basic limit. Superior strike spec requires only superior [pre], omitting superior [aus], and sets `unlockSelf: true`, which is not printed. |
+| 100333 | Charismatic Aura | **Naprawiono — [aus][pre] cancel strike/grapple 1 blood, limit round, [AUS][PRE] strike bez unlock; regression test** | Basic `cancelStrikeCard` + `cancelCombatCard(grapple)` z `all:[aus,pre]` + `bloodCost:1` + `combatLimit:"round"`; superior `all:[AUS,PRE]` `strikeCombatEnds` bez unlock. |
 | 100337 | Cheval de Bataille | Zgodna w sprawdzonych klauzulach | Ready titled Sabbat requirement; voters/ballot casters against burn 1 blood at tally; `referendum-blood.test.ts`. |
 | 100338 | Childling Muse | Zgodna w sprawdzonych klauzulach | Changeling with 1 life; Malkavian employer gets +1 bleed; `legacy-minions.test.ts`. |
 | 100339 | Children of Osiris | Zgodna w sprawdzonych klauzulach | Followers of Set fail normal unlock, may burn blood to unlock; anyone can burn card, Set stealth penalty; `pay-to-unlock.test.ts`. |
@@ -281,7 +281,7 @@ W tej partii zidentyfikowano **jedną nową kartę wymagającą poprawy**: Chari
 | 100401 | Conditioning | Zgodna w sprawdzonych klauzulach | Limited +2/+3 bleed modifier; bleed-action tests. |
 | 100403 | Conflagration | Zgodna w sprawdzonych klauzulach | [pot] 2R normal, [dai] 1R agg, [DAI] 2R agg; specification and strike tests. |
 | 100404 | Conflict of Interests | Zgodna w sprawdzonych klauzulach | During referendum, cancels same-clan reacting vampire's votes/ballots; `legacy-reactions.test.ts`. |
-| 100408 | Conquer the Beast | **Błąd potwierdzony — zasadniczy efekt niezaimplementowany** | Tekst ustawia 3 counters; resetuje je za każdym zagranym combat card; blokuje equipment; w press step każdego round automatycznie zużywa counter na mandatory continue press (superior optional); karta pali się po combacie. Spec ma tylko `restrictOpponent.equipment` i pojedynczy `press`, bez counters, resetów, automatycznego pressa ani końca combat. |
+| 100408 | Conquer the Beast | **Naprawiono — 3 counters, reset, blok equipment, auto-press co rundę i burn po walce; regression test** | Tekst ustawia 3 counters; resetuje je za każdym zagranym combat card; blokuje equipment; w press step każdego round automatycznie zużywa counter na mandatory continue press (superior optional); karta pali się po combacie. Poprawiono `conquerTheBeast: {counters:3, mandatoryPress}` i logikę `pressStep`. Cover `next-batch-a.test.ts`. |
 | 100409 | Conquest of Humanity | Zgodna w sprawdzonych klauzulach | Gehenna gate and delayed replacement; each Methuselah chooses prey's location at unlock, whose controller can pay 2 pool; `gehenna-events.test.ts`. |
 | 100410 | Consanguineous Boon | Zgodna w sprawdzonych klauzulach | Choose existing clan; each Methuselah gets 1 pool per controlled vampire of clan; `referendum-terms.test.ts`, `clan-vocabulary.test.ts`. |
 | 100411 | Consanguineous Condemnation | Zgodna w sprawdzonych klauzulach | Choose clan and lock every vampire of that clan; `legacy-political.test.ts`. |
@@ -292,7 +292,7 @@ W tej partii zidentyfikowano **jedną nową kartę wymagającą poprawy**: Chari
 | 100426 | Corporate Hunting Ground | Zgodna w sprawdzonych klauzulach | Unique location hunting ground with standard once-per-vampire-per-turn gain; `legacy-locations.test.ts`. |
 | 100428 | Corpse Minion | Zgodna w sprawdzonych klauzulach | 1-life Ghoul retainer; vampire bearer burns X blood for +X intercept; `retainer-prices.test.ts`. |
 
-W tej partii znaleziono **jedną nową kartę wymagającą poprawy**: Conquer the Beast. 16 powiązanych suites przeszło: **154 testy**; brak dedykowanej regresji dla niezaimplementowanych liczników i pressów tej karty.
+W tej partii znaleziono **jedną nową kartę wymagającą poprawy**: Conquer the Beast — **naprawiono** w czwartej fali (Zestaw A, `next-batch-a.test.ts`). 16 powiązanych suites przeszło: **154 testy**; brak dedykowanej regresji dla niezaimplementowanych liczników i pressów tej karty.
 
 **Audyt ręczny — partia 11: karty o ID 100431–100478 (23 karty).**
 
@@ -304,7 +304,7 @@ W tej partii znaleziono **jedną nową kartę wymagającą poprawy**: Conquer th
 | 100442 | Creep Show | Zgodna w sprawdzonych klauzulach | Archetype triggers on opposing minion dodge/combat-end strike, gives 1 blood, once per turn; `archetypes.test.ts`. |
 | 100444 | Creepshow Casino | Zgodna w sprawdzonych klauzulach | Lock on announcement of controlled vampire's undirected action to add +1 stealth even when not yet needed; `action-time-locations.test.ts`. |
 | 100445 | Crematorium | Zgodna w sprawdzonych klauzulach | Unlock-phase lock burns a bloodless vampire in torpor; `torpor-prey.test.ts`. |
-| 100447 | Crimson Fury | **Błąd potwierdzony — spec dla innej karty** | Rejestr tekstu: diablerie reaction usable while victim locked/in torpor; [ani] cancels diablerie and diablerist burns 1 blood; [ANI] burns both while diablerie remains successful. Spec instead defines ordinary combat [ani] +1 first-strike hand damage / [ANI] 3 aggravated strike. No diablerie reaction exists. |
+| 100447 | Crimson Fury | **Naprawiono — diablerie cancelDiablerie / burnBothDiablerie; regression test** | [ani] `cancelDiablerie` burn 1, [ANI] `burnBothDiablerie` gdy ofiarą w torporze/zablokowany. Cover `crimson-fury.test.ts`. |
 | 100453 | Crusade: Atlanta | Zgodna w sprawdzonych klauzulach | Sabbat referendum attaches unique Archbishop of Atlanta title to acting vampire; contest/title rules covered by common Praxis/title tests. |
 | 100455 | Crusade: Berlin | Zgodna w sprawdzonych klauzulach | Sabbat Archbishop of Berlin; Lasombra bearer unlocks during next discard phase; `title-riders.test.ts`. |
 | 100457 | Crusade: Chicago | Zgodna w sprawdzonych klauzulach | Sabbat referendum title; contest behavior in `praxis-seizure.test.ts`. |
@@ -336,7 +336,7 @@ W tej partii zidentyfikowano **jedną nową kartę wymagającą poprawy**: Crims
 | 100501 | Dawn Operation | Zgodna w sprawdzonych klauzulach | Basic can cancel current block attempt; all vampire damage in resulting combat aggravated; superior lacks cancellation option; `dawn-operation.test.ts`. |
 | 100504 | Dead-End Alley | Zgodna w sprawdzonych klauzulach | Continue-only press; `basic-combat.test.ts`. |
 | 100506 | Deal with the Devil | Zgodna w sprawdzonych klauzulach | Master discards current hand and draws replacement hand; card replacement delayed until after discard; `hand-churn.test.ts`. |
-| 100507 | The Death of My Conscience | **Błąd potwierdzony — effect/cost/timing/hand replacement niezgodne** | Printed text: before strikes, burn up to 4 hand cards; strength +1 each (+2 superior); those cards replace only after combat. Catalog metadata confirms the 3-blood cost and capacity-above-5 gate are correctly represented. Spec instead gives a flat +1/+2 strength with no hand burn or delayed draw, and its `addStrength` window is before range rather than before strikes. |
+| 100507 | The Death of My Conscience | **Naprawiono — burn do 4 kart z ręki, +1/+2 siły, delayed replace, przed strike; regression test** | Printed text: before strikes, burn up to 4 hand cards; strength +1 each (+2 superior); those cards replace only after combat. Poprawiono `burnHandForStrength: {maxCards:4, strengthPerCard:1/2}`, `delayedReplace:afterCombat`, okno `beforeStrikes`. Cover `next-batch-a.test.ts`. |
 | 100510 | Death Seeker | Zgodna w sprawdzonych klauzulach | Once per round; cancels any opposing combat card as played, with its cost not paid; `one-each-round.test.ts`. |
 | 100511 | Decapitate | Zgodna w sprawdzonych klauzulach | Basic +2 hand/melee strike; superior only if opposing vampire is pending torpor and actor is neither being burned nor going torpor; `decapitate.test.ts` verifies availability and negative cases (prior requested subtask). |
 | 100515 | Deep Song | Zgodna w sprawdzonych klauzulach | Basic D bleed +1; superior Frenzy rush/lock with target treated as acting minion; `last-buildable.test.ts`, `bearer-rush-grants.test.ts`. |
@@ -350,7 +350,7 @@ W tej partii zidentyfikowano **jedną nową kartę wymagającą poprawy**: Crims
 | 100529 | Desert Eagle | Zgodna w sprawdzonych klauzulach | Gun strike 2R; weapon-cost and ranged-strike tests. |
 | 100533 | Detection | Zgodna w sprawdzonych klauzulach | Attach to any Lasombra; prevents normal unlock, permits bearer to pay 1 blood, bars votes/ballots, bearer D-burn; `pay-to-unlock.test.ts`. |
 
-W tej partii wykryto **dwie nowe karty wymagające poprawy**: The Death of My Conscience i Denial of Aphrodite's Favor. Dementation jest kolejnym potwierdzonym brakiem handlera z puli 51. 19 suites passed: **264 tests**; brak dedykowanych testów dla obu błędów.
+W tej partii wykryto **dwie nowe karty wymagające poprawy**: The Death of My Conscience (**naprawiono** w Zestawie A, `next-batch-a.test.ts`) i Denial of Aphrodite's Favor. Dementation jest kolejnym potwierdzonym brakiem handlera z puli 51. 19 suites passed: **264 tests**; brak dedykowanych testów dla obu błędów.
 
 **Audyt ręczny — partia 13: karty o ID 100541–100609 (34 karty).**
 
@@ -377,7 +377,7 @@ W tej partii wykryto **dwie nowe karty wymagające poprawy**: The Death of My Co
 | 100580 | Dragon's Breath Rounds | Zgodna w sprawdzonych klauzulach | Ammo +2 aggravated for gun through combat; burns gun after strike resolution; one ammo per gun/combat; `ammo.test.ts`. |
 | 100581 | Dragonbound | Zgodna w sprawdzonych klauzulach | Gehenna event; discard-phase pool loss per controlled vampire in torpor; `gehenna-events.test.ts`. |
 | 100582 | Drain Essence | Zgodna w sprawdzonych klauzulach | Not first round; ranged blood-steal strike at 2/4; combat strike tests and spec inspected. |
-| 100585 | Drawing Out the Beast | **Błąd potwierdzony — timing i unpreventable rider** | Superior text deals 1 unpreventable damage during the press step each round. Spec's `roundDamage` triggers at `strikeResolution` and lacks `unpreventable: true`; no card-specific test covers this. |
+| 100585 | Drawing Out the Beast | **Naprawiono — pressStepDamage w press step, unpreventable; regression test** | Superior `pressStepDamage` 1 co rundę w `combat.pressStep`, nie `roundDamage` w strike resolution. Cover `third-wave` suite. |
 | 100586 | Dread Gaze | Zgodna w sprawdzonych klauzulach | Referendum reaction; +2/+4 votes; `conditional-reactions.test.ts`. |
 | 100588 | Dreams of the Sphinx | Zgodna w sprawdzonych klauzulach | Lock counters, +2 hand size, Edge-gated pool gain, uncontrolled-region blood gain, burns at 3 counters; `dreams-of-the-sphinx.test.ts`. |
 | 100591 | Drum of Xipe Totec | Zgodna w sprawdzonych klauzulach | Unique equipment grants superior Celerity and one maneuver per combat; `discipline-granting-equipment.test.ts`. |
@@ -468,7 +468,7 @@ W tej partii wykryto **jedną nową kartę wymagającą poprawy**: Elemental Sto
 | 100749 | Flesh of Marble | Zgodna w sprawdzonych klauzulach | After first damage each round, prevent subsequent damage; basic excludes aggravated, superior includes; auto-prevention tests. |
 | 100752 | Flurry of Action | Zgodna w sprawdzonych klauzulach | Celerity bleed; successful basic draws 2/discards, successful superior unlocks actor; bleed-payoff tests. |
 | 100753 | Focus the Blood | Zgodna w sprawdzonych klauzulach | Put card and 1 blood on Assamite; burn card to reduce bearer combat card cost by 1 blood; combat cost tests. |
-| 100758 | Force of Personality | **Błąd potwierdzony — superior action modifier niezaimplementowany** | Basic Presence combat strike ends combat. Superior text is an ACTION MODIFIER usable as action is announced: vampires pay 1 blood to attempt block and non-zombie allies cannot block. Spec instead registers both levels only as combat strike combat-ends; card type is combat only. No dedicated regression test. |
+| 100758 | Force of Personality | **Naprawiono — superior jako modifierOrCombat z blockCost + blockRestriction; regression test** | Basic [pre] `strikeCombatEnds` (no unlock), superior [PRE] `modifierOrCombat` akcja: `blockCost` 1 blood dla vampires + `blockRestriction` allies (non-zombie przybliżone). |
 | 100760 | Forced Awakening | Zgodna w sprawdzonych klauzulach | Locked vampire wakes; if not blocking, burns 1 blood before action resolution; wake and block tests. |
 | 100762 | Forced Vigilance | Zgodna w sprawdzonych klauzulach | Basic unlock after block resolution; superior unlock during action directed at controller/card; `post-block-unlock.test.ts`. |
 | 100763 | Forearm Block | Zgodna w sprawdzonych klauzulach | Prevents 2 from opposing vampire's next hand strike (including resolving strike); if another round, gains first strike on initial strike; combat prevention suite. |
@@ -595,7 +595,7 @@ W tej partii wykryto **trzy nowe karty wymagające poprawy**: Improvised Tactics
 | 101050 | Kindred Intelligence | Zgodna w sprawdzonych klauzulach | +1 stealth action moves crypt top to uncontrolled region; legacy actions. |
 | 101053 | Kindred Segregation | Zgodna w sprawdzonych klauzulach | Successful referendum burns all allies unless controller repays recruitment cost; `legacy-political-sweeps.test.ts`. |
 | 101056 | Kine Resources Contested | Zgodna w sprawdzonych klauzulach | Allocate 4 among ≥2 Methuselahs; successful referendum 1 pool per assigned point; referendum allocation tests. |
-| 101057 | King of the Mountain | **Błąd potwierdzony — both modes materially incorrect** | Basic should prevent damage from opposing strike and destroy a melee weapon used for it. Superior is a post-range/pre-strike rider: if opposing minion inflicts hand-strike damage (even prevented), it takes equal damage at strike resolution. Spec instead maps both levels to blanket `preventAllThisRound`, omitting weapon destruction and the superior reflection clause. |
+| 101057 | King of the Mountain | **Naprawiono — preventOpposingStrike z destroyMeleeWeapon + handStrikeReflection; regression test** | Basic `preventOpposingStrike` (jedna STRIKE) + `destroyMeleeWeapon`; superior `handStrikeReflection` w `combat.beforeStrikes`. Cover `third-wave` suite. |
 | 101059 | King's Rising | Zgodna w sprawdzonych klauzulach | Gain 3 pool at ≤5 otherwise 1; enters play, bars transfers to/from uncontrolled minions, burns at controller's unlock while holding Edge; custom master tests. |
 | 101060 | Kingston Penitentiary, Ontario | Zgodna w sprawdzonych klauzulach | Unique Hunting Ground; own unlock-phase blood, or another Methuselah pays 1 pool to lock it and feed their ready vampire; one HG/vampire; hunting tests. |
 | 101063 | The Knights | Zgodna w sprawdzonych klauzulach | Unique mortal ally; 2 life, 2 strength, 0 bleed; ally tests. |
@@ -662,7 +662,7 @@ W tej partii wykryto **jedną nową kartę wymagającą poprawy**: Lessons in th
 | 101168 | Mark V | Zgodna w sprawdzonych klauzulach | Gun, ranged 4; only at long range and once/round; `weapons.test.ts`. |
 | 101171 | Market Square | Zgodna w sprawdzonych klauzulach | Unique location locks for controlled Assamite +1 intercept; statics tests. |
 | 101175 | Martyr's Resilience | Zgodna w sprawdzonych klauzulach | Outside unlocked vampire; both AUS+FOR; prevent 1 or burn X to prevent X+1 on minion/retainer; `outside-combat.test.ts`. |
-| 101178 | Mask Empathy | **Błąd potwierdzony — entire printed text replaced by damage strikes** | Printed basic Presence is a ranged strike that burns opposing minion's retainer at close range; superior is before range and burns 1 blood to burn that retainer. Spec instead offers ranged 1/2 damage strikes, with no retainer target or burn effect. |
+| 101178 | Mask Empathy | **Naprawiono — strikeDestroyEquipment retainer + burnOpposingRetainer; regression test** | Basic [pre] `strikeDestroyEquipment` retainer RANGED, superior [PRE] `burnOpposingRetainer` 1 blood `onlyBeforeRange`. Cover `mask-empathy.test.ts`. |
 | 101183 | Masquerade Endangered | Zgodna w sprawdzonych klauzulach | OOT on successful hunting vampire; prevents blood gain and next unlock; burns at next unlock; custom handler inspected. |
 | 101184 | Masquerade Enforcement | Zgodna w sprawdzonych klauzulach | Requires Prince/Justicar; successful referendum persistent +1 pool tax per vampire moved from uncontrolled to controlled; burn political action; custom master tests. |
 | 101187 | The Mausoleum, Venice | Zgodna w sprawdzonych klauzulach | Polling lock +1 vote, +1 more if Ventrue Headquarters absent; location/referendum tests. |
@@ -704,7 +704,7 @@ W tej partii wykryto **jedną nową kartę wymagającą poprawy**: Mask Empathy.
 | 101262 | Mythic Form | Zgodna w sprawdzonych klauzulach | First-round/pre-range, one/combat; +1 strength and prevent 1 non-agg each round; superior adds maneuver and one 2R aggravated strike per round; `before-range-attachments.test.ts`. |
 | 101265 | Narrow Minds | Zgodna w sprawdzonych klauzulach | Inconnu event, deferred replacement to next unlock; redirects-bleed minion cards cost +1 blood/life; `events.test.ts`, cost-modifier tests. |
 | 101267 | Necromancy | **Błąd potwierdzony — brak handlera** | Supported Discipline master has no handler/spec; cannot grant +1 Necromancy and +1 capacity, and cannot enforce no-play-on-superior-Necromancy gate. No card in current pool requires it, but the capacity/discipline grant is a printed game effect. |
-| 101268 | Necrosis | **Błąd potwierdzony — superior rider timing/range/unpreventability wrong** | [THN] is [thn] +2 hand strike plus 1 unpreventable environmental damage during the press step this round, effective only if strike was close. Spec uses `roundDamage` at strike resolution with no unpreventable or close-range gate. No dedicated regression test. |
+| 101268 | Necrosis | **Naprawiono — pressStepDamage z ifCloseStrikeThisRound, unpreventable; regression test** | Superior [THN] `strikeHandBonus` 2 + `pressStepDamage` 1 z `ifCloseStrikeThisRound` w `combat.pressStep`. |
 | 101271 | Neonate Breach | Zgodna w sprawdzonych klauzulach | Successful referendum: choose ≥1 seats; each loses 1 pool per point and +3 if they control ready vampire capacity≤4; referendum tests. |
 | 101273 | Nephren-Ka | Zgodna w sprawdzonych klauzulach | Unique mummy; 5 life, 2 strength, 0 bleed; prevents 1 non-agg/combat, basic Necromancy access, D rush, shuffles on burn; `mummies.test.ts`. |
 | 101274 | Nest of Eagles | Zgodna w sprawdzonych klauzulach | Cannot be used if actor is Assamite/wraith/flight; reduces bleed 1, or 3 for ally/capacity≤5 vampire; bleed tests. |
@@ -747,7 +747,7 @@ W tej partii wykryto **jedną nową rozbieżność specyfikacji**: Necrosis. Pot
 | 101373 | The Path of Typhon | Zgodna w sprawdzonych klauzulach | Unique Followers of Set Serpentis discount; any minion D-burns with 1 unpreventable damage; cost/location tests. |
 | 101376 | Patshiv | Zgodna w sprawdzonych klauzulach | +1 stealth action; each ready unlocked Ravnos gains 1 blood; `blood-bank-actions.test.ts`. |
 | 101380 | Peace Treaty | Zgodna w sprawdzonych klauzulach | Successful referendum burns weapons unless owner repays pool cost to equip; political sweep tests. |
-| 101382 | Penitent Resilience | **Błąd potwierdzony — mixed card types and all but one mode missing** | Printed [for] combat treats aggravated damage as normal this round and blanks Flash Grenade; [for][obe] same through combat; [FOR][OBE] action modifier at announcement names a vampire who cannot block. Spec registers only a combat card with two aggravated-as-normal modes; omits Flash Grenade restriction, combined superior duration requirements, and the unblockable action modifier. |
+| 101382 | Penitent Resilience | **Naprawiono — komplet trybów + Flash Grenade + blokada akcji; regression test** | [for] [COMBAT] This round treats aggravated as normal i anuluje Flash Grenade; [for][obe] [COMBAT] As [for] przez cały combat; [FOR][OBE] [ACTION MODIFIER] wybierz wampira – chosen nie może blokować. Poprawiono `cardType: modifierOrCombat`, tryby z `flashGrenadeImmune` i `blockRestriction:chosen`. Cover w `set-b.test.ts`. |
 | 101384 | Pentex™ Subversion | Zgodna w sprawdzonych klauzulach | Unique attachment to ready minion bars blocking; other minions D-burn; opposing statics tests. |
 | 101387 | Perfect Paragon | Zgodna w sprawdzonych klauzulach | Presence basic +3 votes during polling; superior -1 intercept to allies and younger vampires (union filter); `polling-votes.test.ts`, opposing statics. |
 | 101388 | Perfectionist | Zgodna w sprawdzonych klauzulach | Archetype; once/turn successful action with no reactions gains 1 blood; `archetypes.test.ts`. |
@@ -758,7 +758,7 @@ W tej partii wykryto **jedną nową rozbieżność specyfikacji**: Necrosis. Pot
 | 101404 | Poacher's Hunting Ground | Zgodna w sprawdzonych klauzulach | Derivative HG; feeds up to X ready controlled Anarchs, X set by other Methuselahs' non-derivative HGs; one HG/vampire/turn; derivative-HG tests. |
 | 101406 | Poison Pill | Zgodna w sprawdzonych klauzulach | Before votes; if passed referendum makes controller lose pool, acting vampire's controller loses same amount in addition; `referendum-outcomes.test.ts`. |
 
-W tej partii wykryto **jedną nową kartę wymagającą poprawy**: Penitent Resilience. Nie wykryto braków handlera. 31 suites passed: **434 tests**; brak dedykowanego testu dla ujawnionej rozbieżności.
+W tej partii wykryto **jedną nową kartę wymagającą poprawy**: Penitent Resilience — **naprawiono** w czwartej fali (zob. `set-b.test.ts`). Nie wykryto braków handlera. 31 suites passed: **434 tests**; brak dedykowanego testu dla ujawnionej rozbieżności.
 
 **Audyt ręczny — partia 24: karty o ID 101411–101498 (54 karty).**
 
@@ -836,7 +836,7 @@ W tej partii nie wykryto nowych rozbieżności ani braków handlera. 42 suites p
 | 101527 | Qetu the Evil Doer | Zgodna w sprawdzonych klauzulach | Unique mummy; 3 life, 1 strength, 2 bleed, continue-only press; shuffles on burn; `mummies.test.ts`. |
 | 101528 | Quick Exit | Zgodna w sprawdzonych klauzulach | Obfuscate basic end-only press / superior dodge; positional tests. |
 | 101529 | Quick Jab | Zgodna w sprawdzonych klauzulach | Deferred replacement; first-strike hand strike capped at 1 damage; first-strike suite. |
-| 101530 | Quick Meld | **Błąd potwierdzony — superior blood-paid maneuver missing** | [pro] maneuver; [PRO] as above and once this round may burn 1 blood for an additional maneuver. Spec has only one maneuver effect in superior and no paid second maneuver. |
+| 101530 | Quick Meld | **Naprawiono — [PRO] dodatkowy maneuver za 1 krwi raz na rundę; regression test** | [pro] maneuver; [PRO] as above and once this round may burn 1 blood for an additional maneuver. Dodano `extraManeuverForBlood: {bloodCost:1}` w superior. Cover `next-batch-a.test.ts`. |
 | 101532 | Quickness | Zgodna w sprawdzonych klauzulach | One/round; basic limited additional strike, superior unlimited strike; multiple-strike tests. |
 | 101534 | Quietus | **Błąd potwierdzony — brak handlera** | Supported Discipline master has no handler/spec; does not grant +1 Quietus/capacity or enforce superior-Quietus placement restriction. |
 | 101535 | Rabble Razing | Zgodna w sprawdzonych klauzulach | Successful referendum makes each vampire with capacity<4 burn 1 blood; political tests. |
@@ -860,7 +860,7 @@ W tej partii nie wykryto nowych rozbieżności ani braków handlera. 42 suites p
 | 101587 | Regent | Zgodna w sprawdzonych klauzulach | Sabbat capacity≥8 title; Sabbat rush action; on diablerie transfers title before blood hunt; title-rider/diablerie tests. |
 | 101588 | Rego Motum | Zgodna w sprawdzonych klauzulach | One/round; Thaumaturgy prevents 2/4 from opposing strike; prevention tests. |
 
-W tej partii wykryto **dwie nowe karty wymagające poprawy**: Putrefaction i Quick Meld. Quietus jest kolejnym potwierdzonym brakiem handlera z puli 51. 36 suites passed: **493 tests**.
+W tej partii wykryto **dwie nowe karty wymagające poprawy**: Putrefaction i Quick Meld (**naprawiono** w Zestawie A, `next-batch-a.test.ts`). Quietus jest kolejnym potwierdzonym brakiem handlera z puli 51. 36 suites passed: **493 tests**.
 
 **Audyt ręczny — partia 26: karty o ID 101591–101678 (28 kart).**
 
@@ -879,7 +879,7 @@ W tej partii wykryto **dwie nowe karty wymagające poprawy**: Putrefaction i Qui
 | 101628 | Revenant | Zgodna w sprawdzonych klauzulach | Ghoul retainer; employer +1 intercept; retainer tests. |
 | 101631 | Revolutionary Council | Zgodna w sprawdzonych klauzulach | Baron gate; choose X ready unlocked Anarchs, allocate 2X; success locks them, burns pool per point and allocated locations/equipment; referendum tests. |
 | 101632 | Rewilding | Zgodna w sprawdzonych klauzulach | Directed action burns location and controller 2 pool; `permanent-target-actions.test.ts`. |
-| 101636 | Rigor Mortis | **Błąd potwierdzony — all three discipline effects wrong** | Pre-range, once/round. [pre] bars opposing additional strikes; [thn] same plus optional press; [THN] same and once/round may cancel opponent maneuver. Spec instead restricts opposing presses for all modes; fails to bar additional strikes and maneuver cancellation, and grants the wrong press rider. |
+| 101636 | Rigor Mortis | **Naprawiono — bar additional strikes + press od [thn] + cancel maneuver od [THN]; regression test** | Pre-range, once/round. [pre] bars opposing additional strikes; [thn] same plus optional press; [THN] same and once/round may cancel opponent maneuver. Poprawiono `usable: onlyBeforeRange` i `cancelOpposingManeuverOncePerRound` od [THN]. Cover `kotm-rigor-etc.test.ts` i `set-b.test.ts`. |
 | 101640 | The Rising | Zgodna w sprawdzonych klauzulach | Gehenna requires two others; persists until prey ousted; bars pool gain during own turn without Edge/VP, diverts would-be gain to bank; Gehenna tests. |
 | 101644 | Robert Carter | Zgodna w sprawdzonych klauzulach | Unique ghoul retainer; employer 1-blood unlock upkeep or burn; +2 bleed; retainer upkeep tests. |
 | 101647 | Rogue | Zgodna w sprawdzonych klauzulach | Trifle on vampire with post-last-turn diablerie; any vampire may rush bearer; Auspex vampires +1 stealth; `granted-rush.test.ts`. |
@@ -895,7 +895,7 @@ W tej partii wykryto **dwie nowe karty wymagające poprawy**: Putrefaction i Qui
 | 101671 | Sacrifice | Zgodna w sprawdzonych klauzulach | Sabbat capacity>7 requirement; chooses same-clan vampire capacity<7; success burns chosen vampire; political removal tests. |
 | 101678 | Sanguinary Wind | Zgodna w sprawdzonych klauzulach | Basic prevents dodge before strikes; superior applies after strikes chosen; `round-sequencing.test.ts`. |
 
-W tej partii wykryto **jedną nową kartę wymagającą poprawy**: Rigor Mortis. Nie wykryto braków handlera. 34 suites passed: **476 tests**.
+W tej partii wykryto **jedną nową kartę wymagającą poprawy**: Rigor Mortis — **naprawiono** w czwartej fali (zob. `set-b.test.ts`, `kotm-rigor-etc.test.ts`). Nie wykryto braków handlera. 34 suites passed: **476 tests**.
 
 **Audyt ręczny — partia 27: karty o ID 101682–101769 (26 kart).**
 
@@ -908,7 +908,7 @@ W tej partii wykryto **jedną nową kartę wymagającą poprawy**: Rigor Mortis.
 | 101692 | Scorn of Adonis | Zgodna w sprawdzonych klauzulach | During polling; opponents of referendum burn 1 pool each, including controlled minion votes, once at tally; referendum tests. |
 | 101693 | Scorpion Sting | Zgodna w sprawdzonych klauzulach | Animalism +1 hand strike; superior also undodgeable; `undodgeable-strikes.test.ts`. |
 | 101695 | Scourge | Zgodna w sprawdzonych klauzulach | Requires titled vampire; choose same-sect vampire; on referendum success attach and unlock actor; bearer may rush vampire capacity≤4 or ally; `title-riders.test.ts`. |
-| 101696 | Scourge of Alecto | **Błąd potwierdzony — modes/gates/riders wrong** | Frenzy; only versus vampire/werewolf. Both modes require [cel][pre] together; superior [CEL][PRE] also has optional maneuver. Spec instead gives basic Celerity alone and superior Presence alone, omits Frenzy/target restrictions and maneuver, and lacks the printed 4-damage cap. |
+| 101696 | Scourge of Alecto | **Naprawiono — dual [cel][pre] + Frenzy + cap 4 + maneuver; regression test** | Frenzy; only versus vampire/werewolf. Both modes require [cel][pre] together; superior [CEL][PRE] also has optional maneuver. Poprawiono `frenzy:true`, `all:[cel,pre]`, `capDamage:4` i `maneuver` w superior. Cover `set-b.test.ts`. |
 | 101698 | Scouting Mission | Zgodna w sprawdzonych klauzulach | Basic Dominate +1 bleed; superior +1 stealth action adds 2 blood to younger uncontrolled vampire; action tests. |
 | 101699 | Screw the Masquerade! | Zgodna w sprawdzonych klauzulach | Successful referendum: each Methuselah burns 1 pool and chosen Methuselah +1; referendum tests. |
 | 101706 | Second Tradition: Domain | Zgodna w sprawdzonych klauzulach | Prince/Justicar; basic +2 intercept; locked Prince/Justicar may burn 1 blood to unlock/attempt block with +2 even before needed; unlock/block tests. |
@@ -919,7 +919,7 @@ W tej partii wykryto **jedną nową kartę wymagającą poprawy**: Rigor Mortis.
 | 101727 | Serpent's Numbing Kiss | **Błąd potwierdzony — superior attached-card effects missing** | Both levels require Presence+Serpentis and strike combat ends. Superior additionally, if close, burns 1 blood to attach to/lock opposing minion; that minion skips normal unlock and burns card at its unlock. Spec gives both levels only combat ends + self-unlock; no close-range gate, blood cost, attachment, lock or delayed burn. |
 | 101728 | Serpentis | **Błąd potwierdzony — brak handlera** | Supported Discipline master has no handler/spec; cannot grant +1 Serpentis/capacity or enforce no-play-on-superior-Serpentis gate. |
 | 101729 | Servitor of Irad | Zgodna w sprawdzonych klauzulach | Ready bearer permits +2 extra draws after any Methuselah plays Gehenna; discard down; one/vampire; Gehenna/hand tests. |
-| 101736 | Shadow Boxing | **Błąd potwierdzony — split type and combined discipline requirements wrong** | Printed [obf][pot] combat modes both require both disciplines (maneuver-to-close OR continue-only press). Superior [OBF][POT] is an action modifier after block-combat, only when blocker not ready; burn 1 blood to continue action as unblocked. Spec instead splits basic Obfuscate maneuver and superior Potence press and omits the action-modifier continuation/type/timing. |
+| 101736 | Shadow Boxing | **Naprawiono — poprawny typ modifierOrCombat, wymaga [obf][pot] razem, tryby maneuver/press i superior kontynuacja; regression test** | Printed [obf][pot] combat modes both require both disciplines (maneuver-to-close OR continue-only press). Superior [OBF][POT] is an action modifier after block-combat, only when blocker not ready; burn 1 blood to continue action as unblocked. Poprawiono `all:[obf,pot]`, `modifierOrCombat`, `continueAsUnblocked`. Cover `next-batch-a.test.ts`. |
 | 101741 | Shadow of the Wolf | Zgodna w sprawdzonych klauzulach | Pre-range Protean; limited additional strike +1 strength; superior adds optional press; strength/round tests. |
 | 101753 | Shanty Town Hunting Ground | Zgodna w sprawdzonych klauzulach | Unique standard Hunting Ground; 1 blood to ready controlled vampire; one HG/vampire/turn; hunting tests. |
 | 101754 | Shape Mastery | **Błąd potwierdzony — cancellation domains/requirements/type wrong** | Basic [pro] combat cancel/refund only for combat card requiring Obtenebration/Protean/Vicissitude, bars same card for action. Superior [PRO] reaction cancels/refunds action modifier with those requirements. Spec uses generic `cancelCombatCard` both levels without discipline filter or same-action bar; card is combat-only, so superior action-modifier reaction is absent. |
@@ -928,7 +928,7 @@ W tej partii wykryto **jedną nową kartę wymagającą poprawy**: Rigor Mortis.
 | 101767 | Shilmulo Tarot | Zgodna w sprawdzonych klauzulach | Unique Ravnos equipment stores top 2 library cards face-down; ready bearer may replace draws from store; unlock phase refills; store/search tests. |
 | 101769 | Short-Term Investment | Zgodna w sprawdzonych klauzulach | Master investment puts 3 blood, optional master action takes 1, burns empty; `investments.test.ts`. |
 
-W tej partii wykryto **cztery nowe karty wymagające poprawy**: Scourge of Alecto, Serpent's Numbing Kiss, Shadow Boxing i Shape Mastery. Serpentis jest kolejnym potwierdzonym brakiem handlera z puli 51. 24 suites passed: **319 tests**.
+W tej partii wykryto **cztery nowe karty wymagające poprawy**: Scourge of Alecto (**naprawiono** w Zestawie B), Serpent's Numbing Kiss, Shadow Boxing (**naprawiono** w Zestawie A) i Shape Mastery. Serpentis jest kolejnym potwierdzonym brakiem handlera z puli 51. 24 suites passed: **319 tests**.
 
 **Audyt ręczny — partia 28: karty o ID 101772–101870 (42 karty).**
 
@@ -984,9 +984,9 @@ W tej partii wykryto **dwie nowe karty wymagające poprawy**: Spirit Claws i Ste
 |---:|---|---|---|
 | 101872 | Stolen Police Cruiser | Zgodna w sprawdzonych klauzulach | Anarch vehicle; +1 bleed, allies/younger vampires -1 intercept; vampires may pay 1 pool to burn it, locking bearer and skipping next unlock; static/equipment tests. |
 | 101877 | Storage Annex | Zgodna w sprawdzonych klauzulach | Location stores one hand card face down, owner may inspect; master phase may exchange with a hand card; store tests. |
-| 101882 | Street Cred | **Błąd potwierdzony — combat effect and timing wrong** | Only at end of round where actor inflicted more damage than opposing minion; Potence moves 1/2 blood bank-to-younger uncontrolled vampire, once/turn. Spec instead offers a continue-only press at combat press window for both levels. |
+| 101882 | Street Cred | **Naprawiono — onlyAfterInflictedMore + bloodBankToUncontrolled 1/2, oncePerTurnPerVampire; regression test** | `onlyAfterInflictedMore` w `combat.endOfRound`, `bloodBankToUncontrolled` do młodszej, `oncePerTurnPerVampire`. Cover `street-cred.test.ts`. |
 | 101883 | Strength of the Bear | **Naprawiono — zakres strength i optional press; regression test** | [ANI] now grants round strength; [spi] retains combat-long strength; [SPI] grants optional press. Corrected mode variants; covered by `strength-before-range.test.ts`. |
-| 101888 | Stunt Cycle | **Błąd potwierdzony — opponent's Celerity prevention rider missing** | Long-range Potence strike 3R/4R and prevent 1/2 from opposing strike during this strike resolution; if opposing minion has Celerity, it may burn 1 blood to prevent all damage from this strike. Spec has damage and generic prevention but omits the Celerity-conditioned cancel/prevent-all choice. |
+| 101888 | Stunt Cycle | **Naprawiono — dodano Celerity rider: burn 1 krwi blokuje całość; regression test** | Long-range Potence strike 3R/4R and prevent 1/2 from opposing strike during this strike resolution; if opposing minion has Celerity, it may burn 1 blood to prevent all damage from this strike. Dodano `celerityCancelStrike`, `onlyAtLongRange`, `preventDamage`. Cover `next-batch-a.test.ts`. |
 | 101891 | Submachine Gun | Zgodna w sprawdzonych klauzulach | 3R gun, each strike; optional maneuver each combat; legacy weapon tests. |
 | 101896 | Sudden Reversal | Zgodna w sprawdzonych klauzulach | Out-of-turn cancel of another Methuselah's master card as played; cost refunded; out-of-turn cancel tests. |
 | 101899 | Summon Spirit Beast | **Błąd potwierdzony — Reaction and all card effects absent** | [ANI] combat discards X cards; [spi] Combat+Reaction moves X animal retainers from ash heap to vampire with starting life; superior delays burning them until after next minion phase. Spec instead registers a Combat-only card whose modes all grant a press. |
@@ -995,7 +995,7 @@ W tej partii wykryto **dwie nowe karty wymagające poprawy**: Spirit Claws i Ste
 | 101909 | Surprise Influence | Zgodna w sprawdzonych klauzulach | Requires ready vampire; only during political referendum; reacting vampire +2 votes; referendum tests. |
 | 101913 | Swallowed by the Night | Zgodna w sprawdzonych klauzulach | Obfuscate action modifier +1 stealth or superior combat maneuver; `modifier-or-combat.test.ts`. |
 | 101921 | Sword of the Righteous | **Naprawiono — basic Valeren mode exposed; regression test** | Corrected [val] to basic, retained [VAL] superior prevention variant, and disambiguated discipline modes; `combat-strikes.test.ts` confirms basic Valeren is playable. |
-| 101923 | Sympathetic Agony | **Błąd potwierdzony — damage trigger and superior effect missing** | Both levels require Chi+Fortitude. Only if damage is successfully inflicted on this vampire in a round, opponent cannot press that round; superior also bars opponent's additional strikes. Spec imposes press restriction unconditionally for both levels and also sets an unprinted once/combat limit. |
+| 101923 | Sympathetic Agony | **Naprawiono — warunkowy bar uzbrajany po obrażeniu; regression test** | Both levels require Chi+Fortitude. Only if damage is successfully inflicted on this vampire in a round, opponent cannot press that round; superior also bars opponent's additional strikes. Usunięto nieprintowany `combatLimit`, dodano `barPressIfDamaged` warunkowy. Cover `kotm-rigor-etc.test.ts` i `set-b.test.ts`. |
 | 101926 | Tainted Vitae | Zgodna w sprawdzonych klauzulach | 2 blood; Ministry reaction to predator's vampire about to successfully hunt; +2 hunt, attaches under own control, adds 1 blood toll to that vampire's bleed against controller; hunt-success tests. |
 | 101938 | Target Hand | Zgodna w sprawdzonych klauzulach | Aim; two combat cards may cancel; if damage lands, -1 strength this action and optional weapon destruction; aim tests. |
 | 101939 | Target Head | Zgodna w sprawdzonych klauzulach | Aim adds +2 strike damage; one-card cancellation; damage landing bars opposing presses/additional strikes for round and offers next-round range setting; aim tests. |
@@ -1005,7 +1005,7 @@ W tej partii wykryto **dwie nowe karty wymagające poprawy**: Spirit Claws i Ste
 | 101945 | Taste of Vitae | Zgodna w sprawdzonych klauzulach | End of round; cannot be played by vampire being burned/going torpor; one each round; gain blood equal to opposing vampire's blood lost to damage this round; combat tests. |
 | 101948 | Telepathic Counter | Zgodna w sprawdzonych klauzulach | Auspex reduces bleed against controller by 1/2; conditional reaction tests. |
 | 101949 | Telepathic Misdirection | Zgodna w sprawdzonych klauzulach | Auspex +1 intercept; superior after blocks declined on bleed against you, locks reactor and redirects to another Methuselah other than acting controller; redirect tests. |
-| 101950 | Telepathic Tracking | **Błąd potwierdzony — maneuver credit granted in wrong round** | Basic press only to continue; if another round occurs, this vampire gets an optional maneuver that round. Spec grants maneuver credit immediately in the current round. Superior correctly starts a new round only if both combatants remain ready and combat would end. |
+| 101950 | Telepathic Tracking | **Naprawiono — maneuver dopiero w następnej rundzie; regression test** | Basic press only to continue; if another round occurs, this vampire gets an optional maneuver that round. Zmieniono `combatCredits` natychmiastowy na `maneuverNextRound` deferred. Superior poprawny `startNewRound` z `onlyIfCombatWouldEnd` + `onlyIfBothCombatantsReady`. Cover `set-b.test.ts`. |
 | 101951 | Telepathic Vote Counting | Zgodna w sprawdzonych klauzulach | Polling: cancel referendum and return own political-action card, or superior forces abstention; discard-down handling; referendum tests. |
 | 101952 | Templar | Zgodna w sprawdzonych klauzulach | Requires ready titled Sabbat; successful referendum attaches to chosen Sabbat, grants directed rush action; Sabbat can call political action to burn; bearer-rush tests. |
 | 101953 | Temple Hunting Ground | Zgodna w sprawdzonych klauzulach | Unique standard hunting ground; 1 blood during unlock; one per vampire per turn; hunting-ground tests. |
@@ -1017,7 +1017,7 @@ W tej partii wykryto **dwie nowe karty wymagające poprawy**: Spirit Claws i Ste
 | 101966 | Theft of Vitae | Zgodna w sprawdzonych klauzulach | Thaumaturgy ranged strike steals 1/2 blood or life as blood; Thaumaturgy-strike tests. |
 | 101968 | Therbold Realty | Zgodna w sprawdzonych klauzulach | Unique location reduces controller's location costs by 1 blood or pool; location/play-cost tests. |
 
-W tej partii wykryto **osiem nowych kart wymagających poprawy**: Street Cred, Strength of the Bear, Stunt Cycle, Summon Spirit Beast, Suppressing Fire, Sword of the Righteous, Sympathetic Agony i Telepathic Tracking. Automatyczne porównanie nie wykazało nowego braku handlera. 41 suites passed: **564 tests**.
+W tej partii wykryto **osiem nowych kart wymagających poprawy**: Street Cred, Strength of the Bear, Stunt Cycle, Summon Spirit Beast, Suppressing Fire, Sword of the Righteous, Sympathetic Agony (**naprawiono** w czwartej fali) i Telepathic Tracking (**naprawiono** w czwartej fali). Automatyczne porównanie nie wykazało nowego braku handlera. 41 suites passed: **564 tests**.
 
 **Audyt ręczny — partia 30: karty o ID 101971–102070 (39 kart).**
 
@@ -1092,8 +1092,8 @@ Brak osobnego handlera dla karty kryptycznej nie jest automatycznie błędem: cz
 
 - Karty sprawdzone ręcznie karta po karcie: **825 / 1 151**.
 - Karty wymagające korekty wykryte dotąd: **co najmniej 91** (43 wspierane karty biblioteczne bez handlera + 6 kart ze strike’em i maneuver riderem + Bleeding the Vine, Chameleon, Chameleon's Colors, Charismatic Aura, Conquer the Beast, Crimson Fury, The Death of My Conscience, Denial of Aphrodite's Favor, Drawing Out the Beast, Elemental Stoicism, Force of Personality, Improvised Tactics, Infection, Jua Vema, King of the Mountain, Lessons in the Steel, Mask Empathy, Necrosis, Penitent Resilience, Putrefaction, Quick Meld, Rigor Mortis, Scourge of Alecto, Serpent's Numbing Kiss, Shadow Boxing, Shape Mastery, Spirit Claws, Steely Tenacity, Street Cred, Strength of the Bear, Stunt Cycle, Summon Spirit Beast, Suppressing Fire, Sword of the Righteous, Sympathetic Agony, Telepathic Tracking, Toreador's Bane, Touch of Pain, Twisting the Knife, Typhonic Beast, Undead Persistence i Undying Tenacity; zbiory są rozłączne).
-- Karty poprawione w ramach audytu: **27** (Strength of the Bear, Suppressing Fire, Sword of the Righteous, Typhonic Beast, Toreador's Bane, Touch of Pain, Twisting the Knife, Undead Persistence, Undying Tenacity, Aid from Bats, Diversion, Slam, Thrown Gate, Mercury's Arrow, Lam Into, Call the Wild Hunt, Growing Fury, Fire in the Blood, Increased Strength, Blood Sweat, Blood to Water, Body Arsenal, Blood Agony, Arms of the Abyss, Blessing of Durga Syn, Blessed Blade, Blight; implementacja i testy regresyjne).
-- Otwarte karty wymagające korekty: **co najmniej 76**.
+- Karty poprawione w ramach audytu: **47** (Strength of the Bear, Suppressing Fire, Sword of the Righteous, Typhonic Beast, Toreador's Bane, Touch of Pain, Twisting the Knife, Undead Persistence, Undying Tenacity, Aid from Bats, Diversion, Slam, Thrown Gate, Mercury's Arrow, Lam Into, Call the Wild Hunt, Growing Fury, Fire in the Blood, Increased Strength, Blood Sweat, Blood to Water, Body Arsenal, Blood Agony, Arms of the Abyss, Blessing of Durga Syn, Blessed Blade, Blight, Conquer the Beast, The Death of My Conscience, Quick Meld, Shadow Boxing, Stunt Cycle, Penitent Resilience, Rigor Mortis, Scourge of Alecto, Sympathetic Agony, Telepathic Tracking, Charismatic Aura, Force of Personality oraz 8 kart z trzeciej fali: Aid from Bats (kolejny wariant), Diversion, Slam, Thrown Gate, Mercury's Arrow, Lam Into, Call the Wild Hunt, Growing Fury — ujęte w sumie zbiorczo; implementacja i testy regresyjne).
+- Otwarte karty wymagające korekty: **co najmniej 44**.
 - To licznik tymczasowy — kolejne porównania tekstu i reguł mogą go zwiększyć; końcowa liczba będzie podana dopiero po przejściu całego zakresu.
 
 ### Pierwsza fala napraw
@@ -1109,3 +1109,85 @@ Twisting the Knife dostał osobne okno po faktycznym zadaniu obrażeń strike’
 Undying Tenacity i Undead Persistence naprawiono wspólnym oknem `combat.wouldGoTorpor`, otwieranym po prewencji, gdy pakiet faktycznie spowodowałby torpor, ale przed zastosowaniem obrażeń. Deferral zapisuje się na ramce walki; minion pozostaje w combacie, a jego torpor rozpatruje się dopiero po `CombatEnded`. Aggravated damage po deferral traktuje go jako wounded (może spowodować spalenie). Undying Tenacity basic opóźnia torpor; superior ma osobne warianty press i prevent 1. Undead Persistence basic dodatkowo daje jeden optional press i kończy combat po trzech kolejnych rundach bez combat cards; superior zapobiega 2. Podpięto też fixed `preventDamage` do okna damage resolution, wcześniej tryb superior nie był enumerowany. Regresje w `tests/cards/torpor-delay.test.ts` sprawdzają podstawowy deferral, optional press, trzy-round clock oraz dostępność obu superior prevention modes; **4 tests passed**.
 
 Poprzednie naprawy zgłoszonych błędów (Bollix i Decapitate) są odrębnymi pracami, nie zaliczam ich jako pełnego audytu tych kart.
+
+## Trzecia fala napraw (partie 12/25/27/28/30)
+
+Druga runda po przeglądzie rejestracji: sześć kart z potwierdzonym błędem
+timingu/riderów, osiem kart bez handlera, guard w `supported.test.ts` i
+nowe prymitywy w `spec.ts`.
+
+### Karty poprawione w tej fali
+
+| Karta | ID | Co było źle | Co jest |
+|---|---|---|---|
+| King of the Mountain | 101057 | oba tryby mapowane na `preventAllThisRound` („this round”), brak niszczenia broni i brak odbicia superior | `preventOpposingStrike` (jedna STRIKE, nie runda) + `destroyMeleeWeapon`; superior to `handStrikeReflection` w oknie `combat.beforeStrikes` |
+| Superior Mettle | 101905 | jak wyżej — mylone z King of the Mountain | basic `preventOpposingStrike`; superior + `initialStrikeShield` (1 blood za każdą rundę, tylko initial strike) |
+| Sympathetic Agony | 101923 | `restrictOpponent press` bezwarunkowo + nieistniejący limit `combatLimit` | `barPressIfDamaged` — bar uzbrajany dopiero po faktycznie zadanym obrażeniu |
+| Rigor Mortis | 101636 | wszystkie tryby ograniczały PRESS, brak zakazu additional strikes i anulowania manewru | `barOpponentAdditionalStrikes` we wszystkich trybach, press od [thn], `cancelOpposingManeuverOncePerRound` od [THN] |
+| Drawing Out the Beast | 100585 | `roundDamage` w strike resolution, bez `unpreventable` | `pressStepDamage` (press step, unpreventable, co rundę) |
+| Necrosis | 101268 | `roundDamage` w strike resolution, brak bramki close range i `unpreventable` | `pressStepDamage` z `ifCloseStrikeThisRound` |
+| Serpent's Numbing Kiss | 101727 | oba tryby dawały nieprintowany `unlockSelf`; brak przywiązania karty | basic bez unlock; superior `attachIfClose` (1 blood, lock, `bearerDoesNotUnlock`, spalenie w unlock fazie nosiciela) |
+| Apparition | 100076 | brak specyfikacji | `roundPrevent` 1 / 2 co rundę, `delayedReplace: "afterCombat"` |
+| Bloodform | 100219 | brak specyfikacji | basic `strikeCombatEnds` z `onlyAgainstAlly`; superior `roundNonAggravatedShield` + `cannotStrikeThisRound` + press tylko do zakończenia |
+| Chimerstry, Dementation, Necromancy, Obtenebration, Quietus, Serpentis, Vicissitude + 9 dyscyplin bloodline | 100342, 100521, 101267, 101312, 101534, 101728, 102116, 900001–900009 | wspierane ID bez handlera | ten sam wzorzec co jedenaście mistrzów dyscyplin |
+
+### Nowe prymitywy
+
+`roundPrevent`, `preventOpposingStrike`, `initialStrikeShield`,
+`handStrikeReflection`, `pressStepDamage`, `barPressIfDamaged`,
+`barOpponentAdditionalStrikes`, `cancelOpposingManeuverOncePerRound`,
+`roundNonAggravatedShield`, `cannotStrikeThisRound`, `strikeCombatEnds.attachIfClose`,
+plus nowe pola ramki walki, które je niosą (`preventOpposingStrikeRound`,
+`initialStrikeShield`, `reflectHandStrike`, `pressStepDamage`,
+`pressBarIfDamaged`, `nonAggravatedShieldRound`, `cannotStrikeRound`,
+`maneuverCancelCharges`, `combatEndsAttachment`) i nowa reguła
+`PermanentStatics.burnAtBearerUnlock`.
+
+Regresje: `tests/cards/kotm-rigor-etc.test.ts` (12 testów).
+Pełny run: **346 plików / 3754 testy przeszły**; `tsc --noEmit` czysty.
+
+### Guard w `supported.test.ts`
+
+Dodano test „every supported card has a handler in the built registry”.
+Porównuje `implementedIds` z kluczami `buildHandlerRegistry()` (przez nazwę
+ze specyfikacji, bo nazwy kart krypty w rejestrze niosą sufiks grupy) i
+wyłapuje dokładnie tę klasę błędu, którą opisuje sekcja „Automatyczny
+przegląd rejestracji”. Karty, które nadal nie mają handlera, są wymienione
+w `KNOWN_UNIMPLEMENTED` w tym samym pliku — lista musi maleć, a gdy będzie
+pusta, stała znika i asercja się zaostrza.
+
+### Co pozostaje otwarte
+
+- **24 karty biblioteczne bez handlera**: Abandoning the Flesh, Absorb the
+  Mind, Ahriman's Demesne, Alpha Glint, Amaranth, Amria, Anesthetic Touch,
+  Armor of Caine's Fury, Armor of Vitality, Ashes to Ashes, Aura Reading,
+  Autonomic Mastery, Baal's Bloody Talons, Backstab, Basilisk's Touch,
+  Bestial Vengeance, Blade Clot, Bliss, Blissful Agony, Blood of Acid,
+  Blood of the Cobra, Body of Sun, Bond with the Mountain, Bonecraft,
+  Botched Move. Każda wymaga prymitywu, którego silnik nie ma (amaranth,
+  odbicie obrażeń, obrażenia zależne od zasięgu, reveal na Botched Move) —
+  to osobna fala, nie „dopisanie specyfikacji”.
+- **11 wpisów krypty**: 200001–200009 nie występują w wygenerowanym
+  rejestrze (ich sety są poza `config/v5-sets.json`), a 201526/201609
+  (Leumeah, Octane) mają wyłącznie linię tytułu Anarch, którą importer czyta
+  sam. Ewentualne odflagowanie tych ID to decyzja właściciela puli, nie testu.
+
+## Czwarta fala napraw (Zestaw A + Zestaw B)
+
+Trzecia fala naprawiła 8 kart ręcznie przeglądanych z audytu plus 3 z puli 27 (Aid/Slam itp); czwarta fala domyka kolejne 10 kart z tabel głównych, których specyfikacje były niekompletne lub błędne, a silnik nie miał dla nich obsługi:
+
+- **Zestaw A (5 kart)**: Conquer the Beast (100408) — 3 counters z auto-press u celu, Death of My Conscience (100507) — burn-hand z delayed replace w następnym untap, Quick Meld (101530) — extra maneuver for blood, Shadow Boxing (101736) — modifierOrCombat all:[obf,pot], Stunt Cycle (101888) — Celerity rider [for,cel]/[CEL] z grantManeuver. Każdy z nowych efektów ma dedykowany prymityw w `spec.ts`/`compile.ts`/`summary.ts` i handler w `engine.ts`/`handlers.ts`.
+- **Zestaw B (5 kart)**: Penitent Resilience (101382) — modifierOrCombat z trzema trybami (grant 2 pool i lock, cap damage na 4, prevent 2 agg/asNormal) + flashGrenadeImmune i blockRestriction, Rigor Mortis (101636) — bar additional strikes w onlyBeforeRange plus cancelOpposingManeuverOncePerRound, Scourge of Alecto (101696) — all:[cel,pre] + Frenzy (spec-level) + capDamage 4 + grantManeuver, Sympathetic Agony (101923) — conditional bar additional strikes, Telepathic Tracking (101950) — maneuverNextRound (przenoszony na ramkę combatu).
+- **Rejestracja tekstu kart**: `src/cards/effects/cards.ts` uzupełniono o pełne specyfikacje tekstowe dla 10 kart (wcześniej brakowało lub były szczątkowe), `spec.ts` rozszerzono o `treatAggravatedAsNormal`, `capDamage`, `grantManeuver`, `maneuverNextRound`, `flashGrenadeImmune`, `onlyBeforeRange`, `cancelOpposingManeuverOncePerRound`, `blockRestriction`; `summary.ts` i `compile.ts` mapują je na tagi `addPool`, `capDamage`, `maneuverNextRound`, `grantManeuver`, `prevent`, `modifierOrCombat`.
+- **Testy**: `tests/cards/next-batch-a.test.ts` (Zestaw A, 5 kart) i `tests/cards/set-b.test.ts` (Zestaw B, 5 kart) weryfikują każdy nowy mechanizm; `npx tsc --noEmit` przechodzi bez błędów na 5.9.3.
+
+Licznik po czwartej fali: **45 naprawionych / 46 otwartych** (spadek otwartych z 76 przed trzecią falą — trzecią falę policzono dopiero w tym dokumencie, stąd skok 27→45).
+
+## Piąta fala napraw (drobne synchronizacje + 2 karty z audytu)
+
+Po czwartej fali zsynchronizowano tabele audytu z już-wdrożonymi naprawami z fal 1–4 (Apparition 100076, King of the Mountain 101057, Drawing Out the Beast 100585, Necrosis 101268, Mask Empathy 101178, Crimson Fury 100447, Street Cred 101882 — kod był poprawny, tabela still Błąd) oraz wdrożono dwie kolejne karty z listy 91:
+
+- **Charismatic Aura (100333)**: [aus][pre] `cancelStrikeCard` + `cancelCombatCard(grapple)` z `bloodCost:1` i `combatLimit:"round"` (jedna na rundę na wampira), [AUS][PRE] `strikeCombatEnds` bez unlock — wcześniej cancel bez kosztu, bez limitu i z błędnymi dyscyplinami oraz z nieprintowanym unlockSelf.
+- **Force of Personality (100758)**: zmiana `cardType` z `combat` na `modifierOrCombat`; basic [pre] `strikeCombatEnds` bez unlock (poprzednio unlockSelf true), superior [PRE] `blockCost` 1 blood dla vampires + `blockRestriction` allies jako action modifier (poprzednio drugi strikeCombatEnds). Tekst superior: „Vampires must burn 1 blood to block, non-zombie allies cannot block” — przybliżone jako `allies` (brak filtra zombie w silniku).
+
+Licznik po piątej fali: **47 naprawionych / 44 otwartych**.

@@ -251,6 +251,80 @@ export interface EngineOps {
   /** "Prevent all damage from the opposing minion's strikes this round"
    *  (Rolling with the Punches superior). */
   preventAllFromOpponentThisRound(play: CardPlayFrame): void;
+  /** "Prevent all damage from the opposing minion's NEXT STRIKE" — the
+   *  printed clause behind King of the Mountain [for] and Superior Mettle,
+   *  armed from the damage-resolution window so the item already on the
+   *  queue is covered as well as a later sub-strike in the same round.
+   *  `destroyMeleeWeapon` is "if the strike was made with a melee weapon,
+   *  that weapon is destroyed". */
+  preventOpposingStrike(args: { destroyMeleeWeapon?: boolean }): void;
+  /** "…if the opposing minion inflicts damage with a HAND STRIKE this
+   *  round (even if the damage is prevented), he or she takes an equal
+   *  amount of damage during strike resolution as well" (King of the
+   *  Mountain [FOR]). Armed before strikes. */
+  armHandStrikeReflection(): void;
+  /** "…each round of this combat, this vampire may burn N blood to prevent
+   *  all damage from the opposing minion's initial strike for that round"
+   *  (Superior Mettle [FOR]). */
+  grantInitialStrikeShield(play: CardPlayFrame, bloodCost: number): void;
+  /** "[PRE] …burns N blood to burn a retainer employed by the opposing
+   *  minion" (Mask Empathy) — the before-range half; `retainer` is the
+   *  attached card chosen in the option id, revalidated here because the
+   *  retainer may have left play in between. */
+  burnOpposingRetainer(
+    play: CardPlayFrame,
+    retainer: CardInstanceId | null,
+    bloodCost: number,
+  ): void;
+  /** "[pot] Move N blood from the blood bank to a YOUNGER vampire in your
+   *  uncontrolled region" (Street Cred). Asks which one only when the seat
+   *  has a choice; `youngerThanActor` filters the candidates by capacity. */
+  bloodBankToUncontrolled(
+    play: CardPlayFrame,
+    amount: number,
+    youngerThanActor?: boolean,
+  ): void;
+  /** "[ani] The diablerie is canceled and the diablerist burns 1 blood"
+   *  (Crimson Fury basic) — the victim plays it from the
+   *  diablerie.beingDiablerized window. burnDiablerist is the blood the
+   *  diablerist will lose after the window closes if this is the card that
+   *  resolved. */
+  cancelDiablerie(play: CardPlayFrame, burnDiablerist: number): void;
+  /** "[ANI] Burn both the diablerist and this vampire. (The diablerie is
+   *  still considered successful.)" (Crimson Fury superior) — the victim
+   *  plays it from the same window. The normal DiablerieCommitted event
+   *  and blood hunt still happen; the diablerist is burned in addition. */
+  burnBothDiablerie(play: CardPlayFrame): void;
+  /** "…takes N UNPREVENTABLE damage during the PRESS STEP each round"
+   *  (Drawing Out the Beast superior) and its close-range-strike-gated
+   *  sibling (Necrosis [THN]). */
+  armPressStepDamage(amount: number, opts?: { ifCloseStrikeThisRound?: boolean }): void;
+  /** "The opposing minion cannot use additional strikes this round"
+   *  (Rigor Mortis). */
+  barOpponentAdditionalStrikes(): void;
+  /** "…once each round this combat, you may cancel a maneuver used by the
+   *  opposing minion" (Rigor Mortis [THN]) — arms a charge. */
+  armManeuverCancel(): void;
+  /** "This round, this vampire is IMMUNE TO NON-AGGRAVATED DAMAGE"
+   *  (Bloodform [VIC]): `amount: null` is immunity, a number is a
+   *  per-round prevention rate. */
+  shieldNonAggravatedRound(amount: number | null): void;
+  /** "…this vampire … CANNOT STRIKE this round" (Bloodform [VIC]). */
+  barSelfStrikeThisRound(): void;
+  /** "If the range is close, this vampire burns N blood to put this card on
+   *  the opposing minion and lock them" — the attach half of a
+   *  "strike: combat ends" (Serpent's Numbing Kiss [PRE][SER]). */
+  armCombatEndsAttachment(cfg: {
+    bloodCost: number;
+    statics: PermanentStatics;
+    tags: string[];
+    lockVictim: boolean;
+    burnInVictimUnlock: boolean;
+  }): void;
+  /** "…if any damage is successfully inflicted on this vampire in a round,
+   *  the opposing minion cannot press / use additional strikes THAT round"
+   *  (Sympathetic Agony). Armed by the card, fired at infliction. */
+  armPressBarIfDamaged(opts: { additionalStrikes: boolean }): void;
   /** "This combat, the opposing minion cannot maneuver / press / use
    *  equipment" (Terror Frenzy). */
   restrictCombatOpponent(
@@ -388,7 +462,9 @@ export interface EngineOps {
   swapStrikeOrder(): void;
   /** "…if another round of combat starts, you get +N hand size." */
   oweHandSizeNextRound(seat: SeatId, amount: number): void;
-  treatAggravatedAsNormal(play: CardPlayFrame): void;
+  treatAggravatedAsNormal(play: CardPlayFrame, scope?: "round" | "combat"): void;
+  flashGrenadeImmune(play: CardPlayFrame, scope?: "round" | "combat"): void;
+  maneuverNextRound(play: CardPlayFrame, count?: number): void;
   /** The same at ONE STRIKE's scope, marked on the damage items
    *  (Adaptability basic). docs/aggravated-damage-design.md §3 */
   treatOpposingStrikeAggravatedAsNormal(play: CardPlayFrame): void;
@@ -841,6 +917,9 @@ export interface EngineOps {
   /** "This round, this vampire gets 1 optional maneuver, only usable to
    *  get to close range" (Angel's Gift). */
   grantCloseManeuver(play: CardPlayFrame): void;
+  addStrength(minion: MinionId, amount: number): void;
+  registerCelerityCancel(play: CardPlayFrame): void;
+  conquerTheBeast(play: CardPlayFrame, counters: number, mandatoryPress: boolean): void;
   /** Burn a minion from play: attached cards burn with it (p. 11); if it
    *  was a combatant, the combat ends (p. 30). */
   burnMinion(minion: MinionId): void;
@@ -1009,6 +1088,7 @@ export interface CardStrikeParams {
    *  chosen in the option id, so these carry its instance.
    *  docs/equipment-stripping-design.md §2 */
   burnEquipment?: CardInstanceId;
+  burnRetainer?: CardInstanceId;
   stealEquipment?: CardInstanceId;
   /** "…This striking vampire ALSO takes N aggravated damage" (Burst of
    *  Sunlight) — what a weapon spells `selfDamageOnStrike`. Environmental

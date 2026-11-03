@@ -64,6 +64,29 @@ function disciplineCards(): CardSpec[] {
     [100774, "Fortitude", "for"],
     [101480, "Presence", "pre"],
     [101965, "Thaumaturgy", "tha"],
+    // AUDIT (docs/card-rules-audit.md, parts 9/12/22/25/27): supported in
+    // config/supported.json but with no handler, so silently unplayable —
+    // not inert, missing. The printed text is the same sentence as the
+    // eleven above, so the same spec shape covers them.
+    [100342, "Chimerstry", "chi"],
+    [100521, "Dementation", "dem"],
+    [101267, "Necromancy", "nec"],
+    [101312, "Obtenebration", "obt"],
+    [101534, "Quietus", "qui"],
+    [101728, "Serpentis", "ser"],
+    [102116, "Vicissitude", "vic"],
+    // The nine "bloodline" Discipline masters print the V5 wording
+    // ("gains one level … capacity increases by 1") and are the same
+    // effect (docs/derived-traits-design.md).
+    [900001, "Mythercerer", "myt"],
+    [900002, "Obeah", "obe"],
+    [900003, "Valeren", "val"],
+    [900004, "Visceratika", "vis"],
+    [900005, "Daimaite", "dai"],
+    [900006, "Melpominee", "mel"],
+    [900007, "Spiritus", "spi"],
+    [900008, "Temporis", "tem"],
+    [900009, "Thanatosis", "thn"],
   ];
   return all.map(([krcgId, name, code]) => ({
     krcgId,
@@ -919,7 +942,7 @@ export const cardSpecs: CardSpec[] = [
         discipline: "aus",
         effects: [
           { kind: "press", continueOnly: true },
-          { kind: "combatCredits", maneuver: 1 },
+          { kind: "maneuverNextRound", count: 1 },
         ],
       },
       {
@@ -19563,15 +19586,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Force of Personality [pre] — Combat, pre, 1 blood
+    // Force of Personality [pre] — Action Modifier+Combat, pre, 1 blood
+    // "[pre] [COMBAT] Strike: combat ends."
+    // "[PRE] [ACTION MODIFIER] Only usable as the action is announced. Vampires must burn 1 blood to attempt to block this action. Non-zombie allies cannot block this action."
     krcgId: 100758,
     name: "Force of Personality",
-    cardType: "combat",
+    cardType: "modifierOrCombat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "strikeCombatEnds", unlockSelf: true }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "strikeCombatEnds", unlockSelf: true }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "blockCost", amount: 1, payWith: "blood", kinds: ["vampire"] }, { kind: "blockRestriction", who: "allies" }] },
     ],
   },
   {
@@ -19588,6 +19613,7 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Quick Meld [pro] — Combat, pro
+    // "[pro] Maneuver. [PRO] As above, and once this round, this vampire may burn 1 blood for an additional maneuver."
     krcgId: 101530,
     name: "Quick Meld",
     cardType: "combat",
@@ -19595,7 +19621,7 @@ export const cardSpecs: CardSpec[] = [
     usable: [],
     modes: [
       { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "pro", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "maneuver" }, { kind: "extraManeuverForBlood", bloodCost: 1 }] },
     ],
   },
   {
@@ -19630,20 +19656,39 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "preventAllThisRound", bloodCost: 0 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "preventAllThisRound", bloodCost: 0 }] },
+      // "[for] Prevent all damage from the opposing minion's strike." —
+      // one STRIKE, not one round.
+      {
+        level: "basic",
+        discipline: "for",
+        effects: [{ kind: "preventOpposingStrike" }],
+      },
+      // "[FOR] As above, and each round of this combat, this vampire may
+      // burn 1 blood to prevent all damage from the opposing minion's
+      // INITIAL strike for that round."
+      {
+        level: "superior",
+        discipline: "for",
+        effects: [
+          { kind: "preventOpposingStrike" },
+          { kind: "initialStrikeShield", bloodCost: 1 },
+        ],
+      },
     ],
   },
   {
     // Charismatic Aura [aus]/[pre] — Combat, aus/pre
+    // "[aus][pre] Burn 1 blood to cancel the opposing minion's strike card (the minion chooses another strike) or grapple card as it is played, and its cost is not paid. A vampire can play only one Charismatic Aura at basic each round."
+    // "[AUS][PRE] Strike: combat ends."
     krcgId: 100333,
     name: "Charismatic Aura",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
+    combatLimit: "round",
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "cancelCombatCard" }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "cancelCombatCard" }, { kind: "strikeCombatEnds", unlockSelf: true }] },
+      { level: "basic", discipline: { all: ["aus", "pre"] }, effects: [{ kind: "cancelCombatCard", bloodCost: 1, keywords: ["grapple"] }, { kind: "cancelStrikeCard", bloodCost: 1 }] },
+      { level: "superior", discipline: { all: ["aus", "pre"] }, effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
     ],
   },
   {
@@ -19654,8 +19699,43 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "preventAllThisRound", bloodCost: 0 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "preventAllThisRound", bloodCost: 0 }] },
+      // "[for] Prevent all damage from the opposing minion's strike. If the
+      // strike was made with a melee weapon, that weapon is destroyed."
+      // NOT `preventAllThisRound`: that reads "this round", where the card
+      // says "the opposing minion's STRIKE" — one strike, melee rider and
+      // all.
+      {
+        level: "basic",
+        discipline: "for",
+        effects: [{ kind: "preventOpposingStrike", destroyMeleeWeapon: true }],
+      },
+      // "[FOR] Play after range is determined and before strikes are
+      // chosen. If the opposing minion inflicts damage with a hand strike
+      // this round (even if the damage is prevented), he or she takes an
+      // equal amount of damage during strike resolution as well."
+      {
+        level: "superior",
+        discipline: "for",
+        effects: [{ kind: "handStrikeReflection" }],
+      },
+    ],
+  },
+  {
+    // Apparition [Jyhad, VTES, ...] — Combat, chi, 1 blood
+    // "Do not replace until after combat.
+    //  [chi] This vampire can prevent 1 damage each round this combat.
+    //  [CHI] This vampire can prevent 2 damage each round this combat."
+    // A supported id with no spec at all until now — nothing about it needs
+    // the card to be in play; it is the played-card form of preventEachRound.
+    krcgId: 100076,
+    name: "Apparition",
+    cardType: "combat",
+    bloodCost: 1,
+    delayedReplace: "afterCombat",
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "roundPrevent", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "roundPrevent", amount: 2 }] },
     ],
   },
   {
@@ -19671,15 +19751,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Boxing [obf]/[pot] — Combat, obf/pot
+    // Shadow Boxing [obf][pot] — Combat+Action Modifier, obf/pot
+    // "[obf][pot] [COMBAT] Maneuver, only usable to get to close range, or press, only usable to continue combat.
+    // [OBF][POT] [ACTION MODIFIER] Only usable after a combat resulting from a block. Not usable if the blocking minion is ready. This vampire burns 1 blood to continue the action as if unblocked."
     krcgId: 101736,
     name: "Shadow Boxing",
-    cardType: "combat",
+    cardType: "modifierOrCombat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver", onlyToClose: true }] },
-      { level: "superior", discipline: "pot", effects: [{ kind: "press", continueOnly: true }] },
+      { level: "basic", discipline: { all: ["obf", "pot"] }, effects: [{ kind: "maneuver", onlyToClose: true }] },
+      { level: "basic", discipline: { all: ["obf", "pot"] }, variant: "press", effects: [{ kind: "press", continueOnly: true }] },
+      { level: "superior", discipline: { all: ["obf", "pot"] }, effects: [{ kind: "continueAsUnblocked", bloodCost: 1 }] },
     ],
   },
   {
@@ -19735,14 +19818,18 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Scourge of Alecto [cel]/[pre] — Combat, cel/pre
+    // "Frenzy. Only usable against a vampire or werewolf.
+    // [cel][pre] Strike: X-2 ranged damage, where X is this vampire's capacity minus the target's capacity or cost. If more than 4 damage is inflicted with this strike, ignore the excess.
+    // [CEL][PRE] As above, with an optional maneuver."
     krcgId: 101696,
     name: "Scourge of Alecto",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
+    frenzy: true,
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDamageCapacityDiff", base: 2, ranged: true, aggravated: false }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "strikeDamageCapacityDiff", base: 2, ranged: true, aggravated: false }] },
+      { level: "basic", discipline: { all: ["cel", "pre"] }, effects: [{ kind: "strikeDamageCapacityDiff", base: 2, ranged: true, aggravated: false, capDamage: 4 }] },
+      { level: "superior", discipline: { all: ["cel", "pre"] }, effects: [{ kind: "strikeDamageCapacityDiff", base: 2, ranged: true, aggravated: false, capDamage: 4 }, { kind: "maneuver" }] },
     ],
   },
   {
@@ -19774,8 +19861,25 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: false }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false }] },
+      // "[pre] Strike: RANGED. Burn a RETAINER employed by the opposing
+      // minion (USABLE AT CLOSE RANGE)." The card deals NO damage at all —
+      // the previous spec printed two damage strikes this card does not
+      // have, which is the "spec describes a different card" defect
+      // docs/card-rules-audit.md flags. The parenthetical is p. 30's rule
+      // that ranged strikes work at either range, so `ranged: true` alone
+      // already covers it.
+      {
+        level: "basic",
+        discipline: "pre",
+        effects: [{ kind: "strikeDestroyEquipment", retainer: true, ranged: true }],
+      },
+      // "[PRE] Play BEFORE RANGE IS DETERMINED. This vampire burns 1 blood
+      // to burn a retainer employed by the opposing minion."
+      {
+        level: "superior",
+        discipline: "pre",
+        effects: [{ kind: "burnOpposingRetainer", bloodCost: 1 }],
+      },
     ],
   },
   {
@@ -19805,14 +19909,15 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Stunt Cycle [pot] — Combat, pot
+    // "Only usable at long range. [pot] Strike: 3R damage, and prevent 1 damage from the opposing minion's strike during this strike resolution. If the opposing minion has Celerity [cel], he or she can burn 1 blood to prevent all damage from this strike. [POT] As above, but for 4R damage and prevent 2 damage from the opposing minion's strike."
     krcgId: 101888,
     name: "Stunt Cycle",
     cardType: "combat",
     bloodCost: 0,
-    usable: [],
+    usable: ["onlyAtLongRange"],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 3, ranged: true, aggravated: false }, { kind: "preventDamage", amount: 1 }] },
-      { level: "superior", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 4, ranged: true, aggravated: false }, { kind: "preventDamage", amount: 2 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 3, ranged: true, aggravated: false }, { kind: "preventDamage", amount: 1 }, { kind: "celerityCancelStrike" }] },
+      { level: "superior", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 4, ranged: true, aggravated: false }, { kind: "preventDamage", amount: 2 }, { kind: "celerityCancelStrike" }] },
     ],
   },
   // ======================================================================
@@ -19872,6 +19977,7 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Conquer the Beast [Jyhad:R, Vtes:R] — Combat, ani
+    // "Only usable before range is determined during the first round. [ani] Put this card in play with 3 counters. This vampire cannot use equipment this combat. Each time a card is played this combat, reset the number of counters on this card to 3. During the press step of each round this combat, this card automatically burns 1 of those counters to give this vampire 1 mandatory press to continue combat. Burn this card at the end of combat. [ANI] As above, but the presses are optional."
     krcgId: 100408,
     name: "Conquer the Beast",
     cardType: "combat",
@@ -19879,20 +19985,35 @@ export const cardSpecs: CardSpec[] = [
     usable: ["onlyFirstRound"],
     combatLimit: "combat",
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "restrictOpponent", equipment: true }, { kind: "press", continueOnly: true }] },
-      { level: "superior", discipline: "ani", variant: "optional", effects: [{ kind: "restrictOpponent", equipment: true }, { kind: "press", continueOnly: true }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "conquerTheBeast", counters: 3, mandatoryPress: true }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "conquerTheBeast", counters: 3, mandatoryPress: false }] },
     ],
   },
   {
     // Crimson Fury [FN] — Combat+Reaction, ani, 1 blood
+    // "Only usable when this vampire is being diablerized. Usable by a
+    // locked vampire. Usable by a vampire in torpor.
+    // [ani] The diablerie is canceled and the diablerist burns 1 blood.
+    // [ANI] Burn both the diablerist and this vampire. (The diablerie is
+    // still considered successful.)" — a diablerie-interrupt window, not a
+    // combat strike, so the previous spec printing two damage strikes is
+    // the "spec describes a different card" defect docs/card-rules-audit.md flags.
     krcgId: 100447,
     name: "Crimson Fury",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "strikeHandBonus", bonus: 1, firstStrike: true }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "strikeDamage", amount: 3, ranged: false, aggravated: true }] },
+      {
+        level: "basic",
+        discipline: "ani",
+        effects: [{ kind: "cancelDiablerie", burnDiablerist: 1 }],
+      },
+      {
+        level: "superior",
+        discipline: "ani",
+        effects: [{ kind: "burnBothDiablerie" }],
+      },
     ],
   },
   {
@@ -19910,6 +20031,7 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // The Death of My Conscience [AH, FN, LoB] — Combat, pot, 3 blood
+    // "Requires a vampire with a capacity above 5. Do not replace until after combat. Play before strikes are chosen. [pot] Burn up to four cards in your hand. For each card you burn this way, this vampire gets +1 strength for the remainder of combat. Do not replace these cards until after combat. [POT] As above, but this vampire gets +2 strength for the remainder of combat for each card you burn this way."
     krcgId: 100507,
     name: "The Death of My Conscience",
     cardType: "combat",
@@ -19917,9 +20039,10 @@ export const cardSpecs: CardSpec[] = [
     usable: [],
     requiresCapacity: 6,
     combatLimit: "combat",
+    delayedReplace: "afterCombat",
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "addStrength", amount: 1 }] },
-      { level: "superior", discipline: "pot", effects: [{ kind: "addStrength", amount: 2 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "burnHandForStrength", maxCards: 4, strengthPerCard: 1 }] },
+      { level: "superior", discipline: "pot", effects: [{ kind: "burnHandForStrength", maxCards: 4, strengthPerCard: 2 }] },
     ],
   },
   {
@@ -19949,6 +20072,35 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
+    // Bloodform [Jyhad, VTES, ...] — Combat, vic
+    // "[vic] Only usable in combat with an ALLY. Strike: combat ends.
+    //  [VIC] Only usable before range is determined. This round, this
+    //  vampire is immune to non-aggravated damage, cannot strike and gets
+    //  1 optional press, only usable to end combat."
+    krcgId: 100219,
+    name: "Bloodform",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      {
+        level: "basic",
+        discipline: "vic",
+        usable: ["onlyAgainstAlly"],
+        effects: [{ kind: "strikeCombatEnds", unlockSelf: false }],
+      },
+      {
+        level: "superior",
+        discipline: "vic",
+        effects: [
+          { kind: "roundNonAggravatedShield", amount: null },
+          { kind: "cannotStrikeThisRound" },
+          { kind: "press", continueOnly: false, endOnly: true },
+        ],
+      },
+    ],
+  },
+  {
     // Drawing Out the Beast [Jyhad, ...] — Combat, ani
     krcgId: 100585,
     name: "Drawing Out the Beast",
@@ -19958,7 +20110,19 @@ export const cardSpecs: CardSpec[] = [
     combatLimit: "combat",
     modes: [
       { level: "basic", discipline: "ani", effects: [{ kind: "opposingStrength", amount: 1, scope: "round" }, { kind: "restrictOpponent", press: true }, { kind: "restrictOpponent", equipment: true }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "opposingStrength", amount: 1, scope: "round" }, { kind: "restrictOpponent", press: true }, { kind: "restrictOpponent", equipment: true }, { kind: "roundDamage", amount: 1, targets: "opposing", ranged: false, when: "strikeResolution" }] },
+      {
+        level: "superior",
+        discipline: "ani",
+        effects: [
+          { kind: "opposingStrength", amount: 1, scope: "round" },
+          { kind: "restrictOpponent", press: true },
+          { kind: "restrictOpponent", equipment: true },
+          // "…the opposing vampire takes 1 unpreventable damage during the
+          // PRESS STEP each round" — not `roundDamage` at strike
+          // resolution, and NOT preventable.
+          { kind: "pressStepDamage", amount: 1 },
+        ],
+      },
     ],
   },
   {
@@ -20053,19 +20217,33 @@ export const cardSpecs: CardSpec[] = [
     modes: [
       { level: "basic", discipline: "pot", effects: [{ kind: "strikeHandBonus", bonus: 1 }] },
       { level: "basic", discipline: "thn", effects: [{ kind: "strikeHandBonus", bonus: 2 }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "strikeHandBonus", bonus: 2 }, { kind: "roundDamage", amount: 1, targets: "opposing", ranged: false, when: "strikeResolution" }] },
+      {
+        level: "superior",
+        discipline: "thn",
+        effects: [
+          { kind: "strikeHandBonus", bonus: 2 },
+          // "…the opposing vampire takes 1 unpreventable environmental
+          // damage during the press step THIS ROUND (only effective if this
+          // strike was made at close range)."
+          { kind: "pressStepDamage", amount: 1, ifCloseStrikeThisRound: true },
+        ],
+      },
     ],
   },
   {
     // Penitent Resilience [HtB, HtB Reprint, PoD] — Action Modifier+Combat, for/obe
+    // "[for] [COMBAT] This round, this vampire treats aggravated damage as normal damage and cards named /Flash Grenade/ have no effect on this vampire.
+    // [for][obe] [COMBAT] As [for] above, but until the end of combat.
+    // [FOR][OBE] [ACTION MODIFIER] Only usable as the action is announced. Choose a vampire. The chosen vampire cannot block this action."
     krcgId: 101382,
     name: "Penitent Resilience",
-    cardType: "combat",
+    cardType: "modifierOrCombat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "treatAggravatedAsNormal" }] },
-      { level: "superior", discipline: { all: ["for", "obe"] }, effects: [{ kind: "treatAggravatedAsNormal" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "treatAggravatedAsNormal" }, { kind: "flashGrenadeImmune" }] },
+      { level: "basic", discipline: { all: ["for", "obe"] }, effects: [{ kind: "treatAggravatedAsNormal", scope: "combat" }, { kind: "flashGrenadeImmune", scope: "combat" }] },
+      { level: "superior", discipline: { all: ["for", "obe"] }, effects: [{ kind: "blockRestriction", who: "chosen" }] },
     ],
   },
   {
@@ -20100,12 +20278,34 @@ export const cardSpecs: CardSpec[] = [
     name: "Rigor Mortis",
     cardType: "combat",
     bloodCost: 1,
-    usable: [],
+    usable: ["onlyBeforeRange"],
     combatLimit: "round",
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "restrictOpponent", press: true }] },
-      { level: "basic", discipline: "thn", effects: [{ kind: "restrictOpponent", press: true }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "restrictOpponent", press: true }] },
+      // "[pre] The opposing minion cannot use any ADDITIONAL STRIKES this
+      // round." Not `restrictOpponent press` — the card bars additional
+      // strikes, and the [thn]/[THN] siblings add the press back.
+      {
+        level: "basic",
+        discipline: "pre",
+        effects: [{ kind: "barOpponentAdditionalStrikes" }],
+      },
+      {
+        level: "basic",
+        discipline: "thn",
+        effects: [
+          { kind: "barOpponentAdditionalStrikes" },
+          { kind: "press", continueOnly: false },
+        ],
+      },
+      {
+        level: "superior",
+        discipline: "thn",
+        effects: [
+          { kind: "barOpponentAdditionalStrikes" },
+          { kind: "press", continueOnly: false },
+          { kind: "cancelOpposingManeuverOncePerRound" },
+        ],
+      },
     ],
   },
   {
@@ -20116,8 +20316,26 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: { all: ["pre", "ser"] }, effects: [{ kind: "strikeCombatEnds", unlockSelf: true }] },
-      { level: "superior", discipline: { all: ["pre", "ser"] }, effects: [{ kind: "strikeCombatEnds", unlockSelf: true }] },
+      // No unlock clause is printed; the earlier spec carried `unlockSelf`.
+      {
+        level: "basic",
+        discipline: { all: ["pre", "ser"] },
+        effects: [{ kind: "strikeCombatEnds", unlockSelf: false }],
+      },
+      {
+        level: "superior",
+        discipline: { all: ["pre", "ser"] },
+        effects: [
+          // "…and if the range is CLOSE, this vampire burns 1 blood to put
+          // this card on the opposing minion and lock them" — armed with
+          // the strike, paid and attached when it resolves.
+          {
+            kind: "strikeCombatEnds",
+            unlockSelf: false,
+            attachIfClose: { bloodCost: 1, lock: true, burnInVictimUnlock: true },
+          },
+        ],
+      },
     ],
   },
   {
@@ -20164,10 +20382,25 @@ export const cardSpecs: CardSpec[] = [
     name: "Street Cred",
     cardType: "combat",
     bloodCost: 1,
+    // "Only usable at the end of a round of combat in which this vampire
+    // successfully inflicted more damage than the opposing minion." The
+    // press this card used to print belongs to a different card; Street
+    // Cred moves blood and never touches the press step.
     usable: [],
+    oncePerTurnPerVampire: true,
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "press", continueOnly: true }] },
-      { level: "superior", discipline: "pot", effects: [{ kind: "press", continueOnly: true }] },
+      {
+        level: "basic",
+        discipline: "pot",
+        usable: ["onlyAfterInflictedMore"],
+        effects: [{ kind: "bloodBankToUncontrolled", amount: 1, youngerThanActor: true }],
+      },
+      {
+        level: "superior",
+        discipline: "pot",
+        usable: ["onlyAfterInflictedMore"],
+        effects: [{ kind: "bloodBankToUncontrolled", amount: 2, youngerThanActor: true }],
+      },
     ],
   },
   {
@@ -20217,10 +20450,22 @@ export const cardSpecs: CardSpec[] = [
     cardType: "combat",
     bloodCost: 0,
     usable: [],
-    combatLimit: "combat",
     modes: [
-      { level: "basic", discipline: { all: ["chi", "for"] }, effects: [{ kind: "restrictOpponent", press: true }] },
-      { level: "superior", discipline: { all: ["chi", "for"] }, effects: [{ kind: "restrictOpponent", press: true }] },
+      // "This combat, IF ANY DAMAGE IS SUCCESSFULLY INFLICTED on this
+      // vampire in a round, the opposing minion cannot press that round."
+      // The trigger is conditional, which `restrictOpponent` (unconditional
+      // and action-scoped) cannot say — hence the bar-if-damaged op. The
+      // old spec also carried an unprinted `combatLimit`.
+      {
+        level: "basic",
+        discipline: { all: ["chi", "for"] },
+        effects: [{ kind: "barPressIfDamaged", additionalStrikes: false }],
+      },
+      {
+        level: "superior",
+        discipline: { all: ["chi", "for"] },
+        effects: [{ kind: "barPressIfDamaged", additionalStrikes: true }],
+      },
     ],
   },
   {

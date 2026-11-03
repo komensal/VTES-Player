@@ -22,6 +22,7 @@ const entries = registry.entries as unknown as Record<
       bloodCost?: number | null;
       poolCost?: number | null;
       disciplines?: string[] | Record<string, string>;
+      printedName?: string | null;
       types?: string[];
       kind?: string;
     };
@@ -126,6 +127,70 @@ describe("supported.json ↔ implementations", () => {
       );
       expect(h!.bloodCost, `handler blood cost for ${spec.name}`).toBe(spec.bloodCost);
     }
+  });
+
+  /**
+   * docs/card-rules-audit.md's closing note: the suite checked that every
+   * spec matched the registry, but nothing checked that every supported
+   * card had a HANDLER. A spec that exists and a handler registry keyed by
+   * NAME are two different claims — a spec whose `name` drifts from what
+   * the compiler registers is supported, tested, and silently unplayable
+   * from hand. That is exactly the shape of the 43 broken cards the audit
+   * found, and this is the guard that would have caught all of them.
+   */
+  /**
+   * The 36 supported cards that still have NO handler: 24 library combat
+   * cards plus 12 crypt entries. They are listed here rather than dropped
+   * from `config/supported.json` because unflipping a supported id changes
+   * what a deck may contain, which is the owner's call, not a test's.
+   *
+   * docs/card-rules-audit.md §"Licznik korekt" tracks them as open. The
+   * list MUST shrink; the day it is empty the constant goes away and the
+   * assertion below tightens. Everything not on this list is already
+   * guaranteed to have a handler, which is the regression this test
+   * exists to catch.
+   */
+  const KNOWN_UNIMPLEMENTED = new Set<number>([
+    // Library — each needs a primitive the engine does not have yet
+    // (amaranth, reflected damage, damage-by-range, botched-move reveal…).
+    100005, 100013, 100027, 100040, 100043, 100047, 100066, 100087, 100089,
+    100105, 100113, 100117, 100121, 100124, 100138, 100153, 100174, 100189,
+    100190, 100203, 100205, 100231, 100235, 100238, 100241,
+    // Crypt — 200001–200009 are ABSENT from the generated registry (their
+    // sets are outside config/v5-sets.json), and 201526/201609 print an
+    // Anarch title line, which is data the importer reads on its own.
+    200001, 200002, 200003, 200004, 200005, 200006, 200007, 200008, 200009,
+    201526, 201609,
+  ]);
+
+  it("every supported card has a handler in the built registry", () => {
+    const handlers = buildHandlerRegistry();
+    const missing: string[] = [];
+    // The SPEC's name is what the handler registry is keyed by (the
+    // compiler builds `handler.name` from it), and it differs from the
+    // registry's for crypt cards, whose name carries the group suffix.
+    // A bespoke (hand-written) handler has no spec, so it must be found
+    // under the registry's name either way — hence both lookups.
+    const specNames = new Set([
+      ...cardSpecs.map((s) => s.name),
+      ...cryptSpecs.map((s) => s.name),
+    ]);
+    for (const id of implementedIds) {
+      const entry = entries[String(id)];
+      const candidates = [entry?.card.name, entry?.card.printedName].filter(
+        (n): n is string => typeof n === "string",
+      );
+      const specName = [...specNames].find((n) => candidates.includes(n));
+      const handled =
+        (specName !== undefined && handlers[specName] !== undefined) ||
+        candidates.some((n) => handlers[n] !== undefined);
+      if (!handled && !KNOWN_UNIMPLEMENTED.has(id)) {
+        missing.push(`${id} ${candidates.join("/") || "(no registry entry)"}`);
+      }
+    }
+    expect(missing, `supported cards with no handler: ${missing.join(", ")}`).toEqual(
+      [],
+    );
   });
 
   it("the registry marks exactly the implemented ids as supported", () => {

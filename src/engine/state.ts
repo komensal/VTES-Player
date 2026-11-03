@@ -51,6 +51,27 @@ export interface GrantedStrike {
   /** "THIS ROUND, this vampire can strike…" — cleared at the round
    *  boundary, unlike a once-per-combat grant. */
   roundOnly?: boolean;
+  /** "…strike: combat ends **and unlock this vampire**" (Bond with the
+   *  Mountain [vis]). A granted strike otherwise resolves exactly like the
+   *  bare built-in one, so the few printed riders ride here beside the
+   *  kind rather than as an extra card on the frame. */
+  unlockSelf?: boolean;
+  /** "Play a NON-RANGED strike requiring Quietus from your hand and use it
+   *  as if it were ranged" (Blood of the Cobra [QUI]) — the granted strike
+   *  is a COPY of a card from hand, resolved with `ranged: true`. The two
+   *  halves are the printed clause, so they travel together. */
+  copyFromHand?: { disciplines: string[]; ranged: boolean };
+  /** "…and if the range is CLOSE, this vampire burns 1 blood to put this
+   *  card on the opposing minion and lock them" (Serpent's Numbing Kiss
+   *  [PRE][SER]) — the attach half of a "strike: combat ends" whose
+   *  payload is conditional on the range at resolution. */
+  attachOnClose?: {
+    bloodCost: number;
+    statics: PermanentStatics;
+    lockVictim: boolean;
+    /** "Burn this card during their unlock phase." */
+    burnInVictimUnlock: boolean;
+  };
 }
 export type ActionKind =
   | "bleed"
@@ -1133,6 +1154,12 @@ export interface PermanentStatics {
    *  `unlockSuppressed` like every other version of this clause.
    *  docs/pay-to-unlock-design.md §2 */
   bearerDoesNotUnlock?: boolean;
+  /** "Burn this card during THEIR unlock phase" (Serpent's Numbing Kiss
+   *  [PRE][SER]) — "their" is the BEARER's, which is not the same phase as
+   *  `burnAtControllerUnlock`'s when the card sits on an opponent's minion.
+   *  Read in the unlock sweep itself, so no handler has to be registered
+   *  for a card that only exists as a combat rider. */
+  burnAtBearerUnlock?: boolean;
   /** "\<Clan\> DO NOT UNLOCK AS NORMAL" (Children of Osiris) — the same
    *  clause aimed at a clan across the whole table, from one Methuselah's
    *  play area. §2 */
@@ -3026,6 +3053,11 @@ export interface Strike {
    *  strike; everything else about the dodge is unchanged.
    *  docs/last-combat-design.md §1 */
   undodgeable?: boolean;
+  /** "Burn a RETAINER employed by the opposing minion" (Mask
+   *  Empathy [pre]) — a strike that deals no damage but burns one of
+   *  the opposing minion's attached retainers, chosen in the option id.
+   *  docs/equipment-stripping-design.md §2 */
+  burnRetainer?: CardInstanceId;
   /** "Strike: steal N blood" — moves N blood/life from the victim to the
    *  striker instead of dealing damage (p. 33); ranged. 0 = not a steal. */
   stealBlood: number;
@@ -3416,6 +3448,8 @@ export interface CombatFrame {
   /** "Neither combatant can strike during this round" (One With the Land) —
    *  the round number in which strikes are suppressed, else null. */
   suppressStrikesRound: number | null;
+  celerityCancel?: Array<{ minion: string; strike: string }>;
+  conquerTheBeast?: { counters: number; mandatoryPress: boolean; owner: string; side: "acting"|"opposing" };
   /** Press credits granted by cards this round, spendable in the press
    *  step to continue — or to cancel a press to continue (p. 32). */
   presses: { acting: number; opposing: number };
@@ -3581,6 +3615,85 @@ export interface CombatFrame {
   /** "This combat, <X> takes N damage each round" (Carrion Crows, Weather
    *  Control). docs/round-recurring-combat-design.md §3 */
   roundDamage: CombatRoundDamageRider[];
+  /** "…and the opposing vampire takes 1 UNPREVENTABLE damage during the
+   *  press step each round" (Drawing Out the Beast superior, Necrosis
+   *  [THN]). A round damage rider whose WINDOW is the press step, which
+   *  `roundDamage.when`'s two values cannot express — that field chooses
+   *  between "before range" and "normal strike resolution", and a late
+   *  rider has to land after the strikes so it cannot be answered by the
+   *  same round's prevention. Keyed by the side that takes it, and only
+   *  fired while both combatants are still in the fight.
+   *  docs/card-rules-audit.md */
+  pressStepDamage?: { acting: number; opposing: number };
+  /** "Strike: … the opposing vampire takes 1 unpreventable environmental
+   *  damage during the press step this round (ONLY EFFECTIVE IF THIS
+   *  STRIKE WAS MADE AT CLOSE RANGE)" (Necrosis [THN]). Conditional on
+   *  the range the strike actually resolved at, so it is armed by the
+   *  strike and read at the press step. */
+  pressStepDamageIfCloseStrike?: { acting: boolean; opposing: boolean };
+  /** Fired once per combat: the press step is re-entered after any
+   *  "would end" card, and the rider is a once-each-round payment. */
+  pressStepDamageDone?: boolean;
+  /** "Strike: … when the opposing minion inflicts damage with a HAND
+   *  STRIKE this round (even if the damage is prevented), he or she takes
+   *  an equal amount of damage during strike resolution as well" (King of
+   *  the Mountain [FOR]). `amount` is stamped at infliction, before
+   *  prevention, which is what the parenthetical asks for. */
+  reflectHandStrike?: {
+    acting: number | null;
+    opposing: number | null;
+  };
+  /** "Prevent ALL damage from the opposing minion's STRIKE" — a round
+   *  scoped flag rather than a one-item prevention, because the rider is
+   *  printed as a property of the whole strike and a later sub-strike in
+   *  the same round must not sneak past it (King of the Mountain [for]).
+   *  Set on the DEFENDING side, keyed like `preventAllFrom`. */
+  preventOpposingStrikeRound?: { acting: boolean; opposing: boolean };
+  /** "[FOR] …each round of this combat, this vampire may BURN N BLOOD to
+   *  prevent all damage from the opposing minion's INITIAL strike for that
+   *  round" (Superior Mettle). Keyed by the PROTECTED side; the blood cost
+   *  is paid per strike, so it survives the round boundary. */
+  initialStrikeShield?: { acting: number | null; opposing: number | null };
+  /** "…this vampire is IMMUNE TO NON-AGGRAVATED DAMAGE this round" and
+   *  "…may prevent N damage from the opposing minion's strikes each
+   *  round" (Bloodform [VIC]) — a combat-long prevention RATE that only
+   *  applies to non-aggravated damage, which `preventPerRound` has no
+   *  filter for. `amount: null` means immunity. */
+  nonAggravatedShieldRound?: {
+    acting: { amount: number | null; used: number } | null;
+    opposing: { amount: number | null; used: number } | null;
+  };
+  /** "…cannot strike (superior Bloodform) this round" — a printed
+   *  restriction on the defender, gated where strikes are OFFERED so it
+   *  needs no second check at resolution. Keyed by the barred side. */
+  cannotStrikeRound?: { acting: boolean; opposing: boolean };
+  /** "…may cancel a maneuver used by the opposing minion, once each round
+   *  this combat" (Rigor Mortis [THN]) — a per-round charge, spent at the
+   *  one place a maneuver is taken. */
+  maneuverCancelCharges?: { acting: number; opposing: number };
+  /** "…if any damage is successfully inflicted ON THIS VAMPIRE in a given
+   *  round, the opposing minion cannot press / use additional strikes
+   *  THAT ROUND" (Sympathetic Agony). Armed for a round and fired at
+   *  infliction, the same shape `pressIfDamaged` uses — `minion` is the
+   *  SHIELDED side, so the bar lands on its opponent. */
+  pressBarIfDamaged?: Array<{
+    minion: MinionId;
+    round: number;
+    additionalStrikes: boolean;
+  }>;
+  /** "If the range is close, this vampire burns N blood to put this card on
+   *  the opposing minion and LOCK THEM" — the payload of a "strike: combat
+   *  ends" that is conditional on the range at resolution (Serpent's
+   *  Numbing Kiss [PRE][SER]). */
+  combatEndsAttachment?: {
+    from: "acting" | "opposing";
+    cardName: string;
+    bloodCost: number;
+    statics: PermanentStatics;
+    tags: string[];
+    lockVictim: boolean;
+    burnInVictimUnlock: boolean;
+  } | null;
   /** One-shot environmental damage selected during the initial strike
    *  resolution phase (Call the Wild Hunt superior). */
   initialStrikeDamage?: Array<{ cardId: CardInstanceId; minion: MinionId; amount: number }>;
@@ -4068,6 +4181,34 @@ export interface DiablerieOfferFrame {
   offerSeat: SeatId;
 }
 
+/** "Only usable when this vampire is being diablerized" (Crimson Fury,
+ *  [ani]/[ANI]) — a reactive window opened BEFORE the diablerie commits,
+ *  addressed to the victim's controller. The card costs 1 blood and is
+ *  usable by a locked vampire and by a vampire in torpor, so the usual
+ *  ready/unlocked checks are bypassed. The two levels are:
+ *  [ani] the diablerie is canceled and the diablerist burns 1 blood;
+ *  [ANI] burn both the diablerist and the victim (still considered
+ *  successful, so DiablerieCommitted is still emitted). */
+export interface DiablerieInterruptFrame {
+  kind: "diablerieInterrupt";
+  /** The vampire that would commit the diablerie. */
+  diablerist: MinionId;
+  /** The victim that would be diablerized. */
+  victim: MinionId;
+  /** The victim's controller — the seat that decides in this window. */
+  offerSeat: SeatId;
+  /** Impulse cycle over the offerSeat if they have playable cards, else
+   *  empty so the frame closes immediately. */
+  cycle: ImpulseCycle;
+  /** Set by the [ani] level: the diablerie is canceled and the
+   *  diablerist will burn this much blood after the window closes. */
+  cancelBurn?: number;
+  /** Set by the [ANI] level: burn both vampires, but the diablerie is
+   *  still considered successful (so the normal DiablerieCommitted event
+   *  and blood hunt still happen, with the diablerist burned in addition). */
+  burnBoth?: boolean;
+}
+
 /**
  * "The card asks one Methuselah a question" (docs/choice-frames-design.md)
  * — a choice that is part of a card's own resolution: not an action, not a
@@ -4216,6 +4357,7 @@ export type Frame =
   | CardPlayFrame
   | ReferendumFrame
   | DiablerieOfferFrame
+  | DiablerieInterruptFrame
   | ChoiceFrame
   | OustFrame
   | TorporFrame;
