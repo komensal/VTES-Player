@@ -20508,15 +20508,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ahriman's Demesne [100027] — fala 35 wierna (faithful rebuild)
+    // Ahriman's Demesne [100027] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100027,
     name: "Ahriman's Demesne",
     cardType: "combat",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -20532,7 +20531,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Amaranth [100043] — fala 35 wierna (faithful rebuild)
+    // Amaranth [100043] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100043,
     name: "Amaranth",
     cardType: "combat",
@@ -20786,7 +20785,7 @@ export const cardSpecs: CardSpec[] = [
   },
 
   {
-    // Abyssal Hunter [100014] — fala 35 wierna (faithful rebuild)
+    // Abyssal Hunter [100014] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100014,
     name: "Abyssal Hunter",
     cardType: "ally",
@@ -20794,7 +20793,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -20834,7 +20833,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Amulet of Temporal Perception [100048] — fala 35 wierna (faithful rebuild)
+    // Amulet of Temporal Perception [100048] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100048,
     name: "Amulet of Temporal Perception",
     cardType: "equipment",
@@ -20868,14 +20867,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Ancestor's Talisman [100063] — fala 35 wierna (faithful rebuild)
+    // The Ancestor's Talisman [100063] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100063,
     name: "The Ancestor's Talisman",
     cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -25800,14 +25799,14 @@ export const cardSpecs: CardSpec[] = [
   },
 
   {
-    // Achilles' Heel [100017] — fala 35 wierna (faithful rebuild)
+    // Achilles' Heel [100017] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100017,
     name: "Achilles' Heel",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "attachSelf" }] }
     ],
   },
   {
@@ -25822,25 +25821,25 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Admonitions [100023] — fala 35 wierna (faithful rebuild)
+    // The Admonitions [100023] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100023,
     name: "The Admonitions",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "attachSelf" }] }
     ],
   },
   {
-    // Agent of Power [100025] — fala 35 wierna (faithful rebuild)
+    // Agent of Power [100025] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100025,
     name: "Agent of Power",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "attachSelf" }] }
     ],
   },
   {
@@ -25856,14 +25855,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ahrimane Protectorate [100028] — fala 35 wierna (faithful rebuild)
+    // Ahrimane Protectorate [100028] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100028,
     name: "Ahrimane Protectorate",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -25879,14 +25878,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Akunanse Kholo [100034] — fala 35 wierna (faithful rebuild)
+    // Akunanse Kholo [100034] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100034,
     name: "Akunanse Kholo",
     cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -25913,10 +25912,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Anathema [100060] — fala 35 wierna (faithful rebuild)
+    // Anathema [100060] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100060,
     name: "Anathema",
-    cardType: "politicalaction",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -25924,14 +25923,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ancestor Spirit [100061] — fala 35 wierna (faithful rebuild)
+    // Ancestor Spirit [100061] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100061,
     name: "Ancestor Spirit",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -32244,14 +32243,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Abombwe [100009] — fala 35 wierna (faithful rebuild)
+    // Abombwe [100009] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100009,
     name: "Abombwe",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "attachSelf" }] }
     ],
   },
   {
@@ -32267,7 +32266,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Al's Army Apparatus [100035] — fala 35 wierna (faithful rebuild)
+    // Al's Army Apparatus [100035] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100035,
     name: "Al's Army Apparatus",
     cardType: "master",
@@ -32278,40 +32277,40 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Alastor [100038] — fala 35 wierna (faithful rebuild)
+    // Alastor [100038] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100038,
     name: "Alastor",
-    cardType: "politicalaction",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Alia, God's Messenger [100039] — fala 35 wierna (faithful rebuild)
+    // Alia, God's Messenger [100039] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100039,
     name: "Alia, God's Messenger",
     cardType: "ally",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Alvusia [100041] — fala 35 wierna (faithful rebuild)
+    // Alvusia [100041] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100041,
     name: "Alvusia",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Ambrosius, The Ferryman [100044] — fala 35 wierna (faithful rebuild)
+    // Ambrosius, The Ferryman [100044] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100044,
     name: "Ambrosius, The Ferryman",
     cardType: "ally",
@@ -32323,7 +32322,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ambulance [100045] — fala 35 wierna (faithful rebuild)
+    // Ambulance [100045] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100045,
     name: "Ambulance",
     cardType: "equipment",
@@ -32331,7 +32330,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -35630,7 +35629,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Absimiliard's Army [100011] — fala 35 wierna (faithful rebuild)
+    // Absimiliard's Army [100011] — fala 41 wierna (bespoke Master Trifle)
     krcgId: 100011,
     name: "Absimiliard's Army",
     cardType: "event",
