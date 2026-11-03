@@ -32498,6 +32498,1170 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
 
+  {
+    // 419 Operation [100002] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100002,
+    name: "419 Operation",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Abactor [100004] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100004,
+    name: "Abactor",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ablative Skin [100008] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100008,
+    name: "Ablative Skin",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Abombwe [100009] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100009,
+    name: "Abombwe",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Abomination [100010] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100010,
+    name: "Abomination",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Al's Army Apparatus [100035] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100035,
+    name: "Al's Army Apparatus",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Alastor [100038] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100038,
+    name: "Alastor",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Alia, God's Messenger [100039] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100039,
+    name: "Alia, God's Messenger",
+    cardType: "ally",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Alvusia [100041] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100041,
+    name: "Alvusia",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ambrosius, The Ferryman [100044] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100044,
+    name: "Ambrosius, The Ferryman",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ambulance [100045] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100045,
+    name: "Ambulance",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ancestor's Insight [100062] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100062,
+    name: "Ancestor's Insight",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Angel of Berlin [100067] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100067,
+    name: "Angel of Berlin",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Arms Dealer [100090] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100090,
+    name: "Arms Dealer",
+    cardType: "ally",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Art of Memory [100097] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100097,
+    name: "The Art of Memory",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ashur Tablets [100106] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100106,
+    name: "Ashur Tablets",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Augur [100110] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100110,
+    name: "Augur",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "viz", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Aye [100120] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100120,
+    name: "Aye",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Bamba [100129] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100129,
+    name: "Bamba",
+    cardType: "action",
+    bloodCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Battle Frenzy [100141] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100141,
+    name: "Battle Frenzy",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Bauble [100142] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100142,
+    name: "Bauble",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Black Hand Ritual [100168] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100168,
+    name: "Black Hand Ritual",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blade of Enoch [100176] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100176,
+    name: "Blade of Enoch",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Bond [100234] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100234,
+    name: "Bond",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "inn", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bounty [100242] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100242,
+    name: "Bounty",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brainwash [100245] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100245,
+    name: "Brainwash",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brujah Frenzy [100261] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100261,
+    name: "Brujah Frenzy",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Bujo [100265] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100265,
+    name: "Bujo",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Call the Great Beast [100280] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100280,
+    name: "Call the Great Beast",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chair of Hades [100318] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100318,
+    name: "Chair of Hades",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Charigger, The Axe [100331] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100331,
+    name: "Charigger, The Axe",
+    cardType: "retainer",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["retainer"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Children of Stone [100340] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100340,
+    name: "Children of Stone",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Church of Vindicated Faith [100348] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100348,
+    name: "The Church of Vindicated Faith",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cleave [100358] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100358,
+    name: "Cleave",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ven", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Code of Milan Suspended [100371] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100371,
+    name: "Code of Milan Suspended",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cold Amber's Hold [100375] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100375,
+    name: "Cold Amber's Hold",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Concordance [100395] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100395,
+    name: "Concordance",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemnation: Betrayed [100397] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100397,
+    name: "Condemnation: Betrayed",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemnation: Doomed [100398] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100398,
+    name: "Condemnation: Doomed",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemnation: Languid [100399] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100399,
+    name: "Condemnation: Languid",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemnation: Mute [100400] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100400,
+    name: "Condemnation: Mute",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Consume the Dead [100417] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100417,
+    name: "Consume the Dead",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Contagion [100418] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100418,
+    name: "Contagion",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cooler [100422] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100422,
+    name: "Cooler",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Coroner's Contact [100424] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100424,
+    name: "Coroner's Contact",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Corrupt Construction [100429] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100429,
+    name: "Corrupt Construction",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Corruption [100430] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100430,
+    name: "Corruption",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Courier [100434] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100434,
+    name: "Courier",
+    cardType: "ally",
+    bloodCost: 2,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Crusade: Amsterdam [100451] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100451,
+    name: "Crusade: Amsterdam",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Crusade: Barcelona [100454] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100454,
+    name: "Crusade: Barcelona",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Crusade: Brussels [100456] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100456,
+    name: "Crusade: Brussels",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Crusade: Dublin [100459] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100459,
+    name: "Crusade: Dublin",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Crusade: London [100464] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100464,
+    name: "Crusade: London",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Crusade: Rome [100471] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100471,
+    name: "Crusade: Rome",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Crusade: Washington, D.C. [100473] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100473,
+    name: "Crusade: Washington, D.C.",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Crusader Sword [100474] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100474,
+    name: "The Crusader Sword",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Curse of Nitocris [100483] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100483,
+    name: "Curse of Nitocris",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dam the Heart's River [100489] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100489,
+    name: "Dam the Heart's River",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Deploy the Hand [100525] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100525,
+    name: "Deploy the Hand",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Determine [100534] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100534,
+    name: "Determine",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "viz", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Deviki Prasanta [100536] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100536,
+    name: "Deviki Prasanta",
+    cardType: "ally",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Devil-Channel: Back [100537] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100537,
+    name: "Devil-Channel: Back",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Devil-Channel: Feet [100538] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100538,
+    name: "Devil-Channel: Feet",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Devil-Channel: Hands [100539] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100539,
+    name: "Devil-Channel: Hands",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Devil-Channel: Throat [100540] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100540,
+    name: "Devil-Channel: Throat",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Diabolic Lure [100542] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100542,
+    name: "Diabolic Lure",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Din of the Damned [100544] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100544,
+    name: "Din of the Damned",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dirty Little Secrets [100547] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100547,
+    name: "Dirty Little Secrets",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dis Pater [100548] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100548,
+    name: "Dis Pater",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Disciple of Lazarus [100552] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100552,
+    name: "Disciple of Lazarus",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dogs of War [100569] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100569,
+    name: "Dogs of War",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Drop Point Network [100590] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100590,
+    name: "Drop Point Network",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dusk Work [100595] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100595,
+    name: "Dusk Work",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Earth-Feeder [100603] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100603,
+    name: "Earth-Feeder",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ebony Fox Hunt [100606] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100606,
+    name: "Ebony Fox Hunt",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Edge of the World [100613] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100613,
+    name: "Edge of the World",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Edge Vitiation [100614] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100614,
+    name: "Edge Vitiation",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Eldest Command Undeath [100623] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100623,
+    name: "The Eldest Command Undeath",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Elephant Guardian [100626] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100626,
+    name: "Elephant Guardian",
+    cardType: "retainer",
+    bloodCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["retainer"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Emerald Legionnaire [100634] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100634,
+    name: "Emerald Legionnaire",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Emergency Powers [100635] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100635,
+    name: "Emergency Powers",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Emergency Rations [100637] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100637,
+    name: "Emergency Rations",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Enticement [100650] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100650,
+    name: "Enticement",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ephor [100654] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100654,
+    name: "Ephor",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Epiphany [100655] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100655,
+    name: "Epiphany",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Excellent Thirst [100670] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100670,
+    name: "Excellent Thirst",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Exile [100673] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100673,
+    name: "Exile",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Expiate [100674] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100674,
+    name: "Expiate",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mar", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Extortion [100675] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100675,
+    name: "Extortion",
+    cardType: "reaction",
+    bloodCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Familial Bond [100699] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100699,
+    name: "Familial Bond",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Feline Saboteur [100718] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100718,
+    name: "Feline Saboteur",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fire on the Mountain [100735] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100735,
+    name: "Fire on the Mountain",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Form of Corruption [100770] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100770,
+    name: "Form of Corruption",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fortschritt Library [100775] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100775,
+    name: "Fortschritt Library",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Free States Rant [100790] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100790,
+    name: "Free States Rant",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Frenzy [100791] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100791,
+    name: "Frenzy",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Game of Malkav [100800] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100800,
+    name: "Game of Malkav",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gangrel Conspiracy [100805] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100805,
+    name: "Gangrel Conspiracy",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gangrel Justicar [100806] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100806,
+    name: "Gangrel Justicar",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ghost-Eater [100816] — fala 8 wierna (trudne, heurystyka)
+    krcgId: 100816,
+    name: "Ghost-Eater",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+
 ];
 
 /**
@@ -41572,9 +42736,14 @@ export function buildHandlerRegistry(): HandlerRegistry {
 /** All implemented ids (specs + bespoke handlers) for the support test. */
 export const implementedIds: number[] = [
   100001,
+  100002,
   100003,
+  100004,
   100005,
   100006,
+  100008,
+  100009,
+  100010,
   100012,
   100013,
   100014,
@@ -41598,11 +42767,17 @@ export const implementedIds: number[] = [
   100032,
   100033,
   100034,
+  100035,
   100036,
   100037,
+  100038,
+  100039,
   100040,
+  100041,
   100042,
   100043,
+  100044,
+  100045,
   100046,
   100047,
   100048,
@@ -41619,10 +42794,12 @@ export const implementedIds: number[] = [
   100059,
   100060,
   100061,
+  100062,
   100063,
   100064,
   100065,
   100066,
+  100067,
   100068,
   100069,
   100070,
@@ -41644,12 +42821,14 @@ export const implementedIds: number[] = [
   100087,
   100088,
   100089,
+  100090,
   100091,
   100092,
   100093,
   100094,
   100095,
   100096,
+  100097,
   100098,
   100099,
   100100,
@@ -41658,9 +42837,11 @@ export const implementedIds: number[] = [
   100103,
   100104,
   100105,
+  100106,
   100107,
   100108,
   100109,
+  100110,
   100111,
   100112,
   100113,
@@ -41670,6 +42851,7 @@ export const implementedIds: number[] = [
   100117,
   100118,
   100119,
+  100120,
   100121,
   100122,
   100123,
@@ -41678,6 +42860,7 @@ export const implementedIds: number[] = [
   100126,
   100127,
   100128,
+  100129,
   100130,
   100131,
   100132,
@@ -41689,6 +42872,8 @@ export const implementedIds: number[] = [
   100138,
   100139,
   100140,
+  100141,
+  100142,
   100143,
   100144,
   100145,
@@ -41714,6 +42899,7 @@ export const implementedIds: number[] = [
   100165,
   100166,
   100167,
+  100168,
   100169,
   100170,
   100171,
@@ -41721,6 +42907,7 @@ export const implementedIds: number[] = [
   100173,
   100174,
   100175,
+  100176,
   100177,
   100178,
   100179,
@@ -41776,6 +42963,7 @@ export const implementedIds: number[] = [
   100231,
   100232,
   100233,
+  100234,
   100235,
   100236,
   100237,
@@ -41783,8 +42971,10 @@ export const implementedIds: number[] = [
   100239,
   100240,
   100241,
+  100242,
   100243,
   100244,
+  100245,
   100246,
   100247,
   100249,
@@ -41799,9 +42989,11 @@ export const implementedIds: number[] = [
   100258,
   100259,
   100260,
+  100261,
   100262,
   100263,
   100264,
+  100265,
   100266,
   100267,
   100268,
@@ -41816,6 +43008,7 @@ export const implementedIds: number[] = [
   100277,
   100278,
   100279,
+  100280,
   100281,
   100282,
   100283,
@@ -41853,6 +43046,7 @@ export const implementedIds: number[] = [
   100315,
   100316,
   100317,
+  100318,
   100319,
   100320,
   100321,
@@ -41864,6 +43058,7 @@ export const implementedIds: number[] = [
   100328,
   100329,
   100330,
+  100331,
   100332,
   100333,
   100334,
@@ -41872,6 +43067,7 @@ export const implementedIds: number[] = [
   100337,
   100338,
   100339,
+  100340,
   100341,
   100342,
   100343,
@@ -41879,6 +43075,7 @@ export const implementedIds: number[] = [
   100345,
   100346,
   100347,
+  100348,
   100349,
   100350,
   100351,
@@ -41888,6 +43085,7 @@ export const implementedIds: number[] = [
   100355,
   100356,
   100357,
+  100358,
   100359,
   100360,
   100361,
@@ -41900,9 +43098,11 @@ export const implementedIds: number[] = [
   100368,
   100369,
   100370,
+  100371,
   100372,
   100373,
   100374,
+  100375,
   100376,
   100377,
   100378,
@@ -41922,7 +43122,12 @@ export const implementedIds: number[] = [
   100392,
   100393,
   100394,
+  100395,
   100396,
+  100397,
+  100398,
+  100399,
+  100400,
   100401,
   100402,
   100403,
@@ -41939,17 +43144,24 @@ export const implementedIds: number[] = [
   100414,
   100415,
   100416,
+  100417,
+  100418,
   100419,
   100420,
   100421,
+  100422,
   100423,
+  100424,
   100425,
   100426,
   100427,
   100428,
+  100429,
+  100430,
   100431,
   100432,
   100433,
+  100434,
   100435,
   100436,
   100437,
@@ -41966,22 +43178,30 @@ export const implementedIds: number[] = [
   100448,
   100449,
   100450,
+  100451,
   100452,
   100453,
+  100454,
   100455,
+  100456,
   100457,
   100458,
+  100459,
   100460,
   100461,
   100462,
   100463,
+  100464,
   100465,
   100466,
   100467,
   100468,
   100469,
   100470,
+  100471,
   100472,
+  100473,
+  100474,
   100475,
   100476,
   100477,
@@ -41990,11 +43210,13 @@ export const implementedIds: number[] = [
   100480,
   100481,
   100482,
+  100483,
   100484,
   100485,
   100486,
   100487,
   100488,
+  100489,
   100490,
   100491,
   100492,
@@ -42030,6 +43252,7 @@ export const implementedIds: number[] = [
   100522,
   100523,
   100524,
+  100525,
   100526,
   100527,
   100528,
@@ -42038,13 +43261,24 @@ export const implementedIds: number[] = [
   100531,
   100532,
   100533,
+  100534,
   100535,
+  100536,
+  100537,
+  100538,
+  100539,
+  100540,
   100541,
+  100542,
   100543,
+  100544,
   100545,
   100546,
+  100547,
+  100548,
   100549,
   100550,
+  100552,
   100553,
   100554,
   100555,
@@ -42061,6 +43295,7 @@ export const implementedIds: number[] = [
   100566,
   100567,
   100568,
+  100569,
   100570,
   100571,
   100572,
@@ -42080,10 +43315,12 @@ export const implementedIds: number[] = [
   100587,
   100588,
   100589,
+  100590,
   100591,
   100592,
   100593,
   100594,
+  100595,
   100596,
   100597,
   100598,
@@ -42091,13 +43328,17 @@ export const implementedIds: number[] = [
   100600,
   100601,
   100602,
+  100603,
   100604,
   100605,
+  100606,
   100607,
   100608,
   100609,
   100610,
   100611,
+  100613,
+  100614,
   100615,
   100616,
   100617,
@@ -42106,8 +43347,10 @@ export const implementedIds: number[] = [
   100620,
   100621,
   100622,
+  100623,
   100624,
   100625,
+  100626,
   100627,
   100628,
   100629,
@@ -42115,7 +43358,10 @@ export const implementedIds: number[] = [
   100631,
   100632,
   100633,
+  100634,
+  100635,
   100636,
+  100637,
   100638,
   100639,
   100640,
@@ -42128,9 +43374,12 @@ export const implementedIds: number[] = [
   100647,
   100648,
   100649,
+  100650,
   100651,
   100652,
   100653,
+  100654,
+  100655,
   100656,
   100657,
   100658,
@@ -42145,8 +43394,12 @@ export const implementedIds: number[] = [
   100667,
   100668,
   100669,
+  100670,
   100671,
   100672,
+  100673,
+  100674,
+  100675,
   100676,
   100677,
   100678,
@@ -42168,6 +43421,7 @@ export const implementedIds: number[] = [
   100694,
   100697,
   100698,
+  100699,
   100700,
   100701,
   100702,
@@ -42186,6 +43440,7 @@ export const implementedIds: number[] = [
   100715,
   100716,
   100717,
+  100718,
   100719,
   100720,
   100721,
@@ -42202,6 +43457,7 @@ export const implementedIds: number[] = [
   100732,
   100733,
   100734,
+  100735,
   100736,
   100737,
   100738,
@@ -42235,10 +43491,12 @@ export const implementedIds: number[] = [
   100767,
   100768,
   100769,
+  100770,
   100771,
   100772,
   100773,
   100774,
+  100775,
   100776,
   100777,
   100778,
@@ -42252,6 +43510,8 @@ export const implementedIds: number[] = [
   100787,
   100788,
   100789,
+  100790,
+  100791,
   100792,
   100793,
   100794,
@@ -42260,10 +43520,13 @@ export const implementedIds: number[] = [
   100797,
   100798,
   100799,
+  100800,
   100801,
   100802,
   100803,
   100804,
+  100805,
+  100806,
   100807,
   100808,
   100809,
@@ -42273,6 +43536,7 @@ export const implementedIds: number[] = [
   100813,
   100814,
   100815,
+  100816,
   100817,
   100819,
   100820,
