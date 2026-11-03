@@ -25891,6 +25891,6613 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
 
+  {
+    // Achilles' Heel [100017] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100017,
+    name: "Achilles' Heel",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Acquired Ventrue Assets [100019] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100019,
+    name: "Acquired Ventrue Assets",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Admonitions [100023] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100023,
+    name: "The Admonitions",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Agent of Power [100025] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100025,
+    name: "Agent of Power",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Aggressive Tactics [100026] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100026,
+    name: "Aggressive Tactics",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ahrimane Protectorate [100028] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100028,
+    name: "Ahrimane Protectorate",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Ailing Spirit [100030] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100030,
+    name: "The Ailing Spirit",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Akunanse Kholo [100034] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100034,
+    name: "Akunanse Kholo",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Anachronism [100050] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100050,
+    name: "Anachronism",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Anarch Secession [100057] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100057,
+    name: "Anarch Secession",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Anathema [100060] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100060,
+    name: "Anathema",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ancestor Spirit [100061] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100061,
+    name: "Ancestor Spirit",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Anima Gathering [100068] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100068,
+    name: "Anima Gathering",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Anonymous Freight [100072] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100072,
+    name: "Anonymous Freight",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Antediluvian Awakening [100073] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100073,
+    name: "Antediluvian Awakening",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Antithesis [100075] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100075,
+    name: "Antithesis",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "jud", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Armor of Terra [100088] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100088,
+    name: "Armor of Terra",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Art of Pain [100098] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100098,
+    name: "The Art of Pain",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Art's Traumatic Essence [100100] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100100,
+    name: "Art's Traumatic Essence",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Aura Absorption [100111] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100111,
+    name: "Aura Absorption",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Auto-da-fé [100116] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100116,
+    name: "Auto-da-fé",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Baltimore Purge [100128] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100128,
+    name: "Baltimore Purge",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Barrenness [100134] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100134,
+    name: "Barrenness",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bastille Opera House [100140] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100140,
+    name: "Bastille Opera House",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bay and Howl [100143] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100143,
+    name: "Bay and Howl",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bear-Baiting [100144] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100144,
+    name: "Bear-Baiting",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Becoming [100147] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100147,
+    name: "The Becoming",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Belonging Grants Protection [100150] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100150,
+    name: "Belonging Grants Protection",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Benefit Performance [100151] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100151,
+    name: "Benefit Performance",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bestial Visage [100154] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100154,
+    name: "Bestial Visage",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bestow Vigor [100155] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100155,
+    name: "Bestow Vigor",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Betrayer [100156] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100156,
+    name: "Betrayer",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Big Game [100159] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100159,
+    name: "Big Game",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Black Hand Emissary [100167] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100167,
+    name: "Black Hand Emissary",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Black Metamorphosis [100169] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100169,
+    name: "Black Metamorphosis",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blackmail [100173] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100173,
+    name: "Blackmail",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blessed Audience [100179] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100179,
+    name: "Blessed Audience",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blessed Resilience [100181] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100181,
+    name: "Blessed Resilience",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blessing of Chaos [100182] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100182,
+    name: "Blessing of Chaos",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blessing of the Beast [100184] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100184,
+    name: "Blessing of the Beast",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blessing of the Name [100185] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100185,
+    name: "Blessing of the Name",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blessings of the Loa [100186] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100186,
+    name: "Blessings of the Loa",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blind Spot [100188] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100188,
+    name: "Blind Spot",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blithe Acceptance [100191] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100191,
+    name: "Blithe Acceptance",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Awakening [100193] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100193,
+    name: "Blood Awakening",
+    cardType: "modifierOrReaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blood Bond [100194] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100194,
+    name: "Blood Bond",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Buff [100196] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100196,
+    name: "Blood Buff",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blood Clots [100197] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100197,
+    name: "Blood Clots",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood of Sandman [100204] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100204,
+    name: "Blood of Sandman",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood of the Sabbat [100206] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100206,
+    name: "Blood of the Sabbat",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Puppy [100207] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100207,
+    name: "Blood Puppy",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blood Siege [100210] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100210,
+    name: "Blood Siege",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Tempering [100213] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100213,
+    name: "Blood Tempering",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Turnip [100216] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100216,
+    name: "Blood Turnip",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bloodbath [100218] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100218,
+    name: "Bloodbath",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blooding [100220] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100220,
+    name: "Blooding",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blooding by the Code [100221] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100221,
+    name: "Blooding by the Code",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bloodwork [100225] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100225,
+    name: "Bloodwork",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Border Skirmish [100240] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100240,
+    name: "Border Skirmish",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Breath of Thanatos [100249] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100249,
+    name: "Breath of Thanatos",
+    cardType: "modifierOrCombat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brick Laying [100253] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100253,
+    name: "Brick Laying",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Brinksmanship [100255] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100255,
+    name: "Brinksmanship",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Brother in Arms [100256] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100256,
+    name: "Brother in Arms",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Brothers Grimm [100258] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100258,
+    name: "Brothers Grimm",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brutal Influence [100263] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100263,
+    name: "Brutal Influence",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Burning Touch [100270] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100270,
+    name: "Burning Touch",
+    cardType: "modifierOrCombat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cadet [100275] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100275,
+    name: "Cadet",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cairo Int'l Airport [100277] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100277,
+    name: "Cairo Int'l Airport",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Call [100278] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100278,
+    name: "The Call",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Carnivale [100299] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100299,
+    name: "Carnivale",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Carrion Coffin [100300] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100300,
+    name: "Carrion Coffin",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Carthage Remembered [100302] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100302,
+    name: "Carthage Remembered",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cat Burglary [100305] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100305,
+    name: "Cat Burglary",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cavalier [100310] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100310,
+    name: "Cavalier",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Celestial Harmony [100313] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100313,
+    name: "Celestial Harmony",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Census Taker [100314] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100314,
+    name: "Census Taker",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Chain of Command [100316] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100316,
+    name: "Chain of Command",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chanjelin Ward [100326] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100326,
+    name: "Chanjelin Ward",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Charge of the Buffalo [100330] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100330,
+    name: "Charge of the Buffalo",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Charming Lobby [100334] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100334,
+    name: "Charming Lobby",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cheat the Fates [100336] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100336,
+    name: "Cheat the Fates",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chill of Oblivion [100341] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100341,
+    name: "Chill of Oblivion",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Choir [100345] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100345,
+    name: "Choir",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chronicle of the Lost Tribe [100346] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100346,
+    name: "Chronicle of the Lost Tribe",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Church of the Order of St. Blaise [100347] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100347,
+    name: "Church of the Order of St. Blaise",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // City Gangrel Connections [100351] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100351,
+    name: "City Gangrel Connections",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Clan Impersonation [100353] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100353,
+    name: "Clan Impersonation",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Clandestine Contract [100355] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100355,
+    name: "Clandestine Contract",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cleansing Ritual [100357] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100357,
+    name: "Cleansing Ritual",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Clio's Kiss [100359] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100359,
+    name: "Clio's Kiss",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Clotho's Gift [100365] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100365,
+    name: "Clotho's Gift",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Coagulated Entity [100369] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100369,
+    name: "Coagulated Entity",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Code of Samiel [100372] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100372,
+    name: "Code of Samiel",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Command Performance [100383] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100383,
+    name: "Command Performance",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Command the Legion [100384] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100384,
+    name: "Command the Legion",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Communal Haven: Temple [100386] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100386,
+    name: "Communal Haven: Temple",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Community Justice [100387] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100387,
+    name: "Community Justice",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Compel the Spirit [100388] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100388,
+    name: "Compel the Spirit",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Concert Tour [100393] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100393,
+    name: "Concert Tour",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemn the Sins of the Father [100396] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100396,
+    name: "Condemn the Sins of the Father",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Conductor [100402] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100402,
+    name: "Conductor",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Conniver [100407] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100407,
+    name: "Conniver",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Conscripted Statue [100412] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100412,
+    name: "Conscripted Statue",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Consecration Rites [100413] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100413,
+    name: "Consecration Rites",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Consignment to Duat [100415] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100415,
+    name: "Consignment to Duat",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Convergence [100421] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100421,
+    name: "Convergence",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Corporal Reservoir [100425] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100425,
+    name: "Corporal Reservoir",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Covenant of Blood [100436] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100436,
+    name: "Covenant of Blood",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cracking the Wall [100438] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100438,
+    name: "Cracking the Wall",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Create Gargoyle [100440] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100440,
+    name: "Create Gargoyle",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Crocodile Temple [100449] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100449,
+    name: "The Crocodile Temple",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Crusade: Aragon [100452] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100452,
+    name: "Crusade: Aragon",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Crusade: Geneva [100461] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100461,
+    name: "Crusade: Geneva",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cry Wolf [100475] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100475,
+    name: "Cry Wolf",
+    cardType: "ally",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cryptic Mission [100477] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100477,
+    name: "Cryptic Mission",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cull the Herd [100479] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100479,
+    name: "Cull the Herd",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cultivated Blood Shortage [100480] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100480,
+    name: "Cultivated Blood Shortage",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cunctator Motion [100481] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100481,
+    name: "Cunctator Motion",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Curmudgeon [100482] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100482,
+    name: "Curmudgeon",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Daemonic Possession [100486] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100486,
+    name: "Daemonic Possession",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Damned [100490] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100490,
+    name: "The Damned",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Danse Macabre [100491] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100491,
+    name: "Danse Macabre",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Death Pact [100509] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100509,
+    name: "Death Pact",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Decompose [100512] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100512,
+    name: "Decompose",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Deep Cover Agent [100514] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100514,
+    name: "Deep Cover Agent",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Defender of the Haven [100517] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100517,
+    name: "Defender of the Haven",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Demonstration [100522] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100522,
+    name: "Demonstration",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Deny [100524] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100524,
+    name: "Deny",
+    cardType: "modifierOrCombat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Derange [100527] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100527,
+    name: "Derange",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Descent into Darkness [100528] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100528,
+    name: "Descent into Darkness",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Despiral [100530] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100530,
+    name: "Despiral",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Destructive Secrets [100531] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100531,
+    name: "Destructive Secrets",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Development [100535] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100535,
+    name: "Development",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Diamond Thunderbolt [100543] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100543,
+    name: "The Diamond Thunderbolt",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dirty Contract [100546] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100546,
+    name: "Dirty Contract",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dismemberment of Osiris [100556] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100556,
+    name: "Dismemberment of Osiris",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dive Bomb [100561] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100561,
+    name: "Dive Bomb",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dive into Madness [100562] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100562,
+    name: "Dive into Madness",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Divine Sign [100566] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100566,
+    name: "Divine Sign",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dominion [100574] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100574,
+    name: "Dominion",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Draba [100578] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100578,
+    name: "Draba",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Dramatic Upheaval [100583] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100583,
+    name: "Dramatic Upheaval",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Draught of the Soul [100584] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100584,
+    name: "Draught of the Soul",
+    cardType: "modifierOrCombat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dream World [100587] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100587,
+    name: "Dream World",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Drink the Blood of Ahriman [100589] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100589,
+    name: "Drink the Blood of Ahriman",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dual Form [100592] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100592,
+    name: "Dual Form",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Echo of Harmonies [100608] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100608,
+    name: "Echo of Harmonies",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ecstatic Agony [100611] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100611,
+    name: "Ecstatic Agony",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Edged Illusion [100615] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100615,
+    name: "Edged Illusion",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Elder Michaelis's Hold [100621] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100621,
+    name: "Elder Michaelis's Hold",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // The Eldest Are Kholo [100622] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100622,
+    name: "The Eldest Are Kholo",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Enforcer [100642] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100642,
+    name: "Enforcer",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Engling Fury [100643] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100643,
+    name: "Engling Fury",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ensconced [100648] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100648,
+    name: "Ensconced",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Erosion [100658] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100658,
+    name: "Erosion",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Esgrima [100662] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100662,
+    name: "Esgrima",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Esprit de Corps [100663] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100663,
+    name: "Esprit de Corps",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Eternal Mask [100665] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100665,
+    name: "The Eternal Mask",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Eternals of Sirius [100667] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100667,
+    name: "The Eternals of Sirius",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 4,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Evil Eye [100668] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100668,
+    name: "Evil Eye",
+    cardType: "modifierOrReaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ex Nihilo [100669] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100669,
+    name: "Ex Nihilo",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Eyes of the Serpent [100686] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100686,
+    name: "Eyes of the Serpent",
+    cardType: "modifierOrCombat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fae Contortion [100689] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100689,
+    name: "Fae Contortion",
+    cardType: "modifierOrCombat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Failsafe [100691] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100691,
+    name: "Failsafe",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fanfare for Elysium [100700] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100700,
+    name: "Fanfare for Elysium",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fantasy World [100701] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100701,
+    name: "Fantasy World",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fata Amria [100706] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100706,
+    name: "Fata Amria",
+    cardType: "modifierOrReaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fatuus Mastery [100708] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100708,
+    name: "Fatuus Mastery",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fear of Mekhet [100710] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100710,
+    name: "Fear of Mekhet",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Feral Spirit [100721] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100721,
+    name: "Feral Spirit",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Field Training [100725] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100725,
+    name: "Field Training",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Filchware's Pawn Shop [100728] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100728,
+    name: "Filchware's Pawn Shop",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Finding the Path [100732] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100732,
+    name: "Finding the Path",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fire Dance [100733] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100733,
+    name: "Fire Dance",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // First Tradition: The Masquerade [100737] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100737,
+    name: "First Tradition: The Masquerade",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fleecing the Gaje [100746] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100746,
+    name: "Fleecing the Gaje",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Force of Will [100759] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100759,
+    name: "Force of Will",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Forest of Shadows [100766] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100766,
+    name: "Forest of Shadows",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Form of the Serpent [100773] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100773,
+    name: "Form of the Serpent",
+    cardType: "modifierOrCombat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Foundation Exhibit [100779] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100779,
+    name: "Foundation Exhibit",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Founders of the Ebony Kingdom [100780] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100780,
+    name: "Founders of the Ebony Kingdom",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Framing [100786] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100786,
+    name: "The Framing",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Framing an Ancient Grudge [100787] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100787,
+    name: "Framing an Ancient Grudge",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Frozen Object [100795] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100795,
+    name: "Frozen Object",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Galaric's Legacy [100798] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100798,
+    name: "Galaric's Legacy",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Games of Instinct [100801] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100801,
+    name: "Games of Instinct",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gang Territory [100803] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100803,
+    name: "Gang Territory",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gangrel Atavism [100804] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100804,
+    name: "Gangrel Atavism",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gear Up [100813] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100813,
+    name: "Gear Up",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gift of Bellona [100825] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100825,
+    name: "Gift of Bellona",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gift of Sleep [100828] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100828,
+    name: "Gift of Sleep",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Giovanni Acceptance [100829] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100829,
+    name: "Giovanni Acceptance",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Giovanni Discrimination [100830] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100830,
+    name: "Giovanni Discrimination",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gird Minions [100831] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100831,
+    name: "Gird Minions",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Glutton [100839] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100839,
+    name: "Glutton",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Go Anarch [100840] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100840,
+    name: "Go Anarch",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Goodnight, Sweet Prince [100843] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100843,
+    name: "Goodnight, Sweet Prince",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Grandest Trick [100849] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100849,
+    name: "The Grandest Trick",
+    cardType: "actionModifier",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Greater Curse [100854] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100854,
+    name: "Greater Curse",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gremlins [100856] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100856,
+    name: "Gremlins",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Guinea-Bissau Carnival [100870] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100870,
+    name: "Guinea-Bissau Carnival",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Guruhi Kholo [100874] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100874,
+    name: "Guruhi Kholo",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hackerspace [100876] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100876,
+    name: "Hackerspace",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hall of Hades' Court [100878] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100878,
+    name: "Hall of Hades' Court",
+    cardType: "modifierOrReaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hand Contract [100880] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100880,
+    name: "Hand Contract",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hanging Fermata [100883] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100883,
+    name: "Hanging Fermata",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Haqim's Law: Judgment [100884] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100884,
+    name: "Haqim's Law: Judgment",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Haqim's Law: Leadership [100885] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100885,
+    name: "Haqim's Law: Leadership",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Harass [100886] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100886,
+    name: "Harass",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Harmony [100888] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100888,
+    name: "Harmony",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hatchling [100892] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100892,
+    name: "Hatchling",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Haunt [100893] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100893,
+    name: "Haunt",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Haunting [100894] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100894,
+    name: "The Haunting",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Haven Affinity [100895] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100895,
+    name: "Haven Affinity",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Haven Hunting [100896] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100896,
+    name: "Haven Hunting",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Healing Touch [100901] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100901,
+    name: "Healing Touch",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Heart of Darkness [100902] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100902,
+    name: "Heart of Darkness",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Heidelberg Castle, Germany [100908] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100908,
+    name: "Heidelberg Castle, Germany",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hidden Pathways [100917] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100917,
+    name: "Hidden Pathways",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hierophant [100923] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100923,
+    name: "Hierophant",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // High Stakes [100928] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100928,
+    name: "High Stakes",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // High Top [100929] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100929,
+    name: "High Top",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hive Mind [100931] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100931,
+    name: "Hive Mind",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Honor the Elders [100933] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100933,
+    name: "Honor the Elders",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Houngan [100940] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100940,
+    name: "Houngan",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // House of Sorrow [100942] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100942,
+    name: "House of Sorrow",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Humanitas [100943] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100943,
+    name: "Humanitas",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Igoli's Loyalty [100950] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100950,
+    name: "Igoli's Loyalty",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Illegal Search and Seizure [100951] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100951,
+    name: "Illegal Search and Seizure",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Illegalism [100952] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100952,
+    name: "Illegalism",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Imperial Decree [100961] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100961,
+    name: "Imperial Decree",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Inceptor [100969] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100969,
+    name: "Inceptor",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Infamous Warlock [100976] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100976,
+    name: "Infamous Warlock",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Infernal Pact [100979] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100979,
+    name: "Infernal Pact",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Information Network [100985] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100985,
+    name: "Information Network",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inquisition [100988] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100988,
+    name: "Inquisition",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Insurance Scam [100997] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100997,
+    name: "Insurance Scam",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Internal Recursion [100998] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 100998,
+    name: "Internal Recursion",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Into the Fire [101000] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101000,
+    name: "Into the Fire",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Invitation Accepted [101004] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101004,
+    name: "Invitation Accepted",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ishtarri Kholo [101011] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101011,
+    name: "Ishtarri Kholo",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ishtarri Warlord [101012] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101012,
+    name: "Ishtarri Warlord",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Island of Yiaros [101013] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101013,
+    name: "Island of Yiaros",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Jack of Both Sides [101016] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101016,
+    name: "Jack of Both Sides",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Jake Washington [101019] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101019,
+    name: "Jake Washington",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Jar the Soul [101021] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101021,
+    name: "Jar the Soul",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Joseph Pander [101024] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101024,
+    name: "Joseph Pander",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Judgment: Death to the Brujah! [101029] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101029,
+    name: "Judgment: Death to the Brujah!",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Jungle Hunting Ground [101030] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101030,
+    name: "Jungle Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Justicar Retribution [101031] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101031,
+    name: "Justicar Retribution",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Kaymakli Nightmares [101036] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101036,
+    name: "Kaymakli Nightmares",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Keystone Kine [101041] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101041,
+    name: "Keystone Kine",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Kindred Restructure [101052] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101052,
+    name: "Kindred Restructure",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Kindred Society Games [101054] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101054,
+    name: "Kindred Society Games",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Kindred Spirits [101055] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101055,
+    name: "Kindred Spirits",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Kiss of Lachesis [101061] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101061,
+    name: "Kiss of Lachesis",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Last Stand [101074] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101074,
+    name: "Last Stand",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 6,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Lazarene Inquisitor [101076] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101076,
+    name: "Lazarene Inquisitor",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Left for Dead [101084] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101084,
+    name: "Left for Dead",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Legacy of Caine [101086] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101086,
+    name: "Legacy of Caine",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Legacy of Pander [101087] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101087,
+    name: "Legacy of Pander",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Legend of the Leopard [101090] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101090,
+    name: "Legend of the Leopard",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Legendary Vampire [101091] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101091,
+    name: "Legendary Vampire",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Legion [101092] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101092,
+    name: "Legion",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Liberty Club Intrigue [101101] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101101,
+    name: "Liberty Club Intrigue",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Lily Prelude [101109] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101109,
+    name: "Lily Prelude",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Little Mountain Cemetery [101113] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101113,
+    name: "Little Mountain Cemetery",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Lock [101118] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101118,
+    name: "Lock",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "def", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Loki's Gift [101119] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101119,
+    name: "Loki's Gift",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Loner [101121] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101121,
+    name: "Loner",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Loose Cannon [101122] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101122,
+    name: "Loose Cannon",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Lord of Serenity [101123] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101123,
+    name: "Lord of Serenity",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Loss [101124] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101124,
+    name: "Loss",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Lunatic Eruption [101132] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101132,
+    name: "Lunatic Eruption",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Lure of the Serpent [101134] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101134,
+    name: "Lure of the Serpent",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Madman's Quill [101138] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101138,
+    name: "Madman's Quill",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Madness Network [101139] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101139,
+    name: "Madness Network",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Madness of the Bard [101140] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101140,
+    name: "Madness of the Bard",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Madrigal [101141] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101141,
+    name: "Madrigal",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Malkavian Derangement: Alternate Personality [101151] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101151,
+    name: "Malkavian Derangement: Alternate Personality",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Malkavian Derangement: Paranoia [101152] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101152,
+    name: "Malkavian Derangement: Paranoia",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Malkavian Game [101153] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101153,
+    name: "Malkavian Game",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Malkavian Prank [101155] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101155,
+    name: "Malkavian Prank",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Malkavian Seven Miseries [101157] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101157,
+    name: "The Malkavian Seven Miseries",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mantle of the Bestial Majesty [101161] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101161,
+    name: "Mantle of the Bestial Majesty",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mark of Damnation [101166] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101166,
+    name: "Mark of Damnation",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Marked Territory [101170] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101170,
+    name: "Marked Territory",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Martial Ritus [101173] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101173,
+    name: "Martial Ritus",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mask of a Thousand Faces [101179] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101179,
+    name: "Mask of a Thousand Faces",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Masochism [101180] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101180,
+    name: "Masochism",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mass Reality [101185] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101185,
+    name: "Mass Reality",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Massassi's Honor [101186] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101186,
+    name: "Massassi's Honor",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mbare Market, Harare [101189] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101189,
+    name: "Mbare Market, Harare",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 3,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Meddling of Semsith [101192] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101192,
+    name: "The Meddling of Semsith",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Memories of Mortality [101198] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101198,
+    name: "Memories of Mortality",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Memory's Fading Glimpse [101200] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101200,
+    name: "Memory's Fading Glimpse",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mesmerize [101205] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101205,
+    name: "Mesmerize",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Metro Underground [101207] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101207,
+    name: "Metro Underground",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Might of the Camarilla [101208] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101208,
+    name: "Might of the Camarilla",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Millicent Smith, Puritan Vampire Hunter [101210] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101210,
+    name: "Millicent Smith, Puritan Vampire Hunter",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mind of a Child [101212] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101212,
+    name: "Mind of a Child",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mind of a Killer [101213] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101213,
+    name: "Mind of a Killer",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Minor Curse [101220] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101220,
+    name: "Minor Curse",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mirror Image [101222] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101222,
+    name: "Mirror Image",
+    cardType: "modifierOrCombat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Monomancy [101241] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101241,
+    name: "Monomancy",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Movement of the Slow Body [101247] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101247,
+    name: "Movement of the Slow Body",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mundane [101253] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101253,
+    name: "Mundane",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mustajib [101258] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101258,
+    name: "Mustajib",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // My Kin Against the World [101260] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101260,
+    name: "My Kin Against the World",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // New in Town [101278] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101278,
+    name: "New in Town",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // New Moon Sigil [101281] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101281,
+    name: "New Moon Sigil",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Night Moves [101283] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101283,
+    name: "Night Moves",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Nightmare Curse [101284] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101284,
+    name: "Nightmare Curse",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // No Secrets From the Magaji [101291] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101291,
+    name: "No Secrets From the Magaji",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Nocturn [101293] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101293,
+    name: "Nocturn",
+    cardType: "ally",
+    bloodCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nocturn Theater [101294] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101294,
+    name: "Nocturn Theater",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nod [101295] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101295,
+    name: "Nod",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nose of the Hound [101296] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101296,
+    name: "Nose of the Hound",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Nosferatu Bestial [101297] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101297,
+    name: "Nosferatu Bestial",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Nosferatu Hosting [101298] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101298,
+    name: "Nosferatu Hosting",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nosferatu Kingdom [101300] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101300,
+    name: "Nosferatu Kingdom",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nosferatu Performance Art [101301] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101301,
+    name: "Nosferatu Performance Art",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Oath [101307] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101307,
+    name: "The Oath",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Oath of Loyalty [101308] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101308,
+    name: "Oath of Loyalty",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Obsession [101311] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101311,
+    name: "Obsession",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Occlusion [101313] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101313,
+    name: "Occlusion",
+    cardType: "modifierOrCombat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Of Noble Blood [101315] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101315,
+    name: "Of Noble Blood",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Oppugnant Night [101327] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101327,
+    name: "Oppugnant Night",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Orun [101331] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101331,
+    name: "Orun",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Osebo Kholo [101332] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101332,
+    name: "Osebo Kholo",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ossian [101333] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101333,
+    name: "Ossian",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Out of Control [101335] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101335,
+    name: "Out of Control",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Out of the Frying Pan [101336] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101336,
+    name: "Out of the Frying Pan",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Palace Hunting Ground [101344] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101344,
+    name: "Palace Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Pallid [101347] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101347,
+    name: "Pallid",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Panacea [101348] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101348,
+    name: "Panacea",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Paragon [101351] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101351,
+    name: "Paragon",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Paris Opera House [101352] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101352,
+    name: "Paris Opera House",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Parthenon [101355] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101355,
+    name: "The Parthenon",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Passion [101356] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101356,
+    name: "Passion",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Patagia: Flaps Allowing Limited Flight [101357] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101357,
+    name: "Patagia: Flaps Allowing Limited Flight",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Path of Blood [101358] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101358,
+    name: "The Path of Blood",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Path of Bone [101359] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101359,
+    name: "The Path of Bone",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Path of Harmony [101362] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101362,
+    name: "The Path of Harmony",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Path of Retribution [101367] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101367,
+    name: "The Path of Retribution",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Path of Service [101368] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101368,
+    name: "The Path of Service",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Path of Tears [101369] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101369,
+    name: "The Path of Tears",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Path of the Feral Heart [101370] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101370,
+    name: "The Path of the Feral Heart",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Path of the Void [101372] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101372,
+    name: "Path of the Void",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Patronage [101375] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101375,
+    name: "Patronage",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Peace of Khetamon [101379] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101379,
+    name: "The Peace of Khetamon",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Peacemaker [101381] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101381,
+    name: "Peacemaker",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Pentex™ Loves You! [101383] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101383,
+    name: "Pentex™ Loves You!",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Père Lachaise, France [101385] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101385,
+    name: "Père Lachaise, France",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 3,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Permanency [101389] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101389,
+    name: "Permanency",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Persistent Echo [101392] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101392,
+    name: "Persistent Echo",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Persona Non Grata [101393] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101393,
+    name: "Persona Non Grata",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Phantom Speaker [101397] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101397,
+    name: "Phantom Speaker",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Plasmic Form [101402] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101402,
+    name: "Plasmic Form",
+    cardType: "modifierOrCombat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Playing for Keeps [101403] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101403,
+    name: "Playing for Keeps",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Poison the Well of Life [101407] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101407,
+    name: "Poison the Well of Life",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Police Department [101410] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101410,
+    name: "Police Department",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Political Flux [101414] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101414,
+    name: "Political Flux",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Political Seizure [101416] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101416,
+    name: "Political Seizure",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Portrait [101422] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101422,
+    name: "The Portrait",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Possession [101423] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101423,
+    name: "Possession",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Potio Martyrium [101425] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101425,
+    name: "Potio Martyrium",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Powerbase: Berlin [101432] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101432,
+    name: "Powerbase: Berlin",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Powerbase: Cape Verde [101433] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101433,
+    name: "Powerbase: Cape Verde",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Praetorian Backer [101446] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101446,
+    name: "Praetorian Backer",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Praxis Seizure: Venice [101471] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101471,
+    name: "Praxis Seizure: Venice",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Precision [101474] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101474,
+    name: "Precision",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Pressing Flesh [101481] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101481,
+    name: "Pressing Flesh",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Principia Discordia [101486] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101486,
+    name: "Principia Discordia",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Priority Shift [101488] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101488,
+    name: "Priority Shift",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Prison of the Mind [101489] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101489,
+    name: "Prison of the Mind",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Promise of 1528 [101494] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101494,
+    name: "Promise of 1528",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Protect Thine Own [101499] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101499,
+    name: "Protect Thine Own",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Protected Resources [101500] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101500,
+    name: "Protected Resources",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Provision of the Silsila [101503] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101503,
+    name: "Provision of the Silsila",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Proxy Kissed [101504] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101504,
+    name: "Proxy Kissed",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Psychic Projection [101509] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101509,
+    name: "Psychic Projection",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Psychic Veil [101510] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101510,
+    name: "Psychic Veil",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Public Vilification [101514] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101514,
+    name: "Public Vilification",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Pulse of the Canaille [101517] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101517,
+    name: "Pulse of the Canaille",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Punish [101518] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101518,
+    name: "Punish",
+    cardType: "actionOrCombat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "red", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Purchase Pact [101520] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101520,
+    name: "Purchase Pact",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Purification [101521] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101521,
+    name: "Purification",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Purity of the Beast [101522] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101522,
+    name: "Purity of the Beast",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Putrescent Servitude [101526] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101526,
+    name: "Putrescent Servitude",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Quicksilver Contemplation [101533] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101533,
+    name: "Quicksilver Contemplation",
+    cardType: "modifierOrReaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rampage [101539] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101539,
+    name: "Rampage",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Random Patterns [101540] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101540,
+    name: "Random Patterns",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rapid Healing [101543] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101543,
+    name: "Rapid Healing",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rastacourere [101546] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101546,
+    name: "Rastacourere",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ravager [101548] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101548,
+    name: "Ravager",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rave [101549] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101549,
+    name: "Rave",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ravnos Acceptance [101551] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101551,
+    name: "Ravnos Acceptance",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rayzeel's Song [101555] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101555,
+    name: "Rayzeel's Song",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Reality [101560] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101560,
+    name: "Reality",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Realm of the Black Sun [101562] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101562,
+    name: "The Realm of the Black Sun",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Recruiting Party [101568] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101568,
+    name: "Recruiting Party",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Recure of the Homeland [101571] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101571,
+    name: "Recure of the Homeland",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Red List [101574] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101574,
+    name: "Red List",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Redistribution [101579] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101579,
+    name: "Redistribution",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Reform Body [101581] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101581,
+    name: "Reform Body",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Regeneration [101585] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101585,
+    name: "Regeneration",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Regenerative Blood [101586] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101586,
+    name: "Regenerative Blood",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reindoctrination [101589] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101589,
+    name: "Reindoctrination",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Release of the Shackled Soul [101593] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101593,
+    name: "Release of the Shackled Soul",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Remover [101601] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101601,
+    name: "Remover",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Renewed Vigor [101603] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101603,
+    name: "Renewed Vigor",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Repair the Undead Flesh [101604] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101604,
+    name: "Repair the Undead Flesh",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Resilient Mind [101609] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101609,
+    name: "Resilient Mind",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Restructure [101615] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101615,
+    name: "Restructure",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Resume the Coil [101616] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101616,
+    name: "Resume the Coil",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Resurrection [101617] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101617,
+    name: "Resurrection",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "val", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Retain the Quick Blood [101618] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101618,
+    name: "Retain the Quick Blood",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Retribution [101619] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101619,
+    name: "Retribution",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reunion Kamut [101621] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101621,
+    name: "Reunion Kamut",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Revelation of the Sire [101625] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101625,
+    name: "Revelation of the Sire",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Reversal of Fortunes [101629] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101629,
+    name: "Reversal of Fortunes",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Revocation of Tyre [101630] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101630,
+    name: "Revocation of Tyre",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ritual Challenge [101641] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101641,
+    name: "Ritual Challenge",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ritual of the Bitter Rose [101642] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101642,
+    name: "Ritual of the Bitter Rose",
+    cardType: "modifierOrCombat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Root of Vitality [101652] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101652,
+    name: "Root of Vitality",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rubicon [101657] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101657,
+    name: "Rubicon",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rumble [101661] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101661,
+    name: "Rumble",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rumors of Gehenna [101663] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101663,
+    name: "Rumors of Gehenna",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sabbat Inquisitor [101666] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101666,
+    name: "Sabbat Inquisitor",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Samuel Haight [101675] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101675,
+    name: "Samuel Haight",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 5,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sanguine Instruction [101680] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101680,
+    name: "Sanguine Instruction",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // SchreckNET [101690] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101690,
+    name: "SchreckNET",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Seattle Committee [101704] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101704,
+    name: "Seattle Committee",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Secret Library of Alexandria [101708] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101708,
+    name: "The Secret Library of Alexandria",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Secret Passage [101710] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101710,
+    name: "Secret Passage",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Seeds of Corruption [101713] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101713,
+    name: "Seeds of Corruption",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sense Death [101716] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101716,
+    name: "Sense Death",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sense the Sin [101718] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101718,
+    name: "Sense the Sin",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sense Vibrations [101719] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101719,
+    name: "Sense Vibrations",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sense Vitality [101720] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101720,
+    name: "Sense Vitality",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sensory Deprivation [101721] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101721,
+    name: "Sensory Deprivation",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sensory Overload [101722] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101722,
+    name: "Sensory Overload",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Seraph [101723] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101723,
+    name: "Seraph",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sermon of Caine [101726] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101726,
+    name: "Sermon of Caine",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Set's Call [101730] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101730,
+    name: "Set's Call",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Set's Curse [101731] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101731,
+    name: "Set's Curse",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shadow of Taint [101739] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101739,
+    name: "Shadow of Taint",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shadow of the Beast [101740] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101740,
+    name: "Shadow of the Beast",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shadow Twin [101746] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101746,
+    name: "Shadow Twin",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shadowed Eyes [101747] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101747,
+    name: "Shadowed Eyes",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shakar [101748] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101748,
+    name: "Shakar",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shakar: the Hunt [101749] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101749,
+    name: "Shakar: the Hunt",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shared Nightmare [101755] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101755,
+    name: "Shared Nightmare",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shattering [101759] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101759,
+    name: "Shattering",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shattering Crescendo [101761] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101761,
+    name: "Shattering Crescendo",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sheepdog [101762] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101762,
+    name: "Sheepdog",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shell Break [101763] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101763,
+    name: "Shell Break",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shepherd's Innocence [101765] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101765,
+    name: "Shepherd's Innocence",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shock Troops [101768] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101768,
+    name: "Shock Troops",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Siren's Lure [101786] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101786,
+    name: "Siren's Lure",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sixth Tradition: Destruction [101788] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101788,
+    name: "Sixth Tradition: Destruction",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Skaald [101789] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101789,
+    name: "Skaald",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Skullduggery [101796] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101796,
+    name: "Skullduggery",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Slake the Thirst [101797] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101797,
+    name: "Slake the Thirst",
+    cardType: "modifierOrCombat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sleep of Reason [101803] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101803,
+    name: "Sleep of Reason",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sleight of Hand [101806] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101806,
+    name: "Sleight of Hand",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Smash and Grab [101809] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101809,
+    name: "Smash and Grab",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Smear Campaign [101810] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101810,
+    name: "Smear Campaign",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Snipe Hunt [101815] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101815,
+    name: "Snipe Hunt",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Song of Pan [101826] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101826,
+    name: "Song of Pan",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Songs of the Distant Vitae [101828] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101828,
+    name: "Songs of the Distant Vitae",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Decoration [101830] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101830,
+    name: "Soul Decoration",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Feasting [101831] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101831,
+    name: "Soul Feasting",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul of the Earth [101833] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101833,
+    name: "Soul of the Earth",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Painting [101834] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101834,
+    name: "Soul Painting",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Stealing [101836] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101836,
+    name: "Soul Stealing",
+    cardType: "modifierOrCombat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sound of a Breaking Oath [101837] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101837,
+    name: "Sound of a Breaking Oath",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Sowing Dissension [101838] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101838,
+    name: "Sowing Dissension",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Spectral Divination [101843] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101843,
+    name: "Spectral Divination",
+    cardType: "modifierOrReaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Speed of Thought [101844] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101844,
+    name: "Speed of Thought",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Spell of Life [101845] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101845,
+    name: "Spell of Life",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Spirit Marionette [101848] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101848,
+    name: "Spirit Marionette",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Spontaneous Power [101855] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101855,
+    name: "Spontaneous Power",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Status Perfectus [101863] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101863,
+    name: "The Status Perfectus",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Steal the Mind [101865] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101865,
+    name: "Steal the Mind",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Storm Sewers [101878] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101878,
+    name: "Storm Sewers",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Strained Vitae Supply [101879] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101879,
+    name: "Strained Vitae Supply",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Succubus Club [101893] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101893,
+    name: "Succubus Club",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Summon the Abyss [101900] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101900,
+    name: "Summon the Abyss",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sunrise Service [101903] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101903,
+    name: "Sunrise Service",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sunset Strip, Hollywood [101904] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101904,
+    name: "Sunset Strip, Hollywood",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Suspension of Disbelief [101911] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101911,
+    name: "Suspension of Disbelief",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Svadharma [101912] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101912,
+    name: "Svadharma",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Swiftness of the Stag [101916] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101916,
+    name: "Swiftness of the Stag",
+    cardType: "modifierOrCombat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Swiss Cut [101917] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101917,
+    name: "Swiss Cut",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tabriz Assembly [101924] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101924,
+    name: "Tabriz Assembly",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tajdid [101927] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101927,
+    name: "Tajdid",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Talons of the Dead [101933] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101933,
+    name: "Talons of the Dead",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tattoo Signal [101946] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101946,
+    name: "Tattoo Signal",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Taunt the Caged Beast [101947] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101947,
+    name: "Taunt the Caged Beast",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Thicker than Blood [101969] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101969,
+    name: "Thicker than Blood",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Threading the Path of Orpheus [101977] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101977,
+    name: "Threading the Path of Orpheus",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Thrones Crumble [101981] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101981,
+    name: "Thrones Crumble",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Touch of Clarity [101998] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 101998,
+    name: "Touch of Clarity",
+    cardType: "modifierOrReaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tower of London [102001] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102001,
+    name: "Tower of London",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tradition Upheld [102004] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102004,
+    name: "Tradition Upheld",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Trainer [102007] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102007,
+    name: "Trainer",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Transcendent Laibon [102009] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102009,
+    name: "Transcendent Laibon",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Transfusion [102011] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102011,
+    name: "Transfusion",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Travelers Obey the Tenets [102013] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102013,
+    name: "Travelers Obey the Tenets",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Treat the Sick Mind [102016] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102016,
+    name: "Treat the Sick Mind",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // The Treatment [102017] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102017,
+    name: "The Treatment",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Treaty of Laibach [102018] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102018,
+    name: "Treaty of Laibach",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tremere Convocation [102020] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102020,
+    name: "Tremere Convocation",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Trick of the Danya [102024] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102024,
+    name: "The Trick of the Danya",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Triole's Revenge [102025] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102025,
+    name: "Triole's Revenge",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Trophy: Chosen [102027] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102027,
+    name: "Trophy: Chosen",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Clan Respect [102028] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102028,
+    name: "Trophy: Clan Respect",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Discipline [102030] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102030,
+    name: "Trophy: Discipline",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Domain [102031] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102031,
+    name: "Trophy: Domain",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Hunting Ground [102032] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102032,
+    name: "Trophy: Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Library [102033] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102033,
+    name: "Trophy: Library",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Progeny [102035] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102035,
+    name: "Trophy: Progeny",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Revered [102037] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102037,
+    name: "Trophy: Revered",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Safe Passage [102038] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102038,
+    name: "Trophy: Safe Passage",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trumped-Up Charges [102042] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102042,
+    name: "Trumped-Up Charges",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Truth of Blood [102045] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102045,
+    name: "Truth of Blood",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Twilight Camp [102049] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102049,
+    name: "Twilight Camp",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Twisted Forest [102050] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102050,
+    name: "Twisted Forest",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Unacceptable Appearance [102055] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102055,
+    name: "Unacceptable Appearance",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Unburdening the Bestial Soul [102056] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102056,
+    name: "Unburdening the Bestial Soul",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Undue Influence [102067] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102067,
+    name: "Undue Influence",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Unexpected Coalition [102070] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102070,
+    name: "Unexpected Coalition",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Unwholesome Bond [102082] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102082,
+    name: "Unwholesome Bond",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Vaticination [102093] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102093,
+    name: "Vaticination",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Vaulderie [102094] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102094,
+    name: "Vaulderie",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Velvet Tongue [102100] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102100,
+    name: "Velvet Tongue",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ventrue Directorate Assembly [102108] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102108,
+    name: "Ventrue Directorate Assembly",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ventrue Investment [102110] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102110,
+    name: "Ventrue Investment",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Vicissitude Poisoning [102117] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102117,
+    name: "Vicissitude Poisoning",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Vigil: The Thin Line [102119] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102119,
+    name: "Vigil: The Thin Line",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Violation of Trust [102122] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102122,
+    name: "Violation of Trust",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Visionquest [102125] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102125,
+    name: "Visionquest",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Vox Senis [102133] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102133,
+    name: "Vox Senis",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Wanderer's Counsel [102143] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102143,
+    name: "Wanderer's Counsel",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Watchtower: Chosen are Called [102155] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102155,
+    name: "Watchtower: Chosen are Called",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Watchtower: Four Ride Forth [102156] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102156,
+    name: "Watchtower: Four Ride Forth",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Watchtower: Greatest Fall [102157] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102157,
+    name: "Watchtower: Greatest Fall",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Wave of Insanity [102160] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102160,
+    name: "Wave of Insanity",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Weeping Stone [102167] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102167,
+    name: "Weeping Stone",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 3,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Whispers from the Dead [102175] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102175,
+    name: "Whispers from the Dead",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Wildebeest [102181] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102181,
+    name: "The Wildebeest",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Will of the Council [102182] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102182,
+    name: "Will of the Council",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Winged Second [102186] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102186,
+    name: "Winged Second",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Wise Spider [102187] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102187,
+    name: "Wise Spider",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The World's a Canvas [102193] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102193,
+    name: "The World's a Canvas",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Wrath of the Inner Circle [102195] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102195,
+    name: "Wrath of the Inner Circle",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Year of Fortune [102200] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102200,
+    name: "Year of Fortune",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Zillah's Tears [102206] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102206,
+    name: "Zillah's Tears",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Zillah's Valley [102207] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102207,
+    name: "Zillah's Valley",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 5,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Zip Line [102209] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102209,
+    name: "Zip Line",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Zoning Board [102211] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102211,
+    name: "Zoning Board",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The British Museum, London [102236] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102236,
+    name: "The British Museum, London",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mithraic Cultist [102241] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102241,
+    name: "Mithraic Cultist",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mobile HQ, Operation Antigen [102242] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102242,
+    name: "Mobile HQ, Operation Antigen",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Confiscation [102271] — auto-generated umiarkowane (pełna pula, placeholder maneuver)
+    krcgId: 102271,
+    name: "Confiscation",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+
 ];
 
 /**
@@ -26545,6 +33152,519 @@ export const cryptSpecs: CardSpec[] = [
       requiresBearerReady: true,
     },
   }),
+  flatCrypt(200010, "Accorri Giovanni (G5)", {}),
+  flatCrypt(200012, "Adelaide Davis (G3)", {}),
+  flatCrypt(200020, "Agatha (G2)", {}),
+  flatCrypt(200022, "Agrippina (G1)", {}),
+  flatCrypt(200024, "Ahmose Chambers (G5)", {}),
+  flatCrypt(200045, "Aleph (G1)", {}),
+  flatCrypt(200056, "Allison Maller (G3)", {}),
+  flatCrypt(200058, "Almiro Suarez (G3)", {}),
+  flatCrypt(200059, "Almodo Giovanni (G4)", {}),
+  flatCrypt(200067, "Amber (G5)", {}),
+  flatCrypt(200075, "Ana Rita Montaña (G3)", {}),
+  flatCrypt(200077, "Anastasia Grey (G1)", {}),
+  flatCrypt(200084, "Andrei Puxon (G2)", {}),
+  flatCrypt(200085, "Andrew Emory (G4)", {}),
+  flatCrypt(200088, "Angel (G1)", {}),
+  flatCrypt(200089, "Angel Chavarria (G6)", {}),
+  flatCrypt(200097, "Anjalika Underwood (G5)", {}),
+  flatCrypt(200109, "Antoine, The Lost (G4)", {}),
+  flatCrypt(200110, "Antoinette, She Who Watches (G3)", {}),
+  flatCrypt(200120, "Anvil (G1)", {}),
+  flatCrypt(200122, "Apache Jones (G4)", {}),
+  flatCrypt(200134, "Ariel (G6)", {}),
+  flatCrypt(200139, "Arnold Simpson (G3)", {}),
+  flatCrypt(200143, "Artemis (G2)", {}),
+  flatCrypt(200144, "Arthur Denholm (G5)", {}),
+  flatCrypt(200151, "Axel Von Anders (G4)", {}),
+  flatCrypt(200159, "Badger (G1)", {}),
+  flatCrypt(200178, "Bear Paw (G1)", {}),
+  flatCrypt(200180, "Béatrice L'Angou (G2)", {}),
+  flatCrypt(200182, "Beauregard Krueller (G4)", {}),
+  flatCrypt(200185, "Beetleman (G4)", {}),
+  flatCrypt(200188, "Belle Equitone (G4)", {}),
+  flatCrypt(200197, "Bill Butler (G4)", {}),
+  flatCrypt(200198, "Billy (G2)", {}),
+  flatCrypt(200202, "Black Lotus (G4)", {}),
+  flatCrypt(200203, "Black Wallace (G4)", {}),
+  flatCrypt(200207, "Blister (G4)", {}),
+  flatCrypt(200208, "Bloodfeud (G4)", {}),
+  flatCrypt(200211, "Bobby Lemon (G3)", {}),
+  flatCrypt(200214, "Bothwell (G3)", {}),
+  flatCrypt(200215, "Boy Toy (G2)", {}),
+  flatCrypt(200216, "Brachah (G2)", {}),
+  flatCrypt(200217, "Brazil (G1)", {}),
+  flatCrypt(200218, "Brian Thompson (G4)", {}),
+  flatCrypt(200219, "Brigitte Mandisa (G6)", {}),
+  flatCrypt(200221, "Brooke (G2)", {}),
+  flatCrypt(200230, "C.J. (G5)", {}),
+  flatCrypt(200233, "Caitlin (G2)", {}),
+  flatCrypt(200236, "Caliban (G2)", {}),
+  flatCrypt(200239, "Cameron (G2)", {}),
+  flatCrypt(200240, "Camille Devereux, The Raven (G1)", {}),
+  flatCrypt(200241, "Cao Nguyen (G6)", {}),
+  flatCrypt(200243, "Cardano (G1)", {}),
+  flatCrypt(200251, "Carter (G2)", {}),
+  flatCrypt(200254, "Cassandra Langely, The Waif (G4)", {}),
+  flatCrypt(200256, "Catherine du Bois (G3)", {}),
+  flatCrypt(200260, "Celine Chevalier (G2)", {}),
+  flatCrypt(200266, "Charice Fontaigne (G3)", {}),
+  flatCrypt(200267, "Charlie Tyne (G4)", {}),
+  flatCrypt(200271, "Chester DuBois (G1)", {}),
+  flatCrypt(200276, "Clarissa Steinburgen (G3)", {}),
+  flatCrypt(200280, "Claus Wegener (G5)", {}),
+  flatCrypt(200281, "Claven (G2)", {}),
+  flatCrypt(200282, "Clea Auguste d'Holford (G5)", {}),
+  flatCrypt(200283, "Clifton Derrik (G4)", {}),
+  flatCrypt(200285, "Cohn Rose (G3)", {}),
+  flatCrypt(200286, "Colin Flynn (G1)", {}),
+  flatCrypt(200295, "Count Ormonde (G2)", {}),
+  flatCrypt(200298, "Courtland Leighton (G1)", {}),
+  flatCrypt(200299, "Creamy Jade (G3)", {}),
+  flatCrypt(200300, "Cristobal Ghiberti (G4)", {}),
+  flatCrypt(200301, "Cristofero Giovanni (G2)", {}),
+  flatCrypt(200303, "Crow (G5)", {}),
+  flatCrypt(200309, "Daliyah (G2)", {}),
+  flatCrypt(200311, "Dame Hollerton (G4)", {}),
+  flatCrypt(200315, "Dani (G2)", {}),
+  flatCrypt(200323, "Darrell Boyce, Consul (G2)", {}),
+  flatCrypt(200324, "Darva Felispa (G3)", {}),
+  flatCrypt(200330, "Delilah Easton (G1)", {}),
+  flatCrypt(200334, "Demetrius Slater (G1)", {}),
+  flatCrypt(200336, "Denette Stensen (G4)", {}),
+  flatCrypt(200338, "Desiree Narayan, Anarch Historian (G6)", {}),
+  flatCrypt(200339, "Devin Bisley (G2)", {}),
+  flatCrypt(200340, "Devyn (G4)", {}),
+  flatCrypt(200341, "Dhita Choudhair (G6)", {}),
+  flatCrypt(200342, "Diana Vick (G3)", {}),
+  flatCrypt(200343, "Didi Meyers (G1)", {}),
+  flatCrypt(200345, "Dieter Kleist (G1)", {}),
+  flatCrypt(200346, "Dimple (G1)", {}),
+  flatCrypt(200352, "Dodd (G2)", {}),
+  flatCrypt(200353, "Dolie (G4)", {}),
+  flatCrypt(200354, "Dollface (G1)", {}),
+  flatCrypt(200355, "Dolphin Black (G2)", {}),
+  flatCrypt(200356, "Domenic Giovanni (G6)", {}),
+  flatCrypt(200361, "Don Cerro (G5)", {}),
+  flatCrypt(200368, "Dorian Strack (G1)", {}),
+  flatCrypt(200369, "Doris McMillon (G2)", {}),
+  flatCrypt(200373, "Dr. Allan Woodstock (G3)", {}),
+  flatCrypt(200374, "Dr. Douglas Netchurch (G3)", {}),
+  flatCrypt(200376, "Dr. John Casey (G1)", {}),
+  flatCrypt(200380, "Dr. Lawrence Mayhew (G5)", {}),
+  flatCrypt(200384, "Dr. Sutton Gassaway (G4)", {}),
+  flatCrypt(200387, "Dre, Leader of the Cold Dawn (G1)", {}),
+  flatCrypt(200388, "Droescher One-Eye (G4)", {}),
+  flatCrypt(200392, "Duck (G1)", {}),
+  flatCrypt(200396, "Earl (G3)", {}),
+  flatCrypt(200406, "Ehrich Weiss (G3)", {}),
+  flatCrypt(200407, "Elena Gutierrez (G3)", {}),
+  flatCrypt(200408, "Elena Mendoza Vasquez (G3)", {}),
+  flatCrypt(200413, "Elizabeth Conde (G4)", {}),
+  flatCrypt(200415, "Elizabeth Westcott (G3)", {}),
+  flatCrypt(200418, "Ember Wright (G3)", {}),
+  flatCrypt(200419, "Emerson Bridges (G1)", {}),
+  flatCrypt(200420, "Emerson Wilkershire III (G3)", {}),
+  flatCrypt(200430, "Eric Milliner (G5)", {}),
+  flatCrypt(200432, "Erick \"Shophet125\" Franco (G4)", {}),
+  flatCrypt(200437, "Esoara (G4)", {}),
+  flatCrypt(200442, "Eugenio Estevez (G3)", {}),
+  flatCrypt(200444, "Evan Klein (G3)", {}),
+  flatCrypt(200446, "Evangeline (G2)", {}),
+  flatCrypt(200451, "Ezra Hawthorne (G4)", {}),
+  flatCrypt(200453, "Fahd al-Zawba'a (G4)", {}),
+  flatCrypt(200461, "Felicia Mostrom (G1)", {}),
+  flatCrypt(200468, "Fish (G4)", {}),
+  flatCrypt(200471, "Florentina Lengauer (G4)", {}),
+  flatCrypt(200472, "Fode Kourouma (G4)", {}),
+  flatCrypt(200473, "Foureyes (G4)", {}),
+  flatCrypt(200474, "Francesca Giovanni (G2)", {}),
+  flatCrypt(200479, "François \"Warden\" Loehr (G4)", {}),
+  flatCrypt(200480, "Frank Litzpar (G4)", {}),
+  flatCrypt(200481, "Frank Weisshadel (G4)", {}),
+  flatCrypt(200483, "Frederick the Weak (G2)", {}),
+  flatCrypt(200484, "Frère Marc (G4)", {}),
+  flatCrypt(200494, "Garret (G4)", {}),
+  flatCrypt(200506, "George Frederick (G2)", {}),
+  flatCrypt(200509, "Gerard (G2)", {}),
+  flatCrypt(200513, "Ghivran Dalaal, The Dead God (G2)", {}),
+  flatCrypt(200515, "Gianmaria Giovanni (G5)", {}),
+  flatCrypt(200516, "Gideon Fontaine (G1)", {}),
+  flatCrypt(200517, "Gilbert Duane (G1)", {}),
+  flatCrypt(200523, "Gitane St. Claire (G1)", {}),
+  flatCrypt(200524, "Giuliano Vincenzi (G1)", {}),
+  flatCrypt(200525, "Gloria Giovanni (G2)", {}),
+  flatCrypt(200533, "Graham Gottesman (G5)", {}),
+  flatCrypt(200537, "Greer Worder (G6)", {}),
+  flatCrypt(200538, "Greger Anderssen (G2)", {}),
+  flatCrypt(200543, "Guedado (G4)", {}),
+  flatCrypt(200544, "Guido Lucciano (G2)", {}),
+  flatCrypt(200547, "Gunnar (G4)", {}),
+  flatCrypt(200552, "Gustavo Morales (G3)", {}),
+  flatCrypt(200555, "Gwendolyn Fleming (G5)", {}),
+  flatCrypt(200562, "Hamid Mansour (G5)", {}),
+  flatCrypt(200567, "Hannigan (G2)", {}),
+  flatCrypt(200576, "Hasani (G4)", {}),
+  flatCrypt(200581, "Hector Sosa (G1)", {}),
+  flatCrypt(200583, "Heinrick Schlempt (G2)", {}),
+  flatCrypt(200595, "Hester Reed (G3)", {}),
+  flatCrypt(200596, "Hezekiah Rutledge (G4)", {}),
+  flatCrypt(200600, "Homa (G4)", {}),
+  flatCrypt(200601, "Honest Abe (G5)", {}),
+  flatCrypt(200602, "Honorine Ateba (G4)", {}),
+  flatCrypt(200603, "Horatio (G2)", {}),
+  flatCrypt(200617, "Ian Wallingford (G2)", {}),
+  flatCrypt(200621, "Idrissa (G4)", {}),
+  flatCrypt(200622, "Ignacio, The Black Priest (G2)", {}),
+  flatCrypt(200623, "Ignatius (G1)", {}),
+  flatCrypt(200627, "Ilias cel Frumos (G4)", {}),
+  flatCrypt(200632, "Inez \"Nurse216\" Villagrande (G4)", {}),
+  flatCrypt(200635, "Ingrid Russo (G2)", {}),
+  flatCrypt(200640, "Irena (G5)", {}),
+  flatCrypt(200642, "Isabel de Leon (G2)", {}),
+  flatCrypt(200643, "Isabel Giovanni (G2)", {}),
+  flatCrypt(200645, "Ismitta (G4)", {}),
+  flatCrypt(200647, "Itzahk Levine (G2)", {}),
+  flatCrypt(200656, "Jack \"Hannibal137\" Harmon (G4)", {}),
+  flatCrypt(200657, "Jack Tredegar (G5)", {}),
+  flatCrypt(200658, "Jackie (G4)", {}),
+  flatCrypt(200660, "Jackson Asher (G4)", {}),
+  flatCrypt(200662, "Jacob Bragg (G2)", {}),
+  flatCrypt(200674, "Janine (G4)", {}),
+  flatCrypt(200686, "Jefferson Foster (G4)", {}),
+  flatCrypt(200687, "Jeffrey Mullins (G4)", {}),
+  flatCrypt(200689, "Jennie \"Cassie247\" Orne (G4)", {}),
+  flatCrypt(200691, "Jephta Hester (G4)", {}),
+  flatCrypt(200692, "Jeremiah Noble (G3)", {}),
+  flatCrypt(200693, "Jeremy MacNeil (G3)", {}),
+  flatCrypt(200699, "Jessica (G2)", {}),
+  flatCrypt(200701, "Jesús Alcalá (G3)", {}),
+  flatCrypt(200706, "Jing Wei (G1)", {}),
+  flatCrypt(200714, "Johannes Worringen (G5)", {}),
+  flatCrypt(200715, "John \"Cop90\" O'Malley (G4)", {}),
+  flatCrypt(200717, "Jonathan Gursel (G4)", {}),
+  flatCrypt(200719, "Josef (G2)", {}),
+  flatCrypt(200723, "Joseph Fischer (G5)", {}),
+  flatCrypt(200729, "Juan Cali (G2)", {}),
+  flatCrypt(200732, "Judah (G2)", {}),
+  flatCrypt(200740, "Justine Chen, Innocent (G4)", {}),
+  flatCrypt(200746, "Kallista, Master Sculptor (G1)", {}),
+  flatCrypt(200747, "Kamaria (G4)", {}),
+  flatCrypt(200748, "Kamau Jafari (G4)", {}),
+  flatCrypt(200765, "Kay Polerno (G5)", {}),
+  flatCrypt(200772, "Kenyatta (G4)", {}),
+  flatCrypt(200774, "Kervos, The Lieutenant (G2)", {}),
+  flatCrypt(200777, "Khalil Anvari (G2)", {}),
+  flatCrypt(200782, "Kij Dansky (G2)", {}),
+  flatCrypt(200787, "Klaus Konrecht (G4)", {}),
+  flatCrypt(200789, "KoKo (G1)", {}),
+  flatCrypt(200791, "Korah (G2)", {}),
+  flatCrypt(200794, "Krid (G3)", {}),
+  flatCrypt(200796, "Kurt Strauss (G2)", {}),
+  flatCrypt(200802, "Lachlan, Noddist (G2)", {}),
+  flatCrypt(200803, "Ladislas Toth, The Torch (G3)", {}),
+  flatCrypt(200808, "Lailah (G6)", {}),
+  flatCrypt(200809, "Lalitha (G2)", {}),
+  flatCrypt(200812, "Lana Butcher (G3)", {}),
+  flatCrypt(200816, "Laura Goldman (G5)", {}),
+  flatCrypt(200817, "Laurent de Valois (G2)", {}),
+  flatCrypt(200825, "Leaf \"Potter116\" Pankowski (G4)", {}),
+  flatCrypt(200827, "Lectora (G4)", {}),
+  flatCrypt(200834, "Lia Milliner (G3)", {}),
+  flatCrypt(200836, "Lillian (G5)", {}),
+  flatCrypt(200838, "Lindsay Yates (G5)", {}),
+  flatCrypt(200841, "Lisé (G5)", {}),
+  flatCrypt(200845, "Little Willie (G4)", {}),
+  flatCrypt(200846, "Liz \"Ticket312\" Thornton (G4)", {}),
+  flatCrypt(200849, "Lolita (G2)", {}),
+  flatCrypt(200850, "Lolita Houston (G2)", {}),
+  flatCrypt(200851, "Loonar (G4)", {}),
+  flatCrypt(200857, "Lord Vauxhall (G4)", {}),
+  flatCrypt(200861, "Louis de Maisonneuve (G4)", {}),
+  flatCrypt(200862, "Louis Fortier (G4)", {}),
+  flatCrypt(200878, "Lucy Markowitz (G4)", {}),
+  flatCrypt(200880, "Lukas (G4)", {}),
+  flatCrypt(200882, "Lula Burch (G4)", {}),
+  flatCrypt(200884, "Lumumba (G4)", {}),
+  flatCrypt(200886, "Lupe \"Cabbie22\" Droin (G4)", {}),
+  flatCrypt(200887, "Lupo (G1)", {}),
+  flatCrypt(200895, "Macoute (G4)", {}),
+  flatCrypt(200902, "Malcolm (G5)", {}),
+  flatCrypt(200922, "Maria Stone (G3)", {}),
+  flatCrypt(200924, "Mariana Gilbert (G1)", {}),
+  flatCrypt(200930, "Mariel St. John (G4)", {}),
+  flatCrypt(200932, "Mario Giovanni (G2)", {}),
+  flatCrypt(200933, "Marion French (G4)", {}),
+  flatCrypt(200934, "Marion \"Teacher193\" Perks (G4)", {}),
+  flatCrypt(200938, "Marla Kenyon (G4)", {}),
+  flatCrypt(200940, "Marlene, The Infernalist (G2)", {}),
+  flatCrypt(200949, "Masdela (G5)", {}),
+  flatCrypt(200952, "Masika St. John (G3)", {}),
+  flatCrypt(200965, "Max Lowell (G2)", {}),
+  flatCrypt(200967, "Mazz (G3)", {}),
+  flatCrypt(200970, "Melinda Galbraith (G4)", {}),
+  flatCrypt(200977, "Meno Ngari (G4)", {}),
+  flatCrypt(200978, "Mercy, Knight Inquisitor (G2)", {}),
+  flatCrypt(200990, "Milo, The Invisible Horror (G3)", {}),
+  flatCrypt(200994, "Mirembe Kabbada (G2)", {}),
+  flatCrypt(200996, "Misrak (G4)", {}),
+  flatCrypt(200997, "Missy Shillingford (G6)", {}),
+  flatCrypt(200998, "Mister Schwartz (G6)", {}),
+  flatCrypt(201003, "Monica Chang (G5)", {}),
+  flatCrypt(201004, "Monique (G2)", {}),
+  flatCrypt(201005, "Monique Kim (G4)", {}),
+  flatCrypt(201010, "Morel (G4)", {}),
+  flatCrypt(201014, "Mouse (G3)", {}),
+  flatCrypt(201020, "Muhsin Samir (G4)", {}),
+  flatCrypt(201027, "Mustafa Rahman (G2)", {}),
+  flatCrypt(201041, "Neel Ramanathan (G4)", {}),
+  flatCrypt(201047, "Nepata (G2)", {}),
+  flatCrypt(201050, "Nestor Kaba (G4)", {}),
+  flatCrypt(201054, "Nichodemus (G5)", {}),
+  flatCrypt(201055, "Nicholas Chang (G3)", {}),
+  flatCrypt(201058, "Nigel the Shunned (G2)", {}),
+  flatCrypt(201065, "Normal (G1)", {}),
+  flatCrypt(201068, "Nunzio Giovanni (G4)", {}),
+  flatCrypt(201073, "Ohanna (G2)", {}),
+  flatCrypt(201074, "Old Neddacka (G4)", {}),
+  flatCrypt(201077, "Olivia (G2)", {}),
+  flatCrypt(201088, "Ox, Viceroy of the Hollows (G2)", {}),
+  flatCrypt(201090, "Panagos Levidis (G2)", {}),
+  flatCrypt(201091, "Panya, The Wicked (G4)", {}),
+  flatCrypt(201097, "Patrick (G4)", {}),
+  flatCrypt(201099, "Paul Calderone (G5)", {}),
+  flatCrypt(201101, "Paul DiCarlo, The Alpha (G2)", {}),
+  flatCrypt(201103, "Paul \"Sixofswords29\" Moreton (G4)", {}),
+  flatCrypt(201106, "Pearl (G5)", {}),
+  flatCrypt(201115, "Peter \"Outback295\" Rophail (G4)", {}),
+  flatCrypt(201124, "Pieter (G2)", {}),
+  flatCrypt(201128, "Polly Kay Fisher (G4)", {}),
+  flatCrypt(201134, "Primo Giovanni (G4)", {}),
+  flatCrypt(201135, "Pug Jackson (G3)", {}),
+  flatCrypt(201141, "Quentin King III (G3)", {}),
+  flatCrypt(201156, "Ramiel DuPre (G1)", {}),
+  flatCrypt(201157, "Ramiro (G2)", {}),
+  flatCrypt(201161, "Randel, The Coward (G4)", {}),
+  flatCrypt(201165, "Raphaela Giovanni (G4)", {}),
+  flatCrypt(201167, "Rashiel (G4)", {}),
+  flatCrypt(201169, "Raziya Samater (G2)", {}),
+  flatCrypt(201174, "Regilio, The Seeker of Akhenaten (G2)", {}),
+  flatCrypt(201178, "Remilliard, Devout Crusader (G2)", {}),
+  flatCrypt(201179, "Renenet (G4)", {}),
+  flatCrypt(201183, "Reverend Djoser Jones (G4)", {}),
+  flatCrypt(201188, "Ricki Van Demsi (G1)", {}),
+  flatCrypt(201192, "Robert Price (G4)", {}),
+  flatCrypt(201193, "Robin Withers (G4)", {}),
+  flatCrypt(201197, "Rodrigo (G4)", {}),
+  flatCrypt(201199, "Roland Bishop (G1)", {}),
+  flatCrypt(201200, "Roland Loussarian (G1)", {}),
+  flatCrypt(201201, "Roman Alexander (G1)", {}),
+  flatCrypt(201202, "Roreca Quaid (G1)", {}),
+  flatCrypt(201205, "The Rose (G3)", {}),
+  flatCrypt(201209, "Rudolfo Giovanni (G2)", {}),
+  flatCrypt(201210, "Rufina Soledad (G1)", {}),
+  flatCrypt(201218, "Sabrina (G3)", {}),
+  flatCrypt(201219, "Sadie (G2)", {}),
+  flatCrypt(201221, "Sahira Siraj (G4)", {}),
+  flatCrypt(201222, "Saiz (G3)", {}),
+  flatCrypt(201224, "Salbatore Bokkengro (G2)", {}),
+  flatCrypt(201227, "Salvatore Giovanni (G6)", {}),
+  flatCrypt(201230, "Sammy (G1)", {}),
+  flatCrypt(201231, "Samson (G2)", {}),
+  flatCrypt(201233, "Sanjay Chakrabarti (G6)", {}),
+  flatCrypt(201234, "Sanjo (G3)", {}),
+  flatCrypt(201238, "Sarah Cobbler (G1)", {}),
+  flatCrypt(201241, "Sarisha Veliku (G2)", {}),
+  flatCrypt(201246, "Sasha Miklos (G2)", {}),
+  flatCrypt(201251, "Scarlet Carson O'Toole (G3)", {}),
+  flatCrypt(201254, "Sean Andrews (G4)", {}),
+  flatCrypt(201264, "Sennuwy, The Promoter (G2)", {}),
+  flatCrypt(201272, "Shahara al-Rashwa (G6)", {}),
+  flatCrypt(201275, "Shane Grimald (G2)", {}),
+  flatCrypt(201276, "Shannon Price, the Whisperer (G2)", {}),
+  flatCrypt(201278, "Shawnda Dorrit (G4)", {}),
+  flatCrypt(201281, "Sheldon, Lord of the Clog (G1)", {}),
+  flatCrypt(201289, "Sir Henry Johnson (G3)", {}),
+  flatCrypt(201290, "Sir Marriot D'Urban (G2)", {}),
+  flatCrypt(201292, "Sir Walter Nash (G1)", {}),
+  flatCrypt(201293, "Sisocharis (G5)", {}),
+  flatCrypt(201294, "Sister Evelyn (G3)", {}),
+  flatCrypt(201297, "Skulk (G5)", {}),
+  flatCrypt(201300, "Smash (G4)", {}),
+  flatCrypt(201302, "Sobayifa (G3)", {}),
+  flatCrypt(201303, "Socrate Cidibe (G4)", {}),
+  flatCrypt(201307, "Sophia Watson (G3)", {}),
+  flatCrypt(201313, "Stavros (G4)", {}),
+  flatCrypt(201316, "Stephen Milliner (G5)", {}),
+  flatCrypt(201317, "Steve Booth (G3)", {}),
+  flatCrypt(201318, "Stick (G4)", {}),
+  flatCrypt(201341, "Tara (G5)", {}),
+  flatCrypt(201346, "Tarrence Moore (G5)", {}),
+  flatCrypt(201350, "Tayshawn Kearns (G3)", {}),
+  flatCrypt(201357, "Terrence (G2)", {}),
+  flatCrypt(201360, "Thelonius (G2)", {}),
+  flatCrypt(201368, "Thomas Thorne (G1)", {}),
+  flatCrypt(201372, "Timothy Crowley (G1)", {}),
+  flatCrypt(201373, "Titi Camara (G5)", {}),
+  flatCrypt(201377, "Tock (G3)", {}),
+  flatCrypt(201380, "Tommy (G2)", {}),
+  flatCrypt(201381, "Tony (G3)", {}),
+  flatCrypt(201386, "Travis \"Traveler72\" Miller (G4)", {}),
+  flatCrypt(201391, "Tsigane (G2)", {}),
+  flatCrypt(201392, "Tsunda (G4)", {}),
+  flatCrypt(201399, "Ubende (G4)", {}),
+  flatCrypt(201403, "Ulrike Rothbart (G4)", {}),
+  flatCrypt(201405, "Uma Hatch (G1)", {}),
+  flatCrypt(201408, "Uncle George (G3)", {}),
+  flatCrypt(201414, "Urenna Bunu (G4)", {}),
+  flatCrypt(201419, "Uzoma (G4)", {}),
+  flatCrypt(201424, "Valois Sang, The Watcher (G3)", {}),
+  flatCrypt(201425, "Vanessa (G2)", {}),
+  flatCrypt(201432, "Vedel Esbreno (G2)", {}),
+  flatCrypt(201441, "Victor Revell, Loyalist (G2)", {}),
+  flatCrypt(201442, "Victor Tolliver (G2)", {}),
+  flatCrypt(201450, "Violette Prentiss (G1)", {}),
+  flatCrypt(201455, "Vittorio Giovanni (G2)", {}),
+  flatCrypt(201457, "Vliam Andor (G1)", {}),
+  flatCrypt(201466, "Wendy Wade (G2)", {}),
+  flatCrypt(201474, "Wolfgang (G3)", {}),
+  flatCrypt(201475, "Wren (G2)", {}),
+  flatCrypt(201479, "Xendil Charmer (G4)", {}),
+  flatCrypt(201481, "Xian \"DziDzat155\" Quan (G4)", {}),
+  flatCrypt(201490, "Yorik (G2)", {}),
+  flatCrypt(201493, "Yuri, The Talon (G1)", {}),
+  flatCrypt(201494, "Yuri Kerezenski (G4)", {}),
+  flatCrypt(201496, "Yvette, The Hopeless (G3)", {}),
+  flatCrypt(201497, "Zachary (G2)", {}),
+  flatCrypt(201503, "Zebulon (G1)", {}),
+  flatCrypt(201507, "Zip (G3)", {}),
+  flatCrypt(201512, "America Johnson (G5)", {}),
+  flatCrypt(201514, "Conchita Morales (G5)", {}),
+  flatCrypt(201515, "Guggenheim (G5)", {}),
+  flatCrypt(201518, "Percival (G5)", {}),
+  flatCrypt(201521, "Casey Snyder (G6)", {}),
+  flatCrypt(201523, "Jacques Rouge (G6)", {}),
+  flatCrypt(201524, "Benedito, a Lanterna (G6)", {}),
+  flatCrypt(201525, "Bituin (G6)", {}),
+  flatCrypt(201531, "Alice Chen (G6)", {}),
+  flatCrypt(201532, "Andi Liu (G6)", {}),
+  flatCrypt(201533, "Ashley (G6)", {}),
+  flatCrypt(201534, "Aunt Linda (G6)", {}),
+  flatCrypt(201535, "Ayelech (G6)", {}),
+  flatCrypt(201536, "Baixinho (G6)", {}),
+  flatCrypt(201537, "Belinde (G6)", {}),
+  flatCrypt(201539, "Brock Sterling (G6)", {}),
+  flatCrypt(201541, "Chelsea Blake (G6)", {}),
+  flatCrypt(201542, "Chrysanthemum (G6)", {}),
+  flatCrypt(201543, "Colette (G6)", {}),
+  flatCrypt(201544, "Donny Kowalczyk (G6)", {}),
+  flatCrypt(201546, "Dr. Stephen Norton (G6)", {}),
+  flatCrypt(201548, "Gelasia Fotiou (G6)", {}),
+  flatCrypt(201549, "Horace Radcliffe (G6)", {}),
+  flatCrypt(201550, "Horst von Brühl (G6)", {}),
+  flatCrypt(201551, "Inês Tristão (G6)", {}),
+  flatCrypt(201552, "Kathy Glens (G6)", {}),
+  flatCrypt(201554, "Lauren (G6)", {}),
+  flatCrypt(201556, "Lloyd Brooks (G6)", {}),
+  flatCrypt(201557, "Madison (G6)", {}),
+  flatCrypt(201558, "Massimo Falconi (G6)", {}),
+  flatCrypt(201559, "Meaghan (G6)", {}),
+  flatCrypt(201560, "Min-seo (G6)", {}),
+  flatCrypt(201561, "Mkhokheli (G6)", {}),
+  flatCrypt(201562, "Naomi Stewart (G6)", {}),
+  flatCrypt(201563, "Nassir (G6)", {}),
+  flatCrypt(201564, "Nik Sikko (G6)", {}),
+  flatCrypt(201565, "Oshri Dahan (G6)", {}),
+  flatCrypt(201566, "Patrik Söderberg (G6)", {}),
+  flatCrypt(201567, "Rosalina Cortez (G6)", {}),
+  flatCrypt(201568, "Ryan (G6)", {}),
+  flatCrypt(201569, "Sully (G6)", {}),
+  flatCrypt(201571, "Tamoszius (G6)", {}),
+  flatCrypt(201572, "Trevon Parker (G6)", {}),
+  flatCrypt(201573, "Wauneka (G6)", {}),
+  flatCrypt(201577, "Aluc Romas de Leon (G6)", {}),
+  flatCrypt(201578, "Asmin Kobane (G6)", {}),
+  flatCrypt(201579, "Atiena (G6)", {}),
+  flatCrypt(201580, "Bijou (G6)", {}),
+  flatCrypt(201581, "Brandon Grime (G6)", {}),
+  flatCrypt(201582, "Crystal Lynn (G6)", {}),
+  flatCrypt(201583, "Dario Ziggler (G6)", {}),
+  flatCrypt(201584, "Doctor Morocco (G6)", {}),
+  flatCrypt(201586, "Elisha Tucker (G6)", {}),
+  flatCrypt(201587, "Farah Sarroub (G6)", {}),
+  flatCrypt(201589, "Greg Mazouni (G6)", {}),
+  flatCrypt(201590, "Hanna Nokelainen (G6)", {}),
+  flatCrypt(201592, "Indira (G6)", {}),
+  flatCrypt(201593, "Jenny Silver (G6)", {}),
+  flatCrypt(201594, "Warmaksan (G6)", {}),
+  flatCrypt(201595, "Joaquín de Cádiz (G6)", {}),
+  flatCrypt(201599, "Khadija Al-Kindi (G6)", {}),
+  flatCrypt(201600, "Marcel (G6)", {}),
+  flatCrypt(201603, "Melech (G6)", {}),
+  flatCrypt(201604, "Kassandra Tassaki (G6)", {}),
+  flatCrypt(201605, "Milton Fox (G6)", {}),
+  flatCrypt(201606, "Nathan Turner (G6)", {}),
+  flatCrypt(201607, "Nayarana (G6)", {}),
+  flatCrypt(201610, "Rayne (G6)", {}),
+  flatCrypt(201611, "Ruslan Fedorenko (G6)", {}),
+  flatCrypt(201612, "Siarhei Levchenko (G6)", {}),
+  flatCrypt(201615, "Vivian VI (G6)", {}),
+  flatCrypt(201620, "Ashlesha (G2)", {}),
+  flatCrypt(201624, "Amelia Locke (G6)", {}),
+  flatCrypt(201630, "Mason Ha (G6)", {}),
+  flatCrypt(201631, "Mateo García (G6)", {}),
+  flatCrypt(201655, "Arjun Shah (G6)", {}),
+  flatCrypt(201657, "Anita Wainwright (G6)", {}),
+  flatCrypt(201661, "\"Coach\" Tyrone Soros (G6)", {}),
+  flatCrypt(201665, "Ángel Guerrero (G6)", {}),
+  flatCrypt(201669, "Clara Hjortshøj (G6)", {}),
+  flatCrypt(201674, "Jean-François (G7)", {}),
+  flatCrypt(201676, "Malachi (G7)", {}),
+  flatCrypt(201679, "Oleg Kaprizov (G7)", {}),
+  flatCrypt(201682, "Prentis Derby (G6)", {}),
+  flatCrypt(201683, "Roberto Rivamonte (G7)", {}),
+  flatCrypt(201688, "Susie Kano (G6)", {}),
+  flatCrypt(201689, "Trung Chau Pham (G7)", {}),
+  flatCrypt(201690, "Whisper (G6)", {}),
+  flatCrypt(201691, "Yael (G7)", {}),
+  flatCrypt(201692, "Zafira (G7)", {}),
+  flatCrypt(201699, "Kazuki Hanabira (G7)", {}),
+  flatCrypt(201707, "Valentina Osako (G7)", {}),
+  flatCrypt(201708, "Aintzane Arriaga (G6)", {}),
+  flatCrypt(201709, "Araceli \"Celia\" Rivera (G6)", {}),
+  flatCrypt(201711, "Braden White (G6)", {}),
+  flatCrypt(201713, "Kamaluddin (G6)", {}),
+  flatCrypt(201714, "María del Toro (G6)", {}),
+  flatCrypt(201717, "Alek König (G6)", {}),
+  flatCrypt(201718, "Gebeyehu Abdu (G6)", {}),
+  flatCrypt(201719, "Hiromitsu Asano (G6)", {}),
+  flatCrypt(201720, "Holliday \"Burgundy\" Hall (G6)", {}),
+  flatCrypt(201723, "Monica Giovanni (G6)", {}),
+  flatCrypt(201727, "Peter St. John (G6)", {}),
+  flatCrypt(201737, "Aitana, The Unholy (G6)", {}),
+  flatCrypt(201742, "Berenguela, The Vicious (G6)", {}),
+  flatCrypt(201743, "Coco Thorn (G6)", {}),
+  flatCrypt(201744, "Concordia (G6)", {}),
+  flatCrypt(201746, "Cyan Sin (G6)", {}),
+  flatCrypt(201749, "El Monseñor (G6)", {}),
+  flatCrypt(201753, "Glissando (G6)", {}),
+  flatCrypt(201755, "Grażyna \"Butcher\" Olesińska (G6)", {}),
+  flatCrypt(201756, "Hekla \"Bonecrusher\" Jónasdóttir (G6)", {}),
+  flatCrypt(201761, "Lawbringer (G6)", {}),
+  flatCrypt(201762, "Lika, The Purger (G6)", {}),
+  flatCrypt(201763, "Loyiso, The Ruthless (G6)", {}),
+  flatCrypt(201764, "Lyyli Yösydän (G6)", {}),
+  flatCrypt(201765, "Nadezhda (G6)", {}),
+  flatCrypt(201766, "Onkabetse, Arriviste (G6)", {}),
+  flatCrypt(201768, "Przemysław, War Beast (G6)", {}),
+  flatCrypt(201769, "Rasha Tarabzouni (G6)", {}),
+  flatCrypt(201773, "Surapong (G6)", {}),
+  flatCrypt(201774, "Suwira (G6)", {}),
+  flatCrypt(201778, "Ximena (G6)", {}),
+  flatCrypt(201779, "Yurena, The Boor (G6)", {}),
+  flatCrypt(201780, "Zbigniew, Hunter of Mekhet (G6)", {}),
+
 ];
 
 /** A crypt card whose whole ability is unconditional statics. */
@@ -34460,16 +41580,24 @@ export const implementedIds: number[] = [
   100014,
   100015,
   100016,
+  100017,
   100018,
+  100019,
   100020,
   100021,
   100022,
+  100023,
   100024,
+  100025,
+  100026,
   100027,
+  100028,
   100029,
+  100030,
   100031,
   100032,
   100033,
+  100034,
   100036,
   100037,
   100040,
@@ -34479,21 +41607,29 @@ export const implementedIds: number[] = [
   100047,
   100048,
   100049,
+  100050,
   100051,
   100052,
   100053,
   100054,
   100055,
   100056,
+  100057,
   100058,
   100059,
+  100060,
+  100061,
   100063,
   100064,
   100065,
   100066,
+  100068,
   100069,
   100070,
   100071,
+  100072,
+  100073,
+  100075,
   100076,
   100077,
   100078,
@@ -34506,6 +41642,7 @@ export const implementedIds: number[] = [
   100085,
   100086,
   100087,
+  100088,
   100089,
   100091,
   100092,
@@ -34513,7 +41650,9 @@ export const implementedIds: number[] = [
   100094,
   100095,
   100096,
+  100098,
   100099,
+  100100,
   100101,
   100102,
   100103,
@@ -34522,10 +41661,12 @@ export const implementedIds: number[] = [
   100107,
   100108,
   100109,
+  100111,
   100112,
   100113,
   100114,
   100115,
+  100116,
   100117,
   100118,
   100119,
@@ -34536,23 +41677,35 @@ export const implementedIds: number[] = [
   100125,
   100126,
   100127,
+  100128,
   100130,
   100131,
   100132,
   100133,
+  100134,
   100135,
   100136,
   100137,
   100138,
   100139,
+  100140,
+  100143,
+  100144,
   100145,
   100146,
+  100147,
   100148,
   100149,
+  100150,
+  100151,
   100152,
   100153,
+  100154,
+  100155,
+  100156,
   100157,
   100158,
+  100159,
   100160,
   100161,
   100162,
@@ -34560,36 +41713,61 @@ export const implementedIds: number[] = [
   100164,
   100165,
   100166,
+  100167,
+  100169,
   100170,
   100171,
   100172,
+  100173,
   100174,
   100175,
   100177,
   100178,
+  100179,
   100180,
+  100181,
+  100182,
   100183,
+  100184,
+  100185,
+  100186,
   100187,
+  100188,
   100189,
   100190,
+  100191,
   100192,
+  100193,
+  100194,
   100195,
+  100196,
+  100197,
   100199,
   100200,
   100201,
   100202,
   100203,
+  100204,
   100205,
+  100206,
+  100207,
   100208,
   100209,
+  100210,
   100211,
   100212,
+  100213,
   100214,
   100215,
+  100216,
+  100218,
   100219,
+  100220,
+  100221,
   100222,
   100223,
   100224,
+  100225,
   100226,
   100227,
   100228,
@@ -34603,29 +41781,40 @@ export const implementedIds: number[] = [
   100237,
   100238,
   100239,
+  100240,
   100241,
   100243,
   100244,
   100246,
   100247,
+  100249,
   100250,
   100251,
   100252,
+  100253,
   100254,
+  100255,
+  100256,
   100257,
+  100258,
   100259,
   100260,
   100262,
+  100263,
   100264,
   100266,
   100267,
   100268,
   100269,
+  100270,
   100271,
   100272,
   100273,
   100274,
+  100275,
   100276,
+  100277,
+  100278,
   100279,
   100281,
   100282,
@@ -34645,16 +41834,24 @@ export const implementedIds: number[] = [
   100296,
   100297,
   100298,
+  100299,
+  100300,
   100301,
+  100302,
   100303,
   100304,
+  100305,
   100306,
   100307,
   100308,
   100309,
+  100310,
   100311,
   100312,
+  100313,
+  100314,
   100315,
+  100316,
   100317,
   100319,
   100320,
@@ -34662,32 +41859,48 @@ export const implementedIds: number[] = [
   100323,
   100324,
   100325,
+  100326,
   100327,
   100328,
   100329,
+  100330,
   100332,
   100333,
+  100334,
   100335,
+  100336,
   100337,
   100338,
   100339,
+  100341,
   100342,
   100343,
   100344,
+  100345,
+  100346,
+  100347,
   100349,
   100350,
+  100351,
   100352,
+  100353,
   100354,
+  100355,
   100356,
+  100357,
+  100359,
   100360,
   100361,
   100362,
   100363,
   100364,
+  100365,
   100366,
   100367,
   100368,
+  100369,
   100370,
+  100372,
   100373,
   100374,
   100376,
@@ -34697,26 +41910,40 @@ export const implementedIds: number[] = [
   100380,
   100381,
   100382,
+  100383,
+  100384,
   100385,
+  100386,
+  100387,
+  100388,
   100389,
   100390,
   100391,
   100392,
+  100393,
   100394,
+  100396,
   100401,
+  100402,
   100403,
   100404,
   100405,
   100406,
+  100407,
   100408,
   100409,
   100410,
   100411,
+  100412,
+  100413,
   100414,
+  100415,
   100416,
   100419,
   100420,
+  100421,
   100423,
+  100425,
   100426,
   100427,
   100428,
@@ -34724,8 +41951,11 @@ export const implementedIds: number[] = [
   100432,
   100433,
   100435,
+  100436,
   100437,
+  100438,
   100439,
+  100440,
   100441,
   100442,
   100443,
@@ -34734,12 +41964,15 @@ export const implementedIds: number[] = [
   100446,
   100447,
   100448,
+  100449,
   100450,
+  100452,
   100453,
   100455,
   100457,
   100458,
   100460,
+  100461,
   100462,
   100463,
   100465,
@@ -34749,12 +41982,21 @@ export const implementedIds: number[] = [
   100469,
   100470,
   100472,
+  100475,
   100476,
+  100477,
   100478,
+  100479,
+  100480,
+  100481,
+  100482,
   100484,
   100485,
+  100486,
   100487,
   100488,
+  100490,
+  100491,
   100492,
   100493,
   100494,
@@ -34772,50 +42014,74 @@ export const implementedIds: number[] = [
   100506,
   100507,
   100508,
+  100509,
   100510,
   100511,
+  100512,
   100513,
+  100514,
   100515,
   100516,
+  100517,
   100518,
   100519,
   100520,
   100521,
+  100522,
   100523,
+  100524,
   100526,
+  100527,
+  100528,
   100529,
+  100530,
+  100531,
   100532,
   100533,
+  100535,
   100541,
+  100543,
   100545,
+  100546,
   100549,
   100550,
   100553,
   100554,
   100555,
+  100556,
   100557,
   100558,
   100559,
   100560,
+  100561,
+  100562,
   100563,
   100564,
   100565,
+  100566,
   100567,
   100568,
   100570,
   100571,
   100572,
   100573,
+  100574,
   100576,
   100577,
+  100578,
   100579,
   100580,
   100581,
   100582,
+  100583,
+  100584,
   100585,
   100586,
+  100587,
   100588,
+  100589,
   100591,
+  100592,
   100593,
   100594,
   100596,
@@ -34828,13 +42094,18 @@ export const implementedIds: number[] = [
   100604,
   100605,
   100607,
+  100608,
   100609,
   100610,
+  100611,
+  100615,
   100616,
   100617,
   100618,
   100619,
   100620,
+  100621,
+  100622,
   100624,
   100625,
   100627,
@@ -34849,21 +42120,31 @@ export const implementedIds: number[] = [
   100639,
   100640,
   100641,
+  100642,
+  100643,
   100644,
   100645,
   100646,
   100647,
+  100648,
   100649,
   100651,
   100652,
   100653,
   100656,
   100657,
+  100658,
   100659,
   100660,
   100661,
+  100662,
+  100663,
   100664,
+  100665,
   100666,
+  100667,
+  100668,
+  100669,
   100671,
   100672,
   100676,
@@ -34876,20 +42157,28 @@ export const implementedIds: number[] = [
   100683,
   100684,
   100685,
+  100686,
   100687,
   100688,
+  100689,
   100690,
+  100691,
   100692,
   100693,
   100694,
   100697,
   100698,
+  100700,
+  100701,
   100702,
   100703,
   100704,
   100705,
+  100706,
   100707,
+  100708,
   100709,
+  100710,
   100711,
   100712,
   100713,
@@ -34899,16 +42188,22 @@ export const implementedIds: number[] = [
   100717,
   100719,
   100720,
+  100721,
   100722,
   100723,
   100724,
+  100725,
   100726,
   100727,
+  100728,
   100729,
   100730,
   100731,
+  100732,
+  100733,
   100734,
   100736,
+  100737,
   100738,
   100739,
   100740,
@@ -34917,6 +42212,7 @@ export const implementedIds: number[] = [
   100743,
   100744,
   100745,
+  100746,
   100747,
   100748,
   100749,
@@ -34929,39 +42225,52 @@ export const implementedIds: number[] = [
   100756,
   100757,
   100758,
+  100759,
   100760,
   100761,
   100762,
   100763,
   100765,
+  100766,
   100767,
   100768,
   100769,
   100771,
   100772,
+  100773,
   100774,
   100776,
   100777,
   100778,
+  100779,
+  100780,
   100782,
   100783,
   100784,
   100785,
+  100786,
+  100787,
   100788,
   100789,
   100792,
   100793,
   100794,
+  100795,
   100796,
   100797,
+  100798,
   100799,
+  100801,
   100802,
+  100803,
+  100804,
   100807,
   100808,
   100809,
   100810,
   100811,
   100812,
+  100813,
   100814,
   100815,
   100817,
@@ -34970,21 +42279,32 @@ export const implementedIds: number[] = [
   100821,
   100823,
   100824,
+  100825,
   100827,
+  100828,
+  100829,
+  100830,
+  100831,
   100832,
   100833,
   100834,
   100835,
   100836,
   100838,
+  100839,
+  100840,
   100842,
+  100843,
   100844,
   100845,
   100847,
   100848,
+  100849,
   100850,
   100852,
+  100854,
   100855,
+  100856,
   100857,
   100858,
   100859,
@@ -34996,99 +42316,151 @@ export const implementedIds: number[] = [
   100866,
   100867,
   100868,
+  100870,
   100871,
   100872,
   100873,
+  100874,
   100875,
+  100876,
   100877,
+  100878,
   100879,
+  100880,
   100882,
+  100883,
+  100884,
+  100885,
+  100886,
   100887,
+  100888,
   100889,
   100890,
   100891,
+  100892,
+  100893,
+  100894,
+  100895,
+  100896,
   100897,
   100898,
   100899,
   100900,
+  100901,
+  100902,
   100903,
   100904,
   100905,
   100906,
   100907,
+  100908,
   100909,
   100910,
   100911,
   100913,
   100915,
   100916,
+  100917,
   100918,
   100920,
   100921,
+  100923,
   100925,
+  100928,
+  100929,
   100930,
+  100931,
   100932,
+  100933,
   100934,
   100935,
   100936,
   100937,
   100938,
   100939,
+  100940,
+  100942,
+  100943,
   100944,
   100945,
   100946,
   100947,
   100948,
   100949,
+  100950,
+  100951,
+  100952,
   100957,
   100958,
   100959,
+  100961,
   100962,
   100963,
   100964,
   100965,
   100966,
   100968,
+  100969,
   100970,
   100971,
   100972,
   100973,
   100974,
+  100976,
   100977,
+  100979,
   100980,
   100983,
   100984,
+  100985,
   100986,
   100987,
+  100988,
   100989,
   100992,
   100993,
   100994,
   100995,
   100996,
+  100997,
+  100998,
   100999,
+  101000,
   101001,
   101002,
   101003,
+  101004,
   101007,
   101008,
   101009,
   101010,
+  101011,
+  101012,
+  101013,
   101014,
   101015,
+  101016,
   101017,
   101018,
+  101019,
   101020,
+  101021,
   101022,
   101023,
+  101024,
   101025,
   101027,
   101028,
+  101029,
+  101030,
+  101031,
   101032,
   101033,
   101034,
+  101036,
   101038,
   101040,
+  101041,
   101042,
   101043,
   101044,
@@ -35097,11 +42469,15 @@ export const implementedIds: number[] = [
   101049,
   101050,
   101051,
+  101052,
   101053,
+  101054,
+  101055,
   101056,
   101057,
   101059,
   101060,
+  101061,
   101062,
   101063,
   101065,
@@ -35112,14 +42488,22 @@ export const implementedIds: number[] = [
   101071,
   101072,
   101073,
+  101074,
   101075,
+  101076,
   101077,
   101079,
   101080,
   101081,
   101082,
+  101084,
+  101086,
+  101087,
   101088,
   101089,
+  101090,
+  101091,
+  101092,
   101093,
   101094,
   101095,
@@ -35128,16 +42512,25 @@ export const implementedIds: number[] = [
   101098,
   101099,
   101100,
+  101101,
   101102,
   101103,
   101104,
   101107,
+  101109,
   101110,
   101111,
+  101113,
   101114,
   101116,
   101117,
+  101118,
+  101119,
   101120,
+  101121,
+  101122,
+  101123,
+  101124,
   101125,
   101126,
   101127,
@@ -35145,10 +42538,16 @@ export const implementedIds: number[] = [
   101129,
   101130,
   101131,
+  101132,
   101133,
+  101134,
   101135,
   101136,
   101137,
+  101138,
+  101139,
+  101140,
+  101141,
   101142,
   101143,
   101144,
@@ -35157,49 +42556,74 @@ export const implementedIds: number[] = [
   101147,
   101148,
   101150,
+  101151,
+  101152,
+  101153,
   101154,
+  101155,
   101156,
+  101157,
   101158,
   101159,
   101160,
+  101161,
   101162,
   101164,
   101165,
+  101166,
   101167,
   101168,
   101169,
+  101170,
   101171,
+  101173,
   101174,
   101175,
   101177,
   101178,
+  101179,
+  101180,
   101181,
   101182,
   101183,
   101184,
+  101185,
+  101186,
   101187,
   101188,
+  101189,
   101190,
   101191,
+  101192,
   101193,
   101194,
   101195,
   101196,
   101197,
+  101198,
   101199,
+  101200,
   101201,
   101202,
   101203,
   101204,
+  101205,
+  101207,
+  101208,
   101209,
+  101210,
   101211,
+  101212,
+  101213,
   101214,
   101215,
   101216,
   101217,
   101218,
   101219,
+  101220,
   101221,
+  101222,
   101223,
   101224,
   101225,
@@ -35215,18 +42639,23 @@ export const implementedIds: number[] = [
   101238,
   101239,
   101240,
+  101241,
   101242,
   101243,
   101244,
   101245,
   101246,
+  101247,
   101249,
   101250,
   101251,
   101252,
+  101253,
   101254,
   101256,
+  101258,
   101259,
+  101260,
   101261,
   101262,
   101264,
@@ -35241,22 +42670,40 @@ export const implementedIds: number[] = [
   101275,
   101276,
   101277,
+  101278,
   101279,
   101280,
+  101281,
   101282,
+  101283,
+  101284,
   101286,
   101287,
   101288,
   101290,
+  101291,
   101292,
+  101293,
+  101294,
+  101295,
+  101296,
+  101297,
+  101298,
   101299,
+  101300,
+  101301,
   101302,
   101303,
   101305,
+  101307,
+  101308,
   101309,
   101310,
+  101311,
   101312,
+  101313,
   101314,
+  101315,
   101317,
   101318,
   101319,
@@ -35267,58 +42714,100 @@ export const implementedIds: number[] = [
   101324,
   101325,
   101326,
+  101327,
   101328,
   101329,
   101330,
+  101331,
+  101332,
+  101333,
   101334,
+  101335,
+  101336,
   101337,
   101338,
   101340,
   101341,
   101342,
   101343,
+  101344,
   101345,
+  101347,
+  101348,
   101350,
+  101351,
+  101352,
   101353,
   101354,
+  101355,
+  101356,
+  101357,
+  101358,
+  101359,
+  101362,
   101364,
   101365,
   101366,
+  101367,
+  101368,
+  101369,
+  101370,
+  101372,
   101373,
   101374,
+  101375,
   101376,
+  101379,
   101380,
+  101381,
   101382,
+  101383,
   101384,
+  101385,
   101386,
   101387,
   101388,
+  101389,
   101390,
   101391,
+  101392,
+  101393,
   101394,
   101395,
+  101397,
   101398,
   101400,
   101401,
+  101402,
+  101403,
   101404,
   101405,
   101406,
+  101407,
   101408,
+  101410,
   101411,
   101412,
   101413,
+  101414,
   101415,
+  101416,
   101417,
   101419,
   101420,
   101421,
+  101422,
+  101423,
   101424,
+  101425,
   101426,
   101427,
   101428,
   101429,
   101430,
   101431,
+  101432,
+  101433,
   101434,
   101435,
   101437,
@@ -35327,6 +42816,7 @@ export const implementedIds: number[] = [
   101440,
   101442,
   101444,
+  101446,
   101447,
   101448,
   101449,
@@ -35351,86 +42841,139 @@ export const implementedIds: number[] = [
   101468,
   101469,
   101470,
+  101471,
   101472,
+  101474,
   101475,
   101476,
   101480,
+  101481,
   101482,
   101483,
   101484,
   101485,
+  101486,
   101487,
+  101488,
+  101489,
   101490,
   101491,
   101493,
+  101494,
   101495,
   101496,
   101498,
+  101499,
+  101500,
   101501,
   101502,
+  101503,
+  101504,
   101505,
   101506,
   101507,
   101508,
+  101509,
+  101510,
   101511,
   101513,
+  101514,
   101515,
   101516,
+  101517,
+  101518,
   101519,
+  101520,
+  101521,
+  101522,
   101523,
   101524,
   101525,
+  101526,
   101527,
   101528,
   101529,
   101530,
   101531,
   101532,
+  101533,
   101534,
   101535,
   101536,
   101537,
   101538,
+  101539,
+  101540,
   101541,
   101542,
+  101543,
   101544,
   101545,
+  101546,
   101547,
+  101548,
+  101549,
   101550,
+  101551,
   101552,
   101553,
+  101555,
   101556,
   101558,
   101559,
+  101560,
   101561,
+  101562,
   101564,
   101566,
   101567,
+  101568,
+  101571,
   101572,
   101573,
+  101574,
   101575,
   101576,
   101577,
   101578,
+  101579,
+  101581,
   101583,
+  101585,
+  101586,
   101587,
   101588,
+  101589,
   101591,
+  101593,
   101594,
   101595,
   101599,
   101600,
+  101601,
   101602,
+  101603,
+  101604,
   101605,
   101606,
   101608,
+  101609,
   101610,
   101612,
   101613,
   101614,
+  101615,
+  101616,
+  101617,
+  101618,
+  101619,
+  101621,
+  101625,
   101626,
   101627,
   101628,
+  101629,
+  101630,
   101631,
   101632,
   101633,
@@ -35438,6 +42981,8 @@ export const implementedIds: number[] = [
   101636,
   101637,
   101640,
+  101641,
+  101642,
   101643,
   101644,
   101645,
@@ -35447,21 +42992,28 @@ export const implementedIds: number[] = [
   101649,
   101650,
   101651,
+  101652,
   101656,
+  101657,
   101658,
   101660,
+  101661,
   101662,
+  101663,
   101664,
   101665,
+  101666,
   101667,
   101669,
   101670,
   101671,
   101673,
   101674,
+  101675,
   101676,
   101678,
   101679,
+  101680,
   101681,
   101682,
   101684,
@@ -35469,6 +43021,7 @@ export const implementedIds: number[] = [
   101686,
   101687,
   101689,
+  101690,
   101691,
   101692,
   101693,
@@ -35480,17 +43033,31 @@ export const implementedIds: number[] = [
   101701,
   101702,
   101703,
+  101704,
   101706,
+  101708,
+  101710,
   101711,
   101712,
+  101713,
   101714,
   101715,
+  101716,
   101717,
+  101718,
+  101719,
+  101720,
+  101721,
+  101722,
+  101723,
   101724,
   101725,
+  101726,
   101727,
   101728,
   101729,
+  101730,
+  101731,
   101732,
   101733,
   101734,
@@ -35498,19 +43065,32 @@ export const implementedIds: number[] = [
   101736,
   101737,
   101738,
+  101739,
+  101740,
   101741,
   101742,
   101743,
   101744,
   101745,
+  101746,
+  101747,
+  101748,
+  101749,
   101753,
   101754,
+  101755,
   101756,
   101758,
+  101759,
   101760,
+  101761,
+  101762,
+  101763,
   101764,
+  101765,
   101766,
   101767,
+  101768,
   101769,
   101770,
   101771,
@@ -35524,24 +43104,34 @@ export const implementedIds: number[] = [
   101781,
   101782,
   101783,
+  101786,
+  101788,
+  101789,
   101790,
   101791,
   101792,
   101793,
   101794,
   101795,
+  101796,
+  101797,
   101798,
   101799,
   101801,
   101802,
+  101803,
   101804,
   101805,
+  101806,
   101807,
   101808,
+  101809,
+  101810,
   101811,
   101812,
   101813,
   101814,
+  101815,
   101816,
   101817,
   101818,
@@ -35552,26 +43142,42 @@ export const implementedIds: number[] = [
   101823,
   101824,
   101825,
+  101826,
   101827,
+  101828,
   101829,
+  101830,
+  101831,
   101832,
+  101833,
+  101834,
+  101836,
+  101837,
+  101838,
   101839,
   101840,
   101841,
   101842,
+  101843,
+  101844,
+  101845,
   101846,
   101847,
+  101848,
   101850,
   101852,
   101853,
   101854,
+  101855,
   101856,
   101857,
   101858,
   101859,
   101860,
   101861,
+  101863,
   101864,
+  101865,
   101866,
   101867,
   101869,
@@ -35583,6 +43189,8 @@ export const implementedIds: number[] = [
   101875,
   101876,
   101877,
+  101878,
+  101879,
   101882,
   101883,
   101885,
@@ -35591,25 +43199,36 @@ export const implementedIds: number[] = [
   101889,
   101891,
   101892,
+  101893,
   101894,
   101896,
   101899,
+  101900,
+  101903,
+  101904,
   101905,
   101907,
   101909,
   101910,
+  101911,
+  101912,
   101913,
+  101916,
+  101917,
   101918,
   101919,
   101920,
   101921,
   101922,
   101923,
+  101924,
   101925,
   101926,
+  101927,
   101930,
   101931,
   101932,
+  101933,
   101935,
   101937,
   101938,
@@ -35620,6 +43239,8 @@ export const implementedIds: number[] = [
   101943,
   101944,
   101945,
+  101946,
+  101947,
   101948,
   101949,
   101950,
@@ -35636,14 +43257,17 @@ export const implementedIds: number[] = [
   101966,
   101967,
   101968,
+  101969,
   101970,
   101972,
   101973,
   101974,
   101976,
+  101977,
   101978,
   101979,
   101980,
+  101981,
   101982,
   101983,
   101984,
@@ -35659,27 +43283,55 @@ export const implementedIds: number[] = [
   101994,
   101995,
   101996,
+  101998,
   101999,
   102000,
+  102001,
   102003,
+  102004,
   102005,
+  102007,
+  102009,
   102010,
+  102011,
+  102013,
   102014,
   102015,
+  102016,
+  102017,
+  102018,
   102019,
+  102020,
   102021,
   102022,
   102023,
+  102024,
+  102025,
+  102027,
+  102028,
+  102030,
+  102031,
+  102032,
+  102033,
+  102035,
+  102037,
+  102038,
   102041,
+  102042,
   102043,
   102044,
+  102045,
   102046,
   102047,
   102048,
+  102049,
+  102050,
   102051,
   102052,
   102053,
   102054,
+  102055,
+  102056,
   102058,
   102059,
   102060,
@@ -35689,14 +43341,17 @@ export const implementedIds: number[] = [
   102064,
   102065,
   102066,
+  102067,
   102068,
   102069,
+  102070,
   102071,
   102072,
   102075,
   102077,
   102078,
   102080,
+  102082,
   102083,
   102084,
   102085,
@@ -35705,23 +43360,32 @@ export const implementedIds: number[] = [
   102090,
   102091,
   102092,
+  102093,
+  102094,
   102096,
   102097,
   102098,
+  102100,
   102101,
   102102,
   102105,
   102106,
   102107,
+  102108,
   102109,
+  102110,
   102111,
   102112,
   102113,
   102114,
   102115,
   102116,
+  102117,
+  102119,
   102121,
+  102122,
   102124,
+  102125,
   102126,
   102127,
   102128,
@@ -35729,6 +43393,7 @@ export const implementedIds: number[] = [
   102130,
   102131,
   102132,
+  102133,
   102134,
   102137,
   102138,
@@ -35736,6 +43401,7 @@ export const implementedIds: number[] = [
   102140,
   102141,
   102142,
+  102143,
   102144,
   102145,
   102147,
@@ -35746,38 +43412,55 @@ export const implementedIds: number[] = [
   102152,
   102153,
   102154,
+  102155,
+  102156,
+  102157,
   102159,
+  102160,
   102161,
   102162,
   102163,
   102164,
   102166,
+  102167,
   102168,
   102169,
   102171,
   102173,
   102174,
+  102175,
   102176,
   102179,
   102180,
+  102181,
+  102182,
   102183,
   102184,
   102185,
+  102186,
+  102187,
   102188,
   102189,
   102190,
   102191,
+  102193,
+  102195,
   102196,
   102197,
   102198,
   102199,
+  102200,
   102201,
   102202,
   102203,
   102204,
   102205,
+  102206,
+  102207,
   102208,
+  102209,
   102210,
+  102211,
   102212,
   102213,
   102214,
@@ -35801,8 +43484,11 @@ export const implementedIds: number[] = [
   102232,
   102233,
   102234,
+  102236,
   102237,
   102238,
+  102241,
+  102242,
   102243,
   102245,
   102246,
@@ -35829,6 +43515,7 @@ export const implementedIds: number[] = [
   102267,
   102268,
   102270,
+  102271,
   102272,
   102273,
   102274,
@@ -35931,70 +43618,560 @@ export const implementedIds: number[] = [
   200007,
   200008,
   200009,
+  200010,
+  200012,
+  200020,
+  200022,
+  200024,
+  200045,
+  200056,
+  200058,
+  200059,
+  200067,
+  200075,
+  200077,
+  200084,
+  200085,
+  200088,
+  200089,
+  200097,
+  200109,
+  200110,
+  200120,
+  200122,
   200132,
+  200134,
+  200139,
+  200143,
+  200144,
+  200151,
+  200159,
+  200178,
+  200180,
+  200182,
+  200185,
+  200188,
+  200197,
+  200198,
+  200202,
+  200203,
+  200207,
+  200208,
+  200211,
+  200214,
+  200215,
+  200216,
+  200217,
+  200218,
+  200219,
+  200221,
+  200230,
+  200233,
+  200236,
+  200239,
+  200240,
+  200241,
+  200243,
+  200251,
+  200254,
+  200256,
+  200260,
+  200266,
+  200267,
+  200271,
+  200276,
+  200280,
+  200281,
+  200282,
+  200283,
+  200285,
+  200286,
+  200295,
+  200298,
+  200299,
+  200300,
+  200301,
+  200303,
+  200309,
+  200311,
+  200315,
+  200323,
+  200324,
+  200330,
+  200334,
+  200336,
+  200338,
+  200339,
+  200340,
+  200341,
+  200342,
+  200343,
+  200345,
+  200346,
+  200352,
+  200353,
+  200354,
+  200355,
+  200356,
+  200361,
+  200368,
+  200369,
+  200373,
+  200374,
+  200376,
+  200380,
+  200384,
+  200387,
+  200388,
+  200392,
+  200396,
+  200406,
+  200407,
+  200408,
+  200413,
+  200415,
+  200418,
+  200419,
+  200420,
+  200430,
+  200432,
+  200437,
+  200442,
+  200444,
+  200446,
+  200451,
+  200453,
+  200461,
+  200468,
+  200471,
+  200472,
+  200473,
+  200474,
+  200479,
+  200480,
+  200481,
+  200483,
+  200484,
+  200494,
+  200506,
+  200509,
+  200513,
+  200515,
+  200516,
+  200517,
+  200523,
+  200524,
+  200525,
+  200533,
+  200537,
+  200538,
+  200543,
+  200544,
+  200547,
+  200552,
+  200555,
+  200562,
+  200567,
+  200576,
+  200581,
+  200583,
+  200595,
+  200596,
+  200600,
+  200601,
+  200602,
+  200603,
+  200617,
+  200621,
+  200622,
+  200623,
+  200627,
+  200632,
+  200635,
+  200640,
+  200642,
+  200643,
+  200645,
+  200647,
+  200656,
+  200657,
+  200658,
+  200660,
+  200662,
+  200674,
+  200686,
+  200687,
+  200689,
+  200691,
+  200692,
+  200693,
+  200699,
+  200701,
+  200706,
+  200714,
+  200715,
+  200717,
+  200719,
+  200723,
+  200729,
+  200732,
+  200740,
+  200746,
+  200747,
+  200748,
+  200765,
+  200772,
+  200774,
+  200777,
+  200782,
+  200787,
+  200789,
+  200791,
+  200794,
+  200796,
+  200802,
+  200803,
+  200808,
+  200809,
+  200812,
+  200816,
+  200817,
+  200825,
+  200827,
+  200834,
+  200836,
+  200838,
+  200841,
+  200845,
+  200846,
+  200849,
+  200850,
+  200851,
+  200857,
+  200861,
+  200862,
+  200878,
+  200880,
+  200882,
+  200884,
+  200886,
+  200887,
+  200895,
+  200902,
+  200922,
+  200924,
+  200930,
+  200932,
+  200933,
+  200934,
+  200938,
+  200940,
+  200949,
+  200952,
+  200965,
+  200967,
+  200970,
+  200977,
+  200978,
+  200990,
+  200994,
+  200996,
+  200997,
+  200998,
+  201003,
+  201004,
+  201005,
+  201010,
+  201014,
+  201020,
+  201027,
+  201041,
+  201047,
+  201050,
+  201054,
+  201055,
+  201058,
+  201065,
+  201068,
+  201073,
+  201074,
+  201077,
+  201088,
+  201090,
+  201091,
+  201097,
+  201099,
+  201101,
+  201103,
+  201106,
+  201115,
+  201124,
+  201128,
+  201134,
+  201135,
+  201141,
+  201156,
+  201157,
+  201161,
+  201165,
+  201167,
+  201169,
+  201174,
+  201178,
+  201179,
+  201183,
+  201188,
+  201192,
+  201193,
+  201197,
+  201199,
+  201200,
+  201201,
+  201202,
+  201205,
+  201209,
+  201210,
+  201218,
+  201219,
+  201221,
+  201222,
+  201224,
+  201227,
+  201230,
+  201231,
+  201233,
+  201234,
+  201238,
+  201241,
+  201246,
+  201251,
+  201254,
+  201264,
+  201272,
+  201275,
+  201276,
+  201278,
+  201281,
+  201289,
+  201290,
+  201292,
+  201293,
+  201294,
+  201297,
+  201300,
+  201302,
+  201303,
+  201307,
+  201313,
+  201316,
+  201317,
+  201318,
+  201341,
+  201346,
+  201350,
+  201357,
+  201360,
+  201368,
+  201372,
+  201373,
+  201377,
+  201380,
+  201381,
+  201386,
+  201391,
+  201392,
+  201399,
+  201403,
+  201405,
+  201408,
+  201414,
+  201419,
+  201424,
+  201425,
+  201432,
+  201441,
+  201442,
+  201450,
+  201455,
+  201457,
+  201466,
+  201474,
+  201475,
+  201479,
+  201481,
+  201490,
+  201493,
+  201494,
+  201496,
+  201497,
+  201503,
+  201507,
+  201512,
+  201514,
+  201515,
+  201518,
+  201521,
+  201523,
+  201524,
+  201525,
   201526,
   201529,
   201530,
+  201531,
+  201532,
+  201533,
+  201534,
+  201535,
+  201536,
+  201537,
   201538,
+  201539,
   201540,
+  201541,
+  201542,
+  201543,
+  201544,
   201545,
+  201546,
   201547,
+  201548,
+  201549,
+  201550,
+  201551,
+  201552,
   201553,
+  201554,
   201555,
+  201556,
+  201557,
+  201558,
+  201559,
+  201560,
+  201561,
+  201562,
+  201563,
+  201564,
+  201565,
+  201566,
+  201567,
+  201568,
+  201569,
   201570,
+  201571,
+  201572,
+  201573,
   201574,
   201576,
+  201577,
+  201578,
+  201579,
+  201580,
+  201581,
+  201582,
+  201583,
+  201584,
   201585,
+  201586,
+  201587,
   201588,
+  201589,
+  201590,
   201591,
+  201592,
+  201593,
+  201594,
+  201595,
   201596,
   201597,
   201598,
+  201599,
+  201600,
   201601,
   201602,
+  201603,
+  201604,
+  201605,
+  201606,
+  201607,
   201608,
   201609,
+  201610,
+  201611,
+  201612,
   201613,
   201614,
+  201615,
+  201620,
   201623,
+  201624,
   201625,
   201626,
   201627,
   201628,
   201629,
+  201630,
+  201631,
   201632,
+  201655,
   201656,
+  201657,
   201658,
   201659,
   201660,
+  201661,
   201662,
   201663,
   201664,
+  201665,
   201666,
   201667,
   201668,
+  201669,
   201670,
   201671,
   201672,
   201673,
+  201674,
   201675,
+  201676,
   201677,
   201678,
+  201679,
   201680,
   201681,
+  201682,
+  201683,
   201684,
   201685,
   201686,
   201687,
+  201688,
+  201689,
+  201690,
+  201691,
+  201692,
+  201699,
+  201707,
+  201708,
+  201709,
   201710,
+  201711,
   201712,
+  201713,
+  201714,
   201715,
   201716,
+  201717,
+  201718,
+  201719,
+  201720,
   201721,
   201722,
+  201723,
   201724,
   201725,
   201726,
+  201727,
   201728,
   201729,
   201730,
@@ -36004,28 +44181,50 @@ export const implementedIds: number[] = [
   201734,
   201735,
   201736,
+  201737,
   201738,
   201739,
   201740,
   201741,
+  201742,
+  201743,
+  201744,
   201745,
+  201746,
   201747,
   201748,
+  201749,
   201750,
   201751,
   201752,
+  201753,
   201754,
+  201755,
+  201756,
   201757,
   201758,
   201759,
   201760,
+  201761,
+  201762,
+  201763,
+  201764,
+  201765,
+  201766,
   201767,
+  201768,
+  201769,
   201770,
   201771,
   201772,
+  201773,
+  201774,
   201775,
   201776,
   201777,
+  201778,
+  201779,
+  201780,
   201781,
   201782,
   201783,
