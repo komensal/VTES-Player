@@ -25113,7 +25113,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Survivalist [101910] — fala 38 wierna (300) faithful v2
+    // Survivalist [101910] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101910,
     name: "Survivalist",
     cardType: "ally",
@@ -25125,7 +25125,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Swoop [101918] — fala 38 wierna (300) faithful v2
+    // Swoop [101918] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101918,
     name: "Swoop",
     cardType: "combat",
@@ -25136,7 +25136,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sword of Judgment [101919] — fala 38 wierna (300) faithful v2
+    // Sword of Judgment [101919] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101919,
     name: "Sword of Judgment",
     cardType: "equipment",
@@ -25148,7 +25148,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sword of Nuln [101920] — fala 38 wierna (300) faithful v2
+    // Sword of Nuln [101920] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101920,
     name: "Sword of Nuln",
     cardType: "equipment",
@@ -25183,7 +25183,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Talaq, The Immortal [101930] — fala 38 wierna (300) faithful v2
+    // Talaq, The Immortal [101930] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101930,
     name: "Talaq, The Immortal",
     cardType: "ally",
@@ -25207,7 +25207,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Talith [101932] — fala 38 wierna (300) faithful v2
+    // Talith [101932] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101932,
     name: "Talith",
     cardType: "equipment",
@@ -25230,7 +25230,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tara, The Hollow One [101937] — fala 38 wierna (300) faithful v2
+    // Tara, The Hollow One [101937] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101937,
     name: "Tara, The Hollow One",
     cardType: "ally",
@@ -25253,7 +25253,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Taste of Death [101944] — fala 38 wierna (300) faithful v2
+    // Taste of Death [101944] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101944,
     name: "Taste of Death",
     cardType: "combat",
@@ -25264,7 +25264,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tenebrous Form [101957] — fala 38 wierna (300) faithful v2
+    // Tenebrous Form [101957] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101957,
     name: "Tenebrous Form",
     cardType: "modifier",
@@ -25275,7 +25275,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Terrorists [101961] — fala 38 wierna (300) faithful v2
+    // Terrorists [101961] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101961,
     name: "Terrorists",
     cardType: "ally",
@@ -25287,7 +25287,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Their Master's Voice [101967] — fala 38 wierna (300) faithful v2
+    // Their Master's Voice [101967] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101967,
     name: "Their Master's Voice",
     cardType: "reaction",
@@ -25298,7 +25298,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Thin Blood [101970] — fala 38 wierna (300) faithful v2
+    // Thin Blood [101970] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101970,
     name: "Thin Blood",
     cardType: "combat",
@@ -25309,7 +25309,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Thoughts Betrayed [101976] — fala 38 wierna (300) faithful v2
+    // Thoughts Betrayed [101976] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101976,
     name: "Thoughts Betrayed",
     cardType: "combat",
@@ -25331,7 +25331,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tinglestripe [101985] — fala 38 wierna (300) faithful v2
+    // Tinglestripe [101985] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101985,
     name: "Tinglestripe",
     cardType: "equipment",
@@ -25342,7 +25342,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tongue of the Serpent [101988] — fala 38 wierna (300) faithful v2
+    // Tongue of the Serpent [101988] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101988,
     name: "Tongue of the Serpent",
     cardType: "combat",
@@ -25353,7 +25353,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Torment the Soul [101992] — fala 38 wierna (300) faithful v2
+    // Torment the Soul [101992] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101992,
     name: "Torment the Soul",
     cardType: "combat",
@@ -25364,7 +25364,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tortured Confession [101996] — fala 38 wierna (300) faithful v2
+    // Tortured Confession [101996] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101996,
     name: "Tortured Confession",
     cardType: "combat",
@@ -25375,7 +25375,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tourette's Voice [102000] — fala 38 wierna (300) faithful v2
+    // Tourette's Voice [102000] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102000,
     name: "Tourette's Voice",
     cardType: "reaction",
@@ -25398,7 +25398,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Truth in Ink [102043] — fala 39 wierna (300) faithful v2
+    // Truth in Ink [102043] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102043,
     name: "Truth in Ink",
     cardType: "reaction",
@@ -25409,7 +25409,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Truth of a Thousand Lies [102044] — fala 39 wierna (300) faithful v2
+    // Truth of a Thousand Lies [102044] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102044,
     name: "Truth of a Thousand Lies",
     cardType: "modifier",
@@ -25432,7 +25432,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tye Cooper [102053] — fala 39 wierna (300) faithful v2
+    // Tye Cooper [102053] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102053,
     name: "Tye Cooper",
     cardType: "ally",
@@ -25444,7 +25444,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Uncontrollable Rage [102058] — fala 39 wierna (300) faithful v2
+    // Uncontrollable Rage [102058] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102058,
     name: "Uncontrollable Rage",
     cardType: "modifier",
@@ -25455,15 +25455,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Under My Skin [102062] — fala 39 wierna (300) faithful v2
+    // Under My Skin [102062] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102062,
     name: "Under My Skin",
     cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
@@ -25478,7 +25478,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Unleash the Hounds [102077] — fala 39 wierna (300) faithful v2
+    // Unleash the Hounds [102077] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102077,
     name: "Unleash the Hounds",
     cardType: "modifier",
@@ -25490,7 +25490,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vascular Explosion [102091] — fala 39 wierna (300) faithful v2
+    // Vascular Explosion [102091] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102091,
     name: "Vascular Explosion",
     cardType: "combat",
@@ -25546,7 +25546,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Virtuosa [102124] — fala 39 wierna (300) faithful v2
+    // Virtuosa [102124] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102124,
     name: "Virtuosa",
     cardType: "modifier",
@@ -25570,7 +25570,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Voice of Madness [102129] — fala 39 wierna (300) faithful v2
+    // Voice of Madness [102129] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102129,
     name: "Voice of Madness",
     cardType: "reaction",
@@ -25581,7 +25581,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Voices of the Castle [102130] — fala 39 wierna (300) faithful v2
+    // Voices of the Castle [102130] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102130,
     name: "Voices of the Castle",
     cardType: "reaction",
@@ -25604,7 +25604,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Walks-With-Might [102141] — fala 39 wierna (300) faithful v2
+    // Walks-With-Might [102141] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102141,
     name: "Walks-With-Might",
     cardType: "ally",
@@ -25616,7 +25616,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Watch Commander [102154] — fala 39 wierna (300) faithful v2
+    // Watch Commander [102154] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102154,
     name: "Watch Commander",
     cardType: "reaction",
@@ -25638,7 +25638,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Weakness [102163] — fala 39 wierna (300) faithful v2
+    // Weakness [102163] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102163,
     name: "Weakness",
     cardType: "combat",
@@ -25673,7 +25673,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Werewolf Pack [102174] — fala 39 wierna (300) faithful v2
+    // Werewolf Pack [102174] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102174,
     name: "Werewolf Pack",
     cardType: "ally",
@@ -25707,7 +25707,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Wolf Companion [102191] — fala 39 wierna (300) faithful v2
+    // Wolf Companion [102191] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102191,
     name: "Wolf Companion",
     cardType: "retainer",
@@ -25718,7 +25718,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Writ of Acceptance [102196] — fala 39 wierna (300) faithful v2
+    // Writ of Acceptance [102196] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102196,
     name: "Writ of Acceptance",
     cardType: "equipment",
@@ -25729,7 +25729,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Wrong and Crosswise [102197] — fala 39 wierna (300) faithful v2
+    // Wrong and Crosswise [102197] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102197,
     name: "Wrong and Crosswise",
     cardType: "reaction",
@@ -25751,7 +25751,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Enhanced Coagulant [102238] — fala 39 wierna (300) faithful v2
+    // Enhanced Coagulant [102238] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102238,
     name: "Enhanced Coagulant",
     cardType: "equipment",
@@ -25763,7 +25763,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ritual Goblet [102243] — fala 39 wierna (300) faithful v2
+    // Ritual Goblet [102243] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102243,
     name: "Ritual Goblet",
     cardType: "equipment",
@@ -25787,7 +25787,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Loup [102273] — fala 39 wierna (300) faithful v2
+    // Loup [102273] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102273,
     name: "Loup",
     cardType: "modifier",
@@ -31325,7 +31325,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Summon the Abyss [101900] — fala 38 wierna (300) faithful v2
+    // Summon the Abyss [101900] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101900,
     name: "Summon the Abyss",
     cardType: "action",
@@ -31336,7 +31336,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sunrise Service [101903] — fala 38 wierna (300) faithful v2
+    // Sunrise Service [101903] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101903,
     name: "Sunrise Service",
     cardType: "action",
@@ -31347,7 +31347,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sunset Strip, Hollywood [101904] — fala 38 wierna (300) faithful v2
+    // Sunset Strip, Hollywood [101904] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101904,
     name: "Sunset Strip, Hollywood",
     cardType: "master",
@@ -31359,7 +31359,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Suspension of Disbelief [101911] — fala 38 wierna (300) faithful v2
+    // Suspension of Disbelief [101911] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101911,
     name: "Suspension of Disbelief",
     cardType: "action",
@@ -31370,7 +31370,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Svadharma [101912] — fala 38 wierna (300) faithful v2
+    // Svadharma [101912] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101912,
     name: "Svadharma",
     cardType: "master",
@@ -31381,15 +31381,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Swiftness of the Stag [101916] — fala 38 wierna (300) faithful v2
+    // Swiftness of the Stag [101916] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101916,
     name: "Swiftness of the Stag",
     cardType: "actionmodifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: true }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: true }] }
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
@@ -31404,7 +31404,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tabriz Assembly [101924] — fala 38 wierna (300) faithful v2
+    // Tabriz Assembly [101924] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101924,
     name: "Tabriz Assembly",
     cardType: "master",
@@ -31415,7 +31415,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tajdid [101927] — fala 38 wierna (300) faithful v2
+    // Tajdid [101927] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101927,
     name: "Tajdid",
     cardType: "master",
@@ -31426,7 +31426,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Talons of the Dead [101933] — fala 38 wierna (300) faithful v2
+    // Talons of the Dead [101933] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101933,
     name: "Talons of the Dead",
     cardType: "master",
@@ -31438,7 +31438,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tattoo Signal [101946] — fala 38 wierna (300) faithful v2
+    // Tattoo Signal [101946] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101946,
     name: "Tattoo Signal",
     cardType: "action",
@@ -31460,7 +31460,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Thicker than Blood [101969] — fala 38 wierna (300) faithful v2
+    // Thicker than Blood [101969] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101969,
     name: "Thicker than Blood",
     cardType: "master",
@@ -31472,7 +31472,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Threading the Path of Orpheus [101977] — fala 38 wierna (300) faithful v2
+    // Threading the Path of Orpheus [101977] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101977,
     name: "Threading the Path of Orpheus",
     cardType: "action",
@@ -31483,7 +31483,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Thrones Crumble [101981] — fala 38 wierna (300) faithful v2
+    // Thrones Crumble [101981] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 101981,
     name: "Thrones Crumble",
     cardType: "action",
@@ -31505,7 +31505,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tower of London [102001] — fala 38 wierna (300) faithful v2
+    // Tower of London [102001] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102001,
     name: "Tower of London",
     cardType: "master",
@@ -31517,7 +31517,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tradition Upheld [102004] — fala 38 wierna (300) faithful v2
+    // Tradition Upheld [102004] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102004,
     name: "Tradition Upheld",
     cardType: "politicalAction",
@@ -31585,7 +31585,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Treatment [102017] — fala 38 wierna (300) faithful v2
+    // The Treatment [102017] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102017,
     name: "The Treatment",
     cardType: "master",
@@ -31619,7 +31619,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Trick of the Danya [102024] — fala 38 wierna (300) faithful v2
+    // The Trick of the Danya [102024] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102024,
     name: "The Trick of the Danya",
     cardType: "action",
@@ -31652,7 +31652,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Clan Respect [102028] — fala 39 wierna (300) faithful v2
+    // Trophy: Clan Respect [102028] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102028,
     name: "Trophy: Clan Respect",
     cardType: "master",
@@ -31663,7 +31663,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Discipline [102030] — fala 39 wierna (300) faithful v2
+    // Trophy: Discipline [102030] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102030,
     name: "Trophy: Discipline",
     cardType: "master",
@@ -31674,7 +31674,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Domain [102031] — fala 39 wierna (300) faithful v2
+    // Trophy: Domain [102031] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102031,
     name: "Trophy: Domain",
     cardType: "master",
@@ -31685,7 +31685,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Hunting Ground [102032] — fala 39 wierna (300) faithful v2
+    // Trophy: Hunting Ground [102032] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102032,
     name: "Trophy: Hunting Ground",
     cardType: "master",
@@ -31696,7 +31696,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Library [102033] — fala 39 wierna (300) faithful v2
+    // Trophy: Library [102033] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102033,
     name: "Trophy: Library",
     cardType: "master",
@@ -31718,7 +31718,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Revered [102037] — fala 39 wierna (300) faithful v2
+    // Trophy: Revered [102037] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102037,
     name: "Trophy: Revered",
     cardType: "master",
@@ -31729,7 +31729,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Safe Passage [102038] — fala 39 wierna (300) faithful v2
+    // Trophy: Safe Passage [102038] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102038,
     name: "Trophy: Safe Passage",
     cardType: "master",
@@ -31751,7 +31751,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Truth of Blood [102045] — fala 39 wierna (300) faithful v2
+    // Truth of Blood [102045] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102045,
     name: "Truth of Blood",
     cardType: "action",
@@ -31774,7 +31774,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Twisted Forest [102050] — fala 39 wierna (300) faithful v2
+    // Twisted Forest [102050] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102050,
     name: "Twisted Forest",
     cardType: "master",
@@ -31786,7 +31786,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Unacceptable Appearance [102055] — fala 39 wierna (300) faithful v2
+    // Unacceptable Appearance [102055] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102055,
     name: "Unacceptable Appearance",
     cardType: "master",
@@ -31844,7 +31844,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vaticination [102093] — fala 39 wierna (300) faithful v2
+    // Vaticination [102093] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102093,
     name: "Vaticination",
     cardType: "action",
@@ -31877,7 +31877,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ventrue Directorate Assembly [102108] — fala 39 wierna (300) faithful v2
+    // Ventrue Directorate Assembly [102108] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102108,
     name: "Ventrue Directorate Assembly",
     cardType: "master",
@@ -31889,7 +31889,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ventrue Investment [102110] — fala 39 wierna (300) faithful v2
+    // Ventrue Investment [102110] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102110,
     name: "Ventrue Investment",
     cardType: "master",
@@ -31911,7 +31911,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vigil: The Thin Line [102119] — fala 39 wierna (300) faithful v2
+    // Vigil: The Thin Line [102119] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102119,
     name: "Vigil: The Thin Line",
     cardType: "master",
@@ -31922,7 +31922,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Violation of Trust [102122] — fala 39 wierna (300) faithful v2
+    // Violation of Trust [102122] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102122,
     name: "Violation of Trust",
     cardType: "action",
@@ -31933,7 +31933,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Visionquest [102125] — fala 39 wierna (300) faithful v2
+    // Visionquest [102125] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102125,
     name: "Visionquest",
     cardType: "action",
@@ -31944,7 +31944,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vox Senis [102133] — fala 39 wierna (300) faithful v2
+    // Vox Senis [102133] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102133,
     name: "Vox Senis",
     cardType: "master",
@@ -31955,7 +31955,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Wanderer's Counsel [102143] — fala 39 wierna (300) faithful v2
+    // Wanderer's Counsel [102143] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102143,
     name: "Wanderer's Counsel",
     cardType: "modifierOrReaction",
@@ -31966,7 +31966,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Watchtower: Chosen are Called [102155] — fala 39 wierna (300) faithful v2
+    // Watchtower: Chosen are Called [102155] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102155,
     name: "Watchtower: Chosen are Called",
     cardType: "master",
@@ -31978,7 +31978,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Watchtower: Four Ride Forth [102156] — fala 39 wierna (300) faithful v2
+    // Watchtower: Four Ride Forth [102156] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102156,
     name: "Watchtower: Four Ride Forth",
     cardType: "master",
@@ -32002,7 +32002,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Wave of Insanity [102160] — fala 39 wierna (300) faithful v2
+    // Wave of Insanity [102160] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102160,
     name: "Wave of Insanity",
     cardType: "action",
@@ -32013,7 +32013,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Weeping Stone [102167] — fala 39 wierna (300) faithful v2
+    // Weeping Stone [102167] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102167,
     name: "Weeping Stone",
     cardType: "master",
@@ -32025,7 +32025,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Whispers from the Dead [102175] — fala 39 wierna (300) faithful v2
+    // Whispers from the Dead [102175] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102175,
     name: "Whispers from the Dead",
     cardType: "action",
@@ -32069,7 +32069,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Wise Spider [102187] — fala 39 wierna (300) faithful v2
+    // Wise Spider [102187] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102187,
     name: "Wise Spider",
     cardType: "action",
@@ -32080,7 +32080,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The World's a Canvas [102193] — fala 39 wierna (300) faithful v2
+    // The World's a Canvas [102193] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102193,
     name: "The World's a Canvas",
     cardType: "action",
@@ -32093,7 +32093,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Wrath of the Inner Circle [102195] — fala 39 wierna (300) faithful v2
+    // Wrath of the Inner Circle [102195] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102195,
     name: "Wrath of the Inner Circle",
     cardType: "politicalAction",
@@ -32126,7 +32126,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Zillah's Valley [102207] — fala 39 wierna (300) faithful v2
+    // Zillah's Valley [102207] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102207,
     name: "Zillah's Valley",
     cardType: "master",
@@ -32138,14 +32138,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Zip Line [102209] — fala 39 wierna (300) faithful v2
+    // Zip Line [102209] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102209,
     name: "Zip Line",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
@@ -32196,7 +32196,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Confiscation [102271] — fala 39 wierna (300) faithful v2
+    // Confiscation [102271] — fala 44 wierna (84) bespoke bez wydmuszek
     krcgId: 102271,
     name: "Confiscation",
     cardType: "politicalAction",
