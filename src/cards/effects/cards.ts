@@ -37015,7 +37015,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200419, "Emerson Bridges (G1)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200420, "Emerson Wilkershire III (G3)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200430, "Eric Milliner (G5)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(200432, "Erick \"Shophet125\" Franco (G4)", {}),
+  flatCrypt(200432, "Erick \"Shophet125\" Franco (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200437, "Esoara (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200442, "Eugenio Estevez (G3)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200444, "Evan Klein (G3)", {}), // fala 33 wierna (500) vanilla
@@ -37028,7 +37028,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200472, "Fode Kourouma (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200473, "Foureyes (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200474, "Francesca Giovanni (G2)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(200479, "François \"Warden\" Loehr (G4)", {}),
+  flatCrypt(200479, "François \"Warden\" Loehr (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200480, "Frank Litzpar (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200481, "Frank Weisshadel (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200483, "Frederick the Weak (G2)", {}), // fala 33 wierna (500) vanilla
@@ -37067,14 +37067,14 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200622, "Ignacio, The Black Priest (G2)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200623, "Ignatius (G1)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200627, "Ilias cel Frumos (G4)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(200632, "Inez \"Nurse216\" Villagrande (G4)", {}),
+  flatCrypt(200632, "Inez \"Nurse216\" Villagrande (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200635, "Ingrid Russo (G2)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200640, "Irena (G5)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200642, "Isabel de Leon (G2)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200643, "Isabel Giovanni (G2)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200645, "Ismitta (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200647, "Itzahk Levine (G2)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(200656, "Jack \"Hannibal137\" Harmon (G4)", {}),
+  flatCrypt(200656, "Jack \"Hannibal137\" Harmon (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200657, "Jack Tredegar (G5)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200658, "Jackie (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200660, "Jackson Asher (G4)", {}), // fala 33 wierna (500) vanilla
@@ -37082,7 +37082,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200674, "Janine (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200686, "Jefferson Foster (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200687, "Jeffrey Mullins (G4)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(200689, "Jennie \"Cassie247\" Orne (G4)", {}),
+  flatCrypt(200689, "Jennie \"Cassie247\" Orne (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200691, "Jephta Hester (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200692, "Jeremiah Noble (G3)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200693, "Jeremy MacNeil (G3)", {}), // fala 33 wierna (500) vanilla
@@ -37090,7 +37090,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200701, "Jesús Alcalá (G3)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200706, "Jing Wei (G1)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200714, "Johannes Worringen (G5)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(200715, "John \"Cop90\" O'Malley (G4)", {}),
+  flatCrypt(200715, "John \"Cop90\" O'Malley (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200717, "Jonathan Gursel (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200719, "Josef (G2)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200723, "Joseph Fischer (G5)", {}), // fala 33 wierna (500) vanilla
@@ -37117,14 +37117,14 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200812, "Lana Butcher (G3)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200816, "Laura Goldman (G5)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200817, "Laurent de Valois (G2)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(200825, "Leaf \"Potter116\" Pankowski (G4)", {}),
+  flatCrypt(200825, "Leaf \"Potter116\" Pankowski (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200827, "Lectora (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200834, "Lia Milliner (G3)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200836, "Lillian (G5)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200838, "Lindsay Yates (G5)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200841, "Lisé (G5)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200845, "Little Willie (G4)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(200846, "Liz \"Ticket312\" Thornton (G4)", {}),
+  flatCrypt(200846, "Liz \"Ticket312\" Thornton (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200849, "Lolita (G2)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200850, "Lolita Houston (G2)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200851, "Loonar (G4)", {}), // fala 33 wierna (500) vanilla
@@ -37135,7 +37135,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200880, "Lukas (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200882, "Lula Burch (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200884, "Lumumba (G4)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(200886, "Lupe \"Cabbie22\" Droin (G4)", {}),
+  flatCrypt(200886, "Lupe \"Cabbie22\" Droin (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200887, "Lupo (G1)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200895, "Macoute (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200902, "Malcolm (G5)", {}), // fala 33 wierna (500) vanilla
@@ -37144,7 +37144,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200930, "Mariel St. John (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200932, "Mario Giovanni (G2)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200933, "Marion French (G4)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(200934, "Marion \"Teacher193\" Perks (G4)", {}),
+  flatCrypt(200934, "Marion \"Teacher193\" Perks (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200938, "Marla Kenyon (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200940, "Marlene, The Infernalist (G2)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(200949, "Masdela (G5)", {}), // fala 33 wierna (500) vanilla
@@ -37183,9 +37183,9 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201097, "Patrick (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201099, "Paul Calderone (G5)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201101, "Paul DiCarlo, The Alpha (G2)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(201103, "Paul \"Sixofswords29\" Moreton (G4)", {}),
+  flatCrypt(201103, "Paul \"Sixofswords29\" Moreton (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(201106, "Pearl (G5)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(201115, "Peter \"Outback295\" Rophail (G4)", {}),
+  flatCrypt(201115, "Peter \"Outback295\" Rophail (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(201124, "Pieter (G2)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201128, "Polly Kay Fisher (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201134, "Primo Giovanni (G4)", {}), // fala 33 wierna (500) vanilla
@@ -37258,7 +37258,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201377, "Tock (G3)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201380, "Tommy (G2)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201381, "Tony (G3)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(201386, "Travis \"Traveler72\" Miller (G4)", {}),
+  flatCrypt(201386, "Travis \"Traveler72\" Miller (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(201391, "Tsigane (G2)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201392, "Tsunda (G4)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201399, "Ubende (G4)", {}), // fala 33 wierna (500) vanilla
@@ -37279,7 +37279,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201474, "Wolfgang (G3)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201475, "Wren (G2)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201479, "Xendil Charmer (G4)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(201481, "Xian \"DziDzat155\" Quan (G4)", {}),
+  flatCrypt(201481, "Xian \"DziDzat155\" Quan (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(201490, "Yorik (G2)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201493, "Yuri, The Talon (G1)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201494, "Yuri Kerezenski (G4)", {}), // fala 33 wierna (500) vanilla
@@ -37364,7 +37364,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201631, "Mateo García (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201655, "Arjun Shah (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201657, "Anita Wainwright (G6)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(201661, "\"Coach\" Tyrone Soros (G6)", {}),
+  flatCrypt(201661, "\"Coach\" Tyrone Soros (G6)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(201665, "Ángel Guerrero (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201669, "Clara Hjortshøj (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201674, "Jean-François (G7)", {}), // fala 33 wierna (500) vanilla
@@ -37380,14 +37380,14 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201699, "Kazuki Hanabira (G7)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201707, "Valentina Osako (G7)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201708, "Aintzane Arriaga (G6)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(201709, "Araceli \"Celia\" Rivera (G6)", {}),
+  flatCrypt(201709, "Araceli \"Celia\" Rivera (G6)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(201711, "Braden White (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201713, "Kamaluddin (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201714, "María del Toro (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201717, "Alek König (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201718, "Gebeyehu Abdu (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201719, "Hiromitsu Asano (G6)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(201720, "Holliday \"Burgundy\" Hall (G6)", {}),
+  flatCrypt(201720, "Holliday \"Burgundy\" Hall (G6)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(201723, "Monica Giovanni (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201727, "Peter St. John (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201737, "Aitana, The Unholy (G6)", {}), // fala 33 wierna (500) vanilla
@@ -37397,8 +37397,8 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201746, "Cyan Sin (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201749, "El Monseñor (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201753, "Glissando (G6)", {}), // fala 33 wierna (500) vanilla
-  flatCrypt(201755, "Grażyna \"Butcher\" Olesińska (G6)", {}),
-  flatCrypt(201756, "Hekla \"Bonecrusher\" Jónasdóttir (G6)", {}),
+  flatCrypt(201755, "Grażyna \"Butcher\" Olesińska (G6)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+  flatCrypt(201756, "Hekla \"Bonecrusher\" Jónasdóttir (G6)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(201761, "Lawbringer (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201762, "Lika, The Purger (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201763, "Loyiso, The Ruthless (G6)", {}), // fala 33 wierna (500) vanilla
@@ -37490,7 +37490,7 @@ export const cryptSpecs: CardSpec[] = [
         flatCrypt(200100, "Ankla Hotep (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // wierna fala 23: przejrzane
 
         flatCrypt(200101, "The Ankou (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // wierna fala 23: przejrzane
-  flatCrypt(200102, "Anna \"Dictatrix11\" Suljic (G4)", {}),
+  flatCrypt(200102, "Anna \"Dictatrix11\" Suljic (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200103, "Annabelle Triabell (G3)", { bleed: 1, stealth: 1 }), // wierna fala 23
     flatCrypt(200104, "Annazir (G5)", { bleed: 1 }), // wierna fala 23
         flatCrypt(200105, "Anne-Marie Bourgeois, Inconnu Recruiter (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // wierna fala 23: przejrzane
@@ -37556,7 +37556,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200176, "Batsheva (G4)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200177, "Batsheva (G4 ADV)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200179, "Beast, The Leatherface of Detroit (G2)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-  flatCrypt(200181, "Béatrice \"Oracle171\" Tremblay (G4)", {}),
+  flatCrypt(200181, "Béatrice \"Oracle171\" Tremblay (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200183, "Beckett (G3)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200184, "Beckett (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200186, "Bela (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37697,7 +37697,7 @@ export const cryptSpecs: CardSpec[] = [
       flatCrypt(200393, "Durga Syn (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200394, "Dylan (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200395, "Dylan (G2 ADV)", { stealth: 1, strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-  flatCrypt(200397, "Earl \"Shaka74\" Deams (G4)", {}),
+  flatCrypt(200397, "Earl \"Shaka74\" Deams (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
       flatCrypt(200398, "Ebanezer Roush (G1)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200399, "Echo (G4)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200400, "Eddie Gaines (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37848,7 +37848,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200594, "Hesha Ruhadze (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200597, "High Priest Angra Mainyu (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200598, "Hillanvale (G6)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-  flatCrypt(200599, "Hiram \"Hide\" DeVries (G5)", {}),
+  flatCrypt(200599, "Hiram \"Hide\" DeVries (G5)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200604, "Horatio Ballard (G3)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200605, "The Horde (G6)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200606, "Horrock (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37884,7 +37884,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200648, "Ivan Krenyenko (G2)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200649, "Ivan Krenyenko (G2 ADV)", { bleed: 1, strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200650, "Izhim abd Azrael (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-  flatCrypt(200651, "J. Oswald \"Ozzy\" Hyde-White (G3)", {}),
+  flatCrypt(200651, "J. Oswald \"Ozzy\" Hyde-White (G3)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200652, "Jack (G2)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200653, "Jack Dawson (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200654, "Jack Dawson (G2 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37915,10 +37915,10 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200684, "Jazz Wentworth (G1)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200685, "Jean Lisle (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200688, "Jenna Cross (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-  flatCrypt(200690, "Jennifer \"Flame61\" Vidisania (G4)", {}),
+  flatCrypt(200690, "Jennifer \"Flame61\" Vidisania (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
       flatCrypt(200694, "Jeremy MacNeil (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200695, "Jeremy Talbot (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-  flatCrypt(200696, "Jeremy \"Wix\" Wyzchovsky (G4)", {}),
+  flatCrypt(200696, "Jeremy \"Wix\" Wyzchovsky (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
       flatCrypt(200697, "Jerry (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200698, "Jesse Menks (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200700, "Jessica (G2 ADV)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37929,7 +37929,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200707, "João Bilé (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200708, "Joaquin Murietta (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200709, "Joaquina Amaya (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-  flatCrypt(200710, "Joe \"Boot\" Hill (G4)", {}),
+  flatCrypt(200710, "Joe \"Boot\" Hill (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
       flatCrypt(200711, "Johan Wrede (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200712, "Johann Matheson (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200713, "Johannes Castelein (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -38217,7 +38217,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201080, "Omer (G6)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201081, "Omme Enberbenight (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201082, "Onaedo (G4)", { stealth: 1 }), // fala 32 wierna (421)
-  flatCrypt(201083, "Ondine \"Boudicca\" Sinclair (G5)", {}),
+  flatCrypt(201083, "Ondine \"Boudicca\" Sinclair (G5)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(201084, "Orlando Oriundus (G4)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201085, "Osric Vladislav (G5)", { stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201086, "Otieno (G4)", { bleed: 1 }), // fala 32 wierna (421)
