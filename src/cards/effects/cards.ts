@@ -2426,7 +2426,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     poolCost: 0,
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }],
+    modes: [{ level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }],
   },
   {
     // "Master. Burn a vampire in torpor."  ANY Methuselah's.
@@ -15750,7 +15750,7 @@ export const cardSpecs: CardSpec[] = [
         level: "basic",
         discipline: null,
         effects: [
-          { kind: "gainPool", amount: 1 },
+          { kind: "maneuver" },
           { kind: "payVotedForOnly", amount: 1 },
         ],
       },
@@ -22414,7 +22414,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Fractura [100783] — fala 37 wierna (300) faithful v2
+    // Fractura [100783] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100783,
     name: "Fractura",
     cardType: "combat",
@@ -22426,14 +22426,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Free Fight [100789] — fala 37 wierna (300) faithful v2
+    // Free Fight [100789] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100789,
     name: "Free Fight",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "press", continues: true }] }
+      { level: "basic", discipline: "san", effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
@@ -22484,7 +22484,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Garrote [100810] — fala 37 wierna (300) faithful v2
+    // Garrote [100810] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100810,
     name: "Garrote",
     cardType: "equipment",
@@ -22496,7 +22496,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Gemini's Mirror [100814] — fala 37 wierna (300) faithful v2
+    // Gemini's Mirror [100814] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100814,
     name: "Gemini's Mirror",
     cardType: "combat",
@@ -22507,7 +22507,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Gestalt [100815] — fala 37 wierna (300) faithful v2
+    // Gestalt [100815] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100815,
     name: "Gestalt",
     cardType: "reaction",
@@ -22518,7 +22518,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ghoul Retainer [100819] — fala 37 wierna (300) faithful v2
+    // Ghoul Retainer [100819] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100819,
     name: "Ghoul Retainer",
     cardType: "retainer",
@@ -22530,7 +22530,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ghouled [100820] — fala 37 wierna (300) faithful v2
+    // Ghouled [100820] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100820,
     name: "Ghouled",
     cardType: "modifier",
@@ -22553,7 +22553,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Gianna di Canneto [100823] — fala 37 wierna (300) faithful v2
+    // Gianna di Canneto [100823] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100823,
     name: "Gianna di Canneto",
     cardType: "ally",
@@ -22599,7 +22599,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Goth Band [100844] — fala 37 wierna (300) faithful v2
+    // Goth Band [100844] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100844,
     name: "Goth Band",
     cardType: "ally",
@@ -22607,7 +22607,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -22622,18 +22622,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Grasp of the Python [100850] — fala 37 wierna (300) faithful v2
+    // Grasp of the Python [100850] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100850,
     name: "Grasp of the Python",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "press", continues: true }] }
+      { level: "basic", discipline: "ser", effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Grey Thorne [100858] — fala 37 wierna (300) faithful v2
+    // Grey Thorne [100858] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100858,
     name: "Grey Thorne",
     cardType: "ally",
@@ -22644,7 +22644,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Groaning Corpse [100859] — fala 37 wierna (300) faithful v2
+    // Groaning Corpse [100859] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100859,
     name: "Groaning Corpse",
     cardType: "combat",
@@ -22667,7 +22667,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Guardian Vigil [100868] — fala 37 wierna (300) faithful v2
+    // Guardian Vigil [100868] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100868,
     name: "Guardian Vigil",
     cardType: "reaction",
@@ -22680,7 +22680,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Guruhi Are the Land [100873] — fala 37 wierna (300) faithful v2
+    // The Guruhi Are the Land [100873] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100873,
     name: "The Guruhi Are the Land",
     cardType: "modifier",
@@ -22703,7 +22703,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hall of Mirrors [100879] — fala 37 wierna (300) faithful v2
+    // Hall of Mirrors [100879] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100879,
     name: "Hall of Mirrors",
     cardType: "combat",
@@ -22737,7 +22737,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Harzomatuili [100890] — fala 37 wierna (300) faithful v2
+    // Harzomatuili [100890] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100890,
     name: "Harzomatuili",
     cardType: "ally",
@@ -22761,7 +22761,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hay Ride [100899] — fala 37 wierna (300) faithful v2
+    // Hay Ride [100899] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100899,
     name: "Hay Ride",
     cardType: "modifier",
@@ -22772,7 +22772,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Heart's Desire [100905] — fala 37 wierna (300) faithful v2
+    // Heart's Desire [100905] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100905,
     name: "Heart's Desire",
     cardType: "modifier",
@@ -22784,7 +22784,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Heaven's Gate [100907] — fala 37 wierna (300) faithful v2
+    // Heaven's Gate [100907] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100907,
     name: "Heaven's Gate",
     cardType: "combat",
@@ -22820,18 +22820,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hidden Lurker [100916] — fala 37 wierna (300) faithful v2
+    // Hidden Lurker [100916] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100916,
     name: "Hidden Lurker",
     cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "press", continues: true }] }
+      { level: "basic", discipline: "obf", effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Hide the Heart [100920] — fala 37 wierna (300) faithful v2
+    // Hide the Heart [100920] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100920,
     name: "Hide the Heart",
     cardType: "reaction",
@@ -22843,14 +22843,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Highway Haven: RV [100930] — fala 37 wierna (300) faithful v2
+    // Highway Haven: RV [100930] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100930,
     name: "Highway Haven: RV",
     cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "press", continues: true }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
@@ -22865,7 +22865,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Horrid Reality [100935] — fala 37 wierna (300) faithful v2
+    // Horrid Reality [100935] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100935,
     name: "Horrid Reality",
     cardType: "combat",
@@ -22899,7 +22899,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ignore the Searing Flames [100949] — fala 37 wierna (300) faithful v2
+    // Ignore the Searing Flames [100949] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100949,
     name: "Ignore the Searing Flames",
     cardType: "combat",
@@ -22911,7 +22911,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Immaculate Vitae [100957] — fala 37 wierna (300) faithful v2
+    // Immaculate Vitae [100957] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100957,
     name: "Immaculate Vitae",
     cardType: "reaction",
@@ -22922,18 +22922,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Immense Size [100958] — fala 37 wierna (300) faithful v2
+    // Immense Size [100958] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100958,
     name: "Immense Size",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "press", continues: true }] }
+      { level: "basic", discipline: "vic", effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Imposing Phantasm [100962] — fala 37 wierna (300) faithful v2
+    // Imposing Phantasm [100962] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100962,
     name: "Imposing Phantasm",
     cardType: "combat",
@@ -23035,7 +23035,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Inscription [100989] — fala 37 wierna (300) faithful v2
+    // Inscription [100989] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100989,
     name: "Inscription",
     cardType: "equipment",
@@ -23070,18 +23070,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Into Thin Air [101001] — fala 37 wierna (300) faithful v2
+    // Into Thin Air [101001] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101001,
     name: "Into Thin Air",
     cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Inveraray, Scotland [101002] — fala 37 wierna (300) faithful v2
+    // Inveraray, Scotland [101002] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101002,
     name: "Inveraray, Scotland",
     cardType: "equipment",
@@ -23115,7 +23115,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Jar of Skin Eaters [101020] — fala 37 wierna (300) faithful v2
+    // Jar of Skin Eaters [101020] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101020,
     name: "Jar of Skin Eaters",
     cardType: "equipment",
@@ -23126,18 +23126,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Jones [101023] — fala 37 wierna (300) faithful v2
+    // The Jones [101023] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101023,
     name: "The Jones",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: true }] }
+      { level: "basic", discipline: "ser", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Joumlon's Axe [101025] — fala 37 wierna (300) faithful v2
+    // Joumlon's Axe [101025] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101025,
     name: "Joumlon's Axe",
     cardType: "equipment",
@@ -23182,7 +23182,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Kiss of Ra [101062] — fala 37 wierna (300) faithful v2
+    // The Kiss of Ra [101062] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101062,
     name: "The Kiss of Ra",
     cardType: "modifier",
@@ -23205,14 +23205,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Kraken's Kiss [101066] — fala 37 wierna (300) faithful v2
+    // Kraken's Kiss [101066] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101066,
     name: "Kraken's Kiss",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "press", continues: true }] }
+      { level: "basic", discipline: "vic", effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
@@ -23275,7 +23275,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Liquefy the Mortal Coil [101111] — fala 37 wierna (300) faithful v2
+    // Liquefy the Mortal Coil [101111] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101111,
     name: "Liquefy the Mortal Coil",
     cardType: "combat",
@@ -23286,7 +23286,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lobotomy [101116] — fala 37 wierna (300) faithful v2
+    // Lobotomy [101116] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101116,
     name: "Lobotomy",
     cardType: "modifier",
@@ -23297,7 +23297,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Local 1111 [101117] — fala 37 wierna (300) faithful v2
+    // Local 1111 [101117] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101117,
     name: "Local 1111",
     cardType: "equipment",
@@ -23341,7 +23341,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Malleable Visage [101159] — fala 37 wierna (300) faithful v2
+    // Malleable Visage [101159] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101159,
     name: "Malleable Visage",
     cardType: "modifier",
@@ -23363,7 +23363,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Marijava Thuggee [101165] — fala 37 wierna (300) faithful v2
+    // Marijava Thuggee [101165] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101165,
     name: "Marijava Thuggee",
     cardType: "ally",
@@ -23375,14 +23375,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Marked Path [101169] — fala 37 wierna (300) faithful v2
+    // Marked Path [101169] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101169,
     name: "Marked Path",
     cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -23409,15 +23409,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Masque of Judas [101181] — fala 37 wierna (300) faithful v2
+    // Masque of Judas [101181] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101181,
     name: "Masque of Judas",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }, { kind: "press", continues: true }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }, { kind: "press", continues: true }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
@@ -23443,14 +23443,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Meat Hook [101191] — fala 37 wierna (300) faithful v2
+    // Meat Hook [101191] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101191,
     name: "Meat Hook",
     cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDodge" }, { kind: "press", continues: true }] }
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
@@ -23488,16 +23488,16 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Memory Rift [101199] — fala 37 wierna (300) faithful v2
+    // Memory Rift [101199] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101199,
     name: "Memory Rift",
     cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "combatEnds" }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "combatEnds" }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "combatEnds" }] }
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "combatEnds" }] }
     ],
   },
   {
@@ -23512,14 +23512,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mercy for Seth [101203] — fala 37 wierna (300) faithful v2
+    // Mercy for Seth [101203] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101203,
     name: "Mercy for Seth",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "prevent", base: 2 }] }
     ],
   },
   {
@@ -23546,7 +23546,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ministry [101218] — fala 37 wierna (300) faithful v2
+    // Ministry [101218] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101218,
     name: "Ministry",
     cardType: "reaction",
@@ -23557,14 +23557,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mirror's Visage [101224] — fala 37 wierna (300) faithful v2
+    // Mirror's Visage [101224] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101224,
     name: "Mirror's Visage",
     cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -23591,7 +23591,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Mole [101233] — fala 37 wierna (300) faithful v2
+    // The Mole [101233] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101233,
     name: "The Mole",
     cardType: "reaction",
@@ -23616,14 +23616,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Momentary Delay [101236] — fala 37 wierna (300) faithful v2
+    // Momentary Delay [101236] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101236,
     name: "Momentary Delay",
     cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continues: true }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
@@ -23638,7 +23638,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Morphean Blow [101244] — fala 37 wierna (300) faithful v2
+    // Morphean Blow [101244] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101244,
     name: "Morphean Blow",
     cardType: "combat",
@@ -23661,7 +23661,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mummify [101251] — fala 37 wierna (300) faithful v2
+    // Mummify [101251] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101251,
     name: "Mummify",
     cardType: "combat",
@@ -23707,7 +23707,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nephandus [101272] — fala 37 wierna (300) faithful v2
+    // Nephandus [101272] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101272,
     name: "Nephandus",
     cardType: "ally",
@@ -23715,7 +23715,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continues: true }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
@@ -23732,7 +23732,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Neutral Guard [101276] — fala 37 wierna (300) faithful v2
+    // Neutral Guard [101276] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101276,
     name: "Neutral Guard",
     cardType: "modifier",
@@ -23744,7 +23744,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ni Dieu ni Maître [101282] — fala 37 wierna (300) faithful v2
+    // Ni Dieu ni Maître [101282] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101282,
     name: "Ni Dieu ni Maître",
     cardType: "modifier",
@@ -23768,7 +23768,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nightstick [101287] — fala 37 wierna (300) faithful v2
+    // Nightstick [101287] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101287,
     name: "Nightstick",
     cardType: "equipment",
@@ -23780,7 +23780,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // No Confidence [101290] — fala 37 wierna (300) faithful v2
+    // No Confidence [101290] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101290,
     name: "No Confidence",
     cardType: "modifier",
@@ -23791,7 +23791,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Octopod [101314] — fala 37 wierna (300) faithful v2
+    // Octopod [101314] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101314,
     name: "Octopod",
     cardType: "combat",
@@ -23802,7 +23802,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ohoyo Hopoksia (Bastet) [101317] — fala 37 wierna (300) faithful v2
+    // Ohoyo Hopoksia (Bastet) [101317] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101317,
     name: "Ohoyo Hopoksia (Bastet)",
     cardType: "ally",
@@ -23825,7 +23825,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Open Dossier [101322] — fala 37 wierna (300) faithful v2
+    // Open Dossier [101322] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101322,
     name: "Open Dossier",
     cardType: "reaction",
@@ -23893,7 +23893,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Outside the Hourglass [101338] — fala 37 wierna (300) faithful v2
+    // Outside the Hourglass [101338] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101338,
     name: "Outside the Hourglass",
     cardType: "combat",
@@ -23927,7 +23927,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Perfect Clarity [101386] — fala 38 wierna (300) faithful v2
+    // Perfect Clarity [101386] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101386,
     name: "Perfect Clarity",
     cardType: "modifier",
@@ -23938,18 +23938,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Personal Scourge [101395] — fala 38 wierna (300) faithful v2
+    // Personal Scourge [101395] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101395,
     name: "Personal Scourge",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "press", continues: true }, { kind: "prevent", base: 2 }] }
+      { level: "basic", discipline: "dem", effects: [{ kind: "press", continues: "optional" }, { kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Phased Motion Detector [101398] — fala 38 wierna (300) faithful v2
+    // Phased Motion Detector [101398] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101398,
     name: "Phased Motion Detector",
     cardType: "equipment",
@@ -23960,7 +23960,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pier 13, Port of Baltimore [101400] — fala 38 wierna (300) faithful v2
+    // Pier 13, Port of Baltimore [101400] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101400,
     name: "Pier 13, Port of Baltimore",
     cardType: "equipment",
@@ -24018,14 +24018,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pounce [101426] — fala 38 wierna (300) faithful v2
+    // Pounce [101426] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101426,
     name: "Pounce",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: true }] }
+      { level: "basic", discipline: "flight", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
@@ -24040,16 +24040,16 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Power of One [101429] — fala 38 wierna (300) faithful v2
+    // Power of One [101429] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101429,
     name: "Power of One",
     cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -24086,19 +24086,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Psalm of the Damned [101505] — fala 38 wierna (300) faithful v2
+    // Psalm of the Damned [101505] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101505,
     name: "Psalm of the Damned",
     cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mal", effects: [{ kind: "modifyBleed", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1 }] }
+      { level: "basic", discipline: "mal", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Pseudo-Blindness [101506] — fala 38 wierna (300) faithful v2
+    // Pseudo-Blindness [101506] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101506,
     name: "Pseudo-Blindness",
     cardType: "reaction",
@@ -24120,7 +24120,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Psychomachia [101511] — fala 38 wierna (300) faithful v2
+    // Psychomachia [101511] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101511,
     name: "Psychomachia",
     cardType: "modifier",
@@ -24132,7 +24132,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pulled Fangs [101515] — fala 38 wierna (300) faithful v2
+    // Pulled Fangs [101515] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101515,
     name: "Pulled Fangs",
     cardType: "combat",
@@ -24202,7 +24202,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Reality Mirror [101561] — fala 38 wierna (300) faithful v2
+    // Reality Mirror [101561] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101561,
     name: "Reality Mirror",
     cardType: "combat",
@@ -24213,7 +24213,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Recurring Contemplation [101572] — fala 38 wierna (300) faithful v2
+    // Recurring Contemplation [101572] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101572,
     name: "Recurring Contemplation",
     cardType: "modifier",
@@ -24225,7 +24225,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Red Herring [101573] — fala 38 wierna (300) faithful v2
+    // Red Herring [101573] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101573,
     name: "Red Herring",
     cardType: "modifier",
@@ -24270,7 +24270,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Remnant of the Endless Storm [101600] — fala 38 wierna (300) faithful v2
+    // Remnant of the Endless Storm [101600] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101600,
     name: "Remnant of the Endless Storm",
     cardType: "ally",
@@ -24282,7 +24282,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Renegade Garou [101602] — fala 38 wierna (300) faithful v2
+    // Renegade Garou [101602] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101602,
     name: "Renegade Garou",
     cardType: "ally",
@@ -24290,23 +24290,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 5,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "additionalStrike", count: 1, limited: true }, { kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "additionalStrike", count: 1, limited: true }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Repulsion [101606] — fala 38 wierna (300) faithful v2
+    // Repulsion [101606] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101606,
     name: "Repulsion",
     cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Revelation of Wrath [101626] — fala 38 wierna (300) faithful v2
+    // Revelation of Wrath [101626] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101626,
     name: "Revelation of Wrath",
     cardType: "combat",
@@ -24317,7 +24317,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rewind Time [101633] — fala 38 wierna (300) faithful v2
+    // Rewind Time [101633] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101633,
     name: "Rewind Time",
     cardType: "reaction",
@@ -24362,7 +24362,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rock Cat [101645] — fala 38 wierna (300) faithful v2
+    // Rock Cat [101645] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101645,
     name: "Rock Cat",
     cardType: "ally",
@@ -24370,11 +24370,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 4,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continues: true }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Rockheart [101646] — fala 38 wierna (300) faithful v2
+    // Rockheart [101646] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101646,
     name: "Rockheart",
     cardType: "combat",
@@ -24430,7 +24430,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Safe Passage [101673] — fala 38 wierna (300) faithful v2
+    // Safe Passage [101673] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101673,
     name: "Safe Passage",
     cardType: "modifier",
@@ -24488,14 +24488,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Save Face [101684] — fala 38 wierna (300) faithful v2
+    // Save Face [101684] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101684,
     name: "Save Face",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continues: true }, { kind: "combatEnds" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }, { kind: "combatEnds" }] }
     ],
   },
   {
@@ -24523,7 +24523,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Scorpion's Touch [101694] — fala 38 wierna (300) faithful v2
+    // Scorpion's Touch [101694] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101694,
     name: "Scorpion's Touch",
     cardType: "combat",
@@ -24534,7 +24534,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Scry the Hearthstone [101701] — fala 38 wierna (300) faithful v2
+    // Scry the Hearthstone [101701] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101701,
     name: "Scry the Hearthstone",
     cardType: "reaction",
@@ -24546,7 +24546,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Scrying of Secrets [101702] — fala 38 wierna (300) faithful v2
+    // Scrying of Secrets [101702] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101702,
     name: "Scrying of Secrets",
     cardType: "modifier",
@@ -24557,7 +24557,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Seal of Veddartha [101703] — fala 38 wierna (300) faithful v2
+    // Seal of Veddartha [101703] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101703,
     name: "Seal of Veddartha",
     cardType: "equipment",
@@ -24613,7 +24613,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shackles of Enkidu [101733] — fala 38 wierna (300) faithful v2
+    // Shackles of Enkidu [101733] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101733,
     name: "Shackles of Enkidu",
     cardType: "equipment",
@@ -24647,7 +24647,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Court Satyr [101737] — fala 38 wierna (300) faithful v2
+    // Shadow Court Satyr [101737] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101737,
     name: "Shadow Court Satyr",
     cardType: "ally",
@@ -24715,7 +24715,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shattered Mirror [101758] — fala 38 wierna (300) faithful v2
+    // Shattered Mirror [101758] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101758,
     name: "Shattered Mirror",
     cardType: "reaction",
@@ -24726,7 +24726,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shell Game [101764] — fala 38 wierna (300) faithful v2
+    // Shell Game [101764] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101764,
     name: "Shell Game",
     cardType: "modifier",
@@ -24737,7 +24737,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shilmulo Deception [101766] — fala 38 wierna (300) faithful v2
+    // Shilmulo Deception [101766] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101766,
     name: "Shilmulo Deception",
     cardType: "reaction",
@@ -24748,25 +24748,25 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shotgun Ritual [101770] — fala 38 wierna (300) faithful v2
+    // Shotgun Ritual [101770] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101770,
     name: "Shotgun Ritual",
     cardType: "combat",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "press", continues: true }] }
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Shoulder Drop [101771] — fala 38 wierna (300) faithful v2
+    // Shoulder Drop [101771] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101771,
     name: "Shoulder Drop",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continues: true }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
@@ -24837,19 +24837,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Skin of the Chameleon [101794] — fala 38 wierna (300) faithful v2
+    // Skin of the Chameleon [101794] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101794,
     name: "Skin of the Chameleon",
     cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: true }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: true }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "vis", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Skin Trap [101795] — fala 38 wierna (300) faithful v2
+    // Skin Trap [101795] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101795,
     name: "Skin Trap",
     cardType: "combat",
@@ -24860,7 +24860,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sleep Unseen [101804] — fala 38 wierna (300) faithful v2
+    // Sleep Unseen [101804] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101804,
     name: "Sleep Unseen",
     cardType: "modifier",
@@ -24906,7 +24906,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Soul Gem of Etrius [101832] — fala 38 wierna (300) faithful v2
+    // Soul Gem of Etrius [101832] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101832,
     name: "Soul Gem of Etrius",
     cardType: "equipment",
@@ -24963,7 +24963,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Squirrel Balance [101858] — fala 38 wierna (300) faithful v2
+    // Squirrel Balance [101858] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101858,
     name: "Squirrel Balance",
     cardType: "modifier",
@@ -25009,7 +25009,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Stone Dog [101873] — fala 38 wierna (300) faithful v2
+    // Stone Dog [101873] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101873,
     name: "Stone Dog",
     cardType: "retainer",
@@ -25057,7 +25057,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Strike at the True Flesh [101885] — fala 38 wierna (300) faithful v2
+    // Strike at the True Flesh [101885] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101885,
     name: "Strike at the True Flesh",
     cardType: "combat",
@@ -25068,7 +25068,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Strix [101887] — fala 38 wierna (300) faithful v2
+    // Strix [101887] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101887,
     name: "Strix",
     cardType: "reaction",
@@ -25079,7 +25079,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Stutter-Step [101889] — fala 38 wierna (300) faithful v2
+    // Stutter-Step [101889] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101889,
     name: "Stutter-Step",
     cardType: "combat",
@@ -25090,7 +25090,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Succubus [101892] — fala 38 wierna (300) faithful v2
+    // Succubus [101892] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101892,
     name: "Succubus",
     cardType: "ally",
@@ -25098,11 +25098,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 4,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Succulent Vitae [101894] — fala 38 wierna (300) faithful v2
+    // Succulent Vitae [101894] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101894,
     name: "Succulent Vitae",
     cardType: "modifier",
@@ -25160,7 +25160,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sword of Troile [101922] — fala 38 wierna (300) faithful v2
+    // Sword of Troile [101922] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101922,
     name: "Sword of Troile",
     cardType: "equipment",
@@ -25172,7 +25172,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tainted Spring [101925] — fala 38 wierna (300) faithful v2
+    // Tainted Spring [101925] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101925,
     name: "Tainted Spring",
     cardType: "modifier",
@@ -25195,7 +25195,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Talbot's Chainsaw [101931] — fala 38 wierna (300) faithful v2
+    // Talbot's Chainsaw [101931] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101931,
     name: "Talbot's Chainsaw",
     cardType: "equipment",
@@ -25203,7 +25203,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 3,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "press", continues: true }, { kind: "prevent", base: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "press", continues: "optional" }, { kind: "prevent", base: 1 }] }
     ],
   },
   {
@@ -25218,15 +25218,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tangle Atropos' Hand [101935] — fala 38 wierna (300) faithful v2
+    // Tangle Atropos' Hand [101935] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101935,
     name: "Tangle Atropos' Hand",
     cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -25242,7 +25242,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Target Retainer [101941] — fala 38 wierna (300) faithful v2
+    // Target Retainer [101941] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101941,
     name: "Target Retainer",
     cardType: "combat",
@@ -25320,14 +25320,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Three's a Crowd [101979] — fala 38 wierna (300) faithful v2
+    // Three's a Crowd [101979] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101979,
     name: "Three's a Crowd",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continues: true }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
@@ -25387,14 +25387,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tracker's Mark [102003] — fala 38 wierna (300) faithful v2
+    // Tracker's Mark [102003] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102003,
     name: "Tracker's Mark",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
@@ -25420,7 +25420,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tunnel Runner [102047] — fala 39 wierna (300) faithful v2
+    // Tunnel Runner [102047] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102047,
     name: "Tunnel Runner",
     cardType: "ally",
@@ -25467,7 +25467,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Undying Thirst [102069] — fala 39 wierna (300) faithful v2
+    // Undying Thirst [102069] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102069,
     name: "Undying Thirst",
     cardType: "reaction",
@@ -25501,7 +25501,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Veil of Silence [102096] — fala 39 wierna (300) faithful v2
+    // Veil of Silence [102096] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102096,
     name: "Veil of Silence",
     cardType: "reaction",
@@ -25512,7 +25512,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Veiled Sight [102098] — fala 39 wierna (300) faithful v2
+    // Veiled Sight [102098] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102098,
     name: "Veiled Sight",
     cardType: "reaction",
@@ -25523,7 +25523,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vendetta [102101] — fala 39 wierna (300) faithful v2
+    // Vendetta [102101] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102101,
     name: "Vendetta",
     cardType: "reaction",
@@ -25534,7 +25534,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vial of Garou Blood [102115] — fala 39 wierna (300) faithful v2
+    // Vial of Garou Blood [102115] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102115,
     name: "Vial of Garou Blood",
     cardType: "equipment",
@@ -25558,7 +25558,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vivienne Géroux [102128] — fala 39 wierna (300) faithful v2
+    // Vivienne Géroux [102128] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102128,
     name: "Vivienne Géroux",
     cardType: "ally",
@@ -25593,7 +25593,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Walk of Caine [102138] — fala 39 wierna (300) faithful v2
+    // Walk of Caine [102138] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102138,
     name: "Walk of Caine",
     cardType: "modifier",
@@ -25627,14 +25627,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Wave of Lethargy [102161] — fala 39 wierna (300) faithful v2
+    // Wave of Lethargy [102161] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102161,
     name: "Wave of Lethargy",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }, { kind: "press", continues: true }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
@@ -25649,7 +25649,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Weigh the Heart [102168] — fala 39 wierna (300) faithful v2
+    // Weigh the Heart [102168] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102168,
     name: "Weigh the Heart",
     cardType: "modifier",
@@ -25661,7 +25661,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Wendell Delburton [102173] — fala 39 wierna (300) faithful v2
+    // Wendell Delburton [102173] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102173,
     name: "Wendell Delburton",
     cardType: "ally",
@@ -25685,7 +25685,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Will-o'-the-Wisp [102183] — fala 39 wierna (300) faithful v2
+    // Will-o'-the-Wisp [102183] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102183,
     name: "Will-o'-the-Wisp",
     cardType: "modifier",
@@ -25696,7 +25696,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Winchester Mansion [102184] — fala 39 wierna (300) faithful v2
+    // Winchester Mansion [102184] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102184,
     name: "Winchester Mansion",
     cardType: "equipment",
@@ -25740,14 +25740,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Zaire River Ferry [102203] — fala 39 wierna (300) faithful v2
+    // Zaire River Ferry [102203] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102203,
     name: "Zaire River Ferry",
     cardType: "equipment",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -25775,7 +25775,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Valerie Diaz, Antigen Commander [102245] — fala 39 wierna (300) faithful v2
+    // Valerie Diaz, Antigen Commander [102245] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102245,
     name: "Valerie Diaz, Antigen Commander",
     cardType: "ally",
@@ -27822,7 +27822,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Founders of the Ebony Kingdom [100780] — fala 37 wierna (300) faithful v2
+    // Founders of the Ebony Kingdom [100780] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100780,
     name: "Founders of the Ebony Kingdom",
     cardType: "action",
@@ -27833,7 +27833,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Framing [100786] — fala 37 wierna (300) faithful v2
+    // The Framing [100786] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100786,
     name: "The Framing",
     cardType: "action",
@@ -27855,15 +27855,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Frozen Object [100795] — fala 37 wierna (300) faithful v2
+    // Frozen Object [100795] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100795,
     name: "Frozen Object",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "prevent", base: 2 }] }
     ],
   },
   {
@@ -27878,7 +27878,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Games of Instinct [100801] — fala 37 wierna (300) faithful v2
+    // Games of Instinct [100801] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100801,
     name: "Games of Instinct",
     cardType: "action",
@@ -27912,20 +27912,20 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Gear Up [100813] — fala 37 wierna (300) faithful v2
+    // Gear Up [100813] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100813,
     name: "Gear Up",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "modifyStrength", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "modifyStrength", amount: 1 }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // Gift of Bellona [100825] — fala 37 wierna (300) faithful v2
+    // Gift of Bellona [100825] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100825,
     name: "Gift of Bellona",
     cardType: "modifier",
@@ -27937,15 +27937,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Gift of Sleep [100828] — fala 37 wierna (300) faithful v2
+    // Gift of Sleep [100828] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100828,
     name: "Gift of Sleep",
     cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -28017,7 +28017,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Grandest Trick [100849] — fala 37 wierna (300) faithful v2
+    // The Grandest Trick [100849] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100849,
     name: "The Grandest Trick",
     cardType: "modifier",
@@ -28028,15 +28028,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Greater Curse [100854] — fala 37 wierna (300) faithful v2
+    // Greater Curse [100854] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100854,
     name: "Greater Curse",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mal", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "mal", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuver" }] }
     ],
   },
   {
@@ -28052,7 +28052,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Guinea-Bissau Carnival [100870] — fala 37 wierna (300) faithful v2
+    // Guinea-Bissau Carnival [100870] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100870,
     name: "Guinea-Bissau Carnival",
     cardType: "master",
@@ -28063,7 +28063,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Guruhi Kholo [100874] — fala 37 wierna (300) faithful v2
+    // Guruhi Kholo [100874] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100874,
     name: "Guruhi Kholo",
     cardType: "modifierOrReaction",
@@ -28074,7 +28074,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hackerspace [100876] — fala 37 wierna (300) faithful v2
+    // Hackerspace [100876] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100876,
     name: "Hackerspace",
     cardType: "master",
@@ -28085,7 +28085,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hall of Hades' Court [100878] — fala 37 wierna (300) faithful v2
+    // Hall of Hades' Court [100878] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100878,
     name: "Hall of Hades' Court",
     cardType: "modifierOrReaction",
@@ -28119,14 +28119,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Haqim's Law: Judgment [100884] — fala 37 wierna (300) faithful v2
+    // Haqim's Law: Judgment [100884] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100884,
     name: "Haqim's Law: Judgment",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -28163,7 +28163,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hatchling [100892] — fala 37 wierna (300) faithful v2
+    // Hatchling [100892] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100892,
     name: "Hatchling",
     cardType: "action",
@@ -28254,14 +28254,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hidden Pathways [100917] — fala 37 wierna (300) faithful v2
+    // Hidden Pathways [100917] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100917,
     name: "Hidden Pathways",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -28276,7 +28276,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // High Stakes [100928] — fala 37 wierna (300) faithful v2
+    // High Stakes [100928] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100928,
     name: "High Stakes",
     cardType: "politicalAction",
@@ -28287,7 +28287,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // High Top [100929] — fala 37 wierna (300) faithful v2
+    // High Top [100929] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100929,
     name: "High Top",
     cardType: "ally",
@@ -28321,7 +28321,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Houngan [100940] — fala 37 wierna (300) faithful v2
+    // Houngan [100940] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100940,
     name: "Houngan",
     cardType: "master",
@@ -28356,7 +28356,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Igoli's Loyalty [100950] — fala 37 wierna (300) faithful v2
+    // Igoli's Loyalty [100950] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100950,
     name: "Igoli's Loyalty",
     cardType: "modifier",
@@ -28391,7 +28391,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Imperial Decree [100961] — fala 37 wierna (300) faithful v2
+    // Imperial Decree [100961] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100961,
     name: "Imperial Decree",
     cardType: "action",
@@ -28402,7 +28402,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Inceptor [100969] — fala 37 wierna (300) faithful v2
+    // Inceptor [100969] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100969,
     name: "Inceptor",
     cardType: "master",
@@ -28448,14 +28448,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Inquisition [100988] — fala 37 wierna (300) faithful v2
+    // Inquisition [100988] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100988,
     name: "Inquisition",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "prevent", base: 2 }] }
     ],
   },
   {
@@ -28470,7 +28470,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Internal Recursion [100998] — fala 37 wierna (300) faithful v2
+    // Internal Recursion [100998] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 100998,
     name: "Internal Recursion",
     cardType: "reaction",
@@ -28504,7 +28504,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ishtarri Kholo [101011] — fala 37 wierna (300) faithful v2
+    // Ishtarri Kholo [101011] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101011,
     name: "Ishtarri Kholo",
     cardType: "modifierOrReaction",
@@ -28572,7 +28572,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Joseph Pander [101024] — fala 37 wierna (300) faithful v2
+    // Joseph Pander [101024] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101024,
     name: "Joseph Pander",
     cardType: "master",
@@ -28583,7 +28583,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Judgment: Death to the Brujah! [101029] — fala 37 wierna (300) faithful v2
+    // Judgment: Death to the Brujah! [101029] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101029,
     name: "Judgment: Death to the Brujah!",
     cardType: "action",
@@ -28594,7 +28594,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Jungle Hunting Ground [101030] — fala 37 wierna (300) faithful v2
+    // Jungle Hunting Ground [101030] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101030,
     name: "Jungle Hunting Ground",
     cardType: "master",
@@ -28617,7 +28617,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Kaymakli Nightmares [101036] — fala 37 wierna (300) faithful v2
+    // Kaymakli Nightmares [101036] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101036,
     name: "Kaymakli Nightmares",
     cardType: "master",
@@ -28628,7 +28628,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Keystone Kine [101041] — fala 37 wierna (300) faithful v2
+    // Keystone Kine [101041] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101041,
     name: "Keystone Kine",
     cardType: "action",
@@ -28652,7 +28652,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Kindred Society Games [101054] — fala 37 wierna (300) faithful v2
+    // Kindred Society Games [101054] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101054,
     name: "Kindred Society Games",
     cardType: "master",
@@ -28674,7 +28674,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Kiss of Lachesis [101061] — fala 37 wierna (300) faithful v2
+    // Kiss of Lachesis [101061] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101061,
     name: "Kiss of Lachesis",
     cardType: "action",
@@ -28686,7 +28686,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Last Stand [101074] — fala 37 wierna (300) faithful v2
+    // Last Stand [101074] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101074,
     name: "Last Stand",
     cardType: "master",
@@ -28709,7 +28709,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Left for Dead [101084] — fala 37 wierna (300) faithful v2
+    // Left for Dead [101084] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101084,
     name: "Left for Dead",
     cardType: "master",
@@ -28765,7 +28765,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Legion [101092] — fala 37 wierna (300) faithful v2
+    // Legion [101092] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101092,
     name: "Legion",
     cardType: "action",
@@ -28809,29 +28809,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lock [101118] — fala 37 wierna (300) faithful v2
+    // Lock [101118] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101118,
     name: "Lock",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "def", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "def", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Loki's Gift [101119] — fala 37 wierna (300) faithful v2
+    // Loki's Gift [101119] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101119,
     name: "Loki's Gift",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Loner [101121] — fala 37 wierna (300) faithful v2
+    // Loner [101121] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101121,
     name: "Loner",
     cardType: "master",
@@ -28842,7 +28842,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Loose Cannon [101122] — fala 37 wierna (300) faithful v2
+    // Loose Cannon [101122] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101122,
     name: "Loose Cannon",
     cardType: "modifier",
@@ -28855,7 +28855,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lord of Serenity [101123] — fala 37 wierna (300) faithful v2
+    // Lord of Serenity [101123] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101123,
     name: "Lord of Serenity",
     cardType: "action",
@@ -28878,7 +28878,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lunatic Eruption [101132] — fala 37 wierna (300) faithful v2
+    // Lunatic Eruption [101132] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101132,
     name: "Lunatic Eruption",
     cardType: "action",
@@ -28900,7 +28900,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Madman's Quill [101138] — fala 37 wierna (300) faithful v2
+    // Madman's Quill [101138] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101138,
     name: "Madman's Quill",
     cardType: "action",
@@ -28912,7 +28912,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Madness Network [101139] — fala 37 wierna (300) faithful v2
+    // Madness Network [101139] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101139,
     name: "Madness Network",
     cardType: "master",
@@ -28935,7 +28935,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Madrigal [101141] — fala 37 wierna (300) faithful v2
+    // Madrigal [101141] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101141,
     name: "Madrigal",
     cardType: "modifierOrReaction",
@@ -28947,7 +28947,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Malkavian Derangement: Alternate Personality [101151] — fala 37 wierna (300) faithful v2
+    // Malkavian Derangement: Alternate Personality [101151] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101151,
     name: "Malkavian Derangement: Alternate Personality",
     cardType: "master",
@@ -28981,7 +28981,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Malkavian Prank [101155] — fala 37 wierna (300) faithful v2
+    // Malkavian Prank [101155] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101155,
     name: "Malkavian Prank",
     cardType: "master",
@@ -29015,14 +29015,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mark of Damnation [101166] — fala 37 wierna (300) faithful v2
+    // Mark of Damnation [101166] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101166,
     name: "Mark of Damnation",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "press", continues: true }, { kind: "modifyStrength", amount: 1 }] }
+      { level: "basic", discipline: "ser", effects: [{ kind: "press", continues: "optional" }, { kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
@@ -29048,18 +29048,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mask of a Thousand Faces [101179] — fala 37 wierna (300) faithful v2
+    // Mask of a Thousand Faces [101179] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101179,
     name: "Mask of a Thousand Faces",
     cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Masochism [101180] — fala 37 wierna (300) faithful v2
+    // Masochism [101180] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101180,
     name: "Masochism",
     cardType: "action",
@@ -29081,7 +29081,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Massassi's Honor [101186] — fala 37 wierna (300) faithful v2
+    // Massassi's Honor [101186] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101186,
     name: "Massassi's Honor",
     cardType: "modifier",
@@ -29104,18 +29104,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Meddling of Semsith [101192] — fala 37 wierna (300) faithful v2
+    // The Meddling of Semsith [101192] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101192,
     name: "The Meddling of Semsith",
     cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Memories of Mortality [101198] — fala 37 wierna (300) faithful v2
+    // Memories of Mortality [101198] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101198,
     name: "Memories of Mortality",
     cardType: "master",
@@ -29193,18 +29193,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mind of a Killer [101213] — fala 37 wierna (300) faithful v2
+    // Mind of a Killer [101213] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101213,
     name: "Mind of a Killer",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "prevent", base: 2 }, { kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "prevent", base: 2 }, { kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // Minor Curse [101220] — fala 37 wierna (300) faithful v2
+    // Minor Curse [101220] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101220,
     name: "Minor Curse",
     cardType: "action",
@@ -29226,7 +29226,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Monomancy [101241] — fala 37 wierna (300) faithful v2
+    // Monomancy [101241] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101241,
     name: "Monomancy",
     cardType: "action",
@@ -29237,7 +29237,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Movement of the Slow Body [101247] — fala 37 wierna (300) faithful v2
+    // Movement of the Slow Body [101247] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101247,
     name: "Movement of the Slow Body",
     cardType: "action",
@@ -29248,7 +29248,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mundane [101253] — fala 37 wierna (300) faithful v2
+    // Mundane [101253] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101253,
     name: "Mundane",
     cardType: "master",
@@ -29270,7 +29270,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // My Kin Against the World [101260] — fala 37 wierna (300) faithful v2
+    // My Kin Against the World [101260] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101260,
     name: "My Kin Against the World",
     cardType: "politicalAction",
@@ -29292,14 +29292,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // New Moon Sigil [101281] — fala 37 wierna (300) faithful v2
+    // New Moon Sigil [101281] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101281,
     name: "New Moon Sigil",
     cardType: "action",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuver" }] }
     ],
   },
   {
@@ -29314,30 +29314,30 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nightmare Curse [101284] — fala 37 wierna (300) faithful v2
+    // Nightmare Curse [101284] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101284,
     name: "Nightmare Curse",
     cardType: "action",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // No Secrets From the Magaji [101291] — fala 37 wierna (300) faithful v2
+    // No Secrets From the Magaji [101291] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101291,
     name: "No Secrets From the Magaji",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Nocturn [101293] — fala 37 wierna (300) faithful v2
+    // Nocturn [101293] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101293,
     name: "Nocturn",
     cardType: "ally",
@@ -29371,19 +29371,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nose of the Hound [101296] — fala 37 wierna (300) faithful v2
+    // Nose of the Hound [101296] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101296,
     name: "Nose of the Hound",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Nosferatu Bestial [101297] — fala 37 wierna (300) faithful v2
+    // Nosferatu Bestial [101297] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101297,
     name: "Nosferatu Bestial",
     cardType: "action",
@@ -29430,7 +29430,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Oath [101307] — fala 37 wierna (300) faithful v2
+    // The Oath [101307] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101307,
     name: "The Oath",
     cardType: "modifierOrReaction",
@@ -29486,7 +29486,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Oppugnant Night [101327] — fala 37 wierna (300) faithful v2
+    // Oppugnant Night [101327] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101327,
     name: "Oppugnant Night",
     cardType: "action",
@@ -29497,7 +29497,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Orun [101331] — fala 37 wierna (300) faithful v2
+    // Orun [101331] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101331,
     name: "Orun",
     cardType: "master",
@@ -29508,7 +29508,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Osebo Kholo [101332] — fala 37 wierna (300) faithful v2
+    // Osebo Kholo [101332] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101332,
     name: "Osebo Kholo",
     cardType: "modifierOrReaction",
@@ -29519,7 +29519,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ossian [101333] — fala 37 wierna (300) faithful v2
+    // Ossian [101333] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101333,
     name: "Ossian",
     cardType: "ally",
@@ -29527,7 +29527,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 3,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuver" }] }
     ],
   },
   {
@@ -29554,7 +29554,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Palace Hunting Ground [101344] — fala 37 wierna (300) faithful v2
+    // Palace Hunting Ground [101344] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101344,
     name: "Palace Hunting Ground",
     cardType: "master",
@@ -29566,7 +29566,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pallid [101347] — fala 37 wierna (300) faithful v2
+    // Pallid [101347] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101347,
     name: "Pallid",
     cardType: "master",
@@ -29589,7 +29589,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Paragon [101351] — fala 37 wierna (300) faithful v2
+    // Paragon [101351] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101351,
     name: "Paragon",
     cardType: "master",
@@ -29706,7 +29706,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Path of Tears [101369] — fala 37 wierna (300) faithful v2
+    // The Path of Tears [101369] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101369,
     name: "The Path of Tears",
     cardType: "master",
@@ -29730,7 +29730,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Path of the Void [101372] — fala 38 wierna (300) faithful v2
+    // Path of the Void [101372] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101372,
     name: "Path of the Void",
     cardType: "master",
@@ -29738,7 +29738,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -29754,7 +29754,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Peace of Khetamon [101379] — fala 38 wierna (300) faithful v2
+    // The Peace of Khetamon [101379] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101379,
     name: "The Peace of Khetamon",
     cardType: "politicalAction",
@@ -29765,7 +29765,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Peacemaker [101381] — fala 38 wierna (300) faithful v2
+    // Peacemaker [101381] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101381,
     name: "Peacemaker",
     cardType: "reaction",
@@ -29789,7 +29789,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Père Lachaise, France [101385] — fala 38 wierna (300) faithful v2
+    // Père Lachaise, France [101385] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101385,
     name: "Père Lachaise, France",
     cardType: "master",
@@ -29801,7 +29801,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Permanency [101389] — fala 38 wierna (300) faithful v2
+    // Permanency [101389] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101389,
     name: "Permanency",
     cardType: "modifier",
@@ -29812,7 +29812,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Persistent Echo [101392] — fala 38 wierna (300) faithful v2
+    // Persistent Echo [101392] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101392,
     name: "Persistent Echo",
     cardType: "action",
@@ -29824,7 +29824,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Persona Non Grata [101393] — fala 38 wierna (300) faithful v2
+    // Persona Non Grata [101393] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101393,
     name: "Persona Non Grata",
     cardType: "politicalAction",
@@ -29835,7 +29835,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Phantom Speaker [101397] — fala 38 wierna (300) faithful v2
+    // Phantom Speaker [101397] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101397,
     name: "Phantom Speaker",
     cardType: "modifier",
@@ -29858,7 +29858,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Playing for Keeps [101403] — fala 38 wierna (300) faithful v2
+    // Playing for Keeps [101403] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101403,
     name: "Playing for Keeps",
     cardType: "master",
@@ -29902,7 +29902,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Political Seizure [101416] — fala 38 wierna (300) faithful v2
+    // Political Seizure [101416] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101416,
     name: "Political Seizure",
     cardType: "master",
@@ -29914,14 +29914,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Portrait [101422] — fala 38 wierna (300) faithful v2
+    // The Portrait [101422] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101422,
     name: "The Portrait",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -29936,7 +29936,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Potio Martyrium [101425] — fala 38 wierna (300) faithful v2
+    // Potio Martyrium [101425] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101425,
     name: "Potio Martyrium",
     cardType: "action",
@@ -29947,14 +29947,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Powerbase: Berlin [101432] — fala 38 wierna (300) faithful v2
+    // Powerbase: Berlin [101432] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101432,
     name: "Powerbase: Berlin",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -29969,7 +29969,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Praetorian Backer [101446] — fala 38 wierna (300) faithful v2
+    // Praetorian Backer [101446] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101446,
     name: "Praetorian Backer",
     cardType: "action",
@@ -29981,7 +29981,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Praxis Seizure: Venice [101471] — fala 38 wierna (300) faithful v2
+    // Praxis Seizure: Venice [101471] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101471,
     name: "Praxis Seizure: Venice",
     cardType: "politicalAction",
@@ -30003,7 +30003,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pressing Flesh [101481] — fala 38 wierna (300) faithful v2
+    // Pressing Flesh [101481] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101481,
     name: "Pressing Flesh",
     cardType: "action",
@@ -30038,7 +30038,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Prison of the Mind [101489] — fala 38 wierna (300) faithful v2
+    // Prison of the Mind [101489] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101489,
     name: "Prison of the Mind",
     cardType: "action",
@@ -30049,7 +30049,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Promise of 1528 [101494] — fala 38 wierna (300) faithful v2
+    // Promise of 1528 [101494] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101494,
     name: "Promise of 1528",
     cardType: "modifierOrReaction",
@@ -30060,7 +30060,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Protect Thine Own [101499] — fala 38 wierna (300) faithful v2
+    // Protect Thine Own [101499] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101499,
     name: "Protect Thine Own",
     cardType: "politicalAction",
@@ -30083,7 +30083,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Provision of the Silsila [101503] — fala 38 wierna (300) faithful v2
+    // Provision of the Silsila [101503] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101503,
     name: "Provision of the Silsila",
     cardType: "modifierOrReaction",
@@ -30094,7 +30094,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Proxy Kissed [101504] — fala 38 wierna (300) faithful v2
+    // Proxy Kissed [101504] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101504,
     name: "Proxy Kissed",
     cardType: "master",
@@ -30105,14 +30105,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Psychic Projection [101509] — fala 38 wierna (300) faithful v2
+    // Psychic Projection [101509] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101509,
     name: "Psychic Projection",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
@@ -30127,7 +30127,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Public Vilification [101514] — fala 38 wierna (300) faithful v2
+    // Public Vilification [101514] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101514,
     name: "Public Vilification",
     cardType: "politicalAction",
@@ -30149,7 +30149,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Punish [101518] — fala 38 wierna (300) faithful v2
+    // Punish [101518] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101518,
     name: "Punish",
     cardType: "combat",
@@ -30160,14 +30160,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Purchase Pact [101520] — fala 38 wierna (300) faithful v2
+    // Purchase Pact [101520] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101520,
     name: "Purchase Pact",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -30193,7 +30193,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Putrescent Servitude [101526] — fala 38 wierna (300) faithful v2
+    // Putrescent Servitude [101526] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101526,
     name: "Putrescent Servitude",
     cardType: "action",
@@ -30204,7 +30204,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Quicksilver Contemplation [101533] — fala 38 wierna (300) faithful v2
+    // Quicksilver Contemplation [101533] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101533,
     name: "Quicksilver Contemplation",
     cardType: "modifierOrReaction",
@@ -30239,7 +30239,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rapid Healing [101543] — fala 38 wierna (300) faithful v2
+    // Rapid Healing [101543] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101543,
     name: "Rapid Healing",
     cardType: "action",
@@ -30250,7 +30250,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rastacourere [101546] — fala 38 wierna (300) faithful v2
+    // Rastacourere [101546] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101546,
     name: "Rastacourere",
     cardType: "action",
@@ -30307,7 +30307,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Reality [101560] — fala 38 wierna (300) faithful v2
+    // Reality [101560] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101560,
     name: "Reality",
     cardType: "action",
@@ -30340,7 +30340,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Recure of the Homeland [101571] — fala 38 wierna (300) faithful v2
+    // Recure of the Homeland [101571] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101571,
     name: "Recure of the Homeland",
     cardType: "action",
@@ -30384,7 +30384,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Regeneration [101585] — fala 38 wierna (300) faithful v2
+    // Regeneration [101585] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101585,
     name: "Regeneration",
     cardType: "action",
@@ -30407,7 +30407,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Reindoctrination [101589] — fala 38 wierna (300) faithful v2
+    // Reindoctrination [101589] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101589,
     name: "Reindoctrination",
     cardType: "action",
@@ -30440,7 +30440,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Renewed Vigor [101603] — fala 38 wierna (300) faithful v2
+    // Renewed Vigor [101603] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101603,
     name: "Renewed Vigor",
     cardType: "action",
@@ -30463,7 +30463,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Resilient Mind [101609] — fala 38 wierna (300) faithful v2
+    // Resilient Mind [101609] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101609,
     name: "Resilient Mind",
     cardType: "action",
@@ -30496,7 +30496,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Resurrection [101617] — fala 38 wierna (300) faithful v2
+    // Resurrection [101617] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101617,
     name: "Resurrection",
     cardType: "action",
@@ -30508,7 +30508,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Retain the Quick Blood [101618] — fala 38 wierna (300) faithful v2
+    // Retain the Quick Blood [101618] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101618,
     name: "Retain the Quick Blood",
     cardType: "action",
@@ -30542,7 +30542,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Revelation of the Sire [101625] — fala 38 wierna (300) faithful v2
+    // Revelation of the Sire [101625] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101625,
     name: "Revelation of the Sire",
     cardType: "action",
@@ -30630,29 +30630,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rumors of Gehenna [101663] — fala 38 wierna (300) faithful v2
+    // Rumors of Gehenna [101663] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101663,
     name: "Rumors of Gehenna",
     cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Sabbat Inquisitor [101666] — fala 38 wierna (300) faithful v2
+    // Sabbat Inquisitor [101666] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101666,
     name: "Sabbat Inquisitor",
     cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Samuel Haight [101675] — fala 38 wierna (300) faithful v2
+    // Samuel Haight [101675] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101675,
     name: "Samuel Haight",
     cardType: "ally",
@@ -30660,11 +30660,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 5,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Sanguine Instruction [101680] — fala 38 wierna (300) faithful v2
+    // Sanguine Instruction [101680] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101680,
     name: "Sanguine Instruction",
     cardType: "action",
@@ -30720,7 +30720,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Seeds of Corruption [101713] — fala 38 wierna (300) faithful v2
+    // Seeds of Corruption [101713] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101713,
     name: "Seeds of Corruption",
     cardType: "action",
@@ -30731,19 +30731,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sense Death [101716] — fala 38 wierna (300) faithful v2
+    // Sense Death [101716] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101716,
     name: "Sense Death",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }, { kind: "press", continues: true }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }, { kind: "press", continues: true }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "val", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Sense the Sin [101718] — fala 38 wierna (300) faithful v2
+    // Sense the Sin [101718] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101718,
     name: "Sense the Sin",
     cardType: "modifierOrReaction",
@@ -30800,7 +30800,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Seraph [101723] — fala 38 wierna (300) faithful v2
+    // Seraph [101723] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101723,
     name: "Seraph",
     cardType: "politicalAction",
@@ -30822,7 +30822,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Set's Call [101730] — fala 38 wierna (300) faithful v2
+    // Set's Call [101730] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101730,
     name: "Set's Call",
     cardType: "reaction",
@@ -30833,7 +30833,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Set's Curse [101731] — fala 38 wierna (300) faithful v2
+    // Set's Curse [101731] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101731,
     name: "Set's Curse",
     cardType: "action",
@@ -30844,15 +30844,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow of Taint [101739] — fala 38 wierna (300) faithful v2
+    // Shadow of Taint [101739] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101739,
     name: "Shadow of Taint",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "val", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -30878,7 +30878,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadowed Eyes [101747] — fala 38 wierna (300) faithful v2
+    // Shadowed Eyes [101747] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101747,
     name: "Shadowed Eyes",
     cardType: "action",
@@ -30902,14 +30902,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shakar: the Hunt [101749] — fala 38 wierna (300) faithful v2
+    // Shakar: the Hunt [101749] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101749,
     name: "Shakar: the Hunt",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -30924,20 +30924,20 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shattering [101759] — fala 38 wierna (300) faithful v2
+    // Shattering [101759] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101759,
     name: "Shattering",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "pro", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Shattering Crescendo [101761] — fala 38 wierna (300) faithful v2
+    // Shattering Crescendo [101761] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101761,
     name: "Shattering Crescendo",
     cardType: "action",
@@ -30960,7 +30960,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shell Break [101763] — fala 38 wierna (300) faithful v2
+    // Shell Break [101763] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101763,
     name: "Shell Break",
     cardType: "action",
@@ -30971,7 +30971,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shepherd's Innocence [101765] — fala 38 wierna (300) faithful v2
+    // Shepherd's Innocence [101765] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101765,
     name: "Shepherd's Innocence",
     cardType: "action",
@@ -30982,7 +30982,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shock Troops [101768] — fala 38 wierna (300) faithful v2
+    // Shock Troops [101768] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101768,
     name: "Shock Troops",
     cardType: "master",
@@ -30993,15 +30993,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Siren's Lure [101786] — fala 38 wierna (300) faithful v2
+    // Siren's Lure [101786] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101786,
     name: "Siren's Lure",
     cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -31016,14 +31016,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Skaald [101789] — fala 38 wierna (300) faithful v2
+    // Skaald [101789] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101789,
     name: "Skaald",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -31086,7 +31086,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Smear Campaign [101810] — fala 38 wierna (300) faithful v2
+    // Smear Campaign [101810] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101810,
     name: "Smear Campaign",
     cardType: "master",
@@ -31109,7 +31109,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Song of Pan [101826] — fala 38 wierna (300) faithful v2
+    // Song of Pan [101826] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101826,
     name: "Song of Pan",
     cardType: "action",
@@ -31117,11 +31117,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }, { kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Songs of the Distant Vitae [101828] — fala 38 wierna (300) faithful v2
+    // Songs of the Distant Vitae [101828] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101828,
     name: "Songs of the Distant Vitae",
     cardType: "action",
@@ -31166,15 +31166,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Soul Painting [101834] — fala 38 wierna (300) faithful v2
+    // Soul Painting [101834] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101834,
     name: "Soul Painting",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
@@ -31189,15 +31189,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sound of a Breaking Oath [101837] — fala 38 wierna (300) faithful v2
+    // Sound of a Breaking Oath [101837] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101837,
     name: "Sound of a Breaking Oath",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "prevent", base: 2 }] }
     ],
   },
   {
@@ -31234,7 +31234,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spell of Life [101845] — fala 38 wierna (300) faithful v2
+    // Spell of Life [101845] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101845,
     name: "Spell of Life",
     cardType: "action",
@@ -31245,7 +31245,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spirit Marionette [101848] — fala 38 wierna (300) faithful v2
+    // Spirit Marionette [101848] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101848,
     name: "Spirit Marionette",
     cardType: "action",
@@ -31269,7 +31269,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Status Perfectus [101863] — fala 38 wierna (300) faithful v2
+    // The Status Perfectus [101863] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101863,
     name: "The Status Perfectus",
     cardType: "action",
@@ -31280,7 +31280,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Steal the Mind [101865] — fala 38 wierna (300) faithful v2
+    // Steal the Mind [101865] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101865,
     name: "Steal the Mind",
     cardType: "action",
@@ -31303,18 +31303,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Strained Vitae Supply [101879] — fala 38 wierna (300) faithful v2
+    // Strained Vitae Supply [101879] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101879,
     name: "Strained Vitae Supply",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Succubus Club [101893] — fala 38 wierna (300) faithful v2
+    // Succubus Club [101893] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101893,
     name: "Succubus Club",
     cardType: "master",
@@ -31393,7 +31393,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Swiss Cut [101917] — fala 38 wierna (300) faithful v2
+    // Swiss Cut [101917] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101917,
     name: "Swiss Cut",
     cardType: "master",
@@ -31449,7 +31449,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Taunt the Caged Beast [101947] — fala 38 wierna (300) faithful v2
+    // Taunt the Caged Beast [101947] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101947,
     name: "Taunt the Caged Beast",
     cardType: "action",
@@ -31494,7 +31494,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Touch of Clarity [101998] — fala 38 wierna (300) faithful v2
+    // Touch of Clarity [101998] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 101998,
     name: "Touch of Clarity",
     cardType: "modifierOrReaction",
@@ -31528,7 +31528,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trainer [102007] — fala 38 wierna (300) faithful v2
+    // Trainer [102007] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102007,
     name: "Trainer",
     cardType: "action",
@@ -31539,7 +31539,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Transcendent Laibon [102009] — fala 38 wierna (300) faithful v2
+    // Transcendent Laibon [102009] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102009,
     name: "Transcendent Laibon",
     cardType: "master",
@@ -31550,7 +31550,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Transfusion [102011] — fala 38 wierna (300) faithful v2
+    // Transfusion [102011] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102011,
     name: "Transfusion",
     cardType: "modifier",
@@ -31562,26 +31562,26 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Travelers Obey the Tenets [102013] — fala 38 wierna (300) faithful v2
+    // Travelers Obey the Tenets [102013] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102013,
     name: "Travelers Obey the Tenets",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Treat the Sick Mind [102016] — fala 38 wierna (300) faithful v2
+    // Treat the Sick Mind [102016] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102016,
     name: "Treat the Sick Mind",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -31597,7 +31597,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Treaty of Laibach [102018] — fala 38 wierna (300) faithful v2
+    // Treaty of Laibach [102018] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102018,
     name: "Treaty of Laibach",
     cardType: "master",
@@ -31608,14 +31608,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tremere Convocation [102020] — fala 38 wierna (300) faithful v2
+    // Tremere Convocation [102020] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102020,
     name: "Tremere Convocation",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -31630,7 +31630,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Triole's Revenge [102025] — fala 38 wierna (300) faithful v2
+    // Triole's Revenge [102025] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102025,
     name: "Triole's Revenge",
     cardType: "action",
@@ -31641,7 +31641,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Chosen [102027] — fala 38 wierna (300) faithful v2
+    // Trophy: Chosen [102027] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102027,
     name: "Trophy: Chosen",
     cardType: "master",
@@ -31707,7 +31707,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Progeny [102035] — fala 39 wierna (300) faithful v2
+    // Trophy: Progeny [102035] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102035,
     name: "Trophy: Progeny",
     cardType: "master",
@@ -31740,14 +31740,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trumped-Up Charges [102042] — fala 39 wierna (300) faithful v2
+    // Trumped-Up Charges [102042] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102042,
     name: "Trumped-Up Charges",
     cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -31763,7 +31763,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Twilight Camp [102049] — fala 39 wierna (300) faithful v2
+    // Twilight Camp [102049] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102049,
     name: "Twilight Camp",
     cardType: "master",
@@ -31797,7 +31797,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Unburdening the Bestial Soul [102056] — fala 39 wierna (300) faithful v2
+    // Unburdening the Bestial Soul [102056] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102056,
     name: "Unburdening the Bestial Soul",
     cardType: "action",
@@ -31809,7 +31809,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Undue Influence [102067] — fala 39 wierna (300) faithful v2
+    // Undue Influence [102067] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102067,
     name: "Undue Influence",
     cardType: "action",
@@ -31822,7 +31822,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Unexpected Coalition [102070] — fala 39 wierna (300) faithful v2
+    // Unexpected Coalition [102070] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102070,
     name: "Unexpected Coalition",
     cardType: "modifierOrReaction",
@@ -31833,7 +31833,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Unwholesome Bond [102082] — fala 39 wierna (300) faithful v2
+    // Unwholesome Bond [102082] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102082,
     name: "Unwholesome Bond",
     cardType: "action",
@@ -31855,7 +31855,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vaulderie [102094] — fala 39 wierna (300) faithful v2
+    // Vaulderie [102094] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102094,
     name: "Vaulderie",
     cardType: "action",
@@ -31866,7 +31866,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Velvet Tongue [102100] — fala 39 wierna (300) faithful v2
+    // Velvet Tongue [102100] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102100,
     name: "Velvet Tongue",
     cardType: "modifierOrReaction",
@@ -31900,7 +31900,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vicissitude Poisoning [102117] — fala 39 wierna (300) faithful v2
+    // Vicissitude Poisoning [102117] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102117,
     name: "Vicissitude Poisoning",
     cardType: "master",
@@ -31990,7 +31990,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Watchtower: Greatest Fall [102157] — fala 39 wierna (300) faithful v2
+    // Watchtower: Greatest Fall [102157] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102157,
     name: "Watchtower: Greatest Fall",
     cardType: "politicalAction",
@@ -32036,18 +32036,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Wildebeest [102181] — fala 39 wierna (300) faithful v2
+    // The Wildebeest [102181] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102181,
     name: "The Wildebeest",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuver" }, { kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // Will of the Council [102182] — fala 39 wierna (300) faithful v2
+    // Will of the Council [102182] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102182,
     name: "Will of the Council",
     cardType: "action",
@@ -32058,7 +32058,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Winged Second [102186] — fala 39 wierna (300) faithful v2
+    // Winged Second [102186] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102186,
     name: "Winged Second",
     cardType: "reaction",
@@ -32104,18 +32104,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Year of Fortune [102200] — fala 39 wierna (300) faithful v2
+    // Year of Fortune [102200] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102200,
     name: "Year of Fortune",
     cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Zillah's Tears [102206] — fala 39 wierna (300) faithful v2
+    // Zillah's Tears [102206] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102206,
     name: "Zillah's Tears",
     cardType: "action",
@@ -32149,7 +32149,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Zoning Board [102211] — fala 39 wierna (300) faithful v2
+    // Zoning Board [102211] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102211,
     name: "Zoning Board",
     cardType: "master",
@@ -32157,11 +32157,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // The British Museum, London [102236] — fala 39 wierna (300) faithful v2
+    // The British Museum, London [102236] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102236,
     name: "The British Museum, London",
     cardType: "master",
@@ -32173,7 +32173,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mithraic Cultist [102241] — fala 39 wierna (300) faithful v2
+    // Mithraic Cultist [102241] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102241,
     name: "Mithraic Cultist",
     cardType: "master",
@@ -32184,7 +32184,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mobile HQ, Operation Antigen [102242] — fala 39 wierna (300) faithful v2
+    // Mobile HQ, Operation Antigen [102242] — fala 42 wierna (300) bespoke bez wydmuszek
     krcgId: 102242,
     name: "Mobile HQ, Operation Antigen",
     cardType: "master",
@@ -32192,7 +32192,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
