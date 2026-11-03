@@ -33662,6 +33662,1196 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
 
+  {
+    // Ghoul Messenger [100818] — fala 9 wierna (trudne)
+    krcgId: 100818,
+    name: "Ghoul Messenger",
+    cardType: "retainer",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["retainer"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Ghouls of Plaza Morería [100822] — fala 9 wierna (trudne)
+    krcgId: 100822,
+    name: "The Ghouls of Plaza Morería",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gift of Experience [100826] — fala 9 wierna (trudne)
+    krcgId: 100826,
+    name: "Gift of Experience",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Glass Walker Pact [100837] — fala 9 wierna (trudne)
+    krcgId: 100837,
+    name: "Glass Walker Pact",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Goblinism [100841] — fala 9 wierna (trudne)
+    krcgId: 100841,
+    name: "Goblinism",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gramle [100846] — fala 9 wierna (trudne)
+    krcgId: 100846,
+    name: "Gramle",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Grasp the Ghostly [100851] — fala 9 wierna (trudne)
+    krcgId: 100851,
+    name: "Grasp the Ghostly",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Great Symposium [100853] — fala 9 wierna (trudne)
+    krcgId: 100853,
+    name: "Great Symposium",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Guarded Rubrics [100865] — fala 9 wierna (trudne)
+    krcgId: 100865,
+    name: "Guarded Rubrics",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Guide and Mentor [100869] — fala 9 wierna (trudne)
+    krcgId: 100869,
+    name: "Guide and Mentor",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hand Intervention [100881] — fala 9 wierna (trudne)
+    krcgId: 100881,
+    name: "Hand Intervention",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Herald of Topheth [100912] — fala 9 wierna (trudne)
+    krcgId: 100912,
+    name: "Herald of Topheth",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hexaped [100914] — fala 9 wierna (trudne)
+    krcgId: 100914,
+    name: "Hexaped",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hiding in the Open [100922] — fala 9 wierna (trudne)
+    krcgId: 100922,
+    name: "Hiding in the Open",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // High Aye [100924] — fala 9 wierna (trudne)
+    krcgId: 100924,
+    name: "High Aye",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // High Museum of Art, Atlanta [100926] — fala 9 wierna (trudne)
+    krcgId: 100926,
+    name: "High Museum of Art, Atlanta",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // High Orun [100927] — fala 9 wierna (trudne)
+    krcgId: 100927,
+    name: "High Orun",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hourglass of the Mind [100941] — fala 9 wierna (trudne)
+    krcgId: 100941,
+    name: "Hourglass of the Mind",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Illusions of the Kindred [100954] — fala 9 wierna (trudne)
+    krcgId: 100954,
+    name: "Illusions of the Kindred",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Illusory Resources [100955] — fala 9 wierna (trudne)
+    krcgId: 100955,
+    name: "Illusory Resources",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ilomba [100956] — fala 9 wierna (trudne)
+    krcgId: 100956,
+    name: "Ilomba",
+    cardType: "retainer",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["retainer"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Imperator [100960] — fala 9 wierna (trudne)
+    krcgId: 100960,
+    name: "Imperator",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // In Memory of the Two Lands [100967] — fala 9 wierna (trudne)
+    krcgId: 100967,
+    name: "In Memory of the Two Lands",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Infamous Insurgent [100975] — fala 9 wierna (trudne)
+    krcgId: 100975,
+    name: "Infamous Insurgent",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Infernal Familiar [100978] — fala 9 wierna (trudne)
+    krcgId: 100978,
+    name: "Infernal Familiar",
+    cardType: "retainer",
+    bloodCost: 2,
+    permanent: { where: "bearer", statics: {}, tags: ["retainer"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Infernal Servitor [100981] — fala 9 wierna (trudne)
+    krcgId: 100981,
+    name: "Infernal Servitor",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inflict [100982] — fala 9 wierna (trudne)
+    krcgId: 100982,
+    name: "Inflict",
+    cardType: "combat",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mar", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inside Dirt [100990] — fala 9 wierna (trudne)
+    krcgId: 100990,
+    name: "Inside Dirt",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Invoke Poison Glands [101005] — fala 9 wierna (trudne)
+    krcgId: 101005,
+    name: "Invoke Poison Glands",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Invoking the Beast [101006] — fala 9 wierna (trudne)
+    krcgId: 101006,
+    name: "Invoking the Beast",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Journal of Hrorsh [101026] — fala 9 wierna (trudne)
+    krcgId: 101026,
+    name: "Journal of Hrorsh",
+    cardType: "equipment",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Kaymakli Fragment [101035] — fala 9 wierna (trudne)
+    krcgId: 101035,
+    name: "Kaymakli Fragment",
+    cardType: "equipment",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Kduva's Mask [101037] — fala 9 wierna (trudne)
+    krcgId: 101037,
+    name: "Kduva's Mask",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Kerrie [101039] — fala 9 wierna (trudne)
+    krcgId: 101039,
+    name: "Kerrie",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Khazar's Diary (Endless Night) [101046] — fala 9 wierna (trudne)
+    krcgId: 101046,
+    name: "Khazar's Diary (Endless Night)",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Khobar Towers, Al-Khubar [101048] — fala 9 wierna (trudne)
+    krcgId: 101048,
+    name: "Khobar Towers, Al-Khubar",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // King's Favor [101058] — fala 9 wierna (trudne)
+    krcgId: 101058,
+    name: "King's Favor",
+    cardType: "reaction",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Knotted Cord [101064] — fala 9 wierna (trudne)
+    krcgId: 101064,
+    name: "Knotted Cord",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Kuta [101069] — fala 9 wierna (trudne)
+    krcgId: 101069,
+    name: "Kuta",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Leadership Vacuum [101078] — fala 9 wierna (trudne)
+    krcgId: 101078,
+    name: "Leadership Vacuum",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Leech [101083] — fala 9 wierna (trudne)
+    krcgId: 101083,
+    name: "Leech",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Legacy [101085] — fala 9 wierna (trudne)
+    krcgId: 101085,
+    name: "Legacy",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Lifeless Tongues [101105] — fala 9 wierna (trudne)
+    krcgId: 101105,
+    name: "Lifeless Tongues",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Light Intensifying Goggles [101106] — fala 9 wierna (trudne)
+    krcgId: 101106,
+    name: "Light Intensifying Goggles",
+    cardType: "equipment",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Lilith's Blessing [101108] — fala 9 wierna (trudne)
+    krcgId: 101108,
+    name: "Lilith's Blessing",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Liquidation [101112] — fala 9 wierna (trudne)
+    krcgId: 101112,
+    name: "Liquidation",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Living Wood Staff [101115] — fala 9 wierna (trudne)
+    krcgId: 101115,
+    name: "Living Wood Staff",
+    cardType: "equipment",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Maleficia [101149] — fala 9 wierna (trudne)
+    krcgId: 101149,
+    name: "Maleficia",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mapatano Utando [101163] — fala 9 wierna (trudne)
+    krcgId: 101163,
+    name: "Mapatano Utando",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Marrakesh Codex [101172] — fala 9 wierna (trudne)
+    krcgId: 101172,
+    name: "The Marrakesh Codex",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Masai Blood Milk [101176] — fala 9 wierna (trudne)
+    krcgId: 101176,
+    name: "Masai Blood Milk",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mesu Bedshet [101206] — fala 9 wierna (trudne)
+    krcgId: 101206,
+    name: "Mesu Bedshet",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mistrust [101228] — fala 9 wierna (trudne)
+    krcgId: 101228,
+    name: "Mistrust",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Moise Kasavubu [101231] — fala 9 wierna (trudne)
+    krcgId: 101231,
+    name: "Moise Kasavubu",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mokolé Blood [101232] — fala 9 wierna (trudne)
+    krcgId: 101232,
+    name: "Mokolé Blood",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mozambique Allure [101248] — fala 9 wierna (trudne)
+    krcgId: 101248,
+    name: "Mozambique Allure",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Muricia's Call [101255] — fala 9 wierna (trudne)
+    krcgId: 101255,
+    name: "Muricia's Call",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Muse of Flame [101257] — fala 9 wierna (trudne)
+    krcgId: 101257,
+    name: "Muse of Flame",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ven", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Name Forgotten [101263] — fala 9 wierna (trudne)
+    krcgId: 101263,
+    name: "The Name Forgotten",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // National Guard Support [101266] — fala 9 wierna (trudne)
+    krcgId: 101266,
+    name: "National Guard Support",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Neebi [101269] — fala 9 wierna (trudne)
+    krcgId: 101269,
+    name: "Neebi",
+    cardType: "combat",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nkishi [101289] — fala 9 wierna (trudne)
+    krcgId: 101289,
+    name: "Nkishi",
+    cardType: "equipment",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Notorious Brutality [101304] — fala 9 wierna (trudne)
+    krcgId: 101304,
+    name: "Notorious Brutality",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Off Kilter [101316] — fala 9 wierna (trudne)
+    krcgId: 101316,
+    name: "Off Kilter",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Overseer [101339] — fala 9 wierna (trudne)
+    krcgId: 101339,
+    name: "Overseer",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Palla Grande [101346] — fala 9 wierna (trudne)
+    krcgId: 101346,
+    name: "Palla Grande",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Pandora's Whisper [101349] — fala 9 wierna (trudne)
+    krcgId: 101349,
+    name: "Pandora's Whisper",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Path of Death and the Soul [101360] — fala 9 wierna (trudne)
+    krcgId: 101360,
+    name: "Path of Death and the Soul",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Path of Evil Revelations [101361] — fala 9 wierna (trudne)
+    krcgId: 101361,
+    name: "Path of Evil Revelations",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Path of Lilith [101363] — fala 9 wierna (trudne)
+    krcgId: 101363,
+    name: "The Path of Lilith",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Path of the Scorched Heart [101371] — fala 9 wierna (trudne)
+    krcgId: 101371,
+    name: "The Path of the Scorched Heart",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Patsy [101377] — fala 9 wierna (trudne)
+    krcgId: 101377,
+    name: "Patsy",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Patterns in the Chaos [101378] — fala 9 wierna (trudne)
+    krcgId: 101378,
+    name: "Patterns in the Chaos",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Petra Resonance [101396] — fala 9 wierna (trudne)
+    krcgId: 101396,
+    name: "Petra Resonance",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Phobia [101399] — fala 9 wierna (trudne)
+    krcgId: 101399,
+    name: "Phobia",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Polaris Coach [101409] — fala 9 wierna (trudne)
+    krcgId: 101409,
+    name: "Polaris Coach",
+    cardType: "equipment",
+    bloodCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Political Struggle [101418] — fala 9 wierna (trudne)
+    krcgId: 101418,
+    name: "Political Struggle",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Powerbase: Luanda [101436] — fala 9 wierna (trudne)
+    krcgId: 101436,
+    name: "Powerbase: Luanda",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Powerbase: Rome [101441] — fala 9 wierna (trudne)
+    krcgId: 101441,
+    name: "Powerbase: Rome",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Powerbase: Tshwane [101443] — fala 9 wierna (trudne)
+    krcgId: 101443,
+    name: "Powerbase: Tshwane",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Powerbase: Zürich [101445] — fala 9 wierna (trudne)
+    krcgId: 101445,
+    name: "Powerbase: Zürich",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["edge"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Praxis Solomon [101473] — fala 9 wierna (trudne)
+    krcgId: 101473,
+    name: "Praxis Solomon",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Predator's Communion [101477] — fala 9 wierna (trudne)
+    krcgId: 101477,
+    name: "Predator's Communion",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Predator's Mastery [101478] — fala 9 wierna (trudne)
+    krcgId: 101478,
+    name: "Predator's Mastery",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Predator's Transformation [101479] — fala 9 wierna (trudne)
+    krcgId: 101479,
+    name: "Predator's Transformation",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Prophecies of Gehenna [101497] — fala 9 wierna (trudne)
+    krcgId: 101497,
+    name: "Prophecies of Gehenna",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Public Enemy [101512] — fala 9 wierna (trudne)
+    krcgId: 101512,
+    name: "Public Enemy",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Raw Recruit [101554] — fala 9 wierna (trudne)
+    krcgId: 101554,
+    name: "Raw Recruit",
+    cardType: "action",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reanimated Corpse [101563] — fala 9 wierna (trudne)
+    krcgId: 101563,
+    name: "Reanimated Corpse",
+    cardType: "ally",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rebirth [101565] — fala 9 wierna (trudne)
+    krcgId: 101565,
+    name: "Rebirth",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Recruitment [101569] — fala 9 wierna (trudne)
+    krcgId: 101569,
+    name: "Recruitment",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Recruitment Exercise [101570] — fala 9 wierna (trudne)
+    krcgId: 101570,
+    name: "Recruitment Exercise",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Redline [101580] — fala 9 wierna (trudne)
+    krcgId: 101580,
+    name: "Redline",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reformation [101582] — fala 9 wierna (trudne)
+    krcgId: 101582,
+    name: "Reformation",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Regarhagan's Hold [101584] — fala 9 wierna (trudne)
+    krcgId: 101584,
+    name: "Regarhagan's Hold",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reinforcements [101590] — fala 9 wierna (trudne)
+    krcgId: 101590,
+    name: "Reinforcements",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Reliquary: Akunanse Remains [101596] — fala 9 wierna (trudne)
+    krcgId: 101596,
+    name: "Reliquary: Akunanse Remains",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reliquary: Biague [101597] — fala 9 wierna (trudne)
+    krcgId: 101597,
+    name: "Reliquary: Biague",
+    cardType: "equipment",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reliquary: Shango Remains [101598] — fala 9 wierna (trudne)
+    krcgId: 101598,
+    name: "Reliquary: Shango Remains",
+    cardType: "equipment",
+    bloodCost: 0,
+    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Research [101607] — fala 9 wierna (trudne)
+    krcgId: 101607,
+    name: "Research",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+
 ];
 
 /**
@@ -43538,12 +44728,15 @@ export const implementedIds: number[] = [
   100815,
   100816,
   100817,
+  100818,
   100819,
   100820,
   100821,
+  100822,
   100823,
   100824,
   100825,
+  100826,
   100827,
   100828,
   100829,
@@ -43554,18 +44747,23 @@ export const implementedIds: number[] = [
   100834,
   100835,
   100836,
+  100837,
   100838,
   100839,
   100840,
+  100841,
   100842,
   100843,
   100844,
   100845,
+  100846,
   100847,
   100848,
   100849,
   100850,
+  100851,
   100852,
+  100853,
   100854,
   100855,
   100856,
@@ -43577,9 +44775,11 @@ export const implementedIds: number[] = [
   100862,
   100863,
   100864,
+  100865,
   100866,
   100867,
   100868,
+  100869,
   100870,
   100871,
   100872,
@@ -43591,6 +44791,7 @@ export const implementedIds: number[] = [
   100878,
   100879,
   100880,
+  100881,
   100882,
   100883,
   100884,
@@ -43621,15 +44822,21 @@ export const implementedIds: number[] = [
   100909,
   100910,
   100911,
+  100912,
   100913,
+  100914,
   100915,
   100916,
   100917,
   100918,
   100920,
   100921,
+  100922,
   100923,
+  100924,
   100925,
+  100926,
+  100927,
   100928,
   100929,
   100930,
@@ -43643,6 +44850,7 @@ export const implementedIds: number[] = [
   100938,
   100939,
   100940,
+  100941,
   100942,
   100943,
   100944,
@@ -43654,15 +44862,20 @@ export const implementedIds: number[] = [
   100950,
   100951,
   100952,
+  100954,
+  100955,
+  100956,
   100957,
   100958,
   100959,
+  100960,
   100961,
   100962,
   100963,
   100964,
   100965,
   100966,
+  100967,
   100968,
   100969,
   100970,
@@ -43670,10 +44883,14 @@ export const implementedIds: number[] = [
   100972,
   100973,
   100974,
+  100975,
   100976,
   100977,
+  100978,
   100979,
   100980,
+  100981,
+  100982,
   100983,
   100984,
   100985,
@@ -43681,6 +44898,7 @@ export const implementedIds: number[] = [
   100987,
   100988,
   100989,
+  100990,
   100992,
   100993,
   100994,
@@ -43694,6 +44912,8 @@ export const implementedIds: number[] = [
   101002,
   101003,
   101004,
+  101005,
+  101006,
   101007,
   101008,
   101009,
@@ -43713,6 +44933,7 @@ export const implementedIds: number[] = [
   101023,
   101024,
   101025,
+  101026,
   101027,
   101028,
   101029,
@@ -43721,15 +44942,20 @@ export const implementedIds: number[] = [
   101032,
   101033,
   101034,
+  101035,
   101036,
+  101037,
   101038,
+  101039,
   101040,
   101041,
   101042,
   101043,
   101044,
   101045,
+  101046,
   101047,
+  101048,
   101049,
   101050,
   101051,
@@ -43739,15 +44965,18 @@ export const implementedIds: number[] = [
   101055,
   101056,
   101057,
+  101058,
   101059,
   101060,
   101061,
   101062,
   101063,
+  101064,
   101065,
   101066,
   101067,
   101068,
+  101069,
   101070,
   101071,
   101072,
@@ -43756,11 +44985,14 @@ export const implementedIds: number[] = [
   101075,
   101076,
   101077,
+  101078,
   101079,
   101080,
   101081,
   101082,
+  101083,
   101084,
+  101085,
   101086,
   101087,
   101088,
@@ -43780,12 +45012,17 @@ export const implementedIds: number[] = [
   101102,
   101103,
   101104,
+  101105,
+  101106,
   101107,
+  101108,
   101109,
   101110,
   101111,
+  101112,
   101113,
   101114,
+  101115,
   101116,
   101117,
   101118,
@@ -43819,6 +45056,7 @@ export const implementedIds: number[] = [
   101146,
   101147,
   101148,
+  101149,
   101150,
   101151,
   101152,
@@ -43832,6 +45070,7 @@ export const implementedIds: number[] = [
   101160,
   101161,
   101162,
+  101163,
   101164,
   101165,
   101166,
@@ -43840,9 +45079,11 @@ export const implementedIds: number[] = [
   101169,
   101170,
   101171,
+  101172,
   101173,
   101174,
   101175,
+  101176,
   101177,
   101178,
   101179,
@@ -43872,6 +45113,7 @@ export const implementedIds: number[] = [
   101203,
   101204,
   101205,
+  101206,
   101207,
   101208,
   101209,
@@ -43893,8 +45135,11 @@ export const implementedIds: number[] = [
   101225,
   101226,
   101227,
+  101228,
   101229,
   101230,
+  101231,
+  101232,
   101233,
   101234,
   101235,
@@ -43910,22 +45155,28 @@ export const implementedIds: number[] = [
   101245,
   101246,
   101247,
+  101248,
   101249,
   101250,
   101251,
   101252,
   101253,
   101254,
+  101255,
   101256,
+  101257,
   101258,
   101259,
   101260,
   101261,
   101262,
+  101263,
   101264,
   101265,
+  101266,
   101267,
   101268,
+  101269,
   101270,
   101271,
   101272,
@@ -43944,6 +45195,7 @@ export const implementedIds: number[] = [
   101286,
   101287,
   101288,
+  101289,
   101290,
   101291,
   101292,
@@ -43958,6 +45210,7 @@ export const implementedIds: number[] = [
   101301,
   101302,
   101303,
+  101304,
   101305,
   101307,
   101308,
@@ -43968,6 +45221,7 @@ export const implementedIds: number[] = [
   101313,
   101314,
   101315,
+  101316,
   101317,
   101318,
   101319,
@@ -43990,14 +45244,17 @@ export const implementedIds: number[] = [
   101336,
   101337,
   101338,
+  101339,
   101340,
   101341,
   101342,
   101343,
   101344,
   101345,
+  101346,
   101347,
   101348,
+  101349,
   101350,
   101351,
   101352,
@@ -44008,7 +45265,10 @@ export const implementedIds: number[] = [
   101357,
   101358,
   101359,
+  101360,
+  101361,
   101362,
+  101363,
   101364,
   101365,
   101366,
@@ -44016,11 +45276,14 @@ export const implementedIds: number[] = [
   101368,
   101369,
   101370,
+  101371,
   101372,
   101373,
   101374,
   101375,
   101376,
+  101377,
+  101378,
   101379,
   101380,
   101381,
@@ -44038,8 +45301,10 @@ export const implementedIds: number[] = [
   101393,
   101394,
   101395,
+  101396,
   101397,
   101398,
+  101399,
   101400,
   101401,
   101402,
@@ -44049,6 +45314,7 @@ export const implementedIds: number[] = [
   101406,
   101407,
   101408,
+  101409,
   101410,
   101411,
   101412,
@@ -44057,6 +45323,7 @@ export const implementedIds: number[] = [
   101415,
   101416,
   101417,
+  101418,
   101419,
   101420,
   101421,
@@ -44074,12 +45341,16 @@ export const implementedIds: number[] = [
   101433,
   101434,
   101435,
+  101436,
   101437,
   101438,
   101439,
   101440,
+  101441,
   101442,
+  101443,
   101444,
+  101445,
   101446,
   101447,
   101448,
@@ -44107,9 +45378,13 @@ export const implementedIds: number[] = [
   101470,
   101471,
   101472,
+  101473,
   101474,
   101475,
   101476,
+  101477,
+  101478,
+  101479,
   101480,
   101481,
   101482,
@@ -44126,6 +45401,7 @@ export const implementedIds: number[] = [
   101494,
   101495,
   101496,
+  101497,
   101498,
   101499,
   101500,
@@ -44140,6 +45416,7 @@ export const implementedIds: number[] = [
   101509,
   101510,
   101511,
+  101512,
   101513,
   101514,
   101515,
@@ -44181,6 +45458,7 @@ export const implementedIds: number[] = [
   101551,
   101552,
   101553,
+  101554,
   101555,
   101556,
   101558,
@@ -44188,10 +45466,14 @@ export const implementedIds: number[] = [
   101560,
   101561,
   101562,
+  101563,
   101564,
+  101565,
   101566,
   101567,
   101568,
+  101569,
+  101570,
   101571,
   101572,
   101573,
@@ -44201,17 +45483,24 @@ export const implementedIds: number[] = [
   101577,
   101578,
   101579,
+  101580,
   101581,
+  101582,
   101583,
+  101584,
   101585,
   101586,
   101587,
   101588,
   101589,
+  101590,
   101591,
   101593,
   101594,
   101595,
+  101596,
+  101597,
+  101598,
   101599,
   101600,
   101601,
@@ -44220,6 +45509,7 @@ export const implementedIds: number[] = [
   101604,
   101605,
   101606,
+  101607,
   101608,
   101609,
   101610,
