@@ -35914,6 +35914,439 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
 
+  {
+    // Abjure [100007] — fala 11 wierna
+    krcgId: 100007,
+    name: "Abjure",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "red", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Absimiliard's Army [100011] — fala 11 wierna
+    krcgId: 100011,
+    name: "Absimiliard's Army",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Anthelios, The Red Star [100074] — fala 11 wierna
+    krcgId: 100074,
+    name: "Anthelios, The Red Star",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blood Cult Awareness Network [100198] — fala 11 wierna
+    krcgId: 100198,
+    name: "Blood Cult Awareness Network",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blood Weakens [100217] — fala 11 wierna
+    krcgId: 100217,
+    name: "Blood Weakens",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Break the Code [100248] — fala 11 wierna
+    krcgId: 100248,
+    name: "Break the Code",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Champion [100322] — fala 11 wierna
+    krcgId: 100322,
+    name: "Champion",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "def", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Discern [100551] — fala 11 wierna
+    krcgId: 100551,
+    name: "Discern",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "jud", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Donate [100575] — fala 11 wierna
+    krcgId: 100575,
+    name: "Donate",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mar", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Edge Explosion [100612] — fala 11 wierna
+    krcgId: 100612,
+    name: "Edge Explosion",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fall of the Camarilla [100695] — fala 11 wierna
+    krcgId: 100695,
+    name: "Fall of the Camarilla",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fall of the Sabbat [100696] — fala 11 wierna
+    krcgId: 100696,
+    name: "Fall of the Sabbat",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Foresee [100764] — fala 11 wierna
+    krcgId: 100764,
+    name: "Foresee",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "viz", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Fourth Cycle [100781] — fala 11 wierna
+    krcgId: 100781,
+    name: "The Fourth Cycle",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hide [100919] — fala 11 wierna
+    krcgId: 100919,
+    name: "Hide",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "inn", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Illuminate [100953] — fala 11 wierna
+    krcgId: 100953,
+    name: "Illuminate",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "inn", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inspire [100991] — fala 11 wierna
+    krcgId: 100991,
+    name: "Inspire",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "inn", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nightmares upon Nightmares [101285] — fala 11 wierna
+    krcgId: 101285,
+    name: "Nightmares upon Nightmares",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // NSA Trio [101306] — fala 11 wierna
+    krcgId: 101306,
+    name: "NSA Trio",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Project [101492] — fala 11 wierna
+    krcgId: 101492,
+    name: "Project",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mar", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // React with Conviction [101557] — fala 11 wierna
+    krcgId: 101557,
+    name: "React with Conviction",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rejuvenate [101592] — fala 11 wierna
+    krcgId: 101592,
+    name: "Rejuvenate",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "def", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Respire [101611] — fala 11 wierna
+    krcgId: 101611,
+    name: "Respire",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "red", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rise of the Nephtali [101639] — fala 11 wierna
+    krcgId: 101639,
+    name: "Rise of the Nephtali",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Scourge of the Enochians [101697] — fala 11 wierna
+    krcgId: 101697,
+    name: "Scourge of the Enochians",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Second Sight [101705] — fala 11 wierna
+    krcgId: 101705,
+    name: "Second Sight",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shame [101752] — fala 11 wierna
+    krcgId: 101752,
+    name: "Shame",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "red", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Strike with Conviction [101886] — fala 11 wierna
+    krcgId: 101886,
+    name: "Strike with Conviction",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Surge [101908] — fala 11 wierna
+    krcgId: 101908,
+    name: "Surge",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ven", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Uncoiling [102057] — fala 11 wierna
+    krcgId: 102057,
+    name: "The Uncoiling",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Unmasking [102079] — fala 11 wierna
+    krcgId: 102079,
+    name: "The Unmasking",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Veil of Darkness [102095] — fala 11 wierna
+    krcgId: 102095,
+    name: "Veil of Darkness",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Vigilance [102120] — fala 11 wierna
+    krcgId: 102120,
+    name: "Vigilance",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "jud", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Waiting Game [102136] — fala 11 wierna
+    krcgId: 102136,
+    name: "Waiting Game",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // White Nights Massacre [102178] — fala 11 wierna
+    krcgId: 102178,
+    name: "White Nights Massacre",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Wormwood [102194] — fala 11 wierna
+    krcgId: 102194,
+    name: "Wormwood",
+    cardType: "master",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+
 ];
 
 /**
@@ -37091,6 +37524,71 @@ export const cryptSpecs: CardSpec[] = [
   flatCrypt(200019, "Agaitas, The Scholar of Antiquities (G2)", {}),
   flatCrypt(200021, "Ági (G6)", {}),
   flatCrypt(200023, "Agru Kabera (G4)", {}),
+
+  flatCrypt(200025, "Aidan Lyle (G5)", {}),
+  flatCrypt(200026, "Aimee Laroux (G4)", {}),
+  flatCrypt(200027, "Aimery Methuin (G5)", {}),
+  flatCrypt(200028, "Aisata Swanou (G5)", {}),
+  flatCrypt(200029, "Aisha (G2)", {}),
+  flatCrypt(200030, "Aisha az-Zahra (G5)", {}),
+  flatCrypt(200031, "Aisling Sturbridge (G2)", {}),
+  flatCrypt(200032, "Aiyana, The Wolfcatcher (G4)", {}),
+  flatCrypt(200033, "Akram (G2)", {}),
+  flatCrypt(200034, "Aksinya Daclau (G4)", {}),
+  flatCrypt(200035, "Al-Ashrad, Amr of Alamut (G2)", {}),
+  flatCrypt(200036, "Al-Ashrad, Amr of Alamut (G2 ADV)", {}),
+  flatCrypt(200037, "Al-Muntaquim, The Avenger (G4)", {}),
+  flatCrypt(200038, "Al-Muntathir, God's Witness (G5)", {}),
+  flatCrypt(200039, "Alabástrom (G6)", {}),
+  flatCrypt(200040, "Alan Sovereign (G3)", {}),
+  flatCrypt(200041, "Alan Sovereign (G3 ADV)", {}),
+  flatCrypt(200042, "Alcoan (G6)", {}),
+  flatCrypt(200043, "Aleister Crowley (G5)", {}),
+  flatCrypt(200044, "Alejandro Aguirre (G3)", {}),
+  flatCrypt(200046, "Alessandro Garcia (G4)", {}),
+  flatCrypt(200047, "Alex Camille (G5)", {}),
+  flatCrypt(200048, "Alex Wilkins (G5)", {}),
+  flatCrypt(200049, "Alexandra (G2)", {}),
+  flatCrypt(200050, "Alexis Sorokin (G4)", {}),
+  flatCrypt(200051, "Alfred Benezri (G3)", {}),
+  flatCrypt(200052, "Alfred Benezri (G3 ADV)", {}),
+  flatCrypt(200053, "Ali Kar (G3)", {}),
+  flatCrypt(200054, "Alicia Barrows (G4)", {}),
+  flatCrypt(200055, "Allanyan Serata (G5)", {}),
+  flatCrypt(200057, "Allonzo Montoya (G3)", {}),
+  flatCrypt(200060, "Alonso Petrodon (G5)", {}),
+  flatCrypt(200061, "Alonzo Guillen (G3)", {}),
+  flatCrypt(200062, "Alu (G5)", {}),
+  flatCrypt(200063, "Alvaro, The Scion of Angelica (G2)", {}),
+  flatCrypt(200064, "Amadeo (G2)", {}),
+  flatCrypt(200065, "Amaravati (G4)", {}),
+  flatCrypt(200066, "Amavi (G4)", {}),
+  flatCrypt(200068, "Ambrogino Giovanni (G2)", {}),
+  flatCrypt(200069, "Ambrogino Giovanni (G2 ADV)", {}),
+  flatCrypt(200070, "Ambrosio Luis Monçada, Plenipotentiary (G2)", {}),
+  flatCrypt(200071, "Amelia (G2)", {}),
+  flatCrypt(200072, "Amelia, The Blood Red Tears (G3)", {}),
+  flatCrypt(200073, "Amenophobis (G4)", {}),
+  flatCrypt(200074, "Amisa (G2)", {}),
+  flatCrypt(200076, "Anarch Convert (ANY)", {}),
+  flatCrypt(200078, "Anastasz di Zagreb (G3)", {}),
+  flatCrypt(200079, "Anatole, Prophet of Gehenna (G2)", {}),
+  flatCrypt(200080, "Andre LeRoux (G5)", {}),
+  flatCrypt(200081, "André the Manipulator (G5)", {}),
+  flatCrypt(200082, "Andrea Giovanni (G2)", {}),
+  flatCrypt(200083, "Andreas, The Bard of Crete (G1)", {}),
+  flatCrypt(200086, "Andrew Stuart (G4)", {}),
+  flatCrypt(200087, "Andy (G4)", {}),
+  flatCrypt(200090, "Angela Decker (G2)", {}),
+  flatCrypt(200091, "Angela Preston (G2)", {}),
+  flatCrypt(200092, "Angelica, The Canonicus (G2)", {}),
+  flatCrypt(200093, "Angelique (G6)", {}),
+  flatCrypt(200094, "Angelo (G3)", {}),
+  flatCrypt(200095, "Angus the Unruled (G1)", {}),
+  flatCrypt(200096, "Anisa Marianna Lopez (G2)", {}),
+  flatCrypt(200098, "Anka, Priestess of Thorns (G2)", {}),
+  flatCrypt(200099, "Ankh-sen-Sutekh (G4)", {}),
+  flatCrypt(200100, "Ankla Hotep (G2)", {}),
 
 ];
 
@@ -45004,9 +45502,11 @@ export const implementedIds: number[] = [
   100004,
   100005,
   100006,
+  100007,
   100008,
   100009,
   100010,
+  100011,
   100012,
   100013,
   100014,
@@ -45069,6 +45569,7 @@ export const implementedIds: number[] = [
   100071,
   100072,
   100073,
+  100074,
   100075,
   100076,
   100077,
@@ -45192,6 +45693,7 @@ export const implementedIds: number[] = [
   100195,
   100196,
   100197,
+  100198,
   100199,
   100200,
   100201,
@@ -45210,6 +45712,7 @@ export const implementedIds: number[] = [
   100214,
   100215,
   100216,
+  100217,
   100218,
   100219,
   100220,
@@ -45240,6 +45743,7 @@ export const implementedIds: number[] = [
   100245,
   100246,
   100247,
+  100248,
   100249,
   100250,
   100251,
@@ -45313,6 +45817,7 @@ export const implementedIds: number[] = [
   100319,
   100320,
   100321,
+  100322,
   100323,
   100324,
   100325,
@@ -45541,6 +46046,7 @@ export const implementedIds: number[] = [
   100548,
   100549,
   100550,
+  100551,
   100552,
   100553,
   100554,
@@ -45564,6 +46070,7 @@ export const implementedIds: number[] = [
   100572,
   100573,
   100574,
+  100575,
   100576,
   100577,
   100578,
@@ -45600,6 +46107,7 @@ export const implementedIds: number[] = [
   100609,
   100610,
   100611,
+  100612,
   100613,
   100614,
   100615,
@@ -45682,6 +46190,8 @@ export const implementedIds: number[] = [
   100692,
   100693,
   100694,
+  100695,
+  100696,
   100697,
   100698,
   100699,
@@ -45749,6 +46259,7 @@ export const implementedIds: number[] = [
   100761,
   100762,
   100763,
+  100764,
   100765,
   100766,
   100767,
@@ -45765,6 +46276,7 @@ export const implementedIds: number[] = [
   100778,
   100779,
   100780,
+  100781,
   100782,
   100783,
   100784,
@@ -45902,6 +46414,7 @@ export const implementedIds: number[] = [
   100916,
   100917,
   100918,
+  100919,
   100920,
   100921,
   100922,
@@ -45935,6 +46448,7 @@ export const implementedIds: number[] = [
   100950,
   100951,
   100952,
+  100953,
   100954,
   100955,
   100956,
@@ -45972,6 +46486,7 @@ export const implementedIds: number[] = [
   100988,
   100989,
   100990,
+  100991,
   100992,
   100993,
   100994,
@@ -46265,6 +46780,7 @@ export const implementedIds: number[] = [
   101282,
   101283,
   101284,
+  101285,
   101286,
   101287,
   101288,
@@ -46285,6 +46801,7 @@ export const implementedIds: number[] = [
   101303,
   101304,
   101305,
+  101306,
   101307,
   101308,
   101309,
@@ -46470,6 +46987,7 @@ export const implementedIds: number[] = [
   101489,
   101490,
   101491,
+  101492,
   101493,
   101494,
   101495,
@@ -46534,6 +47052,7 @@ export const implementedIds: number[] = [
   101554,
   101555,
   101556,
+  101557,
   101558,
   101559,
   101560,
@@ -46568,6 +47087,7 @@ export const implementedIds: number[] = [
   101589,
   101590,
   101591,
+  101592,
   101593,
   101594,
   101595,
@@ -46586,6 +47106,7 @@ export const implementedIds: number[] = [
   101608,
   101609,
   101610,
+  101611,
   101612,
   101613,
   101614,
@@ -46613,6 +47134,7 @@ export const implementedIds: number[] = [
   101636,
   101637,
   101638,
+  101639,
   101640,
   101641,
   101642,
@@ -46670,6 +47192,7 @@ export const implementedIds: number[] = [
   101694,
   101695,
   101696,
+  101697,
   101698,
   101699,
   101700,
@@ -46677,6 +47200,7 @@ export const implementedIds: number[] = [
   101702,
   101703,
   101704,
+  101705,
   101706,
   101707,
   101708,
@@ -46723,6 +47247,7 @@ export const implementedIds: number[] = [
   101749,
   101750,
   101751,
+  101752,
   101753,
   101754,
   101755,
@@ -46856,6 +47381,7 @@ export const implementedIds: number[] = [
   101883,
   101884,
   101885,
+  101886,
   101887,
   101888,
   101889,
@@ -46877,6 +47403,7 @@ export const implementedIds: number[] = [
   101905,
   101906,
   101907,
+  101908,
   101909,
   101910,
   101911,
@@ -47025,6 +47552,7 @@ export const implementedIds: number[] = [
   102054,
   102055,
   102056,
+  102057,
   102058,
   102059,
   102060,
@@ -47046,6 +47574,7 @@ export const implementedIds: number[] = [
   102076,
   102077,
   102078,
+  102079,
   102080,
   102081,
   102082,
@@ -47061,6 +47590,7 @@ export const implementedIds: number[] = [
   102092,
   102093,
   102094,
+  102095,
   102096,
   102097,
   102098,
@@ -47085,6 +47615,7 @@ export const implementedIds: number[] = [
   102117,
   102118,
   102119,
+  102120,
   102121,
   102122,
   102123,
@@ -47100,6 +47631,7 @@ export const implementedIds: number[] = [
   102133,
   102134,
   102135,
+  102136,
   102137,
   102138,
   102139,
@@ -47141,6 +47673,7 @@ export const implementedIds: number[] = [
   102175,
   102176,
   102177,
+  102178,
   102179,
   102180,
   102181,
@@ -47156,6 +47689,7 @@ export const implementedIds: number[] = [
   102191,
   102192,
   102193,
+  102194,
   102195,
   102196,
   102197,
@@ -47350,18 +47884,82 @@ export const implementedIds: number[] = [
   200022,
   200023,
   200024,
+  200025,
+  200026,
+  200027,
+  200028,
+  200029,
+  200030,
+  200031,
+  200032,
+  200033,
+  200034,
+  200035,
+  200036,
+  200037,
+  200038,
+  200039,
+  200040,
+  200041,
+  200042,
+  200043,
+  200044,
   200045,
+  200046,
+  200047,
+  200048,
+  200049,
+  200050,
+  200051,
+  200052,
+  200053,
+  200054,
+  200055,
   200056,
+  200057,
   200058,
   200059,
+  200060,
+  200061,
+  200062,
+  200063,
+  200064,
+  200065,
+  200066,
   200067,
+  200068,
+  200069,
+  200070,
+  200071,
+  200072,
+  200073,
+  200074,
   200075,
+  200076,
   200077,
+  200078,
+  200079,
+  200080,
+  200081,
+  200082,
+  200083,
   200084,
   200085,
+  200086,
+  200087,
   200088,
   200089,
+  200090,
+  200091,
+  200092,
+  200093,
+  200094,
+  200095,
+  200096,
   200097,
+  200098,
+  200099,
+  200100,
   200109,
   200110,
   200120,
