@@ -37514,109 +37514,109 @@ export const cryptSpecs: CardSpec[] = [
   flatCrypt(201779, "Yurena, The Boor (G6)", {}),
   flatCrypt(201780, "Zbigniew, Hunter of Mekhet (G6)", {}),
 
-  flatCrypt(200011, "Adana de Sforza (G4)", {}),
-  flatCrypt(200013, "Adhiambo (G4)", {}),
-  flatCrypt(200014, "Adonai (G2)", {}),
-  flatCrypt(200015, "Adri, The Seeker (G6)", {}),
-  flatCrypt(200016, "Adrianne (G1)", {}),
-  flatCrypt(200017, "Aeron (G3)", {}),
-  flatCrypt(200018, "Afifa, The Herald (G4)", {}),
-  flatCrypt(200019, "Agaitas, The Scholar of Antiquities (G2)", {}),
-  flatCrypt(200021, "Ági (G6)", {}),
-  flatCrypt(200023, "Agru Kabera (G4)", {}),
+    flatCrypt(200011, "Adana de Sforza (G4)", { bleed: 2 }), // wierna fala 23
+    flatCrypt(200013, "Adhiambo (G4)", { stealth: 1 }), // wierna fala 23
+    flatCrypt(200014, "Adonai (G2)", { bleed: 1, strength: 1 }), // wierna fala 23
+    flatCrypt(200015, "Adri, The Seeker (G6)", { intercept: 1 }), // wierna fala 23
+    flatCrypt(200016, "Adrianne (G1)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200017, "Aeron (G3)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200018, "Afifa, The Herald (G4)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200019, "Agaitas, The Scholar of Antiquities (G2)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200021, "Ági (G6)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200023, "Agru Kabera (G4)", { bleed: 1 }), // wierna fala 23
 
-  flatCrypt(200025, "Aidan Lyle (G5)", {}),
-  flatCrypt(200026, "Aimee Laroux (G4)", {}),
-  flatCrypt(200027, "Aimery Methuin (G5)", {}),
-  flatCrypt(200028, "Aisata Swanou (G5)", {}),
-  flatCrypt(200029, "Aisha (G2)", {}),
-  flatCrypt(200030, "Aisha az-Zahra (G5)", {}),
-  flatCrypt(200031, "Aisling Sturbridge (G2)", {}),
-  flatCrypt(200032, "Aiyana, The Wolfcatcher (G4)", {}),
-  flatCrypt(200033, "Akram (G2)", {}),
-  flatCrypt(200034, "Aksinya Daclau (G4)", {}),
-  flatCrypt(200035, "Al-Ashrad, Amr of Alamut (G2)", {}),
-  flatCrypt(200036, "Al-Ashrad, Amr of Alamut (G2 ADV)", {}),
-  flatCrypt(200037, "Al-Muntaquim, The Avenger (G4)", {}),
-  flatCrypt(200038, "Al-Muntathir, God's Witness (G5)", {}),
-  flatCrypt(200039, "Alabástrom (G6)", {}),
-  flatCrypt(200040, "Alan Sovereign (G3)", {}),
-  flatCrypt(200041, "Alan Sovereign (G3 ADV)", {}),
-  flatCrypt(200042, "Alcoan (G6)", {}),
-  flatCrypt(200043, "Aleister Crowley (G5)", {}),
-  flatCrypt(200044, "Alejandro Aguirre (G3)", {}),
-  flatCrypt(200046, "Alessandro Garcia (G4)", {}),
-  flatCrypt(200047, "Alex Camille (G5)", {}),
-  flatCrypt(200048, "Alex Wilkins (G5)", {}),
-  flatCrypt(200049, "Alexandra (G2)", {}),
-  flatCrypt(200050, "Alexis Sorokin (G4)", {}),
-  flatCrypt(200051, "Alfred Benezri (G3)", {}),
-  flatCrypt(200052, "Alfred Benezri (G3 ADV)", {}),
-  flatCrypt(200053, "Ali Kar (G3)", {}),
-  flatCrypt(200054, "Alicia Barrows (G4)", {}),
-  flatCrypt(200055, "Allanyan Serata (G5)", {}),
-  flatCrypt(200057, "Allonzo Montoya (G3)", {}),
-  flatCrypt(200060, "Alonso Petrodon (G5)", {}),
-  flatCrypt(200061, "Alonzo Guillen (G3)", {}),
-  flatCrypt(200062, "Alu (G5)", {}),
-  flatCrypt(200063, "Alvaro, The Scion of Angelica (G2)", {}),
-  flatCrypt(200064, "Amadeo (G2)", {}),
-  flatCrypt(200065, "Amaravati (G4)", {}),
-  flatCrypt(200066, "Amavi (G4)", {}),
-  flatCrypt(200068, "Ambrogino Giovanni (G2)", {}),
-  flatCrypt(200069, "Ambrogino Giovanni (G2 ADV)", {}),
-  flatCrypt(200070, "Ambrosio Luis Monçada, Plenipotentiary (G2)", {}),
-  flatCrypt(200071, "Amelia (G2)", {}),
-  flatCrypt(200072, "Amelia, The Blood Red Tears (G3)", {}),
-  flatCrypt(200073, "Amenophobis (G4)", {}),
-  flatCrypt(200074, "Amisa (G2)", {}),
-  flatCrypt(200076, "Anarch Convert (ANY)", {}),
-  flatCrypt(200078, "Anastasz di Zagreb (G3)", {}),
-  flatCrypt(200079, "Anatole, Prophet of Gehenna (G2)", {}),
-  flatCrypt(200080, "Andre LeRoux (G5)", {}),
-  flatCrypt(200081, "André the Manipulator (G5)", {}),
-  flatCrypt(200082, "Andrea Giovanni (G2)", {}),
-  flatCrypt(200083, "Andreas, The Bard of Crete (G1)", {}),
-  flatCrypt(200086, "Andrew Stuart (G4)", {}),
-  flatCrypt(200087, "Andy (G4)", {}),
-  flatCrypt(200090, "Angela Decker (G2)", {}),
-  flatCrypt(200091, "Angela Preston (G2)", {}),
-  flatCrypt(200092, "Angelica, The Canonicus (G2)", {}),
-  flatCrypt(200093, "Angelique (G6)", {}),
-  flatCrypt(200094, "Angelo (G3)", {}),
-  flatCrypt(200095, "Angus the Unruled (G1)", {}),
-  flatCrypt(200096, "Anisa Marianna Lopez (G2)", {}),
-  flatCrypt(200098, "Anka, Priestess of Thorns (G2)", {}),
-  flatCrypt(200099, "Ankh-sen-Sutekh (G4)", {}),
-  flatCrypt(200100, "Ankla Hotep (G2)", {}),
+    flatCrypt(200025, "Aidan Lyle (G5)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200026, "Aimee Laroux (G4)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200027, "Aimery Methuin (G5)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200028, "Aisata Swanou (G5)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200029, "Aisha (G2)", { intercept: 1 }), // wierna fala 23
+    flatCrypt(200030, "Aisha az-Zahra (G5)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200031, "Aisling Sturbridge (G2)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200032, "Aiyana, The Wolfcatcher (G4)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200033, "Akram (G2)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200034, "Aksinya Daclau (G4)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200035, "Al-Ashrad, Amr of Alamut (G2)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200036, "Al-Ashrad, Amr of Alamut (G2 ADV)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200037, "Al-Muntaquim, The Avenger (G4)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200038, "Al-Muntathir, God's Witness (G5)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200039, "Alabástrom (G6)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200040, "Alan Sovereign (G3)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200041, "Alan Sovereign (G3 ADV)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200042, "Alcoan (G6)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200043, "Aleister Crowley (G5)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200044, "Alejandro Aguirre (G3)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200046, "Alessandro Garcia (G4)", { strength: 1 }), // wierna fala 23
+    flatCrypt(200047, "Alex Camille (G5)", { intercept: 1 }), // wierna fala 23
+    flatCrypt(200048, "Alex Wilkins (G5)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200049, "Alexandra (G2)", { bleed: 2 }), // wierna fala 23
+    flatCrypt(200050, "Alexis Sorokin (G4)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200051, "Alfred Benezri (G3)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200052, "Alfred Benezri (G3 ADV)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200053, "Ali Kar (G3)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200054, "Alicia Barrows (G4)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200055, "Allanyan Serata (G5)", { strength: 1 }), // wierna fala 23
+    flatCrypt(200057, "Allonzo Montoya (G3)", { stealth: 1 }), // wierna fala 23
+    flatCrypt(200060, "Alonso Petrodon (G5)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200061, "Alonzo Guillen (G3)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200062, "Alu (G5)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200063, "Alvaro, The Scion of Angelica (G2)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200064, "Amadeo (G2)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200065, "Amaravati (G4)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200066, "Amavi (G4)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200068, "Ambrogino Giovanni (G2)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200069, "Ambrogino Giovanni (G2 ADV)", { bleed: 1, stealth: 1 }), // wierna fala 23
+    flatCrypt(200070, "Ambrosio Luis Monçada, Plenipotentiary (G2)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200071, "Amelia (G2)", { stealth: 1 }), // wierna fala 23
+    flatCrypt(200072, "Amelia, The Blood Red Tears (G3)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200073, "Amenophobis (G4)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200074, "Amisa (G2)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200076, "Anarch Convert (ANY)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200078, "Anastasz di Zagreb (G3)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200079, "Anatole, Prophet of Gehenna (G2)", { intercept: 1 }), // wierna fala 23
+    flatCrypt(200080, "Andre LeRoux (G5)", { bleed: 2 }), // wierna fala 23
+    flatCrypt(200081, "André the Manipulator (G5)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200082, "Andrea Giovanni (G2)", { stealth: 1 }), // wierna fala 23
+    flatCrypt(200083, "Andreas, The Bard of Crete (G1)", { intercept: 1 }), // wierna fala 23
+    flatCrypt(200086, "Andrew Stuart (G4)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200087, "Andy (G4)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200090, "Angela Decker (G2)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200091, "Angela Preston (G2)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200092, "Angelica, The Canonicus (G2)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200093, "Angelique (G6)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200094, "Angelo (G3)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200095, "Angus the Unruled (G1)", { strength: 1 }), // wierna fala 23
+    flatCrypt(200096, "Anisa Marianna Lopez (G2)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200098, "Anka, Priestess of Thorns (G2)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200099, "Ankh-sen-Sutekh (G4)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200100, "Ankla Hotep (G2)", {}), // wierna fala 23: przejrzane
 
-  flatCrypt(200101, "The Ankou (G5)", {}),
+    flatCrypt(200101, "The Ankou (G5)", {}), // wierna fala 23: przejrzane
   flatCrypt(200102, "Anna \"Dictatrix11\" Suljic (G4)", {}),
-  flatCrypt(200103, "Annabelle Triabell (G3)", {}),
-  flatCrypt(200104, "Annazir (G5)", {}),
-  flatCrypt(200105, "Anne-Marie Bourgeois, Inconnu Recruiter (G5)", {}),
-  flatCrypt(200106, "Anneke (G1)", {}),
-  flatCrypt(200107, "Anson (G1)", {}),
-  flatCrypt(200108, "Antara (G4)", {}),
-  flatCrypt(200111, "Antoinette Dubois (G4)", {}),
-  flatCrypt(200112, "Antoinette DuChamp (G2)", {}),
-  flatCrypt(200113, "Anton (G2)", {}),
-  flatCrypt(200114, "Antón de Concepción (G4)", {}),
-  flatCrypt(200115, "Antonino (G3)", {}),
-  flatCrypt(200116, "Antonio d'Erlette (G4)", {}),
-  flatCrypt(200117, "Antonio Delgado (G2)", {}),
-  flatCrypt(200118, "Antonio Veradas (G3)", {}),
-  flatCrypt(200119, "Anu Diptinatpa (G6)", {}),
-  flatCrypt(200121, "Anwar (G2)", {}),
-  flatCrypt(200123, "Apolonia Czarnecki (G5)", {}),
-  flatCrypt(200124, "Appius Claudius Corvus (G5)", {}),
-  flatCrypt(200125, "Appolonius (G1)", {}),
-  flatCrypt(200126, "Appolonius (G1 ADV)", {}),
-  flatCrypt(200127, "The Arcadian (G5)", {}),
-  flatCrypt(200128, "Ardan Lane (G3)", {}),
-  flatCrypt(200129, "Aredhel (G4)", {}),
-  flatCrypt(200130, "Aren, Priest of Eshu (G4)", {}),
-  flatCrypt(200131, "Ariadne (G5)", {}),
+    flatCrypt(200103, "Annabelle Triabell (G3)", { bleed: 1, stealth: 1 }), // wierna fala 23
+    flatCrypt(200104, "Annazir (G5)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200105, "Anne-Marie Bourgeois, Inconnu Recruiter (G5)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200106, "Anneke (G1)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200107, "Anson (G1)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200108, "Antara (G4)", { intercept: 1 }), // wierna fala 23
+    flatCrypt(200111, "Antoinette Dubois (G4)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200112, "Antoinette DuChamp (G2)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200113, "Anton (G2)", { intercept: 1 }), // wierna fala 23
+    flatCrypt(200114, "Antón de Concepción (G4)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200115, "Antonino (G3)", { stealth: 1 }), // wierna fala 23
+    flatCrypt(200116, "Antonio d'Erlette (G4)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200117, "Antonio Delgado (G2)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200118, "Antonio Veradas (G3)", { stealth: 1 }), // wierna fala 23
+    flatCrypt(200119, "Anu Diptinatpa (G6)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200121, "Anwar (G2)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200123, "Apolonia Czarnecki (G5)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200124, "Appius Claudius Corvus (G5)", { stealth: 1 }), // wierna fala 23
+    flatCrypt(200125, "Appolonius (G1)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200126, "Appolonius (G1 ADV)", { bleed: 1 }), // wierna fala 23
+    flatCrypt(200127, "The Arcadian (G5)", { bleed: 1, stealth: 1 }), // wierna fala 23
+    flatCrypt(200128, "Ardan Lane (G3)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200129, "Aredhel (G4)", {}), // wierna fala 23: przejrzane
+    flatCrypt(200130, "Aren, Priest of Eshu (G4)", { stealth: 1 }), // wierna fala 23
+    flatCrypt(200131, "Ariadne (G5)", {}), // wierna fala 23: przejrzane
   flatCrypt(200133, "Arianne, The Conqueror (G5)", {}),
   flatCrypt(200135, "Arika (G2)", {}),
   flatCrypt(200136, "Arishat (G6)", {}),
