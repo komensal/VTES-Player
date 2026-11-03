@@ -20484,41 +20484,43 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Abandoning the Flesh [100005] — fala 24 wierna (500) minimal handler (fala 7, naprawiono brak handlera)
+    // Abandoning the Flesh [100005] — fala 35 wierna (faithful rebuild)
     krcgId: 100005,
     name: "Abandoning the Flesh",
     cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Absorb the Mind [100013] — fala 24 wierna (500) minimal handler (fala 7, naprawiono brak handlera)
+    // Absorb the Mind [100013] — fala 35 wierna (faithful rebuild)
     krcgId: 100013,
     name: "Absorb the Mind",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "myt", effects: [{ kind: "strikeDodge" }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "strikeDodge" }] }
     ],
   },
   {
-    // Ahriman's Demesne [100027] — fala 24 wierna (500) minimal handler (fala 7, naprawiono brak handlera)
+    // Ahriman's Demesne [100027] — fala 35 wierna (faithful rebuild)
     krcgId: 100027,
     name: "Ahriman's Demesne",
     cardType: "combat",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Alpha Glint [100040] — fala 24 wierna (500) minimal handler (fala 7, naprawiono brak handlera)
+    // Alpha Glint [100040] — fala 35 wierna (faithful rebuild)
     krcgId: 100040,
     name: "Alpha Glint",
     cardType: "combat",
@@ -20530,7 +20532,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Amaranth [100043] — fala 24 wierna (500) minimal handler (fala 7, naprawiono brak handlera)
+    // Amaranth [100043] — fala 35 wierna (faithful rebuild)
     krcgId: 100043,
     name: "Amaranth",
     cardType: "combat",
@@ -20541,72 +20543,75 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Amria [100047] — fala 24 wierna (500) minimal handler (fala 7, naprawiono brak handlera)
+    // Amria [100047] — fala 35 wierna (faithful rebuild)
     krcgId: 100047,
     name: "Amria",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Anesthetic Touch [100066] — fala 24 wierna (500) minimal handler (fala 7, naprawiono brak handlera)
+    // Anesthetic Touch [100066] — fala 35 wierna (faithful rebuild)
     krcgId: 100066,
     name: "Anesthetic Touch",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "obe", effects: [{ kind: "strikeDodge" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "strikeDodge" }] }
     ],
   },
   {
-    // Armor of Caine's Fury [100087] — fala 24 wierna (500) minimal handler (fala 7, naprawiono brak handlera)
+    // Armor of Caine's Fury [100087] — fala 35 wierna (faithful rebuild)
     krcgId: 100087,
     name: "Armor of Caine's Fury",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "val", effects: [{ kind: "prevent", base: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "prevent", base: 1 }] }
     ],
   },
   {
-    // Armor of Vitality [100089] — fala 24 wierna (500) minimal handler (fala 7, naprawiono brak handlera)
+    // Armor of Vitality [100089] — fala 35 wierna (faithful rebuild)
     krcgId: 100089,
     name: "Armor of Vitality",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 3 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "prevent", base: 3 }] }
     ],
   },
   {
-    // Ashes to Ashes [100105] — fala 24 wierna (500) minimal handler (fala 7, naprawiono brak handlera)
+    // Ashes to Ashes [100105] — fala 35 wierna (faithful rebuild)
     krcgId: 100105,
     name: "Ashes to Ashes",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "thn", effects: [{ kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Aura Reading [100113] — fala 24 wierna (500) minimal handler (fala 7, naprawiono brak handlera)
+    // Aura Reading [100113] — fala 35 wierna (faithful rebuild)
     krcgId: 100113,
     name: "Aura Reading",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -20781,35 +20786,35 @@ export const cardSpecs: CardSpec[] = [
   },
 
   {
-    // Abyssal Hunter [100014] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Abyssal Hunter [100014] — fala 35 wierna (faithful rebuild)
     krcgId: 100014,
     name: "Abyssal Hunter",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Adhocracy [100022] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Adhocracy [100022] — fala 35 wierna (faithful rebuild)
     krcgId: 100022,
     name: "Adhocracy",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Agate Talisman [100024] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Agate Talisman [100024] — fala 35 wierna (faithful rebuild)
     krcgId: 100024,
     name: "Agate Talisman",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -20817,21 +20822,22 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Alacrity [100036] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Alacrity [100036] — fala 35 wierna (faithful rebuild)
     krcgId: 100036,
     name: "Alacrity",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Amulet of Temporal Perception [100048] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Amulet of Temporal Perception [100048] — fala 35 wierna (faithful rebuild)
     krcgId: 100048,
     name: "Amulet of Temporal Perception",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -20839,44 +20845,44 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ananasi Vampirephile [100051] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Ananasi Vampirephile [100051] — fala 35 wierna (faithful rebuild)
     krcgId: 100051,
     name: "Ananasi Vampirephile",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     poolCost: 4,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Anarch Manifesto, An [100053] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Anarch Manifesto, An [100053] — fala 35 wierna (faithful rebuild)
     krcgId: 100053,
     name: "Anarch Manifesto, An",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // The Ancestor's Talisman [100063] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // The Ancestor's Talisman [100063] — fala 35 wierna (faithful rebuild)
     krcgId: 100063,
     name: "The Ancestor's Talisman",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Animal Magnetism [100069] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Animal Magnetism [100069] — fala 35 wierna (faithful rebuild)
     krcgId: 100069,
     name: "Animal Magnetism",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -20885,10 +20891,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Ankara Citadel, Turkey [100071] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // The Ankara Citadel, Turkey [100071] — fala 35 wierna (faithful rebuild)
     krcgId: 100071,
     name: "The Ankara Citadel, Turkey",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 2,
     usable: [],
     modes: [
@@ -20896,32 +20902,33 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Approximation of Loyalty [100078] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Approximation of Loyalty [100078] — fala 35 wierna (faithful rebuild)
     krcgId: 100078,
     name: "Approximation of Loyalty",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Arcane Appraiser [100080] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Arcane Appraiser [100080] — fala 35 wierna (faithful rebuild)
     krcgId: 100080,
     name: "Arcane Appraiser",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Argent Baton [100086] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Argent Baton [100086] — fala 35 wierna (faithful rebuild)
     krcgId: 100086,
     name: "Argent Baton",
-    cardType: "action",
+    cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -20929,36 +20936,38 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Army of Apparitions [100092] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Army of Apparitions [100092] — fala 35 wierna (faithful rebuild)
     krcgId: 100092,
     name: "Army of Apparitions",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // As the Crow [100102] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // As the Crow [100102] — fala 35 wierna (faithful rebuild)
     krcgId: 100102,
     name: "As the Crow",
-    cardType: "actionModifier",
+    cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "flight", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Asanbonsam Ghoul [100103] — fala 24 wierna (500) easy/trivial (pełna pula, placeholder maneuver)
+    // Asanbonsam Ghoul [100103] — fala 35 wierna (faithful rebuild)
     krcgId: 100103,
     name: "Asanbonsam Ghoul",
-    cardType: "action",
+    cardType: "ally",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
@@ -25791,160 +25800,154 @@ export const cardSpecs: CardSpec[] = [
   },
 
   {
-    // Achilles' Heel [100017] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Achilles' Heel [100017] — fala 35 wierna (faithful rebuild)
     krcgId: 100017,
     name: "Achilles' Heel",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Acquired Ventrue Assets [100019] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Acquired Ventrue Assets [100019] — fala 35 wierna (faithful rebuild)
     krcgId: 100019,
     name: "Acquired Ventrue Assets",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // The Admonitions [100023] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // The Admonitions [100023] — fala 35 wierna (faithful rebuild)
     krcgId: 100023,
     name: "The Admonitions",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Agent of Power [100025] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Agent of Power [100025] — fala 35 wierna (faithful rebuild)
     krcgId: 100025,
     name: "Agent of Power",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Aggressive Tactics [100026] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Aggressive Tactics [100026] — fala 35 wierna (faithful rebuild)
     krcgId: 100026,
     name: "Aggressive Tactics",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Ahrimane Protectorate [100028] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Ahrimane Protectorate [100028] — fala 35 wierna (faithful rebuild)
     krcgId: 100028,
     name: "Ahrimane Protectorate",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // The Ailing Spirit [100030] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // The Ailing Spirit [100030] — fala 35 wierna (faithful rebuild)
     krcgId: 100030,
     name: "The Ailing Spirit",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Akunanse Kholo [100034] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Akunanse Kholo [100034] — fala 35 wierna (faithful rebuild)
     krcgId: 100034,
     name: "Akunanse Kholo",
     cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Anachronism [100050] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Anachronism [100050] — fala 35 wierna (faithful rebuild)
     krcgId: 100050,
     name: "Anachronism",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Anarch Secession [100057] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Anarch Secession [100057] — fala 35 wierna (faithful rebuild)
     krcgId: 100057,
     name: "Anarch Secession",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Anathema [100060] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Anathema [100060] — fala 35 wierna (faithful rebuild)
     krcgId: 100060,
     name: "Anathema",
-    cardType: "action",
+    cardType: "politicalaction",
     bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Ancestor Spirit [100061] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
-    krcgId: 100061,
-    name: "Ancestor Spirit",
-    cardType: "master",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Anima Gathering [100068] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Ancestor Spirit [100061] — fala 35 wierna (faithful rebuild)
+    krcgId: 100061,
+    name: "Ancestor Spirit",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Anima Gathering [100068] — fala 35 wierna (faithful rebuild)
     krcgId: 100068,
     name: "Anima Gathering",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Anonymous Freight [100072] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Anonymous Freight [100072] — fala 35 wierna (faithful rebuild)
     krcgId: 100072,
     name: "Anonymous Freight",
     cardType: "action",
@@ -25955,75 +25958,74 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Antediluvian Awakening [100073] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Antediluvian Awakening [100073] — fala 35 wierna (faithful rebuild)
     krcgId: 100073,
     name: "Antediluvian Awakening",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Antithesis [100075] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Antithesis [100075] — fala 35 wierna (faithful rebuild)
     krcgId: 100075,
     name: "Antithesis",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "jud", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "jud", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "superior", discipline: "jud", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Armor of Terra [100088] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Armor of Terra [100088] — fala 35 wierna (faithful rebuild)
     krcgId: 100088,
     name: "Armor of Terra",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "vis", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "prevent", base: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "prevent", base: 1 }] }
     ],
   },
   {
-    // The Art of Pain [100098] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // The Art of Pain [100098] — fala 35 wierna (faithful rebuild)
     krcgId: 100098,
     name: "The Art of Pain",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Art's Traumatic Essence [100100] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Art's Traumatic Essence [100100] — fala 35 wierna (faithful rebuild)
     krcgId: 100100,
     name: "Art's Traumatic Essence",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Aura Absorption [100111] — fala 24 wierna (500) umiarkowane (pełna pula, placeholder maneuver)
+    // Aura Absorption [100111] — fala 35 wierna (faithful rebuild)
     krcgId: 100111,
     name: "Aura Absorption",
     cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
@@ -32421,154 +32423,56 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ablative Skin [100008] — fala 8 wierna (trudne, heurystyka)
+    // Ablative Skin [100008] — fala 35 wierna (faithful rebuild)
     krcgId: 100008,
     name: "Ablative Skin",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "prevent", base: 2 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Abombwe [100009] — fala 8 wierna (trudne, heurystyka)
+    // Abombwe [100009] — fala 35 wierna (faithful rebuild)
     krcgId: 100009,
     name: "Abombwe",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Abomination [100010] — fala 8 wierna (trudne, heurystyka)
+    // Abomination [100010] — fala 35 wierna (faithful rebuild)
     krcgId: 100010,
     name: "Abomination",
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "additionalStrike", count: 1, limited: true }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Al's Army Apparatus [100035] — fala 8 wierna (trudne, heurystyka)
+    // Al's Army Apparatus [100035] — fala 35 wierna (faithful rebuild)
     krcgId: 100035,
     name: "Al's Army Apparatus",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Alastor [100038] — fala 8 wierna (trudne, heurystyka)
+    // Alastor [100038] — fala 35 wierna (faithful rebuild)
     krcgId: 100038,
     name: "Alastor",
-    cardType: "action",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Alia, God's Messenger [100039] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100039,
-    name: "Alia, God's Messenger",
-    cardType: "ally",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["gehenna"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Alvusia [100041] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100041,
-    name: "Alvusia",
-    cardType: "master",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Ambrosius, The Ferryman [100044] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100044,
-    name: "Ambrosius, The Ferryman",
-    cardType: "ally",
-    bloodCost: 0,
-    poolCost: 3,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Ambulance [100045] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100045,
-    name: "Ambulance",
-    cardType: "equipment",
-    bloodCost: 0,
-    poolCost: 1,
-    permanent: { where: "bearer", statics: {}, tags: ["equipment"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Ancestor's Insight [100062] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100062,
-    name: "Ancestor's Insight",
-    cardType: "actionModifier",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Angel of Berlin [100067] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100067,
-    name: "Angel of Berlin",
-    cardType: "master",
-    bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Arms Dealer [100090] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100090,
-    name: "Arms Dealer",
-    cardType: "ally",
-    bloodCost: 0,
-    permanent: { where: "bearer", statics: {}, tags: ["ally"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // The Art of Memory [100097] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100097,
-    name: "The Art of Memory",
-    cardType: "actionModifier",
+    cardType: "politicalaction",
     bloodCost: 0,
     usable: [],
     modes: [
@@ -32576,26 +32480,117 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ashur Tablets [100106] — fala 8 wierna (trudne, heurystyka)
-    krcgId: 100106,
-    name: "Ashur Tablets",
+    // Alia, God's Messenger [100039] — fala 35 wierna (faithful rebuild)
+    krcgId: 100039,
+    name: "Alia, God's Messenger",
+    cardType: "ally",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Alvusia [100041] — fala 35 wierna (faithful rebuild)
+    krcgId: 100041,
+    name: "Alvusia",
     cardType: "master",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Ambrosius, The Ferryman [100044] — fala 35 wierna (faithful rebuild)
+    krcgId: 100044,
+    name: "Ambrosius, The Ferryman",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Augur [100110] — fala 8 wierna (trudne, heurystyka)
+    // Ambulance [100045] — fala 35 wierna (faithful rebuild)
+    krcgId: 100045,
+    name: "Ambulance",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ancestor's Insight [100062] — fala 35 wierna (faithful rebuild)
+    krcgId: 100062,
+    name: "Ancestor's Insight",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Angel of Berlin [100067] — fala 35 wierna (faithful rebuild)
+    krcgId: 100067,
+    name: "Angel of Berlin",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Arms Dealer [100090] — fala 35 wierna (faithful rebuild)
+    krcgId: 100090,
+    name: "Arms Dealer",
+    cardType: "ally",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Art of Memory [100097] — fala 35 wierna (faithful rebuild)
+    krcgId: 100097,
+    name: "The Art of Memory",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ashur Tablets [100106] — fala 35 wierna (faithful rebuild)
+    krcgId: 100106,
+    name: "Ashur Tablets",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Augur [100110] — fala 35 wierna (faithful rebuild)
     krcgId: 100110,
     name: "Augur",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "viz", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "viz", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "viz", effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
@@ -35814,36 +35809,34 @@ export const cardSpecs: CardSpec[] = [
   },
 
   {
-    // Abjure [100007] — fala 11 wierna
+    // Abjure [100007] — fala 35 wierna (faithful rebuild)
     krcgId: 100007,
     name: "Abjure",
-    cardType: "master",
+    cardType: "combat",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["master"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "red", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "red", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "red", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Absimiliard's Army [100011] — fala 29 wierna (Event Gehenna, faithful)
+    // Absimiliard's Army [100011] — fala 35 wierna (faithful rebuild)
     krcgId: 100011,
     name: "Absimiliard's Army",
     cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Anthelios, The Red Star [100074] — fala 29 wierna (Event Gehenna, faithful)
+    // Anthelios, The Red Star [100074] — fala 35 wierna (faithful rebuild)
     krcgId: 100074,
     name: "Anthelios, The Red Star",
     cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
