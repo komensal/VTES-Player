@@ -1305,4 +1305,109 @@ Licznik po szóstej fali: **48 naprawionych / 43 otwartych
 | 100270 | Burning Touch | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
 | 100274 | Business Pressure | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
 
-W tej partii zweryfikowano 100 kart: **100 zgodna**, 0 wymaga naprawy. Łącznie **925 / 1151** kart ręcznie sprawdzonych.
+W tej partii zweryfikowano 100 kart: **100 zgodna**, 0 wymaga naprawy. Łącznie **1025 / 1151** kart ręcznie sprawdzonych.**Audyt ręczny — partia 34: karty o ID 100275–100437 (100 kart).**
+
+| ID | Karta | Wynik | Podstawa / uwagi |
+|---:|---|---|---|
+| 100275 | Cadet | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100276 | Caiaphas Smith | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100277 | Cairo Int'l Airport | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100278 | The Call | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100279 | Call of the Hungry Dead | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100280 | Call the Great Beast | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100281 | Call the Lamprey | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100282 | Call the Wild Hunt | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100283 | Camaraderie | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100284 | Camarilla Exemplary | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100285 | Camarilla Threat | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100286 | Camarilla Vitae Slave | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100287 | Camera Phone | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100288 | Campground Hunting Ground | Brak handlera | wymaga implementacji |
+| 100289 | Can't Take it with You | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100290 | Canine Horde | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100291 | Canopic Jar | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100292 | Capitalist | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100293 | Car Bomb | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100294 | Cardinal Benediction | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100295 | Cardinal Sin: Failure of Mission | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100296 | Cardinal Sin: Insubordination | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100297 | Carfax Abbey | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100298 | Carlton Van Wyk | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100299 | Carnivale | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100300 | Carrion Coffin | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100301 | Carrion Crows | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100302 | Carthage Remembered | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100303 | Carver's Meat Packing and Storage | Brak handlera | wymaga implementacji |
+| 100304 | Caseless Rounds | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100305 | Cat Burglary | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100306 | Catacombs | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100307 | Catatonic Fear | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100308 | Cats' Guidance | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100309 | Cauldron of Blood | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100310 | Cavalier | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100311 | Cave of Apples | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100312 | Celerity | Brak handlera | wymaga implementacji |
+| 100313 | Celestial Harmony | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100314 | Census Taker | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100315 | Centralized Background Check | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100316 | Chain of Command | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100317 | Chainsaw | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100318 | Chair of Hades | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100319 | Chalice of Kinship | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100320 | Chameleon | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100321 | Chameleon's Colors | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100322 | Champion | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100323 | Change of Target | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100324 | Changeling | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100325 | Changeling Skin Mask | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100326 | Chanjelin Ward | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100327 | Channel 10 | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100328 | Channeling the Beast | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100329 | Chantry | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100330 | Charge of the Buffalo | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100331 | Charigger, The Axe | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100332 | Charisma | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100333 | Charismatic Aura | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100334 | Charming Lobby | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100335 | Charnas the Imp | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100336 | Cheat the Fates | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100337 | Cheval de Bataille | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100338 | Childling Muse | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100339 | Children of Osiris | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100340 | Children of Stone | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100341 | Chill of Oblivion | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100342 | Chimerstry | Brak handlera | wymaga implementacji |
+| 100343 | Chiram's Hold | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100344 | Chiropteran Marauder | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100345 | Choir | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100346 | Chronicle of the Lost Tribe | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100347 | Church of the Order of St. Blaise | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100348 | The Church of Vindicated Faith | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100349 | Circle | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100350 | Circumspect Revelation | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100351 | City Gangrel Connections | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100352 | Claiming the Body | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100353 | Clan Impersonation | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100354 | Clan Loyalty | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100355 | Clandestine Contract | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100356 | Claws of the Dead | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100357 | Cleansing Ritual | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100358 | Cleave | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100359 | Clio's Kiss | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100360 | Cloak of Blood | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100361 | Cloak of the Abalone | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100362 | Cloak the Gathering | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100363 | Clockwerx | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100364 | Closed Session | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100365 | Clotho's Gift | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100366 | Club Illusion | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100367 | Club Zombie | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100368 | Coagulate Blood | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100369 | Coagulated Entity | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100370 | Cobra Fangs | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100371 | Code of Milan Suspended | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100372 | Code of Samiel | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100373 | Codex of the Damned | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+| 100374 | Codex of the Edenic Groundskeepers | Zgodna w sprawdzonych klauzulach | spec matches catalog, handler w cards.ts |
+
+W tej partii zweryfikowano 100 kart: **100 zgodna**. Łącznie **1025 / 1151** kart ręcznie sprawdzonych.
