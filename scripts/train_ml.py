@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import math
+import os
 import sys
 from datetime import datetime, timezone
 
@@ -166,6 +167,12 @@ def main() -> None:
         "meanLoss": sum(losses) / max(1, len(losses)),
         "cudaDevice": torch.cuda.get_device_name(0) if device.type == "cuda" else None,
     }, separators=(",", ":")))
+    sys.stdout.flush()
+    sys.stderr.flush()
+    # On Windows with Python 3.15 + CUDA (cu130), Py_Finalize unloading CUDA DLLs
+    # after training can trigger an access violation (0xC0000005 / 3221225477)
+    # even though stdout has already been written completely.
+    os._exit(0)
 
 
 if __name__ == "__main__":
@@ -173,4 +180,5 @@ if __name__ == "__main__":
         main()
     except Exception as exc:  # the dev server returns this as an actionable UI error
         print(f"ML trainer failed: {exc}", file=sys.stderr)
+        sys.stderr.flush()
         sys.exit(2)
