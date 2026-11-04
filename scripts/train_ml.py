@@ -79,7 +79,7 @@ def main() -> None:
     episodes = request.get("episodes", [])
     if len(episodes) < 2:
         raise ValueError("At least two completed games are needed for an ML update.")
-    rewards = [float(ep.get("reward", 0.0)) for ep in episodes]
+    rewards = [float(ep.get("reward") or 0.0) for ep in episodes]
     mean_reward = sum(rewards) / len(rewards)
     variance = sum((r - mean_reward) ** 2 for r in rewards) / max(1, len(rewards) - 1)
     reward_sd = math.sqrt(variance)
@@ -92,22 +92,27 @@ def main() -> None:
             else max(-1.5, min(1.5, reward))
         )
         for sample in ep.get("samples", []):
-            rows = sample.get("options", [])
-            allowed = sample.get("allowed", [True] * len(rows))
-            chosen = int(sample.get("chosen", -1))
-            if not rows or chosen < 0 or chosen >= len(rows) or len(allowed) != len(rows):
+            raw_rows = sample.get("options", [])
+            allowed = sample.get("allowed", [True] * len(raw_rows))
+            chosen = int(sample.get("chosen", -1) or 0)
+            if not raw_rows or chosen < 0 or chosen >= len(raw_rows) or len(allowed) != len(raw_rows):
                 continue
             if not allowed[chosen] or not any(allowed):
                 continue
-            if any(len(row) != FEATURES for row in rows):
+            if any(len(row) != FEATURES for row in raw_rows):
                 raise ValueError("Option feature row has the wrong size.")
+            rows = [
+                [(-4.0 if idx == 0 else 0.0) if v is None else float(v) for idx, v in enumerate(row)]
+                for row in raw_rows
+            ]
             sample_adv = (
                 advantage
                 if reward_sd >= 1e-6
                 else max(-3.0, min(3.0, advantage + 0.35 * float(rows[chosen][0])))
             )
-            samples.append((rows, [bool(value) for value in allowed], chosen,
-                            float(sample.get("oldLogProbability", 0.0)), sample_adv))
+            old_lp_raw = sample.get("oldLogProbability")
+            old_lp = 0.0 if old_lp_raw is None else float(old_lp_raw)
+            samples.append((rows, [bool(value) for value in allowed], chosen, old_lp, sample_adv))
     if len(samples) < 16:
         raise ValueError("Not enough choice examples were collected for an update.")
 
