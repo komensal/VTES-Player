@@ -16,6 +16,7 @@
 
 import { PLAYSTYLES_LIST, PLAYSTYLE_LABELS } from "../ai/playstyles.ts";
 import { createInitialMlModel, isMlModel, type MlModel } from "../ai/ml-agent.ts";
+import { MlWorkerPool } from "./ml-worker-pool.ts";
 import { botAgentFor, playstyleOf } from "./botagent.ts";
 import type { CatalogCard, CatalogFile } from "../cards/catalog.ts";
 import { disciplineName, loadCatalog } from "../cards/catalog.ts";
@@ -175,7 +176,7 @@ import {
 import type { SavedGame } from "./history.ts";
 import { readSaveFile } from "./history.ts";
 import { LocalTransport } from "./transport.ts";
-import { runLocalMlEpisode, runLocalTraining, TRAINING_SEATS, type MlTrainingEpisode } from "./ai-lab.ts";
+import { runLocalTraining, TRAINING_SEATS, type MlTrainingEpisode } from "./ai-lab.ts";
 import type { GenerationTrend, TrainingProgress, TrainingReport } from "../ai/trainer.ts";
 
 const esc = (s: string): string =>
@@ -239,7 +240,7 @@ export class Shell {
   private trainerReport: TrainingReport | null = null;
   private trainerMessage = "";
   private trainerError = "";
-  private mlConfig = { gamesPerRound: 4, rounds: 3, seed: 4242 };
+  private mlConfig = { gamesPerRound: 4, rounds: 3, seed: 4242, workers: Math.min(4, navigator.hardwareConcurrency || 1) };
   private mlRunning = false;
   private mlCancelRequested = false;
   private mlProgress: { round: number; rounds: number; game: number; games: number; ownVp: number; wins: number } | null = null;
@@ -1812,7 +1813,7 @@ export class Shell {
           <p class="note">Round ${this.mlProgress.round}/${this.mlProgress.rounds} · game ${this.mlProgress.game}/${this.mlProgress.games} · candidate ${this.mlProgress.ownVp.toFixed(2)} VP average · ${this.mlProgress.wins} win(s) so far</p></div>`
       : "";
     const rows = this.mlHistory.length
-      ? `<table class="lbtable"><thead><tr><th>Round</th><th>Games</th><th>ML mean VP</th><th>Opponents mean VP</th><th>Δ VP</th><th>Wins</th><th>Ousted</th><th>Backend</th></tr></thead><tbody>${this.mlHistory.map((r) => `<tr><td>${r.round}</td><td>${r.games}</td><td>${r.meanVp.toFixed(2)}</td><td>${r.opponentVp.toFixed(2)}</td><td>${r.delta >= 0 ? "+" : ""}${r.delta.toFixed(2)}</td><td>${r.wins}</td><td>${r.ousts}</td><td>${esc(r.device)}</td></tr>`).join("")}</tbody></table>`
+      ? `<table class="lbtable"><thead><tr><th>Round</th><th>Games</th><th>ML mean VP</th><th>Opponents mean VP</th><th>Δ VP</th><th>Wins</th><th>Ousted</th><th>Samples</th><th>Backend</th></tr></thead><tbody>${this.mlHistory.map((r) => `<tr><td>${r.round}</td><td>${r.games}</td><td>${r.meanVp.toFixed(2)}</td><td>${r.opponentVp.toFixed(2)}</td><td>${r.delta >= 0 ? "+" : ""}${r.delta.toFixed(2)}</td><td>${r.wins}</td><td>${r.ousts}</td><td>${r.examples}</td><td>${esc(r.device)}</td></tr>`).join("")}</tbody></table>`
       : "";
     const disabled = this.mlRunning || this.trainerRunning ? " disabled" : "";
     return `<div class="supported trainer-ml">
@@ -1822,6 +1823,7 @@ export class Shell {
       <div class="trainer-controls">
         <label class="field"><span>Games per update round (2–100)</span><input id="ml-games" type="number" min="2" max="100" value="${this.mlConfig.gamesPerRound}"${disabled} /></label>
         <label class="field"><span>Update rounds (1–1000)</span><input id="ml-rounds" type="number" min="1" max="1000" value="${this.mlConfig.rounds}"${disabled} /></label>
+        <label class="field"><span>Parallel game workers (1–16)</span><input id="ml-workers" type="number" min="1" max="16" value="${this.mlConfig.workers}"${disabled} /></label>
         <label class="field"><span>Seed</span><input id="ml-seed" type="number" value="${this.mlConfig.seed}"${disabled} /></label>
       </div>
       <div class="row">
@@ -1833,7 +1835,7 @@ export class Shell {
       ${progress}${rows}
       ${this.mlError ? `<p class="err">${esc(this.mlError)}</p>` : ""}
       ${this.mlMessage ? `<p class="note">${esc(this.mlMessage)}</p>` : ""}
-      <p class="note dim">Install local PyTorch with CUDA support for the RTX 3070. The run is seeded and reproducible; GPU accelerates gradient training, while the game engine itself runs locally in the browser.</p>
+      <p class="note dim">Install local PyTorch with CUDA support for the RTX 3070. The run is seeded and reproducible; GPU accelerates gradient training, while browser workers simulate games in parallel. More workers need more memory. VP during training includes exploratory decisions, not a separate evaluation.</p>
     </div>`;
   }
 
@@ -1847,6 +1849,7 @@ export class Shell {
       gamesPerRound: Math.max(2, Math.min(100, number("#ml-games", 4))),
       rounds: Math.max(1, Math.min(1000, number("#ml-rounds", 3))),
       seed: number("#ml-seed", 4242) || 1,
+      workers: Math.max(1, Math.min(16, number("#ml-workers", 4))),
     };
     this.mlRunning = true;
     this.mlCancelRequested = false;
@@ -1858,31 +1861,31 @@ export class Shell {
     const priorRounds = model.training?.rounds ?? 0;
     const priorGames = model.training?.games ?? 0;
     let totalGoodGames = 0;
+    let pool: MlWorkerPool | undefined;
     this.paint();
     try {
+      pool = new MlWorkerPool(Math.min(this.mlConfig.workers, this.mlConfig.gamesPerRound));
       for (let round = 1; round <= this.mlConfig.rounds; round++) {
         const episodes: MlTrainingEpisode[] = [];
         let vpTotal = 0;
         let opponentTotal = 0;
         let wins = 0;
         let ousts = 0;
-        for (let game = 1; game <= this.mlConfig.gamesPerRound; game++) {
-          if (this.mlCancelRequested) break;
-          // Yield between complete games so the UI can repaint and cancellation
-          // can be requested without interrupting a game in a half-resolved state.
-          await new Promise<void>((resolve) => setTimeout(resolve, 0));
-          const seed = (this.mlConfig.seed + (priorRounds + round - 1) * 100_003 + game - 1) | 0;
-          const episode = runLocalMlEpisode(model, seed, priorGames + (round - 1) * this.mlConfig.gamesPerRound + game - 1);
+        const tasks = Array.from({ length: this.mlConfig.gamesPerRound }, (_, index) => ({
+          seed: (this.mlConfig.seed + (priorRounds + round - 1) * 100_003 + index) | 0,
+          gameIndex: priorGames + (round - 1) * this.mlConfig.gamesPerRound + index,
+        }));
+        // Workers finish already-started games when cancelled, then stop scheduling.
+        // Results are returned in task order, irrespective of completion order.
+        const results = await pool.run(model, tasks, () => this.mlCancelRequested, (episode, completed) => {
           this.mlProgress = {
-            round,
-            rounds: this.mlConfig.rounds,
-            game,
+            round, rounds: this.mlConfig.rounds, game: completed,
             games: this.mlConfig.gamesPerRound,
             ownVp: episodes.length ? vpTotal / episodes.length : episode.ownVictoryPoints,
             wins,
           };
           if (episode.errors) {
-            this.mlMessage = `Game ${game} ended with an engine error and was excluded: ${episode.errors}`;
+            this.mlMessage = `Game seed ${episode.seed} ended with an engine error and was excluded: ${episode.errors}`;
           } else {
             episodes.push(episode);
             vpTotal += episode.ownVictoryPoints;
@@ -1893,7 +1896,9 @@ export class Shell {
             this.mlProgress.wins = wins;
           }
           if (this.screen === "trainer") this.paint();
-        }
+        });
+        // Preserve deterministic PPO sample order even when games finish out of order.
+        episodes.splice(0, episodes.length, ...results.filter((episode) => !episode.errors));
         if (episodes.length < 2) {
           if (this.mlCancelRequested) break;
           throw new Error("At least two successful games are needed per update round. Try a new seed or fewer games.");
@@ -1955,6 +1960,7 @@ export class Shell {
         this.mlError += " Run the Vite dev server on the machine with Python/PyTorch; set VTES_PYTHON if the interpreter is not on PATH.";
       }
     } finally {
+      pool?.close();
       this.mlRunning = false;
       if (this.screen === "trainer") this.paint();
     }

@@ -38,7 +38,7 @@ describe("AI Training Lab UI", () => {
       expect(shell).toContain(`id="${id}"`);
     }
     expect(shell).toContain("/__vtes_ml/train");
-    expect(shell).toContain("runLocalMlEpisode");
+    expect(shell).toContain("MlWorkerPool");
     expect(shell).toContain("settings.trainedMlModel = model");
     expect(shell).toContain("meanVp - opponentVp");
     expect(mlScript).toContain("torch.cuda.is_available()");
