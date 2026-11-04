@@ -21942,7 +21942,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ears of the Hare [100599] — fala 36 wierna (300) faithful rebuild
+    // Ears of the Hare [100599] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100599,
     name: "Ears of the Hare",
     cardType: "reaction",
@@ -21954,7 +21954,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Eccentric Billionaire [100607] — fala 36 wierna (300) faithful rebuild
+    // Eccentric Billionaire [100607] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100607,
     name: "Eccentric Billionaire",
     cardType: "ally",
@@ -21966,7 +21966,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ecstasy [100610] — fala 36 wierna (300) faithful rebuild
+    // Ecstasy [100610] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100610,
     name: "Ecstasy",
     cardType: "reaction",
@@ -21977,7 +21977,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Elixir of Distillation [100627] — fala 36 wierna (300) faithful rebuild
+    // Elixir of Distillation [100627] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100627,
     name: "Elixir of Distillation",
     cardType: "equipment",
@@ -21988,7 +21988,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Empowering the Puppet King [100639] — fala 36 wierna (300) faithful rebuild
+    // Empowering the Puppet King [100639] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100639,
     name: "Empowering the Puppet King",
     cardType: "modifier",
@@ -27426,7 +27426,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Echo of Harmonies [100608] — fala 36 wierna (300) faithful rebuild
+    // Echo of Harmonies [100608] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100608,
     name: "Echo of Harmonies",
     cardType: "modifier",
@@ -27438,18 +27438,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ecstatic Agony [100611] — fala 36 wierna (300) faithful rebuild
+    // Ecstatic Agony [100611] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100611,
     name: "Ecstatic Agony",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Edged Illusion [100615] — fala 36 wierna (300) faithful rebuild
+    // Edged Illusion [100615] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100615,
     name: "Edged Illusion",
     cardType: "action",
@@ -27460,7 +27460,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Elder Michaelis's Hold [100621] — fala 36 wierna (300) faithful rebuild
+    // Elder Michaelis's Hold [100621] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100621,
     name: "Elder Michaelis's Hold",
     cardType: "reaction",
@@ -27471,7 +27471,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Eldest Are Kholo [100622] — fala 36 wierna (300) faithful rebuild
+    // The Eldest Are Kholo [100622] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100622,
     name: "The Eldest Are Kholo",
     cardType: "modifierOrReaction",
