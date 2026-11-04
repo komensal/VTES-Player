@@ -190,12 +190,12 @@ describe("telling the player what is wrong", () => {
   it("reports an unknown card with its line, and refuses the deck", () => {
     // Never silently dropped: a deck that lost a card is not the deck the
     // player built.
-    const text = `${good}\n2x Sword of Nuln`;
+    const text = `${good}\n2x Not A Real VTES Card`;
     const { deck, report } = importDeck(text, "Alice");
     expect(deck).toBeNull();
     expect(report.ok).toBe(false);
     expect(report.unknown).toHaveLength(1);
-    expect(report.unknown[0]!.text).toContain("Sword of Nuln");
+    expect(report.unknown[0]!.text).toContain("Not A Real VTES Card");
     expect(report.unknown[0]!.line).toBe(text.split("\n").length);
   });
 

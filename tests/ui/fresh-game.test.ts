@@ -34,7 +34,7 @@ const reg = registry as unknown as CardRegistry;
 
 /** The supported pool, as a deck builder would see it. */
 const cryptIds = Object.values(reg.entries)
-  .filter((e) => e.card.kind === "crypt" && e.supported)
+  .filter((e) => e.card.kind === "crypt" && e.supported && e.card.group === 6)
   .map((e) => e.card.id)
   .sort((a, b) => a - b);
 const libraryNames = Object.values(reg.entries)
