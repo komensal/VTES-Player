@@ -838,17 +838,6 @@ export type EffectPrimitive =
        *  and is burned on resolution. The `preventAllThisRound` shape.
        *  docs/dodges-design.md §2 */
       bloodCost?: number;
-      /** "…and if the range is CLOSE, this vampire burns N blood to put this
-       *  card on the opposing minion and lock them. The attached minion
-       *  does not unlock as normal. Burn this card during their unlock
-       *  phase" (Serpent's Numbing Kiss [PRE][SER]) — a rider on a
-       *  combat-ends strike, so it resolves once the range is known rather
-       *  than at declaration. docs/card-rules-audit.md */
-      attachIfClose?: {
-        bloodCost: number;
-        lock: boolean;
-        burnInVictimUnlock: boolean;
-      };
     }
   /** "Strike: dodge" — no damage, cancels the opposing strike's effects
    *  on this minion (p. 33). `riders` is "…WITH AN OPTIONAL PRESS"
@@ -926,40 +915,11 @@ export type EffectPrimitive =
        *  superior) — the gear is gone before the answer lands. */
       firstStrike?: boolean;
       ranged?: boolean;
-      /** "Strike: ranged. Burn a RETAINER employed by the opposing minion
-       *  (usable at close range)" (Mask Empathy [pre]) — the same
-       *  one-option-per-candidate shape, aimed at a retainer instead of an
-       *  equipment card. Without this the strike could not name a retainer
-       *  at all, which is why the card used to be printed here as two
-       *  damage strikes that it does not have. docs/card-rules-audit.md */
-      retainer?: boolean;
     }
   /** "Strike: STEAL equipment" — the same choice, except the card changes
    *  bearer rather than leaving play. Defaults to weapons only (Fast Hands);
    *  `weaponOnly: false` permits any equipment (Blessing of Durga Syn). §3 */
   | { kind: "strikeStealEquipment"; firstStrike?: boolean; weaponOnly?: boolean }
-  /** "[PRE] Play BEFORE RANGE IS DETERMINED. This vampire burns 1 blood to
-   *  burn a retainer employed by the opposing minion" (Mask Empathy
-   *  [PRE]) — the non-strike half of the same card, so the two levels
-   *  differ in timing and in price rather than in what they destroy. */
-  | { kind: "burnOpposingRetainer"; bloodCost: number }
-  /** "[pot] Move N blood from the BLOOD BANK to a YOUNGER VAMPIRE in your
-   *  uncontrolled region. A vampire can play only 1 Street Cred each turn"
-   *  (Street Cred). The recipient is a question only when the seat has more
-   *  than one — the same shape Brujah Debate's outcome uses, which is why
-   *  this reuses `UncontrolledBloodAdded` rather than adding a currency. */
-  | {
-      kind: "bloodBankToUncontrolled";
-      /** "[pot] move 1 blood" / "[POT] as above, but move 2" (Street Cred)
-       *  — the only difference between the card's two levels, so the amount
-       *  is data rather than two primitives. */
-      amount: number;
-      /** "…to a YOUNGER vampire in your uncontrolled region" — younger than
-       *  the vampire playing the card. */
-      youngerThanActor?: boolean;
-    }
-  | { kind: "cancelDiablerie"; burnDiablerist: number }
-  | { kind: "burnBothDiablerie" }
   | { kind: "nullifyOpposingWeaponDamage" }
   /** "After combat ends, <do X>" — a rider on a "Strike: combat ends"
    *  card (Catatonic Fear, Pass Through Shadow, Form of Mist).
@@ -1451,14 +1411,7 @@ export type EffectPrimitive =
    *  player, not their vampire. Held on the combat frame, so the bonus
    *  lifts itself however the combat ended and p. 7's discard-down runs
    *  at the pop. docs/temporary-hand-size-design.md */
-  | {
-      kind: "handSizeBonus";
-      amount: number;
-      /** "+N hand size for the REMAINDER OF THIS COMBAT" (Aura Reading
-       *  [AUS]) — the default scope is the round, which a card that says
-       *  "this combat" must be able to lift. */
-      scope?: "round" | "combat";
-    }
+  | { kind: "handSizeBonus"; amount: number }
   /** `onlyToLong` is the mirror of `onlyToClose` — "Maneuver, only usable
    *  to go to LONG range" (High Ground, Backstep). Same reasoning: worth
    *  nothing once the range is already long.
@@ -1584,10 +1537,6 @@ export type EffectPrimitive =
    *  maneuver, only usable to get to close range" (Dance with the Devil
    *  superior) — a credit, where `maneuver` performs one. §4 */
   | { kind: "grantCloseManeuver"; bloodCost?: number }
-  | { kind: "extraManeuverForBlood"; bloodCost: number }
-  | { kind: "celerityCancelStrike" }
-  | { kind: "burnHandForStrength"; maxCards: number; strengthPerCard: number }
-  | { kind: "conquerTheBeast"; counters: number; mandatoryPress: boolean }
   /** "Prevent N damage". `nonAggravated` is the printed clause "prevent N
    *  NON-AGGRAVATED damage" (Soak, Wall of Filth basic) — a gate on the
    *  OPTION, like `PendingDamage.noPreventBy`: a card that provably
@@ -1596,14 +1545,7 @@ export type EffectPrimitive =
   | { kind: "prevent"; base: number; perBloodX: boolean; nonAggravated?: boolean }
   /** "Prevent N damage from the next strike this round" (Undying Tenacity
    * superior) — a one-off prevention applied at strike resolution. */
-  | {
-      kind: "preventDamage";
-      amount: number;
-      /** "[FOR] As above, and if any of the damage was from the opposing
-       *  minion's melee weapon, that weapon is destroyed" (Armor of
-       *  Vitality). */
-      destroyMeleeWeapon?: boolean;
-    }
+  | { kind: "preventDamage"; amount: number }
   /** Delay this combatant's torpor until combat ends; some cards also grant a press or end combat after three cardless rounds. */
   | { kind: "deferTorporUntilCombatEnds"; press?: boolean; endAfterThreeCardlessRounds?: boolean }
   /**
@@ -1618,10 +1560,7 @@ export type EffectPrimitive =
    * mended" (p. 34) — asks the question.
    * docs/armour-design.md §3
    */
-  | { kind: "treatAggravatedAsNormal"; scope?: "round" | "combat" }
-  | { kind: "flashGrenadeImmune"; scope?: "round" | "combat" }
-  | { kind: "maneuverNextRound"; count?: number }
-  | { kind: "grantManeuver" }
+  | { kind: "treatAggravatedAsNormal" }
   /** "This vampire treats all aggravated damage from the opposing minion's
    *  STRIKE as normal damage" (Adaptability basic) — the same idea as
    *  `treatAggravatedAsNormal` at one strike's scope instead of the round's,
@@ -1743,12 +1682,6 @@ export type EffectPrimitive =
    *  pool (combat-long, spend once).
    *  docs/round-recurring-combat-design.md §2 */
   | { kind: "preventEachRound"; amount: number }
-  /** "This vampire may prevent N damage from the opposing minion's strikes
-   *  EACH ROUND [this combat]" (Apparition) — `preventEachRound` for a
-   *  card played before range rather than from a card in play. Same rate
-   *  bookkeeping (`preventPerRound`), so the two cannot drift.
-   *  docs/card-rules-audit.md */
-  | { kind: "roundPrevent"; amount: number }
   /** "This combat, <the opposing minion | both combatants> take N damage
    *  each round" (Carrion Crows, Weather Control) — the combat-card form
    *  of the retainer static `combatRoundDamage`. §3 */
@@ -1771,68 +1704,6 @@ export type EffectPrimitive =
    *  automatically prevented" (Flesh of Marble). `aggravated` is the
    *  superior's "…aggravated damage is prevented this way as well". §5 */
   | { kind: "autoPreventAfterFirst"; aggravated: boolean }
-  /** "[for] Prevent all damage from the opposing minion's strike. If the
-   *  strike was made with a melee weapon, that weapon is destroyed"
-   *  (King of the Mountain). One STRIKE, not one round. */
-  | { kind: "preventOpposingStrike"; destroyMeleeWeapon?: boolean }
-  /** "[FOR] Play after range is determined and before strikes are chosen.
-   *  If the opposing minion inflicts damage with a hand strike this round
-   *  (even if the damage is prevented), he or she takes an equal amount of
-   *  damage during strike resolution as well" (King of the Mountain). */
-  | { kind: "handStrikeReflection" }
-  /** "[FOR] As above, and each round of this combat, this vampire may BURN
-   *  N BLOOD to prevent all damage from the opposing minion's INITIAL
-   *  strike for that round" (Superior Mettle). A standing offer, paid per
-   *  use — not a credit, because the payer is the victim and the price is
-   *  blood rather than a point pool. */
-  | { kind: "initialStrikeShield"; bloodCost: number }
-  /** "…takes N unpreventable damage during the PRESS STEP each round"
-   *  (Drawing Out the Beast) / "…this round, only effective if this strike
-   *  was made at close range" (Necrosis). */
-  | { kind: "pressStepDamage"; amount: number; ifCloseStrikeThisRound?: boolean }
-  /** "This combat, if any damage is successfully inflicted on this vampire
-   *  in a round, the opposing minion cannot press / use additional strikes
-   *  that round" (Sympathetic Agony). */
-  | { kind: "barPressIfDamaged"; additionalStrikes: boolean }
-  /** "The opposing minion cannot use any additional strikes this round"
-   *  (Rigor Mortis [pre]). */
-  | { kind: "barOpponentAdditionalStrikes" }
-  /** "…once each round this combat, you may cancel a maneuver used by the
-   *  opposing minion" (Rigor Mortis [THN]). */
-  | { kind: "cancelOpposingManeuverOncePerRound" }
-  /** "[VIC] This round, this vampire is immune to non-aggravated damage,
-   *  cannot strike and gets 1 optional press, only usable to end combat"
-   *  (Bloodform). `amount: null` is the immunity. */
-  | { kind: "roundNonAggravatedShield"; amount: number | null }
-  /** "…this vampire cannot strike this round" (Bloodform [VIC]). */
-  | { kind: "cannotStrikeThisRound" }
-  /** "…and if any of the damage was from the opposing minion's MELEE
-   *  WEAPON, that weapon is destroyed" (Armor of Vitality [FOR]) — a rider
-   *  on prevention, spent only if the melee weapon's damage was among what
-   *  was prevented. */
-  | { kind: "destroyMeleeWeaponUsed" }
-  /** "If the opposing vampire would go to torpor during the resolution of
-   *  this strike, instead they are burned" (Ahriman's Demesne [OBT]) — a
-   *  rider on the strike, scoped to that strike's damage. */
-  | { kind: "burnInsteadOfTorpor" }
-  /** "Only usable when the opposing vampire should go to torpor.
-   *  DIALBERIZE the opposing vampire instead" (Amaranth). A torpor-window
-   *  replacement, not a strike — the diablerie runs through the ordinary
-   *  diablerie pipeline so the blood/pool payoff is the printed one. */
-  | { kind: "amaranthInsteadOfTorpor" }
-  /** "[for] Only usable by a vampire being burned; he or she is sent into
-   *  TORPOR instead" (Ashes to Ashes). The burn window, not the torpor
-   *  one. */
-  | { kind: "torporInsteadOfBurn" }
-  /** "[thn] Prevent all damage. This vampire unlocks and goes to torpor
-   *  (ending combat). [THN] As [thn], and this vampire gains N blood"
-   *  (Ashes to Ashes). */
-  | { kind: "selfTorporEndingCombat"; unlockSelf?: boolean; gainBlood?: number }
-  /** "[aus] The opposing minion's controller plays with an OPEN HAND for
-   *  the remainder of combat" (Aura Reading) — a hand-size asymmetry the
-   *  engine already models for the taunt family; this names it for the
-   *  combat only. */
-  | { kind: "openOpposingHand" }
   /** "This combat, frenzy cards cannot be used on this vampire; cancel
    *  the effects of frenzy cards already used on them this combat"
    *  (Tranquility Shield) — closes the deferral in docs/frenzy-design.md.
@@ -2524,13 +2395,6 @@ export type UsabilityRule =
   | "byVampire"
   /** Toreador's Bane: only in combat with Toreador, Toreador antitribu, ally, or younger minion. */
   | "onlyAgainstToreadorAllyOrYounger"
-  /** "Only usable in combat with an ALLY" (Bloodform [vic]) — the OPPOSING
-   *  minion's kind, not the player's. */
-  | "onlyAgainstAlly"
-  /** "Only usable at the end of a round of combat in which THIS VAMPIRE
-   *  successfully inflicted MORE DAMAGE than the opposing minion" (Street
-   *  Cred) — a finished fact read at `combat.endOfRound`. */
-  | "onlyAfterInflictedMore"
   /** Combat card mode only usable at long range (No Trace basic). */
   | "onlyAtLongRange"
   /** "Only usable at close range" (Blood Fury, Blood Rage) — the mirror
@@ -2555,7 +2419,6 @@ export type UsabilityRule =
   | "onlyIfMoreBloodThanFoe"
   /** Only playable when the opposing combatant is a vampire. */
   | "onlyAgainstVampire"
-  | "onlyBeforeRange"
   /** "+1 stealth, EVEN IF stealth is not yet needed" (Form of the Cobra)
    *  — overrides the p. 26 "only when needed" gate for this mode. */
   | "evenIfNotNeeded"

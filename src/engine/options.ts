@@ -59,12 +59,6 @@ export type WindowId =
   /** A vampire is going to torpor and a Minor Boon could stop it —
    *  docs/boons-design.md §4. */
   | "torpor"
-  /** "Only usable when this vampire is being diablerized" (Crimson Fury) —
-   *  a reactive window opened BEFORE the diablerie commits, addressed to
-   *  the victim's controller. The card is [ani]/[ANI] and costs 1 blood;
-   *  it is usable by a locked vampire and by a vampire in torpor, so the
-   *  usual ready/unlocked checks are bypassed here. */
-  | "diablerie.beingDiablerized"
   /** A card asking one Methuselah a question (docs/choice-frames-design.md). */
   | "choice";
 
