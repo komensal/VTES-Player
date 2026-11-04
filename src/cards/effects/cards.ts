@@ -21798,6 +21798,17092 @@ export const cardSpecs: CardSpec[] = [
       { level: "basic", discipline: null, effects: [] }
     ],
   },
+  {
+    // 419 Operation [100002] — fala D wierna (auto)
+    krcgId: 100002,
+    name: "419 Operation",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Abactor [100004] — fala D wierna (auto)
+    krcgId: 100004,
+    name: "Abactor",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Abjure [100007] — fala D wierna (auto)
+    krcgId: 100007,
+    name: "Abjure",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "red", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ablative Skin [100008] — fala D wierna (auto)
+    krcgId: 100008,
+    name: "Ablative Skin",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Abombwe [100009] — fala D wierna (auto)
+    krcgId: 100009,
+    name: "Abombwe",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Abomination [100010] — fala D wierna (auto)
+    krcgId: 100010,
+    name: "Abomination",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Absimiliard's Army [100011] — fala D wierna (auto)
+    krcgId: 100011,
+    name: "Absimiliard's Army",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Abyssal Hunter [100014] — fala D wierna (auto)
+    krcgId: 100014,
+    name: "Abyssal Hunter",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Achilles' Heel [100017] — fala D wierna (auto)
+    krcgId: 100017,
+    name: "Achilles' Heel",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Acquired Ventrue Assets [100019] — fala D wierna (auto)
+    krcgId: 100019,
+    name: "Acquired Ventrue Assets",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Adhocracy [100022] — fala D wierna (auto)
+    krcgId: 100022,
+    name: "Adhocracy",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // The Admonitions [100023] — fala D wierna (auto)
+    krcgId: 100023,
+    name: "The Admonitions",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Agate Talisman [100024] — fala D wierna (auto)
+    krcgId: 100024,
+    name: "Agate Talisman",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Agent of Power [100025] — fala D wierna (auto)
+    krcgId: 100025,
+    name: "Agent of Power",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Aggressive Tactics [100026] — fala D wierna (auto)
+    krcgId: 100026,
+    name: "Aggressive Tactics",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Ahrimane Protectorate [100028] — fala D wierna (auto)
+    krcgId: 100028,
+    name: "Ahrimane Protectorate",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Ailing Spirit [100030] — fala D wierna (auto)
+    krcgId: 100030,
+    name: "The Ailing Spirit",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Akunanse Kholo [100034] — fala D wierna (auto)
+    krcgId: 100034,
+    name: "Akunanse Kholo",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Al's Army Apparatus [100035] — fala D wierna (auto)
+    krcgId: 100035,
+    name: "Al's Army Apparatus",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Alacrity [100036] — fala D wierna (auto)
+    krcgId: 100036,
+    name: "Alacrity",
+    cardType: "actionModifier",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Alastor [100038] — fala D wierna (auto)
+    krcgId: 100038,
+    name: "Alastor",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Alia, God's Messenger [100039] — fala D wierna (auto)
+    krcgId: 100039,
+    name: "Alia, God's Messenger",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Alvusia [100041] — fala D wierna (auto)
+    krcgId: 100041,
+    name: "Alvusia",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Ambrosius, The Ferryman [100044] — fala D wierna (auto)
+    krcgId: 100044,
+    name: "Ambrosius, The Ferryman",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Ambulance [100045] — fala D wierna (auto)
+    krcgId: 100045,
+    name: "Ambulance",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Amulet of Temporal Perception [100048] — fala D wierna (auto)
+    krcgId: 100048,
+    name: "Amulet of Temporal Perception",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Anachronism [100050] — fala D wierna (auto)
+    krcgId: 100050,
+    name: "Anachronism",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Ananasi Vampirephile [100051] — fala D wierna (auto)
+    krcgId: 100051,
+    name: "Ananasi Vampirephile",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Anarch Manifesto, An [100053] — fala D wierna (auto)
+    krcgId: 100053,
+    name: "Anarch Manifesto, An",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Anarch Secession [100057] — fala D wierna (auto)
+    krcgId: 100057,
+    name: "Anarch Secession",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Anathema [100060] — fala D wierna (auto)
+    krcgId: 100060,
+    name: "Anathema",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Ancestor Spirit [100061] — fala D wierna (auto)
+    krcgId: 100061,
+    name: "Ancestor Spirit",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Ancestor's Insight [100062] — fala D wierna (auto)
+    krcgId: 100062,
+    name: "Ancestor's Insight",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // The Ancestor's Talisman [100063] — fala D wierna (auto)
+    krcgId: 100063,
+    name: "The Ancestor's Talisman",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Angel of Berlin [100067] — fala D wierna (auto)
+    krcgId: 100067,
+    name: "Angel of Berlin",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Anima Gathering [100068] — fala D wierna (auto)
+    krcgId: 100068,
+    name: "Anima Gathering",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Animal Magnetism [100069] — fala D wierna (auto)
+    krcgId: 100069,
+    name: "Animal Magnetism",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Ankara Citadel, Turkey [100071] — fala D wierna (auto)
+    krcgId: 100071,
+    name: "The Ankara Citadel, Turkey",
+    cardType: "equipment",
+    bloodCost: 2,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Anonymous Freight [100072] — fala D wierna (auto)
+    krcgId: 100072,
+    name: "Anonymous Freight",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Antediluvian Awakening [100073] — fala D wierna (auto)
+    krcgId: 100073,
+    name: "Antediluvian Awakening",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Anthelios, The Red Star [100074] — fala D wierna (auto)
+    krcgId: 100074,
+    name: "Anthelios, The Red Star",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Antithesis [100075] — fala D wierna (auto)
+    krcgId: 100075,
+    name: "Antithesis",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "jud", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Approximation of Loyalty [100078] — fala D wierna (auto)
+    krcgId: 100078,
+    name: "Approximation of Loyalty",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Arcane Appraiser [100080] — fala D wierna (auto)
+    krcgId: 100080,
+    name: "Arcane Appraiser",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Argent Baton [100086] — fala D wierna (auto)
+    krcgId: 100086,
+    name: "Argent Baton",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1, ranged: true }] }
+    ],
+  },
+  {
+    // Armor of Terra [100088] — fala D wierna (auto)
+    krcgId: 100088,
+    name: "Armor of Terra",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Arms Dealer [100090] — fala D wierna (auto)
+    krcgId: 100090,
+    name: "Arms Dealer",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Army of Apparitions [100092] — fala D wierna (auto)
+    krcgId: 100092,
+    name: "Army of Apparitions",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // The Art of Memory [100097] — fala D wierna (auto)
+    krcgId: 100097,
+    name: "The Art of Memory",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Art of Pain [100098] — fala D wierna (auto)
+    krcgId: 100098,
+    name: "The Art of Pain",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Art's Traumatic Essence [100100] — fala D wierna (auto)
+    krcgId: 100100,
+    name: "Art's Traumatic Essence",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // As the Crow [100102] — fala D wierna (auto)
+    krcgId: 100102,
+    name: "As the Crow",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: "flight", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Asanbonsam Ghoul [100103] — fala D wierna (auto)
+    krcgId: 100103,
+    name: "Asanbonsam Ghoul",
+    cardType: "ally",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Ashur Tablets [100106] — fala D wierna (auto)
+    krcgId: 100106,
+    name: "Ashur Tablets",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Augur [100110] — fala D wierna (auto)
+    krcgId: 100110,
+    name: "Augur",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "viz", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Aura Absorption [100111] — fala D wierna (auto)
+    krcgId: 100111,
+    name: "Aura Absorption",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Auto-da-fé [100116] — fala D wierna (auto)
+    krcgId: 100116,
+    name: "Auto-da-fé",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Aversion [100118] — fala D wierna (auto)
+    krcgId: 100118,
+    name: "Aversion",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Awe [100119] — fala D wierna (auto)
+    krcgId: 100119,
+    name: "Awe",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Aye [100120] — fala D wierna (auto)
+    krcgId: 100120,
+    name: "Aye",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Babble [100122] — fala D wierna (auto)
+    krcgId: 100122,
+    name: "Babble",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Baleful Doll [100127] — fala D wierna (auto)
+    krcgId: 100127,
+    name: "Baleful Doll",
+    cardType: "equipment",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Baltimore Purge [100128] — fala D wierna (auto)
+    krcgId: 100128,
+    name: "Baltimore Purge",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bamba [100129] — fala D wierna (auto)
+    krcgId: 100129,
+    name: "Bamba",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Banshee Ironwail [100133] — fala D wierna (auto)
+    krcgId: 100133,
+    name: "Banshee Ironwail",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Barrenness [100134] — fala D wierna (auto)
+    krcgId: 100134,
+    name: "Barrenness",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "mal", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bastille Opera House [100140] — fala D wierna (auto)
+    krcgId: 100140,
+    name: "Bastille Opera House",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Battle Frenzy [100141] — fala D wierna (auto)
+    krcgId: 100141,
+    name: "Battle Frenzy",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: false }] }
+    ],
+  },
+  {
+    // Bauble [100142] — fala D wierna (auto)
+    krcgId: 100142,
+    name: "Bauble",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bay and Howl [100143] — fala D wierna (auto)
+    krcgId: 100143,
+    name: "Bay and Howl",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Bear-Baiting [100144] — fala D wierna (auto)
+    krcgId: 100144,
+    name: "Bear-Baiting",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // The Becoming [100147] — fala D wierna (auto)
+    krcgId: 100147,
+    name: "The Becoming",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Belonging Grants Protection [100150] — fala D wierna (auto)
+    krcgId: 100150,
+    name: "Belonging Grants Protection",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Benefit Performance [100151] — fala D wierna (auto)
+    krcgId: 100151,
+    name: "Benefit Performance",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Beretta 9mm [100152] — fala D wierna (auto)
+    krcgId: 100152,
+    name: "Beretta 9mm",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bestial Visage [100154] — fala D wierna (auto)
+    krcgId: 100154,
+    name: "Bestial Visage",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bestow Vigor [100155] — fala D wierna (auto)
+    krcgId: 100155,
+    name: "Bestow Vigor",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Betrayer [100156] — fala D wierna (auto)
+    krcgId: 100156,
+    name: "Betrayer",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Big Game [100159] — fala D wierna (auto)
+    krcgId: 100159,
+    name: "Big Game",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bima [100160] — fala D wierna (auto)
+    krcgId: 100160,
+    name: "Bima",
+    cardType: "ally",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Bind the Night-Walker [100161] — fala D wierna (auto)
+    krcgId: 100161,
+    name: "Bind the Night-Walker",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // The Black Beast [100164] — fala D wierna (auto)
+    krcgId: 100164,
+    name: "The Black Beast",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Black Gloves [100166] — fala D wierna (auto)
+    krcgId: 100166,
+    name: "Black Gloves",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Black Hand Emissary [100167] — fala D wierna (auto)
+    krcgId: 100167,
+    name: "Black Hand Emissary",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Black Hand Ritual [100168] — fala D wierna (auto)
+    krcgId: 100168,
+    name: "Black Hand Ritual",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Black Metamorphosis [100169] — fala D wierna (auto)
+    krcgId: 100169,
+    name: "Black Metamorphosis",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Black Spiral Buddy [100170] — fala D wierna (auto)
+    krcgId: 100170,
+    name: "Black Spiral Buddy",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Black Sunrise [100171] — fala D wierna (auto)
+    krcgId: 100171,
+    name: "Black Sunrise",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Blackmail [100173] — fala D wierna (auto)
+    krcgId: 100173,
+    name: "Blackmail",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blade of Enoch [100176] — fala D wierna (auto)
+    krcgId: 100176,
+    name: "Blade of Enoch",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Blanket of Night [100177] — fala D wierna (auto)
+    krcgId: 100177,
+    name: "Blanket of Night",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blessed Audience [100179] — fala D wierna (auto)
+    krcgId: 100179,
+    name: "Blessed Audience",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blessed Resilience [100181] — fala D wierna (auto)
+    krcgId: 100181,
+    name: "Blessed Resilience",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Blessing of Chaos [100182] — fala D wierna (auto)
+    krcgId: 100182,
+    name: "Blessing of Chaos",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blessing of the Beast [100184] — fala D wierna (auto)
+    krcgId: 100184,
+    name: "Blessing of the Beast",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Blessing of the Name [100185] — fala D wierna (auto)
+    krcgId: 100185,
+    name: "Blessing of the Name",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blessings of the Loa [100186] — fala D wierna (auto)
+    krcgId: 100186,
+    name: "Blessings of the Loa",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Blind Spot [100188] — fala D wierna (auto)
+    krcgId: 100188,
+    name: "Blind Spot",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Blithe Acceptance [100191] — fala D wierna (auto)
+    krcgId: 100191,
+    name: "Blithe Acceptance",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Awakening [100193] — fala D wierna (auto)
+    krcgId: 100193,
+    name: "Blood Awakening",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Bond [100194] — fala D wierna (auto)
+    krcgId: 100194,
+    name: "Blood Bond",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Buff [100196] — fala D wierna (auto)
+    krcgId: 100196,
+    name: "Blood Buff",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Blood Clots [100197] — fala D wierna (auto)
+    krcgId: 100197,
+    name: "Blood Clots",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Cult Awareness Network [100198] — fala D wierna (auto)
+    krcgId: 100198,
+    name: "Blood Cult Awareness Network",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood of Sandman [100204] — fala D wierna (auto)
+    krcgId: 100204,
+    name: "Blood of Sandman",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood of the Sabbat [100206] — fala D wierna (auto)
+    krcgId: 100206,
+    name: "Blood of the Sabbat",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Puppy [100207] — fala D wierna (auto)
+    krcgId: 100207,
+    name: "Blood Puppy",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Blood Shield [100209] — fala D wierna (auto)
+    krcgId: 100209,
+    name: "Blood Shield",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Siege [100210] — fala D wierna (auto)
+    krcgId: 100210,
+    name: "Blood Siege",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Blood Tempering [100213] — fala D wierna (auto)
+    krcgId: 100213,
+    name: "Blood Tempering",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Turnip [100216] — fala D wierna (auto)
+    krcgId: 100216,
+    name: "Blood Turnip",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Blood Weakens [100217] — fala D wierna (auto)
+    krcgId: 100217,
+    name: "Blood Weakens",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bloodbath [100218] — fala D wierna (auto)
+    krcgId: 100218,
+    name: "Bloodbath",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blooding [100220] — fala D wierna (auto)
+    krcgId: 100220,
+    name: "Blooding",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blooding by the Code [100221] — fala D wierna (auto)
+    krcgId: 100221,
+    name: "Blooding by the Code",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Bloodstone [100223] — fala D wierna (auto)
+    krcgId: 100223,
+    name: "Bloodstone",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bloodstorm of Chorazin [100224] — fala D wierna (auto)
+    krcgId: 100224,
+    name: "Bloodstorm of Chorazin",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Bloodwork [100225] — fala D wierna (auto)
+    krcgId: 100225,
+    name: "Bloodwork",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bomb [100233] — fala D wierna (auto)
+    krcgId: 100233,
+    name: "Bomb",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 5 }] }
+    ],
+  },
+  {
+    // Bond [100234] — fala D wierna (auto)
+    krcgId: 100234,
+    name: "Bond",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "inn", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Book of Going Forth by Night [100239] — fala D wierna (auto)
+    krcgId: 100239,
+    name: "The Book of Going Forth by Night",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Border Skirmish [100240] — fala D wierna (auto)
+    krcgId: 100240,
+    name: "Border Skirmish",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bounty [100242] — fala D wierna (auto)
+    krcgId: 100242,
+    name: "Bounty",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Brainwash [100245] — fala D wierna (auto)
+    krcgId: 100245,
+    name: "Brainwash",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Break the Code [100248] — fala D wierna (auto)
+    krcgId: 100248,
+    name: "Break the Code",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Breath of Thanatos [100249] — fala D wierna (auto)
+    krcgId: 100249,
+    name: "Breath of Thanatos",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Breath of the Dragon [100250] — fala D wierna (auto)
+    krcgId: 100250,
+    name: "Breath of the Dragon",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Brick by Brick [100252] — fala D wierna (auto)
+    krcgId: 100252,
+    name: "Brick by Brick",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brick Laying [100253] — fala D wierna (auto)
+    krcgId: 100253,
+    name: "Brick Laying",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "pot", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brigitte Gebauer [100254] — fala D wierna (auto)
+    krcgId: 100254,
+    name: "Brigitte Gebauer",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Brinksmanship [100255] — fala D wierna (auto)
+    krcgId: 100255,
+    name: "Brinksmanship",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Brother in Arms [100256] — fala D wierna (auto)
+    krcgId: 100256,
+    name: "Brother in Arms",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Brother's Blood [100257] — fala D wierna (auto)
+    krcgId: 100257,
+    name: "Brother's Blood",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Brothers Grimm [100258] — fala D wierna (auto)
+    krcgId: 100258,
+    name: "Brothers Grimm",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Brujah Frenzy [100261] — fala D wierna (auto)
+    krcgId: 100261,
+    name: "Brujah Frenzy",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Brutal Influence [100263] — fala D wierna (auto)
+    krcgId: 100263,
+    name: "Brutal Influence",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bujo [100265] — fala D wierna (auto)
+    krcgId: 100265,
+    name: "Bujo",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bundi [100267] — fala D wierna (auto)
+    krcgId: 100267,
+    name: "Bundi",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Burning Touch [100270] — fala D wierna (auto)
+    krcgId: 100270,
+    name: "Burning Touch",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Business Pressure [100274] — fala D wierna (auto)
+    krcgId: 100274,
+    name: "Business Pressure",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cadet [100275] — fala D wierna (auto)
+    krcgId: 100275,
+    name: "Cadet",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Caiaphas Smith [100276] — fala D wierna (auto)
+    krcgId: 100276,
+    name: "Caiaphas Smith",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cairo Int'l Airport [100277] — fala D wierna (auto)
+    krcgId: 100277,
+    name: "Cairo Int'l Airport",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // The Call [100278] — fala D wierna (auto)
+    krcgId: 100278,
+    name: "The Call",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Call of the Hungry Dead [100279] — fala D wierna (auto)
+    krcgId: 100279,
+    name: "Call of the Hungry Dead",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Call the Great Beast [100280] — fala D wierna (auto)
+    krcgId: 100280,
+    name: "Call the Great Beast",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Call the Lamprey [100281] — fala D wierna (auto)
+    krcgId: 100281,
+    name: "Call the Lamprey",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Camaraderie [100283] — fala D wierna (auto)
+    krcgId: 100283,
+    name: "Camaraderie",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Camarilla Vitae Slave [100286] — fala D wierna (auto)
+    krcgId: 100286,
+    name: "Camarilla Vitae Slave",
+    cardType: "retainer",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Camera Phone [100287] — fala D wierna (auto)
+    krcgId: 100287,
+    name: "Camera Phone",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Canopic Jar [100291] — fala D wierna (auto)
+    krcgId: 100291,
+    name: "Canopic Jar",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Car Bomb [100293] — fala D wierna (auto)
+    krcgId: 100293,
+    name: "Car Bomb",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Cardinal Sin: Failure of Mission [100295] — fala D wierna (auto)
+    krcgId: 100295,
+    name: "Cardinal Sin: Failure of Mission",
+    cardType: "reaction",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Cardinal Sin: Insubordination [100296] — fala D wierna (auto)
+    krcgId: 100296,
+    name: "Cardinal Sin: Insubordination",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Carlton Van Wyk [100298] — fala D wierna (auto)
+    krcgId: 100298,
+    name: "Carlton Van Wyk",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Carnivale [100299] — fala D wierna (auto)
+    krcgId: 100299,
+    name: "Carnivale",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Carrion Coffin [100300] — fala D wierna (auto)
+    krcgId: 100300,
+    name: "Carrion Coffin",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Carthage Remembered [100302] — fala D wierna (auto)
+    krcgId: 100302,
+    name: "Carthage Remembered",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cat Burglary [100305] — fala D wierna (auto)
+    krcgId: 100305,
+    name: "Cat Burglary",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Catacombs [100306] — fala D wierna (auto)
+    krcgId: 100306,
+    name: "Catacombs",
+    cardType: "equipment",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cavalier [100310] — fala D wierna (auto)
+    krcgId: 100310,
+    name: "Cavalier",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Celestial Harmony [100313] — fala D wierna (auto)
+    krcgId: 100313,
+    name: "Celestial Harmony",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Census Taker [100314] — fala D wierna (auto)
+    krcgId: 100314,
+    name: "Census Taker",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Chain of Command [100316] — fala D wierna (auto)
+    krcgId: 100316,
+    name: "Chain of Command",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chair of Hades [100318] — fala D wierna (auto)
+    krcgId: 100318,
+    name: "Chair of Hades",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chalice of Kinship [100319] — fala D wierna (auto)
+    krcgId: 100319,
+    name: "Chalice of Kinship",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Champion [100322] — fala D wierna (auto)
+    krcgId: 100322,
+    name: "Champion",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "def", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Changeling [100324] — fala D wierna (auto)
+    krcgId: 100324,
+    name: "Changeling",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chanjelin Ward [100326] — fala D wierna (auto)
+    krcgId: 100326,
+    name: "Chanjelin Ward",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Charge of the Buffalo [100330] — fala D wierna (auto)
+    krcgId: 100330,
+    name: "Charge of the Buffalo",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Charigger, The Axe [100331] — fala D wierna (auto)
+    krcgId: 100331,
+    name: "Charigger, The Axe",
+    cardType: "retainer",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Charming Lobby [100334] — fala D wierna (auto)
+    krcgId: 100334,
+    name: "Charming Lobby",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Charnas the Imp [100335] — fala D wierna (auto)
+    krcgId: 100335,
+    name: "Charnas the Imp",
+    cardType: "retainer",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cheat the Fates [100336] — fala D wierna (auto)
+    krcgId: 100336,
+    name: "Cheat the Fates",
+    cardType: "action",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Children of Stone [100340] — fala D wierna (auto)
+    krcgId: 100340,
+    name: "Children of Stone",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chill of Oblivion [100341] — fala D wierna (auto)
+    krcgId: 100341,
+    name: "Chill of Oblivion",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chiram's Hold [100343] — fala D wierna (auto)
+    krcgId: 100343,
+    name: "Chiram's Hold",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Chiropteran Marauder [100344] — fala D wierna (auto)
+    krcgId: 100344,
+    name: "Chiropteran Marauder",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Choir [100345] — fala D wierna (auto)
+    krcgId: 100345,
+    name: "Choir",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chronicle of the Lost Tribe [100346] — fala D wierna (auto)
+    krcgId: 100346,
+    name: "Chronicle of the Lost Tribe",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Church of the Order of St. Blaise [100347] — fala D wierna (auto)
+    krcgId: 100347,
+    name: "Church of the Order of St. Blaise",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // The Church of Vindicated Faith [100348] — fala D wierna (auto)
+    krcgId: 100348,
+    name: "The Church of Vindicated Faith",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Circle [100349] — fala D wierna (auto)
+    krcgId: 100349,
+    name: "Circle",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Circumspect Revelation [100350] — fala D wierna (auto)
+    krcgId: 100350,
+    name: "Circumspect Revelation",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // City Gangrel Connections [100351] — fala D wierna (auto)
+    krcgId: 100351,
+    name: "City Gangrel Connections",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Claiming the Body [100352] — fala D wierna (auto)
+    krcgId: 100352,
+    name: "Claiming the Body",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Clan Impersonation [100353] — fala D wierna (auto)
+    krcgId: 100353,
+    name: "Clan Impersonation",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Clandestine Contract [100355] — fala D wierna (auto)
+    krcgId: 100355,
+    name: "Clandestine Contract",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cleansing Ritual [100357] — fala D wierna (auto)
+    krcgId: 100357,
+    name: "Cleansing Ritual",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cleave [100358] — fala D wierna (auto)
+    krcgId: 100358,
+    name: "Cleave",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ven", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Clio's Kiss [100359] — fala D wierna (auto)
+    krcgId: 100359,
+    name: "Clio's Kiss",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Clockwerx [100363] — fala D wierna (auto)
+    krcgId: 100363,
+    name: "Clockwerx",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Clotho's Gift [100365] — fala D wierna (auto)
+    krcgId: 100365,
+    name: "Clotho's Gift",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Coagulate Blood [100368] — fala D wierna (auto)
+    krcgId: 100368,
+    name: "Coagulate Blood",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Coagulated Entity [100369] — fala D wierna (auto)
+    krcgId: 100369,
+    name: "Coagulated Entity",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Cobra Fangs [100370] — fala D wierna (auto)
+    krcgId: 100370,
+    name: "Cobra Fangs",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Code of Milan Suspended [100371] — fala D wierna (auto)
+    krcgId: 100371,
+    name: "Code of Milan Suspended",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Code of Samiel [100372] — fala D wierna (auto)
+    krcgId: 100372,
+    name: "Code of Samiel",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Codex of the Damned [100373] — fala D wierna (auto)
+    krcgId: 100373,
+    name: "Codex of the Damned",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cold Amber's Hold [100375] — fala D wierna (auto)
+    krcgId: 100375,
+    name: "Cold Amber's Hold",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cold Aura [100376] — fala D wierna (auto)
+    krcgId: 100376,
+    name: "Cold Aura",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Collapse the Arches [100377] — fala D wierna (auto)
+    krcgId: 100377,
+    name: "Collapse the Arches",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Coma [100378] — fala D wierna (auto)
+    krcgId: 100378,
+    name: "Coma",
+    cardType: "combat",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Command [100380] — fala D wierna (auto)
+    krcgId: 100380,
+    name: "Command",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Command of the Beast [100381] — fala D wierna (auto)
+    krcgId: 100381,
+    name: "Command of the Beast",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Command Performance [100383] — fala D wierna (auto)
+    krcgId: 100383,
+    name: "Command Performance",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Command the Legion [100384] — fala D wierna (auto)
+    krcgId: 100384,
+    name: "Command the Legion",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Communal Haven: Temple [100386] — fala D wierna (auto)
+    krcgId: 100386,
+    name: "Communal Haven: Temple",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Community Justice [100387] — fala D wierna (auto)
+    krcgId: 100387,
+    name: "Community Justice",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Compel the Spirit [100388] — fala D wierna (auto)
+    krcgId: 100388,
+    name: "Compel the Spirit",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Concert Tour [100393] — fala D wierna (auto)
+    krcgId: 100393,
+    name: "Concert Tour",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Concoction of Vitality [100394] — fala D wierna (auto)
+    krcgId: 100394,
+    name: "Concoction of Vitality",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Concordance [100395] — fala D wierna (auto)
+    krcgId: 100395,
+    name: "Concordance",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemn the Sins of the Father [100396] — fala D wierna (auto)
+    krcgId: 100396,
+    name: "Condemn the Sins of the Father",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemnation: Betrayed [100397] — fala D wierna (auto)
+    krcgId: 100397,
+    name: "Condemnation: Betrayed",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemnation: Doomed [100398] — fala D wierna (auto)
+    krcgId: 100398,
+    name: "Condemnation: Doomed",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemnation: Languid [100399] — fala D wierna (auto)
+    krcgId: 100399,
+    name: "Condemnation: Languid",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemnation: Mute [100400] — fala D wierna (auto)
+    krcgId: 100400,
+    name: "Condemnation: Mute",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Conductor [100402] — fala D wierna (auto)
+    krcgId: 100402,
+    name: "Conductor",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Confusion [100405] — fala D wierna (auto)
+    krcgId: 100405,
+    name: "Confusion",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Confusion of the Eye [100406] — fala D wierna (auto)
+    krcgId: 100406,
+    name: "Confusion of the Eye",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Conniver [100407] — fala D wierna (auto)
+    krcgId: 100407,
+    name: "Conniver",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Conscripted Statue [100412] — fala D wierna (auto)
+    krcgId: 100412,
+    name: "Conscripted Statue",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Consecration Rites [100413] — fala D wierna (auto)
+    krcgId: 100413,
+    name: "Consecration Rites",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Consignment to Duat [100415] — fala D wierna (auto)
+    krcgId: 100415,
+    name: "Consignment to Duat",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Consume the Dead [100417] — fala D wierna (auto)
+    krcgId: 100417,
+    name: "Consume the Dead",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Contagion [100418] — fala D wierna (auto)
+    krcgId: 100418,
+    name: "Contagion",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Convergence [100421] — fala D wierna (auto)
+    krcgId: 100421,
+    name: "Convergence",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Cooler [100422] — fala D wierna (auto)
+    krcgId: 100422,
+    name: "Cooler",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Coordinate Attacks [100423] — fala D wierna (auto)
+    krcgId: 100423,
+    name: "Coordinate Attacks",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Coroner's Contact [100424] — fala D wierna (auto)
+    krcgId: 100424,
+    name: "Coroner's Contact",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Corporal Reservoir [100425] — fala D wierna (auto)
+    krcgId: 100425,
+    name: "Corporal Reservoir",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Corpse Balloon [100427] — fala D wierna (auto)
+    krcgId: 100427,
+    name: "Corpse Balloon",
+    cardType: "retainer",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Corrupt Construction [100429] — fala D wierna (auto)
+    krcgId: 100429,
+    name: "Corrupt Construction",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Corruption [100430] — fala D wierna (auto)
+    krcgId: 100430,
+    name: "Corruption",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Coterie Tactics [100432] — fala D wierna (auto)
+    krcgId: 100432,
+    name: "Coterie Tactics",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Council of Seraphim [100433] — fala D wierna (auto)
+    krcgId: 100433,
+    name: "Council of Seraphim",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Courier [100434] — fala D wierna (auto)
+    krcgId: 100434,
+    name: "Courier",
+    cardType: "ally",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Covenant of Blood [100436] — fala D wierna (auto)
+    krcgId: 100436,
+    name: "Covenant of Blood",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Covincraft [100437] — fala D wierna (auto)
+    krcgId: 100437,
+    name: "Covincraft",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Cracking the Wall [100438] — fala D wierna (auto)
+    krcgId: 100438,
+    name: "Cracking the Wall",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Crawling Chamber [100439] — fala D wierna (auto)
+    krcgId: 100439,
+    name: "Crawling Chamber",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Create Gargoyle [100440] — fala D wierna (auto)
+    krcgId: 100440,
+    name: "Create Gargoyle",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Creeping Infection [100443] — fala D wierna (auto)
+    krcgId: 100443,
+    name: "Creeping Infection",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "thn", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // CrimethInc. [100446] — fala D wierna (auto)
+    krcgId: 100446,
+    name: "CrimethInc.",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Crimson Sentinel [100448] — fala D wierna (auto)
+    krcgId: 100448,
+    name: "The Crimson Sentinel",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // The Crocodile Temple [100449] — fala D wierna (auto)
+    krcgId: 100449,
+    name: "The Crocodile Temple",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Crocodile's Tongue [100450] — fala D wierna (auto)
+    krcgId: 100450,
+    name: "Crocodile's Tongue",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Crusade: Amsterdam [100451] — fala D wierna (auto)
+    krcgId: 100451,
+    name: "Crusade: Amsterdam",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Crusade: Aragon [100452] — fala D wierna (auto)
+    krcgId: 100452,
+    name: "Crusade: Aragon",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Crusade: Barcelona [100454] — fala D wierna (auto)
+    krcgId: 100454,
+    name: "Crusade: Barcelona",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Crusade: Brussels [100456] — fala D wierna (auto)
+    krcgId: 100456,
+    name: "Crusade: Brussels",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Crusade: Dublin [100459] — fala D wierna (auto)
+    krcgId: 100459,
+    name: "Crusade: Dublin",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Crusade: Geneva [100461] — fala D wierna (auto)
+    krcgId: 100461,
+    name: "Crusade: Geneva",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Crusade: London [100464] — fala D wierna (auto)
+    krcgId: 100464,
+    name: "Crusade: London",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Crusade: Rome [100471] — fala D wierna (auto)
+    krcgId: 100471,
+    name: "Crusade: Rome",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Crusade: Washington, D.C. [100473] — fala D wierna (auto)
+    krcgId: 100473,
+    name: "Crusade: Washington, D.C.",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // The Crusader Sword [100474] — fala D wierna (auto)
+    krcgId: 100474,
+    name: "The Crusader Sword",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cry Wolf [100475] — fala D wierna (auto)
+    krcgId: 100475,
+    name: "Cry Wolf",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Cryptic Mission [100477] — fala D wierna (auto)
+    krcgId: 100477,
+    name: "Cryptic Mission",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "tha", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Cull the Herd [100479] — fala D wierna (auto)
+    krcgId: 100479,
+    name: "Cull the Herd",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cultivated Blood Shortage [100480] — fala D wierna (auto)
+    krcgId: 100480,
+    name: "Cultivated Blood Shortage",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cunctator Motion [100481] — fala D wierna (auto)
+    krcgId: 100481,
+    name: "Cunctator Motion",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Curmudgeon [100482] — fala D wierna (auto)
+    krcgId: 100482,
+    name: "Curmudgeon",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Curse of Nitocris [100483] — fala D wierna (auto)
+    krcgId: 100483,
+    name: "Curse of Nitocris",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // D'habi Revenant [100484] — fala D wierna (auto)
+    krcgId: 100484,
+    name: "D'habi Revenant",
+    cardType: "retainer",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Daemonic Possession [100486] — fala D wierna (auto)
+    krcgId: 100486,
+    name: "Daemonic Possession",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dagger [100487] — fala D wierna (auto)
+    krcgId: 100487,
+    name: "Dagger",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Dagon's Call [100488] — fala D wierna (auto)
+    krcgId: 100488,
+    name: "Dagon's Call",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Dam the Heart's River [100489] — fala D wierna (auto)
+    krcgId: 100489,
+    name: "Dam the Heart's River",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // The Damned [100490] — fala D wierna (auto)
+    krcgId: 100490,
+    name: "The Damned",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Danse Macabre [100491] — fala D wierna (auto)
+    krcgId: 100491,
+    name: "Danse Macabre",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Darkling Trickery [100496] — fala D wierna (auto)
+    krcgId: 100496,
+    name: "Darkling Trickery",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Darkness Within [100497] — fala D wierna (auto)
+    krcgId: 100497,
+    name: "Darkness Within",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Darksight [100498] — fala D wierna (auto)
+    krcgId: 100498,
+    name: "Darksight",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dartmoor, England [100499] — fala D wierna (auto)
+    krcgId: 100499,
+    name: "Dartmoor, England",
+    cardType: "equipment",
+    bloodCost: 2,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dauntain Black Magician [100500] — fala D wierna (auto)
+    krcgId: 100500,
+    name: "Dauntain Black Magician",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Day Operation [100502] — fala D wierna (auto)
+    krcgId: 100502,
+    name: "Day Operation",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dead Hand [100503] — fala D wierna (auto)
+    krcgId: 100503,
+    name: "Dead Hand",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // The Deadliest Sin [100505] — fala D wierna (auto)
+    krcgId: 100505,
+    name: "The Deadliest Sin",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Death of the Drum [100508] — fala D wierna (auto)
+    krcgId: 100508,
+    name: "Death of the Drum",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Death Pact [100509] — fala D wierna (auto)
+    krcgId: 100509,
+    name: "Death Pact",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Decompose [100512] — fala D wierna (auto)
+    krcgId: 100512,
+    name: "Decompose",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "additionalStrike", count: 1, limited: false }] },
+      { level: "superior", discipline: "thn", effects: [{ kind: "additionalStrike", count: 1, limited: false }] }
+    ],
+  },
+  {
+    // Deed the Heart's Desire [100513] — fala D wierna (auto)
+    krcgId: 100513,
+    name: "Deed the Heart's Desire",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Deep Cover Agent [100514] — fala D wierna (auto)
+    krcgId: 100514,
+    name: "Deep Cover Agent",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Defender of the Haven [100517] — fala D wierna (auto)
+    krcgId: 100517,
+    name: "Defender of the Haven",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Demonstration [100522] — fala D wierna (auto)
+    krcgId: 100522,
+    name: "Demonstration",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Deny [100524] — fala D wierna (auto)
+    krcgId: 100524,
+    name: "Deny",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Deploy the Hand [100525] — fala D wierna (auto)
+    krcgId: 100525,
+    name: "Deploy the Hand",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Derange [100527] — fala D wierna (auto)
+    krcgId: 100527,
+    name: "Derange",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Descent into Darkness [100528] — fala D wierna (auto)
+    krcgId: 100528,
+    name: "Descent into Darkness",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Despiral [100530] — fala D wierna (auto)
+    krcgId: 100530,
+    name: "Despiral",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Destructive Secrets [100531] — fala D wierna (auto)
+    krcgId: 100531,
+    name: "Destructive Secrets",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Detect Authority [100532] — fala D wierna (auto)
+    krcgId: 100532,
+    name: "Detect Authority",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Determine [100534] — fala D wierna (auto)
+    krcgId: 100534,
+    name: "Determine",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "viz", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Development [100535] — fala D wierna (auto)
+    krcgId: 100535,
+    name: "Development",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Deviki Prasanta [100536] — fala D wierna (auto)
+    krcgId: 100536,
+    name: "Deviki Prasanta",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Devil-Channel: Back [100537] — fala D wierna (auto)
+    krcgId: 100537,
+    name: "Devil-Channel: Back",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
+      { level: "superior", discipline: "abo", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Devil-Channel: Feet [100538] — fala D wierna (auto)
+    krcgId: 100538,
+    name: "Devil-Channel: Feet",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Devil-Channel: Hands [100539] — fala D wierna (auto)
+    krcgId: 100539,
+    name: "Devil-Channel: Hands",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Devil-Channel: Throat [100540] — fala D wierna (auto)
+    krcgId: 100540,
+    name: "Devil-Channel: Throat",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "abo", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Diabolic Lure [100542] — fala D wierna (auto)
+    krcgId: 100542,
+    name: "Diabolic Lure",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // The Diamond Thunderbolt [100543] — fala D wierna (auto)
+    krcgId: 100543,
+    name: "The Diamond Thunderbolt",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Din of the Damned [100544] — fala D wierna (auto)
+    krcgId: 100544,
+    name: "Din of the Damned",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Dirty Contract [100546] — fala D wierna (auto)
+    krcgId: 100546,
+    name: "Dirty Contract",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dirty Little Secrets [100547] — fala D wierna (auto)
+    krcgId: 100547,
+    name: "Dirty Little Secrets",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Dis Pater [100548] — fala D wierna (auto)
+    krcgId: 100548,
+    name: "Dis Pater",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Discern [100551] — fala D wierna (auto)
+    krcgId: 100551,
+    name: "Discern",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "jud", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Disciple of Lazarus [100552] — fala D wierna (auto)
+    krcgId: 100552,
+    name: "Disciple of Lazarus",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Disease [100553] — fala D wierna (auto)
+    krcgId: 100553,
+    name: "Disease",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Disguised Weapon [100555] — fala D wierna (auto)
+    krcgId: 100555,
+    name: "Disguised Weapon",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dismemberment of Osiris [100556] — fala D wierna (auto)
+    krcgId: 100556,
+    name: "Dismemberment of Osiris",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dive Bomb [100561] — fala D wierna (auto)
+    krcgId: 100561,
+    name: "Dive Bomb",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: "flight", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dive into Madness [100562] — fala D wierna (auto)
+    krcgId: 100562,
+    name: "Dive into Madness",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Divine Image [100565] — fala D wierna (auto)
+    krcgId: 100565,
+    name: "Divine Image",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Divine Sign [100566] — fala D wierna (auto)
+    krcgId: 100566,
+    name: "Divine Sign",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dogs of War [100569] — fala D wierna (auto)
+    krcgId: 100569,
+    name: "Dogs of War",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Domain of Evernight [100571] — fala D wierna (auto)
+    krcgId: 100571,
+    name: "Domain of Evernight",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dominion [100574] — fala D wierna (auto)
+    krcgId: 100574,
+    name: "Dominion",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Donate [100575] — fala D wierna (auto)
+    krcgId: 100575,
+    name: "Donate",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mar", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Draba [100578] — fala D wierna (auto)
+    krcgId: 100578,
+    name: "Draba",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Draeven Softfoot [100579] — fala D wierna (auto)
+    krcgId: 100579,
+    name: "Draeven Softfoot",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Dramatic Upheaval [100583] — fala D wierna (auto)
+    krcgId: 100583,
+    name: "Dramatic Upheaval",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Draught of the Soul [100584] — fala D wierna (auto)
+    krcgId: 100584,
+    name: "Draught of the Soul",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Dream World [100587] — fala D wierna (auto)
+    krcgId: 100587,
+    name: "Dream World",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Drink the Blood of Ahriman [100589] — fala D wierna (auto)
+    krcgId: 100589,
+    name: "Drink the Blood of Ahriman",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Drop Point Network [100590] — fala D wierna (auto)
+    krcgId: 100590,
+    name: "Drop Point Network",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Dual Form [100592] — fala D wierna (auto)
+    krcgId: 100592,
+    name: "Dual Form",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Duma Rafiki [100593] — fala D wierna (auto)
+    krcgId: 100593,
+    name: "Duma Rafiki",
+    cardType: "retainer",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Dusk Work [100595] — fala D wierna (auto)
+    krcgId: 100595,
+    name: "Dusk Work",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dust to Dust [100596] — fala D wierna (auto)
+    krcgId: 100596,
+    name: "Dust to Dust",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "thn", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ears of the Hare [100599] — fala D wierna (auto)
+    krcgId: 100599,
+    name: "Ears of the Hare",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Earth-Feeder [100603] — fala D wierna (auto)
+    krcgId: 100603,
+    name: "Earth-Feeder",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ebony Fox Hunt [100606] — fala D wierna (auto)
+    krcgId: 100606,
+    name: "Ebony Fox Hunt",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Eccentric Billionaire [100607] — fala D wierna (auto)
+    krcgId: 100607,
+    name: "Eccentric Billionaire",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Echo of Harmonies [100608] — fala D wierna (auto)
+    krcgId: 100608,
+    name: "Echo of Harmonies",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ecstasy [100610] — fala D wierna (auto)
+    krcgId: 100610,
+    name: "Ecstasy",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Ecstatic Agony [100611] — fala D wierna (auto)
+    krcgId: 100611,
+    name: "Ecstatic Agony",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Edge Explosion [100612] — fala D wierna (auto)
+    krcgId: 100612,
+    name: "Edge Explosion",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Edge of the World [100613] — fala D wierna (auto)
+    krcgId: 100613,
+    name: "Edge of the World",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Edge Vitiation [100614] — fala D wierna (auto)
+    krcgId: 100614,
+    name: "Edge Vitiation",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Edged Illusion [100615] — fala D wierna (auto)
+    krcgId: 100615,
+    name: "Edged Illusion",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Elder Michaelis's Hold [100621] — fala D wierna (auto)
+    krcgId: 100621,
+    name: "Elder Michaelis's Hold",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // The Eldest Are Kholo [100622] — fala D wierna (auto)
+    krcgId: 100622,
+    name: "The Eldest Are Kholo",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Eldest Command Undeath [100623] — fala D wierna (auto)
+    krcgId: 100623,
+    name: "The Eldest Command Undeath",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Elephant Guardian [100626] — fala D wierna (auto)
+    krcgId: 100626,
+    name: "Elephant Guardian",
+    cardType: "retainer",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Elixir of Distillation [100627] — fala D wierna (auto)
+    krcgId: 100627,
+    name: "Elixir of Distillation",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Emerald Legionnaire [100634] — fala D wierna (auto)
+    krcgId: 100634,
+    name: "Emerald Legionnaire",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Emergency Powers [100635] — fala D wierna (auto)
+    krcgId: 100635,
+    name: "Emergency Powers",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Emergency Rations [100637] — fala D wierna (auto)
+    krcgId: 100637,
+    name: "Emergency Rations",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Empowering the Puppet King [100639] — fala D wierna (auto)
+    krcgId: 100639,
+    name: "Empowering the Puppet King",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Enchanted Marionette [100641] — fala D wierna (auto)
+    krcgId: 100641,
+    name: "Enchanted Marionette",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Enforcer [100642] — fala D wierna (auto)
+    krcgId: 100642,
+    name: "Enforcer",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Engling Fury [100643] — fala D wierna (auto)
+    krcgId: 100643,
+    name: "Engling Fury",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Enkil Cog [100645] — fala D wierna (auto)
+    krcgId: 100645,
+    name: "Enkil Cog",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Ensconced [100648] — fala D wierna (auto)
+    krcgId: 100648,
+    name: "Ensconced",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ensemble [100649] — fala D wierna (auto)
+    krcgId: 100649,
+    name: "Ensemble",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Enticement [100650] — fala D wierna (auto)
+    krcgId: 100650,
+    name: "Enticement",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Entombment [100651] — fala D wierna (auto)
+    krcgId: 100651,
+    name: "Entombment",
+    cardType: "combat",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ephor [100654] — fala D wierna (auto)
+    krcgId: 100654,
+    name: "Ephor",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Epiphany [100655] — fala D wierna (auto)
+    krcgId: 100655,
+    name: "Epiphany",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Erebus Mask [100657] — fala D wierna (auto)
+    krcgId: 100657,
+    name: "Erebus Mask",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Erosion [100658] — fala D wierna (auto)
+    krcgId: 100658,
+    name: "Erosion",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Eruption of Vitae [100659] — fala D wierna (auto)
+    krcgId: 100659,
+    name: "Eruption of Vitae",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Escaped Mental Patient [100661] — fala D wierna (auto)
+    krcgId: 100661,
+    name: "Escaped Mental Patient",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Esgrima [100662] — fala D wierna (auto)
+    krcgId: 100662,
+    name: "Esgrima",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Esprit de Corps [100663] — fala D wierna (auto)
+    krcgId: 100663,
+    name: "Esprit de Corps",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Eternal Mask [100665] — fala D wierna (auto)
+    krcgId: 100665,
+    name: "The Eternal Mask",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Eternals of Sirius [100667] — fala D wierna (auto)
+    krcgId: 100667,
+    name: "The Eternals of Sirius",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Evil Eye [100668] — fala D wierna (auto)
+    krcgId: 100668,
+    name: "Evil Eye",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "mal", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Ex Nihilo [100669] — fala D wierna (auto)
+    krcgId: 100669,
+    name: "Ex Nihilo",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Excellent Thirst [100670] — fala D wierna (auto)
+    krcgId: 100670,
+    name: "Excellent Thirst",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Exile [100673] — fala D wierna (auto)
+    krcgId: 100673,
+    name: "Exile",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Expiate [100674] — fala D wierna (auto)
+    krcgId: 100674,
+    name: "Expiate",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mar", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Extortion [100675] — fala D wierna (auto)
+    krcgId: 100675,
+    name: "Extortion",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Exuding Blood [100677] — fala D wierna (auto)
+    krcgId: 100677,
+    name: "Exuding Blood",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Eye of Hazimel [100678] — fala D wierna (auto)
+    krcgId: 100678,
+    name: "Eye of Hazimel",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Eye of Unforgiving Heaven [100679] — fala D wierna (auto)
+    krcgId: 100679,
+    name: "Eye of Unforgiving Heaven",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "basic", discipline: "val", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Eyes of Blades [100681] — fala D wierna (auto)
+    krcgId: 100681,
+    name: "Eyes of Blades",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "strikeDodge" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Eyes of Chaos [100682] — fala D wierna (auto)
+    krcgId: 100682,
+    name: "Eyes of Chaos",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Eyes of the Beast [100683] — fala D wierna (auto)
+    krcgId: 100683,
+    name: "Eyes of the Beast",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Eyes of the Dead [100684] — fala D wierna (auto)
+    krcgId: 100684,
+    name: "Eyes of the Dead",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Eyes of the Night [100685] — fala D wierna (auto)
+    krcgId: 100685,
+    name: "Eyes of the Night",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Eyes of the Serpent [100686] — fala D wierna (auto)
+    krcgId: 100686,
+    name: "Eyes of the Serpent",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fae Contortion [100689] — fala D wierna (auto)
+    krcgId: 100689,
+    name: "Fae Contortion",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Faerie Wards [100690] — fala D wierna (auto)
+    krcgId: 100690,
+    name: "Faerie Wards",
+    cardType: "reaction",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Failsafe [100691] — fala D wierna (auto)
+    krcgId: 100691,
+    name: "Failsafe",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Falcon's Eye [100694] — fala D wierna (auto)
+    krcgId: 100694,
+    name: "Falcon's Eye",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Fall of the Camarilla [100695] — fala D wierna (auto)
+    krcgId: 100695,
+    name: "Fall of the Camarilla",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fall of the Sabbat [100696] — fala D wierna (auto)
+    krcgId: 100696,
+    name: "Fall of the Sabbat",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // False Resonance [100697] — fala D wierna (auto)
+    krcgId: 100697,
+    name: "False Resonance",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Familial Bond [100699] — fala D wierna (auto)
+    krcgId: 100699,
+    name: "Familial Bond",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Fanfare for Elysium [100700] — fala D wierna (auto)
+    krcgId: 100700,
+    name: "Fanfare for Elysium",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Fantasy World [100701] — fala D wierna (auto)
+    krcgId: 100701,
+    name: "Fantasy World",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Far Fatuus [100702] — fala D wierna (auto)
+    krcgId: 100702,
+    name: "Far Fatuus",
+    cardType: "combat",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Fast Reaction [100705] — fala D wierna (auto)
+    krcgId: 100705,
+    name: "Fast Reaction",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Fata Amria [100706] — fala D wierna (auto)
+    krcgId: 100706,
+    name: "Fata Amria",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Fata Morgana [100707] — fala D wierna (auto)
+    krcgId: 100707,
+    name: "Fata Morgana",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fatuus Mastery [100708] — fala D wierna (auto)
+    krcgId: 100708,
+    name: "Fatuus Mastery",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fear of Mekhet [100710] — fala D wierna (auto)
+    krcgId: 100710,
+    name: "Fear of Mekhet",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Fear of the Void Below [100711] — fala D wierna (auto)
+    krcgId: 100711,
+    name: "Fear of the Void Below",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Feline Saboteur [100718] — fala D wierna (auto)
+    krcgId: 100718,
+    name: "Feline Saboteur",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Feral Spirit [100721] — fala D wierna (auto)
+    krcgId: 100721,
+    name: "Feral Spirit",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Field Training [100725] — fala D wierna (auto)
+    krcgId: 100725,
+    name: "Field Training",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Filchware's Pawn Shop [100728] — fala D wierna (auto)
+    krcgId: 100728,
+    name: "Filchware's Pawn Shop",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Final Loosening [100730] — fala D wierna (auto)
+    krcgId: 100730,
+    name: "Final Loosening",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Finding the Path [100732] — fala D wierna (auto)
+    krcgId: 100732,
+    name: "Finding the Path",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Fire Dance [100733] — fala D wierna (auto)
+    krcgId: 100733,
+    name: "Fire Dance",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fire on the Mountain [100735] — fala D wierna (auto)
+    krcgId: 100735,
+    name: "Fire on the Mountain",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // First Tradition: The Masquerade [100737] — fala D wierna (auto)
+    krcgId: 100737,
+    name: "First Tradition: The Masquerade",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Flak Jacket [100739] — fala D wierna (auto)
+    krcgId: 100739,
+    name: "Flak Jacket",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Flames of the Netherworld [100741] — fala D wierna (auto)
+    krcgId: 100741,
+    name: "Flames of the Netherworld",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Flash Grenade [100745] — fala D wierna (auto)
+    krcgId: 100745,
+    name: "Flash Grenade",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fleecing the Gaje [100746] — fala D wierna (auto)
+    krcgId: 100746,
+    name: "Fleecing the Gaje",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fleshcraft [100750] — fala D wierna (auto)
+    krcgId: 100750,
+    name: "Fleshcraft",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Flow Within the Mountain [100751] — fala D wierna (auto)
+    krcgId: 100751,
+    name: "Flow Within the Mountain",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Foldable Machine Gun [100754] — fala D wierna (auto)
+    krcgId: 100754,
+    name: "Foldable Machine Gun",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Folderol [100755] — fala D wierna (auto)
+    krcgId: 100755,
+    name: "Folderol",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Follow the Alpha [100756] — fala D wierna (auto)
+    krcgId: 100756,
+    name: "Follow the Alpha",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Follow the Blood [100757] — fala D wierna (auto)
+    krcgId: 100757,
+    name: "Follow the Blood",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Force of Will [100759] — fala D wierna (auto)
+    krcgId: 100759,
+    name: "Force of Will",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Forced March [100761] — fala D wierna (auto)
+    krcgId: 100761,
+    name: "Forced March",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Foresee [100764] — fala D wierna (auto)
+    krcgId: 100764,
+    name: "Foresee",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "viz", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Forest of Shadows [100766] — fala D wierna (auto)
+    krcgId: 100766,
+    name: "Forest of Shadows",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Forger's Hammer [100767] — fala D wierna (auto)
+    krcgId: 100767,
+    name: "Forger's Hammer",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Form of Corruption [100770] — fala D wierna (auto)
+    krcgId: 100770,
+    name: "Form of Corruption",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Form of the Serpent [100773] — fala D wierna (auto)
+    krcgId: 100773,
+    name: "Form of the Serpent",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fortschritt Library [100775] — fala D wierna (auto)
+    krcgId: 100775,
+    name: "Fortschritt Library",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Foul Blood [100778] — fala D wierna (auto)
+    krcgId: 100778,
+    name: "Foul Blood",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Foundation Exhibit [100779] — fala D wierna (auto)
+    krcgId: 100779,
+    name: "Foundation Exhibit",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Founders of the Ebony Kingdom [100780] — fala D wierna (auto)
+    krcgId: 100780,
+    name: "Founders of the Ebony Kingdom",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Fourth Cycle [100781] — fala D wierna (auto)
+    krcgId: 100781,
+    name: "The Fourth Cycle",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fractura [100783] — fala D wierna (auto)
+    krcgId: 100783,
+    name: "Fractura",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
+      { level: "superior", discipline: "str", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // The Framing [100786] — fala D wierna (auto)
+    krcgId: 100786,
+    name: "The Framing",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Framing an Ancient Grudge [100787] — fala D wierna (auto)
+    krcgId: 100787,
+    name: "Framing an Ancient Grudge",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Free Fight [100789] — fala D wierna (auto)
+    krcgId: 100789,
+    name: "Free Fight",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Free States Rant [100790] — fala D wierna (auto)
+    krcgId: 100790,
+    name: "Free States Rant",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Frenzy [100791] — fala D wierna (auto)
+    krcgId: 100791,
+    name: "Frenzy",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Friend of Mine [100792] — fala D wierna (auto)
+    krcgId: 100792,
+    name: "Friend of Mine",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Frozen Object [100795] — fala D wierna (auto)
+    krcgId: 100795,
+    name: "Frozen Object",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Funeral Wake [100797] — fala D wierna (auto)
+    krcgId: 100797,
+    name: "Funeral Wake",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Galaric's Legacy [100798] — fala D wierna (auto)
+    krcgId: 100798,
+    name: "Galaric's Legacy",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Game of Malkav [100800] — fala D wierna (auto)
+    krcgId: 100800,
+    name: "Game of Malkav",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Games of Instinct [100801] — fala D wierna (auto)
+    krcgId: 100801,
+    name: "Games of Instinct",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gang Tactics [100802] — fala D wierna (auto)
+    krcgId: 100802,
+    name: "Gang Tactics",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gang Territory [100803] — fala D wierna (auto)
+    krcgId: 100803,
+    name: "Gang Territory",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Gangrel Atavism [100804] — fala D wierna (auto)
+    krcgId: 100804,
+    name: "Gangrel Atavism",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Gangrel Conspiracy [100805] — fala D wierna (auto)
+    krcgId: 100805,
+    name: "Gangrel Conspiracy",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Gangrel Justicar [100806] — fala D wierna (auto)
+    krcgId: 100806,
+    name: "Gangrel Justicar",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Gargoyle Slave [100808] — fala D wierna (auto)
+    krcgId: 100808,
+    name: "Gargoyle Slave",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Garrote [100810] — fala D wierna (auto)
+    krcgId: 100810,
+    name: "Garrote",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Gear Up [100813] — fala D wierna (auto)
+    krcgId: 100813,
+    name: "Gear Up",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gemini's Mirror [100814] — fala D wierna (auto)
+    krcgId: 100814,
+    name: "Gemini's Mirror",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gestalt [100815] — fala D wierna (auto)
+    krcgId: 100815,
+    name: "Gestalt",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Ghost-Eater [100816] — fala D wierna (auto)
+    krcgId: 100816,
+    name: "Ghost-Eater",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ghoul Messenger [100818] — fala D wierna (auto)
+    krcgId: 100818,
+    name: "Ghoul Messenger",
+    cardType: "retainer",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ghoul Retainer [100819] — fala D wierna (auto)
+    krcgId: 100819,
+    name: "Ghoul Retainer",
+    cardType: "retainer",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Ghouled [100820] — fala D wierna (auto)
+    krcgId: 100820,
+    name: "Ghouled",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ghouled Street Thug [100821] — fala D wierna (auto)
+    krcgId: 100821,
+    name: "Ghouled Street Thug",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // The Ghouls of Plaza Morería [100822] — fala D wierna (auto)
+    krcgId: 100822,
+    name: "The Ghouls of Plaza Morería",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gianna di Canneto [100823] — fala D wierna (auto)
+    krcgId: 100823,
+    name: "Gianna di Canneto",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Gift of Bellona [100825] — fala D wierna (auto)
+    krcgId: 100825,
+    name: "Gift of Bellona",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gift of Experience [100826] — fala D wierna (auto)
+    krcgId: 100826,
+    name: "Gift of Experience",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Gift of Sleep [100828] — fala D wierna (auto)
+    krcgId: 100828,
+    name: "Gift of Sleep",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Giovanni Acceptance [100829] — fala D wierna (auto)
+    krcgId: 100829,
+    name: "Giovanni Acceptance",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Giovanni Discrimination [100830] — fala D wierna (auto)
+    krcgId: 100830,
+    name: "Giovanni Discrimination",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Gird Minions [100831] — fala D wierna (auto)
+    krcgId: 100831,
+    name: "Gird Minions",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Giulia Giovanni Abruzzina [100832] — fala D wierna (auto)
+    krcgId: 100832,
+    name: "Giulia Giovanni Abruzzina",
+    cardType: "ally",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Giuseppe, Gravedigger [100833] — fala D wierna (auto)
+    krcgId: 100833,
+    name: "Giuseppe, Gravedigger",
+    cardType: "retainer",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Glare of Lies [100835] — fala D wierna (auto)
+    krcgId: 100835,
+    name: "Glare of Lies",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Glass Walker Pact [100837] — fala D wierna (auto)
+    krcgId: 100837,
+    name: "Glass Walker Pact",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Glutton [100839] — fala D wierna (auto)
+    krcgId: 100839,
+    name: "Glutton",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Go Anarch [100840] — fala D wierna (auto)
+    krcgId: 100840,
+    name: "Go Anarch",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Goblinism [100841] — fala D wierna (auto)
+    krcgId: 100841,
+    name: "Goblinism",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Goodnight, Sweet Prince [100843] — fala D wierna (auto)
+    krcgId: 100843,
+    name: "Goodnight, Sweet Prince",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Goth Band [100844] — fala D wierna (auto)
+    krcgId: 100844,
+    name: "Goth Band",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gramle [100846] — fala D wierna (auto)
+    krcgId: 100846,
+    name: "Gramle",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gran Madre di Dio, Italy [100847] — fala D wierna (auto)
+    krcgId: 100847,
+    name: "Gran Madre di Dio, Italy",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Grandest Trick [100849] — fala D wierna (auto)
+    krcgId: 100849,
+    name: "The Grandest Trick",
+    cardType: "actionModifier",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Grasp of the Python [100850] — fala D wierna (auto)
+    krcgId: 100850,
+    name: "Grasp of the Python",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Grasp the Ghostly [100851] — fala D wierna (auto)
+    krcgId: 100851,
+    name: "Grasp the Ghostly",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Great Symposium [100853] — fala D wierna (auto)
+    krcgId: 100853,
+    name: "Great Symposium",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Greater Curse [100854] — fala D wierna (auto)
+    krcgId: 100854,
+    name: "Greater Curse",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "mal", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gremlins [100856] — fala D wierna (auto)
+    krcgId: 100856,
+    name: "Gremlins",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Grey Thorne [100858] — fala D wierna (auto)
+    krcgId: 100858,
+    name: "Grey Thorne",
+    cardType: "ally",
+    bloodCost: 2,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Groaning Corpse [100859] — fala D wierna (auto)
+    krcgId: 100859,
+    name: "Groaning Corpse",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "thn", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Guarded Rubrics [100865] — fala D wierna (auto)
+    krcgId: 100865,
+    name: "Guarded Rubrics",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Guardian Ghoul [100867] — fala D wierna (auto)
+    krcgId: 100867,
+    name: "Guardian Ghoul",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Guardian Vigil [100868] — fala D wierna (auto)
+    krcgId: 100868,
+    name: "Guardian Vigil",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Guide and Mentor [100869] — fala D wierna (auto)
+    krcgId: 100869,
+    name: "Guide and Mentor",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Guinea-Bissau Carnival [100870] — fala D wierna (auto)
+    krcgId: 100870,
+    name: "Guinea-Bissau Carnival",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Guruhi Are the Land [100873] — fala D wierna (auto)
+    krcgId: 100873,
+    name: "The Guruhi Are the Land",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Guruhi Kholo [100874] — fala D wierna (auto)
+    krcgId: 100874,
+    name: "Guruhi Kholo",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hackerspace [100876] — fala D wierna (auto)
+    krcgId: 100876,
+    name: "Hackerspace",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Hag's Wrinkles [100877] — fala D wierna (auto)
+    krcgId: 100877,
+    name: "Hag's Wrinkles",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hall of Hades' Court [100878] — fala D wierna (auto)
+    krcgId: 100878,
+    name: "Hall of Hades' Court",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hall of Mirrors [100879] — fala D wierna (auto)
+    krcgId: 100879,
+    name: "Hall of Mirrors",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hand Contract [100880] — fala D wierna (auto)
+    krcgId: 100880,
+    name: "Hand Contract",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hand Intervention [100881] — fala D wierna (auto)
+    krcgId: 100881,
+    name: "Hand Intervention",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Hand of Conrad [100882] — fala D wierna (auto)
+    krcgId: 100882,
+    name: "Hand of Conrad",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hanging Fermata [100883] — fala D wierna (auto)
+    krcgId: 100883,
+    name: "Hanging Fermata",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Haqim's Law: Judgment [100884] — fala D wierna (auto)
+    krcgId: 100884,
+    name: "Haqim's Law: Judgment",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Haqim's Law: Leadership [100885] — fala D wierna (auto)
+    krcgId: 100885,
+    name: "Haqim's Law: Leadership",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Harass [100886] — fala D wierna (auto)
+    krcgId: 100886,
+    name: "Harass",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hard Case [100887] — fala D wierna (auto)
+    krcgId: 100887,
+    name: "Hard Case",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Harmony [100888] — fala D wierna (auto)
+    krcgId: 100888,
+    name: "Harmony",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Harzomatuili [100890] — fala D wierna (auto)
+    krcgId: 100890,
+    name: "Harzomatuili",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 5,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hatch the Viper [100891] — fala D wierna (auto)
+    krcgId: 100891,
+    name: "Hatch the Viper",
+    cardType: "retainer",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Hatchling [100892] — fala D wierna (auto)
+    krcgId: 100892,
+    name: "Hatchling",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Haunt [100893] — fala D wierna (auto)
+    krcgId: 100893,
+    name: "Haunt",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Haunting [100894] — fala D wierna (auto)
+    krcgId: 100894,
+    name: "The Haunting",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Haven Affinity [100895] — fala D wierna (auto)
+    krcgId: 100895,
+    name: "Haven Affinity",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Haven Hunting [100896] — fala D wierna (auto)
+    krcgId: 100896,
+    name: "Haven Hunting",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hay Ride [100899] — fala D wierna (auto)
+    krcgId: 100899,
+    name: "Hay Ride",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Healing Touch [100901] — fala D wierna (auto)
+    krcgId: 100901,
+    name: "Healing Touch",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Heart of Darkness [100902] — fala D wierna (auto)
+    krcgId: 100902,
+    name: "Heart of Darkness",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Heart's Desire [100905] — fala D wierna (auto)
+    krcgId: 100905,
+    name: "Heart's Desire",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Heaven's Gate [100907] — fala D wierna (auto)
+    krcgId: 100907,
+    name: "Heaven's Gate",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Heidelberg Castle, Germany [100908] — fala D wierna (auto)
+    krcgId: 100908,
+    name: "Heidelberg Castle, Germany",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Hellhound [100911] — fala D wierna (auto)
+    krcgId: 100911,
+    name: "Hellhound",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Herald of Topheth [100912] — fala D wierna (auto)
+    krcgId: 100912,
+    name: "Herald of Topheth",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Hexaped [100914] — fala D wierna (auto)
+    krcgId: 100914,
+    name: "Hexaped",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hexe [100915] — fala D wierna (auto)
+    krcgId: 100915,
+    name: "Hexe",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "str", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "dai", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Hidden Lurker [100916] — fala D wierna (auto)
+    krcgId: 100916,
+    name: "Hidden Lurker",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hidden Pathways [100917] — fala D wierna (auto)
+    krcgId: 100917,
+    name: "Hidden Pathways",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hide [100919] — fala D wierna (auto)
+    krcgId: 100919,
+    name: "Hide",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "inn", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Hide the Heart [100920] — fala D wierna (auto)
+    krcgId: 100920,
+    name: "Hide the Heart",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Hiding in the Open [100922] — fala D wierna (auto)
+    krcgId: 100922,
+    name: "Hiding in the Open",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Hierophant [100923] — fala D wierna (auto)
+    krcgId: 100923,
+    name: "Hierophant",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // High Aye [100924] — fala D wierna (auto)
+    krcgId: 100924,
+    name: "High Aye",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // High Museum of Art, Atlanta [100926] — fala D wierna (auto)
+    krcgId: 100926,
+    name: "High Museum of Art, Atlanta",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // High Orun [100927] — fala D wierna (auto)
+    krcgId: 100927,
+    name: "High Orun",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // High Stakes [100928] — fala D wierna (auto)
+    krcgId: 100928,
+    name: "High Stakes",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // High Top [100929] — fala D wierna (auto)
+    krcgId: 100929,
+    name: "High Top",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Highway Haven: RV [100930] — fala D wierna (auto)
+    krcgId: 100930,
+    name: "Highway Haven: RV",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hive Mind [100931] — fala D wierna (auto)
+    krcgId: 100931,
+    name: "Hive Mind",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Honor the Elders [100933] — fala D wierna (auto)
+    krcgId: 100933,
+    name: "Honor the Elders",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Horrid Form [100934] — fala D wierna (auto)
+    krcgId: 100934,
+    name: "Horrid Form",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Horrid Reality [100935] — fala D wierna (auto)
+    krcgId: 100935,
+    name: "Horrid Reality",
+    cardType: "combat",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Houngan [100940] — fala D wierna (auto)
+    krcgId: 100940,
+    name: "Houngan",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hourglass of the Mind [100941] — fala D wierna (auto)
+    krcgId: 100941,
+    name: "Hourglass of the Mind",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // House of Sorrow [100942] — fala D wierna (auto)
+    krcgId: 100942,
+    name: "House of Sorrow",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Humanitas [100943] — fala D wierna (auto)
+    krcgId: 100943,
+    name: "Humanitas",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // I am Legion [100947] — fala D wierna (auto)
+    krcgId: 100947,
+    name: "I am Legion",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ignis Fatuus [100948] — fala D wierna (auto)
+    krcgId: 100948,
+    name: "Ignis Fatuus",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ignore the Searing Flames [100949] — fala D wierna (auto)
+    krcgId: 100949,
+    name: "Ignore the Searing Flames",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Igoli's Loyalty [100950] — fala D wierna (auto)
+    krcgId: 100950,
+    name: "Igoli's Loyalty",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Illegal Search and Seizure [100951] — fala D wierna (auto)
+    krcgId: 100951,
+    name: "Illegal Search and Seizure",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Illegalism [100952] — fala D wierna (auto)
+    krcgId: 100952,
+    name: "Illegalism",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Illuminate [100953] — fala D wierna (auto)
+    krcgId: 100953,
+    name: "Illuminate",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "inn", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Illusions of the Kindred [100954] — fala D wierna (auto)
+    krcgId: 100954,
+    name: "Illusions of the Kindred",
+    cardType: "combat",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Illusory Resources [100955] — fala D wierna (auto)
+    krcgId: 100955,
+    name: "Illusory Resources",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ilomba [100956] — fala D wierna (auto)
+    krcgId: 100956,
+    name: "Ilomba",
+    cardType: "retainer",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Immaculate Vitae [100957] — fala D wierna (auto)
+    krcgId: 100957,
+    name: "Immaculate Vitae",
+    cardType: "reaction",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Immense Size [100958] — fala D wierna (auto)
+    krcgId: 100958,
+    name: "Immense Size",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Imperator [100960] — fala D wierna (auto)
+    krcgId: 100960,
+    name: "Imperator",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Imperial Decree [100961] — fala D wierna (auto)
+    krcgId: 100961,
+    name: "Imperial Decree",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Imposing Phantasm [100962] — fala D wierna (auto)
+    krcgId: 100962,
+    name: "Imposing Phantasm",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Imprison [100963] — fala D wierna (auto)
+    krcgId: 100963,
+    name: "Imprison",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "jud", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Improvised Flamethrower [100964] — fala D wierna (auto)
+    krcgId: 100964,
+    name: "Improvised Flamethrower",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Impundulu [100966] — fala D wierna (auto)
+    krcgId: 100966,
+    name: "Impundulu",
+    cardType: "ally",
+    bloodCost: 3,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // In Memory of the Two Lands [100967] — fala D wierna (auto)
+    krcgId: 100967,
+    name: "In Memory of the Two Lands",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Inceptor [100969] — fala D wierna (auto)
+    krcgId: 100969,
+    name: "Inceptor",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Incriminating Videotape [100972] — fala D wierna (auto)
+    krcgId: 100972,
+    name: "Incriminating Videotape",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inevitability of the Void [100974] — fala D wierna (auto)
+    krcgId: 100974,
+    name: "Inevitability of the Void",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Infamous Insurgent [100975] — fala D wierna (auto)
+    krcgId: 100975,
+    name: "Infamous Insurgent",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Infamous Warlock [100976] — fala D wierna (auto)
+    krcgId: 100976,
+    name: "Infamous Warlock",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Infernal Familiar [100978] — fala D wierna (auto)
+    krcgId: 100978,
+    name: "Infernal Familiar",
+    cardType: "retainer",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Infernal Pact [100979] — fala D wierna (auto)
+    krcgId: 100979,
+    name: "Infernal Pact",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Infernal Pursuit [100980] — fala D wierna (auto)
+    krcgId: 100980,
+    name: "Infernal Pursuit",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Infernal Servitor [100981] — fala D wierna (auto)
+    krcgId: 100981,
+    name: "Infernal Servitor",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Inflict [100982] — fala D wierna (auto)
+    krcgId: 100982,
+    name: "Inflict",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mar", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Informant [100983] — fala D wierna (auto)
+    krcgId: 100983,
+    name: "Informant",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Information Network [100985] — fala D wierna (auto)
+    krcgId: 100985,
+    name: "Information Network",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Inner Essence [100986] — fala D wierna (auto)
+    krcgId: 100986,
+    name: "Inner Essence",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inquisition [100988] — fala D wierna (auto)
+    krcgId: 100988,
+    name: "Inquisition",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Inscription [100989] — fala D wierna (auto)
+    krcgId: 100989,
+    name: "Inscription",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inside Dirt [100990] — fala D wierna (auto)
+    krcgId: 100990,
+    name: "Inside Dirt",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inspire [100991] — fala D wierna (auto)
+    krcgId: 100991,
+    name: "Inspire",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "inn", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Inspire Greatness [100992] — fala D wierna (auto)
+    krcgId: 100992,
+    name: "Inspire Greatness",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Instantaneous Transformation [100994] — fala D wierna (auto)
+    krcgId: 100994,
+    name: "Instantaneous Transformation",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Insurance Scam [100997] — fala D wierna (auto)
+    krcgId: 100997,
+    name: "Insurance Scam",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Internal Recursion [100998] — fala D wierna (auto)
+    krcgId: 100998,
+    name: "Internal Recursion",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Into the Fire [101000] — fala D wierna (auto)
+    krcgId: 101000,
+    name: "Into the Fire",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Into Thin Air [101001] — fala D wierna (auto)
+    krcgId: 101001,
+    name: "Into Thin Air",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Inveraray, Scotland [101002] — fala D wierna (auto)
+    krcgId: 101002,
+    name: "Inveraray, Scotland",
+    cardType: "equipment",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Invitation Accepted [101004] — fala D wierna (auto)
+    krcgId: 101004,
+    name: "Invitation Accepted",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Invoke Poison Glands [101005] — fala D wierna (auto)
+    krcgId: 101005,
+    name: "Invoke Poison Glands",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "abo", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Invoking the Beast [101006] — fala D wierna (auto)
+    krcgId: 101006,
+    name: "Invoking the Beast",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Iron Heart [101009] — fala D wierna (auto)
+    krcgId: 101009,
+    name: "Iron Heart",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "pot", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Ishtarri Kholo [101011] — fala D wierna (auto)
+    krcgId: 101011,
+    name: "Ishtarri Kholo",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ishtarri Warlord [101012] — fala D wierna (auto)
+    krcgId: 101012,
+    name: "Ishtarri Warlord",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Island of Yiaros [101013] — fala D wierna (auto)
+    krcgId: 101013,
+    name: "Island of Yiaros",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Jack of Both Sides [101016] — fala D wierna (auto)
+    krcgId: 101016,
+    name: "Jack of Both Sides",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Jackal [101017] — fala D wierna (auto)
+    krcgId: 101017,
+    name: "Jackal",
+    cardType: "retainer",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Jake Washington [101019] — fala D wierna (auto)
+    krcgId: 101019,
+    name: "Jake Washington",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Jar of Skin Eaters [101020] — fala D wierna (auto)
+    krcgId: 101020,
+    name: "Jar of Skin Eaters",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Jar the Soul [101021] — fala D wierna (auto)
+    krcgId: 101021,
+    name: "Jar the Soul",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Jones [101023] — fala D wierna (auto)
+    krcgId: 101023,
+    name: "The Jones",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Joseph Pander [101024] — fala D wierna (auto)
+    krcgId: 101024,
+    name: "Joseph Pander",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Joumlon's Axe [101025] — fala D wierna (auto)
+    krcgId: 101025,
+    name: "Joumlon's Axe",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Journal of Hrorsh [101026] — fala D wierna (auto)
+    krcgId: 101026,
+    name: "Journal of Hrorsh",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Judgment: Death to the Brujah! [101029] — fala D wierna (auto)
+    krcgId: 101029,
+    name: "Judgment: Death to the Brujah!",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Jungle Hunting Ground [101030] — fala D wierna (auto)
+    krcgId: 101030,
+    name: "Jungle Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Justicar Retribution [101031] — fala D wierna (auto)
+    krcgId: 101031,
+    name: "Justicar Retribution",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Karavalanisha Vrana [101033] — fala D wierna (auto)
+    krcgId: 101033,
+    name: "Karavalanisha Vrana",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Kaymakli Fragment [101035] — fala D wierna (auto)
+    krcgId: 101035,
+    name: "Kaymakli Fragment",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Kaymakli Nightmares [101036] — fala D wierna (auto)
+    krcgId: 101036,
+    name: "Kaymakli Nightmares",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Kduva's Mask [101037] — fala D wierna (auto)
+    krcgId: 101037,
+    name: "Kduva's Mask",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Kerrie [101039] — fala D wierna (auto)
+    krcgId: 101039,
+    name: "Kerrie",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1, ranged: true }] }
+    ],
+  },
+  {
+    // Keystone Kine [101041] — fala D wierna (auto)
+    krcgId: 101041,
+    name: "Keystone Kine",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // The Khabar: Honor [101044] — fala D wierna (auto)
+    krcgId: 101044,
+    name: "The Khabar: Honor",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Khazar's Diary (Endless Night) [101046] — fala D wierna (auto)
+    krcgId: 101046,
+    name: "Khazar's Diary (Endless Night)",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Khobar Towers, Al-Khubar [101048] — fala D wierna (auto)
+    krcgId: 101048,
+    name: "Khobar Towers, Al-Khubar",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Kindred Manipulation [101051] — fala D wierna (auto)
+    krcgId: 101051,
+    name: "Kindred Manipulation",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Kindred Restructure [101052] — fala D wierna (auto)
+    krcgId: 101052,
+    name: "Kindred Restructure",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Kindred Society Games [101054] — fala D wierna (auto)
+    krcgId: 101054,
+    name: "Kindred Society Games",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Kindred Spirits [101055] — fala D wierna (auto)
+    krcgId: 101055,
+    name: "Kindred Spirits",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // King's Favor [101058] — fala D wierna (auto)
+    krcgId: 101058,
+    name: "King's Favor",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Kiss of Lachesis [101061] — fala D wierna (auto)
+    krcgId: 101061,
+    name: "Kiss of Lachesis",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Kiss of Ra [101062] — fala D wierna (auto)
+    krcgId: 101062,
+    name: "The Kiss of Ra",
+    cardType: "actionModifier",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Knotted Cord [101064] — fala D wierna (auto)
+    krcgId: 101064,
+    name: "Knotted Cord",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Kpist m/45 [101065] — fala D wierna (auto)
+    krcgId: 101065,
+    name: "Kpist m/45",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Kraken's Kiss [101066] — fala D wierna (auto)
+    krcgId: 101066,
+    name: "Kraken's Kiss",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Kuta [101069] — fala D wierna (auto)
+    krcgId: 101069,
+    name: "Kuta",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Last Stand [101074] — fala D wierna (auto)
+    krcgId: 101074,
+    name: "Last Stand",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 6,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Lazarene Inquisitor [101076] — fala D wierna (auto)
+    krcgId: 101076,
+    name: "Lazarene Inquisitor",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Lead Fist [101077] — fala D wierna (auto)
+    krcgId: 101077,
+    name: "Lead Fist",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Leadership Vacuum [101078] — fala D wierna (auto)
+    krcgId: 101078,
+    name: "Leadership Vacuum",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Leapfrog [101079] — fala D wierna (auto)
+    krcgId: 101079,
+    name: "Leapfrog",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Learjet [101080] — fala D wierna (auto)
+    krcgId: 101080,
+    name: "Learjet",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Leech [101083] — fala D wierna (auto)
+    krcgId: 101083,
+    name: "Leech",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Left for Dead [101084] — fala D wierna (auto)
+    krcgId: 101084,
+    name: "Left for Dead",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Legacy [101085] — fala D wierna (auto)
+    krcgId: 101085,
+    name: "Legacy",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Legacy of Caine [101086] — fala D wierna (auto)
+    krcgId: 101086,
+    name: "Legacy of Caine",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Legacy of Pander [101087] — fala D wierna (auto)
+    krcgId: 101087,
+    name: "Legacy of Pander",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Legacy of Power [101088] — fala D wierna (auto)
+    krcgId: 101088,
+    name: "Legacy of Power",
+    cardType: "reaction",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Legend of the Leopard [101090] — fala D wierna (auto)
+    krcgId: 101090,
+    name: "Legend of the Leopard",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Legendary Vampire [101091] — fala D wierna (auto)
+    krcgId: 101091,
+    name: "Legendary Vampire",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Legion [101092] — fala D wierna (auto)
+    krcgId: 101092,
+    name: "Legion",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Leonardo, Mortician [101094] — fala D wierna (auto)
+    krcgId: 101094,
+    name: "Leonardo, Mortician",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Liberty Club Intrigue [101101] — fala D wierna (auto)
+    krcgId: 101101,
+    name: "Liberty Club Intrigue",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Lifeless Tongues [101105] — fala D wierna (auto)
+    krcgId: 101105,
+    name: "Lifeless Tongues",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Light Intensifying Goggles [101106] — fala D wierna (auto)
+    krcgId: 101106,
+    name: "Light Intensifying Goggles",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Lilith's Blessing [101108] — fala D wierna (auto)
+    krcgId: 101108,
+    name: "Lilith's Blessing",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Lily Prelude [101109] — fala D wierna (auto)
+    krcgId: 101109,
+    name: "Lily Prelude",
+    cardType: "politicalAction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Liquefy the Mortal Coil [101111] — fala D wierna (auto)
+    krcgId: 101111,
+    name: "Liquefy the Mortal Coil",
+    cardType: "combat",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Liquidation [101112] — fala D wierna (auto)
+    krcgId: 101112,
+    name: "Liquidation",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Little Mountain Cemetery [101113] — fala D wierna (auto)
+    krcgId: 101113,
+    name: "Little Mountain Cemetery",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Living Wood Staff [101115] — fala D wierna (auto)
+    krcgId: 101115,
+    name: "Living Wood Staff",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Lobotomy [101116] — fala D wierna (auto)
+    krcgId: 101116,
+    name: "Lobotomy",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Local 1111 [101117] — fala D wierna (auto)
+    krcgId: 101117,
+    name: "Local 1111",
+    cardType: "equipment",
+    bloodCost: 2,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Lock [101118] — fala D wierna (auto)
+    krcgId: 101118,
+    name: "Lock",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "def", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Loki's Gift [101119] — fala D wierna (auto)
+    krcgId: 101119,
+    name: "Loki's Gift",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Loner [101121] — fala D wierna (auto)
+    krcgId: 101121,
+    name: "Loner",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Loose Cannon [101122] — fala D wierna (auto)
+    krcgId: 101122,
+    name: "Loose Cannon",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Lord of Serenity [101123] — fala D wierna (auto)
+    krcgId: 101123,
+    name: "Lord of Serenity",
+    cardType: "action",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Loss [101124] — fala D wierna (auto)
+    krcgId: 101124,
+    name: "Loss",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Loyalist [101130] — fala D wierna (auto)
+    krcgId: 101130,
+    name: "Loyalist",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Lunatic Eruption [101132] — fala D wierna (auto)
+    krcgId: 101132,
+    name: "Lunatic Eruption",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Lure of the Serpent [101134] — fala D wierna (auto)
+    krcgId: 101134,
+    name: "Lure of the Serpent",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Lyndhurst Estate, New York [101135] — fala D wierna (auto)
+    krcgId: 101135,
+    name: "Lyndhurst Estate, New York",
+    cardType: "equipment",
+    bloodCost: 3,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Madman's Quill [101138] — fala D wierna (auto)
+    krcgId: 101138,
+    name: "Madman's Quill",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Madness Network [101139] — fala D wierna (auto)
+    krcgId: 101139,
+    name: "Madness Network",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Madness of the Bard [101140] — fala D wierna (auto)
+    krcgId: 101140,
+    name: "Madness of the Bard",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Madrigal [101141] — fala D wierna (auto)
+    krcgId: 101141,
+    name: "Madrigal",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Make an Example [101146] — fala D wierna (auto)
+    krcgId: 101146,
+    name: "Make an Example",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Maleficia [101149] — fala D wierna (auto)
+    krcgId: 101149,
+    name: "Maleficia",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Malkavian Derangement: Alternate Personality [101151] — fala D wierna (auto)
+    krcgId: 101151,
+    name: "Malkavian Derangement: Alternate Personality",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Malkavian Derangement: Paranoia [101152] — fala D wierna (auto)
+    krcgId: 101152,
+    name: "Malkavian Derangement: Paranoia",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Malkavian Game [101153] — fala D wierna (auto)
+    krcgId: 101153,
+    name: "Malkavian Game",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Malkavian Prank [101155] — fala D wierna (auto)
+    krcgId: 101155,
+    name: "Malkavian Prank",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // The Malkavian Seven Miseries [101157] — fala D wierna (auto)
+    krcgId: 101157,
+    name: "The Malkavian Seven Miseries",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Malleable Visage [101159] — fala D wierna (auto)
+    krcgId: 101159,
+    name: "Malleable Visage",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mantle of the Bestial Majesty [101161] — fala D wierna (auto)
+    krcgId: 101161,
+    name: "Mantle of the Bestial Majesty",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mapatano Utando [101163] — fala D wierna (auto)
+    krcgId: 101163,
+    name: "Mapatano Utando",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Marijava Ghoul [101164] — fala D wierna (auto)
+    krcgId: 101164,
+    name: "Marijava Ghoul",
+    cardType: "retainer",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Marijava Thuggee [101165] — fala D wierna (auto)
+    krcgId: 101165,
+    name: "Marijava Thuggee",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Mark of Damnation [101166] — fala D wierna (auto)
+    krcgId: 101166,
+    name: "Mark of Damnation",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Marked Path [101169] — fala D wierna (auto)
+    krcgId: 101169,
+    name: "Marked Path",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Marked Territory [101170] — fala D wierna (auto)
+    krcgId: 101170,
+    name: "Marked Territory",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Marrakesh Codex [101172] — fala D wierna (auto)
+    krcgId: 101172,
+    name: "The Marrakesh Codex",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Martial Ritus [101173] — fala D wierna (auto)
+    krcgId: 101173,
+    name: "Martial Ritus",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Martinelli's Ring [101174] — fala D wierna (auto)
+    krcgId: 101174,
+    name: "Martinelli's Ring",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Masai Blood Milk [101176] — fala D wierna (auto)
+    krcgId: 101176,
+    name: "Masai Blood Milk",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Masca [101177] — fala D wierna (auto)
+    krcgId: 101177,
+    name: "Masca",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
+      { level: "superior", discipline: "str", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Mask of a Thousand Faces [101179] — fala D wierna (auto)
+    krcgId: 101179,
+    name: "Mask of a Thousand Faces",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Masochism [101180] — fala D wierna (auto)
+    krcgId: 101180,
+    name: "Masochism",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Masque of Judas [101181] — fala D wierna (auto)
+    krcgId: 101181,
+    name: "Masque of Judas",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Masquer [101182] — fala D wierna (auto)
+    krcgId: 101182,
+    name: "Masquer",
+    cardType: "retainer",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Mass Reality [101185] — fala D wierna (auto)
+    krcgId: 101185,
+    name: "Mass Reality",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Massassi's Honor [101186] — fala D wierna (auto)
+    krcgId: 101186,
+    name: "Massassi's Honor",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mayaparisatya [101188] — fala D wierna (auto)
+    krcgId: 101188,
+    name: "Mayaparisatya",
+    cardType: "combat",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Mbare Market, Harare [101189] — fala D wierna (auto)
+    krcgId: 101189,
+    name: "Mbare Market, Harare",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Meat Hook [101191] — fala D wierna (auto)
+    krcgId: 101191,
+    name: "Meat Hook",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // The Meddling of Semsith [101192] — fala D wierna (auto)
+    krcgId: 101192,
+    name: "The Meddling of Semsith",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mehemet of the Ahl-i-Batin [101194] — fala D wierna (auto)
+    krcgId: 101194,
+    name: "Mehemet of the Ahl-i-Batin",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Meld with the Land [101196] — fala D wierna (auto)
+    krcgId: 101196,
+    name: "Meld with the Land",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Member of the Entourage [101197] — fala D wierna (auto)
+    krcgId: 101197,
+    name: "Member of the Entourage",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Memories of Mortality [101198] — fala D wierna (auto)
+    krcgId: 101198,
+    name: "Memories of Mortality",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Memory Rift [101199] — fala D wierna (auto)
+    krcgId: 101199,
+    name: "Memory Rift",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Memory's Fading Glimpse [101200] — fala D wierna (auto)
+    krcgId: 101200,
+    name: "Memory's Fading Glimpse",
+    cardType: "action",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mental Maze [101201] — fala D wierna (auto)
+    krcgId: 101201,
+    name: "Mental Maze",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Mercy for Seth [101203] — fala D wierna (auto)
+    krcgId: 101203,
+    name: "Mercy for Seth",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Mesmerize [101205] — fala D wierna (auto)
+    krcgId: 101205,
+    name: "Mesmerize",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mesu Bedshet [101206] — fala D wierna (auto)
+    krcgId: 101206,
+    name: "Mesu Bedshet",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Metro Underground [101207] — fala D wierna (auto)
+    krcgId: 101207,
+    name: "Metro Underground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Might of the Camarilla [101208] — fala D wierna (auto)
+    krcgId: 101208,
+    name: "Might of the Camarilla",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Millicent Smith, Puritan Vampire Hunter [101210] — fala D wierna (auto)
+    krcgId: 101210,
+    name: "Millicent Smith, Puritan Vampire Hunter",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Mind of a Child [101212] — fala D wierna (auto)
+    krcgId: 101212,
+    name: "Mind of a Child",
+    cardType: "action",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mind of a Killer [101213] — fala D wierna (auto)
+    krcgId: 101213,
+    name: "Mind of a Killer",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Mind of the Wilds [101214] — fala D wierna (auto)
+    krcgId: 101214,
+    name: "Mind of the Wilds",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mind Tricks [101216] — fala D wierna (auto)
+    krcgId: 101216,
+    name: "Mind Tricks",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ministry [101218] — fala D wierna (auto)
+    krcgId: 101218,
+    name: "Ministry",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Minor Curse [101220] — fala D wierna (auto)
+    krcgId: 101220,
+    name: "Minor Curse",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "mal", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mirror Image [101222] — fala D wierna (auto)
+    krcgId: 101222,
+    name: "Mirror Image",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mirror's Visage [101224] — fala D wierna (auto)
+    krcgId: 101224,
+    name: "Mirror's Visage",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Missing Voice [101226] — fala D wierna (auto)
+    krcgId: 101226,
+    name: "The Missing Voice",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mistaken Identity [101227] — fala D wierna (auto)
+    krcgId: 101227,
+    name: "Mistaken Identity",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Mistrust [101228] — fala D wierna (auto)
+    krcgId: 101228,
+    name: "Mistrust",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Moise Kasavubu [101231] — fala D wierna (auto)
+    krcgId: 101231,
+    name: "Moise Kasavubu",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mokolé Blood [101232] — fala D wierna (auto)
+    krcgId: 101232,
+    name: "Mokolé Blood",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Mole [101233] — fala D wierna (auto)
+    krcgId: 101233,
+    name: "The Mole",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Mole's Tunneling [101234] — fala D wierna (auto)
+    krcgId: 101234,
+    name: "Mole's Tunneling",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Momentary Delay [101236] — fala D wierna (auto)
+    krcgId: 101236,
+    name: "Momentary Delay",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Monocle of Clarity [101240] — fala D wierna (auto)
+    krcgId: 101240,
+    name: "Monocle of Clarity",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Monomancy [101241] — fala D wierna (auto)
+    krcgId: 101241,
+    name: "Monomancy",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Morphean Blow [101244] — fala D wierna (auto)
+    krcgId: 101244,
+    name: "Morphean Blow",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Mouthpiece [101245] — fala D wierna (auto)
+    krcgId: 101245,
+    name: "Mouthpiece",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Movement of the Slow Body [101247] — fala D wierna (auto)
+    krcgId: 101247,
+    name: "Movement of the Slow Body",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mozambique Allure [101248] — fala D wierna (auto)
+    krcgId: 101248,
+    name: "Mozambique Allure",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mummify [101251] — fala D wierna (auto)
+    krcgId: 101251,
+    name: "Mummify",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mundane [101253] — fala D wierna (auto)
+    krcgId: 101253,
+    name: "Mundane",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Muricia's Call [101255] — fala D wierna (auto)
+    krcgId: 101255,
+    name: "Muricia's Call",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Muse of Flame [101257] — fala D wierna (auto)
+    krcgId: 101257,
+    name: "Muse of Flame",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ven", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mustajib [101258] — fala D wierna (auto)
+    krcgId: 101258,
+    name: "Mustajib",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // My Kin Against the World [101260] — fala D wierna (auto)
+    krcgId: 101260,
+    name: "My Kin Against the World",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Mylan Horseed [101261] — fala D wierna (auto)
+    krcgId: 101261,
+    name: "Mylan Horseed",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // The Name Forgotten [101263] — fala D wierna (auto)
+    krcgId: 101263,
+    name: "The Name Forgotten",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Nar-Sheptha [101264] — fala D wierna (auto)
+    krcgId: 101264,
+    name: "Nar-Sheptha",
+    cardType: "retainer",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // National Guard Support [101266] — fala D wierna (auto)
+    krcgId: 101266,
+    name: "National Guard Support",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Neebi [101269] — fala D wierna (auto)
+    krcgId: 101269,
+    name: "Neebi",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Neighborhood Watch Commander [101270] — fala D wierna (auto)
+    krcgId: 101270,
+    name: "Neighborhood Watch Commander",
+    cardType: "ally",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Nephandus [101272] — fala D wierna (auto)
+    krcgId: 101272,
+    name: "Nephandus",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Netwar [101275] — fala D wierna (auto)
+    krcgId: 101275,
+    name: "Netwar",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Neutral Guard [101276] — fala D wierna (auto)
+    krcgId: 101276,
+    name: "Neutral Guard",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // New in Town [101278] — fala D wierna (auto)
+    krcgId: 101278,
+    name: "New in Town",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // New Moon Sigil [101281] — fala D wierna (auto)
+    krcgId: 101281,
+    name: "New Moon Sigil",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ni Dieu ni Maître [101282] — fala D wierna (auto)
+    krcgId: 101282,
+    name: "Ni Dieu ni Maître",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Night Moves [101283] — fala D wierna (auto)
+    krcgId: 101283,
+    name: "Night Moves",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Nightmare Curse [101284] — fala D wierna (auto)
+    krcgId: 101284,
+    name: "Nightmare Curse",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nightmares upon Nightmares [101285] — fala D wierna (auto)
+    krcgId: 101285,
+    name: "Nightmares upon Nightmares",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nightshades [101286] — fala D wierna (auto)
+    krcgId: 101286,
+    name: "Nightshades",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Nightstick [101287] — fala D wierna (auto)
+    krcgId: 101287,
+    name: "Nightstick",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Nkishi [101289] — fala D wierna (auto)
+    krcgId: 101289,
+    name: "Nkishi",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // No Confidence [101290] — fala D wierna (auto)
+    krcgId: 101290,
+    name: "No Confidence",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // No Secrets From the Magaji [101291] — fala D wierna (auto)
+    krcgId: 101291,
+    name: "No Secrets From the Magaji",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Nocturn [101293] — fala D wierna (auto)
+    krcgId: 101293,
+    name: "Nocturn",
+    cardType: "ally",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Nocturn Theater [101294] — fala D wierna (auto)
+    krcgId: 101294,
+    name: "Nocturn Theater",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Nod [101295] — fala D wierna (auto)
+    krcgId: 101295,
+    name: "Nod",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Nose of the Hound [101296] — fala D wierna (auto)
+    krcgId: 101296,
+    name: "Nose of the Hound",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nosferatu Bestial [101297] — fala D wierna (auto)
+    krcgId: 101297,
+    name: "Nosferatu Bestial",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Nosferatu Hosting [101298] — fala D wierna (auto)
+    krcgId: 101298,
+    name: "Nosferatu Hosting",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Nosferatu Kingdom [101300] — fala D wierna (auto)
+    krcgId: 101300,
+    name: "Nosferatu Kingdom",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Nosferatu Performance Art [101301] — fala D wierna (auto)
+    krcgId: 101301,
+    name: "Nosferatu Performance Art",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Notorious Brutality [101304] — fala D wierna (auto)
+    krcgId: 101304,
+    name: "Notorious Brutality",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // NSA Trio [101306] — fala D wierna (auto)
+    krcgId: 101306,
+    name: "NSA Trio",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Oath [101307] — fala D wierna (auto)
+    krcgId: 101307,
+    name: "The Oath",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Oath of Loyalty [101308] — fala D wierna (auto)
+    krcgId: 101308,
+    name: "Oath of Loyalty",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Obsession [101311] — fala D wierna (auto)
+    krcgId: 101311,
+    name: "Obsession",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Occlusion [101313] — fala D wierna (auto)
+    krcgId: 101313,
+    name: "Occlusion",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Octopod [101314] — fala D wierna (auto)
+    krcgId: 101314,
+    name: "Octopod",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Of Noble Blood [101315] — fala D wierna (auto)
+    krcgId: 101315,
+    name: "Of Noble Blood",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Off Kilter [101316] — fala D wierna (auto)
+    krcgId: 101316,
+    name: "Off Kilter",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ohoyo Hopoksia (Bastet) [101317] — fala D wierna (auto)
+    krcgId: 101317,
+    name: "Ohoyo Hopoksia (Bastet)",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Olid Loa [101319] — fala D wierna (auto)
+    krcgId: 101319,
+    name: "Olid Loa",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Open Dossier [101322] — fala D wierna (auto)
+    krcgId: 101322,
+    name: "Open Dossier",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ophidian Gaze [101325] — fala D wierna (auto)
+    krcgId: 101325,
+    name: "Ophidian Gaze",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Oppugnant Night [101327] — fala D wierna (auto)
+    krcgId: 101327,
+    name: "Oppugnant Night",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Orb of Ulain [101328] — fala D wierna (auto)
+    krcgId: 101328,
+    name: "Orb of Ulain",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Order of Hermes Cabal [101329] — fala D wierna (auto)
+    krcgId: 101329,
+    name: "Order of Hermes Cabal",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Orgy of Blood [101330] — fala D wierna (auto)
+    krcgId: 101330,
+    name: "Orgy of Blood",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Orun [101331] — fala D wierna (auto)
+    krcgId: 101331,
+    name: "Orun",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Osebo Kholo [101332] — fala D wierna (auto)
+    krcgId: 101332,
+    name: "Osebo Kholo",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ossian [101333] — fala D wierna (auto)
+    krcgId: 101333,
+    name: "Ossian",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Oubliette [101334] — fala D wierna (auto)
+    krcgId: 101334,
+    name: "Oubliette",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Out of Control [101335] — fala D wierna (auto)
+    krcgId: 101335,
+    name: "Out of Control",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Out of the Frying Pan [101336] — fala D wierna (auto)
+    krcgId: 101336,
+    name: "Out of the Frying Pan",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Outside the Hourglass [101338] — fala D wierna (auto)
+    krcgId: 101338,
+    name: "Outside the Hourglass",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Overseer [101339] — fala D wierna (auto)
+    krcgId: 101339,
+    name: "Overseer",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Palace Hunting Ground [101344] — fala D wierna (auto)
+    krcgId: 101344,
+    name: "Palace Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Palatial Estate [101345] — fala D wierna (auto)
+    krcgId: 101345,
+    name: "Palatial Estate",
+    cardType: "equipment",
+    bloodCost: 2,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Palla Grande [101346] — fala D wierna (auto)
+    krcgId: 101346,
+    name: "Palla Grande",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Pallid [101347] — fala D wierna (auto)
+    krcgId: 101347,
+    name: "Pallid",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Panacea [101348] — fala D wierna (auto)
+    krcgId: 101348,
+    name: "Panacea",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Pandora's Whisper [101349] — fala D wierna (auto)
+    krcgId: 101349,
+    name: "Pandora's Whisper",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Paragon [101351] — fala D wierna (auto)
+    krcgId: 101351,
+    name: "Paragon",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Paris Opera House [101352] — fala D wierna (auto)
+    krcgId: 101352,
+    name: "Paris Opera House",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Parthenon [101355] — fala D wierna (auto)
+    krcgId: 101355,
+    name: "The Parthenon",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Passion [101356] — fala D wierna (auto)
+    krcgId: 101356,
+    name: "Passion",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Patagia: Flaps Allowing Limited Flight [101357] — fala D wierna (auto)
+    krcgId: 101357,
+    name: "Patagia: Flaps Allowing Limited Flight",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Path of Blood [101358] — fala D wierna (auto)
+    krcgId: 101358,
+    name: "The Path of Blood",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // The Path of Bone [101359] — fala D wierna (auto)
+    krcgId: 101359,
+    name: "The Path of Bone",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Path of Death and the Soul [101360] — fala D wierna (auto)
+    krcgId: 101360,
+    name: "Path of Death and the Soul",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Path of Evil Revelations [101361] — fala D wierna (auto)
+    krcgId: 101361,
+    name: "Path of Evil Revelations",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // The Path of Harmony [101362] — fala D wierna (auto)
+    krcgId: 101362,
+    name: "The Path of Harmony",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // The Path of Lilith [101363] — fala D wierna (auto)
+    krcgId: 101363,
+    name: "The Path of Lilith",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // The Path of Retribution [101367] — fala D wierna (auto)
+    krcgId: 101367,
+    name: "The Path of Retribution",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // The Path of Service [101368] — fala D wierna (auto)
+    krcgId: 101368,
+    name: "The Path of Service",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // The Path of Tears [101369] — fala D wierna (auto)
+    krcgId: 101369,
+    name: "The Path of Tears",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // The Path of the Feral Heart [101370] — fala D wierna (auto)
+    krcgId: 101370,
+    name: "The Path of the Feral Heart",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // The Path of the Scorched Heart [101371] — fala D wierna (auto)
+    krcgId: 101371,
+    name: "The Path of the Scorched Heart",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Path of the Void [101372] — fala D wierna (auto)
+    krcgId: 101372,
+    name: "Path of the Void",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Patrol [101374] — fala D wierna (auto)
+    krcgId: 101374,
+    name: "Patrol",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Patronage [101375] — fala D wierna (auto)
+    krcgId: 101375,
+    name: "Patronage",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Patsy [101377] — fala D wierna (auto)
+    krcgId: 101377,
+    name: "Patsy",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Patterns in the Chaos [101378] — fala D wierna (auto)
+    krcgId: 101378,
+    name: "Patterns in the Chaos",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // The Peace of Khetamon [101379] — fala D wierna (auto)
+    krcgId: 101379,
+    name: "The Peace of Khetamon",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Peacemaker [101381] — fala D wierna (auto)
+    krcgId: 101381,
+    name: "Peacemaker",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Pentex™ Loves You! [101383] — fala D wierna (auto)
+    krcgId: 101383,
+    name: "Pentex™ Loves You!",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Père Lachaise, France [101385] — fala D wierna (auto)
+    krcgId: 101385,
+    name: "Père Lachaise, France",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Perfect Clarity [101386] — fala D wierna (auto)
+    krcgId: 101386,
+    name: "Perfect Clarity",
+    cardType: "actionModifier",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Permanency [101389] — fala D wierna (auto)
+    krcgId: 101389,
+    name: "Permanency",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Persistent Echo [101392] — fala D wierna (auto)
+    krcgId: 101392,
+    name: "Persistent Echo",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Persona Non Grata [101393] — fala D wierna (auto)
+    krcgId: 101393,
+    name: "Persona Non Grata",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Personal Scourge [101395] — fala D wierna (auto)
+    krcgId: 101395,
+    name: "Personal Scourge",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Petra Resonance [101396] — fala D wierna (auto)
+    krcgId: 101396,
+    name: "Petra Resonance",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Phantom Speaker [101397] — fala D wierna (auto)
+    krcgId: 101397,
+    name: "Phantom Speaker",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Phased Motion Detector [101398] — fala D wierna (auto)
+    krcgId: 101398,
+    name: "Phased Motion Detector",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Phobia [101399] — fala D wierna (auto)
+    krcgId: 101399,
+    name: "Phobia",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Pier 13, Port of Baltimore [101400] — fala D wierna (auto)
+    krcgId: 101400,
+    name: "Pier 13, Port of Baltimore",
+    cardType: "equipment",
+    bloodCost: 2,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Plasmic Form [101402] — fala D wierna (auto)
+    krcgId: 101402,
+    name: "Plasmic Form",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Playing for Keeps [101403] — fala D wierna (auto)
+    krcgId: 101403,
+    name: "Playing for Keeps",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Pocket Out of Time [101405] — fala D wierna (auto)
+    krcgId: 101405,
+    name: "Pocket Out of Time",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Poison the Well of Life [101407] — fala D wierna (auto)
+    krcgId: 101407,
+    name: "Poison the Well of Life",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Poker [101408] — fala D wierna (auto)
+    krcgId: 101408,
+    name: "Poker",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Polaris Coach [101409] — fala D wierna (auto)
+    krcgId: 101409,
+    name: "Polaris Coach",
+    cardType: "equipment",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Police Department [101410] — fala D wierna (auto)
+    krcgId: 101410,
+    name: "Police Department",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Political Antagonist [101412] — fala D wierna (auto)
+    krcgId: 101412,
+    name: "Political Antagonist",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Political Flux [101414] — fala D wierna (auto)
+    krcgId: 101414,
+    name: "Political Flux",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Political Seizure [101416] — fala D wierna (auto)
+    krcgId: 101416,
+    name: "Political Seizure",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Political Struggle [101418] — fala D wierna (auto)
+    krcgId: 101418,
+    name: "Political Struggle",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ponticulus [101419] — fala D wierna (auto)
+    krcgId: 101419,
+    name: "Ponticulus",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // The Portrait [101422] — fala D wierna (auto)
+    krcgId: 101422,
+    name: "The Portrait",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Possession [101423] — fala D wierna (auto)
+    krcgId: 101423,
+    name: "Possession",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Potio Martyrium [101425] — fala D wierna (auto)
+    krcgId: 101425,
+    name: "Potio Martyrium",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Pounce [101426] — fala D wierna (auto)
+    krcgId: 101426,
+    name: "Pounce",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Power of All [101428] — fala D wierna (auto)
+    krcgId: 101428,
+    name: "Power of All",
+    cardType: "reaction",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Power of One [101429] — fala D wierna (auto)
+    krcgId: 101429,
+    name: "Power of One",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Powerbase: Berlin [101432] — fala D wierna (auto)
+    krcgId: 101432,
+    name: "Powerbase: Berlin",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Powerbase: Cape Verde [101433] — fala D wierna (auto)
+    krcgId: 101433,
+    name: "Powerbase: Cape Verde",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Powerbase: Luanda [101436] — fala D wierna (auto)
+    krcgId: 101436,
+    name: "Powerbase: Luanda",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Powerbase: Rome [101441] — fala D wierna (auto)
+    krcgId: 101441,
+    name: "Powerbase: Rome",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Powerbase: Tshwane [101443] — fala D wierna (auto)
+    krcgId: 101443,
+    name: "Powerbase: Tshwane",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Powerbase: Zürich [101445] — fala D wierna (auto)
+    krcgId: 101445,
+    name: "Powerbase: Zürich",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Praetorian Backer [101446] — fala D wierna (auto)
+    krcgId: 101446,
+    name: "Praetorian Backer",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Praxis Seizure: Venice [101471] — fala D wierna (auto)
+    krcgId: 101471,
+    name: "Praxis Seizure: Venice",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Praxis Solomon [101473] — fala D wierna (auto)
+    krcgId: 101473,
+    name: "Praxis Solomon",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Precision [101474] — fala D wierna (auto)
+    krcgId: 101474,
+    name: "Precision",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Predator's Communion [101477] — fala D wierna (auto)
+    krcgId: 101477,
+    name: "Predator's Communion",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "abo", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Predator's Mastery [101478] — fala D wierna (auto)
+    krcgId: 101478,
+    name: "Predator's Mastery",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "abo", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Predator's Transformation [101479] — fala D wierna (auto)
+    krcgId: 101479,
+    name: "Predator's Transformation",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "abo", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Pressing Flesh [101481] — fala D wierna (auto)
+    krcgId: 101481,
+    name: "Pressing Flesh",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Priestess of Sekhmet [101484] — fala D wierna (auto)
+    krcgId: 101484,
+    name: "Priestess of Sekhmet",
+    cardType: "retainer",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Primal Instincts [101485] — fala D wierna (auto)
+    krcgId: 101485,
+    name: "Primal Instincts",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Principia Discordia [101486] — fala D wierna (auto)
+    krcgId: 101486,
+    name: "Principia Discordia",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Priority Shift [101488] — fala D wierna (auto)
+    krcgId: 101488,
+    name: "Priority Shift",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Prison of the Mind [101489] — fala D wierna (auto)
+    krcgId: 101489,
+    name: "Prison of the Mind",
+    cardType: "action",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Project [101492] — fala D wierna (auto)
+    krcgId: 101492,
+    name: "Project",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mar", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Promise of 1528 [101494] — fala D wierna (auto)
+    krcgId: 101494,
+    name: "Promise of 1528",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Propaganda of the Deed [101496] — fala D wierna (auto)
+    krcgId: 101496,
+    name: "Propaganda of the Deed",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Prophecies of Gehenna [101497] — fala D wierna (auto)
+    krcgId: 101497,
+    name: "Prophecies of Gehenna",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Protect Thine Own [101499] — fala D wierna (auto)
+    krcgId: 101499,
+    name: "Protect Thine Own",
+    cardType: "politicalAction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Protected Resources [101500] — fala D wierna (auto)
+    krcgId: 101500,
+    name: "Protected Resources",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Provision of the Silsila [101503] — fala D wierna (auto)
+    krcgId: 101503,
+    name: "Provision of the Silsila",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Proxy Kissed [101504] — fala D wierna (auto)
+    krcgId: 101504,
+    name: "Proxy Kissed",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Psalm of the Damned [101505] — fala D wierna (auto)
+    krcgId: 101505,
+    name: "Psalm of the Damned",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "mal", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Pseudo-Blindness [101506] — fala D wierna (auto)
+    krcgId: 101506,
+    name: "Pseudo-Blindness",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Psychic Assault [101508] — fala D wierna (auto)
+    krcgId: 101508,
+    name: "Psychic Assault",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Psychic Projection [101509] — fala D wierna (auto)
+    krcgId: 101509,
+    name: "Psychic Projection",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Psychic Veil [101510] — fala D wierna (auto)
+    krcgId: 101510,
+    name: "Psychic Veil",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Psychomachia [101511] — fala D wierna (auto)
+    krcgId: 101511,
+    name: "Psychomachia",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Public Enemy [101512] — fala D wierna (auto)
+    krcgId: 101512,
+    name: "Public Enemy",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Public Vilification [101514] — fala D wierna (auto)
+    krcgId: 101514,
+    name: "Public Vilification",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Pulled Fangs [101515] — fala D wierna (auto)
+    krcgId: 101515,
+    name: "Pulled Fangs",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Pulse of the Canaille [101517] — fala D wierna (auto)
+    krcgId: 101517,
+    name: "Pulse of the Canaille",
+    cardType: "action",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Punish [101518] — fala D wierna (auto)
+    krcgId: 101518,
+    name: "Punish",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "red", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Puppeteer [101519] — fala D wierna (auto)
+    krcgId: 101519,
+    name: "Puppeteer",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Purchase Pact [101520] — fala D wierna (auto)
+    krcgId: 101520,
+    name: "Purchase Pact",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Purification [101521] — fala D wierna (auto)
+    krcgId: 101521,
+    name: "Purification",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Purity of the Beast [101522] — fala D wierna (auto)
+    krcgId: 101522,
+    name: "Purity of the Beast",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Putrescent Servitude [101526] — fala D wierna (auto)
+    krcgId: 101526,
+    name: "Putrescent Servitude",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Quicken Sight [101531] — fala D wierna (auto)
+    krcgId: 101531,
+    name: "Quicken Sight",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Quicksilver Contemplation [101533] — fala D wierna (auto)
+    krcgId: 101533,
+    name: "Quicksilver Contemplation",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Raking Talons [101538] — fala D wierna (auto)
+    krcgId: 101538,
+    name: "Raking Talons",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Rampage [101539] — fala D wierna (auto)
+    krcgId: 101539,
+    name: "Rampage",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Random Patterns [101540] — fala D wierna (auto)
+    krcgId: 101540,
+    name: "Random Patterns",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Rapid Healing [101543] — fala D wierna (auto)
+    krcgId: 101543,
+    name: "Rapid Healing",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rastacourere [101546] — fala D wierna (auto)
+    krcgId: 101546,
+    name: "Rastacourere",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ravager [101548] — fala D wierna (auto)
+    krcgId: 101548,
+    name: "Ravager",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Rave [101549] — fala D wierna (auto)
+    krcgId: 101549,
+    name: "Rave",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ravnos Acceptance [101551] — fala D wierna (auto)
+    krcgId: 101551,
+    name: "Ravnos Acceptance",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Raw Recruit [101554] — fala D wierna (auto)
+    krcgId: 101554,
+    name: "Raw Recruit",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rayzeel's Song [101555] — fala D wierna (auto)
+    krcgId: 101555,
+    name: "Rayzeel's Song",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Razor Bat [101556] — fala D wierna (auto)
+    krcgId: 101556,
+    name: "Razor Bat",
+    cardType: "retainer",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // React with Conviction [101557] — fala D wierna (auto)
+    krcgId: 101557,
+    name: "React with Conviction",
+    cardType: "conviction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Read the Winds [101559] — fala D wierna (auto)
+    krcgId: 101559,
+    name: "Read the Winds",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Reality [101560] — fala D wierna (auto)
+    krcgId: 101560,
+    name: "Reality",
+    cardType: "action",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Reality Mirror [101561] — fala D wierna (auto)
+    krcgId: 101561,
+    name: "Reality Mirror",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Realm of the Black Sun [101562] — fala D wierna (auto)
+    krcgId: 101562,
+    name: "The Realm of the Black Sun",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Reanimated Corpse [101563] — fala D wierna (auto)
+    krcgId: 101563,
+    name: "Reanimated Corpse",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "thn", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Rebirth [101565] — fala D wierna (auto)
+    krcgId: 101565,
+    name: "Rebirth",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Recruiting Party [101568] — fala D wierna (auto)
+    krcgId: 101568,
+    name: "Recruiting Party",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Recruitment [101569] — fala D wierna (auto)
+    krcgId: 101569,
+    name: "Recruitment",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Recruitment Exercise [101570] — fala D wierna (auto)
+    krcgId: 101570,
+    name: "Recruitment Exercise",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Recure of the Homeland [101571] — fala D wierna (auto)
+    krcgId: 101571,
+    name: "Recure of the Homeland",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Recurring Contemplation [101572] — fala D wierna (auto)
+    krcgId: 101572,
+    name: "Recurring Contemplation",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Red Herring [101573] — fala D wierna (auto)
+    krcgId: 101573,
+    name: "Red Herring",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Red List [101574] — fala D wierna (auto)
+    krcgId: 101574,
+    name: "Red List",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Red Question [101575] — fala D wierna (auto)
+    krcgId: 101575,
+    name: "The Red Question",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Redcap Wilder [101576] — fala D wierna (auto)
+    krcgId: 101576,
+    name: "Redcap Wilder",
+    cardType: "retainer",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Redistribution [101579] — fala D wierna (auto)
+    krcgId: 101579,
+    name: "Redistribution",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Redline [101580] — fala D wierna (auto)
+    krcgId: 101580,
+    name: "Redline",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Reform Body [101581] — fala D wierna (auto)
+    krcgId: 101581,
+    name: "Reform Body",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Reformation [101582] — fala D wierna (auto)
+    krcgId: 101582,
+    name: "Reformation",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Regarhagan's Hold [101584] — fala D wierna (auto)
+    krcgId: 101584,
+    name: "Regarhagan's Hold",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Regeneration [101585] — fala D wierna (auto)
+    krcgId: 101585,
+    name: "Regeneration",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Regenerative Blood [101586] — fala D wierna (auto)
+    krcgId: 101586,
+    name: "Regenerative Blood",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Reindoctrination [101589] — fala D wierna (auto)
+    krcgId: 101589,
+    name: "Reindoctrination",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Reinforcements [101590] — fala D wierna (auto)
+    krcgId: 101590,
+    name: "Reinforcements",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Rejuvenate [101592] — fala D wierna (auto)
+    krcgId: 101592,
+    name: "Rejuvenate",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "def", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Release of the Shackled Soul [101593] — fala D wierna (auto)
+    krcgId: 101593,
+    name: "Release of the Shackled Soul",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Reliquary: Akunanse Remains [101596] — fala D wierna (auto)
+    krcgId: 101596,
+    name: "Reliquary: Akunanse Remains",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Reliquary: Biague [101597] — fala D wierna (auto)
+    krcgId: 101597,
+    name: "Reliquary: Biague",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reliquary: Shango Remains [101598] — fala D wierna (auto)
+    krcgId: 101598,
+    name: "Reliquary: Shango Remains",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reliquary: Trinket [101599] — fala D wierna (auto)
+    krcgId: 101599,
+    name: "Reliquary: Trinket",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Remnant of the Endless Storm [101600] — fala D wierna (auto)
+    krcgId: 101600,
+    name: "Remnant of the Endless Storm",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 6,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Remover [101601] — fala D wierna (auto)
+    krcgId: 101601,
+    name: "Remover",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Renegade Garou [101602] — fala D wierna (auto)
+    krcgId: 101602,
+    name: "Renegade Garou",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 5,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Renewed Vigor [101603] — fala D wierna (auto)
+    krcgId: 101603,
+    name: "Renewed Vigor",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Repair the Undead Flesh [101604] — fala D wierna (auto)
+    krcgId: 101604,
+    name: "Repair the Undead Flesh",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Repulsion [101606] — fala D wierna (auto)
+    krcgId: 101606,
+    name: "Repulsion",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Research [101607] — fala D wierna (auto)
+    krcgId: 101607,
+    name: "Research",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Resilient Mind [101609] — fala D wierna (auto)
+    krcgId: 101609,
+    name: "Resilient Mind",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Respire [101611] — fala D wierna (auto)
+    krcgId: 101611,
+    name: "Respire",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "red", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Restructure [101615] — fala D wierna (auto)
+    krcgId: 101615,
+    name: "Restructure",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Resume the Coil [101616] — fala D wierna (auto)
+    krcgId: 101616,
+    name: "Resume the Coil",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Resurrection [101617] — fala D wierna (auto)
+    krcgId: 101617,
+    name: "Resurrection",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Retain the Quick Blood [101618] — fala D wierna (auto)
+    krcgId: 101618,
+    name: "Retain the Quick Blood",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Retribution [101619] — fala D wierna (auto)
+    krcgId: 101619,
+    name: "Retribution",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // The Return to Innocence [101620] — fala D wierna (auto)
+    krcgId: 101620,
+    name: "The Return to Innocence",
+    cardType: "action",
+    bloodCost: 4,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Reunion Kamut [101621] — fala D wierna (auto)
+    krcgId: 101621,
+    name: "Reunion Kamut",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Revelation of Desire [101622] — fala D wierna (auto)
+    krcgId: 101622,
+    name: "Revelation of Desire",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Revelation of Despair [101623] — fala D wierna (auto)
+    krcgId: 101623,
+    name: "Revelation of Despair",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Revelation of Ecstasy [101624] — fala D wierna (auto)
+    krcgId: 101624,
+    name: "Revelation of Ecstasy",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Revelation of the Sire [101625] — fala D wierna (auto)
+    krcgId: 101625,
+    name: "Revelation of the Sire",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Revelation of Wrath [101626] — fala D wierna (auto)
+    krcgId: 101626,
+    name: "Revelation of Wrath",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Reversal of Fortunes [101629] — fala D wierna (auto)
+    krcgId: 101629,
+    name: "Reversal of Fortunes",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Revocation of Tyre [101630] — fala D wierna (auto)
+    krcgId: 101630,
+    name: "Revocation of Tyre",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Rewind Time [101633] — fala D wierna (auto)
+    krcgId: 101633,
+    name: "Rewind Time",
+    cardType: "reaction",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Riddle Phantastique [101634] — fala D wierna (auto)
+    krcgId: 101634,
+    name: "Riddle Phantastique",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Righteous Aura [101635] — fala D wierna (auto)
+    krcgId: 101635,
+    name: "Righteous Aura",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Riposte [101637] — fala D wierna (auto)
+    krcgId: 101637,
+    name: "Riposte",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Rise of the Fallen [101638] — fala D wierna (auto)
+    krcgId: 101638,
+    name: "Rise of the Fallen",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rise of the Nephtali [101639] — fala D wierna (auto)
+    krcgId: 101639,
+    name: "Rise of the Nephtali",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ritual Challenge [101641] — fala D wierna (auto)
+    krcgId: 101641,
+    name: "Ritual Challenge",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ritual of the Bitter Rose [101642] — fala D wierna (auto)
+    krcgId: 101642,
+    name: "Ritual of the Bitter Rose",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ritual Scalpel [101643] — fala D wierna (auto)
+    krcgId: 101643,
+    name: "Ritual Scalpel",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Rock Cat [101645] — fala D wierna (auto)
+    krcgId: 101645,
+    name: "Rock Cat",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Rockheart [101646] — fala D wierna (auto)
+    krcgId: 101646,
+    name: "Rockheart",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "strikeDodge" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Roll [101648] — fala D wierna (auto)
+    krcgId: 101648,
+    name: "Roll",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: "flight", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rooftop Shadow [101651] — fala D wierna (auto)
+    krcgId: 101651,
+    name: "Rooftop Shadow",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Root of Vitality [101652] — fala D wierna (auto)
+    krcgId: 101652,
+    name: "Root of Vitality",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Rose Foundation [101653] — fala D wierna (auto)
+    krcgId: 101653,
+    name: "The Rose Foundation",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Rötschreck [101654] — fala D wierna (auto)
+    krcgId: 101654,
+    name: "Rötschreck",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Rowan Ring [101655] — fala D wierna (auto)
+    krcgId: 101655,
+    name: "Rowan Ring",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rubicon [101657] — fala D wierna (auto)
+    krcgId: 101657,
+    name: "Rubicon",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ruins of Ceoris [101658] — fala D wierna (auto)
+    krcgId: 101658,
+    name: "Ruins of Ceoris",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ruins of Charizel [101659] — fala D wierna (auto)
+    krcgId: 101659,
+    name: "Ruins of Charizel",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Ruins of Villers Abbey, Belgium [101660] — fala D wierna (auto)
+    krcgId: 101660,
+    name: "Ruins of Villers Abbey, Belgium",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rumble [101661] — fala D wierna (auto)
+    krcgId: 101661,
+    name: "Rumble",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rumors of Gehenna [101663] — fala D wierna (auto)
+    krcgId: 101663,
+    name: "Rumors of Gehenna",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sabbat Inquisitor [101666] — fala D wierna (auto)
+    krcgId: 101666,
+    name: "Sabbat Inquisitor",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sabbat Threat [101668] — fala D wierna (auto)
+    krcgId: 101668,
+    name: "Sabbat Threat",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Sacrificial Lamb [101672] — fala D wierna (auto)
+    krcgId: 101672,
+    name: "Sacrificial Lamb",
+    cardType: "action",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Safe Passage [101673] — fala D wierna (auto)
+    krcgId: 101673,
+    name: "Safe Passage",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Salt of Thoth [101674] — fala D wierna (auto)
+    krcgId: 101674,
+    name: "Salt of Thoth",
+    cardType: "reaction",
+    bloodCost: 2,
+    poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Samuel Haight [101675] — fala D wierna (auto)
+    krcgId: 101675,
+    name: "Samuel Haight",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 5,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // San Lorenzo de El Escorial, Spain [101676] — fala D wierna (auto)
+    krcgId: 101676,
+    name: "San Lorenzo de El Escorial, Spain",
+    cardType: "equipment",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // San Nicolás de los Servitas [101677] — fala D wierna (auto)
+    krcgId: 101677,
+    name: "San Nicolás de los Servitas",
+    cardType: "equipment",
+    bloodCost: 2,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Sanguine Entrapment [101679] — fala D wierna (auto)
+    krcgId: 101679,
+    name: "Sanguine Entrapment",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "strikeDodge" }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Sanguine Instruction [101680] — fala D wierna (auto)
+    krcgId: 101680,
+    name: "Sanguine Instruction",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Sargon Fragment [101681] — fala D wierna (auto)
+    krcgId: 101681,
+    name: "The Sargon Fragment",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Savannah Runner [101683] — fala D wierna (auto)
+    krcgId: 101683,
+    name: "Savannah Runner",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Save Face [101684] — fala D wierna (auto)
+    krcgId: 101684,
+    name: "Save Face",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Scapelli, The Family \"Mechanic\" [101687] — fala D wierna (auto)
+    krcgId: 101687,
+    name: "Scapelli, The Family \"Mechanic\"",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Scarlet Lore [101688] — fala D wierna (auto)
+    krcgId: 101688,
+    name: "Scarlet Lore",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // SchreckNET [101690] — fala D wierna (auto)
+    krcgId: 101690,
+    name: "SchreckNET",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Scobax [101691] — fala D wierna (auto)
+    krcgId: 101691,
+    name: "Scobax",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "str", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Scorpion's Touch [101694] — fala D wierna (auto)
+    krcgId: 101694,
+    name: "Scorpion's Touch",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Scourge of the Enochians [101697] — fala D wierna (auto)
+    krcgId: 101697,
+    name: "Scourge of the Enochians",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Scrounging [101700] — fala D wierna (auto)
+    krcgId: 101700,
+    name: "Scrounging",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Scry the Hearthstone [101701] — fala D wierna (auto)
+    krcgId: 101701,
+    name: "Scry the Hearthstone",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Scrying of Secrets [101702] — fala D wierna (auto)
+    krcgId: 101702,
+    name: "Scrying of Secrets",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Seal of Veddartha [101703] — fala D wierna (auto)
+    krcgId: 101703,
+    name: "Seal of Veddartha",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Seattle Committee [101704] — fala D wierna (auto)
+    krcgId: 101704,
+    name: "Seattle Committee",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Second Sight [101705] — fala D wierna (auto)
+    krcgId: 101705,
+    name: "Second Sight",
+    cardType: "conviction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Secret Horde [101707] — fala D wierna (auto)
+    krcgId: 101707,
+    name: "Secret Horde",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // The Secret Library of Alexandria [101708] — fala D wierna (auto)
+    krcgId: 101708,
+    name: "The Secret Library of Alexandria",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // The Secret Must Be Kept [101709] — fala D wierna (auto)
+    krcgId: 101709,
+    name: "The Secret Must Be Kept",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Secret Passage [101710] — fala D wierna (auto)
+    krcgId: 101710,
+    name: "Secret Passage",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Seeds of Corruption [101713] — fala D wierna (auto)
+    krcgId: 101713,
+    name: "Seeds of Corruption",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Selective Silence [101714] — fala D wierna (auto)
+    krcgId: 101714,
+    name: "Selective Silence",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sense Death [101716] — fala D wierna (auto)
+    krcgId: 101716,
+    name: "Sense Death",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sense the Sin [101718] — fala D wierna (auto)
+    krcgId: 101718,
+    name: "Sense the Sin",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Sense Vibrations [101719] — fala D wierna (auto)
+    krcgId: 101719,
+    name: "Sense Vibrations",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Sense Vitality [101720] — fala D wierna (auto)
+    krcgId: 101720,
+    name: "Sense Vitality",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sensory Deprivation [101721] — fala D wierna (auto)
+    krcgId: 101721,
+    name: "Sensory Deprivation",
+    cardType: "action",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sensory Overload [101722] — fala D wierna (auto)
+    krcgId: 101722,
+    name: "Sensory Overload",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Seraph [101723] — fala D wierna (auto)
+    krcgId: 101723,
+    name: "Seraph",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Seraph's Second [101724] — fala D wierna (auto)
+    krcgId: 101724,
+    name: "Seraph's Second",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Serenading the Kami [101725] — fala D wierna (auto)
+    krcgId: 101725,
+    name: "Serenading the Kami",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sermon of Caine [101726] — fala D wierna (auto)
+    krcgId: 101726,
+    name: "Sermon of Caine",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Set's Call [101730] — fala D wierna (auto)
+    krcgId: 101730,
+    name: "Set's Call",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Set's Curse [101731] — fala D wierna (auto)
+    krcgId: 101731,
+    name: "Set's Curse",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shaal Fragment [101732] — fala D wierna (auto)
+    krcgId: 101732,
+    name: "Shaal Fragment",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shackles of Enkidu [101733] — fala D wierna (auto)
+    krcgId: 101733,
+    name: "Shackles of Enkidu",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shade [101734] — fala D wierna (auto)
+    krcgId: 101734,
+    name: "Shade",
+    cardType: "retainer",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Shadow Body [101735] — fala D wierna (auto)
+    krcgId: 101735,
+    name: "Shadow Body",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Shadow Court Satyr [101737] — fala D wierna (auto)
+    krcgId: 101737,
+    name: "Shadow Court Satyr",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Shadow Feint [101738] — fala D wierna (auto)
+    krcgId: 101738,
+    name: "Shadow Feint",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "strikeDodge" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Shadow of Taint [101739] — fala D wierna (auto)
+    krcgId: 101739,
+    name: "Shadow of Taint",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shadow of the Beast [101740] — fala D wierna (auto)
+    krcgId: 101740,
+    name: "Shadow of the Beast",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shadow Parasite [101742] — fala D wierna (auto)
+    krcgId: 101742,
+    name: "Shadow Parasite",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "strikeDamage", amount: 3 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "strikeDamage", amount: 3 }] }
+    ],
+  },
+  {
+    // Shadow Play [101743] — fala D wierna (auto)
+    krcgId: 101743,
+    name: "Shadow Play",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shadow Step [101744] — fala D wierna (auto)
+    krcgId: 101744,
+    name: "Shadow Step",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shadow Strike [101745] — fala D wierna (auto)
+    krcgId: 101745,
+    name: "Shadow Strike",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shadow Twin [101746] — fala D wierna (auto)
+    krcgId: 101746,
+    name: "Shadow Twin",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Shadowed Eyes [101747] — fala D wierna (auto)
+    krcgId: 101747,
+    name: "Shadowed Eyes",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shakar [101748] — fala D wierna (auto)
+    krcgId: 101748,
+    name: "Shakar",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Shakar: the Hunt [101749] — fala D wierna (auto)
+    krcgId: 101749,
+    name: "Shakar: the Hunt",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shaman [101750] — fala D wierna (auto)
+    krcgId: 101750,
+    name: "Shaman",
+    cardType: "retainer",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shambling Hordes [101751] — fala D wierna (auto)
+    krcgId: 101751,
+    name: "Shambling Hordes",
+    cardType: "ally",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Shame [101752] — fala D wierna (auto)
+    krcgId: 101752,
+    name: "Shame",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "red", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Shared Nightmare [101755] — fala D wierna (auto)
+    krcgId: 101755,
+    name: "Shared Nightmare",
+    cardType: "action",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shatter the Gate [101757] — fala D wierna (auto)
+    krcgId: 101757,
+    name: "Shatter the Gate",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shattered Mirror [101758] — fala D wierna (auto)
+    krcgId: 101758,
+    name: "Shattered Mirror",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Shattering [101759] — fala D wierna (auto)
+    krcgId: 101759,
+    name: "Shattering",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Shattering Crescendo [101761] — fala D wierna (auto)
+    krcgId: 101761,
+    name: "Shattering Crescendo",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Sheepdog [101762] — fala D wierna (auto)
+    krcgId: 101762,
+    name: "Sheepdog",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shell Break [101763] — fala D wierna (auto)
+    krcgId: 101763,
+    name: "Shell Break",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Shell Game [101764] — fala D wierna (auto)
+    krcgId: 101764,
+    name: "Shell Game",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shepherd's Innocence [101765] — fala D wierna (auto)
+    krcgId: 101765,
+    name: "Shepherd's Innocence",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shilmulo Deception [101766] — fala D wierna (auto)
+    krcgId: 101766,
+    name: "Shilmulo Deception",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shock Troops [101768] — fala D wierna (auto)
+    krcgId: 101768,
+    name: "Shock Troops",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shotgun Ritual [101770] — fala D wierna (auto)
+    krcgId: 101770,
+    name: "Shotgun Ritual",
+    cardType: "combat",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Shoulder Drop [101771] — fala D wierna (auto)
+    krcgId: 101771,
+    name: "Shoulder Drop",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Shroud Mastery [101773] — fala D wierna (auto)
+    krcgId: 101773,
+    name: "Shroud Mastery",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shroud of Absence [101774] — fala D wierna (auto)
+    krcgId: 101774,
+    name: "Shroud of Absence",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shroud of Night [101775] — fala D wierna (auto)
+    krcgId: 101775,
+    name: "Shroud of Night",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shroudsight [101776] — fala D wierna (auto)
+    krcgId: 101776,
+    name: "Shroudsight",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sibyl's Tongue [101777] — fala D wierna (auto)
+    krcgId: 101777,
+    name: "Sibyl's Tongue",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Silence of Death [101782] — fala D wierna (auto)
+    krcgId: 101782,
+    name: "Silence of Death",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sins of the Cauchemar [101783] — fala D wierna (auto)
+    krcgId: 101783,
+    name: "Sins of the Cauchemar",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Siphon [101784] — fala D wierna (auto)
+    krcgId: 101784,
+    name: "Siphon",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sire's Index Finger [101785] — fala D wierna (auto)
+    krcgId: 101785,
+    name: "Sire's Index Finger",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Siren's Lure [101786] — fala D wierna (auto)
+    krcgId: 101786,
+    name: "Siren's Lure",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sires Command, Childer Inherit [101787] — fala D wierna (auto)
+    krcgId: 101787,
+    name: "Sires Command, Childer Inherit",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sixth Tradition: Destruction [101788] — fala D wierna (auto)
+    krcgId: 101788,
+    name: "Sixth Tradition: Destruction",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Skaald [101789] — fala D wierna (auto)
+    krcgId: 101789,
+    name: "Skaald",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Skin of the Adder [101793] — fala D wierna (auto)
+    krcgId: 101793,
+    name: "Skin of the Adder",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Skin of the Chameleon [101794] — fala D wierna (auto)
+    krcgId: 101794,
+    name: "Skin of the Chameleon",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Skin Trap [101795] — fala D wierna (auto)
+    krcgId: 101795,
+    name: "Skin Trap",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Skullduggery [101796] — fala D wierna (auto)
+    krcgId: 101796,
+    name: "Skullduggery",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Slake the Thirst [101797] — fala D wierna (auto)
+    krcgId: 101797,
+    name: "Slake the Thirst",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Slaughterhouse [101800] — fala D wierna (auto)
+    krcgId: 101800,
+    name: "The Slaughterhouse",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Sleep of Reason [101803] — fala D wierna (auto)
+    krcgId: 101803,
+    name: "Sleep of Reason",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sleep Unseen [101804] — fala D wierna (auto)
+    krcgId: 101804,
+    name: "Sleep Unseen",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sleight of Hand [101806] — fala D wierna (auto)
+    krcgId: 101806,
+    name: "Sleight of Hand",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Smash and Grab [101809] — fala D wierna (auto)
+    krcgId: 101809,
+    name: "Smash and Grab",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Smear Campaign [101810] — fala D wierna (auto)
+    krcgId: 101810,
+    name: "Smear Campaign",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Smite [101812] — fala D wierna (auto)
+    krcgId: 101812,
+    name: "Smite",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ven", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Smoke and Mirrors [101813] — fala D wierna (auto)
+    krcgId: 101813,
+    name: "Smoke and Mirrors",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Snipe Hunt [101815] — fala D wierna (auto)
+    krcgId: 101815,
+    name: "Snipe Hunt",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Soar [101818] — fala D wierna (auto)
+    krcgId: 101818,
+    name: "Soar",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Song of Pan [101826] — fala D wierna (auto)
+    krcgId: 101826,
+    name: "Song of Pan",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Songs of the Distant Vitae [101828] — fala D wierna (auto)
+    krcgId: 101828,
+    name: "Songs of the Distant Vitae",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Decoration [101830] — fala D wierna (auto)
+    krcgId: 101830,
+    name: "Soul Decoration",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Feasting [101831] — fala D wierna (auto)
+    krcgId: 101831,
+    name: "Soul Feasting",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Gem of Etrius [101832] — fala D wierna (auto)
+    krcgId: 101832,
+    name: "Soul Gem of Etrius",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Soul of the Earth [101833] — fala D wierna (auto)
+    krcgId: 101833,
+    name: "Soul of the Earth",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Painting [101834] — fala D wierna (auto)
+    krcgId: 101834,
+    name: "Soul Painting",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Scan [101835] — fala D wierna (auto)
+    krcgId: 101835,
+    name: "Soul Scan",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Stealing [101836] — fala D wierna (auto)
+    krcgId: 101836,
+    name: "Soul Stealing",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sound of a Breaking Oath [101837] — fala D wierna (auto)
+    krcgId: 101837,
+    name: "Sound of a Breaking Oath",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Sowing Dissension [101838] — fala D wierna (auto)
+    krcgId: 101838,
+    name: "Sowing Dissension",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Speak with Spirits [101840] — fala D wierna (auto)
+    krcgId: 101840,
+    name: "Speak with Spirits",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Spectral Divination [101843] — fala D wierna (auto)
+    krcgId: 101843,
+    name: "Spectral Divination",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Speed of Thought [101844] — fala D wierna (auto)
+    krcgId: 101844,
+    name: "Speed of Thought",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Spell of Life [101845] — fala D wierna (auto)
+    krcgId: 101845,
+    name: "Spell of Life",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Spike-Thrower [101846] — fala D wierna (auto)
+    krcgId: 101846,
+    name: "Spike-Thrower",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Spirit Marionette [101848] — fala D wierna (auto)
+    krcgId: 101848,
+    name: "Spirit Marionette",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Spirit Summoning Chamber [101849] — fala D wierna (auto)
+    krcgId: 101849,
+    name: "Spirit Summoning Chamber",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Spiritual Guidance [101851] — fala D wierna (auto)
+    krcgId: 101851,
+    name: "Spiritual Guidance",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Spiritual Intervention [101852] — fala D wierna (auto)
+    krcgId: 101852,
+    name: "Spiritual Intervention",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Spiritual Protector [101853] — fala D wierna (auto)
+    krcgId: 101853,
+    name: "Spiritual Protector",
+    cardType: "retainer",
+    bloodCost: 3,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Spontaneous Power [101855] — fala D wierna (auto)
+    krcgId: 101855,
+    name: "Spontaneous Power",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Squirrel Balance [101858] — fala D wierna (auto)
+    krcgId: 101858,
+    name: "Squirrel Balance",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Starshell Grenade Launcher [101860] — fala D wierna (auto)
+    krcgId: 101860,
+    name: "Starshell Grenade Launcher",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Starvation of Marena [101861] — fala D wierna (auto)
+    krcgId: 101861,
+    name: "Starvation of Marena",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Static Virtue [101862] — fala D wierna (auto)
+    krcgId: 101862,
+    name: "Static Virtue",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // The Status Perfectus [101863] — fala D wierna (auto)
+    krcgId: 101863,
+    name: "The Status Perfectus",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Steal the Mind [101865] — fala D wierna (auto)
+    krcgId: 101865,
+    name: "Steal the Mind",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Steam Tunnels [101868] — fala D wierna (auto)
+    krcgId: 101868,
+    name: "Steam Tunnels",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Still the Mortal Flesh [101871] — fala D wierna (auto)
+    krcgId: 101871,
+    name: "Still the Mortal Flesh",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Stone Dog [101873] — fala D wierna (auto)
+    krcgId: 101873,
+    name: "Stone Dog",
+    cardType: "retainer",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Stone Quills [101874] — fala D wierna (auto)
+    krcgId: 101874,
+    name: "Stone Quills",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Stone Travel [101875] — fala D wierna (auto)
+    krcgId: 101875,
+    name: "Stone Travel",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Stonestrength [101876] — fala D wierna (auto)
+    krcgId: 101876,
+    name: "Stonestrength",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Storm Sewers [101878] — fala D wierna (auto)
+    krcgId: 101878,
+    name: "Storm Sewers",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Strained Vitae Supply [101879] — fala D wierna (auto)
+    krcgId: 101879,
+    name: "Strained Vitae Supply",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Strange Day [101880] — fala D wierna (auto)
+    krcgId: 101880,
+    name: "Strange Day",
+    cardType: "actionModifier",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Stranger Among Us [101881] — fala D wierna (auto)
+    krcgId: 101881,
+    name: "The Stranger Among Us",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Striga [101884] — fala D wierna (auto)
+    krcgId: 101884,
+    name: "Striga",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Strike at the True Flesh [101885] — fala D wierna (auto)
+    krcgId: 101885,
+    name: "Strike at the True Flesh",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Strike with Conviction [101886] — fala D wierna (auto)
+    krcgId: 101886,
+    name: "Strike with Conviction",
+    cardType: "conviction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Strix [101887] — fala D wierna (auto)
+    krcgId: 101887,
+    name: "Strix",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "str", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Stutter-Step [101889] — fala D wierna (auto)
+    krcgId: 101889,
+    name: "Stutter-Step",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "additionalStrike", count: 1, limited: false }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "additionalStrike", count: 1, limited: false }] }
+    ],
+  },
+  {
+    // Subdued by the Blood [101890] — fala D wierna (auto)
+    krcgId: 101890,
+    name: "Subdued by the Blood",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Succubus [101892] — fala D wierna (auto)
+    krcgId: 101892,
+    name: "Succubus",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Succubus Club [101893] — fala D wierna (auto)
+    krcgId: 101893,
+    name: "Succubus Club",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Succulent Vitae [101894] — fala D wierna (auto)
+    krcgId: 101894,
+    name: "Succulent Vitae",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sudario Refraction [101895] — fala D wierna (auto)
+    krcgId: 101895,
+    name: "Sudario Refraction",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Summon History [101897] — fala D wierna (auto)
+    krcgId: 101897,
+    name: "Summon History",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Summon Soul [101898] — fala D wierna (auto)
+    krcgId: 101898,
+    name: "Summon Soul",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Summon the Abyss [101900] — fala D wierna (auto)
+    krcgId: 101900,
+    name: "Summon the Abyss",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Summon the Serpent [101901] — fala D wierna (auto)
+    krcgId: 101901,
+    name: "Summon the Serpent",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Summoning [101902] — fala D wierna (auto)
+    krcgId: 101902,
+    name: "The Summoning",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sunrise Service [101903] — fala D wierna (auto)
+    krcgId: 101903,
+    name: "Sunrise Service",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Sunset Strip, Hollywood [101904] — fala D wierna (auto)
+    krcgId: 101904,
+    name: "Sunset Strip, Hollywood",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Supernatural Resistance [101906] — fala D wierna (auto)
+    krcgId: 101906,
+    name: "Supernatural Resistance",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Surge [101908] — fala D wierna (auto)
+    krcgId: 101908,
+    name: "Surge",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ven", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Survivalist [101910] — fala D wierna (auto)
+    krcgId: 101910,
+    name: "Survivalist",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Suspension of Disbelief [101911] — fala D wierna (auto)
+    krcgId: 101911,
+    name: "Suspension of Disbelief",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Svadharma [101912] — fala D wierna (auto)
+    krcgId: 101912,
+    name: "Svadharma",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Swarm [101914] — fala D wierna (auto)
+    krcgId: 101914,
+    name: "Swarm",
+    cardType: "retainer",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sweeper [101915] — fala D wierna (auto)
+    krcgId: 101915,
+    name: "Sweeper",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Swiftness of the Stag [101916] — fala D wierna (auto)
+    krcgId: 101916,
+    name: "Swiftness of the Stag",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Swiss Cut [101917] — fala D wierna (auto)
+    krcgId: 101917,
+    name: "Swiss Cut",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Swoop [101918] — fala D wierna (auto)
+    krcgId: 101918,
+    name: "Swoop",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sword of Judgment [101919] — fala D wierna (auto)
+    krcgId: 101919,
+    name: "Sword of Judgment",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Sword of Nuln [101920] — fala D wierna (auto)
+    krcgId: 101920,
+    name: "Sword of Nuln",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Sword of Troile [101922] — fala D wierna (auto)
+    krcgId: 101922,
+    name: "Sword of Troile",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tabriz Assembly [101924] — fala D wierna (auto)
+    krcgId: 101924,
+    name: "Tabriz Assembly",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Tainted Spring [101925] — fala D wierna (auto)
+    krcgId: 101925,
+    name: "Tainted Spring",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Tajdid [101927] — fala D wierna (auto)
+    krcgId: 101927,
+    name: "Tajdid",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Taking the Skin: Minion [101928] — fala D wierna (auto)
+    krcgId: 101928,
+    name: "Taking the Skin: Minion",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Taking the Skin: Vulture [101929] — fala D wierna (auto)
+    krcgId: 101929,
+    name: "Taking the Skin: Vulture",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "abo", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Talaq, The Immortal [101930] — fala D wierna (auto)
+    krcgId: 101930,
+    name: "Talaq, The Immortal",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Talbot's Chainsaw [101931] — fala D wierna (auto)
+    krcgId: 101931,
+    name: "Talbot's Chainsaw",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Talith [101932] — fala D wierna (auto)
+    krcgId: 101932,
+    name: "Talith",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Talons of the Dead [101933] — fala D wierna (auto)
+    krcgId: 101933,
+    name: "Talons of the Dead",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Taming the Beast [101934] — fala D wierna (auto)
+    krcgId: 101934,
+    name: "Taming the Beast",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Tangle Atropos' Hand [101935] — fala D wierna (auto)
+    krcgId: 101935,
+    name: "Tangle Atropos' Hand",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Tapestry of Blood [101936] — fala D wierna (auto)
+    krcgId: 101936,
+    name: "Tapestry of Blood",
+    cardType: "equipment",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Tara, The Hollow One [101937] — fala D wierna (auto)
+    krcgId: 101937,
+    name: "Tara, The Hollow One",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Target Retainer [101941] — fala D wierna (auto)
+    krcgId: 101941,
+    name: "Target Retainer",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Taste of Death [101944] — fala D wierna (auto)
+    krcgId: 101944,
+    name: "Taste of Death",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Tattoo Signal [101946] — fala D wierna (auto)
+    krcgId: 101946,
+    name: "Tattoo Signal",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Taunt the Caged Beast [101947] — fala D wierna (auto)
+    krcgId: 101947,
+    name: "Taunt the Caged Beast",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Temptation [101954] — fala D wierna (auto)
+    krcgId: 101954,
+    name: "Temptation",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tend the Flock [101956] — fala D wierna (auto)
+    krcgId: 101956,
+    name: "Tend the Flock",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Tenebrous Form [101957] — fala D wierna (auto)
+    krcgId: 101957,
+    name: "Tenebrous Form",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Terra Incognita [101959] — fala D wierna (auto)
+    krcgId: 101959,
+    name: "Terra Incognita",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Terrorists [101961] — fala D wierna (auto)
+    krcgId: 101961,
+    name: "Terrorists",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Textbook Damnation [101962] — fala D wierna (auto)
+    krcgId: 101962,
+    name: "The Textbook Damnation",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Thanks for the Donation [101964] — fala D wierna (auto)
+    krcgId: 101964,
+    name: "Thanks for the Donation",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Their Master's Voice [101967] — fala D wierna (auto)
+    krcgId: 101967,
+    name: "Their Master's Voice",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Thicker than Blood [101969] — fala D wierna (auto)
+    krcgId: 101969,
+    name: "Thicker than Blood",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Thin Blood [101970] — fala D wierna (auto)
+    krcgId: 101970,
+    name: "Thin Blood",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Thin-Blooded Seer [101971] — fala D wierna (auto)
+    krcgId: 101971,
+    name: "Thin-Blooded Seer",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Those Who Endure Judge [101975] — fala D wierna (auto)
+    krcgId: 101975,
+    name: "Those Who Endure Judge",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Thoughts Betrayed [101976] — fala D wierna (auto)
+    krcgId: 101976,
+    name: "Thoughts Betrayed",
+    cardType: "combat",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Threading the Path of Orpheus [101977] — fala D wierna (auto)
+    krcgId: 101977,
+    name: "Threading the Path of Orpheus",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Three's a Crowd [101979] — fala D wierna (auto)
+    krcgId: 101979,
+    name: "Three's a Crowd",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Thrones Crumble [101981] — fala D wierna (auto)
+    krcgId: 101981,
+    name: "Thrones Crumble",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tinglestripe [101985] — fala D wierna (auto)
+    krcgId: 101985,
+    name: "Tinglestripe",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tongue of the Serpent [101988] — fala D wierna (auto)
+    krcgId: 101988,
+    name: "Tongue of the Serpent",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Torment the Soul [101992] — fala D wierna (auto)
+    krcgId: 101992,
+    name: "Torment the Soul",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Tortured Confession [101996] — fala D wierna (auto)
+    krcgId: 101996,
+    name: "Tortured Confession",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Total Insanity [101997] — fala D wierna (auto)
+    krcgId: 101997,
+    name: "Total Insanity",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Touch of Clarity [101998] — fala D wierna (auto)
+    krcgId: 101998,
+    name: "Touch of Clarity",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Tourette's Voice [102000] — fala D wierna (auto)
+    krcgId: 102000,
+    name: "Tourette's Voice",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Tower of London [102001] — fala D wierna (auto)
+    krcgId: 102001,
+    name: "Tower of London",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Toy Chest Test [102002] — fala D wierna (auto)
+    krcgId: 102002,
+    name: "Toy Chest Test",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Tracker's Mark [102003] — fala D wierna (auto)
+    krcgId: 102003,
+    name: "Tracker's Mark",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Tradition Upheld [102004] — fala D wierna (auto)
+    krcgId: 102004,
+    name: "Tradition Upheld",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Tragic Love Affair [102006] — fala D wierna (auto)
+    krcgId: 102006,
+    name: "Tragic Love Affair",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Trainer [102007] — fala D wierna (auto)
+    krcgId: 102007,
+    name: "Trainer",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Tranquility [102008] — fala D wierna (auto)
+    krcgId: 102008,
+    name: "Tranquility",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Transcendent Laibon [102009] — fala D wierna (auto)
+    krcgId: 102009,
+    name: "Transcendent Laibon",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Transfusion [102011] — fala D wierna (auto)
+    krcgId: 102011,
+    name: "Transfusion",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Trap [102012] — fala D wierna (auto)
+    krcgId: 102012,
+    name: "Trap",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Travelers Obey the Tenets [102013] — fala D wierna (auto)
+    krcgId: 102013,
+    name: "Travelers Obey the Tenets",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Treat the Sick Mind [102016] — fala D wierna (auto)
+    krcgId: 102016,
+    name: "Treat the Sick Mind",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Treatment [102017] — fala D wierna (auto)
+    krcgId: 102017,
+    name: "The Treatment",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Treaty of Laibach [102018] — fala D wierna (auto)
+    krcgId: 102018,
+    name: "Treaty of Laibach",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Tremere Convocation [102020] — fala D wierna (auto)
+    krcgId: 102020,
+    name: "Tremere Convocation",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Trick of the Danya [102024] — fala D wierna (auto)
+    krcgId: 102024,
+    name: "The Trick of the Danya",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Triole's Revenge [102025] — fala D wierna (auto)
+    krcgId: 102025,
+    name: "Triole's Revenge",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Trochomancy [102026] — fala D wierna (auto)
+    krcgId: 102026,
+    name: "Trochomancy",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Trophy: Chosen [102027] — fala D wierna (auto)
+    krcgId: 102027,
+    name: "Trophy: Chosen",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Trophy: Clan Respect [102028] — fala D wierna (auto)
+    krcgId: 102028,
+    name: "Trophy: Clan Respect",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Trophy: Diablerie [102029] — fala D wierna (auto)
+    krcgId: 102029,
+    name: "Trophy: Diablerie",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Trophy: Discipline [102030] — fala D wierna (auto)
+    krcgId: 102030,
+    name: "Trophy: Discipline",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Trophy: Domain [102031] — fala D wierna (auto)
+    krcgId: 102031,
+    name: "Trophy: Domain",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Trophy: Hunting Ground [102032] — fala D wierna (auto)
+    krcgId: 102032,
+    name: "Trophy: Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Trophy: Library [102033] — fala D wierna (auto)
+    krcgId: 102033,
+    name: "Trophy: Library",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Trophy: No Questions [102034] — fala D wierna (auto)
+    krcgId: 102034,
+    name: "Trophy: No Questions",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Trophy: Progeny [102035] — fala D wierna (auto)
+    krcgId: 102035,
+    name: "Trophy: Progeny",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Trophy: Retainers [102036] — fala D wierna (auto)
+    krcgId: 102036,
+    name: "Trophy: Retainers",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Trophy: Revered [102037] — fala D wierna (auto)
+    krcgId: 102037,
+    name: "Trophy: Revered",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Trophy: Safe Passage [102038] — fala D wierna (auto)
+    krcgId: 102038,
+    name: "Trophy: Safe Passage",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Trophy: Wealth [102039] — fala D wierna (auto)
+    krcgId: 102039,
+    name: "Trophy: Wealth",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // True Faith [102040] — fala D wierna (auto)
+    krcgId: 102040,
+    name: "True Faith",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Trumped-Up Charges [102042] — fala D wierna (auto)
+    krcgId: 102042,
+    name: "Trumped-Up Charges",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Truth in Ink [102043] — fala D wierna (auto)
+    krcgId: 102043,
+    name: "Truth in Ink",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Truth of a Thousand Lies [102044] — fala D wierna (auto)
+    krcgId: 102044,
+    name: "Truth of a Thousand Lies",
+    cardType: "actionModifier",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Truth of Blood [102045] — fala D wierna (auto)
+    krcgId: 102045,
+    name: "Truth of Blood",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Tunnel Runner [102047] — fala D wierna (auto)
+    krcgId: 102047,
+    name: "Tunnel Runner",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Twilight Camp [102049] — fala D wierna (auto)
+    krcgId: 102049,
+    name: "Twilight Camp",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Twisted Forest [102050] — fala D wierna (auto)
+    krcgId: 102050,
+    name: "Twisted Forest",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Tye Cooper [102053] — fala D wierna (auto)
+    krcgId: 102053,
+    name: "Tye Cooper",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Unacceptable Appearance [102055] — fala D wierna (auto)
+    krcgId: 102055,
+    name: "Unacceptable Appearance",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Unburdening the Bestial Soul [102056] — fala D wierna (auto)
+    krcgId: 102056,
+    name: "Unburdening the Bestial Soul",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Uncoiling [102057] — fala D wierna (auto)
+    krcgId: 102057,
+    name: "The Uncoiling",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Uncontrollable Rage [102058] — fala D wierna (auto)
+    krcgId: 102058,
+    name: "Uncontrollable Rage",
+    cardType: "actionModifier",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Under My Skin [102062] — fala D wierna (auto)
+    krcgId: 102062,
+    name: "Under My Skin",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Undue Influence [102067] — fala D wierna (auto)
+    krcgId: 102067,
+    name: "Undue Influence",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Undying Thirst [102069] — fala D wierna (auto)
+    krcgId: 102069,
+    name: "Undying Thirst",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Unexpected Coalition [102070] — fala D wierna (auto)
+    krcgId: 102070,
+    name: "Unexpected Coalition",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Unholy Radiance [102073] — fala D wierna (auto)
+    krcgId: 102073,
+    name: "Unholy Radiance",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Unity [102074] — fala D wierna (auto)
+    krcgId: 102074,
+    name: "Unity",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Unleash Hell's Fury [102076] — fala D wierna (auto)
+    krcgId: 102076,
+    name: "Unleash Hell's Fury",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Unleash the Hounds [102077] — fala D wierna (auto)
+    krcgId: 102077,
+    name: "Unleash the Hounds",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // The Unmasking [102079] — fala D wierna (auto)
+    krcgId: 102079,
+    name: "The Unmasking",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Unseen Hibernation [102081] — fala D wierna (auto)
+    krcgId: 102081,
+    name: "Unseen Hibernation",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "abo", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Unwholesome Bond [102082] — fala D wierna (auto)
+    krcgId: 102082,
+    name: "Unwholesome Bond",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Using the Advantage [102086] — fala D wierna (auto)
+    krcgId: 102086,
+    name: "Using the Advantage",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Vampiric Disease [102088] — fala D wierna (auto)
+    krcgId: 102088,
+    name: "Vampiric Disease",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Vascular Explosion [102091] — fala D wierna (auto)
+    krcgId: 102091,
+    name: "Vascular Explosion",
+    cardType: "combat",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Vaticination [102093] — fala D wierna (auto)
+    krcgId: 102093,
+    name: "Vaticination",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Vaulderie [102094] — fala D wierna (auto)
+    krcgId: 102094,
+    name: "Vaulderie",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Veil of Darkness [102095] — fala D wierna (auto)
+    krcgId: 102095,
+    name: "Veil of Darkness",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Veil of Silence [102096] — fala D wierna (auto)
+    krcgId: 102096,
+    name: "Veil of Silence",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Veiled Sight [102098] — fala D wierna (auto)
+    krcgId: 102098,
+    name: "Veiled Sight",
+    cardType: "reaction",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Veles' Hunt [102099] — fala D wierna (auto)
+    krcgId: 102099,
+    name: "Veles' Hunt",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Velvet Tongue [102100] — fala D wierna (auto)
+    krcgId: 102100,
+    name: "Velvet Tongue",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Vendetta [102101] — fala D wierna (auto)
+    krcgId: 102101,
+    name: "Vendetta",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Veneficti [102103] — fala D wierna (auto)
+    krcgId: 102103,
+    name: "Veneficti",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Venenation [102104] — fala D wierna (auto)
+    krcgId: 102104,
+    name: "Venenation",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ventrue Directorate Assembly [102108] — fala D wierna (auto)
+    krcgId: 102108,
+    name: "Ventrue Directorate Assembly",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ventrue Investment [102110] — fala D wierna (auto)
+    krcgId: 102110,
+    name: "Ventrue Investment",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Vial of Garou Blood [102115] — fala D wierna (auto)
+    krcgId: 102115,
+    name: "Vial of Garou Blood",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Vicissitude Poisoning [102117] — fala D wierna (auto)
+    krcgId: 102117,
+    name: "Vicissitude Poisoning",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Victim of Habit [102118] — fala D wierna (auto)
+    krcgId: 102118,
+    name: "Victim of Habit",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Vigil: The Thin Line [102119] — fala D wierna (auto)
+    krcgId: 102119,
+    name: "Vigil: The Thin Line",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Vigilance [102120] — fala D wierna (auto)
+    krcgId: 102120,
+    name: "Vigilance",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "jud", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Violation of Trust [102122] — fala D wierna (auto)
+    krcgId: 102122,
+    name: "Violation of Trust",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Virolax Facility [102123] — fala D wierna (auto)
+    krcgId: 102123,
+    name: "Virolax Facility",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Virtuosa [102124] — fala D wierna (auto)
+    krcgId: 102124,
+    name: "Virtuosa",
+    cardType: "actionModifier",
+    bloodCost: 3,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Visionquest [102125] — fala D wierna (auto)
+    krcgId: 102125,
+    name: "Visionquest",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Vivienne Géroux [102128] — fala D wierna (auto)
+    krcgId: 102128,
+    name: "Vivienne Géroux",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Voice of Madness [102129] — fala D wierna (auto)
+    krcgId: 102129,
+    name: "Voice of Madness",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Voices of the Castle [102130] — fala D wierna (auto)
+    krcgId: 102130,
+    name: "Voices of the Castle",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Vox Senis [102133] — fala D wierna (auto)
+    krcgId: 102133,
+    name: "Vox Senis",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Vulture's Buffet [102135] — fala D wierna (auto)
+    krcgId: 102135,
+    name: "Vulture's Buffet",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Waiting Game [102136] — fala D wierna (auto)
+    krcgId: 102136,
+    name: "Waiting Game",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Walk of Caine [102138] — fala D wierna (auto)
+    krcgId: 102138,
+    name: "Walk of Caine",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "san", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Walks-With-Might [102141] — fala D wierna (auto)
+    krcgId: 102141,
+    name: "Walks-With-Might",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Wanderer's Counsel [102143] — fala D wierna (auto)
+    krcgId: 102143,
+    name: "Wanderer's Counsel",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Warding the Beast [102146] — fala D wierna (auto)
+    krcgId: 102146,
+    name: "Warding the Beast",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Watch Commander [102154] — fala D wierna (auto)
+    krcgId: 102154,
+    name: "Watch Commander",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Watchtower: Chosen are Called [102155] — fala D wierna (auto)
+    krcgId: 102155,
+    name: "Watchtower: Chosen are Called",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Watchtower: Four Ride Forth [102156] — fala D wierna (auto)
+    krcgId: 102156,
+    name: "Watchtower: Four Ride Forth",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Watchtower: Greatest Fall [102157] — fala D wierna (auto)
+    krcgId: 102157,
+    name: "Watchtower: Greatest Fall",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Watchtower: The Wolves Feed [102158] — fala D wierna (auto)
+    krcgId: 102158,
+    name: "Watchtower: The Wolves Feed",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Wave of Insanity [102160] — fala D wierna (auto)
+    krcgId: 102160,
+    name: "Wave of Insanity",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Wave of Lethargy [102161] — fala D wierna (auto)
+    krcgId: 102161,
+    name: "Wave of Lethargy",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Weakness [102163] — fala D wierna (auto)
+    krcgId: 102163,
+    name: "Weakness",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Web of Knives Recruit [102165] — fala D wierna (auto)
+    krcgId: 102165,
+    name: "Web of Knives Recruit",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Weeping Stone [102167] — fala D wierna (auto)
+    krcgId: 102167,
+    name: "Weeping Stone",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Weigh the Heart [102168] — fala D wierna (auto)
+    krcgId: 102168,
+    name: "Weigh the Heart",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Weirding Stone [102170] — fala D wierna (auto)
+    krcgId: 102170,
+    name: "Weirding Stone",
+    cardType: "equipment",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Well-Marked [102172] — fala D wierna (auto)
+    krcgId: 102172,
+    name: "Well-Marked",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Wendell Delburton [102173] — fala D wierna (auto)
+    krcgId: 102173,
+    name: "Wendell Delburton",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Werewolf Pack [102174] — fala D wierna (auto)
+    krcgId: 102174,
+    name: "Werewolf Pack",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Whispers from the Dead [102175] — fala D wierna (auto)
+    krcgId: 102175,
+    name: "Whispers from the Dead",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Whistling Up the Beast [102177] — fala D wierna (auto)
+    krcgId: 102177,
+    name: "Whistling Up the Beast",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "abo", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // White Nights Massacre [102178] — fala D wierna (auto)
+    krcgId: 102178,
+    name: "White Nights Massacre",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Wildebeest [102181] — fala D wierna (auto)
+    krcgId: 102181,
+    name: "The Wildebeest",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Will of the Council [102182] — fala D wierna (auto)
+    krcgId: 102182,
+    name: "Will of the Council",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Will-o'-the-Wisp [102183] — fala D wierna (auto)
+    krcgId: 102183,
+    name: "Will-o'-the-Wisp",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Winchester Mansion [102184] — fala D wierna (auto)
+    krcgId: 102184,
+    name: "Winchester Mansion",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Winged Second [102186] — fala D wierna (auto)
+    krcgId: 102186,
+    name: "Winged Second",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "superior", discipline: "flight", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Wise Spider [102187] — fala D wierna (auto)
+    krcgId: 102187,
+    name: "Wise Spider",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Wolf Companion [102191] — fala D wierna (auto)
+    krcgId: 102191,
+    name: "Wolf Companion",
+    cardType: "retainer",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Wooden Stake [102192] — fala D wierna (auto)
+    krcgId: 102192,
+    name: "Wooden Stake",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // The World's a Canvas [102193] — fala D wierna (auto)
+    krcgId: 102193,
+    name: "The World's a Canvas",
+    cardType: "action",
+    bloodCost: 2,
+    poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Wormwood [102194] — fala D wierna (auto)
+    krcgId: 102194,
+    name: "Wormwood",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Wrath of the Inner Circle [102195] — fala D wierna (auto)
+    krcgId: 102195,
+    name: "Wrath of the Inner Circle",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Writ of Acceptance [102196] — fala D wierna (auto)
+    krcgId: 102196,
+    name: "Writ of Acceptance",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Wrong and Crosswise [102197] — fala D wierna (auto)
+    krcgId: 102197,
+    name: "Wrong and Crosswise",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Year of Fortune [102200] — fala D wierna (auto)
+    krcgId: 102200,
+    name: "Year of Fortune",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Zaire River Ferry [102203] — fala D wierna (auto)
+    krcgId: 102203,
+    name: "Zaire River Ferry",
+    cardType: "equipment",
+    bloodCost: 2,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Zillah's Tears [102206] — fala D wierna (auto)
+    krcgId: 102206,
+    name: "Zillah's Tears",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Zillah's Valley [102207] — fala D wierna (auto)
+    krcgId: 102207,
+    name: "Zillah's Valley",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 5,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Zip Line [102209] — fala D wierna (auto)
+    krcgId: 102209,
+    name: "Zip Line",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Zoning Board [102211] — fala D wierna (auto)
+    krcgId: 102211,
+    name: "Zoning Board",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dark Web Procurer [102235] — fala D wierna (auto)
+    krcgId: 102235,
+    name: "Dark Web Procurer",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The British Museum, London [102236] — fala D wierna (auto)
+    krcgId: 102236,
+    name: "The British Museum, London",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Enhanced Coagulant [102238] — fala D wierna (auto)
+    krcgId: 102238,
+    name: "Enhanced Coagulant",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Michael Harris, the Incinerator [102239] — fala D wierna (auto)
+    krcgId: 102239,
+    name: "Michael Harris, the Incinerator",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Mithraeum, London [102240] — fala D wierna (auto)
+    krcgId: 102240,
+    name: "The Mithraeum, London",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Mithraic Cultist [102241] — fala D wierna (auto)
+    krcgId: 102241,
+    name: "Mithraic Cultist",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Mobile HQ, Operation Antigen [102242] — fala D wierna (auto)
+    krcgId: 102242,
+    name: "Mobile HQ, Operation Antigen",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ritual Goblet [102243] — fala D wierna (auto)
+    krcgId: 102243,
+    name: "Ritual Goblet",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Shard, London [102244] — fala D wierna (auto)
+    krcgId: 102244,
+    name: "The Shard, London",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Valerie Diaz, Antigen Commander [102245] — fala D wierna (auto)
+    krcgId: 102245,
+    name: "Valerie Diaz, Antigen Commander",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Camarilla Conclave [102269] — fala D wierna (auto)
+    krcgId: 102269,
+    name: "Camarilla Conclave",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Confiscation [102271] — fala D wierna (auto)
+    krcgId: 102271,
+    name: "Confiscation",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Loup [102273] — fala D wierna (auto)
+    krcgId: 102273,
+    name: "Loup",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
 ];
 
 /**
@@ -30362,111 +47448,230 @@ export function buildHandlerRegistry(): HandlerRegistry {
 /** All implemented ids (specs + bespoke handlers) for the support test. */
 export const implementedIds: number[] = [
   100001,
+  100002,
   100003,
+  100004,
   100005,
   100006,
+  100007,
+  100008,
+  100009,
+  100010,
+  100011,
   100012,
   100013,
+  100014,
   100015,
   100016,
+  100017,
   100018,
+  100019,
   100020,
   100021,
+  100022,
+  100023,
+  100024,
+  100025,
+  100026,
   100027,
+  100028,
   100029,
+  100030,
   100031,
   100032,
   100033,
+  100034,
+  100035,
+  100036,
   100037,
+  100038,
+  100039,
   100040,
+  100041,
   100042,
   100043,
+  100044,
+  100045,
   100046,
   100047,
+  100048,
   100049,
+  100050,
+  100051,
   100052,
+  100053,
   100054,
   100055,
   100056,
+  100057,
   100058,
   100059,
+  100060,
+  100061,
+  100062,
+  100063,
   100064,
   100065,
   100066,
+  100067,
+  100068,
+  100069,
   100070,
+  100071,
+  100072,
+  100073,
+  100074,
+  100075,
   100076,
   100077,
+  100078,
   100079,
+  100080,
   100081,
   100082,
   100083,
   100084,
   100085,
+  100086,
   100087,
+  100088,
   100089,
+  100090,
   100091,
+  100092,
   100093,
   100094,
   100095,
   100096,
+  100097,
+  100098,
   100099,
+  100100,
   100101,
+  100102,
+  100103,
   100104,
   100105,
+  100106,
   100107,
   100108,
   100109,
+  100110,
+  100111,
   100112,
   100113,
   100114,
   100115,
+  100116,
   100117,
+  100118,
+  100119,
+  100120,
   100121,
+  100122,
   100123,
   100124,
   100125,
   100126,
+  100127,
+  100128,
+  100129,
   100130,
   100131,
   100132,
+  100133,
+  100134,
   100135,
   100136,
   100137,
   100138,
   100139,
+  100140,
+  100141,
+  100142,
+  100143,
+  100144,
   100145,
   100146,
+  100147,
   100148,
   100149,
+  100150,
+  100151,
+  100152,
   100153,
+  100154,
+  100155,
+  100156,
   100157,
   100158,
+  100159,
+  100160,
+  100161,
   100162,
   100163,
+  100164,
   100165,
+  100166,
+  100167,
+  100168,
+  100169,
+  100170,
+  100171,
   100172,
+  100173,
   100174,
   100175,
+  100176,
+  100177,
+  100178,
+  100179,
   100180,
+  100181,
+  100182,
   100183,
+  100184,
+  100185,
+  100186,
   100187,
+  100188,
   100189,
   100190,
+  100191,
   100192,
+  100193,
+  100194,
   100195,
+  100196,
+  100197,
+  100198,
   100199,
   100200,
   100201,
   100202,
   100203,
+  100204,
   100205,
+  100206,
+  100207,
   100208,
+  100209,
+  100210,
   100211,
   100212,
+  100213,
   100214,
   100215,
+  100216,
+  100217,
+  100218,
   100219,
+  100220,
+  100221,
   100222,
+  100223,
+  100224,
+  100225,
   100226,
   100227,
   100228,
@@ -30474,480 +47679,1220 @@ export const implementedIds: number[] = [
   100230,
   100231,
   100232,
+  100233,
+  100234,
   100235,
   100236,
   100237,
   100238,
+  100239,
+  100240,
   100241,
+  100242,
   100243,
   100244,
+  100245,
   100246,
   100247,
+  100248,
+  100249,
+  100250,
   100251,
+  100252,
+  100253,
+  100254,
+  100255,
+  100256,
+  100257,
+  100258,
   100259,
   100260,
+  100261,
   100262,
+  100263,
   100264,
+  100265,
   100266,
+  100267,
   100268,
   100269,
+  100270,
   100271,
   100272,
   100273,
+  100274,
+  100275,
+  100276,
+  100277,
+  100278,
+  100279,
+  100280,
+  100281,
   100282,
+  100283,
   100284,
   100285,
+  100286,
+  100287,
   100288,
   100289,
   100290,
+  100291,
   100292,
+  100293,
   100294,
+  100295,
+  100296,
   100297,
+  100298,
+  100299,
+  100300,
   100301,
+  100302,
   100303,
   100304,
+  100305,
+  100306,
   100307,
   100308,
   100309,
+  100310,
   100311,
   100312,
+  100313,
+  100314,
   100315,
+  100316,
   100317,
+  100318,
+  100319,
+  100320,
   100321,
+  100322,
   100323,
+  100324,
   100325,
+  100326,
   100327,
   100328,
   100329,
+  100330,
+  100331,
   100332,
   100333,
+  100334,
+  100335,
+  100336,
   100337,
   100338,
   100339,
+  100340,
+  100341,
   100342,
+  100343,
+  100344,
+  100345,
+  100346,
+  100347,
+  100348,
+  100349,
+  100350,
+  100351,
+  100352,
+  100353,
   100354,
+  100355,
   100356,
+  100357,
+  100358,
+  100359,
   100360,
   100361,
   100362,
+  100363,
   100364,
+  100365,
   100366,
   100367,
+  100368,
+  100369,
+  100370,
+  100371,
+  100372,
+  100373,
   100374,
+  100375,
+  100376,
+  100377,
+  100378,
   100379,
+  100380,
+  100381,
   100382,
+  100383,
+  100384,
   100385,
+  100386,
+  100387,
+  100388,
   100389,
   100390,
   100391,
   100392,
+  100393,
+  100394,
+  100395,
+  100396,
+  100397,
+  100398,
+  100399,
+  100400,
   100401,
+  100402,
   100403,
   100404,
+  100405,
+  100406,
+  100407,
   100408,
   100409,
   100410,
   100411,
+  100412,
+  100413,
   100414,
+  100415,
   100416,
+  100417,
+  100418,
   100419,
   100420,
+  100421,
+  100422,
+  100423,
+  100424,
+  100425,
   100426,
+  100427,
   100428,
+  100429,
+  100430,
   100431,
+  100432,
+  100433,
+  100434,
   100435,
+  100436,
+  100437,
+  100438,
+  100439,
+  100440,
   100441,
   100442,
+  100443,
   100444,
   100445,
+  100446,
   100447,
+  100448,
+  100449,
+  100450,
+  100451,
+  100452,
   100453,
+  100454,
   100455,
+  100456,
   100457,
   100458,
+  100459,
   100460,
+  100461,
   100462,
   100463,
+  100464,
   100465,
   100466,
   100467,
   100468,
   100469,
   100470,
+  100471,
   100472,
+  100473,
+  100474,
+  100475,
   100476,
+  100477,
   100478,
+  100479,
+  100480,
+  100481,
+  100482,
+  100483,
+  100484,
   100485,
+  100486,
+  100487,
+  100488,
+  100489,
+  100490,
+  100491,
   100492,
   100493,
   100494,
   100495,
+  100496,
+  100497,
+  100498,
+  100499,
+  100500,
   100501,
+  100502,
+  100503,
   100504,
+  100505,
   100506,
   100507,
+  100508,
+  100509,
   100510,
   100511,
+  100512,
+  100513,
+  100514,
   100515,
   100516,
+  100517,
   100518,
   100519,
   100520,
   100521,
+  100522,
   100523,
+  100524,
+  100525,
   100526,
+  100527,
+  100528,
   100529,
+  100530,
+  100531,
+  100532,
   100533,
+  100534,
+  100535,
+  100536,
+  100537,
+  100538,
+  100539,
+  100540,
   100541,
+  100542,
+  100543,
+  100544,
   100545,
+  100546,
+  100547,
+  100548,
   100549,
   100550,
+  100551,
+  100552,
+  100553,
   100554,
+  100555,
+  100556,
   100557,
   100558,
   100559,
   100560,
+  100561,
+  100562,
   100563,
   100564,
+  100565,
+  100566,
   100567,
   100568,
+  100569,
   100570,
+  100571,
   100572,
   100573,
+  100574,
+  100575,
   100576,
   100577,
+  100578,
+  100579,
   100580,
   100581,
   100582,
+  100583,
+  100584,
   100585,
   100586,
+  100587,
   100588,
+  100589,
+  100590,
   100591,
+  100592,
+  100593,
   100594,
+  100595,
+  100596,
   100597,
   100598,
+  100599,
   100600,
   100601,
   100602,
+  100603,
   100604,
   100605,
+  100606,
+  100607,
+  100608,
   100609,
+  100610,
+  100611,
+  100612,
+  100613,
+  100614,
+  100615,
   100616,
   100617,
   100618,
   100619,
   100620,
+  100621,
+  100622,
+  100623,
   100624,
   100625,
+  100626,
+  100627,
   100628,
   100629,
   100630,
   100631,
   100632,
   100633,
+  100634,
+  100635,
   100636,
+  100637,
   100638,
+  100639,
   100640,
+  100641,
+  100642,
+  100643,
   100644,
+  100645,
   100646,
   100647,
+  100648,
+  100649,
+  100650,
+  100651,
   100652,
   100653,
+  100654,
+  100655,
   100656,
+  100657,
+  100658,
+  100659,
   100660,
+  100661,
+  100662,
+  100663,
   100664,
+  100665,
   100666,
+  100667,
+  100668,
+  100669,
+  100670,
   100671,
   100672,
+  100673,
+  100674,
+  100675,
   100676,
+  100677,
+  100678,
+  100679,
   100680,
+  100681,
+  100682,
+  100683,
+  100684,
+  100685,
+  100686,
   100687,
   100688,
+  100689,
+  100690,
+  100691,
   100692,
   100693,
+  100694,
+  100695,
+  100696,
+  100697,
   100698,
+  100699,
+  100700,
+  100701,
+  100702,
   100703,
   100704,
+  100705,
+  100706,
+  100707,
+  100708,
   100709,
+  100710,
+  100711,
   100712,
   100713,
   100714,
   100715,
   100716,
   100717,
+  100718,
   100719,
   100720,
+  100721,
   100722,
   100723,
   100724,
+  100725,
   100726,
   100727,
+  100728,
   100729,
+  100730,
   100731,
+  100732,
+  100733,
   100734,
+  100735,
   100736,
+  100737,
   100738,
+  100739,
+  100740,
+  100741,
   100742,
   100743,
   100744,
+  100745,
+  100746,
   100747,
   100748,
   100749,
+  100750,
+  100751,
   100752,
   100753,
+  100754,
+  100755,
+  100756,
+  100757,
   100758,
+  100759,
   100760,
+  100761,
   100762,
   100763,
+  100764,
   100765,
+  100766,
+  100767,
   100768,
   100769,
+  100770,
   100771,
   100772,
+  100773,
   100774,
+  100775,
   100776,
   100777,
+  100778,
+  100779,
+  100780,
+  100781,
   100782,
+  100783,
   100784,
   100785,
+  100786,
+  100787,
   100788,
+  100789,
+  100790,
+  100791,
+  100792,
   100793,
   100794,
+  100795,
   100796,
+  100797,
+  100798,
   100799,
+  100800,
+  100801,
+  100802,
+  100803,
+  100804,
+  100805,
+  100806,
   100807,
+  100808,
   100809,
+  100810,
   100811,
   100812,
+  100813,
+  100814,
+  100815,
+  100816,
   100817,
+  100818,
+  100819,
+  100820,
+  100821,
+  100822,
+  100823,
   100824,
+  100825,
+  100826,
   100827,
+  100828,
+  100829,
+  100830,
+  100831,
+  100832,
+  100833,
   100834,
+  100835,
   100836,
+  100837,
   100838,
+  100839,
+  100840,
+  100841,
   100842,
+  100843,
+  100844,
   100845,
+  100846,
+  100847,
   100848,
+  100849,
+  100850,
+  100851,
   100852,
+  100853,
+  100854,
   100855,
+  100856,
   100857,
+  100858,
+  100859,
   100860,
   100861,
   100862,
   100863,
   100864,
+  100865,
   100866,
+  100867,
+  100868,
+  100869,
+  100870,
   100871,
   100872,
+  100873,
+  100874,
   100875,
+  100876,
+  100877,
+  100878,
+  100879,
+  100880,
+  100881,
+  100882,
+  100883,
+  100884,
+  100885,
+  100886,
+  100887,
+  100888,
   100889,
+  100890,
+  100891,
+  100892,
+  100893,
+  100894,
+  100895,
+  100896,
   100897,
   100898,
+  100899,
   100900,
+  100901,
+  100902,
   100903,
   100904,
+  100905,
   100906,
+  100907,
+  100908,
   100909,
   100910,
+  100911,
+  100912,
   100913,
+  100914,
+  100915,
+  100916,
+  100917,
   100918,
+  100919,
+  100920,
   100921,
+  100922,
+  100923,
+  100924,
   100925,
+  100926,
+  100927,
+  100928,
+  100929,
+  100930,
+  100931,
   100932,
+  100933,
+  100934,
+  100935,
   100936,
   100937,
   100938,
   100939,
+  100940,
+  100941,
+  100942,
+  100943,
   100944,
   100945,
   100946,
+  100947,
+  100948,
+  100949,
+  100950,
+  100951,
+  100952,
+  100953,
+  100954,
+  100955,
+  100956,
+  100957,
+  100958,
   100959,
+  100960,
+  100961,
+  100962,
+  100963,
+  100964,
   100965,
+  100966,
+  100967,
   100968,
+  100969,
   100970,
   100971,
+  100972,
   100973,
+  100974,
+  100975,
+  100976,
   100977,
+  100978,
+  100979,
+  100980,
+  100981,
+  100982,
+  100983,
   100984,
+  100985,
+  100986,
   100987,
+  100988,
+  100989,
+  100990,
+  100991,
+  100992,
   100993,
+  100994,
   100995,
   100996,
+  100997,
+  100998,
   100999,
+  101000,
+  101001,
+  101002,
   101003,
+  101004,
+  101005,
+  101006,
   101007,
   101008,
+  101009,
   101010,
+  101011,
+  101012,
+  101013,
   101014,
   101015,
+  101016,
+  101017,
   101018,
+  101019,
+  101020,
+  101021,
   101022,
+  101023,
+  101024,
+  101025,
+  101026,
   101027,
   101028,
+  101029,
+  101030,
+  101031,
   101032,
+  101033,
   101034,
+  101035,
+  101036,
+  101037,
   101038,
+  101039,
   101040,
+  101041,
   101042,
   101043,
+  101044,
   101045,
+  101046,
   101047,
+  101048,
   101049,
   101050,
+  101051,
+  101052,
   101053,
+  101054,
+  101055,
   101056,
   101057,
+  101058,
   101059,
   101060,
+  101061,
+  101062,
   101063,
+  101064,
+  101065,
+  101066,
   101067,
   101068,
+  101069,
   101070,
   101071,
   101072,
   101073,
+  101074,
   101075,
+  101076,
+  101077,
+  101078,
+  101079,
+  101080,
   101081,
   101082,
+  101083,
+  101084,
+  101085,
+  101086,
+  101087,
+  101088,
   101089,
+  101090,
+  101091,
+  101092,
   101093,
+  101094,
   101095,
   101096,
   101097,
   101098,
   101099,
   101100,
+  101101,
   101102,
   101103,
   101104,
+  101105,
+  101106,
   101107,
+  101108,
+  101109,
   101110,
+  101111,
+  101112,
+  101113,
   101114,
+  101115,
+  101116,
+  101117,
+  101118,
+  101119,
   101120,
+  101121,
+  101122,
+  101123,
+  101124,
   101125,
   101126,
   101127,
   101128,
   101129,
+  101130,
   101131,
+  101132,
   101133,
+  101134,
+  101135,
   101136,
   101137,
+  101138,
+  101139,
+  101140,
+  101141,
   101142,
   101143,
   101144,
   101145,
+  101146,
   101147,
   101148,
+  101149,
   101150,
+  101151,
+  101152,
+  101153,
   101154,
+  101155,
   101156,
+  101157,
   101158,
+  101159,
   101160,
+  101161,
   101162,
+  101163,
+  101164,
+  101165,
+  101166,
   101167,
   101168,
+  101169,
+  101170,
   101171,
+  101172,
+  101173,
+  101174,
   101175,
+  101176,
+  101177,
   101178,
+  101179,
+  101180,
+  101181,
+  101182,
   101183,
   101184,
+  101185,
+  101186,
   101187,
+  101188,
+  101189,
   101190,
+  101191,
+  101192,
   101193,
+  101194,
   101195,
+  101196,
+  101197,
+  101198,
+  101199,
+  101200,
+  101201,
   101202,
+  101203,
   101204,
+  101205,
+  101206,
+  101207,
+  101208,
   101209,
+  101210,
   101211,
+  101212,
+  101213,
+  101214,
   101215,
+  101216,
   101217,
+  101218,
   101219,
+  101220,
   101221,
+  101222,
   101223,
+  101224,
   101225,
+  101226,
+  101227,
+  101228,
   101229,
   101230,
+  101231,
+  101232,
+  101233,
+  101234,
   101235,
+  101236,
   101237,
   101238,
   101239,
+  101240,
+  101241,
   101242,
   101243,
+  101244,
+  101245,
   101246,
+  101247,
+  101248,
   101249,
   101250,
+  101251,
   101252,
+  101253,
   101254,
+  101255,
   101256,
+  101257,
+  101258,
   101259,
+  101260,
+  101261,
   101262,
+  101263,
+  101264,
   101265,
+  101266,
   101267,
   101268,
+  101269,
+  101270,
   101271,
+  101272,
   101273,
   101274,
+  101275,
+  101276,
   101277,
+  101278,
   101279,
   101280,
+  101281,
+  101282,
+  101283,
+  101284,
+  101285,
+  101286,
+  101287,
   101288,
+  101289,
+  101290,
+  101291,
   101292,
+  101293,
+  101294,
+  101295,
+  101296,
+  101297,
+  101298,
   101299,
+  101300,
+  101301,
   101302,
   101303,
+  101304,
   101305,
+  101306,
+  101307,
+  101308,
   101309,
   101310,
+  101311,
   101312,
+  101313,
+  101314,
+  101315,
+  101316,
+  101317,
   101318,
+  101319,
   101320,
   101321,
+  101322,
   101323,
   101324,
+  101325,
   101326,
+  101327,
+  101328,
+  101329,
+  101330,
+  101331,
+  101332,
+  101333,
+  101334,
+  101335,
+  101336,
   101337,
+  101338,
+  101339,
   101340,
   101341,
   101342,
   101343,
+  101344,
+  101345,
+  101346,
+  101347,
+  101348,
+  101349,
   101350,
+  101351,
+  101352,
   101353,
   101354,
+  101355,
+  101356,
+  101357,
+  101358,
+  101359,
+  101360,
+  101361,
+  101362,
+  101363,
   101364,
   101365,
   101366,
+  101367,
+  101368,
+  101369,
+  101370,
+  101371,
+  101372,
   101373,
+  101374,
+  101375,
   101376,
+  101377,
+  101378,
+  101379,
   101380,
+  101381,
   101382,
+  101383,
   101384,
+  101385,
+  101386,
   101387,
   101388,
+  101389,
   101390,
   101391,
+  101392,
+  101393,
   101394,
+  101395,
+  101396,
+  101397,
+  101398,
+  101399,
+  101400,
   101401,
+  101402,
+  101403,
   101404,
+  101405,
   101406,
+  101407,
+  101408,
+  101409,
+  101410,
   101411,
+  101412,
   101413,
+  101414,
   101415,
+  101416,
   101417,
+  101418,
+  101419,
   101420,
   101421,
+  101422,
+  101423,
   101424,
+  101425,
+  101426,
   101427,
+  101428,
+  101429,
   101430,
   101431,
+  101432,
+  101433,
   101434,
   101435,
+  101436,
   101437,
   101438,
   101439,
   101440,
+  101441,
   101442,
+  101443,
   101444,
+  101445,
+  101446,
   101447,
   101448,
   101449,
@@ -30972,254 +48917,682 @@ export const implementedIds: number[] = [
   101468,
   101469,
   101470,
+  101471,
   101472,
+  101473,
+  101474,
   101475,
   101476,
+  101477,
+  101478,
+  101479,
   101480,
+  101481,
   101482,
   101483,
+  101484,
+  101485,
+  101486,
   101487,
+  101488,
+  101489,
   101490,
   101491,
+  101492,
   101493,
+  101494,
   101495,
+  101496,
+  101497,
   101498,
+  101499,
+  101500,
   101501,
   101502,
+  101503,
+  101504,
+  101505,
+  101506,
   101507,
+  101508,
+  101509,
+  101510,
+  101511,
+  101512,
   101513,
+  101514,
+  101515,
   101516,
+  101517,
+  101518,
+  101519,
+  101520,
+  101521,
+  101522,
   101523,
   101524,
   101525,
+  101526,
   101527,
   101528,
   101529,
   101530,
+  101531,
   101532,
+  101533,
   101534,
   101535,
   101536,
   101537,
+  101538,
+  101539,
+  101540,
   101541,
   101542,
+  101543,
   101544,
   101545,
+  101546,
   101547,
+  101548,
+  101549,
   101550,
+  101551,
   101552,
   101553,
+  101554,
+  101555,
+  101556,
+  101557,
   101558,
+  101559,
+  101560,
+  101561,
+  101562,
+  101563,
   101564,
+  101565,
   101566,
   101567,
+  101568,
+  101569,
+  101570,
+  101571,
+  101572,
+  101573,
+  101574,
+  101575,
+  101576,
   101577,
   101578,
+  101579,
+  101580,
+  101581,
+  101582,
   101583,
+  101584,
+  101585,
+  101586,
   101587,
   101588,
+  101589,
+  101590,
   101591,
+  101592,
+  101593,
   101594,
   101595,
+  101596,
+  101597,
+  101598,
+  101599,
+  101600,
+  101601,
+  101602,
+  101603,
+  101604,
   101605,
+  101606,
+  101607,
   101608,
+  101609,
   101610,
+  101611,
   101612,
   101613,
   101614,
+  101615,
+  101616,
+  101617,
+  101618,
+  101619,
+  101620,
+  101621,
+  101622,
+  101623,
+  101624,
+  101625,
+  101626,
   101627,
   101628,
+  101629,
+  101630,
   101631,
   101632,
+  101633,
+  101634,
+  101635,
   101636,
+  101637,
+  101638,
+  101639,
   101640,
+  101641,
+  101642,
+  101643,
   101644,
+  101645,
+  101646,
   101647,
+  101648,
   101649,
   101650,
+  101651,
+  101652,
+  101653,
+  101654,
+  101655,
   101656,
+  101657,
+  101658,
+  101659,
+  101660,
+  101661,
   101662,
+  101663,
   101664,
   101665,
+  101666,
   101667,
+  101668,
   101669,
   101670,
   101671,
+  101672,
+  101673,
+  101674,
+  101675,
+  101676,
+  101677,
   101678,
+  101679,
+  101680,
+  101681,
   101682,
+  101683,
+  101684,
   101685,
   101686,
+  101687,
+  101688,
   101689,
+  101690,
+  101691,
   101692,
   101693,
+  101694,
   101695,
   101696,
+  101697,
   101698,
   101699,
+  101700,
+  101701,
+  101702,
+  101703,
+  101704,
+  101705,
   101706,
+  101707,
+  101708,
+  101709,
+  101710,
   101711,
   101712,
+  101713,
+  101714,
   101715,
+  101716,
   101717,
+  101718,
+  101719,
+  101720,
+  101721,
+  101722,
+  101723,
+  101724,
+  101725,
+  101726,
   101727,
   101728,
   101729,
+  101730,
+  101731,
+  101732,
+  101733,
+  101734,
+  101735,
   101736,
+  101737,
+  101738,
+  101739,
+  101740,
   101741,
+  101742,
+  101743,
+  101744,
+  101745,
+  101746,
+  101747,
+  101748,
+  101749,
+  101750,
+  101751,
+  101752,
   101753,
   101754,
+  101755,
   101756,
+  101757,
+  101758,
+  101759,
   101760,
+  101761,
+  101762,
+  101763,
+  101764,
+  101765,
+  101766,
   101767,
+  101768,
   101769,
+  101770,
+  101771,
   101772,
+  101773,
+  101774,
+  101775,
+  101776,
+  101777,
   101778,
   101779,
   101780,
   101781,
+  101782,
+  101783,
+  101784,
+  101785,
+  101786,
+  101787,
+  101788,
+  101789,
   101790,
   101791,
   101792,
+  101793,
+  101794,
+  101795,
+  101796,
+  101797,
   101798,
   101799,
+  101800,
   101801,
   101802,
+  101803,
+  101804,
   101805,
+  101806,
   101807,
   101808,
+  101809,
+  101810,
   101811,
+  101812,
+  101813,
   101814,
+  101815,
   101816,
   101817,
+  101818,
   101819,
   101820,
   101821,
+  101822,
   101823,
   101824,
   101825,
+  101826,
   101827,
+  101828,
   101829,
+  101830,
+  101831,
+  101832,
+  101833,
+  101834,
+  101835,
+  101836,
+  101837,
+  101838,
   101839,
+  101840,
   101841,
   101842,
+  101843,
+  101844,
+  101845,
+  101846,
   101847,
+  101848,
+  101849,
   101850,
+  101851,
+  101852,
+  101853,
   101854,
+  101855,
   101856,
   101857,
+  101858,
   101859,
+  101860,
+  101861,
+  101862,
+  101863,
   101864,
+  101865,
   101866,
   101867,
+  101868,
   101869,
   101870,
+  101871,
   101872,
+  101873,
+  101874,
+  101875,
+  101876,
   101877,
+  101878,
+  101879,
+  101880,
+  101881,
   101882,
   101883,
+  101884,
+  101885,
+  101886,
+  101887,
   101888,
+  101889,
+  101890,
   101891,
+  101892,
+  101893,
+  101894,
+  101895,
   101896,
+  101897,
+  101898,
   101899,
+  101900,
+  101901,
+  101902,
+  101903,
+  101904,
   101905,
+  101906,
   101907,
+  101908,
   101909,
+  101910,
+  101911,
+  101912,
   101913,
+  101914,
+  101915,
+  101916,
+  101917,
+  101918,
+  101919,
+  101920,
   101921,
+  101922,
   101923,
+  101924,
+  101925,
   101926,
+  101927,
+  101928,
+  101929,
+  101930,
+  101931,
+  101932,
+  101933,
+  101934,
+  101935,
+  101936,
+  101937,
   101938,
   101939,
   101940,
+  101941,
   101942,
   101943,
+  101944,
   101945,
+  101946,
+  101947,
   101948,
   101949,
   101950,
   101951,
   101952,
   101953,
+  101954,
   101955,
+  101956,
+  101957,
   101958,
+  101959,
   101960,
+  101961,
+  101962,
   101963,
+  101964,
   101965,
   101966,
+  101967,
   101968,
+  101969,
+  101970,
+  101971,
   101972,
   101973,
   101974,
+  101975,
+  101976,
+  101977,
   101978,
+  101979,
   101980,
+  101981,
   101982,
   101983,
   101984,
+  101985,
   101986,
   101987,
+  101988,
   101989,
   101990,
   101991,
+  101992,
   101993,
   101994,
   101995,
+  101996,
+  101997,
+  101998,
+  101999,
+  102000,
+  102001,
+  102002,
+  102003,
+  102004,
   102005,
+  102006,
+  102007,
+  102008,
+  102009,
   102010,
+  102011,
+  102012,
+  102013,
   102014,
   102015,
+  102016,
+  102017,
+  102018,
   102019,
+  102020,
   102021,
   102022,
   102023,
+  102024,
+  102025,
+  102026,
+  102027,
+  102028,
+  102029,
+  102030,
+  102031,
+  102032,
+  102033,
+  102034,
+  102035,
+  102036,
+  102037,
+  102038,
+  102039,
+  102040,
   102041,
+  102042,
+  102043,
+  102044,
+  102045,
   102046,
+  102047,
   102048,
+  102049,
+  102050,
   102051,
   102052,
+  102053,
   102054,
+  102055,
+  102056,
+  102057,
+  102058,
   102059,
   102060,
   102061,
+  102062,
   102063,
   102064,
   102065,
   102066,
+  102067,
   102068,
+  102069,
+  102070,
   102071,
   102072,
+  102073,
+  102074,
   102075,
+  102076,
+  102077,
   102078,
+  102079,
   102080,
+  102081,
+  102082,
   102083,
   102084,
   102085,
+  102086,
   102087,
+  102088,
   102089,
   102090,
+  102091,
   102092,
+  102093,
+  102094,
+  102095,
+  102096,
   102097,
+  102098,
+  102099,
+  102100,
+  102101,
   102102,
+  102103,
+  102104,
   102105,
   102106,
   102107,
+  102108,
   102109,
+  102110,
   102111,
   102112,
   102113,
   102114,
+  102115,
   102116,
+  102117,
+  102118,
+  102119,
+  102120,
   102121,
+  102122,
+  102123,
+  102124,
+  102125,
   102126,
   102127,
+  102128,
+  102129,
+  102130,
   102131,
   102132,
+  102133,
   102134,
+  102135,
+  102136,
   102137,
+  102138,
   102139,
   102140,
+  102141,
   102142,
+  102143,
   102144,
   102145,
+  102146,
   102147,
   102148,
   102149,
@@ -31227,27 +49600,64 @@ export const implementedIds: number[] = [
   102151,
   102152,
   102153,
+  102154,
+  102155,
+  102156,
+  102157,
+  102158,
   102159,
+  102160,
+  102161,
   102162,
+  102163,
   102164,
+  102165,
   102166,
+  102167,
+  102168,
   102169,
+  102170,
   102171,
+  102172,
+  102173,
+  102174,
+  102175,
   102176,
+  102177,
+  102178,
   102179,
   102180,
+  102181,
+  102182,
+  102183,
+  102184,
   102185,
+  102186,
+  102187,
   102188,
   102189,
   102190,
+  102191,
+  102192,
+  102193,
+  102194,
+  102195,
+  102196,
+  102197,
   102198,
   102199,
+  102200,
   102201,
   102202,
+  102203,
   102204,
   102205,
+  102206,
+  102207,
   102208,
+  102209,
   102210,
+  102211,
   102212,
   102213,
   102214,
@@ -31271,7 +49681,17 @@ export const implementedIds: number[] = [
   102232,
   102233,
   102234,
+  102235,
+  102236,
   102237,
+  102238,
+  102239,
+  102240,
+  102241,
+  102242,
+  102243,
+  102244,
+  102245,
   102246,
   102247,
   102248,
@@ -31295,8 +49715,11 @@ export const implementedIds: number[] = [
   102266,
   102267,
   102268,
+  102269,
   102270,
+  102271,
   102272,
+  102273,
   102274,
   102275,
   102276,
@@ -31387,76 +49810,1733 @@ export const implementedIds: number[] = [
   102362,
   102363,
   102364,
-  100178,
-  100320,
-  100740,
-  101822,
-  101999,
   102365,
+  200001,
+  200002,
+  200003,
+  200004,
+  200005,
+  200006,
+  200007,
+  200008,
+  200009,
+  200010,
+  200011,
+  200012,
+  200013,
+  200014,
+  200015,
+  200016,
+  200017,
+  200018,
+  200019,
+  200020,
+  200021,
+  200022,
+  200023,
+  200024,
+  200025,
+  200026,
+  200027,
+  200028,
+  200029,
+  200030,
+  200031,
+  200032,
+  200033,
+  200034,
+  200035,
+  200036,
+  200037,
+  200038,
+  200039,
+  200040,
+  200041,
+  200042,
+  200043,
+  200044,
+  200045,
+  200046,
+  200047,
+  200048,
+  200049,
+  200050,
+  200051,
+  200052,
+  200053,
+  200054,
+  200055,
+  200056,
+  200057,
+  200058,
+  200059,
+  200060,
+  200061,
+  200062,
+  200063,
+  200064,
+  200065,
+  200066,
+  200067,
+  200068,
+  200069,
+  200070,
+  200071,
+  200072,
+  200073,
+  200074,
+  200075,
+  200076,
+  200077,
+  200078,
+  200079,
+  200080,
+  200081,
+  200082,
+  200083,
+  200084,
+  200085,
+  200086,
+  200087,
+  200088,
+  200089,
+  200090,
+  200091,
+  200092,
+  200093,
+  200094,
+  200095,
+  200096,
+  200097,
+  200098,
+  200099,
+  200100,
+  200101,
+  200102,
+  200103,
+  200104,
+  200105,
+  200106,
+  200107,
+  200108,
+  200109,
+  200110,
+  200111,
+  200112,
+  200113,
+  200114,
+  200115,
+  200116,
+  200117,
+  200118,
+  200119,
+  200120,
+  200121,
+  200122,
+  200123,
+  200124,
+  200125,
+  200126,
+  200127,
+  200128,
+  200129,
+  200130,
+  200131,
   200132,
+  200133,
+  200134,
+  200135,
+  200136,
+  200137,
+  200138,
+  200139,
+  200140,
+  200141,
+  200142,
+  200143,
+  200144,
+  200145,
+  200146,
+  200147,
+  200148,
+  200149,
+  200150,
+  200151,
+  200152,
+  200153,
+  200154,
+  200155,
+  200156,
+  200157,
+  200158,
+  200159,
+  200160,
+  200161,
+  200162,
+  200163,
+  200164,
+  200165,
+  200166,
+  200167,
+  200168,
+  200169,
+  200170,
+  200171,
+  200172,
+  200173,
+  200174,
+  200175,
+  200176,
+  200177,
+  200178,
+  200179,
+  200180,
+  200181,
+  200182,
+  200183,
+  200184,
+  200185,
+  200186,
+  200187,
+  200188,
+  200189,
+  200190,
+  200191,
+  200192,
+  200193,
+  200194,
+  200195,
+  200196,
+  200197,
+  200198,
+  200199,
+  200200,
+  200201,
+  200202,
+  200203,
+  200204,
+  200205,
+  200206,
+  200207,
+  200208,
+  200209,
+  200210,
+  200211,
+  200212,
+  200213,
+  200214,
+  200215,
+  200216,
+  200217,
+  200218,
+  200219,
+  200220,
+  200221,
+  200222,
+  200223,
+  200224,
+  200225,
+  200226,
+  200227,
+  200228,
+  200229,
+  200230,
+  200231,
+  200232,
+  200233,
+  200234,
+  200235,
+  200236,
+  200237,
+  200238,
+  200239,
+  200240,
+  200241,
+  200242,
+  200243,
+  200244,
+  200245,
+  200246,
+  200247,
+  200248,
+  200249,
+  200250,
+  200251,
+  200252,
+  200253,
+  200254,
+  200255,
+  200256,
+  200257,
+  200258,
+  200259,
+  200260,
+  200261,
+  200262,
+  200263,
+  200264,
+  200265,
+  200266,
+  200267,
+  200268,
+  200269,
+  200270,
+  200271,
+  200272,
+  200273,
+  200274,
+  200275,
+  200276,
+  200277,
+  200278,
+  200279,
+  200280,
+  200281,
+  200282,
+  200283,
+  200284,
+  200285,
+  200286,
+  200287,
+  200288,
+  200289,
+  200290,
+  200291,
+  200292,
+  200293,
+  200294,
+  200295,
+  200296,
+  200297,
+  200298,
+  200299,
+  200300,
+  200301,
+  200302,
+  200303,
+  200304,
+  200305,
+  200306,
+  200307,
+  200308,
+  200309,
+  200310,
+  200311,
+  200312,
+  200313,
+  200314,
+  200315,
+  200316,
+  200317,
+  200318,
+  200319,
+  200320,
+  200321,
+  200322,
+  200323,
+  200324,
+  200325,
+  200326,
+  200327,
+  200328,
+  200329,
+  200330,
+  200331,
+  200332,
+  200333,
+  200334,
+  200335,
+  200336,
+  200337,
+  200338,
+  200339,
+  200340,
+  200341,
+  200342,
+  200343,
+  200344,
+  200345,
+  200346,
+  200347,
+  200348,
+  200349,
+  200350,
+  200351,
+  200352,
+  200353,
+  200354,
+  200355,
+  200356,
+  200357,
+  200358,
+  200359,
+  200360,
+  200361,
+  200362,
+  200363,
+  200364,
+  200365,
+  200366,
+  200367,
+  200368,
+  200369,
+  200370,
+  200371,
+  200372,
+  200373,
+  200374,
+  200375,
+  200376,
+  200377,
+  200378,
+  200379,
+  200380,
+  200381,
+  200382,
+  200383,
+  200384,
+  200385,
+  200386,
+  200387,
+  200388,
+  200389,
+  200390,
+  200391,
+  200392,
+  200393,
+  200394,
+  200395,
+  200396,
+  200397,
+  200398,
+  200399,
+  200400,
+  200401,
+  200402,
+  200403,
+  200404,
+  200405,
+  200406,
+  200407,
+  200408,
+  200409,
+  200410,
+  200411,
+  200412,
+  200413,
+  200414,
+  200415,
+  200416,
+  200417,
+  200418,
+  200419,
+  200420,
+  200421,
+  200422,
+  200423,
+  200424,
+  200425,
+  200426,
+  200427,
+  200428,
+  200429,
+  200430,
+  200431,
+  200432,
+  200433,
+  200434,
+  200435,
+  200436,
+  200437,
+  200438,
+  200439,
+  200440,
+  200441,
+  200442,
+  200443,
+  200444,
+  200445,
+  200446,
+  200447,
+  200448,
+  200449,
+  200450,
+  200451,
+  200452,
+  200453,
+  200454,
+  200455,
+  200456,
+  200457,
+  200458,
+  200459,
+  200460,
+  200461,
+  200462,
+  200463,
+  200464,
+  200465,
+  200466,
+  200467,
+  200468,
+  200469,
+  200470,
+  200471,
+  200472,
+  200473,
+  200474,
+  200475,
+  200476,
+  200477,
+  200478,
+  200479,
+  200480,
+  200481,
+  200482,
+  200483,
+  200484,
+  200485,
+  200486,
+  200487,
+  200488,
+  200489,
+  200490,
+  200491,
+  200492,
+  200493,
+  200494,
+  200495,
+  200496,
+  200497,
+  200498,
+  200499,
+  200500,
+  200501,
+  200502,
+  200503,
+  200504,
+  200505,
+  200506,
+  200507,
+  200508,
+  200509,
+  200510,
+  200511,
+  200512,
+  200513,
+  200514,
+  200515,
+  200516,
+  200517,
+  200518,
+  200519,
+  200520,
+  200521,
+  200522,
+  200523,
+  200524,
+  200525,
+  200526,
+  200527,
+  200528,
+  200529,
+  200530,
+  200531,
+  200532,
+  200533,
+  200534,
+  200535,
+  200536,
+  200537,
+  200538,
+  200539,
+  200540,
+  200541,
+  200542,
+  200543,
+  200544,
+  200545,
+  200546,
+  200547,
+  200548,
+  200549,
+  200550,
+  200551,
+  200552,
+  200553,
+  200554,
+  200555,
+  200556,
+  200557,
+  200558,
+  200559,
+  200560,
+  200561,
+  200562,
+  200563,
+  200564,
+  200565,
+  200566,
+  200567,
+  200568,
+  200569,
+  200570,
+  200571,
+  200572,
+  200573,
+  200574,
+  200575,
+  200576,
+  200577,
+  200578,
+  200579,
+  200580,
+  200581,
+  200582,
+  200583,
+  200584,
+  200585,
+  200586,
+  200587,
+  200588,
+  200589,
+  200590,
+  200591,
+  200592,
+  200593,
+  200594,
+  200595,
+  200596,
+  200597,
+  200598,
+  200599,
+  200600,
+  200601,
+  200602,
+  200603,
+  200604,
+  200605,
+  200606,
+  200607,
+  200608,
+  200609,
+  200610,
+  200611,
+  200612,
+  200613,
+  200614,
+  200615,
+  200616,
+  200617,
+  200618,
+  200619,
+  200620,
+  200621,
+  200622,
+  200623,
+  200624,
+  200625,
+  200626,
+  200627,
+  200628,
+  200629,
+  200630,
+  200631,
+  200632,
+  200633,
+  200634,
+  200635,
+  200636,
+  200637,
+  200638,
+  200639,
+  200640,
+  200641,
+  200642,
+  200643,
+  200644,
+  200645,
+  200646,
+  200647,
+  200648,
+  200649,
+  200650,
+  200651,
+  200652,
+  200653,
+  200654,
+  200655,
+  200656,
+  200657,
+  200658,
+  200659,
+  200660,
+  200661,
+  200662,
+  200663,
+  200664,
+  200665,
+  200666,
+  200667,
+  200668,
+  200669,
+  200670,
+  200671,
+  200672,
+  200673,
+  200674,
+  200675,
+  200676,
+  200677,
+  200678,
+  200679,
+  200680,
+  200681,
+  200682,
+  200683,
+  200684,
+  200685,
+  200686,
+  200687,
+  200688,
+  200689,
+  200690,
+  200691,
+  200692,
+  200693,
+  200694,
+  200695,
+  200696,
+  200697,
+  200698,
+  200699,
+  200700,
+  200701,
+  200702,
+  200703,
+  200704,
+  200705,
+  200706,
+  200707,
+  200708,
+  200709,
+  200710,
+  200711,
+  200712,
+  200713,
+  200714,
+  200715,
+  200716,
+  200717,
+  200718,
+  200719,
+  200720,
+  200721,
+  200722,
+  200723,
+  200724,
+  200725,
+  200726,
+  200727,
+  200728,
+  200729,
+  200730,
+  200731,
+  200732,
+  200733,
+  200734,
+  200735,
+  200736,
+  200737,
+  200738,
+  200739,
+  200740,
+  200741,
+  200742,
+  200743,
+  200744,
+  200745,
+  200746,
+  200747,
+  200748,
+  200749,
+  200750,
+  200751,
+  200752,
+  200753,
+  200754,
+  200755,
+  200756,
+  200757,
+  200758,
+  200759,
+  200760,
+  200761,
+  200762,
+  200763,
+  200764,
+  200765,
+  200766,
+  200767,
+  200768,
+  200769,
+  200770,
+  200771,
+  200772,
+  200773,
+  200774,
+  200775,
+  200776,
+  200777,
+  200778,
+  200779,
+  200780,
+  200781,
+  200782,
+  200783,
+  200784,
+  200785,
+  200786,
+  200787,
+  200788,
+  200789,
+  200790,
+  200791,
+  200792,
+  200793,
+  200794,
+  200795,
+  200796,
+  200797,
+  200798,
+  200799,
+  200800,
+  200801,
+  200802,
+  200803,
+  200804,
+  200805,
+  200806,
+  200807,
+  200808,
+  200809,
+  200810,
+  200811,
+  200812,
+  200813,
+  200814,
+  200815,
+  200816,
+  200817,
+  200818,
+  200819,
+  200820,
+  200821,
+  200822,
+  200823,
+  200824,
+  200825,
+  200826,
+  200827,
+  200828,
+  200829,
+  200830,
+  200831,
+  200832,
+  200833,
+  200834,
+  200835,
+  200836,
+  200837,
+  200838,
+  200839,
+  200840,
+  200841,
+  200842,
+  200843,
+  200844,
+  200845,
+  200846,
+  200847,
+  200848,
+  200849,
+  200850,
+  200851,
+  200852,
+  200853,
+  200854,
+  200855,
+  200856,
+  200857,
+  200858,
+  200859,
+  200860,
+  200861,
+  200862,
+  200863,
+  200864,
+  200865,
+  200866,
+  200867,
+  200868,
+  200869,
+  200870,
+  200871,
+  200872,
+  200873,
+  200874,
+  200875,
+  200876,
+  200877,
+  200878,
+  200879,
+  200880,
+  200881,
+  200882,
+  200883,
+  200884,
+  200885,
+  200886,
+  200887,
+  200888,
+  200889,
+  200890,
+  200891,
+  200892,
+  200893,
+  200894,
+  200895,
+  200896,
+  200897,
+  200898,
+  200899,
+  200900,
+  200901,
+  200902,
+  200903,
+  200904,
+  200905,
+  200906,
+  200907,
+  200908,
+  200909,
+  200910,
+  200911,
+  200912,
+  200913,
+  200914,
+  200915,
+  200916,
+  200917,
+  200918,
+  200919,
+  200920,
+  200921,
+  200922,
+  200923,
+  200924,
+  200925,
+  200926,
+  200927,
+  200928,
+  200929,
+  200930,
+  200931,
+  200932,
+  200933,
+  200934,
+  200935,
+  200936,
+  200937,
+  200938,
+  200939,
+  200940,
+  200941,
+  200942,
+  200943,
+  200944,
+  200945,
+  200946,
+  200947,
+  200948,
+  200949,
+  200950,
+  200951,
+  200952,
+  200953,
+  200954,
+  200955,
+  200956,
+  200957,
+  200958,
+  200959,
+  200960,
+  200961,
+  200962,
+  200963,
+  200964,
+  200965,
+  200966,
+  200967,
+  200968,
+  200969,
+  200970,
+  200971,
+  200972,
+  200973,
+  200974,
+  200975,
+  200976,
+  200977,
+  200978,
+  200979,
+  200980,
+  200981,
+  200982,
+  200983,
+  200984,
+  200985,
+  200986,
+  200987,
+  200988,
+  200989,
+  200990,
+  200991,
+  200992,
+  200993,
+  200994,
+  200995,
+  200996,
+  200997,
+  200998,
+  200999,
+  201000,
+  201001,
+  201002,
+  201003,
+  201004,
+  201005,
+  201006,
+  201007,
+  201008,
+  201009,
+  201010,
+  201011,
+  201012,
+  201013,
+  201014,
+  201015,
+  201016,
+  201017,
+  201018,
+  201019,
+  201020,
+  201021,
+  201022,
+  201023,
+  201024,
+  201025,
+  201026,
+  201027,
+  201028,
+  201029,
+  201030,
+  201031,
+  201032,
+  201033,
+  201034,
+  201035,
+  201036,
+  201037,
+  201038,
+  201039,
+  201040,
+  201041,
+  201042,
+  201043,
+  201044,
+  201045,
+  201046,
+  201047,
+  201048,
+  201049,
+  201050,
+  201051,
+  201052,
+  201053,
+  201054,
+  201055,
+  201056,
+  201057,
+  201058,
+  201059,
+  201060,
+  201061,
+  201062,
+  201063,
+  201064,
+  201065,
+  201066,
+  201067,
+  201068,
+  201069,
+  201070,
+  201071,
+  201072,
+  201073,
+  201074,
+  201075,
+  201076,
+  201077,
+  201078,
+  201079,
+  201080,
+  201081,
+  201082,
+  201083,
+  201084,
+  201085,
+  201086,
+  201087,
+  201088,
+  201089,
+  201090,
+  201091,
+  201092,
+  201093,
+  201094,
+  201095,
+  201096,
+  201097,
+  201098,
+  201099,
+  201100,
+  201101,
+  201102,
+  201103,
+  201104,
+  201105,
+  201106,
+  201107,
+  201108,
+  201109,
+  201110,
+  201111,
+  201112,
+  201113,
+  201114,
+  201115,
+  201116,
+  201117,
+  201118,
+  201119,
+  201120,
+  201121,
+  201122,
+  201123,
+  201124,
+  201125,
+  201126,
+  201127,
+  201128,
+  201129,
+  201130,
+  201131,
+  201132,
+  201133,
+  201134,
+  201135,
+  201136,
+  201137,
+  201138,
+  201139,
+  201140,
+  201141,
+  201142,
+  201143,
+  201144,
+  201145,
+  201146,
+  201147,
+  201148,
+  201149,
+  201150,
+  201151,
+  201152,
+  201153,
+  201154,
+  201155,
+  201156,
+  201157,
+  201158,
+  201159,
+  201160,
+  201161,
+  201162,
+  201163,
+  201164,
+  201165,
+  201166,
+  201167,
+  201168,
+  201169,
+  201170,
+  201171,
+  201172,
+  201173,
+  201174,
+  201175,
+  201176,
+  201177,
+  201178,
+  201179,
+  201180,
+  201181,
+  201182,
+  201183,
+  201184,
+  201185,
+  201186,
+  201187,
+  201188,
+  201189,
+  201190,
+  201191,
+  201192,
+  201193,
+  201194,
+  201195,
+  201196,
+  201197,
+  201198,
+  201199,
+  201200,
+  201201,
+  201202,
+  201203,
+  201204,
+  201205,
+  201206,
+  201207,
+  201208,
+  201209,
+  201210,
+  201211,
+  201212,
+  201213,
+  201214,
+  201215,
+  201216,
+  201217,
+  201218,
+  201219,
+  201220,
+  201221,
+  201222,
+  201223,
+  201224,
+  201225,
+  201226,
+  201227,
+  201228,
+  201229,
+  201230,
+  201231,
+  201232,
+  201233,
+  201234,
+  201235,
+  201236,
+  201237,
+  201238,
+  201239,
+  201240,
+  201241,
+  201242,
+  201243,
+  201244,
+  201245,
+  201246,
+  201247,
+  201248,
+  201249,
+  201250,
+  201251,
+  201252,
+  201253,
+  201254,
+  201255,
+  201256,
+  201257,
+  201258,
+  201259,
+  201260,
+  201261,
+  201262,
+  201263,
+  201264,
+  201265,
+  201266,
+  201267,
+  201268,
+  201269,
+  201270,
+  201271,
+  201272,
+  201273,
+  201274,
+  201275,
+  201276,
+  201277,
+  201278,
+  201279,
+  201280,
+  201281,
+  201282,
+  201283,
+  201284,
+  201285,
+  201286,
+  201287,
+  201288,
+  201289,
+  201290,
+  201291,
+  201292,
+  201293,
+  201294,
+  201295,
+  201296,
+  201297,
+  201298,
+  201299,
+  201300,
+  201301,
+  201302,
+  201303,
+  201304,
+  201305,
+  201306,
+  201307,
+  201308,
+  201309,
+  201310,
+  201311,
+  201312,
+  201313,
+  201314,
+  201315,
+  201316,
+  201317,
+  201318,
+  201319,
+  201320,
+  201321,
+  201322,
+  201323,
+  201324,
+  201325,
+  201326,
+  201327,
+  201328,
+  201329,
+  201330,
+  201331,
+  201332,
+  201333,
+  201334,
+  201335,
+  201336,
+  201337,
+  201338,
+  201339,
+  201340,
+  201341,
+  201342,
+  201343,
+  201344,
+  201345,
+  201346,
+  201347,
+  201348,
+  201349,
+  201350,
+  201351,
+  201352,
+  201353,
+  201354,
+  201355,
+  201356,
+  201357,
+  201358,
+  201359,
+  201360,
+  201361,
+  201362,
+  201363,
+  201364,
+  201365,
+  201366,
+  201367,
+  201368,
+  201369,
+  201370,
+  201371,
+  201372,
+  201373,
+  201374,
+  201375,
+  201376,
+  201377,
+  201378,
+  201379,
+  201380,
+  201381,
+  201382,
+  201383,
+  201384,
+  201385,
+  201386,
+  201387,
+  201388,
+  201389,
+  201390,
+  201391,
+  201392,
+  201393,
+  201394,
+  201395,
+  201396,
+  201397,
+  201398,
+  201399,
+  201400,
+  201401,
+  201402,
+  201403,
+  201404,
+  201405,
+  201406,
+  201407,
+  201408,
+  201409,
+  201410,
+  201411,
+  201412,
+  201413,
+  201414,
+  201415,
+  201416,
+  201417,
+  201418,
+  201419,
+  201420,
+  201421,
+  201422,
+  201423,
+  201424,
+  201425,
+  201426,
+  201427,
+  201428,
+  201429,
+  201430,
+  201431,
+  201432,
+  201433,
+  201434,
+  201435,
+  201436,
+  201437,
+  201438,
+  201439,
+  201440,
+  201441,
+  201442,
+  201443,
+  201444,
+  201445,
+  201446,
+  201447,
+  201448,
+  201449,
+  201450,
+  201451,
+  201452,
+  201453,
+  201454,
+  201455,
+  201456,
+  201457,
+  201458,
+  201459,
+  201460,
+  201461,
+  201462,
+  201463,
+  201464,
+  201465,
+  201466,
+  201467,
+  201468,
+  201469,
+  201470,
+  201471,
+  201472,
+  201473,
+  201474,
+  201475,
+  201476,
+  201477,
+  201478,
+  201479,
+  201480,
+  201481,
+  201482,
+  201483,
+  201484,
+  201485,
+  201486,
+  201487,
+  201488,
+  201489,
+  201490,
+  201491,
+  201492,
+  201493,
+  201494,
+  201495,
+  201496,
+  201497,
+  201498,
+  201499,
+  201500,
+  201501,
+  201502,
+  201503,
+  201504,
+  201505,
+  201506,
+  201507,
+  201508,
+  201509,
+  201510,
+  201511,
+  201512,
+  201513,
+  201514,
+  201515,
+  201516,
+  201517,
+  201518,
+  201519,
+  201520,
+  201521,
+  201522,
+  201523,
+  201524,
+  201525,
   201526,
+  201527,
+  201528,
   201529,
   201530,
+  201531,
+  201532,
+  201533,
+  201534,
+  201535,
+  201536,
+  201537,
   201538,
+  201539,
   201540,
+  201541,
+  201542,
+  201543,
+  201544,
   201545,
+  201546,
   201547,
+  201548,
+  201549,
+  201550,
+  201551,
+  201552,
   201553,
+  201554,
   201555,
+  201556,
+  201557,
+  201558,
+  201559,
+  201560,
+  201561,
+  201562,
+  201563,
+  201564,
+  201565,
+  201566,
+  201567,
+  201568,
+  201569,
   201570,
+  201571,
+  201572,
+  201573,
   201574,
+  201575,
   201576,
+  201577,
+  201578,
+  201579,
+  201580,
+  201581,
+  201582,
+  201583,
+  201584,
   201585,
+  201586,
+  201587,
   201588,
+  201589,
+  201590,
   201591,
+  201592,
+  201593,
+  201594,
+  201595,
   201596,
   201597,
   201598,
+  201599,
+  201600,
   201601,
   201602,
+  201603,
+  201604,
+  201605,
+  201606,
+  201607,
   201608,
   201609,
+  201610,
+  201611,
+  201612,
   201613,
   201614,
+  201615,
+  201616,
+  201617,
+  201618,
+  201619,
+  201620,
+  201621,
+  201622,
   201623,
+  201624,
   201625,
   201626,
   201627,
   201628,
   201629,
+  201630,
+  201631,
   201632,
+  201633,
+  201634,
+  201635,
+  201636,
+  201637,
+  201638,
+  201639,
+  201640,
+  201641,
+  201642,
+  201643,
+  201644,
+  201645,
+  201646,
+  201647,
+  201648,
+  201649,
+  201650,
+  201651,
+  201652,
+  201653,
+  201654,
+  201655,
   201656,
+  201657,
   201658,
   201659,
   201660,
+  201661,
   201662,
   201663,
   201664,
+  201665,
   201666,
   201667,
   201668,
+  201669,
   201670,
   201671,
   201672,
   201673,
+  201674,
   201675,
+  201676,
   201677,
   201678,
+  201679,
   201680,
   201681,
+  201682,
+  201683,
   201684,
   201685,
   201686,
   201687,
+  201688,
+  201689,
+  201690,
+  201691,
+  201692,
+  201693,
+  201694,
+  201695,
+  201696,
+  201697,
+  201698,
+  201699,
+  201700,
+  201702,
+  201703,
+  201704,
+  201705,
+  201706,
+  201707,
+  201708,
+  201709,
   201710,
+  201711,
   201712,
+  201713,
+  201714,
   201715,
   201716,
+  201717,
+  201718,
+  201719,
+  201720,
   201721,
   201722,
+  201723,
   201724,
   201725,
   201726,
+  201727,
   201728,
   201729,
   201730,
@@ -31466,28 +51546,50 @@ export const implementedIds: number[] = [
   201734,
   201735,
   201736,
+  201737,
   201738,
   201739,
   201740,
   201741,
+  201742,
+  201743,
+  201744,
   201745,
+  201746,
   201747,
   201748,
+  201749,
   201750,
   201751,
   201752,
+  201753,
   201754,
+  201755,
+  201756,
   201757,
   201758,
   201759,
   201760,
+  201761,
+  201762,
+  201763,
+  201764,
+  201765,
+  201766,
   201767,
+  201768,
+  201769,
   201770,
   201771,
   201772,
+  201773,
+  201774,
   201775,
   201776,
   201777,
+  201778,
+  201779,
+  201780,
   201781,
   201782,
   201783,
