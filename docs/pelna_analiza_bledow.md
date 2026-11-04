@@ -1,11 +1,12 @@
 # Pełna analiza błędów implementacji — wszystkie karty
 
-Wygenerowano: branch `arena/a2a65614-vtes-player` commit `330452f8`
+Wygenerowano: branch `arena/a2a65614-vtes-player` commit `fd8d2f2` → aktualizacja `$(date)` — 0 braków, 7/7 niezgodności wyjaśnione
 
 ## Podsumowanie inwentarza
 - Katalog: 4158 kart, playable: 1258
-- Wspierane (supported.json): 1151
+- Wspierane (supported.json): 1142 (1151-9 absent 200001-200009)
 - Handlery w cards.ts: 986 (874+80+25+7 lib) + 101 crypt + 77 fabryk → 1041/1041 biblioteki
+- Wspierane po korekcie: 1142 (usunięto 9× status=absent 200001-200009 z implementedIds)
 - **Brak handlera: 0** (po falach A-C, e93fb49)
 - Niezgodności: 4 naprawione, 3 fałszywe alarmy (aim/bespoke)
 
