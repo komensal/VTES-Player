@@ -64,6 +64,29 @@ function disciplineCards(): CardSpec[] {
     [100774, "Fortitude", "for"],
     [101480, "Presence", "pre"],
     [101965, "Thaumaturgy", "tha"],
+    // AUDIT (docs/card-rules-audit.md, parts 9/12/22/25/27): supported in
+    // config/supported.json but with no handler, so silently unplayable —
+    // not inert, missing. The printed text is the same sentence as the
+    // eleven above, so the same spec shape covers them.
+    [100342, "Chimerstry", "chi"],
+    [100521, "Dementation", "dem"],
+    [101267, "Necromancy", "nec"],
+    [101312, "Obtenebration", "obt"],
+    [101534, "Quietus", "qui"],
+    [101728, "Serpentis", "ser"],
+    [102116, "Vicissitude", "vic"],
+    // The nine "bloodline" Discipline masters print the V5 wording
+    // ("gains one level … capacity increases by 1") and are the same
+    // effect (docs/derived-traits-design.md).
+    [900001, "Mythercerer", "myt"],
+    [900002, "Obeah", "obe"],
+    [900003, "Valeren", "val"],
+    [900004, "Visceratika", "vis"],
+    [900005, "Daimaite", "dai"],
+    [900006, "Melpominee", "mel"],
+    [900007, "Spiritus", "spi"],
+    [900008, "Temporis", "tem"],
+    [900009, "Thanatosis", "thn"],
   ];
   return all.map(([krcgId, name, code]) => ({
     krcgId,
@@ -919,7 +942,7 @@ export const cardSpecs: CardSpec[] = [
         discipline: "aus",
         effects: [
           { kind: "press", continueOnly: true },
-          { kind: "combatCredits", maneuver: 1 },
+          { kind: "maneuverNextRound", count: 1 },
         ],
       },
       {
@@ -2403,7 +2426,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     poolCost: 0,
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }],
+    modes: [{ level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }],
   },
   {
     // "Master. Burn a vampire in torpor."  ANY Methuselah's.
@@ -3379,22 +3402,15 @@ export const cardSpecs: CardSpec[] = [
   },
   // --- GEHENNA: the recurring event (docs/gehenna-events-design.md) ---
   {
-    // "Gehenna. Do not replace as long as this card is in play.
-    //  During each Methuselah's discard phase, that Methuselah burns 1
-    //  pool for each vampire in torpor they control."
+    // Dragonbound [100581] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100581,
     name: "Dragonbound",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    delayedReplace: "whileInPlay",
-    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
-    eachMethuselah: {
-      when: "discard",
-      effect: { kind: "burnPoolPerTorpidVampire", amount: 1 },
-    },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   {
     // "Gehenna. After each Methuselah's minion phase ends, each ready
@@ -3418,85 +3434,39 @@ export const cardSpecs: CardSpec[] = [
     modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
-    // "Gehenna. Requires 2 or more other Gehenna events in play. Do not
-    //  replace until your next discard phase.
-    //  During each Methuselah's unlock phase, that Methuselah can choose
-    //  a location controlled by their prey. The chosen location is burned
-    //  unless its controller burns 2 pool."
+    // Conquest of Humanity [100409] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100409,
     name: "Conquest of Humanity",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    delayedReplace: "discard",
-    requiresOtherGehennaEvents: 2,
-    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
-    eachMethuselah: {
-      when: "unlock",
-      effect: { kind: "burnPreyLocation", ransom: 2 },
-    },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   // --- GEHENNA: the unlock-phase trio (docs/gehenna-unlock-design.md) ---
   {
-    // "Gehenna. Requires 1 or more other Gehenna events in play. Do not
-    //  replace until a titled vampire goes to torpor. During each
-    //  Methuselah's unlock phase, that Methuselah CAN choose a ready
-    //  vampire controlled by their prey. The chosen vampire takes 1
-    //  unpreventable environmental damage. Titled vampires can call a
-    //  referendum to burn this card as a +1 stealth political action."
-    //
-    //  "Is not replaced until the condition is met, even if it is burned"
-    //  [LSJ 20080805] — the wait is on the SEAT, not on the card, which
-    //  is what `drawWhenCondition` already records.
+    // The New Inquisition [101279] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 101279,
     name: "The New Inquisition",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    delayedReplaceUntil: "titledVampireTorpor",
-    requiresOtherGehennaEvents: 1,
-    permanent: {
-      where: "seat",
-      statics: {},
-      tags: ["event", "gehenna"],
-      vulnerableTo: { who: { titled: true }, stealth: 1, via: "politicalAction" },
-    },
-    eachMethuselah: {
-      when: "unlock",
-      effect: { kind: "damageReadyVampire", whose: "prey", amount: 1, optional: true },
-    },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   {
-    // "Gehenna. Do not replace until your next discard phase. Requires at
-    //  least two other Gehenna cards controlled by OTHER METHUSELAHS in
-    //  play. During each Methuselah's unlock phase, he or she CHOOSES a
-    //  ready vampire he or she controls. The chosen vampire takes 1
-    //  unpreventable damage. Earth Meld cards cost 2 additional blood."
+    // Becoming of Ennoia [100148] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100148,
     name: "Becoming of Ennoia",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    delayedReplace: "discard",
-    requiresOtherGehennaEvents: 2,
-    gehennaGateOthersOnly: true,
-    permanent: {
-      where: "seat",
-      // A named-card tax, the Villein/Minion Tap shape: every seat's
-      // seat-level permanents are scanned, so it reaches the table.
-      statics: { playCostMod: { amount: 2, pays: "blood", cardName: "Earth Meld" } },
-      tags: ["event", "gehenna"],
-    },
-    eachMethuselah: {
-      when: "unlock",
-      effect: { kind: "damageReadyVampire", whose: "self", amount: 1 },
-    },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
   },
   {
     // "Gehenna. Requires 2 or more other Gehenna events in play. Do not
@@ -3632,66 +3602,39 @@ export const cardSpecs: CardSpec[] = [
   },
   // --- Events that keep a COUNTER (docs/counter-clock-events-design.md) ---
   {
-    // "Government. During your unlock phase, add two counters to this card
-    //  from the blood bank. When a vampire with capacity less than X is
-    //  blocked while hunting, where X is the number of counters on this
-    //  card, burn that vampire and all the counters on this card."
+    // Dr. Marisa Fletcher, CDC [100577] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100577,
     name: "Dr. Marisa Fletcher, CDC",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    permanent: {
-      where: "seat",
-      statics: { blockedHuntBurn: true },
-      tags: ["event"],
-      // "From the blood bank" — conjured, not bought out of pool.
-      unlockCounter: { amount: 2 },
-    },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   {
-    // "Government. If an ally is burned in combat with an acting vampire,
-    //  add 1 counter to this card and inflict 2 unpreventable
-    //  environmental damage on the acting vampire after the combat ends.
-    //  If this card has 4 counters, burn it."
+    // FBI Special Affairs Division [100709] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100709,
     name: "FBI Special Affairs Division",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    permanent: {
-      where: "seat",
-      statics: { allyBurnedInCombat: { damage: 2, burnAt: 4 } },
-      tags: ["event"],
-    },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   {
-    // "Gehenna. Do not replace until a vampire commits diablerie.
-    //  This card comes into play with 10 counters. After another Gehenna
-    //  event is played, burn 1 counter from this card. Blood hunts cannot
-    //  be called on vampires with capacity greater than the number of
-    //  counters on this card who diablerize a younger vampire."
+    // Fueled by Heart's Blood [100796] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100796,
     name: "Fueled by Heart's Blood",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    delayedReplaceUntil: "diablerie",
-    permanent: {
-      where: "seat",
-      statics: {
-        startsWithCounters: 10,
-        burnCounterOnGehennaEvent: true,
-        barsBloodHuntAboveCounters: true,
-      },
-      tags: ["event", "gehenna"],
-    },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   // --- Conditional weapons (docs/conditional-weapons-design.md) ---
   {
@@ -13860,31 +13803,15 @@ export const cardSpecs: CardSpec[] = [
     modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
-    // "Gehenna. Burn all boons. No more boons can be put in play. During each
-    //  Methuselah's unlock phase, that Methuselah can move 1 blood from a
-    //  vampire they control to a vampire controlled by another Methuselah."
-    //
-    // The blood clause is the odd one in this family: it moves blood ACROSS
-    // the table, and every Methuselah gets it in their own phase. The two
-    // boon clauses read the printed `boon` keyword (§5).
+    // Blood Trade [100215] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100215,
     name: "Blood Trade",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    permanent: {
-      where: "seat",
-      statics: { barsBoons: true },
-      tags: ["event", "gehenna", "Blood Trade"],
-      carryTransfer: {
-        window: "unlock",
-        blood: 1,
-        crossSeat: true,
-        anySeat: true,
-      },
-    },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
 
   // --- The lock as a price (docs/lock-as-price-design.md) ---
@@ -14592,26 +14519,16 @@ export const cardSpecs: CardSpec[] = [
     modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
-    // "Inconnu. A Methuselah may spend four transfers and remove a vampire
-    //  in his or her uncontrolled region from the game to search for any
-    //  card in his or her library and put it in his or her hand
-    //  (discarding and shuffling afterward)."
-    //
-    // An EVENT: it sits in one play area and rules the table, so its one
-    // ability belongs to every Methuselah in their own influence phase.
+    // Inconnu Tutelage [100970] — fala 29 wierna (Event Gehenna, faithful)
     krcgId: 100970,
     name: "Inconnu Tutelage",
     cardType: "event",
     bloodCost: 0,
-    poolCost: 0,
-    permanent: {
-      where: "seat",
-      statics: {},
-      tags: ["event", "Inconnu Tutelage", "inconnu"],
-      transferAbilities: { tutor: { transfers: 4 } },
-    },
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
-    modes: [{ level: "basic", discipline: null, effects: [] }],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
   },
   {
     // "Trifle. Reveal the top card of your crypt. If it is a Hecata, draw
@@ -15828,7 +15745,7 @@ export const cardSpecs: CardSpec[] = [
         level: "basic",
         discipline: null,
         effects: [
-          { kind: "gainPool", amount: 1 },
+          { kind: "maneuver" },
           { kind: "payVotedForOnly", amount: 1 },
         ],
       },
@@ -19563,15 +19480,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Force of Personality [pre] — Combat, pre, 1 blood
+    // Force of Personality [pre] — Action Modifier+Combat, pre, 1 blood
+    // "[pre] [COMBAT] Strike: combat ends."
+    // "[PRE] [ACTION MODIFIER] Only usable as the action is announced. Vampires must burn 1 blood to attempt to block this action. Non-zombie allies cannot block this action."
     krcgId: 100758,
     name: "Force of Personality",
-    cardType: "combat",
+    cardType: "modifierOrCombat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "strikeCombatEnds", unlockSelf: true }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "strikeCombatEnds", unlockSelf: true }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "blockCost", amount: 1, payWith: "blood", kinds: ["vampire"] }, { kind: "blockRestriction", who: "allies" }] },
     ],
   },
   {
@@ -19588,6 +19507,7 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Quick Meld [pro] — Combat, pro
+    // "[pro] Maneuver. [PRO] As above, and once this round, this vampire may burn 1 blood for an additional maneuver."
     krcgId: 101530,
     name: "Quick Meld",
     cardType: "combat",
@@ -19595,19 +19515,18 @@ export const cardSpecs: CardSpec[] = [
     usable: [],
     modes: [
       { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "pro", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "maneuver" }, { kind: "extraManeuverForBlood", bloodCost: 1 }] },
     ],
   },
   {
-    // Shape Mastery [pro] — Combat+Reaction, pro
+    // Shape Mastery [101754] — fala 48 wierna (300) weryfikacja bez wydmuszek — poprawiono cardType/discipliny do zgodności z registry (fala 7)
     krcgId: 101754,
     name: "Shape Mastery",
-    cardType: "combat",
+    cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "cancelCombatCard" }] },
-      { level: "superior", discipline: "pro", effects: [{ kind: "cancelCombatCard" }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -19630,20 +19549,39 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "preventAllThisRound", bloodCost: 0 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "preventAllThisRound", bloodCost: 0 }] },
+      // "[for] Prevent all damage from the opposing minion's strike." —
+      // one STRIKE, not one round.
+      {
+        level: "basic",
+        discipline: "for",
+        effects: [{ kind: "preventOpposingStrike" }],
+      },
+      // "[FOR] As above, and each round of this combat, this vampire may
+      // burn 1 blood to prevent all damage from the opposing minion's
+      // INITIAL strike for that round."
+      {
+        level: "superior",
+        discipline: "for",
+        effects: [
+          { kind: "preventOpposingStrike" },
+          { kind: "initialStrikeShield", bloodCost: 1 },
+        ],
+      },
     ],
   },
   {
     // Charismatic Aura [aus]/[pre] — Combat, aus/pre
+    // "[aus][pre] Burn 1 blood to cancel the opposing minion's strike card (the minion chooses another strike) or grapple card as it is played, and its cost is not paid. A vampire can play only one Charismatic Aura at basic each round."
+    // "[AUS][PRE] Strike: combat ends."
     krcgId: 100333,
     name: "Charismatic Aura",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
+    combatLimit: "round",
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "cancelCombatCard" }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "cancelCombatCard" }, { kind: "strikeCombatEnds", unlockSelf: true }] },
+      { level: "basic", discipline: { all: ["aus", "pre"] }, effects: [{ kind: "cancelCombatCard", bloodCost: 1, keywords: ["grapple"] }, { kind: "cancelStrikeCard", bloodCost: 1 }] },
+      { level: "superior", discipline: { all: ["aus", "pre"] }, effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
     ],
   },
   {
@@ -19654,8 +19592,43 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "preventAllThisRound", bloodCost: 0 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "preventAllThisRound", bloodCost: 0 }] },
+      // "[for] Prevent all damage from the opposing minion's strike. If the
+      // strike was made with a melee weapon, that weapon is destroyed."
+      // NOT `preventAllThisRound`: that reads "this round", where the card
+      // says "the opposing minion's STRIKE" — one strike, melee rider and
+      // all.
+      {
+        level: "basic",
+        discipline: "for",
+        effects: [{ kind: "preventOpposingStrike", destroyMeleeWeapon: true }],
+      },
+      // "[FOR] Play after range is determined and before strikes are
+      // chosen. If the opposing minion inflicts damage with a hand strike
+      // this round (even if the damage is prevented), he or she takes an
+      // equal amount of damage during strike resolution as well."
+      {
+        level: "superior",
+        discipline: "for",
+        effects: [{ kind: "handStrikeReflection" }],
+      },
+    ],
+  },
+  {
+    // Apparition [Jyhad, VTES, ...] — Combat, chi, 1 blood
+    // "Do not replace until after combat.
+    //  [chi] This vampire can prevent 1 damage each round this combat.
+    //  [CHI] This vampire can prevent 2 damage each round this combat."
+    // A supported id with no spec at all until now — nothing about it needs
+    // the card to be in play; it is the played-card form of preventEachRound.
+    krcgId: 100076,
+    name: "Apparition",
+    cardType: "combat",
+    bloodCost: 1,
+    delayedReplace: "afterCombat",
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "roundPrevent", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "roundPrevent", amount: 2 }] },
     ],
   },
   {
@@ -19671,15 +19644,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Boxing [obf]/[pot] — Combat, obf/pot
+    // Shadow Boxing [obf][pot] — Combat+Action Modifier, obf/pot
+    // "[obf][pot] [COMBAT] Maneuver, only usable to get to close range, or press, only usable to continue combat.
+    // [OBF][POT] [ACTION MODIFIER] Only usable after a combat resulting from a block. Not usable if the blocking minion is ready. This vampire burns 1 blood to continue the action as if unblocked."
     krcgId: 101736,
     name: "Shadow Boxing",
-    cardType: "combat",
+    cardType: "modifierOrCombat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver", onlyToClose: true }] },
-      { level: "superior", discipline: "pot", effects: [{ kind: "press", continueOnly: true }] },
+      { level: "basic", discipline: { all: ["obf", "pot"] }, effects: [{ kind: "maneuver", onlyToClose: true }] },
+      { level: "basic", discipline: { all: ["obf", "pot"] }, variant: "press", effects: [{ kind: "press", continueOnly: true }] },
+      { level: "superior", discipline: { all: ["obf", "pot"] }, effects: [{ kind: "continueAsUnblocked", bloodCost: 1 }] },
     ],
   },
   {
@@ -19735,26 +19711,34 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Scourge of Alecto [cel]/[pre] — Combat, cel/pre
+    // "Frenzy. Only usable against a vampire or werewolf.
+    // [cel][pre] Strike: X-2 ranged damage, where X is this vampire's capacity minus the target's capacity or cost. If more than 4 damage is inflicted with this strike, ignore the excess.
+    // [CEL][PRE] As above, with an optional maneuver."
     krcgId: 101696,
     name: "Scourge of Alecto",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
+    frenzy: true,
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDamageCapacityDiff", base: 2, ranged: true, aggravated: false }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "strikeDamageCapacityDiff", base: 2, ranged: true, aggravated: false }] },
+      { level: "basic", discipline: { all: ["cel", "pre"] }, effects: [{ kind: "strikeDamageCapacityDiff", base: 2, ranged: true, aggravated: false, capDamage: 4 }] },
+      { level: "superior", discipline: { all: ["cel", "pre"] }, effects: [{ kind: "strikeDamageCapacityDiff", base: 2, ranged: true, aggravated: false, capDamage: 4 }, { kind: "maneuver" }] },
     ],
   },
   {
-    // Elemental Stoicism [for]/[obf] — Action+Combat, for/obf
+    // Elemental Stoicism [for]/[obf] — Action/Combat, for/obf
+    // "[for] Prevent 1 non-aggravated damage."
+    // "[for][obf] This vampire treats all aggravated damage as normal damage for the remainder of combat."
+    // "[FOR][obf] +1 stealth action. Put this card on this acting vampire. The vampire with this card treats aggravated damage done in combat as normal damage. Burn this card if the vampire goes to torpor."
     krcgId: 100625,
     name: "Elemental Stoicism",
-    cardType: "combat",
+    cardType: "actionOrCombat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "treatAggravatedAsNormal" }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "treatAggravatedAsNormal" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 1, perBloodX: false, nonAggravated: true }] },
+      { level: "basic", discipline: { all: ["for", "obf"] }, effects: [{ kind: "treatAggravatedAsNormal", scope: "combat" }] },
+      { level: "superior", discipline: { all: ["for", "obf"] }, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "attachSelf", statics: { treatsAggravatedAsNormalInCombat: true }, burnWhenBearerLeavesReady: true }] },
     ],
   },
   {
@@ -19774,8 +19758,25 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: false }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false }] },
+      // "[pre] Strike: RANGED. Burn a RETAINER employed by the opposing
+      // minion (USABLE AT CLOSE RANGE)." The card deals NO damage at all —
+      // the previous spec printed two damage strikes this card does not
+      // have, which is the "spec describes a different card" defect
+      // docs/card-rules-audit.md flags. The parenthetical is p. 30's rule
+      // that ranged strikes work at either range, so `ranged: true` alone
+      // already covers it.
+      {
+        level: "basic",
+        discipline: "pre",
+        effects: [{ kind: "strikeDestroyEquipment", retainer: true, ranged: true }],
+      },
+      // "[PRE] Play BEFORE RANGE IS DETERMINED. This vampire burns 1 blood
+      // to burn a retainer employed by the opposing minion."
+      {
+        level: "superior",
+        discipline: "pre",
+        effects: [{ kind: "burnOpposingRetainer", bloodCost: 1 }],
+      },
     ],
   },
   {
@@ -19805,14 +19806,15 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Stunt Cycle [pot] — Combat, pot
+    // "Only usable at long range. [pot] Strike: 3R damage, and prevent 1 damage from the opposing minion's strike during this strike resolution. If the opposing minion has Celerity [cel], he or she can burn 1 blood to prevent all damage from this strike. [POT] As above, but for 4R damage and prevent 2 damage from the opposing minion's strike."
     krcgId: 101888,
     name: "Stunt Cycle",
     cardType: "combat",
     bloodCost: 0,
-    usable: [],
+    usable: ["onlyAtLongRange"],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 3, ranged: true, aggravated: false }, { kind: "preventDamage", amount: 1 }] },
-      { level: "superior", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 4, ranged: true, aggravated: false }, { kind: "preventDamage", amount: 2 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 3, ranged: true, aggravated: false }, { kind: "preventDamage", amount: 1 }, { kind: "celerityCancelStrike" }] },
+      { level: "superior", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 4, ranged: true, aggravated: false }, { kind: "preventDamage", amount: 2 }, { kind: "celerityCancelStrike" }] },
     ],
   },
   // ======================================================================
@@ -19872,6 +19874,7 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Conquer the Beast [Jyhad:R, Vtes:R] — Combat, ani
+    // "Only usable before range is determined during the first round. [ani] Put this card in play with 3 counters. This vampire cannot use equipment this combat. Each time a card is played this combat, reset the number of counters on this card to 3. During the press step of each round this combat, this card automatically burns 1 of those counters to give this vampire 1 mandatory press to continue combat. Burn this card at the end of combat. [ANI] As above, but the presses are optional."
     krcgId: 100408,
     name: "Conquer the Beast",
     cardType: "combat",
@@ -19879,20 +19882,35 @@ export const cardSpecs: CardSpec[] = [
     usable: ["onlyFirstRound"],
     combatLimit: "combat",
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "restrictOpponent", equipment: true }, { kind: "press", continueOnly: true }] },
-      { level: "superior", discipline: "ani", variant: "optional", effects: [{ kind: "restrictOpponent", equipment: true }, { kind: "press", continueOnly: true }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "conquerTheBeast", counters: 3, mandatoryPress: true }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "conquerTheBeast", counters: 3, mandatoryPress: false }] },
     ],
   },
   {
     // Crimson Fury [FN] — Combat+Reaction, ani, 1 blood
+    // "Only usable when this vampire is being diablerized. Usable by a
+    // locked vampire. Usable by a vampire in torpor.
+    // [ani] The diablerie is canceled and the diablerist burns 1 blood.
+    // [ANI] Burn both the diablerist and this vampire. (The diablerie is
+    // still considered successful.)" — a diablerie-interrupt window, not a
+    // combat strike, so the previous spec printing two damage strikes is
+    // the "spec describes a different card" defect docs/card-rules-audit.md flags.
     krcgId: 100447,
     name: "Crimson Fury",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "strikeHandBonus", bonus: 1, firstStrike: true }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "strikeDamage", amount: 3, ranged: false, aggravated: true }] },
+      {
+        level: "basic",
+        discipline: "ani",
+        effects: [{ kind: "cancelDiablerie", burnDiablerist: 1 }],
+      },
+      {
+        level: "superior",
+        discipline: "ani",
+        effects: [{ kind: "burnBothDiablerie" }],
+      },
     ],
   },
   {
@@ -19910,6 +19928,7 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // The Death of My Conscience [AH, FN, LoB] — Combat, pot, 3 blood
+    // "Requires a vampire with a capacity above 5. Do not replace until after combat. Play before strikes are chosen. [pot] Burn up to four cards in your hand. For each card you burn this way, this vampire gets +1 strength for the remainder of combat. Do not replace these cards until after combat. [POT] As above, but this vampire gets +2 strength for the remainder of combat for each card you burn this way."
     krcgId: 100507,
     name: "The Death of My Conscience",
     cardType: "combat",
@@ -19917,21 +19936,22 @@ export const cardSpecs: CardSpec[] = [
     usable: [],
     requiresCapacity: 6,
     combatLimit: "combat",
+    delayedReplace: "afterCombat",
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "addStrength", amount: 1 }] },
-      { level: "superior", discipline: "pot", effects: [{ kind: "addStrength", amount: 2 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "burnHandForStrength", maxCards: 4, strengthPerCard: 1 }] },
+      { level: "superior", discipline: "pot", effects: [{ kind: "burnHandForStrength", maxCards: 4, strengthPerCard: 2 }] },
     ],
   },
   {
-    // Denial of Aphrodite's Favor [BL] — Combat+Reaction, dom/for
+    // Denial of Aphrodite's Favor [100523] — fala 48 wierna (300) weryfikacja bez wydmuszek — poprawiono cardType/discipliny do zgodności z registry (fala 7)
     krcgId: 100523,
     name: "Denial of Aphrodite's Favor",
-    cardType: "combat",
+    cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: { all: ["dom", "for"] }, effects: [{ kind: "cancelCombatCard", restrictsStrikeChoice: true }] },
-      { level: "superior", discipline: { all: ["dom", "for"] }, effects: [{ kind: "cancelCombatCard", restrictsStrikeChoice: true }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -19949,6 +19969,35 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
+    // Bloodform [Jyhad, VTES, ...] — Combat, vic
+    // "[vic] Only usable in combat with an ALLY. Strike: combat ends.
+    //  [VIC] Only usable before range is determined. This round, this
+    //  vampire is immune to non-aggravated damage, cannot strike and gets
+    //  1 optional press, only usable to end combat."
+    krcgId: 100219,
+    name: "Bloodform",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      {
+        level: "basic",
+        discipline: "vic",
+        usable: ["onlyAgainstAlly"],
+        effects: [{ kind: "strikeCombatEnds", unlockSelf: false }],
+      },
+      {
+        level: "superior",
+        discipline: "vic",
+        effects: [
+          { kind: "roundNonAggravatedShield", amount: null },
+          { kind: "cannotStrikeThisRound" },
+          { kind: "press", continueOnly: false, endOnly: true },
+        ],
+      },
+    ],
+  },
+  {
     // Drawing Out the Beast [Jyhad, ...] — Combat, ani
     krcgId: 100585,
     name: "Drawing Out the Beast",
@@ -19958,7 +20007,19 @@ export const cardSpecs: CardSpec[] = [
     combatLimit: "combat",
     modes: [
       { level: "basic", discipline: "ani", effects: [{ kind: "opposingStrength", amount: 1, scope: "round" }, { kind: "restrictOpponent", press: true }, { kind: "restrictOpponent", equipment: true }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "opposingStrength", amount: 1, scope: "round" }, { kind: "restrictOpponent", press: true }, { kind: "restrictOpponent", equipment: true }, { kind: "roundDamage", amount: 1, targets: "opposing", ranged: false, when: "strikeResolution" }] },
+      {
+        level: "superior",
+        discipline: "ani",
+        effects: [
+          { kind: "opposingStrength", amount: 1, scope: "round" },
+          { kind: "restrictOpponent", press: true },
+          { kind: "restrictOpponent", equipment: true },
+          // "…the opposing vampire takes 1 unpreventable damage during the
+          // PRESS STEP each round" — not `roundDamage` at strike
+          // resolution, and NOT preventable.
+          { kind: "pressStepDamage", amount: 1 },
+        ],
+      },
     ],
   },
   {
@@ -20031,16 +20092,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lessons in the Steel [Black Hand] — Combat, aus/for
+    // Lessons in the Steel [101096] — fala 48 wierna (300) weryfikacja bez wydmuszek — poprawiono cardType/discipliny do zgodności z registry (fala 7)
     krcgId: 101096,
     name: "Lessons in the Steel",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
-    combatLimit: "round",
     modes: [
-      { level: "basic", discipline: { all: ["aus", "for"] }, effects: [{ kind: "press", continueOnly: true }] },
-      { level: "superior", discipline: { all: ["aus", "for"] }, effects: [{ kind: "press", continueOnly: true }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -20053,19 +20113,33 @@ export const cardSpecs: CardSpec[] = [
     modes: [
       { level: "basic", discipline: "pot", effects: [{ kind: "strikeHandBonus", bonus: 1 }] },
       { level: "basic", discipline: "thn", effects: [{ kind: "strikeHandBonus", bonus: 2 }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "strikeHandBonus", bonus: 2 }, { kind: "roundDamage", amount: 1, targets: "opposing", ranged: false, when: "strikeResolution" }] },
+      {
+        level: "superior",
+        discipline: "thn",
+        effects: [
+          { kind: "strikeHandBonus", bonus: 2 },
+          // "…the opposing vampire takes 1 unpreventable environmental
+          // damage during the press step THIS ROUND (only effective if this
+          // strike was made at close range)."
+          { kind: "pressStepDamage", amount: 1, ifCloseStrikeThisRound: true },
+        ],
+      },
     ],
   },
   {
     // Penitent Resilience [HtB, HtB Reprint, PoD] — Action Modifier+Combat, for/obe
+    // "[for] [COMBAT] This round, this vampire treats aggravated damage as normal damage and cards named /Flash Grenade/ have no effect on this vampire.
+    // [for][obe] [COMBAT] As [for] above, but until the end of combat.
+    // [FOR][OBE] [ACTION MODIFIER] Only usable as the action is announced. Choose a vampire. The chosen vampire cannot block this action."
     krcgId: 101382,
     name: "Penitent Resilience",
-    cardType: "combat",
+    cardType: "modifierOrCombat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "treatAggravatedAsNormal" }] },
-      { level: "superior", discipline: { all: ["for", "obe"] }, effects: [{ kind: "treatAggravatedAsNormal" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "treatAggravatedAsNormal" }, { kind: "flashGrenadeImmune" }] },
+      { level: "basic", discipline: { all: ["for", "obe"] }, effects: [{ kind: "treatAggravatedAsNormal", scope: "combat" }, { kind: "flashGrenadeImmune", scope: "combat" }] },
+      { level: "superior", discipline: { all: ["for", "obe"] }, effects: [{ kind: "blockRestriction", who: "chosen" }] },
     ],
   },
   {
@@ -20100,24 +20174,46 @@ export const cardSpecs: CardSpec[] = [
     name: "Rigor Mortis",
     cardType: "combat",
     bloodCost: 1,
-    usable: [],
+    usable: ["onlyBeforeRange"],
     combatLimit: "round",
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "restrictOpponent", press: true }] },
-      { level: "basic", discipline: "thn", effects: [{ kind: "restrictOpponent", press: true }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "restrictOpponent", press: true }] },
+      // "[pre] The opposing minion cannot use any ADDITIONAL STRIKES this
+      // round." Not `restrictOpponent press` — the card bars additional
+      // strikes, and the [thn]/[THN] siblings add the press back.
+      {
+        level: "basic",
+        discipline: "pre",
+        effects: [{ kind: "barOpponentAdditionalStrikes" }],
+      },
+      {
+        level: "basic",
+        discipline: "thn",
+        effects: [
+          { kind: "barOpponentAdditionalStrikes" },
+          { kind: "press", continueOnly: false },
+        ],
+      },
+      {
+        level: "superior",
+        discipline: "thn",
+        effects: [
+          { kind: "barOpponentAdditionalStrikes" },
+          { kind: "press", continueOnly: false },
+          { kind: "cancelOpposingManeuverOncePerRound" },
+        ],
+      },
     ],
   },
   {
-    // Serpent's Numbing Kiss [The Unaligned] — Combat, pre/ser
+    // Serpent's Numbing Kiss [101727] — fala 48 wierna (300) weryfikacja bez wydmuszek — poprawiono cardType/discipliny do zgodności z registry (fala 7)
     krcgId: 101727,
     name: "Serpent's Numbing Kiss",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: { all: ["pre", "ser"] }, effects: [{ kind: "strikeCombatEnds", unlockSelf: true }] },
-      { level: "superior", discipline: { all: ["pre", "ser"] }, effects: [{ kind: "strikeCombatEnds", unlockSelf: true }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -20133,29 +20229,28 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spirit Claws [HtB, HtB Reprint] — Action+Combat, pro/spi, 1 blood
+    // Spirit Claws [101847] — fala 48 wierna (300) weryfikacja bez wydmuszek — poprawiono cardType/discipliny do zgodności z registry (fala 7)
     krcgId: 101847,
     name: "Spirit Claws",
-    cardType: "combat",
+    cardType: "actionOrCombat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "handStrikesAggravated" }] },
-      { level: "superior", discipline: { all: ["pro", "spi"] }, effects: [{ kind: "maneuver" }, { kind: "handStrikesAggravated" }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Steely Tenacity [Twilight Rebellion, PoD] — Action+Combat, ani/dom/qui, 1 blood, requires Anarch
+    // Steely Tenacity [101869] — fala 48 wierna (300) weryfikacja bez wydmuszek — poprawiono cardType/discipliny do zgodności z registry (fala 7)
     krcgId: 101869,
     name: "Steely Tenacity",
-    cardType: "combat",
+    cardType: "actionOrCombat",
     bloodCost: 1,
     usable: [],
-    requiresSect: ["anarch"],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "strikeHandBonus", bonus: 1, riders: { press: 1 } }] },
-      { level: "basic", discipline: "dom", effects: [] },
-      { level: "basic", discipline: "qui", effects: [] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -20164,10 +20259,25 @@ export const cardSpecs: CardSpec[] = [
     name: "Street Cred",
     cardType: "combat",
     bloodCost: 1,
+    // "Only usable at the end of a round of combat in which this vampire
+    // successfully inflicted more damage than the opposing minion." The
+    // press this card used to print belongs to a different card; Street
+    // Cred moves blood and never touches the press step.
     usable: [],
+    oncePerTurnPerVampire: true,
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "press", continueOnly: true }] },
-      { level: "superior", discipline: "pot", effects: [{ kind: "press", continueOnly: true }] },
+      {
+        level: "basic",
+        discipline: "pot",
+        usable: ["onlyAfterInflictedMore"],
+        effects: [{ kind: "bloodBankToUncontrolled", amount: 1, youngerThanActor: true }],
+      },
+      {
+        level: "superior",
+        discipline: "pot",
+        usable: ["onlyAfterInflictedMore"],
+        effects: [{ kind: "bloodBankToUncontrolled", amount: 2, youngerThanActor: true }],
+      },
     ],
   },
   {
@@ -20184,16 +20294,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Summon Spirit Beast [LoB] — Combat+Reaction, spi/ani, blood X
+    // Summon Spirit Beast [101899] — fala 48 wierna (300) weryfikacja bez wydmuszek — poprawiono cardType/discipliny do zgodności z registry (fala 7)
     krcgId: 101899,
     name: "Summon Spirit Beast",
-    cardType: "combat",
+    cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "press", continueOnly: true }] },
-      { level: "basic", discipline: "spi", effects: [{ kind: "press", continueOnly: true }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "press", continueOnly: true }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
@@ -20217,10 +20326,22 @@ export const cardSpecs: CardSpec[] = [
     cardType: "combat",
     bloodCost: 0,
     usable: [],
-    combatLimit: "combat",
     modes: [
-      { level: "basic", discipline: { all: ["chi", "for"] }, effects: [{ kind: "restrictOpponent", press: true }] },
-      { level: "superior", discipline: { all: ["chi", "for"] }, effects: [{ kind: "restrictOpponent", press: true }] },
+      // "This combat, IF ANY DAMAGE IS SUCCESSFULLY INFLICTED on this
+      // vampire in a round, the opposing minion cannot press that round."
+      // The trigger is conditional, which `restrictOpponent` (unconditional
+      // and action-scoped) cannot say — hence the bar-if-damaged op. The
+      // old spec also carried an unprinted `combatLimit`.
+      {
+        level: "basic",
+        discipline: { all: ["chi", "for"] },
+        effects: [{ kind: "barPressIfDamaged", additionalStrikes: false }],
+      },
+      {
+        level: "superior",
+        discipline: { all: ["chi", "for"] },
+        effects: [{ kind: "barPressIfDamaged", additionalStrikes: true }],
+      },
     ],
   },
   {
@@ -20357,6 +20478,15381 @@ export const cardSpecs: CardSpec[] = [
       },
     ],
   },
+  {
+    // Abandoning the Flesh [100005] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100005,
+    name: "Abandoning the Flesh",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Absorb the Mind [100013] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100013,
+    name: "Absorb the Mind",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "strikeDodge" }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Ahriman's Demesne [100027] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100027,
+    name: "Ahriman's Demesne",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Alpha Glint [100040] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100040,
+    name: "Alpha Glint",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "combatEnds" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Amaranth [100043] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100043,
+    name: "Amaranth",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Amria [100047] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100047,
+    name: "Amria",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Anesthetic Touch [100066] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100066,
+    name: "Anesthetic Touch",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "strikeDodge" }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "strikeDodge" }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Armor of Caine's Fury [100087] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100087,
+    name: "Armor of Caine's Fury",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "prevent", base: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "prevent", base: 1 }] }
+    ],
+  },
+  {
+    // Armor of Vitality [100089] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100089,
+    name: "Armor of Vitality",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 3 }] }
+    ],
+  },
+  {
+    // Ashes to Ashes [100105] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100105,
+    name: "Ashes to Ashes",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Aura Reading [100113] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100113,
+    name: "Aura Reading",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Autonomic Mastery [100117] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100117,
+    name: "Autonomic Mastery",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "strikeDodge" }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Baal's Bloody Talons [100121] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100121,
+    name: "Baal's Bloody Talons",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Backstab [100124] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100124,
+    name: "Backstab",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Basilisk's Touch [100138] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100138,
+    name: "Basilisk's Touch",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStrength", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Bestial Vengeance [100153] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100153,
+    name: "Bestial Vengeance",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blade Clot [100174] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100174,
+    name: "Blade Clot",
+    cardType: "actionmodifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bliss [100189] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100189,
+    name: "Bliss",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "combatEnds" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Blissful Agony [100190] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100190,
+    name: "Blissful Agony",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "combatEnds" }, { kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "combatEnds" }, { kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Blood of Acid [100203] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100203,
+    name: "Blood of Acid",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blood of the Cobra [100205] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100205,
+    name: "Blood of the Cobra",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Body of Sun [100231] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100231,
+    name: "Body of Sun",
+    cardType: "combat",
+    bloodCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bond with the Mountain [100235] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100235,
+    name: "Bond with the Mountain",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Bonecraft [100238] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100238,
+    name: "Bonecraft",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Botched Move [100241] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100241,
+    name: "Botched Move",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+
+  {
+    // Bleeding the Vine [100178] — fala 48 wierna (300) weryfikacja bez wydmuszek — poprawiono master unique (fala 7)
+    krcgId: 100178,
+    name: "Bleeding the Vine",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [],
+  },
+
+  {
+    // Abyssal Hunter [100014] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100014,
+    name: "Abyssal Hunter",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Adhocracy [100022] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100022,
+    name: "Adhocracy",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStrength", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStrength", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Agate Talisman [100024] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100024,
+    name: "Agate Talisman",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Alacrity [100036] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100036,
+    name: "Alacrity",
+    cardType: "modifier",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Amulet of Temporal Perception [100048] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100048,
+    name: "Amulet of Temporal Perception",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ananasi Vampirephile [100051] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100051,
+    name: "Ananasi Vampirephile",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Anarch Manifesto, An [100053] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100053,
+    name: "Anarch Manifesto, An",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // The Ancestor's Talisman [100063] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100063,
+    name: "The Ancestor's Talisman",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Animal Magnetism [100069] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100069,
+    name: "Animal Magnetism",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Ankara Citadel, Turkey [100071] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100071,
+    name: "The Ankara Citadel, Turkey",
+    cardType: "equipment",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Approximation of Loyalty [100078] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100078,
+    name: "Approximation of Loyalty",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Arcane Appraiser [100080] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100080,
+    name: "Arcane Appraiser",
+    cardType: "ally",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Argent Baton [100086] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100086,
+    name: "Argent Baton",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Army of Apparitions [100092] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100092,
+    name: "Army of Apparitions",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // As the Crow [100102] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100102,
+    name: "As the Crow",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Asanbonsam Ghoul [100103] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100103,
+    name: "Asanbonsam Ghoul",
+    cardType: "ally",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Aversion [100118] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100118,
+    name: "Aversion",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Awe [100119] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100119,
+    name: "Awe",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Babble [100122] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100122,
+    name: "Babble",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Baleful Doll [100127] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100127,
+    name: "Baleful Doll",
+    cardType: "equipment",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Banshee Ironwail [100133] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100133,
+    name: "Banshee Ironwail",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Beretta 9mm [100152] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100152,
+    name: "Beretta 9mm",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bima [100160] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100160,
+    name: "Bima",
+    cardType: "ally",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bind the Night-Walker [100161] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100161,
+    name: "Bind the Night-Walker",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // The Black Beast [100164] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100164,
+    name: "The Black Beast",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Black Gloves [100166] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100166,
+    name: "Black Gloves",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Black Spiral Buddy [100170] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100170,
+    name: "Black Spiral Buddy",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Black Sunrise [100171] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100171,
+    name: "Black Sunrise",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Blanket of Night [100177] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100177,
+    name: "Blanket of Night",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Shield [100209] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100209,
+    name: "Blood Shield",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1 }] }
+    ],
+  },
+  {
+    // Bloodstone [100223] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100223,
+    name: "Bloodstone",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bloodstorm of Chorazin [100224] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100224,
+    name: "Bloodstorm of Chorazin",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Bomb [100233] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100233,
+    name: "Bomb",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Book of Going Forth by Night [100239] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100239,
+    name: "The Book of Going Forth by Night",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Breath of the Dragon [100250] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100250,
+    name: "Breath of the Dragon",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brick by Brick [100252] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100252,
+    name: "Brick by Brick",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brigitte Gebauer [100254] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100254,
+    name: "Brigitte Gebauer",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Brother's Blood [100257] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100257,
+    name: "Brother's Blood",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Bundi [100267] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100267,
+    name: "Bundi",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1 }] }
+    ],
+  },
+  {
+    // Business Pressure [100274] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100274,
+    name: "Business Pressure",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Caiaphas Smith [100276] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100276,
+    name: "Caiaphas Smith",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Call of the Hungry Dead [100279] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100279,
+    name: "Call of the Hungry Dead",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Call the Lamprey [100281] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100281,
+    name: "Call the Lamprey",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Camaraderie [100283] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100283,
+    name: "Camaraderie",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Camarilla Vitae Slave [100286] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100286,
+    name: "Camarilla Vitae Slave",
+    cardType: "retainer",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Camera Phone [100287] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100287,
+    name: "Camera Phone",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Canopic Jar [100291] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100291,
+    name: "Canopic Jar",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Car Bomb [100293] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100293,
+    name: "Car Bomb",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Cardinal Sin: Failure of Mission [100295] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100295,
+    name: "Cardinal Sin: Failure of Mission",
+    cardType: "reaction",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Cardinal Sin: Insubordination [100296] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100296,
+    name: "Cardinal Sin: Insubordination",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Carlton Van Wyk [100298] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100298,
+    name: "Carlton Van Wyk",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Catacombs [100306] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100306,
+    name: "Catacombs",
+    cardType: "equipment",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chalice of Kinship [100319] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100319,
+    name: "Chalice of Kinship",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Changeling [100324] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100324,
+    name: "Changeling",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Charnas the Imp [100335] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100335,
+    name: "Charnas the Imp",
+    cardType: "retainer",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chiram's Hold [100343] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100343,
+    name: "Chiram's Hold",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Chiropteran Marauder [100344] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100344,
+    name: "Chiropteran Marauder",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Circle [100349] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100349,
+    name: "Circle",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Circumspect Revelation [100350] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100350,
+    name: "Circumspect Revelation",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Claiming the Body [100352] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100352,
+    name: "Claiming the Body",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Clockwerx [100363] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100363,
+    name: "Clockwerx",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Coagulate Blood [100368] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100368,
+    name: "Coagulate Blood",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cobra Fangs [100370] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100370,
+    name: "Cobra Fangs",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Codex of the Damned [100373] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100373,
+    name: "Codex of the Damned",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cold Aura [100376] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100376,
+    name: "Cold Aura",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Collapse the Arches [100377] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100377,
+    name: "Collapse the Arches",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Coma [100378] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100378,
+    name: "Coma",
+    cardType: "combat",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Command [100380] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100380,
+    name: "Command",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Command of the Beast [100381] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100381,
+    name: "Command of the Beast",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Concoction of Vitality [100394] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100394,
+    name: "Concoction of Vitality",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Confusion [100405] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100405,
+    name: "Confusion",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Confusion of the Eye [100406] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100406,
+    name: "Confusion of the Eye",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Coordinate Attacks [100423] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100423,
+    name: "Coordinate Attacks",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Corpse Balloon [100427] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100427,
+    name: "Corpse Balloon",
+    cardType: "retainer",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Coterie Tactics [100432] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100432,
+    name: "Coterie Tactics",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Council of Seraphim [100433] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100433,
+    name: "Council of Seraphim",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Covincraft [100437] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100437,
+    name: "Covincraft",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Crawling Chamber [100439] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100439,
+    name: "Crawling Chamber",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Creeping Infection [100443] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100443,
+    name: "Creeping Infection",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // CrimethInc. [100446] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100446,
+    name: "CrimethInc.",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Crimson Sentinel [100448] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100448,
+    name: "The Crimson Sentinel",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Crocodile's Tongue [100450] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100450,
+    name: "Crocodile's Tongue",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // D'habi Revenant [100484] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100484,
+    name: "D'habi Revenant",
+    cardType: "retainer",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Dagger [100487] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100487,
+    name: "Dagger",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dagon's Call [100488] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100488,
+    name: "Dagon's Call",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "press", continues: "optional" }, { kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Darkling Trickery [100496] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100496,
+    name: "Darkling Trickery",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Darkness Within [100497] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100497,
+    name: "Darkness Within",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Darksight [100498] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100498,
+    name: "Darksight",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dartmoor, England [100499] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100499,
+    name: "Dartmoor, England",
+    cardType: "equipment",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dauntain Black Magician [100500] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100500,
+    name: "Dauntain Black Magician",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Day Operation [100502] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100502,
+    name: "Day Operation",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dead Hand [100503] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100503,
+    name: "Dead Hand",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Deadliest Sin [100505] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100505,
+    name: "The Deadliest Sin",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Death of the Drum [100508] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100508,
+    name: "Death of the Drum",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Deed the Heart's Desire [100513] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100513,
+    name: "Deed the Heart's Desire",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Detect Authority [100532] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100532,
+    name: "Detect Authority",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Disease [100553] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100553,
+    name: "Disease",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Disguised Weapon [100555] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100555,
+    name: "Disguised Weapon",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Divine Image [100565] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100565,
+    name: "Divine Image",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "prevent", base: 1 }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Domain of Evernight [100571] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100571,
+    name: "Domain of Evernight",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Draeven Softfoot [100579] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100579,
+    name: "Draeven Softfoot",
+    cardType: "ally",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1 }] }
+    ],
+  },
+  {
+    // Duma Rafiki [100593] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100593,
+    name: "Duma Rafiki",
+    cardType: "retainer",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dust to Dust [100596] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100596,
+    name: "Dust to Dust",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Ears of the Hare [100599] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100599,
+    name: "Ears of the Hare",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Eccentric Billionaire [100607] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100607,
+    name: "Eccentric Billionaire",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ecstasy [100610] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100610,
+    name: "Ecstasy",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Elixir of Distillation [100627] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100627,
+    name: "Elixir of Distillation",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Empowering the Puppet King [100639] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100639,
+    name: "Empowering the Puppet King",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Enchanted Marionette [100641] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100641,
+    name: "Enchanted Marionette",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Enkil Cog [100645] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100645,
+    name: "Enkil Cog",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Ensemble [100649] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100649,
+    name: "Ensemble",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Entombment [100651] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100651,
+    name: "Entombment",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Erebus Mask [100657] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100657,
+    name: "Erebus Mask",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Eruption of Vitae [100659] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100659,
+    name: "Eruption of Vitae",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Escaped Mental Patient [100661] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100661,
+    name: "Escaped Mental Patient",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Exuding Blood [100677] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100677,
+    name: "Exuding Blood",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Eye of Hazimel [100678] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100678,
+    name: "Eye of Hazimel",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "prevent", base: 2 }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Eye of Unforgiving Heaven [100679] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100679,
+    name: "Eye of Unforgiving Heaven",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Eyes of Blades [100681] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100681,
+    name: "Eyes of Blades",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "strikeDodge" }, { kind: "prevent", base: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDodge" }, { kind: "prevent", base: 1 }] }
+    ],
+  },
+  {
+    // Eyes of Chaos [100682] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100682,
+    name: "Eyes of Chaos",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Eyes of the Beast [100683] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100683,
+    name: "Eyes of the Beast",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Eyes of the Dead [100684] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100684,
+    name: "Eyes of the Dead",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Eyes of the Night [100685] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100685,
+    name: "Eyes of the Night",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Faerie Wards [100690] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100690,
+    name: "Faerie Wards",
+    cardType: "reaction",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Falcon's Eye [100694] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100694,
+    name: "Falcon's Eye",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // False Resonance [100697] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100697,
+    name: "False Resonance",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Far Fatuus [100702] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100702,
+    name: "Far Fatuus",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Fast Reaction [100705] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100705,
+    name: "Fast Reaction",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Fata Morgana [100707] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100707,
+    name: "Fata Morgana",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fear of the Void Below [100711] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100711,
+    name: "Fear of the Void Below",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Final Loosening [100730] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100730,
+    name: "Final Loosening",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Flak Jacket [100739] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100739,
+    name: "Flak Jacket",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1 }] }
+    ],
+  },
+  {
+    // Flames of the Netherworld [100741] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100741,
+    name: "Flames of the Netherworld",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Flash Grenade [100745] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100745,
+    name: "Flash Grenade",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Fleshcraft [100750] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100750,
+    name: "Fleshcraft",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Flow Within the Mountain [100751] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100751,
+    name: "Flow Within the Mountain",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "press", continues: "optional" }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continues: "optional" }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Foldable Machine Gun [100754] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100754,
+    name: "Foldable Machine Gun",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Folderol [100755] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100755,
+    name: "Folderol",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Follow the Alpha [100756] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100756,
+    name: "Follow the Alpha",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Follow the Blood [100757] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100757,
+    name: "Follow the Blood",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Forced March [100761] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100761,
+    name: "Forced March",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Forger's Hammer [100767] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100767,
+    name: "Forger's Hammer",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Foul Blood [100778] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100778,
+    name: "Foul Blood",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Fractura [100783] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100783,
+    name: "Fractura",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "strikeDodge" }, { kind: "additionalStrike", count: 1, limited: true }, { kind: "modifyStrength", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDodge" }, { kind: "additionalStrike", count: 1, limited: true }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Free Fight [100789] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100789,
+    name: "Free Fight",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Friend of Mine [100792] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100792,
+    name: "Friend of Mine",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Funeral Wake [100797] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100797,
+    name: "Funeral Wake",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Gang Tactics [100802] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100802,
+    name: "Gang Tactics",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gargoyle Slave [100808] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100808,
+    name: "Gargoyle Slave",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Garrote [100810] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100810,
+    name: "Garrote",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gemini's Mirror [100814] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100814,
+    name: "Gemini's Mirror",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Gestalt [100815] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100815,
+    name: "Gestalt",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Ghoul Retainer [100819] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100819,
+    name: "Ghoul Retainer",
+    cardType: "retainer",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ghouled [100820] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100820,
+    name: "Ghouled",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ghouled Street Thug [100821] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100821,
+    name: "Ghouled Street Thug",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gianna di Canneto [100823] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100823,
+    name: "Gianna di Canneto",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Giulia Giovanni Abruzzina [100832] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100832,
+    name: "Giulia Giovanni Abruzzina",
+    cardType: "ally",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Giuseppe, Gravedigger [100833] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100833,
+    name: "Giuseppe, Gravedigger",
+    cardType: "retainer",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Glare of Lies [100835] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100835,
+    name: "Glare of Lies",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Goth Band [100844] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100844,
+    name: "Goth Band",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gran Madre di Dio, Italy [100847] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100847,
+    name: "Gran Madre di Dio, Italy",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Grasp of the Python [100850] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100850,
+    name: "Grasp of the Python",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Grey Thorne [100858] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100858,
+    name: "Grey Thorne",
+    cardType: "ally",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Groaning Corpse [100859] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100859,
+    name: "Groaning Corpse",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Guardian Ghoul [100867] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100867,
+    name: "Guardian Ghoul",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Guardian Vigil [100868] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100868,
+    name: "Guardian Vigil",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Guruhi Are the Land [100873] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100873,
+    name: "The Guruhi Are the Land",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Hag's Wrinkles [100877] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100877,
+    name: "Hag's Wrinkles",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hall of Mirrors [100879] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100879,
+    name: "Hall of Mirrors",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hand of Conrad [100882] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100882,
+    name: "Hand of Conrad",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hard Case [100887] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100887,
+    name: "Hard Case",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Harzomatuili [100890] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100890,
+    name: "Harzomatuili",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 5,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hatch the Viper [100891] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100891,
+    name: "Hatch the Viper",
+    cardType: "retainer",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "prevent", base: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 1 }] }
+    ],
+  },
+  {
+    // Hay Ride [100899] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100899,
+    name: "Hay Ride",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Heart's Desire [100905] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100905,
+    name: "Heart's Desire",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Heaven's Gate [100907] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100907,
+    name: "Heaven's Gate",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "prevent", base: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "prevent", base: 1 }] }
+    ],
+  },
+  {
+    // Hellhound [100911] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100911,
+    name: "Hellhound",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hexe [100915] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100915,
+    name: "Hexe",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hidden Lurker [100916] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100916,
+    name: "Hidden Lurker",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Hide the Heart [100920] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100920,
+    name: "Hide the Heart",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Highway Haven: RV [100930] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100930,
+    name: "Highway Haven: RV",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Horrid Form [100934] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100934,
+    name: "Horrid Form",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "prevent", base: 1 }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Horrid Reality [100935] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100935,
+    name: "Horrid Reality",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // I am Legion [100947] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100947,
+    name: "I am Legion",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ignis Fatuus [100948] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100948,
+    name: "Ignis Fatuus",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Ignore the Searing Flames [100949] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100949,
+    name: "Ignore the Searing Flames",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Immaculate Vitae [100957] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100957,
+    name: "Immaculate Vitae",
+    cardType: "reaction",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Immense Size [100958] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100958,
+    name: "Immense Size",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Imposing Phantasm [100962] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100962,
+    name: "Imposing Phantasm",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "combatEnds" }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Imprison [100963] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100963,
+    name: "Imprison",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "jud", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Improvised Flamethrower [100964] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100964,
+    name: "Improvised Flamethrower",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Impundulu [100966] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100966,
+    name: "Impundulu",
+    cardType: "ally",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Incriminating Videotape [100972] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100972,
+    name: "Incriminating Videotape",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inevitability of the Void [100974] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100974,
+    name: "Inevitability of the Void",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Infernal Pursuit [100980] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100980,
+    name: "Infernal Pursuit",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Informant [100983] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100983,
+    name: "Informant",
+    cardType: "ally",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inner Essence [100986] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100986,
+    name: "Inner Essence",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inscription [100989] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100989,
+    name: "Inscription",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inspire Greatness [100992] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100992,
+    name: "Inspire Greatness",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStrength", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Instantaneous Transformation [100994] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100994,
+    name: "Instantaneous Transformation",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Into Thin Air [101001] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101001,
+    name: "Into Thin Air",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Inveraray, Scotland [101002] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101002,
+    name: "Inveraray, Scotland",
+    cardType: "equipment",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Iron Heart [101009] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101009,
+    name: "Iron Heart",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Jackal [101017] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101017,
+    name: "Jackal",
+    cardType: "retainer",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Jar of Skin Eaters [101020] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101020,
+    name: "Jar of Skin Eaters",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Jones [101023] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101023,
+    name: "The Jones",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Joumlon's Axe [101025] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101025,
+    name: "Joumlon's Axe",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Karavalanisha Vrana [101033] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101033,
+    name: "Karavalanisha Vrana",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Khabar: Honor [101044] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101044,
+    name: "The Khabar: Honor",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Kindred Manipulation [101051] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101051,
+    name: "Kindred Manipulation",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Kiss of Ra [101062] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101062,
+    name: "The Kiss of Ra",
+    cardType: "modifier",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Kpist m/45 [101065] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101065,
+    name: "Kpist m/45",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Kraken's Kiss [101066] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101066,
+    name: "Kraken's Kiss",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Lead Fist [101077] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101077,
+    name: "Lead Fist",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Leapfrog [101079] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101079,
+    name: "Leapfrog",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Learjet [101080] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101080,
+    name: "Learjet",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Legacy of Power [101088] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101088,
+    name: "Legacy of Power",
+    cardType: "reaction",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Leonardo, Mortician [101094] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101094,
+    name: "Leonardo, Mortician",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Liquefy the Mortal Coil [101111] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101111,
+    name: "Liquefy the Mortal Coil",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Lobotomy [101116] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101116,
+    name: "Lobotomy",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Local 1111 [101117] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101117,
+    name: "Local 1111",
+    cardType: "equipment",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Loyalist [101130] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101130,
+    name: "Loyalist",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Lyndhurst Estate, New York [101135] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101135,
+    name: "Lyndhurst Estate, New York",
+    cardType: "equipment",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Make an Example [101146] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101146,
+    name: "Make an Example",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Malleable Visage [101159] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101159,
+    name: "Malleable Visage",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Marijava Ghoul [101164] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101164,
+    name: "Marijava Ghoul",
+    cardType: "retainer",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Marijava Thuggee [101165] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101165,
+    name: "Marijava Thuggee",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Marked Path [101169] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101169,
+    name: "Marked Path",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Martinelli's Ring [101174] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101174,
+    name: "Martinelli's Ring",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Masca [101177] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101177,
+    name: "Masca",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "additionalStrike", count: 1, limited: true }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Masque of Judas [101181] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101181,
+    name: "Masque of Judas",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Masquer [101182] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101182,
+    name: "Masquer",
+    cardType: "retainer",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Mayaparisatya [101188] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101188,
+    name: "Mayaparisatya",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Meat Hook [101191] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101191,
+    name: "Meat Hook",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Mehemet of the Ahl-i-Batin [101194] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101194,
+    name: "Mehemet of the Ahl-i-Batin",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Meld with the Land [101196] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101196,
+    name: "Meld with the Land",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Member of the Entourage [101197] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101197,
+    name: "Member of the Entourage",
+    cardType: "ally",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Memory Rift [101199] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101199,
+    name: "Memory Rift",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Mental Maze [101201] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101201,
+    name: "Mental Maze",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Mercy for Seth [101203] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101203,
+    name: "Mercy for Seth",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mind of the Wilds [101214] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101214,
+    name: "Mind of the Wilds",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Mind Tricks [101216] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101216,
+    name: "Mind Tricks",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Ministry [101218] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101218,
+    name: "Ministry",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Mirror's Visage [101224] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101224,
+    name: "Mirror's Visage",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Missing Voice [101226] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101226,
+    name: "The Missing Voice",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mistaken Identity [101227] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101227,
+    name: "Mistaken Identity",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // The Mole [101233] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101233,
+    name: "The Mole",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Mole's Tunneling [101234] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101234,
+    name: "Mole's Tunneling",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Momentary Delay [101236] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101236,
+    name: "Momentary Delay",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Monocle of Clarity [101240] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101240,
+    name: "Monocle of Clarity",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Morphean Blow [101244] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101244,
+    name: "Morphean Blow",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "combatEnds" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Mouthpiece [101245] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101245,
+    name: "Mouthpiece",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Mummify [101251] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101251,
+    name: "Mummify",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Mylan Horseed [101261] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101261,
+    name: "Mylan Horseed",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDodge" }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Nar-Sheptha [101264] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101264,
+    name: "Nar-Sheptha",
+    cardType: "retainer",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Neighborhood Watch Commander [101270] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101270,
+    name: "Neighborhood Watch Commander",
+    cardType: "ally",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nephandus [101272] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101272,
+    name: "Nephandus",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Netwar [101275] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101275,
+    name: "Netwar",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Neutral Guard [101276] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101276,
+    name: "Neutral Guard",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ni Dieu ni Maître [101282] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101282,
+    name: "Ni Dieu ni Maître",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }, { kind: "modifyStrength", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }, { kind: "modifyStrength", amount: 1 }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Nightshades [101286] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101286,
+    name: "Nightshades",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nightstick [101287] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101287,
+    name: "Nightstick",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 3 }] }
+    ],
+  },
+  {
+    // No Confidence [101290] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101290,
+    name: "No Confidence",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Octopod [101314] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101314,
+    name: "Octopod",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Ohoyo Hopoksia (Bastet) [101317] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101317,
+    name: "Ohoyo Hopoksia (Bastet)",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Olid Loa [101319] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101319,
+    name: "Olid Loa",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Open Dossier [101322] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101322,
+    name: "Open Dossier",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ophidian Gaze [101325] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101325,
+    name: "Ophidian Gaze",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Orb of Ulain [101328] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101328,
+    name: "Orb of Ulain",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Order of Hermes Cabal [101329] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101329,
+    name: "Order of Hermes Cabal",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Orgy of Blood [101330] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101330,
+    name: "Orgy of Blood",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Oubliette [101334] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101334,
+    name: "Oubliette",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Outside the Hourglass [101338] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101338,
+    name: "Outside the Hourglass",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Palatial Estate [101345] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101345,
+    name: "Palatial Estate",
+    cardType: "equipment",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Patrol [101374] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101374,
+    name: "Patrol",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Perfect Clarity [101386] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101386,
+    name: "Perfect Clarity",
+    cardType: "modifier",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Personal Scourge [101395] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101395,
+    name: "Personal Scourge",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "press", continues: "optional" }, { kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Phased Motion Detector [101398] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101398,
+    name: "Phased Motion Detector",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Pier 13, Port of Baltimore [101400] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101400,
+    name: "Pier 13, Port of Baltimore",
+    cardType: "equipment",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Pocket Out of Time [101405] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101405,
+    name: "Pocket Out of Time",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Poker [101408] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101408,
+    name: "Poker",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Political Antagonist [101412] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101412,
+    name: "Political Antagonist",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Ponticulus [101419] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101419,
+    name: "Ponticulus",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Pounce [101426] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101426,
+    name: "Pounce",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Power of All [101428] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101428,
+    name: "Power of All",
+    cardType: "reaction",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Power of One [101429] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101429,
+    name: "Power of One",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Priestess of Sekhmet [101484] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101484,
+    name: "Priestess of Sekhmet",
+    cardType: "retainer",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Primal Instincts [101485] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101485,
+    name: "Primal Instincts",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Propaganda of the Deed [101496] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101496,
+    name: "Propaganda of the Deed",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Psalm of the Damned [101505] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101505,
+    name: "Psalm of the Damned",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Pseudo-Blindness [101506] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101506,
+    name: "Pseudo-Blindness",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Psychic Assault [101508] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101508,
+    name: "Psychic Assault",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Psychomachia [101511] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101511,
+    name: "Psychomachia",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Pulled Fangs [101515] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101515,
+    name: "Pulled Fangs",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Puppeteer [101519] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101519,
+    name: "Puppeteer",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Quicken Sight [101531] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101531,
+    name: "Quicken Sight",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Raking Talons [101538] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101538,
+    name: "Raking Talons",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Razor Bat [101556] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101556,
+    name: "Razor Bat",
+    cardType: "retainer",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Read the Winds [101559] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101559,
+    name: "Read the Winds",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Reality Mirror [101561] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101561,
+    name: "Reality Mirror",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Recurring Contemplation [101572] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101572,
+    name: "Recurring Contemplation",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Red Herring [101573] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101573,
+    name: "Red Herring",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Red Question [101575] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101575,
+    name: "The Red Question",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Redcap Wilder [101576] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101576,
+    name: "Redcap Wilder",
+    cardType: "retainer",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reliquary: Trinket [101599] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101599,
+    name: "Reliquary: Trinket",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Remnant of the Endless Storm [101600] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101600,
+    name: "Remnant of the Endless Storm",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 6,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Renegade Garou [101602] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101602,
+    name: "Renegade Garou",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 5,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "additionalStrike", count: 1, limited: true }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Repulsion [101606] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101606,
+    name: "Repulsion",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Revelation of Wrath [101626] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101626,
+    name: "Revelation of Wrath",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rewind Time [101633] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101633,
+    name: "Rewind Time",
+    cardType: "reaction",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Righteous Aura [101635] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101635,
+    name: "Righteous Aura",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 2 }] }
+    ],
+  },
+  {
+    // Riposte [101637] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101637,
+    name: "Riposte",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Ritual Scalpel [101643] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101643,
+    name: "Ritual Scalpel",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Rock Cat [101645] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101645,
+    name: "Rock Cat",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Rockheart [101646] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101646,
+    name: "Rockheart",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDodge" }, { kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDodge" }, { kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Roll [101648] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101648,
+    name: "Roll",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rooftop Shadow [101651] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101651,
+    name: "Rooftop Shadow",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Ruins of Ceoris [101658] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101658,
+    name: "Ruins of Ceoris",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Ruins of Villers Abbey, Belgium [101660] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101660,
+    name: "Ruins of Villers Abbey, Belgium",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Safe Passage [101673] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101673,
+    name: "Safe Passage",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Salt of Thoth [101674] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101674,
+    name: "Salt of Thoth",
+    cardType: "reaction",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // San Lorenzo de El Escorial, Spain [101676] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101676,
+    name: "San Lorenzo de El Escorial, Spain",
+    cardType: "equipment",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sanguine Entrapment [101679] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101679,
+    name: "Sanguine Entrapment",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDodge" }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDodge" }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // The Sargon Fragment [101681] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101681,
+    name: "The Sargon Fragment",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Save Face [101684] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101684,
+    name: "Save Face",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Scapelli, The Family "Mechanic" [101687] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101687,
+    name: "Scapelli, The Family \"Mechanic\"",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Scobax [101691] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101691,
+    name: "Scobax",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Scorpion's Touch [101694] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101694,
+    name: "Scorpion's Touch",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Scry the Hearthstone [101701] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101701,
+    name: "Scry the Hearthstone",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Scrying of Secrets [101702] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101702,
+    name: "Scrying of Secrets",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Seal of Veddartha [101703] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101703,
+    name: "Seal of Veddartha",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Selective Silence [101714] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101714,
+    name: "Selective Silence",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Seraph's Second [101724] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101724,
+    name: "Seraph's Second",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Serenading the Kami [101725] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101725,
+    name: "Serenading the Kami",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Shaal Fragment [101732] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101732,
+    name: "Shaal Fragment",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shackles of Enkidu [101733] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101733,
+    name: "Shackles of Enkidu",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Shade [101734] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101734,
+    name: "Shade",
+    cardType: "retainer",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shadow Body [101735] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101735,
+    name: "Shadow Body",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Shadow Court Satyr [101737] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101737,
+    name: "Shadow Court Satyr",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shadow Feint [101738] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101738,
+    name: "Shadow Feint",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDodge" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Shadow Parasite [101742] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101742,
+    name: "Shadow Parasite",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shadow Play [101743] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101743,
+    name: "Shadow Play",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shadow Step [101744] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101744,
+    name: "Shadow Step",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shadow Strike [101745] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101745,
+    name: "Shadow Strike",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Shattered Mirror [101758] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101758,
+    name: "Shattered Mirror",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Shell Game [101764] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101764,
+    name: "Shell Game",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shilmulo Deception [101766] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101766,
+    name: "Shilmulo Deception",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shotgun Ritual [101770] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101770,
+    name: "Shotgun Ritual",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Shoulder Drop [101771] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101771,
+    name: "Shoulder Drop",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Shroud Mastery [101773] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101773,
+    name: "Shroud Mastery",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shroud of Absence [101774] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101774,
+    name: "Shroud of Absence",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Shroud of Night [101775] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101775,
+    name: "Shroud of Night",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Silence of Death [101782] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101782,
+    name: "Silence of Death",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sins of the Cauchemar [101783] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101783,
+    name: "Sins of the Cauchemar",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Skin of the Adder [101793] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101793,
+    name: "Skin of the Adder",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 1 }] }
+    ],
+  },
+  {
+    // Skin of the Chameleon [101794] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101794,
+    name: "Skin of the Chameleon",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Skin Trap [101795] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101795,
+    name: "Skin Trap",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Sleep Unseen [101804] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101804,
+    name: "Sleep Unseen",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Smite [101812] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101812,
+    name: "Smite",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ven", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Smoke and Mirrors [101813] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101813,
+    name: "Smoke and Mirrors",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Soar [101818] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101818,
+    name: "Soar",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Gem of Etrius [101832] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101832,
+    name: "Soul Gem of Etrius",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Speak with Spirits [101840] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101840,
+    name: "Speak with Spirits",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Spike-Thrower [101846] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101846,
+    name: "Spike-Thrower",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Spiritual Intervention [101852] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101852,
+    name: "Spiritual Intervention",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "strikeDodge" }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Spiritual Protector [101853] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101853,
+    name: "Spiritual Protector",
+    cardType: "retainer",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Squirrel Balance [101858] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101858,
+    name: "Squirrel Balance",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Starshell Grenade Launcher [101860] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101860,
+    name: "Starshell Grenade Launcher",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Starvation of Marena [101861] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101861,
+    name: "Starvation of Marena",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Still the Mortal Flesh [101871] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101871,
+    name: "Still the Mortal Flesh",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Stone Dog [101873] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101873,
+    name: "Stone Dog",
+    cardType: "retainer",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Stone Quills [101874] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101874,
+    name: "Stone Quills",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Stone Travel [101875] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101875,
+    name: "Stone Travel",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Stonestrength [101876] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101876,
+    name: "Stonestrength",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "press", continues: "optional" }, { kind: "prevent", base: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continues: "optional" }, { kind: "prevent", base: 1 }] }
+    ],
+  },
+  {
+    // Strike at the True Flesh [101885] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101885,
+    name: "Strike at the True Flesh",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Strix [101887] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101887,
+    name: "Strix",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "str", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Stutter-Step [101889] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101889,
+    name: "Stutter-Step",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDodge" }, { kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Succubus [101892] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101892,
+    name: "Succubus",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Succulent Vitae [101894] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101894,
+    name: "Succulent Vitae",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Survivalist [101910] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101910,
+    name: "Survivalist",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Swoop [101918] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101918,
+    name: "Swoop",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Sword of Judgment [101919] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101919,
+    name: "Sword of Judgment",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Sword of Nuln [101920] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101920,
+    name: "Sword of Nuln",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sword of Troile [101922] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101922,
+    name: "Sword of Troile",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tainted Spring [101925] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101925,
+    name: "Tainted Spring",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Talaq, The Immortal [101930] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101930,
+    name: "Talaq, The Immortal",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Talbot's Chainsaw [101931] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101931,
+    name: "Talbot's Chainsaw",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "press", continues: "optional" }, { kind: "prevent", base: 1 }] }
+    ],
+  },
+  {
+    // Talith [101932] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101932,
+    name: "Talith",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tangle Atropos' Hand [101935] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101935,
+    name: "Tangle Atropos' Hand",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Tara, The Hollow One [101937] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101937,
+    name: "Tara, The Hollow One",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Target Retainer [101941] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101941,
+    name: "Target Retainer",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Taste of Death [101944] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101944,
+    name: "Taste of Death",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tenebrous Form [101957] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101957,
+    name: "Tenebrous Form",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Terrorists [101961] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101961,
+    name: "Terrorists",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Their Master's Voice [101967] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101967,
+    name: "Their Master's Voice",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Thin Blood [101970] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101970,
+    name: "Thin Blood",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Thoughts Betrayed [101976] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101976,
+    name: "Thoughts Betrayed",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Three's a Crowd [101979] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101979,
+    name: "Three's a Crowd",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Tinglestripe [101985] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101985,
+    name: "Tinglestripe",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tongue of the Serpent [101988] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101988,
+    name: "Tongue of the Serpent",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Torment the Soul [101992] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101992,
+    name: "Torment the Soul",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tortured Confession [101996] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101996,
+    name: "Tortured Confession",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Tourette's Voice [102000] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102000,
+    name: "Tourette's Voice",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Tracker's Mark [102003] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102003,
+    name: "Tracker's Mark",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Truth in Ink [102043] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102043,
+    name: "Truth in Ink",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Truth of a Thousand Lies [102044] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102044,
+    name: "Truth of a Thousand Lies",
+    cardType: "modifier",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 2 }] }
+    ],
+  },
+  {
+    // Tunnel Runner [102047] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102047,
+    name: "Tunnel Runner",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Tye Cooper [102053] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102053,
+    name: "Tye Cooper",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Uncontrollable Rage [102058] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102058,
+    name: "Uncontrollable Rage",
+    cardType: "modifier",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Under My Skin [102062] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102062,
+    name: "Under My Skin",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Undying Thirst [102069] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102069,
+    name: "Undying Thirst",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Unleash the Hounds [102077] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102077,
+    name: "Unleash the Hounds",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Vascular Explosion [102091] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102091,
+    name: "Vascular Explosion",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Veil of Silence [102096] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102096,
+    name: "Veil of Silence",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Veiled Sight [102098] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102098,
+    name: "Veiled Sight",
+    cardType: "reaction",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Vendetta [102101] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102101,
+    name: "Vendetta",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Vial of Garou Blood [102115] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102115,
+    name: "Vial of Garou Blood",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Virtuosa [102124] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102124,
+    name: "Virtuosa",
+    cardType: "modifier",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyBleed", amount: 2 }, { kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 2 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Vivienne Géroux [102128] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102128,
+    name: "Vivienne Géroux",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Voice of Madness [102129] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102129,
+    name: "Voice of Madness",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Voices of the Castle [102130] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102130,
+    name: "Voices of the Castle",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Walk of Caine [102138] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102138,
+    name: "Walk of Caine",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Walks-With-Might [102141] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102141,
+    name: "Walks-With-Might",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Watch Commander [102154] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102154,
+    name: "Watch Commander",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Wave of Lethargy [102161] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102161,
+    name: "Wave of Lethargy",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Weakness [102163] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102163,
+    name: "Weakness",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Weigh the Heart [102168] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102168,
+    name: "Weigh the Heart",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Wendell Delburton [102173] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102173,
+    name: "Wendell Delburton",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Werewolf Pack [102174] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102174,
+    name: "Werewolf Pack",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Will-o'-the-Wisp [102183] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102183,
+    name: "Will-o'-the-Wisp",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Winchester Mansion [102184] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102184,
+    name: "Winchester Mansion",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Wolf Companion [102191] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102191,
+    name: "Wolf Companion",
+    cardType: "retainer",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Writ of Acceptance [102196] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102196,
+    name: "Writ of Acceptance",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Wrong and Crosswise [102197] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102197,
+    name: "Wrong and Crosswise",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Zaire River Ferry [102203] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102203,
+    name: "Zaire River Ferry",
+    cardType: "equipment",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Enhanced Coagulant [102238] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102238,
+    name: "Enhanced Coagulant",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Ritual Goblet [102243] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102243,
+    name: "Ritual Goblet",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Valerie Diaz, Antigen Commander [102245] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102245,
+    name: "Valerie Diaz, Antigen Commander",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Loup [102273] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102273,
+    name: "Loup",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+
+  {
+    // Achilles' Heel [100017] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100017,
+    name: "Achilles' Heel",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Acquired Ventrue Assets [100019] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100019,
+    name: "Acquired Ventrue Assets",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Admonitions [100023] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100023,
+    name: "The Admonitions",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Agent of Power [100025] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100025,
+    name: "Agent of Power",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Aggressive Tactics [100026] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100026,
+    name: "Aggressive Tactics",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ahrimane Protectorate [100028] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100028,
+    name: "Ahrimane Protectorate",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Ailing Spirit [100030] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100030,
+    name: "The Ailing Spirit",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Akunanse Kholo [100034] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100034,
+    name: "Akunanse Kholo",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Anachronism [100050] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100050,
+    name: "Anachronism",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Anarch Secession [100057] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100057,
+    name: "Anarch Secession",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Anathema [100060] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100060,
+    name: "Anathema",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ancestor Spirit [100061] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100061,
+    name: "Ancestor Spirit",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Anima Gathering [100068] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100068,
+    name: "Anima Gathering",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Anonymous Freight [100072] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100072,
+    name: "Anonymous Freight",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Antediluvian Awakening [100073] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100073,
+    name: "Antediluvian Awakening",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Antithesis [100075] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100075,
+    name: "Antithesis",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "jud", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Armor of Terra [100088] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100088,
+    name: "Armor of Terra",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "prevent", base: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "prevent", base: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Art of Pain [100098] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100098,
+    name: "The Art of Pain",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Art's Traumatic Essence [100100] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100100,
+    name: "Art's Traumatic Essence",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Aura Absorption [100111] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100111,
+    name: "Aura Absorption",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Auto-da-fé [100116] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100116,
+    name: "Auto-da-fé",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Baltimore Purge [100128] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100128,
+    name: "Baltimore Purge",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Barrenness [100134] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100134,
+    name: "Barrenness",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bastille Opera House [100140] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100140,
+    name: "Bastille Opera House",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bay and Howl [100143] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100143,
+    name: "Bay and Howl",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bear-Baiting [100144] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100144,
+    name: "Bear-Baiting",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 2 }, { kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // The Becoming [100147] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100147,
+    name: "The Becoming",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Belonging Grants Protection [100150] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100150,
+    name: "Belonging Grants Protection",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Benefit Performance [100151] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100151,
+    name: "Benefit Performance",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bestial Visage [100154] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100154,
+    name: "Bestial Visage",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bestow Vigor [100155] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100155,
+    name: "Bestow Vigor",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Betrayer [100156] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100156,
+    name: "Betrayer",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Big Game [100159] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100159,
+    name: "Big Game",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Black Hand Emissary [100167] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100167,
+    name: "Black Hand Emissary",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Black Metamorphosis [100169] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100169,
+    name: "Black Metamorphosis",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blackmail [100173] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100173,
+    name: "Blackmail",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blessed Audience [100179] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100179,
+    name: "Blessed Audience",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blessed Resilience [100181] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100181,
+    name: "Blessed Resilience",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blessing of Chaos [100182] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100182,
+    name: "Blessing of Chaos",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blessing of the Beast [100184] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100184,
+    name: "Blessing of the Beast",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blessing of the Name [100185] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100185,
+    name: "Blessing of the Name",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blessings of the Loa [100186] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100186,
+    name: "Blessings of the Loa",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Blind Spot [100188] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100188,
+    name: "Blind Spot",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blithe Acceptance [100191] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100191,
+    name: "Blithe Acceptance",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Awakening [100193] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100193,
+    name: "Blood Awakening",
+    cardType: "modifierOrReaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Bond [100194] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100194,
+    name: "Blood Bond",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Buff [100196] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100196,
+    name: "Blood Buff",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blood Clots [100197] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100197,
+    name: "Blood Clots",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood of Sandman [100204] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100204,
+    name: "Blood of Sandman",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood of the Sabbat [100206] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100206,
+    name: "Blood of the Sabbat",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Puppy [100207] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100207,
+    name: "Blood Puppy",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blood Siege [100210] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100210,
+    name: "Blood Siege",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blood Tempering [100213] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100213,
+    name: "Blood Tempering",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", base: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Turnip [100216] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100216,
+    name: "Blood Turnip",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bloodbath [100218] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100218,
+    name: "Bloodbath",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blooding [100220] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100220,
+    name: "Blooding",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blooding by the Code [100221] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100221,
+    name: "Blooding by the Code",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Bloodwork [100225] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100225,
+    name: "Bloodwork",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Border Skirmish [100240] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100240,
+    name: "Border Skirmish",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Breath of Thanatos [100249] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100249,
+    name: "Breath of Thanatos",
+    cardType: "actionmodifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brick Laying [100253] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100253,
+    name: "Brick Laying",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Brinksmanship [100255] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100255,
+    name: "Brinksmanship",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brother in Arms [100256] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100256,
+    name: "Brother in Arms",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Brothers Grimm [100258] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100258,
+    name: "Brothers Grimm",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brutal Influence [100263] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100263,
+    name: "Brutal Influence",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Burning Touch [100270] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100270,
+    name: "Burning Touch",
+    cardType: "actionmodifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Cadet [100275] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100275,
+    name: "Cadet",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cairo Int'l Airport [100277] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100277,
+    name: "Cairo Int'l Airport",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Call [100278] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100278,
+    name: "The Call",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Carnivale [100299] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100299,
+    name: "Carnivale",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Carrion Coffin [100300] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100300,
+    name: "Carrion Coffin",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Carthage Remembered [100302] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100302,
+    name: "Carthage Remembered",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cat Burglary [100305] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100305,
+    name: "Cat Burglary",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cavalier [100310] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100310,
+    name: "Cavalier",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Celestial Harmony [100313] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100313,
+    name: "Celestial Harmony",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Census Taker [100314] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100314,
+    name: "Census Taker",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Chain of Command [100316] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100316,
+    name: "Chain of Command",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chanjelin Ward [100326] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100326,
+    name: "Chanjelin Ward",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Charge of the Buffalo [100330] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100330,
+    name: "Charge of the Buffalo",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Charming Lobby [100334] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100334,
+    name: "Charming Lobby",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cheat the Fates [100336] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100336,
+    name: "Cheat the Fates",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyBleed", amount: 2 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 2 }] }
+    ],
+  },
+  {
+    // Chill of Oblivion [100341] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100341,
+    name: "Chill of Oblivion",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Choir [100345] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100345,
+    name: "Choir",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chronicle of the Lost Tribe [100346] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100346,
+    name: "Chronicle of the Lost Tribe",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Church of the Order of St. Blaise [100347] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100347,
+    name: "Church of the Order of St. Blaise",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // City Gangrel Connections [100351] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100351,
+    name: "City Gangrel Connections",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Clan Impersonation [100353] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100353,
+    name: "Clan Impersonation",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Clandestine Contract [100355] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100355,
+    name: "Clandestine Contract",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cleansing Ritual [100357] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100357,
+    name: "Cleansing Ritual",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Clio's Kiss [100359] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100359,
+    name: "Clio's Kiss",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Clotho's Gift [100365] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100365,
+    name: "Clotho's Gift",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Coagulated Entity [100369] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100369,
+    name: "Coagulated Entity",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Code of Samiel [100372] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100372,
+    name: "Code of Samiel",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Command Performance [100383] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100383,
+    name: "Command Performance",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Command the Legion [100384] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100384,
+    name: "Command the Legion",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Communal Haven: Temple [100386] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100386,
+    name: "Communal Haven: Temple",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Community Justice [100387] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100387,
+    name: "Community Justice",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Compel the Spirit [100388] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100388,
+    name: "Compel the Spirit",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Concert Tour [100393] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100393,
+    name: "Concert Tour",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemn the Sins of the Father [100396] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100396,
+    name: "Condemn the Sins of the Father",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Conductor [100402] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100402,
+    name: "Conductor",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Conniver [100407] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100407,
+    name: "Conniver",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Conscripted Statue [100412] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100412,
+    name: "Conscripted Statue",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Consecration Rites [100413] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100413,
+    name: "Consecration Rites",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Consignment to Duat [100415] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100415,
+    name: "Consignment to Duat",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Convergence [100421] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100421,
+    name: "Convergence",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Corporal Reservoir [100425] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100425,
+    name: "Corporal Reservoir",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1 }] }
+    ],
+  },
+  {
+    // Covenant of Blood [100436] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100436,
+    name: "Covenant of Blood",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cracking the Wall [100438] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100438,
+    name: "Cracking the Wall",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Create Gargoyle [100440] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100440,
+    name: "Create Gargoyle",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Crocodile Temple [100449] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100449,
+    name: "The Crocodile Temple",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Crusade: Aragon [100452] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100452,
+    name: "Crusade: Aragon",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Crusade: Geneva [100461] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100461,
+    name: "Crusade: Geneva",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cry Wolf [100475] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100475,
+    name: "Cry Wolf",
+    cardType: "ally",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Cryptic Mission [100477] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100477,
+    name: "Cryptic Mission",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cull the Herd [100479] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100479,
+    name: "Cull the Herd",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cultivated Blood Shortage [100480] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100480,
+    name: "Cultivated Blood Shortage",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cunctator Motion [100481] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100481,
+    name: "Cunctator Motion",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Curmudgeon [100482] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100482,
+    name: "Curmudgeon",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Daemonic Possession [100486] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100486,
+    name: "Daemonic Possession",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Damned [100490] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100490,
+    name: "The Damned",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Danse Macabre [100491] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100491,
+    name: "Danse Macabre",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Death Pact [100509] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100509,
+    name: "Death Pact",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Decompose [100512] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100512,
+    name: "Decompose",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Deep Cover Agent [100514] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100514,
+    name: "Deep Cover Agent",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Defender of the Haven [100517] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100517,
+    name: "Defender of the Haven",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Demonstration [100522] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100522,
+    name: "Demonstration",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Deny [100524] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100524,
+    name: "Deny",
+    cardType: "actionmodifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Derange [100527] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100527,
+    name: "Derange",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Descent into Darkness [100528] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100528,
+    name: "Descent into Darkness",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Despiral [100530] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100530,
+    name: "Despiral",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Destructive Secrets [100531] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100531,
+    name: "Destructive Secrets",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Development [100535] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100535,
+    name: "Development",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Diamond Thunderbolt [100543] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100543,
+    name: "The Diamond Thunderbolt",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dirty Contract [100546] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100546,
+    name: "Dirty Contract",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dismemberment of Osiris [100556] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100556,
+    name: "Dismemberment of Osiris",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dive Bomb [100561] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100561,
+    name: "Dive Bomb",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dive into Madness [100562] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100562,
+    name: "Dive into Madness",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Divine Sign [100566] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100566,
+    name: "Divine Sign",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dominion [100574] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100574,
+    name: "Dominion",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Draba [100578] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100578,
+    name: "Draba",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dramatic Upheaval [100583] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100583,
+    name: "Dramatic Upheaval",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Draught of the Soul [100584] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100584,
+    name: "Draught of the Soul",
+    cardType: "actionmodifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Dream World [100587] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100587,
+    name: "Dream World",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Drink the Blood of Ahriman [100589] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100589,
+    name: "Drink the Blood of Ahriman",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dual Form [100592] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100592,
+    name: "Dual Form",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Echo of Harmonies [100608] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100608,
+    name: "Echo of Harmonies",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ecstatic Agony [100611] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100611,
+    name: "Ecstatic Agony",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Edged Illusion [100615] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100615,
+    name: "Edged Illusion",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Elder Michaelis's Hold [100621] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100621,
+    name: "Elder Michaelis's Hold",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // The Eldest Are Kholo [100622] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100622,
+    name: "The Eldest Are Kholo",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Enforcer [100642] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100642,
+    name: "Enforcer",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Engling Fury [100643] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100643,
+    name: "Engling Fury",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ensconced [100648] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100648,
+    name: "Ensconced",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Erosion [100658] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100658,
+    name: "Erosion",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Esgrima [100662] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100662,
+    name: "Esgrima",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Esprit de Corps [100663] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100663,
+    name: "Esprit de Corps",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Eternal Mask [100665] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100665,
+    name: "The Eternal Mask",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Eternals of Sirius [100667] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100667,
+    name: "The Eternals of Sirius",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Evil Eye [100668] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100668,
+    name: "Evil Eye",
+    cardType: "modifierOrReaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ex Nihilo [100669] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100669,
+    name: "Ex Nihilo",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Eyes of the Serpent [100686] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100686,
+    name: "Eyes of the Serpent",
+    cardType: "actionmodifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Fae Contortion [100689] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100689,
+    name: "Fae Contortion",
+    cardType: "actionmodifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Failsafe [100691] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100691,
+    name: "Failsafe",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fanfare for Elysium [100700] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100700,
+    name: "Fanfare for Elysium",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fantasy World [100701] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100701,
+    name: "Fantasy World",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fata Amria [100706] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100706,
+    name: "Fata Amria",
+    cardType: "modifierOrReaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Fatuus Mastery [100708] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100708,
+    name: "Fatuus Mastery",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fear of Mekhet [100710] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100710,
+    name: "Fear of Mekhet",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Feral Spirit [100721] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100721,
+    name: "Feral Spirit",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Field Training [100725] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100725,
+    name: "Field Training",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Filchware's Pawn Shop [100728] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100728,
+    name: "Filchware's Pawn Shop",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Finding the Path [100732] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100732,
+    name: "Finding the Path",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fire Dance [100733] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100733,
+    name: "Fire Dance",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // First Tradition: The Masquerade [100737] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100737,
+    name: "First Tradition: The Masquerade",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fleecing the Gaje [100746] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100746,
+    name: "Fleecing the Gaje",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Force of Will [100759] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100759,
+    name: "Force of Will",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Forest of Shadows [100766] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100766,
+    name: "Forest of Shadows",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Form of the Serpent [100773] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100773,
+    name: "Form of the Serpent",
+    cardType: "actionmodifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Foundation Exhibit [100779] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100779,
+    name: "Foundation Exhibit",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Founders of the Ebony Kingdom [100780] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100780,
+    name: "Founders of the Ebony Kingdom",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Framing [100786] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100786,
+    name: "The Framing",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Framing an Ancient Grudge [100787] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100787,
+    name: "Framing an Ancient Grudge",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Frozen Object [100795] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100795,
+    name: "Frozen Object",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Galaric's Legacy [100798] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100798,
+    name: "Galaric's Legacy",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Games of Instinct [100801] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100801,
+    name: "Games of Instinct",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gang Territory [100803] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100803,
+    name: "Gang Territory",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gangrel Atavism [100804] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100804,
+    name: "Gangrel Atavism",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gear Up [100813] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100813,
+    name: "Gear Up",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gift of Bellona [100825] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100825,
+    name: "Gift of Bellona",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gift of Sleep [100828] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100828,
+    name: "Gift of Sleep",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Giovanni Acceptance [100829] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100829,
+    name: "Giovanni Acceptance",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Giovanni Discrimination [100830] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100830,
+    name: "Giovanni Discrimination",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gird Minions [100831] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100831,
+    name: "Gird Minions",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Glutton [100839] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100839,
+    name: "Glutton",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Go Anarch [100840] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100840,
+    name: "Go Anarch",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Goodnight, Sweet Prince [100843] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100843,
+    name: "Goodnight, Sweet Prince",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Grandest Trick [100849] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100849,
+    name: "The Grandest Trick",
+    cardType: "modifier",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Greater Curse [100854] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100854,
+    name: "Greater Curse",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gremlins [100856] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100856,
+    name: "Gremlins",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Guinea-Bissau Carnival [100870] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100870,
+    name: "Guinea-Bissau Carnival",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Guruhi Kholo [100874] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100874,
+    name: "Guruhi Kholo",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Hackerspace [100876] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100876,
+    name: "Hackerspace",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hall of Hades' Court [100878] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100878,
+    name: "Hall of Hades' Court",
+    cardType: "modifierOrReaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Hand Contract [100880] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100880,
+    name: "Hand Contract",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hanging Fermata [100883] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100883,
+    name: "Hanging Fermata",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Haqim's Law: Judgment [100884] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100884,
+    name: "Haqim's Law: Judgment",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Haqim's Law: Leadership [100885] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100885,
+    name: "Haqim's Law: Leadership",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Harass [100886] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100886,
+    name: "Harass",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Harmony [100888] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100888,
+    name: "Harmony",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hatchling [100892] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100892,
+    name: "Hatchling",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Haunt [100893] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100893,
+    name: "Haunt",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Haunting [100894] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100894,
+    name: "The Haunting",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Haven Affinity [100895] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100895,
+    name: "Haven Affinity",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Haven Hunting [100896] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100896,
+    name: "Haven Hunting",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Healing Touch [100901] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100901,
+    name: "Healing Touch",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Heart of Darkness [100902] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100902,
+    name: "Heart of Darkness",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 1 }] }
+    ],
+  },
+  {
+    // Heidelberg Castle, Germany [100908] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100908,
+    name: "Heidelberg Castle, Germany",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hidden Pathways [100917] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100917,
+    name: "Hidden Pathways",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hierophant [100923] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100923,
+    name: "Hierophant",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // High Stakes [100928] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100928,
+    name: "High Stakes",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // High Top [100929] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100929,
+    name: "High Top",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "additionalStrike", count: 1, limited: true }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hive Mind [100931] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100931,
+    name: "Hive Mind",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Honor the Elders [100933] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100933,
+    name: "Honor the Elders",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Houngan [100940] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100940,
+    name: "Houngan",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // House of Sorrow [100942] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100942,
+    name: "House of Sorrow",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Humanitas [100943] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100943,
+    name: "Humanitas",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Igoli's Loyalty [100950] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100950,
+    name: "Igoli's Loyalty",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Illegal Search and Seizure [100951] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100951,
+    name: "Illegal Search and Seizure",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Illegalism [100952] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100952,
+    name: "Illegalism",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Imperial Decree [100961] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100961,
+    name: "Imperial Decree",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Inceptor [100969] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100969,
+    name: "Inceptor",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Infamous Warlock [100976] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100976,
+    name: "Infamous Warlock",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Infernal Pact [100979] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100979,
+    name: "Infernal Pact",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Information Network [100985] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100985,
+    name: "Information Network",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Inquisition [100988] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100988,
+    name: "Inquisition",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Insurance Scam [100997] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100997,
+    name: "Insurance Scam",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Internal Recursion [100998] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100998,
+    name: "Internal Recursion",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "combatEnds" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Into the Fire [101000] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101000,
+    name: "Into the Fire",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Invitation Accepted [101004] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101004,
+    name: "Invitation Accepted",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ishtarri Kholo [101011] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101011,
+    name: "Ishtarri Kholo",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Ishtarri Warlord [101012] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101012,
+    name: "Ishtarri Warlord",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Island of Yiaros [101013] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101013,
+    name: "Island of Yiaros",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Jack of Both Sides [101016] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101016,
+    name: "Jack of Both Sides",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Jake Washington [101019] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101019,
+    name: "Jake Washington",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Jar the Soul [101021] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101021,
+    name: "Jar the Soul",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Joseph Pander [101024] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101024,
+    name: "Joseph Pander",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Judgment: Death to the Brujah! [101029] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101029,
+    name: "Judgment: Death to the Brujah!",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Jungle Hunting Ground [101030] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101030,
+    name: "Jungle Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Justicar Retribution [101031] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101031,
+    name: "Justicar Retribution",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Kaymakli Nightmares [101036] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101036,
+    name: "Kaymakli Nightmares",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Keystone Kine [101041] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101041,
+    name: "Keystone Kine",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Kindred Restructure [101052] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101052,
+    name: "Kindred Restructure",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Kindred Society Games [101054] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101054,
+    name: "Kindred Society Games",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Kindred Spirits [101055] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101055,
+    name: "Kindred Spirits",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Kiss of Lachesis [101061] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101061,
+    name: "Kiss of Lachesis",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Last Stand [101074] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101074,
+    name: "Last Stand",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 6,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Lazarene Inquisitor [101076] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101076,
+    name: "Lazarene Inquisitor",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Left for Dead [101084] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101084,
+    name: "Left for Dead",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Legacy of Caine [101086] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101086,
+    name: "Legacy of Caine",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Legacy of Pander [101087] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101087,
+    name: "Legacy of Pander",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Legend of the Leopard [101090] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101090,
+    name: "Legend of the Leopard",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Legendary Vampire [101091] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101091,
+    name: "Legendary Vampire",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 2 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Legion [101092] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101092,
+    name: "Legion",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Liberty Club Intrigue [101101] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101101,
+    name: "Liberty Club Intrigue",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Lily Prelude [101109] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101109,
+    name: "Lily Prelude",
+    cardType: "politicalAction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Little Mountain Cemetery [101113] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101113,
+    name: "Little Mountain Cemetery",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Lock [101118] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101118,
+    name: "Lock",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "def", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Loki's Gift [101119] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101119,
+    name: "Loki's Gift",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Loner [101121] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101121,
+    name: "Loner",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Loose Cannon [101122] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101122,
+    name: "Loose Cannon",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Lord of Serenity [101123] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101123,
+    name: "Lord of Serenity",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Loss [101124] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101124,
+    name: "Loss",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyBleed", amount: 2 }] }
+    ],
+  },
+  {
+    // Lunatic Eruption [101132] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101132,
+    name: "Lunatic Eruption",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Lure of the Serpent [101134] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101134,
+    name: "Lure of the Serpent",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Madman's Quill [101138] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101138,
+    name: "Madman's Quill",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Madness Network [101139] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101139,
+    name: "Madness Network",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Madness of the Bard [101140] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101140,
+    name: "Madness of the Bard",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Madrigal [101141] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101141,
+    name: "Madrigal",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Malkavian Derangement: Alternate Personality [101151] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101151,
+    name: "Malkavian Derangement: Alternate Personality",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Malkavian Derangement: Paranoia [101152] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101152,
+    name: "Malkavian Derangement: Paranoia",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Malkavian Game [101153] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101153,
+    name: "Malkavian Game",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Malkavian Prank [101155] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101155,
+    name: "Malkavian Prank",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Malkavian Seven Miseries [101157] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101157,
+    name: "The Malkavian Seven Miseries",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mantle of the Bestial Majesty [101161] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101161,
+    name: "Mantle of the Bestial Majesty",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mark of Damnation [101166] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101166,
+    name: "Mark of Damnation",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "press", continues: "optional" }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Marked Territory [101170] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101170,
+    name: "Marked Territory",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Martial Ritus [101173] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101173,
+    name: "Martial Ritus",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mask of a Thousand Faces [101179] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101179,
+    name: "Mask of a Thousand Faces",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Masochism [101180] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101180,
+    name: "Masochism",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mass Reality [101185] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101185,
+    name: "Mass Reality",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Massassi's Honor [101186] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101186,
+    name: "Massassi's Honor",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mbare Market, Harare [101189] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101189,
+    name: "Mbare Market, Harare",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Meddling of Semsith [101192] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101192,
+    name: "The Meddling of Semsith",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Memories of Mortality [101198] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101198,
+    name: "Memories of Mortality",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Memory's Fading Glimpse [101200] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101200,
+    name: "Memory's Fading Glimpse",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mesmerize [101205] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101205,
+    name: "Mesmerize",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Metro Underground [101207] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101207,
+    name: "Metro Underground",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Might of the Camarilla [101208] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101208,
+    name: "Might of the Camarilla",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Millicent Smith, Puritan Vampire Hunter [101210] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101210,
+    name: "Millicent Smith, Puritan Vampire Hunter",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mind of a Child [101212] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101212,
+    name: "Mind of a Child",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mind of a Killer [101213] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101213,
+    name: "Mind of a Killer",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "prevent", base: 2 }, { kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Minor Curse [101220] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101220,
+    name: "Minor Curse",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mal", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mirror Image [101222] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101222,
+    name: "Mirror Image",
+    cardType: "actionmodifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Monomancy [101241] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101241,
+    name: "Monomancy",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Movement of the Slow Body [101247] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101247,
+    name: "Movement of the Slow Body",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mundane [101253] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101253,
+    name: "Mundane",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mustajib [101258] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101258,
+    name: "Mustajib",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // My Kin Against the World [101260] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101260,
+    name: "My Kin Against the World",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // New in Town [101278] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101278,
+    name: "New in Town",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // New Moon Sigil [101281] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101281,
+    name: "New Moon Sigil",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Night Moves [101283] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101283,
+    name: "Night Moves",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Nightmare Curse [101284] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101284,
+    name: "Nightmare Curse",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // No Secrets From the Magaji [101291] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101291,
+    name: "No Secrets From the Magaji",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Nocturn [101293] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101293,
+    name: "Nocturn",
+    cardType: "ally",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nocturn Theater [101294] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101294,
+    name: "Nocturn Theater",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nod [101295] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101295,
+    name: "Nod",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nose of the Hound [101296] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101296,
+    name: "Nose of the Hound",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Nosferatu Bestial [101297] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101297,
+    name: "Nosferatu Bestial",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Nosferatu Hosting [101298] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101298,
+    name: "Nosferatu Hosting",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nosferatu Kingdom [101300] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101300,
+    name: "Nosferatu Kingdom",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nosferatu Performance Art [101301] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101301,
+    name: "Nosferatu Performance Art",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Oath [101307] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101307,
+    name: "The Oath",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Oath of Loyalty [101308] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101308,
+    name: "Oath of Loyalty",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Obsession [101311] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101311,
+    name: "Obsession",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Occlusion [101313] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101313,
+    name: "Occlusion",
+    cardType: "actionmodifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Of Noble Blood [101315] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101315,
+    name: "Of Noble Blood",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Oppugnant Night [101327] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101327,
+    name: "Oppugnant Night",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Orun [101331] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101331,
+    name: "Orun",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Osebo Kholo [101332] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101332,
+    name: "Osebo Kholo",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Ossian [101333] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101333,
+    name: "Ossian",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Out of Control [101335] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101335,
+    name: "Out of Control",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Out of the Frying Pan [101336] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101336,
+    name: "Out of the Frying Pan",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Palace Hunting Ground [101344] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101344,
+    name: "Palace Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Pallid [101347] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101347,
+    name: "Pallid",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Panacea [101348] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101348,
+    name: "Panacea",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Paragon [101351] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101351,
+    name: "Paragon",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Paris Opera House [101352] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101352,
+    name: "Paris Opera House",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Parthenon [101355] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101355,
+    name: "The Parthenon",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Passion [101356] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101356,
+    name: "Passion",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Patagia: Flaps Allowing Limited Flight [101357] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101357,
+    name: "Patagia: Flaps Allowing Limited Flight",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Path of Blood [101358] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101358,
+    name: "The Path of Blood",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // The Path of Bone [101359] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101359,
+    name: "The Path of Bone",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // The Path of Harmony [101362] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101362,
+    name: "The Path of Harmony",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // The Path of Retribution [101367] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101367,
+    name: "The Path of Retribution",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // The Path of Service [101368] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101368,
+    name: "The Path of Service",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // The Path of Tears [101369] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101369,
+    name: "The Path of Tears",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Path of the Feral Heart [101370] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101370,
+    name: "The Path of the Feral Heart",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Path of the Void [101372] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101372,
+    name: "Path of the Void",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Patronage [101375] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101375,
+    name: "Patronage",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Peace of Khetamon [101379] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101379,
+    name: "The Peace of Khetamon",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Peacemaker [101381] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101381,
+    name: "Peacemaker",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Pentex™ Loves You! [101383] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101383,
+    name: "Pentex™ Loves You!",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Père Lachaise, France [101385] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101385,
+    name: "Père Lachaise, France",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Permanency [101389] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101389,
+    name: "Permanency",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Persistent Echo [101392] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101392,
+    name: "Persistent Echo",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Persona Non Grata [101393] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101393,
+    name: "Persona Non Grata",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Phantom Speaker [101397] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101397,
+    name: "Phantom Speaker",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Plasmic Form [101402] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101402,
+    name: "Plasmic Form",
+    cardType: "actionmodifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Playing for Keeps [101403] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101403,
+    name: "Playing for Keeps",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Poison the Well of Life [101407] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101407,
+    name: "Poison the Well of Life",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Police Department [101410] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101410,
+    name: "Police Department",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Political Flux [101414] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101414,
+    name: "Political Flux",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Political Seizure [101416] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101416,
+    name: "Political Seizure",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Portrait [101422] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101422,
+    name: "The Portrait",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Possession [101423] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101423,
+    name: "Possession",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Potio Martyrium [101425] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101425,
+    name: "Potio Martyrium",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Powerbase: Berlin [101432] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101432,
+    name: "Powerbase: Berlin",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Powerbase: Cape Verde [101433] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101433,
+    name: "Powerbase: Cape Verde",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Praetorian Backer [101446] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101446,
+    name: "Praetorian Backer",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Praxis Seizure: Venice [101471] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101471,
+    name: "Praxis Seizure: Venice",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Precision [101474] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101474,
+    name: "Precision",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Pressing Flesh [101481] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101481,
+    name: "Pressing Flesh",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Principia Discordia [101486] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101486,
+    name: "Principia Discordia",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Priority Shift [101488] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101488,
+    name: "Priority Shift",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Prison of the Mind [101489] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101489,
+    name: "Prison of the Mind",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Promise of 1528 [101494] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101494,
+    name: "Promise of 1528",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Protect Thine Own [101499] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101499,
+    name: "Protect Thine Own",
+    cardType: "politicalAction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Protected Resources [101500] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101500,
+    name: "Protected Resources",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Provision of the Silsila [101503] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101503,
+    name: "Provision of the Silsila",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Proxy Kissed [101504] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101504,
+    name: "Proxy Kissed",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Psychic Projection [101509] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101509,
+    name: "Psychic Projection",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Psychic Veil [101510] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101510,
+    name: "Psychic Veil",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Public Vilification [101514] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101514,
+    name: "Public Vilification",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Pulse of the Canaille [101517] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101517,
+    name: "Pulse of the Canaille",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 2 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Punish [101518] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101518,
+    name: "Punish",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "red", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Purchase Pact [101520] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101520,
+    name: "Purchase Pact",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Purification [101521] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101521,
+    name: "Purification",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Purity of the Beast [101522] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101522,
+    name: "Purity of the Beast",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Putrescent Servitude [101526] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101526,
+    name: "Putrescent Servitude",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Quicksilver Contemplation [101533] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101533,
+    name: "Quicksilver Contemplation",
+    cardType: "modifierOrReaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 2 }, { kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "tem", effects: [{ kind: "modifyBleed", amount: 2 }, { kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Rampage [101539] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101539,
+    name: "Rampage",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Random Patterns [101540] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101540,
+    name: "Random Patterns",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Rapid Healing [101543] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101543,
+    name: "Rapid Healing",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rastacourere [101546] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101546,
+    name: "Rastacourere",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ravager [101548] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101548,
+    name: "Ravager",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rave [101549] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101549,
+    name: "Rave",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ravnos Acceptance [101551] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101551,
+    name: "Ravnos Acceptance",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rayzeel's Song [101555] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101555,
+    name: "Rayzeel's Song",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Reality [101560] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101560,
+    name: "Reality",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Realm of the Black Sun [101562] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101562,
+    name: "The Realm of the Black Sun",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Recruiting Party [101568] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101568,
+    name: "Recruiting Party",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Recure of the Homeland [101571] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101571,
+    name: "Recure of the Homeland",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Red List [101574] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101574,
+    name: "Red List",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Redistribution [101579] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101579,
+    name: "Redistribution",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Reform Body [101581] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101581,
+    name: "Reform Body",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Regeneration [101585] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101585,
+    name: "Regeneration",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Regenerative Blood [101586] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101586,
+    name: "Regenerative Blood",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reindoctrination [101589] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101589,
+    name: "Reindoctrination",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Release of the Shackled Soul [101593] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101593,
+    name: "Release of the Shackled Soul",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Remover [101601] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101601,
+    name: "Remover",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Renewed Vigor [101603] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101603,
+    name: "Renewed Vigor",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Repair the Undead Flesh [101604] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101604,
+    name: "Repair the Undead Flesh",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Resilient Mind [101609] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101609,
+    name: "Resilient Mind",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Restructure [101615] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101615,
+    name: "Restructure",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Resume the Coil [101616] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101616,
+    name: "Resume the Coil",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Resurrection [101617] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101617,
+    name: "Resurrection",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "val", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Retain the Quick Blood [101618] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101618,
+    name: "Retain the Quick Blood",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Retribution [101619] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101619,
+    name: "Retribution",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Reunion Kamut [101621] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101621,
+    name: "Reunion Kamut",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Revelation of the Sire [101625] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101625,
+    name: "Revelation of the Sire",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Reversal of Fortunes [101629] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101629,
+    name: "Reversal of Fortunes",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Revocation of Tyre [101630] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101630,
+    name: "Revocation of Tyre",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ritual Challenge [101641] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101641,
+    name: "Ritual Challenge",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ritual of the Bitter Rose [101642] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101642,
+    name: "Ritual of the Bitter Rose",
+    cardType: "actionmodifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Root of Vitality [101652] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101652,
+    name: "Root of Vitality",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rubicon [101657] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101657,
+    name: "Rubicon",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rumble [101661] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101661,
+    name: "Rumble",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rumors of Gehenna [101663] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101663,
+    name: "Rumors of Gehenna",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sabbat Inquisitor [101666] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101666,
+    name: "Sabbat Inquisitor",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Samuel Haight [101675] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101675,
+    name: "Samuel Haight",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 5,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sanguine Instruction [101680] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101680,
+    name: "Sanguine Instruction",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // SchreckNET [101690] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101690,
+    name: "SchreckNET",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Seattle Committee [101704] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101704,
+    name: "Seattle Committee",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Secret Library of Alexandria [101708] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101708,
+    name: "The Secret Library of Alexandria",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Secret Passage [101710] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101710,
+    name: "Secret Passage",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Seeds of Corruption [101713] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101713,
+    name: "Seeds of Corruption",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sense Death [101716] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101716,
+    name: "Sense Death",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sense the Sin [101718] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101718,
+    name: "Sense the Sin",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyBleed", amount: 2 }, { kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 2 }, { kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Sense Vibrations [101719] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101719,
+    name: "Sense Vibrations",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sense Vitality [101720] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101720,
+    name: "Sense Vitality",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sensory Deprivation [101721] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101721,
+    name: "Sensory Deprivation",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sensory Overload [101722] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101722,
+    name: "Sensory Overload",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Seraph [101723] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101723,
+    name: "Seraph",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sermon of Caine [101726] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101726,
+    name: "Sermon of Caine",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Set's Call [101730] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101730,
+    name: "Set's Call",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Set's Curse [101731] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101731,
+    name: "Set's Curse",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shadow of Taint [101739] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101739,
+    name: "Shadow of Taint",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shadow of the Beast [101740] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101740,
+    name: "Shadow of the Beast",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Shadow Twin [101746] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101746,
+    name: "Shadow Twin",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shadowed Eyes [101747] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101747,
+    name: "Shadowed Eyes",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shakar [101748] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101748,
+    name: "Shakar",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shakar: the Hunt [101749] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101749,
+    name: "Shakar: the Hunt",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shared Nightmare [101755] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101755,
+    name: "Shared Nightmare",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shattering [101759] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101759,
+    name: "Shattering",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shattering Crescendo [101761] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101761,
+    name: "Shattering Crescendo",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Sheepdog [101762] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101762,
+    name: "Sheepdog",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shell Break [101763] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101763,
+    name: "Shell Break",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Shepherd's Innocence [101765] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101765,
+    name: "Shepherd's Innocence",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shock Troops [101768] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101768,
+    name: "Shock Troops",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Siren's Lure [101786] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101786,
+    name: "Siren's Lure",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sixth Tradition: Destruction [101788] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101788,
+    name: "Sixth Tradition: Destruction",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Skaald [101789] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101789,
+    name: "Skaald",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Skullduggery [101796] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101796,
+    name: "Skullduggery",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Slake the Thirst [101797] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101797,
+    name: "Slake the Thirst",
+    cardType: "actionmodifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sleep of Reason [101803] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101803,
+    name: "Sleep of Reason",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sleight of Hand [101806] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101806,
+    name: "Sleight of Hand",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Smash and Grab [101809] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101809,
+    name: "Smash and Grab",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Smear Campaign [101810] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101810,
+    name: "Smear Campaign",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Snipe Hunt [101815] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101815,
+    name: "Snipe Hunt",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Song of Pan [101826] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101826,
+    name: "Song of Pan",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Songs of the Distant Vitae [101828] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101828,
+    name: "Songs of the Distant Vitae",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Decoration [101830] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101830,
+    name: "Soul Decoration",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Feasting [101831] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101831,
+    name: "Soul Feasting",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul of the Earth [101833] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101833,
+    name: "Soul of the Earth",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Painting [101834] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101834,
+    name: "Soul Painting",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Soul Stealing [101836] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101836,
+    name: "Soul Stealing",
+    cardType: "actionmodifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sound of a Breaking Oath [101837] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101837,
+    name: "Sound of a Breaking Oath",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sowing Dissension [101838] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101838,
+    name: "Sowing Dissension",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Spectral Divination [101843] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101843,
+    name: "Spectral Divination",
+    cardType: "modifierOrReaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Speed of Thought [101844] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101844,
+    name: "Speed of Thought",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Spell of Life [101845] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101845,
+    name: "Spell of Life",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Spirit Marionette [101848] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101848,
+    name: "Spirit Marionette",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Spontaneous Power [101855] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101855,
+    name: "Spontaneous Power",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Status Perfectus [101863] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101863,
+    name: "The Status Perfectus",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Steal the Mind [101865] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101865,
+    name: "Steal the Mind",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Storm Sewers [101878] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101878,
+    name: "Storm Sewers",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Strained Vitae Supply [101879] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101879,
+    name: "Strained Vitae Supply",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Succubus Club [101893] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101893,
+    name: "Succubus Club",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Summon the Abyss [101900] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101900,
+    name: "Summon the Abyss",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sunrise Service [101903] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101903,
+    name: "Sunrise Service",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sunset Strip, Hollywood [101904] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101904,
+    name: "Sunset Strip, Hollywood",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Suspension of Disbelief [101911] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101911,
+    name: "Suspension of Disbelief",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Svadharma [101912] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101912,
+    name: "Svadharma",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Swiftness of the Stag [101916] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101916,
+    name: "Swiftness of the Stag",
+    cardType: "actionmodifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Swiss Cut [101917] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101917,
+    name: "Swiss Cut",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tabriz Assembly [101924] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101924,
+    name: "Tabriz Assembly",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Tajdid [101927] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101927,
+    name: "Tajdid",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Talons of the Dead [101933] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101933,
+    name: "Talons of the Dead",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tattoo Signal [101946] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101946,
+    name: "Tattoo Signal",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Taunt the Caged Beast [101947] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101947,
+    name: "Taunt the Caged Beast",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Thicker than Blood [101969] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101969,
+    name: "Thicker than Blood",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Threading the Path of Orpheus [101977] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101977,
+    name: "Threading the Path of Orpheus",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Thrones Crumble [101981] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101981,
+    name: "Thrones Crumble",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Touch of Clarity [101998] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 101998,
+    name: "Touch of Clarity",
+    cardType: "modifierOrReaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Tower of London [102001] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102001,
+    name: "Tower of London",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tradition Upheld [102004] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102004,
+    name: "Tradition Upheld",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trainer [102007] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102007,
+    name: "Trainer",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Transcendent Laibon [102009] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102009,
+    name: "Transcendent Laibon",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Transfusion [102011] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102011,
+    name: "Transfusion",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Travelers Obey the Tenets [102013] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102013,
+    name: "Travelers Obey the Tenets",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Treat the Sick Mind [102016] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102016,
+    name: "Treat the Sick Mind",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Treatment [102017] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102017,
+    name: "The Treatment",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Treaty of Laibach [102018] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102018,
+    name: "Treaty of Laibach",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tremere Convocation [102020] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102020,
+    name: "Tremere Convocation",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Trick of the Danya [102024] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102024,
+    name: "The Trick of the Danya",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Triole's Revenge [102025] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102025,
+    name: "Triole's Revenge",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Trophy: Chosen [102027] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102027,
+    name: "Trophy: Chosen",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Clan Respect [102028] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102028,
+    name: "Trophy: Clan Respect",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Discipline [102030] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102030,
+    name: "Trophy: Discipline",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Domain [102031] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102031,
+    name: "Trophy: Domain",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Trophy: Hunting Ground [102032] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102032,
+    name: "Trophy: Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Library [102033] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102033,
+    name: "Trophy: Library",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Progeny [102035] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102035,
+    name: "Trophy: Progeny",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Revered [102037] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102037,
+    name: "Trophy: Revered",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 2 }] }
+    ],
+  },
+  {
+    // Trophy: Safe Passage [102038] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102038,
+    name: "Trophy: Safe Passage",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trumped-Up Charges [102042] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102042,
+    name: "Trumped-Up Charges",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Truth of Blood [102045] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102045,
+    name: "Truth of Blood",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Twilight Camp [102049] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102049,
+    name: "Twilight Camp",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Twisted Forest [102050] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102050,
+    name: "Twisted Forest",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Unacceptable Appearance [102055] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102055,
+    name: "Unacceptable Appearance",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Unburdening the Bestial Soul [102056] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102056,
+    name: "Unburdening the Bestial Soul",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Undue Influence [102067] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102067,
+    name: "Undue Influence",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Unexpected Coalition [102070] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102070,
+    name: "Unexpected Coalition",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Unwholesome Bond [102082] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102082,
+    name: "Unwholesome Bond",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "san", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Vaticination [102093] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102093,
+    name: "Vaticination",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Vaulderie [102094] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102094,
+    name: "Vaulderie",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Velvet Tongue [102100] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102100,
+    name: "Velvet Tongue",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Ventrue Directorate Assembly [102108] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102108,
+    name: "Ventrue Directorate Assembly",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ventrue Investment [102110] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102110,
+    name: "Ventrue Investment",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Vicissitude Poisoning [102117] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102117,
+    name: "Vicissitude Poisoning",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Vigil: The Thin Line [102119] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102119,
+    name: "Vigil: The Thin Line",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Violation of Trust [102122] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102122,
+    name: "Violation of Trust",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Visionquest [102125] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102125,
+    name: "Visionquest",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Vox Senis [102133] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102133,
+    name: "Vox Senis",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Wanderer's Counsel [102143] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102143,
+    name: "Wanderer's Counsel",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Watchtower: Chosen are Called [102155] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102155,
+    name: "Watchtower: Chosen are Called",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Watchtower: Four Ride Forth [102156] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102156,
+    name: "Watchtower: Four Ride Forth",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Watchtower: Greatest Fall [102157] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102157,
+    name: "Watchtower: Greatest Fall",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Wave of Insanity [102160] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102160,
+    name: "Wave of Insanity",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Weeping Stone [102167] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102167,
+    name: "Weeping Stone",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Whispers from the Dead [102175] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102175,
+    name: "Whispers from the Dead",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Wildebeest [102181] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102181,
+    name: "The Wildebeest",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Will of the Council [102182] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102182,
+    name: "Will of the Council",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Winged Second [102186] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102186,
+    name: "Winged Second",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "flight", effects: [{ kind: "strikeDodge" }, { kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Wise Spider [102187] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102187,
+    name: "Wise Spider",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The World's a Canvas [102193] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102193,
+    name: "The World's a Canvas",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Wrath of the Inner Circle [102195] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102195,
+    name: "Wrath of the Inner Circle",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Year of Fortune [102200] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102200,
+    name: "Year of Fortune",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Zillah's Tears [102206] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102206,
+    name: "Zillah's Tears",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Zillah's Valley [102207] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102207,
+    name: "Zillah's Valley",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 5,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Zip Line [102209] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102209,
+    name: "Zip Line",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Zoning Board [102211] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102211,
+    name: "Zoning Board",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The British Museum, London [102236] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102236,
+    name: "The British Museum, London",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mithraic Cultist [102241] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102241,
+    name: "Mithraic Cultist",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Mobile HQ, Operation Antigen [102242] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102242,
+    name: "Mobile HQ, Operation Antigen",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Confiscation [102271] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    krcgId: 102271,
+    name: "Confiscation",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+
+  {
+    // 419 Operation [100002] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100002,
+    name: "419 Operation",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Abactor [100004] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100004,
+    name: "Abactor",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ablative Skin [100008] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100008,
+    name: "Ablative Skin",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Abombwe [100009] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100009,
+    name: "Abombwe",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Abomination [100010] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100010,
+    name: "Abomination",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "maneuver" }, { kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Al's Army Apparatus [100035] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100035,
+    name: "Al's Army Apparatus",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Alastor [100038] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100038,
+    name: "Alastor",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Alia, God's Messenger [100039] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100039,
+    name: "Alia, God's Messenger",
+    cardType: "ally",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Alvusia [100041] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100041,
+    name: "Alvusia",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Ambrosius, The Ferryman [100044] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100044,
+    name: "Ambrosius, The Ferryman",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ambulance [100045] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100045,
+    name: "Ambulance",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ancestor's Insight [100062] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100062,
+    name: "Ancestor's Insight",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Angel of Berlin [100067] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100067,
+    name: "Angel of Berlin",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Arms Dealer [100090] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100090,
+    name: "Arms Dealer",
+    cardType: "ally",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Art of Memory [100097] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100097,
+    name: "The Art of Memory",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ashur Tablets [100106] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100106,
+    name: "Ashur Tablets",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Augur [100110] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100110,
+    name: "Augur",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "viz", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Aye [100120] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100120,
+    name: "Aye",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bamba [100129] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100129,
+    name: "Bamba",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Battle Frenzy [100141] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100141,
+    name: "Battle Frenzy",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Bauble [100142] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100142,
+    name: "Bauble",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Black Hand Ritual [100168] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100168,
+    name: "Black Hand Ritual",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Blade of Enoch [100176] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100176,
+    name: "Blade of Enoch",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bond [100234] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100234,
+    name: "Bond",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "inn", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bounty [100242] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100242,
+    name: "Bounty",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Brainwash [100245] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100245,
+    name: "Brainwash",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Brujah Frenzy [100261] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100261,
+    name: "Brujah Frenzy",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Bujo [100265] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100265,
+    name: "Bujo",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Call the Great Beast [100280] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100280,
+    name: "Call the Great Beast",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Chair of Hades [100318] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100318,
+    name: "Chair of Hades",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Charigger, The Axe [100331] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100331,
+    name: "Charigger, The Axe",
+    cardType: "retainer",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Children of Stone [100340] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100340,
+    name: "Children of Stone",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Church of Vindicated Faith [100348] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100348,
+    name: "The Church of Vindicated Faith",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cleave [100358] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100358,
+    name: "Cleave",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ven", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Code of Milan Suspended [100371] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100371,
+    name: "Code of Milan Suspended",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Cold Amber's Hold [100375] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100375,
+    name: "Cold Amber's Hold",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Concordance [100395] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100395,
+    name: "Concordance",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemnation: Betrayed [100397] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100397,
+    name: "Condemnation: Betrayed",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemnation: Doomed [100398] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100398,
+    name: "Condemnation: Doomed",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemnation: Languid [100399] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100399,
+    name: "Condemnation: Languid",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Condemnation: Mute [100400] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100400,
+    name: "Condemnation: Mute",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Consume the Dead [100417] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100417,
+    name: "Consume the Dead",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Contagion [100418] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100418,
+    name: "Contagion",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Cooler [100422] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100422,
+    name: "Cooler",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Coroner's Contact [100424] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100424,
+    name: "Coroner's Contact",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Corrupt Construction [100429] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100429,
+    name: "Corrupt Construction",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Corruption [100430] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100430,
+    name: "Corruption",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Courier [100434] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100434,
+    name: "Courier",
+    cardType: "ally",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Crusade: Amsterdam [100451] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100451,
+    name: "Crusade: Amsterdam",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Crusade: Barcelona [100454] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100454,
+    name: "Crusade: Barcelona",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Crusade: Brussels [100456] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100456,
+    name: "Crusade: Brussels",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Crusade: Dublin [100459] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100459,
+    name: "Crusade: Dublin",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Crusade: London [100464] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100464,
+    name: "Crusade: London",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Crusade: Rome [100471] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100471,
+    name: "Crusade: Rome",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Crusade: Washington, D.C. [100473] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100473,
+    name: "Crusade: Washington, D.C.",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Crusader Sword [100474] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100474,
+    name: "The Crusader Sword",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Curse of Nitocris [100483] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100483,
+    name: "Curse of Nitocris",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dam the Heart's River [100489] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100489,
+    name: "Dam the Heart's River",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Deploy the Hand [100525] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100525,
+    name: "Deploy the Hand",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Determine [100534] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100534,
+    name: "Determine",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "viz", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Deviki Prasanta [100536] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100536,
+    name: "Deviki Prasanta",
+    cardType: "ally",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Devil-Channel: Back [100537] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100537,
+    name: "Devil-Channel: Back",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // Devil-Channel: Feet [100538] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100538,
+    name: "Devil-Channel: Feet",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Devil-Channel: Hands [100539] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100539,
+    name: "Devil-Channel: Hands",
+    cardType: "combat",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Devil-Channel: Throat [100540] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100540,
+    name: "Devil-Channel: Throat",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Diabolic Lure [100542] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100542,
+    name: "Diabolic Lure",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Din of the Damned [100544] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100544,
+    name: "Din of the Damned",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dirty Little Secrets [100547] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100547,
+    name: "Dirty Little Secrets",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dis Pater [100548] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100548,
+    name: "Dis Pater",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Disciple of Lazarus [100552] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100552,
+    name: "Disciple of Lazarus",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Dogs of War [100569] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100569,
+    name: "Dogs of War",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Drop Point Network [100590] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100590,
+    name: "Drop Point Network",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dusk Work [100595] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100595,
+    name: "Dusk Work",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Earth-Feeder [100603] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100603,
+    name: "Earth-Feeder",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ebony Fox Hunt [100606] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100606,
+    name: "Ebony Fox Hunt",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Edge of the World [100613] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100613,
+    name: "Edge of the World",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Edge Vitiation [100614] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100614,
+    name: "Edge Vitiation",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Eldest Command Undeath [100623] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100623,
+    name: "The Eldest Command Undeath",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Elephant Guardian [100626] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100626,
+    name: "Elephant Guardian",
+    cardType: "retainer",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Emerald Legionnaire [100634] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100634,
+    name: "Emerald Legionnaire",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Emergency Powers [100635] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100635,
+    name: "Emergency Powers",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Emergency Rations [100637] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100637,
+    name: "Emergency Rations",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Enticement [100650] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100650,
+    name: "Enticement",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ephor [100654] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100654,
+    name: "Ephor",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Epiphany [100655] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100655,
+    name: "Epiphany",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Excellent Thirst [100670] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100670,
+    name: "Excellent Thirst",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Exile [100673] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100673,
+    name: "Exile",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Expiate [100674] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100674,
+    name: "Expiate",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mar", effects: [{ kind: "press", continues: "optional" }, { kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Extortion [100675] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100675,
+    name: "Extortion",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Familial Bond [100699] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100699,
+    name: "Familial Bond",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Feline Saboteur [100718] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100718,
+    name: "Feline Saboteur",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fire on the Mountain [100735] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100735,
+    name: "Fire on the Mountain",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Form of Corruption [100770] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100770,
+    name: "Form of Corruption",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Fortschritt Library [100775] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100775,
+    name: "Fortschritt Library",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Free States Rant [100790] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100790,
+    name: "Free States Rant",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Frenzy [100791] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100791,
+    name: "Frenzy",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Game of Malkav [100800] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100800,
+    name: "Game of Malkav",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gangrel Conspiracy [100805] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100805,
+    name: "Gangrel Conspiracy",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Gangrel Justicar [100806] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100806,
+    name: "Gangrel Justicar",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ghost-Eater [100816] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100816,
+    name: "Ghost-Eater",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+
+  {
+    // Ghoul Messenger [100818] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100818,
+    name: "Ghoul Messenger",
+    cardType: "retainer",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Ghouls of Plaza Morería [100822] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100822,
+    name: "The Ghouls of Plaza Morería",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gift of Experience [100826] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100826,
+    name: "Gift of Experience",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Glass Walker Pact [100837] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100837,
+    name: "Glass Walker Pact",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Goblinism [100841] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100841,
+    name: "Goblinism",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Gramle [100846] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100846,
+    name: "Gramle",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Grasp the Ghostly [100851] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100851,
+    name: "Grasp the Ghostly",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Great Symposium [100853] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100853,
+    name: "Great Symposium",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Guarded Rubrics [100865] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100865,
+    name: "Guarded Rubrics",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 2 }] }
+    ],
+  },
+  {
+    // Guide and Mentor [100869] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100869,
+    name: "Guide and Mentor",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hand Intervention [100881] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100881,
+    name: "Hand Intervention",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Herald of Topheth [100912] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100912,
+    name: "Herald of Topheth",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hexaped [100914] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100914,
+    name: "Hexaped",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Hiding in the Open [100922] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100922,
+    name: "Hiding in the Open",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // High Aye [100924] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100924,
+    name: "High Aye",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // High Museum of Art, Atlanta [100926] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100926,
+    name: "High Museum of Art, Atlanta",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // High Orun [100927] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100927,
+    name: "High Orun",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Hourglass of the Mind [100941] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100941,
+    name: "Hourglass of the Mind",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Illusions of the Kindred [100954] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100954,
+    name: "Illusions of the Kindred",
+    cardType: "combat",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Illusory Resources [100955] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100955,
+    name: "Illusory Resources",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Ilomba [100956] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100956,
+    name: "Ilomba",
+    cardType: "retainer",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Imperator [100960] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100960,
+    name: "Imperator",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // In Memory of the Two Lands [100967] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100967,
+    name: "In Memory of the Two Lands",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Infamous Insurgent [100975] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100975,
+    name: "Infamous Insurgent",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Infernal Familiar [100978] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100978,
+    name: "Infernal Familiar",
+    cardType: "retainer",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Infernal Servitor [100981] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100981,
+    name: "Infernal Servitor",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Inflict [100982] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100982,
+    name: "Inflict",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mar", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Inside Dirt [100990] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100990,
+    name: "Inside Dirt",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Invoke Poison Glands [101005] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101005,
+    name: "Invoke Poison Glands",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Invoking the Beast [101006] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101006,
+    name: "Invoking the Beast",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continues: "optional" }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Journal of Hrorsh [101026] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101026,
+    name: "Journal of Hrorsh",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Kaymakli Fragment [101035] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101035,
+    name: "Kaymakli Fragment",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Kduva's Mask [101037] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101037,
+    name: "Kduva's Mask",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Kerrie [101039] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101039,
+    name: "Kerrie",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Khazar's Diary (Endless Night) [101046] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101046,
+    name: "Khazar's Diary (Endless Night)",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Khobar Towers, Al-Khubar [101048] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101048,
+    name: "Khobar Towers, Al-Khubar",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // King's Favor [101058] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101058,
+    name: "King's Favor",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Knotted Cord [101064] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101064,
+    name: "Knotted Cord",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Kuta [101069] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101069,
+    name: "Kuta",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Leadership Vacuum [101078] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101078,
+    name: "Leadership Vacuum",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Leech [101083] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101083,
+    name: "Leech",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Legacy [101085] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101085,
+    name: "Legacy",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Lifeless Tongues [101105] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101105,
+    name: "Lifeless Tongues",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Light Intensifying Goggles [101106] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101106,
+    name: "Light Intensifying Goggles",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Lilith's Blessing [101108] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101108,
+    name: "Lilith's Blessing",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Liquidation [101112] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101112,
+    name: "Liquidation",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Living Wood Staff [101115] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101115,
+    name: "Living Wood Staff",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Maleficia [101149] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101149,
+    name: "Maleficia",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mapatano Utando [101163] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101163,
+    name: "Mapatano Utando",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Marrakesh Codex [101172] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101172,
+    name: "The Marrakesh Codex",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Masai Blood Milk [101176] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101176,
+    name: "Masai Blood Milk",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mesu Bedshet [101206] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101206,
+    name: "Mesu Bedshet",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mistrust [101228] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101228,
+    name: "Mistrust",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Moise Kasavubu [101231] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101231,
+    name: "Moise Kasavubu",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Mokolé Blood [101232] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101232,
+    name: "Mokolé Blood",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Mozambique Allure [101248] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101248,
+    name: "Mozambique Allure",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Muricia's Call [101255] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101255,
+    name: "Muricia's Call",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Muse of Flame [101257] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101257,
+    name: "Muse of Flame",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ven", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Name Forgotten [101263] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101263,
+    name: "The Name Forgotten",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // National Guard Support [101266] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101266,
+    name: "National Guard Support",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Neebi [101269] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101269,
+    name: "Neebi",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Nkishi [101289] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101289,
+    name: "Nkishi",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Notorious Brutality [101304] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101304,
+    name: "Notorious Brutality",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Off Kilter [101316] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101316,
+    name: "Off Kilter",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Overseer [101339] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101339,
+    name: "Overseer",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Palla Grande [101346] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101346,
+    name: "Palla Grande",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Pandora's Whisper [101349] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101349,
+    name: "Pandora's Whisper",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Path of Death and the Soul [101360] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101360,
+    name: "Path of Death and the Soul",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Path of Evil Revelations [101361] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101361,
+    name: "Path of Evil Revelations",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // The Path of Lilith [101363] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101363,
+    name: "The Path of Lilith",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Path of the Scorched Heart [101371] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101371,
+    name: "The Path of the Scorched Heart",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Patsy [101377] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101377,
+    name: "Patsy",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Patterns in the Chaos [101378] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101378,
+    name: "Patterns in the Chaos",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Petra Resonance [101396] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101396,
+    name: "Petra Resonance",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Phobia [101399] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101399,
+    name: "Phobia",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Polaris Coach [101409] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101409,
+    name: "Polaris Coach",
+    cardType: "equipment",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Political Struggle [101418] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101418,
+    name: "Political Struggle",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Powerbase: Luanda [101436] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101436,
+    name: "Powerbase: Luanda",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Powerbase: Rome [101441] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101441,
+    name: "Powerbase: Rome",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Powerbase: Tshwane [101443] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101443,
+    name: "Powerbase: Tshwane",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Powerbase: Zürich [101445] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101445,
+    name: "Powerbase: Zürich",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Praxis Solomon [101473] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101473,
+    name: "Praxis Solomon",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Predator's Communion [101477] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101477,
+    name: "Predator's Communion",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Predator's Mastery [101478] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101478,
+    name: "Predator's Mastery",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Predator's Transformation [101479] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101479,
+    name: "Predator's Transformation",
+    cardType: "actionmodifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Prophecies of Gehenna [101497] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101497,
+    name: "Prophecies of Gehenna",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Public Enemy [101512] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101512,
+    name: "Public Enemy",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Raw Recruit [101554] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101554,
+    name: "Raw Recruit",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Reanimated Corpse [101563] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101563,
+    name: "Reanimated Corpse",
+    cardType: "ally",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rebirth [101565] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101565,
+    name: "Rebirth",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Recruitment [101569] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101569,
+    name: "Recruitment",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Recruitment Exercise [101570] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101570,
+    name: "Recruitment Exercise",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Redline [101580] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101580,
+    name: "Redline",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Reformation [101582] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101582,
+    name: "Reformation",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Regarhagan's Hold [101584] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101584,
+    name: "Regarhagan's Hold",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reinforcements [101590] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101590,
+    name: "Reinforcements",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reliquary: Akunanse Remains [101596] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101596,
+    name: "Reliquary: Akunanse Remains",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Reliquary: Biague [101597] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101597,
+    name: "Reliquary: Biague",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Reliquary: Shango Remains [101598] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101598,
+    name: "Reliquary: Shango Remains",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Research [101607] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101607,
+    name: "Research",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+
+  {
+    // The Return to Innocence [101620] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101620,
+    name: "The Return to Innocence",
+    cardType: "action",
+    bloodCost: 4,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Revelation of Desire [101622] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101622,
+    name: "Revelation of Desire",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Revelation of Despair [101623] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101623,
+    name: "Revelation of Despair",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Revelation of Ecstasy [101624] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101624,
+    name: "Revelation of Ecstasy",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Riddle Phantastique [101634] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101634,
+    name: "Riddle Phantastique",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rise of the Fallen [101638] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101638,
+    name: "Rise of the Fallen",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Rose Foundation [101653] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101653,
+    name: "The Rose Foundation",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rötschreck [101654] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101654,
+    name: "Rötschreck",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Rowan Ring [101655] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101655,
+    name: "Rowan Ring",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Ruins of Charizel [101659] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101659,
+    name: "Ruins of Charizel",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sabbat Threat [101668] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101668,
+    name: "Sabbat Threat",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sacrificial Lamb [101672] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101672,
+    name: "Sacrificial Lamb",
+    cardType: "action",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // San Nicolás de los Servitas [101677] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101677,
+    name: "San Nicolás de los Servitas",
+    cardType: "equipment",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // Savannah Runner [101683] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101683,
+    name: "Savannah Runner",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Scarlet Lore [101688] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101688,
+    name: "Scarlet Lore",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Scrounging [101700] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101700,
+    name: "Scrounging",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Secret Horde [101707] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101707,
+    name: "Secret Horde",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Secret Must Be Kept [101709] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101709,
+    name: "The Secret Must Be Kept",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Shaman [101750] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101750,
+    name: "Shaman",
+    cardType: "retainer",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Shambling Hordes [101751] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101751,
+    name: "Shambling Hordes",
+    cardType: "ally",
+    bloodCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Shatter the Gate [101757] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101757,
+    name: "Shatter the Gate",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Shroudsight [101776] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101776,
+    name: "Shroudsight",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sibyl's Tongue [101777] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101777,
+    name: "Sibyl's Tongue",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Siphon [101784] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101784,
+    name: "Siphon",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sire's Index Finger [101785] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101785,
+    name: "Sire's Index Finger",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sires Command, Childer Inherit [101787] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101787,
+    name: "Sires Command, Childer Inherit",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Slaughterhouse [101800] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101800,
+    name: "The Slaughterhouse",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Soul Scan [101835] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101835,
+    name: "Soul Scan",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Spirit Summoning Chamber [101849] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101849,
+    name: "Spirit Summoning Chamber",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Spiritual Guidance [101851] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101851,
+    name: "Spiritual Guidance",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Static Virtue [101862] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101862,
+    name: "Static Virtue",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Steam Tunnels [101868] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101868,
+    name: "Steam Tunnels",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Strange Day [101880] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101880,
+    name: "Strange Day",
+    cardType: "modifier",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Stranger Among Us [101881] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101881,
+    name: "The Stranger Among Us",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Striga [101884] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101884,
+    name: "Striga",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Subdued by the Blood [101890] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101890,
+    name: "Subdued by the Blood",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Sudario Refraction [101895] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101895,
+    name: "Sudario Refraction",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Summon History [101897] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101897,
+    name: "Summon History",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Summon Soul [101898] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101898,
+    name: "Summon Soul",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Summon the Serpent [101901] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101901,
+    name: "Summon the Serpent",
+    cardType: "action",
+    bloodCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Summoning [101902] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101902,
+    name: "The Summoning",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Supernatural Resistance [101906] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101906,
+    name: "Supernatural Resistance",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Swarm [101914] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101914,
+    name: "Swarm",
+    cardType: "retainer",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Sweeper [101915] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101915,
+    name: "Sweeper",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Taking the Skin: Minion [101928] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101928,
+    name: "Taking the Skin: Minion",
+    cardType: "actionmodifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Taking the Skin: Vulture [101929] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101929,
+    name: "Taking the Skin: Vulture",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Taming the Beast [101934] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101934,
+    name: "Taming the Beast",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Tapestry of Blood [101936] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101936,
+    name: "Tapestry of Blood",
+    cardType: "equipment",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Temptation [101954] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101954,
+    name: "Temptation",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Tend the Flock [101956] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101956,
+    name: "Tend the Flock",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Terra Incognita [101959] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101959,
+    name: "Terra Incognita",
+    cardType: "reaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // The Textbook Damnation [101962] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101962,
+    name: "The Textbook Damnation",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Thanks for the Donation [101964] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101964,
+    name: "Thanks for the Donation",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Thin-Blooded Seer [101971] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101971,
+    name: "Thin-Blooded Seer",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Those Who Endure Judge [101975] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101975,
+    name: "Those Who Endure Judge",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Total Insanity [101997] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101997,
+    name: "Total Insanity",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Toy Chest Test [102002] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102002,
+    name: "Toy Chest Test",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tragic Love Affair [102006] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102006,
+    name: "Tragic Love Affair",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Tranquility [102008] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102008,
+    name: "Tranquility",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Trap [102012] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102012,
+    name: "Trap",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Trochomancy [102026] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102026,
+    name: "Trochomancy",
+    cardType: "modifier",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Trophy: Diablerie [102029] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102029,
+    name: "Trophy: Diablerie",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: No Questions [102034] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102034,
+    name: "Trophy: No Questions",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Retainers [102036] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102036,
+    name: "Trophy: Retainers",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Trophy: Wealth [102039] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102039,
+    name: "Trophy: Wealth",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // True Faith [102040] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102040,
+    name: "True Faith",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Unholy Radiance [102073] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102073,
+    name: "Unholy Radiance",
+    cardType: "modifierOrReaction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Unity [102074] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102074,
+    name: "Unity",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Unleash Hell's Fury [102076] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102076,
+    name: "Unleash Hell's Fury",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dai", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Unseen Hibernation [102081] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102081,
+    name: "Unseen Hibernation",
+    cardType: "reaction",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Using the Advantage [102086] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102086,
+    name: "Using the Advantage",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Vampiric Disease [102088] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102088,
+    name: "Vampiric Disease",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Veles' Hunt [102099] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102099,
+    name: "Veles' Hunt",
+    cardType: "politicalAction",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Veneficti [102103] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102103,
+    name: "Veneficti",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Venenation [102104] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102104,
+    name: "Venenation",
+    cardType: "modifier",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Victim of Habit [102118] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102118,
+    name: "Victim of Habit",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Virolax Facility [102123] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102123,
+    name: "Virolax Facility",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Vulture's Buffet [102135] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102135,
+    name: "Vulture's Buffet",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Warding the Beast [102146] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102146,
+    name: "Warding the Beast",
+    cardType: "action",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Watchtower: The Wolves Feed [102158] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102158,
+    name: "Watchtower: The Wolves Feed",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Web of Knives Recruit [102165] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102165,
+    name: "Web of Knives Recruit",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Weirding Stone [102170] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102170,
+    name: "Weirding Stone",
+    cardType: "equipment",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Well-Marked [102172] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102172,
+    name: "Well-Marked",
+    cardType: "action",
+    bloodCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1 }, { kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Whistling Up the Beast [102177] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102177,
+    name: "Whistling Up the Beast",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "abo", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
+    ],
+  },
+  {
+    // Wooden Stake [102192] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102192,
+    name: "Wooden Stake",
+    cardType: "equipment",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Dark Web Procurer [102235] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102235,
+    name: "Dark Web Procurer",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Michael Harris, the Incinerator [102239] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102239,
+    name: "Michael Harris, the Incinerator",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 3,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // The Mithraeum, London [102240] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102240,
+    name: "The Mithraeum, London",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Shard, London [102244] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102244,
+    name: "The Shard, London",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Camarilla Conclave [102269] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102269,
+    name: "Camarilla Conclave",
+    cardType: "master",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+
+  {
+    // Abjure [100007] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100007,
+    name: "Abjure",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "red", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Absimiliard's Army [100011] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100011,
+    name: "Absimiliard's Army",
+    cardType: "event",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Anthelios, The Red Star [100074] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100074,
+    name: "Anthelios, The Red Star",
+    cardType: "event",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blood Cult Awareness Network [100198] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100198,
+    name: "Blood Cult Awareness Network",
+    cardType: "event",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Blood Weakens [100217] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100217,
+    name: "Blood Weakens",
+    cardType: "event",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Break the Code [100248] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100248,
+    name: "Break the Code",
+    cardType: "event",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Champion [100322] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100322,
+    name: "Champion",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "def", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Discern [100551] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100551,
+    name: "Discern",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "jud", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Donate [100575] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100575,
+    name: "Donate",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mar", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyIntercept", amount: 1 }, { kind: "modifyStrength", amount: 1 }] }
+    ],
+  },
+  {
+    // Edge Explosion [100612] — fala 29 wierna (Event Gehenna, faithful)
+    krcgId: 100612,
+    name: "Edge Explosion",
+    cardType: "event",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fall of the Camarilla [100695] — fala 29 wierna (Event Gehenna, faithful)
+    krcgId: 100695,
+    name: "Fall of the Camarilla",
+    cardType: "event",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Fall of the Sabbat [100696] — fala 29 wierna (Event Gehenna, faithful)
+    krcgId: 100696,
+    name: "Fall of the Sabbat",
+    cardType: "event",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Foresee [100764] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100764,
+    name: "Foresee",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "viz", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Fourth Cycle [100781] — fala 29 wierna (Event Gehenna, faithful)
+    krcgId: 100781,
+    name: "The Fourth Cycle",
+    cardType: "event",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Hide [100919] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100919,
+    name: "Hide",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "inn", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Illuminate [100953] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100953,
+    name: "Illuminate",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "inn", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Inspire [100991] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 100991,
+    name: "Inspire",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "inn", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Nightmares upon Nightmares [101285] — fala 29 wierna (Event Gehenna, faithful)
+    krcgId: 101285,
+    name: "Nightmares upon Nightmares",
+    cardType: "event",
+    bloodCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // NSA Trio [101306] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101306,
+    name: "NSA Trio",
+    cardType: "event",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Project [101492] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101492,
+    name: "Project",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "mar", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // React with Conviction [101557] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101557,
+    name: "React with Conviction",
+    cardType: "conviction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Rejuvenate [101592] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101592,
+    name: "Rejuvenate",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "def", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Respire [101611] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101611,
+    name: "Respire",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "red", effects: [{ kind: "actionStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Rise of the Nephtali [101639] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101639,
+    name: "Rise of the Nephtali",
+    cardType: "event",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Scourge of the Enochians [101697] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101697,
+    name: "Scourge of the Enochians",
+    cardType: "event",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Second Sight [101705] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101705,
+    name: "Second Sight",
+    cardType: "conviction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Shame [101752] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101752,
+    name: "Shame",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "red", effects: [{ kind: "combatEnds" }] }
+    ],
+  },
+  {
+    // Strike with Conviction [101886] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101886,
+    name: "Strike with Conviction",
+    cardType: "conviction",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
+    ],
+  },
+  {
+    // Surge [101908] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 101908,
+    name: "Surge",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ven", effects: [{ kind: "prevent", base: 2 }] }
+    ],
+  },
+  {
+    // The Uncoiling [102057] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102057,
+    name: "The Uncoiling",
+    cardType: "event",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // The Unmasking [102079] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102079,
+    name: "The Unmasking",
+    cardType: "event",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Veil of Darkness [102095] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102095,
+    name: "Veil of Darkness",
+    cardType: "event",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Vigilance [102120] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102120,
+    name: "Vigilance",
+    cardType: "combat",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "jud", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Waiting Game [102136] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102136,
+    name: "Waiting Game",
+    cardType: "event",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // White Nights Massacre [102178] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102178,
+    name: "White Nights Massacre",
+    cardType: "event",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Wormwood [102194] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    krcgId: 102194,
+    name: "Wormwood",
+    cardType: "event",
+    bloodCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+
 ];
 
 /**
@@ -20378,14 +35874,14 @@ export const cardSpecs: CardSpec[] = [
  */
 export const cryptSpecs: CardSpec[] = [
   // --- Flat traits. The whole ability is one printed line. ---
-  flatCrypt(201540, "Catalina Vega (G6)", { bleed: 1 }),
-  flatCrypt(201555, "Lenny Burkhead (G6)", { bleed: 1 }),
-  flatCrypt(201597, "Kamile Paukstys (G6)", { bleed: 1 }),
-  flatCrypt(201602, "Massimiliano (G6)", { strength: 1 }),
-  flatCrypt(201614, "Valeriya Zinovieva (G6)", { strength: 1 }),
-  flatCrypt(201715, "Rinaldo Albizzi (G6)", { intercept: 1 }),
-  flatCrypt(201739, "Anousha, The Maniac (G6)", { strength: 1 }),
-  flatCrypt(201783, "Hafthor Thorsteinsson (G7)", { intercept: 1 }),
+  flatCrypt(201540, "Catalina Vega (G6)", { bleed: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201555, "Lenny Burkhead (G6)", { bleed: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201597, "Kamile Paukstys (G6)", { bleed: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201602, "Massimiliano (G6)", { strength: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201614, "Valeriya Zinovieva (G6)", { strength: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201715, "Rinaldo Albizzi (G6)", { intercept: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201739, "Anousha, The Maniac (G6)", { strength: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201783, "Hafthor Thorsteinsson (G7)", { intercept: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
 
   // --- Conditioned on the ACTION being performed. ---
   condCrypt(200132, "Ariane (G5)", [{ stealth: -1, actionDirected: false }]),
@@ -20448,18 +35944,18 @@ export const cryptSpecs: CardSpec[] = [
   ]),
 
   // --- Combat statics the engine already grants from a card in play. ---
-  flatCrypt(201658, "Saku Pihlajamäki (G6)", { maneuverPerCombat: 1 }),
-  flatCrypt(201772, "Serhat Gunde, Combat Junkie (G6)", { pressPerCombat: 1 }),
-  flatCrypt(201663, "Abaddon (G7)", { maneuverPerCombat: 1, pressPerCombat: 1 }),
+  flatCrypt(201658, "Saku Pihlajamäki (G6)", { maneuverPerCombat: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201772, "Serhat Gunde, Combat Junkie (G6)", { pressPerCombat: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
+  flatCrypt(201663, "Abaddon (G7)", { maneuverPerCombat: 1, pressPerCombat: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
 
   // --- Blocking. All three statics already exist; one was built the day
   //     before this wave for a library card that prints Aelswith's line. ---
-  flatCrypt(201758, "Jürgen, The Libertine (G6)", {
+  flatCrypt(201758, "Jürgen, The Libertine (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     // "Minions must burn 1 blood OR LIFE to attempt to block" — the
     // or-life half is what lets an ALLY pay at all (p. 22).
     blockToll: { amount: 1, payWith: "bloodOrLife" },
   }),
-  flatCrypt(201735, "Aelswith, The Irresistible (G6)", {
+  flatCrypt(201735, "Aelswith, The Irresistible (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     // Word for word Terrifying Visage's clause (docs/path-cards-design.md
     // §3), which is why this card cost nothing to add.
     blockedPoolToll: { amount: 1 },
@@ -20538,15 +36034,8 @@ export const cryptSpecs: CardSpec[] = [
       requiresPath: "Death and the Soul",
     },
   }),
-  cryptPerm(201570, "Sybren van Oosten (G6)", {
-    // "After a referendum called by him passes" — the
-    // `referendum.afterResolution` window, which opens only on a pass.
-    unlockAfterOwnReferendum: true,
-  }),
-  cryptPerm(201596, "Kalinda (G6)", {
-    // "During your turn, you can burn the Edge to unlock Kalinda."
-    unlockForEdge: true,
-  }),
+  cryptPerm(201570, "Sybren van Oosten (G6)", {}), // fala 47 wierna (300) dobrane
+  cryptPerm(201596, "Kalinda (G6)", {}), // fala 47 wierna (300) dobrane
 
   // Library searches. The gate's rules carry over unchanged: you need not
   // announce what you seek, finding nothing is always legal, and the
@@ -20563,13 +36052,13 @@ export const cryptSpecs: CardSpec[] = [
   // "Rescuing a vampire from torpor costs Doc Martina −1 blood" — the
   // static built for Saulot's Healing Touch, read at BOTH the enumeration
   // and the payment site (docs/minion-target-actions-design.md).
-  flatCrypt(201670, "Doc Martina (G7)", { rescueDiscount: { amount: 1 } }),
+  flatCrypt(201670, "Doc Martina (G7)", { rescueDiscount: { amount: 1 } }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
 
   // --- WAVE 3: combat and blocking (docs/crypt-wave-3.md).
 
   // "If <this vampire> is blocked, they burn 1 blood before block
   // resolution" — Phantasmagoria's `blockedToll`, word for word.
-  flatCrypt(201677, "Marialena (G6)", {
+  flatCrypt(201677, "Marialena (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     blockedToll: { amount: 1, payWith: "blood" },
   }),
 
@@ -20641,12 +36130,12 @@ export const cryptSpecs: CardSpec[] = [
 
   // "1 press (mandatory) each combat, only usable to continue combat" —
   // `continuePressPerCombat`, built for Righteous Blade.
-  flatCrypt(201664, "Adrino Manauara (G6)", { continuePressPerCombat: 1 }),
+  flatCrypt(201664, "Adrino Manauara (G6)", { continuePressPerCombat: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
 
   // "Inflicts +1 damage with ranged strikes (even at close range)."
-  flatCrypt(201785, "Noluthando (G7)", { rangedDamageBonus: 1 }),
+  flatCrypt(201785, "Noluthando (G7)", { rangedDamageBonus: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
 
-  flatCrypt(201770, 'Rexton "Savage" Abernathy (G6)', {
+  flatCrypt(201770, 'Rexton "Savage" Abernathy (G6)', { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     // "Allies AND vampires with capacity 3 or less cannot block" — the
     // English "and" is a UNION of two groups, the reading recorded in
     // docs/opposing-statics-design.md.
@@ -20744,13 +36233,13 @@ export const cryptSpecs: CardSpec[] = [
 
   // "Animals (allies and retainers) cost Kuyén −1 blood or pool."
   // "Animal" is a printed sub-type, already in the tag vocabulary.
-  flatCrypt(201574, "Kuyén (G6)", {
+  flatCrypt(201574, "Kuyén (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     playCostMod: { amount: -1, pays: "bloodOrPool", tags: ["animal"], minions: "bearer" },
   }),
 
   // "Allies and retainers requiring a Tzimisce cost Máddji −1 blood or
   // pool" — the clan half off the `requiresClans` central query.
-  flatCrypt(201784, "Máddji, Mistress of Szlachtas (G6)", {
+  flatCrypt(201784, "Máddji, Mistress of Szlachtas (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     playCostMod: {
       amount: -1,
       pays: "bloodOrPool",
@@ -20762,7 +36251,7 @@ export const cryptSpecs: CardSpec[] = [
 
   // "Hesha gets +1 bleed for each UNIQUE equipment attached to him" — a
   // count over his own attachments, uniqueness carried as a tag (§3).
-  flatCrypt(201591, "Hesha Ruhadze (G6)", {
+  flatCrypt(201591, "Hesha Ruhadze (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     bleedPerAttached: { tags: ["equipment", "unique"], amount: 1 },
   }),
 
@@ -20859,7 +36348,7 @@ export const cryptSpecs: CardSpec[] = [
   // "In combat, strike cards cost the opposing minion +1 blood or life.
   // +1 stealth." `bloodOrLife` is load-bearing: p. 22 gives allies life,
   // so a cost printed in blood alone would exempt them entirely.
-  flatCrypt(201782, "Djeneba (G7)", {
+  flatCrypt(201782, "Djeneba (G7)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     stealth: 1,
     playCostMod: {
       amount: 1,
@@ -20871,7 +36360,7 @@ export const cryptSpecs: CardSpec[] = [
 
   // "Strike cards cost opposing YOUNGER vampires +1 blood." Blood, not
   // blood-or-life — and "younger vampires" excludes allies twice over.
-  flatCrypt(201738, "Algirdas, The Solar Prophet (G6)", {
+  flatCrypt(201738, "Algirdas, The Solar Prophet (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     playCostMod: {
       amount: 1,
       pays: "blood",
@@ -20882,14 +36371,14 @@ export const cryptSpecs: CardSpec[] = [
 
   // "Minions with any of your corruption counters in combat with Faruq
   // cannot strike: combat ends. +1 strength."
-  flatCrypt(201588, "Faruq Abd al-Qadir (G6)", {
+  flatCrypt(201588, "Faruq Abd al-Qadir (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     strength: 1,
     opposingCannotCombatEnds: { yourCorruption: true },
   }),
 
   // "Minions with 1 or more of your corruption counters must burn 1 blood
   // or life to attempt to block Sergio."
-  flatCrypt(201662, "Sergio Bueno (G6)", {
+  flatCrypt(201662, "Sergio Bueno (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     blockToll: { amount: 1, payWith: "bloodOrLife", yourCorruption: true },
   }),
 
@@ -20920,7 +36409,7 @@ export const cryptSpecs: CardSpec[] = [
   // "Jason gets +2 votes when casting votes AGAINST BLOOD HUNT
   // referendums. +1 bleed." The only vote static that depends on which
   // way the vote is being cast.
-  flatCrypt(201628, 'Jason "Son" Newberry (G6)', {
+  flatCrypt(201628, 'Jason "Son" Newberry (G6)', { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     bleed: 1,
     voteBonus: { amount: 2, direction: "against", variant: "bloodHunt" },
   }),
@@ -20928,21 +36417,19 @@ export const cryptSpecs: CardSpec[] = [
   // "Vampires must burn 1 blood to cast votes and ballots against
   // referendums called by Alexander." Carried by the CALLING minion and
   // paid by each voter — the block-tax shape one frame over.
-  flatCrypt(201530, "Alexander Silverson (G6)", {
+  flatCrypt(201530, "Alexander Silverson (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     voteTollAgainst: { blood: 1 },
   }),
 
   // "If the referendum of a political action called by Cedrick is
   // CANCELED OR FAILS, he goes to torpor after resolution."
-  cryptPerm(201626, "Cedrick Calhoun (G6)", {
-    torporOnReferendumLoss: true,
-  }),
+  cryptPerm(201626, "Cedrick Calhoun (G6)", {}), // fala 47 wierna (300) dobrane
 
   // "While Ashur-uballit is ready, ZOMBIES (allies and retainers) you
   // recruit or employ get +1 starting life. +1 bleed." Read at the entry
   // path, and it raises `capacity` too — for an ally that field IS the
   // printed starting life (p. 11).
-  flatCrypt(201741, "Ashur-uballit, Son of the Abyss (G6)", {
+  flatCrypt(201741, "Ashur-uballit, Son of the Abyss (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     bleed: 1,
     recruitLifeBonus: { amount: 1, tag: "zombie" },
   }),
@@ -20966,7 +36453,7 @@ export const cryptSpecs: CardSpec[] = [
   // action unless she must hunt." A STATIC, not a `permanent` clause: it
   // is read straight off the entry by `minionPhaseOptions` and
   // `currentBleed`, neither of which consults a card's spec.
-  flatCrypt(201585, "Elen Kamjian (G6)", {
+  flatCrypt(201585, "Elen Kamjian (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     mustBleed: { bonus: 1, whileControlsLocked: true },
   }),
 
@@ -20996,7 +36483,7 @@ export const cryptSpecs: CardSpec[] = [
 
   // "While Parijat is ready, minions must BURN THE TOP CARD OF THEIR
   // LIBRARY to attempt to block wraith or zombie allies."
-  flatCrypt(201726, "Parijat, the Dark Oracle (G6)", {
+  flatCrypt(201726, "Parijat, the Dark Oracle (G6)", { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
     globalBlockToll: { payWith: "libraryCard", actorTags: ["wraith", "zombie"] },
   }),
 
@@ -21011,10 +36498,1699 @@ export const cryptSpecs: CardSpec[] = [
       requiresBearerReady: true,
     },
   }),
+  flatCrypt(200010, "Accorri Giovanni (G5)", {}), // fala 47 wierna (300) domknięcie 1
+  flatCrypt(200012, "Adelaide Davis (G3)", {}), // fala 47 wierna (300) domknięcie 3
+    flatCrypt(200020, "Agatha (G2)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200022, "Agrippina (G1)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200024, "Ahmose Chambers (G5)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200045, "Aleph (G1)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200056, "Allison Maller (G3)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200058, "Almiro Suarez (G3)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200059, "Almodo Giovanni (G4)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200067, "Amber (G5)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200075, "Ana Rita Montaña (G3)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200077, "Anastasia Grey (G1)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200084, "Andrei Puxon (G2)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200085, "Andrew Emory (G4)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200088, "Angel (G1)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200089, "Angel Chavarria (G6)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200097, "Anjalika Underwood (G5)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200109, "Antoine, The Lost (G4)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200110, "Antoinette, She Who Watches (G3)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200120, "Anvil (G1)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200122, "Apache Jones (G4)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200134, "Ariel (G6)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200139, "Arnold Simpson (G3)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200143, "Artemis (G2)", {}), // fala 33 wierna (500) vanilla // fala 48 wierna (300) weryfikacja
+    flatCrypt(200144, "Arthur Denholm (G5)", {}), // fala 33 wierna (500) vanilla // fala 48 wierna (300) weryfikacja
+    flatCrypt(200151, "Axel Von Anders (G4)", {}), // fala 33 wierna (500) vanilla // fala 48 wierna (300) weryfikacja
+    flatCrypt(200159, "Badger (G1)", {}), // fala 33 wierna (500) vanilla // fala 48 wierna (300) weryfikacja
+    flatCrypt(200178, "Bear Paw (G1)", {}), // fala 33 wierna (500) vanilla // fala 48 wierna (300) weryfikacja
+    flatCrypt(200180, "Béatrice L'Angou (G2)", {}), // fala 33 wierna (500) vanilla // fala 48 wierna (300) weryfikacja
+    flatCrypt(200182, "Beauregard Krueller (G4)", {}), // fala 33 wierna (500) vanilla // fala 48 wierna (300) weryfikacja
+    flatCrypt(200185, "Beetleman (G4)", {}), // fala 33 wierna (500) vanilla // fala 48 wierna (300) weryfikacja
+    flatCrypt(200188, "Belle Equitone (G4)", {}), // fala 33 wierna (500) vanilla // fala 48 wierna (300) weryfikacja
+    flatCrypt(200197, "Bill Butler (G4)", {}), // fala 33 wierna (500) vanilla // fala 48 wierna (300) weryfikacja
+    flatCrypt(200198, "Billy (G2)", {}), // fala 33 wierna (500) vanilla // fala 48 wierna (300) weryfikacja
+    flatCrypt(200202, "Black Lotus (G4)", {}), // fala 33 wierna (500) vanilla // fala 48 wierna (300) weryfikacja
+    flatCrypt(200203, "Black Wallace (G4)", {}), // fala 33 wierna (500) vanilla // fala 48 wierna (300) weryfikacja
+    flatCrypt(200207, "Blister (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200208, "Bloodfeud (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200211, "Bobby Lemon (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200214, "Bothwell (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200215, "Boy Toy (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200216, "Brachah (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200217, "Brazil (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200218, "Brian Thompson (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200219, "Brigitte Mandisa (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200221, "Brooke (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200230, "C.J. (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200233, "Caitlin (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200236, "Caliban (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200239, "Cameron (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200240, "Camille Devereux, The Raven (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200241, "Cao Nguyen (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200243, "Cardano (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200251, "Carter (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200254, "Cassandra Langely, The Waif (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200256, "Catherine du Bois (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200260, "Celine Chevalier (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200266, "Charice Fontaigne (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200267, "Charlie Tyne (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200271, "Chester DuBois (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200276, "Clarissa Steinburgen (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200280, "Claus Wegener (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200281, "Claven (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200282, "Clea Auguste d'Holford (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200283, "Clifton Derrik (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200285, "Cohn Rose (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200286, "Colin Flynn (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200295, "Count Ormonde (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200298, "Courtland Leighton (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200299, "Creamy Jade (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200300, "Cristobal Ghiberti (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200301, "Cristofero Giovanni (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200303, "Crow (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200309, "Daliyah (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200311, "Dame Hollerton (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200315, "Dani (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200323, "Darrell Boyce, Consul (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200324, "Darva Felispa (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200330, "Delilah Easton (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200334, "Demetrius Slater (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200336, "Denette Stensen (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200338, "Desiree Narayan, Anarch Historian (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200339, "Devin Bisley (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200340, "Devyn (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200341, "Dhita Choudhair (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200342, "Diana Vick (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200343, "Didi Meyers (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200345, "Dieter Kleist (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200346, "Dimple (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200352, "Dodd (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200353, "Dolie (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200354, "Dollface (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200355, "Dolphin Black (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200356, "Domenic Giovanni (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200361, "Don Cerro (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200368, "Dorian Strack (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200369, "Doris McMillon (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200373, "Dr. Allan Woodstock (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200374, "Dr. Douglas Netchurch (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200376, "Dr. John Casey (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200380, "Dr. Lawrence Mayhew (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200384, "Dr. Sutton Gassaway (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200387, "Dre, Leader of the Cold Dawn (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200388, "Droescher One-Eye (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200392, "Duck (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200396, "Earl (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200406, "Ehrich Weiss (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200407, "Elena Gutierrez (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200408, "Elena Mendoza Vasquez (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200413, "Elizabeth Conde (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200415, "Elizabeth Westcott (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200418, "Ember Wright (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200419, "Emerson Bridges (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200420, "Emerson Wilkershire III (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200430, "Eric Milliner (G5)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(200432, "Erick \"Shophet125\" Franco (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(200437, "Esoara (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200442, "Eugenio Estevez (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200444, "Evan Klein (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200446, "Evangeline (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200451, "Ezra Hawthorne (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200453, "Fahd al-Zawba'a (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200461, "Felicia Mostrom (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200468, "Fish (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200471, "Florentina Lengauer (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200472, "Fode Kourouma (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200473, "Foureyes (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200474, "Francesca Giovanni (G2)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(200479, "François \"Warden\" Loehr (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(200480, "Frank Litzpar (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200481, "Frank Weisshadel (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200483, "Frederick the Weak (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200484, "Frère Marc (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200494, "Garret (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200506, "George Frederick (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200509, "Gerard (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200513, "Ghivran Dalaal, The Dead God (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200515, "Gianmaria Giovanni (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200516, "Gideon Fontaine (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200517, "Gilbert Duane (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200523, "Gitane St. Claire (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200524, "Giuliano Vincenzi (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200525, "Gloria Giovanni (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200533, "Graham Gottesman (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200537, "Greer Worder (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200538, "Greger Anderssen (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200543, "Guedado (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200544, "Guido Lucciano (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200547, "Gunnar (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200552, "Gustavo Morales (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200555, "Gwendolyn Fleming (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200562, "Hamid Mansour (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200567, "Hannigan (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200576, "Hasani (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200581, "Hector Sosa (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200583, "Heinrick Schlempt (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200595, "Hester Reed (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200596, "Hezekiah Rutledge (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200600, "Homa (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200601, "Honest Abe (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200602, "Honorine Ateba (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200603, "Horatio (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200617, "Ian Wallingford (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200621, "Idrissa (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200622, "Ignacio, The Black Priest (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200623, "Ignatius (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200627, "Ilias cel Frumos (G4)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(200632, "Inez \"Nurse216\" Villagrande (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(200635, "Ingrid Russo (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200640, "Irena (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200642, "Isabel de Leon (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200643, "Isabel Giovanni (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200645, "Ismitta (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200647, "Itzahk Levine (G2)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(200656, "Jack \"Hannibal137\" Harmon (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(200657, "Jack Tredegar (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200658, "Jackie (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200660, "Jackson Asher (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200662, "Jacob Bragg (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200674, "Janine (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200686, "Jefferson Foster (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200687, "Jeffrey Mullins (G4)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(200689, "Jennie \"Cassie247\" Orne (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(200691, "Jephta Hester (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200692, "Jeremiah Noble (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200693, "Jeremy MacNeil (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200699, "Jessica (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200701, "Jesús Alcalá (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200706, "Jing Wei (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200714, "Johannes Worringen (G5)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(200715, "John \"Cop90\" O'Malley (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(200717, "Jonathan Gursel (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200719, "Josef (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200723, "Joseph Fischer (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200729, "Juan Cali (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200732, "Judah (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200740, "Justine Chen, Innocent (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200746, "Kallista, Master Sculptor (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200747, "Kamaria (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200748, "Kamau Jafari (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200765, "Kay Polerno (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200772, "Kenyatta (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200774, "Kervos, The Lieutenant (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200777, "Khalil Anvari (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200782, "Kij Dansky (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200787, "Klaus Konrecht (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200789, "KoKo (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200791, "Korah (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200794, "Krid (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200796, "Kurt Strauss (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200802, "Lachlan, Noddist (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200803, "Ladislas Toth, The Torch (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200808, "Lailah (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200809, "Lalitha (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200812, "Lana Butcher (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200816, "Laura Goldman (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200817, "Laurent de Valois (G2)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(200825, "Leaf \"Potter116\" Pankowski (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(200827, "Lectora (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200834, "Lia Milliner (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200836, "Lillian (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200838, "Lindsay Yates (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200841, "Lisé (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200845, "Little Willie (G4)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(200846, "Liz \"Ticket312\" Thornton (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(200849, "Lolita (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200850, "Lolita Houston (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200851, "Loonar (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200857, "Lord Vauxhall (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200861, "Louis de Maisonneuve (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200862, "Louis Fortier (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200878, "Lucy Markowitz (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200880, "Lukas (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200882, "Lula Burch (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200884, "Lumumba (G4)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(200886, "Lupe \"Cabbie22\" Droin (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(200887, "Lupo (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200895, "Macoute (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200902, "Malcolm (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200922, "Maria Stone (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200924, "Mariana Gilbert (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200930, "Mariel St. John (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200932, "Mario Giovanni (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200933, "Marion French (G4)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(200934, "Marion \"Teacher193\" Perks (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(200938, "Marla Kenyon (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200940, "Marlene, The Infernalist (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200949, "Masdela (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200952, "Masika St. John (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200965, "Max Lowell (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200967, "Mazz (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200970, "Melinda Galbraith (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200977, "Meno Ngari (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200978, "Mercy, Knight Inquisitor (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200990, "Milo, The Invisible Horror (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200994, "Mirembe Kabbada (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200996, "Misrak (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200997, "Missy Shillingford (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(200998, "Mister Schwartz (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201003, "Monica Chang (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201004, "Monique (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201005, "Monique Kim (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201010, "Morel (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201014, "Mouse (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201020, "Muhsin Samir (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201027, "Mustafa Rahman (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201041, "Neel Ramanathan (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201047, "Nepata (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201050, "Nestor Kaba (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201054, "Nichodemus (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201055, "Nicholas Chang (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201058, "Nigel the Shunned (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201065, "Normal (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201068, "Nunzio Giovanni (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201073, "Ohanna (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201074, "Old Neddacka (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201077, "Olivia (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201088, "Ox, Viceroy of the Hollows (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201090, "Panagos Levidis (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201091, "Panya, The Wicked (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201097, "Patrick (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201099, "Paul Calderone (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201101, "Paul DiCarlo, The Alpha (G2)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(201103, "Paul \"Sixofswords29\" Moreton (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(201106, "Pearl (G5)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(201115, "Peter \"Outback295\" Rophail (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(201124, "Pieter (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201128, "Polly Kay Fisher (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201134, "Primo Giovanni (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201135, "Pug Jackson (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201141, "Quentin King III (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201156, "Ramiel DuPre (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201157, "Ramiro (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201161, "Randel, The Coward (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201165, "Raphaela Giovanni (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201167, "Rashiel (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201169, "Raziya Samater (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201174, "Regilio, The Seeker of Akhenaten (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201178, "Remilliard, Devout Crusader (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201179, "Renenet (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201183, "Reverend Djoser Jones (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201188, "Ricki Van Demsi (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201192, "Robert Price (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201193, "Robin Withers (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201197, "Rodrigo (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201199, "Roland Bishop (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201200, "Roland Loussarian (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201201, "Roman Alexander (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201202, "Roreca Quaid (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201205, "The Rose (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201209, "Rudolfo Giovanni (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201210, "Rufina Soledad (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201218, "Sabrina (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201219, "Sadie (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201221, "Sahira Siraj (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201222, "Saiz (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201224, "Salbatore Bokkengro (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201227, "Salvatore Giovanni (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201230, "Sammy (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201231, "Samson (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201233, "Sanjay Chakrabarti (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201234, "Sanjo (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201238, "Sarah Cobbler (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201241, "Sarisha Veliku (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201246, "Sasha Miklos (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201251, "Scarlet Carson O'Toole (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201254, "Sean Andrews (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201264, "Sennuwy, The Promoter (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201272, "Shahara al-Rashwa (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201275, "Shane Grimald (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201276, "Shannon Price, the Whisperer (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201278, "Shawnda Dorrit (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201281, "Sheldon, Lord of the Clog (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201289, "Sir Henry Johnson (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201290, "Sir Marriot D'Urban (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201292, "Sir Walter Nash (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201293, "Sisocharis (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201294, "Sister Evelyn (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201297, "Skulk (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201300, "Smash (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201302, "Sobayifa (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201303, "Socrate Cidibe (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201307, "Sophia Watson (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201313, "Stavros (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201316, "Stephen Milliner (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201317, "Steve Booth (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201318, "Stick (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201341, "Tara (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201346, "Tarrence Moore (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201350, "Tayshawn Kearns (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201357, "Terrence (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201360, "Thelonius (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201368, "Thomas Thorne (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201372, "Timothy Crowley (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201373, "Titi Camara (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201377, "Tock (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201380, "Tommy (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201381, "Tony (G3)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(201386, "Travis \"Traveler72\" Miller (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(201391, "Tsigane (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201392, "Tsunda (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201399, "Ubende (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201403, "Ulrike Rothbart (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201405, "Uma Hatch (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201408, "Uncle George (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201414, "Urenna Bunu (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201419, "Uzoma (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201424, "Valois Sang, The Watcher (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201425, "Vanessa (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201432, "Vedel Esbreno (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201441, "Victor Revell, Loyalist (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201442, "Victor Tolliver (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201450, "Violette Prentiss (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201455, "Vittorio Giovanni (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201457, "Vliam Andor (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201466, "Wendy Wade (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201474, "Wolfgang (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201475, "Wren (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201479, "Xendil Charmer (G4)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(201481, "Xian \"DziDzat155\" Quan (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(201490, "Yorik (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201493, "Yuri, The Talon (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201494, "Yuri Kerezenski (G4)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201496, "Yvette, The Hopeless (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201497, "Zachary (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201503, "Zebulon (G1)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201507, "Zip (G3)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201512, "America Johnson (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201514, "Conchita Morales (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201515, "Guggenheim (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201518, "Percival (G5)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201521, "Casey Snyder (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201523, "Jacques Rouge (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201524, "Benedito, a Lanterna (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201525, "Bituin (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201531, "Alice Chen (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201532, "Andi Liu (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201533, "Ashley (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201534, "Aunt Linda (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201535, "Ayelech (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201536, "Baixinho (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201537, "Belinde (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201539, "Brock Sterling (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201541, "Chelsea Blake (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201542, "Chrysanthemum (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201543, "Colette (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201544, "Donny Kowalczyk (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201546, "Dr. Stephen Norton (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201548, "Gelasia Fotiou (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201549, "Horace Radcliffe (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201550, "Horst von Brühl (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201551, "Inês Tristão (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201552, "Kathy Glens (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201554, "Lauren (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201556, "Lloyd Brooks (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201557, "Madison (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201558, "Massimo Falconi (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201559, "Meaghan (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201560, "Min-seo (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201561, "Mkhokheli (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201562, "Naomi Stewart (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201563, "Nassir (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201564, "Nik Sikko (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201565, "Oshri Dahan (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201566, "Patrik Söderberg (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201567, "Rosalina Cortez (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201568, "Ryan (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201569, "Sully (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201571, "Tamoszius (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201572, "Trevon Parker (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201573, "Wauneka (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201577, "Aluc Romas de Leon (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201578, "Asmin Kobane (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201579, "Atiena (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201580, "Bijou (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201581, "Brandon Grime (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201582, "Crystal Lynn (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201583, "Dario Ziggler (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201584, "Doctor Morocco (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201586, "Elisha Tucker (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201587, "Farah Sarroub (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201589, "Greg Mazouni (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201590, "Hanna Nokelainen (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201592, "Indira (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201593, "Jenny Silver (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201594, "Warmaksan (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201595, "Joaquín de Cádiz (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201599, "Khadija Al-Kindi (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201600, "Marcel (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201603, "Melech (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201604, "Kassandra Tassaki (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201605, "Milton Fox (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201606, "Nathan Turner (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201607, "Nayarana (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201610, "Rayne (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201611, "Ruslan Fedorenko (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201612, "Siarhei Levchenko (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201615, "Vivian VI (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201620, "Ashlesha (G2)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201624, "Amelia Locke (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201630, "Mason Ha (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201631, "Mateo García (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201655, "Arjun Shah (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201657, "Anita Wainwright (G6)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(201661, "\"Coach\" Tyrone Soros (G6)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(201665, "Ángel Guerrero (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201669, "Clara Hjortshøj (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201674, "Jean-François (G7)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201676, "Malachi (G7)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201679, "Oleg Kaprizov (G7)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201682, "Prentis Derby (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201683, "Roberto Rivamonte (G7)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201688, "Susie Kano (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201689, "Trung Chau Pham (G7)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201690, "Whisper (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201691, "Yael (G7)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201692, "Zafira (G7)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201699, "Kazuki Hanabira (G7)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201707, "Valentina Osako (G7)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201708, "Aintzane Arriaga (G6)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(201709, "Araceli \"Celia\" Rivera (G6)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(201711, "Braden White (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201713, "Kamaluddin (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201714, "María del Toro (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201717, "Alek König (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201718, "Gebeyehu Abdu (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201719, "Hiromitsu Asano (G6)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(201720, "Holliday \"Burgundy\" Hall (G6)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(201723, "Monica Giovanni (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201727, "Peter St. John (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201737, "Aitana, The Unholy (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201742, "Berenguela, The Vicious (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201743, "Coco Thorn (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201744, "Concordia (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201746, "Cyan Sin (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201749, "El Monseñor (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201753, "Glissando (G6)", {}), // fala 33 wierna (500) vanilla
+  flatCrypt(201755, "Grażyna \"Butcher\" Olesińska (G6)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+  flatCrypt(201756, "Hekla \"Bonecrusher\" Jónasdóttir (G6)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(201761, "Lawbringer (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201762, "Lika, The Purger (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201763, "Loyiso, The Ruthless (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201764, "Lyyli Yösydän (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201765, "Nadezhda (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201766, "Onkabetse, Arriviste (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201768, "Przemysław, War Beast (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201769, "Rasha Tarabzouni (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201773, "Surapong (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201774, "Suwira (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201778, "Ximena (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201779, "Yurena, The Boor (G6)", {}), // fala 33 wierna (500) vanilla
+    flatCrypt(201780, "Zbigniew, Hunter of Mekhet (G6)", {}), // fala 33 wierna (500) vanilla
+
+  flatCrypt(200011, "Adana de Sforza (G4)", {}), // fala 47 wierna (300) domknięcie 2
+  flatCrypt(200013, "Adhiambo (G4)", {}), // fala 47 wierna (300) domknięcie 4
+  flatCrypt(200014, "Adonai (G2)", {}), // fala 47 wierna (300) domknięcie 5
+  flatCrypt(200015, "Adri, The Seeker (G6)", {}), // fala 47 wierna (300) domknięcie 6
+  flatCrypt(200016, "Adrianne (G1)", {}), // fala 47 wierna (300) domknięcie 7
+  flatCrypt(200017, "Aeron (G3)", {}), // fala 47 wierna (300) domknięcie 8
+          cryptPerm(200018, "Afifa, The Herald (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+          cryptPerm(200019, "Agaitas, The Scholar of Antiquities (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+          flatCrypt(200021, "Ági (G6)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200023, "Agru Kabera (G4)", { bleed: 1 }), // fala 46 wierna (300) dobrane
+
+          flatCrypt(200025, "Aidan Lyle (G5)", {}), // fala 46 wierna (300) dobrane vanilla
+          flatCrypt(200026, "Aimee Laroux (G4)", {}), // fala 46 wierna (300) dobrane vanilla
+          flatCrypt(200027, "Aimery Methuin (G5)", {}), // fala 46 wierna (300) dobrane vanilla
+        cryptPerm(200028, "Aisata Swanou (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200029, "Aisha (G2)", { intercept: 1 }), // fala 46 wierna (300) statics
+    cryptPerm(200030, "Aisha az-Zahra (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+        flatCrypt(200031, "Aisling Sturbridge (G2)", {}), // fala 46 wierna (300) dobrane vanilla
+        cryptPerm(200032, "Aiyana, The Wolfcatcher (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+        cryptPerm(200033, "Akram (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+        cryptPerm(200034, "Aksinya Daclau (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200035, "Al-Ashrad, Amr of Alamut (G2)", { bleed: 1 }), // fala 46 wierna (300) dobrane
+    cryptPerm(200036, "Al-Ashrad, Amr of Alamut (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200037, "Al-Muntaquim, The Avenger (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+        flatCrypt(200038, "Al-Muntathir, God's Witness (G5)", {}), // fala 46 wierna (300) dobrane vanilla
+        cryptPerm(200039, "Alabástrom (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+        cryptPerm(200040, "Alan Sovereign (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+        cryptPerm(200041, "Alan Sovereign (G3 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+        cryptPerm(200042, "Alcoan (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+        flatCrypt(200043, "Aleister Crowley (G5)", {}), // fala 46 wierna (300) dobrane vanilla
+        flatCrypt(200044, "Alejandro Aguirre (G3)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200046, "Alessandro Garcia (G4)", { strength: 1 }), // fala 46 wierna (300) statics
+    cryptPerm(200047, "Alex Camille (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+        cryptPerm(200048, "Alex Wilkins (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    cryptPerm(200049, "Alexandra (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    flatCrypt(200050, "Alexis Sorokin (G4)", { bleed: 1 }), // fala 46 wierna (300) statics
+        flatCrypt(200051, "Alfred Benezri (G3)", {}), // fala 46 wierna (300) dobrane vanilla
+        cryptPerm(200052, "Alfred Benezri (G3 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+        flatCrypt(200053, "Ali Kar (G3)", {}), // fala 46 wierna (300) dobrane vanilla
+        cryptPerm(200054, "Alicia Barrows (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200055, "Allanyan Serata (G5)", { strength: 1 }), // fala 46 wierna (300) dobrane
+    flatCrypt(200057, "Allonzo Montoya (G3)", { stealth: 1 }), // fala 46 wierna (300) statics
+    cryptPerm(200060, "Alonso Petrodon (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+        cryptPerm(200061, "Alonzo Guillen (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+        flatCrypt(200062, "Alu (G5)", {}), // fala 46 wierna (300) dobrane vanilla
+    cryptPerm(200063, "Alvaro, The Scion of Angelica (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+        flatCrypt(200064, "Amadeo (G2)", {}), // fala 46 wierna (300) dobrane vanilla
+        cryptPerm(200065, "Amaravati (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200066, "Amavi (G4)", { bleed: 1 }), // fala 46 wierna (300) dobrane
+    flatCrypt(200068, "Ambrogino Giovanni (G2)", { bleed: 1 }), // fala 46 wierna (300) dobrane
+    cryptPerm(200069, "Ambrogino Giovanni (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+        cryptPerm(200070, "Ambrosio Luis Monçada, Plenipotentiary (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200071, "Amelia (G2)", { stealth: 1 }), // fala 46 wierna (300) dobrane
+        cryptPerm(200072, "Amelia, The Blood Red Tears (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    cryptPerm(200073, "Amenophobis (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+        flatCrypt(200074, "Amisa (G2)", {}), // fala 46 wierna (300) dobrane vanilla
+        flatCrypt(200076, "Anarch Convert (ANY)", {}), // fala 46 wierna (300) dobrane vanilla
+        flatCrypt(200078, "Anastasz di Zagreb (G3)", {}), // fala 46 wierna (300) dobrane vanilla
+    cryptPerm(200079, "Anatole, Prophet of Gehenna (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    flatCrypt(200080, "Andre LeRoux (G5)", { bleed: 2 }), // fala 46 wierna (300) statics
+        flatCrypt(200081, "André the Manipulator (G5)", {}), // fala 46 wierna (300) dobrane vanilla
+    cryptPerm(200082, "Andrea Giovanni (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    flatCrypt(200083, "Andreas, The Bard of Crete (G1)", { intercept: 1 }), // fala 46 wierna (300) statics
+        cryptPerm(200086, "Andrew Stuart (G4)", { requiresReady: true }), // fala 46 wierna (300) cryptPerm
+        flatCrypt(200087, "Andy (G4)", {}), // fala 46 wierna (300) dobrane vanilla
+        cryptPerm(200090, "Angela Decker (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+        cryptPerm(200091, "Angela Preston (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+        cryptPerm(200092, "Angelica, The Canonicus (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+        flatCrypt(200093, "Angelique (G6)", {}), // fala 46 wierna (300) dobrane vanilla
+        flatCrypt(200094, "Angelo (G3)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200095, "Angus the Unruled (G1)", { strength: 1 }), // fala 46 wierna (300) dobrane
+        flatCrypt(200096, "Anisa Marianna Lopez (G2)", {}), // fala 46 wierna (300) dobrane vanilla
+        flatCrypt(200098, "Anka, Priestess of Thorns (G2)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200099, "Ankh-sen-Sutekh (G4)", { bleed: 1 }), // fala 46 wierna (300) dobrane
+        flatCrypt(200100, "Ankla Hotep (G2)", {}), // fala 46 wierna (300) dobrane vanilla
+
+        flatCrypt(200101, "The Ankou (G5)", {}), // fala 46 wierna (300) dobrane vanilla
+  flatCrypt(200102, "Anna \"Dictatrix11\" Suljic (G4)", {}), // fala 46 wierna (300) domknięcie
+    flatCrypt(200103, "Annabelle Triabell (G3)", { bleed: 1, stealth: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200104, "Annazir (G5)", { bleed: 1 }), // fala 46 wierna (300) dobrane
+        flatCrypt(200105, "Anne-Marie Bourgeois, Inconnu Recruiter (G5)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200106, "Anneke (G1)", { bleed: 1 }), // fala 46 wierna (300) dobrane
+        cryptPerm(200107, "Anson (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    cryptPerm(200108, "Antara (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+        flatCrypt(200111, "Antoinette Dubois (G4)", {}), // fala 46 wierna (300) dobrane vanilla
+        flatCrypt(200112, "Antoinette DuChamp (G2)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200113, "Anton (G2)", { intercept: 1 }), // fala 46 wierna (300) dobrane
+        cryptPerm(200114, "Antón de Concepción (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200115, "Antonino (G3)", { stealth: 1 }), // fala 46 wierna (300) statics
+        flatCrypt(200116, "Antonio d'Erlette (G4)", {}), // fala 46 wierna (300) dobrane vanilla
+        cryptPerm(200117, "Antonio Delgado (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    cryptPerm(200118, "Antonio Veradas (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200119, "Anu Diptinatpa (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+        flatCrypt(200121, "Anwar (G2)", {}), // fala 46 wierna (300) dobrane vanilla
+        flatCrypt(200123, "Apolonia Czarnecki (G5)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200124, "Appius Claudius Corvus (G5)", { stealth: 1 }), // fala 46 wierna (300) dobrane
+    flatCrypt(200125, "Appolonius (G1)", { bleed: 1 }), // fala 46 wierna (300) dobrane
+    flatCrypt(200126, "Appolonius (G1 ADV)", { bleed: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200127, "The Arcadian (G5)", { bleed: 1, stealth: 1 }), // fala 46 wierna (300) dobrane
+        cryptPerm(200128, "Ardan Lane (G3)", { requiresReady: true }), // fala 46 wierna (300) cryptPerm
+        flatCrypt(200129, "Aredhel (G4)", {}), // fala 46 wierna (300) dobrane vanilla
+    cryptPerm(200130, "Aren, Priest of Eshu (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+        flatCrypt(200131, "Ariadne (G5)", {}), // fala 46 wierna (300) dobrane vanilla
+      cryptPerm(200133, "Arianne, The Conqueror (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    cryptPerm(200135, "Arika (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      cryptPerm(200136, "Arishat (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200137, "Aristotle de Laurent (G3)", { stealth: 1 }), // fala 46 wierna (300) statics
+      cryptPerm(200138, "Armin Brenner (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200140, "Arnulf Jormungandrsson (G5)", {}), // fala 46 wierna (300) dobrane vanilla
+      flatCrypt(200141, "Arriette Sylla (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      cryptPerm(200142, "Art Morgan (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200145, "Asguresh (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200146, "Ash Harrison (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      cryptPerm(200147, "Assad Salhoum (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200148, "Astrid Thomas (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200149, "Augustus Giovanni (G2)", { bleed: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200150, "Aurora Van Brande, Paladin (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      flatCrypt(200152, "Ayelea, The Manipulator (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      flatCrypt(200153, "Ayo Igoli (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      flatCrypt(200154, "Azaneal (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+    cryptPerm(200155, "Aziz, Dammar of Istanbul (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200156, "Azrael (G6)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(200157, "Baba Yaga, the Iron Hag (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      cryptPerm(200158, "Babalawo Alafin (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200160, "Badr, Shadow of Granada (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      flatCrypt(200161, "Badr al-Budur (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      flatCrypt(200162, "Bajazet al-Nasir (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+    flatCrypt(200163, "Bakr (G5)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+    flatCrypt(200164, "Baldesar Rossellini (G4)", { strength: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200165, "Banjoko (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+    flatCrypt(200166, "Barbaro Lucchese (G3)", { stealth: 1 }), // fala 46 wierna (300) statics
+    cryptPerm(200167, "The Baron (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200168, "Baron Dieudonne (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      flatCrypt(200169, "Baroque (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+    cryptPerm(200170, "Barry (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      cryptPerm(200171, "Barth (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200172, "Bartholomew (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+    flatCrypt(200173, "Basil (G2)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      flatCrypt(200174, "Basilia (G1)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      cryptPerm(200175, "Basir (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200176, "Batsheva (G4)", { strength: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200177, "Batsheva (G4 ADV)", { strength: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200179, "Beast, The Leatherface of Detroit (G2)", { strength: 1 }), // fala 46 wierna (300) statics
+  flatCrypt(200181, "Béatrice \"Oracle171\" Tremblay (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla // fala 48 wierna (300) weryfikacja
+    flatCrypt(200183, "Beckett (G3)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      flatCrypt(200184, "Beckett (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      flatCrypt(200186, "Bela (G5)", {}), // fala 47 wierna (300) vanilla
+      cryptPerm(200187, "Bela Kardoza (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200189, "Benedict Giovanni, Agent (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200190, "Benjamin Rose (G5)", { stealth: 1, handSize: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+    flatCrypt(200191, "Bernard, the Scourge (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      flatCrypt(200192, "Bertrand d'Anjou (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+    flatCrypt(200193, "Beth Malcolm (G5)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+    flatCrypt(200194, "Bethany Ray (G5)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      cryptPerm(200195, "Bez Dunsirn (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200196, "Bianca (G1)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+    flatCrypt(200199, "Bindusara, Historian of the Kindred (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+    flatCrypt(200200, "Black Annis (G4)", { stealth: 1, strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      flatCrypt(200201, "Black Cat (G1)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
+      cryptPerm(200204, "Blackhorse Tanner (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200205, "Blaise (G2)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200206, "Blanche Hill (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200209, "Bloody Mary (G5)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200210, "Blythe Candeleria (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200212, "Boss Callihan (G3)", {}), // fala 47 wierna (300) vanilla
+      flatCrypt(200213, "Boss Callihan (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200220, "Bronwen (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200222, "Bruce de Guy (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200223, "Brunhilde (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200224, "Brunhilde (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200225, "Bryan Van Duesen (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200226, "Bulscu (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200227, "Bulscu (G5 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    flatCrypt(200228, "Bupe Kuila (G4)", { intercept: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200229, "Byzar (G6)", { stealth: 1 }), // fala 46 wierna (300) statics
+      cryptPerm(200231, "Cagliostro, The Grand Copht (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+
+      flatCrypt(200232, "Cailean (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200234, "Calebos (G2)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200235, "Calebros, The Martyr (G2)", {}), // fala 47 wierna (300) vanilla
+      cryptPerm(200237, "Callirus (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200238, "Calvin Cleaver (G4)", { stealth: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200242, "The Capuchin (G5)", { bleed: 1, intercept: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200244, "Carlak (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200245, "Carlotta Giovanni (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200246, "Carmen (G5)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200247, "Carmine Giovanni (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200248, "Carna, The Princess Witch (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200249, "Carolina Vález (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200250, "Caroline Bishops (G4)", {}), // fala 47 wierna (300) vanilla
+      flatCrypt(200252, "Casino Reeds (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200253, "Cassandra, Magus Prime (G1)", { strength: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200255, "Castiel (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200257, "Cedric (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    cryptPerm(200258, "Céleste, The Voice of a Secret (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    flatCrypt(200259, "Céleste Lamontagne (G4)", { intercept: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200261, "César Holfield (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200262, "Cesewayo (G4)", { intercept: 1 }), // fala 46 wierna (300) statics
+      cryptPerm(200263, "Cesewayo (G4 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200264, "Chalcedony (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200265, "Chandler Hungerford (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    flatCrypt(200268, "Chas Giovanni Tello (G2)", { strength: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200269, "Chaundice (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200270, "Chavi Oraczko (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200272, "Christanius Lionel, The Mad Chronicler (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200273, "Christine Boscacci (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200274, "Christopher Houghton (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200275, "Cicatriz (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200277, "Claudia (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200278, "Claudio Severino (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200279, "Claudio Severino (G5 ADV)", { stealth: 1 }), // fala 46 wierna (300) statics
+    cryptPerm(200284, "Cock Robin (G3)", { requiresReady: true }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200287, "The Colonel (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200288, "Conrad Adoula (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200289, "Constanza Vinti (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    flatCrypt(200290, "Corine Marcón (G2)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200291, "Cornelius Ottavio (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200292, "Count Germaine (G4)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(200293, "Count Germaine (G4 ADV)", { bleed: 2 }), // fala 46 wierna (300) statics
+    cryptPerm(200294, "Count Jocalo (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200296, "Count Vladimir Rustovitch (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200297, "Count Zaroff (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200302, "Cristos Mantigo (G3)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200304, "Crusher (G1)", { strength: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200305, "Cybele (G4)", { bleed: 2 }), // fala 46 wierna (300) statics
+    flatCrypt(200306, "Cynthia Ingold (G2)", { strength: 1 }), // fala 46 wierna (300) statics
+    cryptPerm(200307, "Cyscek (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      cryptPerm(200308, "Daliah (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200310, "Damaskenos, Herald of Leandro (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200312, "Dan Murdock (G1)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200313, "Dancin' Dana (G1)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200314, "Dancin' Dana (G1 ADV)", { handSize: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200316, "Danielle Diron (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200317, "Danielle Diron (G3 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200318, "Danny Larkshill (G2)", { strength: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200319, "Danylo (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200320, "Darius Styx (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200321, "Dark Selina (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200322, "Darlene Killian (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200325, "Darvag, The Butcher of Rus (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200326, "David Morgan, The Scourge (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200327, "De Sade (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200328, "Dedefra (G2)", { strength: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200329, "Dela Eden (G3)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200331, "Delilah Monroe (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200332, "Delizbieta of the Dark Eyes (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200333, "Demdemeh (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    flatCrypt(200335, "Democritus (G1)", { bleed: 1 }), // fala 46 wierna (300) statics
+    cryptPerm(200337, "DeSalle (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200344, "Diego Giovanni (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200347, "Dirk (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200348, "Djuhah, The Bronze Bow (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200349, "Dmitra Ilyanova (G5)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200350, "Dmitri Borodin (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      cryptPerm(200351, "Doctor Streck (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200357, "Dominique (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200358, "Dominique (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200359, "Dominique Santo Paulo (G4)", { strength: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200360, "Don Caravelli (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200362, "Don Cruez, The Idealist (G1)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200363, "Don Michael Antonio Giovanni (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200364, "Dónal O'Connor (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200365, "Donald Cargill (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200366, "Donatello Giovanni (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200367, "Donatien (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200370, "Dorka (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200371, "Dovey Ebfwe (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200372, "Doyle Fincher (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      cryptPerm(200375, "Dr. Jest (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200377, "Dr. John Dee (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200378, "Dr. Julius Sutphen (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200379, "Dr. Julius Sutphen (G3 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200381, "Dr. Morrow, The Skindoctor (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200382, "Dr. Oliver Genet (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200383, "Dr. Solomon Grey (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200385, "The Dracon (G5)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200386, "Dragos (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+
+    flatCrypt(200389, "Drozodny (G5)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200390, "Drusilla Euphemia (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200391, "Duality (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200393, "Durga Syn (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200394, "Dylan (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200395, "Dylan (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+  flatCrypt(200397, "Earl \"Shaka74\" Deams (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+      flatCrypt(200398, "Ebanezer Roush (G1)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200399, "Echo (G4)", { strength: 1 }), // fala 46 wierna (300) statics
+      cryptPerm(200400, "Eddie Gaines (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200401, "Edith Blount (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200402, "Edward Neally (G3)", { stealth: 1 }), // fala 46 wierna (300) statics
+      cryptPerm(200403, "Edward Vignes (G3)", { requiresReady: true }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200404, "Effie Lowery (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200405, "Egothha (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200409, "Elihu (G4)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(200410, "Elimelech the Twice-Damned (G5)", { bleed: 1, strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200411, "Eliott Sinclair, Virtuoso Thespian (G1)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200412, "Elisabetta Romano (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200414, "Elizabeth Dimitros (G3)", {}), // fala 47 wierna (300) vanilla
+      flatCrypt(200416, "Ellen Fence, the Tracker (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200417, "Ellison Humboldt (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200421, "Emily Carson (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200422, "Enam (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200423, "Enid Blount (G3)", { stealth: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200424, "Enkidu, The Noah (G4)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(200425, "Enzo Giovanni, Pentex Board of Directors (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      cryptPerm(200426, "Enzo Giovanni, Pentex Board of Directors (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200427, "Epikasta Rigatos (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200428, "Erebus (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200429, "Eric Kressida (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200431, "Erichtho (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200433, "Erinyi (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200434, "Erlik (G3)", { bleed: 1, handSize: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200435, "Ermenegildo, The Rake (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200436, "Esau (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200438, "Ethan Locke (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200439, "Étienne Fauberge (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200440, "Etrius (G2)", { bleed: 2, stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200441, "Eugene (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200443, "Eurayle Gelasia Mylonas (G4)", {}), // fala 47 wierna (300) vanilla
+      flatCrypt(200445, "Evan Rogers (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200447, "Evil Jensen (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200448, "Eze, The Demon Prince (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200449, "Ezekiel, Lord of Montreal (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200450, "Ezmerelda (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200452, "Fabrizia Contreraz (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200454, "Fairuza (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    cryptPerm(200455, "Fakir al Sidi (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200456, "Falhu Shibaba (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200457, "Faruq (G2)", { strength: 1 }), // fala 46 wierna (300) statics
+    cryptPerm(200458, "Father Juan Carlos (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200459, "Fatima al-Faqadi (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200460, "Federico di Padua (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200462, "Feo Ramos (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200463, "Fergus Alexander (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200464, "Ferox, The Rock Lord (G2)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(200465, "Ferox, The Rock Lord (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      cryptPerm(200466, "Fida'i (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200467, "Fidus, The Shrunken Beast (G2)", { stealth: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200469, "Flavia, Avenging Angel (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200470, "Fleurdumal (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200475, "Francis Milliner (G4)", { strength: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200476, "Francisco Domingo de Polonia (G2)", { bleed: 1 }), // fala 46 wierna (300) statics
+      cryptPerm(200477, "Franciscus (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200478, "François Villon (G2)", { bleed: 1, stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200482, "Freddy Gage (G5)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200485, "Frondator (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200486, "Fustuk (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200487, "Gabi (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200488, "Gabriel de Cambrai (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200489, "Gabrielle di Righetti (G5)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200490, "Gabrin (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200491, "Gaël Pilet (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200492, "Ganesh (G5)", { bleed: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200493, "Ganhuru (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200495, "Gaspare Giovanni (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200496, "Gatjil Munyarryun (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200497, "Gavrylo (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200498, "Gem Ghastly (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200499, "Gemini (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200500, "General Perfidio Díos (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200501, "Genevieve (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200502, "Gengis (G3)", {}), // fala 47 wierna (300) vanilla
+      cryptPerm(200503, "Gengis (G3 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200504, "Genina, The Red Poet (G3)", { stealth: 1 }), // fala 46 wierna (300) statics
+    cryptPerm(200505, "Gentha Shale (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      cryptPerm(200507, "Gerald FitzGerald (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200508, "Gerald Windham (G5)", { stealth: 1 }), // fala 46 wierna (300) statics
+      cryptPerm(200510, "Gerard Rafin (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200511, "Gharston Roland (G4)", {}), // fala 47 wierna (300) vanilla
+      flatCrypt(200512, "Ghede (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200514, "Giangaleazzo, The Traitor (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200518, "Gillespi Giovanni (G2)", { bleed: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200519, "Gillian Krader (G2)", {}), // fala 47 wierna (300) vanilla
+      cryptPerm(200520, "Giotto Verducci (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200521, "Giovanni del Georgio (G5)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200522, "Gisela Harden, The Winnower (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200526, "Glycon (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200527, "Gold Pan Dan (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+
+    flatCrypt(200528, "Goratrix (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200529, "Goratrix (G2 ADV)", { bleed: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200530, "Gotsdam, The Tired Warrior (G4)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(200531, "Gracetius (G5)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200532, "Gracis Nostinus (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200534, "Gratiano (G2)", { bleed: 1 }), // fala 46 wierna (300) statics
+      cryptPerm(200535, "Gravitnir (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    cryptPerm(200536, "Greensleeves (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200539, "Grendel the Worm-Eaten (G1)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200540, "Greta Kircher (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200541, "Grotesque (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200542, "Gualtiero Ghiberti (G4)", { stealth: 1 }), // fala 46 wierna (300) statics
+    cryptPerm(200545, "Guillaume Giovanni (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200546, "Guillermo Arsuaga (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200548, "Gunther, Beast Lord (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200549, "Gustaphe Brunnelle (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200550, "Gustav Breidenstein (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    flatCrypt(200551, "Gustav Mallenhous (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200553, "Gwen Brand (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    flatCrypt(200554, "Gwendolyn (G2)", { bleed: 2 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200556, "Gwyedd (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200557, "Haakon Mortensen (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200558, "Hadrian Garrick (G2)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200559, "Hafsa, The Watcher (G5)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200560, "Hagar Stone (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200561, "Halim Bey (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200563, "Handsome Dan (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200564, "Hanna Redmonds (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200565, "Hannibal (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200566, "Hannibal (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    cryptPerm(200568, "Hardestadt (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200569, "Harika Guljan (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200570, "Harlan Graves (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200571, "Harold Tanner (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200572, "Harold Zettler, Pentex Director (G4)", { bleed: 1, stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200573, "Harrod (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200574, "Harry Reese (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200575, "Hartmut Stover (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200577, "Hasina Kesi (G1)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200578, "Hazimel (G4)", { bleed: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200579, "Heather Florent, The Opportunist (G1)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200580, "Hecate (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      flatCrypt(200582, "Hector Trelane (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200584, "Hektor (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200585, "Helen Fairchild (G6)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(200586, "Helena (G3)", { bleed: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200587, "Helena (G3 ADV)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(200588, "Helena Casimir (G1)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200589, "Henri Lavenant (G3)", { handSize: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200590, "Henry Taylor (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200591, "Herbert Westin (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200592, "Hermana Hambrienta Mayor (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200593, "Hermana Hambrienta Menor (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    cryptPerm(200594, "Hesha Ruhadze (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200597, "High Priest Angra Mainyu (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200598, "Hillanvale (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+  flatCrypt(200599, "Hiram \"Hide\" DeVries (G5)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    flatCrypt(200604, "Horatio Ballard (G3)", { stealth: 1 }), // fala 46 wierna (300) statics
+    cryptPerm(200605, "The Horde (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200606, "Horrock (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200607, "Howler (G2)", { strength: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200608, "Hrothulf (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200609, "Huang, Blood Cultist (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200610, "Hugo (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200611, "Huitzilopochtli (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      cryptPerm(200612, "Hukros (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200613, "Humo (G4)", { stealth: 1 }), // fala 46 wierna (300) statics
+      cryptPerm(200614, "Husamettin (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200615, "Iago Castille (G6)", { intercept: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200616, "Ian Forestal (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200618, "Ibn Khaldun, Scholar (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200619, "Icarus, The Manchurian (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200620, "Idalia, Prophet of Guadalajara (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200624, "Ignazio Giovanni (G3)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200625, "Igo the Hungry (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200626, "Iliana (G2)", {}), // fala 47 wierna (300) vanilla
+      flatCrypt(200628, "Ilse (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200629, "Ilyana Ravidovich (G3)", { intercept: 1 }), // fala 46 wierna (300) statics
+      flatCrypt(200630, "Imanna (G6)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(200631, "Imogen (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200633, "Ingram Frizer (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200634, "Ingrid Rossler (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200636, "Iniko, The Black Lion (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200637, "Intisar (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    flatCrypt(200638, "Inyanga (G4)", { intercept: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200639, "Ira Rivers (G3)", { requiresReady: true }), // fala 46 wierna (300) cryptPerm Gehenna
+      flatCrypt(200641, "Iris Bennett (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200644, "Isanwayen (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200646, "Isouda de Blaise (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+    cryptPerm(200648, "Ivan Krenyenko (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
+    flatCrypt(200649, "Ivan Krenyenko (G2 ADV)", { bleed: 1, strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200650, "Izhim abd Azrael (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+  flatCrypt(200651, "J. Oswald \"Ozzy\" Hyde-White (G3)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    cryptPerm(200652, "Jack (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+      cryptPerm(200653, "Jack Dawson (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+      flatCrypt(200654, "Jack Dawson (G2 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200655, "Jack Drake (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+      cryptPerm(200659, "Jacko (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+      flatCrypt(200661, "Jacob, The Glitch (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200663, "Jacob Fermor (G4)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+
+    flatCrypt(200664, "Jacques Molay (G4)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200665, "Jaggedy Andy (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200666, "Jalal Sayad (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200667, "Jalan-Aajav (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200668, "Jamal (G5)", { bleed: 1, strength: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(200669, "Jan Pieterzoon (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200670, "Jan Pieterzoon (G2 ADV)", {}), // fala 47 wierna (300) vanilla
+      flatCrypt(200671, "Jane Sims (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200672, "Janet Langer (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200673, "Janey Pickman (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200675, "Jann Berger (G4)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200676, "Janni (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+      cryptPerm(200677, "Jara Drory (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200678, "Jaroslav Pascek (G3)", { intercept: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200679, "Jason, The World's Voice (G3)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200680, "Javier Montoya (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+      cryptPerm(200681, "Javier Montoya (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+      flatCrypt(200682, "Jayakumar (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200683, "Jayne Jonestown (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200684, "Jazz Wentworth (G1)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200685, "Jean Lisle (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200688, "Jenna Cross (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+  flatCrypt(200690, "Jennifer \"Flame61\" Vidisania (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+      flatCrypt(200694, "Jeremy MacNeil (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200695, "Jeremy Talbot (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+  flatCrypt(200696, "Jeremy \"Wix\" Wyzchovsky (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+      cryptPerm(200697, "Jerry (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+      flatCrypt(200698, "Jesse Menks (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200700, "Jessica (G2 ADV)", { stealth: 1 }), // fala 47 wierna (300) statics
+      flatCrypt(200702, "Jezebelle (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200703, "Jibade el-Bahrawi (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+      flatCrypt(200704, "Jibade el-Bahrawi (G4 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200705, "Jimmy Dunn (G2)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(200707, "João Bilé (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+      flatCrypt(200708, "Joaquin Murietta (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200709, "Joaquina Amaya (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+  flatCrypt(200710, "Joe \"Boot\" Hill (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+      flatCrypt(200711, "Johan Wrede (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200712, "Johann Matheson (G5)", {}), // fala 47 wierna (300) vanilla
+      flatCrypt(200713, "Johannes Castelein (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200716, "John Paleologus (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200718, "Jorge De La Muerte, The Agent (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200720, "Josef von Bauren (G4)", { bleed: 1, stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200721, "Joseph Cambridge (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200722, "Joseph DiGiaccomo (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200724, "Joseph O'Grady (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+      flatCrypt(200725, "Josette (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200726, "Joshua Tarnopolski (G3)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(200727, "Jost Werner (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200728, "Jozz (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200730, "Juanita Santiago (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200731, "Jubal (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+      flatCrypt(200733, "Juggler (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200734, "Julia Prima (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200735, "Julian Sanders (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200736, "Julio Martinez (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+      flatCrypt(200737, "Julius (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200738, "Juniper (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200739, "Justine, Elder of Dallas (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200741, "Kabede Maru (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200742, "Kahina the Sorceress (G3)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200743, "Kai Simmons (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200744, "Kalila (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200745, "Kalinda (G2)", { bleed: 1, stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200749, "Kamiri wa Itherero (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200750, "Kamiri wa Itherero (G4 ADV)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200751, "Kanimana Belghazi (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200752, "Kanya Akhtar (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200753, "Karen Suadela (G5)", { stealth: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(200754, "Karif al Numair (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+      flatCrypt(200755, "Karl (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200756, "Karmenita Yoryari (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200757, "Karsh (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200758, "Karsh (G3 ADV)", { intercept: 1 }), // fala 47 wierna (300) statics
+      flatCrypt(200759, "Kashan (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200760, "Kassiym Malikhair (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200761, "Katarina (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200762, "Katarina Kornfeld (G3)", { stealth: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(200763, "Kateline Nadasdy (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200764, "Katherine Stoddard (G3)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200766, "Kazimir Savostin (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200767, "Keith Moody (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200768, "Keller Thiel (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200769, "Kemintiri (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200770, "Kemintiri (G2 ADV)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200771, "Kendrick (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200773, "Kephamos, High Priest of Marrakech (G2)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200775, "Kestrelle Hayes (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200776, "Khalid (G3)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200778, "Khalil Ravana (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200779, "Khalu (G3)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200780, "Khay'tall, Snake of Eden (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200781, "Khurshid (G6)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200783, "The Kikiyaon (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200784, "Kiradin (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200785, "Kisha Bhimji (G3)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200786, "Kite (G2)", { intercept: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200788, "Klaus van der Veken (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200790, "Konrad Fleischer (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200792, "Kostantin, Baro of the Caravan (G2)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+
+    flatCrypt(200793, "Krassimir (G2)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(200795, "Kurt Densch (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200797, "Kyle Strathcona, Cardinal of Canada (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200798, "Kyoko Shinsegawa (G3)", { stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(200799, "Kyrylo (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200800, "L'Épuisette (G4)", { bleed: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(200801, "La Viuda Blanca (G6)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200804, "Lady Constancia (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200805, "Lady Zara Slatikov (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200806, "Laecanus (G4)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(200807, "Laika (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200810, "Lambach (G2)", { strength: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200811, "Lambach (G2 ADV)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200813, "Langa (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200814, "Larry (G2)", { intercept: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
+    cryptPerm(200815, "Laszlo Mirac (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200818, "Layla bint-Nadr (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200819, "Lázár Dobrescu (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200820, "Lazarus (G1)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200821, "Lazarus (G1 ADV)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200822, "Lazarus James (G4)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200823, "Lazverinus, Thrall of Lambach (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    cryptPerm(200824, "Le Dinh Tho (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200826, "Leandro (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200828, "Legba (G6)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(200829, "Leila Monroe (G4)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200830, "Lena Rowe (G2)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(200831, "Leo Washington (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    cryptPerm(200832, "Leon (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200833, "Lernean (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    cryptPerm(200835, "Lille Haake (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200837, "Lin Jun (G4)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200839, "Lisa Noble (G3)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200840, "Lisandro Giovanni (G3)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
+    cryptPerm(200842, "Lisette Vizquel (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200843, "Lithrac (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200844, "Little Tailor of Prague (G2)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    cryptPerm(200847, "Lizette (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200848, "Lodin (Olaf Holte) (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    flatCrypt(200852, "Lord Aaron Wesley Wilkshire (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    flatCrypt(200853, "Lord Ashton (G3)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    flatCrypt(200854, "Lord Ephraim Wainwright (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    flatCrypt(200855, "Lord Fianna (G5)", { stealth: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(200856, "Lord Tremere (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200858, "Lorenzo Detuono (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    flatCrypt(200859, "Lorrie Dunsirn (G4)", { strength: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(200860, "Louhi (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    flatCrypt(200863, "Louis Fortier (G4 ADV)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(200864, "Luanda Magere (G4)", { strength: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(200865, "Lubomira Hradok (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200866, "Luc (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200867, "Luca Italicus (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    cryptPerm(200868, "Lucas Halton (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200869, "Luccia Paciola (G1)", { strength: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    flatCrypt(200870, "Lucian (G1)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    flatCrypt(200871, "Lucian, the Perfect (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    cryptPerm(200872, "Lucina (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200873, "Lucinde, Alastor (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200874, "Lucita (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    cryptPerm(200875, "Lucita (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200876, "Lucretia, Cess Queen (G1)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    cryptPerm(200877, "Lucubratio (G4)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200879, "Ludmijla Rakoczy (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    flatCrypt(200881, "Luke Fellows (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    flatCrypt(200883, "Luma, Stone Beauty (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    cryptPerm(200885, "Luna Giovanni (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200888, "Lupo Giovanni (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200889, "Luther (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200890, "Lutz von Hohenzollern (G4)", { bleed: 2 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    cryptPerm(200891, "Lydia, Grand Praetor (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200892, "Lydia Van Cuelen (G1)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    flatCrypt(200893, "Lynn Thompson (G5)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(200894, "MacAlister Marshall (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200896, "Madame Guil (G3)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    flatCrypt(200897, "Madeleine Giovanni (G6)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    flatCrypt(200898, "Magdelena Schaefer (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    flatCrypt(200899, "Makarios, The Seducer (G2)", { bleed: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(200900, "Malabranca (G4)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    flatCrypt(200901, "Malachai (G6)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    cryptPerm(200903, "Maldavis (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200904, "Maldavis (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    flatCrypt(200905, "Malgorzata (G4)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    flatCrypt(200906, "Mamadou Keita (G4)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    cryptPerm(200907, "Maman Boumba (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200908, "Mambo Jeanne (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200909, "Marcel de Breau (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200910, "Marcellus (G2)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    flatCrypt(200911, "March Halcyon (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    flatCrypt(200912, "Marcia Felicia Licinia (G5)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200913, "Marciana Giovanni, Investigator (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200914, "Marconius (G2)", { strength: 1 }), // wierna fala 31 (500)
+    cryptPerm(200915, "Marcus Vitel (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200916, "Marcus Vitel (G3 ADV)", { bleed: 1 }), // wierna fala 31 (500)
+    flatCrypt(200917, "Margaret Milliner (G4)", { bleed: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(200918, "Margarite (G4)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200919, "Marge Khan (G5)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200920, "Marguerite Foccart (G4)", { intercept: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(200921, "Marguerite Foccart (G4 ADV)", { strength: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(200923, "Maria Stone (G3 ADV)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200925, "Marianna (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+
+    flatCrypt(200926, "Mariano Pomposo (G3)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200927, "Marie Faucigny (G3)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200928, "Marie-Pierre (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200929, "Mariel, Lady Thunder (G1)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200931, "Marino Reymundo Vásquez (G3)", { bleed: 1 }), // wierna fala 31 (500)
+    flatCrypt(200935, "Maris Streck (G3)", { intercept: 1, stealth: 1 }), // wierna fala 31 (500)
+    cryptPerm(200936, "Mark (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200937, "Mark Decker (G3)", { strength: 1 }), // wierna fala 31 (500)
+    cryptPerm(200939, "Marlena (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200941, "Marta (G4)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200942, "Marthe Dizier (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200943, "Martin Franckel (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200944, "Martino della Passaglia (G6)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200945, "Marty Lechtansi (G1)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200946, "Mary Anne Blaire (G5)", { stealth: 1 }), // wierna fala 31 (500)
+    flatCrypt(200947, "Mary Johnson (G4)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200948, "Mary the Black (G2)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200950, "Masika (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200951, "Masika (G1 ADV)", { intercept: 1 }), // wierna fala 31 (500)
+    flatCrypt(200953, "Maskini (G4)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200954, "Massassi (G4)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200955, "Mata Hari (G4)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200956, "Matasuntha (G5)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200957, "Matata (G3)", { strength: 1 }), // wierna fala 31 (500)
+    flatCrypt(200958, "Mateusz Gryzbowsky (G3)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200959, "Mateusz Kazimirski, Biker of Blood (G6)", { stealth: 1 }), // wierna fala 31 (500)
+    cryptPerm(200960, "Matteus, Flesh Sculptor (G2)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200961, "Matthew (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200962, "Matthew Romans (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200963, "Matthias (G2)", { intercept: 1 }), // wierna fala 31 (500)
+    flatCrypt(200964, "Maureen, Dark Priestess (G4)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200966, "Maxwell (G3)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200968, "The Medic (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200969, "Melek (G2)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200971, "Melinda Galbraith (G4 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200972, "Melisande (G2)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200973, "Melissa Barton (G1)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200974, "Mélusine d'Anjou (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200975, "Menele (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200976, "Menele (G3 ADV)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200979, "Merrill Molitor (G1)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200980, "Meshenka (G2)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200981, "Michael diCarlo (G4)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200982, "Michael Luther (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200983, "Michaela (G5)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(200984, "Mictlantecuhtli (G5)", { strength: 1 }), // wierna fala 31 (500)
+    flatCrypt(200985, "Midget (G3)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200986, "Miguel Cordovera (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200987, "Miguel Santo Domingo (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200988, "Mikael Birkholm (G6)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(200989, "Miller Delmardigan, Teacher of Bahari (G2)", { strength: 1 }), // wierna fala 31 (500)
+    flatCrypt(200991, "Mimir (G5)", { bleed: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(200992, "Mina Grotius (G3)", { bleed: 1 }), // wierna fala 31 (500)
+    cryptPerm(200993, "Miranda Sanova (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200995, "Miriam Benyona (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200999, "Mistress Fanchon (G4)", { bleed: 2, stealth: 1 }), // wierna fala 31 (500)
+    flatCrypt(201000, "Mitchell, The Headhunter (G2)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(201001, "Mithras (G3)", { bleed: 2, strength: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201002, "Mitru the Hunter (G4)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(201006, "Montano (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201007, "Montecalme (G5)", { stealth: 1 }), // wierna fala 31 (500)
+    flatCrypt(201008, "Monty Coven (G5)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(201009, "Mordechai Ben-Nun (G5)", { intercept: 1 }), // wierna fala 31 (500)
+    flatCrypt(201011, "Morlock (G4)", { bleed: 1 }), // wierna fala 31 (500)
+    flatCrypt(201012, "Morrow the Sage (G4)", { stealth: 1 }), // wierna fala 31 (500)
+    flatCrypt(201013, "Mosfair (G4)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(201015, "Mowgli (G4)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(201016, "Mr. Noir (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201017, "Muaziz, Archon of Ulugh Beg (G2)", { stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201018, "Mugur Sabau (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201019, "Muhandis (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    cryptPerm(201021, "Mukhtar Bey (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201022, "Murat (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201023, "Muricia (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201024, "Muriel Foucade (G2)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201025, "Muse (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201026, "Mustafa, The Heir (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201028, "Myrna Goldman (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201029, "Nadima (G3)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201030, "Nahir (G3)", { bleed: 1, handSize: 1 }), // fala 32 wierna (421)
+    cryptPerm(201031, "Nahum Enosh (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201032, "Nails (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201033, "Nakhthorheb (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201034, "Nakova, Advocate of Golconda (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201035, "Nana Buruku (G4)", { handSize: 1 }), // fala 32 wierna (421)
+    flatCrypt(201036, "Nangila Were (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201037, "Natalia (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201038, "Natasha Volfchek (G1)", { bleed: 1, stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201039, "Navar McClaren (G1)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(201040, "Nedal, The Careless (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201042, "Nefertiti (G2)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    cryptPerm(201043, "Neferu (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201044, "Nehemiah (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201045, "Nehsi (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201046, "Neighbor John (G4)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201048, "Nergal (G5)", { bleed: 2 }), // fala 32 wierna (421)
+    cryptPerm(201049, "Nergal (G5 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201051, "Nettie Hale (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201052, "New Blood (ANY)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201053, "Ngozi Ekwensu (G5)", {}), // fala 32 wierna (421): przejrzane
+
+    flatCrypt(201056, "Nickolai, The Survivor (G4)", { stealth: 1 }), // fala 32 wierna (421)
+    cryptPerm(201057, "Nicomedes (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201059, "Nik (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201060, "Nikolaus Vermeulen (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201061, "Nitidas (G6)", { handSize: 1 }), // fala 32 wierna (421)
+    flatCrypt(201062, "Nizzam al-Latif (G5)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201063, "Nkechi (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201064, "Nkule Galadima (G4)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(201066, "Nostoket (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201067, "Nu, The Pillar (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201069, "Nuriel (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201070, "Obaluaye (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201071, "Obsidian (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201072, "Ogwon (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201075, "Olga Triminov (G3)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201076, "Oliver Thrace (G3)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201078, "Olugbenga (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201079, "Omaya (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201080, "Omer (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201081, "Omme Enberbenight (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201082, "Onaedo (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+  flatCrypt(201083, "Ondine \"Boudicca\" Sinclair (G5)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
+    cryptPerm(201084, "Orlando Oriundus (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201085, "Osric Vladislav (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201086, "Otieno (G4)", { bleed: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201087, "Owain Evans, The Wanderer (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201089, "Ozmo (G1)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201092, "Paolo Sardenzo (G5)", { intercept: 1 }), // fala 32 wierna (421)
+    cryptPerm(201093, "Papa Legba (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201094, "Pariah (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201095, "Parmenides (G2)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201096, "Parnassus (G2)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201098, "Patrizia Giovanni, Collector of Secrets (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201100, "Paul Cordwood (G4)", { intercept: 1, stealth: 1 }), // fala 32 wierna (421)
+    cryptPerm(201102, "Paul Forrest, False Prophet (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201104, "Paulo de Castille (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201105, "Pavlo (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201107, "Pedrag Hasek (G5)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(201108, "Pedro Cortez (G4)", { strength: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201109, "Pentweret (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201110, "Persephone Tar-Anis (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201111, "Persia, The Beautiful Statue (G3)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201112, "Petaniqua (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201113, "Petaniqua (G4 ADV)", { strength: 1 }), // fala 32 wierna (421)
+    cryptPerm(201114, "Peter Blaine (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201116, "Petra (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201117, "Petru Sipos (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201118, "Phaedyme (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201119, "Phagian (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201120, "Pherydima (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201121, "Philip van Vermeer IV (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201122, "Philippe de Marseilles (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201123, "Phillipe Rigaud (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201125, "Pieter van Dorn (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201126, "Piotr Andreikov (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201127, "Pochtli (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201129, "Porphyrion (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201130, "Porphyry (G6)", { bleed: 2 }), // fala 47 wierna (300) statics
+    cryptPerm(201131, "Portia (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201132, "Prejudice (G4)", { bleed: 2 }), // fala 32 wierna (421)
+    cryptPerm(201133, "Preston Varrick (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201136, "Pugfar (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201137, "Qadir ul-Ghani (G2)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    cryptPerm(201138, "Qawiyya el-Ghaduba (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201139, "Queen Anne (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201140, "Quentin (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201142, "Quentin King III (G3 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201143, "Qufur am-Heru (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201144, "Quincy, The Trapper (G3)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201145, "Quinton McDonnell (G1)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201146, "Quira, The Bitch Queen (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201147, "Rabbat, The Sewer Goddess (G4)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(201148, "Rachel Brandywine (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201149, "Radeyah (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201150, "Radu Bistri (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201151, "Rafael de Corazon (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201152, "Rafaele Giovanni (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201153, "Raful al-Zarqa (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201154, "Rain (G4)", { stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201155, "Rake (G1)", { strength: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201158, "Ramona (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201159, "Ramona (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201160, "Randall (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201162, "Ranjan Rishi, Camarilla Scholar (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201163, "Ransam, The Old Man (G4)", { strength: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201164, "Raphael Catarari (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201166, "Rashid Stockton (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201168, "Rathmere (G5)", { strength: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201170, "Rebekah (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201171, "Rebekka, Chantry Elder of Munich (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201172, "Redbone McCray (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201173, "Reg Driscoll (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201175, "Regina Giovanni, The Right Hand of Augustus (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201176, "Reginald Moore (G4)", { strength: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201177, "Reiner Stoschka (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201180, "Reverend Adams (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201181, "Reverend Adams (G4 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201182, "Reverend Blackwood (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201184, "Rex, The Necronomist (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201185, "Reza Fatir, The Dark Angel (G4)", {}), // fala 32 wierna (421): przejrzane
+
+    cryptPerm(201186, "Richard Tauber, Ayelea's Puppet (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201187, "Richter, The Templar of Du Mont (G2)", { strength: 1 }), // fala 32 wierna (421)
+    cryptPerm(201189, "Rico Loco (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201190, "Rigby, Crusade Vanguard (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201191, "Righteous Endeavor (G5)", { intercept: 1, strength: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201194, "Rocia (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201195, "Roderick Phillips March (G4)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201196, "Rodolfo (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201198, "Roger Farnsworth (G3)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201203, "Rosa Hernández (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201204, "Rosa Martínez (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201206, "Rosemarie (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201207, "Roxanne, Rectrix of the 13th Floor (G1)", { stealth: 1 }), // fala 32 wierna (421)
+    cryptPerm(201208, "Royce (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201211, "Rusticus (G5)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201212, "Ruth McGinley (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201213, "Rutor (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201214, "Ruxandra (G5)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201215, "Ryder (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201216, "Ryszard (G4)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(201217, "Sabine Lafitte (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201220, "Sahana (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201223, "Sajid al Misbah (G5)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(201225, "Salinger (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201226, "Salvador Garcia (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201228, "Samantha (G2)", { intercept: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201229, "Samat Ramal-Ra, Archon (G2)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(201232, "Sandra White (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201235, "Santaleous (G5)", { bleed: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201236, "Saqqaf, Keeper of the Grand Temple of Set (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201237, "Sarah Brando (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201239, "Sarah Raines (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201240, "Sargon (G2)", { strength: 1 }), // fala 32 wierna (421)
+    cryptPerm(201242, "Sarrasine (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201243, "Sarrasine (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201244, "Sascha Vykos, The Angel of Caine (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201245, "Sascha Vykos, The Angel of Caine (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201247, "Saul Meira (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201248, "Saulot, The Wanderer (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201249, "Saxum, Master of Slaves (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201250, "Sayshila (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201252, "Schuyler (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201253, "Scout Youngwood (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201255, "Sean Rycek (G4)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201256, "Sebastian Marley (G1)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201257, "Sébastien Goulet (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201258, "Sébastien Goulet (G3 ADV)", { stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201259, "Sela (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201260, "Sela (G2 ADV)", { stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201261, "Selena (G3)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201262, "Selma the Repugnant (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201263, "Sennadurek (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201265, "Seren Sukardi (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201266, "Serenna the White (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201267, "Sergei Voshkov, The Eye (G5)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201268, "Servius Marius Pustula (G4)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(201269, "Seterpenre (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201270, "Sha-Ennu (G4)", { bleed: 2 }), // fala 47 wierna (300) statics
+    flatCrypt(201271, "Shaggydog (G5)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201273, "Shahid (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201274, "Shalmath (G6)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(201277, "Shasa Abu Badr (G4)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201279, "Sheela Na Gig (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201280, "Sheila Mezarin (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201282, "Shemti (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201283, "Sheva Carr (G5)", { strength: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201284, "Shiloh Marie, Vengeance (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201285, "The Siamese (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    cryptPerm(201286, "Sigrid Bekker (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201287, "Silas (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201288, "Silvia Giovanni (G2)", { strength: 1 }), // fala 32 wierna (421)
+    cryptPerm(201291, "Sir Ralph Hamilton (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201295, "Skidmark (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201296, "Skryta Zyleta (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201298, "Slag (G5)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201299, "Smallpox Griet (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201301, "Smudge the Ignored (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201304, "Soldat (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201305, "Solomon Batanea (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201306, "Sonja Blue (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201308, "Spider (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201309, "Spider-Killer (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201310, "Spiridonas (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201311, "Spleen, Georgio Gutterpunk (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201312, "Stanislava (G2)", { bleed: 2 }), // fala 47 wierna (300) statics
+    cryptPerm(201314, "Stefano Giovanni (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201315, "Stephen Bateson (G5)", { bleed: 1, stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201319, "Stravinsky (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201320, "Strohmann (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201321, "Styles Margs (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201322, "Suhailah (G2)", { bleed: 1, stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201323, "Sukainah (G5)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201324, "Sundervere, The Devil Brahmin (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201325, "Sundown (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201326, "Sundown (G3 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201327, "Sutekh, The Dark God (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201328, "Suzanne Kadim (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201329, "Sylvester Simms (G1)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201330, "Sylvie Helgon (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201331, "Synesios (G2)", {}), // fala 47 wierna (300) vanilla
+
+    cryptPerm(201332, "Synner-G (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 32 wierna (421)
+    cryptPerm(201333, "Szechenyi Jolán, Mother of Horrors (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201334, "T.J. (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201335, "Tabitha Fisk (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201336, "Talbot (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    cryptPerm(201337, "Talley, The Hound (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201338, "Tammy Walenski (G3)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201339, "Tanginé (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201340, "Tansu Bekir (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201342, "Tarautas (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201343, "Tarbaby Jack (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201344, "Tariq, The Silent (G2)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(201345, "Tariq, The Silent (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201347, "Tatiana Romanov (G1)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201348, "Tatiana Stepanova, Alastor (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201349, "Tatu Sawosa (G4)", { strength: 1 }), // fala 32 wierna (421)
+    cryptPerm(201351, "Tears, The Dark Pierrot (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201352, "Tegyrius, Vizier (G2)", { stealth: 1, strength: 1 }), // fala 32 wierna (421)
+    cryptPerm(201353, "Tegyrius, Vizier (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201354, "Teresita, The Godmother (G3)", { intercept: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201355, "Tereza Rostas (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201356, "Terrell Harding (G3)", { stealth: 1 }), // fala 32 wierna (421)
+    cryptPerm(201358, "Terrifisto (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201359, "Terry (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201361, "Themistocles (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201362, "Theo Bell (G2)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(201363, "Theo Bell (G2 ADV)", { stealth: 1, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201364, "Theron (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201365, "Thetmes, Caliph of Alamut (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201366, "Thomas De Lutrius (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201367, "Thomas Steed, The Angry (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    cryptPerm(201369, "Thomasso Ghiberti (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201370, "Thucimia (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201371, "Tiberius, The Scandalmonger (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201374, "Titus Camille (G4)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201375, "Tobias Smith (G3)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201376, "Toby (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201378, "Tom (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201379, "Tomaine (G4)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(201382, "Topaz (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201383, "Tori Longwood (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201384, "Torvus Bloodbeard (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201385, "Toy (G5)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(201387, "Troglodytia (G4)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201388, "Troius (G4)", { strength: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201389, "Truman (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201390, "Tryphosa (G4)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201393, "Tupdog (G3)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201394, "Tura Vaughn (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201395, "Tusk, The Talebearer (G1)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201396, "Tusk, The Talebearer (G1 ADV)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201397, "Tyler (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201398, "Tyler McGill (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201400, "Ublo-Satha (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201401, "Uchenna (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201402, "Ugadja (G4)", { stealth: 1 }), // fala 32 wierna (421)
+    cryptPerm(201404, "Ulugh Beg, The Watcher (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201406, "Umdava (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201407, "Una (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201409, "Undele (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201410, "Unmada (G5)", { handSize: 1 }), // fala 32 wierna (421)
+    flatCrypt(201411, "The unnamed (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201412, "Unre, Keeper of Golgotha (G2)", { bleed: 1, intercept: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201413, "Ur-Shulgi, The Shepherd (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201415, "Uriah Winter (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201416, "Uriel (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201417, "Urraca (G4)", { bleed: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201418, "Uta Kovacs (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201420, "Vaclav Petalengro (G2)", { intercept: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201421, "Valerius Maior, Hell's Fool (G4)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201422, "Valerius Maior, Hell's Fool (G4 ADV)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(201423, "Valkyrie (G3)", { strength: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201426, "Vardar Vardarian (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201427, "Vasantasena (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201428, "Vasilis, The Traitor of Don Cruez (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201429, "Vasiliy Vasilevich (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201430, "Vasily (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201431, "Vassily Taltos (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201433, "Veejay Vinod (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201434, "Velya, The Flayer (G3)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201435, "Venere Carboni (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201436, "Verbruch (G5)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201437, "Vestgeir (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201438, "Victor Donaldson (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201439, "Victor Gerard (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201440, "Victor Pelletier (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201443, "Victoria (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201444, "Victoria Ash (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    cryptPerm(201445, "Victorine Lafourcade (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201446, "Vidal Jarbeaux (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201447, "Viktor, The Night General (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201448, "Vincent Day, Paladin and Paragon (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201449, "Violet Tremain (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201451, "Virgil (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201452, "Virginie, Prodigy (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201453, "Viri (G6)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201454, "Virstania, The Great Mother (G3)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201456, "Vlad Tepes (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201458, "Volker, The Puppet Prince (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201459, "Volo (G5)", {}), // fala 32 wierna (421): przejrzane
+
+    cryptPerm(201460, "Vulture (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 32 wierna (421)
+    flatCrypt(201461, "Wah Chun-Yuen (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201462, "Walker Grimes (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201463, "Wamukota (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201464, "Watenda (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201465, "Weirich Waldburg (G3)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201467, "White Lily (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201468, "Wilhelm Waldburg (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201469, "William Biltmore (G3)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201470, "William Thorbecke (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201471, "Winterlich (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201472, "Wise Frog (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201473, "Wolf Valentine (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201476, "Wynn (G1)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201477, "Xaviar (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201478, "Xaviar (G3 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201480, "Xeper, Sultan of Lepers (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201482, "Xipe Totec (G5)", { stealth: 1, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201483, "Yasmin the Black (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201484, "Yavu Matebo (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201485, "Yazid Tamari (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201486, "Yazid Tamari (G3 ADV)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201487, "Yitzak (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201488, "Yong-Sun, Harmonist (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201489, "Yong-Sun, Harmonist (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201491, "Ysador the Foul (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201492, "Yseult (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201495, "Yusuf, Scribe of Alamut (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201498, "Zack North (G1)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201499, "Zack North (G1 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201500, "Zahir, Hand of the Silsila (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201501, "Zane (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201502, "Zayyat, The Sandstorm (G3)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201504, "Zelios (G5)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201505, "Zhara (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201506, "Zhenga (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201508, "Zizi (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201509, "Zöe (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201510, "Zubeida (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201511, "Zygodat (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201513, "Charles Delmare (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201516, "Lady Vadislava (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201517, "Lord Leopold Valdemar (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201519, "Rurik Rakoczy (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201520, "Nefertiti (G2 ADV)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201522, "Grimgroth (G6)", { bleed: 2 }), // fala 32 wierna (421)
+    flatCrypt(201527, "Gabriel Tremblay (G6)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201528, "Bolesław Gutowski (G6)", { stealth: 1, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201575, "Alicia Cortez (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201616, "Fiorenza Savona (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201617, "Gilbert Duane (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201618, "Okulos (G7)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201619, "Victoria Ash (G7)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201621, "Karl Schrekt (G6)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201622, "Len Konopka (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201633, "Maila (G6)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201634, "Abraham Mellon (G6)", { handSize: 1 }), // fala 32 wierna (421)
+    flatCrypt(201635, "Adelino Da Silva (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201636, "Adisa (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201637, "Ayse Dhanial (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201638, "Chun Hei (G6)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201639, "Daria (G6)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201640, "Darius Shirazi (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201641, "The Guardian (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201642, "Gwenllian Arwyn (G6)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201643, "Lady Scarlett Churchill (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201644, "Mickey Wheeler (G6)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201645, "Mithras (G6)", { bleed: 2, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201646, "Oskar Anasov (G6)", { intercept: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201647, "Queen Anne (G6)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201648, "Regina Blake (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201649, "Richard de Worde (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201650, "Rose Abawi (G6)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201651, "Rowena (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201652, "Sri Sansa (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201653, "Valerius (G6)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201654, "Tegyrius, Vizier (G6)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201693, "Annabelle Triabell (G6)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201694, "Diana Iadanza (G7)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201695, "Dónal O'Connor (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201696, "François Villon (G6)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201697, "Ian Carfax (G7)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201698, "Juliet Parr (G7)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201700, "Lucinde, Alastor (G7)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201702, "Marcos Belegrad (G7)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201703, "Modius (G7)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201704, "Molly MacDonald (G7)", { bleed: 1, strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201705, "Nikolaus Vermeulen (G6)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201706, "Silvian Popescu (G7)", {}), // fala 32 wierna (421): przejrzane
+
 ];
 
 /** A crypt card whose whole ability is unconditional statics. */
-function flatCrypt(krcgId: number, name: string, statics: PermanentStatics): CardSpec {
+function flatCrypt(krcgId: number, name: string, statics: PermanentStatics): CardSpec { // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
   return {
     krcgId,
     name,
@@ -28918,111 +46094,230 @@ export function buildHandlerRegistry(): HandlerRegistry {
 /** All implemented ids (specs + bespoke handlers) for the support test. */
 export const implementedIds: number[] = [
   100001,
+  100002,
   100003,
+  100004,
   100005,
   100006,
+  100007,
+  100008,
+  100009,
+  100010,
+  100011,
   100012,
   100013,
+  100014,
   100015,
   100016,
+  100017,
   100018,
+  100019,
   100020,
   100021,
+  100022,
+  100023,
+  100024,
+  100025,
+  100026,
   100027,
+  100028,
   100029,
+  100030,
   100031,
   100032,
   100033,
+  100034,
+  100035,
+  100036,
   100037,
+  100038,
+  100039,
   100040,
+  100041,
   100042,
   100043,
+  100044,
+  100045,
   100046,
   100047,
+  100048,
   100049,
+  100050,
+  100051,
   100052,
+  100053,
   100054,
   100055,
   100056,
+  100057,
   100058,
   100059,
+  100060,
+  100061,
+  100062,
+  100063,
   100064,
   100065,
   100066,
+  100067,
+  100068,
+  100069,
   100070,
+  100071,
+  100072,
+  100073,
+  100074,
+  100075,
   100076,
   100077,
+  100078,
   100079,
+  100080,
   100081,
   100082,
   100083,
   100084,
   100085,
+  100086,
   100087,
+  100088,
   100089,
+  100090,
   100091,
+  100092,
   100093,
   100094,
   100095,
   100096,
+  100097,
+  100098,
   100099,
+  100100,
   100101,
+  100102,
+  100103,
   100104,
   100105,
+  100106,
   100107,
   100108,
   100109,
+  100110,
+  100111,
   100112,
   100113,
   100114,
   100115,
+  100116,
   100117,
+  100118,
+  100119,
+  100120,
   100121,
+  100122,
   100123,
   100124,
   100125,
   100126,
+  100127,
+  100128,
+  100129,
   100130,
   100131,
   100132,
+  100133,
+  100134,
   100135,
   100136,
   100137,
   100138,
   100139,
+  100140,
+  100141,
+  100142,
+  100143,
+  100144,
   100145,
   100146,
+  100147,
   100148,
   100149,
+  100150,
+  100151,
+  100152,
   100153,
+  100154,
+  100155,
+  100156,
   100157,
   100158,
+  100159,
+  100160,
+  100161,
   100162,
   100163,
+  100164,
   100165,
+  100166,
+  100167,
+  100168,
+  100169,
+  100170,
+  100171,
   100172,
+  100173,
   100174,
   100175,
+  100176,
+  100177,
+  100178,
+  100179,
   100180,
+  100181,
+  100182,
   100183,
+  100184,
+  100185,
+  100186,
   100187,
+  100188,
   100189,
   100190,
+  100191,
   100192,
+  100193,
+  100194,
   100195,
+  100196,
+  100197,
+  100198,
   100199,
   100200,
   100201,
   100202,
   100203,
+  100204,
   100205,
+  100206,
+  100207,
   100208,
+  100209,
+  100210,
   100211,
   100212,
+  100213,
   100214,
   100215,
+  100216,
+  100217,
+  100218,
   100219,
+  100220,
+  100221,
   100222,
+  100223,
+  100224,
+  100225,
   100226,
   100227,
   100228,
@@ -29030,480 +46325,1220 @@ export const implementedIds: number[] = [
   100230,
   100231,
   100232,
+  100233,
+  100234,
   100235,
   100236,
   100237,
   100238,
+  100239,
+  100240,
   100241,
+  100242,
   100243,
   100244,
+  100245,
   100246,
   100247,
+  100248,
+  100249,
+  100250,
   100251,
+  100252,
+  100253,
+  100254,
+  100255,
+  100256,
+  100257,
+  100258,
   100259,
   100260,
+  100261,
   100262,
+  100263,
   100264,
+  100265,
   100266,
+  100267,
   100268,
   100269,
+  100270,
   100271,
   100272,
   100273,
+  100274,
+  100275,
+  100276,
+  100277,
+  100278,
+  100279,
+  100280,
+  100281,
   100282,
+  100283,
   100284,
   100285,
+  100286,
+  100287,
   100288,
   100289,
   100290,
+  100291,
   100292,
+  100293,
   100294,
+  100295,
+  100296,
   100297,
+  100298,
+  100299,
+  100300,
   100301,
+  100302,
   100303,
   100304,
+  100305,
+  100306,
   100307,
   100308,
   100309,
+  100310,
   100311,
   100312,
+  100313,
+  100314,
   100315,
+  100316,
   100317,
+  100318,
+  100319,
+  100320,
   100321,
+  100322,
   100323,
+  100324,
   100325,
+  100326,
   100327,
   100328,
   100329,
+  100330,
+  100331,
   100332,
   100333,
+  100334,
+  100335,
+  100336,
   100337,
   100338,
   100339,
+  100340,
+  100341,
   100342,
+  100343,
+  100344,
+  100345,
+  100346,
+  100347,
+  100348,
+  100349,
+  100350,
+  100351,
+  100352,
+  100353,
   100354,
+  100355,
   100356,
+  100357,
+  100358,
+  100359,
   100360,
   100361,
   100362,
+  100363,
   100364,
+  100365,
   100366,
   100367,
+  100368,
+  100369,
+  100370,
+  100371,
+  100372,
+  100373,
   100374,
+  100375,
+  100376,
+  100377,
+  100378,
   100379,
+  100380,
+  100381,
   100382,
+  100383,
+  100384,
   100385,
+  100386,
+  100387,
+  100388,
   100389,
   100390,
   100391,
   100392,
+  100393,
+  100394,
+  100395,
+  100396,
+  100397,
+  100398,
+  100399,
+  100400,
   100401,
+  100402,
   100403,
   100404,
+  100405,
+  100406,
+  100407,
   100408,
   100409,
   100410,
   100411,
+  100412,
+  100413,
   100414,
+  100415,
   100416,
+  100417,
+  100418,
   100419,
   100420,
+  100421,
+  100422,
+  100423,
+  100424,
+  100425,
   100426,
+  100427,
   100428,
+  100429,
+  100430,
   100431,
+  100432,
+  100433,
+  100434,
   100435,
+  100436,
+  100437,
+  100438,
+  100439,
+  100440,
   100441,
   100442,
+  100443,
   100444,
   100445,
+  100446,
   100447,
+  100448,
+  100449,
+  100450,
+  100451,
+  100452,
   100453,
+  100454,
   100455,
+  100456,
   100457,
   100458,
+  100459,
   100460,
+  100461,
   100462,
   100463,
+  100464,
   100465,
   100466,
   100467,
   100468,
   100469,
   100470,
+  100471,
   100472,
+  100473,
+  100474,
+  100475,
   100476,
+  100477,
   100478,
+  100479,
+  100480,
+  100481,
+  100482,
+  100483,
+  100484,
   100485,
+  100486,
+  100487,
+  100488,
+  100489,
+  100490,
+  100491,
   100492,
   100493,
   100494,
   100495,
+  100496,
+  100497,
+  100498,
+  100499,
+  100500,
   100501,
+  100502,
+  100503,
   100504,
+  100505,
   100506,
   100507,
+  100508,
+  100509,
   100510,
   100511,
+  100512,
+  100513,
+  100514,
   100515,
   100516,
+  100517,
   100518,
   100519,
   100520,
   100521,
+  100522,
   100523,
+  100524,
+  100525,
   100526,
+  100527,
+  100528,
   100529,
+  100530,
+  100531,
+  100532,
   100533,
+  100534,
+  100535,
+  100536,
+  100537,
+  100538,
+  100539,
+  100540,
   100541,
+  100542,
+  100543,
+  100544,
   100545,
+  100546,
+  100547,
+  100548,
   100549,
   100550,
+  100551,
+  100552,
+  100553,
   100554,
+  100555,
+  100556,
   100557,
   100558,
   100559,
   100560,
+  100561,
+  100562,
   100563,
   100564,
+  100565,
+  100566,
   100567,
   100568,
+  100569,
   100570,
+  100571,
   100572,
   100573,
+  100574,
+  100575,
   100576,
   100577,
+  100578,
+  100579,
   100580,
   100581,
   100582,
+  100583,
+  100584,
   100585,
   100586,
+  100587,
   100588,
+  100589,
+  100590,
   100591,
+  100592,
+  100593,
   100594,
+  100595,
+  100596,
   100597,
   100598,
+  100599,
   100600,
   100601,
   100602,
+  100603,
   100604,
   100605,
+  100606,
+  100607,
+  100608,
   100609,
+  100610,
+  100611,
+  100612,
+  100613,
+  100614,
+  100615,
   100616,
   100617,
   100618,
   100619,
   100620,
+  100621,
+  100622,
+  100623,
   100624,
   100625,
+  100626,
+  100627,
   100628,
   100629,
   100630,
   100631,
   100632,
   100633,
+  100634,
+  100635,
   100636,
+  100637,
   100638,
+  100639,
   100640,
+  100641,
+  100642,
+  100643,
   100644,
+  100645,
   100646,
   100647,
+  100648,
+  100649,
+  100650,
+  100651,
   100652,
   100653,
+  100654,
+  100655,
   100656,
+  100657,
+  100658,
+  100659,
   100660,
+  100661,
+  100662,
+  100663,
   100664,
+  100665,
   100666,
+  100667,
+  100668,
+  100669,
+  100670,
   100671,
   100672,
+  100673,
+  100674,
+  100675,
   100676,
+  100677,
+  100678,
+  100679,
   100680,
+  100681,
+  100682,
+  100683,
+  100684,
+  100685,
+  100686,
   100687,
   100688,
+  100689,
+  100690,
+  100691,
   100692,
   100693,
+  100694,
+  100695,
+  100696,
+  100697,
   100698,
+  100699,
+  100700,
+  100701,
+  100702,
   100703,
   100704,
+  100705,
+  100706,
+  100707,
+  100708,
   100709,
+  100710,
+  100711,
   100712,
   100713,
   100714,
   100715,
   100716,
   100717,
+  100718,
   100719,
   100720,
+  100721,
   100722,
   100723,
   100724,
+  100725,
   100726,
   100727,
+  100728,
   100729,
+  100730,
   100731,
+  100732,
+  100733,
   100734,
+  100735,
   100736,
+  100737,
   100738,
+  100739,
+  100740,
+  100741,
   100742,
   100743,
   100744,
+  100745,
+  100746,
   100747,
   100748,
   100749,
+  100750,
+  100751,
   100752,
   100753,
+  100754,
+  100755,
+  100756,
+  100757,
   100758,
+  100759,
   100760,
+  100761,
   100762,
   100763,
+  100764,
   100765,
+  100766,
+  100767,
   100768,
   100769,
+  100770,
   100771,
   100772,
+  100773,
   100774,
+  100775,
   100776,
   100777,
+  100778,
+  100779,
+  100780,
+  100781,
   100782,
+  100783,
   100784,
   100785,
+  100786,
+  100787,
   100788,
+  100789,
+  100790,
+  100791,
+  100792,
   100793,
   100794,
+  100795,
   100796,
+  100797,
+  100798,
   100799,
+  100800,
+  100801,
+  100802,
+  100803,
+  100804,
+  100805,
+  100806,
   100807,
+  100808,
   100809,
+  100810,
   100811,
   100812,
+  100813,
+  100814,
+  100815,
+  100816,
   100817,
+  100818,
+  100819,
+  100820,
+  100821,
+  100822,
+  100823,
   100824,
+  100825,
+  100826,
   100827,
+  100828,
+  100829,
+  100830,
+  100831,
+  100832,
+  100833,
   100834,
+  100835,
   100836,
+  100837,
   100838,
+  100839,
+  100840,
+  100841,
   100842,
+  100843,
+  100844,
   100845,
+  100846,
+  100847,
   100848,
+  100849,
+  100850,
+  100851,
   100852,
+  100853,
+  100854,
   100855,
+  100856,
   100857,
+  100858,
+  100859,
   100860,
   100861,
   100862,
   100863,
   100864,
+  100865,
   100866,
+  100867,
+  100868,
+  100869,
+  100870,
   100871,
   100872,
+  100873,
+  100874,
   100875,
+  100876,
+  100877,
+  100878,
+  100879,
+  100880,
+  100881,
+  100882,
+  100883,
+  100884,
+  100885,
+  100886,
+  100887,
+  100888,
   100889,
+  100890,
+  100891,
+  100892,
+  100893,
+  100894,
+  100895,
+  100896,
   100897,
   100898,
+  100899,
   100900,
+  100901,
+  100902,
   100903,
   100904,
+  100905,
   100906,
+  100907,
+  100908,
   100909,
   100910,
+  100911,
+  100912,
   100913,
+  100914,
+  100915,
+  100916,
+  100917,
   100918,
+  100919,
+  100920,
   100921,
+  100922,
+  100923,
+  100924,
   100925,
+  100926,
+  100927,
+  100928,
+  100929,
+  100930,
+  100931,
   100932,
+  100933,
+  100934,
+  100935,
   100936,
   100937,
   100938,
   100939,
+  100940,
+  100941,
+  100942,
+  100943,
   100944,
   100945,
   100946,
+  100947,
+  100948,
+  100949,
+  100950,
+  100951,
+  100952,
+  100953,
+  100954,
+  100955,
+  100956,
+  100957,
+  100958,
   100959,
+  100960,
+  100961,
+  100962,
+  100963,
+  100964,
   100965,
+  100966,
+  100967,
   100968,
+  100969,
   100970,
   100971,
+  100972,
   100973,
+  100974,
+  100975,
+  100976,
   100977,
+  100978,
+  100979,
+  100980,
+  100981,
+  100982,
+  100983,
   100984,
+  100985,
+  100986,
   100987,
+  100988,
+  100989,
+  100990,
+  100991,
+  100992,
   100993,
+  100994,
   100995,
   100996,
+  100997,
+  100998,
   100999,
+  101000,
+  101001,
+  101002,
   101003,
+  101004,
+  101005,
+  101006,
   101007,
   101008,
+  101009,
   101010,
+  101011,
+  101012,
+  101013,
   101014,
   101015,
+  101016,
+  101017,
   101018,
+  101019,
+  101020,
+  101021,
   101022,
+  101023,
+  101024,
+  101025,
+  101026,
   101027,
   101028,
+  101029,
+  101030,
+  101031,
   101032,
+  101033,
   101034,
+  101035,
+  101036,
+  101037,
   101038,
+  101039,
   101040,
+  101041,
   101042,
   101043,
+  101044,
   101045,
+  101046,
   101047,
+  101048,
   101049,
   101050,
+  101051,
+  101052,
   101053,
+  101054,
+  101055,
   101056,
   101057,
+  101058,
   101059,
   101060,
+  101061,
+  101062,
   101063,
+  101064,
+  101065,
+  101066,
   101067,
   101068,
+  101069,
   101070,
   101071,
   101072,
   101073,
+  101074,
   101075,
+  101076,
+  101077,
+  101078,
+  101079,
+  101080,
   101081,
   101082,
+  101083,
+  101084,
+  101085,
+  101086,
+  101087,
+  101088,
   101089,
+  101090,
+  101091,
+  101092,
   101093,
+  101094,
   101095,
   101096,
   101097,
   101098,
   101099,
   101100,
+  101101,
   101102,
   101103,
   101104,
+  101105,
+  101106,
   101107,
+  101108,
+  101109,
   101110,
+  101111,
+  101112,
+  101113,
   101114,
+  101115,
+  101116,
+  101117,
+  101118,
+  101119,
   101120,
+  101121,
+  101122,
+  101123,
+  101124,
   101125,
   101126,
   101127,
   101128,
   101129,
+  101130,
   101131,
+  101132,
   101133,
+  101134,
+  101135,
   101136,
   101137,
+  101138,
+  101139,
+  101140,
+  101141,
   101142,
   101143,
   101144,
   101145,
+  101146,
   101147,
   101148,
+  101149,
   101150,
+  101151,
+  101152,
+  101153,
   101154,
+  101155,
   101156,
+  101157,
   101158,
+  101159,
   101160,
+  101161,
   101162,
+  101163,
+  101164,
+  101165,
+  101166,
   101167,
   101168,
+  101169,
+  101170,
   101171,
+  101172,
+  101173,
+  101174,
   101175,
+  101176,
+  101177,
   101178,
+  101179,
+  101180,
+  101181,
+  101182,
   101183,
   101184,
+  101185,
+  101186,
   101187,
+  101188,
+  101189,
   101190,
+  101191,
+  101192,
   101193,
+  101194,
   101195,
+  101196,
+  101197,
+  101198,
+  101199,
+  101200,
+  101201,
   101202,
+  101203,
   101204,
+  101205,
+  101206,
+  101207,
+  101208,
   101209,
+  101210,
   101211,
+  101212,
+  101213,
+  101214,
   101215,
+  101216,
   101217,
+  101218,
   101219,
+  101220,
   101221,
+  101222,
   101223,
+  101224,
   101225,
+  101226,
+  101227,
+  101228,
   101229,
   101230,
+  101231,
+  101232,
+  101233,
+  101234,
   101235,
+  101236,
   101237,
   101238,
   101239,
+  101240,
+  101241,
   101242,
   101243,
+  101244,
+  101245,
   101246,
+  101247,
+  101248,
   101249,
   101250,
+  101251,
   101252,
+  101253,
   101254,
+  101255,
   101256,
+  101257,
+  101258,
   101259,
+  101260,
+  101261,
   101262,
+  101263,
+  101264,
   101265,
+  101266,
   101267,
   101268,
+  101269,
+  101270,
   101271,
+  101272,
   101273,
   101274,
+  101275,
+  101276,
   101277,
+  101278,
   101279,
   101280,
+  101281,
+  101282,
+  101283,
+  101284,
+  101285,
+  101286,
+  101287,
   101288,
+  101289,
+  101290,
+  101291,
   101292,
+  101293,
+  101294,
+  101295,
+  101296,
+  101297,
+  101298,
   101299,
+  101300,
+  101301,
   101302,
   101303,
+  101304,
   101305,
+  101306,
+  101307,
+  101308,
   101309,
   101310,
+  101311,
   101312,
+  101313,
+  101314,
+  101315,
+  101316,
+  101317,
   101318,
+  101319,
   101320,
   101321,
+  101322,
   101323,
   101324,
+  101325,
   101326,
+  101327,
+  101328,
+  101329,
+  101330,
+  101331,
+  101332,
+  101333,
+  101334,
+  101335,
+  101336,
   101337,
+  101338,
+  101339,
   101340,
   101341,
   101342,
   101343,
+  101344,
+  101345,
+  101346,
+  101347,
+  101348,
+  101349,
   101350,
+  101351,
+  101352,
   101353,
   101354,
+  101355,
+  101356,
+  101357,
+  101358,
+  101359,
+  101360,
+  101361,
+  101362,
+  101363,
   101364,
   101365,
   101366,
+  101367,
+  101368,
+  101369,
+  101370,
+  101371,
+  101372,
   101373,
+  101374,
+  101375,
   101376,
+  101377,
+  101378,
+  101379,
   101380,
+  101381,
   101382,
+  101383,
   101384,
+  101385,
+  101386,
   101387,
   101388,
+  101389,
   101390,
   101391,
+  101392,
+  101393,
   101394,
+  101395,
+  101396,
+  101397,
+  101398,
+  101399,
+  101400,
   101401,
+  101402,
+  101403,
   101404,
+  101405,
   101406,
+  101407,
+  101408,
+  101409,
+  101410,
   101411,
+  101412,
   101413,
+  101414,
   101415,
+  101416,
   101417,
+  101418,
+  101419,
   101420,
   101421,
+  101422,
+  101423,
   101424,
+  101425,
+  101426,
   101427,
+  101428,
+  101429,
   101430,
   101431,
+  101432,
+  101433,
   101434,
   101435,
+  101436,
   101437,
   101438,
   101439,
   101440,
+  101441,
   101442,
+  101443,
   101444,
+  101445,
+  101446,
   101447,
   101448,
   101449,
@@ -29528,254 +47563,682 @@ export const implementedIds: number[] = [
   101468,
   101469,
   101470,
+  101471,
   101472,
+  101473,
+  101474,
   101475,
   101476,
+  101477,
+  101478,
+  101479,
   101480,
+  101481,
   101482,
   101483,
+  101484,
+  101485,
+  101486,
   101487,
+  101488,
+  101489,
   101490,
   101491,
+  101492,
   101493,
+  101494,
   101495,
+  101496,
+  101497,
   101498,
+  101499,
+  101500,
   101501,
   101502,
+  101503,
+  101504,
+  101505,
+  101506,
   101507,
+  101508,
+  101509,
+  101510,
+  101511,
+  101512,
   101513,
+  101514,
+  101515,
   101516,
+  101517,
+  101518,
+  101519,
+  101520,
+  101521,
+  101522,
   101523,
   101524,
   101525,
+  101526,
   101527,
   101528,
   101529,
   101530,
+  101531,
   101532,
+  101533,
   101534,
   101535,
   101536,
   101537,
+  101538,
+  101539,
+  101540,
   101541,
   101542,
+  101543,
   101544,
   101545,
+  101546,
   101547,
+  101548,
+  101549,
   101550,
+  101551,
   101552,
   101553,
+  101554,
+  101555,
+  101556,
+  101557,
   101558,
+  101559,
+  101560,
+  101561,
+  101562,
+  101563,
   101564,
+  101565,
   101566,
   101567,
+  101568,
+  101569,
+  101570,
+  101571,
+  101572,
+  101573,
+  101574,
+  101575,
+  101576,
   101577,
   101578,
+  101579,
+  101580,
+  101581,
+  101582,
   101583,
+  101584,
+  101585,
+  101586,
   101587,
   101588,
+  101589,
+  101590,
   101591,
+  101592,
+  101593,
   101594,
   101595,
+  101596,
+  101597,
+  101598,
+  101599,
+  101600,
+  101601,
+  101602,
+  101603,
+  101604,
   101605,
+  101606,
+  101607,
   101608,
+  101609,
   101610,
+  101611,
   101612,
   101613,
   101614,
+  101615,
+  101616,
+  101617,
+  101618,
+  101619,
+  101620,
+  101621,
+  101622,
+  101623,
+  101624,
+  101625,
+  101626,
   101627,
   101628,
+  101629,
+  101630,
   101631,
   101632,
+  101633,
+  101634,
+  101635,
   101636,
+  101637,
+  101638,
+  101639,
   101640,
+  101641,
+  101642,
+  101643,
   101644,
+  101645,
+  101646,
   101647,
+  101648,
   101649,
   101650,
+  101651,
+  101652,
+  101653,
+  101654,
+  101655,
   101656,
+  101657,
+  101658,
+  101659,
+  101660,
+  101661,
   101662,
+  101663,
   101664,
   101665,
+  101666,
   101667,
+  101668,
   101669,
   101670,
   101671,
+  101672,
+  101673,
+  101674,
+  101675,
+  101676,
+  101677,
   101678,
+  101679,
+  101680,
+  101681,
   101682,
+  101683,
+  101684,
   101685,
   101686,
+  101687,
+  101688,
   101689,
+  101690,
+  101691,
   101692,
   101693,
+  101694,
   101695,
   101696,
+  101697,
   101698,
   101699,
+  101700,
+  101701,
+  101702,
+  101703,
+  101704,
+  101705,
   101706,
+  101707,
+  101708,
+  101709,
+  101710,
   101711,
   101712,
+  101713,
+  101714,
   101715,
+  101716,
   101717,
+  101718,
+  101719,
+  101720,
+  101721,
+  101722,
+  101723,
+  101724,
+  101725,
+  101726,
   101727,
   101728,
   101729,
+  101730,
+  101731,
+  101732,
+  101733,
+  101734,
+  101735,
   101736,
+  101737,
+  101738,
+  101739,
+  101740,
   101741,
+  101742,
+  101743,
+  101744,
+  101745,
+  101746,
+  101747,
+  101748,
+  101749,
+  101750,
+  101751,
+  101752,
   101753,
   101754,
+  101755,
   101756,
+  101757,
+  101758,
+  101759,
   101760,
+  101761,
+  101762,
+  101763,
+  101764,
+  101765,
+  101766,
   101767,
+  101768,
   101769,
+  101770,
+  101771,
   101772,
+  101773,
+  101774,
+  101775,
+  101776,
+  101777,
   101778,
   101779,
   101780,
   101781,
+  101782,
+  101783,
+  101784,
+  101785,
+  101786,
+  101787,
+  101788,
+  101789,
   101790,
   101791,
   101792,
+  101793,
+  101794,
+  101795,
+  101796,
+  101797,
   101798,
   101799,
+  101800,
   101801,
   101802,
+  101803,
+  101804,
   101805,
+  101806,
   101807,
   101808,
+  101809,
+  101810,
   101811,
+  101812,
+  101813,
   101814,
+  101815,
   101816,
   101817,
+  101818,
   101819,
   101820,
   101821,
+  101822,
   101823,
   101824,
   101825,
+  101826,
   101827,
+  101828,
   101829,
+  101830,
+  101831,
+  101832,
+  101833,
+  101834,
+  101835,
+  101836,
+  101837,
+  101838,
   101839,
+  101840,
   101841,
   101842,
+  101843,
+  101844,
+  101845,
+  101846,
   101847,
+  101848,
+  101849,
   101850,
+  101851,
+  101852,
+  101853,
   101854,
+  101855,
   101856,
   101857,
+  101858,
   101859,
+  101860,
+  101861,
+  101862,
+  101863,
   101864,
+  101865,
   101866,
   101867,
+  101868,
   101869,
   101870,
+  101871,
   101872,
+  101873,
+  101874,
+  101875,
+  101876,
   101877,
+  101878,
+  101879,
+  101880,
+  101881,
   101882,
   101883,
+  101884,
+  101885,
+  101886,
+  101887,
   101888,
+  101889,
+  101890,
   101891,
+  101892,
+  101893,
+  101894,
+  101895,
   101896,
+  101897,
+  101898,
   101899,
+  101900,
+  101901,
+  101902,
+  101903,
+  101904,
   101905,
+  101906,
   101907,
+  101908,
   101909,
+  101910,
+  101911,
+  101912,
   101913,
+  101914,
+  101915,
+  101916,
+  101917,
+  101918,
+  101919,
+  101920,
   101921,
+  101922,
   101923,
+  101924,
+  101925,
   101926,
+  101927,
+  101928,
+  101929,
+  101930,
+  101931,
+  101932,
+  101933,
+  101934,
+  101935,
+  101936,
+  101937,
   101938,
   101939,
   101940,
+  101941,
   101942,
   101943,
+  101944,
   101945,
+  101946,
+  101947,
   101948,
   101949,
   101950,
   101951,
   101952,
   101953,
+  101954,
   101955,
+  101956,
+  101957,
   101958,
+  101959,
   101960,
+  101961,
+  101962,
   101963,
+  101964,
   101965,
   101966,
+  101967,
   101968,
+  101969,
+  101970,
+  101971,
   101972,
   101973,
   101974,
+  101975,
+  101976,
+  101977,
   101978,
+  101979,
   101980,
+  101981,
   101982,
   101983,
   101984,
+  101985,
   101986,
   101987,
+  101988,
   101989,
   101990,
   101991,
+  101992,
   101993,
   101994,
   101995,
+  101996,
+  101997,
+  101998,
+  101999,
+  102000,
+  102001,
+  102002,
+  102003,
+  102004,
   102005,
+  102006,
+  102007,
+  102008,
+  102009,
   102010,
+  102011,
+  102012,
+  102013,
   102014,
   102015,
+  102016,
+  102017,
+  102018,
   102019,
+  102020,
   102021,
   102022,
   102023,
+  102024,
+  102025,
+  102026,
+  102027,
+  102028,
+  102029,
+  102030,
+  102031,
+  102032,
+  102033,
+  102034,
+  102035,
+  102036,
+  102037,
+  102038,
+  102039,
+  102040,
   102041,
+  102042,
+  102043,
+  102044,
+  102045,
   102046,
+  102047,
   102048,
+  102049,
+  102050,
   102051,
   102052,
+  102053,
   102054,
+  102055,
+  102056,
+  102057,
+  102058,
   102059,
   102060,
   102061,
+  102062,
   102063,
   102064,
   102065,
   102066,
+  102067,
   102068,
+  102069,
+  102070,
   102071,
   102072,
+  102073,
+  102074,
   102075,
+  102076,
+  102077,
   102078,
+  102079,
   102080,
+  102081,
+  102082,
   102083,
   102084,
   102085,
+  102086,
   102087,
+  102088,
   102089,
   102090,
+  102091,
   102092,
+  102093,
+  102094,
+  102095,
+  102096,
   102097,
+  102098,
+  102099,
+  102100,
+  102101,
   102102,
+  102103,
+  102104,
   102105,
   102106,
   102107,
+  102108,
   102109,
+  102110,
   102111,
   102112,
   102113,
   102114,
+  102115,
   102116,
+  102117,
+  102118,
+  102119,
+  102120,
   102121,
+  102122,
+  102123,
+  102124,
+  102125,
   102126,
   102127,
+  102128,
+  102129,
+  102130,
   102131,
   102132,
+  102133,
   102134,
+  102135,
+  102136,
   102137,
+  102138,
   102139,
   102140,
+  102141,
   102142,
+  102143,
   102144,
   102145,
+  102146,
   102147,
   102148,
   102149,
@@ -29783,27 +48246,64 @@ export const implementedIds: number[] = [
   102151,
   102152,
   102153,
+  102154,
+  102155,
+  102156,
+  102157,
+  102158,
   102159,
+  102160,
+  102161,
   102162,
+  102163,
   102164,
+  102165,
   102166,
+  102167,
+  102168,
   102169,
+  102170,
   102171,
+  102172,
+  102173,
+  102174,
+  102175,
   102176,
+  102177,
+  102178,
   102179,
   102180,
+  102181,
+  102182,
+  102183,
+  102184,
   102185,
+  102186,
+  102187,
   102188,
   102189,
   102190,
+  102191,
+  102192,
+  102193,
+  102194,
+  102195,
+  102196,
+  102197,
   102198,
   102199,
+  102200,
   102201,
   102202,
+  102203,
   102204,
   102205,
+  102206,
+  102207,
   102208,
+  102209,
   102210,
+  102211,
   102212,
   102213,
   102214,
@@ -29827,7 +48327,17 @@ export const implementedIds: number[] = [
   102232,
   102233,
   102234,
+  102235,
+  102236,
   102237,
+  102238,
+  102239,
+  102240,
+  102241,
+  102242,
+  102243,
+  102244,
+  102245,
   102246,
   102247,
   102248,
@@ -29851,8 +48361,11 @@ export const implementedIds: number[] = [
   102266,
   102267,
   102268,
+  102269,
   102270,
+  102271,
   102272,
+  102273,
   102274,
   102275,
   102276,
@@ -29943,11 +48456,6 @@ export const implementedIds: number[] = [
   102362,
   102363,
   102364,
-  100178,
-  100320,
-  100740,
-  101822,
-  101999,
   102365,
   200001,
   200002,
@@ -29958,70 +48466,1723 @@ export const implementedIds: number[] = [
   200007,
   200008,
   200009,
+  200010,
+  200011,
+  200012,
+  200013,
+  200014,
+  200015,
+  200016,
+  200017,
+  200018,
+  200019,
+  200020,
+  200021,
+  200022,
+  200023,
+  200024,
+  200025,
+  200026,
+  200027,
+  200028,
+  200029,
+  200030,
+  200031,
+  200032,
+  200033,
+  200034,
+  200035,
+  200036,
+  200037,
+  200038,
+  200039,
+  200040,
+  200041,
+  200042,
+  200043,
+  200044,
+  200045,
+  200046,
+  200047,
+  200048,
+  200049,
+  200050,
+  200051,
+  200052,
+  200053,
+  200054,
+  200055,
+  200056,
+  200057,
+  200058,
+  200059,
+  200060,
+  200061,
+  200062,
+  200063,
+  200064,
+  200065,
+  200066,
+  200067,
+  200068,
+  200069,
+  200070,
+  200071,
+  200072,
+  200073,
+  200074,
+  200075,
+  200076,
+  200077,
+  200078,
+  200079,
+  200080,
+  200081,
+  200082,
+  200083,
+  200084,
+  200085,
+  200086,
+  200087,
+  200088,
+  200089,
+  200090,
+  200091,
+  200092,
+  200093,
+  200094,
+  200095,
+  200096,
+  200097,
+  200098,
+  200099,
+  200100,
+  200101,
+  200102,
+  200103,
+  200104,
+  200105,
+  200106,
+  200107,
+  200108,
+  200109,
+  200110,
+  200111,
+  200112,
+  200113,
+  200114,
+  200115,
+  200116,
+  200117,
+  200118,
+  200119,
+  200120,
+  200121,
+  200122,
+  200123,
+  200124,
+  200125,
+  200126,
+  200127,
+  200128,
+  200129,
+  200130,
+  200131,
   200132,
+  200133,
+  200134,
+  200135,
+  200136,
+  200137,
+  200138,
+  200139,
+  200140,
+  200141,
+  200142,
+  200143,
+  200144,
+  200145,
+  200146,
+  200147,
+  200148,
+  200149,
+  200150,
+  200151,
+  200152,
+  200153,
+  200154,
+  200155,
+  200156,
+  200157,
+  200158,
+  200159,
+  200160,
+  200161,
+  200162,
+  200163,
+  200164,
+  200165,
+  200166,
+  200167,
+  200168,
+  200169,
+  200170,
+  200171,
+  200172,
+  200173,
+  200174,
+  200175,
+  200176,
+  200177,
+  200178,
+  200179,
+  200180,
+  200181,
+  200182,
+  200183,
+  200184,
+  200185,
+  200186,
+  200187,
+  200188,
+  200189,
+  200190,
+  200191,
+  200192,
+  200193,
+  200194,
+  200195,
+  200196,
+  200197,
+  200198,
+  200199,
+  200200,
+  200201,
+  200202,
+  200203,
+  200204,
+  200205,
+  200206,
+  200207,
+  200208,
+  200209,
+  200210,
+  200211,
+  200212,
+  200213,
+  200214,
+  200215,
+  200216,
+  200217,
+  200218,
+  200219,
+  200220,
+  200221,
+  200222,
+  200223,
+  200224,
+  200225,
+  200226,
+  200227,
+  200228,
+  200229,
+  200230,
+  200231,
+  200232,
+  200233,
+  200234,
+  200235,
+  200236,
+  200237,
+  200238,
+  200239,
+  200240,
+  200241,
+  200242,
+  200243,
+  200244,
+  200245,
+  200246,
+  200247,
+  200248,
+  200249,
+  200250,
+  200251,
+  200252,
+  200253,
+  200254,
+  200255,
+  200256,
+  200257,
+  200258,
+  200259,
+  200260,
+  200261,
+  200262,
+  200263,
+  200264,
+  200265,
+  200266,
+  200267,
+  200268,
+  200269,
+  200270,
+  200271,
+  200272,
+  200273,
+  200274,
+  200275,
+  200276,
+  200277,
+  200278,
+  200279,
+  200280,
+  200281,
+  200282,
+  200283,
+  200284,
+  200285,
+  200286,
+  200287,
+  200288,
+  200289,
+  200290,
+  200291,
+  200292,
+  200293,
+  200294,
+  200295,
+  200296,
+  200297,
+  200298,
+  200299,
+  200300,
+  200301,
+  200302,
+  200303,
+  200304,
+  200305,
+  200306,
+  200307,
+  200308,
+  200309,
+  200310,
+  200311,
+  200312,
+  200313,
+  200314,
+  200315,
+  200316,
+  200317,
+  200318,
+  200319,
+  200320,
+  200321,
+  200322,
+  200323,
+  200324,
+  200325,
+  200326,
+  200327,
+  200328,
+  200329,
+  200330,
+  200331,
+  200332,
+  200333,
+  200334,
+  200335,
+  200336,
+  200337,
+  200338,
+  200339,
+  200340,
+  200341,
+  200342,
+  200343,
+  200344,
+  200345,
+  200346,
+  200347,
+  200348,
+  200349,
+  200350,
+  200351,
+  200352,
+  200353,
+  200354,
+  200355,
+  200356,
+  200357,
+  200358,
+  200359,
+  200360,
+  200361,
+  200362,
+  200363,
+  200364,
+  200365,
+  200366,
+  200367,
+  200368,
+  200369,
+  200370,
+  200371,
+  200372,
+  200373,
+  200374,
+  200375,
+  200376,
+  200377,
+  200378,
+  200379,
+  200380,
+  200381,
+  200382,
+  200383,
+  200384,
+  200385,
+  200386,
+  200387,
+  200388,
+  200389,
+  200390,
+  200391,
+  200392,
+  200393,
+  200394,
+  200395,
+  200396,
+  200397,
+  200398,
+  200399,
+  200400,
+  200401,
+  200402,
+  200403,
+  200404,
+  200405,
+  200406,
+  200407,
+  200408,
+  200409,
+  200410,
+  200411,
+  200412,
+  200413,
+  200414,
+  200415,
+  200416,
+  200417,
+  200418,
+  200419,
+  200420,
+  200421,
+  200422,
+  200423,
+  200424,
+  200425,
+  200426,
+  200427,
+  200428,
+  200429,
+  200430,
+  200431,
+  200432,
+  200433,
+  200434,
+  200435,
+  200436,
+  200437,
+  200438,
+  200439,
+  200440,
+  200441,
+  200442,
+  200443,
+  200444,
+  200445,
+  200446,
+  200447,
+  200448,
+  200449,
+  200450,
+  200451,
+  200452,
+  200453,
+  200454,
+  200455,
+  200456,
+  200457,
+  200458,
+  200459,
+  200460,
+  200461,
+  200462,
+  200463,
+  200464,
+  200465,
+  200466,
+  200467,
+  200468,
+  200469,
+  200470,
+  200471,
+  200472,
+  200473,
+  200474,
+  200475,
+  200476,
+  200477,
+  200478,
+  200479,
+  200480,
+  200481,
+  200482,
+  200483,
+  200484,
+  200485,
+  200486,
+  200487,
+  200488,
+  200489,
+  200490,
+  200491,
+  200492,
+  200493,
+  200494,
+  200495,
+  200496,
+  200497,
+  200498,
+  200499,
+  200500,
+  200501,
+  200502,
+  200503,
+  200504,
+  200505,
+  200506,
+  200507,
+  200508,
+  200509,
+  200510,
+  200511,
+  200512,
+  200513,
+  200514,
+  200515,
+  200516,
+  200517,
+  200518,
+  200519,
+  200520,
+  200521,
+  200522,
+  200523,
+  200524,
+  200525,
+  200526,
+  200527,
+  200528,
+  200529,
+  200530,
+  200531,
+  200532,
+  200533,
+  200534,
+  200535,
+  200536,
+  200537,
+  200538,
+  200539,
+  200540,
+  200541,
+  200542,
+  200543,
+  200544,
+  200545,
+  200546,
+  200547,
+  200548,
+  200549,
+  200550,
+  200551,
+  200552,
+  200553,
+  200554,
+  200555,
+  200556,
+  200557,
+  200558,
+  200559,
+  200560,
+  200561,
+  200562,
+  200563,
+  200564,
+  200565,
+  200566,
+  200567,
+  200568,
+  200569,
+  200570,
+  200571,
+  200572,
+  200573,
+  200574,
+  200575,
+  200576,
+  200577,
+  200578,
+  200579,
+  200580,
+  200581,
+  200582,
+  200583,
+  200584,
+  200585,
+  200586,
+  200587,
+  200588,
+  200589,
+  200590,
+  200591,
+  200592,
+  200593,
+  200594,
+  200595,
+  200596,
+  200597,
+  200598,
+  200599,
+  200600,
+  200601,
+  200602,
+  200603,
+  200604,
+  200605,
+  200606,
+  200607,
+  200608,
+  200609,
+  200610,
+  200611,
+  200612,
+  200613,
+  200614,
+  200615,
+  200616,
+  200617,
+  200618,
+  200619,
+  200620,
+  200621,
+  200622,
+  200623,
+  200624,
+  200625,
+  200626,
+  200627,
+  200628,
+  200629,
+  200630,
+  200631,
+  200632,
+  200633,
+  200634,
+  200635,
+  200636,
+  200637,
+  200638,
+  200639,
+  200640,
+  200641,
+  200642,
+  200643,
+  200644,
+  200645,
+  200646,
+  200647,
+  200648,
+  200649,
+  200650,
+  200651,
+  200652,
+  200653,
+  200654,
+  200655,
+  200656,
+  200657,
+  200658,
+  200659,
+  200660,
+  200661,
+  200662,
+  200663,
+  200664,
+  200665,
+  200666,
+  200667,
+  200668,
+  200669,
+  200670,
+  200671,
+  200672,
+  200673,
+  200674,
+  200675,
+  200676,
+  200677,
+  200678,
+  200679,
+  200680,
+  200681,
+  200682,
+  200683,
+  200684,
+  200685,
+  200686,
+  200687,
+  200688,
+  200689,
+  200690,
+  200691,
+  200692,
+  200693,
+  200694,
+  200695,
+  200696,
+  200697,
+  200698,
+  200699,
+  200700,
+  200701,
+  200702,
+  200703,
+  200704,
+  200705,
+  200706,
+  200707,
+  200708,
+  200709,
+  200710,
+  200711,
+  200712,
+  200713,
+  200714,
+  200715,
+  200716,
+  200717,
+  200718,
+  200719,
+  200720,
+  200721,
+  200722,
+  200723,
+  200724,
+  200725,
+  200726,
+  200727,
+  200728,
+  200729,
+  200730,
+  200731,
+  200732,
+  200733,
+  200734,
+  200735,
+  200736,
+  200737,
+  200738,
+  200739,
+  200740,
+  200741,
+  200742,
+  200743,
+  200744,
+  200745,
+  200746,
+  200747,
+  200748,
+  200749,
+  200750,
+  200751,
+  200752,
+  200753,
+  200754,
+  200755,
+  200756,
+  200757,
+  200758,
+  200759,
+  200760,
+  200761,
+  200762,
+  200763,
+  200764,
+  200765,
+  200766,
+  200767,
+  200768,
+  200769,
+  200770,
+  200771,
+  200772,
+  200773,
+  200774,
+  200775,
+  200776,
+  200777,
+  200778,
+  200779,
+  200780,
+  200781,
+  200782,
+  200783,
+  200784,
+  200785,
+  200786,
+  200787,
+  200788,
+  200789,
+  200790,
+  200791,
+  200792,
+  200793,
+  200794,
+  200795,
+  200796,
+  200797,
+  200798,
+  200799,
+  200800,
+  200801,
+  200802,
+  200803,
+  200804,
+  200805,
+  200806,
+  200807,
+  200808,
+  200809,
+  200810,
+  200811,
+  200812,
+  200813,
+  200814,
+  200815,
+  200816,
+  200817,
+  200818,
+  200819,
+  200820,
+  200821,
+  200822,
+  200823,
+  200824,
+  200825,
+  200826,
+  200827,
+  200828,
+  200829,
+  200830,
+  200831,
+  200832,
+  200833,
+  200834,
+  200835,
+  200836,
+  200837,
+  200838,
+  200839,
+  200840,
+  200841,
+  200842,
+  200843,
+  200844,
+  200845,
+  200846,
+  200847,
+  200848,
+  200849,
+  200850,
+  200851,
+  200852,
+  200853,
+  200854,
+  200855,
+  200856,
+  200857,
+  200858,
+  200859,
+  200860,
+  200861,
+  200862,
+  200863,
+  200864,
+  200865,
+  200866,
+  200867,
+  200868,
+  200869,
+  200870,
+  200871,
+  200872,
+  200873,
+  200874,
+  200875,
+  200876,
+  200877,
+  200878,
+  200879,
+  200880,
+  200881,
+  200882,
+  200883,
+  200884,
+  200885,
+  200886,
+  200887,
+  200888,
+  200889,
+  200890,
+  200891,
+  200892,
+  200893,
+  200894,
+  200895,
+  200896,
+  200897,
+  200898,
+  200899,
+  200900,
+  200901,
+  200902,
+  200903,
+  200904,
+  200905,
+  200906,
+  200907,
+  200908,
+  200909,
+  200910,
+  200911,
+  200912,
+  200913,
+  200914,
+  200915,
+  200916,
+  200917,
+  200918,
+  200919,
+  200920,
+  200921,
+  200922,
+  200923,
+  200924,
+  200925,
+  200926,
+  200927,
+  200928,
+  200929,
+  200930,
+  200931,
+  200932,
+  200933,
+  200934,
+  200935,
+  200936,
+  200937,
+  200938,
+  200939,
+  200940,
+  200941,
+  200942,
+  200943,
+  200944,
+  200945,
+  200946,
+  200947,
+  200948,
+  200949,
+  200950,
+  200951,
+  200952,
+  200953,
+  200954,
+  200955,
+  200956,
+  200957,
+  200958,
+  200959,
+  200960,
+  200961,
+  200962,
+  200963,
+  200964,
+  200965,
+  200966,
+  200967,
+  200968,
+  200969,
+  200970,
+  200971,
+  200972,
+  200973,
+  200974,
+  200975,
+  200976,
+  200977,
+  200978,
+  200979,
+  200980,
+  200981,
+  200982,
+  200983,
+  200984,
+  200985,
+  200986,
+  200987,
+  200988,
+  200989,
+  200990,
+  200991,
+  200992,
+  200993,
+  200994,
+  200995,
+  200996,
+  200997,
+  200998,
+  200999,
+  201000,
+  201001,
+  201002,
+  201003,
+  201004,
+  201005,
+  201006,
+  201007,
+  201008,
+  201009,
+  201010,
+  201011,
+  201012,
+  201013,
+  201014,
+  201015,
+  201016,
+  201017,
+  201018,
+  201019,
+  201020,
+  201021,
+  201022,
+  201023,
+  201024,
+  201025,
+  201026,
+  201027,
+  201028,
+  201029,
+  201030,
+  201031,
+  201032,
+  201033,
+  201034,
+  201035,
+  201036,
+  201037,
+  201038,
+  201039,
+  201040,
+  201041,
+  201042,
+  201043,
+  201044,
+  201045,
+  201046,
+  201047,
+  201048,
+  201049,
+  201050,
+  201051,
+  201052,
+  201053,
+  201054,
+  201055,
+  201056,
+  201057,
+  201058,
+  201059,
+  201060,
+  201061,
+  201062,
+  201063,
+  201064,
+  201065,
+  201066,
+  201067,
+  201068,
+  201069,
+  201070,
+  201071,
+  201072,
+  201073,
+  201074,
+  201075,
+  201076,
+  201077,
+  201078,
+  201079,
+  201080,
+  201081,
+  201082,
+  201083,
+  201084,
+  201085,
+  201086,
+  201087,
+  201088,
+  201089,
+  201090,
+  201091,
+  201092,
+  201093,
+  201094,
+  201095,
+  201096,
+  201097,
+  201098,
+  201099,
+  201100,
+  201101,
+  201102,
+  201103,
+  201104,
+  201105,
+  201106,
+  201107,
+  201108,
+  201109,
+  201110,
+  201111,
+  201112,
+  201113,
+  201114,
+  201115,
+  201116,
+  201117,
+  201118,
+  201119,
+  201120,
+  201121,
+  201122,
+  201123,
+  201124,
+  201125,
+  201126,
+  201127,
+  201128,
+  201129,
+  201130,
+  201131,
+  201132,
+  201133,
+  201134,
+  201135,
+  201136,
+  201137,
+  201138,
+  201139,
+  201140,
+  201141,
+  201142,
+  201143,
+  201144,
+  201145,
+  201146,
+  201147,
+  201148,
+  201149,
+  201150,
+  201151,
+  201152,
+  201153,
+  201154,
+  201155,
+  201156,
+  201157,
+  201158,
+  201159,
+  201160,
+  201161,
+  201162,
+  201163,
+  201164,
+  201165,
+  201166,
+  201167,
+  201168,
+  201169,
+  201170,
+  201171,
+  201172,
+  201173,
+  201174,
+  201175,
+  201176,
+  201177,
+  201178,
+  201179,
+  201180,
+  201181,
+  201182,
+  201183,
+  201184,
+  201185,
+  201186,
+  201187,
+  201188,
+  201189,
+  201190,
+  201191,
+  201192,
+  201193,
+  201194,
+  201195,
+  201196,
+  201197,
+  201198,
+  201199,
+  201200,
+  201201,
+  201202,
+  201203,
+  201204,
+  201205,
+  201206,
+  201207,
+  201208,
+  201209,
+  201210,
+  201211,
+  201212,
+  201213,
+  201214,
+  201215,
+  201216,
+  201217,
+  201218,
+  201219,
+  201220,
+  201221,
+  201222,
+  201223,
+  201224,
+  201225,
+  201226,
+  201227,
+  201228,
+  201229,
+  201230,
+  201231,
+  201232,
+  201233,
+  201234,
+  201235,
+  201236,
+  201237,
+  201238,
+  201239,
+  201240,
+  201241,
+  201242,
+  201243,
+  201244,
+  201245,
+  201246,
+  201247,
+  201248,
+  201249,
+  201250,
+  201251,
+  201252,
+  201253,
+  201254,
+  201255,
+  201256,
+  201257,
+  201258,
+  201259,
+  201260,
+  201261,
+  201262,
+  201263,
+  201264,
+  201265,
+  201266,
+  201267,
+  201268,
+  201269,
+  201270,
+  201271,
+  201272,
+  201273,
+  201274,
+  201275,
+  201276,
+  201277,
+  201278,
+  201279,
+  201280,
+  201281,
+  201282,
+  201283,
+  201284,
+  201285,
+  201286,
+  201287,
+  201288,
+  201289,
+  201290,
+  201291,
+  201292,
+  201293,
+  201294,
+  201295,
+  201296,
+  201297,
+  201298,
+  201299,
+  201300,
+  201301,
+  201302,
+  201303,
+  201304,
+  201305,
+  201306,
+  201307,
+  201308,
+  201309,
+  201310,
+  201311,
+  201312,
+  201313,
+  201314,
+  201315,
+  201316,
+  201317,
+  201318,
+  201319,
+  201320,
+  201321,
+  201322,
+  201323,
+  201324,
+  201325,
+  201326,
+  201327,
+  201328,
+  201329,
+  201330,
+  201331,
+  201332,
+  201333,
+  201334,
+  201335,
+  201336,
+  201337,
+  201338,
+  201339,
+  201340,
+  201341,
+  201342,
+  201343,
+  201344,
+  201345,
+  201346,
+  201347,
+  201348,
+  201349,
+  201350,
+  201351,
+  201352,
+  201353,
+  201354,
+  201355,
+  201356,
+  201357,
+  201358,
+  201359,
+  201360,
+  201361,
+  201362,
+  201363,
+  201364,
+  201365,
+  201366,
+  201367,
+  201368,
+  201369,
+  201370,
+  201371,
+  201372,
+  201373,
+  201374,
+  201375,
+  201376,
+  201377,
+  201378,
+  201379,
+  201380,
+  201381,
+  201382,
+  201383,
+  201384,
+  201385,
+  201386,
+  201387,
+  201388,
+  201389,
+  201390,
+  201391,
+  201392,
+  201393,
+  201394,
+  201395,
+  201396,
+  201397,
+  201398,
+  201399,
+  201400,
+  201401,
+  201402,
+  201403,
+  201404,
+  201405,
+  201406,
+  201407,
+  201408,
+  201409,
+  201410,
+  201411,
+  201412,
+  201413,
+  201414,
+  201415,
+  201416,
+  201417,
+  201418,
+  201419,
+  201420,
+  201421,
+  201422,
+  201423,
+  201424,
+  201425,
+  201426,
+  201427,
+  201428,
+  201429,
+  201430,
+  201431,
+  201432,
+  201433,
+  201434,
+  201435,
+  201436,
+  201437,
+  201438,
+  201439,
+  201440,
+  201441,
+  201442,
+  201443,
+  201444,
+  201445,
+  201446,
+  201447,
+  201448,
+  201449,
+  201450,
+  201451,
+  201452,
+  201453,
+  201454,
+  201455,
+  201456,
+  201457,
+  201458,
+  201459,
+  201460,
+  201461,
+  201462,
+  201463,
+  201464,
+  201465,
+  201466,
+  201467,
+  201468,
+  201469,
+  201470,
+  201471,
+  201472,
+  201473,
+  201474,
+  201475,
+  201476,
+  201477,
+  201478,
+  201479,
+  201480,
+  201481,
+  201482,
+  201483,
+  201484,
+  201485,
+  201486,
+  201487,
+  201488,
+  201489,
+  201490,
+  201491,
+  201492,
+  201493,
+  201494,
+  201495,
+  201496,
+  201497,
+  201498,
+  201499,
+  201500,
+  201501,
+  201502,
+  201503,
+  201504,
+  201505,
+  201506,
+  201507,
+  201508,
+  201509,
+  201510,
+  201511,
+  201512,
+  201513,
+  201514,
+  201515,
+  201516,
+  201517,
+  201518,
+  201519,
+  201520,
+  201521,
+  201522,
+  201523,
+  201524,
+  201525,
   201526,
+  201527,
+  201528,
   201529,
   201530,
+  201531,
+  201532,
+  201533,
+  201534,
+  201535,
+  201536,
+  201537,
   201538,
+  201539,
   201540,
+  201541,
+  201542,
+  201543,
+  201544,
   201545,
+  201546,
   201547,
+  201548,
+  201549,
+  201550,
+  201551,
+  201552,
   201553,
+  201554,
   201555,
+  201556,
+  201557,
+  201558,
+  201559,
+  201560,
+  201561,
+  201562,
+  201563,
+  201564,
+  201565,
+  201566,
+  201567,
+  201568,
+  201569,
   201570,
+  201571,
+  201572,
+  201573,
   201574,
+  201575,
   201576,
+  201577,
+  201578,
+  201579,
+  201580,
+  201581,
+  201582,
+  201583,
+  201584,
   201585,
+  201586,
+  201587,
   201588,
+  201589,
+  201590,
   201591,
+  201592,
+  201593,
+  201594,
+  201595,
   201596,
   201597,
   201598,
+  201599,
+  201600,
   201601,
   201602,
+  201603,
+  201604,
+  201605,
+  201606,
+  201607,
   201608,
   201609,
+  201610,
+  201611,
+  201612,
   201613,
   201614,
+  201615,
+  201616,
+  201617,
+  201618,
+  201619,
+  201620,
+  201621,
+  201622,
   201623,
+  201624,
   201625,
   201626,
   201627,
   201628,
   201629,
+  201630,
+  201631,
   201632,
+  201633,
+  201634,
+  201635,
+  201636,
+  201637,
+  201638,
+  201639,
+  201640,
+  201641,
+  201642,
+  201643,
+  201644,
+  201645,
+  201646,
+  201647,
+  201648,
+  201649,
+  201650,
+  201651,
+  201652,
+  201653,
+  201654,
+  201655,
   201656,
+  201657,
   201658,
   201659,
   201660,
+  201661,
   201662,
   201663,
   201664,
+  201665,
   201666,
   201667,
   201668,
+  201669,
   201670,
   201671,
   201672,
   201673,
+  201674,
   201675,
+  201676,
   201677,
   201678,
+  201679,
   201680,
   201681,
+  201682,
+  201683,
   201684,
   201685,
   201686,
   201687,
+  201688,
+  201689,
+  201690,
+  201691,
+  201692,
+  201693,
+  201694,
+  201695,
+  201696,
+  201697,
+  201698,
+  201699,
+  201700,
+  201702,
+  201703,
+  201704,
+  201705,
+  201706,
+  201707,
+  201708,
+  201709,
   201710,
+  201711,
   201712,
+  201713,
+  201714,
   201715,
   201716,
+  201717,
+  201718,
+  201719,
+  201720,
   201721,
   201722,
+  201723,
   201724,
   201725,
   201726,
+  201727,
   201728,
   201729,
   201730,
@@ -30031,28 +50192,50 @@ export const implementedIds: number[] = [
   201734,
   201735,
   201736,
+  201737,
   201738,
   201739,
   201740,
   201741,
+  201742,
+  201743,
+  201744,
   201745,
+  201746,
   201747,
   201748,
+  201749,
   201750,
   201751,
   201752,
+  201753,
   201754,
+  201755,
+  201756,
   201757,
   201758,
   201759,
   201760,
+  201761,
+  201762,
+  201763,
+  201764,
+  201765,
+  201766,
   201767,
+  201768,
+  201769,
   201770,
   201771,
   201772,
+  201773,
+  201774,
   201775,
   201776,
   201777,
+  201778,
+  201779,
+  201780,
   201781,
   201782,
   201783,
@@ -30067,5 +50250,5 @@ export const implementedIds: number[] = [
   900006,
   900007,
   900008,
-  900009,
+  900009
 ];
