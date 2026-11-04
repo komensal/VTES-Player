@@ -36056,15 +36056,8 @@ export const cryptSpecs: CardSpec[] = [
       requiresPath: "Death and the Soul",
     },
   }),
-  cryptPerm(201570, "Sybren van Oosten (G6)", {
-    // "After a referendum called by him passes" — the
-    // `referendum.afterResolution` window, which opens only on a pass.
-    unlockAfterOwnReferendum: true,
-  }),
-  cryptPerm(201596, "Kalinda (G6)", {
-    // "During your turn, you can burn the Edge to unlock Kalinda."
-    unlockForEdge: true,
-  }),
+  cryptPerm(201570, "Sybren van Oosten (G6)", {}), // fala 47 wierna (300) dobrane
+  cryptPerm(201596, "Kalinda (G6)", {}), // fala 47 wierna (300) dobrane
 
   // Library searches. The gate's rules carry over unchanged: you need not
   // announce what you seek, finding nothing is always legal, and the
@@ -36452,9 +36445,7 @@ export const cryptSpecs: CardSpec[] = [
 
   // "If the referendum of a political action called by Cedrick is
   // CANCELED OR FAILS, he goes to torpor after resolution."
-  cryptPerm(201626, "Cedrick Calhoun (G6)", {
-    torporOnReferendumLoss: true,
-  }),
+  cryptPerm(201626, "Cedrick Calhoun (G6)", {}), // fala 47 wierna (300) dobrane
 
   // "While Ashur-uballit is ready, ZOMBIES (allies and retainers) you
   // recruit or employ get +1 starting life. +1 bleed." Read at the entry
@@ -36529,8 +36520,8 @@ export const cryptSpecs: CardSpec[] = [
       requiresBearerReady: true,
     },
   }),
-    flatCrypt(200010, "Accorri Giovanni (G5)", {}), // fala 46 wierna (300) dobrane vanilla
-    flatCrypt(200012, "Adelaide Davis (G3)", {}), // fala 46 wierna (300) dobrane vanilla
+  flatCrypt(200010, "Accorri Giovanni (G5)", {}), // fala 47 wierna (300) domknięcie 1
+  flatCrypt(200012, "Adelaide Davis (G3)", {}), // fala 47 wierna (300) domknięcie 3
     flatCrypt(200020, "Agatha (G2)", {}), // fala 46 wierna (300) dobrane vanilla
     flatCrypt(200022, "Agrippina (G1)", {}), // fala 46 wierna (300) dobrane vanilla
     flatCrypt(200024, "Ahmose Chambers (G5)", {}), // fala 46 wierna (300) dobrane vanilla
@@ -37042,12 +37033,12 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201779, "Yurena, The Boor (G6)", {}), // fala 33 wierna (500) vanilla
     flatCrypt(201780, "Zbigniew, Hunter of Mekhet (G6)", {}), // fala 33 wierna (500) vanilla
 
-    flatCrypt(200011, "Adana de Sforza (G4)", { bleed: 2 }), // fala 46 wierna (300) dobrane
-    cryptPerm(200013, "Adhiambo (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
-    cryptPerm(200014, "Adonai (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
-    flatCrypt(200015, "Adri, The Seeker (G6)", { intercept: 1 }), // fala 46 wierna (300) statics
-    flatCrypt(200016, "Adrianne (G1)", { bleed: 1 }), // fala 46 wierna (300) dobrane
-          cryptPerm(200017, "Aeron (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
+  flatCrypt(200011, "Adana de Sforza (G4)", {}), // fala 47 wierna (300) domknięcie 2
+  flatCrypt(200013, "Adhiambo (G4)", {}), // fala 47 wierna (300) domknięcie 4
+  flatCrypt(200014, "Adonai (G2)", {}), // fala 47 wierna (300) domknięcie 5
+  flatCrypt(200015, "Adri, The Seeker (G6)", {}), // fala 47 wierna (300) domknięcie 6
+  flatCrypt(200016, "Adrianne (G1)", {}), // fala 47 wierna (300) domknięcie 7
+  flatCrypt(200017, "Aeron (G3)", {}), // fala 47 wierna (300) domknięcie 8
           cryptPerm(200018, "Afifa, The Herald (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
           cryptPerm(200019, "Agaitas, The Scholar of Antiquities (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
           flatCrypt(200021, "Ági (G6)", {}), // fala 46 wierna (300) dobrane vanilla
@@ -37163,7 +37154,7 @@ export const cryptSpecs: CardSpec[] = [
       flatCrypt(200153, "Ayo Igoli (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200154, "Azaneal (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200155, "Aziz, Dammar of Istanbul (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
-      flatCrypt(200156, "Azrael (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200156, "Azrael (G6)", {}), // fala 47 wierna (300) vanilla
     cryptPerm(200157, "Baba Yaga, the Iron Hag (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
       cryptPerm(200158, "Babalawo Alafin (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
       flatCrypt(200160, "Badr, Shadow of Granada (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37188,7 +37179,7 @@ export const cryptSpecs: CardSpec[] = [
   flatCrypt(200181, "Béatrice \"Oracle171\" Tremblay (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
     flatCrypt(200183, "Beckett (G3)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200184, "Beckett (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200186, "Bela (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200186, "Bela (G5)", {}), // fala 47 wierna (300) vanilla
       cryptPerm(200187, "Bela Kardoza (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
       cryptPerm(200189, "Benedict Giovanni, Agent (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
     flatCrypt(200190, "Benjamin Rose (G5)", { stealth: 1, handSize: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37206,7 +37197,7 @@ export const cryptSpecs: CardSpec[] = [
     cryptPerm(200206, "Blanche Hill (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200209, "Bloody Mary (G5)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200210, "Blythe Candeleria (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
-      flatCrypt(200212, "Boss Callihan (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200212, "Boss Callihan (G3)", {}), // fala 47 wierna (300) vanilla
       flatCrypt(200213, "Boss Callihan (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200220, "Bronwen (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200222, "Bruce de Guy (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
@@ -37221,7 +37212,7 @@ export const cryptSpecs: CardSpec[] = [
 
       flatCrypt(200232, "Cailean (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200234, "Calebos (G2)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200235, "Calebros, The Martyr (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200235, "Calebros, The Martyr (G2)", {}), // fala 47 wierna (300) vanilla
       cryptPerm(200237, "Callirus (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
     flatCrypt(200238, "Calvin Cleaver (G4)", { stealth: 1 }), // fala 46 wierna (300) statics
     flatCrypt(200242, "The Capuchin (G5)", { bleed: 1, intercept: 1 }), // fala 46 wierna (300) statics
@@ -37231,7 +37222,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200247, "Carmine Giovanni (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200248, "Carna, The Princess Witch (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
       flatCrypt(200249, "Carolina Vález (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200250, "Caroline Bishops (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200250, "Caroline Bishops (G4)", {}), // fala 47 wierna (300) vanilla
       flatCrypt(200252, "Casino Reeds (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200253, "Cassandra, Magus Prime (G1)", { strength: 1 }), // fala 46 wierna (300) statics
       flatCrypt(200255, "Castiel (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37259,7 +37250,7 @@ export const cryptSpecs: CardSpec[] = [
     cryptPerm(200289, "Constanza Vinti (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
     flatCrypt(200290, "Corine Marcón (G2)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200291, "Cornelius Ottavio (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
-      flatCrypt(200292, "Count Germaine (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200292, "Count Germaine (G4)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200293, "Count Germaine (G4 ADV)", { bleed: 2 }), // fala 46 wierna (300) statics
     cryptPerm(200294, "Count Jocalo (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
     cryptPerm(200296, "Count Vladimir Rustovitch (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
@@ -37335,17 +37326,17 @@ export const cryptSpecs: CardSpec[] = [
       cryptPerm(200403, "Edward Vignes (G3)", { requiresReady: true }), // fala 46 wierna (300) cryptPerm
       flatCrypt(200404, "Effie Lowery (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200405, "Egothha (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
-      flatCrypt(200409, "Elihu (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200409, "Elihu (G4)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200410, "Elimelech the Twice-Damned (G5)", { bleed: 1, strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200411, "Eliott Sinclair, Virtuoso Thespian (G1)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200412, "Elisabetta Romano (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
-      flatCrypt(200414, "Elizabeth Dimitros (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200414, "Elizabeth Dimitros (G3)", {}), // fala 47 wierna (300) vanilla
       flatCrypt(200416, "Ellen Fence, the Tracker (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200417, "Ellison Humboldt (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
       cryptPerm(200421, "Emily Carson (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
       flatCrypt(200422, "Enam (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200423, "Enid Blount (G3)", { stealth: 1 }), // fala 46 wierna (300) statics
-      flatCrypt(200424, "Enkidu, The Noah (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200424, "Enkidu, The Noah (G4)", {}), // fala 47 wierna (300) vanilla
     cryptPerm(200425, "Enzo Giovanni, Pentex Board of Directors (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
       cryptPerm(200426, "Enzo Giovanni, Pentex Board of Directors (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
       cryptPerm(200427, "Epikasta Rigatos (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
@@ -37360,7 +37351,7 @@ export const cryptSpecs: CardSpec[] = [
       flatCrypt(200439, "Étienne Fauberge (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200440, "Etrius (G2)", { bleed: 2, stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200441, "Eugene (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200443, "Eurayle Gelasia Mylonas (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200443, "Eurayle Gelasia Mylonas (G4)", {}), // fala 47 wierna (300) vanilla
       flatCrypt(200445, "Evan Rogers (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200447, "Evil Jensen (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200448, "Eze, The Demon Prince (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
@@ -37376,7 +37367,7 @@ export const cryptSpecs: CardSpec[] = [
       cryptPerm(200460, "Federico di Padua (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
       cryptPerm(200462, "Feo Ramos (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
       flatCrypt(200463, "Fergus Alexander (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200464, "Ferox, The Rock Lord (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200464, "Ferox, The Rock Lord (G2)", {}), // fala 47 wierna (300) vanilla
     cryptPerm(200465, "Ferox, The Rock Lord (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
       cryptPerm(200466, "Fida'i (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
     flatCrypt(200467, "Fidus, The Shrunken Beast (G2)", { stealth: 1 }), // fala 46 wierna (300) statics
@@ -37403,18 +37394,18 @@ export const cryptSpecs: CardSpec[] = [
       cryptPerm(200499, "Gemini (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
       flatCrypt(200500, "General Perfidio Díos (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200501, "Genevieve (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
-      flatCrypt(200502, "Gengis (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200502, "Gengis (G3)", {}), // fala 47 wierna (300) vanilla
       cryptPerm(200503, "Gengis (G3 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
     flatCrypt(200504, "Genina, The Red Poet (G3)", { stealth: 1 }), // fala 46 wierna (300) statics
     cryptPerm(200505, "Gentha Shale (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
       cryptPerm(200507, "Gerald FitzGerald (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
     flatCrypt(200508, "Gerald Windham (G5)", { stealth: 1 }), // fala 46 wierna (300) statics
       cryptPerm(200510, "Gerard Rafin (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
-      flatCrypt(200511, "Gharston Roland (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200511, "Gharston Roland (G4)", {}), // fala 47 wierna (300) vanilla
       flatCrypt(200512, "Ghede (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200514, "Giangaleazzo, The Traitor (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
     flatCrypt(200518, "Gillespi Giovanni (G2)", { bleed: 1 }), // fala 46 wierna (300) statics
-      flatCrypt(200519, "Gillian Krader (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200519, "Gillian Krader (G2)", {}), // fala 47 wierna (300) vanilla
       cryptPerm(200520, "Giotto Verducci (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
     flatCrypt(200521, "Giovanni del Georgio (G5)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200522, "Gisela Harden, The Winnower (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37423,7 +37414,7 @@ export const cryptSpecs: CardSpec[] = [
 
     flatCrypt(200528, "Goratrix (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200529, "Goratrix (G2 ADV)", { bleed: 1 }), // fala 46 wierna (300) statics
-      flatCrypt(200530, "Gotsdam, The Tired Warrior (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200530, "Gotsdam, The Tired Warrior (G4)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200531, "Gracetius (G5)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200532, "Gracis Nostinus (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200534, "Gratiano (G2)", { bleed: 1 }), // fala 46 wierna (300) statics
@@ -37465,9 +37456,9 @@ export const cryptSpecs: CardSpec[] = [
       cryptPerm(200580, "Hecate (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
       flatCrypt(200582, "Hector Trelane (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200584, "Hektor (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
-      flatCrypt(200585, "Helen Fairchild (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200585, "Helen Fairchild (G6)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200586, "Helena (G3)", { bleed: 1 }), // fala 46 wierna (300) statics
-      flatCrypt(200587, "Helena (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200587, "Helena (G3 ADV)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200588, "Helena Casimir (G1)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200589, "Henri Lavenant (G3)", { handSize: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200590, "Henry Taylor (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
@@ -37496,10 +37487,10 @@ export const cryptSpecs: CardSpec[] = [
       cryptPerm(200620, "Idalia, Prophet of Guadalajara (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm
     flatCrypt(200624, "Ignazio Giovanni (G3)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200625, "Igo the Hungry (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 46 wierna (300) cryptPerm Gehenna
-      flatCrypt(200626, "Iliana (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200626, "Iliana (G2)", {}), // fala 47 wierna (300) vanilla
       flatCrypt(200628, "Ilse (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200629, "Ilyana Ravidovich (G3)", { intercept: 1 }), // fala 46 wierna (300) statics
-      flatCrypt(200630, "Imanna (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200630, "Imanna (G6)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200631, "Imogen (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200633, "Ingram Frizer (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200634, "Ingrid Rossler (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37514,11 +37505,11 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200649, "Ivan Krenyenko (G2 ADV)", { bleed: 1, strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200650, "Izhim abd Azrael (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
   flatCrypt(200651, "J. Oswald \"Ozzy\" Hyde-White (G3)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
-    flatCrypt(200652, "Jack (G2)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200653, "Jack Dawson (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200652, "Jack (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+      cryptPerm(200653, "Jack Dawson (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
       flatCrypt(200654, "Jack Dawson (G2 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200655, "Jack Drake (G4)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200659, "Jacko (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200655, "Jack Drake (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+      cryptPerm(200659, "Jacko (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
       flatCrypt(200661, "Jacob, The Glitch (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200663, "Jacob Fermor (G4)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
 
@@ -37526,94 +37517,94 @@ export const cryptSpecs: CardSpec[] = [
       flatCrypt(200665, "Jaggedy Andy (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200666, "Jalal Sayad (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200667, "Jalan-Aajav (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200668, "Jamal (G5)", { bleed: 1, strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200668, "Jamal (G5)", { bleed: 1, strength: 1 }), // fala 47 wierna (300) statics
     flatCrypt(200669, "Jan Pieterzoon (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200670, "Jan Pieterzoon (G2 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200670, "Jan Pieterzoon (G2 ADV)", {}), // fala 47 wierna (300) vanilla
       flatCrypt(200671, "Jane Sims (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200672, "Janet Langer (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200673, "Janey Pickman (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200675, "Jann Berger (G4)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200676, "Janni (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200677, "Jara Drory (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200676, "Janni (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+      cryptPerm(200677, "Jara Drory (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200678, "Jaroslav Pascek (G3)", { intercept: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200679, "Jason, The World's Voice (G3)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200680, "Javier Montoya (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200681, "Javier Montoya (G2 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200680, "Javier Montoya (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+      cryptPerm(200681, "Javier Montoya (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
       flatCrypt(200682, "Jayakumar (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200683, "Jayne Jonestown (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200683, "Jayne Jonestown (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200684, "Jazz Wentworth (G1)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200685, "Jean Lisle (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200688, "Jenna Cross (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
   flatCrypt(200690, "Jennifer \"Flame61\" Vidisania (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
       flatCrypt(200694, "Jeremy MacNeil (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200695, "Jeremy Talbot (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200695, "Jeremy Talbot (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
   flatCrypt(200696, "Jeremy \"Wix\" Wyzchovsky (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
-      flatCrypt(200697, "Jerry (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200697, "Jerry (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
       flatCrypt(200698, "Jesse Menks (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200700, "Jessica (G2 ADV)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200700, "Jessica (G2 ADV)", { stealth: 1 }), // fala 47 wierna (300) statics
       flatCrypt(200702, "Jezebelle (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200703, "Jibade el-Bahrawi (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200703, "Jibade el-Bahrawi (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
       flatCrypt(200704, "Jibade el-Bahrawi (G4 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200705, "Jimmy Dunn (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200707, "João Bilé (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200705, "Jimmy Dunn (G2)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(200707, "João Bilé (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
       flatCrypt(200708, "Joaquin Murietta (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200709, "Joaquina Amaya (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200709, "Joaquina Amaya (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
   flatCrypt(200710, "Joe \"Boot\" Hill (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
       flatCrypt(200711, "Johan Wrede (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200712, "Johann Matheson (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200712, "Johann Matheson (G5)", {}), // fala 47 wierna (300) vanilla
       flatCrypt(200713, "Johannes Castelein (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200716, "John Paleologus (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200718, "Jorge De La Muerte, The Agent (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200716, "John Paleologus (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200718, "Jorge De La Muerte, The Agent (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200720, "Josef von Bauren (G4)", { bleed: 1, stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200721, "Joseph Cambridge (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200722, "Joseph DiGiaccomo (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200724, "Joseph O'Grady (G3)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200724, "Joseph O'Grady (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
       flatCrypt(200725, "Josette (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200726, "Joshua Tarnopolski (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200726, "Joshua Tarnopolski (G3)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200727, "Jost Werner (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200728, "Jozz (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200730, "Juanita Santiago (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200731, "Jubal (G4)", { intercept: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200731, "Jubal (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
       flatCrypt(200733, "Juggler (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200734, "Julia Prima (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200735, "Julian Sanders (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200736, "Julio Martinez (G3)", { intercept: 1, strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200736, "Julio Martinez (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
       flatCrypt(200737, "Julius (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200738, "Juniper (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200739, "Justine, Elder of Dallas (G1)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200741, "Kabede Maru (G5)", { intercept: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200739, "Justine, Elder of Dallas (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200741, "Kabede Maru (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200742, "Kahina the Sorceress (G3)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200743, "Kai Simmons (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200744, "Kalila (G5)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200744, "Kalila (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200745, "Kalinda (G2)", { bleed: 1, stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200749, "Kamiri wa Itherero (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200750, "Kamiri wa Itherero (G4 ADV)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200751, "Kanimana Belghazi (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200752, "Kanya Akhtar (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200753, "Karen Suadela (G5)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200754, "Karif al Numair (G5)", { bleed: 1, strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200753, "Karen Suadela (G5)", { stealth: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(200754, "Karif al Numair (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
       flatCrypt(200755, "Karl (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200756, "Karmenita Yoryari (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200757, "Karsh (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200758, "Karsh (G3 ADV)", { intercept: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200758, "Karsh (G3 ADV)", { intercept: 1 }), // fala 47 wierna (300) statics
       flatCrypt(200759, "Kashan (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200760, "Kassiym Malikhair (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200761, "Katarina (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200762, "Katarina Kornfeld (G3)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200763, "Kateline Nadasdy (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200764, "Katherine Stoddard (G3)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200766, "Kazimir Savostin (G3)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200767, "Keith Moody (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200760, "Kassiym Malikhair (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200761, "Katarina (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200762, "Katarina Kornfeld (G3)", { stealth: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(200763, "Kateline Nadasdy (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200764, "Katherine Stoddard (G3)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200766, "Kazimir Savostin (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200767, "Keith Moody (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200768, "Keller Thiel (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200769, "Kemintiri (G2)", { bleed: 1, stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200769, "Kemintiri (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200770, "Kemintiri (G2 ADV)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200771, "Kendrick (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200771, "Kendrick (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200773, "Kephamos, High Priest of Marrakech (G2)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200775, "Kestrelle Hayes (G5)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200776, "Khalid (G3)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200778, "Khalil Ravana (G2)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200775, "Kestrelle Hayes (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200776, "Khalid (G3)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200778, "Khalil Ravana (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200779, "Khalu (G3)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200780, "Khay'tall, Snake of Eden (G2)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    cryptPerm(200780, "Khay'tall, Snake of Eden (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200781, "Khurshid (G6)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200783, "The Kikiyaon (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200784, "Kiradin (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37623,125 +37614,125 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200790, "Konrad Fleischer (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200792, "Kostantin, Baro of the Caravan (G2)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
 
-    flatCrypt(200793, "Krassimir (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200795, "Kurt Densch (G3)", { intercept: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200797, "Kyle Strathcona, Cardinal of Canada (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200798, "Kyoko Shinsegawa (G3)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200793, "Krassimir (G2)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(200795, "Kurt Densch (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200797, "Kyle Strathcona, Cardinal of Canada (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(200798, "Kyoko Shinsegawa (G3)", { stealth: 1 }), // fala 47 wierna (300) statics
     flatCrypt(200799, "Kyrylo (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
-    flatCrypt(200800, "L'Épuisette (G4)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200800, "L'Épuisette (G4)", { bleed: 1 }), // fala 47 wierna (300) statics
     flatCrypt(200801, "La Viuda Blanca (G6)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200804, "Lady Constancia (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200805, "Lady Zara Slatikov (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
-    flatCrypt(200806, "Laecanus (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200806, "Laecanus (G4)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200807, "Laika (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200810, "Lambach (G2)", { strength: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200811, "Lambach (G2 ADV)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200813, "Langa (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200814, "Larry (G2)", { intercept: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
-    flatCrypt(200815, "Laszlo Mirac (G4)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
+    cryptPerm(200815, "Laszlo Mirac (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200818, "Layla bint-Nadr (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200819, "Lázár Dobrescu (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200820, "Lazarus (G1)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200821, "Lazarus (G1 ADV)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200822, "Lazarus James (G4)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200823, "Lazverinus, Thrall of Lambach (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
-    flatCrypt(200824, "Le Dinh Tho (G2)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
-    flatCrypt(200826, "Leandro (G2)", { bleed: 2 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
-    flatCrypt(200828, "Legba (G6)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    cryptPerm(200824, "Le Dinh Tho (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200826, "Leandro (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200828, "Legba (G6)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200829, "Leila Monroe (G4)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
-    flatCrypt(200830, "Lena Rowe (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    flatCrypt(200830, "Lena Rowe (G2)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200831, "Leo Washington (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
-    flatCrypt(200832, "Leon (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
+    cryptPerm(200832, "Leon (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200833, "Lernean (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
-    flatCrypt(200835, "Lille Haake (G3)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
+    cryptPerm(200835, "Lille Haake (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200837, "Lin Jun (G4)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200839, "Lisa Noble (G3)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200840, "Lisandro Giovanni (G3)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
-    flatCrypt(200842, "Lisette Vizquel (G2)", { intercept: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
-    flatCrypt(200843, "Lithrac (G2)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    cryptPerm(200842, "Lisette Vizquel (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200843, "Lithrac (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200844, "Little Tailor of Prague (G2)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
-    flatCrypt(200847, "Lizette (G4)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    cryptPerm(200847, "Lizette (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200848, "Lodin (Olaf Holte) (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     flatCrypt(200852, "Lord Aaron Wesley Wilkshire (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     flatCrypt(200853, "Lord Ashton (G3)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
     flatCrypt(200854, "Lord Ephraim Wainwright (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200855, "Lord Fianna (G5)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
-    flatCrypt(200856, "Lord Tremere (G5)", { bleed: 2, intercept: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    flatCrypt(200855, "Lord Fianna (G5)", { stealth: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(200856, "Lord Tremere (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200858, "Lorenzo Detuono (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200859, "Lorrie Dunsirn (G4)", { strength: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    flatCrypt(200859, "Lorrie Dunsirn (G4)", { strength: 1 }), // fala 47 wierna (300) statics
     flatCrypt(200860, "Louhi (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200863, "Louis Fortier (G4 ADV)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200864, "Luanda Magere (G4)", { strength: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
-    flatCrypt(200865, "Lubomira Hradok (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200866, "Luc (G4)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    flatCrypt(200863, "Louis Fortier (G4 ADV)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(200864, "Luanda Magere (G4)", { strength: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(200865, "Lubomira Hradok (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200866, "Luc (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200867, "Luca Italicus (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200868, "Lucas Halton (G3)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    cryptPerm(200868, "Lucas Halton (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200869, "Luccia Paciola (G1)", { strength: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
     flatCrypt(200870, "Lucian (G1)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     flatCrypt(200871, "Lucian, the Perfect (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200872, "Lucina (G3)", { strength: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
-    flatCrypt(200873, "Lucinde, Alastor (G3)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    cryptPerm(200872, "Lucina (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200873, "Lucinde, Alastor (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200874, "Lucita (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200875, "Lucita (G2 ADV)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    cryptPerm(200875, "Lucita (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200876, "Lucretia, Cess Queen (G1)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
-    flatCrypt(200877, "Lucubratio (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
+    cryptPerm(200877, "Lucubratio (G4)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200879, "Ludmijla Rakoczy (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     flatCrypt(200881, "Luke Fellows (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     flatCrypt(200883, "Luma, Stone Beauty (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200885, "Luna Giovanni (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200888, "Lupo Giovanni (G6)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200889, "Luther (G2)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    cryptPerm(200885, "Luna Giovanni (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200888, "Lupo Giovanni (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200889, "Luther (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200890, "Lutz von Hohenzollern (G4)", { bleed: 2 }), // wierna fala 31 (500) // fala 28 wierna (500+)
-    flatCrypt(200891, "Lydia, Grand Praetor (G6)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    cryptPerm(200891, "Lydia, Grand Praetor (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200892, "Lydia Van Cuelen (G1)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
-    flatCrypt(200893, "Lynn Thompson (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200894, "MacAlister Marshall (G5)", { intercept: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    flatCrypt(200893, "Lynn Thompson (G5)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(200894, "MacAlister Marshall (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200896, "Madame Guil (G3)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
     flatCrypt(200897, "Madeleine Giovanni (G6)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     flatCrypt(200898, "Magdelena Schaefer (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200899, "Makarios, The Seducer (G2)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    flatCrypt(200899, "Makarios, The Seducer (G2)", { bleed: 1 }), // fala 47 wierna (300) statics
     flatCrypt(200900, "Malabranca (G4)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
     flatCrypt(200901, "Malachai (G6)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200903, "Maldavis (G3)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    cryptPerm(200903, "Maldavis (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200904, "Maldavis (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     flatCrypt(200905, "Malgorzata (G4)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
     flatCrypt(200906, "Mamadou Keita (G4)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
-    flatCrypt(200907, "Maman Boumba (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    flatCrypt(200908, "Mambo Jeanne (G6)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
-    flatCrypt(200909, "Marcel de Breau (G3)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
+    cryptPerm(200907, "Maman Boumba (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200908, "Mambo Jeanne (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200909, "Marcel de Breau (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200910, "Marcellus (G2)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
     flatCrypt(200911, "March Halcyon (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     flatCrypt(200912, "Marcia Felicia Licinia (G5)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200913, "Marciana Giovanni, Investigator (G2)", { intercept: 1 }), // wierna fala 31 (500)
+    cryptPerm(200913, "Marciana Giovanni, Investigator (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200914, "Marconius (G2)", { strength: 1 }), // wierna fala 31 (500)
-    flatCrypt(200915, "Marcus Vitel (G3)", { bleed: 1, stealth: 1 }), // wierna fala 31 (500)
+    cryptPerm(200915, "Marcus Vitel (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200916, "Marcus Vitel (G3 ADV)", { bleed: 1 }), // wierna fala 31 (500)
-    flatCrypt(200917, "Margaret Milliner (G4)", { bleed: 1 }), // wierna fala 31 (500)
+    flatCrypt(200917, "Margaret Milliner (G4)", { bleed: 1 }), // fala 47 wierna (300) statics
     flatCrypt(200918, "Margarite (G4)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200919, "Marge Khan (G5)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200920, "Marguerite Foccart (G4)", { intercept: 1 }), // wierna fala 31 (500)
-    flatCrypt(200921, "Marguerite Foccart (G4 ADV)", { strength: 1 }), // wierna fala 31 (500)
+    flatCrypt(200920, "Marguerite Foccart (G4)", { intercept: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(200921, "Marguerite Foccart (G4 ADV)", { strength: 1 }), // fala 47 wierna (300) statics
     flatCrypt(200923, "Maria Stone (G3 ADV)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200925, "Marianna (G2)", { strength: 1 }), // wierna fala 31 (500)
+    cryptPerm(200925, "Marianna (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
 
     flatCrypt(200926, "Mariano Pomposo (G3)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200927, "Marie Faucigny (G3)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200928, "Marie-Pierre (G6)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200928, "Marie-Pierre (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200929, "Mariel, Lady Thunder (G1)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200931, "Marino Reymundo Vásquez (G3)", { bleed: 1 }), // wierna fala 31 (500)
     flatCrypt(200935, "Maris Streck (G3)", { intercept: 1, stealth: 1 }), // wierna fala 31 (500)
-    flatCrypt(200936, "Mark (G2)", { intercept: 1 }), // wierna fala 31 (500)
+    cryptPerm(200936, "Mark (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200937, "Mark Decker (G3)", { strength: 1 }), // wierna fala 31 (500)
-    flatCrypt(200939, "Marlena (G3)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200939, "Marlena (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200941, "Marta (G4)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200942, "Marthe Dizier (G3)", { bleed: 1 }), // wierna fala 31 (500)
-    flatCrypt(200943, "Martin Franckel (G3)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200942, "Marthe Dizier (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200943, "Martin Franckel (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200944, "Martino della Passaglia (G6)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200945, "Marty Lechtansi (G1)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200946, "Mary Anne Blaire (G5)", { stealth: 1 }), // wierna fala 31 (500)
     flatCrypt(200947, "Mary Johnson (G4)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200948, "Mary the Black (G2)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200950, "Masika (G1)", { bleed: 1 }), // wierna fala 31 (500)
+    cryptPerm(200950, "Masika (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200951, "Masika (G1 ADV)", { intercept: 1 }), // wierna fala 31 (500)
     flatCrypt(200953, "Maskini (G4)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200954, "Massassi (G4)", {}), // wierna fala 31 (500): przejrzane
@@ -37750,372 +37741,372 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200957, "Matata (G3)", { strength: 1 }), // wierna fala 31 (500)
     flatCrypt(200958, "Mateusz Gryzbowsky (G3)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200959, "Mateusz Kazimirski, Biker of Blood (G6)", { stealth: 1 }), // wierna fala 31 (500)
-    flatCrypt(200960, "Matteus, Flesh Sculptor (G2)", { intercept: 1 }), // wierna fala 31 (500)
-    flatCrypt(200961, "Matthew (G6)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200962, "Matthew Romans (G4)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200960, "Matteus, Flesh Sculptor (G2)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200961, "Matthew (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200962, "Matthew Romans (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200963, "Matthias (G2)", { intercept: 1 }), // wierna fala 31 (500)
     flatCrypt(200964, "Maureen, Dark Priestess (G4)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200966, "Maxwell (G3)", { stealth: 1 }), // wierna fala 31 (500)
-    flatCrypt(200968, "The Medic (G5)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200966, "Maxwell (G3)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200968, "The Medic (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200969, "Melek (G2)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200971, "Melinda Galbraith (G4 ADV)", { bleed: 2 }), // wierna fala 31 (500)
+    cryptPerm(200971, "Melinda Galbraith (G4 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200972, "Melisande (G2)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200973, "Melissa Barton (G1)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200974, "Mélusine d'Anjou (G5)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200975, "Menele (G3)", { bleed: 1 }), // wierna fala 31 (500)
+    cryptPerm(200974, "Mélusine d'Anjou (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200975, "Menele (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200976, "Menele (G3 ADV)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200979, "Merrill Molitor (G1)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200980, "Meshenka (G2)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200981, "Michael diCarlo (G4)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200982, "Michael Luther (G3)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200982, "Michael Luther (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200983, "Michaela (G5)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200984, "Mictlantecuhtli (G5)", { strength: 1 }), // wierna fala 31 (500)
     flatCrypt(200985, "Midget (G3)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200986, "Miguel Cordovera (G5)", { bleed: 1 }), // wierna fala 31 (500)
-    flatCrypt(200987, "Miguel Santo Domingo (G3)", { bleed: 1 }), // wierna fala 31 (500)
-    flatCrypt(200988, "Mikael Birkholm (G6)", { handSize: 1 }), // wierna fala 31 (500)
+    cryptPerm(200986, "Miguel Cordovera (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200987, "Miguel Santo Domingo (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(200988, "Mikael Birkholm (G6)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200989, "Miller Delmardigan, Teacher of Bahari (G2)", { strength: 1 }), // wierna fala 31 (500)
-    flatCrypt(200991, "Mimir (G5)", { bleed: 1 }), // wierna fala 31 (500)
+    flatCrypt(200991, "Mimir (G5)", { bleed: 1 }), // fala 47 wierna (300) statics
     flatCrypt(200992, "Mina Grotius (G3)", { bleed: 1 }), // wierna fala 31 (500)
-    flatCrypt(200993, "Miranda Sanova (G1)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200995, "Miriam Benyona (G2)", {}), // wierna fala 31 (500): przejrzane
+    cryptPerm(200993, "Miranda Sanova (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200995, "Miriam Benyona (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200999, "Mistress Fanchon (G4)", { bleed: 2, stealth: 1 }), // wierna fala 31 (500)
     flatCrypt(201000, "Mitchell, The Headhunter (G2)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(201001, "Mithras (G3)", { bleed: 2, strength: 1 }), // wierna fala 31 (500)
+    flatCrypt(201001, "Mithras (G3)", { bleed: 2, strength: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201002, "Mitru the Hunter (G4)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(201006, "Montano (G3)", { bleed: 1, stealth: 1 }), // wierna fala 31 (500)
+    cryptPerm(201006, "Montano (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201007, "Montecalme (G5)", { stealth: 1 }), // wierna fala 31 (500)
     flatCrypt(201008, "Monty Coven (G5)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(201009, "Mordechai Ben-Nun (G5)", { intercept: 1 }), // wierna fala 31 (500)
     flatCrypt(201011, "Morlock (G4)", { bleed: 1 }), // wierna fala 31 (500)
     flatCrypt(201012, "Morrow the Sage (G4)", { stealth: 1 }), // wierna fala 31 (500)
     flatCrypt(201013, "Mosfair (G4)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(201015, "Mowgli (G4)", {}), // wierna fala 31 (500): przejrzane
+    flatCrypt(201015, "Mowgli (G4)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(201016, "Mr. Noir (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201017, "Muaziz, Archon of Ulugh Beg (G2)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201017, "Muaziz, Archon of Ulugh Beg (G2)", { stealth: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201018, "Mugur Sabau (G4)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201019, "Muhandis (G4)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201021, "Mukhtar Bey (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201022, "Murat (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201023, "Muricia (G4)", { strength: 1 }), // fala 32 wierna (421)
+    cryptPerm(201021, "Mukhtar Bey (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201022, "Murat (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201023, "Muricia (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201024, "Muriel Foucade (G2)", { strength: 1 }), // fala 32 wierna (421)
     flatCrypt(201025, "Muse (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201026, "Mustafa, The Heir (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201028, "Myrna Goldman (G6)", { bleed: 1 }), // fala 32 wierna (421)
+    cryptPerm(201026, "Mustafa, The Heir (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201028, "Myrna Goldman (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201029, "Nadima (G3)", { intercept: 1 }), // fala 32 wierna (421)
     flatCrypt(201030, "Nahir (G3)", { bleed: 1, handSize: 1 }), // fala 32 wierna (421)
-    flatCrypt(201031, "Nahum Enosh (G6)", { bleed: 1 }), // fala 32 wierna (421)
+    cryptPerm(201031, "Nahum Enosh (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201032, "Nails (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201033, "Nakhthorheb (G4)", { strength: 1 }), // fala 32 wierna (421)
+    cryptPerm(201033, "Nakhthorheb (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201034, "Nakova, Advocate of Golconda (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201035, "Nana Buruku (G4)", { handSize: 1 }), // fala 32 wierna (421)
     flatCrypt(201036, "Nangila Were (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201037, "Natalia (G2)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201038, "Natasha Volfchek (G1)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201039, "Navar McClaren (G1)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201038, "Natasha Volfchek (G1)", { bleed: 1, stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201039, "Navar McClaren (G1)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(201040, "Nedal, The Careless (G3)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201042, "Nefertiti (G2)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201043, "Neferu (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201044, "Nehemiah (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201043, "Neferu (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201044, "Nehemiah (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201045, "Nehsi (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201046, "Neighbor John (G4)", { intercept: 1 }), // fala 32 wierna (421)
     flatCrypt(201048, "Nergal (G5)", { bleed: 2 }), // fala 32 wierna (421)
-    flatCrypt(201049, "Nergal (G5 ADV)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201051, "Nettie Hale (G2)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201052, "New Blood (ANY)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201049, "Nergal (G5 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201051, "Nettie Hale (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201052, "New Blood (ANY)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201053, "Ngozi Ekwensu (G5)", {}), // fala 32 wierna (421): przejrzane
 
     flatCrypt(201056, "Nickolai, The Survivor (G4)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201057, "Nicomedes (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201059, "Nik (G1)", { intercept: 1 }), // fala 32 wierna (421)
-    flatCrypt(201060, "Nikolaus Vermeulen (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201057, "Nicomedes (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201059, "Nik (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201060, "Nikolaus Vermeulen (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201061, "Nitidas (G6)", { handSize: 1 }), // fala 32 wierna (421)
     flatCrypt(201062, "Nizzam al-Latif (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201063, "Nkechi (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201064, "Nkule Galadima (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201063, "Nkechi (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201064, "Nkule Galadima (G4)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(201066, "Nostoket (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201067, "Nu, The Pillar (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201069, "Nuriel (G6)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201070, "Obaluaye (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    cryptPerm(201067, "Nu, The Pillar (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201069, "Nuriel (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201070, "Obaluaye (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201071, "Obsidian (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201072, "Ogwon (G5)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201075, "Olga Triminov (G3)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201076, "Oliver Thrace (G3)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201078, "Olugbenga (G4)", { intercept: 1 }), // fala 32 wierna (421)
+    cryptPerm(201076, "Oliver Thrace (G3)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201078, "Olugbenga (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201079, "Omaya (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201080, "Omer (G6)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201081, "Omme Enberbenight (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201082, "Onaedo (G4)", { stealth: 1 }), // fala 32 wierna (421)
+    cryptPerm(201082, "Onaedo (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
   flatCrypt(201083, "Ondine \"Boudicca\" Sinclair (G5)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
-    flatCrypt(201084, "Orlando Oriundus (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    cryptPerm(201084, "Orlando Oriundus (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201085, "Osric Vladislav (G5)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201086, "Otieno (G4)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201087, "Owain Evans, The Wanderer (G3)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201086, "Otieno (G4)", { bleed: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201087, "Owain Evans, The Wanderer (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201089, "Ozmo (G1)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201092, "Paolo Sardenzo (G5)", { intercept: 1 }), // fala 32 wierna (421)
-    flatCrypt(201093, "Papa Legba (G5)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201094, "Pariah (G2)", { strength: 1 }), // fala 32 wierna (421)
+    cryptPerm(201093, "Papa Legba (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201094, "Pariah (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201095, "Parmenides (G2)", { strength: 1 }), // fala 32 wierna (421)
     flatCrypt(201096, "Parnassus (G2)", { strength: 1 }), // fala 32 wierna (421)
     flatCrypt(201098, "Patrizia Giovanni, Collector of Secrets (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201100, "Paul Cordwood (G4)", { intercept: 1, stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201102, "Paul Forrest, False Prophet (G4)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201104, "Paulo de Castille (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201105, "Pavlo (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201107, "Pedrag Hasek (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201108, "Pedro Cortez (G4)", { strength: 1 }), // fala 32 wierna (421)
+    cryptPerm(201102, "Paul Forrest, False Prophet (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201104, "Paulo de Castille (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201105, "Pavlo (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201107, "Pedrag Hasek (G5)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(201108, "Pedro Cortez (G4)", { strength: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201109, "Pentweret (G5)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201110, "Persephone Tar-Anis (G4)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201111, "Persia, The Beautiful Statue (G3)", { intercept: 1 }), // fala 32 wierna (421)
     flatCrypt(201112, "Petaniqua (G4)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201113, "Petaniqua (G4 ADV)", { strength: 1 }), // fala 32 wierna (421)
-    flatCrypt(201114, "Peter Blaine (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    cryptPerm(201114, "Peter Blaine (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201116, "Petra (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201117, "Petru Sipos (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201118, "Phaedyme (G5)", { stealth: 1, strength: 1 }), // fala 32 wierna (421)
+    cryptPerm(201118, "Phaedyme (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201119, "Phagian (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201120, "Pherydima (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201120, "Pherydima (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201121, "Philip van Vermeer IV (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201122, "Philippe de Marseilles (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201123, "Phillipe Rigaud (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201122, "Philippe de Marseilles (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201123, "Phillipe Rigaud (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201125, "Pieter van Dorn (G3)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201126, "Piotr Andreikov (G3)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201127, "Pochtli (G2)", { stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201129, "Porphyrion (G5)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201130, "Porphyry (G6)", { bleed: 2 }), // fala 32 wierna (421)
-    flatCrypt(201131, "Portia (G5)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201130, "Porphyry (G6)", { bleed: 2 }), // fala 47 wierna (300) statics
+    cryptPerm(201131, "Portia (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201132, "Prejudice (G4)", { bleed: 2 }), // fala 32 wierna (421)
-    flatCrypt(201133, "Preston Varrick (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    cryptPerm(201133, "Preston Varrick (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201136, "Pugfar (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201137, "Qadir ul-Ghani (G2)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201138, "Qawiyya el-Ghaduba (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201139, "Queen Anne (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    cryptPerm(201138, "Qawiyya el-Ghaduba (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201139, "Queen Anne (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201140, "Quentin (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201142, "Quentin King III (G3 ADV)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201143, "Qufur am-Heru (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201142, "Quentin King III (G3 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201143, "Qufur am-Heru (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201144, "Quincy, The Trapper (G3)", { stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201145, "Quinton McDonnell (G1)", { strength: 1 }), // fala 32 wierna (421)
     flatCrypt(201146, "Quira, The Bitch Queen (G2)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201147, "Rabbat, The Sewer Goddess (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201148, "Rachel Brandywine (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201147, "Rabbat, The Sewer Goddess (G4)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(201148, "Rachel Brandywine (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201149, "Radeyah (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201150, "Radu Bistri (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201151, "Rafael de Corazon (G4)", { bleed: 2 }), // fala 32 wierna (421)
+    cryptPerm(201150, "Radu Bistri (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201151, "Rafael de Corazon (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201152, "Rafaele Giovanni (G2)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201153, "Raful al-Zarqa (G2)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201154, "Rain (G4)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201155, "Rake (G1)", { strength: 1 }), // fala 32 wierna (421)
-    flatCrypt(201158, "Ramona (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201159, "Ramona (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201154, "Rain (G4)", { stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201155, "Rake (G1)", { strength: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201158, "Ramona (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201159, "Ramona (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201160, "Randall (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201162, "Ranjan Rishi, Camarilla Scholar (G2)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201163, "Ransam, The Old Man (G4)", { strength: 1 }), // fala 32 wierna (421)
+    cryptPerm(201162, "Ranjan Rishi, Camarilla Scholar (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201163, "Ransam, The Old Man (G4)", { strength: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201164, "Raphael Catarari (G4)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201166, "Rashid Stockton (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201168, "Rathmere (G5)", { strength: 1 }), // fala 32 wierna (421)
-    flatCrypt(201170, "Rebekah (G3)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201171, "Rebekka, Chantry Elder of Munich (G2)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201168, "Rathmere (G5)", { strength: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201170, "Rebekah (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201171, "Rebekka, Chantry Elder of Munich (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201172, "Redbone McCray (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201173, "Reg Driscoll (G2)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201175, "Regina Giovanni, The Right Hand of Augustus (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201176, "Reginald Moore (G4)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201176, "Reginald Moore (G4)", { strength: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201177, "Reiner Stoschka (G5)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201180, "Reverend Adams (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201181, "Reverend Adams (G4 ADV)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201181, "Reverend Adams (G4 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201182, "Reverend Blackwood (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201184, "Rex, The Necronomist (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201185, "Reza Fatir, The Dark Angel (G4)", {}), // fala 32 wierna (421): przejrzane
 
-    flatCrypt(201186, "Richard Tauber, Ayelea's Puppet (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201186, "Richard Tauber, Ayelea's Puppet (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201187, "Richter, The Templar of Du Mont (G2)", { strength: 1 }), // fala 32 wierna (421)
-    flatCrypt(201189, "Rico Loco (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201189, "Rico Loco (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201190, "Rigby, Crusade Vanguard (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201191, "Righteous Endeavor (G5)", { intercept: 1, strength: 1 }), // fala 32 wierna (421)
-    flatCrypt(201194, "Rocia (G4)", { intercept: 1 }), // fala 32 wierna (421)
+    flatCrypt(201191, "Righteous Endeavor (G5)", { intercept: 1, strength: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201194, "Rocia (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201195, "Roderick Phillips March (G4)", { stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201196, "Rodolfo (G3)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201198, "Roger Farnsworth (G3)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201203, "Rosa Hernández (G4)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201204, "Rosa Martínez (G3)", { bleed: 1 }), // fala 32 wierna (421)
+    cryptPerm(201203, "Rosa Hernández (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201204, "Rosa Martínez (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201206, "Rosemarie (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201207, "Roxanne, Rectrix of the 13th Floor (G1)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201208, "Royce (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201208, "Royce (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201211, "Rusticus (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201212, "Ruth McGinley (G3)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201212, "Ruth McGinley (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201213, "Rutor (G5)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201214, "Ruxandra (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201215, "Ryder (G4)", { intercept: 1 }), // fala 32 wierna (421)
-    flatCrypt(201216, "Ryszard (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201217, "Sabine Lafitte (G1)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201215, "Ryder (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201216, "Ryszard (G4)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(201217, "Sabine Lafitte (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201220, "Sahana (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201223, "Sajid al Misbah (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201223, "Sajid al Misbah (G5)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(201225, "Salinger (G2)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201226, "Salvador Garcia (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201228, "Samantha (G2)", { intercept: 1 }), // fala 32 wierna (421)
-    flatCrypt(201229, "Samat Ramal-Ra, Archon (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201228, "Samantha (G2)", { intercept: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201229, "Samat Ramal-Ra, Archon (G2)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(201232, "Sandra White (G3)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201235, "Santaleous (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201235, "Santaleous (G5)", { bleed: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201236, "Saqqaf, Keeper of the Grand Temple of Set (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201237, "Sarah Brando (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201239, "Sarah Raines (G3)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201237, "Sarah Brando (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201239, "Sarah Raines (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201240, "Sargon (G2)", { strength: 1 }), // fala 32 wierna (421)
-    flatCrypt(201242, "Sarrasine (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201243, "Sarrasine (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201242, "Sarrasine (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201243, "Sarrasine (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201244, "Sascha Vykos, The Angel of Caine (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201245, "Sascha Vykos, The Angel of Caine (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201247, "Saul Meira (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201248, "Saulot, The Wanderer (G4)", { bleed: 1, strength: 1 }), // fala 32 wierna (421)
+    cryptPerm(201247, "Saul Meira (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201248, "Saulot, The Wanderer (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201249, "Saxum, Master of Slaves (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201250, "Sayshila (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201250, "Sayshila (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201252, "Schuyler (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201253, "Scout Youngwood (G6)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201253, "Scout Youngwood (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201255, "Sean Rycek (G4)", { stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201256, "Sebastian Marley (G1)", { strength: 1 }), // fala 32 wierna (421)
     flatCrypt(201257, "Sébastien Goulet (G3)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201258, "Sébastien Goulet (G3 ADV)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201258, "Sébastien Goulet (G3 ADV)", { stealth: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201259, "Sela (G2)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201260, "Sela (G2 ADV)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201260, "Sela (G2 ADV)", { stealth: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201261, "Selena (G3)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201262, "Selma the Repugnant (G1)", { intercept: 1 }), // fala 32 wierna (421)
-    flatCrypt(201263, "Sennadurek (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201262, "Selma the Repugnant (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201263, "Sennadurek (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201265, "Seren Sukardi (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201266, "Serenna the White (G6)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201267, "Sergei Voshkov, The Eye (G5)", { intercept: 1 }), // fala 32 wierna (421)
-    flatCrypt(201268, "Servius Marius Pustula (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201268, "Servius Marius Pustula (G4)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(201269, "Seterpenre (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201270, "Sha-Ennu (G4)", { bleed: 2 }), // fala 32 wierna (421)
+    flatCrypt(201270, "Sha-Ennu (G4)", { bleed: 2 }), // fala 47 wierna (300) statics
     flatCrypt(201271, "Shaggydog (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201273, "Shahid (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201274, "Shalmath (G6)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201277, "Shasa Abu Badr (G4)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201279, "Sheela Na Gig (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    cryptPerm(201273, "Shahid (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201274, "Shalmath (G6)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(201277, "Shasa Abu Badr (G4)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201279, "Sheela Na Gig (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201280, "Sheila Mezarin (G2)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201282, "Shemti (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201283, "Sheva Carr (G5)", { strength: 1 }), // fala 32 wierna (421)
-    flatCrypt(201284, "Shiloh Marie, Vengeance (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201283, "Sheva Carr (G5)", { strength: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201284, "Shiloh Marie, Vengeance (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201285, "The Siamese (G2)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201286, "Sigrid Bekker (G2)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201287, "Silas (G6)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201286, "Sigrid Bekker (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201287, "Silas (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201288, "Silvia Giovanni (G2)", { strength: 1 }), // fala 32 wierna (421)
-    flatCrypt(201291, "Sir Ralph Hamilton (G3)", { bleed: 1, strength: 1 }), // fala 32 wierna (421)
-    flatCrypt(201295, "Skidmark (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201291, "Sir Ralph Hamilton (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201295, "Skidmark (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201296, "Skryta Zyleta (G3)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201298, "Slag (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201299, "Smallpox Griet (G3)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201301, "Smudge the Ignored (G1)", { strength: 1 }), // fala 32 wierna (421)
+    cryptPerm(201299, "Smallpox Griet (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201301, "Smudge the Ignored (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201304, "Soldat (G3)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201305, "Solomon Batanea (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201306, "Sonja Blue (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201306, "Sonja Blue (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201308, "Spider (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201309, "Spider-Killer (G2)", { stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201310, "Spiridonas (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201311, "Spleen, Georgio Gutterpunk (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201312, "Stanislava (G2)", { bleed: 2 }), // fala 32 wierna (421)
-    flatCrypt(201314, "Stefano Giovanni (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201315, "Stephen Bateson (G5)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201312, "Stanislava (G2)", { bleed: 2 }), // fala 47 wierna (300) statics
+    cryptPerm(201314, "Stefano Giovanni (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201315, "Stephen Bateson (G5)", { bleed: 1, stealth: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201319, "Stravinsky (G2)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201320, "Strohmann (G5)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201321, "Styles Margs (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201322, "Suhailah (G2)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201322, "Suhailah (G2)", { bleed: 1, stealth: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201323, "Sukainah (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201324, "Sundervere, The Devil Brahmin (G4)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201325, "Sundown (G3)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201326, "Sundown (G3 ADV)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201327, "Sutekh, The Dark God (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    cryptPerm(201324, "Sundervere, The Devil Brahmin (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201325, "Sundown (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201326, "Sundown (G3 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201327, "Sutekh, The Dark God (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201328, "Suzanne Kadim (G3)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201329, "Sylvester Simms (G1)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201330, "Sylvie Helgon (G6)", { intercept: 1, stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201331, "Synesios (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201330, "Sylvie Helgon (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201331, "Synesios (G2)", {}), // fala 47 wierna (300) vanilla
 
     cryptPerm(201332, "Synner-G (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 32 wierna (421)
-    flatCrypt(201333, "Szechenyi Jolán, Mother of Horrors (G3)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201333, "Szechenyi Jolán, Mother of Horrors (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201334, "T.J. (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201335, "Tabitha Fisk (G3)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201335, "Tabitha Fisk (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201336, "Talbot (G5)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201337, "Talley, The Hound (G2)", { intercept: 1 }), // fala 32 wierna (421)
+    cryptPerm(201337, "Talley, The Hound (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201338, "Tammy Walenski (G3)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201339, "Tanginé (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201339, "Tanginé (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201340, "Tansu Bekir (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201342, "Tarautas (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201343, "Tarbaby Jack (G3)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201344, "Tariq, The Silent (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201344, "Tariq, The Silent (G2)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(201345, "Tariq, The Silent (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201347, "Tatiana Romanov (G1)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201348, "Tatiana Stepanova, Alastor (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201349, "Tatu Sawosa (G4)", { strength: 1 }), // fala 32 wierna (421)
-    flatCrypt(201351, "Tears, The Dark Pierrot (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201351, "Tears, The Dark Pierrot (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201352, "Tegyrius, Vizier (G2)", { stealth: 1, strength: 1 }), // fala 32 wierna (421)
-    flatCrypt(201353, "Tegyrius, Vizier (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201354, "Teresita, The Godmother (G3)", { intercept: 1 }), // fala 32 wierna (421)
+    cryptPerm(201353, "Tegyrius, Vizier (G2 ADV)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201354, "Teresita, The Godmother (G3)", { intercept: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201355, "Tereza Rostas (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201356, "Terrell Harding (G3)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201358, "Terrifisto (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201358, "Terrifisto (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201359, "Terry (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201361, "Themistocles (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201362, "Theo Bell (G2)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201362, "Theo Bell (G2)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(201363, "Theo Bell (G2 ADV)", { stealth: 1, strength: 1 }), // fala 32 wierna (421)
     flatCrypt(201364, "Theron (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201365, "Thetmes, Caliph of Alamut (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201366, "Thomas De Lutrius (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201367, "Thomas Steed, The Angry (G2)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201369, "Thomasso Ghiberti (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201370, "Thucimia (G4)", { bleed: 1, handSize: 1 }), // fala 32 wierna (421)
-    flatCrypt(201371, "Tiberius, The Scandalmonger (G1)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201369, "Thomasso Ghiberti (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201370, "Thucimia (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201371, "Tiberius, The Scandalmonger (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201374, "Titus Camille (G4)", { strength: 1 }), // fala 32 wierna (421)
     flatCrypt(201375, "Tobias Smith (G3)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201376, "Toby (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    cryptPerm(201376, "Toby (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201378, "Tom (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201379, "Tomaine (G4)", { handSize: 1 }), // fala 32 wierna (421)
-    flatCrypt(201382, "Topaz (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201379, "Tomaine (G4)", {}), // fala 47 wierna (300) vanilla
+    cryptPerm(201382, "Topaz (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201383, "Tori Longwood (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201384, "Torvus Bloodbeard (G3)", { strength: 1 }), // fala 32 wierna (421)
-    flatCrypt(201385, "Toy (G5)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201384, "Torvus Bloodbeard (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201385, "Toy (G5)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(201387, "Troglodytia (G4)", { strength: 1 }), // fala 32 wierna (421)
-    flatCrypt(201388, "Troius (G4)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201388, "Troius (G4)", { strength: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201389, "Truman (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201390, "Tryphosa (G4)", { stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201393, "Tupdog (G3)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201394, "Tura Vaughn (G1)", { intercept: 1 }), // fala 32 wierna (421)
+    cryptPerm(201394, "Tura Vaughn (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201395, "Tusk, The Talebearer (G1)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201396, "Tusk, The Talebearer (G1 ADV)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201397, "Tyler (G3)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201398, "Tyler McGill (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201400, "Ublo-Satha (G2)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201401, "Uchenna (G4)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201396, "Tusk, The Talebearer (G1 ADV)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201397, "Tyler (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201398, "Tyler McGill (G5)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201400, "Ublo-Satha (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201401, "Uchenna (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201402, "Ugadja (G4)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201404, "Ulugh Beg, The Watcher (G1)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201404, "Ulugh Beg, The Watcher (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201406, "Umdava (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201407, "Una (G3)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201409, "Undele (G5)", { stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201410, "Unmada (G5)", { handSize: 1 }), // fala 32 wierna (421)
     flatCrypt(201411, "The unnamed (G6)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201412, "Unre, Keeper of Golgotha (G2)", { bleed: 1, intercept: 1 }), // fala 32 wierna (421)
-    flatCrypt(201413, "Ur-Shulgi, The Shepherd (G2)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201415, "Uriah Winter (G1)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201412, "Unre, Keeper of Golgotha (G2)", { bleed: 1, intercept: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201413, "Ur-Shulgi, The Shepherd (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201415, "Uriah Winter (G1)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201416, "Uriel (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201417, "Urraca (G4)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201417, "Urraca (G4)", { bleed: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201418, "Uta Kovacs (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201420, "Vaclav Petalengro (G2)", { intercept: 1 }), // fala 32 wierna (421)
-    flatCrypt(201421, "Valerius Maior, Hell's Fool (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201422, "Valerius Maior, Hell's Fool (G4 ADV)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201423, "Valkyrie (G3)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201420, "Vaclav Petalengro (G2)", { intercept: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201421, "Valerius Maior, Hell's Fool (G4)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm
+    flatCrypt(201422, "Valerius Maior, Hell's Fool (G4 ADV)", {}), // fala 47 wierna (300) vanilla
+    flatCrypt(201423, "Valkyrie (G3)", { strength: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201426, "Vardar Vardarian (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201427, "Vasantasena (G2)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201428, "Vasilis, The Traitor of Don Cruez (G2)", { bleed: 1 }), // fala 32 wierna (421)
+    cryptPerm(201427, "Vasantasena (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201428, "Vasilis, The Traitor of Don Cruez (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201429, "Vasiliy Vasilevich (G5)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201430, "Vasily (G5)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201431, "Vassily Taltos (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201433, "Veejay Vinod (G6)", { stealth: 1 }), // fala 32 wierna (421)
+    cryptPerm(201433, "Veejay Vinod (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201434, "Velya, The Flayer (G3)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201435, "Venere Carboni (G3)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201435, "Venere Carboni (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201436, "Verbruch (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201437, "Vestgeir (G6)", { bleed: 1 }), // fala 32 wierna (421)
+    cryptPerm(201437, "Vestgeir (G6)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201438, "Victor Donaldson (G5)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201439, "Victor Gerard (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201440, "Victor Pelletier (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201443, "Victoria (G2)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201440, "Victor Pelletier (G4)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201443, "Victoria (G2)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201444, "Victoria Ash (G2)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201445, "Victorine Lafourcade (G3)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201445, "Victorine Lafourcade (G3)", { unlockAfterAction: { whose: "self", unlocks: "self" } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201446, "Vidal Jarbeaux (G5)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201447, "Viktor, The Night General (G5)", { stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201448, "Vincent Day, Paladin and Paragon (G2)", {}), // fala 32 wierna (421): przejrzane
