@@ -19437,7 +19437,15 @@ export const cardSpecs: CardSpec[] = [
     cardType: "combat",
     bloodCost: 0,
     usable: [],
-    modes: [{ level: "basic", discipline: "cel", effects: [{ kind: "queueCombat" }] }],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "press", continueOnly: false }] },
+      {
+        level: "superior",
+        discipline: "cel",
+        usable: ["onlyIfBothCombatantsReady", "onlyIfCombatWouldEnd"],
+        effects: [{ kind: "queueCombat" }],
+      },
+    ],
   },
   {
     // Arms of the Abyss [obt] — dodge, superior adds one limited strike
@@ -19742,7 +19750,7 @@ export const cardSpecs: CardSpec[] = [
     usable: [],
     modes: [
       { level: "basic", discipline: "cel", effects: [{ kind: "strikeDamageCapacityDiff", base: 2, ranged: true, aggravated: false }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "strikeDamageCapacityDiff", base: 2, ranged: true, aggravated: false }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "strikeDamageCapacityDiff", base: 2, ranged: true, aggravated: false }, { kind: "maneuver" }] },
     ],
   },
   {
@@ -19957,8 +19965,8 @@ export const cardSpecs: CardSpec[] = [
     usable: ["onlyFirstRound"],
     combatLimit: "combat",
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "opposingStrength", amount: 1, scope: "round" }, { kind: "restrictOpponent", press: true }, { kind: "restrictOpponent", equipment: true }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "opposingStrength", amount: 1, scope: "round" }, { kind: "restrictOpponent", press: true }, { kind: "restrictOpponent", equipment: true }, { kind: "roundDamage", amount: 1, targets: "opposing", ranged: false, when: "strikeResolution" }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "opposingStrength", amount: 1, scope: "round" }, { kind: "restrictOpponent", maneuver: true, press: true, equipment: true }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "opposingStrength", amount: 1, scope: "round" }, { kind: "restrictOpponent", maneuver: true, press: true, equipment: true }, { kind: "roundDamage", amount: 1, targets: "opposing", ranged: false, when: "strikeResolution" }] },
     ],
   },
   {
@@ -20103,9 +20111,9 @@ export const cardSpecs: CardSpec[] = [
     usable: [],
     combatLimit: "round",
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "restrictOpponent", press: true }] },
-      { level: "basic", discipline: "thn", effects: [{ kind: "restrictOpponent", press: true }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "restrictOpponent", press: true }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "restrictOpponent", press: true, additionalStrikes: true }] },
+      { level: "basic", discipline: "thn", effects: [{ kind: "restrictOpponent", press: true, additionalStrikes: true }, { kind: "press", continueOnly: true }] },
+      { level: "superior", discipline: "thn", effects: [{ kind: "restrictOpponent", press: true, additionalStrikes: true, maneuver: true }, { kind: "press", continueOnly: true }] },
     ],
   },
   {
@@ -20220,7 +20228,7 @@ export const cardSpecs: CardSpec[] = [
     combatLimit: "combat",
     modes: [
       { level: "basic", discipline: { all: ["chi", "for"] }, effects: [{ kind: "restrictOpponent", press: true }] },
-      { level: "superior", discipline: { all: ["chi", "for"] }, effects: [{ kind: "restrictOpponent", press: true }] },
+      { level: "superior", discipline: { all: ["chi", "for"] }, effects: [{ kind: "restrictOpponent", press: true, additionalStrikes: true }] },
     ],
   },
   {
@@ -20355,6 +20363,1439 @@ export const cardSpecs: CardSpec[] = [
         discipline: null,
         effects: [{ kind: "modifyStealth", amount: 1 }],
       },
+    ],
+  },
+  {
+    // .44 Magnum [100001] — fala A wierna (auto)
+    krcgId: 100001,
+    name: ".44 Magnum",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Abandoning the Flesh [100005] — fala A wierna (auto)
+    krcgId: 100005,
+    name: "Abandoning the Flesh",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Absolution of the Diabolist [100012] — fala A wierna (auto)
+    krcgId: 100012,
+    name: "Absolution of the Diabolist",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Absorb the Mind [100013] — fala A wierna (auto)
+    krcgId: 100013,
+    name: "Absorb the Mind",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "strikeDodge" }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Academic Hunting Ground [100015] — fala A wierna (auto)
+    krcgId: 100015,
+    name: "Academic Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Ahriman's Demesne [100027] — fala A wierna (auto)
+    krcgId: 100027,
+    name: "Ahriman's Demesne",
+    cardType: "combat",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obt", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Alamut [100037] — fala A wierna (auto)
+    krcgId: 100037,
+    name: "Alamut",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Alpha Glint [100040] — fala A wierna (auto)
+    krcgId: 100040,
+    name: "Alpha Glint",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Amaranth [100043] — fala A wierna (auto)
+    krcgId: 100043,
+    name: "Amaranth",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Amria [100047] — fala A wierna (auto)
+    krcgId: 100047,
+    name: "Amria",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Amusement Park Hunting Ground [100049] — fala A wierna (auto)
+    krcgId: 100049,
+    name: "Amusement Park Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Anesthetic Touch [100066] — fala A wierna (auto)
+    krcgId: 100066,
+    name: "Anesthetic Touch",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obe", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "strikeDodge" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Animalism [100070] — fala A wierna (auto)
+    krcgId: 100070,
+    name: "Animalism",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Apparition [100076] — fala A wierna (auto)
+    krcgId: 100076,
+    name: "Apparition",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Armor of Caine's Fury [100087] — fala A wierna (auto)
+    krcgId: 100087,
+    name: "Armor of Caine's Fury",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Armor of Vitality [100089] — fala A wierna (auto)
+    krcgId: 100089,
+    name: "Armor of Vitality",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Ashes to Ashes [100105] — fala A wierna (auto)
+    krcgId: 100105,
+    name: "Ashes to Ashes",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "thn", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "thn", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Asylum Hunting Ground [100108] — fala A wierna (auto)
+    krcgId: 100108,
+    name: "Asylum Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Aura Reading [100113] — fala A wierna (auto)
+    krcgId: 100113,
+    name: "Aura Reading",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "maneuver" }] }
+    ],
+  },
+  {
+    // Auspex [100114] — fala A wierna (auto)
+    krcgId: 100114,
+    name: "Auspex",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Autonomic Mastery [100117] — fala A wierna (auto)
+    krcgId: 100117,
+    name: "Autonomic Mastery",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "strikeDodge" }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Baal's Bloody Talons [100121] — fala A wierna (auto)
+    krcgId: 100121,
+    name: "Baal's Bloody Talons",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Backstab [100124] — fala A wierna (auto)
+    krcgId: 100124,
+    name: "Backstab",
+    cardType: "combat",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "cel", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+    ],
+  },
+  {
+    // The Barrens [100135] — fala A wierna (auto)
+    krcgId: 100135,
+    name: "The Barrens",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Base Hunting Ground [100136] — fala A wierna (auto)
+    krcgId: 100136,
+    name: "Base Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Basilisk's Touch [100138] — fala A wierna (auto)
+    krcgId: 100138,
+    name: "Basilisk's Touch",
+    cardType: "combat",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "myt", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Bestial Vengeance [100153] — fala A wierna (auto)
+    krcgId: 100153,
+    name: "Bestial Vengeance",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "ani", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "ani", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Blade Clot [100174] — fala A wierna (auto)
+    krcgId: 100174,
+    name: "Blade Clot",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Bleeding the Vine [100178] — fala A wierna (auto)
+    krcgId: 100178,
+    name: "Bleeding the Vine",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Bliss [100189] — fala A wierna (auto)
+    krcgId: 100189,
+    name: "Bliss",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Blissful Agony [100190] — fala A wierna (auto)
+    krcgId: 100190,
+    name: "Blissful Agony",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "val", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "prevent", amount: 1 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood Doll [100199] — fala A wierna (auto)
+    krcgId: 100199,
+    name: "Blood Doll",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Blood of Acid [100203] — fala A wierna (auto)
+    krcgId: 100203,
+    name: "Blood of Acid",
+    cardType: "combat",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Blood of the Cobra [100205] — fala A wierna (auto)
+    krcgId: 100205,
+    name: "Blood of the Cobra",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1, ranged: true }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1, ranged: true }] }
+    ],
+  },
+  {
+    // Bloodform [100219] — fala A wierna (auto)
+    krcgId: 100219,
+    name: "Bloodform",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Body of Sun [100231] — fala A wierna (auto)
+    krcgId: 100231,
+    name: "Body of Sun",
+    cardType: "combat",
+    bloodCost: 4,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "pro", effects: [{ kind: "strikeDamage", amount: 1 }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "strikeDamage", amount: 1 }] }
+    ],
+  },
+  {
+    // Bond with the Mountain [100235] — fala A wierna (auto)
+    krcgId: 100235,
+    name: "Bond with the Mountain",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] }
+    ],
+  },
+  {
+    // Bonecraft [100238] — fala A wierna (auto)
+    krcgId: 100238,
+    name: "Bonecraft",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Botched Move [100241] — fala A wierna (auto)
+    krcgId: 100241,
+    name: "Botched Move",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Campground Hunting Ground [100288] — fala A wierna (auto)
+    krcgId: 100288,
+    name: "Campground Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Carver's Meat Packing and Storage [100303] — fala A wierna (auto)
+    krcgId: 100303,
+    name: "Carver's Meat Packing and Storage",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Celerity [100312] — fala A wierna (auto)
+    krcgId: 100312,
+    name: "Celerity",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Chimerstry [100342] — fala A wierna (auto)
+    krcgId: 100342,
+    name: "Chimerstry",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Contingency Planning [100419] — fala A wierna (auto)
+    krcgId: 100419,
+    name: "Contingency Planning",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Corporate Hunting Ground [100426] — fala A wierna (auto)
+    krcgId: 100426,
+    name: "Corporate Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Dark Influences [100493] — fala A wierna (auto)
+    krcgId: 100493,
+    name: "Dark Influences",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Dementation [100521] — fala A wierna (auto)
+    krcgId: 100521,
+    name: "Dementation",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Direct Intervention [100545] — fala A wierna (auto)
+    krcgId: 100545,
+    name: "Direct Intervention",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Dominate [100572] — fala A wierna (auto)
+    krcgId: 100572,
+    name: "Dominate",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Dreams of the Sphinx [100588] — fala A wierna (auto)
+    krcgId: 100588,
+    name: "Dreams of the Sphinx",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Dummy Corporation [100594] — fala A wierna (auto)
+    krcgId: 100594,
+    name: "Dummy Corporation",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Emergency Preparations [100636] — fala A wierna (auto)
+    krcgId: 100636,
+    name: "Emergency Preparations",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Fetish Club Hunting Ground [100724] — fala A wierna (auto)
+    krcgId: 100724,
+    name: "Fetish Club Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Fortitude [100774] — fala A wierna (auto)
+    krcgId: 100774,
+    name: "Fortitude",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Hide the Mind [100921] — fala A wierna (auto)
+    krcgId: 100921,
+    name: "Hide the Mind",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Institution Hunting Ground [100996] — fala A wierna (auto)
+    krcgId: 100996,
+    name: "Institution Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Lay Low [101075] — fala A wierna (auto)
+    krcgId: 101075,
+    name: "Lay Low",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Library Hunting Ground [101102] — fala A wierna (auto)
+    krcgId: 101102,
+    name: "Library Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Masquerade Endangered [101183] — fala A wierna (auto)
+    krcgId: 101183,
+    name: "Masquerade Endangered",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Morgue Hunting Ground [101243] — fala A wierna (auto)
+    krcgId: 101243,
+    name: "Morgue Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Necromancy [101267] — fala A wierna (auto)
+    krcgId: 101267,
+    name: "Necromancy",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Not to Be [101303] — fala A wierna (auto)
+    krcgId: 101303,
+    name: "Not to Be",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Obfuscate [101310] — fala A wierna (auto)
+    krcgId: 101310,
+    name: "Obfuscate",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Obtenebration [101312] — fala A wierna (auto)
+    krcgId: 101312,
+    name: "Obtenebration",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Park Hunting Ground [101354] — fala A wierna (auto)
+    krcgId: 101354,
+    name: "Park Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // The Path of Metamorphosis [101364] — fala A wierna (auto)
+    krcgId: 101364,
+    name: "The Path of Metamorphosis",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // The Path of Night [101365] — fala A wierna (auto)
+    krcgId: 101365,
+    name: "The Path of Night",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // The Path of Paradox [101366] — fala A wierna (auto)
+    krcgId: 101366,
+    name: "The Path of Paradox",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // The Path of Typhon [101373] — fala A wierna (auto)
+    krcgId: 101373,
+    name: "The Path of Typhon",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+    ],
+  },
+  {
+    // Political Hunting Ground [101415] — fala A wierna (auto)
+    krcgId: 101415,
+    name: "Political Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Port Hunting Ground [101421] — fala A wierna (auto)
+    krcgId: 101421,
+    name: "Port Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Potence [101424] — fala A wierna (auto)
+    krcgId: 101424,
+    name: "Potence",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Presence [101480] — fala A wierna (auto)
+    krcgId: 101480,
+    name: "Presence",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Protean [101498] — fala A wierna (auto)
+    krcgId: 101498,
+    name: "Protean",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Quietus [101534] — fala A wierna (auto)
+    krcgId: 101534,
+    name: "Quietus",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Ravnos Cache [101552] — fala A wierna (auto)
+    krcgId: 101552,
+    name: "Ravnos Cache",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Ravnos Carnival [101553] — fala A wierna (auto)
+    krcgId: 101553,
+    name: "Ravnos Carnival",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Serpentis [101728] — fala A wierna (auto)
+    krcgId: 101728,
+    name: "Serpentis",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Shanty Town Hunting Ground [101753] — fala A wierna (auto)
+    krcgId: 101753,
+    name: "Shanty Town Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Slum Hunting Ground [101808] — fala A wierna (auto)
+    krcgId: 101808,
+    name: "Slum Hunting Ground",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Society of Leopold [101822] — fala B wierna (auto)
+    krcgId: 101822,
+    name: "Society of Leopold",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Special Report [101841] — fala B wierna (auto)
+    krcgId: 101841,
+    name: "Special Report",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // Sudden Reversal [101896] — fala B wierna (auto)
+    krcgId: 101896,
+    name: "Sudden Reversal",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Tainted Vitae [101926] — fala B wierna (auto)
+    krcgId: 101926,
+    name: "Tainted Vitae",
+    cardType: "reaction",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Thaumaturgy [101965] — fala B wierna (auto)
+    krcgId: 101965,
+    name: "Thaumaturgy",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Two Wrongs [102052] — fala B wierna (auto)
+    krcgId: 102052,
+    name: "Two Wrongs",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Vessel [102113] — fala B wierna (auto)
+    krcgId: 102113,
+    name: "Vessel",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Vicissitude [102116] — fala B wierna (auto)
+    krcgId: 102116,
+    name: "Vicissitude",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Visit from the Capuchin [102126] — fala B wierna (auto)
+    krcgId: 102126,
+    name: "Visit from the Capuchin",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Warning Sirens [102147] — fala B wierna (auto)
+    krcgId: 102147,
+    name: "Warning Sirens",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "strikeDodge" }] }
+    ],
+  },
+  {
+    // Wash [102151] — fala B wierna (auto)
+    krcgId: 102151,
+    name: "Wash",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Week of Nightmares [102166] — fala B wierna (auto)
+    krcgId: 102166,
+    name: "Week of Nightmares",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Organized Resistance [102230] — fala B wierna (auto)
+    krcgId: 102230,
+    name: "Organized Resistance",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+    ],
+  },
+  {
+    // The Platinum Protocol [102232] — fala B wierna (auto)
+    krcgId: 102232,
+    name: "The Platinum Protocol",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+    ],
+  },
+  {
+    // Oblivion [102277] — fala B wierna (auto)
+    krcgId: 102277,
+    name: "Oblivion",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Dead Pool [102299] — fala B wierna (auto)
+    krcgId: 102299,
+    name: "Dead Pool",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+    ],
+  },
+  {
+    // Mythercerer [900001] — fala B wierna (auto)
+    krcgId: 900001,
+    name: "Mythercerer",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Obeah [900002] — fala B wierna (auto)
+    krcgId: 900002,
+    name: "Obeah",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Valeren [900003] — fala B wierna (auto)
+    krcgId: 900003,
+    name: "Valeren",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Visceratika [900004] — fala B wierna (auto)
+    krcgId: 900004,
+    name: "Visceratika",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Daimaite [900005] — fala B wierna (auto)
+    krcgId: 900005,
+    name: "Daimaite",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Melpominee [900006] — fala B wierna (auto)
+    krcgId: 900006,
+    name: "Melpominee",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Spiritus [900007] — fala B wierna (auto)
+    krcgId: 900007,
+    name: "Spiritus",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Temporis [900008] — fala B wierna (auto)
+    krcgId: 900008,
+    name: "Temporis",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Thanatosis [900009] — fala B wierna (auto)
+    krcgId: 900009,
+    name: "Thanatosis",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Powerbase: Barranquilla [101431] — fala C wierna (auto)
+    krcgId: 101431,
+    name: "Powerbase: Barranquilla",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Powerbase: Chicago [101434] — fala C wierna (auto)
+    krcgId: 101434,
+    name: "Powerbase: Chicago",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Powerbase: Madrid [101437] — fala C wierna (auto)
+    krcgId: 101437,
+    name: "Powerbase: Madrid",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Powerbase: Mexico City [101438] — fala C wierna (auto)
+    krcgId: 101438,
+    name: "Powerbase: Mexico City",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 2,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Powerbase: New York [101440] — fala C wierna (auto)
+    krcgId: 101440,
+    name: "Powerbase: New York",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Powerbase: Washington, D.C. [101444] — fala C wierna (auto)
+    krcgId: 101444,
+    name: "Powerbase: Washington, D.C.",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Wasserschloss Anif, Austria [102152] — fala C wierna (auto)
+    krcgId: 102152,
+    name: "Wasserschloss Anif, Austria",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
 ];
@@ -21011,6 +22452,9 @@ export const cryptSpecs: CardSpec[] = [
       requiresBearerReady: true,
     },
   }),
+
+  flatCrypt(201526, "Leumeah (G6)", {}),
+  flatCrypt(201609, "Octane (G6)", {}),
 ];
 
 /** A crypt card whose whole ability is unconditional statics. */

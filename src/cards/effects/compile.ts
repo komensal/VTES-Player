@@ -4405,11 +4405,12 @@ function compileCombatCard(spec: CardSpec): CardHandler {
           case "additionalStrike": {
             // Additional strikes are GAINED during strike resolution so
             // that tests and intermediate state see them immediately.
-            // However, `usedLimitedAddl` is deliberately NOT set here — it
-            // is set after damageResolution (in engine.ts) from
-            // cf.playedHistory, so that the grant window (which opens after
-            // damageResolution) correctly limits a minion to one limited
-            // additional-strike source per round (V5 p. 32).
+            // For strikes that grant additional strikes (Dust Up cel etc.)
+            // the limited flag is also recorded via playedHistory after
+            // damageResolution. For pure additional-strike cards (Blur etc.)
+            // played in the grant window, we must set usedLimitedAddl
+            // immediately or a second limited source in the same grant
+            // window would be incorrectly offered (Blur twice).
             let count = e.count;
             if (e.perBloodX) {
               const x = Number(play.params["x"] ?? "0");
@@ -4418,9 +4419,7 @@ function compileCombatCard(spec: CardSpec): CardHandler {
               }
               count = x;
             }
-            // Pass limited=false so usedLimitedAddl is NOT set now; it will
-            // be set after damageResolution from playedHistory.
-            ops.grantAdditionalStrike(play, count, false);
+            ops.grantAdditionalStrike(play, count, e.limited === true);
             // "…: burn weapon" — the extra strike is specified, offered
             // in the chooseStrike step the way a granted combat-ends
             // strike is (§4).
