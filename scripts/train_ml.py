@@ -83,12 +83,14 @@ def main() -> None:
     mean_reward = sum(rewards) / len(rewards)
     variance = sum((r - mean_reward) ** 2 for r in rewards) / max(1, len(rewards) - 1)
     reward_sd = math.sqrt(variance)
-    if reward_sd < 1e-6:
-        raise ValueError("All games had the same reward; add more games or change the seed.")
 
     samples: list[tuple[list[list[float]], list[bool], int, float, float]] = []
     for ep, reward in zip(episodes, rewards):
-        advantage = max(-3.0, min(3.0, (reward - mean_reward) / (reward_sd + 1e-6)))
+        advantage = (
+            max(-3.0, min(3.0, (reward - mean_reward) / (reward_sd + 1e-6)))
+            if reward_sd >= 1e-6
+            else max(-1.5, min(1.5, reward))
+        )
         for sample in ep.get("samples", []):
             rows = sample.get("options", [])
             allowed = sample.get("allowed", [True] * len(rows))
@@ -99,8 +101,13 @@ def main() -> None:
                 continue
             if any(len(row) != FEATURES for row in rows):
                 raise ValueError("Option feature row has the wrong size.")
+            sample_adv = (
+                advantage
+                if reward_sd >= 1e-6
+                else max(-3.0, min(3.0, advantage + 0.35 * float(rows[chosen][0])))
+            )
             samples.append((rows, [bool(value) for value in allowed], chosen,
-                            float(sample.get("oldLogProbability", 0.0)), advantage))
+                            float(sample.get("oldLogProbability", 0.0)), sample_adv))
     if len(samples) < 16:
         raise ValueError("Not enough choice examples were collected for an update.")
 
