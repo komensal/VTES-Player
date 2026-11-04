@@ -104200,6 +104200,42 @@
    "name": "2024-11-16 \u2014 Gangrel Swarm v3 (Slovak NC, Bratislava \u2014 Jakub Rypar, 22p, Wall/Swarm)",
    "cards": [
     {
+     "id": 200469,
+     "copies": 2
+    },
+    {
+     "id": 201521,
+     "copies": 1
+    },
+    {
+     "id": 201521,
+     "copies": 2
+    },
+    {
+     "id": 201574,
+     "copies": 2
+    },
+    {
+     "id": 201592,
+     "copies": 1
+    },
+    {
+     "id": 201595,
+     "copies": 1
+    },
+    {
+     "id": 201597,
+     "copies": 1
+    },
+    {
+     "id": 201602,
+     "copies": 1
+    },
+    {
+     "id": 201611,
+     "copies": 1
+    },
+    {
      "id": 100052,
      "copies": 1
     },
@@ -104318,42 +104354,6 @@
     {
      "id": 102230,
      "copies": 8
-    },
-    {
-     "id": 200469,
-     "copies": 1
-    },
-    {
-     "id": 200644,
-     "copies": 1
-    },
-    {
-     "id": 201521,
-     "copies": 2
-    },
-    {
-     "id": 201574,
-     "copies": 2
-    },
-    {
-     "id": 201592,
-     "copies": 1
-    },
-    {
-     "id": 201595,
-     "copies": 1
-    },
-    {
-     "id": 201597,
-     "copies": 1
-    },
-    {
-     "id": 201602,
-     "copies": 1
-    },
-    {
-     "id": 201611,
-     "copies": 1
     }
    ]
   },
@@ -104361,6 +104361,42 @@
    "set": "\ud83c\udfc6 Tournament Winners 2024",
    "name": "2024-02-10 \u2014 Malkavian 95 Bleed (Mexico NC \u2014 Melissa Avil\u00e9s, 10p, Stealth & Bleed)",
    "cards": [
+    {
+     "id": 201735,
+     "copies": 3
+    },
+    {
+     "id": 200015,
+     "copies": 1
+    },
+    {
+     "id": 200039,
+     "copies": 1
+    },
+    {
+     "id": 201735,
+     "copies": 1
+    },
+    {
+     "id": 201735,
+     "copies": 1
+    },
+    {
+     "id": 201735,
+     "copies": 1
+    },
+    {
+     "id": 201735,
+     "copies": 2
+    },
+    {
+     "id": 201735,
+     "copies": 1
+    },
+    {
+     "id": 201735,
+     "copies": 1
+    },
     {
      "id": 100405,
      "copies": 2
@@ -104460,42 +104496,6 @@
     {
      "id": 102180,
      "copies": 1
-    },
-    {
-     "id": 200012,
-     "copies": 1
-    },
-    {
-     "id": 200015,
-     "copies": 1
-    },
-    {
-     "id": 200039,
-     "copies": 1
-    },
-    {
-     "id": 200049,
-     "copies": 1
-    },
-    {
-     "id": 200092,
-     "copies": 1
-    },
-    {
-     "id": 200107,
-     "copies": 1
-    },
-    {
-     "id": 200834,
-     "copies": 2
-    },
-    {
-     "id": 201244,
-     "copies": 1
-    },
-    {
-     "id": 201707,
-     "copies": 1
     }
    ]
   },
@@ -104503,6 +104503,46 @@
    "set": "\ud83c\udfc6 Tournament Winners 2024",
    "name": "2024-07-21 \u2014 Usurper High Council (Helsinki, Martin Weinmayer, 22p, Vote)",
    "cards": [
+    {
+     "id": 201733,
+     "copies": 1
+    },
+    {
+     "id": 201733,
+     "copies": 1
+    },
+    {
+     "id": 201733,
+     "copies": 1
+    },
+    {
+     "id": 201733,
+     "copies": 1
+    },
+    {
+     "id": 201645,
+     "copies": 1
+    },
+    {
+     "id": 201733,
+     "copies": 1
+    },
+    {
+     "id": 201733,
+     "copies": 2
+    },
+    {
+     "id": 201733,
+     "copies": 1
+    },
+    {
+     "id": 201733,
+     "copies": 1
+    },
+    {
+     "id": 201529,
+     "copies": 2
+    },
     {
      "id": 100064,
      "copies": 2
@@ -104590,46 +104630,6 @@
     {
      "id": 102218,
      "copies": 3
-    },
-    {
-     "id": 200106,
-     "copies": 1
-    },
-    {
-     "id": 200107,
-     "copies": 1
-    },
-    {
-     "id": 200132,
-     "copies": 1
-    },
-    {
-     "id": 200419,
-     "copies": 1
-    },
-    {
-     "id": 201001,
-     "copies": 1
-    },
-    {
-     "id": 201312,
-     "copies": 1
-    },
-    {
-     "id": 201344,
-     "copies": 2
-    },
-    {
-     "id": 201440,
-     "copies": 1
-    },
-    {
-     "id": 201442,
-     "copies": 1
-    },
-    {
-     "id": 201529,
-     "copies": 2
     }
    ]
   },
@@ -104637,6 +104637,50 @@
    "set": "\ud83c\udfc6 Tournament Winners 2026",
    "name": "2026-06-27 \u2014 Lasombra Potato Groove (Spanish NC, Legan\u00e9s \u2014 Miquel Jorge, 158p, Vote/Bleed)",
    "cards": [
+    {
+     "id": 201734,
+     "copies": 2
+    },
+    {
+     "id": 201708,
+     "copies": 1
+    },
+    {
+     "id": 201709,
+     "copies": 1
+    },
+    {
+     "id": 201710,
+     "copies": 1
+    },
+    {
+     "id": 201711,
+     "copies": 1
+    },
+    {
+     "id": 201729,
+     "copies": 1
+    },
+    {
+     "id": 201708,
+     "copies": 1
+    },
+    {
+     "id": 201716,
+     "copies": 1
+    },
+    {
+     "id": 201734,
+     "copies": 1
+    },
+    {
+     "id": 201737,
+     "copies": 1
+    },
+    {
+     "id": 201778,
+     "copies": 1
+    },
     {
      "id": 100064,
      "copies": 1
@@ -104740,50 +104784,6 @@
     {
      "id": 102277,
      "copies": 2
-    },
-    {
-     "id": 200870,
-     "copies": 2
-    },
-    {
-     "id": 200873,
-     "copies": 1
-    },
-    {
-     "id": 201006,
-     "copies": 1
-    },
-    {
-     "id": 201261,
-     "copies": 1
-    },
-    {
-     "id": 201444,
-     "copies": 1
-    },
-    {
-     "id": 201496,
-     "copies": 1
-    },
-    {
-     "id": 201708,
-     "copies": 1
-    },
-    {
-     "id": 201716,
-     "copies": 1
-    },
-    {
-     "id": 201734,
-     "copies": 1
-    },
-    {
-     "id": 201737,
-     "copies": 1
-    },
-    {
-     "id": 201778,
-     "copies": 1
     }
    ]
   },
@@ -104791,6 +104791,30 @@
    "set": "\ud83c\udfc6 Tournament Winners 2024",
    "name": "2024-06-21 \u2014 The Unnamed Six Demon Bag (Origins Friday 2, Columbus \u2014 Darby Keeney, 44p, Baali Bleed)",
    "cards": [
+    {
+     "id": 200076,
+     "copies": 3
+    },
+    {
+     "id": 201411,
+     "copies": 1
+    },
+    {
+     "id": 201411,
+     "copies": 1
+    },
+    {
+     "id": 201049,
+     "copies": 2
+    },
+    {
+     "id": 201411,
+     "copies": 4
+    },
+    {
+     "id": 201510,
+     "copies": 1
+    },
     {
      "id": 100106,
      "copies": 2
@@ -104898,30 +104922,6 @@
     {
      "id": 102180,
      "copies": 1
-    },
-    {
-     "id": 200076,
-     "copies": 1
-    },
-    {
-     "id": 200441,
-     "copies": 1
-    },
-    {
-     "id": 200935,
-     "copies": 1
-    },
-    {
-     "id": 201048,
-     "copies": 2
-    },
-    {
-     "id": 201411,
-     "copies": 4
-    },
-    {
-     "id": 201510,
-     "copies": 1
     }
    ]
   },
@@ -104929,6 +104929,38 @@
    "set": "\ud83c\udfc6 Tournament Winners 2023",
    "name": "2023-10-15 \u2014 Tupdog Brick Wall (EC 2023 Finalist \u2014 Rush Wall)",
    "cards": [
+    {
+     "id": 200076,
+     "copies": 5
+    },
+    {
+     "id": 200550,
+     "copies": 1
+    },
+    {
+     "id": 200568,
+     "copies": 1
+    },
+    {
+     "id": 200604,
+     "copies": 1
+    },
+    {
+     "id": 200608,
+     "copies": 1
+    },
+    {
+     "id": 200257,
+     "copies": 1
+    },
+    {
+     "id": 200930,
+     "copies": 1
+    },
+    {
+     "id": 201151,
+     "copies": 1
+    },
     {
      "id": 100054,
      "copies": 1
@@ -105032,38 +105064,6 @@
     {
      "id": 102230,
      "copies": 6
-    },
-    {
-     "id": 200076,
-     "copies": 1
-    },
-    {
-     "id": 200550,
-     "copies": 1
-    },
-    {
-     "id": 200568,
-     "copies": 1
-    },
-    {
-     "id": 200604,
-     "copies": 1
-    },
-    {
-     "id": 200608,
-     "copies": 1
-    },
-    {
-     "id": 200634,
-     "copies": 1
-    },
-    {
-     "id": 200930,
-     "copies": 1
-    },
-    {
-     "id": 201151,
-     "copies": 1
     }
    ]
   },
@@ -105072,8 +105072,36 @@
    "name": "2024-03-09 \u2014 Weenie Animalism (Oceania NC, Auckland \u2014 Rush/Bleed)",
    "cards": [
     {
+     "id": 200076,
+     "copies": 4
+    },
+    {
+     "id": 201661,
+     "copies": 1
+    },
+    {
+     "id": 201661,
+     "copies": 1
+    },
+    {
+     "id": 201661,
+     "copies": 2
+    },
+    {
+     "id": 201287,
+     "copies": 1
+    },
+    {
+     "id": 201661,
+     "copies": 2
+    },
+    {
+     "id": 201521,
+     "copies": 1
+    },
+    {
      "id": 100029,
-     "copies": 8
+     "copies": 9
     },
     {
      "id": 100054,
@@ -105162,34 +105190,6 @@
     {
      "id": 102230,
      "copies": 4
-    },
-    {
-     "id": 200076,
-     "copies": 1
-    },
-    {
-     "id": 200211,
-     "copies": 1
-    },
-    {
-     "id": 200547,
-     "copies": 1
-    },
-    {
-     "id": 200829,
-     "copies": 2
-    },
-    {
-     "id": 201287,
-     "copies": 1
-    },
-    {
-     "id": 201318,
-     "copies": 2
-    },
-    {
-     "id": 201521,
-     "copies": 1
     }
    ]
   }
