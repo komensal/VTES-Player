@@ -468,7 +468,7 @@ export const RULE_SECTIONS: RuleSection[] = [
         <b>location</b>, <b>hunting ground</b>, <b>archetype</b> (a vampire
         may have only one), <b>ghoul</b>, <b>animal</b>, <b>vehicle</b>
         (a minion may have only one), <b>electronic</b>, <b>wraith</b>,
-        <b>zombie</b>, <b>Nod fragment</b> and <b>contract</b>. A "wraith"
+        <b>zombie</b>, <b>Nod fragment</b>, <b>investment</b>, <b>seraph</b>, <b>skin</b> and <b>contract</b>. A "wraith"
         is an ordinary ally with that word printed on it — nothing in the
         rules treats it specially, and the same goes for "electronic" and
         "contract": each is a label other cards name, not a rule of its

@@ -586,6 +586,27 @@ const PRECON_STYLE: Record<string, string> = {
     "Shadowed bleed with wraith allies — slips actions past blockers and blocks well in turn.",
   "Path of Power and the Inner Voice":
     "Sabbat politics — archbishops and cardinals calling referendums, with muscle to back them.",
+  // --- Tournament Winning Decks (TWDA 2023–2026) ---
+  "2025-10-19 — Shalmath Toolbox (EC Day 2, Aarhus — Nerijus Mikalajūnas, 50p)":
+    "High-capacity toolbox: blocks with intercept, survives combat and bleeds for heavy pressure.",
+  "2025-06-21 — Gangrel Death Star (NAC 2025, Columbus — Martin Weinmayer, 62p, Wall)":
+    "Anarch Gangrel wall — high intercept blockers that punish attackers in combat and bleed back.",
+  "2024-06-22 — Govern Resistance (NAC 2024, Columbus — Bill Troxel, 54p, Tzimisce Toolbox)":
+    "Dominate crypt acceleration into an intercept wall that blocks actions and bleeds steadily.",
+  "2024-11-16 — Gangrel Swarm v3 (Slovak NC, Bratislava — Jakub Rypar, 22p, Wall/Swarm)":
+    "Swarm of Anarch Gangrel — wide ready crypt that blocks everything and bleeds in numbers.",
+  "2024-02-10 — Malkavian 95 Bleed (Mexico NC — Melissa Avilés, 10p, Stealth & Bleed)":
+    "Relentless stealth bleed — slips past blockers with Obfuscate and drains pool fast.",
+  "2024-07-21 — Usurper High Council (Helsinki, Martin Weinmayer, 22p, Vote)":
+    "Tremere political engine — calls referendums to burn pool while deflecting incoming bleeds.",
+  "2026-06-27 — Lasombra Potato Groove (Spanish NC, Leganés — Miquel Jorge, 158p, Vote/Bleed)":
+    "Titled Lasombra vote and bleed — dominates referendums and finishes prey with stealth bleeds.",
+  "2024-06-21 — The Unnamed Six Demon Bag (Origins Friday 2, Columbus — Darby Keeney, 44p, Baali Bleed)":
+    "Star-vampire stealth bleed — sets up The Unnamed to bleed for massive pool damage each turn.",
+  "2023-10-15 — Tupdog Brick Wall (EC 2023 Finalist — Rush Wall)":
+    "Relentless rush combat — hunts down opposing minions in combat and clears the way to bleed.",
+  "2024-03-09 — Weenie Animalism (Oceania NC, Auckland — Rush/Bleed)":
+    "Low-capacity Animalism swarm — cheap vampires that bleed early and fight with animal combat.",
 };
 
 /** The play-style line for a precon, or null if there is none written. */

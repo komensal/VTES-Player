@@ -245,7 +245,7 @@ describe("what this platform can deal", () => {
     // player has not implemented is a LEGAL deck that cannot be dealt.
     // Merging the two would either hide the gap or call the rulebook
     // wrong.
-    const absent = file.cards.find((c) => c.kind === "library" && c.status === "absent")!;
+    const absent = file.cards.find((c) => c.kind === "library" && c.status === "absent") ?? (() => { const c = { ...file.cards.find((x) => x.kind === "library")!, id: 999999, name: "Unimplemented Test Card", status: "absent" as const }; byId.set(c.id, c); byName.set(c.name.toLowerCase(), c); return c; })();
     let d = legalDeck();
     const lib = draftCards(d, byId).find((r) => r.card.kind === "library")!.card;
     d = setCount(setCount(d, lib.id, 6), absent.id, 4);
@@ -280,7 +280,7 @@ describe("saving and reopening", () => {
     // REGISTRY and would report an unimplemented card as an unknown
     // line — so reopening a saved deck through it would silently delete
     // exactly the cards the builder is meant to be warning about.
-    const absent = file.cards.find((c) => c.kind === "library" && c.status === "absent")!;
+    const absent = file.cards.find((c) => c.kind === "library" && c.status === "absent") ?? (() => { const c = { ...file.cards.find((x) => x.kind === "library")!, id: 999999, name: "Unimplemented Test Card", status: "absent" as const }; byId.set(c.id, c); byName.set(c.name.toLowerCase(), c); return c; })();
     const before = setCount(legalDeck(), absent.id, 2);
     const { draft: after, unreadable } = parseDraft(draftToText(before, byId), byName);
     expect(unreadable).toEqual([]);
@@ -420,7 +420,7 @@ describe("half decks", () => {
     gapped = setCount(setCount(gapped, g("5")[0]!.id, 2), g("7")[0]!.id, 2);
     expect(reviewDraft(gapped, byId).illegal.join(" ")).toContain("group");
 
-    const absent = file.cards.find((c) => c.kind === "library" && c.status === "absent")!;
+    const absent = file.cards.find((c) => c.kind === "library" && c.status === "absent") ?? (() => { const c = { ...file.cards.find((x) => x.kind === "library")!, id: 999999, name: "Unimplemented Test Card", status: "absent" as const }; byId.set(c.id, c); byName.set(c.name.toLowerCase(), c); return c; })();
     const unplayable = setCount(halfDeck(), absent.id, 1);
     expect(reviewDraft(unplayable, byId).dealable).toBe(false);
   });

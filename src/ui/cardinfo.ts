@@ -76,6 +76,7 @@ const SECTS: Record<string, Sect> = {
   Sabbat: "sabbat",
   Anarch: "anarch",
   Independent: "independent",
+  Laibon: "laibon",
 };
 
 const TITLES: Record<string, VampireTitle> = {
