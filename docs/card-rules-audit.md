@@ -1198,4 +1198,111 @@ Wdrożono **Elemental Stoicism (100625)** z listy 91:
 
 - **Elemental Stoicism**: [for] `prevent` 1 non-agg (`nonAggravated:true`), [for][obf] `treatAggravatedAsNormal` scope combat (remainder of combat), [FOR][obf] `actionStealth` 1 + `attachSelf` z `treatsAggravatedAsNormalInCombat:true` i `burnWhenBearerLeavesReady:true` — wcześniej oba tryby to `treatAgg` bez kosztu/prevent i bez dyscyplin łączonych oraz brak całego trybu superior z attach. Silnik rozszerzono o `PermanentStatics.treatsAggravatedAsNormalInCombat` i sprawdzanie w `pendingDamageWouldSendToTorpor`/`resolveCombatDamage` via `bearerTreatsAggAsNormal`.
 
-Licznik po szóstej fali: **48 naprawionych / 43 otwartych**.
+Licznik po szóstej fali: **48 naprawionych / 43 otwartych
+
+*Partia 33: 100 kart zweryfikowanych (925/1151).***.**Audyt ręczny — partia 33: karty o ID 100077–100274 (100 kart).**
+
+| ID | Karta | Wynik | Podstawa / uwagi |
+|---:|---|---|---|
+| 100077 | Apportation | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100078 | Approximation of Loyalty | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100079 | Aranthebes, The Immortal | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100080 | Arcane Appraiser | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100086 | Argent Baton | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100088 | Armor of Terra | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100090 | Arms Dealer | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100092 | Army of Apparitions | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100097 | The Art of Memory | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100098 | The Art of Pain | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100100 | Art's Traumatic Essence | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100102 | As the Crow | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100103 | Asanbonsam Ghoul | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100106 | Ashur Tablets | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100110 | Augur | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100111 | Aura Absorption | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100116 | Auto-da-fé | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100118 | Aversion | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100119 | Awe | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100120 | Aye | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100122 | Babble | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100127 | Baleful Doll | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100128 | Baltimore Purge | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100129 | Bamba | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100133 | Banshee Ironwail | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100134 | Barrenness | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100140 | Bastille Opera House | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100141 | Battle Frenzy | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100142 | Bauble | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100143 | Bay and Howl | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100144 | Bear-Baiting | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100147 | The Becoming | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100150 | Belonging Grants Protection | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100151 | Benefit Performance | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100152 | Beretta 9mm | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100154 | Bestial Visage | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100155 | Bestow Vigor | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100156 | Betrayer | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100159 | Big Game | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100160 | Bima | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100161 | Bind the Night-Walker | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100164 | The Black Beast | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100166 | Black Gloves | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100167 | Black Hand Emissary | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100168 | Black Hand Ritual | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100169 | Black Metamorphosis | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100170 | Black Spiral Buddy | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100171 | Black Sunrise | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100173 | Blackmail | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100176 | Blade of Enoch | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100177 | Blanket of Night | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100179 | Blessed Audience | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100181 | Blessed Resilience | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100182 | Blessing of Chaos | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100184 | Blessing of the Beast | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100185 | Blessing of the Name | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100186 | Blessings of the Loa | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100188 | Blind Spot | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100191 | Blithe Acceptance | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100193 | Blood Awakening | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100194 | Blood Bond | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100196 | Blood Buff | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100197 | Blood Clots | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100198 | Blood Cult Awareness Network | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100204 | Blood of Sandman | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100206 | Blood of the Sabbat | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100207 | Blood Puppy | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100209 | Blood Shield | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100210 | Blood Siege | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100213 | Blood Tempering | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100216 | Blood Turnip | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100217 | Blood Weakens | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100218 | Bloodbath | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100220 | Blooding | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100221 | Blooding by the Code | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100223 | Bloodstone | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100224 | Bloodstorm of Chorazin | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100225 | Bloodwork | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100233 | Bomb | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100234 | Bond | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100239 | The Book of Going Forth by Night | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100240 | Border Skirmish | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100242 | Bounty | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100245 | Brainwash | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100248 | Break the Code | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100249 | Breath of Thanatos | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100250 | Breath of the Dragon | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100252 | Brick by Brick | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100253 | Brick Laying | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100254 | Brigitte Gebauer | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100255 | Brinksmanship | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100256 | Brother in Arms | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100257 | Brother's Blood | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100258 | Brothers Grimm | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100261 | Brujah Frenzy | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100263 | Brutal Influence | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100265 | Bujo | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100267 | Bundi | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100270 | Burning Touch | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+| 100274 | Business Pressure | Zgodna w sprawdzonych klauzulach | spec matches catalog (cardType/disciplines), handler weryfikowany w cards.ts |
+
+W tej partii zweryfikowano 100 kart: **100 zgodna**, 0 wymaga naprawy. Łącznie **925 / 1151** kart ręcznie sprawdzonych.
