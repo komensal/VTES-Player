@@ -23023,7 +23023,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Bond [100194] — fala D wierna (auto)
+    // Blood Bond [100194] — fala I wierna (auto)
     krcgId: 100194,
     name: "Blood Bond",
     cardType: "action",
@@ -23031,11 +23031,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Blood Buff [100196] — fala D wierna (auto)
+    // Blood Buff [100196] — fala I wierna (auto)
     krcgId: 100196,
     name: "Blood Buff",
     cardType: "master",
@@ -23047,7 +23047,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Clots [100197] — fala D wierna (auto)
+    // Blood Clots [100197] — fala I wierna (auto)
     krcgId: 100197,
     name: "Blood Clots",
     cardType: "action",
@@ -23055,12 +23055,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Blood Cult Awareness Network [100198] — fala D wierna (auto)
+    // Blood Cult Awareness Network [100198] — fala I wierna (auto)
     krcgId: 100198,
     name: "Blood Cult Awareness Network",
     cardType: "event",
@@ -23068,11 +23067,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Blood of Sandman [100204] — fala D wierna (auto)
+    // Blood of Sandman [100204] — fala I wierna (auto)
     krcgId: 100204,
     name: "Blood of Sandman",
     cardType: "action",
@@ -23080,12 +23079,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Blood of the Sabbat [100206] — fala D wierna (auto)
+    // Blood of the Sabbat [100206] — fala I wierna (auto)
     krcgId: 100206,
     name: "Blood of the Sabbat",
     cardType: "action",
@@ -23093,11 +23091,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Blood Puppy [100207] — fala D wierna (auto)
+    // Blood Puppy [100207] — fala I wierna (auto)
     krcgId: 100207,
     name: "Blood Puppy",
     cardType: "master",
@@ -23110,7 +23108,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Shield [100209] — fala D wierna (auto)
+    // Blood Shield [100209] — fala I wierna (auto)
     krcgId: 100209,
     name: "Blood Shield",
     cardType: "equipment",
@@ -23119,24 +23117,23 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Blood Siege [100210] — fala D wierna (auto)
+    // Blood Siege [100210] — fala I wierna (auto)
     krcgId: 100210,
     name: "Blood Siege",
     cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Blood Tempering [100213] — fala D wierna (auto)
+    // Blood Tempering [100213] — fala I wierna (auto)
     krcgId: 100213,
     name: "Blood Tempering",
     cardType: "action",
@@ -23144,14 +23141,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Blood Turnip [100216] — fala D wierna (auto)
+    // Blood Turnip [100216] — fala I wierna (auto)
     krcgId: 100216,
     name: "Blood Turnip",
     cardType: "master",
@@ -23164,7 +23158,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Weakens [100217] — fala D wierna (auto)
+    // Blood Weakens [100217] — fala I wierna (auto)
     krcgId: 100217,
     name: "Blood Weakens",
     cardType: "event",
@@ -23172,11 +23166,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Bloodbath [100218] — fala D wierna (auto)
+    // Bloodbath [100218] — fala I wierna (auto)
     krcgId: 100218,
     name: "Bloodbath",
     cardType: "action",
@@ -23184,11 +23178,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Blooding [100220] — fala D wierna (auto)
+    // Blooding [100220] — fala I wierna (auto)
     krcgId: 100220,
     name: "Blooding",
     cardType: "action",
@@ -23196,11 +23190,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Blooding by the Code [100221] — fala D wierna (auto)
+    // Blooding by the Code [100221] — fala I wierna (auto)
     krcgId: 100221,
     name: "Blooding by the Code",
     cardType: "master",
@@ -23212,7 +23206,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bloodstone [100223] — fala D wierna (auto)
+    // Bloodstone [100223] — fala I wierna (auto)
     krcgId: 100223,
     name: "Bloodstone",
     cardType: "equipment",
@@ -23220,11 +23214,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Bloodstorm of Chorazin [100224] — fala D wierna (auto)
+    // Bloodstorm of Chorazin [100224] — fala I wierna (auto)
     krcgId: 100224,
     name: "Bloodstorm of Chorazin",
     cardType: "reaction",
@@ -23232,11 +23226,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Bloodwork [100225] — fala D wierna (auto)
+    // Bloodwork [100225] — fala I wierna (auto)
     krcgId: 100225,
     name: "Bloodwork",
     cardType: "action",
@@ -23244,23 +23238,24 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Bomb [100233] — fala D wierna (auto)
+    // Bomb [100233] — fala I wierna (auto)
     krcgId: 100233,
     name: "Bomb",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 5 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Bond [100234] — fala D wierna (auto)
+    // Bond [100234] — fala I wierna (auto)
     krcgId: 100234,
     name: "Bond",
     cardType: "action",
@@ -23268,11 +23263,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "inn", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Book of Going Forth by Night [100239] — fala D wierna (auto)
+    // The Book of Going Forth by Night [100239] — fala I wierna (auto)
     krcgId: 100239,
     name: "The Book of Going Forth by Night",
     cardType: "equipment",
@@ -23281,11 +23276,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Border Skirmish [100240] — fala D wierna (auto)
+    // Border Skirmish [100240] — fala I wierna (auto)
     krcgId: 100240,
     name: "Border Skirmish",
     cardType: "action",
@@ -23293,11 +23288,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Bounty [100242] — fala D wierna (auto)
+    // Bounty [100242] — fala I wierna (auto)
     krcgId: 100242,
     name: "Bounty",
     cardType: "master",
@@ -23309,7 +23304,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Brainwash [100245] — fala D wierna (auto)
+    // Brainwash [100245] — fala I wierna (auto)
     krcgId: 100245,
     name: "Brainwash",
     cardType: "master",
@@ -23317,11 +23312,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Break the Code [100248] — fala D wierna (auto)
+    // Break the Code [100248] — fala I wierna (auto)
     krcgId: 100248,
     name: "Break the Code",
     cardType: "event",
@@ -23329,11 +23324,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Breath of Thanatos [100249] — fala D wierna (auto)
+    // Breath of Thanatos [100249] — fala I wierna (auto)
     krcgId: 100249,
     name: "Breath of Thanatos",
     cardType: "actionModifier",
@@ -23341,12 +23336,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Breath of the Dragon [100250] — fala D wierna (auto)
+    // Breath of the Dragon [100250] — fala I wierna (auto)
     krcgId: 100250,
     name: "Breath of the Dragon",
     cardType: "combat",
@@ -23354,12 +23348,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Brick by Brick [100252] — fala D wierna (auto)
+    // Brick by Brick [100252] — fala I wierna (auto)
     krcgId: 100252,
     name: "Brick by Brick",
     cardType: "combat",
@@ -23367,13 +23360,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Brick Laying [100253] — fala D wierna (auto)
+    // Brick Laying [100253] — fala I wierna (auto)
     krcgId: 100253,
     name: "Brick Laying",
     cardType: "action",
@@ -23381,12 +23372,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "pot", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Brigitte Gebauer [100254] — fala D wierna (auto)
+    // Brigitte Gebauer [100254] — fala I wierna (auto)
     krcgId: 100254,
     name: "Brigitte Gebauer",
     cardType: "ally",
@@ -23395,11 +23385,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Brinksmanship [100255] — fala D wierna (auto)
+    // Brinksmanship [100255] — fala I wierna (auto)
     krcgId: 100255,
     name: "Brinksmanship",
     cardType: "politicalAction",
@@ -23407,24 +23397,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Brother in Arms [100256] — fala D wierna (auto)
+    // Brother in Arms [100256] — fala I wierna (auto)
     krcgId: 100256,
     name: "Brother in Arms",
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Brother's Blood [100257] — fala D wierna (auto)
+    // Brother's Blood [100257] — fala I wierna (auto)
     krcgId: 100257,
     name: "Brother's Blood",
     cardType: "combat",
@@ -23432,12 +23421,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Brothers Grimm [100258] — fala D wierna (auto)
+    // Brothers Grimm [100258] — fala I wierna (auto)
     krcgId: 100258,
     name: "Brothers Grimm",
     cardType: "master",
@@ -23450,7 +23438,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Brujah Frenzy [100261] — fala D wierna (auto)
+    // Brujah Frenzy [100261] — fala I wierna (auto)
     krcgId: 100261,
     name: "Brujah Frenzy",
     cardType: "master",
@@ -23462,7 +23450,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Brutal Influence [100263] — fala D wierna (auto)
+    // Brutal Influence [100263] — fala I wierna (auto)
     krcgId: 100263,
     name: "Brutal Influence",
     cardType: "action",
@@ -23470,12 +23458,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Bujo [100265] — fala D wierna (auto)
+    // Bujo [100265] — fala I wierna (auto)
     krcgId: 100265,
     name: "Bujo",
     cardType: "action",
@@ -23483,11 +23470,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Bundi [100267] — fala D wierna (auto)
+    // Bundi [100267] — fala I wierna (auto)
     krcgId: 100267,
     name: "Bundi",
     cardType: "equipment",
@@ -23495,11 +23482,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Burning Touch [100270] — fala D wierna (auto)
+    // Burning Touch [100270] — fala I wierna (auto)
     krcgId: 100270,
     name: "Burning Touch",
     cardType: "actionModifier",
@@ -23507,13 +23494,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "val", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Business Pressure [100274] — fala D wierna (auto)
+    // Business Pressure [100274] — fala I wierna (auto)
     krcgId: 100274,
     name: "Business Pressure",
     cardType: "actionModifier",
@@ -23521,12 +23506,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cadet [100275] — fala D wierna (auto)
+    // Cadet [100275] — fala I wierna (auto)
     krcgId: 100275,
     name: "Cadet",
     cardType: "master",
@@ -23538,7 +23522,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Caiaphas Smith [100276] — fala D wierna (auto)
+    // Caiaphas Smith [100276] — fala I wierna (auto)
     krcgId: 100276,
     name: "Caiaphas Smith",
     cardType: "ally",
@@ -23547,17 +23531,16 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cairo Int'l Airport [100277] — fala D wierna (auto)
+    // Cairo Int'l Airport [100277] — fala I wierna (auto)
     krcgId: 100277,
     name: "Cairo Int'l Airport",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -23565,7 +23548,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Call [100278] — fala D wierna (auto)
+    // The Call [100278] — fala I wierna (auto)
     krcgId: 100278,
     name: "The Call",
     cardType: "action",
@@ -23573,14 +23556,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Call of the Hungry Dead [100279] — fala D wierna (auto)
+    // Call of the Hungry Dead [100279] — fala I wierna (auto)
     krcgId: 100279,
     name: "Call of the Hungry Dead",
     cardType: "actionModifier",
@@ -23588,25 +23568,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Call the Great Beast [100280] — fala D wierna (auto)
+    // Call the Great Beast [100280] — fala I wierna (auto)
     krcgId: 100280,
     name: "Call the Great Beast",
     cardType: "action",
     bloodCost: 1,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Call the Lamprey [100281] — fala D wierna (auto)
+    // Call the Lamprey [100281] — fala I wierna (auto)
     krcgId: 100281,
     name: "Call the Lamprey",
     cardType: "combat",
@@ -23614,12 +23592,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Camaraderie [100283] — fala D wierna (auto)
+    // Camaraderie [100283] — fala I wierna (auto)
     krcgId: 100283,
     name: "Camaraderie",
     cardType: "reaction",
@@ -23627,12 +23604,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Camarilla Vitae Slave [100286] — fala D wierna (auto)
+    // Camarilla Vitae Slave [100286] — fala I wierna (auto)
     krcgId: 100286,
     name: "Camarilla Vitae Slave",
     cardType: "retainer",
@@ -23640,11 +23616,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Camera Phone [100287] — fala D wierna (auto)
+    // Camera Phone [100287] — fala I wierna (auto)
     krcgId: 100287,
     name: "Camera Phone",
     cardType: "equipment",
@@ -23652,11 +23628,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Canopic Jar [100291] — fala D wierna (auto)
+    // Canopic Jar [100291] — fala I wierna (auto)
     krcgId: 100291,
     name: "Canopic Jar",
     cardType: "equipment",
@@ -23664,12 +23640,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Car Bomb [100293] — fala D wierna (auto)
+    // Car Bomb [100293] — fala I wierna (auto)
     krcgId: 100293,
     name: "Car Bomb",
     cardType: "reaction",
@@ -23677,11 +23652,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cardinal Sin: Failure of Mission [100295] — fala D wierna (auto)
+    // Cardinal Sin: Failure of Mission [100295] — fala I wierna (auto)
     krcgId: 100295,
     name: "Cardinal Sin: Failure of Mission",
     cardType: "reaction",
@@ -23689,11 +23664,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cardinal Sin: Insubordination [100296] — fala D wierna (auto)
+    // Cardinal Sin: Insubordination [100296] — fala I wierna (auto)
     krcgId: 100296,
     name: "Cardinal Sin: Insubordination",
     cardType: "reaction",
@@ -23701,11 +23676,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Carlton Van Wyk [100298] — fala D wierna (auto)
+    // Carlton Van Wyk [100298] — fala I wierna (auto)
     krcgId: 100298,
     name: "Carlton Van Wyk",
     cardType: "ally",
@@ -23714,11 +23689,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Carnivale [100299] — fala D wierna (auto)
+    // Carnivale [100299] — fala I wierna (auto)
     krcgId: 100299,
     name: "Carnivale",
     cardType: "master",
@@ -23727,11 +23702,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Carrion Coffin [100300] — fala D wierna (auto)
+    // Carrion Coffin [100300] — fala I wierna (auto)
     krcgId: 100300,
     name: "Carrion Coffin",
     cardType: "action",
@@ -23739,12 +23714,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Carthage Remembered [100302] — fala D wierna (auto)
+    // Carthage Remembered [100302] — fala I wierna (auto)
     krcgId: 100302,
     name: "Carthage Remembered",
     cardType: "master",
@@ -23752,11 +23726,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cat Burglary [100305] — fala D wierna (auto)
+    // Cat Burglary [100305] — fala I wierna (auto)
     krcgId: 100305,
     name: "Cat Burglary",
     cardType: "action",
@@ -23764,25 +23738,25 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Catacombs [100306] — fala D wierna (auto)
+    // Catacombs [100306] — fala I wierna (auto)
     krcgId: 100306,
     name: "Catacombs",
     cardType: "equipment",
     bloodCost: 1,
     poolCost: 0,
     unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cavalier [100310] — fala D wierna (auto)
+    // Cavalier [100310] — fala I wierna (auto)
     krcgId: 100310,
     name: "Cavalier",
     cardType: "master",
@@ -23794,7 +23768,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Celestial Harmony [100313] — fala D wierna (auto)
+    // Celestial Harmony [100313] — fala I wierna (auto)
     krcgId: 100313,
     name: "Celestial Harmony",
     cardType: "action",
@@ -23802,12 +23776,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Census Taker [100314] — fala D wierna (auto)
+    // Census Taker [100314] — fala I wierna (auto)
     krcgId: 100314,
     name: "Census Taker",
     cardType: "master",
@@ -23816,25 +23789,23 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Chain of Command [100316] — fala D wierna (auto)
+    // Chain of Command [100316] — fala I wierna (auto)
     krcgId: 100316,
     name: "Chain of Command",
     cardType: "action",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Chair of Hades [100318] — fala D wierna (auto)
+    // Chair of Hades [100318] — fala I wierna (auto)
     krcgId: 100318,
     name: "Chair of Hades",
     cardType: "action",
@@ -23842,12 +23813,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Chalice of Kinship [100319] — fala D wierna (auto)
+    // Chalice of Kinship [100319] — fala I wierna (auto)
     krcgId: 100319,
     name: "Chalice of Kinship",
     cardType: "equipment",
@@ -23856,11 +23826,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Champion [100322] — fala D wierna (auto)
+    // Champion [100322] — fala I wierna (auto)
     krcgId: 100322,
     name: "Champion",
     cardType: "power",
@@ -23868,11 +23838,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "def", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Changeling [100324] — fala D wierna (auto)
+    // Changeling [100324] — fala I wierna (auto)
     krcgId: 100324,
     name: "Changeling",
     cardType: "actionModifier",
@@ -23880,12 +23850,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Chanjelin Ward [100326] — fala D wierna (auto)
+    // Chanjelin Ward [100326] — fala I wierna (auto)
     krcgId: 100326,
     name: "Chanjelin Ward",
     cardType: "master",
@@ -23897,7 +23866,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Charge of the Buffalo [100330] — fala D wierna (auto)
+    // Charge of the Buffalo [100330] — fala I wierna (auto)
     krcgId: 100330,
     name: "Charge of the Buffalo",
     cardType: "action",
@@ -23905,13 +23874,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Charigger, The Axe [100331] — fala D wierna (auto)
+    // Charigger, The Axe [100331] — fala I wierna (auto)
     krcgId: 100331,
     name: "Charigger, The Axe",
     cardType: "retainer",
@@ -23920,11 +23887,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Charming Lobby [100334] — fala D wierna (auto)
+    // Charming Lobby [100334] — fala I wierna (auto)
     krcgId: 100334,
     name: "Charming Lobby",
     cardType: "action",
@@ -23932,12 +23899,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Charnas the Imp [100335] — fala D wierna (auto)
+    // Charnas the Imp [100335] — fala I wierna (auto)
     krcgId: 100335,
     name: "Charnas the Imp",
     cardType: "retainer",
@@ -23946,11 +23912,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cheat the Fates [100336] — fala D wierna (auto)
+    // Cheat the Fates [100336] — fala I wierna (auto)
     krcgId: 100336,
     name: "Cheat the Fates",
     cardType: "action",
@@ -23958,13 +23924,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Children of Stone [100340] — fala D wierna (auto)
+    // Children of Stone [100340] — fala I wierna (auto)
     krcgId: 100340,
     name: "Children of Stone",
     cardType: "action",
@@ -23972,13 +23936,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Chill of Oblivion [100341] — fala D wierna (auto)
+    // Chill of Oblivion [100341] — fala I wierna (auto)
     krcgId: 100341,
     name: "Chill of Oblivion",
     cardType: "action",
@@ -23986,12 +23948,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Chiram's Hold [100343] — fala D wierna (auto)
+    // Chiram's Hold [100343] — fala I wierna (auto)
     krcgId: 100343,
     name: "Chiram's Hold",
     cardType: "combat",
@@ -23999,11 +23960,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Chiropteran Marauder [100344] — fala D wierna (auto)
+    // Chiropteran Marauder [100344] — fala I wierna (auto)
     krcgId: 100344,
     name: "Chiropteran Marauder",
     cardType: "combat",
@@ -24011,12 +23972,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Choir [100345] — fala D wierna (auto)
+    // Choir [100345] — fala I wierna (auto)
     krcgId: 100345,
     name: "Choir",
     cardType: "action",
@@ -24024,12 +23984,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Chronicle of the Lost Tribe [100346] — fala D wierna (auto)
+    // Chronicle of the Lost Tribe [100346] — fala I wierna (auto)
     krcgId: 100346,
     name: "Chronicle of the Lost Tribe",
     cardType: "action",
@@ -24038,17 +23997,16 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Church of the Order of St. Blaise [100347] — fala D wierna (auto)
+    // Church of the Order of St. Blaise [100347] — fala I wierna (auto)
     krcgId: 100347,
     name: "Church of the Order of St. Blaise",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -24056,13 +24014,12 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Church of Vindicated Faith [100348] — fala D wierna (auto)
+    // The Church of Vindicated Faith [100348] — fala I wierna (auto)
     krcgId: 100348,
     name: "The Church of Vindicated Faith",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -24070,7 +24027,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Circle [100349] — fala D wierna (auto)
+    // Circle [100349] — fala I wierna (auto)
     krcgId: 100349,
     name: "Circle",
     cardType: "combat",
@@ -24078,11 +24035,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Circumspect Revelation [100350] — fala D wierna (auto)
+    // Circumspect Revelation [100350] — fala I wierna (auto)
     krcgId: 100350,
     name: "Circumspect Revelation",
     cardType: "actionModifier",
@@ -24090,17 +24047,16 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // City Gangrel Connections [100351] — fala D wierna (auto)
+    // City Gangrel Connections [100351] — fala I wierna (auto)
     krcgId: 100351,
     name: "City Gangrel Connections",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -24108,7 +24064,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Claiming the Body [100352] — fala D wierna (auto)
+    // Claiming the Body [100352] — fala I wierna (auto)
     krcgId: 100352,
     name: "Claiming the Body",
     cardType: "actionModifier",
@@ -24116,12 +24072,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Clan Impersonation [100353] — fala D wierna (auto)
+    // Clan Impersonation [100353] — fala I wierna (auto)
     krcgId: 100353,
     name: "Clan Impersonation",
     cardType: "action",
@@ -24129,11 +24084,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Clandestine Contract [100355] — fala D wierna (auto)
+    // Clandestine Contract [100355] — fala I wierna (auto)
     krcgId: 100355,
     name: "Clandestine Contract",
     cardType: "action",
@@ -24141,11 +24096,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cleansing Ritual [100357] — fala D wierna (auto)
+    // Cleansing Ritual [100357] — fala I wierna (auto)
     krcgId: 100357,
     name: "Cleansing Ritual",
     cardType: "action",
@@ -24153,13 +24108,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cleave [100358] — fala D wierna (auto)
+    // Cleave [100358] — fala I wierna (auto)
     krcgId: 100358,
     name: "Cleave",
     cardType: "combat",
@@ -24167,26 +24120,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ven", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Clio's Kiss [100359] — fala D wierna (auto)
+    // Clio's Kiss [100359] — fala I wierna (auto)
     krcgId: 100359,
     name: "Clio's Kiss",
     cardType: "action",
     bloodCost: 1,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Clockwerx [100363] — fala D wierna (auto)
+    // Clockwerx [100363] — fala I wierna (auto)
     krcgId: 100363,
     name: "Clockwerx",
     cardType: "combat",
@@ -24194,12 +24144,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Clotho's Gift [100365] — fala D wierna (auto)
+    // Clotho's Gift [100365] — fala I wierna (auto)
     krcgId: 100365,
     name: "Clotho's Gift",
     cardType: "action",
@@ -24207,13 +24156,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Coagulate Blood [100368] — fala D wierna (auto)
+    // Coagulate Blood [100368] — fala I wierna (auto)
     krcgId: 100368,
     name: "Coagulate Blood",
     cardType: "combat",
@@ -24221,12 +24168,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Coagulated Entity [100369] — fala D wierna (auto)
+    // Coagulated Entity [100369] — fala I wierna (auto)
     krcgId: 100369,
     name: "Coagulated Entity",
     cardType: "action",
@@ -24234,12 +24180,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cobra Fangs [100370] — fala D wierna (auto)
+    // Cobra Fangs [100370] — fala I wierna (auto)
     krcgId: 100370,
     name: "Cobra Fangs",
     cardType: "combat",
@@ -24247,12 +24192,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Code of Milan Suspended [100371] — fala D wierna (auto)
+    // Code of Milan Suspended [100371] — fala I wierna (auto)
     krcgId: 100371,
     name: "Code of Milan Suspended",
     cardType: "politicalAction",
@@ -24260,11 +24204,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Code of Samiel [100372] — fala D wierna (auto)
+    // Code of Samiel [100372] — fala I wierna (auto)
     krcgId: 100372,
     name: "Code of Samiel",
     cardType: "master",
@@ -24277,7 +24221,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Codex of the Damned [100373] — fala D wierna (auto)
+    // Codex of the Damned [100373] — fala I wierna (auto)
     krcgId: 100373,
     name: "Codex of the Damned",
     cardType: "equipment",
@@ -24286,12 +24230,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cold Amber's Hold [100375] — fala D wierna (auto)
+    // Cold Amber's Hold [100375] — fala I wierna (auto)
     krcgId: 100375,
     name: "Cold Amber's Hold",
     cardType: "action",
@@ -24299,11 +24242,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cold Aura [100376] — fala D wierna (auto)
+    // Cold Aura [100376] — fala I wierna (auto)
     krcgId: 100376,
     name: "Cold Aura",
     cardType: "combat",
@@ -24311,12 +24254,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Collapse the Arches [100377] — fala D wierna (auto)
+    // Collapse the Arches [100377] — fala I wierna (auto)
     krcgId: 100377,
     name: "Collapse the Arches",
     cardType: "combat",
@@ -24324,13 +24266,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Coma [100378] — fala D wierna (auto)
+    // Coma [100378] — fala I wierna (auto)
     krcgId: 100378,
     name: "Coma",
     cardType: "combat",
@@ -24338,12 +24278,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Command [100380] — fala D wierna (auto)
+    // Command [100380] — fala I wierna (auto)
     krcgId: 100380,
     name: "Command",
     cardType: "actionModifier",
@@ -24351,12 +24290,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Command of the Beast [100381] — fala D wierna (auto)
+    // Command of the Beast [100381] — fala I wierna (auto)
     krcgId: 100381,
     name: "Command of the Beast",
     cardType: "actionModifier",
@@ -24364,12 +24302,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Command Performance [100383] — fala D wierna (auto)
+    // Command Performance [100383] — fala I wierna (auto)
     krcgId: 100383,
     name: "Command Performance",
     cardType: "master",
@@ -24378,11 +24315,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Command the Legion [100384] — fala D wierna (auto)
+    // Command the Legion [100384] — fala I wierna (auto)
     krcgId: 100384,
     name: "Command the Legion",
     cardType: "action",
@@ -24390,12 +24327,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "dom", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Communal Haven: Temple [100386] — fala D wierna (auto)
+    // Communal Haven: Temple [100386] — fala I wierna (auto)
     krcgId: 100386,
     name: "Communal Haven: Temple",
     cardType: "master",
@@ -24404,11 +24340,11 @@ export const cardSpecs: CardSpec[] = [
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Community Justice [100387] — fala D wierna (auto)
+    // Community Justice [100387] — fala I wierna (auto)
     krcgId: 100387,
     name: "Community Justice",
     cardType: "action",
@@ -24416,11 +24352,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Compel the Spirit [100388] — fala D wierna (auto)
+    // Compel the Spirit [100388] — fala I wierna (auto)
     krcgId: 100388,
     name: "Compel the Spirit",
     cardType: "action",
@@ -24428,12 +24364,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Concert Tour [100393] — fala D wierna (auto)
+    // Concert Tour [100393] — fala I wierna (auto)
     krcgId: 100393,
     name: "Concert Tour",
     cardType: "action",
@@ -24441,11 +24376,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Concoction of Vitality [100394] — fala D wierna (auto)
+    // Concoction of Vitality [100394] — fala I wierna (auto)
     krcgId: 100394,
     name: "Concoction of Vitality",
     cardType: "equipment",
@@ -24454,11 +24389,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Concordance [100395] — fala D wierna (auto)
+    // Concordance [100395] — fala I wierna (auto)
     krcgId: 100395,
     name: "Concordance",
     cardType: "action",
@@ -24466,13 +24401,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Condemn the Sins of the Father [100396] — fala D wierna (auto)
+    // Condemn the Sins of the Father [100396] — fala I wierna (auto)
     krcgId: 100396,
     name: "Condemn the Sins of the Father",
     cardType: "action",
@@ -24480,12 +24413,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Condemnation: Betrayed [100397] — fala D wierna (auto)
+    // Condemnation: Betrayed [100397] — fala I wierna (auto)
     krcgId: 100397,
     name: "Condemnation: Betrayed",
     cardType: "action",
@@ -24493,13 +24425,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Condemnation: Doomed [100398] — fala D wierna (auto)
+    // Condemnation: Doomed [100398] — fala I wierna (auto)
     krcgId: 100398,
     name: "Condemnation: Doomed",
     cardType: "action",
@@ -24507,13 +24437,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Condemnation: Languid [100399] — fala D wierna (auto)
+    // Condemnation: Languid [100399] — fala I wierna (auto)
     krcgId: 100399,
     name: "Condemnation: Languid",
     cardType: "action",
@@ -24521,13 +24449,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Condemnation: Mute [100400] — fala D wierna (auto)
+    // Condemnation: Mute [100400] — fala I wierna (auto)
     krcgId: 100400,
     name: "Condemnation: Mute",
     cardType: "action",
@@ -24535,13 +24461,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Conductor [100402] — fala D wierna (auto)
+    // Conductor [100402] — fala I wierna (auto)
     krcgId: 100402,
     name: "Conductor",
     cardType: "master",
@@ -24554,7 +24478,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Confusion [100405] — fala D wierna (auto)
+    // Confusion [100405] — fala I wierna (auto)
     krcgId: 100405,
     name: "Confusion",
     cardType: "actionModifier",
@@ -24562,12 +24486,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Confusion of the Eye [100406] — fala D wierna (auto)
+    // Confusion of the Eye [100406] — fala I wierna (auto)
     krcgId: 100406,
     name: "Confusion of the Eye",
     cardType: "reaction",
@@ -24575,12 +24498,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Conniver [100407] — fala D wierna (auto)
+    // Conniver [100407] — fala I wierna (auto)
     krcgId: 100407,
     name: "Conniver",
     cardType: "master",
@@ -24592,7 +24514,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Conscripted Statue [100412] — fala D wierna (auto)
+    // Conscripted Statue [100412] — fala I wierna (auto)
     krcgId: 100412,
     name: "Conscripted Statue",
     cardType: "actionModifier",
@@ -24600,24 +24522,24 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Consecration Rites [100413] — fala D wierna (auto)
+    // Consecration Rites [100413] — fala I wierna (auto)
     krcgId: 100413,
     name: "Consecration Rites",
     cardType: "action",
     bloodCost: 0,
     poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Consignment to Duat [100415] — fala D wierna (auto)
+    // Consignment to Duat [100415] — fala I wierna (auto)
     krcgId: 100415,
     name: "Consignment to Duat",
     cardType: "action",
@@ -24625,12 +24547,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Consume the Dead [100417] — fala D wierna (auto)
+    // Consume the Dead [100417] — fala I wierna (auto)
     krcgId: 100417,
     name: "Consume the Dead",
     cardType: "action",
@@ -24638,12 +24559,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "superior", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Contagion [100418] — fala D wierna (auto)
+    // Contagion [100418] — fala I wierna (auto)
     krcgId: 100418,
     name: "Contagion",
     cardType: "action",
@@ -24652,12 +24572,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Convergence [100421] — fala D wierna (auto)
+    // Convergence [100421] — fala I wierna (auto)
     krcgId: 100421,
     name: "Convergence",
     cardType: "master",
@@ -24669,7 +24588,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Cooler [100422] — fala D wierna (auto)
+    // Cooler [100422] — fala I wierna (auto)
     krcgId: 100422,
     name: "Cooler",
     cardType: "equipment",
@@ -24677,11 +24596,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Coordinate Attacks [100423] — fala D wierna (auto)
+    // Coordinate Attacks [100423] — fala I wierna (auto)
     krcgId: 100423,
     name: "Coordinate Attacks",
     cardType: "combat",
@@ -24689,12 +24608,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Coroner's Contact [100424] — fala D wierna (auto)
+    // Coroner's Contact [100424] — fala I wierna (auto)
     krcgId: 100424,
     name: "Coroner's Contact",
     cardType: "master",
@@ -24706,7 +24624,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Corporal Reservoir [100425] — fala D wierna (auto)
+    // Corporal Reservoir [100425] — fala I wierna (auto)
     krcgId: 100425,
     name: "Corporal Reservoir",
     cardType: "master",
@@ -24714,11 +24632,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Corpse Balloon [100427] — fala D wierna (auto)
+    // Corpse Balloon [100427] — fala I wierna (auto)
     krcgId: 100427,
     name: "Corpse Balloon",
     cardType: "retainer",
@@ -24726,12 +24644,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Corrupt Construction [100429] — fala D wierna (auto)
+    // Corrupt Construction [100429] — fala I wierna (auto)
     krcgId: 100429,
     name: "Corrupt Construction",
     cardType: "ally",
@@ -24739,12 +24656,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Corruption [100430] — fala D wierna (auto)
+    // Corruption [100430] — fala I wierna (auto)
     krcgId: 100430,
     name: "Corruption",
     cardType: "action",
@@ -24752,11 +24668,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Coterie Tactics [100432] — fala D wierna (auto)
+    // Coterie Tactics [100432] — fala I wierna (auto)
     krcgId: 100432,
     name: "Coterie Tactics",
     cardType: "reaction",
@@ -24764,11 +24680,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Council of Seraphim [100433] — fala D wierna (auto)
+    // Council of Seraphim [100433] — fala I wierna (auto)
     krcgId: 100433,
     name: "Council of Seraphim",
     cardType: "actionModifier",
@@ -24776,11 +24692,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Courier [100434] — fala D wierna (auto)
+    // Courier [100434] — fala I wierna (auto)
     krcgId: 100434,
     name: "Courier",
     cardType: "ally",
@@ -24788,11 +24704,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Covenant of Blood [100436] — fala D wierna (auto)
+    // Covenant of Blood [100436] — fala I wierna (auto)
     krcgId: 100436,
     name: "Covenant of Blood",
     cardType: "action",
@@ -24800,11 +24716,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Covincraft [100437] — fala D wierna (auto)
+    // Covincraft [100437] — fala I wierna (auto)
     krcgId: 100437,
     name: "Covincraft",
     cardType: "reaction",
@@ -24812,11 +24728,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "superior", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cracking the Wall [100438] — fala D wierna (auto)
+    // Cracking the Wall [100438] — fala I wierna (auto)
     krcgId: 100438,
     name: "Cracking the Wall",
     cardType: "master",
@@ -24828,7 +24744,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Crawling Chamber [100439] — fala D wierna (auto)
+    // Crawling Chamber [100439] — fala I wierna (auto)
     krcgId: 100439,
     name: "Crawling Chamber",
     cardType: "combat",
@@ -24836,13 +24752,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Create Gargoyle [100440] — fala D wierna (auto)
+    // Create Gargoyle [100440] — fala I wierna (auto)
     krcgId: 100440,
     name: "Create Gargoyle",
     cardType: "action",
@@ -24850,12 +24764,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Creeping Infection [100443] — fala D wierna (auto)
+    // Creeping Infection [100443] — fala I wierna (auto)
     krcgId: 100443,
     name: "Creeping Infection",
     cardType: "combat",
@@ -24863,12 +24776,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // CrimethInc. [100446] — fala D wierna (auto)
+    // CrimethInc. [100446] — fala I wierna (auto)
     krcgId: 100446,
     name: "CrimethInc.",
     cardType: "actionModifier",
@@ -24876,13 +24788,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Crimson Sentinel [100448] — fala D wierna (auto)
+    // The Crimson Sentinel [100448] — fala I wierna (auto)
     krcgId: 100448,
     name: "The Crimson Sentinel",
     cardType: "equipment",
@@ -24891,11 +24801,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Crocodile Temple [100449] — fala D wierna (auto)
+    // The Crocodile Temple [100449] — fala I wierna (auto)
     krcgId: 100449,
     name: "The Crocodile Temple",
     cardType: "master",
@@ -24909,7 +24819,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Crocodile's Tongue [100450] — fala D wierna (auto)
+    // Crocodile's Tongue [100450] — fala I wierna (auto)
     krcgId: 100450,
     name: "Crocodile's Tongue",
     cardType: "actionModifier",
@@ -24917,129 +24827,119 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Crusade: Amsterdam [100451] — fala D wierna (auto)
+    // Crusade: Amsterdam [100451] — fala I wierna (auto)
     krcgId: 100451,
     name: "Crusade: Amsterdam",
     cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Crusade: Aragon [100452] — fala D wierna (auto)
+    // Crusade: Aragon [100452] — fala I wierna (auto)
     krcgId: 100452,
     name: "Crusade: Aragon",
     cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Crusade: Barcelona [100454] — fala D wierna (auto)
+    // Crusade: Barcelona [100454] — fala I wierna (auto)
     krcgId: 100454,
     name: "Crusade: Barcelona",
     cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Crusade: Brussels [100456] — fala D wierna (auto)
+    // Crusade: Brussels [100456] — fala I wierna (auto)
     krcgId: 100456,
     name: "Crusade: Brussels",
     cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Crusade: Dublin [100459] — fala D wierna (auto)
+    // Crusade: Dublin [100459] — fala I wierna (auto)
     krcgId: 100459,
     name: "Crusade: Dublin",
     cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Crusade: Geneva [100461] — fala D wierna (auto)
+    // Crusade: Geneva [100461] — fala I wierna (auto)
     krcgId: 100461,
     name: "Crusade: Geneva",
     cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Crusade: London [100464] — fala D wierna (auto)
+    // Crusade: London [100464] — fala I wierna (auto)
     krcgId: 100464,
     name: "Crusade: London",
     cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Crusade: Rome [100471] — fala D wierna (auto)
+    // Crusade: Rome [100471] — fala I wierna (auto)
     krcgId: 100471,
     name: "Crusade: Rome",
     cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Crusade: Washington, D.C. [100473] — fala D wierna (auto)
+    // Crusade: Washington, D.C. [100473] — fala I wierna (auto)
     krcgId: 100473,
     name: "Crusade: Washington, D.C.",
     cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Crusader Sword [100474] — fala D wierna (auto)
+    // The Crusader Sword [100474] — fala I wierna (auto)
     krcgId: 100474,
     name: "The Crusader Sword",
     cardType: "equipment",
@@ -25048,11 +24948,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cry Wolf [100475] — fala D wierna (auto)
+    // Cry Wolf [100475] — fala I wierna (auto)
     krcgId: 100475,
     name: "Cry Wolf",
     cardType: "ally",
@@ -25061,11 +24961,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cryptic Mission [100477] — fala D wierna (auto)
+    // Cryptic Mission [100477] — fala I wierna (auto)
     krcgId: 100477,
     name: "Cryptic Mission",
     cardType: "action",
@@ -25073,12 +24973,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "tha", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cull the Herd [100479] — fala D wierna (auto)
+    // Cull the Herd [100479] — fala I wierna (auto)
     krcgId: 100479,
     name: "Cull the Herd",
     cardType: "action",
@@ -25086,11 +24985,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cultivated Blood Shortage [100480] — fala D wierna (auto)
+    // Cultivated Blood Shortage [100480] — fala I wierna (auto)
     krcgId: 100480,
     name: "Cultivated Blood Shortage",
     cardType: "master",
@@ -25098,11 +24997,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Cunctator Motion [100481] — fala D wierna (auto)
+    // Cunctator Motion [100481] — fala I wierna (auto)
     krcgId: 100481,
     name: "Cunctator Motion",
     cardType: "politicalAction",
@@ -25110,11 +25009,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Curmudgeon [100482] — fala D wierna (auto)
+    // Curmudgeon [100482] — fala I wierna (auto)
     krcgId: 100482,
     name: "Curmudgeon",
     cardType: "master",
@@ -25126,7 +25025,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Curse of Nitocris [100483] — fala D wierna (auto)
+    // Curse of Nitocris [100483] — fala I wierna (auto)
     krcgId: 100483,
     name: "Curse of Nitocris",
     cardType: "master",
@@ -25139,7 +25038,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // D'habi Revenant [100484] — fala D wierna (auto)
+    // D'habi Revenant [100484] — fala I wierna (auto)
     krcgId: 100484,
     name: "D'habi Revenant",
     cardType: "retainer",
@@ -25147,11 +25046,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Daemonic Possession [100486] — fala D wierna (auto)
+    // Daemonic Possession [100486] — fala I wierna (auto)
     krcgId: 100486,
     name: "Daemonic Possession",
     cardType: "action",
@@ -25159,12 +25058,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dagger [100487] — fala D wierna (auto)
+    // Dagger [100487] — fala I wierna (auto)
     krcgId: 100487,
     name: "Dagger",
     cardType: "equipment",
@@ -25172,11 +25070,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dagon's Call [100488] — fala D wierna (auto)
+    // Dagon's Call [100488] — fala I wierna (auto)
     krcgId: 100488,
     name: "Dagon's Call",
     cardType: "combat",
@@ -25184,12 +25082,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dam the Heart's River [100489] — fala D wierna (auto)
+    // Dam the Heart's River [100489] — fala I wierna (auto)
     krcgId: 100489,
     name: "Dam the Heart's River",
     cardType: "combat",
@@ -25197,12 +25094,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Damned [100490] — fala D wierna (auto)
+    // The Damned [100490] — fala I wierna (auto)
     krcgId: 100490,
     name: "The Damned",
     cardType: "master",
@@ -25211,11 +25107,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Danse Macabre [100491] — fala D wierna (auto)
+    // Danse Macabre [100491] — fala I wierna (auto)
     krcgId: 100491,
     name: "Danse Macabre",
     cardType: "master",
@@ -25227,7 +25123,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Darkling Trickery [100496] — fala D wierna (auto)
+    // Darkling Trickery [100496] — fala I wierna (auto)
     krcgId: 100496,
     name: "Darkling Trickery",
     cardType: "combat",
@@ -25235,13 +25131,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "myt", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Darkness Within [100497] — fala D wierna (auto)
+    // Darkness Within [100497] — fala I wierna (auto)
     krcgId: 100497,
     name: "Darkness Within",
     cardType: "combat",
@@ -25249,12 +25143,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Darksight [100498] — fala D wierna (auto)
+    // Darksight [100498] — fala I wierna (auto)
     krcgId: 100498,
     name: "Darksight",
     cardType: "reaction",
@@ -25262,26 +25155,25 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dartmoor, England [100499] — fala D wierna (auto)
+    // Dartmoor, England [100499] — fala I wierna (auto)
     krcgId: 100499,
     name: "Dartmoor, England",
     cardType: "equipment",
     bloodCost: 2,
     poolCost: 0,
     unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dauntain Black Magician [100500] — fala D wierna (auto)
+    // Dauntain Black Magician [100500] — fala I wierna (auto)
     krcgId: 100500,
     name: "Dauntain Black Magician",
     cardType: "ally",
@@ -25289,11 +25181,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 3,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Day Operation [100502] — fala D wierna (auto)
+    // Day Operation [100502] — fala I wierna (auto)
     krcgId: 100502,
     name: "Day Operation",
     cardType: "actionModifier",
@@ -25301,12 +25193,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dead Hand [100503] — fala D wierna (auto)
+    // Dead Hand [100503] — fala I wierna (auto)
     krcgId: 100503,
     name: "Dead Hand",
     cardType: "combat",
@@ -25314,12 +25205,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Deadliest Sin [100505] — fala D wierna (auto)
+    // The Deadliest Sin [100505] — fala I wierna (auto)
     krcgId: 100505,
     name: "The Deadliest Sin",
     cardType: "reaction",
@@ -25327,11 +25217,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Death of the Drum [100508] — fala D wierna (auto)
+    // Death of the Drum [100508] — fala I wierna (auto)
     krcgId: 100508,
     name: "Death of the Drum",
     cardType: "combat",
@@ -25339,13 +25229,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "mel", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Death Pact [100509] — fala D wierna (auto)
+    // Death Pact [100509] — fala I wierna (auto)
     krcgId: 100509,
     name: "Death Pact",
     cardType: "action",
@@ -25353,12 +25241,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Decompose [100512] — fala D wierna (auto)
+    // Decompose [100512] — fala I wierna (auto)
     krcgId: 100512,
     name: "Decompose",
     cardType: "action",
@@ -25366,12 +25253,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "additionalStrike", count: 1, limited: false }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "additionalStrike", count: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Deed the Heart's Desire [100513] — fala D wierna (auto)
+    // Deed the Heart's Desire [100513] — fala I wierna (auto)
     krcgId: 100513,
     name: "Deed the Heart's Desire",
     cardType: "actionModifier",
@@ -25379,12 +25265,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Deep Cover Agent [100514] — fala D wierna (auto)
+    // Deep Cover Agent [100514] — fala I wierna (auto)
     krcgId: 100514,
     name: "Deep Cover Agent",
     cardType: "action",
@@ -25393,11 +25278,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Defender of the Haven [100517] — fala D wierna (auto)
+    // Defender of the Haven [100517] — fala I wierna (auto)
     krcgId: 100517,
     name: "Defender of the Haven",
     cardType: "action",
@@ -25405,11 +25290,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Demonstration [100522] — fala D wierna (auto)
+    // Demonstration [100522] — fala I wierna (auto)
     krcgId: 100522,
     name: "Demonstration",
     cardType: "master",
@@ -25422,7 +25307,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Deny [100524] — fala D wierna (auto)
+    // Deny [100524] — fala I wierna (auto)
     krcgId: 100524,
     name: "Deny",
     cardType: "actionModifier",
@@ -25430,12 +25315,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Deploy the Hand [100525] — fala D wierna (auto)
+    // Deploy the Hand [100525] — fala I wierna (auto)
     krcgId: 100525,
     name: "Deploy the Hand",
     cardType: "politicalAction",
@@ -25443,11 +25327,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Derange [100527] — fala D wierna (auto)
+    // Derange [100527] — fala I wierna (auto)
     krcgId: 100527,
     name: "Derange",
     cardType: "action",
@@ -25455,11 +25339,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Descent into Darkness [100528] — fala D wierna (auto)
+    // Descent into Darkness [100528] — fala I wierna (auto)
     krcgId: 100528,
     name: "Descent into Darkness",
     cardType: "action",
@@ -25467,12 +25351,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Despiral [100530] — fala D wierna (auto)
+    // Despiral [100530] — fala I wierna (auto)
     krcgId: 100530,
     name: "Despiral",
     cardType: "action",
@@ -25480,11 +25363,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Destructive Secrets [100531] — fala D wierna (auto)
+    // Destructive Secrets [100531] — fala I wierna (auto)
     krcgId: 100531,
     name: "Destructive Secrets",
     cardType: "action",
@@ -25492,25 +25375,24 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Detect Authority [100532] — fala D wierna (auto)
+    // Detect Authority [100532] — fala I wierna (auto)
     krcgId: 100532,
     name: "Detect Authority",
     cardType: "reaction",
     bloodCost: 0,
     poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Determine [100534] — fala D wierna (auto)
+    // Determine [100534] — fala I wierna (auto)
     krcgId: 100534,
     name: "Determine",
     cardType: "reaction",
@@ -25518,11 +25400,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "viz", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Development [100535] — fala D wierna (auto)
+    // Development [100535] — fala I wierna (auto)
     krcgId: 100535,
     name: "Development",
     cardType: "master",
@@ -25534,7 +25416,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Deviki Prasanta [100536] — fala D wierna (auto)
+    // Deviki Prasanta [100536] — fala I wierna (auto)
     krcgId: 100536,
     name: "Deviki Prasanta",
     cardType: "ally",
@@ -25543,11 +25425,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Devil-Channel: Back [100537] — fala D wierna (auto)
+    // Devil-Channel: Back [100537] — fala I wierna (auto)
     krcgId: 100537,
     name: "Devil-Channel: Back",
     cardType: "combat",
@@ -25555,12 +25437,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
-      { level: "superior", discipline: "abo", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Devil-Channel: Feet [100538] — fala D wierna (auto)
+    // Devil-Channel: Feet [100538] — fala I wierna (auto)
     krcgId: 100538,
     name: "Devil-Channel: Feet",
     cardType: "combat",
@@ -25568,12 +25449,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Devil-Channel: Hands [100539] — fala D wierna (auto)
+    // Devil-Channel: Hands [100539] — fala I wierna (auto)
     krcgId: 100539,
     name: "Devil-Channel: Hands",
     cardType: "combat",
@@ -25581,12 +25461,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Devil-Channel: Throat [100540] — fala D wierna (auto)
+    // Devil-Channel: Throat [100540] — fala I wierna (auto)
     krcgId: 100540,
     name: "Devil-Channel: Throat",
     cardType: "actionModifier",
@@ -25594,12 +25473,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "abo", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Diabolic Lure [100542] — fala D wierna (auto)
+    // Diabolic Lure [100542] — fala I wierna (auto)
     krcgId: 100542,
     name: "Diabolic Lure",
     cardType: "reaction",
@@ -25607,13 +25485,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Diamond Thunderbolt [100543] — fala D wierna (auto)
+    // The Diamond Thunderbolt [100543] — fala I wierna (auto)
     krcgId: 100543,
     name: "The Diamond Thunderbolt",
     cardType: "master",
@@ -25625,7 +25501,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Din of the Damned [100544] — fala D wierna (auto)
+    // Din of the Damned [100544] — fala I wierna (auto)
     krcgId: 100544,
     name: "Din of the Damned",
     cardType: "actionModifier",
@@ -25633,11 +25509,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dirty Contract [100546] — fala D wierna (auto)
+    // Dirty Contract [100546] — fala I wierna (auto)
     krcgId: 100546,
     name: "Dirty Contract",
     cardType: "master",
@@ -25645,11 +25521,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dirty Little Secrets [100547] — fala D wierna (auto)
+    // Dirty Little Secrets [100547] — fala I wierna (auto)
     krcgId: 100547,
     name: "Dirty Little Secrets",
     cardType: "actionModifier",
@@ -25657,11 +25533,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dis Pater [100548] — fala D wierna (auto)
+    // Dis Pater [100548] — fala I wierna (auto)
     krcgId: 100548,
     name: "Dis Pater",
     cardType: "master",
@@ -25670,11 +25546,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Discern [100551] — fala D wierna (auto)
+    // Discern [100551] — fala I wierna (auto)
     krcgId: 100551,
     name: "Discern",
     cardType: "power",
@@ -25682,11 +25558,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "jud", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Disciple of Lazarus [100552] — fala D wierna (auto)
+    // Disciple of Lazarus [100552] — fala I wierna (auto)
     krcgId: 100552,
     name: "Disciple of Lazarus",
     cardType: "action",
@@ -25694,11 +25570,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Disease [100553] — fala D wierna (auto)
+    // Disease [100553] — fala I wierna (auto)
     krcgId: 100553,
     name: "Disease",
     cardType: "combat",
@@ -25706,12 +25582,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Disguised Weapon [100555] — fala D wierna (auto)
+    // Disguised Weapon [100555] — fala I wierna (auto)
     krcgId: 100555,
     name: "Disguised Weapon",
     cardType: "combat",
@@ -25719,12 +25594,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dismemberment of Osiris [100556] — fala D wierna (auto)
+    // Dismemberment of Osiris [100556] — fala I wierna (auto)
     krcgId: 100556,
     name: "Dismemberment of Osiris",
     cardType: "action",
@@ -25732,12 +25606,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dive Bomb [100561] — fala D wierna (auto)
+    // Dive Bomb [100561] — fala I wierna (auto)
     krcgId: 100561,
     name: "Dive Bomb",
     cardType: "action",
@@ -25745,11 +25618,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "superior", discipline: "flight", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dive into Madness [100562] — fala D wierna (auto)
+    // Dive into Madness [100562] — fala I wierna (auto)
     krcgId: 100562,
     name: "Dive into Madness",
     cardType: "action",
@@ -25757,12 +25630,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Divine Image [100565] — fala D wierna (auto)
+    // Divine Image [100565] — fala I wierna (auto)
     krcgId: 100565,
     name: "Divine Image",
     cardType: "actionModifier",
@@ -25770,12 +25642,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Divine Sign [100566] — fala D wierna (auto)
+    // Divine Sign [100566] — fala I wierna (auto)
     krcgId: 100566,
     name: "Divine Sign",
     cardType: "action",
@@ -25783,12 +25654,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dogs of War [100569] — fala D wierna (auto)
+    // Dogs of War [100569] — fala I wierna (auto)
     krcgId: 100569,
     name: "Dogs of War",
     cardType: "politicalAction",
@@ -25796,11 +25666,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Domain of Evernight [100571] — fala D wierna (auto)
+    // Domain of Evernight [100571] — fala I wierna (auto)
     krcgId: 100571,
     name: "Domain of Evernight",
     cardType: "actionModifier",
@@ -25808,13 +25678,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dominion [100574] — fala D wierna (auto)
+    // Dominion [100574] — fala I wierna (auto)
     krcgId: 100574,
     name: "Dominion",
     cardType: "master",
@@ -25826,7 +25694,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Donate [100575] — fala D wierna (auto)
+    // Donate [100575] — fala I wierna (auto)
     krcgId: 100575,
     name: "Donate",
     cardType: "power",
@@ -25834,11 +25702,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mar", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Draba [100578] — fala D wierna (auto)
+    // Draba [100578] — fala I wierna (auto)
     krcgId: 100578,
     name: "Draba",
     cardType: "action",
@@ -25846,12 +25714,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Draeven Softfoot [100579] — fala D wierna (auto)
+    // Draeven Softfoot [100579] — fala I wierna (auto)
     krcgId: 100579,
     name: "Draeven Softfoot",
     cardType: "ally",
@@ -25860,11 +25727,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dramatic Upheaval [100583] — fala D wierna (auto)
+    // Dramatic Upheaval [100583] — fala I wierna (auto)
     krcgId: 100583,
     name: "Dramatic Upheaval",
     cardType: "politicalAction",
@@ -25872,11 +25739,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Draught of the Soul [100584] — fala D wierna (auto)
+    // Draught of the Soul [100584] — fala I wierna (auto)
     krcgId: 100584,
     name: "Draught of the Soul",
     cardType: "actionModifier",
@@ -25884,14 +25751,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dream World [100587] — fala D wierna (auto)
+    // Dream World [100587] — fala I wierna (auto)
     krcgId: 100587,
     name: "Dream World",
     cardType: "action",
@@ -25899,12 +25763,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Drink the Blood of Ahriman [100589] — fala D wierna (auto)
+    // Drink the Blood of Ahriman [100589] — fala I wierna (auto)
     krcgId: 100589,
     name: "Drink the Blood of Ahriman",
     cardType: "action",
@@ -25912,11 +25775,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Drop Point Network [100590] — fala D wierna (auto)
+    // Drop Point Network [100590] — fala I wierna (auto)
     krcgId: 100590,
     name: "Drop Point Network",
     cardType: "master",
@@ -25928,21 +25791,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Dual Form [100592] — fala D wierna (auto)
+    // Dual Form [100592] — fala I wierna (auto)
     krcgId: 100592,
     name: "Dual Form",
     cardType: "action",
     bloodCost: 2,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Duma Rafiki [100593] — fala D wierna (auto)
+    // Duma Rafiki [100593] — fala I wierna (auto)
     krcgId: 100593,
     name: "Duma Rafiki",
     cardType: "retainer",
@@ -25950,11 +25811,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dusk Work [100595] — fala D wierna (auto)
+    // Dusk Work [100595] — fala I wierna (auto)
     krcgId: 100595,
     name: "Dusk Work",
     cardType: "actionModifier",
@@ -25962,11 +25823,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dust to Dust [100596] — fala D wierna (auto)
+    // Dust to Dust [100596] — fala I wierna (auto)
     krcgId: 100596,
     name: "Dust to Dust",
     cardType: "combat",
@@ -25974,13 +25835,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ears of the Hare [100599] — fala D wierna (auto)
+    // Ears of the Hare [100599] — fala I wierna (auto)
     krcgId: 100599,
     name: "Ears of the Hare",
     cardType: "reaction",
@@ -25988,13 +25847,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Earth-Feeder [100603] — fala D wierna (auto)
+    // Earth-Feeder [100603] — fala I wierna (auto)
     krcgId: 100603,
     name: "Earth-Feeder",
     cardType: "action",
@@ -26002,11 +25859,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ebony Fox Hunt [100606] — fala D wierna (auto)
+    // Ebony Fox Hunt [100606] — fala I wierna (auto)
     krcgId: 100606,
     name: "Ebony Fox Hunt",
     cardType: "master",
@@ -26018,19 +25875,20 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Eccentric Billionaire [100607] — fala D wierna (auto)
+    // Eccentric Billionaire [100607] — fala I wierna (auto)
     krcgId: 100607,
     name: "Eccentric Billionaire",
     cardType: "ally",
     bloodCost: 0,
     poolCost: 3,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Echo of Harmonies [100608] — fala D wierna (auto)
+    // Echo of Harmonies [100608] — fala I wierna (auto)
     krcgId: 100608,
     name: "Echo of Harmonies",
     cardType: "actionModifier",
@@ -26038,13 +25896,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ecstasy [100610] — fala D wierna (auto)
+    // Ecstasy [100610] — fala I wierna (auto)
     krcgId: 100610,
     name: "Ecstasy",
     cardType: "reaction",
@@ -26052,12 +25908,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ecstatic Agony [100611] — fala D wierna (auto)
+    // Ecstatic Agony [100611] — fala I wierna (auto)
     krcgId: 100611,
     name: "Ecstatic Agony",
     cardType: "action",
@@ -26065,12 +25920,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Edge Explosion [100612] — fala D wierna (auto)
+    // Edge Explosion [100612] — fala I wierna (auto)
     krcgId: 100612,
     name: "Edge Explosion",
     cardType: "event",
@@ -26078,11 +25932,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Edge of the World [100613] — fala D wierna (auto)
+    // Edge of the World [100613] — fala I wierna (auto)
     krcgId: 100613,
     name: "Edge of the World",
     cardType: "actionModifier",
@@ -26090,11 +25944,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Edge Vitiation [100614] — fala D wierna (auto)
+    // Edge Vitiation [100614] — fala I wierna (auto)
     krcgId: 100614,
     name: "Edge Vitiation",
     cardType: "action",
@@ -26102,12 +25956,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Edged Illusion [100615] — fala D wierna (auto)
+    // Edged Illusion [100615] — fala I wierna (auto)
     krcgId: 100615,
     name: "Edged Illusion",
     cardType: "action",
@@ -26115,12 +25968,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Elder Michaelis's Hold [100621] — fala D wierna (auto)
+    // Elder Michaelis's Hold [100621] — fala I wierna (auto)
     krcgId: 100621,
     name: "Elder Michaelis's Hold",
     cardType: "reaction",
@@ -26128,11 +25980,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Eldest Are Kholo [100622] — fala D wierna (auto)
+    // The Eldest Are Kholo [100622] — fala I wierna (auto)
     krcgId: 100622,
     name: "The Eldest Are Kholo",
     cardType: "actionModifier",
@@ -26140,11 +25992,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "superior", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Eldest Command Undeath [100623] — fala D wierna (auto)
+    // The Eldest Command Undeath [100623] — fala I wierna (auto)
     krcgId: 100623,
     name: "The Eldest Command Undeath",
     cardType: "politicalAction",
@@ -26152,11 +26004,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Elephant Guardian [100626] — fala D wierna (auto)
+    // Elephant Guardian [100626] — fala I wierna (auto)
     krcgId: 100626,
     name: "Elephant Guardian",
     cardType: "retainer",
@@ -26164,11 +26016,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Elixir of Distillation [100627] — fala D wierna (auto)
+    // Elixir of Distillation [100627] — fala I wierna (auto)
     krcgId: 100627,
     name: "Elixir of Distillation",
     cardType: "equipment",
@@ -26176,245 +26028,26 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Emerald Legionnaire [100634] — fala D wierna (auto)
+    // Emerald Legionnaire [100634] — fala I wierna (auto)
     krcgId: 100634,
     name: "Emerald Legionnaire",
     cardType: "ally",
     bloodCost: 0,
     poolCost: 1,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Emergency Powers [100635] — fala D wierna (auto)
+    // Emergency Powers [100635] — fala I wierna (auto)
     krcgId: 100635,
     name: "Emergency Powers",
     cardType: "action",
-    bloodCost: 0,
-    poolCost: 0,
-    unique: true,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Emergency Rations [100637] — fala D wierna (auto)
-    krcgId: 100637,
-    name: "Emergency Rations",
-    cardType: "action",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Empowering the Puppet King [100639] — fala D wierna (auto)
-    krcgId: 100639,
-    name: "Empowering the Puppet King",
-    cardType: "actionModifier",
-    bloodCost: 1,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
-    ],
-  },
-  {
-    // Enchanted Marionette [100641] — fala D wierna (auto)
-    krcgId: 100641,
-    name: "Enchanted Marionette",
-    cardType: "equipment",
-    bloodCost: 0,
-    poolCost: 3,
-    unique: true,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Enforcer [100642] — fala D wierna (auto)
-    krcgId: 100642,
-    name: "Enforcer",
-    cardType: "action",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Engling Fury [100643] — fala D wierna (auto)
-    krcgId: 100643,
-    name: "Engling Fury",
-    cardType: "action",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Enkil Cog [100645] — fala D wierna (auto)
-    krcgId: 100645,
-    name: "Enkil Cog",
-    cardType: "actionModifier",
-    bloodCost: 0,
-    poolCost: 0,
-    unique: true,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
-    ],
-  },
-  {
-    // Ensconced [100648] — fala D wierna (auto)
-    krcgId: 100648,
-    name: "Ensconced",
-    cardType: "action",
-    bloodCost: 0,
-    poolCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["location"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Ensemble [100649] — fala D wierna (auto)
-    krcgId: 100649,
-    name: "Ensemble",
-    cardType: "actionModifier",
-    bloodCost: 1,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
-    ],
-  },
-  {
-    // Enticement [100650] — fala D wierna (auto)
-    krcgId: 100650,
-    name: "Enticement",
-    cardType: "action",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
-    ],
-  },
-  {
-    // Entombment [100651] — fala D wierna (auto)
-    krcgId: 100651,
-    name: "Entombment",
-    cardType: "combat",
-    bloodCost: 2,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Ephor [100654] — fala D wierna (auto)
-    krcgId: 100654,
-    name: "Ephor",
-    cardType: "master",
-    bloodCost: 0,
-    poolCost: 1,
-    unique: true,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Epiphany [100655] — fala D wierna (auto)
-    krcgId: 100655,
-    name: "Epiphany",
-    cardType: "action",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Erebus Mask [100657] — fala D wierna (auto)
-    krcgId: 100657,
-    name: "Erebus Mask",
-    cardType: "equipment",
-    bloodCost: 0,
-    poolCost: 1,
-    unique: true,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Erosion [100658] — fala D wierna (auto)
-    krcgId: 100658,
-    name: "Erosion",
-    cardType: "action",
-    bloodCost: 1,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Eruption of Vitae [100659] — fala D wierna (auto)
-    krcgId: 100659,
-    name: "Eruption of Vitae",
-    cardType: "combat",
-    bloodCost: 1,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] }
-    ],
-  },
-  {
-    // Escaped Mental Patient [100661] — fala D wierna (auto)
-    krcgId: 100661,
-    name: "Escaped Mental Patient",
-    cardType: "ally",
-    bloodCost: 0,
-    poolCost: 2,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
-    ],
-  },
-  {
-    // Esgrima [100662] — fala D wierna (auto)
-    krcgId: 100662,
-    name: "Esgrima",
-    cardType: "master",
     bloodCost: 0,
     poolCost: 0,
     unique: true,
@@ -26424,7 +26057,216 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Esprit de Corps [100663] — fala D wierna (auto)
+    // Emergency Rations [100637] — fala I wierna (auto)
+    krcgId: 100637,
+    name: "Emergency Rations",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Empowering the Puppet King [100639] — fala I wierna (auto)
+    krcgId: 100639,
+    name: "Empowering the Puppet King",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Enchanted Marionette [100641] — fala I wierna (auto)
+    krcgId: 100641,
+    name: "Enchanted Marionette",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 3,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Enforcer [100642] — fala I wierna (auto)
+    krcgId: 100642,
+    name: "Enforcer",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Engling Fury [100643] — fala I wierna (auto)
+    krcgId: 100643,
+    name: "Engling Fury",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Enkil Cog [100645] — fala I wierna (auto)
+    krcgId: 100645,
+    name: "Enkil Cog",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Ensconced [100648] — fala I wierna (auto)
+    krcgId: 100648,
+    name: "Ensconced",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Ensemble [100649] — fala I wierna (auto)
+    krcgId: 100649,
+    name: "Ensemble",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Enticement [100650] — fala I wierna (auto)
+    krcgId: 100650,
+    name: "Enticement",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Entombment [100651] — fala I wierna (auto)
+    krcgId: 100651,
+    name: "Entombment",
+    cardType: "combat",
+    bloodCost: 2,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Ephor [100654] — fala I wierna (auto)
+    krcgId: 100654,
+    name: "Ephor",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Epiphany [100655] — fala I wierna (auto)
+    krcgId: 100655,
+    name: "Epiphany",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Erebus Mask [100657] — fala I wierna (auto)
+    krcgId: 100657,
+    name: "Erebus Mask",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Erosion [100658] — fala I wierna (auto)
+    krcgId: 100658,
+    name: "Erosion",
+    cardType: "action",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Eruption of Vitae [100659] — fala I wierna (auto)
+    krcgId: 100659,
+    name: "Eruption of Vitae",
+    cardType: "combat",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Escaped Mental Patient [100661] — fala I wierna (auto)
+    krcgId: 100661,
+    name: "Escaped Mental Patient",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 2,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Esgrima [100662] — fala I wierna (auto)
+    krcgId: 100662,
+    name: "Esgrima",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Esprit de Corps [100663] — fala I wierna (auto)
     krcgId: 100663,
     name: "Esprit de Corps",
     cardType: "action",
@@ -26433,28 +26275,23 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Eternal Mask [100665] — fala D wierna (auto)
+    // The Eternal Mask [100665] — fala I wierna (auto)
     krcgId: 100665,
     name: "The Eternal Mask",
     cardType: "action",
     bloodCost: 1,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Eternals of Sirius [100667] — fala D wierna (auto)
+    // The Eternals of Sirius [100667] — fala I wierna (auto)
     krcgId: 100667,
     name: "The Eternals of Sirius",
     cardType: "master",
@@ -26466,20 +26303,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Evil Eye [100668] — fala D wierna (auto)
+    // Evil Eye [100668] — fala I wierna (auto)
     krcgId: 100668,
     name: "Evil Eye",
-    cardType: "reaction",
+    cardType: "combat",
     bloodCost: 1,
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mal", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "mal", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ex Nihilo [100669] — fala D wierna (auto)
+    // Ex Nihilo [100669] — fala I wierna (auto)
     krcgId: 100669,
     name: "Ex Nihilo",
     cardType: "action",
@@ -26487,12 +26323,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Excellent Thirst [100670] — fala D wierna (auto)
+    // Excellent Thirst [100670] — fala I wierna (auto)
     krcgId: 100670,
     name: "Excellent Thirst",
     cardType: "actionModifier",
@@ -26500,11 +26335,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Exile [100673] — fala D wierna (auto)
+    // Exile [100673] — fala I wierna (auto)
     krcgId: 100673,
     name: "Exile",
     cardType: "action",
@@ -26512,12 +26347,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Expiate [100674] — fala D wierna (auto)
+    // Expiate [100674] — fala I wierna (auto)
     krcgId: 100674,
     name: "Expiate",
     cardType: "combat",
@@ -26525,11 +26359,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mar", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Extortion [100675] — fala D wierna (auto)
+    // Extortion [100675] — fala I wierna (auto)
     krcgId: 100675,
     name: "Extortion",
     cardType: "reaction",
@@ -26537,12 +26371,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Exuding Blood [100677] — fala D wierna (auto)
+    // Exuding Blood [100677] — fala I wierna (auto)
     krcgId: 100677,
     name: "Exuding Blood",
     cardType: "combat",
@@ -26550,12 +26383,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Eye of Hazimel [100678] — fala D wierna (auto)
+    // Eye of Hazimel [100678] — fala I wierna (auto)
     krcgId: 100678,
     name: "Eye of Hazimel",
     cardType: "equipment",
@@ -26564,12 +26396,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "superior", discipline: null, effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Eye of Unforgiving Heaven [100679] — fala D wierna (auto)
+    // Eye of Unforgiving Heaven [100679] — fala I wierna (auto)
     krcgId: 100679,
     name: "Eye of Unforgiving Heaven",
     cardType: "combat",
@@ -26577,14 +26408,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "basic", discipline: "val", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "val", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Eyes of Blades [100681] — fala D wierna (auto)
+    // Eyes of Blades [100681] — fala I wierna (auto)
     krcgId: 100681,
     name: "Eyes of Blades",
     cardType: "combat",
@@ -26592,14 +26420,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "strikeDodge" }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "strikeDodge" }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDodge" }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Eyes of Chaos [100682] — fala D wierna (auto)
+    // Eyes of Chaos [100682] — fala I wierna (auto)
     krcgId: 100682,
     name: "Eyes of Chaos",
     cardType: "actionModifier",
@@ -26607,12 +26432,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Eyes of the Beast [100683] — fala D wierna (auto)
+    // Eyes of the Beast [100683] — fala I wierna (auto)
     krcgId: 100683,
     name: "Eyes of the Beast",
     cardType: "reaction",
@@ -26620,12 +26444,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "pro", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Eyes of the Dead [100684] — fala D wierna (auto)
+    // Eyes of the Dead [100684] — fala I wierna (auto)
     krcgId: 100684,
     name: "Eyes of the Dead",
     cardType: "reaction",
@@ -26633,12 +26456,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Eyes of the Night [100685] — fala D wierna (auto)
+    // Eyes of the Night [100685] — fala I wierna (auto)
     krcgId: 100685,
     name: "Eyes of the Night",
     cardType: "reaction",
@@ -26646,12 +26468,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Eyes of the Serpent [100686] — fala D wierna (auto)
+    // Eyes of the Serpent [100686] — fala I wierna (auto)
     krcgId: 100686,
     name: "Eyes of the Serpent",
     cardType: "actionModifier",
@@ -26659,12 +26480,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Fae Contortion [100689] — fala D wierna (auto)
+    // Fae Contortion [100689] — fala I wierna (auto)
     krcgId: 100689,
     name: "Fae Contortion",
     cardType: "actionModifier",
@@ -26672,13 +26492,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "myt", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Faerie Wards [100690] — fala D wierna (auto)
+    // Faerie Wards [100690] — fala I wierna (auto)
     krcgId: 100690,
     name: "Faerie Wards",
     cardType: "reaction",
@@ -26686,16 +26504,86 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "myt", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Failsafe [100691] — fala D wierna (auto)
+    // Failsafe [100691] — fala I wierna (auto)
     krcgId: 100691,
     name: "Failsafe",
     cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Falcon's Eye [100694] — fala I wierna (auto)
+    krcgId: 100694,
+    name: "Falcon's Eye",
+    cardType: "reaction",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Fall of the Camarilla [100695] — fala I wierna (auto)
+    krcgId: 100695,
+    name: "Fall of the Camarilla",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Fall of the Sabbat [100696] — fala I wierna (auto)
+    krcgId: 100696,
+    name: "Fall of the Sabbat",
+    cardType: "event",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // False Resonance [100697] — fala I wierna (auto)
+    krcgId: 100697,
+    name: "False Resonance",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Familial Bond [100699] — fala I wierna (auto)
+    krcgId: 100699,
+    name: "Familial Bond",
+    cardType: "reaction",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Fanfare for Elysium [100700] — fala I wierna (auto)
+    krcgId: 100700,
+    name: "Fanfare for Elysium",
+    cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 0,
     unique: true,
@@ -26705,84 +26593,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Falcon's Eye [100694] — fala D wierna (auto)
-    krcgId: 100694,
-    name: "Falcon's Eye",
-    cardType: "reaction",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] }
-    ],
-  },
-  {
-    // Fall of the Camarilla [100695] — fala D wierna (auto)
-    krcgId: 100695,
-    name: "Fall of the Camarilla",
-    cardType: "event",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Fall of the Sabbat [100696] — fala D wierna (auto)
-    krcgId: 100696,
-    name: "Fall of the Sabbat",
-    cardType: "event",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // False Resonance [100697] — fala D wierna (auto)
-    krcgId: 100697,
-    name: "False Resonance",
-    cardType: "actionModifier",
-    bloodCost: 1,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Familial Bond [100699] — fala D wierna (auto)
-    krcgId: 100699,
-    name: "Familial Bond",
-    cardType: "reaction",
-    bloodCost: 1,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
-    ],
-  },
-  {
-    // Fanfare for Elysium [100700] — fala D wierna (auto)
-    krcgId: 100700,
-    name: "Fanfare for Elysium",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    poolCost: 0,
-    unique: true,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "mel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
-    ],
-  },
-  {
-    // Fantasy World [100701] — fala D wierna (auto)
+    // Fantasy World [100701] — fala I wierna (auto)
     krcgId: 100701,
     name: "Fantasy World",
     cardType: "action",
@@ -26790,12 +26601,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Far Fatuus [100702] — fala D wierna (auto)
+    // Far Fatuus [100702] — fala I wierna (auto)
     krcgId: 100702,
     name: "Far Fatuus",
     cardType: "combat",
@@ -26803,12 +26613,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Fast Reaction [100705] — fala D wierna (auto)
+    // Fast Reaction [100705] — fala I wierna (auto)
     krcgId: 100705,
     name: "Fast Reaction",
     cardType: "reaction",
@@ -26816,25 +26625,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Fata Amria [100706] — fala D wierna (auto)
+    // Fata Amria [100706] — fala I wierna (auto)
     krcgId: 100706,
     name: "Fata Amria",
-    cardType: "reaction",
+    cardType: "combat",
     bloodCost: 1,
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "strikeDodge" }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Fata Morgana [100707] — fala D wierna (auto)
+    // Fata Morgana [100707] — fala I wierna (auto)
     krcgId: 100707,
     name: "Fata Morgana",
     cardType: "actionModifier",
@@ -26842,12 +26649,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Fatuus Mastery [100708] — fala D wierna (auto)
+    // Fatuus Mastery [100708] — fala I wierna (auto)
     krcgId: 100708,
     name: "Fatuus Mastery",
     cardType: "action",
@@ -26855,12 +26661,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Fear of Mekhet [100710] — fala D wierna (auto)
+    // Fear of Mekhet [100710] — fala I wierna (auto)
     krcgId: 100710,
     name: "Fear of Mekhet",
     cardType: "master",
@@ -26872,7 +26677,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Fear of the Void Below [100711] — fala D wierna (auto)
+    // Fear of the Void Below [100711] — fala I wierna (auto)
     krcgId: 100711,
     name: "Fear of the Void Below",
     cardType: "combat",
@@ -26880,13 +26685,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Feline Saboteur [100718] — fala D wierna (auto)
+    // Feline Saboteur [100718] — fala I wierna (auto)
     krcgId: 100718,
     name: "Feline Saboteur",
     cardType: "action",
@@ -26894,14 +26697,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Feral Spirit [100721] — fala D wierna (auto)
+    // Feral Spirit [100721] — fala I wierna (auto)
     krcgId: 100721,
     name: "Feral Spirit",
     cardType: "master",
@@ -26913,7 +26713,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Field Training [100725] — fala D wierna (auto)
+    // Field Training [100725] — fala I wierna (auto)
     krcgId: 100725,
     name: "Field Training",
     cardType: "action",
@@ -26921,25 +26721,24 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Filchware's Pawn Shop [100728] — fala D wierna (auto)
+    // Filchware's Pawn Shop [100728] — fala I wierna (auto)
     krcgId: 100728,
     name: "Filchware's Pawn Shop",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Final Loosening [100730] — fala D wierna (auto)
+    // Final Loosening [100730] — fala I wierna (auto)
     krcgId: 100730,
     name: "Final Loosening",
     cardType: "reaction",
@@ -26947,13 +26746,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Finding the Path [100732] — fala D wierna (auto)
+    // Finding the Path [100732] — fala I wierna (auto)
     krcgId: 100732,
     name: "Finding the Path",
     cardType: "politicalAction",
@@ -26961,11 +26758,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Fire Dance [100733] — fala D wierna (auto)
+    // Fire Dance [100733] — fala I wierna (auto)
     krcgId: 100733,
     name: "Fire Dance",
     cardType: "action",
@@ -26973,11 +26770,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Fire on the Mountain [100735] — fala D wierna (auto)
+    // Fire on the Mountain [100735] — fala I wierna (auto)
     krcgId: 100735,
     name: "Fire on the Mountain",
     cardType: "action",
@@ -26985,11 +26782,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // First Tradition: The Masquerade [100737] — fala D wierna (auto)
+    // First Tradition: The Masquerade [100737] — fala I wierna (auto)
     krcgId: 100737,
     name: "First Tradition: The Masquerade",
     cardType: "politicalAction",
@@ -26997,11 +26794,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Flak Jacket [100739] — fala D wierna (auto)
+    // Flak Jacket [100739] — fala I wierna (auto)
     krcgId: 100739,
     name: "Flak Jacket",
     cardType: "equipment",
@@ -27009,11 +26806,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Flames of the Netherworld [100741] — fala D wierna (auto)
+    // Flames of the Netherworld [100741] — fala I wierna (auto)
     krcgId: 100741,
     name: "Flames of the Netherworld",
     cardType: "combat",
@@ -27021,13 +26818,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Flash Grenade [100745] — fala D wierna (auto)
+    // Flash Grenade [100745] — fala I wierna (auto)
     krcgId: 100745,
     name: "Flash Grenade",
     cardType: "equipment",
@@ -27035,11 +26830,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Fleecing the Gaje [100746] — fala D wierna (auto)
+    // Fleecing the Gaje [100746] — fala I wierna (auto)
     krcgId: 100746,
     name: "Fleecing the Gaje",
     cardType: "action",
@@ -27047,11 +26842,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Fleshcraft [100750] — fala D wierna (auto)
+    // Fleshcraft [100750] — fala I wierna (auto)
     krcgId: 100750,
     name: "Fleshcraft",
     cardType: "combat",
@@ -27059,12 +26854,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Flow Within the Mountain [100751] — fala D wierna (auto)
+    // Flow Within the Mountain [100751] — fala I wierna (auto)
     krcgId: 100751,
     name: "Flow Within the Mountain",
     cardType: "combat",
@@ -27072,13 +26866,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Foldable Machine Gun [100754] — fala D wierna (auto)
+    // Foldable Machine Gun [100754] — fala I wierna (auto)
     krcgId: 100754,
     name: "Foldable Machine Gun",
     cardType: "equipment",
@@ -27086,11 +26878,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Folderol [100755] — fala D wierna (auto)
+    // Folderol [100755] — fala I wierna (auto)
     krcgId: 100755,
     name: "Folderol",
     cardType: "reaction",
@@ -27098,13 +26890,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "myt", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Follow the Alpha [100756] — fala D wierna (auto)
+    // Follow the Alpha [100756] — fala I wierna (auto)
     krcgId: 100756,
     name: "Follow the Alpha",
     cardType: "actionModifier",
@@ -27112,11 +26902,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Follow the Blood [100757] — fala D wierna (auto)
+    // Follow the Blood [100757] — fala I wierna (auto)
     krcgId: 100757,
     name: "Follow the Blood",
     cardType: "reaction",
@@ -27124,11 +26914,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Force of Will [100759] — fala D wierna (auto)
+    // Force of Will [100759] — fala I wierna (auto)
     krcgId: 100759,
     name: "Force of Will",
     cardType: "action",
@@ -27136,12 +26926,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Forced March [100761] — fala D wierna (auto)
+    // Forced March [100761] — fala I wierna (auto)
     krcgId: 100761,
     name: "Forced March",
     cardType: "actionModifier",
@@ -27149,14 +26938,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Foresee [100764] — fala D wierna (auto)
+    // Foresee [100764] — fala I wierna (auto)
     krcgId: 100764,
     name: "Foresee",
     cardType: "power",
@@ -27164,39 +26950,36 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "viz", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Forest of Shadows [100766] — fala D wierna (auto)
+    // Forest of Shadows [100766] — fala I wierna (auto)
     krcgId: 100766,
     name: "Forest of Shadows",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Forger's Hammer [100767] — fala D wierna (auto)
+    // Forger's Hammer [100767] — fala I wierna (auto)
     krcgId: 100767,
     name: "Forger's Hammer",
     cardType: "actionModifier",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Form of Corruption [100770] — fala D wierna (auto)
+    // Form of Corruption [100770] — fala I wierna (auto)
     krcgId: 100770,
     name: "Form of Corruption",
     cardType: "action",
@@ -27204,12 +26987,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Form of the Serpent [100773] — fala D wierna (auto)
+    // Form of the Serpent [100773] — fala I wierna (auto)
     krcgId: 100773,
     name: "Form of the Serpent",
     cardType: "actionModifier",
@@ -27217,12 +26999,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Fortschritt Library [100775] — fala D wierna (auto)
+    // Fortschritt Library [100775] — fala I wierna (auto)
     krcgId: 100775,
     name: "Fortschritt Library",
     cardType: "master",
@@ -27234,7 +27015,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Foul Blood [100778] — fala D wierna (auto)
+    // Foul Blood [100778] — fala I wierna (auto)
     krcgId: 100778,
     name: "Foul Blood",
     cardType: "reaction",
@@ -27242,12 +27023,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Foundation Exhibit [100779] — fala D wierna (auto)
+    // Foundation Exhibit [100779] — fala I wierna (auto)
     krcgId: 100779,
     name: "Foundation Exhibit",
     cardType: "master",
@@ -27261,7 +27041,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Founders of the Ebony Kingdom [100780] — fala D wierna (auto)
+    // Founders of the Ebony Kingdom [100780] — fala I wierna (auto)
     krcgId: 100780,
     name: "Founders of the Ebony Kingdom",
     cardType: "action",
@@ -27269,11 +27049,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Fourth Cycle [100781] — fala D wierna (auto)
+    // The Fourth Cycle [100781] — fala I wierna (auto)
     krcgId: 100781,
     name: "The Fourth Cycle",
     cardType: "event",
@@ -27281,11 +27061,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Fractura [100783] — fala D wierna (auto)
+    // Fractura [100783] — fala I wierna (auto)
     krcgId: 100783,
     name: "Fractura",
     cardType: "combat",
@@ -27293,13 +27073,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "str", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
-      { level: "superior", discipline: "str", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Framing [100786] — fala D wierna (auto)
+    // The Framing [100786] — fala I wierna (auto)
     krcgId: 100786,
     name: "The Framing",
     cardType: "action",
@@ -27307,11 +27085,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Framing an Ancient Grudge [100787] — fala D wierna (auto)
+    // Framing an Ancient Grudge [100787] — fala I wierna (auto)
     krcgId: 100787,
     name: "Framing an Ancient Grudge",
     cardType: "master",
@@ -27323,7 +27101,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Free Fight [100789] — fala D wierna (auto)
+    // Free Fight [100789] — fala I wierna (auto)
     krcgId: 100789,
     name: "Free Fight",
     cardType: "combat",
@@ -27331,12 +27109,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Free States Rant [100790] — fala D wierna (auto)
+    // Free States Rant [100790] — fala I wierna (auto)
     krcgId: 100790,
     name: "Free States Rant",
     cardType: "politicalAction",
@@ -27344,11 +27121,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Frenzy [100791] — fala D wierna (auto)
+    // Frenzy [100791] — fala I wierna (auto)
     krcgId: 100791,
     name: "Frenzy",
     cardType: "master",
@@ -27360,7 +27137,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Friend of Mine [100792] — fala D wierna (auto)
+    // Friend of Mine [100792] — fala I wierna (auto)
     krcgId: 100792,
     name: "Friend of Mine",
     cardType: "reaction",
@@ -27368,13 +27145,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Frozen Object [100795] — fala D wierna (auto)
+    // Frozen Object [100795] — fala I wierna (auto)
     krcgId: 100795,
     name: "Frozen Object",
     cardType: "action",
@@ -27382,13 +27157,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Funeral Wake [100797] — fala D wierna (auto)
+    // Funeral Wake [100797] — fala I wierna (auto)
     krcgId: 100797,
     name: "Funeral Wake",
     cardType: "reaction",
@@ -27396,12 +27169,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Galaric's Legacy [100798] — fala D wierna (auto)
+    // Galaric's Legacy [100798] — fala I wierna (auto)
     krcgId: 100798,
     name: "Galaric's Legacy",
     cardType: "master",
@@ -27413,7 +27185,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Game of Malkav [100800] — fala D wierna (auto)
+    // Game of Malkav [100800] — fala I wierna (auto)
     krcgId: 100800,
     name: "Game of Malkav",
     cardType: "master",
@@ -27425,7 +27197,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Games of Instinct [100801] — fala D wierna (auto)
+    // Games of Instinct [100801] — fala I wierna (auto)
     krcgId: 100801,
     name: "Games of Instinct",
     cardType: "action",
@@ -27433,11 +27205,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Gang Tactics [100802] — fala D wierna (auto)
+    // Gang Tactics [100802] — fala I wierna (auto)
     krcgId: 100802,
     name: "Gang Tactics",
     cardType: "actionModifier",
@@ -27445,17 +27217,16 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Gang Territory [100803] — fala D wierna (auto)
+    // Gang Territory [100803] — fala I wierna (auto)
     krcgId: 100803,
     name: "Gang Territory",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -27463,7 +27234,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Gangrel Atavism [100804] — fala D wierna (auto)
+    // Gangrel Atavism [100804] — fala I wierna (auto)
     krcgId: 100804,
     name: "Gangrel Atavism",
     cardType: "master",
@@ -27471,11 +27242,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Gangrel Conspiracy [100805] — fala D wierna (auto)
+    // Gangrel Conspiracy [100805] — fala I wierna (auto)
     krcgId: 100805,
     name: "Gangrel Conspiracy",
     cardType: "master",
@@ -27487,20 +27258,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Gangrel Justicar [100806] — fala D wierna (auto)
+    // Gangrel Justicar [100806] — fala I wierna (auto)
     krcgId: 100806,
     name: "Gangrel Justicar",
     cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Gargoyle Slave [100808] — fala D wierna (auto)
+    // Gargoyle Slave [100808] — fala I wierna (auto)
     krcgId: 100808,
     name: "Gargoyle Slave",
     cardType: "ally",
@@ -27508,11 +27278,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 3,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Garrote [100810] — fala D wierna (auto)
+    // Garrote [100810] — fala I wierna (auto)
     krcgId: 100810,
     name: "Garrote",
     cardType: "equipment",
@@ -27520,11 +27290,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Gear Up [100813] — fala D wierna (auto)
+    // Gear Up [100813] — fala I wierna (auto)
     krcgId: 100813,
     name: "Gear Up",
     cardType: "action",
@@ -27532,13 +27302,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Gemini's Mirror [100814] — fala D wierna (auto)
+    // Gemini's Mirror [100814] — fala I wierna (auto)
     krcgId: 100814,
     name: "Gemini's Mirror",
     cardType: "combat",
@@ -27546,12 +27314,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Gestalt [100815] — fala D wierna (auto)
+    // Gestalt [100815] — fala I wierna (auto)
     krcgId: 100815,
     name: "Gestalt",
     cardType: "reaction",
@@ -27559,12 +27326,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ghost-Eater [100816] — fala D wierna (auto)
+    // Ghost-Eater [100816] — fala I wierna (auto)
     krcgId: 100816,
     name: "Ghost-Eater",
     cardType: "action",
@@ -27572,11 +27338,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ghoul Messenger [100818] — fala D wierna (auto)
+    // Ghoul Messenger [100818] — fala I wierna (auto)
     krcgId: 100818,
     name: "Ghoul Messenger",
     cardType: "retainer",
@@ -27584,11 +27350,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ghoul Retainer [100819] — fala D wierna (auto)
+    // Ghoul Retainer [100819] — fala I wierna (auto)
     krcgId: 100819,
     name: "Ghoul Retainer",
     cardType: "retainer",
@@ -27596,11 +27362,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ghouled [100820] — fala D wierna (auto)
+    // Ghouled [100820] — fala I wierna (auto)
     krcgId: 100820,
     name: "Ghouled",
     cardType: "actionModifier",
@@ -27608,11 +27374,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ghouled Street Thug [100821] — fala D wierna (auto)
+    // Ghouled Street Thug [100821] — fala I wierna (auto)
     krcgId: 100821,
     name: "Ghouled Street Thug",
     cardType: "ally",
@@ -27620,11 +27386,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Ghouls of Plaza Morería [100822] — fala D wierna (auto)
+    // The Ghouls of Plaza Morería [100822] — fala I wierna (auto)
     krcgId: 100822,
     name: "The Ghouls of Plaza Morería",
     cardType: "ally",
@@ -27633,11 +27399,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Gianna di Canneto [100823] — fala D wierna (auto)
+    // Gianna di Canneto [100823] — fala I wierna (auto)
     krcgId: 100823,
     name: "Gianna di Canneto",
     cardType: "ally",
@@ -27646,11 +27412,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Gift of Bellona [100825] — fala D wierna (auto)
+    // Gift of Bellona [100825] — fala I wierna (auto)
     krcgId: 100825,
     name: "Gift of Bellona",
     cardType: "actionModifier",
@@ -27658,13 +27424,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Gift of Experience [100826] — fala D wierna (auto)
+    // Gift of Experience [100826] — fala I wierna (auto)
     krcgId: 100826,
     name: "Gift of Experience",
     cardType: "master",
@@ -27676,7 +27440,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Gift of Sleep [100828] — fala D wierna (auto)
+    // Gift of Sleep [100828] — fala I wierna (auto)
     krcgId: 100828,
     name: "Gift of Sleep",
     cardType: "actionModifier",
@@ -27684,13 +27448,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Giovanni Acceptance [100829] — fala D wierna (auto)
+    // Giovanni Acceptance [100829] — fala I wierna (auto)
     krcgId: 100829,
     name: "Giovanni Acceptance",
     cardType: "politicalAction",
@@ -27698,11 +27460,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Giovanni Discrimination [100830] — fala D wierna (auto)
+    // Giovanni Discrimination [100830] — fala I wierna (auto)
     krcgId: 100830,
     name: "Giovanni Discrimination",
     cardType: "master",
@@ -27715,7 +27477,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Gird Minions [100831] — fala D wierna (auto)
+    // Gird Minions [100831] — fala I wierna (auto)
     krcgId: 100831,
     name: "Gird Minions",
     cardType: "master",
@@ -27727,7 +27489,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Giulia Giovanni Abruzzina [100832] — fala D wierna (auto)
+    // Giulia Giovanni Abruzzina [100832] — fala I wierna (auto)
     krcgId: 100832,
     name: "Giulia Giovanni Abruzzina",
     cardType: "ally",
@@ -27736,11 +27498,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Giuseppe, Gravedigger [100833] — fala D wierna (auto)
+    // Giuseppe, Gravedigger [100833] — fala I wierna (auto)
     krcgId: 100833,
     name: "Giuseppe, Gravedigger",
     cardType: "retainer",
@@ -27749,11 +27511,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Glare of Lies [100835] — fala D wierna (auto)
+    // Glare of Lies [100835] — fala I wierna (auto)
     krcgId: 100835,
     name: "Glare of Lies",
     cardType: "reaction",
@@ -27761,14 +27523,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Glass Walker Pact [100837] — fala D wierna (auto)
+    // Glass Walker Pact [100837] — fala I wierna (auto)
     krcgId: 100837,
     name: "Glass Walker Pact",
     cardType: "master",
@@ -27781,7 +27540,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Glutton [100839] — fala D wierna (auto)
+    // Glutton [100839] — fala I wierna (auto)
     krcgId: 100839,
     name: "Glutton",
     cardType: "master",
@@ -27794,7 +27553,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Go Anarch [100840] — fala D wierna (auto)
+    // Go Anarch [100840] — fala I wierna (auto)
     krcgId: 100840,
     name: "Go Anarch",
     cardType: "action",
@@ -27802,11 +27561,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Goblinism [100841] — fala D wierna (auto)
+    // Goblinism [100841] — fala I wierna (auto)
     krcgId: 100841,
     name: "Goblinism",
     cardType: "action",
@@ -27815,13 +27574,11 @@ export const cardSpecs: CardSpec[] = [
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Goodnight, Sweet Prince [100843] — fala D wierna (auto)
+    // Goodnight, Sweet Prince [100843] — fala I wierna (auto)
     krcgId: 100843,
     name: "Goodnight, Sweet Prince",
     cardType: "master",
@@ -27833,7 +27590,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Goth Band [100844] — fala D wierna (auto)
+    // Goth Band [100844] — fala I wierna (auto)
     krcgId: 100844,
     name: "Goth Band",
     cardType: "ally",
@@ -27842,11 +27599,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Gramle [100846] — fala D wierna (auto)
+    // Gramle [100846] — fala I wierna (auto)
     krcgId: 100846,
     name: "Gramle",
     cardType: "action",
@@ -27854,25 +27611,24 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Gran Madre di Dio, Italy [100847] — fala D wierna (auto)
+    // Gran Madre di Dio, Italy [100847] — fala I wierna (auto)
     krcgId: 100847,
     name: "Gran Madre di Dio, Italy",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Grandest Trick [100849] — fala D wierna (auto)
+    // The Grandest Trick [100849] — fala I wierna (auto)
     krcgId: 100849,
     name: "The Grandest Trick",
     cardType: "actionModifier",
@@ -27880,11 +27636,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Grasp of the Python [100850] — fala D wierna (auto)
+    // Grasp of the Python [100850] — fala I wierna (auto)
     krcgId: 100850,
     name: "Grasp of the Python",
     cardType: "combat",
@@ -27892,26 +27648,24 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Grasp the Ghostly [100851] — fala D wierna (auto)
+    // Grasp the Ghostly [100851] — fala I wierna (auto)
     krcgId: 100851,
     name: "Grasp the Ghostly",
     cardType: "action",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Great Symposium [100853] — fala D wierna (auto)
+    // Great Symposium [100853] — fala I wierna (auto)
     krcgId: 100853,
     name: "Great Symposium",
     cardType: "master",
@@ -27923,7 +27677,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Greater Curse [100854] — fala D wierna (auto)
+    // Greater Curse [100854] — fala I wierna (auto)
     krcgId: 100854,
     name: "Greater Curse",
     cardType: "action",
@@ -27931,13 +27685,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mal", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "mal", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Gremlins [100856] — fala D wierna (auto)
+    // Gremlins [100856] — fala I wierna (auto)
     krcgId: 100856,
     name: "Gremlins",
     cardType: "action",
@@ -27945,13 +27697,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Grey Thorne [100858] — fala D wierna (auto)
+    // Grey Thorne [100858] — fala I wierna (auto)
     krcgId: 100858,
     name: "Grey Thorne",
     cardType: "ally",
@@ -27960,12 +27710,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Groaning Corpse [100859] — fala D wierna (auto)
+    // Groaning Corpse [100859] — fala I wierna (auto)
     krcgId: 100859,
     name: "Groaning Corpse",
     cardType: "combat",
@@ -27973,12 +27722,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Guarded Rubrics [100865] — fala D wierna (auto)
+    // Guarded Rubrics [100865] — fala I wierna (auto)
     krcgId: 100865,
     name: "Guarded Rubrics",
     cardType: "equipment",
@@ -27987,23 +27735,24 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Guardian Ghoul [100867] — fala D wierna (auto)
+    // Guardian Ghoul [100867] — fala I wierna (auto)
     krcgId: 100867,
     name: "Guardian Ghoul",
     cardType: "ally",
     bloodCost: 0,
     poolCost: 1,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Guardian Vigil [100868] — fala D wierna (auto)
+    // Guardian Vigil [100868] — fala I wierna (auto)
     krcgId: 100868,
     name: "Guardian Vigil",
     cardType: "reaction",
@@ -28011,13 +27760,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Guide and Mentor [100869] — fala D wierna (auto)
+    // Guide and Mentor [100869] — fala I wierna (auto)
     krcgId: 100869,
     name: "Guide and Mentor",
     cardType: "master",
@@ -28025,11 +27772,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Guinea-Bissau Carnival [100870] — fala D wierna (auto)
+    // Guinea-Bissau Carnival [100870] — fala I wierna (auto)
     krcgId: 100870,
     name: "Guinea-Bissau Carnival",
     cardType: "master",
@@ -28037,11 +27784,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Guruhi Are the Land [100873] — fala D wierna (auto)
+    // The Guruhi Are the Land [100873] — fala I wierna (auto)
     krcgId: 100873,
     name: "The Guruhi Are the Land",
     cardType: "actionModifier",
@@ -28049,24 +27796,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Guruhi Kholo [100874] — fala D wierna (auto)
+    // Guruhi Kholo [100874] — fala I wierna (auto)
     krcgId: 100874,
     name: "Guruhi Kholo",
     cardType: "actionModifier",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hackerspace [100876] — fala D wierna (auto)
+    // Hackerspace [100876] — fala I wierna (auto)
     krcgId: 100876,
     name: "Hackerspace",
     cardType: "master",
@@ -28079,7 +27825,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hag's Wrinkles [100877] — fala D wierna (auto)
+    // Hag's Wrinkles [100877] — fala I wierna (auto)
     krcgId: 100877,
     name: "Hag's Wrinkles",
     cardType: "actionModifier",
@@ -28087,13 +27833,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hall of Hades' Court [100878] — fala D wierna (auto)
+    // Hall of Hades' Court [100878] — fala I wierna (auto)
     krcgId: 100878,
     name: "Hall of Hades' Court",
     cardType: "actionModifier",
@@ -28101,13 +27845,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hall of Mirrors [100879] — fala D wierna (auto)
+    // Hall of Mirrors [100879] — fala I wierna (auto)
     krcgId: 100879,
     name: "Hall of Mirrors",
     cardType: "combat",
@@ -28115,12 +27857,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hand Contract [100880] — fala D wierna (auto)
+    // Hand Contract [100880] — fala I wierna (auto)
     krcgId: 100880,
     name: "Hand Contract",
     cardType: "master",
@@ -28128,11 +27869,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hand Intervention [100881] — fala D wierna (auto)
+    // Hand Intervention [100881] — fala I wierna (auto)
     krcgId: 100881,
     name: "Hand Intervention",
     cardType: "politicalAction",
@@ -28140,11 +27881,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hand of Conrad [100882] — fala D wierna (auto)
+    // Hand of Conrad [100882] — fala I wierna (auto)
     krcgId: 100882,
     name: "Hand of Conrad",
     cardType: "equipment",
@@ -28153,11 +27894,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hanging Fermata [100883] — fala D wierna (auto)
+    // Hanging Fermata [100883] — fala I wierna (auto)
     krcgId: 100883,
     name: "Hanging Fermata",
     cardType: "master",
@@ -28169,7 +27910,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Haqim's Law: Judgment [100884] — fala D wierna (auto)
+    // Haqim's Law: Judgment [100884] — fala I wierna (auto)
     krcgId: 100884,
     name: "Haqim's Law: Judgment",
     cardType: "master",
@@ -28177,11 +27918,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Haqim's Law: Leadership [100885] — fala D wierna (auto)
+    // Haqim's Law: Leadership [100885] — fala I wierna (auto)
     krcgId: 100885,
     name: "Haqim's Law: Leadership",
     cardType: "action",
@@ -28189,11 +27930,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Harass [100886] — fala D wierna (auto)
+    // Harass [100886] — fala I wierna (auto)
     krcgId: 100886,
     name: "Harass",
     cardType: "action",
@@ -28201,11 +27942,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hard Case [100887] — fala D wierna (auto)
+    // Hard Case [100887] — fala I wierna (auto)
     krcgId: 100887,
     name: "Hard Case",
     cardType: "reaction",
@@ -28213,12 +27954,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Harmony [100888] — fala D wierna (auto)
+    // Harmony [100888] — fala I wierna (auto)
     krcgId: 100888,
     name: "Harmony",
     cardType: "action",
@@ -28226,11 +27966,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Harzomatuili [100890] — fala D wierna (auto)
+    // Harzomatuili [100890] — fala I wierna (auto)
     krcgId: 100890,
     name: "Harzomatuili",
     cardType: "ally",
@@ -28239,11 +27979,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hatch the Viper [100891] — fala D wierna (auto)
+    // Hatch the Viper [100891] — fala I wierna (auto)
     krcgId: 100891,
     name: "Hatch the Viper",
     cardType: "retainer",
@@ -28251,14 +27991,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "pro", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hatchling [100892] — fala D wierna (auto)
+    // Hatchling [100892] — fala I wierna (auto)
     krcgId: 100892,
     name: "Hatchling",
     cardType: "action",
@@ -28266,25 +28003,24 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Haunt [100893] — fala D wierna (auto)
+    // Haunt [100893] — fala I wierna (auto)
     krcgId: 100893,
     name: "Haunt",
     cardType: "action",
     bloodCost: 1,
     poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Haunting [100894] — fala D wierna (auto)
+    // The Haunting [100894] — fala I wierna (auto)
     krcgId: 100894,
     name: "The Haunting",
     cardType: "action",
@@ -28292,12 +28028,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Haven Affinity [100895] — fala D wierna (auto)
+    // Haven Affinity [100895] — fala I wierna (auto)
     krcgId: 100895,
     name: "Haven Affinity",
     cardType: "master",
@@ -28310,7 +28045,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Haven Hunting [100896] — fala D wierna (auto)
+    // Haven Hunting [100896] — fala I wierna (auto)
     krcgId: 100896,
     name: "Haven Hunting",
     cardType: "action",
@@ -28318,11 +28053,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hay Ride [100899] — fala D wierna (auto)
+    // Hay Ride [100899] — fala I wierna (auto)
     krcgId: 100899,
     name: "Hay Ride",
     cardType: "actionModifier",
@@ -28330,12 +28065,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Healing Touch [100901] — fala D wierna (auto)
+    // Healing Touch [100901] — fala I wierna (auto)
     krcgId: 100901,
     name: "Healing Touch",
     cardType: "action",
@@ -28343,13 +28077,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Heart of Darkness [100902] — fala D wierna (auto)
+    // Heart of Darkness [100902] — fala I wierna (auto)
     krcgId: 100902,
     name: "Heart of Darkness",
     cardType: "action",
@@ -28357,12 +28089,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Heart's Desire [100905] — fala D wierna (auto)
+    // Heart's Desire [100905] — fala I wierna (auto)
     krcgId: 100905,
     name: "Heart's Desire",
     cardType: "actionModifier",
@@ -28370,14 +28101,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Heaven's Gate [100907] — fala D wierna (auto)
+    // Heaven's Gate [100907] — fala I wierna (auto)
     krcgId: 100907,
     name: "Heaven's Gate",
     cardType: "combat",
@@ -28385,13 +28113,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "basic", discipline: "nec", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Heidelberg Castle, Germany [100908] — fala D wierna (auto)
+    // Heidelberg Castle, Germany [100908] — fala I wierna (auto)
     krcgId: 100908,
     name: "Heidelberg Castle, Germany",
     cardType: "master",
@@ -28405,7 +28131,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hellhound [100911] — fala D wierna (auto)
+    // Hellhound [100911] — fala I wierna (auto)
     krcgId: 100911,
     name: "Hellhound",
     cardType: "ally",
@@ -28413,11 +28139,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Herald of Topheth [100912] — fala D wierna (auto)
+    // Herald of Topheth [100912] — fala I wierna (auto)
     krcgId: 100912,
     name: "Herald of Topheth",
     cardType: "ally",
@@ -28425,13 +28151,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 3,
     usable: [],
     modes: [
-      { level: "superior", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hexaped [100914] — fala D wierna (auto)
+    // Hexaped [100914] — fala I wierna (auto)
     krcgId: 100914,
     name: "Hexaped",
     cardType: "ally",
@@ -28439,11 +28163,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hexe [100915] — fala D wierna (auto)
+    // Hexe [100915] — fala I wierna (auto)
     krcgId: 100915,
     name: "Hexe",
     cardType: "combat",
@@ -28451,13 +28175,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "str", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "str", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "basic", discipline: "dai", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hidden Lurker [100916] — fala D wierna (auto)
+    // Hidden Lurker [100916] — fala I wierna (auto)
     krcgId: 100916,
     name: "Hidden Lurker",
     cardType: "actionModifier",
@@ -28465,12 +28187,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hidden Pathways [100917] — fala D wierna (auto)
+    // Hidden Pathways [100917] — fala I wierna (auto)
     krcgId: 100917,
     name: "Hidden Pathways",
     cardType: "action",
@@ -28478,12 +28199,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hide [100919] — fala D wierna (auto)
+    // Hide [100919] — fala I wierna (auto)
     krcgId: 100919,
     name: "Hide",
     cardType: "power",
@@ -28491,11 +28211,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "inn", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hide the Heart [100920] — fala D wierna (auto)
+    // Hide the Heart [100920] — fala I wierna (auto)
     krcgId: 100920,
     name: "Hide the Heart",
     cardType: "reaction",
@@ -28503,13 +28223,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "val", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hiding in the Open [100922] — fala D wierna (auto)
+    // Hiding in the Open [100922] — fala I wierna (auto)
     krcgId: 100922,
     name: "Hiding in the Open",
     cardType: "politicalAction",
@@ -28517,11 +28235,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hierophant [100923] — fala D wierna (auto)
+    // Hierophant [100923] — fala I wierna (auto)
     krcgId: 100923,
     name: "Hierophant",
     cardType: "politicalAction",
@@ -28529,11 +28247,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // High Aye [100924] — fala D wierna (auto)
+    // High Aye [100924] — fala I wierna (auto)
     krcgId: 100924,
     name: "High Aye",
     cardType: "actionModifier",
@@ -28541,17 +28259,16 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // High Museum of Art, Atlanta [100926] — fala D wierna (auto)
+    // High Museum of Art, Atlanta [100926] — fala I wierna (auto)
     krcgId: 100926,
     name: "High Museum of Art, Atlanta",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -28559,7 +28276,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // High Orun [100927] — fala D wierna (auto)
+    // High Orun [100927] — fala I wierna (auto)
     krcgId: 100927,
     name: "High Orun",
     cardType: "actionModifier",
@@ -28567,11 +28284,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // High Stakes [100928] — fala D wierna (auto)
+    // High Stakes [100928] — fala I wierna (auto)
     krcgId: 100928,
     name: "High Stakes",
     cardType: "politicalAction",
@@ -28579,11 +28296,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // High Top [100929] — fala D wierna (auto)
+    // High Top [100929] — fala I wierna (auto)
     krcgId: 100929,
     name: "High Top",
     cardType: "ally",
@@ -28592,11 +28309,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Highway Haven: RV [100930] — fala D wierna (auto)
+    // Highway Haven: RV [100930] — fala I wierna (auto)
     krcgId: 100930,
     name: "Highway Haven: RV",
     cardType: "equipment",
@@ -28604,11 +28321,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hive Mind [100931] — fala D wierna (auto)
+    // Hive Mind [100931] — fala I wierna (auto)
     krcgId: 100931,
     name: "Hive Mind",
     cardType: "action",
@@ -28616,12 +28333,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Honor the Elders [100933] — fala D wierna (auto)
+    // Honor the Elders [100933] — fala I wierna (auto)
     krcgId: 100933,
     name: "Honor the Elders",
     cardType: "politicalAction",
@@ -28629,11 +28345,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Horrid Form [100934] — fala D wierna (auto)
+    // Horrid Form [100934] — fala I wierna (auto)
     krcgId: 100934,
     name: "Horrid Form",
     cardType: "combat",
@@ -28641,12 +28357,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Horrid Reality [100935] — fala D wierna (auto)
+    // Horrid Reality [100935] — fala I wierna (auto)
     krcgId: 100935,
     name: "Horrid Reality",
     cardType: "combat",
@@ -28654,12 +28369,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Houngan [100940] — fala D wierna (auto)
+    // Houngan [100940] — fala I wierna (auto)
     krcgId: 100940,
     name: "Houngan",
     cardType: "master",
@@ -28668,11 +28382,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hourglass of the Mind [100941] — fala D wierna (auto)
+    // Hourglass of the Mind [100941] — fala I wierna (auto)
     krcgId: 100941,
     name: "Hourglass of the Mind",
     cardType: "action",
@@ -28680,19 +28394,16 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // House of Sorrow [100942] — fala D wierna (auto)
+    // House of Sorrow [100942] — fala I wierna (auto)
     krcgId: 100942,
     name: "House of Sorrow",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -28700,7 +28411,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Humanitas [100943] — fala D wierna (auto)
+    // Humanitas [100943] — fala I wierna (auto)
     krcgId: 100943,
     name: "Humanitas",
     cardType: "master",
@@ -28709,11 +28420,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // I am Legion [100947] — fala D wierna (auto)
+    // I am Legion [100947] — fala I wierna (auto)
     krcgId: 100947,
     name: "I am Legion",
     cardType: "actionModifier",
@@ -28721,14 +28432,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ignis Fatuus [100948] — fala D wierna (auto)
+    // Ignis Fatuus [100948] — fala I wierna (auto)
     krcgId: 100948,
     name: "Ignis Fatuus",
     cardType: "reaction",
@@ -28736,12 +28444,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ignore the Searing Flames [100949] — fala D wierna (auto)
+    // Ignore the Searing Flames [100949] — fala I wierna (auto)
     krcgId: 100949,
     name: "Ignore the Searing Flames",
     cardType: "combat",
@@ -28749,13 +28456,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Igoli's Loyalty [100950] — fala D wierna (auto)
+    // Igoli's Loyalty [100950] — fala I wierna (auto)
     krcgId: 100950,
     name: "Igoli's Loyalty",
     cardType: "actionModifier",
@@ -28763,11 +28468,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Illegal Search and Seizure [100951] — fala D wierna (auto)
+    // Illegal Search and Seizure [100951] — fala I wierna (auto)
     krcgId: 100951,
     name: "Illegal Search and Seizure",
     cardType: "master",
@@ -28775,11 +28480,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Illegalism [100952] — fala D wierna (auto)
+    // Illegalism [100952] — fala I wierna (auto)
     krcgId: 100952,
     name: "Illegalism",
     cardType: "action",
@@ -28787,13 +28492,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Illuminate [100953] — fala D wierna (auto)
+    // Illuminate [100953] — fala I wierna (auto)
     krcgId: 100953,
     name: "Illuminate",
     cardType: "power",
@@ -28801,11 +28504,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "inn", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Illusions of the Kindred [100954] — fala D wierna (auto)
+    // Illusions of the Kindred [100954] — fala I wierna (auto)
     krcgId: 100954,
     name: "Illusions of the Kindred",
     cardType: "combat",
@@ -28813,12 +28516,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Illusory Resources [100955] — fala D wierna (auto)
+    // Illusory Resources [100955] — fala I wierna (auto)
     krcgId: 100955,
     name: "Illusory Resources",
     cardType: "action",
@@ -28827,12 +28529,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ilomba [100956] — fala D wierna (auto)
+    // Ilomba [100956] — fala I wierna (auto)
     krcgId: 100956,
     name: "Ilomba",
     cardType: "retainer",
@@ -28840,11 +28541,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Immaculate Vitae [100957] — fala D wierna (auto)
+    // Immaculate Vitae [100957] — fala I wierna (auto)
     krcgId: 100957,
     name: "Immaculate Vitae",
     cardType: "reaction",
@@ -28852,12 +28553,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Immense Size [100958] — fala D wierna (auto)
+    // Immense Size [100958] — fala I wierna (auto)
     krcgId: 100958,
     name: "Immense Size",
     cardType: "combat",
@@ -28865,25 +28565,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Imperator [100960] — fala D wierna (auto)
+    // Imperator [100960] — fala I wierna (auto)
     krcgId: 100960,
     name: "Imperator",
     cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Imperial Decree [100961] — fala D wierna (auto)
+    // Imperial Decree [100961] — fala I wierna (auto)
     krcgId: 100961,
     name: "Imperial Decree",
     cardType: "action",
@@ -28891,11 +28589,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Imposing Phantasm [100962] — fala D wierna (auto)
+    // Imposing Phantasm [100962] — fala I wierna (auto)
     krcgId: 100962,
     name: "Imposing Phantasm",
     cardType: "combat",
@@ -28903,12 +28601,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Imprison [100963] — fala D wierna (auto)
+    // Imprison [100963] — fala I wierna (auto)
     krcgId: 100963,
     name: "Imprison",
     cardType: "combat",
@@ -28916,11 +28613,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "jud", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Improvised Flamethrower [100964] — fala D wierna (auto)
+    // Improvised Flamethrower [100964] — fala I wierna (auto)
     krcgId: 100964,
     name: "Improvised Flamethrower",
     cardType: "equipment",
@@ -28928,11 +28625,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Impundulu [100966] — fala D wierna (auto)
+    // Impundulu [100966] — fala I wierna (auto)
     krcgId: 100966,
     name: "Impundulu",
     cardType: "ally",
@@ -28941,11 +28638,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // In Memory of the Two Lands [100967] — fala D wierna (auto)
+    // In Memory of the Two Lands [100967] — fala I wierna (auto)
     krcgId: 100967,
     name: "In Memory of the Two Lands",
     cardType: "master",
@@ -28954,11 +28651,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Inceptor [100969] — fala D wierna (auto)
+    // Inceptor [100969] — fala I wierna (auto)
     krcgId: 100969,
     name: "Inceptor",
     cardType: "master",
@@ -28971,7 +28668,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Incriminating Videotape [100972] — fala D wierna (auto)
+    // Incriminating Videotape [100972] — fala I wierna (auto)
     krcgId: 100972,
     name: "Incriminating Videotape",
     cardType: "equipment",
@@ -28979,11 +28676,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Inevitability of the Void [100974] — fala D wierna (auto)
+    // Inevitability of the Void [100974] — fala I wierna (auto)
     krcgId: 100974,
     name: "Inevitability of the Void",
     cardType: "actionModifier",
@@ -28991,14 +28688,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Infamous Insurgent [100975] — fala D wierna (auto)
+    // Infamous Insurgent [100975] — fala I wierna (auto)
     krcgId: 100975,
     name: "Infamous Insurgent",
     cardType: "master",
@@ -29011,7 +28705,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Infamous Warlock [100976] — fala D wierna (auto)
+    // Infamous Warlock [100976] — fala I wierna (auto)
     krcgId: 100976,
     name: "Infamous Warlock",
     cardType: "master",
@@ -29023,7 +28717,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Infernal Familiar [100978] — fala D wierna (auto)
+    // Infernal Familiar [100978] — fala I wierna (auto)
     krcgId: 100978,
     name: "Infernal Familiar",
     cardType: "retainer",
@@ -29031,11 +28725,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Infernal Pact [100979] — fala D wierna (auto)
+    // Infernal Pact [100979] — fala I wierna (auto)
     krcgId: 100979,
     name: "Infernal Pact",
     cardType: "master",
@@ -29048,166 +28742,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Infernal Pursuit [100980] — fala D wierna (auto)
+    // Infernal Pursuit [100980] — fala I wierna (auto)
     krcgId: 100980,
     name: "Infernal Pursuit",
     cardType: "combat",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "press", continueOnly: false }] }
-    ],
-  },
-  {
-    // Infernal Servitor [100981] — fala D wierna (auto)
-    krcgId: 100981,
-    name: "Infernal Servitor",
-    cardType: "ally",
-    bloodCost: 0,
-    poolCost: 1,
-    unique: true,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
-    ],
-  },
-  {
-    // Inflict [100982] — fala D wierna (auto)
-    krcgId: 100982,
-    name: "Inflict",
-    cardType: "combat",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "mar", effects: [{ kind: "prevent", amount: 1 }] }
-    ],
-  },
-  {
-    // Informant [100983] — fala D wierna (auto)
-    krcgId: 100983,
-    name: "Informant",
-    cardType: "ally",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
-    ],
-  },
-  {
-    // Information Network [100985] — fala D wierna (auto)
-    krcgId: 100985,
-    name: "Information Network",
-    cardType: "master",
-    bloodCost: 0,
-    poolCost: 1,
-    unique: true,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
-    ],
-  },
-  {
-    // Inner Essence [100986] — fala D wierna (auto)
-    krcgId: 100986,
-    name: "Inner Essence",
-    cardType: "combat",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Inquisition [100988] — fala D wierna (auto)
-    krcgId: 100988,
-    name: "Inquisition",
-    cardType: "action",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
-    ],
-  },
-  {
-    // Inscription [100989] — fala D wierna (auto)
-    krcgId: 100989,
-    name: "Inscription",
-    cardType: "equipment",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "tha", effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Inside Dirt [100990] — fala D wierna (auto)
-    krcgId: 100990,
-    name: "Inside Dirt",
-    cardType: "action",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
-    ],
-  },
-  {
-    // Inspire [100991] — fala D wierna (auto)
-    krcgId: 100991,
-    name: "Inspire",
-    cardType: "power",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "inn", effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Inspire Greatness [100992] — fala D wierna (auto)
-    krcgId: 100992,
-    name: "Inspire Greatness",
-    cardType: "actionModifier",
-    bloodCost: 1,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Instantaneous Transformation [100994] — fala D wierna (auto)
-    krcgId: 100994,
-    name: "Instantaneous Transformation",
-    cardType: "actionModifier",
-    bloodCost: 0,
-    poolCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Insurance Scam [100997] — fala D wierna (auto)
-    krcgId: 100997,
-    name: "Insurance Scam",
-    cardType: "master",
     bloodCost: 0,
     poolCost: 0,
     usable: [],
@@ -29216,7 +28754,154 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Internal Recursion [100998] — fala D wierna (auto)
+    // Infernal Servitor [100981] — fala I wierna (auto)
+    krcgId: 100981,
+    name: "Infernal Servitor",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Inflict [100982] — fala I wierna (auto)
+    krcgId: 100982,
+    name: "Inflict",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Informant [100983] — fala I wierna (auto)
+    krcgId: 100983,
+    name: "Informant",
+    cardType: "ally",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Information Network [100985] — fala I wierna (auto)
+    krcgId: 100985,
+    name: "Information Network",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 1,
+    unique: true,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Inner Essence [100986] — fala I wierna (auto)
+    krcgId: 100986,
+    name: "Inner Essence",
+    cardType: "combat",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Inquisition [100988] — fala I wierna (auto)
+    krcgId: 100988,
+    name: "Inquisition",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Inscription [100989] — fala I wierna (auto)
+    krcgId: 100989,
+    name: "Inscription",
+    cardType: "equipment",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Inside Dirt [100990] — fala I wierna (auto)
+    krcgId: 100990,
+    name: "Inside Dirt",
+    cardType: "action",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Inspire [100991] — fala I wierna (auto)
+    krcgId: 100991,
+    name: "Inspire",
+    cardType: "power",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Inspire Greatness [100992] — fala I wierna (auto)
+    krcgId: 100992,
+    name: "Inspire Greatness",
+    cardType: "actionModifier",
+    bloodCost: 1,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Instantaneous Transformation [100994] — fala I wierna (auto)
+    krcgId: 100994,
+    name: "Instantaneous Transformation",
+    cardType: "actionModifier",
+    bloodCost: 0,
+    poolCost: 0,
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Insurance Scam [100997] — fala I wierna (auto)
+    krcgId: 100997,
+    name: "Insurance Scam",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Internal Recursion [100998] — fala I wierna (auto)
     krcgId: 100998,
     name: "Internal Recursion",
     cardType: "reaction",
@@ -29224,13 +28909,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Into the Fire [101000] — fala D wierna (auto)
+    // Into the Fire [101000] — fala I wierna (auto)
     krcgId: 101000,
     name: "Into the Fire",
     cardType: "master",
@@ -29242,7 +28925,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Into Thin Air [101001] — fala D wierna (auto)
+    // Into Thin Air [101001] — fala I wierna (auto)
     krcgId: 101001,
     name: "Into Thin Air",
     cardType: "actionModifier",
@@ -29250,25 +28933,25 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Inveraray, Scotland [101002] — fala D wierna (auto)
+    // Inveraray, Scotland [101002] — fala I wierna (auto)
     krcgId: 101002,
     name: "Inveraray, Scotland",
     cardType: "equipment",
     bloodCost: 1,
     poolCost: 0,
     unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Invitation Accepted [101004] — fala D wierna (auto)
+    // Invitation Accepted [101004] — fala I wierna (auto)
     krcgId: 101004,
     name: "Invitation Accepted",
     cardType: "politicalAction",
@@ -29276,11 +28959,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Invoke Poison Glands [101005] — fala D wierna (auto)
+    // Invoke Poison Glands [101005] — fala I wierna (auto)
     krcgId: 101005,
     name: "Invoke Poison Glands",
     cardType: "combat",
@@ -29288,12 +28971,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "abo", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Invoking the Beast [101006] — fala D wierna (auto)
+    // Invoking the Beast [101006] — fala I wierna (auto)
     krcgId: 101006,
     name: "Invoking the Beast",
     cardType: "combat",
@@ -29301,12 +28983,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Iron Heart [101009] — fala D wierna (auto)
+    // Iron Heart [101009] — fala I wierna (auto)
     krcgId: 101009,
     name: "Iron Heart",
     cardType: "reaction",
@@ -29314,27 +28995,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "pot", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ishtarri Kholo [101011] — fala D wierna (auto)
+    // Ishtarri Kholo [101011] — fala I wierna (auto)
     krcgId: 101011,
     name: "Ishtarri Kholo",
     cardType: "actionModifier",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ishtarri Warlord [101012] — fala D wierna (auto)
+    // Ishtarri Warlord [101012] — fala I wierna (auto)
     krcgId: 101012,
     name: "Ishtarri Warlord",
     cardType: "master",
@@ -29342,11 +29019,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Island of Yiaros [101013] — fala D wierna (auto)
+    // Island of Yiaros [101013] — fala I wierna (auto)
     krcgId: 101013,
     name: "Island of Yiaros",
     cardType: "master",
@@ -29360,7 +29037,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Jack of Both Sides [101016] — fala D wierna (auto)
+    // Jack of Both Sides [101016] — fala I wierna (auto)
     krcgId: 101016,
     name: "Jack of Both Sides",
     cardType: "action",
@@ -29368,11 +29045,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Jackal [101017] — fala D wierna (auto)
+    // Jackal [101017] — fala I wierna (auto)
     krcgId: 101017,
     name: "Jackal",
     cardType: "retainer",
@@ -29380,12 +29057,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Jake Washington [101019] — fala D wierna (auto)
+    // Jake Washington [101019] — fala I wierna (auto)
     krcgId: 101019,
     name: "Jake Washington",
     cardType: "master",
@@ -29394,11 +29070,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Jar of Skin Eaters [101020] — fala D wierna (auto)
+    // Jar of Skin Eaters [101020] — fala I wierna (auto)
     krcgId: 101020,
     name: "Jar of Skin Eaters",
     cardType: "equipment",
@@ -29406,11 +29082,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Jar the Soul [101021] — fala D wierna (auto)
+    // Jar the Soul [101021] — fala I wierna (auto)
     krcgId: 101021,
     name: "Jar the Soul",
     cardType: "action",
@@ -29418,12 +29094,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Jones [101023] — fala D wierna (auto)
+    // The Jones [101023] — fala I wierna (auto)
     krcgId: 101023,
     name: "The Jones",
     cardType: "combat",
@@ -29431,12 +29106,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Joseph Pander [101024] — fala D wierna (auto)
+    // Joseph Pander [101024] — fala I wierna (auto)
     krcgId: 101024,
     name: "Joseph Pander",
     cardType: "master",
@@ -29449,7 +29123,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Joumlon's Axe [101025] — fala D wierna (auto)
+    // Joumlon's Axe [101025] — fala I wierna (auto)
     krcgId: 101025,
     name: "Joumlon's Axe",
     cardType: "equipment",
@@ -29458,11 +29132,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Journal of Hrorsh [101026] — fala D wierna (auto)
+    // Journal of Hrorsh [101026] — fala I wierna (auto)
     krcgId: 101026,
     name: "Journal of Hrorsh",
     cardType: "equipment",
@@ -29471,11 +29145,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Judgment: Death to the Brujah! [101029] — fala D wierna (auto)
+    // Judgment: Death to the Brujah! [101029] — fala I wierna (auto)
     krcgId: 101029,
     name: "Judgment: Death to the Brujah!",
     cardType: "action",
@@ -29483,25 +29157,24 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Jungle Hunting Ground [101030] — fala D wierna (auto)
+    // Jungle Hunting Ground [101030] — fala I wierna (auto)
     krcgId: 101030,
     name: "Jungle Hunting Ground",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    unique: true,
-    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Justicar Retribution [101031] — fala D wierna (auto)
+    // Justicar Retribution [101031] — fala I wierna (auto)
     krcgId: 101031,
     name: "Justicar Retribution",
     cardType: "politicalAction",
@@ -29509,11 +29182,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Karavalanisha Vrana [101033] — fala D wierna (auto)
+    // Karavalanisha Vrana [101033] — fala I wierna (auto)
     krcgId: 101033,
     name: "Karavalanisha Vrana",
     cardType: "equipment",
@@ -29522,11 +29195,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Kaymakli Fragment [101035] — fala D wierna (auto)
+    // Kaymakli Fragment [101035] — fala I wierna (auto)
     krcgId: 101035,
     name: "Kaymakli Fragment",
     cardType: "equipment",
@@ -29535,11 +29208,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Kaymakli Nightmares [101036] — fala D wierna (auto)
+    // Kaymakli Nightmares [101036] — fala I wierna (auto)
     krcgId: 101036,
     name: "Kaymakli Nightmares",
     cardType: "master",
@@ -29551,7 +29224,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Kduva's Mask [101037] — fala D wierna (auto)
+    // Kduva's Mask [101037] — fala I wierna (auto)
     krcgId: 101037,
     name: "Kduva's Mask",
     cardType: "equipment",
@@ -29560,11 +29233,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Kerrie [101039] — fala D wierna (auto)
+    // Kerrie [101039] — fala I wierna (auto)
     krcgId: 101039,
     name: "Kerrie",
     cardType: "equipment",
@@ -29572,11 +29245,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1, ranged: true }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Keystone Kine [101041] — fala D wierna (auto)
+    // Keystone Kine [101041] — fala I wierna (auto)
     krcgId: 101041,
     name: "Keystone Kine",
     cardType: "action",
@@ -29584,13 +29257,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Khabar: Honor [101044] — fala D wierna (auto)
+    // The Khabar: Honor [101044] — fala I wierna (auto)
     krcgId: 101044,
     name: "The Khabar: Honor",
     cardType: "combat",
@@ -29598,24 +29269,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Khazar's Diary (Endless Night) [101046] — fala D wierna (auto)
+    // Khazar's Diary (Endless Night) [101046] — fala I wierna (auto)
     krcgId: 101046,
     name: "Khazar's Diary (Endless Night)",
     cardType: "action",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "superior", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Khobar Towers, Al-Khubar [101048] — fala D wierna (auto)
+    // Khobar Towers, Al-Khubar [101048] — fala I wierna (auto)
     krcgId: 101048,
     name: "Khobar Towers, Al-Khubar",
     cardType: "master",
@@ -29629,7 +29299,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Kindred Manipulation [101051] — fala D wierna (auto)
+    // Kindred Manipulation [101051] — fala I wierna (auto)
     krcgId: 101051,
     name: "Kindred Manipulation",
     cardType: "actionModifier",
@@ -29637,11 +29307,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Kindred Restructure [101052] — fala D wierna (auto)
+    // Kindred Restructure [101052] — fala I wierna (auto)
     krcgId: 101052,
     name: "Kindred Restructure",
     cardType: "politicalAction",
@@ -29649,11 +29319,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Kindred Society Games [101054] — fala D wierna (auto)
+    // Kindred Society Games [101054] — fala I wierna (auto)
     krcgId: 101054,
     name: "Kindred Society Games",
     cardType: "master",
@@ -29665,7 +29335,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Kindred Spirits [101055] — fala D wierna (auto)
+    // Kindred Spirits [101055] — fala I wierna (auto)
     krcgId: 101055,
     name: "Kindred Spirits",
     cardType: "action",
@@ -29673,12 +29343,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // King's Favor [101058] — fala D wierna (auto)
+    // King's Favor [101058] — fala I wierna (auto)
     krcgId: 101058,
     name: "King's Favor",
     cardType: "reaction",
@@ -29686,26 +29355,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Kiss of Lachesis [101061] — fala D wierna (auto)
+    // Kiss of Lachesis [101061] — fala I wierna (auto)
     krcgId: 101061,
     name: "Kiss of Lachesis",
     cardType: "action",
     bloodCost: 1,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Kiss of Ra [101062] — fala D wierna (auto)
+    // The Kiss of Ra [101062] — fala I wierna (auto)
     krcgId: 101062,
     name: "The Kiss of Ra",
     cardType: "actionModifier",
@@ -29713,12 +29379,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Knotted Cord [101064] — fala D wierna (auto)
+    // Knotted Cord [101064] — fala I wierna (auto)
     krcgId: 101064,
     name: "Knotted Cord",
     cardType: "actionModifier",
@@ -29726,11 +29391,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Kpist m/45 [101065] — fala D wierna (auto)
+    // Kpist m/45 [101065] — fala I wierna (auto)
     krcgId: 101065,
     name: "Kpist m/45",
     cardType: "equipment",
@@ -29738,11 +29403,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 3,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Kraken's Kiss [101066] — fala D wierna (auto)
+    // Kraken's Kiss [101066] — fala I wierna (auto)
     krcgId: 101066,
     name: "Kraken's Kiss",
     cardType: "combat",
@@ -29750,12 +29415,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Kuta [101069] — fala D wierna (auto)
+    // Kuta [101069] — fala I wierna (auto)
     krcgId: 101069,
     name: "Kuta",
     cardType: "politicalAction",
@@ -29763,11 +29427,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Last Stand [101074] — fala D wierna (auto)
+    // Last Stand [101074] — fala I wierna (auto)
     krcgId: 101074,
     name: "Last Stand",
     cardType: "master",
@@ -29780,7 +29444,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lazarene Inquisitor [101076] — fala D wierna (auto)
+    // Lazarene Inquisitor [101076] — fala I wierna (auto)
     krcgId: 101076,
     name: "Lazarene Inquisitor",
     cardType: "master",
@@ -29789,11 +29453,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Lead Fist [101077] — fala D wierna (auto)
+    // Lead Fist [101077] — fala I wierna (auto)
     krcgId: 101077,
     name: "Lead Fist",
     cardType: "combat",
@@ -29801,13 +29465,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Leadership Vacuum [101078] — fala D wierna (auto)
+    // Leadership Vacuum [101078] — fala I wierna (auto)
     krcgId: 101078,
     name: "Leadership Vacuum",
     cardType: "master",
@@ -29820,7 +29482,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Leapfrog [101079] — fala D wierna (auto)
+    // Leapfrog [101079] — fala I wierna (auto)
     krcgId: 101079,
     name: "Leapfrog",
     cardType: "combat",
@@ -29828,13 +29490,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Learjet [101080] — fala D wierna (auto)
+    // Learjet [101080] — fala I wierna (auto)
     krcgId: 101080,
     name: "Learjet",
     cardType: "equipment",
@@ -29842,11 +29502,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Leech [101083] — fala D wierna (auto)
+    // Leech [101083] — fala I wierna (auto)
     krcgId: 101083,
     name: "Leech",
     cardType: "action",
@@ -29854,11 +29514,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Left for Dead [101084] — fala D wierna (auto)
+    // Left for Dead [101084] — fala I wierna (auto)
     krcgId: 101084,
     name: "Left for Dead",
     cardType: "master",
@@ -29870,7 +29530,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Legacy [101085] — fala D wierna (auto)
+    // Legacy [101085] — fala I wierna (auto)
     krcgId: 101085,
     name: "Legacy",
     cardType: "action",
@@ -29878,11 +29538,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Legacy of Caine [101086] — fala D wierna (auto)
+    // Legacy of Caine [101086] — fala I wierna (auto)
     krcgId: 101086,
     name: "Legacy of Caine",
     cardType: "master",
@@ -29894,7 +29554,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Legacy of Pander [101087] — fala D wierna (auto)
+    // Legacy of Pander [101087] — fala I wierna (auto)
     krcgId: 101087,
     name: "Legacy of Pander",
     cardType: "politicalAction",
@@ -29902,11 +29562,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Legacy of Power [101088] — fala D wierna (auto)
+    // Legacy of Power [101088] — fala I wierna (auto)
     krcgId: 101088,
     name: "Legacy of Power",
     cardType: "reaction",
@@ -29914,11 +29574,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Legend of the Leopard [101090] — fala D wierna (auto)
+    // Legend of the Leopard [101090] — fala I wierna (auto)
     krcgId: 101090,
     name: "Legend of the Leopard",
     cardType: "action",
@@ -29926,11 +29586,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Legendary Vampire [101091] — fala D wierna (auto)
+    // Legendary Vampire [101091] — fala I wierna (auto)
     krcgId: 101091,
     name: "Legendary Vampire",
     cardType: "master",
@@ -29939,24 +29599,23 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Legion [101092] — fala D wierna (auto)
+    // Legion [101092] — fala I wierna (auto)
     krcgId: 101092,
     name: "Legion",
     cardType: "action",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Leonardo, Mortician [101094] — fala D wierna (auto)
+    // Leonardo, Mortician [101094] — fala I wierna (auto)
     krcgId: 101094,
     name: "Leonardo, Mortician",
     cardType: "ally",
@@ -29965,11 +29624,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Liberty Club Intrigue [101101] — fala D wierna (auto)
+    // Liberty Club Intrigue [101101] — fala I wierna (auto)
     krcgId: 101101,
     name: "Liberty Club Intrigue",
     cardType: "action",
@@ -29977,11 +29636,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Lifeless Tongues [101105] — fala D wierna (auto)
+    // Lifeless Tongues [101105] — fala I wierna (auto)
     krcgId: 101105,
     name: "Lifeless Tongues",
     cardType: "action",
@@ -29989,12 +29648,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Light Intensifying Goggles [101106] — fala D wierna (auto)
+    // Light Intensifying Goggles [101106] — fala I wierna (auto)
     krcgId: 101106,
     name: "Light Intensifying Goggles",
     cardType: "equipment",
@@ -30002,11 +29660,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Lilith's Blessing [101108] — fala D wierna (auto)
+    // Lilith's Blessing [101108] — fala I wierna (auto)
     krcgId: 101108,
     name: "Lilith's Blessing",
     cardType: "master",
@@ -30018,7 +29676,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Lily Prelude [101109] — fala D wierna (auto)
+    // Lily Prelude [101109] — fala I wierna (auto)
     krcgId: 101109,
     name: "Lily Prelude",
     cardType: "politicalAction",
@@ -30026,12 +29684,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "mel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Liquefy the Mortal Coil [101111] — fala D wierna (auto)
+    // Liquefy the Mortal Coil [101111] — fala I wierna (auto)
     krcgId: 101111,
     name: "Liquefy the Mortal Coil",
     cardType: "combat",
@@ -30039,12 +29696,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Liquidation [101112] — fala D wierna (auto)
+    // Liquidation [101112] — fala I wierna (auto)
     krcgId: 101112,
     name: "Liquidation",
     cardType: "master",
@@ -30056,7 +29712,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Little Mountain Cemetery [101113] — fala D wierna (auto)
+    // Little Mountain Cemetery [101113] — fala I wierna (auto)
     krcgId: 101113,
     name: "Little Mountain Cemetery",
     cardType: "action",
@@ -30064,11 +29720,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Living Wood Staff [101115] — fala D wierna (auto)
+    // Living Wood Staff [101115] — fala I wierna (auto)
     krcgId: 101115,
     name: "Living Wood Staff",
     cardType: "equipment",
@@ -30077,11 +29733,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Lobotomy [101116] — fala D wierna (auto)
+    // Lobotomy [101116] — fala I wierna (auto)
     krcgId: 101116,
     name: "Lobotomy",
     cardType: "actionModifier",
@@ -30089,25 +29745,25 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Local 1111 [101117] — fala D wierna (auto)
+    // Local 1111 [101117] — fala I wierna (auto)
     krcgId: 101117,
     name: "Local 1111",
     cardType: "equipment",
     bloodCost: 2,
     poolCost: 0,
     unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Lock [101118] — fala D wierna (auto)
+    // Lock [101118] — fala I wierna (auto)
     krcgId: 101118,
     name: "Lock",
     cardType: "action",
@@ -30115,11 +29771,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "def", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Loki's Gift [101119] — fala D wierna (auto)
+    // Loki's Gift [101119] — fala I wierna (auto)
     krcgId: 101119,
     name: "Loki's Gift",
     cardType: "action",
@@ -30127,12 +29783,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Loner [101121] — fala D wierna (auto)
+    // Loner [101121] — fala I wierna (auto)
     krcgId: 101121,
     name: "Loner",
     cardType: "master",
@@ -30144,7 +29799,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Loose Cannon [101122] — fala D wierna (auto)
+    // Loose Cannon [101122] — fala I wierna (auto)
     krcgId: 101122,
     name: "Loose Cannon",
     cardType: "actionModifier",
@@ -30152,13 +29807,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "basic", discipline: "vic", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Lord of Serenity [101123] — fala D wierna (auto)
+    // Lord of Serenity [101123] — fala I wierna (auto)
     krcgId: 101123,
     name: "Lord of Serenity",
     cardType: "action",
@@ -30166,26 +29819,24 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Loss [101124] — fala D wierna (auto)
+    // Loss [101124] — fala I wierna (auto)
     krcgId: 101124,
     name: "Loss",
     cardType: "action",
     bloodCost: 1,
     poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Loyalist [101130] — fala D wierna (auto)
+    // Loyalist [101130] — fala I wierna (auto)
     krcgId: 101130,
     name: "Loyalist",
     cardType: "reaction",
@@ -30193,11 +29844,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Lunatic Eruption [101132] — fala D wierna (auto)
+    // Lunatic Eruption [101132] — fala I wierna (auto)
     krcgId: 101132,
     name: "Lunatic Eruption",
     cardType: "action",
@@ -30205,12 +29856,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Lure of the Serpent [101134] — fala D wierna (auto)
+    // Lure of the Serpent [101134] — fala I wierna (auto)
     krcgId: 101134,
     name: "Lure of the Serpent",
     cardType: "action",
@@ -30218,25 +29868,25 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Lyndhurst Estate, New York [101135] — fala D wierna (auto)
+    // Lyndhurst Estate, New York [101135] — fala I wierna (auto)
     krcgId: 101135,
     name: "Lyndhurst Estate, New York",
     cardType: "equipment",
     bloodCost: 3,
     poolCost: 0,
     unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Madman's Quill [101138] — fala D wierna (auto)
+    // Madman's Quill [101138] — fala I wierna (auto)
     krcgId: 101138,
     name: "Madman's Quill",
     cardType: "action",
@@ -30244,14 +29894,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Madness Network [101139] — fala D wierna (auto)
+    // Madness Network [101139] — fala I wierna (auto)
     krcgId: 101139,
     name: "Madness Network",
     cardType: "master",
@@ -30264,7 +29911,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Madness of the Bard [101140] — fala D wierna (auto)
+    // Madness of the Bard [101140] — fala I wierna (auto)
     krcgId: 101140,
     name: "Madness of the Bard",
     cardType: "master",
@@ -30277,7 +29924,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Madrigal [101141] — fala D wierna (auto)
+    // Madrigal [101141] — fala I wierna (auto)
     krcgId: 101141,
     name: "Madrigal",
     cardType: "actionModifier",
@@ -30285,13 +29932,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Make an Example [101146] — fala D wierna (auto)
+    // Make an Example [101146] — fala I wierna (auto)
     krcgId: 101146,
     name: "Make an Example",
     cardType: "actionModifier",
@@ -30299,11 +29944,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Maleficia [101149] — fala D wierna (auto)
+    // Maleficia [101149] — fala I wierna (auto)
     krcgId: 101149,
     name: "Maleficia",
     cardType: "master",
@@ -30315,7 +29960,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Malkavian Derangement: Alternate Personality [101151] — fala D wierna (auto)
+    // Malkavian Derangement: Alternate Personality [101151] — fala I wierna (auto)
     krcgId: 101151,
     name: "Malkavian Derangement: Alternate Personality",
     cardType: "master",
@@ -30327,7 +29972,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Malkavian Derangement: Paranoia [101152] — fala D wierna (auto)
+    // Malkavian Derangement: Paranoia [101152] — fala I wierna (auto)
     krcgId: 101152,
     name: "Malkavian Derangement: Paranoia",
     cardType: "master",
@@ -30339,7 +29984,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Malkavian Game [101153] — fala D wierna (auto)
+    // Malkavian Game [101153] — fala I wierna (auto)
     krcgId: 101153,
     name: "Malkavian Game",
     cardType: "master",
@@ -30351,7 +29996,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Malkavian Prank [101155] — fala D wierna (auto)
+    // Malkavian Prank [101155] — fala I wierna (auto)
     krcgId: 101155,
     name: "Malkavian Prank",
     cardType: "master",
@@ -30363,7 +30008,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Malkavian Seven Miseries [101157] — fala D wierna (auto)
+    // The Malkavian Seven Miseries [101157] — fala I wierna (auto)
     krcgId: 101157,
     name: "The Malkavian Seven Miseries",
     cardType: "master",
@@ -30371,11 +30016,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Malleable Visage [101159] — fala D wierna (auto)
+    // Malleable Visage [101159] — fala I wierna (auto)
     krcgId: 101159,
     name: "Malleable Visage",
     cardType: "actionModifier",
@@ -30383,12 +30028,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mantle of the Bestial Majesty [101161] — fala D wierna (auto)
+    // Mantle of the Bestial Majesty [101161] — fala I wierna (auto)
     krcgId: 101161,
     name: "Mantle of the Bestial Majesty",
     cardType: "action",
@@ -30396,12 +30040,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mapatano Utando [101163] — fala D wierna (auto)
+    // Mapatano Utando [101163] — fala I wierna (auto)
     krcgId: 101163,
     name: "Mapatano Utando",
     cardType: "master",
@@ -30410,11 +30053,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Marijava Ghoul [101164] — fala D wierna (auto)
+    // Marijava Ghoul [101164] — fala I wierna (auto)
     krcgId: 101164,
     name: "Marijava Ghoul",
     cardType: "retainer",
@@ -30422,11 +30065,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Marijava Thuggee [101165] — fala D wierna (auto)
+    // Marijava Thuggee [101165] — fala I wierna (auto)
     krcgId: 101165,
     name: "Marijava Thuggee",
     cardType: "ally",
@@ -30434,11 +30077,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mark of Damnation [101166] — fala D wierna (auto)
+    // Mark of Damnation [101166] — fala I wierna (auto)
     krcgId: 101166,
     name: "Mark of Damnation",
     cardType: "action",
@@ -30446,12 +30089,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Marked Path [101169] — fala D wierna (auto)
+    // Marked Path [101169] — fala I wierna (auto)
     krcgId: 101169,
     name: "Marked Path",
     cardType: "actionModifier",
@@ -30459,12 +30101,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Marked Territory [101170] — fala D wierna (auto)
+    // Marked Territory [101170] — fala I wierna (auto)
     krcgId: 101170,
     name: "Marked Territory",
     cardType: "action",
@@ -30472,11 +30113,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Marrakesh Codex [101172] — fala D wierna (auto)
+    // The Marrakesh Codex [101172] — fala I wierna (auto)
     krcgId: 101172,
     name: "The Marrakesh Codex",
     cardType: "master",
@@ -30489,7 +30130,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Martial Ritus [101173] — fala D wierna (auto)
+    // Martial Ritus [101173] — fala I wierna (auto)
     krcgId: 101173,
     name: "Martial Ritus",
     cardType: "action",
@@ -30497,11 +30138,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Martinelli's Ring [101174] — fala D wierna (auto)
+    // Martinelli's Ring [101174] — fala I wierna (auto)
     krcgId: 101174,
     name: "Martinelli's Ring",
     cardType: "equipment",
@@ -30510,12 +30151,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Masai Blood Milk [101176] — fala D wierna (auto)
+    // Masai Blood Milk [101176] — fala I wierna (auto)
     krcgId: 101176,
     name: "Masai Blood Milk",
     cardType: "action",
@@ -30524,11 +30164,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Masca [101177] — fala D wierna (auto)
+    // Masca [101177] — fala I wierna (auto)
     krcgId: 101177,
     name: "Masca",
     cardType: "actionModifier",
@@ -30536,13 +30176,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "str", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
-      { level: "superior", discipline: "str", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mask of a Thousand Faces [101179] — fala D wierna (auto)
+    // Mask of a Thousand Faces [101179] — fala I wierna (auto)
     krcgId: 101179,
     name: "Mask of a Thousand Faces",
     cardType: "actionModifier",
@@ -30550,12 +30188,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Masochism [101180] — fala D wierna (auto)
+    // Masochism [101180] — fala I wierna (auto)
     krcgId: 101180,
     name: "Masochism",
     cardType: "action",
@@ -30563,12 +30200,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Masque of Judas [101181] — fala D wierna (auto)
+    // Masque of Judas [101181] — fala I wierna (auto)
     krcgId: 101181,
     name: "Masque of Judas",
     cardType: "combat",
@@ -30576,14 +30212,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Masquer [101182] — fala D wierna (auto)
+    // Masquer [101182] — fala I wierna (auto)
     krcgId: 101182,
     name: "Masquer",
     cardType: "retainer",
@@ -30591,12 +30224,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mass Reality [101185] — fala D wierna (auto)
+    // Mass Reality [101185] — fala I wierna (auto)
     krcgId: 101185,
     name: "Mass Reality",
     cardType: "action",
@@ -30604,12 +30236,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Massassi's Honor [101186] — fala D wierna (auto)
+    // Massassi's Honor [101186] — fala I wierna (auto)
     krcgId: 101186,
     name: "Massassi's Honor",
     cardType: "actionModifier",
@@ -30617,11 +30248,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mayaparisatya [101188] — fala D wierna (auto)
+    // Mayaparisatya [101188] — fala I wierna (auto)
     krcgId: 101188,
     name: "Mayaparisatya",
     cardType: "combat",
@@ -30629,18 +30260,16 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mbare Market, Harare [101189] — fala D wierna (auto)
+    // Mbare Market, Harare [101189] — fala I wierna (auto)
     krcgId: 101189,
     name: "Mbare Market, Harare",
     cardType: "master",
     bloodCost: 0,
     poolCost: 3,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -30648,7 +30277,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Meat Hook [101191] — fala D wierna (auto)
+    // Meat Hook [101191] — fala I wierna (auto)
     krcgId: 101191,
     name: "Meat Hook",
     cardType: "equipment",
@@ -30656,11 +30285,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Meddling of Semsith [101192] — fala D wierna (auto)
+    // The Meddling of Semsith [101192] — fala I wierna (auto)
     krcgId: 101192,
     name: "The Meddling of Semsith",
     cardType: "politicalAction",
@@ -30668,11 +30297,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mehemet of the Ahl-i-Batin [101194] — fala D wierna (auto)
+    // Mehemet of the Ahl-i-Batin [101194] — fala I wierna (auto)
     krcgId: 101194,
     name: "Mehemet of the Ahl-i-Batin",
     cardType: "ally",
@@ -30681,11 +30310,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Meld with the Land [101196] — fala D wierna (auto)
+    // Meld with the Land [101196] — fala I wierna (auto)
     krcgId: 101196,
     name: "Meld with the Land",
     cardType: "combat",
@@ -30693,12 +30322,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Member of the Entourage [101197] — fala D wierna (auto)
+    // Member of the Entourage [101197] — fala I wierna (auto)
     krcgId: 101197,
     name: "Member of the Entourage",
     cardType: "ally",
@@ -30706,11 +30334,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Memories of Mortality [101198] — fala D wierna (auto)
+    // Memories of Mortality [101198] — fala I wierna (auto)
     krcgId: 101198,
     name: "Memories of Mortality",
     cardType: "master",
@@ -30722,7 +30350,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Memory Rift [101199] — fala D wierna (auto)
+    // Memory Rift [101199] — fala I wierna (auto)
     krcgId: 101199,
     name: "Memory Rift",
     cardType: "actionModifier",
@@ -30730,13 +30358,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Memory's Fading Glimpse [101200] — fala D wierna (auto)
+    // Memory's Fading Glimpse [101200] — fala I wierna (auto)
     krcgId: 101200,
     name: "Memory's Fading Glimpse",
     cardType: "action",
@@ -30744,12 +30370,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mental Maze [101201] — fala D wierna (auto)
+    // Mental Maze [101201] — fala I wierna (auto)
     krcgId: 101201,
     name: "Mental Maze",
     cardType: "reaction",
@@ -30757,12 +30382,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mercy for Seth [101203] — fala D wierna (auto)
+    // Mercy for Seth [101203] — fala I wierna (auto)
     krcgId: 101203,
     name: "Mercy for Seth",
     cardType: "combat",
@@ -30770,12 +30394,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mesmerize [101205] — fala D wierna (auto)
+    // Mesmerize [101205] — fala I wierna (auto)
     krcgId: 101205,
     name: "Mesmerize",
     cardType: "action",
@@ -30783,12 +30406,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mesu Bedshet [101206] — fala D wierna (auto)
+    // Mesu Bedshet [101206] — fala I wierna (auto)
     krcgId: 101206,
     name: "Mesu Bedshet",
     cardType: "action",
@@ -30796,17 +30418,16 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Metro Underground [101207] — fala D wierna (auto)
+    // Metro Underground [101207] — fala I wierna (auto)
     krcgId: 101207,
     name: "Metro Underground",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -30814,7 +30435,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Might of the Camarilla [101208] — fala D wierna (auto)
+    // Might of the Camarilla [101208] — fala I wierna (auto)
     krcgId: 101208,
     name: "Might of the Camarilla",
     cardType: "politicalAction",
@@ -30822,11 +30443,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Millicent Smith, Puritan Vampire Hunter [101210] — fala D wierna (auto)
+    // Millicent Smith, Puritan Vampire Hunter [101210] — fala I wierna (auto)
     krcgId: 101210,
     name: "Millicent Smith, Puritan Vampire Hunter",
     cardType: "master",
@@ -30839,7 +30460,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mind of a Child [101212] — fala D wierna (auto)
+    // Mind of a Child [101212] — fala I wierna (auto)
     krcgId: 101212,
     name: "Mind of a Child",
     cardType: "action",
@@ -30847,12 +30468,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mind of a Killer [101213] — fala D wierna (auto)
+    // Mind of a Killer [101213] — fala I wierna (auto)
     krcgId: 101213,
     name: "Mind of a Killer",
     cardType: "action",
@@ -30860,12 +30480,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mind of the Wilds [101214] — fala D wierna (auto)
+    // Mind of the Wilds [101214] — fala I wierna (auto)
     krcgId: 101214,
     name: "Mind of the Wilds",
     cardType: "actionModifier",
@@ -30873,14 +30492,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mind Tricks [101216] — fala D wierna (auto)
+    // Mind Tricks [101216] — fala I wierna (auto)
     krcgId: 101216,
     name: "Mind Tricks",
     cardType: "actionModifier",
@@ -30888,12 +30504,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ministry [101218] — fala D wierna (auto)
+    // Ministry [101218] — fala I wierna (auto)
     krcgId: 101218,
     name: "Ministry",
     cardType: "reaction",
@@ -30901,11 +30516,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Minor Curse [101220] — fala D wierna (auto)
+    // Minor Curse [101220] — fala I wierna (auto)
     krcgId: 101220,
     name: "Minor Curse",
     cardType: "action",
@@ -30913,12 +30528,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mal", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "mal", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mirror Image [101222] — fala D wierna (auto)
+    // Mirror Image [101222] — fala I wierna (auto)
     krcgId: 101222,
     name: "Mirror Image",
     cardType: "actionModifier",
@@ -30926,12 +30540,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mirror's Visage [101224] — fala D wierna (auto)
+    // Mirror's Visage [101224] — fala I wierna (auto)
     krcgId: 101224,
     name: "Mirror's Visage",
     cardType: "actionModifier",
@@ -30939,12 +30552,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Missing Voice [101226] — fala D wierna (auto)
+    // The Missing Voice [101226] — fala I wierna (auto)
     krcgId: 101226,
     name: "The Missing Voice",
     cardType: "actionModifier",
@@ -30952,13 +30564,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mistaken Identity [101227] — fala D wierna (auto)
+    // Mistaken Identity [101227] — fala I wierna (auto)
     krcgId: 101227,
     name: "Mistaken Identity",
     cardType: "reaction",
@@ -30966,11 +30576,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mistrust [101228] — fala D wierna (auto)
+    // Mistrust [101228] — fala I wierna (auto)
     krcgId: 101228,
     name: "Mistrust",
     cardType: "master",
@@ -30982,7 +30592,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Moise Kasavubu [101231] — fala D wierna (auto)
+    // Moise Kasavubu [101231] — fala I wierna (auto)
     krcgId: 101231,
     name: "Moise Kasavubu",
     cardType: "ally",
@@ -30991,11 +30601,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mokolé Blood [101232] — fala D wierna (auto)
+    // Mokolé Blood [101232] — fala I wierna (auto)
     krcgId: 101232,
     name: "Mokolé Blood",
     cardType: "equipment",
@@ -31004,11 +30614,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Mole [101233] — fala D wierna (auto)
+    // The Mole [101233] — fala I wierna (auto)
     krcgId: 101233,
     name: "The Mole",
     cardType: "reaction",
@@ -31016,13 +30626,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mole's Tunneling [101234] — fala D wierna (auto)
+    // Mole's Tunneling [101234] — fala I wierna (auto)
     krcgId: 101234,
     name: "Mole's Tunneling",
     cardType: "actionModifier",
@@ -31030,13 +30638,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Momentary Delay [101236] — fala D wierna (auto)
+    // Momentary Delay [101236] — fala I wierna (auto)
     krcgId: 101236,
     name: "Momentary Delay",
     cardType: "actionModifier",
@@ -31044,11 +30650,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Monocle of Clarity [101240] — fala D wierna (auto)
+    // Monocle of Clarity [101240] — fala I wierna (auto)
     krcgId: 101240,
     name: "Monocle of Clarity",
     cardType: "equipment",
@@ -31057,11 +30663,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Monomancy [101241] — fala D wierna (auto)
+    // Monomancy [101241] — fala I wierna (auto)
     krcgId: 101241,
     name: "Monomancy",
     cardType: "action",
@@ -31069,11 +30675,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Morphean Blow [101244] — fala D wierna (auto)
+    // Morphean Blow [101244] — fala I wierna (auto)
     krcgId: 101244,
     name: "Morphean Blow",
     cardType: "combat",
@@ -31081,13 +30687,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "val", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mouthpiece [101245] — fala D wierna (auto)
+    // Mouthpiece [101245] — fala I wierna (auto)
     krcgId: 101245,
     name: "Mouthpiece",
     cardType: "actionModifier",
@@ -31095,12 +30699,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Movement of the Slow Body [101247] — fala D wierna (auto)
+    // Movement of the Slow Body [101247] — fala I wierna (auto)
     krcgId: 101247,
     name: "Movement of the Slow Body",
     cardType: "action",
@@ -31108,12 +30711,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mozambique Allure [101248] — fala D wierna (auto)
+    // Mozambique Allure [101248] — fala I wierna (auto)
     krcgId: 101248,
     name: "Mozambique Allure",
     cardType: "action",
@@ -31121,11 +30723,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mummify [101251] — fala D wierna (auto)
+    // Mummify [101251] — fala I wierna (auto)
     krcgId: 101251,
     name: "Mummify",
     cardType: "combat",
@@ -31133,12 +30735,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mundane [101253] — fala D wierna (auto)
+    // Mundane [101253] — fala I wierna (auto)
     krcgId: 101253,
     name: "Mundane",
     cardType: "master",
@@ -31150,7 +30751,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Muricia's Call [101255] — fala D wierna (auto)
+    // Muricia's Call [101255] — fala I wierna (auto)
     krcgId: 101255,
     name: "Muricia's Call",
     cardType: "action",
@@ -31158,14 +30759,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Muse of Flame [101257] — fala D wierna (auto)
+    // Muse of Flame [101257] — fala I wierna (auto)
     krcgId: 101257,
     name: "Muse of Flame",
     cardType: "action",
@@ -31173,11 +30771,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ven", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mustajib [101258] — fala D wierna (auto)
+    // Mustajib [101258] — fala I wierna (auto)
     krcgId: 101258,
     name: "Mustajib",
     cardType: "action",
@@ -31185,11 +30783,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // My Kin Against the World [101260] — fala D wierna (auto)
+    // My Kin Against the World [101260] — fala I wierna (auto)
     krcgId: 101260,
     name: "My Kin Against the World",
     cardType: "politicalAction",
@@ -31197,11 +30795,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mylan Horseed [101261] — fala D wierna (auto)
+    // Mylan Horseed [101261] — fala I wierna (auto)
     krcgId: 101261,
     name: "Mylan Horseed",
     cardType: "ally",
@@ -31210,25 +30808,23 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Name Forgotten [101263] — fala D wierna (auto)
+    // The Name Forgotten [101263] — fala I wierna (auto)
     krcgId: 101263,
     name: "The Name Forgotten",
     cardType: "action",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Nar-Sheptha [101264] — fala D wierna (auto)
+    // Nar-Sheptha [101264] — fala I wierna (auto)
     krcgId: 101264,
     name: "Nar-Sheptha",
     cardType: "retainer",
@@ -31237,11 +30833,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // National Guard Support [101266] — fala D wierna (auto)
+    // National Guard Support [101266] — fala I wierna (auto)
     krcgId: 101266,
     name: "National Guard Support",
     cardType: "politicalAction",
@@ -31249,11 +30845,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Neebi [101269] — fala D wierna (auto)
+    // Neebi [101269] — fala I wierna (auto)
     krcgId: 101269,
     name: "Neebi",
     cardType: "combat",
@@ -31261,11 +30857,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Neighborhood Watch Commander [101270] — fala D wierna (auto)
+    // Neighborhood Watch Commander [101270] — fala I wierna (auto)
     krcgId: 101270,
     name: "Neighborhood Watch Commander",
     cardType: "ally",
@@ -31273,11 +30869,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Nephandus [101272] — fala D wierna (auto)
+    // Nephandus [101272] — fala I wierna (auto)
     krcgId: 101272,
     name: "Nephandus",
     cardType: "ally",
@@ -31285,11 +30881,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Netwar [101275] — fala D wierna (auto)
+    // Netwar [101275] — fala I wierna (auto)
     krcgId: 101275,
     name: "Netwar",
     cardType: "reaction",
@@ -31297,13 +30893,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Neutral Guard [101276] — fala D wierna (auto)
+    // Neutral Guard [101276] — fala I wierna (auto)
     krcgId: 101276,
     name: "Neutral Guard",
     cardType: "actionModifier",
@@ -31311,13 +30905,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // New in Town [101278] — fala D wierna (auto)
+    // New in Town [101278] — fala I wierna (auto)
     krcgId: 101278,
     name: "New in Town",
     cardType: "master",
@@ -31326,11 +30918,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // New Moon Sigil [101281] — fala D wierna (auto)
+    // New Moon Sigil [101281] — fala I wierna (auto)
     krcgId: 101281,
     name: "New Moon Sigil",
     cardType: "action",
@@ -31338,12 +30930,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ni Dieu ni Maître [101282] — fala D wierna (auto)
+    // Ni Dieu ni Maître [101282] — fala I wierna (auto)
     krcgId: 101282,
     name: "Ni Dieu ni Maître",
     cardType: "actionModifier",
@@ -31351,13 +30942,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Night Moves [101283] — fala D wierna (auto)
+    // Night Moves [101283] — fala I wierna (auto)
     krcgId: 101283,
     name: "Night Moves",
     cardType: "action",
@@ -31365,12 +30954,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Nightmare Curse [101284] — fala D wierna (auto)
+    // Nightmare Curse [101284] — fala I wierna (auto)
     krcgId: 101284,
     name: "Nightmare Curse",
     cardType: "action",
@@ -31378,14 +30966,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Nightmares upon Nightmares [101285] — fala D wierna (auto)
+    // Nightmares upon Nightmares [101285] — fala I wierna (auto)
     krcgId: 101285,
     name: "Nightmares upon Nightmares",
     cardType: "event",
@@ -31393,11 +30978,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Nightshades [101286] — fala D wierna (auto)
+    // Nightshades [101286] — fala I wierna (auto)
     krcgId: 101286,
     name: "Nightshades",
     cardType: "actionModifier",
@@ -31405,12 +30990,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Nightstick [101287] — fala D wierna (auto)
+    // Nightstick [101287] — fala I wierna (auto)
     krcgId: 101287,
     name: "Nightstick",
     cardType: "equipment",
@@ -31418,11 +31002,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Nkishi [101289] — fala D wierna (auto)
+    // Nkishi [101289] — fala I wierna (auto)
     krcgId: 101289,
     name: "Nkishi",
     cardType: "equipment",
@@ -31431,11 +31015,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // No Confidence [101290] — fala D wierna (auto)
+    // No Confidence [101290] — fala I wierna (auto)
     krcgId: 101290,
     name: "No Confidence",
     cardType: "actionModifier",
@@ -31443,11 +31027,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // No Secrets From the Magaji [101291] — fala D wierna (auto)
+    // No Secrets From the Magaji [101291] — fala I wierna (auto)
     krcgId: 101291,
     name: "No Secrets From the Magaji",
     cardType: "action",
@@ -31455,11 +31039,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Nocturn [101293] — fala D wierna (auto)
+    // Nocturn [101293] — fala I wierna (auto)
     krcgId: 101293,
     name: "Nocturn",
     cardType: "ally",
@@ -31467,12 +31051,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Nocturn Theater [101294] — fala D wierna (auto)
+    // Nocturn Theater [101294] — fala I wierna (auto)
     krcgId: 101294,
     name: "Nocturn Theater",
     cardType: "master",
@@ -31486,7 +31069,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nod [101295] — fala D wierna (auto)
+    // Nod [101295] — fala I wierna (auto)
     krcgId: 101295,
     name: "Nod",
     cardType: "master",
@@ -31498,7 +31081,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nose of the Hound [101296] — fala D wierna (auto)
+    // Nose of the Hound [101296] — fala I wierna (auto)
     krcgId: 101296,
     name: "Nose of the Hound",
     cardType: "action",
@@ -31506,13 +31089,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Nosferatu Bestial [101297] — fala D wierna (auto)
+    // Nosferatu Bestial [101297] — fala I wierna (auto)
     krcgId: 101297,
     name: "Nosferatu Bestial",
     cardType: "action",
@@ -31521,11 +31102,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Nosferatu Hosting [101298] — fala D wierna (auto)
+    // Nosferatu Hosting [101298] — fala I wierna (auto)
     krcgId: 101298,
     name: "Nosferatu Hosting",
     cardType: "master",
@@ -31537,13 +31118,12 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nosferatu Kingdom [101300] — fala D wierna (auto)
+    // Nosferatu Kingdom [101300] — fala I wierna (auto)
     krcgId: 101300,
     name: "Nosferatu Kingdom",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -31551,19 +31131,20 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Nosferatu Performance Art [101301] — fala D wierna (auto)
+    // Nosferatu Performance Art [101301] — fala I wierna (auto)
     krcgId: 101301,
     name: "Nosferatu Performance Art",
     cardType: "action",
     bloodCost: 2,
     poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Notorious Brutality [101304] — fala D wierna (auto)
+    // Notorious Brutality [101304] — fala I wierna (auto)
     krcgId: 101304,
     name: "Notorious Brutality",
     cardType: "actionModifier",
@@ -31571,11 +31152,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // NSA Trio [101306] — fala D wierna (auto)
+    // NSA Trio [101306] — fala I wierna (auto)
     krcgId: 101306,
     name: "NSA Trio",
     cardType: "event",
@@ -31583,23 +31164,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Oath [101307] — fala D wierna (auto)
+    // The Oath [101307] — fala I wierna (auto)
     krcgId: 101307,
     name: "The Oath",
-    cardType: "reaction",
+    cardType: "combat",
     bloodCost: 0,
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Oath of Loyalty [101308] — fala D wierna (auto)
+    // Oath of Loyalty [101308] — fala I wierna (auto)
     krcgId: 101308,
     name: "Oath of Loyalty",
     cardType: "master",
@@ -31607,11 +31188,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Obsession [101311] — fala D wierna (auto)
+    // Obsession [101311] — fala I wierna (auto)
     krcgId: 101311,
     name: "Obsession",
     cardType: "master",
@@ -31623,7 +31204,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Occlusion [101313] — fala D wierna (auto)
+    // Occlusion [101313] — fala I wierna (auto)
     krcgId: 101313,
     name: "Occlusion",
     cardType: "actionModifier",
@@ -31631,12 +31212,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "strikeDodge" }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Octopod [101314] — fala D wierna (auto)
+    // Octopod [101314] — fala I wierna (auto)
     krcgId: 101314,
     name: "Octopod",
     cardType: "combat",
@@ -31644,12 +31224,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "additionalStrike", count: 1, limited: true }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Of Noble Blood [101315] — fala D wierna (auto)
+    // Of Noble Blood [101315] — fala I wierna (auto)
     krcgId: 101315,
     name: "Of Noble Blood",
     cardType: "action",
@@ -31657,11 +31236,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Off Kilter [101316] — fala D wierna (auto)
+    // Off Kilter [101316] — fala I wierna (auto)
     krcgId: 101316,
     name: "Off Kilter",
     cardType: "action",
@@ -31669,11 +31248,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ohoyo Hopoksia (Bastet) [101317] — fala D wierna (auto)
+    // Ohoyo Hopoksia (Bastet) [101317] — fala I wierna (auto)
     krcgId: 101317,
     name: "Ohoyo Hopoksia (Bastet)",
     cardType: "ally",
@@ -31682,11 +31261,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Olid Loa [101319] — fala D wierna (auto)
+    // Olid Loa [101319] — fala I wierna (auto)
     krcgId: 101319,
     name: "Olid Loa",
     cardType: "combat",
@@ -31694,11 +31273,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Open Dossier [101322] — fala D wierna (auto)
+    // Open Dossier [101322] — fala I wierna (auto)
     krcgId: 101322,
     name: "Open Dossier",
     cardType: "reaction",
@@ -31706,11 +31285,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ophidian Gaze [101325] — fala D wierna (auto)
+    // Ophidian Gaze [101325] — fala I wierna (auto)
     krcgId: 101325,
     name: "Ophidian Gaze",
     cardType: "reaction",
@@ -31718,14 +31297,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Oppugnant Night [101327] — fala D wierna (auto)
+    // Oppugnant Night [101327] — fala I wierna (auto)
     krcgId: 101327,
     name: "Oppugnant Night",
     cardType: "action",
@@ -31733,11 +31309,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Orb of Ulain [101328] — fala D wierna (auto)
+    // Orb of Ulain [101328] — fala I wierna (auto)
     krcgId: 101328,
     name: "Orb of Ulain",
     cardType: "equipment",
@@ -31746,13 +31322,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Order of Hermes Cabal [101329] — fala D wierna (auto)
+    // Order of Hermes Cabal [101329] — fala I wierna (auto)
     krcgId: 101329,
     name: "Order of Hermes Cabal",
     cardType: "ally",
@@ -31761,11 +31335,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Orgy of Blood [101330] — fala D wierna (auto)
+    // Orgy of Blood [101330] — fala I wierna (auto)
     krcgId: 101330,
     name: "Orgy of Blood",
     cardType: "combat",
@@ -31773,11 +31347,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Orun [101331] — fala D wierna (auto)
+    // Orun [101331] — fala I wierna (auto)
     krcgId: 101331,
     name: "Orun",
     cardType: "master",
@@ -31785,24 +31359,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Osebo Kholo [101332] — fala D wierna (auto)
+    // Osebo Kholo [101332] — fala I wierna (auto)
     krcgId: 101332,
     name: "Osebo Kholo",
     cardType: "actionModifier",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ossian [101333] — fala D wierna (auto)
+    // Ossian [101333] — fala I wierna (auto)
     krcgId: 101333,
     name: "Ossian",
     cardType: "ally",
@@ -31811,11 +31384,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Oubliette [101334] — fala D wierna (auto)
+    // Oubliette [101334] — fala I wierna (auto)
     krcgId: 101334,
     name: "Oubliette",
     cardType: "combat",
@@ -31823,12 +31396,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Out of Control [101335] — fala D wierna (auto)
+    // Out of Control [101335] — fala I wierna (auto)
     krcgId: 101335,
     name: "Out of Control",
     cardType: "master",
@@ -31840,7 +31412,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Out of the Frying Pan [101336] — fala D wierna (auto)
+    // Out of the Frying Pan [101336] — fala I wierna (auto)
     krcgId: 101336,
     name: "Out of the Frying Pan",
     cardType: "master",
@@ -31852,7 +31424,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Outside the Hourglass [101338] — fala D wierna (auto)
+    // Outside the Hourglass [101338] — fala I wierna (auto)
     krcgId: 101338,
     name: "Outside the Hourglass",
     cardType: "combat",
@@ -31860,13 +31432,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Overseer [101339] — fala D wierna (auto)
+    // Overseer [101339] — fala I wierna (auto)
     krcgId: 101339,
     name: "Overseer",
     cardType: "politicalAction",
@@ -31874,38 +31444,38 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Palace Hunting Ground [101344] — fala D wierna (auto)
+    // Palace Hunting Ground [101344] — fala I wierna (auto)
     krcgId: 101344,
     name: "Palace Hunting Ground",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    unique: true,
-    permanent: { where: "seat", statics: {}, tags: ["location"], huntingGround: true },
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Palatial Estate [101345] — fala D wierna (auto)
+    // Palatial Estate [101345] — fala I wierna (auto)
     krcgId: 101345,
     name: "Palatial Estate",
     cardType: "equipment",
     bloodCost: 2,
     poolCost: 0,
     unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Palla Grande [101346] — fala D wierna (auto)
+    // Palla Grande [101346] — fala I wierna (auto)
     krcgId: 101346,
     name: "Palla Grande",
     cardType: "master",
@@ -31914,11 +31484,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Pallid [101347] — fala D wierna (auto)
+    // Pallid [101347] — fala I wierna (auto)
     krcgId: 101347,
     name: "Pallid",
     cardType: "master",
@@ -31926,11 +31496,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Panacea [101348] — fala D wierna (auto)
+    // Panacea [101348] — fala I wierna (auto)
     krcgId: 101348,
     name: "Panacea",
     cardType: "action",
@@ -31938,13 +31508,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Pandora's Whisper [101349] — fala D wierna (auto)
+    // Pandora's Whisper [101349] — fala I wierna (auto)
     krcgId: 101349,
     name: "Pandora's Whisper",
     cardType: "action",
@@ -31952,13 +31520,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Paragon [101351] — fala D wierna (auto)
+    // Paragon [101351] — fala I wierna (auto)
     krcgId: 101351,
     name: "Paragon",
     cardType: "master",
@@ -31971,7 +31537,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Paris Opera House [101352] — fala D wierna (auto)
+    // Paris Opera House [101352] — fala I wierna (auto)
     krcgId: 101352,
     name: "Paris Opera House",
     cardType: "master",
@@ -31981,11 +31547,11 @@ export const cardSpecs: CardSpec[] = [
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Parthenon [101355] — fala D wierna (auto)
+    // The Parthenon [101355] — fala I wierna (auto)
     krcgId: 101355,
     name: "The Parthenon",
     cardType: "master",
@@ -31999,7 +31565,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Passion [101356] — fala D wierna (auto)
+    // Passion [101356] — fala I wierna (auto)
     krcgId: 101356,
     name: "Passion",
     cardType: "action",
@@ -32007,12 +31573,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Patagia: Flaps Allowing Limited Flight [101357] — fala D wierna (auto)
+    // Patagia: Flaps Allowing Limited Flight [101357] — fala I wierna (auto)
     krcgId: 101357,
     name: "Patagia: Flaps Allowing Limited Flight",
     cardType: "action",
@@ -32020,11 +31585,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Path of Blood [101358] — fala D wierna (auto)
+    // The Path of Blood [101358] — fala I wierna (auto)
     krcgId: 101358,
     name: "The Path of Blood",
     cardType: "master",
@@ -32033,11 +31598,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Path of Bone [101359] — fala D wierna (auto)
+    // The Path of Bone [101359] — fala I wierna (auto)
     krcgId: 101359,
     name: "The Path of Bone",
     cardType: "master",
@@ -32046,11 +31611,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Path of Death and the Soul [101360] — fala D wierna (auto)
+    // Path of Death and the Soul [101360] — fala I wierna (auto)
     krcgId: 101360,
     name: "Path of Death and the Soul",
     cardType: "master",
@@ -32063,7 +31628,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Path of Evil Revelations [101361] — fala D wierna (auto)
+    // Path of Evil Revelations [101361] — fala I wierna (auto)
     krcgId: 101361,
     name: "Path of Evil Revelations",
     cardType: "master",
@@ -32072,11 +31637,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Path of Harmony [101362] — fala D wierna (auto)
+    // The Path of Harmony [101362] — fala I wierna (auto)
     krcgId: 101362,
     name: "The Path of Harmony",
     cardType: "master",
@@ -32085,11 +31650,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Path of Lilith [101363] — fala D wierna (auto)
+    // The Path of Lilith [101363] — fala I wierna (auto)
     krcgId: 101363,
     name: "The Path of Lilith",
     cardType: "master",
@@ -32102,7 +31667,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Path of Retribution [101367] — fala D wierna (auto)
+    // The Path of Retribution [101367] — fala I wierna (auto)
     krcgId: 101367,
     name: "The Path of Retribution",
     cardType: "master",
@@ -32111,11 +31676,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Path of Service [101368] — fala D wierna (auto)
+    // The Path of Service [101368] — fala I wierna (auto)
     krcgId: 101368,
     name: "The Path of Service",
     cardType: "master",
@@ -32124,11 +31689,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Path of Tears [101369] — fala D wierna (auto)
+    // The Path of Tears [101369] — fala I wierna (auto)
     krcgId: 101369,
     name: "The Path of Tears",
     cardType: "master",
@@ -32140,7 +31705,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Path of the Feral Heart [101370] — fala D wierna (auto)
+    // The Path of the Feral Heart [101370] — fala I wierna (auto)
     krcgId: 101370,
     name: "The Path of the Feral Heart",
     cardType: "master",
@@ -32149,11 +31714,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Path of the Scorched Heart [101371] — fala D wierna (auto)
+    // The Path of the Scorched Heart [101371] — fala I wierna (auto)
     krcgId: 101371,
     name: "The Path of the Scorched Heart",
     cardType: "action",
@@ -32161,11 +31726,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Path of the Void [101372] — fala D wierna (auto)
+    // Path of the Void [101372] — fala I wierna (auto)
     krcgId: 101372,
     name: "Path of the Void",
     cardType: "master",
@@ -32174,11 +31739,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Patrol [101374] — fala D wierna (auto)
+    // Patrol [101374] — fala I wierna (auto)
     krcgId: 101374,
     name: "Patrol",
     cardType: "reaction",
@@ -32186,11 +31751,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Patronage [101375] — fala D wierna (auto)
+    // Patronage [101375] — fala I wierna (auto)
     krcgId: 101375,
     name: "Patronage",
     cardType: "action",
@@ -32198,11 +31763,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Patsy [101377] — fala D wierna (auto)
+    // Patsy [101377] — fala I wierna (auto)
     krcgId: 101377,
     name: "Patsy",
     cardType: "politicalAction",
@@ -32210,11 +31775,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Patterns in the Chaos [101378] — fala D wierna (auto)
+    // Patterns in the Chaos [101378] — fala I wierna (auto)
     krcgId: 101378,
     name: "Patterns in the Chaos",
     cardType: "actionModifier",
@@ -32222,12 +31787,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Peace of Khetamon [101379] — fala D wierna (auto)
+    // The Peace of Khetamon [101379] — fala I wierna (auto)
     krcgId: 101379,
     name: "The Peace of Khetamon",
     cardType: "politicalAction",
@@ -32235,11 +31799,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Peacemaker [101381] — fala D wierna (auto)
+    // Peacemaker [101381] — fala I wierna (auto)
     krcgId: 101381,
     name: "Peacemaker",
     cardType: "reaction",
@@ -32247,27 +31811,24 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Pentex™ Loves You! [101383] — fala D wierna (auto)
+    // Pentex™ Loves You! [101383] — fala I wierna (auto)
     krcgId: 101383,
     name: "Pentex™ Loves You!",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Père Lachaise, France [101385] — fala D wierna (auto)
+    // Père Lachaise, France [101385] — fala I wierna (auto)
     krcgId: 101385,
     name: "Père Lachaise, France",
     cardType: "master",
@@ -32281,7 +31842,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Perfect Clarity [101386] — fala D wierna (auto)
+    // Perfect Clarity [101386] — fala I wierna (auto)
     krcgId: 101386,
     name: "Perfect Clarity",
     cardType: "actionModifier",
@@ -32289,12 +31850,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Permanency [101389] — fala D wierna (auto)
+    // Permanency [101389] — fala I wierna (auto)
     krcgId: 101389,
     name: "Permanency",
     cardType: "actionModifier",
@@ -32302,12 +31862,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Persistent Echo [101392] — fala D wierna (auto)
+    // Persistent Echo [101392] — fala I wierna (auto)
     krcgId: 101392,
     name: "Persistent Echo",
     cardType: "action",
@@ -32315,13 +31874,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Persona Non Grata [101393] — fala D wierna (auto)
+    // Persona Non Grata [101393] — fala I wierna (auto)
     krcgId: 101393,
     name: "Persona Non Grata",
     cardType: "politicalAction",
@@ -32329,11 +31886,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Personal Scourge [101395] — fala D wierna (auto)
+    // Personal Scourge [101395] — fala I wierna (auto)
     krcgId: 101395,
     name: "Personal Scourge",
     cardType: "combat",
@@ -32341,12 +31898,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Petra Resonance [101396] — fala D wierna (auto)
+    // Petra Resonance [101396] — fala I wierna (auto)
     krcgId: 101396,
     name: "Petra Resonance",
     cardType: "action",
@@ -32354,11 +31910,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Phantom Speaker [101397] — fala D wierna (auto)
+    // Phantom Speaker [101397] — fala I wierna (auto)
     krcgId: 101397,
     name: "Phantom Speaker",
     cardType: "actionModifier",
@@ -32366,13 +31922,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Phased Motion Detector [101398] — fala D wierna (auto)
+    // Phased Motion Detector [101398] — fala I wierna (auto)
     krcgId: 101398,
     name: "Phased Motion Detector",
     cardType: "equipment",
@@ -32380,13 +31934,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Phobia [101399] — fala D wierna (auto)
+    // Phobia [101399] — fala I wierna (auto)
     krcgId: 101399,
     name: "Phobia",
     cardType: "action",
@@ -32394,25 +31946,25 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Pier 13, Port of Baltimore [101400] — fala D wierna (auto)
+    // Pier 13, Port of Baltimore [101400] — fala I wierna (auto)
     krcgId: 101400,
     name: "Pier 13, Port of Baltimore",
     cardType: "equipment",
     bloodCost: 2,
     poolCost: 0,
     unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Plasmic Form [101402] — fala D wierna (auto)
+    // Plasmic Form [101402] — fala I wierna (auto)
     krcgId: 101402,
     name: "Plasmic Form",
     cardType: "actionModifier",
@@ -32420,12 +31972,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "strikeDodge" }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Playing for Keeps [101403] — fala D wierna (auto)
+    // Playing for Keeps [101403] — fala I wierna (auto)
     krcgId: 101403,
     name: "Playing for Keeps",
     cardType: "master",
@@ -32438,7 +31989,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Pocket Out of Time [101405] — fala D wierna (auto)
+    // Pocket Out of Time [101405] — fala I wierna (auto)
     krcgId: 101405,
     name: "Pocket Out of Time",
     cardType: "actionModifier",
@@ -32446,13 +31997,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Poison the Well of Life [101407] — fala D wierna (auto)
+    // Poison the Well of Life [101407] — fala I wierna (auto)
     krcgId: 101407,
     name: "Poison the Well of Life",
     cardType: "action",
@@ -32460,12 +32009,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Poker [101408] — fala D wierna (auto)
+    // Poker [101408] — fala I wierna (auto)
     krcgId: 101408,
     name: "Poker",
     cardType: "equipment",
@@ -32473,11 +32021,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Polaris Coach [101409] — fala D wierna (auto)
+    // Polaris Coach [101409] — fala I wierna (auto)
     krcgId: 101409,
     name: "Polaris Coach",
     cardType: "equipment",
@@ -32485,17 +32033,16 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Police Department [101410] — fala D wierna (auto)
+    // Police Department [101410] — fala I wierna (auto)
     krcgId: 101410,
     name: "Police Department",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -32503,7 +32050,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Political Antagonist [101412] — fala D wierna (auto)
+    // Political Antagonist [101412] — fala I wierna (auto)
     krcgId: 101412,
     name: "Political Antagonist",
     cardType: "ally",
@@ -32511,11 +32058,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Political Flux [101414] — fala D wierna (auto)
+    // Political Flux [101414] — fala I wierna (auto)
     krcgId: 101414,
     name: "Political Flux",
     cardType: "politicalAction",
@@ -32523,24 +32070,24 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Political Seizure [101416] — fala D wierna (auto)
+    // Political Seizure [101416] — fala I wierna (auto)
     krcgId: 101416,
     name: "Political Seizure",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Political Struggle [101418] — fala D wierna (auto)
+    // Political Struggle [101418] — fala I wierna (auto)
     krcgId: 101418,
     name: "Political Struggle",
     cardType: "action",
@@ -32548,11 +32095,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ponticulus [101419] — fala D wierna (auto)
+    // Ponticulus [101419] — fala I wierna (auto)
     krcgId: 101419,
     name: "Ponticulus",
     cardType: "ally",
@@ -32561,11 +32108,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Portrait [101422] — fala D wierna (auto)
+    // The Portrait [101422] — fala I wierna (auto)
     krcgId: 101422,
     name: "The Portrait",
     cardType: "action",
@@ -32573,11 +32120,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Possession [101423] — fala D wierna (auto)
+    // Possession [101423] — fala I wierna (auto)
     krcgId: 101423,
     name: "Possession",
     cardType: "action",
@@ -32585,12 +32132,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Potio Martyrium [101425] — fala D wierna (auto)
+    // Potio Martyrium [101425] — fala I wierna (auto)
     krcgId: 101425,
     name: "Potio Martyrium",
     cardType: "action",
@@ -32598,11 +32144,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Pounce [101426] — fala D wierna (auto)
+    // Pounce [101426] — fala I wierna (auto)
     krcgId: 101426,
     name: "Pounce",
     cardType: "combat",
@@ -32610,11 +32156,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Power of All [101428] — fala D wierna (auto)
+    // Power of All [101428] — fala I wierna (auto)
     krcgId: 101428,
     name: "Power of All",
     cardType: "reaction",
@@ -32622,11 +32168,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Power of One [101429] — fala D wierna (auto)
+    // Power of One [101429] — fala I wierna (auto)
     krcgId: 101429,
     name: "Power of One",
     cardType: "actionModifier",
@@ -32634,27 +32180,24 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Powerbase: Berlin [101432] — fala D wierna (auto)
+    // Powerbase: Berlin [101432] — fala I wierna (auto)
     krcgId: 101432,
     name: "Powerbase: Berlin",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Powerbase: Cape Verde [101433] — fala D wierna (auto)
+    // Powerbase: Cape Verde [101433] — fala I wierna (auto)
     krcgId: 101433,
     name: "Powerbase: Cape Verde",
     cardType: "master",
@@ -32664,41 +32207,26 @@ export const cardSpecs: CardSpec[] = [
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Powerbase: Luanda [101436] — fala D wierna (auto)
+    // Powerbase: Luanda [101436] — fala I wierna (auto)
     krcgId: 101436,
     name: "Powerbase: Luanda",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Powerbase: Rome [101441] — fala D wierna (auto)
+    // Powerbase: Rome [101441] — fala I wierna (auto)
     krcgId: 101441,
     name: "Powerbase: Rome",
-    cardType: "master",
-    bloodCost: 0,
-    poolCost: 0,
-    unique: true,
-    permanent: { where: "seat", statics: {}, tags: ["location"] },
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
-    ],
-  },
-  {
-    // Powerbase: Tshwane [101443] — fala D wierna (auto)
-    krcgId: 101443,
-    name: "Powerbase: Tshwane",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
@@ -32710,21 +32238,33 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Powerbase: Zürich [101445] — fala D wierna (auto)
+    // Powerbase: Tshwane [101443] — fala I wierna (auto)
+    krcgId: 101443,
+    name: "Powerbase: Tshwane",
+    cardType: "master",
+    bloodCost: 0,
+    poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
+    usable: [],
+    modes: [
+      { level: "basic", discipline: null, effects: [] }
+    ],
+  },
+  {
+    // Powerbase: Zürich [101445] — fala I wierna (auto)
     krcgId: 101445,
     name: "Powerbase: Zürich",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Praetorian Backer [101446] — fala D wierna (auto)
+    // Praetorian Backer [101446] — fala I wierna (auto)
     krcgId: 101446,
     name: "Praetorian Backer",
     cardType: "action",
@@ -32733,24 +32273,23 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Praxis Seizure: Venice [101471] — fala D wierna (auto)
+    // Praxis Seizure: Venice [101471] — fala I wierna (auto)
     krcgId: 101471,
     name: "Praxis Seizure: Venice",
     cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Praxis Solomon [101473] — fala D wierna (auto)
+    // Praxis Solomon [101473] — fala I wierna (auto)
     krcgId: 101473,
     name: "Praxis Solomon",
     cardType: "politicalAction",
@@ -32758,11 +32297,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Precision [101474] — fala D wierna (auto)
+    // Precision [101474] — fala I wierna (auto)
     krcgId: 101474,
     name: "Precision",
     cardType: "action",
@@ -32770,12 +32309,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Predator's Communion [101477] — fala D wierna (auto)
+    // Predator's Communion [101477] — fala I wierna (auto)
     krcgId: 101477,
     name: "Predator's Communion",
     cardType: "reaction",
@@ -32783,12 +32321,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "abo", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Predator's Mastery [101478] — fala D wierna (auto)
+    // Predator's Mastery [101478] — fala I wierna (auto)
     krcgId: 101478,
     name: "Predator's Mastery",
     cardType: "actionModifier",
@@ -32796,12 +32333,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "abo", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Predator's Transformation [101479] — fala D wierna (auto)
+    // Predator's Transformation [101479] — fala I wierna (auto)
     krcgId: 101479,
     name: "Predator's Transformation",
     cardType: "actionModifier",
@@ -32809,12 +32345,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "abo", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Pressing Flesh [101481] — fala D wierna (auto)
+    // Pressing Flesh [101481] — fala I wierna (auto)
     krcgId: 101481,
     name: "Pressing Flesh",
     cardType: "action",
@@ -32822,12 +32357,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Priestess of Sekhmet [101484] — fala D wierna (auto)
+    // Priestess of Sekhmet [101484] — fala I wierna (auto)
     krcgId: 101484,
     name: "Priestess of Sekhmet",
     cardType: "retainer",
@@ -32835,11 +32369,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Primal Instincts [101485] — fala D wierna (auto)
+    // Primal Instincts [101485] — fala I wierna (auto)
     krcgId: 101485,
     name: "Primal Instincts",
     cardType: "combat",
@@ -32847,12 +32381,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "strikeDodge" }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Principia Discordia [101486] — fala D wierna (auto)
+    // Principia Discordia [101486] — fala I wierna (auto)
     krcgId: 101486,
     name: "Principia Discordia",
     cardType: "action",
@@ -32860,13 +32393,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Priority Shift [101488] — fala D wierna (auto)
+    // Priority Shift [101488] — fala I wierna (auto)
     krcgId: 101488,
     name: "Priority Shift",
     cardType: "action",
@@ -32874,11 +32405,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Prison of the Mind [101489] — fala D wierna (auto)
+    // Prison of the Mind [101489] — fala I wierna (auto)
     krcgId: 101489,
     name: "Prison of the Mind",
     cardType: "action",
@@ -32886,12 +32417,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Project [101492] — fala D wierna (auto)
+    // Project [101492] — fala I wierna (auto)
     krcgId: 101492,
     name: "Project",
     cardType: "power",
@@ -32899,11 +32429,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mar", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Promise of 1528 [101494] — fala D wierna (auto)
+    // Promise of 1528 [101494] — fala I wierna (auto)
     krcgId: 101494,
     name: "Promise of 1528",
     cardType: "actionModifier",
@@ -32911,11 +32441,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Propaganda of the Deed [101496] — fala D wierna (auto)
+    // Propaganda of the Deed [101496] — fala I wierna (auto)
     krcgId: 101496,
     name: "Propaganda of the Deed",
     cardType: "actionModifier",
@@ -32923,11 +32453,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Prophecies of Gehenna [101497] — fala D wierna (auto)
+    // Prophecies of Gehenna [101497] — fala I wierna (auto)
     krcgId: 101497,
     name: "Prophecies of Gehenna",
     cardType: "master",
@@ -32940,7 +32470,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Protect Thine Own [101499] — fala D wierna (auto)
+    // Protect Thine Own [101499] — fala I wierna (auto)
     krcgId: 101499,
     name: "Protect Thine Own",
     cardType: "politicalAction",
@@ -32948,11 +32478,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Protected Resources [101500] — fala D wierna (auto)
+    // Protected Resources [101500] — fala I wierna (auto)
     krcgId: 101500,
     name: "Protected Resources",
     cardType: "master",
@@ -32960,11 +32490,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Provision of the Silsila [101503] — fala D wierna (auto)
+    // Provision of the Silsila [101503] — fala I wierna (auto)
     krcgId: 101503,
     name: "Provision of the Silsila",
     cardType: "actionModifier",
@@ -32972,11 +32502,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Proxy Kissed [101504] — fala D wierna (auto)
+    // Proxy Kissed [101504] — fala I wierna (auto)
     krcgId: 101504,
     name: "Proxy Kissed",
     cardType: "master",
@@ -32988,7 +32518,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Psalm of the Damned [101505] — fala D wierna (auto)
+    // Psalm of the Damned [101505] — fala I wierna (auto)
     krcgId: 101505,
     name: "Psalm of the Damned",
     cardType: "actionModifier",
@@ -32996,13 +32526,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mal", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "mal", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Pseudo-Blindness [101506] — fala D wierna (auto)
+    // Pseudo-Blindness [101506] — fala I wierna (auto)
     krcgId: 101506,
     name: "Pseudo-Blindness",
     cardType: "reaction",
@@ -33010,12 +32538,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Psychic Assault [101508] — fala D wierna (auto)
+    // Psychic Assault [101508] — fala I wierna (auto)
     krcgId: 101508,
     name: "Psychic Assault",
     cardType: "combat",
@@ -33023,12 +32550,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Psychic Projection [101509] — fala D wierna (auto)
+    // Psychic Projection [101509] — fala I wierna (auto)
     krcgId: 101509,
     name: "Psychic Projection",
     cardType: "action",
@@ -33036,12 +32562,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Psychic Veil [101510] — fala D wierna (auto)
+    // Psychic Veil [101510] — fala I wierna (auto)
     krcgId: 101510,
     name: "Psychic Veil",
     cardType: "action",
@@ -33049,12 +32574,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Psychomachia [101511] — fala D wierna (auto)
+    // Psychomachia [101511] — fala I wierna (auto)
     krcgId: 101511,
     name: "Psychomachia",
     cardType: "actionModifier",
@@ -33062,13 +32586,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Public Enemy [101512] — fala D wierna (auto)
+    // Public Enemy [101512] — fala I wierna (auto)
     krcgId: 101512,
     name: "Public Enemy",
     cardType: "action",
@@ -33076,11 +32598,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Public Vilification [101514] — fala D wierna (auto)
+    // Public Vilification [101514] — fala I wierna (auto)
     krcgId: 101514,
     name: "Public Vilification",
     cardType: "politicalAction",
@@ -33088,11 +32610,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Pulled Fangs [101515] — fala D wierna (auto)
+    // Pulled Fangs [101515] — fala I wierna (auto)
     krcgId: 101515,
     name: "Pulled Fangs",
     cardType: "combat",
@@ -33100,11 +32622,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Pulse of the Canaille [101517] — fala D wierna (auto)
+    // Pulse of the Canaille [101517] — fala I wierna (auto)
     krcgId: 101517,
     name: "Pulse of the Canaille",
     cardType: "action",
@@ -33112,12 +32634,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Punish [101518] — fala D wierna (auto)
+    // Punish [101518] — fala I wierna (auto)
     krcgId: 101518,
     name: "Punish",
     cardType: "action",
@@ -33125,11 +32646,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "red", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Puppeteer [101519] — fala D wierna (auto)
+    // Puppeteer [101519] — fala I wierna (auto)
     krcgId: 101519,
     name: "Puppeteer",
     cardType: "ally",
@@ -33137,12 +32658,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Purchase Pact [101520] — fala D wierna (auto)
+    // Purchase Pact [101520] — fala I wierna (auto)
     krcgId: 101520,
     name: "Purchase Pact",
     cardType: "master",
@@ -33151,11 +32671,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Purification [101521] — fala D wierna (auto)
+    // Purification [101521] — fala I wierna (auto)
     krcgId: 101521,
     name: "Purification",
     cardType: "action",
@@ -33163,12 +32683,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Purity of the Beast [101522] — fala D wierna (auto)
+    // Purity of the Beast [101522] — fala I wierna (auto)
     krcgId: 101522,
     name: "Purity of the Beast",
     cardType: "action",
@@ -33176,11 +32695,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Putrescent Servitude [101526] — fala D wierna (auto)
+    // Putrescent Servitude [101526] — fala I wierna (auto)
     krcgId: 101526,
     name: "Putrescent Servitude",
     cardType: "action",
@@ -33188,12 +32707,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Quicken Sight [101531] — fala D wierna (auto)
+    // Quicken Sight [101531] — fala I wierna (auto)
     krcgId: 101531,
     name: "Quicken Sight",
     cardType: "reaction",
@@ -33201,14 +32719,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Quicksilver Contemplation [101533] — fala D wierna (auto)
+    // Quicksilver Contemplation [101533] — fala I wierna (auto)
     krcgId: 101533,
     name: "Quicksilver Contemplation",
     cardType: "actionModifier",
@@ -33216,14 +32731,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Raking Talons [101538] — fala D wierna (auto)
+    // Raking Talons [101538] — fala I wierna (auto)
     krcgId: 101538,
     name: "Raking Talons",
     cardType: "combat",
@@ -33231,11 +32743,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rampage [101539] — fala D wierna (auto)
+    // Rampage [101539] — fala I wierna (auto)
     krcgId: 101539,
     name: "Rampage",
     cardType: "action",
@@ -33244,11 +32756,11 @@ export const cardSpecs: CardSpec[] = [
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Random Patterns [101540] — fala D wierna (auto)
+    // Random Patterns [101540] — fala I wierna (auto)
     krcgId: 101540,
     name: "Random Patterns",
     cardType: "actionModifier",
@@ -33256,14 +32768,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rapid Healing [101543] — fala D wierna (auto)
+    // Rapid Healing [101543] — fala I wierna (auto)
     krcgId: 101543,
     name: "Rapid Healing",
     cardType: "action",
@@ -33271,12 +32780,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rastacourere [101546] — fala D wierna (auto)
+    // Rastacourere [101546] — fala I wierna (auto)
     krcgId: 101546,
     name: "Rastacourere",
     cardType: "action",
@@ -33284,11 +32792,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ravager [101548] — fala D wierna (auto)
+    // Ravager [101548] — fala I wierna (auto)
     krcgId: 101548,
     name: "Ravager",
     cardType: "master",
@@ -33300,7 +32808,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rave [101549] — fala D wierna (auto)
+    // Rave [101549] — fala I wierna (auto)
     krcgId: 101549,
     name: "Rave",
     cardType: "action",
@@ -33308,11 +32816,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ravnos Acceptance [101551] — fala D wierna (auto)
+    // Ravnos Acceptance [101551] — fala I wierna (auto)
     krcgId: 101551,
     name: "Ravnos Acceptance",
     cardType: "politicalAction",
@@ -33320,11 +32828,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Raw Recruit [101554] — fala D wierna (auto)
+    // Raw Recruit [101554] — fala I wierna (auto)
     krcgId: 101554,
     name: "Raw Recruit",
     cardType: "action",
@@ -33332,13 +32840,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rayzeel's Song [101555] — fala D wierna (auto)
+    // Rayzeel's Song [101555] — fala I wierna (auto)
     krcgId: 101555,
     name: "Rayzeel's Song",
     cardType: "action",
@@ -33346,13 +32852,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Razor Bat [101556] — fala D wierna (auto)
+    // Razor Bat [101556] — fala I wierna (auto)
     krcgId: 101556,
     name: "Razor Bat",
     cardType: "retainer",
@@ -33360,11 +32864,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // React with Conviction [101557] — fala D wierna (auto)
+    // React with Conviction [101557] — fala I wierna (auto)
     krcgId: 101557,
     name: "React with Conviction",
     cardType: "conviction",
@@ -33372,13 +32876,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Read the Winds [101559] — fala D wierna (auto)
+    // Read the Winds [101559] — fala I wierna (auto)
     krcgId: 101559,
     name: "Read the Winds",
     cardType: "reaction",
@@ -33386,14 +32888,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Reality [101560] — fala D wierna (auto)
+    // Reality [101560] — fala I wierna (auto)
     krcgId: 101560,
     name: "Reality",
     cardType: "action",
@@ -33401,12 +32900,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Reality Mirror [101561] — fala D wierna (auto)
+    // Reality Mirror [101561] — fala I wierna (auto)
     krcgId: 101561,
     name: "Reality Mirror",
     cardType: "combat",
@@ -33414,11 +32912,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Realm of the Black Sun [101562] — fala D wierna (auto)
+    // The Realm of the Black Sun [101562] — fala I wierna (auto)
     krcgId: 101562,
     name: "The Realm of the Black Sun",
     cardType: "master",
@@ -33427,11 +32925,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Reanimated Corpse [101563] — fala D wierna (auto)
+    // Reanimated Corpse [101563] — fala I wierna (auto)
     krcgId: 101563,
     name: "Reanimated Corpse",
     cardType: "ally",
@@ -33439,12 +32937,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rebirth [101565] — fala D wierna (auto)
+    // Rebirth [101565] — fala I wierna (auto)
     krcgId: 101565,
     name: "Rebirth",
     cardType: "actionModifier",
@@ -33452,11 +32949,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Recruiting Party [101568] — fala D wierna (auto)
+    // Recruiting Party [101568] — fala I wierna (auto)
     krcgId: 101568,
     name: "Recruiting Party",
     cardType: "action",
@@ -33464,11 +32961,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Recruitment [101569] — fala D wierna (auto)
+    // Recruitment [101569] — fala I wierna (auto)
     krcgId: 101569,
     name: "Recruitment",
     cardType: "master",
@@ -33480,7 +32977,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Recruitment Exercise [101570] — fala D wierna (auto)
+    // Recruitment Exercise [101570] — fala I wierna (auto)
     krcgId: 101570,
     name: "Recruitment Exercise",
     cardType: "action",
@@ -33488,11 +32985,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Recure of the Homeland [101571] — fala D wierna (auto)
+    // Recure of the Homeland [101571] — fala I wierna (auto)
     krcgId: 101571,
     name: "Recure of the Homeland",
     cardType: "action",
@@ -33500,11 +32997,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Recurring Contemplation [101572] — fala D wierna (auto)
+    // Recurring Contemplation [101572] — fala I wierna (auto)
     krcgId: 101572,
     name: "Recurring Contemplation",
     cardType: "actionModifier",
@@ -33512,13 +33009,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Red Herring [101573] — fala D wierna (auto)
+    // Red Herring [101573] — fala I wierna (auto)
     krcgId: 101573,
     name: "Red Herring",
     cardType: "actionModifier",
@@ -33526,12 +33021,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Red List [101574] — fala D wierna (auto)
+    // Red List [101574] — fala I wierna (auto)
     krcgId: 101574,
     name: "Red List",
     cardType: "action",
@@ -33539,11 +33033,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Red Question [101575] — fala D wierna (auto)
+    // The Red Question [101575] — fala I wierna (auto)
     krcgId: 101575,
     name: "The Red Question",
     cardType: "actionModifier",
@@ -33551,11 +33045,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Redcap Wilder [101576] — fala D wierna (auto)
+    // Redcap Wilder [101576] — fala I wierna (auto)
     krcgId: 101576,
     name: "Redcap Wilder",
     cardType: "retainer",
@@ -33563,12 +33057,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "myt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Redistribution [101579] — fala D wierna (auto)
+    // Redistribution [101579] — fala I wierna (auto)
     krcgId: 101579,
     name: "Redistribution",
     cardType: "action",
@@ -33576,12 +33069,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Redline [101580] — fala D wierna (auto)
+    // Redline [101580] — fala I wierna (auto)
     krcgId: 101580,
     name: "Redline",
     cardType: "master",
@@ -33589,24 +33081,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Reform Body [101581] — fala D wierna (auto)
+    // Reform Body [101581] — fala I wierna (auto)
     krcgId: 101581,
     name: "Reform Body",
-    cardType: "reaction",
+    cardType: "combat",
     bloodCost: 0,
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Reformation [101582] — fala D wierna (auto)
+    // Reformation [101582] — fala I wierna (auto)
     krcgId: 101582,
     name: "Reformation",
     cardType: "action",
@@ -33614,13 +33105,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Regarhagan's Hold [101584] — fala D wierna (auto)
+    // Regarhagan's Hold [101584] — fala I wierna (auto)
     krcgId: 101584,
     name: "Regarhagan's Hold",
     cardType: "master",
@@ -33632,7 +33121,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Regeneration [101585] — fala D wierna (auto)
+    // Regeneration [101585] — fala I wierna (auto)
     krcgId: 101585,
     name: "Regeneration",
     cardType: "action",
@@ -33640,12 +33129,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Regenerative Blood [101586] — fala D wierna (auto)
+    // Regenerative Blood [101586] — fala I wierna (auto)
     krcgId: 101586,
     name: "Regenerative Blood",
     cardType: "master",
@@ -33658,7 +33146,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Reindoctrination [101589] — fala D wierna (auto)
+    // Reindoctrination [101589] — fala I wierna (auto)
     krcgId: 101589,
     name: "Reindoctrination",
     cardType: "action",
@@ -33666,11 +33154,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Reinforcements [101590] — fala D wierna (auto)
+    // Reinforcements [101590] — fala I wierna (auto)
     krcgId: 101590,
     name: "Reinforcements",
     cardType: "politicalAction",
@@ -33678,11 +33166,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rejuvenate [101592] — fala D wierna (auto)
+    // Rejuvenate [101592] — fala I wierna (auto)
     krcgId: 101592,
     name: "Rejuvenate",
     cardType: "power",
@@ -33690,11 +33178,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "def", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Release of the Shackled Soul [101593] — fala D wierna (auto)
+    // Release of the Shackled Soul [101593] — fala I wierna (auto)
     krcgId: 101593,
     name: "Release of the Shackled Soul",
     cardType: "action",
@@ -33702,12 +33190,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Reliquary: Akunanse Remains [101596] — fala D wierna (auto)
+    // Reliquary: Akunanse Remains [101596] — fala I wierna (auto)
     krcgId: 101596,
     name: "Reliquary: Akunanse Remains",
     cardType: "equipment",
@@ -33716,13 +33203,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Reliquary: Biague [101597] — fala D wierna (auto)
+    // Reliquary: Biague [101597] — fala I wierna (auto)
     krcgId: 101597,
     name: "Reliquary: Biague",
     cardType: "equipment",
@@ -33730,11 +33215,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Reliquary: Shango Remains [101598] — fala D wierna (auto)
+    // Reliquary: Shango Remains [101598] — fala I wierna (auto)
     krcgId: 101598,
     name: "Reliquary: Shango Remains",
     cardType: "equipment",
@@ -33742,11 +33227,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Reliquary: Trinket [101599] — fala D wierna (auto)
+    // Reliquary: Trinket [101599] — fala I wierna (auto)
     krcgId: 101599,
     name: "Reliquary: Trinket",
     cardType: "equipment",
@@ -33754,11 +33239,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Remnant of the Endless Storm [101600] — fala D wierna (auto)
+    // Remnant of the Endless Storm [101600] — fala I wierna (auto)
     krcgId: 101600,
     name: "Remnant of the Endless Storm",
     cardType: "ally",
@@ -33767,11 +33252,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Remover [101601] — fala D wierna (auto)
+    // Remover [101601] — fala I wierna (auto)
     krcgId: 101601,
     name: "Remover",
     cardType: "master",
@@ -33779,11 +33264,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Renegade Garou [101602] — fala D wierna (auto)
+    // Renegade Garou [101602] — fala I wierna (auto)
     krcgId: 101602,
     name: "Renegade Garou",
     cardType: "ally",
@@ -33791,11 +33276,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 5,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Renewed Vigor [101603] — fala D wierna (auto)
+    // Renewed Vigor [101603] — fala I wierna (auto)
     krcgId: 101603,
     name: "Renewed Vigor",
     cardType: "action",
@@ -33803,13 +33288,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Repair the Undead Flesh [101604] — fala D wierna (auto)
+    // Repair the Undead Flesh [101604] — fala I wierna (auto)
     krcgId: 101604,
     name: "Repair the Undead Flesh",
     cardType: "action",
@@ -33817,12 +33300,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Repulsion [101606] — fala D wierna (auto)
+    // Repulsion [101606] — fala I wierna (auto)
     krcgId: 101606,
     name: "Repulsion",
     cardType: "actionModifier",
@@ -33830,13 +33312,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Research [101607] — fala D wierna (auto)
+    // Research [101607] — fala I wierna (auto)
     krcgId: 101607,
     name: "Research",
     cardType: "master",
@@ -33848,7 +33328,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Resilient Mind [101609] — fala D wierna (auto)
+    // Resilient Mind [101609] — fala I wierna (auto)
     krcgId: 101609,
     name: "Resilient Mind",
     cardType: "action",
@@ -33856,12 +33336,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Respire [101611] — fala D wierna (auto)
+    // Respire [101611] — fala I wierna (auto)
     krcgId: 101611,
     name: "Respire",
     cardType: "power",
@@ -33869,11 +33348,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "red", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Restructure [101615] — fala D wierna (auto)
+    // Restructure [101615] — fala I wierna (auto)
     krcgId: 101615,
     name: "Restructure",
     cardType: "action",
@@ -33881,12 +33360,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Resume the Coil [101616] — fala D wierna (auto)
+    // Resume the Coil [101616] — fala I wierna (auto)
     krcgId: 101616,
     name: "Resume the Coil",
     cardType: "action",
@@ -33894,12 +33372,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Resurrection [101617] — fala D wierna (auto)
+    // Resurrection [101617] — fala I wierna (auto)
     krcgId: 101617,
     name: "Resurrection",
     cardType: "action",
@@ -33907,13 +33384,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Retain the Quick Blood [101618] — fala D wierna (auto)
+    // Retain the Quick Blood [101618] — fala I wierna (auto)
     krcgId: 101618,
     name: "Retain the Quick Blood",
     cardType: "action",
@@ -33921,14 +33396,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Retribution [101619] — fala D wierna (auto)
+    // Retribution [101619] — fala I wierna (auto)
     krcgId: 101619,
     name: "Retribution",
     cardType: "master",
@@ -33936,11 +33408,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Return to Innocence [101620] — fala D wierna (auto)
+    // The Return to Innocence [101620] — fala I wierna (auto)
     krcgId: 101620,
     name: "The Return to Innocence",
     cardType: "action",
@@ -33948,11 +33420,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Reunion Kamut [101621] — fala D wierna (auto)
+    // Reunion Kamut [101621] — fala I wierna (auto)
     krcgId: 101621,
     name: "Reunion Kamut",
     cardType: "action",
@@ -33960,11 +33432,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Revelation of Desire [101622] — fala D wierna (auto)
+    // Revelation of Desire [101622] — fala I wierna (auto)
     krcgId: 101622,
     name: "Revelation of Desire",
     cardType: "actionModifier",
@@ -33972,12 +33444,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Revelation of Despair [101623] — fala D wierna (auto)
+    // Revelation of Despair [101623] — fala I wierna (auto)
     krcgId: 101623,
     name: "Revelation of Despair",
     cardType: "reaction",
@@ -33985,12 +33456,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Revelation of Ecstasy [101624] — fala D wierna (auto)
+    // Revelation of Ecstasy [101624] — fala I wierna (auto)
     krcgId: 101624,
     name: "Revelation of Ecstasy",
     cardType: "action",
@@ -33998,12 +33468,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Revelation of the Sire [101625] — fala D wierna (auto)
+    // Revelation of the Sire [101625] — fala I wierna (auto)
     krcgId: 101625,
     name: "Revelation of the Sire",
     cardType: "action",
@@ -34011,11 +33480,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Revelation of Wrath [101626] — fala D wierna (auto)
+    // Revelation of Wrath [101626] — fala I wierna (auto)
     krcgId: 101626,
     name: "Revelation of Wrath",
     cardType: "combat",
@@ -34023,12 +33492,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Reversal of Fortunes [101629] — fala D wierna (auto)
+    // Reversal of Fortunes [101629] — fala I wierna (auto)
     krcgId: 101629,
     name: "Reversal of Fortunes",
     cardType: "politicalAction",
@@ -34036,11 +33504,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Revocation of Tyre [101630] — fala D wierna (auto)
+    // Revocation of Tyre [101630] — fala I wierna (auto)
     krcgId: 101630,
     name: "Revocation of Tyre",
     cardType: "politicalAction",
@@ -34048,11 +33516,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rewind Time [101633] — fala D wierna (auto)
+    // Rewind Time [101633] — fala I wierna (auto)
     krcgId: 101633,
     name: "Rewind Time",
     cardType: "reaction",
@@ -34060,13 +33528,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Riddle Phantastique [101634] — fala D wierna (auto)
+    // Riddle Phantastique [101634] — fala I wierna (auto)
     krcgId: 101634,
     name: "Riddle Phantastique",
     cardType: "action",
@@ -34074,11 +33540,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Righteous Aura [101635] — fala D wierna (auto)
+    // Righteous Aura [101635] — fala I wierna (auto)
     krcgId: 101635,
     name: "Righteous Aura",
     cardType: "combat",
@@ -34086,11 +33552,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Riposte [101637] — fala D wierna (auto)
+    // Riposte [101637] — fala I wierna (auto)
     krcgId: 101637,
     name: "Riposte",
     cardType: "combat",
@@ -34098,12 +33564,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rise of the Fallen [101638] — fala D wierna (auto)
+    // Rise of the Fallen [101638] — fala I wierna (auto)
     krcgId: 101638,
     name: "Rise of the Fallen",
     cardType: "action",
@@ -34112,24 +33577,23 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rise of the Nephtali [101639] — fala D wierna (auto)
+    // Rise of the Nephtali [101639] — fala I wierna (auto)
     krcgId: 101639,
     name: "Rise of the Nephtali",
     cardType: "event",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ritual Challenge [101641] — fala D wierna (auto)
+    // Ritual Challenge [101641] — fala I wierna (auto)
     krcgId: 101641,
     name: "Ritual Challenge",
     cardType: "action",
@@ -34137,11 +33601,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ritual of the Bitter Rose [101642] — fala D wierna (auto)
+    // Ritual of the Bitter Rose [101642] — fala I wierna (auto)
     krcgId: 101642,
     name: "Ritual of the Bitter Rose",
     cardType: "actionModifier",
@@ -34149,11 +33613,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ritual Scalpel [101643] — fala D wierna (auto)
+    // Ritual Scalpel [101643] — fala I wierna (auto)
     krcgId: 101643,
     name: "Ritual Scalpel",
     cardType: "equipment",
@@ -34162,11 +33626,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rock Cat [101645] — fala D wierna (auto)
+    // Rock Cat [101645] — fala I wierna (auto)
     krcgId: 101645,
     name: "Rock Cat",
     cardType: "ally",
@@ -34174,11 +33638,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 4,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rockheart [101646] — fala D wierna (auto)
+    // Rockheart [101646] — fala I wierna (auto)
     krcgId: 101646,
     name: "Rockheart",
     cardType: "combat",
@@ -34186,13 +33650,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDodge" }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "strikeDodge" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Roll [101648] — fala D wierna (auto)
+    // Roll [101648] — fala I wierna (auto)
     krcgId: 101648,
     name: "Roll",
     cardType: "combat",
@@ -34200,11 +33662,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "superior", discipline: "flight", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rooftop Shadow [101651] — fala D wierna (auto)
+    // Rooftop Shadow [101651] — fala I wierna (auto)
     krcgId: 101651,
     name: "Rooftop Shadow",
     cardType: "reaction",
@@ -34212,12 +33674,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Root of Vitality [101652] — fala D wierna (auto)
+    // Root of Vitality [101652] — fala I wierna (auto)
     krcgId: 101652,
     name: "Root of Vitality",
     cardType: "action",
@@ -34225,26 +33686,24 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Rose Foundation [101653] — fala D wierna (auto)
+    // The Rose Foundation [101653] — fala I wierna (auto)
     krcgId: 101653,
     name: "The Rose Foundation",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rötschreck [101654] — fala D wierna (auto)
+    // Rötschreck [101654] — fala I wierna (auto)
     krcgId: 101654,
     name: "Rötschreck",
     cardType: "master",
@@ -34256,7 +33715,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Rowan Ring [101655] — fala D wierna (auto)
+    // Rowan Ring [101655] — fala I wierna (auto)
     krcgId: 101655,
     name: "Rowan Ring",
     cardType: "equipment",
@@ -34265,11 +33724,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rubicon [101657] — fala D wierna (auto)
+    // Rubicon [101657] — fala I wierna (auto)
     krcgId: 101657,
     name: "Rubicon",
     cardType: "action",
@@ -34277,24 +33736,25 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ruins of Ceoris [101658] — fala D wierna (auto)
+    // Ruins of Ceoris [101658] — fala I wierna (auto)
     krcgId: 101658,
     name: "Ruins of Ceoris",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 0,
     unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ruins of Charizel [101659] — fala D wierna (auto)
+    // Ruins of Charizel [101659] — fala I wierna (auto)
     krcgId: 101659,
     name: "Ruins of Charizel",
     cardType: "master",
@@ -34304,24 +33764,25 @@ export const cardSpecs: CardSpec[] = [
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ruins of Villers Abbey, Belgium [101660] — fala D wierna (auto)
+    // Ruins of Villers Abbey, Belgium [101660] — fala I wierna (auto)
     krcgId: 101660,
     name: "Ruins of Villers Abbey, Belgium",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 0,
     unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rumble [101661] — fala D wierna (auto)
+    // Rumble [101661] — fala I wierna (auto)
     krcgId: 101661,
     name: "Rumble",
     cardType: "action",
@@ -34329,11 +33790,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Rumors of Gehenna [101663] — fala D wierna (auto)
+    // Rumors of Gehenna [101663] — fala I wierna (auto)
     krcgId: 101663,
     name: "Rumors of Gehenna",
     cardType: "politicalAction",
@@ -34341,11 +33802,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sabbat Inquisitor [101666] — fala D wierna (auto)
+    // Sabbat Inquisitor [101666] — fala I wierna (auto)
     krcgId: 101666,
     name: "Sabbat Inquisitor",
     cardType: "politicalAction",
@@ -34353,11 +33814,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sabbat Threat [101668] — fala D wierna (auto)
+    // Sabbat Threat [101668] — fala I wierna (auto)
     krcgId: 101668,
     name: "Sabbat Threat",
     cardType: "politicalAction",
@@ -34365,11 +33826,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sacrificial Lamb [101672] — fala D wierna (auto)
+    // Sacrificial Lamb [101672] — fala I wierna (auto)
     krcgId: 101672,
     name: "Sacrificial Lamb",
     cardType: "action",
@@ -34377,12 +33838,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Safe Passage [101673] — fala D wierna (auto)
+    // Safe Passage [101673] — fala I wierna (auto)
     krcgId: 101673,
     name: "Safe Passage",
     cardType: "actionModifier",
@@ -34390,13 +33850,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Salt of Thoth [101674] — fala D wierna (auto)
+    // Salt of Thoth [101674] — fala I wierna (auto)
     krcgId: 101674,
     name: "Salt of Thoth",
     cardType: "reaction",
@@ -34405,11 +33863,11 @@ export const cardSpecs: CardSpec[] = [
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Samuel Haight [101675] — fala D wierna (auto)
+    // Samuel Haight [101675] — fala I wierna (auto)
     krcgId: 101675,
     name: "Samuel Haight",
     cardType: "ally",
@@ -34418,38 +33876,39 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // San Lorenzo de El Escorial, Spain [101676] — fala D wierna (auto)
+    // San Lorenzo de El Escorial, Spain [101676] — fala I wierna (auto)
     krcgId: 101676,
     name: "San Lorenzo de El Escorial, Spain",
     cardType: "equipment",
     bloodCost: 1,
     poolCost: 0,
     unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // San Nicolás de los Servitas [101677] — fala D wierna (auto)
+    // San Nicolás de los Servitas [101677] — fala I wierna (auto)
     krcgId: 101677,
     name: "San Nicolás de los Servitas",
     cardType: "equipment",
     bloodCost: 2,
     poolCost: 0,
     unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sanguine Entrapment [101679] — fala D wierna (auto)
+    // Sanguine Entrapment [101679] — fala I wierna (auto)
     krcgId: 101679,
     name: "Sanguine Entrapment",
     cardType: "combat",
@@ -34457,14 +33916,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDodge" }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "strikeDodge" }] },
-      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDodge" }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sanguine Instruction [101680] — fala D wierna (auto)
+    // Sanguine Instruction [101680] — fala I wierna (auto)
     krcgId: 101680,
     name: "Sanguine Instruction",
     cardType: "action",
@@ -34472,11 +33928,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Sargon Fragment [101681] — fala D wierna (auto)
+    // The Sargon Fragment [101681] — fala I wierna (auto)
     krcgId: 101681,
     name: "The Sargon Fragment",
     cardType: "equipment",
@@ -34485,11 +33941,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Savannah Runner [101683] — fala D wierna (auto)
+    // Savannah Runner [101683] — fala I wierna (auto)
     krcgId: 101683,
     name: "Savannah Runner",
     cardType: "reaction",
@@ -34497,12 +33953,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Save Face [101684] — fala D wierna (auto)
+    // Save Face [101684] — fala I wierna (auto)
     krcgId: 101684,
     name: "Save Face",
     cardType: "combat",
@@ -34510,11 +33965,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Scapelli, The Family \"Mechanic\" [101687] — fala D wierna (auto)
+    // Scapelli, The Family \"Mechanic\" [101687] — fala I wierna (auto)
     krcgId: 101687,
     name: "Scapelli, The Family \"Mechanic\"",
     cardType: "ally",
@@ -34523,11 +33978,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Scarlet Lore [101688] — fala D wierna (auto)
+    // Scarlet Lore [101688] — fala I wierna (auto)
     krcgId: 101688,
     name: "Scarlet Lore",
     cardType: "action",
@@ -34535,13 +33990,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // SchreckNET [101690] — fala D wierna (auto)
+    // SchreckNET [101690] — fala I wierna (auto)
     krcgId: 101690,
     name: "SchreckNET",
     cardType: "action",
@@ -34550,11 +34003,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Scobax [101691] — fala D wierna (auto)
+    // Scobax [101691] — fala I wierna (auto)
     krcgId: 101691,
     name: "Scobax",
     cardType: "reaction",
@@ -34562,13 +34015,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "str", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "str", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Scorpion's Touch [101694] — fala D wierna (auto)
+    // Scorpion's Touch [101694] — fala I wierna (auto)
     krcgId: 101694,
     name: "Scorpion's Touch",
     cardType: "combat",
@@ -34576,12 +34027,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Scourge of the Enochians [101697] — fala D wierna (auto)
+    // Scourge of the Enochians [101697] — fala I wierna (auto)
     krcgId: 101697,
     name: "Scourge of the Enochians",
     cardType: "event",
@@ -34589,11 +34039,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Scrounging [101700] — fala D wierna (auto)
+    // Scrounging [101700] — fala I wierna (auto)
     krcgId: 101700,
     name: "Scrounging",
     cardType: "action",
@@ -34601,11 +34051,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Scry the Hearthstone [101701] — fala D wierna (auto)
+    // Scry the Hearthstone [101701] — fala I wierna (auto)
     krcgId: 101701,
     name: "Scry the Hearthstone",
     cardType: "reaction",
@@ -34613,13 +34063,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Scrying of Secrets [101702] — fala D wierna (auto)
+    // Scrying of Secrets [101702] — fala I wierna (auto)
     krcgId: 101702,
     name: "Scrying of Secrets",
     cardType: "actionModifier",
@@ -34627,12 +34075,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Seal of Veddartha [101703] — fala D wierna (auto)
+    // Seal of Veddartha [101703] — fala I wierna (auto)
     krcgId: 101703,
     name: "Seal of Veddartha",
     cardType: "equipment",
@@ -34641,12 +34088,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Seattle Committee [101704] — fala D wierna (auto)
+    // Seattle Committee [101704] — fala I wierna (auto)
     krcgId: 101704,
     name: "Seattle Committee",
     cardType: "master",
@@ -34659,7 +34105,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Second Sight [101705] — fala D wierna (auto)
+    // Second Sight [101705] — fala I wierna (auto)
     krcgId: 101705,
     name: "Second Sight",
     cardType: "conviction",
@@ -34667,11 +34113,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Secret Horde [101707] — fala D wierna (auto)
+    // Secret Horde [101707] — fala I wierna (auto)
     krcgId: 101707,
     name: "Secret Horde",
     cardType: "master",
@@ -34683,21 +34129,20 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Secret Library of Alexandria [101708] — fala D wierna (auto)
+    // The Secret Library of Alexandria [101708] — fala I wierna (auto)
     krcgId: 101708,
     name: "The Secret Library of Alexandria",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Secret Must Be Kept [101709] — fala D wierna (auto)
+    // The Secret Must Be Kept [101709] — fala I wierna (auto)
     krcgId: 101709,
     name: "The Secret Must Be Kept",
     cardType: "politicalAction",
@@ -34705,11 +34150,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Secret Passage [101710] — fala D wierna (auto)
+    // Secret Passage [101710] — fala I wierna (auto)
     krcgId: 101710,
     name: "Secret Passage",
     cardType: "master",
@@ -34721,7 +34166,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Seeds of Corruption [101713] — fala D wierna (auto)
+    // Seeds of Corruption [101713] — fala I wierna (auto)
     krcgId: 101713,
     name: "Seeds of Corruption",
     cardType: "action",
@@ -34729,12 +34174,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Selective Silence [101714] — fala D wierna (auto)
+    // Selective Silence [101714] — fala I wierna (auto)
     krcgId: 101714,
     name: "Selective Silence",
     cardType: "combat",
@@ -34742,12 +34186,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sense Death [101716] — fala D wierna (auto)
+    // Sense Death [101716] — fala I wierna (auto)
     krcgId: 101716,
     name: "Sense Death",
     cardType: "action",
@@ -34755,13 +34198,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "val", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sense the Sin [101718] — fala D wierna (auto)
+    // Sense the Sin [101718] — fala I wierna (auto)
     krcgId: 101718,
     name: "Sense the Sin",
     cardType: "actionModifier",
@@ -34769,13 +34210,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sense Vibrations [101719] — fala D wierna (auto)
+    // Sense Vibrations [101719] — fala I wierna (auto)
     krcgId: 101719,
     name: "Sense Vibrations",
     cardType: "master",
@@ -34787,7 +34226,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sense Vitality [101720] — fala D wierna (auto)
+    // Sense Vitality [101720] — fala I wierna (auto)
     krcgId: 101720,
     name: "Sense Vitality",
     cardType: "action",
@@ -34795,13 +34234,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sensory Deprivation [101721] — fala D wierna (auto)
+    // Sensory Deprivation [101721] — fala I wierna (auto)
     krcgId: 101721,
     name: "Sensory Deprivation",
     cardType: "action",
@@ -34809,12 +34246,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sensory Overload [101722] — fala D wierna (auto)
+    // Sensory Overload [101722] — fala I wierna (auto)
     krcgId: 101722,
     name: "Sensory Overload",
     cardType: "action",
@@ -34822,12 +34258,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Seraph [101723] — fala D wierna (auto)
+    // Seraph [101723] — fala I wierna (auto)
     krcgId: 101723,
     name: "Seraph",
     cardType: "politicalAction",
@@ -34835,11 +34270,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Seraph's Second [101724] — fala D wierna (auto)
+    // Seraph's Second [101724] — fala I wierna (auto)
     krcgId: 101724,
     name: "Seraph's Second",
     cardType: "actionModifier",
@@ -34847,11 +34282,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Serenading the Kami [101725] — fala D wierna (auto)
+    // Serenading the Kami [101725] — fala I wierna (auto)
     krcgId: 101725,
     name: "Serenading the Kami",
     cardType: "actionModifier",
@@ -34859,12 +34294,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sermon of Caine [101726] — fala D wierna (auto)
+    // Sermon of Caine [101726] — fala I wierna (auto)
     krcgId: 101726,
     name: "Sermon of Caine",
     cardType: "master",
@@ -34876,7 +34310,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Set's Call [101730] — fala D wierna (auto)
+    // Set's Call [101730] — fala I wierna (auto)
     krcgId: 101730,
     name: "Set's Call",
     cardType: "reaction",
@@ -34884,12 +34318,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Set's Curse [101731] — fala D wierna (auto)
+    // Set's Curse [101731] — fala I wierna (auto)
     krcgId: 101731,
     name: "Set's Curse",
     cardType: "action",
@@ -34897,12 +34330,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shaal Fragment [101732] — fala D wierna (auto)
+    // Shaal Fragment [101732] — fala I wierna (auto)
     krcgId: 101732,
     name: "Shaal Fragment",
     cardType: "equipment",
@@ -34911,11 +34343,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shackles of Enkidu [101733] — fala D wierna (auto)
+    // Shackles of Enkidu [101733] — fala I wierna (auto)
     krcgId: 101733,
     name: "Shackles of Enkidu",
     cardType: "equipment",
@@ -34924,11 +34356,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shade [101734] — fala D wierna (auto)
+    // Shade [101734] — fala I wierna (auto)
     krcgId: 101734,
     name: "Shade",
     cardType: "retainer",
@@ -34936,12 +34368,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shadow Body [101735] — fala D wierna (auto)
+    // Shadow Body [101735] — fala I wierna (auto)
     krcgId: 101735,
     name: "Shadow Body",
     cardType: "combat",
@@ -34949,12 +34380,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shadow Court Satyr [101737] — fala D wierna (auto)
+    // Shadow Court Satyr [101737] — fala I wierna (auto)
     krcgId: 101737,
     name: "Shadow Court Satyr",
     cardType: "ally",
@@ -34962,11 +34392,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 3,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shadow Feint [101738] — fala D wierna (auto)
+    // Shadow Feint [101738] — fala I wierna (auto)
     krcgId: 101738,
     name: "Shadow Feint",
     cardType: "combat",
@@ -34974,14 +34404,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "strikeDodge" }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "strikeDodge" }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "strikeDodge" }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shadow of Taint [101739] — fala D wierna (auto)
+    // Shadow of Taint [101739] — fala I wierna (auto)
     krcgId: 101739,
     name: "Shadow of Taint",
     cardType: "action",
@@ -34989,13 +34416,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shadow of the Beast [101740] — fala D wierna (auto)
+    // Shadow of the Beast [101740] — fala I wierna (auto)
     krcgId: 101740,
     name: "Shadow of the Beast",
     cardType: "action",
@@ -35003,12 +34428,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "pro", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shadow Parasite [101742] — fala D wierna (auto)
+    // Shadow Parasite [101742] — fala I wierna (auto)
     krcgId: 101742,
     name: "Shadow Parasite",
     cardType: "combat",
@@ -35016,12 +34440,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "strikeDamage", amount: 3 }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "strikeDamage", amount: 3 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shadow Play [101743] — fala D wierna (auto)
+    // Shadow Play [101743] — fala I wierna (auto)
     krcgId: 101743,
     name: "Shadow Play",
     cardType: "actionModifier",
@@ -35029,12 +34452,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shadow Step [101744] — fala D wierna (auto)
+    // Shadow Step [101744] — fala I wierna (auto)
     krcgId: 101744,
     name: "Shadow Step",
     cardType: "combat",
@@ -35042,12 +34464,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shadow Strike [101745] — fala D wierna (auto)
+    // Shadow Strike [101745] — fala I wierna (auto)
     krcgId: 101745,
     name: "Shadow Strike",
     cardType: "combat",
@@ -35055,12 +34476,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shadow Twin [101746] — fala D wierna (auto)
+    // Shadow Twin [101746] — fala I wierna (auto)
     krcgId: 101746,
     name: "Shadow Twin",
     cardType: "action",
@@ -35068,12 +34488,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shadowed Eyes [101747] — fala D wierna (auto)
+    // Shadowed Eyes [101747] — fala I wierna (auto)
     krcgId: 101747,
     name: "Shadowed Eyes",
     cardType: "action",
@@ -35081,14 +34500,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shakar [101748] — fala D wierna (auto)
+    // Shakar [101748] — fala I wierna (auto)
     krcgId: 101748,
     name: "Shakar",
     cardType: "master",
@@ -35100,7 +34516,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shakar: the Hunt [101749] — fala D wierna (auto)
+    // Shakar: the Hunt [101749] — fala I wierna (auto)
     krcgId: 101749,
     name: "Shakar: the Hunt",
     cardType: "master",
@@ -35109,11 +34525,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shaman [101750] — fala D wierna (auto)
+    // Shaman [101750] — fala I wierna (auto)
     krcgId: 101750,
     name: "Shaman",
     cardType: "retainer",
@@ -35122,11 +34538,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shambling Hordes [101751] — fala D wierna (auto)
+    // Shambling Hordes [101751] — fala I wierna (auto)
     krcgId: 101751,
     name: "Shambling Hordes",
     cardType: "ally",
@@ -35134,12 +34550,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shame [101752] — fala D wierna (auto)
+    // Shame [101752] — fala I wierna (auto)
     krcgId: 101752,
     name: "Shame",
     cardType: "power",
@@ -35147,11 +34562,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "red", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shared Nightmare [101755] — fala D wierna (auto)
+    // Shared Nightmare [101755] — fala I wierna (auto)
     krcgId: 101755,
     name: "Shared Nightmare",
     cardType: "action",
@@ -35159,12 +34574,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shatter the Gate [101757] — fala D wierna (auto)
+    // Shatter the Gate [101757] — fala I wierna (auto)
     krcgId: 101757,
     name: "Shatter the Gate",
     cardType: "action",
@@ -35172,11 +34586,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shattered Mirror [101758] — fala D wierna (auto)
+    // Shattered Mirror [101758] — fala I wierna (auto)
     krcgId: 101758,
     name: "Shattered Mirror",
     cardType: "reaction",
@@ -35184,12 +34598,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shattering [101759] — fala D wierna (auto)
+    // Shattering [101759] — fala I wierna (auto)
     krcgId: 101759,
     name: "Shattering",
     cardType: "action",
@@ -35197,13 +34610,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "basic", discipline: "pro", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shattering Crescendo [101761] — fala D wierna (auto)
+    // Shattering Crescendo [101761] — fala I wierna (auto)
     krcgId: 101761,
     name: "Shattering Crescendo",
     cardType: "action",
@@ -35211,13 +34622,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "mel", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "basic", discipline: "pro", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sheepdog [101762] — fala D wierna (auto)
+    // Sheepdog [101762] — fala I wierna (auto)
     krcgId: 101762,
     name: "Sheepdog",
     cardType: "action",
@@ -35225,24 +34634,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shell Break [101763] — fala D wierna (auto)
+    // Shell Break [101763] — fala I wierna (auto)
     krcgId: 101763,
     name: "Shell Break",
     cardType: "action",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shell Game [101764] — fala D wierna (auto)
+    // Shell Game [101764] — fala I wierna (auto)
     krcgId: 101764,
     name: "Shell Game",
     cardType: "actionModifier",
@@ -35250,12 +34658,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shepherd's Innocence [101765] — fala D wierna (auto)
+    // Shepherd's Innocence [101765] — fala I wierna (auto)
     krcgId: 101765,
     name: "Shepherd's Innocence",
     cardType: "action",
@@ -35263,12 +34670,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shilmulo Deception [101766] — fala D wierna (auto)
+    // Shilmulo Deception [101766] — fala I wierna (auto)
     krcgId: 101766,
     name: "Shilmulo Deception",
     cardType: "reaction",
@@ -35276,25 +34682,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shock Troops [101768] — fala D wierna (auto)
+    // Shock Troops [101768] — fala I wierna (auto)
     krcgId: 101768,
     name: "Shock Troops",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shotgun Ritual [101770] — fala D wierna (auto)
+    // Shotgun Ritual [101770] — fala I wierna (auto)
     krcgId: 101770,
     name: "Shotgun Ritual",
     cardType: "combat",
@@ -35302,12 +34706,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shoulder Drop [101771] — fala D wierna (auto)
+    // Shoulder Drop [101771] — fala I wierna (auto)
     krcgId: 101771,
     name: "Shoulder Drop",
     cardType: "combat",
@@ -35315,11 +34718,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shroud Mastery [101773] — fala D wierna (auto)
+    // Shroud Mastery [101773] — fala I wierna (auto)
     krcgId: 101773,
     name: "Shroud Mastery",
     cardType: "actionModifier",
@@ -35327,12 +34730,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shroud of Absence [101774] — fala D wierna (auto)
+    // Shroud of Absence [101774] — fala I wierna (auto)
     krcgId: 101774,
     name: "Shroud of Absence",
     cardType: "actionModifier",
@@ -35340,14 +34742,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shroud of Night [101775] — fala D wierna (auto)
+    // Shroud of Night [101775] — fala I wierna (auto)
     krcgId: 101775,
     name: "Shroud of Night",
     cardType: "actionModifier",
@@ -35355,12 +34754,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Shroudsight [101776] — fala D wierna (auto)
+    // Shroudsight [101776] — fala I wierna (auto)
     krcgId: 101776,
     name: "Shroudsight",
     cardType: "actionModifier",
@@ -35368,12 +34766,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sibyl's Tongue [101777] — fala D wierna (auto)
+    // Sibyl's Tongue [101777] — fala I wierna (auto)
     krcgId: 101777,
     name: "Sibyl's Tongue",
     cardType: "action",
@@ -35381,11 +34778,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Silence of Death [101782] — fala D wierna (auto)
+    // Silence of Death [101782] — fala I wierna (auto)
     krcgId: 101782,
     name: "Silence of Death",
     cardType: "combat",
@@ -35393,12 +34790,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sins of the Cauchemar [101783] — fala D wierna (auto)
+    // Sins of the Cauchemar [101783] — fala I wierna (auto)
     krcgId: 101783,
     name: "Sins of the Cauchemar",
     cardType: "reaction",
@@ -35406,12 +34802,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Siphon [101784] — fala D wierna (auto)
+    // Siphon [101784] — fala I wierna (auto)
     krcgId: 101784,
     name: "Siphon",
     cardType: "action",
@@ -35419,11 +34814,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sire's Index Finger [101785] — fala D wierna (auto)
+    // Sire's Index Finger [101785] — fala I wierna (auto)
     krcgId: 101785,
     name: "Sire's Index Finger",
     cardType: "equipment",
@@ -35432,11 +34827,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Siren's Lure [101786] — fala D wierna (auto)
+    // Siren's Lure [101786] — fala I wierna (auto)
     krcgId: 101786,
     name: "Siren's Lure",
     cardType: "actionModifier",
@@ -35444,13 +34839,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sires Command, Childer Inherit [101787] — fala D wierna (auto)
+    // Sires Command, Childer Inherit [101787] — fala I wierna (auto)
     krcgId: 101787,
     name: "Sires Command, Childer Inherit",
     cardType: "action",
@@ -35458,11 +34851,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sixth Tradition: Destruction [101788] — fala D wierna (auto)
+    // Sixth Tradition: Destruction [101788] — fala I wierna (auto)
     krcgId: 101788,
     name: "Sixth Tradition: Destruction",
     cardType: "action",
@@ -35470,11 +34863,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Skaald [101789] — fala D wierna (auto)
+    // Skaald [101789] — fala I wierna (auto)
     krcgId: 101789,
     name: "Skaald",
     cardType: "action",
@@ -35483,11 +34876,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Skin of the Adder [101793] — fala D wierna (auto)
+    // Skin of the Adder [101793] — fala I wierna (auto)
     krcgId: 101793,
     name: "Skin of the Adder",
     cardType: "combat",
@@ -35495,12 +34888,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Skin of the Chameleon [101794] — fala D wierna (auto)
+    // Skin of the Chameleon [101794] — fala I wierna (auto)
     krcgId: 101794,
     name: "Skin of the Chameleon",
     cardType: "actionModifier",
@@ -35508,13 +34900,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Skin Trap [101795] — fala D wierna (auto)
+    // Skin Trap [101795] — fala I wierna (auto)
     krcgId: 101795,
     name: "Skin Trap",
     cardType: "combat",
@@ -35522,12 +34912,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "strikeDodge" }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Skullduggery [101796] — fala D wierna (auto)
+    // Skullduggery [101796] — fala I wierna (auto)
     krcgId: 101796,
     name: "Skullduggery",
     cardType: "action",
@@ -35535,13 +34924,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Slake the Thirst [101797] — fala D wierna (auto)
+    // Slake the Thirst [101797] — fala I wierna (auto)
     krcgId: 101797,
     name: "Slake the Thirst",
     cardType: "actionModifier",
@@ -35549,12 +34936,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Slaughterhouse [101800] — fala D wierna (auto)
+    // The Slaughterhouse [101800] — fala I wierna (auto)
     krcgId: 101800,
     name: "The Slaughterhouse",
     cardType: "master",
@@ -35567,7 +34953,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Sleep of Reason [101803] — fala D wierna (auto)
+    // Sleep of Reason [101803] — fala I wierna (auto)
     krcgId: 101803,
     name: "Sleep of Reason",
     cardType: "action",
@@ -35575,12 +34961,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sleep Unseen [101804] — fala D wierna (auto)
+    // Sleep Unseen [101804] — fala I wierna (auto)
     krcgId: 101804,
     name: "Sleep Unseen",
     cardType: "actionModifier",
@@ -35588,39 +34973,37 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sleight of Hand [101806] — fala D wierna (auto)
+    // Sleight of Hand [101806] — fala I wierna (auto)
     krcgId: 101806,
     name: "Sleight of Hand",
     cardType: "action",
     bloodCost: 1,
     poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Smash and Grab [101809] — fala D wierna (auto)
+    // Smash and Grab [101809] — fala I wierna (auto)
     krcgId: 101809,
     name: "Smash and Grab",
     cardType: "action",
     bloodCost: 0,
     poolCost: 0,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Smear Campaign [101810] — fala D wierna (auto)
+    // Smear Campaign [101810] — fala I wierna (auto)
     krcgId: 101810,
     name: "Smear Campaign",
     cardType: "master",
@@ -35633,7 +35016,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Smite [101812] — fala D wierna (auto)
+    // Smite [101812] — fala I wierna (auto)
     krcgId: 101812,
     name: "Smite",
     cardType: "combat",
@@ -35641,11 +35024,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ven", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Smoke and Mirrors [101813] — fala D wierna (auto)
+    // Smoke and Mirrors [101813] — fala I wierna (auto)
     krcgId: 101813,
     name: "Smoke and Mirrors",
     cardType: "actionModifier",
@@ -35653,13 +35036,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Snipe Hunt [101815] — fala D wierna (auto)
+    // Snipe Hunt [101815] — fala I wierna (auto)
     krcgId: 101815,
     name: "Snipe Hunt",
     cardType: "politicalAction",
@@ -35667,11 +35048,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Soar [101818] — fala D wierna (auto)
+    // Soar [101818] — fala I wierna (auto)
     krcgId: 101818,
     name: "Soar",
     cardType: "actionModifier",
@@ -35679,11 +35060,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Song of Pan [101826] — fala D wierna (auto)
+    // Song of Pan [101826] — fala I wierna (auto)
     krcgId: 101826,
     name: "Song of Pan",
     cardType: "action",
@@ -35692,11 +35073,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Songs of the Distant Vitae [101828] — fala D wierna (auto)
+    // Songs of the Distant Vitae [101828] — fala I wierna (auto)
     krcgId: 101828,
     name: "Songs of the Distant Vitae",
     cardType: "action",
@@ -35704,12 +35085,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Soul Decoration [101830] — fala D wierna (auto)
+    // Soul Decoration [101830] — fala I wierna (auto)
     krcgId: 101830,
     name: "Soul Decoration",
     cardType: "action",
@@ -35717,14 +35097,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Soul Feasting [101831] — fala D wierna (auto)
+    // Soul Feasting [101831] — fala I wierna (auto)
     krcgId: 101831,
     name: "Soul Feasting",
     cardType: "action",
@@ -35732,12 +35109,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Soul Gem of Etrius [101832] — fala D wierna (auto)
+    // Soul Gem of Etrius [101832] — fala I wierna (auto)
     krcgId: 101832,
     name: "Soul Gem of Etrius",
     cardType: "equipment",
@@ -35746,11 +35122,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Soul of the Earth [101833] — fala D wierna (auto)
+    // Soul of the Earth [101833] — fala I wierna (auto)
     krcgId: 101833,
     name: "Soul of the Earth",
     cardType: "action",
@@ -35758,11 +35134,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Soul Painting [101834] — fala D wierna (auto)
+    // Soul Painting [101834] — fala I wierna (auto)
     krcgId: 101834,
     name: "Soul Painting",
     cardType: "action",
@@ -35770,14 +35146,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Soul Scan [101835] — fala D wierna (auto)
+    // Soul Scan [101835] — fala I wierna (auto)
     krcgId: 101835,
     name: "Soul Scan",
     cardType: "action",
@@ -35785,12 +35158,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Soul Stealing [101836] — fala D wierna (auto)
+    // Soul Stealing [101836] — fala I wierna (auto)
     krcgId: 101836,
     name: "Soul Stealing",
     cardType: "actionModifier",
@@ -35798,12 +35170,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sound of a Breaking Oath [101837] — fala D wierna (auto)
+    // Sound of a Breaking Oath [101837] — fala I wierna (auto)
     krcgId: 101837,
     name: "Sound of a Breaking Oath",
     cardType: "action",
@@ -35811,14 +35182,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "dom", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sowing Dissension [101838] — fala D wierna (auto)
+    // Sowing Dissension [101838] — fala I wierna (auto)
     krcgId: 101838,
     name: "Sowing Dissension",
     cardType: "action",
@@ -35826,11 +35194,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Speak with Spirits [101840] — fala D wierna (auto)
+    // Speak with Spirits [101840] — fala I wierna (auto)
     krcgId: 101840,
     name: "Speak with Spirits",
     cardType: "reaction",
@@ -35838,13 +35206,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Spectral Divination [101843] — fala D wierna (auto)
+    // Spectral Divination [101843] — fala I wierna (auto)
     krcgId: 101843,
     name: "Spectral Divination",
     cardType: "actionModifier",
@@ -35852,12 +35218,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Speed of Thought [101844] — fala D wierna (auto)
+    // Speed of Thought [101844] — fala I wierna (auto)
     krcgId: 101844,
     name: "Speed of Thought",
     cardType: "action",
@@ -35865,25 +35230,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Spell of Life [101845] — fala D wierna (auto)
+    // Spell of Life [101845] — fala I wierna (auto)
     krcgId: 101845,
     name: "Spell of Life",
     cardType: "action",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Spike-Thrower [101846] — fala D wierna (auto)
+    // Spike-Thrower [101846] — fala I wierna (auto)
     krcgId: 101846,
     name: "Spike-Thrower",
     cardType: "equipment",
@@ -35891,11 +35254,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Spirit Marionette [101848] — fala D wierna (auto)
+    // Spirit Marionette [101848] — fala I wierna (auto)
     krcgId: 101848,
     name: "Spirit Marionette",
     cardType: "action",
@@ -35903,19 +35266,16 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Spirit Summoning Chamber [101849] — fala D wierna (auto)
+    // Spirit Summoning Chamber [101849] — fala I wierna (auto)
     krcgId: 101849,
     name: "Spirit Summoning Chamber",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -35923,7 +35283,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Spiritual Guidance [101851] — fala D wierna (auto)
+    // Spiritual Guidance [101851] — fala I wierna (auto)
     krcgId: 101851,
     name: "Spiritual Guidance",
     cardType: "combat",
@@ -35931,11 +35291,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Spiritual Intervention [101852] — fala D wierna (auto)
+    // Spiritual Intervention [101852] — fala I wierna (auto)
     krcgId: 101852,
     name: "Spiritual Intervention",
     cardType: "combat",
@@ -35943,12 +35303,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "strikeDodge" }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Spiritual Protector [101853] — fala D wierna (auto)
+    // Spiritual Protector [101853] — fala I wierna (auto)
     krcgId: 101853,
     name: "Spiritual Protector",
     cardType: "retainer",
@@ -35957,11 +35316,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Spontaneous Power [101855] — fala D wierna (auto)
+    // Spontaneous Power [101855] — fala I wierna (auto)
     krcgId: 101855,
     name: "Spontaneous Power",
     cardType: "master",
@@ -35974,7 +35333,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Squirrel Balance [101858] — fala D wierna (auto)
+    // Squirrel Balance [101858] — fala I wierna (auto)
     krcgId: 101858,
     name: "Squirrel Balance",
     cardType: "actionModifier",
@@ -35982,13 +35341,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Starshell Grenade Launcher [101860] — fala D wierna (auto)
+    // Starshell Grenade Launcher [101860] — fala I wierna (auto)
     krcgId: 101860,
     name: "Starshell Grenade Launcher",
     cardType: "equipment",
@@ -35996,11 +35353,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Starvation of Marena [101861] — fala D wierna (auto)
+    // Starvation of Marena [101861] — fala I wierna (auto)
     krcgId: 101861,
     name: "Starvation of Marena",
     cardType: "combat",
@@ -36008,12 +35365,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Static Virtue [101862] — fala D wierna (auto)
+    // Static Virtue [101862] — fala I wierna (auto)
     krcgId: 101862,
     name: "Static Virtue",
     cardType: "master",
@@ -36025,7 +35381,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Status Perfectus [101863] — fala D wierna (auto)
+    // The Status Perfectus [101863] — fala I wierna (auto)
     krcgId: 101863,
     name: "The Status Perfectus",
     cardType: "action",
@@ -36034,11 +35390,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Steal the Mind [101865] — fala D wierna (auto)
+    // Steal the Mind [101865] — fala I wierna (auto)
     krcgId: 101865,
     name: "Steal the Mind",
     cardType: "action",
@@ -36046,19 +35402,16 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "myt", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Steam Tunnels [101868] — fala D wierna (auto)
+    // Steam Tunnels [101868] — fala I wierna (auto)
     krcgId: 101868,
     name: "Steam Tunnels",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -36066,7 +35419,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Still the Mortal Flesh [101871] — fala D wierna (auto)
+    // Still the Mortal Flesh [101871] — fala I wierna (auto)
     krcgId: 101871,
     name: "Still the Mortal Flesh",
     cardType: "combat",
@@ -36074,12 +35427,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "dom", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Stone Dog [101873] — fala D wierna (auto)
+    // Stone Dog [101873] — fala I wierna (auto)
     krcgId: 101873,
     name: "Stone Dog",
     cardType: "retainer",
@@ -36087,11 +35439,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 3,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Stone Quills [101874] — fala D wierna (auto)
+    // Stone Quills [101874] — fala I wierna (auto)
     krcgId: 101874,
     name: "Stone Quills",
     cardType: "combat",
@@ -36099,13 +35451,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Stone Travel [101875] — fala D wierna (auto)
+    // Stone Travel [101875] — fala I wierna (auto)
     krcgId: 101875,
     name: "Stone Travel",
     cardType: "actionModifier",
@@ -36113,13 +35463,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "myt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Stonestrength [101876] — fala D wierna (auto)
+    // Stonestrength [101876] — fala I wierna (auto)
     krcgId: 101876,
     name: "Stonestrength",
     cardType: "combat",
@@ -36127,19 +35475,16 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Storm Sewers [101878] — fala D wierna (auto)
+    // Storm Sewers [101878] — fala I wierna (auto)
     krcgId: 101878,
     name: "Storm Sewers",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -36147,7 +35492,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Strained Vitae Supply [101879] — fala D wierna (auto)
+    // Strained Vitae Supply [101879] — fala I wierna (auto)
     krcgId: 101879,
     name: "Strained Vitae Supply",
     cardType: "master",
@@ -36155,11 +35500,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Strange Day [101880] — fala D wierna (auto)
+    // Strange Day [101880] — fala I wierna (auto)
     krcgId: 101880,
     name: "Strange Day",
     cardType: "actionModifier",
@@ -36167,11 +35512,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Stranger Among Us [101881] — fala D wierna (auto)
+    // The Stranger Among Us [101881] — fala I wierna (auto)
     krcgId: 101881,
     name: "The Stranger Among Us",
     cardType: "master",
@@ -36183,7 +35528,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Striga [101884] — fala D wierna (auto)
+    // Striga [101884] — fala I wierna (auto)
     krcgId: 101884,
     name: "Striga",
     cardType: "master",
@@ -36195,7 +35540,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Strike at the True Flesh [101885] — fala D wierna (auto)
+    // Strike at the True Flesh [101885] — fala I wierna (auto)
     krcgId: 101885,
     name: "Strike at the True Flesh",
     cardType: "combat",
@@ -36203,12 +35548,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Strike with Conviction [101886] — fala D wierna (auto)
+    // Strike with Conviction [101886] — fala I wierna (auto)
     krcgId: 101886,
     name: "Strike with Conviction",
     cardType: "conviction",
@@ -36216,11 +35560,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Strix [101887] — fala D wierna (auto)
+    // Strix [101887] — fala I wierna (auto)
     krcgId: 101887,
     name: "Strix",
     cardType: "reaction",
@@ -36228,12 +35572,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "str", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "str", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Stutter-Step [101889] — fala D wierna (auto)
+    // Stutter-Step [101889] — fala I wierna (auto)
     krcgId: 101889,
     name: "Stutter-Step",
     cardType: "combat",
@@ -36241,12 +35584,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "additionalStrike", count: 1, limited: false }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "additionalStrike", count: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Subdued by the Blood [101890] — fala D wierna (auto)
+    // Subdued by the Blood [101890] — fala I wierna (auto)
     krcgId: 101890,
     name: "Subdued by the Blood",
     cardType: "master",
@@ -36258,7 +35600,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Succubus [101892] — fala D wierna (auto)
+    // Succubus [101892] — fala I wierna (auto)
     krcgId: 101892,
     name: "Succubus",
     cardType: "ally",
@@ -36266,17 +35608,16 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 4,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Succubus Club [101893] — fala D wierna (auto)
+    // Succubus Club [101893] — fala I wierna (auto)
     krcgId: 101893,
     name: "Succubus Club",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -36284,7 +35625,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Succulent Vitae [101894] — fala D wierna (auto)
+    // Succulent Vitae [101894] — fala I wierna (auto)
     krcgId: 101894,
     name: "Succulent Vitae",
     cardType: "actionModifier",
@@ -36292,12 +35633,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sudario Refraction [101895] — fala D wierna (auto)
+    // Sudario Refraction [101895] — fala I wierna (auto)
     krcgId: 101895,
     name: "Sudario Refraction",
     cardType: "action",
@@ -36305,11 +35645,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Summon History [101897] — fala D wierna (auto)
+    // Summon History [101897] — fala I wierna (auto)
     krcgId: 101897,
     name: "Summon History",
     cardType: "action",
@@ -36317,12 +35657,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Summon Soul [101898] — fala D wierna (auto)
+    // Summon Soul [101898] — fala I wierna (auto)
     krcgId: 101898,
     name: "Summon Soul",
     cardType: "action",
@@ -36330,12 +35669,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Summon the Abyss [101900] — fala D wierna (auto)
+    // Summon the Abyss [101900] — fala I wierna (auto)
     krcgId: 101900,
     name: "Summon the Abyss",
     cardType: "action",
@@ -36343,12 +35681,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Summon the Serpent [101901] — fala D wierna (auto)
+    // Summon the Serpent [101901] — fala I wierna (auto)
     krcgId: 101901,
     name: "Summon the Serpent",
     cardType: "action",
@@ -36356,11 +35693,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Summoning [101902] — fala D wierna (auto)
+    // The Summoning [101902] — fala I wierna (auto)
     krcgId: 101902,
     name: "The Summoning",
     cardType: "action",
@@ -36368,12 +35705,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sunrise Service [101903] — fala D wierna (auto)
+    // Sunrise Service [101903] — fala I wierna (auto)
     krcgId: 101903,
     name: "Sunrise Service",
     cardType: "action",
@@ -36381,38 +35717,36 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sunset Strip, Hollywood [101904] — fala D wierna (auto)
+    // Sunset Strip, Hollywood [101904] — fala I wierna (auto)
     krcgId: 101904,
     name: "Sunset Strip, Hollywood",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Supernatural Resistance [101906] — fala D wierna (auto)
+    // Supernatural Resistance [101906] — fala I wierna (auto)
     krcgId: 101906,
     name: "Supernatural Resistance",
-    cardType: "reaction",
+    cardType: "combat",
     bloodCost: 0,
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Surge [101908] — fala D wierna (auto)
+    // Surge [101908] — fala I wierna (auto)
     krcgId: 101908,
     name: "Surge",
     cardType: "power",
@@ -36420,11 +35754,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ven", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Survivalist [101910] — fala D wierna (auto)
+    // Survivalist [101910] — fala I wierna (auto)
     krcgId: 101910,
     name: "Survivalist",
     cardType: "ally",
@@ -36432,11 +35766,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Suspension of Disbelief [101911] — fala D wierna (auto)
+    // Suspension of Disbelief [101911] — fala I wierna (auto)
     krcgId: 101911,
     name: "Suspension of Disbelief",
     cardType: "action",
@@ -36444,12 +35778,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Svadharma [101912] — fala D wierna (auto)
+    // Svadharma [101912] — fala I wierna (auto)
     krcgId: 101912,
     name: "Svadharma",
     cardType: "master",
@@ -36461,7 +35794,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Swarm [101914] — fala D wierna (auto)
+    // Swarm [101914] — fala I wierna (auto)
     krcgId: 101914,
     name: "Swarm",
     cardType: "retainer",
@@ -36469,11 +35802,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sweeper [101915] — fala D wierna (auto)
+    // Sweeper [101915] — fala I wierna (auto)
     krcgId: 101915,
     name: "Sweeper",
     cardType: "politicalAction",
@@ -36481,11 +35814,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Swiftness of the Stag [101916] — fala D wierna (auto)
+    // Swiftness of the Stag [101916] — fala I wierna (auto)
     krcgId: 101916,
     name: "Swiftness of the Stag",
     cardType: "actionModifier",
@@ -36493,13 +35826,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Swiss Cut [101917] — fala D wierna (auto)
+    // Swiss Cut [101917] — fala I wierna (auto)
     krcgId: 101917,
     name: "Swiss Cut",
     cardType: "master",
@@ -36512,7 +35843,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Swoop [101918] — fala D wierna (auto)
+    // Swoop [101918] — fala I wierna (auto)
     krcgId: 101918,
     name: "Swoop",
     cardType: "combat",
@@ -36520,11 +35851,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sword of Judgment [101919] — fala D wierna (auto)
+    // Sword of Judgment [101919] — fala I wierna (auto)
     krcgId: 101919,
     name: "Sword of Judgment",
     cardType: "equipment",
@@ -36533,11 +35864,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sword of Nuln [101920] — fala D wierna (auto)
+    // Sword of Nuln [101920] — fala I wierna (auto)
     krcgId: 101920,
     name: "Sword of Nuln",
     cardType: "equipment",
@@ -36546,11 +35877,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Sword of Troile [101922] — fala D wierna (auto)
+    // Sword of Troile [101922] — fala I wierna (auto)
     krcgId: 101922,
     name: "Sword of Troile",
     cardType: "equipment",
@@ -36559,12 +35890,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tabriz Assembly [101924] — fala D wierna (auto)
+    // Tabriz Assembly [101924] — fala I wierna (auto)
     krcgId: 101924,
     name: "Tabriz Assembly",
     cardType: "master",
@@ -36573,11 +35903,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tainted Spring [101925] — fala D wierna (auto)
+    // Tainted Spring [101925] — fala I wierna (auto)
     krcgId: 101925,
     name: "Tainted Spring",
     cardType: "actionModifier",
@@ -36585,12 +35915,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tajdid [101927] — fala D wierna (auto)
+    // Tajdid [101927] — fala I wierna (auto)
     krcgId: 101927,
     name: "Tajdid",
     cardType: "master",
@@ -36598,11 +35927,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Taking the Skin: Minion [101928] — fala D wierna (auto)
+    // Taking the Skin: Minion [101928] — fala I wierna (auto)
     krcgId: 101928,
     name: "Taking the Skin: Minion",
     cardType: "actionModifier",
@@ -36610,11 +35939,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Taking the Skin: Vulture [101929] — fala D wierna (auto)
+    // Taking the Skin: Vulture [101929] — fala I wierna (auto)
     krcgId: 101929,
     name: "Taking the Skin: Vulture",
     cardType: "reaction",
@@ -36622,12 +35951,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "abo", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Talaq, The Immortal [101930] — fala D wierna (auto)
+    // Talaq, The Immortal [101930] — fala I wierna (auto)
     krcgId: 101930,
     name: "Talaq, The Immortal",
     cardType: "ally",
@@ -36636,12 +35964,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Talbot's Chainsaw [101931] — fala D wierna (auto)
+    // Talbot's Chainsaw [101931] — fala I wierna (auto)
     krcgId: 101931,
     name: "Talbot's Chainsaw",
     cardType: "equipment",
@@ -36650,11 +35977,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Talith [101932] — fala D wierna (auto)
+    // Talith [101932] — fala I wierna (auto)
     krcgId: 101932,
     name: "Talith",
     cardType: "equipment",
@@ -36662,11 +35989,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Talons of the Dead [101933] — fala D wierna (auto)
+    // Talons of the Dead [101933] — fala I wierna (auto)
     krcgId: 101933,
     name: "Talons of the Dead",
     cardType: "master",
@@ -36675,11 +36002,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Taming the Beast [101934] — fala D wierna (auto)
+    // Taming the Beast [101934] — fala I wierna (auto)
     krcgId: 101934,
     name: "Taming the Beast",
     cardType: "combat",
@@ -36687,12 +36014,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "abo", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tangle Atropos' Hand [101935] — fala D wierna (auto)
+    // Tangle Atropos' Hand [101935] — fala I wierna (auto)
     krcgId: 101935,
     name: "Tangle Atropos' Hand",
     cardType: "actionModifier",
@@ -36700,13 +36026,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tapestry of Blood [101936] — fala D wierna (auto)
+    // Tapestry of Blood [101936] — fala I wierna (auto)
     krcgId: 101936,
     name: "Tapestry of Blood",
     cardType: "equipment",
@@ -36715,11 +36039,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tara, The Hollow One [101937] — fala D wierna (auto)
+    // Tara, The Hollow One [101937] — fala I wierna (auto)
     krcgId: 101937,
     name: "Tara, The Hollow One",
     cardType: "ally",
@@ -36728,11 +36052,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Target Retainer [101941] — fala D wierna (auto)
+    // Target Retainer [101941] — fala I wierna (auto)
     krcgId: 101941,
     name: "Target Retainer",
     cardType: "combat",
@@ -36740,11 +36064,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Taste of Death [101944] — fala D wierna (auto)
+    // Taste of Death [101944] — fala I wierna (auto)
     krcgId: 101944,
     name: "Taste of Death",
     cardType: "combat",
@@ -36752,12 +36076,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tattoo Signal [101946] — fala D wierna (auto)
+    // Tattoo Signal [101946] — fala I wierna (auto)
     krcgId: 101946,
     name: "Tattoo Signal",
     cardType: "action",
@@ -36765,11 +36088,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Taunt the Caged Beast [101947] — fala D wierna (auto)
+    // Taunt the Caged Beast [101947] — fala I wierna (auto)
     krcgId: 101947,
     name: "Taunt the Caged Beast",
     cardType: "action",
@@ -36777,12 +36100,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Temptation [101954] — fala D wierna (auto)
+    // Temptation [101954] — fala I wierna (auto)
     krcgId: 101954,
     name: "Temptation",
     cardType: "action",
@@ -36790,12 +36112,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tend the Flock [101956] — fala D wierna (auto)
+    // Tend the Flock [101956] — fala I wierna (auto)
     krcgId: 101956,
     name: "Tend the Flock",
     cardType: "master",
@@ -36807,7 +36128,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tenebrous Form [101957] — fala D wierna (auto)
+    // Tenebrous Form [101957] — fala I wierna (auto)
     krcgId: 101957,
     name: "Tenebrous Form",
     cardType: "actionModifier",
@@ -36815,12 +36136,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Terra Incognita [101959] — fala D wierna (auto)
+    // Terra Incognita [101959] — fala I wierna (auto)
     krcgId: 101959,
     name: "Terra Incognita",
     cardType: "reaction",
@@ -36828,11 +36148,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Terrorists [101961] — fala D wierna (auto)
+    // Terrorists [101961] — fala I wierna (auto)
     krcgId: 101961,
     name: "Terrorists",
     cardType: "ally",
@@ -36840,11 +36160,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Textbook Damnation [101962] — fala D wierna (auto)
+    // The Textbook Damnation [101962] — fala I wierna (auto)
     krcgId: 101962,
     name: "The Textbook Damnation",
     cardType: "equipment",
@@ -36853,12 +36173,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Thanks for the Donation [101964] — fala D wierna (auto)
+    // Thanks for the Donation [101964] — fala I wierna (auto)
     krcgId: 101964,
     name: "Thanks for the Donation",
     cardType: "action",
@@ -36866,11 +36185,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Their Master's Voice [101967] — fala D wierna (auto)
+    // Their Master's Voice [101967] — fala I wierna (auto)
     krcgId: 101967,
     name: "Their Master's Voice",
     cardType: "reaction",
@@ -36878,24 +36197,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Thicker than Blood [101969] — fala D wierna (auto)
+    // Thicker than Blood [101969] — fala I wierna (auto)
     krcgId: 101969,
     name: "Thicker than Blood",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Thin Blood [101970] — fala D wierna (auto)
+    // Thin Blood [101970] — fala I wierna (auto)
     krcgId: 101970,
     name: "Thin Blood",
     cardType: "combat",
@@ -36903,25 +36221,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Thin-Blooded Seer [101971] — fala D wierna (auto)
+    // Thin-Blooded Seer [101971] — fala I wierna (auto)
     krcgId: 101971,
     name: "Thin-Blooded Seer",
     cardType: "action",
     bloodCost: 1,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Those Who Endure Judge [101975] — fala D wierna (auto)
+    // Those Who Endure Judge [101975] — fala I wierna (auto)
     krcgId: 101975,
     name: "Those Who Endure Judge",
     cardType: "actionModifier",
@@ -36929,11 +36245,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Thoughts Betrayed [101976] — fala D wierna (auto)
+    // Thoughts Betrayed [101976] — fala I wierna (auto)
     krcgId: 101976,
     name: "Thoughts Betrayed",
     cardType: "combat",
@@ -36941,12 +36257,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "dom", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Threading the Path of Orpheus [101977] — fala D wierna (auto)
+    // Threading the Path of Orpheus [101977] — fala I wierna (auto)
     krcgId: 101977,
     name: "Threading the Path of Orpheus",
     cardType: "action",
@@ -36954,11 +36269,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Three's a Crowd [101979] — fala D wierna (auto)
+    // Three's a Crowd [101979] — fala I wierna (auto)
     krcgId: 101979,
     name: "Three's a Crowd",
     cardType: "combat",
@@ -36966,11 +36281,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Thrones Crumble [101981] — fala D wierna (auto)
+    // Thrones Crumble [101981] — fala I wierna (auto)
     krcgId: 101981,
     name: "Thrones Crumble",
     cardType: "action",
@@ -36978,12 +36293,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tinglestripe [101985] — fala D wierna (auto)
+    // Tinglestripe [101985] — fala I wierna (auto)
     krcgId: 101985,
     name: "Tinglestripe",
     cardType: "equipment",
@@ -36991,12 +36305,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "myt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tongue of the Serpent [101988] — fala D wierna (auto)
+    // Tongue of the Serpent [101988] — fala I wierna (auto)
     krcgId: 101988,
     name: "Tongue of the Serpent",
     cardType: "combat",
@@ -37004,12 +36317,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Torment the Soul [101992] — fala D wierna (auto)
+    // Torment the Soul [101992] — fala I wierna (auto)
     krcgId: 101992,
     name: "Torment the Soul",
     cardType: "combat",
@@ -37017,12 +36329,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tortured Confession [101996] — fala D wierna (auto)
+    // Tortured Confession [101996] — fala I wierna (auto)
     krcgId: 101996,
     name: "Tortured Confession",
     cardType: "combat",
@@ -37030,11 +36341,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Total Insanity [101997] — fala D wierna (auto)
+    // Total Insanity [101997] — fala I wierna (auto)
     krcgId: 101997,
     name: "Total Insanity",
     cardType: "action",
@@ -37042,12 +36353,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Touch of Clarity [101998] — fala D wierna (auto)
+    // Touch of Clarity [101998] — fala I wierna (auto)
     krcgId: 101998,
     name: "Touch of Clarity",
     cardType: "actionModifier",
@@ -37055,12 +36365,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tourette's Voice [102000] — fala D wierna (auto)
+    // Tourette's Voice [102000] — fala I wierna (auto)
     krcgId: 102000,
     name: "Tourette's Voice",
     cardType: "reaction",
@@ -37068,13 +36377,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "mel", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tower of London [102001] — fala D wierna (auto)
+    // Tower of London [102001] — fala I wierna (auto)
     krcgId: 102001,
     name: "Tower of London",
     cardType: "master",
@@ -37088,7 +36395,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Toy Chest Test [102002] — fala D wierna (auto)
+    // Toy Chest Test [102002] — fala I wierna (auto)
     krcgId: 102002,
     name: "Toy Chest Test",
     cardType: "master",
@@ -37100,7 +36407,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tracker's Mark [102003] — fala D wierna (auto)
+    // Tracker's Mark [102003] — fala I wierna (auto)
     krcgId: 102003,
     name: "Tracker's Mark",
     cardType: "combat",
@@ -37108,11 +36415,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tradition Upheld [102004] — fala D wierna (auto)
+    // Tradition Upheld [102004] — fala I wierna (auto)
     krcgId: 102004,
     name: "Tradition Upheld",
     cardType: "politicalAction",
@@ -37120,11 +36427,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tragic Love Affair [102006] — fala D wierna (auto)
+    // Tragic Love Affair [102006] — fala I wierna (auto)
     krcgId: 102006,
     name: "Tragic Love Affair",
     cardType: "master",
@@ -37136,7 +36443,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trainer [102007] — fala D wierna (auto)
+    // Trainer [102007] — fala I wierna (auto)
     krcgId: 102007,
     name: "Trainer",
     cardType: "action",
@@ -37144,12 +36451,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tranquility [102008] — fala D wierna (auto)
+    // Tranquility [102008] — fala I wierna (auto)
     krcgId: 102008,
     name: "Tranquility",
     cardType: "combat",
@@ -37157,12 +36463,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "press", continueOnly: false }] },
-      { level: "superior", discipline: "dom", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Transcendent Laibon [102009] — fala D wierna (auto)
+    // Transcendent Laibon [102009] — fala I wierna (auto)
     krcgId: 102009,
     name: "Transcendent Laibon",
     cardType: "master",
@@ -37175,7 +36480,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Transfusion [102011] — fala D wierna (auto)
+    // Transfusion [102011] — fala I wierna (auto)
     krcgId: 102011,
     name: "Transfusion",
     cardType: "actionModifier",
@@ -37183,13 +36488,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Trap [102012] — fala D wierna (auto)
+    // Trap [102012] — fala I wierna (auto)
     krcgId: 102012,
     name: "Trap",
     cardType: "combat",
@@ -37197,11 +36500,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Travelers Obey the Tenets [102013] — fala D wierna (auto)
+    // Travelers Obey the Tenets [102013] — fala I wierna (auto)
     krcgId: 102013,
     name: "Travelers Obey the Tenets",
     cardType: "action",
@@ -37209,11 +36512,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Treat the Sick Mind [102016] — fala D wierna (auto)
+    // Treat the Sick Mind [102016] — fala I wierna (auto)
     krcgId: 102016,
     name: "Treat the Sick Mind",
     cardType: "action",
@@ -37221,13 +36524,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Treatment [102017] — fala D wierna (auto)
+    // The Treatment [102017] — fala I wierna (auto)
     krcgId: 102017,
     name: "The Treatment",
     cardType: "master",
@@ -37235,11 +36536,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Treaty of Laibach [102018] — fala D wierna (auto)
+    // Treaty of Laibach [102018] — fala I wierna (auto)
     krcgId: 102018,
     name: "Treaty of Laibach",
     cardType: "master",
@@ -37252,7 +36553,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tremere Convocation [102020] — fala D wierna (auto)
+    // Tremere Convocation [102020] — fala I wierna (auto)
     krcgId: 102020,
     name: "Tremere Convocation",
     cardType: "master",
@@ -37261,11 +36562,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Trick of the Danya [102024] — fala D wierna (auto)
+    // The Trick of the Danya [102024] — fala I wierna (auto)
     krcgId: 102024,
     name: "The Trick of the Danya",
     cardType: "action",
@@ -37273,11 +36574,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Triole's Revenge [102025] — fala D wierna (auto)
+    // Triole's Revenge [102025] — fala I wierna (auto)
     krcgId: 102025,
     name: "Triole's Revenge",
     cardType: "action",
@@ -37285,11 +36586,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Trochomancy [102026] — fala D wierna (auto)
+    // Trochomancy [102026] — fala I wierna (auto)
     krcgId: 102026,
     name: "Trochomancy",
     cardType: "actionModifier",
@@ -37297,14 +36598,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Trophy: Chosen [102027] — fala D wierna (auto)
+    // Trophy: Chosen [102027] — fala I wierna (auto)
     krcgId: 102027,
     name: "Trophy: Chosen",
     cardType: "master",
@@ -37316,7 +36614,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Clan Respect [102028] — fala D wierna (auto)
+    // Trophy: Clan Respect [102028] — fala I wierna (auto)
     krcgId: 102028,
     name: "Trophy: Clan Respect",
     cardType: "master",
@@ -37328,7 +36626,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Diablerie [102029] — fala D wierna (auto)
+    // Trophy: Diablerie [102029] — fala I wierna (auto)
     krcgId: 102029,
     name: "Trophy: Diablerie",
     cardType: "master",
@@ -37336,11 +36634,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Trophy: Discipline [102030] — fala D wierna (auto)
+    // Trophy: Discipline [102030] — fala I wierna (auto)
     krcgId: 102030,
     name: "Trophy: Discipline",
     cardType: "master",
@@ -37352,7 +36650,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Domain [102031] — fala D wierna (auto)
+    // Trophy: Domain [102031] — fala I wierna (auto)
     krcgId: 102031,
     name: "Trophy: Domain",
     cardType: "master",
@@ -37360,11 +36658,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Trophy: Hunting Ground [102032] — fala D wierna (auto)
+    // Trophy: Hunting Ground [102032] — fala I wierna (auto)
     krcgId: 102032,
     name: "Trophy: Hunting Ground",
     cardType: "master",
@@ -37376,7 +36674,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Library [102033] — fala D wierna (auto)
+    // Trophy: Library [102033] — fala I wierna (auto)
     krcgId: 102033,
     name: "Trophy: Library",
     cardType: "master",
@@ -37388,7 +36686,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: No Questions [102034] — fala D wierna (auto)
+    // Trophy: No Questions [102034] — fala I wierna (auto)
     krcgId: 102034,
     name: "Trophy: No Questions",
     cardType: "master",
@@ -37400,20 +36698,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Progeny [102035] — fala D wierna (auto)
+    // Trophy: Progeny [102035] — fala I wierna (auto)
     krcgId: 102035,
     name: "Trophy: Progeny",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Trophy: Retainers [102036] — fala D wierna (auto)
+    // Trophy: Retainers [102036] — fala I wierna (auto)
     krcgId: 102036,
     name: "Trophy: Retainers",
     cardType: "master",
@@ -37425,7 +36722,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Revered [102037] — fala D wierna (auto)
+    // Trophy: Revered [102037] — fala I wierna (auto)
     krcgId: 102037,
     name: "Trophy: Revered",
     cardType: "master",
@@ -37433,11 +36730,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Trophy: Safe Passage [102038] — fala D wierna (auto)
+    // Trophy: Safe Passage [102038] — fala I wierna (auto)
     krcgId: 102038,
     name: "Trophy: Safe Passage",
     cardType: "master",
@@ -37449,7 +36746,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Trophy: Wealth [102039] — fala D wierna (auto)
+    // Trophy: Wealth [102039] — fala I wierna (auto)
     krcgId: 102039,
     name: "Trophy: Wealth",
     cardType: "master",
@@ -37461,7 +36758,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // True Faith [102040] — fala D wierna (auto)
+    // True Faith [102040] — fala I wierna (auto)
     krcgId: 102040,
     name: "True Faith",
     cardType: "master",
@@ -37470,11 +36767,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Trumped-Up Charges [102042] — fala D wierna (auto)
+    // Trumped-Up Charges [102042] — fala I wierna (auto)
     krcgId: 102042,
     name: "Trumped-Up Charges",
     cardType: "politicalAction",
@@ -37482,11 +36779,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Truth in Ink [102043] — fala D wierna (auto)
+    // Truth in Ink [102043] — fala I wierna (auto)
     krcgId: 102043,
     name: "Truth in Ink",
     cardType: "reaction",
@@ -37494,11 +36791,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Truth of a Thousand Lies [102044] — fala D wierna (auto)
+    // Truth of a Thousand Lies [102044] — fala I wierna (auto)
     krcgId: 102044,
     name: "Truth of a Thousand Lies",
     cardType: "actionModifier",
@@ -37506,12 +36803,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Truth of Blood [102045] — fala D wierna (auto)
+    // Truth of Blood [102045] — fala I wierna (auto)
     krcgId: 102045,
     name: "Truth of Blood",
     cardType: "action",
@@ -37519,14 +36815,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tunnel Runner [102047] — fala D wierna (auto)
+    // Tunnel Runner [102047] — fala I wierna (auto)
     krcgId: 102047,
     name: "Tunnel Runner",
     cardType: "ally",
@@ -37534,11 +36827,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 4,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Twilight Camp [102049] — fala D wierna (auto)
+    // Twilight Camp [102049] — fala I wierna (auto)
     krcgId: 102049,
     name: "Twilight Camp",
     cardType: "master",
@@ -37550,21 +36843,20 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Twisted Forest [102050] — fala D wierna (auto)
+    // Twisted Forest [102050] — fala I wierna (auto)
     krcgId: 102050,
     name: "Twisted Forest",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Tye Cooper [102053] — fala D wierna (auto)
+    // Tye Cooper [102053] — fala I wierna (auto)
     krcgId: 102053,
     name: "Tye Cooper",
     cardType: "ally",
@@ -37573,11 +36865,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Unacceptable Appearance [102055] — fala D wierna (auto)
+    // Unacceptable Appearance [102055] — fala I wierna (auto)
     krcgId: 102055,
     name: "Unacceptable Appearance",
     cardType: "master",
@@ -37589,7 +36881,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Unburdening the Bestial Soul [102056] — fala D wierna (auto)
+    // Unburdening the Bestial Soul [102056] — fala I wierna (auto)
     krcgId: 102056,
     name: "Unburdening the Bestial Soul",
     cardType: "action",
@@ -37597,13 +36889,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Uncoiling [102057] — fala D wierna (auto)
+    // The Uncoiling [102057] — fala I wierna (auto)
     krcgId: 102057,
     name: "The Uncoiling",
     cardType: "event",
@@ -37611,11 +36901,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Uncontrollable Rage [102058] — fala D wierna (auto)
+    // Uncontrollable Rage [102058] — fala I wierna (auto)
     krcgId: 102058,
     name: "Uncontrollable Rage",
     cardType: "actionModifier",
@@ -37623,12 +36913,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "pro", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Under My Skin [102062] — fala D wierna (auto)
+    // Under My Skin [102062] — fala I wierna (auto)
     krcgId: 102062,
     name: "Under My Skin",
     cardType: "actionModifier",
@@ -37636,13 +36925,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Undue Influence [102067] — fala D wierna (auto)
+    // Undue Influence [102067] — fala I wierna (auto)
     krcgId: 102067,
     name: "Undue Influence",
     cardType: "action",
@@ -37650,13 +36937,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Undying Thirst [102069] — fala D wierna (auto)
+    // Undying Thirst [102069] — fala I wierna (auto)
     krcgId: 102069,
     name: "Undying Thirst",
     cardType: "reaction",
@@ -37664,11 +36949,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Unexpected Coalition [102070] — fala D wierna (auto)
+    // Unexpected Coalition [102070] — fala I wierna (auto)
     krcgId: 102070,
     name: "Unexpected Coalition",
     cardType: "actionModifier",
@@ -37676,11 +36961,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Unholy Radiance [102073] — fala D wierna (auto)
+    // Unholy Radiance [102073] — fala I wierna (auto)
     krcgId: 102073,
     name: "Unholy Radiance",
     cardType: "actionModifier",
@@ -37688,24 +36973,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Unity [102074] — fala D wierna (auto)
+    // Unity [102074] — fala I wierna (auto)
     krcgId: 102074,
     name: "Unity",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Unleash Hell's Fury [102076] — fala D wierna (auto)
+    // Unleash Hell's Fury [102076] — fala I wierna (auto)
     krcgId: 102076,
     name: "Unleash Hell's Fury",
     cardType: "action",
@@ -37714,27 +36998,23 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "dai", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Unleash the Hounds [102077] — fala D wierna (auto)
+    // Unleash the Hounds [102077] — fala I wierna (auto)
     krcgId: 102077,
     name: "Unleash the Hounds",
     cardType: "actionModifier",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Unmasking [102079] — fala D wierna (auto)
+    // The Unmasking [102079] — fala I wierna (auto)
     krcgId: 102079,
     name: "The Unmasking",
     cardType: "event",
@@ -37742,11 +37022,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Unseen Hibernation [102081] — fala D wierna (auto)
+    // Unseen Hibernation [102081] — fala I wierna (auto)
     krcgId: 102081,
     name: "Unseen Hibernation",
     cardType: "reaction",
@@ -37754,12 +37034,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "abo", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Unwholesome Bond [102082] — fala D wierna (auto)
+    // Unwholesome Bond [102082] — fala I wierna (auto)
     krcgId: 102082,
     name: "Unwholesome Bond",
     cardType: "action",
@@ -37767,12 +37046,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Using the Advantage [102086] — fala D wierna (auto)
+    // Using the Advantage [102086] — fala I wierna (auto)
     krcgId: 102086,
     name: "Using the Advantage",
     cardType: "master",
@@ -37784,7 +37062,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vampiric Disease [102088] — fala D wierna (auto)
+    // Vampiric Disease [102088] — fala I wierna (auto)
     krcgId: 102088,
     name: "Vampiric Disease",
     cardType: "master",
@@ -37796,7 +37074,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vascular Explosion [102091] — fala D wierna (auto)
+    // Vascular Explosion [102091] — fala I wierna (auto)
     krcgId: 102091,
     name: "Vascular Explosion",
     cardType: "combat",
@@ -37804,12 +37082,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Vaticination [102093] — fala D wierna (auto)
+    // Vaticination [102093] — fala I wierna (auto)
     krcgId: 102093,
     name: "Vaticination",
     cardType: "action",
@@ -37817,11 +37094,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Vaulderie [102094] — fala D wierna (auto)
+    // Vaulderie [102094] — fala I wierna (auto)
     krcgId: 102094,
     name: "Vaulderie",
     cardType: "action",
@@ -37829,11 +37106,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Veil of Darkness [102095] — fala D wierna (auto)
+    // Veil of Darkness [102095] — fala I wierna (auto)
     krcgId: 102095,
     name: "Veil of Darkness",
     cardType: "event",
@@ -37841,11 +37118,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Veil of Silence [102096] — fala D wierna (auto)
+    // Veil of Silence [102096] — fala I wierna (auto)
     krcgId: 102096,
     name: "Veil of Silence",
     cardType: "reaction",
@@ -37853,12 +37130,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDodge" }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Veiled Sight [102098] — fala D wierna (auto)
+    // Veiled Sight [102098] — fala I wierna (auto)
     krcgId: 102098,
     name: "Veiled Sight",
     cardType: "reaction",
@@ -37866,12 +37142,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Veles' Hunt [102099] — fala D wierna (auto)
+    // Veles' Hunt [102099] — fala I wierna (auto)
     krcgId: 102099,
     name: "Veles' Hunt",
     cardType: "politicalAction",
@@ -37879,11 +37154,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 3,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Velvet Tongue [102100] — fala D wierna (auto)
+    // Velvet Tongue [102100] — fala I wierna (auto)
     krcgId: 102100,
     name: "Velvet Tongue",
     cardType: "actionModifier",
@@ -37891,12 +37166,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Vendetta [102101] — fala D wierna (auto)
+    // Vendetta [102101] — fala I wierna (auto)
     krcgId: 102101,
     name: "Vendetta",
     cardType: "reaction",
@@ -37904,11 +37178,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Veneficti [102103] — fala D wierna (auto)
+    // Veneficti [102103] — fala I wierna (auto)
     krcgId: 102103,
     name: "Veneficti",
     cardType: "ally",
@@ -37917,11 +37191,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Venenation [102104] — fala D wierna (auto)
+    // Venenation [102104] — fala I wierna (auto)
     krcgId: 102104,
     name: "Venenation",
     cardType: "actionModifier",
@@ -37929,12 +37203,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ventrue Directorate Assembly [102108] — fala D wierna (auto)
+    // Ventrue Directorate Assembly [102108] — fala I wierna (auto)
     krcgId: 102108,
     name: "Ventrue Directorate Assembly",
     cardType: "master",
@@ -37942,11 +37215,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ventrue Investment [102110] — fala D wierna (auto)
+    // Ventrue Investment [102110] — fala I wierna (auto)
     krcgId: 102110,
     name: "Ventrue Investment",
     cardType: "master",
@@ -37958,7 +37231,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vial of Garou Blood [102115] — fala D wierna (auto)
+    // Vial of Garou Blood [102115] — fala I wierna (auto)
     krcgId: 102115,
     name: "Vial of Garou Blood",
     cardType: "equipment",
@@ -37966,11 +37239,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Vicissitude Poisoning [102117] — fala D wierna (auto)
+    // Vicissitude Poisoning [102117] — fala I wierna (auto)
     krcgId: 102117,
     name: "Vicissitude Poisoning",
     cardType: "master",
@@ -37982,7 +37255,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Victim of Habit [102118] — fala D wierna (auto)
+    // Victim of Habit [102118] — fala I wierna (auto)
     krcgId: 102118,
     name: "Victim of Habit",
     cardType: "action",
@@ -37990,24 +37263,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Vigil: The Thin Line [102119] — fala D wierna (auto)
+    // Vigil: The Thin Line [102119] — fala I wierna (auto)
     krcgId: 102119,
     name: "Vigil: The Thin Line",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Vigilance [102120] — fala D wierna (auto)
+    // Vigilance [102120] — fala I wierna (auto)
     krcgId: 102120,
     name: "Vigilance",
     cardType: "power",
@@ -38015,11 +37287,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "jud", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Violation of Trust [102122] — fala D wierna (auto)
+    // Violation of Trust [102122] — fala I wierna (auto)
     krcgId: 102122,
     name: "Violation of Trust",
     cardType: "action",
@@ -38027,17 +37299,16 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Virolax Facility [102123] — fala D wierna (auto)
+    // Virolax Facility [102123] — fala I wierna (auto)
     krcgId: 102123,
     name: "Virolax Facility",
     cardType: "master",
     bloodCost: 0,
     poolCost: 0,
-    unique: true,
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
@@ -38045,7 +37316,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Virtuosa [102124] — fala D wierna (auto)
+    // Virtuosa [102124] — fala I wierna (auto)
     krcgId: 102124,
     name: "Virtuosa",
     cardType: "actionModifier",
@@ -38053,13 +37324,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Visionquest [102125] — fala D wierna (auto)
+    // Visionquest [102125] — fala I wierna (auto)
     krcgId: 102125,
     name: "Visionquest",
     cardType: "action",
@@ -38067,11 +37336,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Vivienne Géroux [102128] — fala D wierna (auto)
+    // Vivienne Géroux [102128] — fala I wierna (auto)
     krcgId: 102128,
     name: "Vivienne Géroux",
     cardType: "ally",
@@ -38080,12 +37349,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Voice of Madness [102129] — fala D wierna (auto)
+    // Voice of Madness [102129] — fala I wierna (auto)
     krcgId: 102129,
     name: "Voice of Madness",
     cardType: "reaction",
@@ -38093,12 +37361,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Voices of the Castle [102130] — fala D wierna (auto)
+    // Voices of the Castle [102130] — fala I wierna (auto)
     krcgId: 102130,
     name: "Voices of the Castle",
     cardType: "reaction",
@@ -38106,13 +37373,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "vis", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Vox Senis [102133] — fala D wierna (auto)
+    // Vox Senis [102133] — fala I wierna (auto)
     krcgId: 102133,
     name: "Vox Senis",
     cardType: "master",
@@ -38125,7 +37390,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Vulture's Buffet [102135] — fala D wierna (auto)
+    // Vulture's Buffet [102135] — fala I wierna (auto)
     krcgId: 102135,
     name: "Vulture's Buffet",
     cardType: "action",
@@ -38133,13 +37398,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "spi", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Waiting Game [102136] — fala D wierna (auto)
+    // Waiting Game [102136] — fala I wierna (auto)
     krcgId: 102136,
     name: "Waiting Game",
     cardType: "event",
@@ -38147,11 +37410,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Walk of Caine [102138] — fala D wierna (auto)
+    // Walk of Caine [102138] — fala I wierna (auto)
     krcgId: 102138,
     name: "Walk of Caine",
     cardType: "actionModifier",
@@ -38159,12 +37422,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "san", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "san", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Walks-With-Might [102141] — fala D wierna (auto)
+    // Walks-With-Might [102141] — fala I wierna (auto)
     krcgId: 102141,
     name: "Walks-With-Might",
     cardType: "ally",
@@ -38173,11 +37435,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Wanderer's Counsel [102143] — fala D wierna (auto)
+    // Wanderer's Counsel [102143] — fala I wierna (auto)
     krcgId: 102143,
     name: "Wanderer's Counsel",
     cardType: "actionModifier",
@@ -38185,11 +37447,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "superior", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Warding the Beast [102146] — fala D wierna (auto)
+    // Warding the Beast [102146] — fala I wierna (auto)
     krcgId: 102146,
     name: "Warding the Beast",
     cardType: "action",
@@ -38197,13 +37459,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Watch Commander [102154] — fala D wierna (auto)
+    // Watch Commander [102154] — fala I wierna (auto)
     krcgId: 102154,
     name: "Watch Commander",
     cardType: "reaction",
@@ -38211,11 +37471,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Watchtower: Chosen are Called [102155] — fala D wierna (auto)
+    // Watchtower: Chosen are Called [102155] — fala I wierna (auto)
     krcgId: 102155,
     name: "Watchtower: Chosen are Called",
     cardType: "master",
@@ -38227,7 +37487,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Watchtower: Four Ride Forth [102156] — fala D wierna (auto)
+    // Watchtower: Four Ride Forth [102156] — fala I wierna (auto)
     krcgId: 102156,
     name: "Watchtower: Four Ride Forth",
     cardType: "master",
@@ -38239,7 +37499,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Watchtower: Greatest Fall [102157] — fala D wierna (auto)
+    // Watchtower: Greatest Fall [102157] — fala I wierna (auto)
     krcgId: 102157,
     name: "Watchtower: Greatest Fall",
     cardType: "politicalAction",
@@ -38247,11 +37507,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Watchtower: The Wolves Feed [102158] — fala D wierna (auto)
+    // Watchtower: The Wolves Feed [102158] — fala I wierna (auto)
     krcgId: 102158,
     name: "Watchtower: The Wolves Feed",
     cardType: "master",
@@ -38259,11 +37519,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Wave of Insanity [102160] — fala D wierna (auto)
+    // Wave of Insanity [102160] — fala I wierna (auto)
     krcgId: 102160,
     name: "Wave of Insanity",
     cardType: "action",
@@ -38271,12 +37531,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Wave of Lethargy [102161] — fala D wierna (auto)
+    // Wave of Lethargy [102161] — fala I wierna (auto)
     krcgId: 102161,
     name: "Wave of Lethargy",
     cardType: "combat",
@@ -38284,12 +37543,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Weakness [102163] — fala D wierna (auto)
+    // Weakness [102163] — fala I wierna (auto)
     krcgId: 102163,
     name: "Weakness",
     cardType: "combat",
@@ -38297,27 +37555,23 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Web of Knives Recruit [102165] — fala D wierna (auto)
+    // Web of Knives Recruit [102165] — fala I wierna (auto)
     krcgId: 102165,
     name: "Web of Knives Recruit",
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Weeping Stone [102167] — fala D wierna (auto)
+    // Weeping Stone [102167] — fala I wierna (auto)
     krcgId: 102167,
     name: "Weeping Stone",
     cardType: "master",
@@ -38331,7 +37585,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Weigh the Heart [102168] — fala D wierna (auto)
+    // Weigh the Heart [102168] — fala I wierna (auto)
     krcgId: 102168,
     name: "Weigh the Heart",
     cardType: "actionModifier",
@@ -38339,14 +37593,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Weirding Stone [102170] — fala D wierna (auto)
+    // Weirding Stone [102170] — fala I wierna (auto)
     krcgId: 102170,
     name: "Weirding Stone",
     cardType: "equipment",
@@ -38354,11 +37605,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Well-Marked [102172] — fala D wierna (auto)
+    // Well-Marked [102172] — fala I wierna (auto)
     krcgId: 102172,
     name: "Well-Marked",
     cardType: "action",
@@ -38366,11 +37617,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Wendell Delburton [102173] — fala D wierna (auto)
+    // Wendell Delburton [102173] — fala I wierna (auto)
     krcgId: 102173,
     name: "Wendell Delburton",
     cardType: "ally",
@@ -38379,11 +37630,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Werewolf Pack [102174] — fala D wierna (auto)
+    // Werewolf Pack [102174] — fala I wierna (auto)
     krcgId: 102174,
     name: "Werewolf Pack",
     cardType: "ally",
@@ -38392,11 +37643,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Whispers from the Dead [102175] — fala D wierna (auto)
+    // Whispers from the Dead [102175] — fala I wierna (auto)
     krcgId: 102175,
     name: "Whispers from the Dead",
     cardType: "action",
@@ -38404,12 +37655,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Whistling Up the Beast [102177] — fala D wierna (auto)
+    // Whistling Up the Beast [102177] — fala I wierna (auto)
     krcgId: 102177,
     name: "Whistling Up the Beast",
     cardType: "combat",
@@ -38417,12 +37667,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "abo", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "abo", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // White Nights Massacre [102178] — fala D wierna (auto)
+    // White Nights Massacre [102178] — fala I wierna (auto)
     krcgId: 102178,
     name: "White Nights Massacre",
     cardType: "event",
@@ -38430,11 +37679,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Wildebeest [102181] — fala D wierna (auto)
+    // The Wildebeest [102181] — fala I wierna (auto)
     krcgId: 102181,
     name: "The Wildebeest",
     cardType: "action",
@@ -38442,11 +37691,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Will of the Council [102182] — fala D wierna (auto)
+    // Will of the Council [102182] — fala I wierna (auto)
     krcgId: 102182,
     name: "Will of the Council",
     cardType: "action",
@@ -38454,11 +37703,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Will-o'-the-Wisp [102183] — fala D wierna (auto)
+    // Will-o'-the-Wisp [102183] — fala I wierna (auto)
     krcgId: 102183,
     name: "Will-o'-the-Wisp",
     cardType: "actionModifier",
@@ -38466,25 +37715,25 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Winchester Mansion [102184] — fala D wierna (auto)
+    // Winchester Mansion [102184] — fala I wierna (auto)
     krcgId: 102184,
     name: "Winchester Mansion",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 0,
     unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "superior", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Winged Second [102186] — fala D wierna (auto)
+    // Winged Second [102186] — fala I wierna (auto)
     krcgId: 102186,
     name: "Winged Second",
     cardType: "reaction",
@@ -38492,11 +37741,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "superior", discipline: "flight", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Wise Spider [102187] — fala D wierna (auto)
+    // Wise Spider [102187] — fala I wierna (auto)
     krcgId: 102187,
     name: "Wise Spider",
     cardType: "action",
@@ -38504,11 +37753,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Wolf Companion [102191] — fala D wierna (auto)
+    // Wolf Companion [102191] — fala I wierna (auto)
     krcgId: 102191,
     name: "Wolf Companion",
     cardType: "retainer",
@@ -38516,12 +37765,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "strikeDamage", amount: 1 }] },
-      { level: "superior", discipline: "ani", effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Wooden Stake [102192] — fala D wierna (auto)
+    // Wooden Stake [102192] — fala I wierna (auto)
     krcgId: 102192,
     name: "Wooden Stake",
     cardType: "equipment",
@@ -38529,11 +37777,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "strikeDamage", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The World's a Canvas [102193] — fala D wierna (auto)
+    // The World's a Canvas [102193] — fala I wierna (auto)
     krcgId: 102193,
     name: "The World's a Canvas",
     cardType: "action",
@@ -38542,13 +37790,11 @@ export const cardSpecs: CardSpec[] = [
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Wormwood [102194] — fala D wierna (auto)
+    // Wormwood [102194] — fala I wierna (auto)
     krcgId: 102194,
     name: "Wormwood",
     cardType: "event",
@@ -38556,11 +37802,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Wrath of the Inner Circle [102195] — fala D wierna (auto)
+    // Wrath of the Inner Circle [102195] — fala I wierna (auto)
     krcgId: 102195,
     name: "Wrath of the Inner Circle",
     cardType: "politicalAction",
@@ -38568,11 +37814,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Writ of Acceptance [102196] — fala D wierna (auto)
+    // Writ of Acceptance [102196] — fala I wierna (auto)
     krcgId: 102196,
     name: "Writ of Acceptance",
     cardType: "equipment",
@@ -38580,11 +37826,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Wrong and Crosswise [102197] — fala D wierna (auto)
+    // Wrong and Crosswise [102197] — fala I wierna (auto)
     krcgId: 102197,
     name: "Wrong and Crosswise",
     cardType: "reaction",
@@ -38592,12 +37838,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Year of Fortune [102200] — fala D wierna (auto)
+    // Year of Fortune [102200] — fala I wierna (auto)
     krcgId: 102200,
     name: "Year of Fortune",
     cardType: "politicalAction",
@@ -38605,24 +37850,25 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Zaire River Ferry [102203] — fala D wierna (auto)
+    // Zaire River Ferry [102203] — fala I wierna (auto)
     krcgId: 102203,
     name: "Zaire River Ferry",
     cardType: "equipment",
     bloodCost: 2,
     poolCost: 0,
     unique: true,
+    permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Zillah's Tears [102206] — fala D wierna (auto)
+    // Zillah's Tears [102206] — fala I wierna (auto)
     krcgId: 102206,
     name: "Zillah's Tears",
     cardType: "action",
@@ -38630,11 +37876,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Zillah's Valley [102207] — fala D wierna (auto)
+    // Zillah's Valley [102207] — fala I wierna (auto)
     krcgId: 102207,
     name: "Zillah's Valley",
     cardType: "master",
@@ -38646,7 +37892,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Zip Line [102209] — fala D wierna (auto)
+    // Zip Line [102209] — fala I wierna (auto)
     krcgId: 102209,
     name: "Zip Line",
     cardType: "action",
@@ -38654,11 +37900,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Zoning Board [102211] — fala D wierna (auto)
+    // Zoning Board [102211] — fala I wierna (auto)
     krcgId: 102211,
     name: "Zoning Board",
     cardType: "master",
@@ -38668,24 +37914,23 @@ export const cardSpecs: CardSpec[] = [
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Dark Web Procurer [102235] — fala D wierna (auto)
+    // Dark Web Procurer [102235] — fala I wierna (auto)
     krcgId: 102235,
     name: "Dark Web Procurer",
     cardType: "ally",
     bloodCost: 0,
     poolCost: 2,
-    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The British Museum, London [102236] — fala D wierna (auto)
+    // The British Museum, London [102236] — fala I wierna (auto)
     krcgId: 102236,
     name: "The British Museum, London",
     cardType: "master",
@@ -38699,7 +37944,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Enhanced Coagulant [102238] — fala D wierna (auto)
+    // Enhanced Coagulant [102238] — fala I wierna (auto)
     krcgId: 102238,
     name: "Enhanced Coagulant",
     cardType: "equipment",
@@ -38707,11 +37952,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Michael Harris, the Incinerator [102239] — fala D wierna (auto)
+    // Michael Harris, the Incinerator [102239] — fala I wierna (auto)
     krcgId: 102239,
     name: "Michael Harris, the Incinerator",
     cardType: "ally",
@@ -38720,11 +37965,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Mithraeum, London [102240] — fala D wierna (auto)
+    // The Mithraeum, London [102240] — fala I wierna (auto)
     krcgId: 102240,
     name: "The Mithraeum, London",
     cardType: "master",
@@ -38738,7 +37983,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Mithraic Cultist [102241] — fala D wierna (auto)
+    // Mithraic Cultist [102241] — fala I wierna (auto)
     krcgId: 102241,
     name: "Mithraic Cultist",
     cardType: "master",
@@ -38746,11 +37991,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Mobile HQ, Operation Antigen [102242] — fala D wierna (auto)
+    // Mobile HQ, Operation Antigen [102242] — fala I wierna (auto)
     krcgId: 102242,
     name: "Mobile HQ, Operation Antigen",
     cardType: "master",
@@ -38760,11 +38005,11 @@ export const cardSpecs: CardSpec[] = [
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Ritual Goblet [102243] — fala D wierna (auto)
+    // Ritual Goblet [102243] — fala I wierna (auto)
     krcgId: 102243,
     name: "Ritual Goblet",
     cardType: "equipment",
@@ -38773,11 +38018,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // The Shard, London [102244] — fala D wierna (auto)
+    // The Shard, London [102244] — fala I wierna (auto)
     krcgId: 102244,
     name: "The Shard, London",
     cardType: "master",
@@ -38787,11 +38032,11 @@ export const cardSpecs: CardSpec[] = [
     permanent: { where: "seat", statics: {}, tags: ["location"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Valerie Diaz, Antigen Commander [102245] — fala D wierna (auto)
+    // Valerie Diaz, Antigen Commander [102245] — fala I wierna (auto)
     krcgId: 102245,
     name: "Valerie Diaz, Antigen Commander",
     cardType: "ally",
@@ -38800,11 +38045,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Camarilla Conclave [102269] — fala D wierna (auto)
+    // Camarilla Conclave [102269] — fala I wierna (auto)
     krcgId: 102269,
     name: "Camarilla Conclave",
     cardType: "master",
@@ -38813,11 +38058,11 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Confiscation [102271] — fala D wierna (auto)
+    // Confiscation [102271] — fala I wierna (auto)
     krcgId: 102271,
     name: "Confiscation",
     cardType: "politicalAction",
@@ -38825,11 +38070,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: false }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Loup [102273] — fala D wierna (auto)
+    // Loup [102273] — fala I wierna (auto)
     krcgId: 102273,
     name: "Loup",
     cardType: "actionModifier",
@@ -38837,7 +38082,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
 ];
