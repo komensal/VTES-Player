@@ -3402,12 +3402,11 @@ export const cardSpecs: CardSpec[] = [
   },
   // --- GEHENNA: the recurring event (docs/gehenna-events-design.md) ---
   {
-    // Dragonbound [100581] — fala 29 wierna (Event Gehenna, faithful)
+    // Dragonbound [100581] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100581,
     name: "Dragonbound",
     cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
@@ -3435,12 +3434,11 @@ export const cardSpecs: CardSpec[] = [
     modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
-    // Conquest of Humanity [100409] — fala 29 wierna (Event Gehenna, faithful)
+    // Conquest of Humanity [100409] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100409,
     name: "Conquest of Humanity",
     cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
@@ -3460,15 +3458,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Becoming of Ennoia [100148] — fala 29 wierna (Event Gehenna, faithful)
+    // Becoming of Ennoia [100148] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100148,
     name: "Becoming of Ennoia",
     cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
     ],
   },
   {
@@ -3605,12 +3602,11 @@ export const cardSpecs: CardSpec[] = [
   },
   // --- Events that keep a COUNTER (docs/counter-clock-events-design.md) ---
   {
-    // Dr. Marisa Fletcher, CDC [100577] — fala 29 wierna (Event Gehenna, faithful)
+    // Dr. Marisa Fletcher, CDC [100577] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100577,
     name: "Dr. Marisa Fletcher, CDC",
     cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
@@ -13807,12 +13803,11 @@ export const cardSpecs: CardSpec[] = [
     modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
-    // Blood Trade [100215] — fala 29 wierna (Event Gehenna, faithful)
+    // Blood Trade [100215] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100215,
     name: "Blood Trade",
     cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
@@ -20484,19 +20479,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Abandoning the Flesh [100005] — fala 35 wierna (faithful rebuild)
+    // Abandoning the Flesh [100005] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100005,
     name: "Abandoning the Flesh",
     cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }] },
-      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }] }
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Absorb the Mind [100013] — fala 35 wierna (faithful rebuild)
+    // Absorb the Mind [100013] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100013,
     name: "Absorb the Mind",
     cardType: "combat",
@@ -20508,7 +20502,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ahriman's Demesne [100027] — fala 41 wierna (bespoke Master Trifle)
+    // Ahriman's Demesne [100027] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100027,
     name: "Ahriman's Demesne",
     cardType: "combat",
@@ -20519,19 +20513,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Alpha Glint [100040] — fala 35 wierna (faithful rebuild)
+    // Alpha Glint [100040] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100040,
     name: "Alpha Glint",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "ani", effects: [{ kind: "combatEnds" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "combatEnds" }] }
     ],
   },
   {
-    // Amaranth [100043] — fala 41 wierna (bespoke Master Trifle)
+    // Amaranth [100043] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100043,
     name: "Amaranth",
     cardType: "combat",
@@ -20542,31 +20536,30 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Amria [100047] — fala 35 wierna (faithful rebuild)
+    // Amria [100047] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100047,
     name: "Amria",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Anesthetic Touch [100066] — fala 35 wierna (faithful rebuild)
+    // Anesthetic Touch [100066] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100066,
     name: "Anesthetic Touch",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "strikeDodge" }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: "obe", effects: [{ kind: "strikeDodge" }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "strikeDodge" }, { kind: "combatEnds" }] }
     ],
   },
   {
-    // Armor of Caine's Fury [100087] — fala 35 wierna (faithful rebuild)
+    // Armor of Caine's Fury [100087] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100087,
     name: "Armor of Caine's Fury",
     cardType: "combat",
@@ -20578,19 +20571,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Armor of Vitality [100089] — fala 35 wierna (faithful rebuild)
+    // Armor of Vitality [100089] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100089,
     name: "Armor of Vitality",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 3 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "prevent", base: 3 }] }
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 3 }] }
     ],
   },
   {
-    // Ashes to Ashes [100105] — fala 35 wierna (faithful rebuild)
+    // Ashes to Ashes [100105] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100105,
     name: "Ashes to Ashes",
     cardType: "combat",
@@ -20602,30 +20594,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Aura Reading [100113] — fala 35 wierna (faithful rebuild)
+    // Aura Reading [100113] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100113,
     name: "Aura Reading",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Autonomic Mastery [100117] — fala 36 wierna (300) faithful rebuild
+    // Autonomic Mastery [100117] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100117,
     name: "Autonomic Mastery",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: "dom", effects: [{ kind: "strikeDodge" }, { kind: "combatEnds" }] }
     ],
   },
   {
-    // Baal's Bloody Talons [100121] — fala 36 wierna (300) faithful rebuild
+    // Baal's Bloody Talons [100121] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100121,
     name: "Baal's Bloody Talons",
     cardType: "combat",
@@ -20636,7 +20627,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Backstab [100124] — fala 36 wierna (300) faithful rebuild
+    // Backstab [100124] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100124,
     name: "Backstab",
     cardType: "combat",
@@ -20647,19 +20638,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Basilisk's Touch [100138] — fala 36 wierna (300) faithful rebuild
+    // Basilisk's Touch [100138] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100138,
     name: "Basilisk's Touch",
     cardType: "combat",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "myt", effects: [{ kind: "modifyStrength", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // Bestial Vengeance [100153] — fala 36 wierna (300) faithful rebuild
+    // Bestial Vengeance [100153] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100153,
     name: "Bestial Vengeance",
     cardType: "combat",
@@ -20670,7 +20661,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blade Clot [100174] — fala 36 wierna (300) faithful rebuild
+    // Blade Clot [100174] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100174,
     name: "Blade Clot",
     cardType: "actionmodifier",
@@ -20681,31 +20672,31 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bliss [100189] — fala 36 wierna (300) faithful rebuild
+    // Bliss [100189] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100189,
     name: "Bliss",
     cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "dom", effects: [{ kind: "combatEnds" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "combatEnds" }] }
     ],
   },
   {
-    // Blissful Agony [100190] — fala 36 wierna (300) faithful rebuild
+    // Blissful Agony [100190] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100190,
     name: "Blissful Agony",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "prevent", base: 2 }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "prevent", base: 2 }] }
+      { level: "basic", discipline: "val", effects: [{ kind: "combatEnds" }, { kind: "prevent", base: 2 }] },
+      { level: "basic", discipline: "ani", effects: [{ kind: "combatEnds" }, { kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Blood of Acid [100203] — fala 36 wierna (300) faithful rebuild
+    // Blood of Acid [100203] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100203,
     name: "Blood of Acid",
     cardType: "combat",
@@ -20716,7 +20707,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood of the Cobra [100205] — fala 36 wierna (300) faithful rebuild
+    // Blood of the Cobra [100205] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100205,
     name: "Blood of the Cobra",
     cardType: "combat",
@@ -20727,7 +20718,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Body of Sun [100231] — fala 36 wierna (300) faithful rebuild
+    // Body of Sun [100231] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100231,
     name: "Body of Sun",
     cardType: "combat",
@@ -20738,30 +20729,30 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bond with the Mountain [100235] — fala 36 wierna (300) faithful rebuild
+    // Bond with the Mountain [100235] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100235,
     name: "Bond with the Mountain",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDodge" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }, { kind: "combatEnds" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }, { kind: "combatEnds" }] }
     ],
   },
   {
-    // Bonecraft [100238] — fala 36 wierna (300) faithful rebuild
+    // Bonecraft [100238] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100238,
     name: "Bonecraft",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Botched Move [100241] — fala 36 wierna (300) faithful rebuild
+    // Botched Move [100241] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100241,
     name: "Botched Move",
     cardType: "combat",
@@ -20785,7 +20776,7 @@ export const cardSpecs: CardSpec[] = [
   },
 
   {
-    // Abyssal Hunter [100014] — fala 41 wierna (bespoke Master Trifle)
+    // Abyssal Hunter [100014] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100014,
     name: "Abyssal Hunter",
     cardType: "ally",
@@ -20797,20 +20788,20 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Adhocracy [100022] — fala 35 wierna (faithful rebuild)
+    // Adhocracy [100022] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100022,
     name: "Adhocracy",
     cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyBleed", amount: 1 }] },
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1 }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyBleed", amount: 1 }] }
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStrength", amount: 1 }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStrength", amount: 1 }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // Agate Talisman [100024] — fala 35 wierna (faithful rebuild)
+    // Agate Talisman [100024] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100024,
     name: "Agate Talisman",
     cardType: "equipment",
@@ -20821,19 +20812,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Alacrity [100036] — fala 35 wierna (faithful rebuild)
+    // Alacrity [100036] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100036,
     name: "Alacrity",
     cardType: "modifier",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
     ],
   },
   {
-    // Amulet of Temporal Perception [100048] — fala 41 wierna (bespoke Master Trifle)
+    // Amulet of Temporal Perception [100048] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100048,
     name: "Amulet of Temporal Perception",
     cardType: "equipment",
@@ -20844,7 +20834,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ananasi Vampirephile [100051] — fala 35 wierna (faithful rebuild)
+    // Ananasi Vampirephile [100051] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100051,
     name: "Ananasi Vampirephile",
     cardType: "ally",
@@ -20852,33 +20842,33 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 4,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Anarch Manifesto, An [100053] — fala 35 wierna (faithful rebuild)
+    // Anarch Manifesto, An [100053] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100053,
     name: "Anarch Manifesto, An",
     cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // The Ancestor's Talisman [100063] — fala 41 wierna (bespoke Master Trifle)
+    // The Ancestor's Talisman [100063] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100063,
     name: "The Ancestor's Talisman",
     cardType: "equipment",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Animal Magnetism [100069] — fala 35 wierna (faithful rebuild)
+    // Animal Magnetism [100069] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100069,
     name: "Animal Magnetism",
     cardType: "modifier",
@@ -20890,7 +20880,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Ankara Citadel, Turkey [100071] — fala 35 wierna (faithful rebuild)
+    // The Ankara Citadel, Turkey [100071] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100071,
     name: "The Ankara Citadel, Turkey",
     cardType: "equipment",
@@ -20901,19 +20891,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Approximation of Loyalty [100078] — fala 35 wierna (faithful rebuild)
+    // Approximation of Loyalty [100078] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100078,
     name: "Approximation of Loyalty",
     cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "pre", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Arcane Appraiser [100080] — fala 35 wierna (faithful rebuild)
+    // Arcane Appraiser [100080] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100080,
     name: "Arcane Appraiser",
     cardType: "ally",
@@ -20924,7 +20913,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Argent Baton [100086] — fala 35 wierna (faithful rebuild)
+    // Argent Baton [100086] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100086,
     name: "Argent Baton",
     cardType: "equipment",
@@ -20935,31 +20924,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Army of Apparitions [100092] — fala 35 wierna (faithful rebuild)
+    // Army of Apparitions [100092] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100092,
     name: "Army of Apparitions",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "superior", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // As the Crow [100102] — fala 35 wierna (faithful rebuild)
+    // As the Crow [100102] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100102,
     name: "As the Crow",
     cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "flight", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Asanbonsam Ghoul [100103] — fala 35 wierna (faithful rebuild)
+    // Asanbonsam Ghoul [100103] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100103,
     name: "Asanbonsam Ghoul",
     cardType: "ally",
@@ -20970,7 +20957,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Aversion [100118] — fala 36 wierna (300) faithful rebuild
+    // Aversion [100118] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100118,
     name: "Aversion",
     cardType: "reaction",
@@ -20982,7 +20969,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Awe [100119] — fala 36 wierna (300) faithful rebuild
+    // Awe [100119] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100119,
     name: "Awe",
     cardType: "modifier",
@@ -20993,7 +20980,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Babble [100122] — fala 36 wierna (300) faithful rebuild
+    // Babble [100122] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100122,
     name: "Babble",
     cardType: "reaction",
@@ -21004,7 +20991,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Baleful Doll [100127] — fala 36 wierna (300) faithful rebuild
+    // Baleful Doll [100127] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100127,
     name: "Baleful Doll",
     cardType: "equipment",
@@ -21015,7 +21002,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Banshee Ironwail [100133] — fala 36 wierna (300) faithful rebuild
+    // Banshee Ironwail [100133] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100133,
     name: "Banshee Ironwail",
     cardType: "equipment",
@@ -21027,7 +21014,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Beretta 9mm [100152] — fala 36 wierna (300) faithful rebuild
+    // Beretta 9mm [100152] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100152,
     name: "Beretta 9mm",
     cardType: "equipment",
@@ -21039,7 +21026,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bima [100160] — fala 36 wierna (300) faithful rebuild
+    // Bima [100160] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100160,
     name: "Bima",
     cardType: "ally",
@@ -21050,7 +21037,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bind the Night-Walker [100161] — fala 36 wierna (300) faithful rebuild
+    // Bind the Night-Walker [100161] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100161,
     name: "Bind the Night-Walker",
     cardType: "reaction",
@@ -21061,18 +21048,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Black Beast [100164] — fala 36 wierna (300) faithful rebuild
+    // The Black Beast [100164] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100164,
     name: "The Black Beast",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }, { kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // Black Gloves [100166] — fala 36 wierna (300) faithful rebuild
+    // Black Gloves [100166] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100166,
     name: "Black Gloves",
     cardType: "equipment",
@@ -21084,7 +21071,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Black Spiral Buddy [100170] — fala 36 wierna (300) faithful rebuild
+    // Black Spiral Buddy [100170] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100170,
     name: "Black Spiral Buddy",
     cardType: "ally",
@@ -21096,7 +21083,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Black Sunrise [100171] — fala 36 wierna (300) faithful rebuild
+    // Black Sunrise [100171] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100171,
     name: "Black Sunrise",
     cardType: "reaction",
@@ -21107,7 +21094,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blanket of Night [100177] — fala 36 wierna (300) faithful rebuild
+    // Blanket of Night [100177] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100177,
     name: "Blanket of Night",
     cardType: "modifier",
@@ -21118,7 +21105,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Shield [100209] — fala 36 wierna (300) faithful rebuild
+    // Blood Shield [100209] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100209,
     name: "Blood Shield",
     cardType: "equipment",
@@ -21130,7 +21117,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bloodstone [100223] — fala 36 wierna (300) faithful rebuild
+    // Bloodstone [100223] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100223,
     name: "Bloodstone",
     cardType: "equipment",
@@ -21141,7 +21128,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bloodstorm of Chorazin [100224] — fala 36 wierna (300) faithful rebuild
+    // Bloodstorm of Chorazin [100224] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100224,
     name: "Bloodstorm of Chorazin",
     cardType: "reaction",
@@ -21152,7 +21139,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bomb [100233] — fala 36 wierna (300) faithful rebuild
+    // Bomb [100233] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100233,
     name: "Bomb",
     cardType: "equipment",
@@ -21164,7 +21151,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Book of Going Forth by Night [100239] — fala 36 wierna (300) faithful rebuild
+    // The Book of Going Forth by Night [100239] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100239,
     name: "The Book of Going Forth by Night",
     cardType: "equipment",
@@ -21176,7 +21163,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Breath of the Dragon [100250] — fala 36 wierna (300) faithful rebuild
+    // Breath of the Dragon [100250] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100250,
     name: "Breath of the Dragon",
     cardType: "combat",
@@ -21187,7 +21174,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Brick by Brick [100252] — fala 36 wierna (300) faithful rebuild
+    // Brick by Brick [100252] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100252,
     name: "Brick by Brick",
     cardType: "combat",
@@ -21199,7 +21186,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Brigitte Gebauer [100254] — fala 36 wierna (300) faithful rebuild
+    // Brigitte Gebauer [100254] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100254,
     name: "Brigitte Gebauer",
     cardType: "ally",
@@ -21211,7 +21198,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Brother's Blood [100257] — fala 36 wierna (300) faithful rebuild
+    // Brother's Blood [100257] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100257,
     name: "Brother's Blood",
     cardType: "combat",
@@ -21222,7 +21209,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bundi [100267] — fala 36 wierna (300) faithful rebuild
+    // Bundi [100267] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100267,
     name: "Bundi",
     cardType: "equipment",
@@ -21234,7 +21221,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Business Pressure [100274] — fala 36 wierna (300) faithful rebuild
+    // Business Pressure [100274] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100274,
     name: "Business Pressure",
     cardType: "modifier",
@@ -21245,7 +21232,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Caiaphas Smith [100276] — fala 36 wierna (300) faithful rebuild
+    // Caiaphas Smith [100276] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100276,
     name: "Caiaphas Smith",
     cardType: "ally",
@@ -21257,7 +21244,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Call of the Hungry Dead [100279] — fala 36 wierna (300) faithful rebuild
+    // Call of the Hungry Dead [100279] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100279,
     name: "Call of the Hungry Dead",
     cardType: "modifier",
@@ -21268,7 +21255,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Call the Lamprey [100281] — fala 36 wierna (300) faithful rebuild
+    // Call the Lamprey [100281] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100281,
     name: "Call the Lamprey",
     cardType: "combat",
@@ -21279,7 +21266,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Camaraderie [100283] — fala 36 wierna (300) faithful rebuild
+    // Camaraderie [100283] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100283,
     name: "Camaraderie",
     cardType: "reaction",
@@ -21290,7 +21277,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Camarilla Vitae Slave [100286] — fala 36 wierna (300) faithful rebuild
+    // Camarilla Vitae Slave [100286] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100286,
     name: "Camarilla Vitae Slave",
     cardType: "retainer",
@@ -21301,7 +21288,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Camera Phone [100287] — fala 36 wierna (300) faithful rebuild
+    // Camera Phone [100287] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100287,
     name: "Camera Phone",
     cardType: "equipment",
@@ -21312,7 +21299,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Canopic Jar [100291] — fala 36 wierna (300) faithful rebuild
+    // Canopic Jar [100291] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100291,
     name: "Canopic Jar",
     cardType: "equipment",
@@ -21323,18 +21310,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Car Bomb [100293] — fala 36 wierna (300) faithful rebuild
+    // Car Bomb [100293] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100293,
     name: "Car Bomb",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Cardinal Sin: Failure of Mission [100295] — fala 36 wierna (300) faithful rebuild
+    // Cardinal Sin: Failure of Mission [100295] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100295,
     name: "Cardinal Sin: Failure of Mission",
     cardType: "reaction",
@@ -21345,7 +21332,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Cardinal Sin: Insubordination [100296] — fala 36 wierna (300) faithful rebuild
+    // Cardinal Sin: Insubordination [100296] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100296,
     name: "Cardinal Sin: Insubordination",
     cardType: "reaction",
@@ -21356,7 +21343,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Carlton Van Wyk [100298] — fala 36 wierna (300) faithful rebuild
+    // Carlton Van Wyk [100298] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100298,
     name: "Carlton Van Wyk",
     cardType: "ally",
@@ -21368,7 +21355,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Catacombs [100306] — fala 36 wierna (300) faithful rebuild
+    // Catacombs [100306] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100306,
     name: "Catacombs",
     cardType: "equipment",
@@ -21379,7 +21366,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Chalice of Kinship [100319] — fala 36 wierna (300) faithful rebuild
+    // Chalice of Kinship [100319] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100319,
     name: "Chalice of Kinship",
     cardType: "equipment",
@@ -21387,11 +21374,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Changeling [100324] — fala 36 wierna (300) faithful rebuild
+    // Changeling [100324] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100324,
     name: "Changeling",
     cardType: "modifier",
@@ -21402,7 +21389,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Charnas the Imp [100335] — fala 36 wierna (300) faithful rebuild
+    // Charnas the Imp [100335] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100335,
     name: "Charnas the Imp",
     cardType: "retainer",
@@ -21413,7 +21400,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Chiram's Hold [100343] — fala 36 wierna (300) faithful rebuild
+    // Chiram's Hold [100343] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100343,
     name: "Chiram's Hold",
     cardType: "combat",
@@ -21424,7 +21411,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Chiropteran Marauder [100344] — fala 36 wierna (300) faithful rebuild
+    // Chiropteran Marauder [100344] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100344,
     name: "Chiropteran Marauder",
     cardType: "combat",
@@ -21435,18 +21422,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Circle [100349] — fala 36 wierna (300) faithful rebuild
+    // Circle [100349] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100349,
     name: "Circle",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Circumspect Revelation [100350] — fala 36 wierna (300) faithful rebuild
+    // Circumspect Revelation [100350] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100350,
     name: "Circumspect Revelation",
     cardType: "modifier",
@@ -21457,7 +21444,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Claiming the Body [100352] — fala 36 wierna (300) faithful rebuild
+    // Claiming the Body [100352] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100352,
     name: "Claiming the Body",
     cardType: "modifier",
@@ -21468,7 +21455,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Clockwerx [100363] — fala 36 wierna (300) faithful rebuild
+    // Clockwerx [100363] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100363,
     name: "Clockwerx",
     cardType: "combat",
@@ -21479,7 +21466,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Coagulate Blood [100368] — fala 36 wierna (300) faithful rebuild
+    // Coagulate Blood [100368] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100368,
     name: "Coagulate Blood",
     cardType: "combat",
@@ -21490,7 +21477,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Cobra Fangs [100370] — fala 36 wierna (300) faithful rebuild
+    // Cobra Fangs [100370] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100370,
     name: "Cobra Fangs",
     cardType: "combat",
@@ -21501,7 +21488,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Codex of the Damned [100373] — fala 36 wierna (300) faithful rebuild
+    // Codex of the Damned [100373] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100373,
     name: "Codex of the Damned",
     cardType: "equipment",
@@ -21512,30 +21499,30 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Cold Aura [100376] — fala 36 wierna (300) faithful rebuild
+    // Cold Aura [100376] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100376,
     name: "Cold Aura",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Collapse the Arches [100377] — fala 36 wierna (300) faithful rebuild
+    // Collapse the Arches [100377] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100377,
     name: "Collapse the Arches",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDodge" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDodge" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Coma [100378] — fala 36 wierna (300) faithful rebuild
+    // Coma [100378] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100378,
     name: "Coma",
     cardType: "combat",
@@ -21546,7 +21533,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Command [100380] — fala 36 wierna (300) faithful rebuild
+    // Command [100380] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100380,
     name: "Command",
     cardType: "modifier",
@@ -21557,7 +21544,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Command of the Beast [100381] — fala 36 wierna (300) faithful rebuild
+    // Command of the Beast [100381] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100381,
     name: "Command of the Beast",
     cardType: "modifier",
@@ -21568,7 +21555,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Concoction of Vitality [100394] — fala 36 wierna (300) faithful rebuild
+    // Concoction of Vitality [100394] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100394,
     name: "Concoction of Vitality",
     cardType: "equipment",
@@ -21580,7 +21567,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Confusion [100405] — fala 36 wierna (300) faithful rebuild
+    // Confusion [100405] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100405,
     name: "Confusion",
     cardType: "modifier",
@@ -21591,7 +21578,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Confusion of the Eye [100406] — fala 36 wierna (300) faithful rebuild
+    // Confusion of the Eye [100406] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100406,
     name: "Confusion of the Eye",
     cardType: "reaction",
@@ -21602,7 +21589,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Coordinate Attacks [100423] — fala 36 wierna (300) faithful rebuild
+    // Coordinate Attacks [100423] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100423,
     name: "Coordinate Attacks",
     cardType: "combat",
@@ -21613,7 +21600,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Corpse Balloon [100427] — fala 36 wierna (300) faithful rebuild
+    // Corpse Balloon [100427] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100427,
     name: "Corpse Balloon",
     cardType: "retainer",
@@ -21624,7 +21611,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Coterie Tactics [100432] — fala 36 wierna (300) faithful rebuild
+    // Coterie Tactics [100432] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100432,
     name: "Coterie Tactics",
     cardType: "reaction",
@@ -21635,7 +21622,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Council of Seraphim [100433] — fala 36 wierna (300) faithful rebuild
+    // Council of Seraphim [100433] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100433,
     name: "Council of Seraphim",
     cardType: "modifier",
@@ -21646,7 +21633,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Covincraft [100437] — fala 36 wierna (300) faithful rebuild
+    // Covincraft [100437] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100437,
     name: "Covincraft",
     cardType: "reaction",
@@ -21657,19 +21644,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Crawling Chamber [100439] — fala 36 wierna (300) faithful rebuild
+    // Crawling Chamber [100439] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100439,
     name: "Crawling Chamber",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Creeping Infection [100443] — fala 36 wierna (300) faithful rebuild
+    // Creeping Infection [100443] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100443,
     name: "Creeping Infection",
     cardType: "combat",
@@ -21680,7 +21667,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // CrimethInc. [100446] — fala 36 wierna (300) faithful rebuild
+    // CrimethInc. [100446] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100446,
     name: "CrimethInc.",
     cardType: "modifier",
@@ -21693,7 +21680,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Crimson Sentinel [100448] — fala 36 wierna (300) faithful rebuild
+    // The Crimson Sentinel [100448] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100448,
     name: "The Crimson Sentinel",
     cardType: "equipment",
@@ -21705,7 +21692,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Crocodile's Tongue [100450] — fala 36 wierna (300) faithful rebuild
+    // Crocodile's Tongue [100450] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100450,
     name: "Crocodile's Tongue",
     cardType: "modifier",
@@ -21716,7 +21703,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // D'habi Revenant [100484] — fala 36 wierna (300) faithful rebuild
+    // D'habi Revenant [100484] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100484,
     name: "D'habi Revenant",
     cardType: "retainer",
@@ -21727,7 +21714,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Dagger [100487] — fala 36 wierna (300) faithful rebuild
+    // Dagger [100487] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100487,
     name: "Dagger",
     cardType: "equipment",
@@ -21735,56 +21722,56 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Dagon's Call [100488] — fala 36 wierna (300) faithful rebuild
+    // Dagon's Call [100488] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100488,
     name: "Dagon's Call",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", base: 2 }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "press", continues: "optional" }, { kind: "prevent", base: 2 }] }
     ],
   },
   {
-    // Darkling Trickery [100496] — fala 36 wierna (300) faithful rebuild
+    // Darkling Trickery [100496] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100496,
     name: "Darkling Trickery",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "myt", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Darkness Within [100497] — fala 36 wierna (300) faithful rebuild
+    // Darkness Within [100497] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100497,
     name: "Darkness Within",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }, { kind: "combatEnds" }] }
     ],
   },
   {
-    // Darksight [100498] — fala 36 wierna (300) faithful rebuild
+    // Darksight [100498] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100498,
     name: "Darksight",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Dartmoor, England [100499] — fala 36 wierna (300) faithful rebuild
+    // Dartmoor, England [100499] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100499,
     name: "Dartmoor, England",
     cardType: "equipment",
@@ -21795,7 +21782,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Dauntain Black Magician [100500] — fala 36 wierna (300) faithful rebuild
+    // Dauntain Black Magician [100500] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100500,
     name: "Dauntain Black Magician",
     cardType: "ally",
@@ -21807,7 +21794,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Day Operation [100502] — fala 36 wierna (300) faithful rebuild
+    // Day Operation [100502] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100502,
     name: "Day Operation",
     cardType: "modifier",
@@ -21818,18 +21805,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Dead Hand [100503] — fala 36 wierna (300) faithful rebuild
+    // Dead Hand [100503] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100503,
     name: "Dead Hand",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "prevent", base: 2 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // The Deadliest Sin [100505] — fala 36 wierna (300) faithful rebuild
+    // The Deadliest Sin [100505] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100505,
     name: "The Deadliest Sin",
     cardType: "reaction",
@@ -21840,19 +21827,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Death of the Drum [100508] — fala 36 wierna (300) faithful rebuild
+    // Death of the Drum [100508] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100508,
     name: "Death of the Drum",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "prevent", base: 2 }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "prevent", base: 2 }] }
+      { level: "basic", discipline: "mel", effects: [{ kind: "maneuver" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Deed the Heart's Desire [100513] — fala 36 wierna (300) faithful rebuild
+    // Deed the Heart's Desire [100513] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100513,
     name: "Deed the Heart's Desire",
     cardType: "modifier",
@@ -21863,7 +21850,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Detect Authority [100532] — fala 36 wierna (300) faithful rebuild
+    // Detect Authority [100532] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100532,
     name: "Detect Authority",
     cardType: "reaction",
@@ -21876,7 +21863,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Disease [100553] — fala 36 wierna (300) faithful rebuild
+    // Disease [100553] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100553,
     name: "Disease",
     cardType: "combat",
@@ -21887,7 +21874,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Disguised Weapon [100555] — fala 36 wierna (300) faithful rebuild
+    // Disguised Weapon [100555] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100555,
     name: "Disguised Weapon",
     cardType: "combat",
@@ -21898,18 +21885,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Divine Image [100565] — fala 36 wierna (300) faithful rebuild
+    // Divine Image [100565] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100565,
     name: "Divine Image",
     cardType: "modifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "prevent", base: 1 }] }
+      { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "prevent", base: 1 }, { kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // Domain of Evernight [100571] — fala 36 wierna (300) faithful rebuild
+    // Domain of Evernight [100571] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100571,
     name: "Domain of Evernight",
     cardType: "modifier",
@@ -21921,7 +21908,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Draeven Softfoot [100579] — fala 36 wierna (300) faithful rebuild
+    // Draeven Softfoot [100579] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100579,
     name: "Draeven Softfoot",
     cardType: "ally",
@@ -21932,7 +21919,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Duma Rafiki [100593] — fala 36 wierna (300) faithful rebuild
+    // Duma Rafiki [100593] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100593,
     name: "Duma Rafiki",
     cardType: "retainer",
@@ -21943,15 +21930,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Dust to Dust [100596] — fala 36 wierna (300) faithful rebuild
+    // Dust to Dust [100596] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100596,
     name: "Dust to Dust",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }] }
+      { level: "basic", discipline: "thn", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
@@ -25799,18 +25786,18 @@ export const cardSpecs: CardSpec[] = [
   },
 
   {
-    // Achilles' Heel [100017] — fala 41 wierna (bespoke Master Trifle)
+    // Achilles' Heel [100017] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100017,
     name: "Achilles' Heel",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "attachSelf" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Acquired Ventrue Assets [100019] — fala 35 wierna (faithful rebuild)
+    // Acquired Ventrue Assets [100019] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100019,
     name: "Acquired Ventrue Assets",
     cardType: "master",
@@ -25821,29 +25808,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Admonitions [100023] — fala 41 wierna (bespoke Master Trifle)
+    // The Admonitions [100023] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100023,
     name: "The Admonitions",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "attachSelf" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Agent of Power [100025] — fala 41 wierna (bespoke Master Trifle)
+    // Agent of Power [100025] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100025,
     name: "Agent of Power",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "attachSelf" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Aggressive Tactics [100026] — fala 35 wierna (faithful rebuild)
+    // Aggressive Tactics [100026] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100026,
     name: "Aggressive Tactics",
     cardType: "master",
@@ -25855,41 +25842,41 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ahrimane Protectorate [100028] — fala 41 wierna (bespoke Master Trifle)
+    // Ahrimane Protectorate [100028] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100028,
     name: "Ahrimane Protectorate",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // The Ailing Spirit [100030] — fala 35 wierna (faithful rebuild)
+    // The Ailing Spirit [100030] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100030,
     name: "The Ailing Spirit",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Akunanse Kholo [100034] — fala 41 wierna (bespoke Master Trifle)
+    // Akunanse Kholo [100034] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100034,
     name: "Akunanse Kholo",
     cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
   },
   {
-    // Anachronism [100050] — fala 35 wierna (faithful rebuild)
+    // Anachronism [100050] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100050,
     name: "Anachronism",
     cardType: "master",
@@ -25901,18 +25888,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Anarch Secession [100057] — fala 35 wierna (faithful rebuild)
+    // Anarch Secession [100057] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100057,
     name: "Anarch Secession",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Anathema [100060] — fala 41 wierna (bespoke Master Trifle)
+    // Anathema [100060] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100060,
     name: "Anathema",
     cardType: "politicalAction",
@@ -25923,30 +25910,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ancestor Spirit [100061] — fala 41 wierna (bespoke Master Trifle)
+    // Ancestor Spirit [100061] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100061,
     name: "Ancestor Spirit",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Anima Gathering [100068] — fala 35 wierna (faithful rebuild)
+    // Anima Gathering [100068] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100068,
     name: "Anima Gathering",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Anonymous Freight [100072] — fala 35 wierna (faithful rebuild)
+    // Anonymous Freight [100072] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100072,
     name: "Anonymous Freight",
     cardType: "action",
@@ -25957,7 +25943,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Antediluvian Awakening [100073] — fala 35 wierna (faithful rebuild)
+    // Antediluvian Awakening [100073] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100073,
     name: "Antediluvian Awakening",
     cardType: "master",
@@ -25968,31 +25954,30 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Antithesis [100075] — fala 35 wierna (faithful rebuild)
+    // Antithesis [100075] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100075,
     name: "Antithesis",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "jud", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "superior", discipline: "jud", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "jud", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Armor of Terra [100088] — fala 35 wierna (faithful rebuild)
+    // Armor of Terra [100088] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100088,
     name: "Armor of Terra",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "prevent", base: 1 }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "prevent", base: 1 }] }
+      { level: "basic", discipline: "vis", effects: [{ kind: "prevent", base: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "prevent", base: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // The Art of Pain [100098] — fala 35 wierna (faithful rebuild)
+    // The Art of Pain [100098] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100098,
     name: "The Art of Pain",
     cardType: "master",
@@ -26004,19 +25989,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Art's Traumatic Essence [100100] — fala 35 wierna (faithful rebuild)
+    // Art's Traumatic Essence [100100] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100100,
     name: "Art's Traumatic Essence",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Aura Absorption [100111] — fala 35 wierna (faithful rebuild)
+    // Aura Absorption [100111] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100111,
     name: "Aura Absorption",
     cardType: "modifierOrReaction",
@@ -26028,7 +26013,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Auto-da-fé [100116] — fala 36 wierna (300) faithful rebuild
+    // Auto-da-fé [100116] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100116,
     name: "Auto-da-fé",
     cardType: "politicalAction",
@@ -26039,29 +26024,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Baltimore Purge [100128] — fala 36 wierna (300) faithful rebuild
+    // Baltimore Purge [100128] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100128,
     name: "Baltimore Purge",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Barrenness [100134] — fala 36 wierna (300) faithful rebuild
+    // Barrenness [100134] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100134,
     name: "Barrenness",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mal", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "mal", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Bastille Opera House [100140] — fala 36 wierna (300) faithful rebuild
+    // Bastille Opera House [100140] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100140,
     name: "Bastille Opera House",
     cardType: "master",
@@ -26072,7 +26057,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bay and Howl [100143] — fala 36 wierna (300) faithful rebuild
+    // Bay and Howl [100143] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100143,
     name: "Bay and Howl",
     cardType: "master",
@@ -26083,7 +26068,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bear-Baiting [100144] — fala 36 wierna (300) faithful rebuild
+    // Bear-Baiting [100144] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100144,
     name: "Bear-Baiting",
     cardType: "modifier",
@@ -26094,29 +26079,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Becoming [100147] — fala 36 wierna (300) faithful rebuild
+    // The Becoming [100147] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100147,
     name: "The Becoming",
     cardType: "action",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Belonging Grants Protection [100150] — fala 36 wierna (300) faithful rebuild
+    // Belonging Grants Protection [100150] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100150,
     name: "Belonging Grants Protection",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Benefit Performance [100151] — fala 36 wierna (300) faithful rebuild
+    // Benefit Performance [100151] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100151,
     name: "Benefit Performance",
     cardType: "politicalAction",
@@ -26127,7 +26112,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bestial Visage [100154] — fala 36 wierna (300) faithful rebuild
+    // Bestial Visage [100154] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100154,
     name: "Bestial Visage",
     cardType: "master",
@@ -26138,18 +26123,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bestow Vigor [100155] — fala 36 wierna (300) faithful rebuild
+    // Bestow Vigor [100155] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100155,
     name: "Bestow Vigor",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Betrayer [100156] — fala 36 wierna (300) faithful rebuild
+    // Betrayer [100156] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100156,
     name: "Betrayer",
     cardType: "master",
@@ -26160,18 +26145,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Big Game [100159] — fala 36 wierna (300) faithful rebuild
+    // Big Game [100159] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100159,
     name: "Big Game",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Black Hand Emissary [100167] — fala 36 wierna (300) faithful rebuild
+    // Black Hand Emissary [100167] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100167,
     name: "Black Hand Emissary",
     cardType: "action",
@@ -26179,22 +26164,22 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Black Metamorphosis [100169] — fala 36 wierna (300) faithful rebuild
+    // Black Metamorphosis [100169] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100169,
     name: "Black Metamorphosis",
     cardType: "action",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "additionalStrike", count: 1, limited: true }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Blackmail [100173] — fala 36 wierna (300) faithful rebuild
+    // Blackmail [100173] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100173,
     name: "Blackmail",
     cardType: "action",
@@ -26205,7 +26190,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blessed Audience [100179] — fala 36 wierna (300) faithful rebuild
+    // Blessed Audience [100179] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100179,
     name: "Blessed Audience",
     cardType: "action",
@@ -26217,7 +26202,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blessed Resilience [100181] — fala 36 wierna (300) faithful rebuild
+    // Blessed Resilience [100181] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100181,
     name: "Blessed Resilience",
     cardType: "master",
@@ -26228,18 +26213,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blessing of Chaos [100182] — fala 36 wierna (300) faithful rebuild
+    // Blessing of Chaos [100182] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100182,
     name: "Blessing of Chaos",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Blessing of the Beast [100184] — fala 36 wierna (300) faithful rebuild
+    // Blessing of the Beast [100184] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100184,
     name: "Blessing of the Beast",
     cardType: "master",
@@ -26250,18 +26235,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blessing of the Name [100185] — fala 36 wierna (300) faithful rebuild
+    // Blessing of the Name [100185] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100185,
     name: "Blessing of the Name",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Blessings of the Loa [100186] — fala 36 wierna (300) faithful rebuild
+    // Blessings of the Loa [100186] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100186,
     name: "Blessings of the Loa",
     cardType: "master",
@@ -26272,7 +26257,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blind Spot [100188] — fala 36 wierna (300) faithful rebuild
+    // Blind Spot [100188] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100188,
     name: "Blind Spot",
     cardType: "master",
@@ -26283,7 +26268,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blithe Acceptance [100191] — fala 36 wierna (300) faithful rebuild
+    // Blithe Acceptance [100191] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100191,
     name: "Blithe Acceptance",
     cardType: "action",
@@ -26294,7 +26279,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Awakening [100193] — fala 36 wierna (300) faithful rebuild
+    // Blood Awakening [100193] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100193,
     name: "Blood Awakening",
     cardType: "modifierOrReaction",
@@ -26305,18 +26290,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Bond [100194] — fala 36 wierna (300) faithful rebuild
+    // Blood Bond [100194] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100194,
     name: "Blood Bond",
     cardType: "action",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Blood Buff [100196] — fala 36 wierna (300) faithful rebuild
+    // Blood Buff [100196] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100196,
     name: "Blood Buff",
     cardType: "master",
@@ -26327,40 +26312,40 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Clots [100197] — fala 36 wierna (300) faithful rebuild
+    // Blood Clots [100197] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100197,
     name: "Blood Clots",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Blood of Sandman [100204] — fala 36 wierna (300) faithful rebuild
+    // Blood of Sandman [100204] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100204,
     name: "Blood of Sandman",
     cardType: "action",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Blood of the Sabbat [100206] — fala 36 wierna (300) faithful rebuild
+    // Blood of the Sabbat [100206] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100206,
     name: "Blood of the Sabbat",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Blood Puppy [100207] — fala 36 wierna (300) faithful rebuild
+    // Blood Puppy [100207] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100207,
     name: "Blood Puppy",
     cardType: "master",
@@ -26372,7 +26357,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Siege [100210] — fala 36 wierna (300) faithful rebuild
+    // Blood Siege [100210] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100210,
     name: "Blood Siege",
     cardType: "politicalAction",
@@ -26383,19 +26368,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Tempering [100213] — fala 36 wierna (300) faithful rebuild
+    // Blood Tempering [100213] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100213,
     name: "Blood Tempering",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "prevent", base: 2 }] },
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "prevent", base: 2 }] }
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 1 }, { kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", base: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Blood Turnip [100216] — fala 36 wierna (300) faithful rebuild
+    // Blood Turnip [100216] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100216,
     name: "Blood Turnip",
     cardType: "master",
@@ -26406,29 +26391,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bloodbath [100218] — fala 36 wierna (300) faithful rebuild
+    // Bloodbath [100218] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100218,
     name: "Bloodbath",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Blooding [100220] — fala 36 wierna (300) faithful rebuild
+    // Blooding [100220] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100220,
     name: "Blooding",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Blooding by the Code [100221] — fala 36 wierna (300) faithful rebuild
+    // Blooding by the Code [100221] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100221,
     name: "Blooding by the Code",
     cardType: "master",
@@ -26436,11 +26421,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // Bloodwork [100225] — fala 36 wierna (300) faithful rebuild
+    // Bloodwork [100225] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100225,
     name: "Bloodwork",
     cardType: "action",
@@ -26451,18 +26436,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Border Skirmish [100240] — fala 36 wierna (300) faithful rebuild
+    // Border Skirmish [100240] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100240,
     name: "Border Skirmish",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Breath of Thanatos [100249] — fala 36 wierna (300) faithful rebuild
+    // Breath of Thanatos [100249] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100249,
     name: "Breath of Thanatos",
     cardType: "actionmodifier",
@@ -26473,7 +26458,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Brick Laying [100253] — fala 36 wierna (300) faithful rebuild
+    // Brick Laying [100253] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100253,
     name: "Brick Laying",
     cardType: "action",
@@ -26484,7 +26469,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Brinksmanship [100255] — fala 36 wierna (300) faithful rebuild
+    // Brinksmanship [100255] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100255,
     name: "Brinksmanship",
     cardType: "politicalAction",
@@ -26496,7 +26481,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Brother in Arms [100256] — fala 36 wierna (300) faithful rebuild
+    // Brother in Arms [100256] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100256,
     name: "Brother in Arms",
     cardType: "action",
@@ -26504,11 +26489,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Brothers Grimm [100258] — fala 36 wierna (300) faithful rebuild
+    // Brothers Grimm [100258] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100258,
     name: "Brothers Grimm",
     cardType: "master",
@@ -26519,30 +26504,30 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Brutal Influence [100263] — fala 36 wierna (300) faithful rebuild
+    // Brutal Influence [100263] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100263,
     name: "Brutal Influence",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "pot", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Burning Touch [100270] — fala 36 wierna (300) faithful rebuild
+    // Burning Touch [100270] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100270,
     name: "Burning Touch",
     cardType: "actionmodifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "prevent", base: 2 }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "prevent", base: 2 }] }
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyBleed", amount: 1 }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Cadet [100275] — fala 36 wierna (300) faithful rebuild
+    // Cadet [100275] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100275,
     name: "Cadet",
     cardType: "master",
@@ -26553,7 +26538,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Cairo Int'l Airport [100277] — fala 36 wierna (300) faithful rebuild
+    // Cairo Int'l Airport [100277] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100277,
     name: "Cairo Int'l Airport",
     cardType: "master",
@@ -26565,19 +26550,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Call [100278] — fala 36 wierna (300) faithful rebuild
+    // The Call [100278] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100278,
     name: "The Call",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Carnivale [100299] — fala 36 wierna (300) faithful rebuild
+    // Carnivale [100299] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100299,
     name: "Carnivale",
     cardType: "master",
@@ -26588,7 +26573,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Carrion Coffin [100300] — fala 36 wierna (300) faithful rebuild
+    // Carrion Coffin [100300] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100300,
     name: "Carrion Coffin",
     cardType: "action",
@@ -26599,7 +26584,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Carthage Remembered [100302] — fala 36 wierna (300) faithful rebuild
+    // Carthage Remembered [100302] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100302,
     name: "Carthage Remembered",
     cardType: "master",
@@ -26611,18 +26596,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Cat Burglary [100305] — fala 36 wierna (300) faithful rebuild
+    // Cat Burglary [100305] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100305,
     name: "Cat Burglary",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Cavalier [100310] — fala 36 wierna (300) faithful rebuild
+    // Cavalier [100310] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100310,
     name: "Cavalier",
     cardType: "master",
@@ -26633,18 +26618,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Celestial Harmony [100313] — fala 36 wierna (300) faithful rebuild
+    // Celestial Harmony [100313] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100313,
     name: "Celestial Harmony",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Census Taker [100314] — fala 36 wierna (300) faithful rebuild
+    // Census Taker [100314] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100314,
     name: "Census Taker",
     cardType: "master",
@@ -26656,18 +26641,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Chain of Command [100316] — fala 36 wierna (300) faithful rebuild
+    // Chain of Command [100316] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100316,
     name: "Chain of Command",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Chanjelin Ward [100326] — fala 36 wierna (300) faithful rebuild
+    // Chanjelin Ward [100326] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100326,
     name: "Chanjelin Ward",
     cardType: "master",
@@ -26678,7 +26663,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Charge of the Buffalo [100330] — fala 36 wierna (300) faithful rebuild
+    // Charge of the Buffalo [100330] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100330,
     name: "Charge of the Buffalo",
     cardType: "action",
@@ -26690,7 +26675,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Charming Lobby [100334] — fala 36 wierna (300) faithful rebuild
+    // Charming Lobby [100334] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100334,
     name: "Charming Lobby",
     cardType: "action",
@@ -26701,7 +26686,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Cheat the Fates [100336] — fala 36 wierna (300) faithful rebuild
+    // Cheat the Fates [100336] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100336,
     name: "Cheat the Fates",
     cardType: "action",
@@ -26713,40 +26698,40 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Chill of Oblivion [100341] — fala 36 wierna (300) faithful rebuild
+    // Chill of Oblivion [100341] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100341,
     name: "Chill of Oblivion",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Choir [100345] — fala 36 wierna (300) faithful rebuild
+    // Choir [100345] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100345,
     name: "Choir",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Chronicle of the Lost Tribe [100346] — fala 36 wierna (300) faithful rebuild
+    // Chronicle of the Lost Tribe [100346] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100346,
     name: "Chronicle of the Lost Tribe",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Church of the Order of St. Blaise [100347] — fala 36 wierna (300) faithful rebuild
+    // Church of the Order of St. Blaise [100347] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100347,
     name: "Church of the Order of St. Blaise",
     cardType: "master",
@@ -26757,7 +26742,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // City Gangrel Connections [100351] — fala 36 wierna (300) faithful rebuild
+    // City Gangrel Connections [100351] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100351,
     name: "City Gangrel Connections",
     cardType: "master",
@@ -26768,18 +26753,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Clan Impersonation [100353] — fala 36 wierna (300) faithful rebuild
+    // Clan Impersonation [100353] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100353,
     name: "Clan Impersonation",
     cardType: "action",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Clandestine Contract [100355] — fala 36 wierna (300) faithful rebuild
+    // Clandestine Contract [100355] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100355,
     name: "Clandestine Contract",
     cardType: "action",
@@ -26787,47 +26772,47 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Cleansing Ritual [100357] — fala 36 wierna (300) faithful rebuild
+    // Cleansing Ritual [100357] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100357,
     name: "Cleansing Ritual",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Clio's Kiss [100359] — fala 36 wierna (300) faithful rebuild
+    // Clio's Kiss [100359] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100359,
     name: "Clio's Kiss",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Clotho's Gift [100365] — fala 36 wierna (300) faithful rebuild
+    // Clotho's Gift [100365] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100365,
     name: "Clotho's Gift",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Coagulated Entity [100369] — fala 36 wierna (300) faithful rebuild
+    // Coagulated Entity [100369] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100369,
     name: "Coagulated Entity",
     cardType: "action",
@@ -26838,7 +26823,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Code of Samiel [100372] — fala 36 wierna (300) faithful rebuild
+    // Code of Samiel [100372] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100372,
     name: "Code of Samiel",
     cardType: "master",
@@ -26850,7 +26835,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Command Performance [100383] — fala 36 wierna (300) faithful rebuild
+    // Command Performance [100383] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100383,
     name: "Command Performance",
     cardType: "master",
@@ -26862,7 +26847,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Command the Legion [100384] — fala 36 wierna (300) faithful rebuild
+    // Command the Legion [100384] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100384,
     name: "Command the Legion",
     cardType: "action",
@@ -26873,7 +26858,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Communal Haven: Temple [100386] — fala 36 wierna (300) faithful rebuild
+    // Communal Haven: Temple [100386] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100386,
     name: "Communal Haven: Temple",
     cardType: "master",
@@ -26885,51 +26870,51 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Community Justice [100387] — fala 36 wierna (300) faithful rebuild
+    // Community Justice [100387] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100387,
     name: "Community Justice",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Compel the Spirit [100388] — fala 36 wierna (300) faithful rebuild
+    // Compel the Spirit [100388] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100388,
     name: "Compel the Spirit",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Concert Tour [100393] — fala 36 wierna (300) faithful rebuild
+    // Concert Tour [100393] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100393,
     name: "Concert Tour",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Condemn the Sins of the Father [100396] — fala 36 wierna (300) faithful rebuild
+    // Condemn the Sins of the Father [100396] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100396,
     name: "Condemn the Sins of the Father",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Conductor [100402] — fala 36 wierna (300) faithful rebuild
+    // Conductor [100402] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100402,
     name: "Conductor",
     cardType: "master",
@@ -26941,7 +26926,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Conniver [100407] — fala 36 wierna (300) faithful rebuild
+    // Conniver [100407] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100407,
     name: "Conniver",
     cardType: "master",
@@ -26952,40 +26937,40 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Conscripted Statue [100412] — fala 36 wierna (300) faithful rebuild
+    // Conscripted Statue [100412] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100412,
     name: "Conscripted Statue",
     cardType: "modifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "vis", effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Consecration Rites [100413] — fala 36 wierna (300) faithful rebuild
+    // Consecration Rites [100413] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100413,
     name: "Consecration Rites",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Consignment to Duat [100415] — fala 36 wierna (300) faithful rebuild
+    // Consignment to Duat [100415] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100415,
     name: "Consignment to Duat",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Convergence [100421] — fala 36 wierna (300) faithful rebuild
+    // Convergence [100421] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100421,
     name: "Convergence",
     cardType: "master",
@@ -26996,18 +26981,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Corporal Reservoir [100425] — fala 36 wierna (300) faithful rebuild
+    // Corporal Reservoir [100425] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100425,
     name: "Corporal Reservoir",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1 }] }
     ],
   },
   {
-    // Covenant of Blood [100436] — fala 36 wierna (300) faithful rebuild
+    // Covenant of Blood [100436] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100436,
     name: "Covenant of Blood",
     cardType: "action",
@@ -27018,7 +27003,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Cracking the Wall [100438] — fala 36 wierna (300) faithful rebuild
+    // Cracking the Wall [100438] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100438,
     name: "Cracking the Wall",
     cardType: "master",
@@ -27030,7 +27015,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Create Gargoyle [100440] — fala 36 wierna (300) faithful rebuild
+    // Create Gargoyle [100440] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100440,
     name: "Create Gargoyle",
     cardType: "action",
@@ -27038,11 +27023,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // The Crocodile Temple [100449] — fala 36 wierna (300) faithful rebuild
+    // The Crocodile Temple [100449] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100449,
     name: "The Crocodile Temple",
     cardType: "master",
@@ -27053,7 +27038,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Crusade: Aragon [100452] — fala 36 wierna (300) faithful rebuild
+    // Crusade: Aragon [100452] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100452,
     name: "Crusade: Aragon",
     cardType: "politicalAction",
@@ -27064,7 +27049,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Crusade: Geneva [100461] — fala 36 wierna (300) faithful rebuild
+    // Crusade: Geneva [100461] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100461,
     name: "Crusade: Geneva",
     cardType: "politicalAction",
@@ -27075,40 +27060,40 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Cry Wolf [100475] — fala 36 wierna (300) faithful rebuild
+    // Cry Wolf [100475] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100475,
     name: "Cry Wolf",
     cardType: "ally",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Cryptic Mission [100477] — fala 36 wierna (300) faithful rebuild
+    // Cryptic Mission [100477] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100477,
     name: "Cryptic Mission",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "prevent", base: 2 }] }
+      { level: "basic", discipline: "tha", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Cull the Herd [100479] — fala 36 wierna (300) faithful rebuild
+    // Cull the Herd [100479] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100479,
     name: "Cull the Herd",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Cultivated Blood Shortage [100480] — fala 36 wierna (300) faithful rebuild
+    // Cultivated Blood Shortage [100480] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100480,
     name: "Cultivated Blood Shortage",
     cardType: "master",
@@ -27119,7 +27104,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Cunctator Motion [100481] — fala 36 wierna (300) faithful rebuild
+    // Cunctator Motion [100481] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100481,
     name: "Cunctator Motion",
     cardType: "politicalAction",
@@ -27130,7 +27115,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Curmudgeon [100482] — fala 36 wierna (300) faithful rebuild
+    // Curmudgeon [100482] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100482,
     name: "Curmudgeon",
     cardType: "master",
@@ -27141,7 +27126,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Daemonic Possession [100486] — fala 36 wierna (300) faithful rebuild
+    // Daemonic Possession [100486] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100486,
     name: "Daemonic Possession",
     cardType: "action",
@@ -27152,7 +27137,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Damned [100490] — fala 36 wierna (300) faithful rebuild
+    // The Damned [100490] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100490,
     name: "The Damned",
     cardType: "master",
@@ -27164,7 +27149,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Danse Macabre [100491] — fala 36 wierna (300) faithful rebuild
+    // Danse Macabre [100491] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100491,
     name: "Danse Macabre",
     cardType: "master",
@@ -27175,51 +27160,51 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Death Pact [100509] — fala 36 wierna (300) faithful rebuild
+    // Death Pact [100509] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100509,
     name: "Death Pact",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Decompose [100512] — fala 36 wierna (300) faithful rebuild
+    // Decompose [100512] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100512,
     name: "Decompose",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "additionalStrike", count: 1, limited: true }] }
+      { level: "basic", discipline: "thn", effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Deep Cover Agent [100514] — fala 36 wierna (300) faithful rebuild
+    // Deep Cover Agent [100514] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100514,
     name: "Deep Cover Agent",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Defender of the Haven [100517] — fala 36 wierna (300) faithful rebuild
+    // Defender of the Haven [100517] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100517,
     name: "Defender of the Haven",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Demonstration [100522] — fala 36 wierna (300) faithful rebuild
+    // Demonstration [100522] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100522,
     name: "Demonstration",
     cardType: "master",
@@ -27231,62 +27216,62 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Deny [100524] — fala 36 wierna (300) faithful rebuild
+    // Deny [100524] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100524,
     name: "Deny",
     cardType: "actionmodifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "press", continues: "optional" }] }
     ],
   },
   {
-    // Derange [100527] — fala 36 wierna (300) faithful rebuild
+    // Derange [100527] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100527,
     name: "Derange",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Descent into Darkness [100528] — fala 36 wierna (300) faithful rebuild
+    // Descent into Darkness [100528] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100528,
     name: "Descent into Darkness",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Despiral [100530] — fala 36 wierna (300) faithful rebuild
+    // Despiral [100530] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100530,
     name: "Despiral",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Destructive Secrets [100531] — fala 36 wierna (300) faithful rebuild
+    // Destructive Secrets [100531] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100531,
     name: "Destructive Secrets",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Development [100535] — fala 36 wierna (300) faithful rebuild
+    // Development [100535] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100535,
     name: "Development",
     cardType: "master",
@@ -27297,7 +27282,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Diamond Thunderbolt [100543] — fala 36 wierna (300) faithful rebuild
+    // The Diamond Thunderbolt [100543] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100543,
     name: "The Diamond Thunderbolt",
     cardType: "master",
@@ -27308,7 +27293,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Dirty Contract [100546] — fala 36 wierna (300) faithful rebuild
+    // Dirty Contract [100546] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100546,
     name: "Dirty Contract",
     cardType: "master",
@@ -27319,7 +27304,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Dismemberment of Osiris [100556] — fala 36 wierna (300) faithful rebuild
+    // Dismemberment of Osiris [100556] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100556,
     name: "Dismemberment of Osiris",
     cardType: "action",
@@ -27330,40 +27315,40 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Dive Bomb [100561] — fala 36 wierna (300) faithful rebuild
+    // Dive Bomb [100561] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100561,
     name: "Dive Bomb",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
+      { level: "basic", discipline: "flight", effects: [{ kind: "maneuver" }, { kind: "press", continues: "optional" }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Dive into Madness [100562] — fala 36 wierna (300) faithful rebuild
+    // Dive into Madness [100562] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100562,
     name: "Dive into Madness",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Divine Sign [100566] — fala 36 wierna (300) faithful rebuild
+    // Divine Sign [100566] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100566,
     name: "Divine Sign",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Dominion [100574] — fala 36 wierna (300) faithful rebuild
+    // Dominion [100574] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100574,
     name: "Dominion",
     cardType: "master",
@@ -27374,18 +27359,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Draba [100578] — fala 36 wierna (300) faithful rebuild
+    // Draba [100578] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100578,
     name: "Draba",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Dramatic Upheaval [100583] — fala 36 wierna (300) faithful rebuild
+    // Dramatic Upheaval [100583] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100583,
     name: "Dramatic Upheaval",
     cardType: "politicalAction",
@@ -27396,7 +27381,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Draught of the Soul [100584] — fala 36 wierna (300) faithful rebuild
+    // Draught of the Soul [100584] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100584,
     name: "Draught of the Soul",
     cardType: "actionmodifier",
@@ -27408,36 +27393,36 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Dream World [100587] — fala 36 wierna (300) faithful rebuild
+    // Dream World [100587] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100587,
     name: "Dream World",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Drink the Blood of Ahriman [100589] — fala 36 wierna (300) faithful rebuild
+    // Drink the Blood of Ahriman [100589] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100589,
     name: "Drink the Blood of Ahriman",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "prevent", base: 2 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Dual Form [100592] — fala 36 wierna (300) faithful rebuild
+    // Dual Form [100592] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100592,
     name: "Dual Form",
     cardType: "action",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -32230,30 +32215,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ablative Skin [100008] — fala 35 wierna (faithful rebuild)
+    // Ablative Skin [100008] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100008,
     name: "Ablative Skin",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "prevent", base: 2 }] },
-      { level: "superior", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "prevent", base: 2 }] }
+      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 2 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Abombwe [100009] — fala 41 wierna (bespoke Master Trifle)
+    // Abombwe [100009] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100009,
     name: "Abombwe",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "attachSelf" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Abomination [100010] — fala 35 wierna (faithful rebuild)
+    // Abomination [100010] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100010,
     name: "Abomination",
     cardType: "action",
@@ -32261,11 +32245,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "additionalStrike", count: 1, limited: true }, { kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "maneuver" }, { kind: "modifyStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Al's Army Apparatus [100035] — fala 41 wierna (bespoke Master Trifle)
+    // Al's Army Apparatus [100035] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100035,
     name: "Al's Army Apparatus",
     cardType: "master",
@@ -32276,40 +32260,40 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Alastor [100038] — fala 41 wierna (bespoke Master Trifle)
+    // Alastor [100038] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100038,
     name: "Alastor",
     cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Alia, God's Messenger [100039] — fala 41 wierna (bespoke Master Trifle)
+    // Alia, God's Messenger [100039] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100039,
     name: "Alia, God's Messenger",
     cardType: "ally",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Alvusia [100041] — fala 41 wierna (bespoke Master Trifle)
+    // Alvusia [100041] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100041,
     name: "Alvusia",
     cardType: "master",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1 }, { kind: "modifyStrength", amount: 1 }] }
     ],
   },
   {
-    // Ambrosius, The Ferryman [100044] — fala 41 wierna (bespoke Master Trifle)
+    // Ambrosius, The Ferryman [100044] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100044,
     name: "Ambrosius, The Ferryman",
     cardType: "ally",
@@ -32321,7 +32305,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ambulance [100045] — fala 41 wierna (bespoke Master Trifle)
+    // Ambulance [100045] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100045,
     name: "Ambulance",
     cardType: "equipment",
@@ -32329,23 +32313,22 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
     ],
   },
   {
-    // Ancestor's Insight [100062] — fala 35 wierna (faithful rebuild)
+    // Ancestor's Insight [100062] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100062,
     name: "Ancestor's Insight",
     cardType: "modifierOrReaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }] },
-      { level: "superior", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1 }] }
     ],
   },
   {
-    // Angel of Berlin [100067] — fala 35 wierna (faithful rebuild)
+    // Angel of Berlin [100067] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100067,
     name: "Angel of Berlin",
     cardType: "master",
@@ -32356,18 +32339,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Arms Dealer [100090] — fala 35 wierna (faithful rebuild)
+    // Arms Dealer [100090] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100090,
     name: "Arms Dealer",
     cardType: "ally",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // The Art of Memory [100097] — fala 35 wierna (faithful rebuild)
+    // The Art of Memory [100097] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100097,
     name: "The Art of Memory",
     cardType: "modifier",
@@ -32378,7 +32361,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ashur Tablets [100106] — fala 35 wierna (faithful rebuild)
+    // Ashur Tablets [100106] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100106,
     name: "Ashur Tablets",
     cardType: "master",
@@ -32389,15 +32372,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Augur [100110] — fala 35 wierna (faithful rebuild)
+    // Augur [100110] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100110,
     name: "Augur",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "viz", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "viz", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "viz", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -35470,19 +35452,18 @@ export const cardSpecs: CardSpec[] = [
   },
 
   {
-    // Abjure [100007] — fala 35 wierna (faithful rebuild)
+    // Abjure [100007] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100007,
     name: "Abjure",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "red", effects: [{ kind: "maneuver" }] },
-      { level: "superior", discipline: "red", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "red", effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Absimiliard's Army [100011] — fala 41 wierna (bespoke Master Trifle)
+    // Absimiliard's Army [100011] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100011,
     name: "Absimiliard's Army",
     cardType: "event",
@@ -35493,7 +35474,7 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Anthelios, The Red Star [100074] — fala 35 wierna (faithful rebuild)
+    // Anthelios, The Red Star [100074] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100074,
     name: "Anthelios, The Red Star",
     cardType: "event",
@@ -35504,36 +35485,33 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Cult Awareness Network [100198] — fala 29 wierna (Event Gehenna, faithful)
+    // Blood Cult Awareness Network [100198] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100198,
     name: "Blood Cult Awareness Network",
     cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Blood Weakens [100217] — fala 29 wierna (Event Gehenna, faithful)
+    // Blood Weakens [100217] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100217,
     name: "Blood Weakens",
     cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
     ],
   },
   {
-    // Break the Code [100248] — fala 29 wierna (Event Gehenna, faithful)
+    // Break the Code [100248] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100248,
     name: "Break the Code",
     cardType: "event",
     bloodCost: 0,
-    permanent: { where: "seat", statics: {}, tags: ["event", "gehenna"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
