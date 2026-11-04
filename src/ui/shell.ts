@@ -1777,9 +1777,9 @@ export class Shell {
       <div class="supported">
         <div class="sethead">Tournament setup</div>
         <div class="trainer-controls">
-          <label class="field"><span>Variants per generation</span><input id="trainer-population" type="number" min="2" max="20" value="${c.population}"${disabled} /></label>
-          <label class="field"><span>Generations</span><input id="trainer-generations" type="number" min="1" max="10" value="${c.generations}"${disabled} /></label>
-          <label class="field"><span>Games per variant</span><input id="trainer-games" type="number" min="1" max="50" value="${c.gamesPerCandidate}"${disabled} /></label>
+          <label class="field"><span>Variants per generation</span><input id="trainer-population" type="number" min="2" max="100" value="${c.population}"${disabled} /></label>
+          <label class="field"><span>Generations</span><input id="trainer-generations" type="number" min="1" max="200" value="${c.generations}"${disabled} /></label>
+          <label class="field"><span>Games per variant</span><input id="trainer-games" type="number" min="1" max="500" value="${c.gamesPerCandidate}"${disabled} /></label>
           <label class="field"><span>Seed</span><input id="trainer-seed" type="number" value="${c.seed}"${disabled} /></label>
         </div>
         <p class="note dim">The first generation includes the current default bot and seeded random weight variants. Later generations keep top performers, mutate them, and re-run a Balanced control on the same seeds. The five-seat table repeats the bundled playtest decks; the candidate rotates seats. Larger runs take longer.</p>
@@ -1820,8 +1820,8 @@ export class Shell {
       <p class="note">Train a selectable neural-network bot with real five-seat games. The candidate uses only its masked PlayerView and plays four changing built-in bot styles; PyTorch updates the policy through the local dev-server bridge. CUDA is used automatically when your Python environment has CUDA-enabled PyTorch; otherwise it reports CPU. To use your RTX 3070, run the Vite app on the PC with that GPU—an Arena/cloud preview cannot access the GPU on your own computer.</p>
       <p class="note">Saved model: <b>${model ? "yes" : "not yet"}</b> · ${savedInfo}. A trained model is saved after every successful round and can be selected in Settings → Bots.</p>
       <div class="trainer-controls">
-        <label class="field"><span>Games per update round (2–20)</span><input id="ml-games" type="number" min="2" max="20" value="${this.mlConfig.gamesPerRound}"${disabled} /></label>
-        <label class="field"><span>Update rounds</span><input id="ml-rounds" type="number" min="1" max="20" value="${this.mlConfig.rounds}"${disabled} /></label>
+        <label class="field"><span>Games per update round (2–100)</span><input id="ml-games" type="number" min="2" max="100" value="${this.mlConfig.gamesPerRound}"${disabled} /></label>
+        <label class="field"><span>Update rounds (1–1000)</span><input id="ml-rounds" type="number" min="1" max="1000" value="${this.mlConfig.rounds}"${disabled} /></label>
         <label class="field"><span>Seed</span><input id="ml-seed" type="number" value="${this.mlConfig.seed}"${disabled} /></label>
       </div>
       <div class="row">
@@ -1844,8 +1844,8 @@ export class Shell {
       return Number.isFinite(value) ? Math.floor(value) : fallback;
     };
     this.mlConfig = {
-      gamesPerRound: Math.max(2, Math.min(20, number("#ml-games", 4))),
-      rounds: Math.max(1, Math.min(20, number("#ml-rounds", 3))),
+      gamesPerRound: Math.max(2, Math.min(100, number("#ml-games", 4))),
+      rounds: Math.max(1, Math.min(1000, number("#ml-rounds", 3))),
       seed: number("#ml-seed", 4242) || 1,
     };
     this.mlRunning = true;
@@ -1855,6 +1855,8 @@ export class Shell {
     this.mlError = "";
     this.mlMessage = "Preparing a five-seat self-play batch…";
     let model: MlModel = loadSettings().trainedMlModel ?? createInitialMlModel(this.mlConfig.seed);
+    const priorRounds = model.training?.rounds ?? 0;
+    const priorGames = model.training?.games ?? 0;
     let totalGoodGames = 0;
     this.paint();
     try {
@@ -1869,8 +1871,8 @@ export class Shell {
           // Yield between complete games so the UI can repaint and cancellation
           // can be requested without interrupting a game in a half-resolved state.
           await new Promise<void>((resolve) => setTimeout(resolve, 0));
-          const seed = (this.mlConfig.seed + (round - 1) * 100_003 + game - 1) | 0;
-          const episode = runLocalMlEpisode(model, seed, (round - 1) * this.mlConfig.gamesPerRound + game - 1);
+          const seed = (this.mlConfig.seed + (priorRounds + round - 1) * 100_003 + game - 1) | 0;
+          const episode = runLocalMlEpisode(model, seed, priorGames + (round - 1) * this.mlConfig.gamesPerRound + game - 1);
           this.mlProgress = {
             round,
             rounds: this.mlConfig.rounds,
@@ -1976,9 +1978,9 @@ export class Shell {
       return Number.isFinite(value) ? Math.floor(value) : fallback;
     };
     this.trainerConfig = {
-      population: Math.max(2, Math.min(20, number("#trainer-population", 6))),
-      generations: Math.max(1, Math.min(10, number("#trainer-generations", 2))),
-      gamesPerCandidate: Math.max(1, Math.min(50, number("#trainer-games", 3))),
+      population: Math.max(2, Math.min(100, number("#trainer-population", 6))),
+      generations: Math.max(1, Math.min(200, number("#trainer-generations", 2))),
+      gamesPerCandidate: Math.max(1, Math.min(500, number("#trainer-games", 3))),
       seed: number("#trainer-seed", 42) || 1,
     };
     this.trainerRunning = true;
