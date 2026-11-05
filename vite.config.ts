@@ -4,6 +4,7 @@ import { basename, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { Plugin } from "vite";
 import { defineConfig } from "vite";
+import { ollamaBridge } from "./scripts/ollama-bridge.ts";
 
 const repoRoot = dirname(fileURLToPath(import.meta.url));
 
@@ -153,7 +154,9 @@ export default defineConfig({
   base: "./",
   // The Arena preview is proxied through a generated e2b.app hostname.
   server: { host: "0.0.0.0", allowedHosts: true },
-  plugins: [gameLogPlugin(), mlTrainingPlugin()],
+  plugins: [gameLogPlugin(), mlTrainingPlugin(), ollamaBridge()],
+  // Comparison workers dynamically load card text for LLM prompts.
+  worker: { format: "es" },
   build: {
     target: "es2022",
     sourcemap: true,

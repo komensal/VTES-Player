@@ -14,9 +14,10 @@
  * the table, which owns the game from then on.
  */
 
-import { PLAYSTYLES_LIST, PLAYSTYLE_LABELS } from "../ai/playstyles.ts";
+import { PLAYSTYLES_LIST, PLAYSTYLE_LABELS, isPlaystyle } from "../ai/playstyles.ts";
 import { createInitialMlModel, isMlModel, type MlModel } from "../ai/ml-agent.ts";
 import { MlWorkerPool } from "./ml-worker-pool.ts";
+import type { ComparedBot, ComparisonConfig, ComparisonPair } from "./bot-comparison.ts";
 import { botAgentFor, playstyleOf } from "./botagent.ts";
 import type { CatalogCard, CatalogFile } from "../cards/catalog.ts";
 import { disciplineName, loadCatalog } from "../cards/catalog.ts";
@@ -228,6 +229,7 @@ export class Shell {
   /** Why the last card-folder change failed, for the Card Database panel. */
   private cardDbError = "";
   private botNameError = "";
+  private ollamaStatus = "";
   /** Which seat's deck panel is open on the new-game screen. */
   private editingDeck: number | null = null;
 
@@ -247,6 +249,12 @@ export class Shell {
   private mlHistory: Array<{ round: number; games: number; meanVp: number; opponentVp: number; delta: number; wins: number; ousts: number; device: string; examples: number }> = [];
   private mlMessage = "";
   private mlError = "";
+  private compareRunning = false;
+  private compareRunId = 0;
+  private compareWorker: Worker | null = null;
+  private comparePairs: ComparisonPair[] = [];
+  private compareMessage = "";
+  private compareConfig: { a: ComparedBot; b: ComparedBot; deals: number; seed: number } = { a: "ollama", b: "balanced", deals: 1, seed: 4242 };
 
   // --- the deck builder -----------------------------------------------------
   /**
@@ -409,6 +417,12 @@ export class Shell {
   private go(screen: Screen): void {
     if (this.screen === "trainer" && screen !== "trainer" && this.trainerRunning) {
       this.trainerCancelRequested = true;
+    }
+    if (this.screen === "trainer" && screen !== "trainer" && this.compareRunning) {
+      this.compareRunId++;
+      this.compareWorker?.terminate(); this.compareWorker = null;
+      this.compareRunning = false;
+      this.compareMessage = "Stopped when leaving the lab. Only fully matched pairs are included.";
     }
     // Leaving the Profile screen abandons whatever was half-typed on it;
     // coming back should show what is SAVED. `paint` re-reads the draft
@@ -831,6 +845,9 @@ export class Shell {
           any seat in the lobby before a game starts.
         </p>
         ${rows.join("")}
+        <label class="field"><span>Local Ollama model</span><input id="ollama-model" value="${esc(settings.ollamaModel ?? "qwen3:8b")}" maxlength="120" /></label>
+        <button id="ollama-test">Test Ollama connection</button> <span id="ollama-status" class="note">${esc(this.ollamaStatus)}</span>
+        <p class="note dim">Install and run Ollama locally with this model. Local Vite server required; model is shared but each bot sees only its own cards. Unavailable Ollama falls back to Balanced.</p>
         <p class="note dim">${settings.trainedMlModel ? "A trained neural model is available locally." : "No neural model is saved yet; the Neural network option uses the safe Balanced fallback until you train one in AI Training Lab."}</p>
         <div class="row">
           <button id="botnames-save" class="primary">Save names</button>
@@ -1698,7 +1715,7 @@ export class Shell {
 
   private trainerScreen(): string {
     const c = this.trainerConfig;
-    const disabled = this.trainerRunning || this.mlRunning ? " disabled" : "";
+    const disabled = this.trainerRunning || this.mlRunning || this.compareRunning ? " disabled" : "";
     const saved = Boolean(loadSettings().trainedBotWeights);
     const p = this.trainerProgress;
     const progress = p
@@ -1785,7 +1802,7 @@ export class Shell {
         </div>
         <p class="note dim">The first generation includes the current default bot and seeded random weight variants. Later generations keep top performers, mutate them, and re-run a Balanced control on the same seeds. The five-seat table repeats the bundled playtest decks; the candidate rotates seats. Larger runs take longer.</p>
         <div class="row">
-          <button id="trainer-run" class="primary"${this.trainerRunning || this.mlRunning ? " disabled" : ""}>${this.trainerRunning ? "Training…" : "Run training"}</button>
+          <button id="trainer-run" class="primary"${this.trainerRunning || this.mlRunning || this.compareRunning ? " disabled" : ""}>${this.trainerRunning ? "Training…" : "Run training"}</button>
           <button id="trainer-new-seed"${disabled}>Roll new seed</button>
           <button id="trainer-cancel"${this.trainerRunning ? "" : " disabled"}>Cancel</button>
           <button id="trainer-clear" class="danger"${saved && !this.trainerRunning && !this.mlRunning ? "" : " disabled"}>Clear saved profile</button>
@@ -1798,6 +1815,7 @@ export class Shell {
         <p class="note">Saved trained profile: <b>${saved ? "yes" : "not yet"}</b>. Choose the locally trained profile under Settings → Bots to use it in normal games.</p>
       </div>
       ${this.mlLabMarkup()}
+      ${this.comparisonMarkup()}
       ${results}
     </div>`;
   }
@@ -1839,8 +1857,73 @@ export class Shell {
     </div>`;
   }
 
+  private comparisonMarkup(): string {
+    const c = this.compareConfig;
+    const disabled = this.compareRunning || this.mlRunning || this.trainerRunning ? " disabled" : "";
+    const options: Array<[ComparedBot, string]> = [["ollama", "Ollama LLM"], ["balanced", "Balanced"], ["neural", "Saved neural model"], ["trained", "Saved trained heuristic"]];
+    const select = (selected: ComparedBot) => options.map(([value, label]) => `<option value="${value}"${selected === value ? " selected" : ""}>${label}</option>`).join("");
+    const rows = this.comparePairs.length ? (["a", "b"] as const).map((key) => {
+      const games = this.comparePairs.map((pair) => pair[key]);
+      const mean = games.reduce((sum, g) => sum + g.vp, 0) / games.length;
+      const wins = games.filter((g) => g.win).length;
+      const decisions = games.reduce((sum, g) => sum + g.decisions, 0);
+      const ms = games.reduce((sum, g) => sum + g.decisionMs, 0);
+      const calls = games.reduce((sum, g) => sum + g.ollamaRequests, 0);
+      return `<tr><td>${esc(options.find(([id]) => id === c[key])?.[1] ?? c[key])}</td><td>${games.length}</td><td>${mean.toFixed(2)}</td><td>${wins}</td><td>${decisions ? (ms / decisions / 1000).toFixed(2) : "—"}</td><td>${calls}</td></tr>`;
+    }).join("") : "";
+    const delta = this.comparePairs.length ? this.comparePairs.reduce((sum, p) => sum + p.a.vp - p.b.vp, 0) / this.comparePairs.length : null;
+    return `<div class="supported trainer-compare"><div class="sethead">Bot comparison</div>
+      <p class="note">Each deal is played at all five seats by both bots against the same opponents and initial decks. One matched pair is two games. LLM games can be slow. Neural evaluation uses greedy decisions, without training exploration.</p>
+      <div class="trainer-controls">
+        <label class="field"><span>Bot A</span><select id="compare-a"${disabled}>${select(c.a)}</select></label>
+        <label class="field"><span>Bot B</span><select id="compare-b"${disabled}>${select(c.b)}</select></label>
+        <label class="field"><span>Deals (1–100)</span><input id="compare-deals" type="number" min="1" max="100" value="${c.deals}"${disabled} /></label>
+        <label class="field"><span>Seed</span><input id="compare-seed" type="number" value="${c.seed}"${disabled} /></label>
+      </div><div class="row"><button id="compare-run" class="primary"${disabled}>Run comparison</button><button id="compare-cancel"${this.compareRunning ? "" : " disabled"}>Cancel</button></div>
+      <p class="note">${this.comparePairs.length * 2}/${c.deals * 10} games completed in matched pairs. ${esc(this.compareMessage)}</p>
+      ${rows ? `<table class="lbtable"><thead><tr><th>Bot</th><th>Games</th><th>Mean VP</th><th>Wins</th><th>Seconds / decision</th><th>LLM requests</th></tr></thead><tbody>${rows}</tbody></table><p class="note">A − B: ${delta! >= 0 ? "+" : ""}${delta!.toFixed(2)} VP. Small samples are noisy; changing seed tests new deals.</p>` : ""}
+      <p class="note dim">LLM fallback games are not counted. Comparison uses the local Vite/Ollama bridge on this computer, not the cloud preview.</p>
+    </div>`;
+  }
+
+  private async startComparison(): Promise<void> {
+    if (this.compareRunning || this.trainerRunning || this.mlRunning) return;
+    const read = (id: string) => this.root.querySelector<HTMLInputElement | HTMLSelectElement>(id)?.value ?? "";
+    const valid = (value: string): value is ComparedBot => ["balanced", "trained", "neural", "ollama"].includes(value);
+    const a = read("#compare-a"), b = read("#compare-b");
+    if (!valid(a) || !valid(b)) return;
+    const deals = Number(read("#compare-deals")), seed = Number(read("#compare-seed"));
+    this.compareConfig = { a, b, deals: Number.isFinite(deals) ? Math.max(1, Math.min(100, Math.floor(deals))) : 1, seed: Number.isFinite(seed) ? Math.floor(seed) | 0 : 4242 };
+    const settings = loadSettings();
+    if ((a === "neural" || b === "neural") && !settings.trainedMlModel) { this.compareMessage = "No neural model saved."; this.paint(); return; }
+    if ((a === "trained" || b === "trained") && !settings.trainedBotWeights) { this.compareMessage = "No trained heuristic saved."; this.paint(); return; }
+    this.comparePairs = []; this.compareRunning = true; this.compareMessage = "Starting…"; this.paint();
+    const runId = ++this.compareRunId;
+    const config: ComparisonConfig = { ...this.compareConfig, model: settings.ollamaModel ?? "qwen3:8b", neural: settings.trainedMlModel ?? null, trained: settings.trainedBotWeights ?? null };
+    if (a === "ollama" || b === "ollama") {
+      const status = await this.checkOllama(config.model);
+      if (!this.compareRunning || this.compareRunId !== runId) return;
+      if (!status.startsWith("Connected:")) { this.compareMessage = status; this.compareRunning = false; this.paint(); return; }
+    }
+    try {
+      const worker = new Worker(new URL("./bot-comparison-worker.ts", import.meta.url), { type: "module" });
+      this.compareWorker = worker;
+      worker.onmessage = (event: MessageEvent<{ type: string; pair?: ComparisonPair; error?: string }>) => {
+        if (this.compareWorker !== worker) return;
+        if (event.data.type === "pair" && event.data.pair) { this.comparePairs.push(event.data.pair); this.compareMessage = "Running…"; }
+        else if (event.data.type === "done" || event.data.type === "error") {
+          this.compareMessage = event.data.type === "done" ? "Finished." : event.data.error ?? "Comparison failed.";
+          this.compareRunning = false; this.compareWorker = null; worker.terminate();
+        }
+        if (this.screen === "trainer") this.paint();
+      };
+      worker.onerror = (event) => { if (this.compareWorker !== worker) return; this.compareMessage = `Worker failed: ${event.message}`; this.compareRunning = false; this.compareWorker = null; worker.terminate(); this.paint(); };
+      worker.postMessage(config);
+    } catch (error) { this.compareRunning = false; this.compareMessage = error instanceof Error ? error.message : String(error); this.paint(); }
+  }
+
   private async startMlTraining(): Promise<void> {
-    if (this.mlRunning) return;
+    if (this.mlRunning || this.trainerRunning || this.compareRunning) return;
     const number = (selector: string, fallback: number): number => {
       const value = Number(this.root.querySelector<HTMLInputElement>(selector)?.value);
       return Number.isFinite(value) ? Math.floor(value) : fallback;
@@ -1977,7 +2060,7 @@ export class Shell {
   }
 
   private async startTraining(): Promise<void> {
-    if (this.trainerRunning) return;
+    if (this.trainerRunning || this.mlRunning || this.compareRunning) return;
     const number = (selector: string, fallback: number): number => {
       const input = this.root.querySelector<HTMLInputElement>(selector);
       const value = Number(input?.value);
@@ -2246,6 +2329,10 @@ export class Shell {
                    <option value="open" ${seat.kind === "open" ? "selected" : ""}>Open (online)</option>
                  </select>`
         }
+        ${seat.kind === "ai" ? `<label class="field"><span>Bot style</span><select class="seatstyle" data-i="${i}">
+          <option value="default" ${!isPlaystyle(seat.botStyle) ? "selected" : ""}>Use Settings / deck default</option>
+          ${PLAYSTYLES_LIST.map((style) => `<option value="${style}" ${seat.botStyle === style ? "selected" : ""}>${esc(PLAYSTYLE_LABELS[style])}</option>`).join("")}
+        </select></label>` : ""}
         ${
           // The host owns their own deck and the bots'. A seat a person
           // joined on is not the host's to change.
@@ -2704,6 +2791,14 @@ export class Shell {
       this.paint();
     });
     this.on("#ml-trainer-clear", () => this.clearMlModel());
+    this.on("#compare-run", () => void this.startComparison());
+    this.on("#compare-cancel", () => {
+      this.compareRunId++;
+      this.compareWorker?.terminate(); this.compareWorker = null;
+      this.compareRunning = false;
+      this.compareMessage = "Stopped. Only fully matched pairs are included.";
+      this.paint();
+    });
     this.wireHelp();
     this.on("#lb-back, #pback, #join-back, #db-back", () => this.go("menu"));
     // --- looking at a saved deck (owner request, 2026-09-22) ---
@@ -3704,7 +3799,27 @@ export class Shell {
     });
   }
 
+  private async checkOllama(model: string): Promise<string> {
+    try {
+      const response = await fetch("/__vtes_ollama/status", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ model }), signal: AbortSignal.timeout(10_000) });
+      const body = await response.json() as { available?: boolean; error?: string; models?: string[] };
+      if (!response.ok) return body.error ?? `Connection failed (HTTP ${response.status}).`;
+      return body.available ? `Connected: ${model} is installed.` : `Ollama is running, but ${model} is not installed. Installed: ${(body.models ?? []).join(", ") || "none"}.`;
+    } catch { return "Cannot reach local Ollama via the local Vite server. Start Ollama and open the game on localhost."; }
+  }
+
   private wireBotNames(): void {
+    this.on("#ollama-test", () => {
+      const model = this.root.querySelector<HTMLInputElement>("#ollama-model")?.value.trim() || "qwen3:8b";
+      this.ollamaStatus = "Checking Ollama…";
+      const output = this.root.querySelector<HTMLElement>("#ollama-status");
+      if (output) output.textContent = this.ollamaStatus;
+      void this.checkOllama(model).then((message) => {
+        this.ollamaStatus = message;
+        const current = this.root.querySelector<HTMLElement>("#ollama-status");
+        if (current) current.textContent = message;
+      });
+    });
     this.on("#botnames-save", () => {
       const boxes = Array.from(
         this.root.querySelectorAll<HTMLInputElement>("input.botname"),
@@ -3733,6 +3848,9 @@ export class Shell {
       }
       const settings = loadSettings();
       settings.botNames = names;
+      const model = this.root.querySelector<HTMLInputElement>("#ollama-model")?.value.trim() || "qwen3:8b";
+      if (!/^[a-zA-Z0-9_.:/-]{1,120}$/.test(model)) { this.botNameError = "Invalid Ollama model name."; this.paint(); return; }
+      settings.ollamaModel = model;
       // The row saves as a ROW. Two save buttons in one panel would be a
       // worse UI than one that saves what is in front of you.
       settings.botPlaystyles = Array.from(
@@ -3869,6 +3987,15 @@ export class Shell {
         this.syncRoom();
         // In a lobby the change has to reach everyone waiting, not just
         // this screen — they are being told why the game cannot start.
+        this.lobbyHost?.update(this.table);
+        this.paint();
+      });
+    }
+
+    for (const el of Array.from(this.root.querySelectorAll<HTMLSelectElement>(".seatstyle"))) {
+      el.addEventListener("change", () => {
+        const seat = this.table.seats[seatAt(el)];
+        if (seat) { if (isPlaystyle(el.value)) seat.botStyle = el.value; else delete seat.botStyle; }
         this.lobbyHost?.update(this.table);
         this.paint();
       });
@@ -4082,6 +4209,8 @@ export class Shell {
         seat,
         botAgentFor(seat, {
           settings,
+          ...(isPlaystyle(this.table.seats.find((s) => s.name === seat)?.botStyle)
+            ? { playstyle: this.table.seats.find((s) => s.name === seat)!.botStyle as (typeof PLAYSTYLES_LIST)[number] } : {}),
           // 1-based and positional, matching the "Bot 1…5" boxes.
           botIndex: i + 1,
           deck: this.table.seats.find((s) => s.name === seat)?.deck ?? null,
@@ -4464,6 +4593,7 @@ export class Shell {
    * doing it leaves a room code on the broker that dials into nothing.
    */
   private leaveTable(): void {
+    if (this.tableTransport instanceof LocalTransport) this.tableTransport.stop();
     this.lobbyHost?.close();
     this.lobbyHost = null;
     this.room?.close();

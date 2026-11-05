@@ -17,7 +17,8 @@
  * starts, hidden information.
  */
 
-import { HeuristicAgent } from "../ai/heuristic.ts";
+import { botAgentFor } from "../ui/botagent.ts";
+import { isPlaystyle } from "../ai/playstyles.ts";
 import { addChat } from "../ui/chat.ts";
 import { DevServerSink, GameLog } from "../ui/gamelog.ts";
 import type { SeatConfig, TableConfig } from "../ui/newgame.ts";
@@ -25,7 +26,7 @@ import { botSeats, buildTable, deckLabel, MAX_SEATS, seatDeckHash } from "../ui/
 import { avatarProblem, colorProblem, nameProblem } from "../ui/profile.ts";
 import type { GameResult } from "../ui/results.ts";
 import { recordResult } from "../ui/results.ts";
-import { loadSettings, OPENING_DELAY_MS, seatSeed } from "../ui/settings.ts";
+import { loadSettings, OPENING_DELAY_MS } from "../ui/settings.ts";
 import { LocalTransport } from "../ui/transport.ts";
 import { HostSession } from "./host.ts";
 import type {
@@ -436,9 +437,14 @@ export class LobbyHost {
         ),
       ),
     });
-    for (const seat of botSeats(this.table)) {
-      transport.setAgent(seat, new HeuristicAgent({ seed: seatSeed(seat) }));
-    }
+    const botSettings = loadSettings();
+    botSeats(this.table).forEach((seat, index) => {
+      const config = this.table.seats.find((s) => s.name === seat);
+      transport.setAgent(seat, botAgentFor(seat, {
+        settings: botSettings, botIndex: index + 1, deck: config?.deck ?? null,
+        ...(isPlaystyle(config?.botStyle) ? { playstyle: config.botStyle } : {}),
+      }));
+    });
     // The seats a PERSON is sitting in as the game is dealt. Only these
     // can be reclaimed later; a seat that was a bot from the start stays
     // the table's (owner rule).

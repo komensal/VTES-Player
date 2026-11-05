@@ -106,6 +106,11 @@ box, and it covers the words that appear on cards but not in the rulebook.
   suits it (Balanced, Bruiser, Stalker, Turtle, Politician or Builder), and
   you can override it for any bot in **Settings > Bots**. You can also give
   the bots your own names there.
+- **Local Ollama bots and comparisons.** Choose a bot style per seat when
+  setting up a table, including a locally installed Ollama model. The AI
+  Training Lab can compare two bots on matched deals. Ollama requires the
+  local Vite server and a separately installed model; see [local Ollama
+  setup and limitations](docs/ollama-bots.md).
 - **Online play for 2 to 6 people**, though the rulebook recommends four or
   five.
 - **Undo, save and load.** Save to named slots or to a file. There is also

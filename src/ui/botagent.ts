@@ -17,6 +17,7 @@
 
 import type { Agent } from "../engine/agent.ts";
 import { HeuristicAgent } from "../ai/heuristic.ts";
+import { OllamaAgent } from "../ai/ollama-agent.ts";
 import { MlAgent } from "../ai/ml-agent.ts";
 import { PLAYSTYLES, isPlaystyle, type Playstyle } from "../ai/playstyles.ts";
 import deckPlaystyles from "../../config/deck-playstyles.json" with { type: "json" };
@@ -95,6 +96,9 @@ export function botAgentFor(seat: string, opts: BotAgentOptions = {}): StyledAge
     style === "trained"
       ? (opts.settings?.trainedBotWeights ?? loadSettings().trainedBotWeights)
       : null;
+  if (style === "ollama") {
+    return Object.assign(new OllamaAgent(settings.ollamaModel ?? "qwen3:8b", seatSeed(seat)), { playstyle: style });
+  }
   if (style === "neural" && settings.trainedMlModel) {
     return Object.assign(new MlAgent({ model: settings.trainedMlModel, seed: seatSeed(seat) }), { playstyle: style });
   }

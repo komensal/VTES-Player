@@ -581,6 +581,8 @@ export interface Agent {
     view: PlayerView,
     masked?: GameState,
   ): string;
+  /** Optional remote decision; synchronous agents remain unchanged. */
+  decideAsync?(dp: DecisionPoint, options: LegalOption[], view: PlayerView, signal: AbortSignal): Promise<string>;
 }
 
 /** Always passes when possible; otherwise takes the first option. Useful

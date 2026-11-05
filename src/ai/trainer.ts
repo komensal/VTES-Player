@@ -176,7 +176,7 @@ function nextPopulation(
 }
 
 function stylesForOpponents(): typeof PLAYSTYLES_LIST[number][] {
-  return PLAYSTYLES_LIST.filter((s) => s !== "trained" && s !== "neural");
+  return PLAYSTYLES_LIST.filter((s) => s !== "trained" && s !== "neural" && s !== "ollama");
 }
 
 function yieldToUi(): Promise<void> {
