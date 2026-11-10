@@ -3930,6 +3930,12 @@ export class VtesEngine implements EngineOps {
       // A canceled action card never locked its minion and may be played
       // again (p. 16); nothing to undo because everything was deferred.
       this.emit({ type: "CardCanceled", cardId: cp.card.id, name: cp.card.name });
+      // A cancelled combat card is still *played* for per-card limits, but
+      // it did not grant an additional strike. Do not reserve that source
+      // later when damage resolution consults the played history.
+      const combat = this.combatFrame();
+      const entry = combat?.playedHistory?.find((h) => h.cardId === cp.card.id && h.round === combat.round);
+      if (entry) { delete entry.addlCount; delete entry.addlLimited; }
       // "A cancelled card has no effect, but it is STILL CONSIDERED PLAYED"
       // (p. 16) — so it goes where a played card goes. This branch used to
       // file it nowhere: the card left the hand at play and simply ceased
@@ -5808,8 +5814,9 @@ export class VtesEngine implements EngineOps {
         load.additionalStrikeRound = cf.round;
         const bearer = from === "acting" ? cf.acting : cf.opposing;
         if (findMinion(this.state, bearer)) {
-          this.grantAdditionalStrikeTo(bearer, 1, true);
-          cf.committedStrike[from] = strike.weaponCard;
+          if (this.grantAdditionalStrikeTo(bearer, 1, true)) {
+            cf.committedStrike[from] = strike.weaponCard;
+          }
         }
       }
       // "Burn the gun after strike resolution" (Dragon's Breath Rounds).
@@ -6261,7 +6268,7 @@ export class VtesEngine implements EngineOps {
 
   /** The minion-addressed form of `grantAdditionalStrike`, for a card in
    *  play (which has no `CardPlayFrame`). */
-  grantAdditionalStrikeTo(minion: MinionId, count: number, limited: boolean): void {
+  grantAdditionalStrikeTo(minion: MinionId, count: number, limited: boolean): boolean {
     const cf = this.requireCombat();
     const side = this.sideOf(cf, minion);
     // "…cannot use any additional strikes … this round" (Target Head) —
@@ -6269,9 +6276,10 @@ export class VtesEngine implements EngineOps {
     // "cannot play a card that provides an additional strike, EVEN IF
     // JUST TO BENEFIT FROM ANOTHER EFFECT", which the option enumerator
     // enforces; this is the same bar for a grant from a card in play.
-    if (cf.noAdditionalStrikes?.[side]) return;
+    if (cf.noAdditionalStrikes?.[side] || (limited && cf.usedLimitedAddl[side])) return false;
     cf.additionalStrikes[side] += count;
     if (limited) cf.usedLimitedAddl[side] = true;
+    return true;
   }
 
   /**

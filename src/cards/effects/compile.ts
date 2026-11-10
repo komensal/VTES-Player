@@ -3334,6 +3334,14 @@ function compileCombatCard(spec: CardSpec): CardHandler {
           if (ctx.window === "combat.chooseStrike" && hasAddl && !hasStrikeEffect) continue;
           if (window !== ctx.window) continue;
         }
+        // A before-range credit can also carry a limited additional strike
+        // (Shadow of the Wolf). The limit belongs to the minion and round,
+        // regardless of the window in which the source was played.
+        const credit = mode.effects.find((e) => e.kind === "combatCredits" && e.additionalStrike);
+        if (credit?.kind === "combatCredits" && credit.additionalStrike) {
+          if (cf.noAdditionalStrikes?.[side]) continue;
+          if (credit.additionalStrike.limited && cf.usedLimitedAddl[side]) continue;
+        }
         // An outside-the-combat mode was enumerated above, from a vampire
         // that is NOT in this combat; a combatant may not play it.
         if (
@@ -4544,13 +4552,11 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             }
             break;
           case "additionalStrike": {
-            // Additional strikes are GAINED during strike resolution so
-            // that tests and intermediate state see them immediately.
-            // However, `usedLimitedAddl` is deliberately NOT set here — it
-            // is set after damageResolution (in engine.ts) from
-            // cf.playedHistory, so that the grant window (which opens after
-            // damageResolution) correctly limits a minion to one limited
-            // additional-strike source per round (V5 p. 32).
+            // Strike modes reserve their limited source after the first
+            // strike pair resolves (the combat frame's played history).
+            // A grant played in the later grant window must reserve it NOW:
+            // otherwise the same minion can play another limited source
+            // before the window closes, as with two Diversions.
             let count = e.count;
             if (e.perBloodX) {
               const x = Number(play.params["x"] ?? "0");
@@ -4559,9 +4565,9 @@ function compileCombatCard(spec: CardSpec): CardHandler {
               }
               count = x;
             }
-            // Pass limited=false so usedLimitedAddl is NOT set now; it will
-            // be set after damageResolution from playedHistory.
-            ops.grantAdditionalStrike(play, count, false);
+            const combat = [...ops.state.frames].reverse().find((f) => f.kind === "combat");
+            const reserveNow = combat?.kind === "combat" && combat.step !== "chooseStrike";
+            ops.grantAdditionalStrike(play, count, e.limited && reserveNow);
             // "…: burn weapon" — the extra strike is specified, offered
             // in the chooseStrike step the way a granted combat-ends
             // strike is (§4).
@@ -9021,8 +9027,7 @@ function addWeaponAbilities(spec: CardSpec, handler: CardHandler): void {
       // "After the bearer strikes with this gun, they get 1 optional
       // additional strike (limited), only usable to strike with this
       // gun, this round" (AK-47, §2).
-      if (w.additionalStrikeSelf) {
-        ops.grantAdditionalStrikeTo(owner.minion, 1, true);
+      if (w.additionalStrikeSelf && ops.grantAdditionalStrikeTo(owner.minion, 1, true)) {
         ops.commitStrikeTo(owner.minion, entry.card.id);
       }
     };
