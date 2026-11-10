@@ -1,8 +1,12 @@
 import { appendFileSync, mkdirSync } from "node:fs";
 import { spawn } from "node:child_process";
-import { basename, resolve } from "node:path";
+import { basename, dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import type { Plugin } from "vite";
 import { defineConfig } from "vite";
+import { ollamaBridge } from "./scripts/ollama-bridge.ts";
+
+const repoRoot = dirname(fileURLToPath(import.meta.url));
 
 /**
  * Writes each playthrough's log into `logs/` in the repo
@@ -19,7 +23,7 @@ import { defineConfig } from "vite";
  * stripped to a bare name and forced under `logs/`.
  */
 function gameLogPlugin(): Plugin {
-  const dir = resolve(process.cwd(), "logs");
+  const dir = resolve(repoRoot, "logs");
   return {
     name: "vtes-game-log",
     apply: "serve",
@@ -87,8 +91,8 @@ function mlTrainingPlugin(): Plugin {
           catch { res.statusCode = 400; res.end(JSON.stringify({ error: "Could not read training batch." })); return; }
 
           const python = process.env.VTES_PYTHON || (process.platform === "win32" ? "python" : "python3");
-          const script = resolve(process.cwd(), "scripts", "train_ml.py");
-          const child = spawn(python, [script], { cwd: process.cwd(), windowsHide: true, stdio: ["pipe", "pipe", "pipe"] });
+          const script = resolve(repoRoot, "scripts", "train_ml.py");
+          const child = spawn(python, [script], { cwd: repoRoot, windowsHide: true, stdio: ["pipe", "pipe", "pipe"] });
           let stdout = "";
           let stderr = "";
           const outputLimit = 32 * 1024 * 1024;
@@ -108,9 +112,24 @@ function mlTrainingPlugin(): Plugin {
             clearTimeout(timer);
             if (res.writableEnded) return;
             res.setHeader("Content-Type", "application/json; charset=utf-8");
+            if (stdout.trim()) {
+              try {
+                const result = JSON.parse(stdout);
+                if (result && typeof result === "object" && "model" in result) {
+                  res.statusCode = 200;
+                  res.end(JSON.stringify(result));
+                  return;
+                }
+              } catch {
+                // Fall through to error handling below.
+              }
+            }
             if (code !== 0) {
               res.statusCode = 503;
-              res.end(JSON.stringify({ error: "PyTorch training failed. Check the local Python environment.", detail: stderr.slice(-6000) }));
+              res.end(JSON.stringify({
+                error: "PyTorch training failed. Check the local Python environment.",
+                detail: stderr.slice(-6000) || `Python exited with code ${code}`,
+              }));
               return;
             }
             try {
@@ -135,7 +154,9 @@ export default defineConfig({
   base: "./",
   // The Arena preview is proxied through a generated e2b.app hostname.
   server: { host: "0.0.0.0", allowedHosts: true },
-  plugins: [gameLogPlugin(), mlTrainingPlugin()],
+  plugins: [gameLogPlugin(), mlTrainingPlugin(), ollamaBridge()],
+  // Comparison workers dynamically load card text for LLM prompts.
+  worker: { format: "es" },
   build: {
     target: "es2022",
     sourcemap: true,

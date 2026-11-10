@@ -30,6 +30,7 @@ export const PLAYSTYLES_LIST = [
   "builder",
   "trained",
   "neural",
+  "ollama",
 ] as const;
 export type Playstyle = (typeof PLAYSTYLES_LIST)[number];
 
@@ -44,6 +45,7 @@ export const PLAYSTYLE_LABELS: Record<Playstyle, string> = {
   builder: "Builder",
   trained: "Trained (AI Lab)",
   neural: "Neural network (PyTorch)",
+  ollama: "Ollama (local LLM)",
 };
 
 export function isPlaystyle(value: unknown): value is Playstyle {
@@ -234,7 +236,9 @@ export const PLAYSTYLES: Record<Playstyle, Partial<Weights>> = {
     lowPoolCaution: 1,
   },
 
-  /** When no network has been trained yet, use a safe balanced baseline. */
+  /** Compatibility overlay; OllamaAgent supplies its own Balanced fallback. */
+  ollama: { poolFloor: 2, lowPoolThreshold: 8, lowPoolCaution: 1 },
+  /** When no network has been trained yet, use a safe baseline. */
   neural: {
     poolFloor: 3,
     lowPoolThreshold: 9,

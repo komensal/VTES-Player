@@ -42,6 +42,7 @@ describe("the styles themselves", () => {
       "builder",
       "trained",
       "neural",
+      "ollama",
     ]);
     expect(Object.values(PLAYSTYLE_LABELS)).toEqual([
       "Balanced",
@@ -52,6 +53,7 @@ describe("the styles themselves", () => {
       "Builder",
       "Trained (AI Lab)",
       "Neural network (PyTorch)",
+      "Ollama (local LLM)",
     ]);
   });
 
@@ -78,7 +80,7 @@ describe("the styles themselves", () => {
 
   it("makes each style actually differ from balanced", () => {
     for (const style of PLAYSTYLES_LIST) {
-      if (style === "balanced") continue;
+      if (style === "balanced" || style === "ollama") continue;
       expect(Object.keys(PLAYSTYLES[style]).length).toBeGreaterThan(0);
     }
   });

@@ -176,7 +176,7 @@ function nextPopulation(
 }
 
 function stylesForOpponents(): typeof PLAYSTYLES_LIST[number][] {
-  return PLAYSTYLES_LIST.filter((s) => s !== "trained" && s !== "neural");
+  return PLAYSTYLES_LIST.filter((s) => s !== "trained" && s !== "neural" && s !== "ollama");
 }
 
 function yieldToUi(): Promise<void> {
@@ -191,9 +191,9 @@ function yieldToUi(): Promise<void> {
 export async function trainHeuristic(
   opts: TrainingOptions,
 ): Promise<TrainingReport> {
-  const populationSize = Math.max(2, Math.min(20, Math.floor(opts.population)));
-  const generations = Math.max(1, Math.min(10, Math.floor(opts.generations)));
-  const gamesPerCandidate = Math.max(1, Math.min(50, Math.floor(opts.gamesPerCandidate)));
+  const populationSize = Math.max(2, Math.min(100, Math.floor(opts.population)));
+  const generations = Math.max(1, Math.min(200, Math.floor(opts.generations)));
+  const gamesPerCandidate = Math.max(1, Math.min(500, Math.floor(opts.gamesPerCandidate)));
   const seats = opts.seats.slice(0, 6);
   if (seats.length < 3) throw new Error("Training needs at least three seats.");
   const rng: RandomState = { value: (opts.seed | 0) || 1 };

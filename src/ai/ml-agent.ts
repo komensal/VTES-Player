@@ -98,7 +98,7 @@ export function encodeMlOption(
   expertZScore: number,
 ): number[] {
   const x = new Array<number>(ML_FEATURE_SIZE).fill(0);
-  x[0] = Math.max(-4, Math.min(4, expertZScore));
+  x[0] = Number.isFinite(expertZScore) ? Math.max(-4, Math.min(4, expertZScore)) : -4;
 
   const kindIndex = OPTION_KINDS.indexOf(option.kind as (typeof OPTION_KINDS)[number]);
   if (kindIndex >= 0) x[1 + kindIndex] = 1;
@@ -264,10 +264,18 @@ export class MlAgent implements Agent {
   decide(dp: DecisionPoint, options: LegalOption[], view: PlayerView): string {
     if (options.length === 0) throw new Error("no options offered");
     const expertScores = options.map((o) => this.expert.score(o, dp, view));
-    const mean = expertScores.reduce((a, b) => a + b, 0) / expertScores.length;
-    const variance = expertScores.reduce((a, s) => a + (s - mean) ** 2, 0) / expertScores.length;
+    const finiteScores = expertScores.filter((s) => Number.isFinite(s) && s > -500);
+    const poolForStats = finiteScores.length > 0
+      ? finiteScores
+      : expertScores.map((s) => (Number.isFinite(s) ? s : -1000));
+    const mean = poolForStats.reduce((a, b) => a + b, 0) / poolForStats.length;
+    const variance = poolForStats.reduce((a, s) => a + (s - mean) ** 2, 0) / poolForStats.length;
     const sd = Math.sqrt(variance) || 1;
-    const features = options.map((o, i) => encodeMlOption(o, dp, view, (expertScores[i]! - mean) / sd));
+    const features = options.map((o, i) => {
+      const s = expertScores[i]!;
+      const z = Number.isFinite(s) ? (s - mean) / sd : -4;
+      return encodeMlOption(o, dp, view, z);
+    });
     const ownBloodHuntTarget = view.referendum?.variant === "bloodHunt" && view.referendum.bloodHuntTarget
       ? minionById(view, view.referendum.bloodHuntTarget)?.seat === view.you
       : false;
@@ -288,18 +296,20 @@ export class MlAgent implements Agent {
       : Number.NEGATIVE_INFINITY,
     );
 
-    let chosen = 0;
+    let chosen = Math.max(0, allowed.indexOf(true));
     let logProbability = 0;
     if (this.opts.explore && options.length > 1) {
       const max = Math.max(...logits);
-      const weights = logits.map((v) => Math.exp(v - max));
-      const total = weights.reduce((a, b) => a + b, 0);
+      const weights = logits.map((v) => (Number.isFinite(v) ? Math.exp(v - max) : 0));
+      const total = weights.reduce((a, b) => a + b, 0) || 1;
       let draw = this.nextFloat() * total;
       for (let i = 0; i < weights.length; i++) {
+        if (!allowed[i]) continue;
         draw -= weights[i]!;
         if (draw <= 0) { chosen = i; break; }
       }
-      logProbability = logits[chosen]! - max - Math.log(total);
+      const rawLogProb = logits[chosen]! - max - Math.log(total);
+      logProbability = Number.isFinite(rawLogProb) ? rawLogProb : 0;
       this.samples.push({ options: features, allowed, chosen, oldLogProbability: logProbability });
     } else {
       for (let i = 1; i < logits.length; i++) if (logits[i]! > logits[chosen]!) chosen = i;

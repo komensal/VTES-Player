@@ -93,6 +93,8 @@ export interface UiSettings {
    * so the host's settings decide, and nothing here crosses the wire.
    */
   botPlaystyles: string[];
+  /** Locally installed Ollama model tag; not an external URL. */
+  ollamaModel?: string;
   /** Best custom policy saved from the local AI Training Lab. */
   trainedBotWeights?: Partial<Weights> | null;
   /** Locally trained PyTorch network, exported to browser inference weights. */
@@ -213,6 +215,7 @@ export const DEFAULT_SETTINGS: UiSettings = {
   // Empty rather than five "default" strings, for the reason above it: an
   // unset entry and a chosen "Default" must behave identically.
   botPlaystyles: [],
+  ollamaModel: "qwen3:8b",
   trainedBotWeights: null,
   trainedMlModel: null,
   keybinds: { ...DEFAULT_KEYBINDS },
@@ -351,6 +354,7 @@ export function loadSettings(): UiSettings {
       omniscient: parsed.omniscient === true,
       botNames: cleanBotNames(parsed.botNames),
       botPlaystyles: cleanBotPlaystyles(parsed.botPlaystyles),
+      ollamaModel: typeof parsed.ollamaModel === "string" && /^[a-zA-Z0-9_.:/-]{1,120}$/.test(parsed.ollamaModel) ? parsed.ollamaModel : "qwen3:8b",
       trainedBotWeights: cleanTrainedWeights(parsed.trainedBotWeights),
       trainedMlModel: cleanTrainedMlModel(parsed.trainedMlModel),
       keybinds: cleanKeybinds(parsed.keybinds),
