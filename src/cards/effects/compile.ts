@@ -491,7 +491,7 @@ function hasLimitedBleedIncrease(state: GameState, af: ActionFrame): boolean {
  * player still owes, so the caller applies its normal affordability
  * check to that instead of the printed cost.
  */
-function paymentSplits(
+export function paymentSplits(
   ctx: PlayContext,
   minion: MinionState,
   cost: { blood: number; pool: number },

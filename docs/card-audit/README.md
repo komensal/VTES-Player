@@ -14,10 +14,15 @@ To **triage, nie ręczny audyt ani potwierdzenie poprawności**. UNREVIEWED ozna
 
 ## Ręcznie potwierdzone ustalenia
 
-To konkretne wykryte rozbieżności, a nie pełne sprawdzenie wszystkich interakcji tych kart. Źródło: manual-findings.json. Pozostałe 4148 kart w tym zestawieniu mają status UNREVIEWED.
+To udokumentowane ustalenia, a nie pełne sprawdzenie wszystkich interakcji tych kart. REVIEWED_NO_ISSUE_FOUND oznacza brak wykrytych problemów w sprawdzonym zakresie; PARTIAL_FIX oznacza, że znane błędy pozostają. Źródło: manual-findings.json; podsumowania paczek: batches.md. Pozostałe 4143 kart w tym zestawieniu mają status UNREVIEWED, czyli nie mają tu żadnego ręcznego ustalenia. Wcześniejsze wpisy CONFIRMED_BUG i FIXED_TARGETED również wymagają dalszego audytu.
 
 | ID | Karta | Status | Ustalenie |
 |---:|---|---|---|
+| 100001 | .44 Magnum | FIXED_TARGETED | Naprawiono wybór broni w dodatkowym strike przeciwnika, zakazy działania i ekwipunku oraz modyfikatory i źródła kosztu; tests/cards/round-end.test.ts i tests/cards/cost-sources.test.ts. Potrzebna dalsza weryfikacja interakcji. |
+| 100002 | 419 Operation | CONFIRMED_BUG | Spec action ma jedynie actionStealth; brak umieszczenia karty w grze, przenoszenia pool, wypłaty i możliwości użycia Edge przez prey. src/cards/effects/cards.ts: 419 Operation; registry.json: 100002. |
+| 100003 | Aaron's Feeding Razor | REVIEWED_NO_ISSUE_FOUND | Koszt 1 pool, unique oraz +1 hunt nosiciela zgodne ze specyfikacją; tests/cards/legacy-equipment.test.ts i ogólne testy unikalnego equipment. Ocena nie obejmuje wszystkich możliwych interakcji. |
+| 100004 | Abactor | CONFIRMED_BUG | Spec action daje wyłącznie +1 stealth, brak hunt +4 i blood hunt referendum po sukcesie. src/cards/effects/cards.ts: Abactor; registry.json: 100004. |
+| 100005 | Abandoning the Flesh | CONFIRMED_BUG | Spec modifier/reaction daje natychmiast +1 bleed zamiast zastąpienia spalenia wampira, usunięcia go z gry i lokowanej karty z warunkowym bonusem; brak limitu jednej kopii. src/cards/effects/cards.ts: Abandoning the Flesh; registry.json: 100005. |
 | 100013 | Absorb the Mind | CONFIRMED_BUG | Spec ma dodge także dla myt i nie zawiera superior; tekst myt wymaga ranged steal blood, a MYT dodatkowo kradzieży Discipline. src/cards/effects/cards.ts: Absorb the Mind; src/cards/registry.json: 100013. |
 | 100027 | Ahriman's Demesne | CONFIRMED_BUG | Spec daje wyłącznie maneuver, bez wymogu long range i późniejszej rundy, bez aggravated strike i superior burn. src/cards/effects/cards.ts: Ahriman's Demesne; src/cards/registry.json: 100027. |
 | 100207 | Blood Puppy | FIXED_TARGETED | Zastąpiono niepoprawne gainPool przez unique, blood store i akcję burn; tests/cards/blood-puppy.test.ts. Nadal możliwe są nieodkryte interakcje z innymi kartami. |

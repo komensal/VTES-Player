@@ -17,11 +17,11 @@ const registry = registryData as unknown as CardRegistry;
 const handlers = buildHandlerRegistry();
 const specs = new Map([...cardSpecs, ...cryptSpecs].map((spec) => [spec.krcgId, spec]));
 const entries = Object.values(registry.entries).sort((a, b) => a.card.id - b.card.id);
-interface ManualFinding { id: number; name: string; status: "CONFIRMED_BUG" | "FIXED_TARGETED"; evidence: string }
+interface ManualFinding { id: number; name: string; status: "CONFIRMED_BUG" | "FIXED_TARGETED" | "PARTIAL_FIX" | "REVIEWED_NO_ISSUE_FOUND"; evidence: string }
 const findings = JSON.parse(readFileSync("docs/card-audit/manual-findings.json", "utf8")) as ManualFinding[];
 const manual = new Map<number, ManualFinding>();
 for (const finding of findings) {
-  if (manual.has(finding.id) || registry.entries[finding.id]?.card.name !== finding.name || !["CONFIRMED_BUG", "FIXED_TARGETED"].includes(finding.status) || !finding.evidence) {
+  if (manual.has(finding.id) || registry.entries[finding.id]?.card.name !== finding.name || !["CONFIRMED_BUG", "FIXED_TARGETED", "PARTIAL_FIX", "REVIEWED_NO_ISSUE_FOUND"].includes(finding.status) || !finding.evidence) {
     throw new Error(`Invalid manual finding: ${finding.id} ${finding.name}`);
   }
   manual.set(finding.id, finding);
@@ -61,7 +61,7 @@ const report = `# Automatyczny przegląd kart — inwentarz\n\n` +
   `To **triage, nie ręczny audyt ani potwierdzenie poprawności**. UNREVIEWED oznacza brak udokumentowanej w tym zestawieniu weryfikacji; brak sygnału niczego nie dowodzi. Sygnały są wskazówkami wymagającymi zbadania: overlay, wariant kosztu lub użycie słowa w innym znaczeniu mogą powodować fałszywe alarmy. Istnienie handlera i status supported też nie dowodzą poprawności.\n\n` +
   `| Sygnał | Kart |\n|---|---:|\n` + [...signals].sort(([a], [b]) => a.localeCompare(b)).map(([s, n]) => `| ${s} | ${n} |`).join("\n") +
   `\n\n## Ręcznie potwierdzone ustalenia\n\n` +
-  `To konkretne wykryte rozbieżności, a nie pełne sprawdzenie wszystkich interakcji tych kart. Źródło: manual-findings.json. Pozostałe ${entries.length - findings.length} kart w tym zestawieniu mają status UNREVIEWED.\n\n` +
+  `To udokumentowane ustalenia, a nie pełne sprawdzenie wszystkich interakcji tych kart. REVIEWED_NO_ISSUE_FOUND oznacza brak wykrytych problemów w sprawdzonym zakresie; PARTIAL_FIX oznacza, że znane błędy pozostają. Źródło: manual-findings.json; podsumowania paczek: batches.md. Pozostałe ${entries.length - findings.length} kart w tym zestawieniu mają status UNREVIEWED, czyli nie mają tu żadnego ręcznego ustalenia. Wcześniejsze wpisy CONFIRMED_BUG i FIXED_TARGETED również wymagają dalszego audytu.\n\n` +
   `| ID | Karta | Status | Ustalenie |\n|---:|---|---|---|\n` + findings.map((f) => `| ${f.id} | ${f.name.replaceAll("|", "\\|")} | ${f.status} | ${f.evidence.replaceAll("|", "\\|")} |`).join("\n") +
   `\n\n## Znaczenie sygnałów\n\n` +
   `- no_runtime_handler: brak handlera o nazwie karty; dla niektórych wampirów bez zdolności może to być zamierzone.\n` +

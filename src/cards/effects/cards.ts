@@ -15,6 +15,7 @@ import {
   compileSpec,
   controllerMeetsRequirements,
   enumerateAllocations,
+  paymentSplits,
   parseAlloc,
   seatControlsCopy,
   vulnerableGrant,
@@ -41754,21 +41755,28 @@ const magnum44: CardHandler = {
   options(card, ctx) {
     if (ctx.window !== "turn.minion") return [];
     const seat = getSeat(ctx.state, ctx.seat);
-    if (seat.pool < 2) return [];
     const options: LegalOption[] = [];
     for (const m of seat.minions) {
-      if (m.inTorpor || m.locked) continue;
+      if (!canAct(m) || cannotBeEquipped(m, "equipment")) continue;
       if (m.playedSinceUnlock.includes(this.name)) continue;
-      options.push({
-        id: playOptionId(this.name, null, m.id, card.id),
-        kind: "playCard",
-        label: `${m.name}: equip .44 Magnum`,
-        card: card.id,
-        name: this.name,
-        minion: m.id,
-        mode: null,
-        params: {},
-      });
+      const cost = playCostFor(ctx.state, {
+        name: this.name, bloodCost: 0, poolCost: 2, types: ["equipment"], requires: [],
+      }, m, ctx.action, ctx.combat, null, ctx.seat);
+      for (const split of paymentSplits(ctx, m, cost, "equipment")) {
+        if (seat.pool < split.pool || m.blood < split.blood) continue;
+        const suffix = Object.values(split.params);
+        options.push({
+          id: playOptionId(this.name, null, m.id, ...suffix, card.id),
+          kind: "playCard",
+          label: `${m.name}: equip .44 Magnum${suffix.length ? ` (${suffix.join(", ")})` : ""}`,
+          card: card.id,
+          name: this.name,
+          minion: m.id,
+          mode: null,
+          cost,
+          params: split.params,
+        });
+      }
     }
     return options;
   },
@@ -41807,7 +41815,14 @@ const magnum44: CardHandler = {
       ];
     }
     if (ctx.window === "combat.chooseStrike") {
-      const chooser = cf.strikes.acting === null ? "acting" : "opposing";
+      const participates = (s: "acting" | "opposing"): boolean =>
+        cf.strikeRound === "normal" || cf.additionalStrikes[s] > 0;
+      const chooser =
+        participates("acting") && cf.strikes.acting === null
+          ? "acting"
+          : participates("opposing") && cf.strikes.opposing === null
+            ? "opposing"
+            : null;
       if (chooser !== side || cf.strikes[side] !== null) return [];
       const committed = cf.committedStrike[side];
       if (committed !== null && committed !== entry.card.id) return [];

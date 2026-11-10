@@ -14,7 +14,7 @@
 import { describe, expect, it } from "vitest";
 import type { CombatFrame, GameState, MinionState, PermanentInPlay } from "../../src/engine/index.ts";
 import { VtesEngine } from "../../src/engine/index.ts";
-import { runTrace, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
+import { makeAlly, runTrace, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
 
 function find(state: GameState, id: string): MinionState {
   const m = state.seats.flatMap((s) => s.minions).find((x) => x.id === id);
@@ -224,6 +224,44 @@ describe("Telepathic Tracking (101950)", () => {
 // ---------------------------------------------------------------------------
 // §2 — Immortal Grapple
 // ---------------------------------------------------------------------------
+
+describe(".44 Magnum audit regressions", () => {
+  it("lets the opposing minion use the gun for an additional strike when the actor has none", () => {
+    const { state, engine } = intoCombat([], {}, (s) => equip(s, "M", "gun2", ".44 Magnum"));
+    expect(walkTo(engine, "strike:hand")).toBe(true);
+    const cf = combat(state)!;
+    cf.strikeRound = "additional";
+    cf.additionalStrikes = { acting: 0, opposing: 1 };
+    cf.strikes = { acting: null, opposing: null };
+    const dp = engine.decision()!;
+    expect(dp.seat).toBe("Bob");
+    expect(dp.options.map((o) => o.id)).toContain("ability:.44 Magnum:gun2:strike");
+    runTrace(engine, [["Bob", "ability:.44 Magnum:gun2:strike"]]);
+    expect(cf.strikes.opposing).toMatchObject({ damage: 2, ranged: true });
+  });
+
+  it("does not let a minion barred from acting equip the gun", () => {
+    const state = threeSeatGame();
+    seatOf(state, "Alice").hand.push({ id: "gun", name: ".44 Magnum" });
+    const minion = find(state, "V1");
+    const engine = new VtesEngine(state, testRegistry);
+    expect(optionIds(engine).some((id) => id.startsWith("play:.44 Magnum") && id.includes(":V1:"))).toBe(true);
+    minion.cannotActThisTurn = true;
+    expect(optionIds(engine).some((id) => id.startsWith("play:.44 Magnum") && id.includes(":V1:"))).toBe(false);
+  });
+
+  it("does not offer equipment to an ally that cannot have it", () => {
+    const state = threeSeatGame();
+    const ally = makeAlly("ally", "Alice", 2);
+    ally.attached.push({ card: { id: "ally", name: "Bone Shambler" }, locked: false,
+      usedThisPhase: false, statics: { cannotBeEquipped: {} }, tags: [] });
+    seatOf(state, "Alice").minions.push(ally);
+    seatOf(state, "Alice").hand.push({ id: "gun", name: ".44 Magnum" });
+    const engine = new VtesEngine(state, testRegistry);
+    expect(optionIds(engine).some((id) => id.startsWith("play:.44 Magnum") && id.includes(":ally:"))).toBe(false);
+    expect(optionIds(engine).some((id) => id.startsWith("play:.44 Magnum") && id.includes(":V1:"))).toBe(true);
+  });
+});
 
 describe("Immortal Grapple (100959)", () => {
   it("bars every non-hand strike for BOTH combatants this round", () => {

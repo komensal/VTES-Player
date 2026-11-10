@@ -1,5 +1,35 @@
 [
   {
+    "id": 100001,
+    "name": ".44 Magnum",
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono wybór broni w dodatkowym strike przeciwnika, zakazy działania i ekwipunku oraz modyfikatory i źródła kosztu; tests/cards/round-end.test.ts i tests/cards/cost-sources.test.ts. Potrzebna dalsza weryfikacja interakcji."
+  },
+  {
+    "id": 100002,
+    "name": "419 Operation",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec action ma jedynie actionStealth; brak umieszczenia karty w grze, przenoszenia pool, wypłaty i możliwości użycia Edge przez prey. src/cards/effects/cards.ts: 419 Operation; registry.json: 100002."
+  },
+  {
+    "id": 100003,
+    "name": "Aaron's Feeding Razor",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Koszt 1 pool, unique oraz +1 hunt nosiciela zgodne ze specyfikacją; tests/cards/legacy-equipment.test.ts i ogólne testy unikalnego equipment. Ocena nie obejmuje wszystkich możliwych interakcji."
+  },
+  {
+    "id": 100004,
+    "name": "Abactor",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec action daje wyłącznie +1 stealth, brak hunt +4 i blood hunt referendum po sukcesie. src/cards/effects/cards.ts: Abactor; registry.json: 100004."
+  },
+  {
+    "id": 100005,
+    "name": "Abandoning the Flesh",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec modifier/reaction daje natychmiast +1 bleed zamiast zastąpienia spalenia wampira, usunięcia go z gry i lokowanej karty z warunkowym bonusem; brak limitu jednej kopii. src/cards/effects/cards.ts: Abandoning the Flesh; registry.json: 100005."
+  },
+  {
     "id": 100013,
     "name": "Absorb the Mind",
     "status": "CONFIRMED_BUG",

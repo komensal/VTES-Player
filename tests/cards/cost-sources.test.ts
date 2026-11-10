@@ -226,6 +226,46 @@ describe("Ravnos Carnival (101553)", () => {
 // ---------------------------------------------------------------------------
 
 describe("Ravnos Cache (101552)", () => {
+  it("prices .44 Magnum with per-minion equipment discounts and increases", () => {
+    for (const amount of [-1, 1]) {
+      const state = threeSeatGame();
+      state.seats[0]!.pool = 2;
+      const minion = state.seats[0]!.minions[0]!;
+      minion.attached.push({ card: { id: "modifier", name: "price modifier" }, locked: false,
+        usedThisPhase: false, tags: [], statics: { playCostMod: { amount, pays: "pool", cardTypes: ["equipment"], minions: "bearer" } } });
+      state.seats[0]!.hand.push({ id: "gun", name: ".44 Magnum" });
+      const engine = new VtesEngine(state, testRegistry);
+      const option = engine.decision()!.options.find((o) => o.id === "play:.44 Magnum:-:V1:gun");
+      if (amount > 0) { expect(option).toBeUndefined(); continue; }
+      expect(option).toMatchObject({ cost: { pool: 1, blood: 0 } });
+      runTrace(engine, [["Alice", option!.id], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+        ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+        ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+        ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"]]);
+      expect(state.seats[0]!.pool).toBe(1);
+      expect(minion.attached.some((p) => p.card.name === ".44 Magnum")).toBe(true);
+    }
+  });
+
+  it("lets .44 Magnum use its counters when the controller cannot pay the full cost", () => {
+    const state = withSource("cache", "Ravnos Cache", 2, cacheSource);
+    state.seats[0]!.pool = 1;
+    state.seats[0]!.hand.push({ id: "gun", name: ".44 Magnum" });
+    const engine = new VtesEngine(state, testRegistry);
+    const dp = engine.decision()!;
+    expect(dp.options.some((o) => o.id === "play:.44 Magnum:-:V1:gun")).toBe(false);
+    const split = dp.options.find((o) => o.id === "play:.44 Magnum:-:V1:cache/0/2:gun");
+    expect(split).toBeDefined();
+    runTrace(engine, [["Alice", split!.id], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"]]);
+    expect(state.seats[0]!.pool).toBe(1);
+    expect(permanent(state, "cache")?.counters).toBe(0);
+    expect(permanent(state, "cache")?.locked).toBe(true);
+    expect(state.seats[0]!.minions[0]!.attached.some((p) => p.card.name === ".44 Magnum")).toBe(true);
+  });
+
   it("trades 1 pool for 2 counters, once per master phase", () => {
     const state = mastersPhase();
     state.seats[0]!.permanents.push({
