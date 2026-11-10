@@ -731,7 +731,7 @@ W tej partii wykryto **jedną nową rozbieżność specyfikacji**: Necrosis. Pot
 |---:|---|---|---|
 | 101321 | On the Qui Vive | Zgodna w sprawdzonych klauzulach | Locked minion wakes through action; once between unlocks; ally does not unlock next phase; reaction/wake tests. |
 | 101323 | Open Grate | Zgodna w sprawdzonych klauzulach | Press only to end combat; positional combat tests. |
-| 101324 | Open War | Zgodna w sprawdzonych klauzulach | +1 stealth Baron action, once/game; persistent Anarch rush/location-burn grants; counters and 4-pool payout; `granted-rush.test.ts`. |
+| 101324 | Open War | Zgodna w sprawdzonych klauzulach | +1 stealth Baron action, once/game; persistent Anarch rush/location-burn grants; counters and 4-pool payout; `permanent-target-actions.test.ts`. |
 | 101326 | Opium Den | Zgodna w sprawdzonych klauzulach | Unique location locks for controlled Follower of Set +1 stealth; location statics tests. |
 | 101337 | Outcast Mage | Zgodna w sprawdzonych klauzulach | Mage ally: 2 life, 0 strength, 1 bleed; 2R strike and optional maneuver; ally combat tests. |
 | 101340 | Owl Companion | Zgodna w sprawdzonych klauzulach | Animal retainer gives opposing controller open hand during employer combat; superior 2 life; retainer tests. |

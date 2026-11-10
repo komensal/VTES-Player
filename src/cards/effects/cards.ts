@@ -43245,15 +43245,19 @@ const diaDeLosMuertos: CardHandler = {
   },
 };
 
+// Keep the compiled grant hooks when adding Open War's bespoke actions.
+// Spreading the compiled handler and then replacing actionOptions used to
+// silently discard its rush grant.
+const compiledOpenWar = compileSpec(specByName("Open War"));
 const openWar: CardHandler = {
-  ...compileSpec(specByName("Open War")),
+  ...compiledOpenWar,
   options(card, ctx) {
     // "Only one Open War can be played in a game" (clause 1).
     const everPlayed = ctx.state.eventLog.some(
       (ev) => ev.type === "CardPlayed" && ev.name === "Open War",
     );
     if (everPlayed) return [];
-    return compileSpec(specByName("Open War")).options?.(card, ctx) ?? [];
+    return compiledOpenWar.options(card, ctx);
   },
 
   // Clause 3 is offered to EVERY Methuselah, not just the controller.
@@ -43285,13 +43289,12 @@ const openWar: CardHandler = {
     }
   },
 
-  // Clause 2: the granted location-burn. The spec's rushGrant supplies
-  // the other granted action; both are merged by the compiler, which
-  // dispatches on the verb segment of the option id.
+  // Clause 2: combine the location-burn with the compiler's rush grant.
+  // Dispatch explicitly: the bespoke overlay is applied AFTER compilation.
   actionOptions(entry, _owner, ctx) {
     if (ctx.window !== "turn.minion") return [];
-    const opts: LegalOption[] = [];
-    if (getSeat(ctx.state, ctx.seat).pool < 2) return opts; // "costs 2 pool"
+    const opts: LegalOption[] = compiledOpenWar.actionOptions?.(entry, _owner, ctx) ?? [];
+    if (getSeat(ctx.state, ctx.seat).pool < 2) return opts; // only the location burn costs 2 pool
     for (const actor of getSeat(ctx.state, ctx.seat).minions) {
       if (actor.kind !== "vampire" || actor.sect !== "anarch" || !canAct(actor)) continue;
       if (
@@ -43317,6 +43320,11 @@ const openWar: CardHandler = {
     return opts;
   },
   useActionOption(entry, _owner, choice, ops) {
+    if (choice.id.includes(":rush:")) {
+      if (!compiledOpenWar.useActionOption) throw new Error("Open War: missing rush handler");
+      compiledOpenWar.useActionOption(entry, _owner, choice, ops);
+      return;
+    }
     const permanent = choice.params["permanent"];
     if (!permanent) throw new Error("Open War: no location chosen");
     ops.announceEntryAction(entry, choice.minion, {

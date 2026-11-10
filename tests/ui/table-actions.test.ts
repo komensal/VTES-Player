@@ -84,6 +84,23 @@ describe("indexing options by the card they are about", () => {
     }
   });
 
+  it("makes Open War's rush reachable from the granting card and acting Anarch", () => {
+    const state = threeSeatGame();
+    state.seats[0]!.minions[0]!.sect = "anarch";
+    state.seats[0]!.permanents.push({ card: { id: "ow", name: "Open War" }, controller: "Alice", locked: false, usedThisPhase: false, statics: {}, tags: ["Open War"] });
+    const dp = new VtesEngine(state, testRegistry).decision()!;
+    const rush = dp.options.find((o) => o.id === "act:Open War:ow:rush:V1:W");
+    expect(rush).toBeDefined();
+    const by = actionsByTableCard(dp, state);
+    expect(by.get("ow")).toContain(rush);
+    expect(by.get("V1")).toContain(rush);
+    const t = new LocalTransport({ setup });
+    for (const selectedCard of ["ow", "V1"]) {
+      const html = screen(t, { state, dp, selectedCard });
+      expect(html).toContain('data-opt="act:Open War:ow:rush:V1:W"');
+    }
+  });
+
   it("NEVER indexes an option under something the table does not draw", () => {
     // The whole safety property: every key must be a card actually on
     // screen, or the option disappears from the bar and from the table at
