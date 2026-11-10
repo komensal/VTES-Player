@@ -6,6 +6,7 @@ import type { AddressInfo } from "node:net";
 let server: ViteDevServer;
 let base: string;
 const realFetch = globalThis.fetch.bind(globalThis);
+let chatResponse: object = { message: { content: '{"id":"legal-1"}' } };
 const upstreamCalls: Array<{ url: string; init?: RequestInit }> = [];
 
 beforeAll(async () => {
@@ -14,7 +15,7 @@ beforeAll(async () => {
     if (url.startsWith("http://127.0.0.1:11434/")) {
       upstreamCalls.push({ url, ...(init ? { init } : {}) });
       if (url.endsWith("/api/tags")) return new Response(JSON.stringify({ models: [{ name: "qwen3:8b" }] }), { status: 200 });
-      return new Response(JSON.stringify({ message: { content: '{"id":"legal-1"}' } }), { status: 200 });
+      return new Response(JSON.stringify(chatResponse), { status: 200 });
     }
     return realFetch(input, init);
   });
@@ -34,6 +35,27 @@ describe("local Ollama bridge", () => {
     expect(await response.json()).toEqual({ id: "legal-1" });
     const request = upstreamCalls.find((c) => c.url.endsWith("/api/chat"));
     expect(JSON.parse(String(request?.init?.body))).toMatchObject({ model: "qwen3:8b", format: "json", stream: false, think: false });
+  });
+
+  it("constrains valid ids and classifies truncated or invalid model output as retryable", async () => {
+    const post = (attempt: number) => realFetch(`${base}/__vtes_ollama/decide`, {
+      method: "POST", headers: { origin: base, "content-type": "application/json" },
+      body: JSON.stringify({ model: "qwen3:8b", prompt: "game data", optionIds: ["legal-1", "pass"], attempt }),
+    });
+    try {
+      chatResponse = { message: { content: '{"id":' }, done_reason: "length" };
+      let response = await post(0);
+      expect(response.status).toBe(502);
+      expect(await response.json()).toMatchObject({ retryable: true, error: expect.stringMatching(/token limit/) });
+      chatResponse = { message: { content: '{"id":"invented"}' } };
+      response = await post(1);
+      expect(response.status).toBe(502);
+      expect(await response.json()).toMatchObject({ retryable: true });
+      const request = JSON.parse(String(upstreamCalls.at(-1)?.init?.body));
+      expect(request.format.properties.id.enum).toEqual(["legal-1", "pass"]);
+      expect(request.options.num_predict).toBe(256);
+      expect(request.messages[0].role).toBe("system");
+    } finally { chatResponse = { message: { content: '{"id":"legal-1"}' } }; }
   });
 
   it("rejects cross-origin calls and invalid model names without invoking Ollama", async () => {

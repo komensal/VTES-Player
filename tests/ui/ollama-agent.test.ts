@@ -5,7 +5,7 @@ import { VtesEngine, viewFor } from "../../src/engine/index.ts";
 import { buildHandlerRegistry } from "../../src/cards/effects/cards.ts";
 import { OllamaAgent, ollamaPrompt } from "../../src/ai/ollama-agent.ts";
 import { LocalTransport } from "../../src/ui/transport.ts";
-import { comparisonGame, type ComparisonConfig } from "../../src/ui/bot-comparison.ts";
+import { comparisonGame, comparisonPosition, type ComparisonConfig } from "../../src/ui/bot-comparison.ts";
 import { botAgentFor } from "../../src/ui/botagent.ts";
 import { DEFAULT_SETTINGS } from "../../src/ui/settings.ts";
 
@@ -45,6 +45,45 @@ describe("local Ollama agent", () => {
     expect(options.some((o) => o.id === choice)).toBe(true);
     expect(agent.fallbacks).toBe(1);
     expect(agent.lastError).toMatch(/invalid option/);
+  });
+
+  it("retries malformed and illegal answers without recording a fallback", async () => {
+    const engine = new VtesEngine(buildGame(setup), buildHandlerRegistry());
+    const dp = engine.decision()!;
+    const view = viewFor(engine.state, dp.seat);
+    const options = dp.options.length > 1 ? dp.options : [dp.options[0]!, { id: "test-extra", kind: "pass" as const, label: "Pass" }];
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(new Response(JSON.stringify({ error: "invalid JSON", retryable: true }), { status: 502 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ id: "invented" }), { status: 200 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ id: options[0]!.id }), { status: 200 }));
+    vi.stubGlobal("fetch", fetchMock);
+    const agent = new OllamaAgent();
+    expect(await agent.decideAsync(dp, options, view, new AbortController().signal)).toBe(options[0]!.id);
+    expect(agent.requests).toBe(3);
+    expect(agent.fallbacks).toBe(0);
+    expect(JSON.parse(fetchMock.mock.calls[2]![1].body)).toMatchObject({ attempt: 2, optionIds: options.map((o) => o.id) });
+  });
+
+  it("falls back only after exhausting malformed-response retries", async () => {
+    const engine = new VtesEngine(buildGame(setup), buildHandlerRegistry());
+    const dp = engine.decision()!;
+    const view = viewFor(engine.state, dp.seat);
+    const options = dp.options.length > 1 ? dp.options : [dp.options[0]!, { id: "test-extra", kind: "pass" as const, label: "Pass" }];
+    const fetchMock = vi.fn().mockImplementation(async () => new Response(JSON.stringify({ error: "invalid JSON", retryable: true }), { status: 502 }));
+    vi.stubGlobal("fetch", fetchMock);
+    const agent = new OllamaAgent();
+    const choice = await agent.decideAsync(dp, options, view, new AbortController().signal);
+    expect(options.some((o) => o.id === choice)).toBe(true);
+    expect(fetchMock).toHaveBeenCalledTimes(3);
+    expect(agent.fallbacks).toBe(1);
+    expect(agent.lastError).toMatch(/3 attempts/);
+  });
+
+  it("includes the pending public card in the prompt", () => {
+    const engine = new VtesEngine(buildGame(setup), buildHandlerRegistry());
+    const dp = engine.decision()!;
+    const view = { ...viewFor(engine.state, dp.seat), pendingCard: { name: "Direct Intervention", seat: "Alice", minion: null, isMaster: false, isEvent: false } };
+    expect(JSON.parse(ollamaPrompt(dp, dp.options, view)).pendingCard).toEqual(view.pendingCard);
   });
 
   it("constructs distinct seat agents from one configured model", () => {
@@ -128,6 +167,13 @@ describe("asynchronous table decisions", () => {
 });
 
 describe("paired comparison", () => {
+  it("resumes at the next seat and seed without replaying completed pairs", () => {
+    const config: ComparisonConfig = { a: "ollama", b: "balanced", deals: 100, seed: 4242, model: "qwen3:8b", neural: null, trained: null };
+    expect(comparisonPosition(config, 22)).toEqual({ seed: 4246, seatIndex: 2 });
+    expect(comparisonPosition(config, 23)).toEqual({ seed: 4246, seatIndex: 3 });
+    expect(comparisonPosition(config, 25)).toEqual({ seed: 4247, seatIndex: 0 });
+  });
+
   it("stops instead of scoring a failed LLM game as Ollama", async () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify({ error: "model missing" }), { status: 503 })));
     const config: ComparisonConfig = { a: "ollama", b: "balanced", deals: 1, seed: 4242, model: "missing", neural: null, trained: null };
