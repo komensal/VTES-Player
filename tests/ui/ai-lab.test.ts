@@ -19,6 +19,7 @@ describe("AI Training Lab UI", () => {
       "trainer-population",
       "trainer-generations",
       "trainer-games",
+      "trainer-workers",
       "trainer-seed",
       "trainer-run",
       "trainer-cancel",

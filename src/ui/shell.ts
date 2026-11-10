@@ -234,7 +234,7 @@ export class Shell {
   private editingDeck: number | null = null;
 
   // --- local AI training lab -----------------------------------------------
-  private trainerConfig = { population: 6, generations: 2, gamesPerCandidate: 3, seed: 42 };
+  private trainerConfig = { population: 6, generations: 2, gamesPerCandidate: 3, seed: 42, workers: Math.min(16, navigator.hardwareConcurrency || 1) };
   private trainerRunning = false;
   private trainerCancelRequested = false;
   private trainerProgress: TrainingProgress | null = null;
@@ -1723,7 +1723,8 @@ export class Shell {
       ? `<div class="trainer-progress">
            <progress max="${p.totalGames}" value="${p.completedGames}"></progress>
            <p class="note">Generation ${p.generation}/${c.generations} · candidate ${p.candidate}/${c.population} ·
-             game ${p.gamesForCandidate}/${c.gamesPerCandidate} · current mean ${p.candidateMeanVp.toFixed(2)} VP</p>
+             completed ${p.gamesForCandidate}/${c.gamesPerCandidate} games for this candidate · current mean ${p.candidateMeanVp.toFixed(2)} VP<br />
+             Total: ${p.completedGames.toLocaleString()}/${p.totalGames.toLocaleString()} games</p>
          </div>`
       : "";
     const trendRows = this.trainerHistory;
@@ -1787,7 +1788,7 @@ export class Shell {
           </tr>
           <tr><td colspan="5"><details><summary>Weights for ${esc(candidate.id)}</summary>
             <pre>${esc(JSON.stringify(candidate.weights, null, 2))}</pre></details></td></tr>`).join("")}</tbody></table>
-          <p class="note dim">Score is average victory points in five-seat self-play. Wins and ousts are shown as context.</p>
+          <p class="note dim">Score is average victory points in five-seat self-play. Wins and ousts are shown as context. After cancellation some candidates may have fewer games; their scores are not directly comparable.</p>
         </div>`
       : "";
     return `<div class="card trainer">
@@ -1799,9 +1800,10 @@ export class Shell {
           <label class="field"><span>Variants per generation</span><input id="trainer-population" type="number" min="2" max="100" value="${c.population}"${disabled} /></label>
           <label class="field"><span>Generations</span><input id="trainer-generations" type="number" min="1" max="200" value="${c.generations}"${disabled} /></label>
           <label class="field"><span>Games per variant</span><input id="trainer-games" type="number" min="1" max="500" value="${c.gamesPerCandidate}"${disabled} /></label>
+          <label class="field"><span>Parallel game workers (1–32)</span><input id="trainer-workers" type="number" min="1" max="32" value="${c.workers}"${disabled} /></label>
           <label class="field"><span>Seed</span><input id="trainer-seed" type="number" value="${c.seed}"${disabled} /></label>
         </div>
-        <p class="note dim">The first generation includes the current default bot and seeded random weight variants. Later generations keep top performers, mutate them, and re-run a Balanced control on the same seeds. The five-seat table repeats the bundled playtest decks; the candidate rotates seats. Larger runs take longer.</p>
+        <p class="note dim">The first generation includes the current default bot and seeded random weight variants. Later generations keep top performers, mutate them, and re-run a Balanced control on the same seeds. The five-seat table repeats the bundled playtest decks; the candidate rotates seats. Independent games run on browser workers; more workers use more CPU and memory. A generation waits for all its games. Larger runs take longer.</p>
         <div class="row">
           <button id="trainer-run" class="primary"${this.trainerRunning || this.mlRunning || this.compareRunning ? " disabled" : ""}>${this.trainerRunning ? "Training…" : "Run training"}</button>
           <button id="trainer-new-seed"${disabled}>Roll new seed</button>
@@ -2080,6 +2082,7 @@ export class Shell {
       population: Math.max(2, Math.min(100, number("#trainer-population", 6))),
       generations: Math.max(1, Math.min(200, number("#trainer-generations", 2))),
       gamesPerCandidate: Math.max(1, Math.min(500, number("#trainer-games", 3))),
+      workers: Math.max(1, Math.min(32, number("#trainer-workers", 1))),
       seed: number("#trainer-seed", 42) || 1,
     };
     this.trainerRunning = true;
@@ -2088,15 +2091,16 @@ export class Shell {
     this.trainerHistory = [];
     this.trainerReport = null;
     this.trainerError = "";
-    this.trainerMessage = "Starting seeded tournament…";
+    this.trainerMessage = typeof Worker === "undefined" ? "Web Workers unavailable; training is running serially." : `Starting seeded tournament with up to ${this.trainerConfig.workers} game workers…`;
     this.paint();
+    let lastProgressPaint = 0;
     try {
       this.trainerReport = await runLocalTraining({
         ...this.trainerConfig,
         shouldCancel: () => this.trainerCancelRequested,
         onProgress: (progress) => {
           this.trainerProgress = progress;
-          if (this.screen === "trainer") this.paint();
+          if (this.screen === "trainer" && Date.now() - lastProgressPaint >= 200) { lastProgressPaint = Date.now(); this.paint(); }
         },
         onGeneration: (trend) => {
           this.trainerHistory.push(trend);
@@ -2781,7 +2785,7 @@ export class Shell {
     });
     this.on("#trainer-cancel", () => {
       this.trainerCancelRequested = true;
-      this.trainerMessage = "Cancellation requested; finishing the current game…";
+      this.trainerMessage = "Cancellation requested; finishing games already running…";
       this.paint();
     });
     this.on(".trainer-save", (el) => this.saveTrainedCandidate(el.dataset["candidate"] ?? ""));

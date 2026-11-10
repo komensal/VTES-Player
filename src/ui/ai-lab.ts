@@ -1,42 +1,35 @@
 /** Browser wiring for the local AI Lab; deck/UI dependencies stay out of src/ai. */
 
-import playtestConfig from "../../config/playtest-decks.json" with { type: "json" };
 import { trainHeuristic, type TrainingOptions } from "../ai/trainer.ts";
-import { buildHandlerRegistry } from "../cards/effects/cards.ts";
+import { HeuristicWorkerPool } from "./heuristic-worker-pool.ts";
 import type { SeatId } from "../engine/state.ts";
+import { buildTrainingState, TRAINING_SEATS, TRAINING_REGISTRY } from "./training-games.ts";
+export { buildTrainingState, TRAINING_SEATS } from "./training-games.ts";
 import { HeuristicAgent } from "../ai/heuristic.ts";
 import { MlAgent, type MlDecisionSample, type MlModel } from "../ai/ml-agent.ts";
 import { PLAYSTYLES } from "../ai/playstyles.ts";
 import { runGame } from "../ai/batch.ts";
-import { buildGame, type DeckDef } from "./decks.ts";
 import { seatSeed } from "./settings.ts";
 
-const config = playtestConfig as unknown as { decks: DeckDef[]; maxTurns: number | null };
-export const TRAINING_SEATS: SeatId[] = ["Lab 1", "Lab 2", "Lab 3", "Lab 4", "Lab 5"];
-const registry = buildHandlerRegistry();
+const registry = TRAINING_REGISTRY;
 
-/** Five-seat training tables from the included playtest snapshots. The three
- *  snapshots are repeated and rotated so the candidate does not always see
- *  the same deck assignment. Random seating remains seeded and reproducible. */
-export function buildTrainingState(seed: number) {
-  const source = config.decks;
-  const offset = Math.abs(seed) % source.length;
-  const decks = TRAINING_SEATS.map((seat, i) => ({
-    ...source[(i + offset) % source.length]!,
-    seat,
-  }));
-  return buildGame({ decks, seed, maxTurns: config.maxTurns, randomSeating: true });
-}
+export type LocalTrainingOptions = Omit<TrainingOptions, "seats" | "registry" | "buildState" | "executeGames"> & { workers?: number };
 
-export type LocalTrainingOptions = Omit<TrainingOptions, "seats" | "registry" | "buildState">;
-
-export function runLocalTraining(options: LocalTrainingOptions) {
-  return trainHeuristic({
-    ...options,
-    seats: TRAINING_SEATS,
-    registry,
-    buildState: buildTrainingState,
-  });
+export async function runLocalTraining(options: LocalTrainingOptions) {
+  const { workers = 1, ...training } = options;
+  // In environments without Web Workers (including node tests), keep the
+  // original serial executor. A worker startup failure is reported, not hidden.
+  const pool = typeof Worker === "undefined" ? undefined : new HeuristicWorkerPool(
+    Math.max(1, Math.min(32, Math.floor(workers) || 1, options.population * options.gamesPerCandidate)),
+  );
+  try {
+    return await trainHeuristic({
+      ...training, seats: TRAINING_SEATS, registry, buildState: buildTrainingState,
+      ...(pool ? { executeGames: pool.run } : {}),
+    });
+  } finally {
+    pool?.close();
+  }
 }
 
 export interface MlTrainingEpisode {

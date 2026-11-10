@@ -1,7 +1,7 @@
 /** Seeded, local self-play tuning (AI Training Lab). */
 
 import { describe, expect, it } from "vitest";
-import { trainHeuristic } from "../../src/ai/trainer.ts";
+import { runTrainingGame, trainHeuristic, type TrainingGameExecutor } from "../../src/ai/trainer.ts";
 import { threeSeatGame, testRegistry } from "../engine/fixtures.ts";
 import { buildTrainingState, runLocalTraining, TRAINING_SEATS } from "../../src/ui/ai-lab.ts";
 
@@ -44,6 +44,29 @@ describe("AI self-play trainer", () => {
     expect(first.history).toEqual(second.history);
     expect(first.candidates).toEqual(second.candidates);
     expect(first.best).toEqual(second.best);
+  });
+
+  it("produces the same report when games finish in reverse order", async () => {
+    const options = { population: 3, generations: 3, gamesPerCandidate: 2, seed: 731,
+      seats: ["Alice", "Bob", "Carol"], registry: testRegistry, buildState: tinyFinishedState };
+    const executeGames: TrainingGameExecutor = async (tasks, _cancelled, onResult) => {
+      for (let i = tasks.length - 1; i >= 0; i--) {
+        onResult(i, runTrainingGame(tasks[i]!, options.seats, options.buildState, options.registry));
+      }
+    };
+    const serial = await trainHeuristic(options);
+    const parallel = await trainHeuristic({ ...options, executeGames });
+    expect(parallel).toEqual(serial);
+  });
+
+  it("rejects missing or duplicated game results instead of scoring a partial generation", async () => {
+    const options = { population: 2, generations: 1, gamesPerCandidate: 1, seed: 9,
+      seats: ["Alice", "Bob", "Carol"], registry: testRegistry, buildState: tinyFinishedState };
+    await expect(trainHeuristic({ ...options, executeGames: async () => {} })).rejects.toThrow(/did not return every game/);
+    await expect(trainHeuristic({ ...options, executeGames: async (_tasks, _cancel, record) => {
+      const result = { victoryPoints: 0, won: false, ousted: false, error: false };
+      record(0, result); record(0, result);
+    } })).rejects.toThrow(/duplicate/);
   });
 
   it("runs the real five-seat local tournament without game errors", async () => {
