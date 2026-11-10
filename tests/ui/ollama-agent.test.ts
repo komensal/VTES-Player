@@ -134,11 +134,180 @@ describe("local Ollama agent", () => {
     const agent = new OllamaAgent();
     expect(await agent.decideAsync(dp, dp.options, viewFor(state, "Alice"), new AbortController().signal)).toBe("inf:take:X");
     expect(fetchMock).toHaveBeenCalledOnce();
-    alice.pool = 2;
+    alice.pool = 8;
     const fetchSafe = vi.fn().mockResolvedValue(new Response(JSON.stringify({ id: "inf:add:X" }), { status: 200 }));
     vi.stubGlobal("fetch", fetchSafe);
     expect(await agent.decideAsync(dp, dp.options, viewFor(state, "Alice"), new AbortController().signal)).toBe("inf:add:X");
     expect(JSON.parse(fetchSafe.mock.calls[0]![1].body).optionIds).toContain("inf:crypt");
+  });
+
+  it("concentrates transfers, then moves the completed vampire into play", async () => {
+    const state = threeSeatGame();
+    const alice = state.seats[0]!;
+    alice.minions = []; alice.pool = 10;
+    alice.uncontrolled = [
+      { card: makeMinion("near", "Alice", { capacity: 5 }), counters: 3 },
+      { card: makeMinion("far", "Alice", { capacity: 7 }), counters: 2 },
+    ];
+    state.seats[1]!.uncontrolled.push({ card: makeMinion("SECRET-OPPONENT", "Bob"), counters: 4 });
+    const turn = state.frames[0]!;
+    if (turn.kind !== "turn") throw new Error("fixture");
+    turn.phase = "influence"; turn.transfersLeft = 4;
+    const engine = new VtesEngine(state, testRegistry);
+    const fetchMock = vi.fn().mockImplementation(async (_url, init) => {
+      const request = JSON.parse(init.body);
+      expect(request.optionIds).toContain("inf:add:near");
+      expect(request.optionIds).not.toContain("inf:add:far");
+      expect(request.prompt).not.toContain("SECRET-OPPONENT");
+      expect(JSON.parse(request.prompt).influenceContext.candidates).toContainEqual({ id: "near", capacity: 5, counters: alice.uncontrolled[0]!.counters, remaining: 5 - alice.uncontrolled[0]!.counters });
+      return new Response(JSON.stringify({ id: "inf:add:near" }), { status: 200 });
+    });
+    vi.stubGlobal("fetch", fetchMock);
+    const agent = new OllamaAgent();
+    for (let i = 0; i < 3; i++) {
+      const dp = engine.decision()!;
+      engine.choose(await agent.decideAsync(dp, dp.options, viewFor(state, "Alice"), new AbortController().signal));
+    }
+    expect(alice.minions.some((m) => m.id === "near")).toBe(true);
+    expect(alice.uncontrolled.find((u) => u.card.id === "far")!.counters).toBe(2);
+    expect(alice.pool).toBe(8);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it("does not spend low pool on an unaffordable vampire or oscillate in fallback", async () => {
+    const state = threeSeatGame();
+    const alice = state.seats[0]!;
+    alice.minions = []; alice.pool = 3;
+    alice.uncontrolled = [{ card: makeMinion("large", "Alice", { capacity: 8 }), counters: 3 }];
+    const turn = state.frames[0]!;
+    if (turn.kind !== "turn") throw new Error("fixture");
+    turn.phase = "influence"; turn.transfersLeft = 4;
+    const engine = new VtesEngine(state, testRegistry);
+    const fetchMock = vi.fn().mockRejectedValue(new Error("offline"));
+    vi.stubGlobal("fetch", fetchMock);
+    const agent = new OllamaAgent();
+    for (let i = 0; i < 3; i++) {
+      const dp = engine.decision()!;
+      if (dp.window !== "turn.influence") break;
+      const choice = await agent.decideAsync(dp, dp.options, viewFor(state, "Alice"), new AbortController().signal);
+      expect(choice).not.toBe("inf:add:large");
+      engine.choose(choice);
+    }
+    expect(alice.pool).toBeGreaterThanOrEqual(3);
+    expect(engine.decision()!.window).not.toBe("turn.influence");
+    expect(agent.fallbacks).toBeGreaterThan(0);
+  });
+
+  it("allows a boardless seat to finish at low pool without taking counters back", async () => {
+    const state = threeSeatGame();
+    const alice = state.seats[0]!;
+    alice.minions = []; alice.pool = 3;
+    alice.uncontrolled = [{ card: makeMinion("near", "Alice", { capacity: 5 }), counters: 3 }];
+    const turn = state.frames[0]!;
+    if (turn.kind !== "turn") throw new Error("fixture");
+    turn.phase = "influence"; turn.transfersLeft = 4;
+    const engine = new VtesEngine(state, testRegistry);
+    const fetchMock = vi.fn().mockImplementation(async (_url, init) => {
+      const ids = JSON.parse(init.body).optionIds;
+      expect(ids).toContain("inf:add:near");
+      expect(ids).not.toContain("inf:take:near");
+      return new Response(JSON.stringify({ id: "inf:add:near" }), { status: 200 });
+    });
+    vi.stubGlobal("fetch", fetchMock);
+    const agent = new OllamaAgent();
+    for (let i = 0; i < 3; i++) {
+      const dp = engine.decision()!;
+      engine.choose(await agent.decideAsync(dp, dp.options, viewFor(state, "Alice"), new AbortController().signal));
+    }
+    expect(alice.pool).toBe(1);
+    expect(alice.minions.some((m) => m.id === "near")).toBe(true);
+  });
+
+  it("uses effective capacity and leaves contested entries to the model", async () => {
+    const state = threeSeatGame();
+    const alice = state.seats[0]!;
+    const card = makeMinion("boosted", "Alice", { capacity: 4, attached: [{ card: { id: "boost", name: "Capacity" }, locked: false, usedThisPhase: false, statics: { capacityBonus: 2 }, tags: [] }] });
+    alice.uncontrolled = [{ card, counters: 4 }, { card: makeMinion("other", "Alice", { capacity: 5 }), counters: 4 }];
+    const turn = state.frames[0]!;
+    if (turn.kind !== "turn") throw new Error("fixture");
+    turn.phase = "influence"; turn.transfersLeft = 4;
+    const engine = new VtesEngine(state, testRegistry);
+    const dp = engine.decision()!;
+    const prompt = JSON.parse(ollamaPrompt(dp, dp.options, viewFor(state, "Alice")));
+    expect(prompt.influenceContext.candidates[0]).toMatchObject({ capacity: 6, remaining: 2 });
+    const fetchMock = vi.fn().mockImplementation(async (_url, init) => {
+      const ids = JSON.parse(init.body).optionIds;
+      expect(ids).toContain("inf:add:other");
+      expect(ids).not.toContain("inf:add:boosted");
+      return new Response(JSON.stringify({ id: "inf:add:other" }), { status: 200 });
+    });
+    vi.stubGlobal("fetch", fetchMock);
+    await new OllamaAgent().decideAsync(dp, dp.options, viewFor(state, "Alice"), new AbortController().signal);
+    expect(fetchMock).toHaveBeenCalledOnce();
+    alice.uncontrolled[1]!.counters = 5;
+    state.seats[1]!.minions[0]!.name = "other";
+    const contested = engine.decision()!;
+    const fetchContest = vi.fn().mockResolvedValue(new Response(JSON.stringify({ id: "pass" }), { status: 200 }));
+    vi.stubGlobal("fetch", fetchContest);
+    await new OllamaAgent().decideAsync(contested, contested.options, viewFor(state, "Alice"), new AbortController().signal);
+    expect(fetchContest).toHaveBeenCalledOnce();
+  });
+
+  it("keeps card abilities and taxed entries available for model judgment", async () => {
+    const state = threeSeatGame();
+    const alice = state.seats[0]!;
+    alice.uncontrolled = [{ card: makeMinion("full", "Alice", { capacity: 5 }), counters: 5 }];
+    state.seats[1]!.permanents.push({ card: { id: "tax", name: "Masquerade Enforcement" }, locked: false, usedThisPhase: false, statics: { influenceOutPoolTax: 1 }, tags: [] });
+    const turn = state.frames[0]!;
+    if (turn.kind !== "turn") throw new Error("fixture");
+    turn.phase = "influence"; turn.transfersLeft = 4;
+    const engine = new VtesEngine(state, testRegistry);
+    const dp = engine.decision()!;
+    const fetchMock = vi.fn().mockImplementation(async (_url, init) => {
+      const ids = JSON.parse(init.body).optionIds;
+      expect(ids).toContain("inf:out:full");
+      expect(ids).toContain("pass");
+      return new Response(JSON.stringify({ id: "pass" }), { status: 200 });
+    });
+    vi.stubGlobal("fetch", fetchMock);
+    expect(await new OllamaAgent().decideAsync(dp, dp.options, viewFor(state, "Alice"), new AbortController().signal)).toBe("pass");
+    alice.pool = 2; alice.minions = [];
+    alice.uncontrolled.push({ card: makeMinion("unfunded", "Alice", { capacity: 5 }), counters: 4 });
+    const withTax = engine.decision()!;
+    const taxed = vi.fn().mockImplementation(async (_url, init) => {
+      const ids = JSON.parse(init.body).optionIds;
+      expect(ids).not.toContain("inf:add:unfunded");
+      return new Response(JSON.stringify({ id: "pass" }), { status: 200 });
+    });
+    vi.stubGlobal("fetch", taxed);
+    await new OllamaAgent().decideAsync(withTax, withTax.options, viewFor(state, "Alice"), new AbortController().signal);
+    expect(taxed).toHaveBeenCalledOnce();
+    state.seats[1]!.permanents = [];
+    const special = { id: "special", kind: "playCard" as const, label: "Special", card: "c1", name: "Special", minion: null, mode: null, params: {}, cost: { blood: 0, pool: 0 }, effects: [] };
+    const specialDp = engine.decision()!;
+    const abilityFetch = vi.fn().mockResolvedValue(new Response(JSON.stringify({ id: "special" }), { status: 200 }));
+    vi.stubGlobal("fetch", abilityFetch);
+    expect(await new OllamaAgent().decideAsync(specialDp, [...specialDp.options, special], viewFor(state, "Alice"), new AbortController().signal)).toBe("special");
+  });
+
+  it("concentrates and graduates with the fallback when the service is offline", async () => {
+    const state = threeSeatGame();
+    const alice = state.seats[0]!;
+    alice.minions = []; alice.pool = 10;
+    alice.uncontrolled = [{ card: makeMinion("near", "Alice", { capacity: 5 }), counters: 3 }, { card: makeMinion("far", "Alice", { capacity: 7 }), counters: 2 }];
+    const turn = state.frames[0]!;
+    if (turn.kind !== "turn") throw new Error("fixture");
+    turn.phase = "influence"; turn.transfersLeft = 4;
+    const engine = new VtesEngine(state, testRegistry);
+    vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("offline")));
+    const agent = new OllamaAgent();
+    for (let i = 0; i < 3; i++) {
+      const dp = engine.decision()!;
+      engine.choose(await agent.decideAsync(dp, dp.options, viewFor(state, "Alice"), new AbortController().signal));
+    }
+    expect(agent.fallbacks).toBeGreaterThan(0);
+    expect(alice.minions.some((m) => m.id === "near")).toBe(true);
+    expect(alice.uncontrolled.find((u) => u.card.id === "far")!.counters).toBe(2);
   });
 
   it("constructs distinct seat agents from one configured model", () => {
