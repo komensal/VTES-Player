@@ -1900,6 +1900,8 @@ export type GameEvent =
   | { type: "DamageMended"; minion: MinionId; amount: number }
   | { type: "WentToTorpor"; minion: MinionId }
   | { type: "CombatEnded"; rounds: number }
+  /** A public card's activated ability ends combat before range. */
+  | { type: "CombatEndedByAbility"; seat: SeatId; source: string }
   /** A combat that NEVER HAPPENED — the block succeeded and a card
    *  replaced its second consequence (Clan Loyalty, Ghoul Escort, Blood
    *  Brother Ambush). Distinct from `CombatEnded` on purpose: End of

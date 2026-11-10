@@ -18839,6 +18839,7 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
         ops.emit({ type: "PermanentLocked", cardId: entry.card.id });
       }
       if (combatEnd.oncePerTurn) entry.usedThisTurn = true;
+      ops.emit({ type: "CombatEndedByAbility", seat: entry.controller ?? owner.seat, source: spec.name });
       ops.endCombatFromOutside();
     };
   }
