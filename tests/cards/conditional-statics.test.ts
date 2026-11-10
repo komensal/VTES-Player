@@ -151,6 +151,27 @@ describe("Guardian Angel (100866)", () => {
 });
 
 describe("Abbot (100006)", () => {
+  it("requires a Sabbat vampire and bars a second Abbot on the same vampire", () => {
+    const state = threeSeatGame();
+    const v = find(state, "V1");
+    state.seats[0]!.hand.push({ id: "ab", name: "Abbot" });
+    const engine = new VtesEngine(state, testRegistry);
+    v.sect = "camarilla";
+    expect(engine.decision()!.options.some((o) => o.id === "play:Abbot:basic:V1:ab")).toBe(false);
+    v.sect = "sabbat";
+    expect(engine.decision()!.options.some((o) => o.id === "play:Abbot:basic:V1:ab")).toBe(true);
+    attach(v, "old-ab", "Abbot", { conditional: [{ intercept: 1, directedAtController: true }] });
+    expect(engine.decision()!.options.some((o) => o.id === "play:Abbot:basic:V1:ab")).toBe(false);
+  });
+
+  it("does not grant intercept on an action directed at a different Methuselah", () => {
+    const state = threeSeatGame();
+    attach(find(state, "N"), "ab", "Abbot", { conditional: [{ intercept: 1, directedAtController: true }] });
+    const engine = new VtesEngine(state, testRegistry);
+    runTrace(engine, [["Alice", "bleed:V1"]]); // directed at Bob, not Carol
+    expect(currentIntercept(state, currentActionId(state), "N")).toBe(0);
+  });
+
   it("attaches, unlocks the actor, and grants directed-action intercept", () => {
     const state = threeSeatGame();
     Object.assign(find(state, "V1"), { sect: "sabbat", blood: 4 });

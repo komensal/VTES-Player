@@ -32517,15 +32517,26 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Abombwe [100009] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Master: Discipline, trifle. A Laibon OR a vampire with Protean;
+    // no "you control" or "ready" restriction is printed.
     krcgId: 100009,
     name: "Abombwe",
     cardType: "master",
     bloodCost: 0,
+    poolCost: 0,
+    trifle: true,
+    permanent: {
+      where: "bearer",
+      statics: { disciplineBoost: "abo", capacityBonus: 1 },
+      tags: ["discipline"],
+      attach: {
+        scope: "any", kind: "vampire", inTorporToo: true,
+        sectOrDiscipline: { sect: "laibon", discipline: "pro" },
+        notSuperiorDiscipline: "abo",
+      },
+    },
     usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
-    ],
+    modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
     // Abomination [100010] — fala 49 wierna (300) pełna zgodność bez wydmuszek

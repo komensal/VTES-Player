@@ -6598,6 +6598,8 @@ export function attachTargets(
       }
       if (a.clan !== undefined && m.clan !== a.clan) continue;
       if (a.sect !== undefined && m.sect !== a.sect) continue;
+      if (a.sectOrDiscipline && m.sect !== a.sectOrDiscipline.sect &&
+          disciplinesOf(m)[a.sectOrDiscipline.discipline] === undefined) continue;
       // "…on a ready vampire who follows the Path of <x>" (Terrifying
       // Visage) — a printed crypt trait, like the two filters above it.
       if (a.path !== undefined && m.path !== a.path) continue;

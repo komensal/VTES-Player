@@ -2931,6 +2931,8 @@ export interface CardSpec {
       kind?: "vampire" | "ally";
       clan?: string;
       sect?: Sect;
+      /** "A Laibon OR a vampire with Protean" (Abombwe). */
+      sectOrDiscipline?: { sect: Sect; discipline: string };
       /** "…on a ready vampire WHO FOLLOWS THE PATH OF \<x\>" (Terrifying
        *  Visage). A printed crypt trait, filtered exactly like clan and
        *  sect beside it (docs/path-cards-design.md §3). */

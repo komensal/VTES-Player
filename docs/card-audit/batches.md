@@ -12,3 +12,14 @@ Licznik „bez ustaleń” oznacza wyłącznie karty, które nie mają żadnego 
 | Nadal wymagają naprawy | 3 z 4 | 419 Operation, Abactor, Abandoning the Flesh. |
 
 Bez żadnego ręcznego ustalenia po tej paczce: **4143 z 4158**. Wcześniej udokumentowane rozbieżności i częściowe poprawki też wymagają dalszej pracy; lista nie jest liczbą kart w pełni zweryfikowanych.
+
+## Paczka 2 — ID 100006–100010
+
+| Wynik | Karty | Szczegóły |
+|---|---:|---|
+| Bez wykrytej niezgodności | 1 | Abbot — sprawdzone klauzule, w tym wymóg Sabbat, limit, unlock i intercept. |
+| Wymagały naprawy | 4 | Abjure, Ablative Skin, Abombwe, Abomination. |
+| Naprawione wykryte błędy | 1 z 4 | Abombwe — trifle, dołączenie do właściwego celu, podniesienie dyscypliny i capacity; testy `abombwe-audit.test.ts`. |
+| Nadal wymagają naprawy | 3 z 4 | Abjure, Ablative Skin, Abomination. |
+
+Bez żadnego ręcznego ustalenia po tej paczce: **4138 z 4158**. Liczba ta nie obejmuje niezamkniętych problemów i nie oznacza, że pozostałe 20 kart z wpisami są w pełni zweryfikowane.

@@ -30,6 +30,36 @@
     "evidence": "Spec modifier/reaction daje natychmiast +1 bleed zamiast zastąpienia spalenia wampira, usunięcia go z gry i lokowanej karty z warunkowym bonusem; brak limitu jednej kopii. src/cards/effects/cards.ts: Abandoning the Flesh; registry.json: 100005."
   },
   {
+    "id": 100006,
+    "name": "Abbot",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Sabbat, +1 stealth, dołączenie, unlock, limit jednej kopii oraz intercept wobec akcji skierowanych do kontrolera; tests/cards/conditional-statics.test.ts. Możliwe dalsze interakcje nie zostały w pełni zweryfikowane."
+  },
+  {
+    "id": 100007,
+    "name": "Abjure",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Tekst Power [COMBAT] wymaga zakończenia walki monster z mortal przez lock imbued i opcjonalnego przeniesienia conviction; spec opisuje wyłącznie combat maneuver wymagający red. src/cards/effects/cards.ts: Abjure; src/cards/registry.json: 100007."
+  },
+  {
+    "id": 100008,
+    "name": "Ablative Skin",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec zawiera jedynie +1 stealth i prevent 2 w action, bez dołączenia karty, 3 liczników, wydawania liczników i wersji superior zapobiegającej aggravated. src/cards/effects/cards.ts: Ablative Skin; src/cards/registry.json: 100008."
+  },
+  {
+    "id": 100009,
+    "name": "Abombwe",
+    "status": "FIXED_TARGETED",
+    "evidence": "Zastąpiono gainPool przez trifle Discipline +1 abo/+1 capacity; cel Laibon lub wampir z pro, również przeciwnika/w torpor, z brakiem superior abo. tests/cards/abombwe-audit.test.ts. Pozostałe interakcje mogą wymagać dalszego sprawdzenia."
+  },
+  {
+    "id": 100010,
+    "name": "Abomination",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec nie wymaga non-sterile vampire ani spalenia ready unlocked werewolf, nie tworzy unikalnego wampira, nie przenosi krwi i nie daje wskazanych stałych zdolności/akcji. src/cards/effects/cards.ts: Abomination; src/cards/registry.json: 100010."
+  },
+  {
     "id": 100013,
     "name": "Absorb the Mind",
     "status": "CONFIRMED_BUG",

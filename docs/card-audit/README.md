@@ -10,11 +10,11 @@ To **triage, nie ręczny audyt ani potwierdzenie poprawności**. UNREVIEWED ozna
 | no_reported_library_type | 3 |
 | no_runtime_handler | 11 |
 | printed_unique_not_reported_review | 221 |
-| simple_gain_pool_text_mismatch_review | 187 |
+| simple_gain_pool_text_mismatch_review | 186 |
 
 ## Ręcznie potwierdzone ustalenia
 
-To udokumentowane ustalenia, a nie pełne sprawdzenie wszystkich interakcji tych kart. REVIEWED_NO_ISSUE_FOUND oznacza brak wykrytych problemów w sprawdzonym zakresie; PARTIAL_FIX oznacza, że znane błędy pozostają. Źródło: manual-findings.json; podsumowania paczek: batches.md. Pozostałe 4143 kart w tym zestawieniu mają status UNREVIEWED, czyli nie mają tu żadnego ręcznego ustalenia. Wcześniejsze wpisy CONFIRMED_BUG i FIXED_TARGETED również wymagają dalszego audytu.
+To udokumentowane ustalenia, a nie pełne sprawdzenie wszystkich interakcji tych kart. REVIEWED_NO_ISSUE_FOUND oznacza brak wykrytych problemów w sprawdzonym zakresie; PARTIAL_FIX oznacza, że znane błędy pozostają. Źródło: manual-findings.json; podsumowania paczek: batches.md. Pozostałe 4138 kart w tym zestawieniu mają status UNREVIEWED, czyli nie mają tu żadnego ręcznego ustalenia. Wcześniejsze wpisy CONFIRMED_BUG i FIXED_TARGETED również wymagają dalszego audytu.
 
 | ID | Karta | Status | Ustalenie |
 |---:|---|---|---|
@@ -23,6 +23,11 @@ To udokumentowane ustalenia, a nie pełne sprawdzenie wszystkich interakcji tych
 | 100003 | Aaron's Feeding Razor | REVIEWED_NO_ISSUE_FOUND | Koszt 1 pool, unique oraz +1 hunt nosiciela zgodne ze specyfikacją; tests/cards/legacy-equipment.test.ts i ogólne testy unikalnego equipment. Ocena nie obejmuje wszystkich możliwych interakcji. |
 | 100004 | Abactor | CONFIRMED_BUG | Spec action daje wyłącznie +1 stealth, brak hunt +4 i blood hunt referendum po sukcesie. src/cards/effects/cards.ts: Abactor; registry.json: 100004. |
 | 100005 | Abandoning the Flesh | CONFIRMED_BUG | Spec modifier/reaction daje natychmiast +1 bleed zamiast zastąpienia spalenia wampira, usunięcia go z gry i lokowanej karty z warunkowym bonusem; brak limitu jednej kopii. src/cards/effects/cards.ts: Abandoning the Flesh; registry.json: 100005. |
+| 100006 | Abbot | REVIEWED_NO_ISSUE_FOUND | W sprawdzonym zakresie: Sabbat, +1 stealth, dołączenie, unlock, limit jednej kopii oraz intercept wobec akcji skierowanych do kontrolera; tests/cards/conditional-statics.test.ts. Możliwe dalsze interakcje nie zostały w pełni zweryfikowane. |
+| 100007 | Abjure | CONFIRMED_BUG | Tekst Power [COMBAT] wymaga zakończenia walki monster z mortal przez lock imbued i opcjonalnego przeniesienia conviction; spec opisuje wyłącznie combat maneuver wymagający red. src/cards/effects/cards.ts: Abjure; src/cards/registry.json: 100007. |
+| 100008 | Ablative Skin | CONFIRMED_BUG | Spec zawiera jedynie +1 stealth i prevent 2 w action, bez dołączenia karty, 3 liczników, wydawania liczników i wersji superior zapobiegającej aggravated. src/cards/effects/cards.ts: Ablative Skin; src/cards/registry.json: 100008. |
+| 100009 | Abombwe | FIXED_TARGETED | Zastąpiono gainPool przez trifle Discipline +1 abo/+1 capacity; cel Laibon lub wampir z pro, również przeciwnika/w torpor, z brakiem superior abo. tests/cards/abombwe-audit.test.ts. Pozostałe interakcje mogą wymagać dalszego sprawdzenia. |
+| 100010 | Abomination | CONFIRMED_BUG | Spec nie wymaga non-sterile vampire ani spalenia ready unlocked werewolf, nie tworzy unikalnego wampira, nie przenosi krwi i nie daje wskazanych stałych zdolności/akcji. src/cards/effects/cards.ts: Abomination; src/cards/registry.json: 100010. |
 | 100013 | Absorb the Mind | CONFIRMED_BUG | Spec ma dodge także dla myt i nie zawiera superior; tekst myt wymaga ranged steal blood, a MYT dodatkowo kradzieży Discipline. src/cards/effects/cards.ts: Absorb the Mind; src/cards/registry.json: 100013. |
 | 100027 | Ahriman's Demesne | CONFIRMED_BUG | Spec daje wyłącznie maneuver, bez wymogu long range i późniejszej rundy, bez aggravated strike i superior burn. src/cards/effects/cards.ts: Ahriman's Demesne; src/cards/registry.json: 100027. |
 | 100207 | Blood Puppy | FIXED_TARGETED | Zastąpiono niepoprawne gainPool przez unique, blood store i akcję burn; tests/cards/blood-puppy.test.ts. Nadal możliwe są nieodkryte interakcje z innymi kartami. |
