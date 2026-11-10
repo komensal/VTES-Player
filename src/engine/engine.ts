@@ -2779,9 +2779,16 @@ export class VtesEngine implements EngineOps {
     switch (cf.step) {
       case "beforeRange":
         if (cycleQuiescent(cf.cycle)) {
-          cf.step = "range";
-          cf.awaiting = "acting";
-          cf.declines = 0;
+          if (cf.skipRangeNextRound) {
+            // Setting the range skips maneuvers, not the pre-range window.
+            cf.skipRangeNextRound = false;
+            cf.step = "beforeStrikes";
+            cf.cycle = newCycle(cf.cycle.order);
+          } else {
+            cf.step = "range";
+            cf.awaiting = "acting";
+            cf.declines = 0;
+          }
           return true;
         }
         return false;
@@ -2976,8 +2983,7 @@ export class VtesEngine implements EngineOps {
             // step)" (Immortal Grapple superior). The boundary already
             // forces close range; the flag skips the step a maneuver
             // would otherwise reopen (docs/round-end-design.md §2).
-            cf.step = cf.skipRangeNextRound ? "beforeStrikes" : "beforeRange";
-            cf.skipRangeNextRound = false;
+            cf.step = "beforeRange";
             cf.range = "close";
             cf.strikes = { acting: null, opposing: null };
             cf.strikeRound = "normal";
@@ -3099,10 +3105,7 @@ export class VtesEngine implements EngineOps {
             // and `skipRangeNextRound` (Immortal Grapple) is one.
             const pending = cf.pendingSetRange ?? [];
             cf.pendingSetRange = [];
-            // `skipRangeNextRound` was consumed above and is already
-            // false; the step it left behind is the readable form of the
-            // same fact.
-            if (cf.step === "beforeRange") {
+            if (!cf.skipRangeNextRound) {
               for (const p of pending) {
                 this.raiseChoice({
                   seat: p.seat,
@@ -6236,7 +6239,9 @@ export class VtesEngine implements EngineOps {
   }
 
   setCombatRange(range: "close" | "long"): void {
-    this.requireCombat().range = range;
+    const cf = this.requireCombat();
+    cf.range = range;
+    cf.skipRangeNextRound = true; // range is set for this round; keep pre-range open
   }
 
   /** "Once each combat" for an ability that is not a prevention (Sword of
@@ -14231,7 +14236,7 @@ export class VtesEngine implements EngineOps {
         // "Skip the Determine Range step for that round" [RTR 19970630] —
         // and with it, "no other effect can be used to reset the range
         // that round", since the step is where they would be played.
-        if (cf.step === "beforeRange") cf.step = "beforeStrikes";
+        if (cf.step === "beforeRange") cf.skipRangeNextRound = true;
       }
       return;
     }

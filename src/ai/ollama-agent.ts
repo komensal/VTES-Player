@@ -49,6 +49,15 @@ export function ollamaPrompt(dp: DecisionPoint, options: LegalOption[], view: Pl
   });
 }
 
+// These influence options spend exactly one pool immediately. Do not remove
+// other options: a card or a referendum can have conditional/net effects.
+function avoidImmediateTransferOust(options: LegalOption[], view: PlayerView): LegalOption[] {
+  const pool = view.seats.find((seat) => seat.id === view.you)?.pool;
+  if (pool === undefined || pool > 1) return options;
+  const safe = options.filter((o) => o.kind !== "transferToVampire" && o.kind !== "cryptDraw");
+  return safe.length ? safe : options;
+}
+
 export class OllamaAgent implements Agent {
   readonly fallback: HeuristicAgent;
   requests = 0;
@@ -57,13 +66,14 @@ export class OllamaAgent implements Agent {
   private retryAfter = 0;
   constructor(readonly model = "qwen3:8b", seed = 1) { this.fallback = new HeuristicAgent({ seed }); }
   decide(dp: DecisionPoint, options: LegalOption[], view: PlayerView): string {
-    return this.fallback.decide(dp, options, view);
+    return this.fallback.decide(dp, avoidImmediateTransferOust(options, view), view);
   }
   async decideAsync(dp: DecisionPoint, options: LegalOption[], view: PlayerView, signal: AbortSignal): Promise<string> {
     // Repeated attempts to block without enough intercept can stall forever.
     // Match the existing heuristic's safety rule when an alternative exists.
-    const nonHopeless = options.filter((option) => option.kind !== "declareBlock" || option.wouldSucceed);
-    const choices = nonHopeless.length ? nonHopeless : options;
+    const safeOptions = avoidImmediateTransferOust(options, view);
+    const nonHopeless = safeOptions.filter((option) => option.kind !== "declareBlock" || option.wouldSucceed);
+    const choices = nonHopeless.length ? nonHopeless : safeOptions;
     if (choices.length === 1) return choices[0]!.id;
     if (Date.now() < this.retryAfter) {
       this.fallbacks++;

@@ -260,33 +260,34 @@ describe("Immortal Grapple (100959)", () => {
     expect(walkTo(engine, "ability:.44 Magnum:gun2:strike")).toBe(true);
   });
 
-  it("superior: the next round skips the determine-range step", () => {
-    const { state, engine } = intoCombat([["Alice", "Immortal Grapple"]], {
+  it("superior: next round keeps pre-range plays but skips maneuvers", () => {
+    const { state, engine } = intoCombat([["Alice", "Immortal Grapple"], ["Alice", "Torn Signpost"], ["Alice", "High Ground"]], {
       v1: { pot: "superior" },
-    });
+    }, (s) => { equip(s, "V1", "flight", "Flight").tags.push("flight"); });
     expect(walkTo(engine, "play:Immortal Grapple:superior")).toBe(true);
-    runTrace(engine, [
-      ["Alice", optionIds(engine).find((o) => o.startsWith("play:Immortal Grapple:superior"))!],
-    ]);
+    runTrace(engine, [["Alice", optionIds(engine).find((o) => o.startsWith("play:Immortal Grapple:superior"))!]]);
     expect(walkTo(engine, "strike:hand")).toBe(true);
     expect(combat(state)!.skipRangeNextRound).toBe(true);
-    const round = combat(state)!.round;
-    for (let i = 0; i < 40 && combat(state) && combat(state)!.round === round; i++) {
-      const dp = engine.decision();
-      if (!dp) break;
-      const pick =
-        dp.options.find((o) => o.id === "press:continue") ??
-        dp.options.find((o) => o.id === "pass") ??
-        dp.options[0]!;
+    for (let i = 0; i < 60 && combat(state)?.round === 1; i++) {
+      const dp = engine.decision()!;
+      const pick = dp.options.find((o) => o.id === "press:continue") ?? dp.options.find((o) => o.id === "pass") ?? dp.options[0]!;
       runTrace(engine, [[dp.seat, pick.id]]);
     }
-    // The press credit came with the superior, so a second round happened
-    // — and it opened past the range step.
-    if (combat(state)) {
-      expect(combat(state)!.round).toBe(round + 1);
-      expect(combat(state)!.step).not.toBe("beforeRange");
-      expect(combat(state)!.skipRangeNextRound).toBe(false);
+    expect(combat(state)?.round).toBe(2);
+    expect(engine.decision()?.window).toBe("combat.beforeRange");
+    expect(optionIds(engine).some((id) => id.startsWith("play:Torn Signpost:superior"))).toBe(true);
+    expect(optionIds(engine).some((id) => id.startsWith("play:High Ground"))).toBe(false);
+    runTrace(engine, [["Alice", optionIds(engine).find((o) => o.startsWith("play:Torn Signpost:superior"))!]]);
+    let sawStrikeWindow = false;
+    for (let i = 0; i < 20; i++) {
+      const dp = engine.decision()!;
+      expect(dp.window).not.toBe("combat.range");
+      if (dp.window === "combat.beforeStrikes") { sawStrikeWindow = true; break; }
+      runTrace(engine, [[dp.seat, dp.options.find((o) => o.id === "pass")!.id]]);
     }
+    expect(sawStrikeWindow).toBe(true);
+    expect(combat(state)?.range).toBe("close");
+    expect(combat(state)?.skipRangeNextRound).toBe(false);
   });
 
   it("carries the GRAPPLE keyword, which Sword of the Archangel filters on", () => {

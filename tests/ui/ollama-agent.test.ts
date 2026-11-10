@@ -8,6 +8,7 @@ import { LocalTransport } from "../../src/ui/transport.ts";
 import { comparisonGame, comparisonPosition, type ComparisonConfig } from "../../src/ui/bot-comparison.ts";
 import { botAgentFor } from "../../src/ui/botagent.ts";
 import { DEFAULT_SETTINGS } from "../../src/ui/settings.ts";
+import { makeMinion, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
 
 const cfg = playtestDecks as unknown as { seed: number; decks: DeckDef[] };
 const setup: GameSetup = { decks: cfg.decks, seed: cfg.seed, maxTurns: 40 };
@@ -107,6 +108,37 @@ describe("local Ollama agent", () => {
     const unknown = JSON.parse(ollamaPrompt({ ...dp, window: "referendum.polling" }, dp.options, { ...view, referendum: withoutPerSeat }));
     expect(unknown.voteContext.poolChangesIfPassed).toBeNull();
     expect(unknown.voteContext.yourKnownPoolChange).toBeNull();
+  });
+
+  it("avoids transferring its last pool while keeping the engine's legal choices intact", async () => {
+    const state = threeSeatGame();
+    const alice = state.seats[0]!;
+    alice.pool = 1;
+    alice.uncontrolled.push({ card: makeMinion("X", "Alice", { capacity: 5 }), counters: 2 });
+    alice.crypt.push(makeMinion("Y", "Alice"));
+    const turn = state.frames[0]!;
+    if (turn.kind !== "turn") throw new Error("fixture");
+    turn.phase = "influence"; turn.transfersLeft = 4;
+    const engine = new VtesEngine(state, testRegistry);
+    const dp = engine.decision()!;
+    expect(dp.options.some((o) => o.kind === "transferToVampire")).toBe(true);
+    expect(dp.options.some((o) => o.kind === "cryptDraw")).toBe(true);
+    const fetchMock = vi.fn().mockImplementation(async (_url, init) => {
+      const body = JSON.parse(init.body);
+      expect(body.optionIds).not.toContain("inf:add:X");
+      expect(body.optionIds).not.toContain("inf:crypt");
+      expect(body.optionIds).toContain("inf:take:X");
+      return new Response(JSON.stringify({ id: "inf:take:X" }), { status: 200 });
+    });
+    vi.stubGlobal("fetch", fetchMock);
+    const agent = new OllamaAgent();
+    expect(await agent.decideAsync(dp, dp.options, viewFor(state, "Alice"), new AbortController().signal)).toBe("inf:take:X");
+    expect(fetchMock).toHaveBeenCalledOnce();
+    alice.pool = 2;
+    const fetchSafe = vi.fn().mockResolvedValue(new Response(JSON.stringify({ id: "inf:add:X" }), { status: 200 }));
+    vi.stubGlobal("fetch", fetchSafe);
+    expect(await agent.decideAsync(dp, dp.options, viewFor(state, "Alice"), new AbortController().signal)).toBe("inf:add:X");
+    expect(JSON.parse(fetchSafe.mock.calls[0]![1].body).optionIds).toContain("inf:crypt");
   });
 
   it("constructs distinct seat agents from one configured model", () => {

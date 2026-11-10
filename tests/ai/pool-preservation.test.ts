@@ -175,6 +175,12 @@ describe("the influence phase, which had no brake at all", () => {
     ).toBeGreaterThan(DEFAULT_WEIGHTS.pass);
   });
 
+  it("does not transfer its last pool even with no minions", () => {
+    const state = influencing(1, { boardless: true });
+    expect(score(state, TRANSFER, undefined, "turn.influence")).toBe(DEFAULT_WEIGHTS.selfOustGuard);
+    expect(score(state, { id: "inf:crypt", kind: "cryptDraw", label: "Draw" }, undefined, "turn.influence")).toBe(DEFAULT_WEIGHTS.selfOustGuard);
+  });
+
   it("pulls counters BACK when it is already at the floor", () => {
     // The mirror of the cliff, and the one case where undoing your own
     // influence is right: counters in the uncontrolled region buy nothing

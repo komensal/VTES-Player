@@ -130,6 +130,49 @@ describe("a unique card two Methuselahs control", () => {
   });
 });
 
+describe("unique masters on another player's minion", () => {
+  function fameGame(controller: string) {
+    const state = threeSeatGame();
+    state.seats[1]!.minions[0]!.attached.push({ ...loc("old-fame", "Fame"), controller });
+    state.seats[0]!.hand.push({ id: "new-fame", name: "Fame" });
+    const turn = state.frames[0]!;
+    if (turn.kind !== "turn") throw new Error("fixture");
+    turn.phase = "master"; turn.masterActionsLeft = 1;
+    return { state, engine: new VtesEngine(state, testRegistry) };
+  }
+  it("cannot play a second Fame when you control the one on an opposing minion", () => {
+    const { engine } = fameGame("Alice");
+    expect(optionIds(engine).some((id) => id.startsWith("play:Fame"))).toBe(false);
+  });
+  it("can play against a rival's Fame, which starts a contest", () => {
+    const { state, engine } = fameGame("Bob");
+    const play = optionIds(engine).find((id) => id.startsWith("play:Fame"));
+    expect(play).toBeDefined();
+    engine.choose(play!);
+    for (let i = 0; i < 6 && engine.decision()?.window === "card.asPlayed"; i++) engine.choose("pass");
+    engine.decision();
+    expect(state.seats[0]!.contested?.some((c) => c.card.name === "Fame")).toBe(true);
+    expect(state.seats[1]!.contested?.some((c) => c.card.name === "Fame")).toBe(true);
+  });
+  it("a rival's master on your minion does not count as your own copy", () => {
+    const { state, engine } = fameGame("Bob");
+    const fame = state.seats[1]!.minions[0]!.attached.pop()!;
+    state.seats[0]!.minions[0]!.attached.push(fame);
+    expect(optionIds(engine).some((id) => id.startsWith("play:Fame"))).toBe(true);
+  });
+  it("cannot play a copy when your Fame is already contested", () => {
+    const { state, engine } = fameGame("Bob");
+    state.seats[0]!.contested = [{ card: { id: "held-fame", name: "Fame" }, permanent: loc("held-fame", "Fame") }];
+    expect(optionIds(engine).some((id) => id.startsWith("play:Fame"))).toBe(false);
+  });
+  it("cannot play a copy when your Fame is attached to a contested vampire", () => {
+    const { state, engine } = fameGame("Alice");
+    const vampire = state.seats[1]!.minions.shift()!;
+    state.seats[1]!.contested = [{ card: { id: vampire.id, name: vampire.name }, minion: vampire }];
+    expect(optionIds(engine).some((id) => id.startsWith("play:Fame"))).toBe(false);
+  });
+});
+
 describe("paying for and yielding a contested card", () => {
   function contest(seat = "Alice"): { state: GameState; engine: VtesEngine } {
     const state = threeSeatGame();

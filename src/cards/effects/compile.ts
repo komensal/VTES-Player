@@ -3712,6 +3712,7 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             // not" (High Ground) — an asymmetry, not a property, so both
             // sides are read.
             const srl = mode.effects.find((e) => e.kind === "setRangeLong");
+            if (srl && cf.skipRangeNextRound) continue;
             if (srl?.kind === "setRangeLong" && srl.requiresFlightAdvantage) {
               const foe = findMinion(ctx.state, side === "acting" ? cf.opposing : cf.acting);
               // ANY attached card, not `minionHasTag` — that reads the
@@ -6552,11 +6553,20 @@ export function seatControlsCopy(
   seatId: string,
   name: string,
 ): boolean {
-  const seat = getSeat(state, seatId);
-  return (
-    seat.permanents.some((p) => p.card.name === name) ||
-    seat.minions.some((m) => m.attached.some((p) => p.card.name === name))
-  );
+  // A master remains controlled by the player who played it, even on
+  // another Methuselah's minion. Minion cards follow their bearer.
+  for (const seat of state.seats) {
+    if (seat.ousted) continue;
+    if (seat.permanents.some((p) => p.card.name === name && (p.controller ?? seat.id) === seatId)) return true;
+    for (const m of seat.minions) {
+      if (m.attached.some((p) => p.card.name === name && (p.controller ?? m.controller) === seatId)) return true;
+    }
+    for (const held of seat.contested ?? []) {
+      if (seat.id === seatId && held.card.name === name) return true;
+      if (held.minion?.attached.some((p) => p.card.name === name && (p.controller ?? held.minion!.controller) === seatId)) return true;
+    }
+  }
+  return false;
 }
 
 /** Ready minions a `permanent.attach` master may be put on
@@ -8886,6 +8896,7 @@ function addWeaponAbilities(spec: CardSpec, handler: CardHandler): void {
       // that round must be with this weapon" (Sniper Rifle, §3).
       if (
         w.blockSetsLongRange &&
+        !cf.skipRangeNextRound &&
         ctx.window === "combat.beforeRange" &&
         cf.fromBlock &&
         cf.round === 1 &&
@@ -15496,7 +15507,7 @@ function addRetainerAbilities(spec: CardSpec, handler: CardHandler): void {
     // §3).
     if (ra.burnBloodToSetRange && ctx.window === "combat.beforeRange") {
       const cf = ctx.combat;
-      if (cf && cf.round === 1 && bearer.blood >= ra.burnBloodToSetRange.blood) {
+      if (cf && !cf.skipRangeNextRound && cf.round === 1 && bearer.blood >= ra.burnBloodToSetRange.blood) {
         for (const range of ["close", "long"] as const) {
           if (cf.range === range) continue;
           out.push({

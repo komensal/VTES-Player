@@ -3515,8 +3515,9 @@ export interface CombatFrame {
   handStrikesOnly?: boolean;
   /** "If another round of combat occurs, that round is at close range
    *  (skip the determine range step for that round)" (Immortal Grapple
-   *  superior). The boundary already forces close range; this skips the
-   *  step a maneuver would otherwise reopen. */
+   *  superior). At the next round boundary the flag remains set through
+   *  the pre-range window, then skips only the determine-range step. Also
+   *  set during pre-range by effects that establish the current range. */
   skipRangeNextRound?: boolean;
   /**
    * "THE STRIKE DOES +N DAMAGE" (Target Head) — added to the strike's own
