@@ -54,6 +54,7 @@ describe("local Ollama bridge", () => {
       const request = JSON.parse(String(upstreamCalls.at(-1)?.init?.body));
       expect(request.format.properties.id.enum).toEqual(["legal-1", "pass"]);
       expect(request.options.num_predict).toBe(256);
+      expect(request.options.num_ctx).toBe(9500);
       expect(request.messages[0].role).toBe("system");
     } finally { chatResponse = { message: { content: '{"id":"legal-1"}' } }; }
   });

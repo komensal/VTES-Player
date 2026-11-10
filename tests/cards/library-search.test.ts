@@ -189,6 +189,7 @@ describe("Vast Wealth (102092)", () => {
 describe("Black Market Cache (102351)", () => {
   function game(): { state: GameState; engine: VtesEngine } {
     const state = masterPhase(threeSeatGame());
+    alice(state).minions[0]!.clan = "Ravnos";
     alice(state).hand.push({ id: "bmc", name: "Black Market Cache" });
     alice(state).library.push(
       { id: "filler", name: "Conditioning" }, // taken by the replacement draw

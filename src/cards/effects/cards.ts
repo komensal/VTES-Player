@@ -20,6 +20,18 @@ import {
   vulnerableGrant,
 } from "./compile.ts";
 import type { CardSpec } from "./spec.ts";
+import cardRegistry from "../registry.json";
+import type { CardRegistry } from "../types.ts";
+
+// Printed clan icons on masters require a ready controlled member when
+// played (VTES rulebook, library-card requirements). This also applies to
+// bespoke and out-of-turn masters; a clan icon is not merely thematic.
+const masterClanRequirements = new Map(
+  Object.values((cardRegistry as unknown as CardRegistry).entries)
+    .map((entry) => entry.card)
+    .filter((card) => card.kind === "library" && card.types.includes("Master") && card.clans.length > 0)
+    .map((card) => [card.name, card.kind === "library" ? card.clans : []] as const),
+);
 
 /**
  * The eleven Discipline master cards (docs/derived-traits-design.md). One
@@ -8990,10 +9002,10 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100740,
     name: "Flames of Insurrection",
     cardType: "master",
+    requiresControlledSect: ["anarch"],
     bloodCost: 0,
     poolCost: 0,
     unique: true,
-    requiresSect: ["anarch"],
     permanent: {
       where: "seat",
       statics: {},
@@ -11554,7 +11566,7 @@ export const cardSpecs: CardSpec[] = [
     //  your influence phase to steal a vampire controlled by your prey with
     //  capacity less than X. Any vampire can burn this card as a Ⓓ action."
     //
-    // The Ministry icon is on a MASTER, so it is not a requirement (p. 10).
+    // The Ministry icon is enforced centrally as a ready-vampire requirement.
     krcgId: 100848,
     name: "Grand Temple of Set",
     cardType: "master",
@@ -11862,8 +11874,7 @@ export const cardSpecs: CardSpec[] = [
     //
     // "MINIONS can steal" where The Line says "VAMPIRES": an ally may take this
     // one and not the other, which is the pair's negative space. The Toreador
-    // icon is on a MASTER, so it is not a requirement (p. 10's rule is about
-    // minion cards).
+    // icon is enforced centrally as a ready-vampire requirement.
     krcgId: 101127,
     name: "The Louvre, Paris",
     cardType: "master",
@@ -15743,8 +15754,7 @@ export const cardSpecs: CardSpec[] = [
   {
     // "Unique. Put this card in play. Once each turn, you can burn 1 pool
     //  to get +3 votes during the polling step of any referendum."
-    // The Ministry clan tag is thematic, not a requirement — the Ravnos
-    // Carnival precedent: a Master has no acting minion to gate.
+    // The Ministry clan icon is enforced centrally when played.
     krcgId: 100722,
     name: "Ferraille",
     cardType: "master",
@@ -17161,8 +17171,7 @@ export const cardSpecs: CardSpec[] = [
     // "Master: unique location. Lock during your discard phase to move a
     //  card from your ash heap to the bottom of your library."
     //
-    //  The Brujah antitribu icon on a MASTER is decorative — a master's
-    //  clan requirement is printed in its text, and this one prints none.
+    //  The Brujah antitribu icon is enforced centrally when played.
     krcgId: 102153,
     name: "Waste Management Operation",
     cardType: "master",
@@ -17185,7 +17194,7 @@ export const cardSpecs: CardSpec[] = [
     //  the top of your library. Any vampire may burn this location as a
     //  Ⓓ action."
     //
-    //  The Harbinger of Skulls icon is decorative for the same reason.
+    //  The Harbinger of Skulls icon is enforced centrally when played.
     krcgId: 101136,
     name: "Maabara",
     cardType: "master",
@@ -26613,6 +26622,7 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100216,
     name: "Blood Turnip",
     cardType: "master",
+    requiresControlledSect: ["anarch"],
     bloodCost: 0,
     usable: [],
     modes: [
@@ -26964,6 +26974,7 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100347,
     name: "Church of the Order of St. Blaise",
     cardType: "master",
+    requiresControlledSect: ["sabbat"],
     bloodCost: 0,
     usable: [],
     modes: [
@@ -31326,6 +31337,7 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101810,
     name: "Smear Campaign",
     cardType: "master",
+    requiresControlledSect: ["anarch"],
     bloodCost: 0,
     poolCost: 1,
     usable: [],
@@ -34478,6 +34490,7 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101436,
     name: "Powerbase: Luanda",
     cardType: "master",
+    requiresControlledSect: ["laibon"],
     bloodCost: 0,
     usable: [],
     modes: [
@@ -34500,6 +34513,7 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101443,
     name: "Powerbase: Tshwane",
     cardType: "master",
+    requiresControlledSect: ["laibon"],
     bloodCost: 0,
     usable: [],
     modes: [
@@ -35074,6 +35088,7 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101862,
     name: "Static Virtue",
     cardType: "master",
+    requiresControlledSect: ["laibon"],
     bloodCost: 0,
     usable: [],
     modes: [
@@ -35362,6 +35377,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 102002,
     name: "Toy Chest Test",
     cardType: "master",
+    requiresControlledSect: ["sabbat"],
+    requiresControlledCapacity: 5,
     bloodCost: 0,
     poolCost: 1,
     usable: [],
@@ -45561,9 +45578,8 @@ function findEntryById(state: GameState, cardId: string): PermanentInPlay | null
  * play. If this location has no counters, burn it." The paying half is
  * declarative (`costSource` on the card in play, read by the option
  * enumeration and by the payment at resolution); what is bespoke is the
- * headcount at entry — and the fact that a player controlling no Ravnos
- * puts it into play with nothing on it and burns it on arrival, which is
- * what the card says.
+ * headcount at entry. A ready Ravnos is required when it is played; if
+ * that requirement later ceases to hold, the printed burn rule still applies.
  */
 const ravnosCarnival: CardHandler = {
   name: "Ravnos Carnival",
@@ -46387,6 +46403,22 @@ export function buildHandlerRegistry(): HandlerRegistry {
     registry[bespoke.name] = bespoke;
   }
   for (const h of Object.values(registry)) backfillCentralQueries(h);
+  for (const [name, clans] of masterClanRequirements) {
+    const handler = registry[name];
+    if (!handler) continue;
+    // Do not mutate shared bespoke handler objects: registry construction is
+    // repeated by training workers and tests. In-play abilities do not need
+    // the requirement to remain satisfied after the card was played.
+    registry[name] = {
+      ...handler,
+      requiresClans: () => [...clans],
+      options: (card, ctx) => {
+        const options = handler.options(card, ctx);
+        return controllerMeetsRequirements(ctx.state, ctx.seat, { requiresControlledClan: clans })
+          ? options : options.filter((option) => option.kind !== "playCard");
+      },
+    };
+  }
   return registry;
 }
 

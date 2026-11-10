@@ -4672,6 +4672,8 @@ export interface CardSpec {
   requiresControlledSect?: Sect[];
   /** "Requires a ready [clan]" on a Master card — the clan sibling. */
   requiresControlledClan?: string[];
+  /** Minimum capacity of the same qualifying ready vampire, when printed. */
+  requiresControlledCapacity?: number;
   usable: UsabilityRule[];
   /** "If this referendum FAILS, the acting vampire burns 1 blood" (The
    *  Final Nights) — the other half of a referendum, and the first card

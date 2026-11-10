@@ -169,6 +169,7 @@ describe("Grooming the Protégé (100860)", () => {
 describe("Family Gathering (102289)", () => {
   function gatheringGame(topClan: string): GameState {
     const state = threeSeatGame();
+    seatOf(state, "Alice").minions[0]!.clan = "Hecata";
     seatOf(state, "Alice").crypt = [
       makeMinion("C1", "Alice", { clan: topClan, capacity: 5 }),
       makeMinion("C2", "Alice", { clan: "Ventrue", capacity: 4 }),

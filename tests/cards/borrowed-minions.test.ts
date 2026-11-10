@@ -61,6 +61,7 @@ function controllerOf(state: GameState, id: string): string | undefined {
  */
 function game(card: string): { state: GameState; engine: VtesEngine } {
   const state = threeSeatGame();
+  if (card === "The Art of Love") seatOf(state, "Alice").minions[0]!.clan = "Toreador antitribu";
   const bob = seatOf(state, "Bob");
   Object.assign(find(state, "W")!, { clan: "Brujah", capacity: 5, blood: 2 });
   bob.minions = bob.minions.filter((m) => m.id === "W");

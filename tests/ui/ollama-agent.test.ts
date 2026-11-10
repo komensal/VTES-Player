@@ -86,6 +86,29 @@ describe("local Ollama agent", () => {
     expect(JSON.parse(ollamaPrompt(dp, dp.options, view)).pendingCard).toEqual(view.pendingCard);
   });
 
+  it("explains signed referendum impacts to the affected voter", () => {
+    const engine = new VtesEngine(buildGame(setup), buildHandlerRegistry());
+    const dp = engine.decision()!;
+    const original = viewFor(engine.state, dp.seat);
+    const victim = original.seats.find((s) => s.id !== original.you)!;
+    const view = { ...original, referendum: { caller: original.you, cardName: "Kine Resources Contested", variant: "political" as const, callingMinion: null, step: "polling" as const, terms: { alloc: `${victim.id}=3` }, votesFor: 3, votesAgainst: 0, usedSources: [], bloodHuntTarget: null, effectKind: "burn" as const, perSeat: { [victim.id]: -3 } } };
+    const prompt = JSON.parse(ollamaPrompt({ ...dp, window: "referendum.polling" }, dp.options, { ...view, you: victim.id }));
+    expect(prompt.voteContext.yourKnownPoolChange).toBe(-3);
+    expect(prompt.voteContext.poolChangesIfPassed[victim.id]).toBe(-3);
+    expect(prompt.voteContext.guidance).toMatch(/Negative pool change means loss/);
+    expect(prompt.voteContext.prey).toBeTruthy();
+    const parity = JSON.parse(ollamaPrompt({ ...dp, window: "referendum.polling" }, dp.options, {
+      ...view, you: victim.id,
+      referendum: { ...view.referendum, cardName: "Parity Shift", effectKind: "burn" as const, perSeat: { [victim.id]: 3, [original.you]: -3 } },
+    }));
+    expect(parity.voteContext.yourKnownPoolChange).toBe(3);
+    expect(parity.voteContext.poolChangesIfPassed[original.you]).toBe(-3);
+    const { perSeat: _perSeat, ...withoutPerSeat } = view.referendum;
+    const unknown = JSON.parse(ollamaPrompt({ ...dp, window: "referendum.polling" }, dp.options, { ...view, referendum: withoutPerSeat }));
+    expect(unknown.voteContext.poolChangesIfPassed).toBeNull();
+    expect(unknown.voteContext.yourKnownPoolChange).toBeNull();
+  });
+
   it("constructs distinct seat agents from one configured model", () => {
     const settings = { ...DEFAULT_SETTINGS, ollamaModel: "qwen3:8b" };
     const a = botAgentFor("Alice", { playstyle: "ollama", settings });

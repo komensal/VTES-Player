@@ -788,21 +788,15 @@ describe("keeping the search to what a crypt can play", () => {
     expect(out.map((c) => c.id)).not.toContain(brujahOnly.id);
   });
 
-  it("NEVER hides a master for its clan icon", () => {
-    // p. 10: a clan icon on a MINION card is a requirement. On a master
-    // it is a label — 179 of them carry one, and Achilles' Heel is
-    // played on somebody else's vampire entirely. Hiding those would
-    // remove cards every deck can play, and it would look plausible.
+  it("treats the clan icon on a master as a requirement", () => {
     const masters = cards.filter((c) => c.types.includes("Master") && c.clans.length > 0);
     expect(masters.length).toBeGreaterThan(100);
-    for (const m of masters) expect(m.requiresClans).toEqual([]);
-    const out = new Set(
-      searchCards(cards, {
-        ...emptyQuery(),
-        withinCrypt: { disciplines: [], clans: ["Tremere"], sects: [] },
-      }).map((c) => c.id),
-    );
-    for (const m of masters) expect(out.has(m.id)).toBe(true);
+    for (const m of masters) expect(m.requiresClans).toEqual([...m.clans].sort());
+    const out = new Set(searchCards(cards, {
+      ...emptyQuery(), withinCrypt: { disciplines: [], clans: ["Tremere"], sects: [] },
+    }).map((c) => c.id));
+    expect(out.has(byName("Academic Hunting Ground").id)).toBe(true);
+    expect(out.has(byName("Backways").id)).toBe(false);
   });
 
   it("keeps a card whose SECT the crypt has, and drops one it has not", () => {

@@ -611,8 +611,8 @@ describe("off-scope by clan and by sect", () => {
     expect(off.find((r) => r.card.id === stray.id)!.missing).toBe("sect");
   });
 
-  it("never reports a master for its clan icon", () => {
-    // 179 masters carry a clan field and it is a label, not a gate.
+  it("reports a master with an unmet clan icon requirement", () => {
+    // A master with a clan icon requires a ready vampire of that clan.
     const scope = reviewDraft(legalDeck(), byId).cryptScope;
     const master = file.cards.find(
       (c) =>
@@ -623,7 +623,7 @@ describe("off-scope by clan and by sect", () => {
         c.disciplines.length === 0,
     )!;
     expect(master).toBeTruthy();
-    expect(withCard(master).offScope.map((r) => r.card.id)).not.toContain(master.id);
+    expect(withCard(master).offScope.find((r) => r.card.id === master.id)?.missing).toBe("clan");
   });
 
   it("reports the crypt's clans and sects alongside its disciplines", () => {

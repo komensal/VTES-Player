@@ -306,6 +306,7 @@ export function controllerMeetsRequirements(
     CardSpec,
     | "requiresControlledSect"
     | "requiresControlledClan"
+    | "requiresControlledCapacity"
     | "requiresControlledTitle"
     | "requiresControlledPath"
   >,
@@ -313,6 +314,7 @@ export function controllerMeetsRequirements(
   const reqSect = spec.requiresControlledSect;
   const reqClan = spec.requiresControlledClan;
   const reqTitle = spec.requiresControlledTitle;
+  const reqCapacity = spec.requiresControlledCapacity;
   // "Requires 2 OR MORE ready vampires who follow the Path of <x>"
   // (Privileged Position) — a COUNT, which the `.some()` below cannot
   // express, so it is its own test (docs/path-cards-design.md §4).
@@ -323,13 +325,14 @@ export function controllerMeetsRequirements(
     ).length;
     if (n < reqPath.count) return false;
   }
-  if (!reqSect && !reqClan && !reqTitle) return true;
+  if (!reqSect && !reqClan && !reqTitle && reqCapacity === undefined) return true;
   return getSeat(state, seatId).minions.some(
     (m) =>
       m.kind === "vampire" &&
       isReady(m) &&
       (!reqSect || (m.sect !== null && reqSect.includes(m.sect))) &&
       (!reqClan || (m.clan !== null && reqClan.includes(m.clan))) &&
+      (reqCapacity === undefined || capacityOf(m) >= reqCapacity) &&
       (!reqTitle || (m.title !== null && reqTitle.includes(m.title))),
   );
 }

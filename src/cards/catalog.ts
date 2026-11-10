@@ -80,10 +80,8 @@ export interface CatalogCard {
   /**
    * Library only: the clans that may play this card, or empty for "any".
    *
-   * NOT the same list as `clans`, which is what the card is LABELLED
-   * with. A clan icon on a minion card is a requirement (p. 10); on a
-   * MASTER it is not, and 179 masters carry one. Keeping the two apart
-   * is what stops a clan filter hiding cards every deck can play.
+   * Clan icons on minion and master cards are requirements. On a master,
+   * the controller must have a ready vampire of a listed clan.
    */
   requiresClans: string[];
   /**

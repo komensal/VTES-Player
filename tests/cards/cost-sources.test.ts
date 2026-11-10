@@ -82,17 +82,14 @@ describe("Ravnos Carnival (101553)", () => {
     expect(state.seats[0]!.pool).toBe(9); // 1 pool
   });
 
-  it("burns on arrival when its player controls no Ravnos", () => {
+  it("requires a ready Ravnos when played; the burn rule still applies if the clan changes before resolution", () => {
     const state = mastersPhase({ id: "rc", name: "Ravnos Carnival" });
     const engine = new VtesEngine(state, testRegistry);
-
-    runTrace(engine, [
-      ["Alice", "play:Ravnos Carnival"],
-      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
-    ]);
-
-    // "If this location has no counters, burn it" — true the moment it
-    // arrives with none; the pool is spent either way.
+    expect(engine.decision()!.options.some((o) => o.id.startsWith("play:Ravnos Carnival"))).toBe(false);
+    state.seats[0]!.minions[0]!.clan = "Ravnos";
+    engine.choose(engine.decision()!.options.find((o) => o.id.startsWith("play:Ravnos Carnival"))!.id);
+    state.seats[0]!.minions[0]!.clan = "Brujah";
+    runTrace(engine, [["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"]]);
     expect(permanent(state, "rc")).toBeUndefined();
     expect(state.seats[0]!.pool).toBe(9);
   });

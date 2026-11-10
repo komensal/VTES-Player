@@ -69,6 +69,7 @@ const bidsOf = (engine: VtesEngine): number[] =>
 describe("Hostile Takeover — the table bids, the controller is paid", () => {
   function takeover(): { state: GameState; engine: VtesEngine } {
     const state = threeSeatGame();
+    minion(state, "V1").clan = "Ventrue";
     seat(state, "Alice").hand.push({ id: "ht", name: "Hostile Takeover" });
     minion(state, "W").attached.push(entry("mag", ".44 Magnum"));
     return { state, engine: masterPhase(state, "Alice") };
@@ -168,6 +169,7 @@ describe("Hostile Takeover — the table bids, the controller is paid", () => {
 
   it("NEGATIVE SPACE: capacity 7 is not offered, and an ally is not a vampire", () => {
     const state = threeSeatGame();
+    minion(state, "V1").clan = "Ventrue";
     seat(state, "Alice").hand.push({ id: "ht", name: "Hostile Takeover" });
     minion(state, "M").capacity = 7;
     minion(state, "N").kind = "ally";
@@ -186,6 +188,7 @@ describe("Hostile Takeover — the table bids, the controller is paid", () => {
 describe("Malkavian Time Auction — the two highest bidders pay you", () => {
   function auction(): { state: GameState; engine: VtesEngine } {
     const state = threeSeatGame();
+    minion(state, "V1").clan = "Malkavian";
     seat(state, "Alice").hand.push({ id: "mta", name: "Malkavian Time Auction" });
     // `owner` as play records it: a burned card goes to its OWNER's ash
     // heap (p. 16), whoever controls it by then.
