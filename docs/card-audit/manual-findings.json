@@ -1,0 +1,62 @@
+[
+  {
+    "id": 100013,
+    "name": "Absorb the Mind",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec ma dodge także dla myt i nie zawiera superior; tekst myt wymaga ranged steal blood, a MYT dodatkowo kradzieży Discipline. src/cards/effects/cards.ts: Absorb the Mind; src/cards/registry.json: 100013."
+  },
+  {
+    "id": 100027,
+    "name": "Ahriman's Demesne",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec daje wyłącznie maneuver, bez wymogu long range i późniejszej rundy, bez aggravated strike i superior burn. src/cards/effects/cards.ts: Ahriman's Demesne; src/cards/registry.json: 100027."
+  },
+  {
+    "id": 100207,
+    "name": "Blood Puppy",
+    "status": "FIXED_TARGETED",
+    "evidence": "Zastąpiono niepoprawne gainPool przez unique, blood store i akcję burn; tests/cards/blood-puppy.test.ts. Nadal możliwe są nieodkryte interakcje z innymi kartami."
+  },
+  {
+    "id": 100216,
+    "name": "Blood Turnip",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Poza wymogiem Anarch spec daje tylko gainPool; tekst opisuje unikalny master na minionie, przenoszony z krwią/life po rozpoczęciu combatu. src/cards/effects/cards.ts: Blood Turnip; src/cards/registry.json: 100216."
+  },
+  {
+    "id": 101862,
+    "name": "Static Virtue",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Poza wymogiem Laibon spec daje tylko gainPool; tekst dotyczy wyszukiwania i umieszczania kart Aye/Orun. src/cards/effects/cards.ts: Static Virtue; src/cards/registry.json: 101862."
+  },
+  {
+    "id": 200005,
+    "name": "Abdelsobek (G5)",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Brak specyfikacji i handlera o tej nazwie; tekst daje akcję odblokowania wampira lub mumii. src/cards/registry.json: 200005; buildHandlerRegistry."
+  },
+  {
+    "id": 200008,
+    "name": "Abiku (G4)",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Brak specyfikacji i handlera o tej nazwie; tekst daje +1 stealth podczas hunt. src/cards/registry.json: 200008; buildHandlerRegistry."
+  },
+  {
+    "id": 200229,
+    "name": "Byzar (G6)",
+    "status": "CONFIRMED_BUG",
+    "evidence": "flatCrypt zawiera tylko +1 stealth; tekst dodaje zastąpienie burn przeniesieniem do torporu i licznikami. src/cards/effects/cards.ts: Byzar (G6); src/cards/registry.json: 200229."
+  },
+  {
+    "id": 200232,
+    "name": "Cailean (G2)",
+    "status": "CONFIRMED_BUG",
+    "evidence": "flatCrypt z pustymi statystykami nie zapewnia zdolności ustawiania zasięgu przed każdą rundą. src/cards/effects/cards.ts: Cailean (G2); src/cards/registry.json: 200232."
+  },
+  {
+    "id": 200249,
+    "name": "Carolina Vález (G5)",
+    "status": "CONFIRMED_BUG",
+    "evidence": "flatCrypt z pustymi statystykami nie zawiera immunitetu na obrażenia od allies i retainers. src/cards/effects/cards.ts: Carolina Vález (G5); src/cards/registry.json: 200249."
+  }
+]

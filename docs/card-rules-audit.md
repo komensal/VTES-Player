@@ -1,5 +1,7 @@
 # Audit zgodności kart z tekstem i zasadami VTES
 
+> **UWAGA — raport historyczny, nieaktualny i nierzetelny jako potwierdzenie zgodności.** Obecny rejestr ma inny zakres, a część poniższych ocen i twierdzenie o 1151 ręcznie sprawdzonych kartach przeczą aktualnemu kodowi. Przykłady potwierdzonych rozbieżności oraz aktualny inwentarz i jego ograniczenia: [card-audit/README.md](card-audit/README.md). Nie traktować statusu supported, wpisu w tej tabeli ani samego handlera jako dowodu poprawnego działania.
+
 ## Zakres i stan
 
 Audyt obejmuje wszystkie karty oznaczone jako wspierane w `config/supported.json`, a nie tylko karty biblioteki ani wyłącznie karty z osobnymi testami.

@@ -2400,7 +2400,7 @@ export type BloodStoreOffer = {
    *  unbounded (p. 5), so this is a gain, not a transfer. */
   | { kind: "bankToCard"; amount: number }
   /** "Move N blood from this card to your pool", or ALL of it. */
-  | { kind: "cardToPool"; amount: number | "all" }
+  | { kind: "cardToPool"; amount: number | "all"; burnSelf?: boolean }
   /** "Move up to N pool to this card and add 1 blood from the blood bank
    *  for each pool you move" (Powerbase: Washington, D.C.) — one option
    *  per amount, each leaving 2 counters per pool spent. */

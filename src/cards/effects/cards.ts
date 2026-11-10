@@ -26583,16 +26583,27 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Puppy [100207] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Unique master: a blood store with three alternative unlock uses.
     krcgId: 100207,
     name: "Blood Puppy",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
+    permanent: {
+      where: "seat", statics: {}, tags: [],
+      bloodStore: {
+        start: 3,
+        offers: [
+          { window: "unlock", kind: "cardToPool", amount: 1 },
+          { window: "unlock", kind: "bankToCard", amount: 1 },
+          { window: "unlock", kind: "cardToPool", amount: "all", burnSelf: true },
+        ],
+      },
+      vulnerableTo: {}, // any minion may burn it as a directed action
+    },
     usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
-    ],
+    modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
     // Blood Siege [100210] — fala 49 wierna (300) pełna zgodność bez wydmuszek

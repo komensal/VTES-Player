@@ -17498,11 +17498,11 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
           // one moves one — the printed amount is a ceiling, not a
           // requirement — but on an EMPTY card it is worth nothing and
           // spends the phase's one use (docs/futile-options-design.md).
-          if (take <= 0) continue;
+          if (take <= 0 && !o.burnSelf) continue;
           out.push({
             id: `ability:${spec.name}:${entry.card.id}:store:${i}`,
             kind: "useAbility",
-            label: `${spec.name}: move ${take} blood to your pool`,
+            label: `${spec.name}: ${o.burnSelf ? "burn this card and move" : "move"} ${take} blood to your pool`,
             source: entry.card.id,
             params: { act: "bloodStore", offer: String(i) },
           });
@@ -18160,8 +18160,10 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
       } else if (o.kind === "cardToPool") {
         const held = entry.counters ?? 0;
         const take = o.amount === "all" ? held : Math.min(o.amount, held);
-        ops.removeCounters(entry.card.id, take);
-        ops.emit({ type: "PoolGained", seat: controller, amount: take });
+        if (take > 0) ops.removeCounters(entry.card.id, take);
+        // Burning is the price of the all-to-pool option (Blood Puppy).
+        if (o.burnSelf) ops.burnPermanent(entry.card.id);
+        if (take > 0) ops.emit({ type: "PoolGained", seat: controller, amount: take });
       } else if (o.kind === "cardToUncontrolled") {
         const n = Number(choice.params["amount"] ?? "0");
         const target = choice.params["target"];

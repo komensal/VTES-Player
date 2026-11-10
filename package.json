@@ -18,7 +18,8 @@
     "simulate": "tsx scripts/simulate.mts",
     "simulate:politics": "tsx scripts/simulate.mts --decks config/playtest-decks-politics.json",
     "bench": "tsx scripts/aibench.mts",
-    "cards:catalog": "tsx scripts/build-catalog.mts"
+    "cards:catalog": "tsx scripts/build-catalog.mts",
+    "cards:audit": "tsx scripts/card-audit.mts"
   },
   "devDependencies": {
     "@types/node": "^26.1.1",
