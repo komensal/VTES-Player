@@ -284,3 +284,13 @@ Wybrane testy: 224/226 w 19 plikach; znane porażki listy dyscyplin `burn-the-eq
 [Raport](batch-11-manual-05.md) obejmuje ostatnie 22 karty z ID 100219–100410 według manifestu: 6 statycznych rozbieżności bez nowego scenariusza, 13 ograniczonych przeglądów bez wykrytej niezgodności i 3 nierozstrzygnięte. Cała paczka: **136/136** wpisów, w tym **38 `CODE_DISCREPANCY`, 91 ograniczonych `REVIEWED_NO_ISSUE_FOUND`, 7 `UNRESOLVED`**. W całym inwentarzu **4158/4158** kart ma wpis; nie oznacza to pełnej zgodności ani pełnego pokrycia testowego. Historyczne `CONFIRMED_BUG` mogą obejmować analizy statyczne.
 
 Wybrane testy: 291/293 w 21 plikach; znane porażki `justicars.test.ts:27` i `referendum-terms.test.ts:301`. Pełnego zestawu nie uruchomiono. Generator, test inwentarza, typecheck i diff-check sprawdzono osobno.
+
+## Paczka 11 — scenariuszowa weryfikacja trzech rozbieżności
+
+Po ukończeniu pierwszego przeglądu dodano `tests/cards/batch-11-discrepancies.test.ts`: trzy testy charakteryzują **obecne wadliwe zachowanie** i przechodzą, dopóki pozostaje niezmienione. Przy naprawie należy zmienić asercje na oczekiwaną zgodność, nie zachowywać wadliwego zachowania. Nie zmieniano mechanik.
+
+- **Consanguineous Boon (100410)**: faktyczna decyzja terms nie oferuje Toreador antitribu nawet z takim wampirem w grze; Brujah i nieobecny Nosferatu są kontrolami. Nie sprawdzono wypłaty wybranego klanu, bo nie można go wybrać.
+- **Camarilla Exemplary (100284)**: przy statyce karty ręcznie dołączonej do aktora w oknie bleed ally może blokować bez karty, lecz nie z kartą; wampir z blood nadal może. Test nie rozgrywa referendum ani nie rozstrzyga osobnej kwestii wymogu ready.
+- **Can't Take it with You (100289)**: po udanym referendum z lokacją u Alice log pokazuje gain Alice, burn Alice, gain Bob, gain Carol, nie dwie globalne fazy. Test nie bada skutków oustingu ani reakcji na kolejność.
+
+Te trzy wpisy zaktualizowano do `CONFIRMED_BUG` w inwentarzu z zaznaczeniem powyższych ograniczeń; wcześniejszy raport części 05 opisuje stan przed tymi testami. W całej paczce 11 po aktualizacji: **35 `CODE_DISCREPANCY`, 3 `CONFIRMED_BUG`, 91 ograniczonych `REVIEWED_NO_ISSUE_FOUND`, 7 `UNRESOLVED`**. Pozostałe statyczne ustalenia bez zmian.

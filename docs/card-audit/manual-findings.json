@@ -1700,8 +1700,8 @@
   {
     "id": 100284,
     "name": "Camarilla Exemplary",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "blockToll nie ma filtra kinds, a blockTollFor traktuje blood toll jako niedostępny dla ally. Druk obciąża tylko vampire próbującego block, więc ally nie powinien być wykluczany z tego powodu. once-in-a-game.test.ts bada wybór i statykę na bearerze, nie blok ally. Osobno helper terms wymaga ready mimo braku tego słowa w nadruku; interpretacji tego zakresu tutaj nie rozstrzygnięto. Statyczna analiza bez nowego testu scenariuszowego."
+    "status": "CONFIRMED_BUG",
+    "evidence": "Test batch-11-discrepancies.test.ts odtwarza okno bloku po ręcznym dołączeniu skompilowanej statyki karty do aktora: ally może blokować bez karty, ale nie może z kartą, a wampir z blood zachowuje opcję. To test aktualnego wadliwego zachowania, nie pełnej ścieżki referendum; kwestii ready nie rozstrzyga."
   },
   {
     "id": 100285,
@@ -1730,8 +1730,8 @@
   {
     "id": 100289,
     "name": "Can't Take it with You",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "refPerSeatCards najpierw oblicza wszystkie tally, lecz w pojedynczej pętli emituje gain dla danego seat i zaraz potem burn tego seat. Tekst rozdziela gain każdego Methuselah od następującej po nim fazy burn każdego Methuselah. table-pool-swings.test.ts sprawdza końcowe pule bez sytuacji wrażliwej na kolejność, nie globalną sekwencję zdarzeń. Statyczna analiza bez nowego testu scenariuszowego."
+    "status": "CONFIRMED_BUG",
+    "evidence": "Test batch-11-discrepancies.test.ts rozgrywa udane referendum z lokacją Alice i stwierdza kolejność PoolGained Alice, PoolBurned Alice, PoolGained Bob, PoolGained Carol, zamiast wszystkich gain przed burn. To test aktualnego wadliwego zachowania, nie scenariusz oustingu."
   },
   {
     "id": 100290,
@@ -2456,8 +2456,8 @@
   {
     "id": 100410,
     "name": "Consanguineous Boon",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Opcje terms są enumerowane z CLANS w state.ts, które zawiera 14 pozycji, choć rejestr crypt zawiera również rzeczywiste klany jak Toreador antitribu. Nie można wybrać takich klanów do Boon. Znany test referendum-terms.test.ts:301 wykrywa rozjazd list, ale nie jest scenariuszem tej karty; nie wszystkie nazwy z rejestru (np. klasy imbued) muszą być poprawnymi klanami. Statyczna analiza bez nowego testu scenariuszowego."
+    "status": "CONFIRMED_BUG",
+    "evidence": "Test batch-11-discrepancies.test.ts rozgrywa akcję do wyboru terms; Brujah i nieobecny Nosferatu są dostępne, ale Toreador antitribu nie jest, mimo wampira tego klanu w grze i wpisów w rejestrze. To test aktualnego wadliwego zachowania, bez testowania wypłaty dla tego klanu."
   },
   {
     "id": 100411,
