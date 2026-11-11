@@ -14,6 +14,11 @@ export interface ComparedGame { vp: number; win: boolean; ousted: boolean; decis
 export interface ComparisonPair { seed: number; seat: string; a: ComparedGame; b: ComparedGame }
 const registry = buildHandlerRegistry();
 
+/** One pair is committed only after both games finish; resume from the next pair. */
+export function comparisonPosition(config: ComparisonConfig, pairIndex: number): { seed: number; seatIndex: number } {
+  return { seed: (config.seed + Math.floor(pairIndex / TRAINING_SEATS.length)) | 0, seatIndex: pairIndex % TRAINING_SEATS.length };
+}
+
 /** Same seed, seat, opponents, and initial decks for each matched pair. */
 export async function comparisonGame(config: ComparisonConfig, kind: ComparedBot, seed: number, seatIndex: number): Promise<ComparedGame> {
   const candidateSeat = TRAINING_SEATS[seatIndex]!;

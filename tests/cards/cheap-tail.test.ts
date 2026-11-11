@@ -11,6 +11,7 @@
 import { describe, expect, it } from "vitest";
 import type { CombatFrame, GameState, MinionState, PermanentInPlay } from "../../src/engine/index.ts";
 import { VtesEngine } from "../../src/engine/index.ts";
+import { narrate } from "../../src/ui/narrate.ts";
 import { makeAlly, makeMinion, runTrace, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
 
 function find(state: GameState, id: string): MinionState {
@@ -248,8 +249,9 @@ describe("Garibaldi-Meucci Museum (100809)", () => {
     // only Bob may block Alice.)
     const state = threeSeatGame();
     seatOf(state, "Bob").permanents.push(entry("gm", "Garibaldi-Meucci Museum"));
-    Object.assign(find(state, "V1"), { sect: "anarch" });
+    Object.assign(find(state, "V1"), { sect: "anarch", disciplines: { pot: "superior" } });
     Object.assign(find(state, "M"), { sect: "anarch" });
+    seatOf(state, "Alice").hand.push({ id: "ig", name: "Immortal Grapple" }, { id: "rh", name: "Roundhouse" });
     const engine = new VtesEngine(state, testRegistry);
     runTrace(engine, [
       ["Alice", "bleed:V1"],
@@ -260,13 +262,39 @@ describe("Garibaldi-Meucci Museum (100809)", () => {
     expect(combat(state)).toBeDefined();
     expect(walkTo(engine, "ability:Garibaldi-Meucci Museum:gm:endcombat")).toBe(true);
     runTrace(engine, [["Bob", "ability:Garibaldi-Meucci Museum:gm:endcombat"]]);
-    // End of Round still runs (p. 32), so drain to the frame's exit.
+    const ended = state.eventLog.find((ev) => ev.type === "CombatEndedByAbility");
+    expect(ended).toEqual({ type: "CombatEndedByAbility", seat: "Bob", source: "Garibaldi-Meucci Museum" });
+    expect(narrate(ended!, state)?.text).toBe("Bob uses Garibaldi-Meucci Museum to end combat before range is determined.");
+    // End of Round still runs, but range and strike windows are skipped.
+    const windows: string[] = [];
     for (let i = 0; i < 30 && combat(state); i++) {
       const dp = engine.decision();
       if (!dp) break;
+      windows.push(dp.window);
       runTrace(engine, [[dp.seat, (dp.options.find((o) => o.id === "pass") ?? dp.options[0]!).id]]);
     }
     expect(combat(state)).toBeUndefined();
+    expect(windows).not.toContain("combat.beforeStrikes");
+    expect(windows).not.toContain("combat.chooseStrike");
+    expect(seatOf(state, "Alice").hand.map((card) => card.name)).toEqual(expect.arrayContaining(["Immortal Grapple", "Roundhouse"]));
+  });
+
+  it("if the museum is not used, Potence combat cards are offered in their normal windows", () => {
+    const state = threeSeatGame();
+    seatOf(state, "Bob").permanents.push(entry("gm", "Garibaldi-Meucci Museum"));
+    Object.assign(find(state, "V1"), { sect: "anarch", disciplines: { pot: "superior" } });
+    Object.assign(find(state, "M"), { sect: "anarch" });
+    seatOf(state, "Alice").hand.push({ id: "ig", name: "Immortal Grapple" }, { id: "rh", name: "Roundhouse" });
+    const engine = new VtesEngine(state, testRegistry);
+    runTrace(engine, [
+      ["Alice", "bleed:V1"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "block:M"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+    ]);
+    expect(walkTo(engine, "play:Immortal Grapple:")).toBe(true);
+    expect(walkTo(engine, "play:Roundhouse:")).toBe(true);
+    expect(state.eventLog.some((ev) => ev.type === "CombatEndedByAbility")).toBe(false);
   });
 
   it("NEGATIVE SPACE: not offered when only ONE combatant is an Anarch", () => {

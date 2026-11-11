@@ -179,6 +179,51 @@ describe("Open War (101324)", () => {
     expect(state.seats[0]!.permanents.some((p) => p.card.id === "ow")).toBe(false);
   });
 
+  it("after a baron plays it, another ready Anarch can rush a minion", () => {
+    const state = threeSeatGame();
+    Object.assign(find(state, "V1"), { title: "baron", sect: "anarch" });
+    state.seats[0]!.minions.push(makeMinion("A2", "Alice", { sect: "anarch" }));
+    state.seats[0]!.hand.push({ id: "ow", name: "Open War" });
+    const engine = new VtesEngine(state, testRegistry);
+    resolveUnblocked(engine, "play:Open War:basic:V1");
+    expect(state.seats[0]!.permanents.some((p) => p.card.id === "ow")).toBe(true);
+    expect(find(state, "V1").locked).toBe(true);
+    const option = "act:Open War:ow:rush:A2:W";
+    expect(engine.decision()!.options.some((o) => o.id === option)).toBe(true);
+    engine.choose(option);
+    const action = state.frames.find((f) => f.kind === "action");
+    expect(action).toMatchObject({ acting: "A2", targetMinion: "W", target: "Bob", directed: true });
+    expect(find(state, "A2").locked).toBe(true);
+    expect(state.seats[0]!.permanents.find((p) => p.card.id === "ow")!.grantedActionUses).toContainEqual({ minion: "A2", key: "enterCombat" });
+    for (let i = 0; i < 20 && !state.frames.some((f) => f.kind === "combat"); i++) {
+      const dp = engine.decision()!;
+      runTrace(engine, [[dp.seat, "pass"]]);
+    }
+    expect(state.frames.find((f) => f.kind === "combat")).toMatchObject({ acting: "A2", opposing: "W" });
+  });
+
+  it("lets every Methuselah's ready Anarch rush independently of the location burn's pool cost", () => {
+    const state = threeSeatGame();
+    const entry = openWarInPlay(state);
+    state.seats[1]!.pool = 1;
+    find(state, "W").sect = "anarch";
+    find(state, "M").sect = "camarilla";
+    state.seats[2]!.minions[0]!.inTorpor = true;
+    state.seats[0]!.permanents.push(location("loc", "Alamut"));
+    const turn = state.frames[0]!;
+    if (turn.kind !== "turn") throw new Error("fixture");
+    turn.seat = "Bob";
+    const engine = new VtesEngine(state, testRegistry);
+    const ids = engine.decision()!.options.map((o) => o.id);
+    expect(ids).toContain("act:Open War:ow:rush:W:V1");
+    expect(ids).not.toContain("act:Open War:ow:rush:W:W");
+    expect(ids).not.toContain("act:Open War:ow:rush:W:N");
+    expect(ids.some((id) => id.startsWith("act:Open War:ow:rush:M:"))).toBe(false);
+    expect(ids.some((id) => id.startsWith("act:Open War:ow:raze:"))).toBe(false);
+    entry.grantedActionUses = [{ minion: "W", key: "enterCombat" }];
+    expect(engine.decision()!.options.some((o) => o.id.startsWith("act:Open War:ow:rush:W:"))).toBe(false);
+  });
+
   it("grants Anarchs a location-burn action costing 2 pool", () => {
     const state = threeSeatGame();
     openWarInPlay(state);
@@ -187,6 +232,7 @@ describe("Open War (101324)", () => {
     const engine = new VtesEngine(state, testRegistry);
     const opt = "act:Open War:ow:raze:V1:loc";
     expect(engine.decision()!.options.some((o) => o.id === opt)).toBe(true);
+    expect(engine.decision()!.options.some((o) => o.id === "act:Open War:ow:rush:V1:W")).toBe(true);
 
     const before = state.seats[0]!.pool;
     runTrace(engine, [

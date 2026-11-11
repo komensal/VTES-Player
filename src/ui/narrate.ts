@@ -188,6 +188,8 @@ export function narrate(ev: GameEvent, state: GameState): LogLine | null {
       return { text: `${M(ev.minion)} is going to torpor.`, weight: "normal" };
     case "TorporPrevented":
       return { text: `${M(ev.minion)} is kept out of torpor.`, weight: "major" };
+    case "CombatEndedByAbility":
+      return { text: `${ev.seat} uses ${ev.source} to end combat before range is determined.`, weight: "major" };
     case "CombatEnded":
       return { text: `Combat ends after ${plural(ev.rounds, "round")}.`, weight: "normal" };
     case "PressUsed":

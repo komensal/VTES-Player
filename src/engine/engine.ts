@@ -136,16 +136,17 @@ import {
 
 
 /**
- * The first discipline code printed on the spec's mode matching `level`,
- * falling back to the basic mode when `level` is null.
+ * The first discipline code printed on the selected mode. A variant
+ * distinguishes same-level modes that require different disciplines.
  */
 function disciplineOf(
   name: string,
   level: DisciplineLevel | null,
+  variant?: string,
 ): string | undefined {
   const spec = cardSpecs.find((s) => s.name === name);
   if (!spec) return undefined;
-  const mode = spec.modes.find((m) => m.level === (level ?? "basic"));
+  const mode = spec.modes.find((m) => m.level === (level ?? "basic") && (variant === undefined || m.variant === variant));
   if (!mode) return undefined;
   const d = mode.discipline;
   if (!d) return undefined;
@@ -2779,9 +2780,16 @@ export class VtesEngine implements EngineOps {
     switch (cf.step) {
       case "beforeRange":
         if (cycleQuiescent(cf.cycle)) {
-          cf.step = "range";
-          cf.awaiting = "acting";
-          cf.declines = 0;
+          if (cf.skipRangeNextRound) {
+            // Setting the range skips maneuvers, not the pre-range window.
+            cf.skipRangeNextRound = false;
+            cf.step = "beforeStrikes";
+            cf.cycle = newCycle(cf.cycle.order);
+          } else {
+            cf.step = "range";
+            cf.awaiting = "acting";
+            cf.declines = 0;
+          }
           return true;
         }
         return false;
@@ -2976,8 +2984,7 @@ export class VtesEngine implements EngineOps {
             // step)" (Immortal Grapple superior). The boundary already
             // forces close range; the flag skips the step a maneuver
             // would otherwise reopen (docs/round-end-design.md §2).
-            cf.step = cf.skipRangeNextRound ? "beforeStrikes" : "beforeRange";
-            cf.skipRangeNextRound = false;
+            cf.step = "beforeRange";
             cf.range = "close";
             cf.strikes = { acting: null, opposing: null };
             cf.strikeRound = "normal";
@@ -3099,10 +3106,7 @@ export class VtesEngine implements EngineOps {
             // and `skipRangeNextRound` (Immortal Grapple) is one.
             const pending = cf.pendingSetRange ?? [];
             cf.pendingSetRange = [];
-            // `skipRangeNextRound` was consumed above and is already
-            // false; the step it left behind is the readable form of the
-            // same fact.
-            if (cf.step === "beforeRange") {
+            if (!cf.skipRangeNextRound) {
               for (const p of pending) {
                 this.raiseChoice({
                   seat: p.seat,
@@ -3927,6 +3931,12 @@ export class VtesEngine implements EngineOps {
       // A canceled action card never locked its minion and may be played
       // again (p. 16); nothing to undo because everything was deferred.
       this.emit({ type: "CardCanceled", cardId: cp.card.id, name: cp.card.name });
+      // A cancelled combat card is still *played* for per-card limits, but
+      // it did not grant an additional strike. Do not reserve that source
+      // later when damage resolution consults the played history.
+      const combat = this.combatFrame();
+      const entry = combat?.playedHistory?.find((h) => h.cardId === cp.card.id && h.round === combat.round);
+      if (entry) { delete entry.addlCount; delete entry.addlLimited; }
       // "A cancelled card has no effect, but it is STILL CONSIDERED PLAYED"
       // (p. 16) — so it goes where a played card goes. This branch used to
       // file it nowhere: the card left the hand at play and simply ceased
@@ -5805,8 +5815,9 @@ export class VtesEngine implements EngineOps {
         load.additionalStrikeRound = cf.round;
         const bearer = from === "acting" ? cf.acting : cf.opposing;
         if (findMinion(this.state, bearer)) {
-          this.grantAdditionalStrikeTo(bearer, 1, true);
-          cf.committedStrike[from] = strike.weaponCard;
+          if (this.grantAdditionalStrikeTo(bearer, 1, true)) {
+            cf.committedStrike[from] = strike.weaponCard;
+          }
         }
       }
       // "Burn the gun after strike resolution" (Dragon's Breath Rounds).
@@ -6236,7 +6247,9 @@ export class VtesEngine implements EngineOps {
   }
 
   setCombatRange(range: "close" | "long"): void {
-    this.requireCombat().range = range;
+    const cf = this.requireCombat();
+    cf.range = range;
+    cf.skipRangeNextRound = true; // range is set for this round; keep pre-range open
   }
 
   /** "Once each combat" for an ability that is not a prevention (Sword of
@@ -6256,7 +6269,7 @@ export class VtesEngine implements EngineOps {
 
   /** The minion-addressed form of `grantAdditionalStrike`, for a card in
    *  play (which has no `CardPlayFrame`). */
-  grantAdditionalStrikeTo(minion: MinionId, count: number, limited: boolean): void {
+  grantAdditionalStrikeTo(minion: MinionId, count: number, limited: boolean): boolean {
     const cf = this.requireCombat();
     const side = this.sideOf(cf, minion);
     // "…cannot use any additional strikes … this round" (Target Head) —
@@ -6264,9 +6277,10 @@ export class VtesEngine implements EngineOps {
     // "cannot play a card that provides an additional strike, EVEN IF
     // JUST TO BENEFIT FROM ANOTHER EFFECT", which the option enumerator
     // enforces; this is the same bar for a grant from a card in play.
-    if (cf.noAdditionalStrikes?.[side]) return;
+    if (cf.noAdditionalStrikes?.[side] || (limited && cf.usedLimitedAddl[side])) return false;
     cf.additionalStrikes[side] += count;
     if (limited) cf.usedLimitedAddl[side] = true;
+    return true;
   }
 
   /**
@@ -9046,7 +9060,8 @@ export class VtesEngine implements EngineOps {
   nullifyOpposingWeaponDamage(play: CardPlayFrame): void {
     const cf = this.requireCombat();
     const other = this.sideOf(cf, play.minion) === "acting" ? "opposing" : "acting";
-    cf.weaponDamageNullified[other] = true;
+    const opponent = other === "acting" ? cf.acting : cf.opposing;
+    if (getMinion(this.state, opponent).kind === "vampire") cf.weaponDamageNullified[other] = true;
   }
 
   /** "This combat, combat cards cost the OPPOSING vampire +1 blood"
@@ -13664,7 +13679,7 @@ export class VtesEngine implements EngineOps {
       }
     }
     const cf = this.combatFrame();
-    const discipline = disciplineOf(card.name, option.mode);
+    const discipline = disciplineOf(card.name, option.mode, option.params["variant"]);
     const target = cf ? getMinion(this.state, cf.opposing)?.name : undefined;
     this.emit({
       type: "CardPlayed",
@@ -14231,7 +14246,7 @@ export class VtesEngine implements EngineOps {
         // "Skip the Determine Range step for that round" [RTR 19970630] —
         // and with it, "no other effect can be used to reset the range
         // that round", since the step is where they would be played.
-        if (cf.step === "beforeRange") cf.step = "beforeStrikes";
+        if (cf.step === "beforeRange") cf.skipRangeNextRound = true;
       }
       return;
     }

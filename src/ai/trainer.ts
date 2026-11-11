@@ -63,6 +63,26 @@ export interface TrainingProgress {
   candidateWins: number;
 }
 
+export interface TrainingGameTask {
+  candidateIndex: number;
+  gameIndex: number;
+  seed: number;
+  weights: TunableWeights;
+}
+
+export interface TrainingGameResult {
+  victoryPoints: number;
+  won: boolean;
+  ousted: boolean;
+  error: boolean;
+}
+
+/** The executor reports each completed task exactly once; completion may be out of order. */
+export type TrainingGameExecutor = (
+  tasks: TrainingGameTask[], cancelled: () => boolean,
+  onResult: (taskIndex: number, result: TrainingGameResult) => void,
+) => Promise<void>;
+
 export interface TrainingOptions {
   population: number;
   generations: number;
@@ -74,6 +94,7 @@ export interface TrainingOptions {
   shouldCancel?: () => boolean;
   onProgress?: (p: TrainingProgress) => void;
   onGeneration?: (trend: GenerationTrend) => void;
+  executeGames?: TrainingGameExecutor;
 }
 
 export interface GenerationTrend {
@@ -183,6 +204,29 @@ function yieldToUi(): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, 0));
 }
 
+/** One independently seeded game; shared by the serial path and workers. */
+export function runTrainingGame(task: TrainingGameTask, seats: SeatId[], buildState: (seed: number) => GameState, registry: HandlerRegistry): TrainingGameResult {
+  const candidateSeat = seats[task.gameIndex % seats.length]!;
+  const agents: Record<SeatId, Agent> = {};
+  const styles = stylesForOpponents();
+  seats.forEach((seat, seatIndex) => {
+    const agentSeed = (task.seed * 1009 + seatIndex * 9176) | 0;
+    if (seat === candidateSeat) {
+      agents[seat] = new HeuristicAgent({ seed: agentSeed, weights: task.weights });
+    } else {
+      const styleIndex = Math.abs(task.seed + seatIndex * 3) % styles.length;
+      agents[seat] = new HeuristicAgent({ seed: agentSeed, weights: PLAYSTYLES[styles[styleIndex]!] });
+    }
+  });
+  const result = runGame(task.seed, buildState(task.seed), agents, registry);
+  return {
+    victoryPoints: result.victoryPoints[candidateSeat] ?? 0,
+    won: result.winner === candidateSeat,
+    ousted: result.ousted.includes(candidateSeat),
+    error: Boolean(result.error),
+  };
+}
+
 /**
  * Run a small evolutionary tournament. Each candidate plays one seat in a
  * five-seat table; the other seats receive varied built-in styles. The
@@ -204,74 +248,58 @@ export async function trainHeuristic(
   const history: GenerationTrend[] = [];
   let generationsCompleted = 0;
   let cancelled = false;
-  const styles = stylesForOpponents();
-
   for (let generation = 0; generation < generations; generation++) {
     if (opts.shouldCancel?.()) { cancelled = true; break; }
     const population = generation === 0
       ? freshPopulation(populationSize, rng)
       : nextPopulation(previous, populationSize, generation + 1, rng);
-    const current: TrainingCandidate[] = [];
-
-    for (let candidateIndex = 0; candidateIndex < population.length; candidateIndex++) {
-      const candidate = population[candidateIndex]!;
-      let totalVp = 0;
-      let wins = 0;
-      let ousted = 0;
-      let errors = 0;
-      let games = 0;
-
-      for (let gameIndex = 0; gameIndex < gamesPerCandidate; gameIndex++) {
-        if (opts.shouldCancel?.()) { cancelled = true; break; }
-        const gameSeed = opts.seed + gameIndex;
-        const candidateSeat = seats[gameIndex % seats.length]!;
-        const agents: Record<SeatId, Agent> = {};
-        seats.forEach((seat, seatIndex) => {
-          const agentSeed = (gameSeed * 1009 + seatIndex * 9176) | 0;
-          if (seat === candidateSeat) {
-            agents[seat] = new HeuristicAgent({ seed: agentSeed, weights: candidate.weights });
-          } else {
-            const styleIndex = Math.abs(gameSeed + seatIndex * 3) % styles.length;
-            agents[seat] = new HeuristicAgent({
-              seed: agentSeed,
-              weights: PLAYSTYLES[styles[styleIndex]!],
-            });
-          }
-        });
-
-        const result = runGame(gameSeed, opts.buildState(gameSeed), agents, opts.registry);
-        games++;
-        completedGames++;
-        const vp = result.victoryPoints[candidateSeat] ?? 0;
-        totalVp += vp;
-        if (result.winner === candidateSeat) wins++;
-        if (result.ousted.includes(candidateSeat)) ousted++;
-        if (result.error) errors++;
-        opts.onProgress?.({
-          completedGames,
-          totalGames,
-          generation: generation + 1,
-          candidate: candidateIndex + 1,
-          gamesForCandidate: games,
-          candidateMeanVp: totalVp / games,
-          candidateWins: wins,
-        });
+    const tasks: TrainingGameTask[] = population.flatMap((candidate, candidateIndex) =>
+      Array.from({ length: gamesPerCandidate }, (_, gameIndex) => ({
+        candidateIndex, gameIndex, seed: opts.seed + gameIndex, weights: candidate.weights,
+      })),
+    );
+    const results: Array<TrainingGameResult | undefined> = Array(tasks.length);
+    const counts = population.map(() => ({ games: 0, totalVp: 0, wins: 0 }));
+    const record = (index: number, result: TrainingGameResult) => {
+      const task = tasks[index];
+      if (!task || results[index]) throw new Error("Invalid or duplicate training game result.");
+      results[index] = result;
+      completedGames++;
+      const count = counts[task.candidateIndex]!;
+      count.games++; count.totalVp += result.victoryPoints;
+      if (result.won) count.wins++;
+      opts.onProgress?.({
+        completedGames, totalGames, generation: generation + 1,
+        candidate: task.candidateIndex + 1, gamesForCandidate: count.games,
+        candidateMeanVp: count.totalVp / count.games, candidateWins: count.wins,
+      });
+    };
+    if (opts.executeGames) {
+      await opts.executeGames(tasks, () => Boolean(opts.shouldCancel?.()), record);
+    } else {
+      for (let index = 0; index < tasks.length; index++) {
+        if (opts.shouldCancel?.()) break;
+        record(index, runTrainingGame(tasks[index]!, seats, opts.buildState, opts.registry));
         await yieldToUi();
       }
-
-      if (games > 0) {
-        current.push({
-          id: candidate.id,
-          weights: candidate.weights,
-          meanVictoryPoints: totalVp / games,
-          wins,
-          games,
-          ousted,
-          errors,
-        });
-      }
-      if (cancelled) break;
     }
+    cancelled = Boolean(opts.shouldCancel?.());
+    if (!cancelled && results.filter((result) => result !== undefined).length !== tasks.length) {
+      throw new Error("Training executor did not return every game.");
+    }
+    // Fold in task order, not worker completion order: stable ranking, ties,
+    // and subsequent mutations are independent of scheduling.
+    const current: TrainingCandidate[] = population.flatMap((candidate, candidateIndex) => {
+      const candidateResults = results.slice(candidateIndex * gamesPerCandidate, (candidateIndex + 1) * gamesPerCandidate)
+        .filter((result): result is TrainingGameResult => result !== undefined);
+      if (!candidateResults.length) return [];
+      return [{
+        id: candidate.id, weights: candidate.weights,
+        meanVictoryPoints: candidateResults.reduce((sum, r) => sum + r.victoryPoints, 0) / candidateResults.length,
+        wins: candidateResults.filter((r) => r.won).length, games: candidateResults.length,
+        ousted: candidateResults.filter((r) => r.ousted).length, errors: candidateResults.filter((r) => r.error).length,
+      }];
+    });
 
     if (current.length > 0) {
       current.sort((a, b) => b.meanVictoryPoints - a.meanVictoryPoints || b.wins - a.wins);

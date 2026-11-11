@@ -102,6 +102,30 @@ describe("AK-47 (100032)", () => {
     expect(cf.usedLimitedAddl[side]).toBe(true);
   });
 
+  it("does not repeatedly grant the gun's limited additional strike", () => {
+    const { state, engine } = intoCombat((s) => equip(s, "V1", "ak", "AK-47"));
+    expect(walkTo(engine, "ability:AK-47:ak:strike")).toBe(true);
+    engine.choose("ability:AK-47:ak:strike");
+    expect(walkTo(engine, "ability:AK-47:ak:strike")).toBe(true);
+    expect(combat(state)!.strikeRound).toBe("additional");
+    engine.choose("ability:AK-47:ak:strike");
+    expect(combat(state)!.additionalStrikes.acting).toBe(0);
+  });
+
+  it("still permits the gun's strike but not its extra strike after another limited source", () => {
+    const { state, engine } = intoCombat((s) => {
+      equip(s, "V1", "ak", "AK-47");
+      find(s, "V1").disciplines = { cel: "superior" };
+      s.seats[0]!.hand.push({ id: "bl", name: "Blur" });
+    });
+    expect(walkTo(engine, "play:Blur:superior")).toBe(true);
+    runTrace(engine, [["Alice", "play:Blur:superior"]]);
+    expect(walkTo(engine, "ability:AK-47:ak:strike")).toBe(true);
+    expect(combat(state)!.additionalStrikes.acting).toBe(2);
+    engine.choose("ability:AK-47:ak:strike");
+    expect(combat(state)!.additionalStrikes.acting).toBe(1);
+  });
+
   it("the extra sub-round offers ONLY the gun — no hand strike", () => {
     const { state, engine } = intoCombat((s) => equip(s, "V1", "ak", "AK-47"));
     expect(walkTo(engine, "ability:AK-47:ak:strike")).toBe(true);

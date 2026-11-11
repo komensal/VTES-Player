@@ -306,6 +306,7 @@ export function controllerMeetsRequirements(
     CardSpec,
     | "requiresControlledSect"
     | "requiresControlledClan"
+    | "requiresControlledCapacity"
     | "requiresControlledTitle"
     | "requiresControlledPath"
   >,
@@ -313,6 +314,7 @@ export function controllerMeetsRequirements(
   const reqSect = spec.requiresControlledSect;
   const reqClan = spec.requiresControlledClan;
   const reqTitle = spec.requiresControlledTitle;
+  const reqCapacity = spec.requiresControlledCapacity;
   // "Requires 2 OR MORE ready vampires who follow the Path of <x>"
   // (Privileged Position) — a COUNT, which the `.some()` below cannot
   // express, so it is its own test (docs/path-cards-design.md §4).
@@ -323,13 +325,14 @@ export function controllerMeetsRequirements(
     ).length;
     if (n < reqPath.count) return false;
   }
-  if (!reqSect && !reqClan && !reqTitle) return true;
+  if (!reqSect && !reqClan && !reqTitle && reqCapacity === undefined) return true;
   return getSeat(state, seatId).minions.some(
     (m) =>
       m.kind === "vampire" &&
       isReady(m) &&
       (!reqSect || (m.sect !== null && reqSect.includes(m.sect))) &&
       (!reqClan || (m.clan !== null && reqClan.includes(m.clan))) &&
+      (reqCapacity === undefined || capacityOf(m) >= reqCapacity) &&
       (!reqTitle || (m.title !== null && reqTitle.includes(m.title))),
   );
 }
@@ -488,7 +491,7 @@ function hasLimitedBleedIncrease(state: GameState, af: ActionFrame): boolean {
  * player still owes, so the caller applies its normal affordability
  * check to that instead of the printed cost.
  */
-function paymentSplits(
+export function paymentSplits(
   ctx: PlayContext,
   minion: MinionState,
   cost: { blood: number; pool: number },
@@ -3331,6 +3334,14 @@ function compileCombatCard(spec: CardSpec): CardHandler {
           if (ctx.window === "combat.chooseStrike" && hasAddl && !hasStrikeEffect) continue;
           if (window !== ctx.window) continue;
         }
+        // A before-range credit can also carry a limited additional strike
+        // (Shadow of the Wolf). The limit belongs to the minion and round,
+        // regardless of the window in which the source was played.
+        const credit = mode.effects.find((e) => e.kind === "combatCredits" && e.additionalStrike);
+        if (credit?.kind === "combatCredits" && credit.additionalStrike) {
+          if (cf.noAdditionalStrikes?.[side]) continue;
+          if (credit.additionalStrike.limited && cf.usedLimitedAddl[side]) continue;
+        }
         // An outside-the-combat mode was enumerated above, from a vampire
         // that is NOT in this combat; a combatant may not play it.
         if (
@@ -3709,6 +3720,7 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             // not" (High Ground) — an asymmetry, not a property, so both
             // sides are read.
             const srl = mode.effects.find((e) => e.kind === "setRangeLong");
+            if (srl && cf.skipRangeNextRound) continue;
             if (srl?.kind === "setRangeLong" && srl.requiresFlightAdvantage) {
               const foe = findMinion(ctx.state, side === "acting" ? cf.opposing : cf.acting);
               // ANY attached card, not `minionHasTag` — that reads the
@@ -4540,13 +4552,11 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             }
             break;
           case "additionalStrike": {
-            // Additional strikes are GAINED during strike resolution so
-            // that tests and intermediate state see them immediately.
-            // However, `usedLimitedAddl` is deliberately NOT set here — it
-            // is set after damageResolution (in engine.ts) from
-            // cf.playedHistory, so that the grant window (which opens after
-            // damageResolution) correctly limits a minion to one limited
-            // additional-strike source per round (V5 p. 32).
+            // Strike modes reserve their limited source after the first
+            // strike pair resolves (the combat frame's played history).
+            // A grant played in the later grant window must reserve it NOW:
+            // otherwise the same minion can play another limited source
+            // before the window closes, as with two Diversions.
             let count = e.count;
             if (e.perBloodX) {
               const x = Number(play.params["x"] ?? "0");
@@ -4555,9 +4565,9 @@ function compileCombatCard(spec: CardSpec): CardHandler {
               }
               count = x;
             }
-            // Pass limited=false so usedLimitedAddl is NOT set now; it will
-            // be set after damageResolution from playedHistory.
-            ops.grantAdditionalStrike(play, count, false);
+            const combat = [...ops.state.frames].reverse().find((f) => f.kind === "combat");
+            const reserveNow = combat?.kind === "combat" && combat.step !== "chooseStrike";
+            ops.grantAdditionalStrike(play, count, e.limited && reserveNow);
             // "…: burn weapon" — the extra strike is specified, offered
             // in the chooseStrike step the way a granted combat-ends
             // strike is (§4).
@@ -6549,11 +6559,20 @@ export function seatControlsCopy(
   seatId: string,
   name: string,
 ): boolean {
-  const seat = getSeat(state, seatId);
-  return (
-    seat.permanents.some((p) => p.card.name === name) ||
-    seat.minions.some((m) => m.attached.some((p) => p.card.name === name))
-  );
+  // A master remains controlled by the player who played it, even on
+  // another Methuselah's minion. Minion cards follow their bearer.
+  for (const seat of state.seats) {
+    if (seat.ousted) continue;
+    if (seat.permanents.some((p) => p.card.name === name && (p.controller ?? seat.id) === seatId)) return true;
+    for (const m of seat.minions) {
+      if (m.attached.some((p) => p.card.name === name && (p.controller ?? m.controller) === seatId)) return true;
+    }
+    for (const held of seat.contested ?? []) {
+      if (seat.id === seatId && held.card.name === name) return true;
+      if (held.minion?.attached.some((p) => p.card.name === name && (p.controller ?? held.minion!.controller) === seatId)) return true;
+    }
+  }
+  return false;
 }
 
 /** Ready minions a `permanent.attach` master may be put on
@@ -6585,6 +6604,8 @@ export function attachTargets(
       }
       if (a.clan !== undefined && m.clan !== a.clan) continue;
       if (a.sect !== undefined && m.sect !== a.sect) continue;
+      if (a.sectOrDiscipline && m.sect !== a.sectOrDiscipline.sect &&
+          disciplinesOf(m)[a.sectOrDiscipline.discipline] === undefined) continue;
       // "…on a ready vampire who follows the Path of <x>" (Terrifying
       // Visage) — a printed crypt trait, like the two filters above it.
       if (a.path !== undefined && m.path !== a.path) continue;
@@ -8883,6 +8904,7 @@ function addWeaponAbilities(spec: CardSpec, handler: CardHandler): void {
       // that round must be with this weapon" (Sniper Rifle, §3).
       if (
         w.blockSetsLongRange &&
+        !cf.skipRangeNextRound &&
         ctx.window === "combat.beforeRange" &&
         cf.fromBlock &&
         cf.round === 1 &&
@@ -9005,8 +9027,7 @@ function addWeaponAbilities(spec: CardSpec, handler: CardHandler): void {
       // "After the bearer strikes with this gun, they get 1 optional
       // additional strike (limited), only usable to strike with this
       // gun, this round" (AK-47, §2).
-      if (w.additionalStrikeSelf) {
-        ops.grantAdditionalStrikeTo(owner.minion, 1, true);
+      if (w.additionalStrikeSelf && ops.grantAdditionalStrikeTo(owner.minion, 1, true)) {
         ops.commitStrikeTo(owner.minion, entry.card.id);
       }
     };
@@ -15493,7 +15514,7 @@ function addRetainerAbilities(spec: CardSpec, handler: CardHandler): void {
     // §3).
     if (ra.burnBloodToSetRange && ctx.window === "combat.beforeRange") {
       const cf = ctx.combat;
-      if (cf && cf.round === 1 && bearer.blood >= ra.burnBloodToSetRange.blood) {
+      if (cf && !cf.skipRangeNextRound && cf.round === 1 && bearer.blood >= ra.burnBloodToSetRange.blood) {
         for (const range of ["close", "long"] as const) {
           if (cf.range === range) continue;
           out.push({
@@ -17247,7 +17268,8 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
         const who = carry.who ?? {};
         const eligible = getSeat(ctx.state, mine).minions.filter(
           (m) =>
-            isReady(m) &&
+            (isReady(m) || (carry.inTorporToo === true && m.inTorpor)) &&
+            (who.kind === undefined || m.kind === who.kind) &&
             (who.sect === undefined || m.sect === who.sect) &&
             (who.clan === undefined || m.clan === who.clan),
         );
@@ -17271,7 +17293,7 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
               ? ctx.state.seats
                   .filter((s) => s.id !== mine && !s.ousted)
                   .flatMap((s) => s.minions)
-                  .filter((m) => m.kind === "vampire" && isReady(m))
+                  .filter((m) => m.kind === "vampire" && (isReady(m) || (carry.inTorporToo === true && m.inTorpor)))
               : eligible.filter((m) => m.id !== from.id);
             for (const to of targets) {
               // A vampire already at capacity gains nothing: the counter
@@ -17484,11 +17506,11 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
           // one moves one — the printed amount is a ceiling, not a
           // requirement — but on an EMPTY card it is worth nothing and
           // spends the phase's one use (docs/futile-options-design.md).
-          if (take <= 0) continue;
+          if (take <= 0 && !o.burnSelf) continue;
           out.push({
             id: `ability:${spec.name}:${entry.card.id}:store:${i}`,
             kind: "useAbility",
-            label: `${spec.name}: move ${take} blood to your pool`,
+            label: `${spec.name}: ${o.burnSelf ? "burn this card and move" : "move"} ${take} blood to your pool`,
             source: entry.card.id,
             params: { act: "bloodStore", offer: String(i) },
           });
@@ -18146,8 +18168,10 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
       } else if (o.kind === "cardToPool") {
         const held = entry.counters ?? 0;
         const take = o.amount === "all" ? held : Math.min(o.amount, held);
-        ops.removeCounters(entry.card.id, take);
-        ops.emit({ type: "PoolGained", seat: controller, amount: take });
+        if (take > 0) ops.removeCounters(entry.card.id, take);
+        // Burning is the price of the all-to-pool option (Blood Puppy).
+        if (o.burnSelf) ops.burnPermanent(entry.card.id);
+        if (take > 0) ops.emit({ type: "PoolGained", seat: controller, amount: take });
       } else if (o.kind === "cardToUncontrolled") {
         const n = Number(choice.params["amount"] ?? "0");
         const target = choice.params["target"];
@@ -18823,6 +18847,7 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
         ops.emit({ type: "PermanentLocked", cardId: entry.card.id });
       }
       if (combatEnd.oncePerTurn) entry.usedThisTurn = true;
+      ops.emit({ type: "CombatEndedByAbility", seat: entry.controller ?? owner.seat, source: spec.name });
       ops.endCombatFromOutside();
     };
   }

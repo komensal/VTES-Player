@@ -234,7 +234,7 @@ export class Shell {
   private editingDeck: number | null = null;
 
   // --- local AI training lab -----------------------------------------------
-  private trainerConfig = { population: 6, generations: 2, gamesPerCandidate: 3, seed: 42 };
+  private trainerConfig = { population: 6, generations: 2, gamesPerCandidate: 3, seed: 42, workers: Math.min(16, navigator.hardwareConcurrency || 1) };
   private trainerRunning = false;
   private trainerCancelRequested = false;
   private trainerProgress: TrainingProgress | null = null;
@@ -253,6 +253,7 @@ export class Shell {
   private compareRunId = 0;
   private compareWorker: Worker | null = null;
   private comparePairs: ComparisonPair[] = [];
+  private compareRunConfig: ComparisonConfig | null = null;
   private compareMessage = "";
   private compareConfig: { a: ComparedBot; b: ComparedBot; deals: number; seed: number } = { a: "ollama", b: "balanced", deals: 1, seed: 4242 };
 
@@ -1722,7 +1723,8 @@ export class Shell {
       ? `<div class="trainer-progress">
            <progress max="${p.totalGames}" value="${p.completedGames}"></progress>
            <p class="note">Generation ${p.generation}/${c.generations} · candidate ${p.candidate}/${c.population} ·
-             game ${p.gamesForCandidate}/${c.gamesPerCandidate} · current mean ${p.candidateMeanVp.toFixed(2)} VP</p>
+             completed ${p.gamesForCandidate}/${c.gamesPerCandidate} games for this candidate · current mean ${p.candidateMeanVp.toFixed(2)} VP<br />
+             Total: ${p.completedGames.toLocaleString()}/${p.totalGames.toLocaleString()} games</p>
          </div>`
       : "";
     const trendRows = this.trainerHistory;
@@ -1786,7 +1788,7 @@ export class Shell {
           </tr>
           <tr><td colspan="5"><details><summary>Weights for ${esc(candidate.id)}</summary>
             <pre>${esc(JSON.stringify(candidate.weights, null, 2))}</pre></details></td></tr>`).join("")}</tbody></table>
-          <p class="note dim">Score is average victory points in five-seat self-play. Wins and ousts are shown as context.</p>
+          <p class="note dim">Score is average victory points in five-seat self-play. Wins and ousts are shown as context. After cancellation some candidates may have fewer games; their scores are not directly comparable.</p>
         </div>`
       : "";
     return `<div class="card trainer">
@@ -1798,9 +1800,10 @@ export class Shell {
           <label class="field"><span>Variants per generation</span><input id="trainer-population" type="number" min="2" max="100" value="${c.population}"${disabled} /></label>
           <label class="field"><span>Generations</span><input id="trainer-generations" type="number" min="1" max="200" value="${c.generations}"${disabled} /></label>
           <label class="field"><span>Games per variant</span><input id="trainer-games" type="number" min="1" max="500" value="${c.gamesPerCandidate}"${disabled} /></label>
+          <label class="field"><span>Parallel game workers (1–32)</span><input id="trainer-workers" type="number" min="1" max="32" value="${c.workers}"${disabled} /></label>
           <label class="field"><span>Seed</span><input id="trainer-seed" type="number" value="${c.seed}"${disabled} /></label>
         </div>
-        <p class="note dim">The first generation includes the current default bot and seeded random weight variants. Later generations keep top performers, mutate them, and re-run a Balanced control on the same seeds. The five-seat table repeats the bundled playtest decks; the candidate rotates seats. Larger runs take longer.</p>
+        <p class="note dim">The first generation includes the current default bot and seeded random weight variants. Later generations keep top performers, mutate them, and re-run a Balanced control on the same seeds. The five-seat table repeats the bundled playtest decks; the candidate rotates seats. Independent games run on browser workers; more workers use more CPU and memory. A generation waits for all its games. Larger runs take longer.</p>
         <div class="row">
           <button id="trainer-run" class="primary"${this.trainerRunning || this.mlRunning || this.compareRunning ? " disabled" : ""}>${this.trainerRunning ? "Training…" : "Run training"}</button>
           <button id="trainer-new-seed"${disabled}>Roll new seed</button>
@@ -1879,28 +1882,37 @@ export class Shell {
         <label class="field"><span>Bot B</span><select id="compare-b"${disabled}>${select(c.b)}</select></label>
         <label class="field"><span>Deals (1–100)</span><input id="compare-deals" type="number" min="1" max="100" value="${c.deals}"${disabled} /></label>
         <label class="field"><span>Seed</span><input id="compare-seed" type="number" value="${c.seed}"${disabled} /></label>
-      </div><div class="row"><button id="compare-run" class="primary"${disabled}>Run comparison</button><button id="compare-cancel"${this.compareRunning ? "" : " disabled"}>Cancel</button></div>
+      </div><div class="row"><button id="compare-run" class="primary"${disabled}>Run comparison</button><button id="compare-resume"${!disabled && this.compareRunConfig && this.comparePairs.length < this.compareRunConfig.deals * 5 ? "" : " disabled"}>Resume previous comparison</button><button id="compare-cancel"${this.compareRunning ? "" : " disabled"}>Cancel</button></div>
       <p class="note">${this.comparePairs.length * 2}/${c.deals * 10} games completed in matched pairs. ${esc(this.compareMessage)}</p>
       ${rows ? `<table class="lbtable"><thead><tr><th>Bot</th><th>Games</th><th>Mean VP</th><th>Wins</th><th>Seconds / decision</th><th>LLM requests</th></tr></thead><tbody>${rows}</tbody></table><p class="note">A − B: ${delta! >= 0 ? "+" : ""}${delta!.toFixed(2)} VP. Small samples are noisy; changing seed tests new deals.</p>` : ""}
-      <p class="note dim">LLM fallback games are not counted. Comparison uses the local Vite/Ollama bridge on this computer, not the cloud preview.</p>
+      <p class="note dim">LLM fallback games are not counted. Resume retains completed pairs in this page until a new comparison or reload. Comparison uses the local Vite/Ollama bridge on this computer, not the cloud preview.</p>
     </div>`;
   }
 
-  private async startComparison(): Promise<void> {
+  private async startComparison(resume = false): Promise<void> {
     if (this.compareRunning || this.trainerRunning || this.mlRunning) return;
-    const read = (id: string) => this.root.querySelector<HTMLInputElement | HTMLSelectElement>(id)?.value ?? "";
-    const valid = (value: string): value is ComparedBot => ["balanced", "trained", "neural", "ollama"].includes(value);
-    const a = read("#compare-a"), b = read("#compare-b");
-    if (!valid(a) || !valid(b)) return;
-    const deals = Number(read("#compare-deals")), seed = Number(read("#compare-seed"));
-    this.compareConfig = { a, b, deals: Number.isFinite(deals) ? Math.max(1, Math.min(100, Math.floor(deals))) : 1, seed: Number.isFinite(seed) ? Math.floor(seed) | 0 : 4242 };
-    const settings = loadSettings();
-    if ((a === "neural" || b === "neural") && !settings.trainedMlModel) { this.compareMessage = "No neural model saved."; this.paint(); return; }
-    if ((a === "trained" || b === "trained") && !settings.trainedBotWeights) { this.compareMessage = "No trained heuristic saved."; this.paint(); return; }
-    this.comparePairs = []; this.compareRunning = true; this.compareMessage = "Starting…"; this.paint();
+    let config: ComparisonConfig;
+    if (resume) {
+      if (!this.compareRunConfig || this.comparePairs.length >= this.compareRunConfig.deals * 5) return;
+      config = this.compareRunConfig;
+      this.compareConfig = { a: config.a, b: config.b, deals: config.deals, seed: config.seed };
+    } else {
+      const read = (id: string) => this.root.querySelector<HTMLInputElement | HTMLSelectElement>(id)?.value ?? "";
+      const valid = (value: string): value is ComparedBot => ["balanced", "trained", "neural", "ollama"].includes(value);
+      const a = read("#compare-a"), b = read("#compare-b");
+      if (!valid(a) || !valid(b)) return;
+      const deals = Number(read("#compare-deals")), seed = Number(read("#compare-seed"));
+      const settings = loadSettings();
+      if ((a === "neural" || b === "neural") && !settings.trainedMlModel) { this.compareMessage = "No neural model saved."; this.paint(); return; }
+      if ((a === "trained" || b === "trained") && !settings.trainedBotWeights) { this.compareMessage = "No trained heuristic saved."; this.paint(); return; }
+      this.compareConfig = { a, b, deals: Number.isFinite(deals) ? Math.max(1, Math.min(100, Math.floor(deals))) : 1, seed: Number.isFinite(seed) ? Math.floor(seed) | 0 : 4242 };
+      config = { ...this.compareConfig, model: settings.ollamaModel ?? "qwen3:8b", neural: settings.trainedMlModel ?? null, trained: settings.trainedBotWeights ?? null };
+      this.comparePairs = [];
+      this.compareRunConfig = config;
+    }
+    this.compareRunning = true; this.compareMessage = resume ? "Resuming…" : "Starting…"; this.paint();
     const runId = ++this.compareRunId;
-    const config: ComparisonConfig = { ...this.compareConfig, model: settings.ollamaModel ?? "qwen3:8b", neural: settings.trainedMlModel ?? null, trained: settings.trainedBotWeights ?? null };
-    if (a === "ollama" || b === "ollama") {
+    if (config.a === "ollama" || config.b === "ollama") {
       const status = await this.checkOllama(config.model);
       if (!this.compareRunning || this.compareRunId !== runId) return;
       if (!status.startsWith("Connected:")) { this.compareMessage = status; this.compareRunning = false; this.paint(); return; }
@@ -1918,7 +1930,7 @@ export class Shell {
         if (this.screen === "trainer") this.paint();
       };
       worker.onerror = (event) => { if (this.compareWorker !== worker) return; this.compareMessage = `Worker failed: ${event.message}`; this.compareRunning = false; this.compareWorker = null; worker.terminate(); this.paint(); };
-      worker.postMessage(config);
+      worker.postMessage({ config, startPair: this.comparePairs.length });
     } catch (error) { this.compareRunning = false; this.compareMessage = error instanceof Error ? error.message : String(error); this.paint(); }
   }
 
@@ -2070,6 +2082,7 @@ export class Shell {
       population: Math.max(2, Math.min(100, number("#trainer-population", 6))),
       generations: Math.max(1, Math.min(200, number("#trainer-generations", 2))),
       gamesPerCandidate: Math.max(1, Math.min(500, number("#trainer-games", 3))),
+      workers: Math.max(1, Math.min(32, number("#trainer-workers", 1))),
       seed: number("#trainer-seed", 42) || 1,
     };
     this.trainerRunning = true;
@@ -2078,15 +2091,16 @@ export class Shell {
     this.trainerHistory = [];
     this.trainerReport = null;
     this.trainerError = "";
-    this.trainerMessage = "Starting seeded tournament…";
+    this.trainerMessage = typeof Worker === "undefined" ? "Web Workers unavailable; training is running serially." : `Starting seeded tournament with up to ${this.trainerConfig.workers} game workers…`;
     this.paint();
+    let lastProgressPaint = 0;
     try {
       this.trainerReport = await runLocalTraining({
         ...this.trainerConfig,
         shouldCancel: () => this.trainerCancelRequested,
         onProgress: (progress) => {
           this.trainerProgress = progress;
-          if (this.screen === "trainer") this.paint();
+          if (this.screen === "trainer" && Date.now() - lastProgressPaint >= 200) { lastProgressPaint = Date.now(); this.paint(); }
         },
         onGeneration: (trend) => {
           this.trainerHistory.push(trend);
@@ -2771,7 +2785,7 @@ export class Shell {
     });
     this.on("#trainer-cancel", () => {
       this.trainerCancelRequested = true;
-      this.trainerMessage = "Cancellation requested; finishing the current game…";
+      this.trainerMessage = "Cancellation requested; finishing games already running…";
       this.paint();
     });
     this.on(".trainer-save", (el) => this.saveTrainedCandidate(el.dataset["candidate"] ?? ""));
@@ -2792,6 +2806,7 @@ export class Shell {
     });
     this.on("#ml-trainer-clear", () => this.clearMlModel());
     this.on("#compare-run", () => void this.startComparison());
+    this.on("#compare-resume", () => void this.startComparison(true));
     this.on("#compare-cancel", () => {
       this.compareRunId++;
       this.compareWorker?.terminate(); this.compareWorker = null;

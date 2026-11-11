@@ -136,8 +136,7 @@ export type ScopeMiss = "discipline" | "clan" | "sect";
  *
  * An EMPTY requirement is not a gate. That is the case that makes this a
  * filter rather than a way of hiding most of the library — the majority
- * of cards ask for nothing, and `requiresClans` is deliberately empty on
- * all 179 masters that merely carry a clan icon.
+ * of cards ask for nothing. A master card's clan icon is a requirement.
  *
  * An empty SCOPE is not a gate either: a crypt with no sects (or a
  * search run before any vampire is added) must not hide every card that

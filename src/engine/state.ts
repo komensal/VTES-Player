@@ -1900,6 +1900,8 @@ export type GameEvent =
   | { type: "DamageMended"; minion: MinionId; amount: number }
   | { type: "WentToTorpor"; minion: MinionId }
   | { type: "CombatEnded"; rounds: number }
+  /** A public card's activated ability ends combat before range. */
+  | { type: "CombatEndedByAbility"; seat: SeatId; source: string }
   /** A combat that NEVER HAPPENED — the block succeeded and a card
    *  replaced its second consequence (Clan Loyalty, Ghoul Escort, Blood
    *  Brother Ambush). Distinct from `CombatEnded` on purpose: End of
@@ -3515,8 +3517,9 @@ export interface CombatFrame {
   handStrikesOnly?: boolean;
   /** "If another round of combat occurs, that round is at close range
    *  (skip the determine range step for that round)" (Immortal Grapple
-   *  superior). The boundary already forces close range; this skips the
-   *  step a maneuver would otherwise reopen. */
+   *  superior). At the next round boundary the flag remains set through
+   *  the pre-range window, then skips only the determine-range step. Also
+   *  set during pre-range by effects that establish the current range. */
   skipRangeNextRound?: boolean;
   /**
    * "THE STRIKE DOES +N DAMAGE" (Target Head) — added to the strike's own

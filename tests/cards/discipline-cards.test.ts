@@ -90,7 +90,7 @@ describe("Discipline master cards", () => {
     const state = game("Celerity", { cel: "superior" });
     const engine = new VtesEngine(state, testRegistry);
     expect(
-      engine.decision()!.options.some((o) => o.id.includes("Celerity")),
+      engine.decision()!.options.some((o) => o.id.startsWith("play:Celerity:-:V1:")),
     ).toBe(false);
   });
 

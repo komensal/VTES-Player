@@ -56,6 +56,23 @@ function equip(state: GameState, minion: string, id: string, name: string): Perm
 // --- the bearer bonuses ----------------------------------------------------
 
 describe("Aaron's Feeding Razor (100003) — +1 hunt", () => {
+  it("costs one pool, equips the acting minion and prevents its controller playing another copy", () => {
+    const state = threeSeatGame();
+    state.seats[0]!.hand.push({ id: "razor1", name: "Aaron's Feeding Razor" });
+    const engine = new VtesEngine(state, testRegistry);
+    const play = engine.decision()!.options.find((o) => o.kind === "playCard" && o.card === "razor1");
+    expect(play).toMatchObject({ cost: { pool: 1, blood: 0 } });
+    expect(testRegistry["Aaron's Feeding Razor"]?.isUnique).toBe(true);
+    runTrace(engine, [["Alice", play!.id], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"]]);
+    expect(state.seats[0]!.pool).toBe(9);
+    expect(find(state, "V1").attached.some((p) => p.card.id === "razor1")).toBe(true);
+    state.seats[0]!.hand.push({ id: "razor2", name: "Aaron's Feeding Razor" });
+    expect(engine.decision()!.options.some((o) => o.kind === "playCard" && o.card === "razor2")).toBe(false);
+  });
+
   it("raises the hunt amount for its bearer", () => {
     const state = threeSeatGame();
     expect(huntAmountFor(state, find(state, "V1"))).toBe(1);

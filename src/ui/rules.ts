@@ -136,8 +136,9 @@ export const RULE_SECTIONS: RuleSection[] = [
             your uncontrolled region.</li>
           </ul>
           When an uncontrolled vampire has <b>counters equal to their
-          capacity</b>, move them face up to your ready region, unlocked —
-          the counters stay on them as blood.
+          capacity</b>, you may move them face up to your ready region
+          during this phase, unlocked, without spending a transfer — the
+          counters stay on them as blood.
         </li>
         <li><b>Discard phase.</b> One discard phase action: discard a card
         from hand and draw a replacement. Not saveable. (p. 36)</li>

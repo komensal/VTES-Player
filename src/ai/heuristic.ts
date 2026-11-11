@@ -727,7 +727,7 @@ export class HeuristicAgent implements Agent {
       case "influenceOut":
         return w.influenceOut;
       case "cryptDraw":
-        return w.cryptDraw;
+        return poolAfter(view, me, 1) <= 0 ? w.selfOustGuard : w.cryptDraw;
       case "transferToPool":
         // Pulling counters back off a vampire undoes your own influence —
         // and is precisely what a seat about to be ousted should do with
@@ -1066,7 +1066,7 @@ export class HeuristicAgent implements Agent {
     // The exemption is the one that matters: a seat with nothing in play
     // influences at full price, because hoarding pool behind an empty
     // table is a slower way of losing, not a way of surviving.
-    if (!this.boardless(view, me) && poolAfter(view, me, 1) <= w.poolFloor) {
+    if (poolAfter(view, me, 1) <= 0 || (!this.boardless(view, me) && poolAfter(view, me, 1) <= w.poolFloor)) {
       return w.selfOustGuard;
     }
     const entry = seat?.uncontrolled.find((u) => u.card?.id === o.minion);

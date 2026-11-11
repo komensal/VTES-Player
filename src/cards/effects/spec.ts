@@ -2400,7 +2400,7 @@ export type BloodStoreOffer = {
    *  unbounded (p. 5), so this is a gain, not a transfer. */
   | { kind: "bankToCard"; amount: number }
   /** "Move N blood from this card to your pool", or ALL of it. */
-  | { kind: "cardToPool"; amount: number | "all" }
+  | { kind: "cardToPool"; amount: number | "all"; burnSelf?: boolean }
   /** "Move up to N pool to this card and add 1 blood from the blood bank
    *  for each pool you move" (Powerbase: Washington, D.C.) — one option
    *  per amount, each leaving 2 counters per pool spent. */
@@ -2931,6 +2931,8 @@ export interface CardSpec {
       kind?: "vampire" | "ally";
       clan?: string;
       sect?: Sect;
+      /** "A Laibon OR a vampire with Protean" (Abombwe). */
+      sectOrDiscipline?: { sect: Sect; discipline: string };
       /** "…on a ready vampire WHO FOLLOWS THE PATH OF \<x\>" (Terrifying
        *  Visage). A printed crypt trait, filtered exactly like clan and
        *  sect beside it (docs/path-cards-design.md §3). */
@@ -3190,7 +3192,9 @@ export interface CardSpec {
        *  means the clause is free and p. 16's once-per-phase is the limit. */
       lock?: boolean;
       /** Who may give and receive. */
-      who?: { sect?: Sect; clan?: string };
+      who?: { sect?: Sect; clan?: string; kind?: "vampire" | "ally" };
+      /** "a vampire", not "a ready vampire" (Blood Trade). */
+      inTorporToo?: boolean;
       /** "…move N blood between them." */
       blood?: number;
       /** "…to THIS CARD" (The Spawning Pool): the blood becomes a counter on
@@ -4672,6 +4676,8 @@ export interface CardSpec {
   requiresControlledSect?: Sect[];
   /** "Requires a ready [clan]" on a Master card — the clan sibling. */
   requiresControlledClan?: string[];
+  /** Minimum capacity of the same qualifying ready vampire, when printed. */
+  requiresControlledCapacity?: number;
   usable: UsabilityRule[];
   /** "If this referendum FAILS, the acting vampire burns 1 blood" (The
    *  Final Nights) — the other half of a referendum, and the first card

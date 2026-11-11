@@ -61,8 +61,9 @@ makes it the interesting one:
 3. **"Anarchs can burn a location as a Ⓓ action that costs 2 pool."** A
    granted action targeting a card in play — `announceEntryAction` with
    `targetPermanent` and `cost.pool`. One card now grants **two**
-   different actions; the compiler's granted-action merge dispatches on
-   the verb segment of the option id (`:rush:` vs `:raze:`).
+   different actions. The Open War handler combines the compiled rush
+   grant with its bespoke location-burn grant and dispatches by the verb
+   segment of the option id (`:rush:` vs `:raze:`).
 4. **"Methuselahs can use a master phase action to move 1 counter from
    their pool to this card. If this card has 4 counters, burn it and gain
    4 pool."** `abilityAnySeat` (built for Week of Nightmares) makes the

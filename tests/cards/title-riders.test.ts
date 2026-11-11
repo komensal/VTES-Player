@@ -213,6 +213,41 @@ describe("when the capacity bonus goes away", () => {
   });
 });
 
+describe("audited antitribu Crusade riders", () => {
+  const cities = [
+    ["Crusade: Amsterdam", "Amsterdam", "Ventrue antitribu"],
+    ["Crusade: Barcelona", "Barcelona", "Tremere antitribu"],
+    ["Crusade: Brussels", "Brussels", "Toreador antitribu"],
+    ["Crusade: Dublin", "Dublin", "Gangrel antitribu"],
+    ["Crusade: Geneva", "Geneva", "Malkavian antitribu"],
+    ["Crusade: London", "London", "Nosferatu antitribu"],
+    ["Crusade: Rome", "Rome", "Brujah antitribu"],
+    ["Crusade: Washington, D.C.", "Washington, D.C.", "Ventrue antitribu"],
+  ];
+  it.each(cities)("%s grants the correct title and unlocks only the printed clan", (card, city, clan) => {
+    const printed = Object.values(registry.entries).find((e) => e.card.name === card)?.card;
+    expect(printed?.cardText).toContain(`Archbishop of ${city}`);
+    expect(printed?.cardText).toContain(`is ${clan}`);
+    const matching = callAndPass(card!, { sect: "sabbat", clan: clan! });
+    expect(v1(matching.state).title).toBe("archbishop");
+    expect(v1(matching.state).titleCity).toBe(city);
+    expect(v1(matching.state).locked).toBe(true);
+    walkToNextTurn(matching.engine, matching.state);
+    expect(v1(matching.state).locked).toBe(false);
+
+    const other = callAndPass(card!, { sect: "sabbat", clan: "Lasombra" });
+    expect(v1(other.state).title).toBe("archbishop");
+    walkToNextTurn(other.engine, other.state);
+    expect(v1(other.state).locked).toBe(true);
+
+    const wrongSect = threeSeatGame();
+    Object.assign(v1(wrongSect), { sect: "camarilla", clan });
+    wrongSect.seats[0]!.hand.push({ id: "cr", name: card! });
+    const dp = new VtesEngine(wrongSect, testRegistry).decision()!;
+    expect(dp.options.some((o) => o.id.startsWith(`play:${card}`))).toBe(false);
+  });
+});
+
 describe("the Crusade rider — unlock during your next discard phase", () => {
   it("Crusade: Berlin unlocks a LASOMBRA archbishop in the discard phase", () => {
     const { state, engine } = callAndPass("Crusade: Berlin", { sect: "sabbat", clan: "Lasombra" });

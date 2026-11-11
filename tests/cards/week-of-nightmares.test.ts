@@ -42,7 +42,7 @@ function ravnosGame(): GameState {
 
 describe("Week of Nightmares (102166)", () => {
   it("can only be played once in a game, by anyone", () => {
-    const state = threeSeatGame();
+    const state = ravnosGame();
     const tf = state.frames[0]!;
     if (tf.kind === "turn") {
       tf.phase = "master";

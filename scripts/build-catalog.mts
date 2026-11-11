@@ -141,17 +141,10 @@ function requiredSects(card: RawKrcgCard): string[] {
   return [...out].sort();
 }
 
-/**
- * The clans a LIBRARY card demands.
- *
- * A CLAN ICON ON A MINION CARD IS A REQUIREMENT (p. 10) and KRCG's text
- * does not repeat it — but **a master is the exception**, and that is
- * not a detail: 179 masters carry a clan field, and on them it is a
- * label rather than a gate. Achilles' Heel is played on a vampire
- * another Methuselah controls; Acquired Ventrue Assets counts Giovanni.
- * Treating those as requirements would hide cards any deck can play.
- */
+/** Clan icons on minion and master cards are play requirements. A master
+ * requires the Methuselah to control a ready vampire of one listed clan. */
 const MINION_TYPES = [
+  "Master",
   "Action",
   "Action Modifier",
   "Ally",

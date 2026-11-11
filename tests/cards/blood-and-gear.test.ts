@@ -13,7 +13,7 @@
 import { describe, expect, it } from "vitest";
 import type { GameState, MinionState, PermanentInPlay, TurnPhase } from "../../src/engine/index.ts";
 import { VtesEngine } from "../../src/engine/index.ts";
-import { makeMinion, runTrace, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
+import { makeAlly, makeMinion, runTrace, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
 
 function seatOf(state: GameState, id: string): GameState["seats"][number] {
   const s = state.seats.find((x) => x.id === id);
@@ -286,6 +286,26 @@ describe("Blood Trade (100215)", () => {
     runTrace(engine, [["Alice", "ability:Blood Trade:bt:carryblood:V1:W"]]);
     expect(find(state, "V1").blood).toBe(2);
     expect(find(state, "W").blood).toBe(2);
+  });
+
+  it("moves blood from or to vampires in torpor, but not allies", () => {
+    const state = phase(game(), "Carol", "discard");
+    seatOf(state, "Alice").minions.push(makeMinion("AT", "Alice", { blood: 2, inTorpor: true }));
+    seatOf(state, "Alice").minions.push(makeAlly("AA", "Alice", 3));
+    seatOf(state, "Bob").minions.push(makeMinion("BT", "Bob", { blood: 1, inTorpor: true }));
+    seatOf(state, "Bob").minions.push(makeAlly("BA", "Bob", 3));
+    const engine = new VtesEngine(state, testRegistry);
+    walkToNextTurn(engine, state);
+    const ids = optionIds(engine).filter((id) => id.includes("carryblood"));
+    expect(ids).toContain("ability:Blood Trade:bt:carryblood:AT:BT");
+    expect(ids).toContain("ability:Blood Trade:bt:carryblood:V1:BT");
+    expect(ids).not.toContain("ability:Blood Trade:bt:carryblood:AA:BT");
+    expect(ids).not.toContain("ability:Blood Trade:bt:carryblood:AT:BA");
+    runTrace(engine, [["Alice", "ability:Blood Trade:bt:carryblood:AT:BT"]]);
+    expect(find(state, "AT").blood).toBe(1);
+    expect(find(state, "BT").blood).toBe(2);
+    expect(find(state, "AT").inTorpor).toBe(true);
+    expect(find(state, "BT").inTorpor).toBe(true);
   });
 
   it("is the CARD OWNER's turn to use it too, in their own phase", () => {

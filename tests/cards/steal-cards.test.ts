@@ -110,6 +110,46 @@ function caveGame(): GameState {
 }
 
 describe("Cave of Apples (100311)", () => {
+  it("uses modified capacity for younger targets and the steal threshold", () => {
+    const state = caveGame();
+    const actor = state.seats[0]!.minions[0]!;
+    const victim = state.seats[1]!.minions[0]!;
+    actor.capacity = 3;
+    victim.capacity = 3;
+    actor.attached.push({ card: { id: "actorBoost", name: "test" }, locked: false, usedThisPhase: false, statics: { capacityBonus: 1 }, tags: [] });
+    victim.attached.push({ card: { id: "victimBoost", name: "test" }, locked: false, usedThisPhase: false, statics: { capacityBonus: 1 }, tags: [] });
+    victim.corruption = { Alice: 2 };
+    let engine = new VtesEngine(state, testRegistry);
+    expect(engine.decision()!.options.some((o) => o.id === "act:Cave of Apples:cave:corrupt:V1:W")).toBe(false);
+    victim.attached = [];
+    engine = new VtesEngine(state, testRegistry);
+    runTrace(engine, [
+      ["Alice", "act:Cave of Apples:cave:corrupt:V1:W"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "choice:Cave of Apples:cave:steal:W"],
+    ]);
+    expect(state.seats[0]!.minions.some((m) => m.id === "W")).toBe(true);
+  });
+
+  it("does not offer theft until the modified capacity is met", () => {
+    const state = caveGame();
+    const victim = state.seats[1]!.minions[0]!;
+    victim.corruption = { Alice: 1 };
+    victim.attached.push({ card: { id: "boost", name: "test" }, locked: false, usedThisPhase: false, statics: { capacityBonus: 1 }, tags: [] });
+    const engine = new VtesEngine(state, testRegistry);
+    runTrace(engine, [
+      ["Alice", "act:Cave of Apples:cave:corrupt:V1:W"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+    ]);
+    expect(victim.corruption?.["Alice"]).toBe(2);
+    expect(state.seats[1]!.minions).toContain(victim);
+    expect(engine.decision()?.options.some((o) => o.id.startsWith("choice:Cave of Apples:cave:steal:"))).toBe(false);
+  });
+
   it("places a corruption counter with a directed action, below threshold", () => {
     const state = caveGame();
     const engine = new VtesEngine(state, testRegistry);

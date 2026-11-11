@@ -42,3 +42,11 @@ When `VTES_PYTHON` is unset, the dev server tries `python` on Windows and `pytho
 ## Training behavior
 
 Each update round uses seeded five-seat games. The candidate rotates seats against four changing styles drawn from Balanced, Bruiser, Stalker, Turtle, Politician, and Builder. A round ends with a PPO update; successful round models are saved immediately. UI scores include candidate mean VP, opponents' mean VP, wins, ousts, and the chosen backend. Cancellation takes effect at a game/round boundary, not halfway through engine resolution.
+
+## Heuristic tournament workers
+
+The upper **Tournament setup** tunes heuristic weights; it is separate from the neural/PyTorch section. Independent games of a generation run in a bounded pool of browser Web Workers, on the computer running the browser, not the server or GPU. Choose **Parallel game workers** (1–32); the initial value is the browser-reported logical CPU count capped at 16. The browser may report fewer CPUs than the machine has, and increasing the count costs memory and can make other applications less responsive. Speedup depends on the CPU, memory, browser and game workload; 16 workers do not guarantee a 16× speedup. In environments without Web Workers, the serial executor is used and the UI says so. A worker failure stops the run instead of silently scoring a missing game.
+
+Every game has the same seed, seat rotation and opponent assignment as the serial tournament. Results are aggregated in task order; the next population is generated only after all games in a generation finish, so a completed run with the same configuration and seed produces the same report regardless of worker count. Cancellation stops scheduling new games and waits for games already running; partially evaluated candidates can have incomparable scores, and only fully evaluated candidates contribute to generation trends. Training is in memory and is not resumed after a page reload. Saving a candidate is a separate action. The progress display reports total completed games as well as the candidate most recently completed, which may jump around as workers finish.
+
+The requested total is variants × generations × games per variant. For example, 100 × 200 × 500 is **10,000,000 games**, so even parallel training can take a very long time; start smaller and monitor throughput before committing to a large run.

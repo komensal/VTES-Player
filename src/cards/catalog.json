@@ -1520,7 +1520,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Tremere"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -1657,7 +1659,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Blood Brother"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -1696,7 +1700,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Toreador"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -1742,7 +1748,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Giovanni"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -3780,7 +3788,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Brujah"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -4129,7 +4139,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Banu Haqim"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -5860,7 +5872,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Tremere"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -6882,7 +6896,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Brujah antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -11015,7 +11031,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Tremere"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -12425,7 +12443,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Toreador"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -12661,7 +12681,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Brujah"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -13334,7 +13356,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Malkavian"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -14854,7 +14878,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Gangrel"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -16049,7 +16075,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Osebo"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -16484,7 +16512,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Osebo"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -16565,7 +16595,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Gangrel antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -18459,7 +18491,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Hecata"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -18889,7 +18923,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ravnos"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -19691,7 +19727,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ahrimane"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -19774,7 +19812,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Samedi"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -20220,7 +20260,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Blood Brother"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -21287,7 +21329,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Salubri antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -23832,7 +23876,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Brujah"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -26027,7 +26073,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Gangrel antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -26275,7 +26323,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Hecata"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -27185,7 +27235,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Brujah"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -27958,7 +28010,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ministry"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -28908,7 +28962,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Kiasyd"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -29025,7 +29081,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Tremere"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -30604,7 +30662,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Gangrel antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -32038,7 +32098,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Salubri antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -32579,7 +32641,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Daughter of Cacophony"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -33548,7 +33612,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Daughter of Cacophony"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -34540,7 +34606,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Pander"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -34833,7 +34901,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ventrue antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -35629,7 +35699,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Malkavian antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -36004,7 +36076,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Harbinger of Skulls"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -40343,7 +40417,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Lasombra"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -41501,7 +41577,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ventrue antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -43017,7 +43095,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Samedi"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -43100,7 +43180,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Giovanni"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -48753,7 +48835,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Gangrel"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -50565,7 +50649,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Lasombra"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -51702,7 +51788,10 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Gangrel",
+        "Gangrel antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -52225,7 +52314,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ventrue"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -55622,7 +55713,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Hecata"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -57167,7 +57260,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ministry"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -57248,7 +57343,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Toreador antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -58629,7 +58726,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Tzimisce"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -59526,7 +59625,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Malkavian"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -60118,7 +60219,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ravnos"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -60293,7 +60396,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Toreador antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -60589,7 +60694,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ventrue antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -62145,7 +62252,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Malkavian"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -62318,7 +62427,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Brujah antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -62397,7 +62508,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Gangrel antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -62477,7 +62590,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Gangrel"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -65510,7 +65625,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Giovanni"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -65689,7 +65806,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ishtarri"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -66044,7 +66163,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ravnos"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -66612,7 +66733,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ministry"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -66971,7 +67094,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Kiasyd"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -69764,7 +69889,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Daughter of Cacophony"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -70050,7 +70177,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Banu Haqim"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -70133,7 +70262,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Banu Haqim"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -70999,7 +71130,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Tzimisce"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -71506,7 +71639,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Banu Haqim"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -74584,7 +74719,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ventrue"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -74627,7 +74764,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Samedi"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -77805,7 +77944,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Tremere antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -78059,7 +78200,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Nosferatu antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -78703,7 +78846,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Malkavian antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -79785,7 +79930,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ishtarri"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -79824,7 +79971,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ventrue"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -84323,7 +84472,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Pander"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -85295,7 +85446,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Akunanse"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -88793,7 +88946,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ministry"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -89144,7 +89299,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Toreador"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -90192,7 +90349,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ravnos"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -91984,7 +92143,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Harbinger of Skulls"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -93948,7 +94109,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Tzimisce"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -98673,7 +98836,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Harbinger of Skulls"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -99048,7 +99213,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Malkavian"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -99091,7 +99258,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Malkavian"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -100149,7 +100318,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Malkavian antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -100233,7 +100404,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Malkavian"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -100319,7 +100492,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Malkavian"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -100668,7 +100843,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Akunanse"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -102615,7 +102792,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Banu Haqim"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -105231,7 +105410,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Salubri"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -109889,7 +110070,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Giovanni"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -113906,7 +114089,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Brujah"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -115584,7 +115769,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Nosferatu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -115664,7 +115851,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Nosferatu antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -117973,7 +118162,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ministry"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -119013,7 +119204,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Brujah"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -119185,7 +119378,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Guruhi"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -119263,7 +119458,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Toreador antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -119659,7 +119856,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ventrue"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -119796,7 +119995,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Daughter of Cacophony"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -119887,7 +120088,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ravnos"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -123765,7 +123968,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Lasombra"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -123811,7 +124016,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Lasombra"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -124168,7 +124375,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ishtarri"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -124470,7 +124679,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Lasombra"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -124635,7 +124846,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ventrue"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -124675,7 +124888,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Giovanni"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -124955,7 +125170,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Hecata"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -127123,7 +127340,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Banu Haqim"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -127892,7 +128111,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Giovanni"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -131847,7 +132068,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Kiasyd"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -132016,7 +132239,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ravnos"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -132058,7 +132283,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ravnos"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -133598,7 +133825,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Samedi"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -138797,7 +139026,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Baali"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -141863,7 +142094,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Salubri"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -141902,7 +142135,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Salubri"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -141941,7 +142176,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Salubri"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -146571,7 +146808,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Nosferatu antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -148166,7 +148405,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Salubri"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -149803,7 +150044,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Nosferatu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -150534,7 +150777,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Toreador"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -152123,7 +152368,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Tremere antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -153201,7 +153448,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Nosferatu antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -153851,7 +154100,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Nosferatu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -155915,7 +156166,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ravnos"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -156170,7 +156423,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Giovanni"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -157089,7 +157344,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "True Brujah"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -157213,7 +157470,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Banu Haqim"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -157556,7 +157815,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Gangrel antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -159297,7 +159558,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ministry"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -159460,7 +159723,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Baali"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -160522,7 +160787,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Toreador antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -160599,7 +160866,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Toreador antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -160858,7 +161127,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Banu Haqim"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -161278,7 +161549,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ministry"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -162392,7 +162665,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Banu Haqim"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -162614,7 +162889,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Nosferatu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -162698,7 +162975,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Toreador"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -162739,7 +163018,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Malkavian"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -162815,7 +163096,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Giovanni"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -163222,7 +163505,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Banu Haqim"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -163265,7 +163550,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Giovanni"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -163306,7 +163593,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ahrimane"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -163383,7 +163672,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Tzimisce"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -163424,7 +163715,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Lasombra"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -163465,7 +163758,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ravnos"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -163506,7 +163801,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Salubri antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -163546,7 +163843,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Gargoyle"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -163586,7 +163885,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Salubri"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -163626,7 +163927,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ministry"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -163668,7 +163971,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Gangrel antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -163920,7 +164225,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ministry"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -164241,7 +164548,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Nosferatu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -164489,7 +164798,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Harbinger of Skulls"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -164609,7 +164920,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Nosferatu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -164806,7 +165119,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ravnos"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -165800,7 +166115,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Blood Brother"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -167519,7 +167836,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Toreador"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -168204,7 +168523,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Giovanni"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -168988,7 +169309,10 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ministry",
+        "Tremere"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -169065,7 +169389,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Tremere"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -170853,7 +171179,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Gangrel antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -172167,7 +172495,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Banu Haqim"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -172543,7 +172873,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Visionary"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -172582,7 +172914,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Tremere antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -173093,7 +173427,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ventrue"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -173424,7 +173760,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Nosferatu antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -175438,7 +175776,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ventrue"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -175478,7 +175818,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ventrue"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -175524,7 +175866,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ventrue antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -176527,7 +176871,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Defender"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -179022,7 +179368,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Nosferatu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -179064,7 +179412,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Brujah"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -179149,7 +179499,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Tremere"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -179192,7 +179544,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Brujah antitribu"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -179797,7 +180151,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Ravnos"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -182628,7 +182984,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Banu Haqim"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,
@@ -184095,7 +184453,9 @@
       "capacity": null,
       "group": null,
       "sect": null,
-      "requiresClans": [],
+      "requiresClans": [
+        "Gangrel"
+      ],
       "requiresSects": [],
       "title": null,
       "path": null,

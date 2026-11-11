@@ -10,7 +10,7 @@ import { HeuristicAgent } from "../../src/ai/heuristic.ts";
 import { viewFor } from "../../src/engine/agent.ts";
 import { VtesEngine } from "../../src/engine/index.ts";
 import type { DecisionPoint, GameState, LegalOption } from "../../src/engine/index.ts";
-import { runTrace, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
+import { makeMinion, runTrace, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
 
 const agent = new HeuristicAgent({ seed: 3 });
 const seat = (state: GameState, id: string) => state.seats.find((s) => s.id === id)!;
@@ -41,7 +41,9 @@ function played(engine: VtesEngine, id: string): DecisionPoint {
 describe("auctions and the bot", () => {
   it("calls a takeover on a rival's vampire, never on its own, and never sells a card", () => {
     const state = threeSeatGame();
+    seat(state, "Alice").minions[0]!.clan = "Ventrue";
     seat(state, "Alice").hand.push({ id: "ht", name: "Hostile Takeover" });
+    seat(state, "Alice").minions.push(makeMinion("qualifier", "Alice", { clan: "Malkavian" }));
     seat(state, "Alice").hand.push({ id: "mta", name: "Malkavian Time Auction" });
     const dp = masterPhase(state, "Alice").decision()!;
     const pass = score(state, dp, option(dp, "pass"));
@@ -52,6 +54,7 @@ describe("auctions and the bot", () => {
 
   it("opens with the least bid, and stops where winning costs more than half the capacity", () => {
     const state = threeSeatGame();
+    seat(state, "Alice").minions[0]!.clan = "Ventrue";
     seat(state, "Alice").hand.push({ id: "ht", name: "Hostile Takeover" });
     const engine = masterPhase(state, "Alice");
     const dp = played(engine, "play:Hostile Takeover:-:W:ht");
@@ -71,6 +74,7 @@ describe("auctions and the bot", () => {
 
   it("never bids where the runner-up pays too", () => {
     const state = threeSeatGame();
+    seat(state, "Alice").minions.push(makeMinion("qualifier", "Alice", { clan: "Malkavian" }));
     seat(state, "Alice").hand.push({ id: "mta", name: "Malkavian Time Auction" });
     const dp = played(masterPhase(state, "Alice"), "play:Malkavian Time Auction:-:V1:mta");
     expect(dp.seat).toBe("Bob");

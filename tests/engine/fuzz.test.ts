@@ -1628,14 +1628,20 @@ function playFuzzGame(seed: number): void {
     `[seed ${seed}] last event should be GameEnded`,
   ).toBe("GameEnded");
 
-  // Lock-state legality: every action announcement is immediately
-  // preceded by the lock of its acting minion (p. 19, p. 25).
+  // Action tolls may burn the acting minion's blood between locking and
+  // announcement (e.g. Enrage). No unrelated event may intervene.
   state.eventLog.forEach((ev, i) => {
     if (ev.type === "ActionAnnounced") {
-      const prev = state.eventLog[i - 1];
+      let previous = i - 1;
+      while (previous >= 0) {
+        const toll = state.eventLog[previous];
+        if (toll?.type !== "BloodBurned" || toll.minion !== ev.acting) break;
+        previous--;
+      }
+      const prev = state.eventLog[previous];
       if (!prev || prev.type !== "MinionLocked" || prev.minion !== ev.acting) {
         throw new Error(
-          `[seed ${seed}] ActionAnnounced for ${ev.acting} not preceded by its lock`,
+          `[seed ${seed}] ActionAnnounced for ${ev.acting} not preceded by its lock and optional blood tolls`,
         );
       }
     }

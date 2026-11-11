@@ -392,7 +392,7 @@ export interface EngineOps {
   markUsedThisRound(cardId: CardInstanceId): void;
   /** The minion-addressed form of `grantAdditionalStrike`, for a card in
    *  play (which has no `CardPlayFrame`). */
-  grantAdditionalStrikeTo(minion: MinionId, count: number, limited: boolean): void;
+  grantAdditionalStrikeTo(minion: MinionId, count: number, limited: boolean): boolean;
   /** "Ammo. … for the remainder of this combat" — load one ammo card into
    *  one gun, by the gun's card id (docs/ammo-design.md §4). */
   loadAmmo(gun: CardInstanceId, load: AmmoLoad): void;

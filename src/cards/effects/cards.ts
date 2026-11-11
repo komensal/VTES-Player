@@ -15,11 +15,24 @@ import {
   compileSpec,
   controllerMeetsRequirements,
   enumerateAllocations,
+  paymentSplits,
   parseAlloc,
   seatControlsCopy,
   vulnerableGrant,
 } from "./compile.ts";
 import type { CardSpec } from "./spec.ts";
+import cardRegistry from "../registry.json";
+import type { CardRegistry } from "../types.ts";
+
+// Printed clan icons on masters require a ready controlled member when
+// played (VTES rulebook, library-card requirements). This also applies to
+// bespoke and out-of-turn masters; a clan icon is not merely thematic.
+const masterClanRequirements = new Map(
+  Object.values((cardRegistry as unknown as CardRegistry).entries)
+    .map((entry) => entry.card)
+    .filter((card) => card.kind === "library" && card.types.includes("Master") && card.clans.length > 0)
+    .map((card) => [card.name, card.kind === "library" ? card.clans : []] as const),
+);
 
 /**
  * The eleven Discipline master cards (docs/derived-traits-design.md). One
@@ -38,10 +51,8 @@ import type { CardSpec } from "./spec.ts";
  * never written onto the minion — so they vanish correctly if the card
  * leaves play, with no bookkeeping.
  *
- * Reading on record: the text says "a vampire", not "a vampire you
- * control". Scoped to `own`, since handing an opponent's vampire a
- * Discipline level and a point of capacity is never a play anyone makes,
- * and it keeps the AI from generating one.
+ * "A vampire" includes another player's vampire and one in torpor.
+ * Strategy is the agent's decision; it must not narrow legal targets.
  */
 function disciplineCards(): CardSpec[] {
   const all: Array<[number, string, string]> = [
@@ -102,8 +113,9 @@ function disciplineCards(): CardSpec[] {
       // Discipline cards, and even two of the SAME one (none → basic →
       // superior). The superior gate below is what stops a third.
       attach: {
-        scope: "own" as const,
+        scope: "any" as const,
         kind: "vampire" as const,
+        inTorporToo: true,
         notSuperiorDiscipline: code,
       },
     },
@@ -319,11 +331,9 @@ function crusade(krcgId: number, city: string, unlockIfClan?: string): CardSpec 
 }
 
 /**
- * The twelve Crusades whose whole text is the shape above. The other
- * eleven each add a clan rider ("if this vampire is Tzimisce, they unlock
- * during your next discard phase", "if Lucita is in play…") naming a clan
- * or a vampire the pool does not have — inert by §0, and they cost
- * nothing the day §7 opens those clans.
+ * The twelve plain Crusades and two clan-rider versions originally admitted
+ * together. The remaining eight clan riders use this same factory below;
+ * Aragon has a different Lucita-specific title recipient and is separate.
  */
 const CRUSADES: CardSpec[] = (
   [
@@ -341,8 +351,8 @@ const CRUSADES: CardSpec[] = (
     [100472, "Toronto"],
     // WAVE 93: two of the "other eleven" name a clan the V5 crypt NOW HAS —
     // the recorded reason for leaving them out was a claim about the pool as
-    // it was (docs/title-riders-design.md §3). The remaining nine name an
-    // ANTITRIBU clan or Lucita, which it still does not.
+    // it was (docs/title-riders-design.md §3). The other clan riders are
+    // also implemented below even though the current V5 crypt lacks them.
     [100455, "Berlin", "Lasombra"],
     [100463, "Istanbul", "Tzimisce"],
   ] as Array<[number, string, string?]>
@@ -8001,7 +8011,7 @@ export const cardSpecs: CardSpec[] = [
         },
       },
       tags: ["Charisma"],
-      attach: { scope: "own", kind: "vampire" },
+      attach: { scope: "any", kind: "vampire" },
     },
     usable: [],
     modes: [{ level: "basic", discipline: null, effects: [] }],
@@ -8990,10 +9000,10 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100740,
     name: "Flames of Insurrection",
     cardType: "master",
+    requiresControlledSect: ["anarch"],
     bloodCost: 0,
     poolCost: 0,
     unique: true,
-    requiresSect: ["anarch"],
     permanent: {
       where: "seat",
       statics: {},
@@ -11554,7 +11564,7 @@ export const cardSpecs: CardSpec[] = [
     //  your influence phase to steal a vampire controlled by your prey with
     //  capacity less than X. Any vampire can burn this card as a Ⓓ action."
     //
-    // The Ministry icon is on a MASTER, so it is not a requirement (p. 10).
+    // The Ministry icon is enforced centrally as a ready-vampire requirement.
     krcgId: 100848,
     name: "Grand Temple of Set",
     cardType: "master",
@@ -11862,8 +11872,7 @@ export const cardSpecs: CardSpec[] = [
     //
     // "MINIONS can steal" where The Line says "VAMPIRES": an ally may take this
     // one and not the other, which is the pair's negative space. The Toreador
-    // icon is on a MASTER, so it is not a requirement (p. 10's rule is about
-    // minion cards).
+    // icon is enforced centrally as a ready-vampire requirement.
     krcgId: 101127,
     name: "The Louvre, Paris",
     cardType: "master",
@@ -13902,6 +13911,8 @@ export const cardSpecs: CardSpec[] = [
       carryTransfer: {
         window: "unlock",
         blood: 1,
+        who: { kind: "vampire" },
+        inTorporToo: true,
         crossSeat: true,
         anySeat: true,
       },
@@ -15743,8 +15754,7 @@ export const cardSpecs: CardSpec[] = [
   {
     // "Unique. Put this card in play. Once each turn, you can burn 1 pool
     //  to get +3 votes during the polling step of any referendum."
-    // The Ministry clan tag is thematic, not a requirement — the Ravnos
-    // Carnival precedent: a Master has no acting minion to gate.
+    // The Ministry clan icon is enforced centrally when played.
     krcgId: 100722,
     name: "Ferraille",
     cardType: "master",
@@ -17161,8 +17171,7 @@ export const cardSpecs: CardSpec[] = [
     // "Master: unique location. Lock during your discard phase to move a
     //  card from your ash heap to the bottom of your library."
     //
-    //  The Brujah antitribu icon on a MASTER is decorative — a master's
-    //  clan requirement is printed in its text, and this one prints none.
+    //  The Brujah antitribu icon is enforced centrally when played.
     krcgId: 102153,
     name: "Waste Management Operation",
     cardType: "master",
@@ -17185,7 +17194,7 @@ export const cardSpecs: CardSpec[] = [
     //  the top of your library. Any vampire may burn this location as a
     //  Ⓓ action."
     //
-    //  The Harbinger of Skulls icon is decorative for the same reason.
+    //  The Harbinger of Skulls icon is enforced centrally when played.
     krcgId: 101136,
     name: "Maabara",
     cardType: "master",
@@ -17801,6 +17810,7 @@ export const cardSpecs: CardSpec[] = [
         // "Employ an animal retainer from your hand ignoring requirements
         // (pay cost as normal)."
         effects: [
+          { kind: "actionStealth", amount: 1 },
           {
             kind: "playFromHand",
             types: ["retainer"],
@@ -17815,6 +17825,7 @@ export const cardSpecs: CardSpec[] = [
         // "Put this card on a minion you control. The attached minion
         // gets 1 optional maneuver each combat and +1 strength."
         effects: [
+          { kind: "actionStealth", amount: 1 },
           { kind: "attachSelf", strength: 1, maneuverPerCombat: 1, target: "ownMinion" },
         ],
       },
@@ -19968,8 +19979,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "strikeHandBonus", bonus: 2 }] },
-      { level: "basic", discipline: "thn", effects: [{ kind: "strikeDamage", amount: 2, ranged: false, aggravated: true }] },
+      { level: "basic", discipline: "pot", variant: "pot", effects: [{ kind: "strikeHandBonus", bonus: 2 }] },
+      { level: "basic", discipline: "thn", variant: "thn", effects: [{ kind: "strikeDamage", amount: 2, ranged: false, aggravated: true }] },
       { level: "superior", discipline: "thn", effects: [{ kind: "strikeDamage", amount: 3, ranged: false, aggravated: true }] },
     ],
   },
@@ -19981,9 +19992,9 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false }] },
-      { level: "superior", discipline: "dai", variant: "one", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }] },
-      { level: "superior", discipline: "dai", variant: "two", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: true }] },
+      { level: "basic", discipline: "pot", variant: "pot", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false }] },
+      { level: "basic", discipline: "dai", variant: "dai", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: true }] },
     ],
   },
   {
@@ -20036,8 +20047,8 @@ export const cardSpecs: CardSpec[] = [
     usable: [],
     combatLimit: "combat",
     modes: [
-      { level: "basic", discipline: { all: ["obt", "pot"] }, effects: [{ kind: "roundDamage", amount: 1, targets: "opposing", ranged: false, when: "strikeResolution" }, { kind: "maneuver", onlyToClose: true }] },
-      { level: "superior", discipline: { all: ["obt", "pot"] }, effects: [{ kind: "roundDamage", amount: 2, targets: "opposing", ranged: false, when: "strikeResolution" }, { kind: "maneuver", onlyToClose: true }] },
+      { level: "basic", discipline: { all: ["obt", "pot"] }, effects: [{ kind: "roundDamage", amount: 1, targets: "opposing", ranged: false, when: "strikeResolution" }, { kind: "roundCloseManeuver" }] },
+      { level: "superior", discipline: { all: ["obt", "pot"] }, effects: [{ kind: "roundDamage", amount: 2, targets: "opposing", ranged: false, when: "strikeResolution" }, { kind: "roundCloseManeuver" }] },
     ],
   },
   {
@@ -21507,14 +21518,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Changeling [100324] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Changeling: the bleed restriction belongs only to inferior Vicissitude.
     krcgId: 100324,
     name: "Changeling",
     cardType: "actionModifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "vic", usable: ["onlyDuringBleed"], effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] },
     ],
   },
   {
@@ -21673,14 +21685,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Command of the Beast [100381] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Superior does not count against the limited bleed modifier rule.
     krcgId: 100381,
     name: "Command of the Beast",
     cardType: "actionModifier",
     bloodCost: 0,
-    usable: [],
+    usable: ["onlyDuringBleed"],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
     ],
   },
   {
@@ -21701,7 +21714,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Confusion",
     cardType: "actionModifier",
     bloodCost: 0,
-    usable: [],
+    usable: ["onlyDuringBleed"],
     modes: [
       { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
       {
@@ -26201,16 +26214,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Art of Pain [100098] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Unique master: put on any ready Toreador antitribu; +2 strength.
     krcgId: 100098,
     name: "The Art of Pain",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
+    permanent: {
+      where: "bearer", statics: { strength: 2 }, tags: ["The Art of Pain"],
+      attach: { scope: "any", kind: "vampire", clan: "Toreador antitribu" },
+    },
     usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
-    ],
+    modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
     // Art's Traumatic Essence [100100] — fala 49 wierna (300) pełna zgodność bez wydmuszek
@@ -26336,15 +26352,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bestial Visage [100154] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // "Put this card on a Gangrel antitribu. The vampire ... gets -1 stealth."
     krcgId: 100154,
     name: "Bestial Visage",
     cardType: "master",
     bloodCost: 0,
+    permanent: {
+      where: "bearer", statics: { stealth: -1 }, tags: ["Bestial Visage"],
+      attach: { scope: "any", kind: "vampire", clan: "Gangrel antitribu", inTorporToo: true },
+    },
     usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
-    ],
+    modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
     // Bestow Vigor [100155] — fala 49 wierna (300) pełna zgodność bez wydmuszek
@@ -26530,15 +26548,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Buff [100196] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Trifle: put on a ready Blood Brother you control; +1 Sanguinus.
     krcgId: 100196,
     name: "Blood Buff",
     cardType: "master",
     bloodCost: 0,
+    trifle: true,
+    permanent: {
+      where: "bearer", statics: { disciplineBoost: "san" }, tags: ["Blood Buff"],
+      attach: { scope: "own", kind: "vampire", clan: "Blood Brother" },
+    },
     usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
-    ],
+    modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
     // Blood Clots [100197] — fala 49 wierna (300) pełna zgodność bez wydmuszek
@@ -26574,16 +26595,27 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Puppy [100207] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Unique master: a blood store with three alternative unlock uses.
     krcgId: 100207,
     name: "Blood Puppy",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
+    permanent: {
+      where: "seat", statics: {}, tags: [],
+      bloodStore: {
+        start: 3,
+        offers: [
+          { window: "unlock", kind: "cardToPool", amount: 1 },
+          { window: "unlock", kind: "bankToCard", amount: 1 },
+          { window: "unlock", kind: "cardToPool", amount: "all", burnSelf: true },
+        ],
+      },
+      vulnerableTo: {}, // any minion may burn it as a directed action
+    },
     usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
-    ],
+    modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
     // Blood Siege [100210] — fala 49 wierna (300) pełna zgodność bez wydmuszek
@@ -26613,6 +26645,7 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100216,
     name: "Blood Turnip",
     cardType: "master",
+    requiresControlledSect: ["anarch"],
     bloodCost: 0,
     usable: [],
     modes: [
@@ -26642,16 +26675,22 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blooding by the Code [100221] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Master on a Salubri antitribu you control: +1 val, capacity and
+    // strength. "A vampire can have only one" is per bearer, not unique.
     krcgId: 100221,
     name: "Blooding by the Code",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    permanent: {
+      where: "bearer",
+      statics: { disciplineBoost: "val", capacityBonus: 1, strength: 1 },
+      tags: ["Blooding by the Code"],
+      exclusiveKey: "Blooding by the Code",
+      attach: { scope: "own", kind: "vampire", clan: "Salubri antitribu", inTorporToo: true },
+    },
     usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "addStrength", amount: 1 }] }
-    ],
+    modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
     // Bloodwork [100225] — fala 49 wierna (300) pełna zgodność bez wydmuszek
@@ -26964,6 +27003,7 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100347,
     name: "Church of the Order of St. Blaise",
     cardType: "master",
+    requiresControlledSect: ["sabbat"],
     bloodCost: 0,
     usable: [],
     modes: [
@@ -27277,17 +27317,7 @@ export const cardSpecs: CardSpec[] = [
       { level: "basic", discipline: null, effects: [] }
     ],
   },
-  {
-    // Crusade: Geneva [100461] — fala 49 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100461,
-    name: "Crusade: Geneva",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
+  crusade(100461, "Geneva", "Malkavian antitribu"),
   {
     // Cry Wolf [100475]
     krcgId: 100475,
@@ -31326,6 +31356,7 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101810,
     name: "Smear Campaign",
     cardType: "master",
+    requiresControlledSect: ["anarch"],
     bloodCost: 0,
     poolCost: 1,
     usable: [],
@@ -32493,15 +32524,26 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Abombwe [100009] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Master: Discipline, trifle. A Laibon OR a vampire with Protean;
+    // no "you control" or "ready" restriction is printed.
     krcgId: 100009,
     name: "Abombwe",
     cardType: "master",
     bloodCost: 0,
+    poolCost: 0,
+    trifle: true,
+    permanent: {
+      where: "bearer",
+      statics: { disciplineBoost: "abo", capacityBonus: 1 },
+      tags: ["discipline"],
+      attach: {
+        scope: "any", kind: "vampire", inTorporToo: true,
+        sectOrDiscipline: { sect: "laibon", discipline: "pro" },
+        notSuperiorDiscipline: "abo",
+      },
+    },
     usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
-    ],
+    modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
     // Abomination [100010] — fala 49 wierna (300) pełna zgodność bez wydmuszek
@@ -33006,83 +33048,13 @@ export const cardSpecs: CardSpec[] = [
       { level: "basic", discipline: null, effects: [] }
     ],
   },
-  {
-    // Crusade: Amsterdam [100451] — fala 45 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100451,
-    name: "Crusade: Amsterdam",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
-  {
-    // Crusade: Barcelona [100454] — fala 45 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100454,
-    name: "Crusade: Barcelona",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
-  {
-    // Crusade: Brussels [100456] — fala 45 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100456,
-    name: "Crusade: Brussels",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
-  {
-    // Crusade: Dublin [100459] — fala 45 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100459,
-    name: "Crusade: Dublin",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
-  {
-    // Crusade: London [100464] — fala 45 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100464,
-    name: "Crusade: London",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
-  {
-    // Crusade: Rome [100471] — fala 45 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100471,
-    name: "Crusade: Rome",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
-  {
-    // Crusade: Washington, D.C. [100473] — fala 45 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100473,
-    name: "Crusade: Washington, D.C.",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
+  crusade(100451, "Amsterdam", "Ventrue antitribu"),
+  crusade(100454, "Barcelona", "Tremere antitribu"),
+  crusade(100456, "Brussels", "Toreador antitribu"),
+  crusade(100459, "Dublin", "Gangrel antitribu"),
+  crusade(100464, "London", "Nosferatu antitribu"),
+  crusade(100471, "Rome", "Brujah antitribu"),
+  crusade(100473, "Washington, D.C.", "Ventrue antitribu"),
   {
     // The Crusader Sword [100474] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100474,
@@ -34478,6 +34450,7 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101436,
     name: "Powerbase: Luanda",
     cardType: "master",
+    requiresControlledSect: ["laibon"],
     bloodCost: 0,
     usable: [],
     modes: [
@@ -34500,6 +34473,7 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101443,
     name: "Powerbase: Tshwane",
     cardType: "master",
+    requiresControlledSect: ["laibon"],
     bloodCost: 0,
     usable: [],
     modes: [
@@ -35074,6 +35048,7 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101862,
     name: "Static Virtue",
     cardType: "master",
+    requiresControlledSect: ["laibon"],
     bloodCost: 0,
     usable: [],
     modes: [
@@ -35362,6 +35337,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 102002,
     name: "Toy Chest Test",
     cardType: "master",
+    requiresControlledSect: ["sabbat"],
+    requiresControlledCapacity: 5,
     bloodCost: 0,
     poolCost: 1,
     usable: [],
@@ -41726,21 +41703,28 @@ const magnum44: CardHandler = {
   options(card, ctx) {
     if (ctx.window !== "turn.minion") return [];
     const seat = getSeat(ctx.state, ctx.seat);
-    if (seat.pool < 2) return [];
     const options: LegalOption[] = [];
     for (const m of seat.minions) {
-      if (m.inTorpor || m.locked) continue;
+      if (!canAct(m) || cannotBeEquipped(m, "equipment")) continue;
       if (m.playedSinceUnlock.includes(this.name)) continue;
-      options.push({
-        id: playOptionId(this.name, null, m.id, card.id),
-        kind: "playCard",
-        label: `${m.name}: equip .44 Magnum`,
-        card: card.id,
-        name: this.name,
-        minion: m.id,
-        mode: null,
-        params: {},
-      });
+      const cost = playCostFor(ctx.state, {
+        name: this.name, bloodCost: 0, poolCost: 2, types: ["equipment"], requires: [],
+      }, m, ctx.action, ctx.combat, null, ctx.seat);
+      for (const split of paymentSplits(ctx, m, cost, "equipment")) {
+        if (seat.pool < split.pool || m.blood < split.blood) continue;
+        const suffix = Object.values(split.params);
+        options.push({
+          id: playOptionId(this.name, null, m.id, ...suffix, card.id),
+          kind: "playCard",
+          label: `${m.name}: equip .44 Magnum${suffix.length ? ` (${suffix.join(", ")})` : ""}`,
+          card: card.id,
+          name: this.name,
+          minion: m.id,
+          mode: null,
+          cost,
+          params: split.params,
+        });
+      }
     }
     return options;
   },
@@ -41779,7 +41763,14 @@ const magnum44: CardHandler = {
       ];
     }
     if (ctx.window === "combat.chooseStrike") {
-      const chooser = cf.strikes.acting === null ? "acting" : "opposing";
+      const participates = (s: "acting" | "opposing"): boolean =>
+        cf.strikeRound === "normal" || cf.additionalStrikes[s] > 0;
+      const chooser =
+        participates("acting") && cf.strikes.acting === null
+          ? "acting"
+          : participates("opposing") && cf.strikes.opposing === null
+            ? "opposing"
+            : null;
       if (chooser !== side || cf.strikes[side] !== null) return [];
       const committed = cf.committedStrike[side];
       if (committed !== null && committed !== entry.card.id) return [];
@@ -42508,7 +42499,7 @@ const JUSTICAR_HANDLERS: CardHandler[] = JUSTICAR_CLANS.map(([, clan, camarillaO
 const cardinalBenediction = titleGrant({
   name: "Cardinal Benediction",
   title: "cardinal",
-  eligible: (m) => isReady(m) && m.sect === "sabbat" && m.capacity >= 7,
+  eligible: (m) => isReady(m) && m.sect === "sabbat" && capacityOf(m) >= 7,
   restrictSect: "sabbat", // "non-Sabbat vampires cannot cast votes or ballots"
 });
 
@@ -43228,15 +43219,19 @@ const diaDeLosMuertos: CardHandler = {
   },
 };
 
+// Keep the compiled grant hooks when adding Open War's bespoke actions.
+// Spreading the compiled handler and then replacing actionOptions used to
+// silently discard its rush grant.
+const compiledOpenWar = compileSpec(specByName("Open War"));
 const openWar: CardHandler = {
-  ...compileSpec(specByName("Open War")),
+  ...compiledOpenWar,
   options(card, ctx) {
     // "Only one Open War can be played in a game" (clause 1).
     const everPlayed = ctx.state.eventLog.some(
       (ev) => ev.type === "CardPlayed" && ev.name === "Open War",
     );
     if (everPlayed) return [];
-    return compileSpec(specByName("Open War")).options?.(card, ctx) ?? [];
+    return compiledOpenWar.options(card, ctx);
   },
 
   // Clause 3 is offered to EVERY Methuselah, not just the controller.
@@ -43268,13 +43263,12 @@ const openWar: CardHandler = {
     }
   },
 
-  // Clause 2: the granted location-burn. The spec's rushGrant supplies
-  // the other granted action; both are merged by the compiler, which
-  // dispatches on the verb segment of the option id.
+  // Clause 2: combine the location-burn with the compiler's rush grant.
+  // Dispatch explicitly: the bespoke overlay is applied AFTER compilation.
   actionOptions(entry, _owner, ctx) {
     if (ctx.window !== "turn.minion") return [];
-    const opts: LegalOption[] = [];
-    if (getSeat(ctx.state, ctx.seat).pool < 2) return opts; // "costs 2 pool"
+    const opts: LegalOption[] = compiledOpenWar.actionOptions?.(entry, _owner, ctx) ?? [];
+    if (getSeat(ctx.state, ctx.seat).pool < 2) return opts; // only the location burn costs 2 pool
     for (const actor of getSeat(ctx.state, ctx.seat).minions) {
       if (actor.kind !== "vampire" || actor.sect !== "anarch" || !canAct(actor)) continue;
       if (
@@ -43300,6 +43294,11 @@ const openWar: CardHandler = {
     return opts;
   },
   useActionOption(entry, _owner, choice, ops) {
+    if (choice.id.includes(":rush:")) {
+      if (!compiledOpenWar.useActionOption) throw new Error("Open War: missing rush handler");
+      compiledOpenWar.useActionOption(entry, _owner, choice, ops);
+      return;
+    }
     const permanent = choice.params["permanent"];
     if (!permanent) throw new Error("Open War: no location chosen");
     ops.announceEntryAction(entry, choice.minion, {
@@ -43918,7 +43917,7 @@ const caveOfApples: CardHandler = {
       }
       for (const victim of getSeat(ctx.state, prey).minions) {
         // "an ally or younger vampire": younger = lower capacity.
-        if (victim.kind === "vampire" && victim.capacity >= actor.capacity) continue;
+        if (victim.kind === "vampire" && capacityOf(victim) >= capacityOf(actor)) continue;
         opts.push({
           id: `act:Cave of Apples:${entry.card.id}:corrupt:${actor.id}:${victim.id}`,
           kind: "useEntryAction",
@@ -43950,7 +43949,7 @@ const caveOfApples: CardHandler = {
     ops.addCorruption(victim.id, seat, 1);
     // "…equals or exceeds their capacity or cost": vampires are measured
     // by capacity, allies by their printed pool cost.
-    const threshold = victim.kind === "ally" ? (victim.cost ?? 0) : victim.capacity;
+    const threshold = victim.kind === "ally" ? (victim.cost ?? 0) : capacityOf(victim);
     const counters = victim.corruption?.[seat] ?? 0;
     if (counters >= threshold) {
       // "You CAN burn those counters to steal that minion" — the
@@ -45561,9 +45560,8 @@ function findEntryById(state: GameState, cardId: string): PermanentInPlay | null
  * play. If this location has no counters, burn it." The paying half is
  * declarative (`costSource` on the card in play, read by the option
  * enumeration and by the payment at resolution); what is bespoke is the
- * headcount at entry — and the fact that a player controlling no Ravnos
- * puts it into play with nothing on it and burns it on arrival, which is
- * what the card says.
+ * headcount at entry. A ready Ravnos is required when it is played; if
+ * that requirement later ceases to hold, the printed burn rule still applies.
  */
 const ravnosCarnival: CardHandler = {
   name: "Ravnos Carnival",
@@ -45872,6 +45870,7 @@ function hostages(state: GameState): MinionState[] {
  */
 const carversMeatPacking: CardHandler = {
   name: "Carver's Meat Packing and Storage",
+  isUnique: true,
   bloodCost: 0,
   poolCost: 1,
   isMasterCard: true,
@@ -45909,7 +45908,7 @@ const carversMeatPacking: CardHandler = {
     // hostage counter on them" — torpor only; a burned vampire is gone.
     if (info.how !== "torpor") return;
     const m = findMinion(ops.state, info.minion);
-    if (!m || m.kind !== "vampire" || m.capacity > 3) return;
+    if (!m || m.kind !== "vampire" || capacityOf(m) > 3) return;
     ops.addMinionCounters(info.minion, "hostage", 1);
   },
   abilityOptions(entry, owner, ctx) {
@@ -46387,6 +46386,22 @@ export function buildHandlerRegistry(): HandlerRegistry {
     registry[bespoke.name] = bespoke;
   }
   for (const h of Object.values(registry)) backfillCentralQueries(h);
+  for (const [name, clans] of masterClanRequirements) {
+    const handler = registry[name];
+    if (!handler) continue;
+    // Do not mutate shared bespoke handler objects: registry construction is
+    // repeated by training workers and tests. In-play abilities do not need
+    // the requirement to remain satisfied after the card was played.
+    registry[name] = {
+      ...handler,
+      requiresClans: () => [...clans],
+      options: (card, ctx) => {
+        const options = handler.options(card, ctx);
+        return controllerMeetsRequirements(ctx.state, ctx.seat, { requiresControlledClan: clans })
+          ? options : options.filter((option) => option.kind !== "playCard");
+      },
+    };
+  }
   return registry;
 }
 
