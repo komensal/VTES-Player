@@ -266,3 +266,9 @@ Dodano 27 testów dziewięciu dyscyplin (27/27); wybrane testy crypt-wave/suppor
 [Raport](batch-11-manual-02-partial.md) obejmuje 25 kart z ID 100011–100054 według manifestu: 13 statycznych rozbieżności bez nowego scenariusza odtwarzającego, 11 ograniczonych przeglądów bez wykrytej niezgodności oraz jeden przypadek nierozstrzygnięty. W paczce łącznie wpisy ma **69/136** kart, pozostało **67**; w całym inwentarzu **4091/4158** ma wpis. Ograniczony przegląd nie dowodzi pełnej zgodności.
 
 Wybrane testy: 114/114 w 13 plikach; dodatkowy zestaw 86/89 w 6 plikach, trzy znane porażki listy dyscyplin, klanów i frenzy. Pełnego zestawu nie uruchomiono. Generator, test inwentarza, typecheck i diff-check sprawdzono osobno.
+
+## Paczka 11 — kolejne 25 kart biblioteki
+
+[Raport](batch-11-manual-03-partial.md) obejmuje 25 kart z ID 100055–100096 według manifestu: 7 statycznych rozbieżności bez nowego scenariusza, 15 ograniczonych przeglądów bez wykrytej niezgodności oraz 3 nierozstrzygnięte. W paczce łącznie wpisy ma **94/136** kart, pozostało **42**; w całym inwentarzu **4116/4158** ma wpis. Ograniczony przegląd nie dowodzi pełnej zgodności.
+
+Wybrane testy: 141/142 w 12 plikach, znana porażka listy klanów `referendum-terms.test.ts:301`; dodatkowe 62/62 w 6 plikach. Pełnego zestawu nie uruchomiono. Generator, test inwentarza, typecheck i diff-check sprawdzono osobno.

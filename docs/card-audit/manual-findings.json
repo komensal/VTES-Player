@@ -324,10 +324,40 @@
     "evidence": "lockGrant stealth z sect anarch bez ownOnly; compile.ts dopuszcza aktora innego kontrolera, ale wymagany jest działający kontekst okna. W tym zakresie bez osobnego scenariusza wszystkich miejsc przy stole. Ograniczony zakres."
   },
   {
+    "id": 100055,
+    "name": "Anarch Revolt",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec unlockDrain noReadySect anarch i vulnerableTo przez politicalAction +1 stealth; pool-drain.test.ts i vulnerable-cards.test.ts obejmują wybrane przypadki, nie wszystkie interakcje. Ograniczony zakres."
+  },
+  {
+    "id": 100056,
+    "name": "Anarch Salon",
+    "status": "UNRESOLVED",
+    "evidence": "refSectPayout filtruje anarchs przez isReady zarówno dla blood, jak i pool; referendum-terms.test.ts:63–103 oczekuje braku pool dla kontrolera jedynego Anarcha w torporze. Druk kwalifikuje ready tylko w pierwszej części („each ready Anarch” vs „each Methuselah controlling an Anarch”); wymagane rozstrzygnięcie interpretacji reguł i osobny scenariusz przed klasyfikacją."
+  },
+  {
     "id": 100057,
     "name": "Anarch Secession",
     "status": "CONFIRMED_BUG",
     "evidence": "Action ma tylko +1 stealth, nie zmienia wampira na Anarch, nie obsługuje baron ani ograniczenia bloku. Tekst: src/cards/registry.json, ID 100057; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100058,
+    "name": "Anarch Troublemaker",
+    "status": "UNRESOLVED",
+    "evidence": "Bespoke abilityOptions w cards.ts:38880 wybiera 1 lub 2 ready unlocked vampire albo equipment i nie oferuje wyboru 0 przy „up to two”. Wymaga ustalenia, czy reguły dopuszczają przekazanie karty bez wybrania żadnego celu; cross-table-masters.test.ts bada typowy wybór, nie zero."
+  },
+  {
+    "id": 100059,
+    "name": "Anarchist Uprising",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "refBurnPerMinion lockedOnly false liczy minions w każdym standing seat; istniejące testy referendum obejmują rodziny efektów, nie pełne kombinacje regionów i stanów. Ograniczony zakres."
+  },
+  {
+    "id": 100060,
+    "name": "Anathema",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec politicalAction nie zawiera wymogu prince/justicar, wyboru ready vampire, umieszczenia karty ani efektu burn i zysku pool; wyszukiwanie nazwy w cards.ts i silniku nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego."
   },
   {
     "id": 100061,
@@ -340,6 +370,24 @@
     "name": "Ancestor's Insight",
     "status": "CONFIRMED_BUG",
     "evidence": "Jest jedynie basic aus modifyBleed; brak redukcji bleed jako reakcji i rozdzielenia od superior modifier. Tekst: src/cards/registry.json, ID 100062; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100063,
+    "name": "The Ancestor's Talisman",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec equipment ma jedynie modifyIntercept w modes, bez unique permanent i warunku actions requiring dom lub pre; brak znalezionego nazwanego handlera. Wymagania klanowe equipment oraz inne interakcje nie zostały osobno odtworzone. Statyczna analiza bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100064,
+    "name": "Ancient Influence",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "oncePerGameByName i refEachSeatChoosesVampire wybierają ready vampire, wypłacają capacity i następnie pobierają 5 pool; once-in-a-game.test.ts sprawdza wybrane wybory i drugą kopię, bez wszystkich interakcji oust. Ograniczony zakres."
+  },
+  {
+    "id": 100065,
+    "name": "Ancilla Empowerment",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "refBurnPerMinion lockedOnly false nalicza po 1 pool za miniona w s.minions; nie sprawdzono wszystkich interakcji regionów i rozliczania oust. Ograniczony zakres."
   },
   {
     "id": 100066,
@@ -372,6 +420,12 @@
     "evidence": "Naprawiono celowanie: dowolny wampir, także przeciwnika i w torpor; superior jest wykluczony. Wspólna poprawka zwykłych Discipline masters; tests/cards/audit-batch-100.test.ts. Pozostałe interakcje nie są w pełni zweryfikowane. Tekst: src/cards/registry.json, ID 100070; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100071,
+    "name": "The Ankara Citadel, Turkey",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec equipment nie zawiera unique, reprezentowania location zamiast equipment ani obniżenia kosztu non-action modifier cards; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego."
+  },
+  {
     "id": 100072,
     "name": "Anonymous Freight",
     "status": "CONFIRMED_BUG",
@@ -384,16 +438,76 @@
     "evidence": "Master daje gainPool zamiast unikalnej karty ze stratą pool i opcją poświęcenia wampira w unlock. Tekst: src/cards/registry.json, ID 100073; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100074,
+    "name": "Anthelios, The Red Star",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec event nie zawiera Gehenna ani opcji raz na master phase wymiany master z ręki na master z ash heap za master phase action; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego."
+  },
+  {
     "id": 100075,
     "name": "Antithesis",
     "status": "CONFIRMED_BUG",
     "evidence": "Action ma tylko +1 stealth; nie dołącza do uprawnionego wampira ani nie blokuje hunt i nie wywołuje torpor. Tekst: src/cards/registry.json, ID 100075; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100076,
+    "name": "Apparition",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "roundPrevent 1/2 i delayedReplace afterCombat; round-recurring-combat.test.ts sprawdza wybrane przypadki mechanizmu, bez pełnej macierzy obrażeń i replacement. Ograniczony zakres."
+  },
+  {
+    "id": 100077,
+    "name": "Apportation",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Basic press continueOnly i superior maneuver; combat-cards.test.ts:204 sprawdza basic kontynuację oraz superior przejście na long range, nie wszystkie stany walki. Ograniczony zakres."
+  },
+  {
     "id": 100078,
     "name": "Approximation of Loyalty",
     "status": "CONFIRMED_BUG",
     "evidence": "Jest tylko basic pre stealth zamiast wyboru blokującego i superior anulowania reakcji; brak ograniczenia capacity. Tekst: src/cards/registry.json, ID 100078; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100079,
+    "name": "Aranthebes, The Immortal",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec aura oraz vulnerableTo, wraz z bespoke lock-to-stealth; aranthebes.test.ts sprawdza zakres capacity, locked, predator i shuffle. Nie sprawdzono wszystkich interakcji. Ograniczony zakres."
+  },
+  {
+    "id": 100080,
+    "name": "Arcane Appraiser",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally zawiera podstawowe statystyki i modifyStealth, lecz bez unique, subtype ghoul, akcji przenoszenia equipment i zapobiegania drugiej kopii unique equipment; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100081,
+    "name": "Arcane Library",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Unique location, clanowy wymóg master z nakładki masterClanRequirements oraz lockGrant uncontrolledBlood Tremere; kod rodziny mechanik i wybrane testy wymagań klanowych nie dowodzą wszystkich interakcji tej karty. Ograniczony zakres."
+  },
+  {
+    "id": 100082,
+    "name": "Arcanum Chapterhouse, Alexandria",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Unique location, unlockDrain predatorOrPrey perHuntingGround oraz vulnerableTo; wybrane testy pool-drain i vulnerable-cards pokrywają część mechanik, nie wszystkie kombinacje. Ograniczony zakres."
+  },
+  {
+    "id": 100083,
+    "name": "Arcanum Investigator",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Ally mortal z właściwymi statystykami i grantedAction burnPermanent equipment scope predatorOrPrey; destroyer-allies.test.ts obejmuje wybrane cele, bez pełnej macierzy. Ograniczony zakres."
+  },
+  {
+    "id": 100084,
+    "name": "Archon",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Archon nakłada blockToll z payWith blood bez filtra kinds, a blockTollFor w derived.ts odrzuca ally niezdolnego zapłacić blood. Druk wymaga zapłaty tylko od vampires; opposing-statics.test.ts:245 wręcz oczekuje niedopuszczenia ally. Rozbieżność jest statyczna, istniejący test koduje przeciwne oczekiwanie, a nie nowe odtworzenie poprawnego scenariusza. Statyczna analiza bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100085,
+    "name": "Archon Investigation",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Bespoke out-of-turn handler sprawdza bleed na kontrolera i próg 4 po blocks; cross-table-masters.test.ts bada wybrane przypadki i burn aktora. Nie sprawdzono wszystkich okien i interakcji. Ograniczony zakres."
   },
   {
     "id": 100086,
@@ -420,10 +534,46 @@
     "evidence": "Jest tylko basic prevent 3; brak superior niszczącego melee weapon po odpowiedniej prewencji. Tekst: src/cards/registry.json, ID 100089; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100090,
+    "name": "Arms Dealer",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally ma jedynie statystyki i actionStealth, brak subtype mortal i akcji wyszukania weapon w library, shuffle oraz discard; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100091,
+    "name": "Arms of the Abyss",
+    "status": "UNRESOLVED",
+    "evidence": "Spec zawiera basic dodge i superior dodge plus limited additional strike, lecz timing kombinacji strike-plus-additional wymaga osobnego przeglądu zgodnie z docs/additional-strike-followups.md. Nie rozstrzygnięto pełnej sekwencji jedynie na podstawie surowej specy."
+  },
+  {
     "id": 100092,
     "name": "Army of Apparitions",
     "status": "CONFIRMED_BUG",
     "evidence": "Reaction daje modifyIntercept zamiast głosów chi lub anulowania akcji w superior. Tekst: src/cards/registry.json, ID 100092; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100093,
+    "name": "Army of Rats",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Action +1 stealth z permanent vulnerableTo i bespoke naliczaniem pool raz na turę; vulnerable-cards.test.ts sprawdza limit i wybrane interakcje, nie wszystkie. Ograniczony zakres."
+  },
+  {
+    "id": 100094,
+    "name": "Arson",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "actionOnPermanent dla location, delayedReplace afterAction; legacy-rush-actions.test.ts sprawdza zniszczenie location przeciwnika i brak opcji bez celu, nie pełny timing replacement. Ograniczony zakres."
+  },
+  {
+    "id": 100095,
+    "name": "Art Museum",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Unique location, clanowy wymóg master przez nakładkę oraz lockGrant uncontrolledBlood Toreador; ograniczony przegląd rodziny, nie wszystkie interakcje. Ograniczony zakres."
+  },
+  {
+    "id": 100096,
+    "name": "The Art of Love",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Nakładka masterClanRequirements dodaje wymóg ready Toreador antitribu, choć brak go w raw spec; takeControlOfMinion filtruje ally innego kontrolera i borrowMinion kończy kontrolę na koniec tury. borrowed-minions.test.ts sprawdza celowanie i powrót w typowym przypadku. Ograniczony zakres."
   },
   {
     "id": 100097,
