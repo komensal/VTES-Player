@@ -64,16 +64,11 @@ tag entirely would pass.
 
 ## §4 — "Not usable against a minion with flight"
 
-A gate on the option, read against the minion the strike would answer. Flight
-is a tag on an attached card, and **no V5 vampire prints it** (the Gargoyles are
-not in the pool), so in practice it only ever arrives from a card in play —
-which is exactly how the test produces it.
-
-This is a gate that could easily be *inert* rather than wrong, so the negative
-is asserted against a positive on the same board: with a flight retainer on the
-blocker the card is not offered, and with a plain equipment on the blocker it
-is. Otherwise "not offered" would also be satisfied by a card that is never
-offered at all.
+A gate on the option, read against the opposing minion. The current pool includes
+vampires that print Flight. `hasFlight` reads their self-entry and explicit
+`grantsFlight` statics on attached cards, not an attached retainer's own tag.
+The synthetic-grant test has a plain-equipment control, and
+`flight-audit.test.ts` also exercises a real imported vampire.
 
 ## §5 — What the wave found, in its own test
 

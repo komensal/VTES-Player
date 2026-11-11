@@ -1836,7 +1836,6 @@ id,name,kind,status,categories
 200559,"Hafsa, The Watcher (G5)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 200560,Hagar Stone (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 200561,Halim Bey (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
-200563,Handsome Dan (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy
 200564,Hanna Redmonds (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 200565,Hannibal (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 200566,Hannibal (G2 ADV),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; czas_i_warunki
@@ -2084,7 +2083,6 @@ id,name,kind,status,categories
 200898,Magdelena Schaefer (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby
 200899,"Makarios, The Seducer (G2)",crypt,CODE_DISCREPANCY,akcje_i_blok
 200900,Malabranca (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
-200901,Malachai (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy
 200903,Maldavis (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200904,Maldavis (G3 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy
 200905,Malgorzata (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
@@ -2213,7 +2211,6 @@ id,name,kind,status,categories
 201067,"Nu, The Pillar (G2)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
 201069,Nuriel (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; czas_i_warunki
 201070,Obaluaye (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-201071,Obsidian (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy
 201072,Ogwon (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 201075,Olga Triminov (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 201076,Oliver Thrace (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy

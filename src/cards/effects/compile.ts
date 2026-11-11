@@ -59,6 +59,7 @@ import {
   currentIntercept,
   isToreadorOrAntitribuClan,
   isUndeadAlly,
+  hasFlight,
   minionHasTag,
   cardRequiresDiscipline,
   otherCopies,
@@ -361,6 +362,9 @@ function canPlayMode(m: MinionState, mode: CardMode, spec: CardSpec): boolean {
 function disciplineOk(m: MinionState, mode: CardMode): boolean {
   if (mode.discipline === null) return true;
   const hasAt = (d: string): boolean => {
+    // Flight is an unleveled trait, represented in mode requirements by
+    // the "flight" code; it can be printed or granted by a card in play.
+    if (d === "flight") return hasFlight(m);
     const lvl = disciplinesOf(m)[d];
     if (!lvl) return false;
     return mode.level === "basic" || lvl === "superior";
@@ -1167,7 +1171,7 @@ function actingConditionHolds(
   if (cond.sects && !(a.sect !== null && cond.sects.includes(a.sect))) return false;
   if (cond.notClans && a.clan !== null && cond.notClans.includes(a.clan)) return false;
   if (cond.notUndeadAlly && isUndeadAlly(a)) return false;
-  if (cond.notTags?.some((t) => minionHasTag(a, t))) return false;
+  if (cond.notTags?.some((t) => t === "flight" ? hasFlight(a) : minionHasTag(a, t))) return false;
   return true;
 }
 
@@ -3538,15 +3542,13 @@ function compileCombatCard(spec: CardSpec): CardHandler {
                 options.push(makeOption(spec, card, m, mode, { weapon: p.card.id }));
               }
             }
-            // "NOT USABLE against a minion with FLIGHT" (Earthshock) — a gate
-            // on the option, checked against the minion this strike would
-            // answer. No V5 vampire prints flight, so it only ever arrives
-            // from a card in play. §4
+            // "NOT USABLE against a minion with FLIGHT" (Earthshock) —
+            // a gate on the opposing minion's printed or granted trait.
             if (
               mode.effects.some((x) => x.kind === "strikeHandBonus" && x.notVsFlight)
             ) {
               const foe = findMinion(ctx.state, side === "acting" ? cf.opposing : cf.acting);
-              if (foe?.attached.some((p) => p.tags.includes("flight"))) continue;
+              if (foe && hasFlight(foe)) continue;
             }
             // "Not usable first round of combat" (Growing Fury) — a gate on
             // the strike option itself.
@@ -3726,16 +3728,8 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             if (srl && cf.skipRangeNextRound) continue;
             if (srl?.kind === "setRangeLong" && srl.requiresFlightAdvantage) {
               const foe = findMinion(ctx.state, side === "acting" ? cf.opposing : cf.acting);
-              // ANY attached card, not `minionHasTag` — that reads the
-              // SELF-attached entry, which is "what does this minion
-              // PRINT". No vampire in the pool prints flight (the
-              // Gargoyles are not in it), so flight only ever arrives
-              // GRANTED, and the printed-only question is the wrong one
-              // here. docs/one-each-round-design.md §3
-              const flies = (x: MinionState): boolean =>
-                x.attached.some((p) => p.tags.includes("flight"));
-              if (!flies(m)) continue;
-              if (!foe || flies(foe)) continue;
+              if (!hasFlight(m)) continue;
+              if (!foe || hasFlight(foe)) continue;
             }
             // "[PRE] …burns 1 blood to burn a RETAINER employed by the
             // opposing minion" (Mask Empathy). One option per retainer, and

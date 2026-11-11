@@ -82,13 +82,10 @@ The flight half **sets** the range, which is a different act:
 that round"* and the Determine Range step is skipped [RTR 19970630]
 [ANK 20180720] — which is what `setCombatRange` already does.
 
-**And the flight test is not `minionHasTag`.** That helper reads the
-minion's SELF-attached entry, so it answers *"what does this minion
-PRINT"*. No vampire in the pool prints flight — the Gargoyles are not in
-it — so flight only ever arrives **granted**, and the printed-only
-question would have made the clause permanently dead: whole by the letter
-of §0 and inert in fact. The gate reads any attached card carrying the
-tag, which includes the self entry.
+**The flight test uses `hasFlight`, not `minionHasTag`.** The latter
+reads only the minion's self-entry. The current crypt pool includes printed
+Flight; a permanent may also explicitly grant it via `grantsFlight`.
+An attached retainer's own Flight tag does not grant Flight to its employer.
 
 That is a small instance of a general trap worth naming: **a derived
 helper's name says what it returns, not what your card is asking.**

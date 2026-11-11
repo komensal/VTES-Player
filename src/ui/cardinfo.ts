@@ -105,6 +105,8 @@ export interface CryptImport {
   nonUnique: boolean;
   /** The vampire itself prints Sterile, not merely a reference to another minion. */
   sterile: boolean;
+  /** Standalone printed Flight trait, rather than an ability mentioning flight. */
+  flight: boolean;
   /** The city a prince/baron/archbishop holds their title in — "Camarilla
    *  Prince of MELBOURNE". Undefined for every other title, and it is the
    *  key a title contest turns on. docs/contested-design.md §6 */
@@ -125,8 +127,9 @@ export interface CryptImport {
 
 /** Match a standalone printed trait rather than references within abilities,
  * such as "become a sterile Ahrimane" or "non-sterile vampire". */
-export function hasStandaloneCryptTrait(text: string, trait: "sterile" | "non-unique"): boolean {
-  return new RegExp(`(?:^|[.:!?]\\s*)${trait}\\s*(?:[.!?]|$)`, "i").test(text.trim());
+export function hasStandaloneCryptTrait(text: string, trait: "sterile" | "non-unique" | "flight"): boolean {
+  const suffix = trait === "flight" ? "\\s*\\[flight\\]" : "";
+  return new RegExp(`(?:^|[.:!?]\\s*)${trait}${suffix}\\s*(?:[.!?]|$)`, "i").test(text.trim());
 }
 
 /**
@@ -210,6 +213,7 @@ export function importCryptCard(id: number): CryptImport {
     title,
     nonUnique: hasStandaloneCryptTrait(card.cardText, "non-unique"),
     sterile: hasStandaloneCryptTrait(card.cardText, "sterile"),
+    flight: hasStandaloneCryptTrait(card.cardText, "flight"),
     image: card.image,
     cardText: card.cardText,
     hasUnimplementedAbility,

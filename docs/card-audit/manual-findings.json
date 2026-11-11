@@ -14415,7 +14415,7 @@
     "id": 200039,
     "name": "Alabástrom (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez unlock innego Gargoyle; drukowane Flight nie widnieje w registry disciplines i nie jest wyprowadzane z tekstu przez importer. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusty cryptPerm bez unlock innego Gargoyle; drukowane Flight nie widnieje w registry disciplines i nie jest wyprowadzane z tekstu przez importer. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200040,
@@ -15723,7 +15723,7 @@
     "id": 200257,
     "name": "Cedric (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez płatnego unlock po udanym block directed action; registry nie zawiera Flight w disciplines, importer nie przenosi drukowanego Flight ani Tremere slave. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez płatnego unlock po udanym block directed action; registry nie zawiera Flight w disciplines, importer nie przenosi drukowanego Flight ani Tremere slave. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200258,
@@ -15765,7 +15765,7 @@
     "id": 200264,
     "name": "Chalcedony (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zniżki dla kart wymagających Gargoyle; Flight nie figuruje w disciplines registry ani nie jest importowane z tekstu, podobnie jak Tremere slave. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez zniżki dla kart wymagających Gargoyle; Flight nie figuruje w disciplines registry ani nie jest importowane z tekstu, podobnie jak Tremere slave. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200265,
@@ -15795,7 +15795,7 @@
     "id": 200269,
     "name": "Chaundice (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez dwukrotnej prevention 2 non-aggravated damage od strike w danej rundzie; Flight i Tremere antitribu slave nie są importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez dwukrotnej prevention 2 non-aggravated damage od strike w danej rundzie; Flight i Tremere antitribu slave nie są importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200270,
@@ -15957,7 +15957,7 @@
     "id": 200296,
     "name": "Count Vladimir Rustovitch (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez draw po replacement combat card i +1 strength przeciw werewolf; registry nie przechowuje Flight w disciplines, importer nie odczytuje go z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez draw po replacement combat card i +1 strength przeciw werewolf; registry nie przechowuje Flight w disciplines, importer nie odczytuje go z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200297,
@@ -16491,7 +16491,7 @@
     "id": 200385,
     "name": "The Dracon (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 bleed, ale brak +2 strength, zniżki Vicissitude i dodatkowego damage lub steal z ranged strikes; Flight nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Spec daje +1 bleed, ale brak +2 strength, zniżki Vicissitude i dodatkowego damage lub steal z ranged strikes; Flight nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200386,
@@ -16779,7 +16779,7 @@
     "id": 200433,
     "name": "Erinyi (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 strength w combat z Gangrel antitribu; Flight nie występuje w disciplines registry i nie jest importowane z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez -1 strength w combat z Gangrel antitribu; Flight nie występuje w disciplines registry i nie jest importowane z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200434,
@@ -16965,13 +16965,13 @@
     "id": 200464,
     "name": "Ferox, The Rock Lord (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez directed rush na Nosferatu innego Methuselah, kosztu block młodszych oraz zakazu diablerie; Flight nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez directed rush na Nosferatu innego Methuselah, kosztu block młodszych oraz zakazu diablerie; Flight nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200465,
     "name": "Ferox, The Rock Lord (G2 ADV)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zakazu kart nec/tha przeciwników w combat, zakazu diablerie i merged warunkowego intercept; Flight nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez zakazu kart nec/tha przeciwników w combat, zakazu diablerie i merged warunkowego intercept; Flight nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200466,
@@ -16983,7 +16983,7 @@
     "id": 200467,
     "name": "Fidus, The Shrunken Beast (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały stealth zamiast wyłącznie dla undirected actions, brak -1 strength; Flight i Tremere slave nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Spec daje stały stealth zamiast wyłącznie dla undirected actions, brak -1 strength; Flight i Tremere slave nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200468,
@@ -17097,7 +17097,7 @@
     "id": 200486,
     "name": "Fustuk (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez lock Fustuka za unlock Tremere antitribu; Flight i Tremere antitribu slave nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez lock Fustuka za unlock Tremere antitribu; Flight i Tremere antitribu slave nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200487,
@@ -17427,7 +17427,7 @@
     "id": 200541,
     "name": "Grotesque (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Import non-unique naprawiony i testowany w crypt-non-unique.test.ts. Pusta spec bez wyboru i powiązania location oraz remove z gry po utracie tej location; Flight i Tremere slave nie są importowane. Analiza statyczna."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Import non-unique naprawiony i testowany w crypt-non-unique.test.ts. Pusta spec bez wyboru i powiązania location oraz remove z gry po utracie tej location; Flight i Tremere slave nie są importowane. Analiza statyczna."
   },
   {
     "id": 200542,
@@ -17558,8 +17558,8 @@
   {
     "id": 200563,
     "name": "Handsome Dan (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Anarch importowany, lecz Flight nie jest przenoszone z tekstu ani registry disciplines do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Flight importowane do wszystkich stref krypty; wspólny odczyt sprawdzony na rzeczywistych kartach oraz w scenariuszach Patrol, Earthshock, High Ground i Nest of Eagles (flight-audit.test.ts). Weryfikacja celowana, nie gwarancja pełnej zgodności."
   },
   {
     "id": 200564,
@@ -18879,7 +18879,7 @@
     "id": 200783,
     "name": "The Kikiyaon (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez płatnego maneuver raz na combat; Flight nie jest przenoszone z tekstu ani registry disciplines. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez płatnego maneuver raz na combat; Flight nie jest przenoszone z tekstu ani registry disciplines. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200784,
@@ -19479,7 +19479,7 @@
     "id": 200883,
     "name": "Luma, Stone Beauty (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Camarilla importowana, ale Tremere slave i Flight nie są przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Camarilla importowana, ale Tremere slave i Flight nie są przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200884,
@@ -19586,8 +19586,8 @@
   {
     "id": 200901,
     "name": "Malachai (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Independent importowany, ale Flight nie jest przenoszone z tekstu ani registry disciplines do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Flight importowane do wszystkich stref krypty; wspólny odczyt sprawdzony na rzeczywistych kartach oraz w scenariuszach Patrol, Earthshock, High Ground i Nest of Eagles (flight-audit.test.ts). Weryfikacja celowana, nie gwarancja pełnej zgodności."
   },
   {
     "id": 200902,
@@ -20606,8 +20606,8 @@
   {
     "id": 201071,
     "name": "Obsidian (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Independent importowany, ale drukowane Flight nie jest przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Flight importowane do wszystkich stref krypty; wspólny odczyt sprawdzony na rzeczywistych kartach oraz w scenariuszach Patrol, Earthshock, High Ground i Nest of Eagles (flight-audit.test.ts). Weryfikacja celowana, nie gwarancja pełnej zgodności."
   },
   {
     "id": 201072,
@@ -20961,7 +20961,7 @@
     "id": 201130,
     "name": "Porphyry (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +2 bleed zamiast tylko przeciw kontrolerowi location; Flight i Tremere slave nie przenoszone z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Spec daje stały +2 bleed zamiast tylko przeciw kontrolerowi location; Flight i Tremere slave nie przenoszone z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201131,
@@ -20997,7 +20997,7 @@
     "id": 201136,
     "name": "Pugfar (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez blood za press własnemu Tremere antitribu; Flight i Tremere antitribu slave nie przenoszone z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez blood za press własnemu Tremere antitribu; Flight i Tremere antitribu slave nie przenoszone z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201137,
@@ -21345,7 +21345,7 @@
     "id": 201194,
     "name": "Rocia (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 intercept przy próbie block Tremere/Tremere antitribu i optional press co combat; Flight nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez +1 intercept przy próbie block Tremere/Tremere antitribu i optional press co combat; Flight nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201195,
@@ -21447,7 +21447,7 @@
     "id": 201211,
     "name": "Rusticus (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Camarilla importowana, lecz Flight i Tremere slave nie są przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Camarilla importowana, lecz Flight i Tremere slave nie są przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201212,
@@ -21675,7 +21675,7 @@
     "id": 201249,
     "name": "Saxum, Master of Slaves (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Camarilla importowana, lecz Flight i Tremere slave nie są przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Camarilla importowana, lecz Flight i Tremere slave nie są przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201250,
@@ -21855,7 +21855,7 @@
     "id": 201279,
     "name": "Sheela Na Gig (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez lock za +1 bleed własnemu acting Tremere antitribu podczas bleed; Flight i Tremere antitribu slave nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez lock za +1 bleed własnemu acting Tremere antitribu podczas bleed; Flight i Tremere antitribu slave nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201280,
@@ -22539,7 +22539,7 @@
     "id": 201393,
     "name": "Tupdog (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zniżki Visceratika, directed rush, burn po minion phase i przesunięcia top crypt do uncontrolled; non-unique, Flight i Tremere antitribu slave nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez zniżki Visceratika, directed rush, burn po minion phase i przesunięcia top crypt do uncontrolled; non-unique, Flight i Tremere antitribu slave nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201394,
@@ -22581,7 +22581,7 @@
     "id": 201400,
     "name": "Ublo-Satha (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez prevention 1 damage co combat i +1 bleed Brujah przeciw kontrolerowi Ublo-Satha; Flight i Tremere slave nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez prevention 1 damage co combat i +1 bleed Brujah przeciw kontrolerowi Ublo-Satha; Flight i Tremere slave nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201401,
@@ -22797,7 +22797,7 @@
     "id": 201436,
     "name": "Verbruch (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez wyszukania Tremere z crypt do uncontrolled przy wejściu; Flight i Tremere slave nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez wyszukania Tremere z crypt do uncontrolled przy wejściu; Flight i Tremere slave nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201437,

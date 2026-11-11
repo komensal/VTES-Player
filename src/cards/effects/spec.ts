@@ -754,9 +754,8 @@ export type EffectPrimitive =
        *  because a strength-based strike is a hand strike to every other
        *  card that prints one. docs/undodgeable-strikes-design.md §2 */
       ranged?: boolean;
-      /** "NOT USABLE against a minion with flight [FLIGHT]" (Earthshock) — a
-       *  gate on the option. Flight only ever arrives from a card in this
-       *  pool, since no V5 vampire prints it. §4 */
+      /** "NOT USABLE against a minion with flight [FLIGHT]" (Earthshock) —
+       *  gate on the opposing minion's printed or granted Flight. */
       notVsFlight?: boolean;
       /** \"Not usable first round of combat\" (Growing Fury) — gate on the
        *  strike option itself. */
@@ -4637,9 +4636,7 @@ export interface CardSpec {
     /** "…or a WRAITH" — read with `isUndeadAlly`, which is the engine's
      *  one answer to that question. */
     notUndeadAlly?: boolean;
-    /** "…or has FLIGHT" — a printed advantage. No minion in the pool has
-     *  it today, so this correctly excludes nobody; it is here because
-     *  the card prints it and a clause that is not built is not built. */
+    /** "…or has FLIGHT" — checked against the minion's printed or granted trait. */
     notTags?: string[];
   };
   /** "…with capacity N or more". */

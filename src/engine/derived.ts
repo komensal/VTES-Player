@@ -1127,6 +1127,15 @@ export function minionTags(m: MinionState): string[] {
   return m.attached.find((e) => e.card.id === m.id)?.tags ?? [];
 }
 
+/** Flight may be printed on the minion or granted by an attached card.
+ * Older snapshots can also carry it in the discipline-like field. Do not
+ * add it to disciplinesOf: Flight has no basic/superior levels. */
+export function hasFlight(m: MinionState): boolean {
+  return m.disciplines["flight"] !== undefined || m.attached.some((p) =>
+    (p.card.id === m.id && p.tags.includes("flight")) || p.statics.grantsFlight === true,
+  );
+}
+
 /** Does this minion print any of these sub-types? */
 export function minionHasTag(m: MinionState, ...tags: string[]): boolean {
   const mine = minionTags(m);

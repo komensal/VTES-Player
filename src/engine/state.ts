@@ -719,6 +719,8 @@ export interface ConditionalStatic {
 }
 
 export interface PermanentStatics {
+  /** This permanent grants its bearer Flight; a retainer's own tags do not. */
+  grantsFlight?: boolean;
   /** "This ally cannot have or use equipment (or retainers)" (Bone
    *  Shambler, Gravebound Drone) — a gate on OPTIONS: the minion is never
    *  offered as a bearer, which covers "have" and "use" at once.
