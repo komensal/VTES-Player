@@ -15,6 +15,9 @@ describe("the card audit inventory", () => {
       expect(rows).toHaveLength(Object.keys(registry.entries).length + 1);
       expect(csv).toContain('"100207","Blood Puppy","library","true","FIXED_TARGETED"');
       expect(csv).toContain('"100216","Blood Turnip","library","true","CONFIRMED_BUG"');
+      expect(csv).toContain('"100791","Frenzy","library","true","CODE_DISCREPANCY"');
+      expect(csv).toContain('"101043","Khabar: Glory","library","true","CODE_DISCREPANCY"');
+      expect(csv).toContain('"100753","Focus the Blood","library","true","UNRESOLVED"');
       expect(csv).toContain('"200232","Cailean (G2)","crypt","true","CONFIRMED_BUG","crypt_empty_spec_with_text_review"');
       expect(csv).toContain('"UNREVIEWED"');
       const report = readFileSync(join(dir, "README.md"), "utf8");

@@ -3756,10 +3756,40 @@
     "evidence": "Oba tryby wymagają pojedynczej dyscypliny i oferują stealth zamiast wyboru Methuselah i losowego discard; brak superior z czterema kartami library. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100719,
+    "name": "Felix \"Fix\" Hessian",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: akcja spalenia location innego gracza za 1 pool; destroyer-allies.test.ts. Nie zbadano wszystkich celów i interakcji."
+  },
+  {
+    "id": 100720,
+    "name": "Femur of Toomler",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique melee, strength+1 aggravated w spec; weapons.test.ts bada strike strength+1. Nie zbadano wszystkich interakcji."
+  },
+  {
     "id": 100721,
     "name": "Feral Spirit",
     "status": "CONFIRMED_BUG",
     "evidence": "Master daje gainPool zamiast konwersji kontrolowanego Gangrel na Ahrimane Sabbat z Spiritus i sterile. Tekst: src/cards/registry.json, ID 100721; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100722,
+    "name": "Ferraille",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: +3 votes za 1 pool, bez lock, raz na turę; politics-locations.test.ts bada też referendum innego gracza."
+  },
+  {
+    "id": 100723,
+    "name": "Festivo dello Estinto",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: kara stealth dla Sabbat przy hunt, fill i burn w unlock; hunt-payouts.test.ts."
+  },
+  {
+    "id": 100724,
+    "name": "Fetish Club Hunting Ground",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique hunting ground z blood dla ready vampire; legacy-locations.test.ts bada wspólny limit hunting ground."
   },
   {
     "id": 100725,
@@ -3768,16 +3798,40 @@
     "evidence": "Action zawiera jedynie stealth; brak wymogu Anarch, unlock, wyboru superior Discipline i dołączenia z konwersją sect oraz limitem. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100726,
+    "name": "Fiendish Tongue",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Sabbat, bleed +1, kara intercept Anarch oraz unlock Tzimisce w discard; last-buildable.test.ts."
+  },
+  {
+    "id": 100727,
+    "name": "Fifth Tradition: Hospitality",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: tytuł, +1 stealth i 4 blood innemu vampire; sweep3.test.ts. Nie zbadano wszystkich interakcji."
+  },
+  {
     "id": 100728,
     "name": "Filchware's Pawn Shop",
     "status": "CONFIRMED_BUG",
     "evidence": "Master zamiast unique trifle location z equip z ash heap i różnymi kosztami zawiera jedynie modifyStealth. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100729,
+    "name": "Fillip",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: wake młodszego locked vampire bez odblokowania; lock-as-currency.test.ts. Limit raz na turę nie został tu testowany."
+  },
+  {
     "id": 100730,
     "name": "Final Loosening",
     "status": "CONFIRMED_BUG",
     "evidence": "Wszystkie trzy tryby dają intercept, brak wymogu Anarch i efektów aus, dem oraz for zgodnych z tekstem. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100731,
+    "name": "The Final Nights",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: burn 1 blood każdemu vampire po sukcesie, caller po porażce; legacy-political.test.ts."
   },
   {
     "id": 100732,
@@ -3792,10 +3846,22 @@
     "evidence": "Brak wymogu ready tytułu Sabbat, dołączenia do Sabbat i jednorazowej konwersji aggravated w każdym combat. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100734,
+    "name": "Fire in the Blood",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: superior +1 strength i +2 w drugiej rundzie; strength-before-range.test.ts. Basic i pozostałe interakcje wymagają dalszego badania."
+  },
+  {
     "id": 100735,
     "name": "Fire on the Mountain",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak wymogu ready Laibon, wyboru locked vampire w torpor, diablerie i dodatkowych głosów. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100736,
+    "name": "Firebrand",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: +1 vote i płatny unlock młodszego anarch; pay-to-unlock.test.ts. Samo referendum i wszystkie warunki usunięcia nie zostały tu w pełni sprawdzone."
   },
   {
     "id": 100737,
@@ -3828,6 +3894,24 @@
     "evidence": "Oba podstawowe tryby dają maneuver zamiast aggravated strikes; brak superior dai i kosztu/range dla tha. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100742,
+    "name": "Flamethrower",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Tekst w registry podaje Weapon, nie Gun, zaś spec dodaje tag gun; może to błędnie dopuścić karty i efekty wymagające gun. weapons.test.ts bada obrażenia, nie poprawność klasyfikacji; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100743,
+    "name": "Flaming Candle",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: osobny handler spala blood i equipment przy announce, blokuje vampire oraz ogranicza jedną na grę; last-equipment-modifiers.test.ts."
+  },
+  {
+    "id": 100744,
+    "name": "Flash",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic maneuver prowadzi do long range; sweep.test.ts. Odrębny press i superior nie zostały tu scenariuszowo zweryfikowane."
+  },
+  {
     "id": 100745,
     "name": "Flash Grenade",
     "status": "CONFIRMED_BUG",
@@ -3840,6 +3924,24 @@
     "evidence": "Action zamiast przenoszenia retainera, equipment lub blood młodszego cudzego vampire do Ravnos ma jedynie stealth. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100747,
+    "name": "Fleetness",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic bleed ze stealth, superior rush z ograniczeniem do locked; rush-cards.test.ts. Pozostałe interakcje wymagają dalszej weryfikacji."
+  },
+  {
+    "id": 100748,
+    "name": "Flesh Bond",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic 2R i superior combat ends; after-combat-payoffs.test.ts."
+  },
+  {
+    "id": 100749,
+    "name": "Flesh of Marble",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: automatyczna prewencja kolejnych damage oraz różnica aggravated poziomów; round-recurring-combat.test.ts. Nie oznacza pełnej poprawności interakcji."
+  },
+  {
     "id": 100750,
     "name": "Fleshcraft",
     "status": "CONFIRMED_BUG",
@@ -3850,6 +3952,18 @@
     "name": "Flow Within the Mountain",
     "status": "CONFIRMED_BUG",
     "evidence": "Spec łączy press i combat ends dla obu basic zamiast osobnych tha/vis; brak superior kontynuującego działanie po bloku. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100752,
+    "name": "Flurry of Action",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: bleed z draw w basic i unlock w superior po sukcesie; bleed-payoffs.test.ts."
+  },
+  {
+    "id": 100753,
+    "name": "Focus the Blood",
+    "status": "UNRESOLVED",
+    "evidence": "Focus the Blood: spec/istniejący test przed range przenosi blood z vampire na kartę, ale tekst registry mówi jedynie „put this card and 1 blood on this Assamite”. Źródło blood i skutki wymagają sprawdzenia zasad lub oficjalnego orzeczenia; dodatkowo zdolność obniżki kosztu nie została tu scenariuszowo sprawdzona."
   },
   {
     "id": 100754,
@@ -3888,16 +4002,40 @@
     "evidence": "Action nie wykonuje bleed przez locked vampire ani obowiązkowych aggravated damage po rozstrzygnięciu; brak superior. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100760,
+    "name": "Forced Awakening",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: locked vampire wake i utrata blood bez block; sweep.test.ts i allies-retainers.test.ts."
+  },
+  {
     "id": 100761,
     "name": "Forced March",
     "status": "CONFIRMED_BUG",
     "evidence": "Spec oferuje stealth przy pojedynczym basic cel lub for zamiast wymogu obu dyscyplin; brak właściwych timing, unlock i limitu raz na turę. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100762,
+    "name": "Forced Vigilance",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: superior unlock locked vampire podczas directed action; post-block-unlock.test.ts. Basic i dokładne granice directed action wymagają dalszej weryfikacji."
+  },
+  {
+    "id": 100763,
+    "name": "Forearm Block",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: prevent 2 z bieżącego hand strike i first strike w następnej rundzie; first-strike-cards.test.ts."
+  },
+  {
     "id": 100764,
     "name": "Foresee",
     "status": "CONFIRMED_BUG",
     "evidence": "Power błędnie reprezentowany przez combat maneuver wymagający viz; brak conviction, oglądania ręki, anulowania walki i kontynuacji akcji. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100765,
+    "name": "Foreshadowing Destruction",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: superior +3 przy pool 9, brak bonusu przy 10; foreshadowing-destruction.test.ts."
   },
   {
     "id": 100766,
@@ -3912,6 +4050,12 @@
     "evidence": "Modifier daje stealth zamiast dołączenia do non-unique melee weapon po udanym equip, +1 damage i rabatu superior. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100768,
+    "name": "Forgery",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: capacity 5, bleed i blood po sukcesie; legacy-actions.test.ts."
+  },
+  {
     "id": 100769,
     "name": "Forgotten Labyrinth",
     "status": "REVIEWED_NO_ISSUE_FOUND",
@@ -3922,6 +4066,12 @@
     "name": "Form of Corruption",
     "status": "CONFIRMED_BUG",
     "evidence": "Action ma tylko stealth zamiast permanenta z counterami za Edge, kradzieży vampire prey i superior pool burn. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100771,
+    "name": "Form of Mist",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: superior kontynuuje akcję po combat ends i ograniczenie jednej superior; after-combat-ends.test.ts. Nie zbadano wszystkich interakcji."
   },
   {
     "id": 100772,
@@ -3936,10 +4086,28 @@
     "evidence": "Action modifier ma dwa stealth w basic zamiast jednego; brak combat superior maneuver. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100774,
+    "name": "Fortitude",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: spec umieszcza kartę jako Discipline z +for/+capacity i blokadą superior; discipline-cards.test.ts sprawdza wspólną mechanikę. Cały plik ma niezwiązane z pojedynczą kartą niepowodzenie inwentarza dyscyplin."
+  },
+  {
     "id": 100775,
     "name": "Fortschritt Library",
     "status": "CONFIRMED_BUG",
     "evidence": "Master daje gainPool zamiast wyszukiwania Gehenna i limitu raz na grę. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100776,
+    "name": "Fortune Teller",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: odczyt jednej losowej karty prey w minion phase; retainer-upkeep.test.ts. Nie zbadano pełnej obsługi prywatności."
+  },
+  {
+    "id": 100777,
+    "name": "Fortune Teller Shop",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique location i lockGrant +1 stealth Ravnos w spec. Nie znaleziono dedykowanego testu tej karty; zachowanie i pozostałe interakcje wymagają dalszej weryfikacji."
   },
   {
     "id": 100778,
@@ -3966,10 +4134,28 @@
     "evidence": "Event nie ma wymogu 2 Gehenna, spalenia wydarzeń i conviction, torpor dla capacity 3 lub mniej ani zakazu nowych Gehenna. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100782,
+    "name": "Fourth Tradition: The Accounting",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: prince/justicar oraz 3 blood dla młodszego uncontrolled; sweep2.test.ts."
+  },
+  {
     "id": 100783,
     "name": "Fractura",
     "status": "CONFIRMED_BUG",
     "evidence": "Tryby str i cel oba łączą dodge, additional strike i strength; brak X strikes każdej rundy, ograniczenia do hand i superior. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100784,
+    "name": "Fractured Armament",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: strike wybiera i niszczy equipment; equipment-stripping.test.ts. Dodatkowy damage superior nie został tu w pełni sprawdzony."
+  },
+  {
+    "id": 100785,
+    "name": "Fragment of the Book of Nod",
+    "status": "UNRESOLVED",
+    "evidence": "Fragment of the Book of Nod: osobny handler realizuje draw/discard i ogranicza ability do faz własnej tury; jego komentarz wskazuje możliwe szersze okno. Tekst nie określa timingu; potrzebne rozstrzygnięcie zasad oraz testy poza własną turą."
   },
   {
     "id": 100786,
@@ -3984,6 +4170,12 @@
     "evidence": "Master daje gainPool zamiast wyboru tytułowanego vampire i usunięcia tytułu z dodatkowym kosztem justicar. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100788,
+    "name": "Freak Drive",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic unlock po sukcesie, superior po bloku; after-resolution.test.ts."
+  },
+  {
     "id": 100789,
     "name": "Free Fight",
     "status": "CONFIRMED_BUG",
@@ -3996,10 +4188,28 @@
     "evidence": "Political action bez wymogów sect nie alokuje punktów ani nie rozstrzyga blood burn i modyfikatorów głosów. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100791,
+    "name": "Frenzy",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Tekst wymaga out-of-turn, wyboru vampire i ograniczeń equipment/press oraz press tylko do kontynuacji; spec zawiera wyłącznie press bez takiego ograniczenia. Nie znaleziono osobnego handlera dokładnej karty Frenzy; bez nowego testu scenariuszowego."
+  },
+  {
     "id": 100792,
     "name": "Friend of Mine",
     "status": "CONFIRMED_BUG",
     "evidence": "Wszystkie trzy tryby reaction dają intercept; for powinno redukować bleed, obt spalać blood po successful bleed, brak wymogu Anarch. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100793,
+    "name": "From a Sinking Ship",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: controller max 3 pool, wykluczenie capacity 7+, trwałe przejęcie i raz na grę; borrowed-minions.test.ts."
+  },
+  {
+    "id": 100794,
+    "name": "Frontal Assault",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: własne rush na prey, pool po utracie ready miniona prey i kara w influence; osobny handler i granted-rush.test.ts. Nie oznacza pełnej weryfikacji interakcji."
   },
   {
     "id": 100795,
@@ -4024,6 +4234,12 @@
     "name": "Galaric's Legacy",
     "status": "CONFIRMED_BUG",
     "evidence": "Master daje gainPool zamiast trifle dołączanego do nietytułowanego non-Anarch i zmiany sect. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100799,
+    "name": "Gambit Accepted",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: osobny handler obsługuje koszt VP, transfer pool i VP po oust/końcu; victory-points.test.ts. Nie oznacza pełnej weryfikacji interakcji."
   },
   {
     "id": 100800,
@@ -4062,16 +4278,46 @@
     "evidence": "Master daje gainPool zamiast anulowania blood hunt Gangrel antitribu w odpowiednim oknie. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100806,
+    "name": "Gangrel Justicar",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Gangrel Justicar ma pustą spec, nie jest w tabeli JUSTICAR_CLANS ani fabryce titleGrant; brak wyboru Camarilla Gangrel, tytułu i bonusu głosów. Fabryka Justicar świadomie pomija tę kartę. Bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100807,
+    "name": "Gangrel Revel",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: +1 strength własnych Gangrel i spalenie przez non-Ravnos; aura-statics.test.ts."
+  },
+  {
     "id": 100808,
     "name": "Gargoyle Slave",
     "status": "CONFIRMED_BUG",
     "evidence": "Ally ma statystyki, ale brak ograniczenia ranged weapon, zdolności prevent 1/combat i akcji odzyskania życia. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100809,
+    "name": "Garibaldi-Meucci Museum",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: wymiana karty za 1 pool i combat ends dla dwóch anarch; cheap-tail.test.ts."
+  },
+  {
     "id": 100810,
     "name": "Garrote",
     "status": "CONFIRMED_BUG",
     "evidence": "Equipment nie ma melee weapon profile ani opcji spalenia torporującego vampire przez spalenie broni. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100811,
+    "name": "Gas-Powered Chainsaw",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: weapon 3 damage w spec; legacy-weapons.test.ts sprawdza obrażenia. Limit raz na combat nie został tu scenariuszowo zweryfikowany."
+  },
+  {
+    "id": 100812,
+    "name": "Gather",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: wybór młodszego Gangrel, wejście locked, przeniesienie i możliwość spalenia; uncontrolled-graduation.test.ts."
   },
   {
     "id": 100813,
@@ -4096,6 +4342,12 @@
     "name": "Ghost-Eater",
     "status": "CONFIRMED_BUG",
     "evidence": "Action ma tylko modifyStealth zamiast hunt wykorzystującego ash heap i blood zależnego od capacity/life wybranego miniona. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100817,
+    "name": "Ghoul Escort",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: nosiciel może spalić retainera i unlock zamiast combat; no-combat.test.ts. requires-vampire.test.ts bada wymóg vampire."
   },
   {
     "id": 100818,
@@ -4134,6 +4386,12 @@
     "evidence": "Ally nie ma unique ani zewnętrznych zdolności spalenia equipment i zadania unpreventable damage; spec ma jedynie prevent. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100824,
+    "name": "Giant's Blood",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: osobny handler napełnia dowolnego vampire i ogranicza kartę raz na grę; cross-table-masters.test.ts."
+  },
+  {
     "id": 100825,
     "name": "Gift of Bellona",
     "status": "CONFIRMED_BUG",
@@ -4144,6 +4402,12 @@
     "name": "Gift of Experience",
     "status": "CONFIRMED_BUG",
     "evidence": "Master daje gainPool zamiast lock własnego wampira i wyszukania w crypt jego advancement lub base. Tekst: src/cards/registry.json, ID 100826; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100827,
+    "name": "Gift of Proteus",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: przechowywanie kart wymagających Protean i możliwość zagrania przez nosiciela; store-plays.test.ts."
   },
   {
     "id": 100828,
@@ -4182,10 +4446,22 @@
     "evidence": "Retainer nie opisuje unique ani stałego stealth w akcjach wymagających Necromancy; zawiera tylko modifyStealth w trybie. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100834,
+    "name": "Glancing Blow",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: prevent 1 od strike i opóźnione zastąpienie; sweep2.test.ts."
+  },
+  {
     "id": 100835,
     "name": "Glare of Lies",
     "status": "CONFIRMED_BUG",
     "evidence": "Reaction wymaga pojedynczej dyscypliny i daje intercept zamiast oglądania ręki; brak ograniczenia bleed i superior redukcji. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100836,
+    "name": "Glaser Rounds",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: brak oferty przy pierwszym użyciu gun; ammo.test.ts. Test opisany jako drugie użycie nie odtwarza rzeczywistego drugiego użycia; +2 i dalsze użycia wymagają osobnej weryfikacji."
   },
   {
     "id": 100837,
@@ -4218,6 +4494,12 @@
     "evidence": "Oba basic mają tylko stealth zamiast spalenia location pot oraz wyszukania location myt; brak superior bezpośredniego wyposażenia haven. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100842,
+    "name": "Golconda: Inner Peace",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: osobny handler usuwa vampire 8+, daje capacity pool kontrolerowi oraz opcję anulowania za 2 pool; cross-table-masters.test.ts."
+  },
+  {
     "id": 100843,
     "name": "Goodnight, Sweet Prince",
     "status": "CONFIRMED_BUG",
@@ -4230,6 +4512,12 @@
     "evidence": "Ally nie ma unique ani akcji przenoszenia countera między master cards; ma tylko modifyStealth w spec. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100845,
+    "name": "Govern the Unaligned",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic bleed +2 i superior 3 blood dla młodszego uncontrolled w spec; action-cards.test.ts sprawdza ofertę działania superior. Nie zweryfikowano wszystkich interakcji."
+  },
+  {
     "id": 100846,
     "name": "Gramle",
     "status": "CONFIRMED_BUG",
@@ -4240,6 +4528,12 @@
     "name": "Gran Madre di Dio, Italy",
     "status": "CONFIRMED_BUG",
     "evidence": "Equipment nie tworzy unique location i nie lockuje nowych minionów predator/prey ani nie spala blood młodszego vampire. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100848,
+    "name": "Grand Temple of Set",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: ruch pool do location i kradzież vampire prey przez spalenie counterów; stores-you-fill.test.ts."
   },
   {
     "id": 100849,
@@ -4260,6 +4554,12 @@
     "evidence": "Action ma tylko stealth; brak odzyskania equipment z cudzego ash heap, counterów pathos i superior umożliwiającego unique. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100852,
+    "name": "Graverobbing",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: przejęcie vampire w torpor i opcjonalne przeniesienie po koszcie superior; taking-actions.test.ts."
+  },
+  {
     "id": 100853,
     "name": "Great Symposium",
     "status": "CONFIRMED_BUG",
@@ -4272,10 +4572,22 @@
     "evidence": "Oba basic zawierają wyłącznie stealth zamiast bleed i gain pool dai albo curse mal; brak superior. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
+    "id": 100855,
+    "name": "Gregory Winter",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: dwa przyznane działania oraz burn 1 life w unlock; plain-allies-3.test.ts."
+  },
+  {
     "id": 100856,
     "name": "Gremlins",
     "status": "CONFIRMED_BUG",
     "evidence": "Spec ma ten sam modifyBleed i stealth dla basic myt/dom zamiast bleed dom i niszczenia equipment myt; brak superior bleed. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100857,
+    "name": "Grenade",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: 3R, zniszczenie po użyciu i 1 damage nosiciela na close; one-shot-weapons.test.ts."
   },
   {
     "id": 100858,
@@ -4288,6 +4600,36 @@
     "name": "Groaning Corpse",
     "status": "CONFIRMED_BUG",
     "evidence": "Combat oferuje tylko maneuver zamiast powtarzalnych environmental damage, kosztu X i superior 2 damage. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+  },
+  {
+    "id": 100860,
+    "name": "Grooming the Protégé",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: do trzech blood od ready vampire do młodszego z tego samego clan w uncontrolled; crypt-and-uncontrolled.test.ts."
+  },
+  {
+    "id": 100861,
+    "name": "Groundfighting",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: cancel karty ograniczającej wybór strike; cancel-in-combat.test.ts. Opcje maneuver i press oraz replacement wymagają dalszego sprawdzenia."
+  },
+  {
+    "id": 100862,
+    "name": "Growing Fury",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: +2/+3 hand strike po pierwszej rundzie; growing-fury.test.ts. Strike melee i inne interakcje wymagają dalszego sprawdzenia."
+  },
+  {
+    "id": 100863,
+    "name": "Guard Dogs",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: locked vampire unlockuje się przy bleed; unlock-and-block.test.ts. Superior maneuver nie jest tu w pełni sprawdzony."
+  },
+  {
+    "id": 100864,
+    "name": "Guard Duty",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: osobny handler wybiera location i daje unlock/block za blood albo kartę; master-intercept.test.ts."
   },
   {
     "id": 100865,
@@ -4990,6 +5332,126 @@
     "name": "Joseph Pander",
     "status": "CONFIRMED_BUG",
     "evidence": "Master daje gainPool zamiast unique permanenta chroniącego Pander, akcji rush i możliwości spalenia. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 101025,
+    "name": "Joumlon's Axe",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec equipment nie zawiera profilu unique melee strength+1 ani aggravated na Kiasyd i anulowania grapple. Nie znaleziono osobnego handlera karty; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 101026,
+    "name": "Journal of Hrorsh",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec equipment nie zawiera unique, counterów za action i ich spalania ani usunięcia Salubri za pool. Nie znaleziono osobnego handlera; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 101027,
+    "name": "Jua Vema",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic for jest w spec, ale brak superior trwającego przez action przy lock Aye. Nie znaleziono osobnego handlera; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 101028,
+    "name": "Judgment: Camarilla Segregation",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: drain pool dla kontrolerów non-Camarilla vampire; pool-drain.test.ts. Tytuł i akcja spalenia nie zostały tu w pełni zweryfikowane."
+  },
+  {
+    "id": 101029,
+    "name": "Judgment: Death to the Brujah!",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec zawiera jedynie +1 stealth: brak wymaganego tytułu, permanenta z rush na Brujah i opcji spalenia oraz limitu na grę. Bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 101030,
+    "name": "Jungle Hunting Ground",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec master daje gainPool zamiast unique hunting ground z gromadzeniem blood i transferem do Laibon. Bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 101031,
+    "name": "Justicar Retribution",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty tryb political action: brak wymogu Camarilla oraz spalenia vampire z current bleed 3+. Bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 101032,
+    "name": "Kali's Fang",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique melee, wymóg Banu Haqim, strength+1 aggravated w spec; brak dedykowanego scenariusza strike w tym przeglądzie. Inne interakcje wymagają dalszej weryfikacji."
+  },
+  {
+    "id": 101033,
+    "name": "Karavalanisha Vrana",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec equipment ma tylko actionStealth: brak unique i akcji zasilenia młodszego Ravnos oraz rabatu Chimerstry. Bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 101034,
+    "name": "Kaymakli Barrier",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: wybór młodszego ready vampire, blokada undirected block i koszt directed action; block-taxes.test.ts. Dalsze interakcje wymagają sprawdzenia."
+  },
+  {
+    "id": 101035,
+    "name": "Kaymakli Fragment",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec equipment zawiera jedynie actionStealth: brak unique, akcji Sabbat i infernal oraz strike: steal. Bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 101036,
+    "name": "Kaymakli Nightmares",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast zwrotu crypt z uncontrolled, przetasowania i ponownego rozłożenia; brak limitu raz na grę. Bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 101037,
+    "name": "Kduva's Mask",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Equipment ma jedynie modifyBleed, bez unique, wymogu Laibon, trwałego bleed i votes oraz podatku na reaction Auspex. Bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 101038,
+    "name": "Keep it Simple",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: redukcja bleed przeciw sobie według stealth w chwili zagrania; acting-minion-reactions.test.ts."
+  },
+  {
+    "id": 101039,
+    "name": "Kerrie",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty tryb equipment bez wymogu Laibon, profilu melee strength+1 i alternatywnego ranged strike odwracającego broń. Bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 101040,
+    "name": "Kevlar Vest",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: prevent 2 z gun lub 1 z hand strike raz na combat; last-combat.test.ts. Limit jednej kopii na minionie nie został tu zweryfikowany."
+  },
+  {
+    "id": 101041,
+    "name": "Keystone Kine",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Tryby cel/nec/obf identycznie modyfikują bleed zamiast różnych efektów; brak wymogu Anarch oraz działania bleed i kombinacji dyscyplin. Bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 101042,
+    "name": "The Khabar: Community",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: aura +1 stealth Assamite przy bleed oraz +1 stealth Tremere przy próbie spalenia; aura-statics.test.ts."
+  },
+  {
+    "id": 101043,
+    "name": "Khabar: Glory",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec ma właściwe dołączenie i bonusy, ale usable jest puste: brakuje nadrukowanego zakazu po wykonaniu non-mandatory action, mimo istniejącego gate onlyIfNoActionsYet w compile.ts. Bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 101044,
+    "name": "The Khabar: Honor",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec combat oferuje maneuver zamiast hand strike +3 i wymogu wybrania do kontraktu na przeciwnika. Bez nowego testu scenariuszowego."
   },
   {
     "id": 101862,

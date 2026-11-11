@@ -122,3 +122,9 @@ Razem 144 z tych 200 kart nadal nie ma ręcznego wpisu. W całym inwentarzu taki
 ## Paczka 4 — kolejny przegląd częściowy
 
 [Ustalenia dla części pozycji 751–910](batch-04-manual-08-partial.md): 114 otwartych błędów i jedna celowana naprawa Horrid Form; błędy bez nowych testów scenariuszowych. W pozycjach 501–1000 wciąż 190 kart nie ma ręcznego wpisu. Łącznie w inwentarzu 838 z 4158 kart ma wpis (607 otwartych błędów, 188 przeglądów w ograniczonym zakresie, 43 naprawy celowane), a 3320 nie ma wpisu. To nie jest pełny audyt 500 kart ani pomiar całkowitej poprawności.
+
+## Paczka 4 — uzupełnienie pominiętych pozycji i kolejny zakres
+
+[Pozycje 601–750](batch-04-manual-09-partial.md) oraz [911–930](batch-04-manual-10-partial.md): 77 nowych wpisów — 58 przeglądów bez wykrytej niezgodności **tylko w opisanym zakresie**, 17 rozbieżności stwierdzonych w kodzie bez nowego testu scenariuszowego (`CODE_DISCREPANCY`) i dwa przypadki nierozstrzygnięte (`UNRESOLVED`). Istniejące testy uruchomiono dla wybranych zakresów; raporty podają wyniki i ograniczenia.
+
+W pozycjach 501–1000 jest 387 kart z wpisem, 113 bez wpisu; dwa wpisy są nierozstrzygnięte. W całym inwentarzu jest 915 kart z wpisem i 3243 bez wpisu. Historyczne `CONFIRMED_BUG` nie gwarantuje testu scenariuszowego: należy czytać dowody indywidualnych wpisów, a nie utożsamiać ten status z jednolitym poziomem pewności.

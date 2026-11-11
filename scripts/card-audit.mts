@@ -17,11 +17,13 @@ const registry = registryData as unknown as CardRegistry;
 const handlers = buildHandlerRegistry();
 const specs = new Map([...cardSpecs, ...cryptSpecs].map((spec) => [spec.krcgId, spec]));
 const entries = Object.values(registry.entries).sort((a, b) => a.card.id - b.card.id);
-interface ManualFinding { id: number; name: string; status: "CONFIRMED_BUG" | "FIXED_TARGETED" | "PARTIAL_FIX" | "REVIEWED_NO_ISSUE_FOUND"; evidence: string }
+type ManualStatus = "CONFIRMED_BUG" | "CODE_DISCREPANCY" | "UNRESOLVED" | "FIXED_TARGETED" | "PARTIAL_FIX" | "REVIEWED_NO_ISSUE_FOUND";
+interface ManualFinding { id: number; name: string; status: ManualStatus; evidence: string }
+const validStatuses: readonly ManualStatus[] = ["CONFIRMED_BUG", "CODE_DISCREPANCY", "UNRESOLVED", "FIXED_TARGETED", "PARTIAL_FIX", "REVIEWED_NO_ISSUE_FOUND"];
 const findings = JSON.parse(readFileSync("docs/card-audit/manual-findings.json", "utf8")) as ManualFinding[];
 const manual = new Map<number, ManualFinding>();
 for (const finding of findings) {
-  if (manual.has(finding.id) || registry.entries[finding.id]?.card.name !== finding.name || !["CONFIRMED_BUG", "FIXED_TARGETED", "PARTIAL_FIX", "REVIEWED_NO_ISSUE_FOUND"].includes(finding.status) || !finding.evidence) {
+  if (manual.has(finding.id) || registry.entries[finding.id]?.card.name !== finding.name || !validStatuses.includes(finding.status) || !finding.evidence) {
     throw new Error(`Invalid manual finding: ${finding.id} ${finding.name}`);
   }
   manual.set(finding.id, finding);
@@ -60,8 +62,8 @@ const report = `# Automatyczny przegląd kart — inwentarz\n\n` +
   `Zakres: aktualny src/cards/registry.json (${entries.length} kart: ${library} library i ${crypt} crypt; ${supported} oznaczonych jako supported). Każdy wpis jest w inventory.csv. Dane registry: fetchedAt ${registry.fetchedAt}.\n\n` +
   `To **triage, nie ręczny audyt ani potwierdzenie poprawności**. UNREVIEWED oznacza brak udokumentowanej w tym zestawieniu weryfikacji; brak sygnału niczego nie dowodzi. Sygnały są wskazówkami wymagającymi zbadania: overlay, wariant kosztu lub użycie słowa w innym znaczeniu mogą powodować fałszywe alarmy. Istnienie handlera i status supported też nie dowodzą poprawności.\n\n` +
   `| Sygnał | Kart |\n|---|---:|\n` + [...signals].sort(([a], [b]) => a.localeCompare(b)).map(([s, n]) => `| ${s} | ${n} |`).join("\n") +
-  `\n\n## Ręcznie potwierdzone ustalenia\n\n` +
-  `To udokumentowane ustalenia, a nie pełne sprawdzenie wszystkich interakcji tych kart. REVIEWED_NO_ISSUE_FOUND oznacza brak wykrytych problemów w sprawdzonym zakresie; PARTIAL_FIX oznacza, że znane błędy pozostają. Źródło: manual-findings.json; podsumowania paczek: batches.md. Pozostałe ${entries.length - findings.length} kart w tym zestawieniu mają status UNREVIEWED, czyli nie mają tu żadnego ręcznego ustalenia. Wcześniejsze wpisy CONFIRMED_BUG i FIXED_TARGETED również wymagają dalszego audytu.\n\n` +
+  `\n\n## Udokumentowane ustalenia ręczne\n\n` +
+  `To udokumentowane ustalenia, a nie pełne sprawdzenie wszystkich interakcji tych kart. CODE_DISCREPANCY to rozbieżność stwierdzona w kodzie bez nowego testu scenariuszowego; UNRESOLVED wymaga dalszej analizy. REVIEWED_NO_ISSUE_FOUND oznacza brak wykrytych problemów tylko w opisanym zakresie; PARTIAL_FIX oznacza, że znane błędy pozostają. Historyczne CONFIRMED_BUG nie gwarantuje odtworzenia testem — sprawdź dowód konkretnego wpisu. FIXED_TARGETED też nie oznacza pełnej poprawności. Źródło: manual-findings.json; podsumowania paczek: batches.md. Pozostałe ${entries.length - findings.length} kart mają status UNREVIEWED, czyli nie mają tu żadnego ręcznego ustalenia.\n\n` +
   `| ID | Karta | Status | Ustalenie |\n|---:|---|---|---|\n` + findings.map((f) => `| ${f.id} | ${f.name.replaceAll("|", "\\|")} | ${f.status} | ${f.evidence.replaceAll("|", "\\|")} |`).join("\n") +
   `\n\n## Znaczenie sygnałów\n\n` +
   `- no_runtime_handler: brak handlera o nazwie karty; dla niektórych wampirów bez zdolności może to być zamierzone.\n` +
