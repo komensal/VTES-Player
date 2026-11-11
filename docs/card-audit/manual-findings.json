@@ -19630,5 +19630,905 @@
     "name": "Mitchell, The Headhunter (G2)",
     "status": "CODE_DISCREPANCY",
     "evidence": "Pusta spec bez dodatkowego blood za rescue Mitchella z torpor. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201001,
+    "name": "Mithras (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +2 bleed i +1 strength, lecz brak +2 votes i płatnego cancel reaction młodszego vampire raz na akcję. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201002,
+    "name": "Mitru the Hunter (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez zniżki 1 blood dla kart Celerity. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201003,
+    "name": "Monica Chang (G5)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201004,
+    "name": "Monique (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201005,
+    "name": "Monique Kim (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201006,
+    "name": "Montano (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 bleed, zniżki Obtenebration i blood za +1 stealth własnemu minionowi; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201007,
+    "name": "Montecalme (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały stealth zamiast tylko dla political action referendum burn location, której brak; Toreador Justicar importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201008,
+    "name": "Monty Coven (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez zostania bishop lub priscus po burn titled vampire zależnie od tytułu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201009,
+    "name": "Mordechai Ben-Nun (G5)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat: +1 intercept.”; importer rozpoznaje sektę, self-entry zawiera drukowaną statystykę. Bez osobnego testu karty."
+  },
+  {
+    "id": 201010,
+    "name": "Morel (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201011,
+    "name": "Morlock (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 bleed, ale brak ranged strike burn retainer; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201012,
+    "name": "Morrow the Sage (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały stealth zamiast opcji za 2 blood raz na akcję. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201013,
+    "name": "Mosfair (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201014,
+    "name": "Mouse (G3)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201015,
+    "name": "Mowgli (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez zakazu maneuver do long i press to end combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201016,
+    "name": "Mr. Noir (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez gain 2 pool po burn w combat; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201017,
+    "name": "Muaziz, Archon of Ulugh Beg (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 stealth, ale brak zakazu blood hunt na Muaziz. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201018,
+    "name": "Mugur Sabau (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały +1 bleed zamiast dodatkowego +1 za każde diablerie; Archbishop of Pittsburgh importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201019,
+    "name": "Muhandis (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 bleed, ale brak burn blood za próbę block vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201020,
+    "name": "Muhsin Samir (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201021,
+    "name": "Mukhtar Bey (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez zakazu press to continue i burn Mukhtara w unlock przy pięciu Gehenna; Prince of Cairo importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201022,
+    "name": "Murat (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez dodatkowego blood za combat cards Serpentis Followers of Set w walce z Muratem; Prince of Istanbul importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201023,
+    "name": "Muricia (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 strength oraz przemiany własnego Gangrel antitribu w sterile Ahrimane z poziomem Spiritus za blood w unlock; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201024,
+    "name": "Muriel Foucade (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat: +1 strength.”; importer rozpoznaje sektę, self-entry zawiera drukowaną statystykę. Bez osobnego testu karty."
+  },
+  {
+    "id": 201025,
+    "name": "Muse (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez drukowanego -1 intercept. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201026,
+    "name": "Mustafa, The Heir (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez opcji starszego Toreador innego Methuselah w polling przesunięcia blood za kontrolę votes/ballots Mustafy; Prince of Istanbul importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201027,
+    "name": "Mustafa Rahman (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201028,
+    "name": "Myrna Goldman (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 bleed i opcji podejrzenia top 3 library w unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201029,
+    "name": "Nadima (G3)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent: +1 intercept.”; importer rozpoznaje sektę, self-entry zawiera drukowaną statystykę. Bez osobnego testu karty."
+  },
+  {
+    "id": 201030,
+    "name": "Nahir (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 bleed i płaski handSize zamiast bonusu zależnego od research counters; brak master phase action za pool dodającej counter. Płaski handSize miniona nie jest odczytywany przez handSizeOf. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201031,
+    "name": "Nahum Enosh (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 bleed i gain blood innego własnego ready vampire w unlock przy ready Nahum; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201032,
+    "name": "Nails (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201033,
+    "name": "Nakhthorheb (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 strength, unlock w minion phase i zakazu block przez miniony z własnymi corruption counters. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201034,
+    "name": "Nakova, Advocate of Golconda (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez 4 unpreventable damage przeciwnikowi po burn Nakovy w combat; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201035,
+    "name": "Nana Buruku (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec ma płaski handSize bez warunku ready, lecz handSizeOf nie odczytuje go na minionach; brak drugiej master phase action przy ready. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201036,
+    "name": "Nangila Were (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez directed rush na miniona innego Methuselah i +1 hand size przy ready. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201037,
+    "name": "Natalia (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent: +1 bleed.”; importer rozpoznaje sektę, self-entry zawiera drukowaną statystykę. Bez osobnego testu karty."
+  },
+  {
+    "id": 201038,
+    "name": "Natasha Volfchek (G1)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały stealth zamiast tylko dla political actions, oraz +1 bleed; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201039,
+    "name": "Navar McClaren (G1)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez zakazu block starszych vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201040,
+    "name": "Nedal, The Careless (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez opóźnienia replacement combat cards do następnego unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201041,
+    "name": "Neel Ramanathan (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201042,
+    "name": "Nefertiti (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 bleed oraz stały stealth zamiast tylko na directed action za blood dodającą corruption counter minionowi prey; brak tej akcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201043,
+    "name": "Neferu (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez blood za zmianę votes/ballots vampire z własnym corruption counter w polling; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201044,
+    "name": "Nehemiah (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez przesunięcia do 2 kart z ręki na spód library w unlock i zakazu Celerity; 2 titled votes po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201045,
+    "name": "Nehsi (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez optional maneuver co combat; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201046,
+    "name": "Neighbor John (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat: +1 intercept.”; importer rozpoznaje sektę, self-entry zawiera drukowaną statystykę. Bez osobnego testu karty."
+  },
+  {
+    "id": 201047,
+    "name": "Nepata (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201048,
+    "name": "Nergal (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +2 bleed, ale brak zniżki karty o blood raz na turę; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201049,
+    "name": "Nergal (G5 ADV)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez dodatkowego blood za reaction cards podczas akcji Nergala i blood za stealth; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201050,
+    "name": "Nestor Kaba (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Laibon.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201051,
+    "name": "Nettie Hale (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 stealth przy employ retainer/recruit ally; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201052,
+    "name": "New Blood (ANY)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez wyboru circle i draw crypt przy wejściu w influence; sterile i circle nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201053,
+    "name": "Ngozi Ekwensu (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez lock Orun raz na combat za aggravated hand strikes na rundę; magaji nie importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201054,
+    "name": "Nichodemus (G5)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201055,
+    "name": "Nicholas Chang (G3)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201056,
+    "name": "Nickolai, The Survivor (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały stealth zamiast tylko dla akcji za blood zdobycia poziomu dyscypliny innego własnego ready vampire na superior; brak tej akcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201057,
+    "name": "Nicomedes (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez blood w swojej turze za shuffle ręki w library i draw up; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201058,
+    "name": "Nigel the Shunned (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201059,
+    "name": "Nik (G1)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 intercept Brujah przy próbie block Nika. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201060,
+    "name": "Nikolaus Vermeulen (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez przesunięcia blood do dowolnego uncontrolled Nosferatu w unlock; Prince of Brussels importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201061,
+    "name": "Nitidas (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec ma płaski handSize zamiast lock za +1 do końca tury; handSizeOf nie odczytuje płaskiego handSize miniona. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201062,
+    "name": "Nizzam al-Latif (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez aggravated hand strikes; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201063,
+    "name": "Nkechi (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez blood przed range w pierwszej rundzie za podgląd ręki kontrolera przeciwnika. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201064,
+    "name": "Nkule Galadima (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez zakazu votes/ballots Lasombra w referendum Nkule i +2 votes za Edge przy ready; magaji nie importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201065,
+    "name": "Normal (G1)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201066,
+    "name": "Nostoket (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez directed action 2 damage ready minionowi predatora/prey; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201067,
+    "name": "Nu, The Pillar (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez blood za unlock w minion phase i zakazu Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201068,
+    "name": "Nunzio Giovanni (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201069,
+    "name": "Nuriel (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez optional limited additional strike w pierwszej rundzie i +1 damage melee weapons. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201070,
+    "name": "Obaluaye (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez stealth przy hunt i burn przy kontroli co najmniej czterech Salubri; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201071,
+    "name": "Obsidian (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Independent importowany, ale drukowane Flight nie jest przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201072,
+    "name": "Ogwon (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez burn blood/life przez ally lub młodszego vampire po nieudanej próbie block Ogwona. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201073,
+    "name": "Ohanna (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201074,
+    "name": "Old Neddacka (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201075,
+    "name": "Olga Triminov (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez directed action Black Hand vampire za pool przejęcia Olgi. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201076,
+    "name": "Oliver Thrace (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec z requiresReady bez zakazu strike combat ends przeciwnym vampires i discard karty Blood Sorcery za bleed raz na akcję. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201077,
+    "name": "Olivia (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat bishop.”; importer rozpoznaje sektę i tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201078,
+    "name": "Olugbenga (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez płacenia blood zamiast pool za contest vampire i +1 intercept podczas bleed; magaji nie importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201079,
+    "name": "Omaya (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez prevention jednego damage co combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201080,
+    "name": "Omer (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Independent importowany, lecz Blood cursed nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201081,
+    "name": "Omme Enberbenight (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez zniżki blood dla kart Mytherceria; priscus importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201082,
+    "name": "Onaedo (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 stealth podczas diablerie przy ready Otieno. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201083,
+    "name": "Ondine \"Boudicca\" Sinclair (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 strength i stealth przy bleed z Edge; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201084,
+    "name": "Orlando Oriundus (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 bleed i podwojenia votes własnych vampire w referendum przy ready Orlando oraz zakazu innych multipliers; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201085,
+    "name": "Osric Vladislav (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały stealth zamiast opcji burn własnej location za stealth w bieżącej akcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201086,
+    "name": "Otieno (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi ready Guruhi. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201087,
+    "name": "Owain Evans, The Wanderer (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez opcji dodania blood do vampire aktywnego Methuselah w jego unlock przy ready Owain. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201088,
+    "name": "Ox, Viceroy of the Hollows (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201089,
+    "name": "Ozmo (G1)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla: +1 bleed.”; importer rozpoznaje sektę, self-entry zawiera drukowaną statystykę. Bez osobnego testu karty."
+  },
+  {
+    "id": 201090,
+    "name": "Panagos Levidis (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201091,
+    "name": "Panya, The Wicked (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Laibon.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201092,
+    "name": "Paolo Sardenzo (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 intercept Paolowi zamiast Giovanni przeciw niemu; brak opcji gain blood przy wejściu wraith. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201093,
+    "name": "Papa Legba (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez blood za +1 bleed podczas bleed action. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201094,
+    "name": "Pariah (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 strength, discard master lub lock w master phase, zakazu undirected poza hunt i directed rush na dowolnego miniona; Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201095,
+    "name": "Parmenides (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 strength, ale brak przejęcia przez predatora do następnego unlock po wejściu; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201096,
+    "name": "Parnassus (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 strength, lecz Blood cursed nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201097,
+    "name": "Patrick (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201098,
+    "name": "Patrizia Giovanni, Collector of Secrets (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez akcji employ retainer z ash heap za dodatkowy blood. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201099,
+    "name": "Paul Calderone (G5)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201100,
+    "name": "Paul Cordwood (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały intercept i stealth zamiast wyboru jednego za usunięcie top crypt z gry raz na akcję; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201101,
+    "name": "Paul DiCarlo, The Alpha (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201102,
+    "name": "Paul Forrest, False Prophet (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez blood za +1 bleed własnemu acting Ravnos podczas bleed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201103,
+    "name": "Paul \"Sixofswords29\" Moreton (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez przesunięcia counter z pool do uncontrolled imbued w influence; makeVampire tworzy tę kartę jako vampire, nie imbued. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201104,
+    "name": "Paulo de Castille (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez opcji przesunięcia blood z Paulo do uncontrolled Lasombra po wejściu w influence. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201105,
+    "name": "Pavlo (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez przesunięcia blood do ready Blood Brother Kiev circle w unlock; Kiev circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201106,
+    "name": "Pearl (G5)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201107,
+    "name": "Pedrag Hasek (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez zakazu diablerie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201108,
+    "name": "Pedro Cortez (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 strength, ale brak zakazów maneuver do long, press to end i strike combat ends; makeVampire tworzy tę kartę jako vampire, nie imbued. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201109,
+    "name": "Pentweret (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez płatnego strike steal przeciwnika o wskazanym małym koszcie/capacity. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201110,
+    "name": "Persephone Tar-Anis (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat: +1 bleed.”; importer rozpoznaje sektę i ewentualny tytuł, self-entry zawiera drukowaną statystykę. Bez osobnego testu karty."
+  },
+  {
+    "id": 201111,
+    "name": "Persia, The Beautiful Statue (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały intercept zamiast opcji blood za +1 raz na akcję. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201112,
+    "name": "Petaniqua (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 bleed, ale brak 2 damage przeciwnikowi przed range po pierwszej rundzie i zniżki allies/retainers; Infernal i Red List nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201113,
+    "name": "Petaniqua (G4 ADV)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 strength, ale brak blood za press raz na combat i uprawnienia do recruit werewolf bez wymagań; Infernal i Red List nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201114,
+    "name": "Peter Blaine (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 bleed przeciw kontrolerowi ready Ventrue. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201115,
+    "name": "Peter \"Outback295\" Rophail (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez conviction za maneuver w combat z monster; makeVampire tworzy tę kartę jako vampire, nie imbued. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201116,
+    "name": "Petra (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez aggravated damage wobec Baali i burn blood vampire po press to continue w combat z Petrą. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201117,
+    "name": "Petru Sipos (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez directed action steal blood vampire z torpor. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201118,
+    "name": "Phaedyme (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 strength i stealth przy bleed kontrolera ready Camarilla vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201119,
+    "name": "Phagian (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez prawa własnych vampire grania Necromancy na basic za dodatkowy blood. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201120,
+    "name": "Pherydima (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez pool za unlock w discard phase; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201121,
+    "name": "Philip van Vermeer IV (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez prawa Philipa i kontrolera grania kart wymagających Ventrue jak gdyby był Ventrue. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201122,
+    "name": "Philippe de Marseilles (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez usunięcia Philippe z gry za 6 pool w unlock przy Gehenna; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201123,
+    "name": "Phillipe Rigaud (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez zakazu block undirected i obowiązku diablerie starszego vampire w torpor gdy możliwe, z wyjątkiem wymuszonego hunt; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201124,
+    "name": "Pieter (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201125,
+    "name": "Pieter van Dorn (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez directed action burn blood ready Tremere. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201126,
+    "name": "Piotr Andreikov (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201127,
+    "name": "Pochtli (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały stealth zamiast tylko dla akcji wtasowania do dwóch library cards z ash heap, której brak. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201128,
+    "name": "Polly Kay Fisher (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat Archbishop of New York.”; importer rozpoznaje sektę i tytuł, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201129,
+    "name": "Porphyrion (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 stealth, ale brak wyszukania Treaty of Laibach do ręki przy wejściu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201130,
+    "name": "Porphyry (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały +2 bleed zamiast tylko przeciw kontrolerowi location; Flight i Tremere slave nie przenoszone z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201131,
+    "name": "Portia (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez stealth przy hunt i environmental damage po block hunt przed range w pierwszej rundzie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201132,
+    "name": "Prejudice (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały +2 bleed zamiast usunięcia ally/retainer z ash heap prey raz na akcję; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201133,
+    "name": "Preston Varrick (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 bleed przeciw kontrolerowi ready ally. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201134,
+    "name": "Primo Giovanni (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201135,
+    "name": "Pug Jackson (G3)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla primogen.”; importer rozpoznaje sektę i tytuł, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201136,
+    "name": "Pugfar (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez blood za press własnemu Tremere antitribu; Flight i Tremere antitribu slave nie przenoszone z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201137,
+    "name": "Qadir ul-Ghani (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 bleed i stały stealth zamiast tylko akcji zmiany klanu za blood, której brak; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201138,
+    "name": "Qawiyya el-Ghaduba (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +2 strength, unlock za 2 blood w minion phase i Red List. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201139,
+    "name": "Queen Anne (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 bleed i dodatkowego +1 przeciw kontrolerowi ready Tremere; Prince of London importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201140,
+    "name": "Quentin (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez blood za wymuszenie abstention vampire raz na political action; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201141,
+    "name": "Quentin King III (G3)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla Prince of Boston.”; importer rozpoznaje sektę i tytuł, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201142,
+    "name": "Quentin King III (G3 ADV)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez merged gain blood starszego ready vampire przy ready Quentin w unlock i blood za bleed raz na akcję. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201143,
+    "name": "Qufur am-Heru (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez przesunięcia z ash heap do uncontrolled w następnym influence po burn z gry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201144,
+    "name": "Quincy, The Trapper (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały stealth zamiast tylko dla dwóch directed actions +1 stealth burn ally predatora/prey; brak tej akcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201145,
+    "name": "Quinton McDonnell (G1)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla primogen: +1 strength.”; importer rozpoznaje sektę i ewentualny tytuł, self-entry zawiera drukowaną statystykę. Bez osobnego testu karty."
+  },
+  {
+    "id": 201146,
+    "name": "Quira, The Bitch Queen (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat: +1 bleed.”; importer rozpoznaje sektę i ewentualny tytuł, self-entry zawiera drukowaną statystykę. Bez osobnego testu karty."
+  },
+  {
+    "id": 201147,
+    "name": "Rabbat, The Sewer Goddess (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez strike torpor vampire/burn ally, opcji przesunięcia blood z hunt do pool, zakazu directed actions i ograniczenia block; Red List nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201148,
+    "name": "Rachel Brandywine (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +1 bleed i opcji wtasowania discardowanych kart discard phase w library przy ready Rachel; Prince of Cleveland importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201149,
+    "name": "Radeyah (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez directed rush na Follower of Set innego Methuselah. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201150,
+    "name": "Radu Bistri (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez opcji gain blood w unlock przy Purchase Pact w grze; cardinal importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   }
 ]
