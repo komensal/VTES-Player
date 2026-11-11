@@ -118,3 +118,7 @@ Razem 144 z tych 200 kart nadal nie ma ręcznego wpisu. W całym inwentarzu taki
 [Kontynuacja karta po karcie](batch-04-manual-05-continuation.md) obejmuje 66 wcześniej pominiętych kart z pozycji 401–500 manifestu. Zapisano 24 otwarte błędy, cztery celowane naprawy i 38 ocen bez wykrytej niezgodności w podanym zakresie. Naprawiono Donnybrook, Disarm (cel wyłącznie vampire), Dust to Dust i wybór trybów Earth Swords; poprawiono też możliwość wyboru strike z opcjonalnym maneuver po pominięciu maneuver.
 
 Łącznie dla pozycji 401–500 (w tym wcześniejsze ustalenia): **57 błędów otwartych, 5 celowanych napraw i 38 ocen bez wykrytej niezgodności w opisanym zakresie**. Każda ma ręczny wpis, co nie oznacza pełnej zgodności ani pokrycia wszystkich interakcji. Pozycje 501–600 mają nadal 78 kart bez ręcznego wpisu. W całym rejestrze bez żadnego wpisu pozostaje **3604 z 4158**.
+
+## Paczka 4 — kolejny przegląd częściowy
+
+[Ustalenia dla części pozycji 751–910](batch-04-manual-08-partial.md): 114 otwartych błędów i jedna celowana naprawa Horrid Form; błędy bez nowych testów scenariuszowych. W pozycjach 501–1000 wciąż 190 kart nie ma ręcznego wpisu. Łącznie w inwentarzu 838 z 4158 kart ma wpis (607 otwartych błędów, 188 przeglądów w ograniczonym zakresie, 43 naprawy celowane), a 3320 nie ma wpisu. To nie jest pełny audyt 500 kart ani pomiar całkowitej poprawności.

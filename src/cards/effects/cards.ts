@@ -23027,14 +23027,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Horrid Form [100934] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Before range: +1 strength this combat; superior can prevent 1 each round.
     krcgId: 100934,
     name: "Horrid Form",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "prevent", base: 1, perBloodX: false }, { kind: "addStrength", amount: 1 }] }
+      { level: "basic", discipline: "vic", effects: [{ kind: "addStrength", amount: 1 }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "addStrength", amount: 1 }, { kind: "preventEachRound", amount: 1 }] },
     ],
   },
   {
