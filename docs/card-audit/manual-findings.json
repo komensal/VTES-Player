@@ -6132,6 +6132,606 @@
     "evidence": "Wąski zakres: +1 bleed, burn do combat ends, limit jednej kopii i wymóg Tzimisce; last-equipment-modifiers.test.ts."
   },
   {
+    "id": 101115,
+    "name": "Living Wood Staff",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec equipment nie ma unique ani profilu melee strength, bonusu imbued za X i interakcji z Cleave. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101116,
+    "name": "Lobotomy",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Modifier daje stealth zamiast dołączenia do rekrutowanego ally, lock i stałych ograniczeń; brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101117,
+    "name": "Local 1111",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Equipment ma tylko actionStealth zamiast unique location wymagającej Sabbat, z akcją przekazania 2 blood innemu Sabbat. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101118,
+    "name": "Lock",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action daje modifyStealth zamiast dołączenia do miniona i kosztów dla monsters oraz opcji spalenia i limitu jednej kopii. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101119,
+    "name": "Loki's Gift",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action daje modifyStealth zamiast hunt, dołączenia oraz płatnych efektów stealth/votes; brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101120,
+    "name": "London Evening Star, Tabloid Newspaper",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique location może dać +1 intercept minionowi innego gracza; legacy-locations.test.ts."
+  },
+  {
+    "id": 101121,
+    "name": "Loner",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast dołączenia archetype i warunkowego blood w influence phase. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101122,
+    "name": "Loose Cannon",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Wszystkie trzy tryby dają stealth zamiast oddzielnych skutków po bloku; brak wymogu Anarch i timingu announce. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101123,
+    "name": "Lord of Serenity",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba tryby action mają tylko stealth; brak rescue, permanenta z blood w unlock, opcji spalenia i superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101124,
+    "name": "Loss",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic daje modifyBleed zamiast spalenia equipment/location; brak superior z akcją bleed +2. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101125,
+    "name": "Lost in Crowds",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "W spec są poprawne wartości stealth, ale brak wzajemnego wykluczenia z Into Thin Air; nie znaleziono nazwy karty w innym kodzie runtime; komentarz w spec twierdzi, że Into Thin Air nie ma w puli, lecz ma ona spec ID 101001. Nie przetestowano scenariusza obu kart w jednej akcji. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101126,
+    "name": "Lost in Translation",
+    "status": "UNRESOLVED",
+    "evidence": "Lost in Translation: lock i przekierowanie do trzeciego gracza bada lock-as-currency.test.ts. W tekście registry jest limit jednej karty na akcję, którego nie widać w spec; wymaga sprawdzenia wspólnej obsługi przekierowań i testu dwóch kopii."
+  },
+  {
+    "id": 101127,
+    "name": "The Louvre, Paris",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique location, lock Toreador lub dowolnego miniona z Prince of Paris i kradzież przez miniona; stealable-locations.test.ts."
+  },
+  {
+    "id": 101128,
+    "name": "Loving Agony",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ani nie ma ograniczenia close; basic val brak, a superior val łączy hand strike i combat ends bez 1 unpreventable damage po walce. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101129,
+    "name": "Loyal Street Gang",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: ally 2 life, 1 strength, 0 bleed, mortal i wymóg Brujah w spec; pozostałe interakcje nie są w pełni sprawdzone."
+  },
+  {
+    "id": 101130,
+    "name": "Loyalist",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Reaction daje intercept zamiast 3 głosów przeciw i warunkowego transferu blood; brak wymogu klanu. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101131,
+    "name": "Lucky Blow",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: hand/melee strike +1 i delayed replacement po combat w spec; strike-sources.test.ts bada dostępne strike."
+  },
+  {
+    "id": 101132,
+    "name": "Lunatic Eruption",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma prevent zamiast permanenta wymuszającego combat i opcji spalenia; brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101133,
+    "name": "Lupine Assault",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec wymaga delayedReplace unlock zamiast influence; engine.ts zwalnia taki dobór w następnej fazie unlock, zaś handler tableDiscardRedraw dobiera od razu do pełnej ręki. hand-churn.test.ts nie sprawdza timingu zastąpienia karty; bez nowego scenariusza. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101134,
+    "name": "Lure of the Serpent",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic action ma tylko stealth zamiast kradzieży retainera; brak superior kradzieży ally. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101135,
+    "name": "Lyndhurst Estate, New York",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty equipment nie opisuje unique location ani wydawania blood za votes w political action. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101136,
+    "name": "Maabara",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: ukryte przechowanie karty z własnego ash heap i przeniesienie na wierzch biblioteki; ash-heap-resource.test.ts."
+  },
+  {
+    "id": 101137,
+    "name": "Machine Blitz",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: damage z wybranej broni przeciwnika i +1 superior; thaumaturgy-strikes.test.ts."
+  },
+  {
+    "id": 101138,
+    "name": "Madman's Quill",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Tryby oferują pojedyncze aus lub dem i +1 bleed zamiast łącznego wymogu i bleed +2; brak superior z dołączeniem. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101139,
+    "name": "Madness Network",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique permanenta pozwalającego Malkavian działać w cudzych minion phases oraz akcji spalenia. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101140,
+    "name": "Madness of the Bard",
+    "status": "UNRESOLVED",
+    "evidence": "Madness of the Bard: spec daje gainPool zamiast unikalnego permanenta i akcji spalenia, ale wymóg rymowania dotyczy mowy graczy poza modelem gry. Potrzebne rozstrzygnięcie zakresu platformy i zachowania dla niewykonalnej klauzuli."
+  },
+  {
+    "id": 101141,
+    "name": "Madrigal",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic dają intercept zamiast odrębnych typów i +2 votes podczas polling; brak superior rozliczającego blood. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101142,
+    "name": "Magazine",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: przyłączenie do gun, wymaganie ammo i przechowywanie; before-range-attachments.test.ts. Późniejsza gra ammo wymaga dalszej weryfikacji."
+  },
+  {
+    "id": 101143,
+    "name": "Magic of the Smith",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: wyszukanie/equip po sukcesie, koszt i tasowanie; library-search.test.ts. Pozostałe interakcje nie są w pełni sprawdzone."
+  },
+  {
+    "id": 101144,
+    "name": "Majesty",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: superior combat ends i unlock; combat-cards.test.ts. Pozostałe interakcje wymagają weryfikacji."
+  },
+  {
+    "id": 101145,
+    "name": "Major Boon",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: osobny handler przekierowuje płatność i utrzymuje sukces bleed; boons.test.ts. Późniejsze użycie Boon nie jest tu w pełni zbadane."
+  },
+  {
+    "id": 101146,
+    "name": "Make an Example",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Modifier ma prevent zamiast warunkowego działania innego Guruhi, 2 unpreventable damage dla obu minionów i zakończenia akcji. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101147,
+    "name": "Make the Misere",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Anarch, cel locked oraz kombinacja riderów dyscyplin; rush-outcome.test.ts."
+  },
+  {
+    "id": 101148,
+    "name": "Malajit Chandramouli",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: lock retainera za stealth i spalenie po bloku; retainer-prices.test.ts."
+  },
+  {
+    "id": 101149,
+    "name": "Maleficia",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast trifle na infernal z poziomem Maleficia i warunkiem spalenia. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101150,
+    "name": "Malkavian Dementia",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: czasowe przejęcie ready Malkavian do unlock pożyczającego; borrowed-minions.test.ts."
+  },
+  {
+    "id": 101151,
+    "name": "Malkavian Derangement: Alternate Personality",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast karty na Malkavian z rzutem monetą i skutkami po porażce. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101152,
+    "name": "Malkavian Derangement: Paranoia",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast karty na Malkavian antitribu z zakazem działań i opcją spalenia. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101153,
+    "name": "Malkavian Game",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast gry kamień-papier-nożyce i transferu pool według wyniku. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101154,
+    "name": "Malkavian Justicar",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: fabryka JUSTICARS i osobny handler titleGrant dla Malkavian. Test justicars.test.ts dotyczący unique nie przechodzi, bo oczekuje 8 kart, a wykrywa 9; nie weryfikuje tu żadnej właściwości Malkavian. Inne interakcje wymagają sprawdzenia."
+  },
+  {
+    "id": 101155,
+    "name": "Malkavian Prank",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast wyborów graczy i rozliczenia zgadywania liczby counterów. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101156,
+    "name": "Malkavian Rider Clause",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: spec wymaga Malkavian i beforeVotesCast, daje autoPassNextOnPass; referendum-outcomes.test.ts i referendum-riders.test.ts obejmują mechanikę. Inne interakcje nie są w pełni sprawdzone."
+  },
+  {
+    "id": 101157,
+    "name": "The Malkavian Seven Miseries",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast permanenta z karą stealth dla political actions i opcją spalenia przez non-Tremere. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101158,
+    "name": "Malkavian Time Auction",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: osobny handler pozwala licytować kartę i rozlicza dwóch najwyższych; auctions.test.ts."
+  },
+  {
+    "id": 101159,
+    "name": "Malleable Visage",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Modifier daje stealth zamiast zamiany zablokowanego miniona na innego vampire w combat; brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101160,
+    "name": "Manstopper Rounds",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: gun dostaje +1 damage w combat; ammo.test.ts. Inne interakcje nie są w pełni sprawdzone."
+  },
+  {
+    "id": 101161,
+    "name": "Mantle of the Bestial Majesty",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action basic daje strength i stealth zamiast unlock oraz aggravated hand strikes do następnego unlock; brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101162,
+    "name": "Mantle of the Moon",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Ravnos i blokada wszystkich blockerów przy announce; legacy-modifiers.test.ts."
+  },
+  {
+    "id": 101163,
+    "name": "Mapatano Utando",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique permanenta z redukcją bleed, transferami za Edge i akcją spalenia. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101164,
+    "name": "Marijava Ghoul",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Retainer ma jedynie natychmiastowy modifyStealth zamiast trwałego +1 stealth przy action wymagającym Presence. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101165,
+    "name": "Marijava Thuggee",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally ma podstawowe statystyki, bez wymogu Black Hand, gry obf jako vampire, działania damage i lock w unlock. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101166,
+    "name": "Mark of Damnation",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma press i strength zamiast dołączenia do vampire prey, przyznania bonusu przeciwnikom i opcji spalenia; brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101167,
+    "name": "Mark of the Damned",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: burn pool wg liczby vampire w ash heap prey każdego gracza; table-pool-swings.test.ts."
+  },
+  {
+    "id": 101168,
+    "name": "Mark V",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: gun 4R long-only i limit raz na rundę w spec; legacy-weapons.test.ts bada long i zakaz close."
+  },
+  {
+    "id": 101169,
+    "name": "Marked Path",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Modifier daje jedynie stealth zamiast dołączenia po udanym directed action i późniejszego burn za stealth do tego samego celu; brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101170,
+    "name": "Marked Territory",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma +1 zamiast +2 stealth, nie dołącza karty, nie unlockuje i nie daje burn za intercept. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101171,
+    "name": "Market Square",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique location z lock dającym intercept własnemu Banu Haqim; clan-sect.test.ts."
+  },
+  {
+    "id": 101172,
+    "name": "The Marrakesh Codex",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique permanenta z lock do obejrzenia i zmiany kolejności 4 kart oraz możliwością kradzieży. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101173,
+    "name": "Martial Ritus",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action daje natychmiast addStrength i stealth zamiast wymogu Sabbat, przyłączenia do młodszego Sabbat, unlock aktora i późniejszego spalenia. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101174,
+    "name": "Martinelli's Ring",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty equipment bez unique i ograniczenia kart/targetowania według klanów oraz dyscyplin. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101175,
+    "name": "Martyr's Resilience",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Superior ogranicza X do 3 w spec; outsidePreventOptions w compile.ts bierze minimum z tego limitu i dostępnej blood, podczas gdy tekst nie zawiera limitu 3. Pozostałe zachowania nie były tu rozstrzygane. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101176,
+    "name": "Masai Blood Milk",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma addStrength i stealth zamiast unique karty na Laibon, działania burn dającego trwały strength oraz wygaśnięcia. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101177,
+    "name": "Masca",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Tryby basic str i obf oba łączą stealth i additional strike zamiast osobnych efektów; brak superior str. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101178,
+    "name": "Mask Empathy",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic ranged strike pali retainer, superior robi to przed range za blood; mask-empathy.test.ts."
+  },
+  {
+    "id": 101179,
+    "name": "Mask of a Thousand Faces",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Modifier daje stealth zamiast zamiany działającego miniona na innego kwalifikującego się vampire i unlock oryginału; brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101180,
+    "name": "Masochism",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast permanenta z rush counters i zniżką kosztu, brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101181,
+    "name": "Masque of Judas",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic oferuje oddzielne aus lub obf zamiast wymogu obu, brak warunku ally/młodszego vampire i limitu combat oraz superior discard. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101182,
+    "name": "Masquer",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Retainer ma natychmiastowy modifyIntercept zamiast odporności, trwałego intercept i burn za intercept innego miniona; brak superior life. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101183,
+    "name": "Masquerade Endangered",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: osobny handler blokuje blood po hunt i zatrzymuje unlock na jedną fazę; hunt-success.test.ts."
+  },
+  {
+    "id": 101184,
+    "name": "Masquerade Enforcement",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: podatek pool przy wejściu vampire oraz referendum do spalenia przez Camarilla; table-referendums.test.ts."
+  },
+  {
+    "id": 101185,
+    "name": "Mass Reality",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast permanenta z bonusem damage broni i możliwością spalenia; brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101186,
+    "name": "Massassi's Honor",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Modifier daje stealth zamiast przekazania ponawianej akcji wybranemu Osebo i przechowywania kart. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101187,
+    "name": "The Mausoleum, Venice",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: +1 vote oraz dodatkowy głos przy braku Ventrue Headquarters; legacy-locations.test.ts."
+  },
+  {
+    "id": 101188,
+    "name": "Mayaparisatya",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Combat daje prevent 2 zamiast odporności na damage z weapons; brak superior long-only 1R unpreventable aggravated. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101189,
+    "name": "Mbare Market, Harare",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique location dającej blood Laibon w uncontrolled. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101190,
+    "name": "Meat Cleaver",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: melee strength+1 w spec; legacy-weapons.test.ts bada obrażenia. Pozostałe interakcje nie są w pełni sprawdzone."
+  },
+  {
+    "id": 101191,
+    "name": "Meat Hook",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Equipment ma dodge i press zamiast profilu melee strength+1, ograniczeń użycia, warunkowego press i opcji zniszczenia przez Potence. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101192,
+    "name": "The Meddling of Semsith",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Political action daje modifyStealth zamiast wyboru Methuselah i permanenta ze zmianą hand size/replacement oraz referendum do spalenia. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101193,
+    "name": "Media Influence",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: superior dodaje blood własnym unlocked vampire; bleed-payoffs.test.ts. Basic i pozostałe interakcje wymagają dalszej weryfikacji."
+  },
+  {
+    "id": 101194,
+    "name": "Mehemet of the Ahl-i-Batin",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally ma statystyki, ale brak unique, ranged 2 damage i działania spalenia Discipline card wraz z kosztem. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101195,
+    "name": "Melange",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: dołączenie superior po bloku i spalenie za bleed; melange.test.ts i ledger-closeout.test.ts."
+  },
+  {
+    "id": 101196,
+    "name": "Meld with the Land",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic kończy combat, ale nie unlockuje przeciwnika; brak superior kończącego combat bez unlock. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101197,
+    "name": "Member of the Entourage",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally ma statystyki i modifyIntercept jako efekt zagrania zamiast zakazu działań, płatnego intercept i spalenia po bloku vampire; brak wymogu klanu. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101198,
+    "name": "Memories of Mortality",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast dołączenia do vampire z zakazem bloku allies, redukcją damage i opcją spalenia/torpor. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101199,
+    "name": "Memory Rift",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Wszystkie tryby mają stealth i combat ends zamiast oddzielnych zdolności dem/obf/pre; brak wymogu Anarch i łączenia dyscyplin. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101200,
+    "name": "Memory's Fading Glimpse",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast przemieszczenia uncontrolled do crypt prey, przeniesienia blood oraz superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101201,
+    "name": "Mental Maze",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Reaction daje intercept zamiast zakończenia akcji po bloku ally/młodszego vampire, lock i rabatu Follower of Set; brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101202,
+    "name": "Mercury's Arrow",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: spec basic 1R z maneuver i superior 3R; thrown-objects.test.ts bada mechaniczną rodzinę. Pozostałe interakcje wymagają weryfikacji."
+  },
+  {
+    "id": 101203,
+    "name": "Mercy for Seth",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Combat ma prevent i actionStealth zamiast strike z dołączeniem, obrażeniami w unlock i akcją spalenia; brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101204,
+    "name": "Mercy for the Weak",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: warunek przewagi blood i combat ends z blood dla przeciwnika; after-combat-payoffs.test.ts."
+  },
+  {
+    "id": 101205,
+    "name": "Mesmerize",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast kradzieży equipment od ally/młodszego vampire; brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101206,
+    "name": "Mesu Bedshet",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast wyboru z wierzchu crypt, warunkowego blood i tasowania; brak wymogu klanu. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101207,
+    "name": "Metro Underground",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique location z lock oraz opłacanym unlock w discard. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101208,
+    "name": "Might of the Camarilla",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty tryb referendum bez wymogu justicar/Inner Circle i wyboru spalanego uncontrolled vampire każdego gracza. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101209,
+    "name": "Mighty Grapple",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba poziomy zawierają jednocześnie press i hand strike, chociaż basic to tylko press; spec nie zawiera keyword grapple. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101210,
+    "name": "Millicent Smith, Puritan Vampire Hunter",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique permanenta z następstwami block i przeniesieniem do predator w discard. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101211,
+    "name": "Mind Numb",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: wybór unlocked vampire, stun i superior stealth; stun.test.ts."
+  },
+  {
+    "id": 101212,
+    "name": "Mind of a Child",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast dołączenia do vampire z zakazem kart Disciplines i opcją spalenia; brak superior capacity -1. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101213,
+    "name": "Mind of a Killer",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma prevent, strength i stealth zamiast dołączenia do miniona z opóźnionymi skutkami combat/discard; brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101214,
+    "name": "Mind of the Wilds",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oferuje osobne ani i aus, dwukrotny stealth oraz własny combat ends zamiast wymogu obu, maneuver i zakazu combat ends blockera; brak superior. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
     "id": 101862,
     "name": "Static Virtue",
     "status": "CONFIRMED_BUG",

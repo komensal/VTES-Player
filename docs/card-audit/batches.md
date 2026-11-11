@@ -134,3 +134,9 @@ W pozycjach 501–1000 jest 387 kart z wpisem, 113 bez wpisu; dwa wpisy są nier
 [Pozycje 931–1000](batch-04-manual-11-partial.md) i [pominięte pozycje 751–910](batch-04-manual-12-partial.md): 113 nowych wpisów, w tym 40 rozbieżności w kodzie bez nowego testu scenariuszowego oraz 73 ograniczone przeglądy bez wykrytej niezgodności w opisanym zakresie. Wybrane istniejące testy: 353/353 i 498/498 w dwóch częściowo pokrywających się zestawach; typecheck i diff-check poprawne. Pełnego zestawu nie uruchomiono.
 
 W pozycjach 501–1000 każda z **500 kart** ma teraz wpis: 259 historycznych `CONFIRMED_BUG`, 57 `CODE_DISCREPANCY`, 175 ograniczonych przeglądów bez wykrytej niezgodności, 7 celowanych napraw i 2 `UNRESOLVED`. Historyczny `CONFIRMED_BUG` nie gwarantuje odtworzenia testem, a ograniczony przegląd nie oznacza pełnej zgodności. Nierozstrzygnięte: Focus the Blood i Fragment of the Book of Nod. W całym inwentarzu 1028 z 4158 kart ma wpis, 3130 nadal nie ma wpisu.
+
+## Paczka 5 — rozpoczęty przegląd 500 kart
+
+[Manifest 500 kart](batch-05-ids.json) obejmuje ID 101115–101614. [Ręczny przegląd pozycji 1–100](batch-05-manual-01-partial.md) zawiera 67 rozbieżności w kodzie bez nowych testów scenariuszowych, 31 przeglądów bez wykrytej niezgodności wyłącznie w podanym zakresie oraz 2 przypadki nierozstrzygnięte. Pozostałych **400 kart** tej paczki nadal nie ma ręcznego wpisu. Triage automatyczny nie jest przeglądem i wyników próbki nie należy ekstrapolować.
+
+Wybrane testy: 403/404 w 35 plikach; jeden test `justicars.test.ts` zawodzi na liczbie 9 zamiast oczekiwanych 8, zanim sprawdzi unikalność; ten sam test zawodził w poprzednim pełnym przebiegu. Typecheck i diff-check poprawne; pełnego zestawu nie uruchomiono. W całym inwentarzu **1128 z 4158** kart ma wpis, **3030** go nie ma. Historyczne `CONFIRMED_BUG` obejmuje również ustalenia statyczne, nie tylko niezależnie odtworzone błędy; wpisy nie stanowią pełnego potwierdzenia zgodności kart.
