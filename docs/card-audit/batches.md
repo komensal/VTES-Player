@@ -188,3 +188,9 @@ Wybrane, częściowo pokrywające się zestawy: 296/297, 195/195 i 356/356. Pora
 [Szczegóły 120 pozycji](batch-07-manual-02-partial.md): 100 kart bibliotecznych i 20 pierwszych crypt, w tym 2 zachowane historyczne wpisy. Nowe wpisy: 24 rozbieżności z analizy kodu bez nowych testów odtwarzających, 93 ograniczone przeglądy i 1 nierozstrzygnięty wymóg. Łącznie przejrzano w paczce **270 z 500 pozycji**; pozostałych 230 nie przejrzano w ramach tych dwóch raportów. Trzy z nich mają wcześniejsze wpisy `CONFIRMED_BUG`, które mogą obejmować analizę statyczną bez niezależnego odtworzenia.
 
 Wybrane, częściowo pokrywające się testy: 464/468, 610/611 i 62/63; listę niepowodzeń podaje raport. Pełnego zestawu nie uruchomiono. Generator inwentarza, test generatora, typecheck i diff-check uruchomiono osobno. Łącznie w inwentarzu **2295 z 4158** kart ma wpis, **1863** go nie ma. Wyników nie należy ekstrapolować.
+
+## Paczka 7 — pozycje 271–370
+
+[Szczegóły 100 wampirów](batch-07-manual-03-partial.md), ID 200021–200120: 77 rozbieżności z analizy kodu bez nowych testów odtwarzających i 23 ograniczone przeglądy. Łącznie przejrzano **370 z 500 pozycji**; pozostałych 130 nie przejrzano w ramach tych raportów, w tym trzy z zachowanymi wcześniejszymi wpisami `CONFIRMED_BUG`. Historyczny status może obejmować analizę statyczną bez niezależnego odtworzenia. Wyników nie ekstrapolować.
+
+Wybrane testy: 225/227 w 9 plikach; dwie znane porażki list/oczekiwań opisano w raporcie, nie są scenariuszowym potwierdzeniem nowych rozbieżności. Pełnego zestawu nie uruchomiono. Generator inwentarza, test generatora, typecheck i diff-check sprawdzono osobno. W inwentarzu **2395 z 4158** kart ma wpis, **1763** go nie ma.

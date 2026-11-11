@@ -13752,6 +13752,606 @@
     "evidence": "Wąski zakres: tekst ogranicza się do Sabbat; importer parsuje sektę, pusty flatCrypt nie dodaje zdolności. Bez osobnego testu karty."
   },
   {
+    "id": 200021,
+    "name": "Ági (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt nie daje zniżki blood na Sanguinus ani Budapest circle; importer nie ustawia sterile, choć engine posiada taki warunek. Sabbat jest odczytywane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200022,
+    "name": "Agrippina (G1)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Camarilla, importer kopiuje sect i dane crypt; pusty flatCrypt nie dodaje zdolności."
+  },
+  {
+    "id": 200023,
+    "name": "Agru Kabera (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Laibon jest parsowana, +1 bleed jest w self-entry flatCrypt; bez osobnego testu tej nazwy."
+  },
+  {
+    "id": 200024,
+    "name": "Ahmose Chambers (G5)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Independent; importer kopiuje sect i dane crypt, pusty flatCrypt nie dodaje zdolności."
+  },
+  {
+    "id": 200025,
+    "name": "Aidan Lyle (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt nie daje optional press raz na combat; Camarilla jest parsowana. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200026,
+    "name": "Aimee Laroux (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt nie daje opcji 4 transfers i 1 pool za poziom Melpominee ani zakazu reaction cards; Independent jest parsowana. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200027,
+    "name": "Aimery Methuin (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt nie nakłada -1 intercept na młodszych Camarilla blokujących Aimery; Sabbat jest parsowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200028,
+    "name": "Aisata Swanou (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez opcji w master phase draw i przesunięcia karty z ręki do ash heap lub na top library. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200029,
+    "name": "Aisha (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt daje stały intercept 1, ale druk wymaga zapłaty blood, ogranicza zdolność do raz na turę i do bieżącej akcji; brak osobnego handlera wyboru i kosztu. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200030,
+    "name": "Aisha az-Zahra (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm nie daje +1 bleed ani płatnych votes według liczby ready Anarch w polling. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200031,
+    "name": "Aisling Sturbridge (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt bez zakazu block przez młodszych Tremere. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200032,
+    "name": "Aiyana, The Wolfcatcher (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez press przeciw werewolf i płatnej prevention; importer nie ustawia sterile na vampire. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200033,
+    "name": "Akram (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm nie oferuje za blood nowego combat po poprzednim z obydwoma ready; tytuł primogen importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200034,
+    "name": "Aksinya Daclau (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez discard master za redirect bleedu przeciw sobie, ograniczonego do ready unlocked i raz na turn. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200035,
+    "name": "Al-Ashrad, Amr of Alamut (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt realizuje +1 bleed, lecz nie ma akcji burn location za 2 blood; importer i runtime nie modelują Blood cursed. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200036,
+    "name": "Al-Ashrad, Amr of Alamut (G2 ADV)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez wyjątku first-round dla strike tha i bez Blood cursed; nie znaleziono obsługi drukowanego merged tytułu i +1 bleed. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200037,
+    "name": "Al-Muntaquim, The Avenger (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez burn Caitiff za trwały bleed, unlock po Gehenna i zakazu kart wymagających Celerity; tekst Scarce również nie jest importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200038,
+    "name": "Al-Muntathir, God's Witness (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt bez warunku burn przy czterech True Brujah, zakazu kart Celerity oraz oznaczeń Black Hand i Scarce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200039,
+    "name": "Alabástrom (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez unlock innego Gargoyle; drukowane Flight nie widnieje w registry disciplines i nie jest wyprowadzane z tekstu przez importer. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200040,
+    "name": "Alan Sovereign (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm nie dodaje countera do zagranego investment card. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200041,
+    "name": "Alan Sovereign (G3 ADV)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm nie pozwala płacić z investment za equip ani w wariancie merged przesuwać countera do pool. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200042,
+    "name": "Alcoan (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez opcji podglądu ręki przeciwnika w pierwszej rundzie przeciw ally lub młodszemu vampire. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200043,
+    "name": "Aleister Crowley (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt bez zakazu grania frenzy na Aleistera. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200044,
+    "name": "Alejandro Aguirre (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt bez lock przed range w cudzym combat za 1 unpreventable damage każdemu combatantowi. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200045,
+    "name": "Aleph (G1)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Camarilla; importer kopiuje sect i dane crypt, pusty flatCrypt nie dodaje zdolności."
+  },
+  {
+    "id": 200046,
+    "name": "Alessandro Garcia (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt daje stały +1 strength, choć druk ogranicza bonus do walki z Lasombra. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200047,
+    "name": "Alex Camille (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm nie daje płatnego blood za intercept podczas akcji. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200048,
+    "name": "Alex Wilkins (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm nie oferuje targetowi udanego bleed zapłaty pool za przejęcie Alexa. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200049,
+    "name": "Alexandra (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez +2 bleed i raz na turę lock/unlock innego ready Toreador; Inner Circle jest parsowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200050,
+    "name": "Alexis Sorokin (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt daje bezwarunkowe +1 bleed zamiast tylko przeciw kontrolerowi ready Toreador. Brak dodge raz na combat, akcji steal equipment i oznaczenia Red List. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200051,
+    "name": "Alfred Benezri (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt bez -1 strength w combat z ally; tytuł bishop importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200052,
+    "name": "Alfred Benezri (G3 ADV)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez lock za zakończenie combat innych Sabbat oraz merged Archbishop i płatnego vote. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200053,
+    "name": "Ali Kar (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt i importer nie zapisują drukowanej cechy Blood cursed; implementacji cechy w runtime nie znaleziono. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200054,
+    "name": "Alicia Barrows (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez warunkowego podglądu cudzej ręki i discard Gehenna w unlock; Archbishop of Mexico City jest parsowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200055,
+    "name": "Allanyan Serata (G5)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Camarilla primogen jest parsowany, flatCrypt daje +1 strength; bez osobnego testu tej nazwy."
+  },
+  {
+    "id": 200056,
+    "name": "Allison Maller (G3)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Camarilla; importer kopiuje sect i dane crypt, pusty flatCrypt nie dodaje zdolności."
+  },
+  {
+    "id": 200057,
+    "name": "Allonzo Montoya (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt daje stały stealth zamiast ograniczenia do akcji wymagających Serpentis; brak zakazu block undirected, a importer nie ustawia sterile ani Scarce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200058,
+    "name": "Almiro Suarez (G3)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Camarilla; importer kopiuje sect i dane crypt, pusty flatCrypt nie dodaje zdolności."
+  },
+  {
+    "id": 200059,
+    "name": "Almodo Giovanni (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Independent; importer kopiuje sect i dane crypt, pusty flatCrypt nie dodaje zdolności."
+  },
+  {
+    "id": 200060,
+    "name": "Alonso Petrodon (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez +1 bleed i unpreventable damage anarchom po udanym bleed; Nosferatu Justicar jest parsowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200061,
+    "name": "Alonzo Guillen (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez opcji spalenia Edge dla podglądu ręki w unlock/discard. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200062,
+    "name": "Alu (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt i importer nie zapisują cechy Blood cursed; implementacji w runtime nie znaleziono. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200063,
+    "name": "Alvaro, The Scion of Angelica (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez +1 bleed oraz gain 2 blood po abstention w political action, również w torpor; tytuł Archbishop importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200064,
+    "name": "Amadeo (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt bez +1 hunt; primogen jest parsowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200065,
+    "name": "Amaravati (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez płatnych votes ready Assamite; Blood cursed nie jest odczytywane przez importer ani modelowane w runtime. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200066,
+    "name": "Amavi (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Laibon jest parsowana, flatCrypt daje +1 bleed; bez osobnego testu tej nazwy."
+  },
+  {
+    "id": 200067,
+    "name": "Amber (G5)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Sabbat; importer kopiuje sect i dane crypt, pusty flatCrypt nie dodaje zdolności."
+  },
+  {
+    "id": 200068,
+    "name": "Ambrogino Giovanni (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt daje +1 bleed, lecz importer zatrzymuje prefiks na pierwszej kropce i nie odczytuje „1 vote (titled)”; brak tej wartości w statics i tytułu w MinionState. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200069,
+    "name": "Ambrogino Giovanni (G2 ADV)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez +1 bleed, opcji usunięcia 7 kart ash heap za 2 blood w unlock, Red List oraz merged +1 stealth. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200070,
+    "name": "Ambrosio Luis Monçada, Plenipotentiary (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez zakazu block, dodatkowego kosztu directed actions i unlock Lasombra w discard; tytuł cardinal importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200071,
+    "name": "Amelia (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt dodaje stały stealth 1, choć bonus dotyczy wyłącznie własnego rush na małego vampire; brak samej akcji enter combat. Tytuł bishop jest parsowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200072,
+    "name": "Amelia, The Blood Red Tears (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez burn 1 blood/life przeciwnika po combat. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200073,
+    "name": "Amenophobis (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez draw po udanej akcji wymagającej Serpentis i warunkowego bleed przeciw kontrolerowi Edge; primogen jest parsowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200074,
+    "name": "Amisa (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez akcji lock vampire capacity 8+. Importer nie odczytuje „2 votes (titled)” po kropce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200075,
+    "name": "Ana Rita Montaña (G3)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Sabbat; importer kopiuje sektę i dane crypt, pusty flatCrypt nie daje zdolności."
+  },
+  {
+    "id": 200076,
+    "name": "Anarch Convert (ANY)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez opcjonalnego remove-self przy wejściu, zmiany sekty non-titled vampire i wyboru pool lub crypt draw. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200077,
+    "name": "Anastasia Grey (G1)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Camarilla; importer kopiuje sektę i dane crypt, pusty flatCrypt nie daje zdolności."
+  },
+  {
+    "id": 200078,
+    "name": "Anastasz di Zagreb (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez kary vote przy innym ready justicar i ranged strike steal blood; tytuł justicar jest parsowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200079,
+    "name": "Anatole, Prophet of Gehenna (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez +1 intercept i opcji podglądu/shuffle top 5 library w master phase. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200080,
+    "name": "Andre LeRoux (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt daje stały +2 bleed zamiast opcjonalnego zmniejszenia udanego bleedu własnego vampire o 1 i bonusu tylko do końca tury. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200081,
+    "name": "André the Manipulator (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez +2 hand size warunkowego od ready. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200082,
+    "name": "Andrea Giovanni (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt bez +1 stealth podczas akcji wymagających Necromancy. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200083,
+    "name": "Andreas, The Bard of Crete (G1)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt daje stały intercept 1 zamiast płatnego blood raz na turę dla bieżącej akcji; primogen importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200084,
+    "name": "Andrei Puxon (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Independent; importer kopiuje sektę i dane crypt, pusty flatCrypt nie daje zdolności."
+  },
+  {
+    "id": 200085,
+    "name": "Andrew Emory (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: tekst Sabbat bishop, importer kopiuje sektę i title oraz dane crypt; bez osobnego testu nazwy."
+  },
+  {
+    "id": 200086,
+    "name": "Andrew Stuart (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "cryptPerm zawiera requiresReady, ale nie ma triggera ujawnienia top library przy graniu tha, cancel i burn blood; nie znaleziono osobnego handlera. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200087,
+    "name": "Andy (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez optional press dla starszego przeciwnika Andy’ego w combat. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200088,
+    "name": "Angel (G1)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Camarilla; importer kopiuje sektę i dane crypt, pusty flatCrypt nie daje zdolności."
+  },
+  {
+    "id": 200089,
+    "name": "Angel Chavarria (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Independent; importer kopiuje sektę i dane crypt, pusty flatCrypt nie daje zdolności."
+  },
+  {
+    "id": 200090,
+    "name": "Angela Decker (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez burn 2 pool po spaleniu Angeli w combat. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200091,
+    "name": "Angela Preston (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez lock w influence za unlock innego vampire i bez kosztu 1 blood przy próbie block starszego. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200092,
+    "name": "Angelica, The Canonicus (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt bez discard X master cards za X intercept; cardinal parsowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200093,
+    "name": "Angelique (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez ready aury obniżającej koszt Necromancy Harbingers of Skulls. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200094,
+    "name": "Angelo (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez reguły Sanguinus circle, akcji burn location, zakazu retainers i Red List; importer nie ustawia sterile. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200095,
+    "name": "Angus the Unruled (G1)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Camarilla Gangrel Justicar parsowany przez importer, flatCrypt daje drukowany +1 strength."
+  },
+  {
+    "id": 200096,
+    "name": "Anisa Marianna Lopez (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez akcji burn vampire capacity <4 należącego do predator/prey za 1 pool. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200097,
+    "name": "Anjalika Underwood (G5)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Independent; importer kopiuje sektę i dane crypt, pusty flatCrypt nie daje zdolności."
+  },
+  {
+    "id": 200098,
+    "name": "Anka, Priestess of Thorns (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt bez rush na Lasombra. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200099,
+    "name": "Ankh-sen-Sutekh (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Independent parsowana, flatCrypt daje +1 bleed; bez osobnego testu tej nazwy."
+  },
+  {
+    "id": 200100,
+    "name": "Ankla Hotep (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt bez zniżki rescue z torpor i optional press co combat. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200101,
+    "name": "The Ankou (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez śledzenia udanego hunt i akcji burn tego vampire także w cudzej turze. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200102,
+    "name": "Anna \"Dictatrix11\" Suljic (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez +1 stealth action dającej 2 blood vampire i podglądu top 3 library w unlock; tekst nie zawiera prefiksu sekty. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200103,
+    "name": "Annabelle Triabell (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt daje stały +1 bleed i stealth samej Annabelle zamiast akcji za blood dającej Toreador bleed na turn, z unlock po sukcesie. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200104,
+    "name": "Annazir (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt daje +1 bleed, ale brak akcji burn location/steal equipment; importer nie odczytuje „2 votes (titled)” ani Infernal. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200105,
+    "name": "Anne-Marie Bourgeois, Inconnu Recruiter (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt bez zniżki 1 pool przy equipment. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200106,
+    "name": "Anneke (G1)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt daje +1 bleed i importer parsuje justicar, ale brak prawa block vampire poza zwykłymi ograniczeniami predator/prey/target. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200107,
+    "name": "Anson (G1)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez dwóch master phase actions gdy ready; Prince of Seattle importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200108,
+    "name": "Antara (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez intercept przeciw Sabbat i burn blood po Gehenna; Blood cursed nie jest importowane ani modelowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200109,
+    "name": "Antoine, The Lost (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Camarilla; importer kopiuje sektę i dane crypt, pusty flatCrypt nie daje zdolności."
+  },
+  {
+    "id": 200110,
+    "name": "Antoinette, She Who Watches (G3)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Camarilla primogen; importer kopiuje sektę i tytuł, pusty flatCrypt nie daje zdolności."
+  },
+  {
+    "id": 200111,
+    "name": "Antoinette Dubois (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez zakazu block przez Toreador/Toreador antitribu i drukowanego -1 intercept. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200112,
+    "name": "Antoinette DuChamp (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt bez dodatkowego blood za action/strike cards wymagające Celerity. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200113,
+    "name": "Anton (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Sabbat parsowany, flatCrypt daje +1 intercept; bez osobnego testu tej nazwy."
+  },
+  {
+    "id": 200114,
+    "name": "Antón de Concepción (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty flatCrypt bez optional maneuver w pierwszej rundzie; Archbishop of Chicago importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200115,
+    "name": "Antonino (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt daje +1 stealth zawsze, choć druk ogranicza bonus do undirected actions. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200116,
+    "name": "Antonio d'Erlette (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez opcji 4 transferów za wyszukanie i wprowadzenie mage ally z opłaceniem kosztu. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200117,
+    "name": "Antonio Delgado (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez delayed unlock w discard po passed referendum własnej political action; Archbishop of Atlanta importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200118,
+    "name": "Antonio Veradas (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez stealth przy equip weapon i płatnego unlock w discard; bishop importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200119,
+    "name": "Anu Diptinatpa (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty cryptPerm bez opcji blood za bleed acting miniona i bez importu Scarce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200120,
+    "name": "Anvil (G1)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: sam tekst Camarilla primogen; importer kopiuje sektę i tytuł, pusty flatCrypt nie daje zdolności."
+  },
+  {
     "id": 200229,
     "name": "Byzar (G6)",
     "status": "CONFIRMED_BUG",
