@@ -140,3 +140,9 @@ W pozycjach 501–1000 każda z **500 kart** ma teraz wpis: 259 historycznych `C
 [Manifest 500 kart](batch-05-ids.json) obejmuje ID 101115–101614. [Ręczny przegląd pozycji 1–100](batch-05-manual-01-partial.md) zawiera 67 rozbieżności w kodzie bez nowych testów scenariuszowych, 31 przeglądów bez wykrytej niezgodności wyłącznie w podanym zakresie oraz 2 przypadki nierozstrzygnięte. Pozostałych **400 kart** tej paczki nadal nie ma ręcznego wpisu. Triage automatyczny nie jest przeglądem i wyników próbki nie należy ekstrapolować.
 
 Wybrane testy: 403/404 w 35 plikach; jeden test `justicars.test.ts` zawodzi na liczbie 9 zamiast oczekiwanych 8, zanim sprawdzi unikalność; ten sam test zawodził w poprzednim pełnym przebiegu. Typecheck i diff-check poprawne; pełnego zestawu nie uruchomiono. W całym inwentarzu **1128 z 4158** kart ma wpis, **3030** go nie ma. Historyczne `CONFIRMED_BUG` obejmuje również ustalenia statyczne, nie tylko niezależnie odtworzone błędy; wpisy nie stanowią pełnego potwierdzenia zgodności kart.
+
+## Paczka 5 — dalsze 150 pozycji
+
+[Pozycje 101–250](batch-05-manual-02-partial.md), ID 101215–101364: 95 rozbieżności w kodzie bez nowych testów odtwarzających, 53 przeglądy bez wykrytej niezgodności tylko w podanym zakresie oraz 2 przypadki nierozstrzygnięte. W paczce 5 jest teraz **250 kart z wpisem i 250 bez wpisu**; wpis nie oznacza pełnego audytu reguł. Nie ekstrapolować tych wyników na pozostałe karty.
+
+Wybrane zestawy testów, częściowo pokrywające się: 382/384 (dwa niepowodzenia związane z listą dyscyplin występowały w poprzednim pełnym przebiegu) oraz 170/170; osobny test generatora po regeneracji 1/1. Typecheck i diff-check przeszły. Pełnego zestawu nie uruchomiono. Łącznie **1278 z 4158** kart ma wpis w inwentarzu, **2880** nie ma; historyczny `CONFIRMED_BUG` nie gwarantuje scenariuszowego odtworzenia.
