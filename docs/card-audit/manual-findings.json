@@ -23530,5 +23530,605 @@
     "name": "Rose Abawi (G6)",
     "status": "CODE_DISCREPANCY",
     "evidence": "Spec daje stały bleed zamiast tylko podczas kontroli Mithrasa. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201651,
+    "name": "Rowena (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez zapobiegania 1 non-aggravated damage każdej rundy i strike: combat ends przeciw werewolf. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201652,
+    "name": "Sri Sansa (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez przenoszenia blood/life między Sri a własnym mortal lub mage ally w unlock phase. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201653,
+    "name": "Valerius (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec zachowuje +1 bleed, ale nie dodaje directed action kradzieży tytułu prince. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201654,
+    "name": "Tegyrius, Vizier (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 strength, lecz nie dodaje +2 votes przy ready Victoria Ash; importer pomija też drukowane 2 titled votes po kropce. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201655,
+    "name": "Arjun Shah (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201656,
+    "name": "Oluwafunmilayo (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Warunkowy intercept dla politicalAction; granted-action-requirements.test.ts sprawdza dodatni burn referendum i ujemny counter action. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201657,
+    "name": "Anita Wainwright (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201658,
+    "name": "Saku Pihlajamäki (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Jedna opcjonalna maneuver per combat w statykach; czytane przez silnik jako combat credit. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201659,
+    "name": "Keegan (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "unlockAfterAction wymaga self, successful action, Gangrel oraz oncePerTurn; granted-action-requirements.test.ts wskazuje brak obsługiwanej dodatniej grant action Gangrel. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201660,
+    "name": "Ragnar Nordstrom (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec zawiera zniżkę pro i dwie warunkowe siły przeciw ally lub młodszemu vampire; ograniczony przegląd warunków. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201661,
+    "name": "\"Coach\" Tyrone Soros (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201662,
+    "name": "Sergio Bueno (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Block toll bloodOrLife z yourCorruption; crypt-wave-5.test.ts sprawdza własne, cudze i brak corruption. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201663,
+    "name": "Abaddon (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Dwa combat credits maneuverPerCombat i pressPerCombat; silnik pozwala je opcjonalnie wykorzystać. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201664,
+    "name": "Adrino Manauara (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje continuePressPerCombat, ale engine.ts w combat.press oferuje zawsze pass oraz opcjonalne press:continue: drukowany press jest obowiązkowy. Test crypt-wave-3.test.ts sprawdza tylko statykę, nie obowiązek. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201665,
+    "name": "Ángel Guerrero (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch Baron of Ciudad Juárez.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201666,
+    "name": "Aniel (G7)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "stripMinion w compile.ts ogranicza wybór corruption counters do należących do kontrolera Aniel; tekst nie zawiera tego ograniczenia. Istniejący test crypt-wave-5.test.ts sprawdza właśnie takie ograniczenie, nie inne pochodzenie licznika zgodnie z tekstem. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201667,
+    "name": "Branimira (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Warunkowy intercept przy poolAtMost 9; porównano warunek i statykę. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201668,
+    "name": "Castellan (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Dwa warunkowe intercept dla directed/nondirected; crypt-wave-1.test.ts sprawdza oba względem braku efektu. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201669,
+    "name": "Clara Hjortshøj (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201670,
+    "name": "Doc Martina (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "rescueDiscount amount 1 dla blood przy rescue; przegląd spec i ścieżki statyk. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201671,
+    "name": "Dominica (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "searchToHand ogranicza wyszukiwanie do master archetype, +1 stealth; porównano spec i kompilator. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201672,
+    "name": "Gathii (G7)",
+    "status": "UNRESOLVED",
+    "evidence": "compile.ts ogranicza reveal do raz na akcję i wymaga 1 blood przed ujawnieniem, choć drukowany tekst nie podaje wprost limitu ani kosztu jako warunku; docs/crypt-wave-7.md opisuje latch jako wcześniejszą poprawkę i test go zakłada. Bez rozstrzygnięcia ewentualnych reguł/erraty i bez nowego scenariusza nie klasyfikujemy tego jako błąd."
+  },
+  {
+    "id": 201673,
+    "name": "Ilonka (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Hook ujawnia nazwy kart w prywatnej opcji i dopuszcza pass bez discard; crypt-wave-7.test.ts sprawdza widoczność dla kontrolera, losowy discard oraz pass. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201674,
+    "name": "Jean-François (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201675,
+    "name": "Luciano Carvalho (G7)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "discardPhaseChoice wymaga isReady zarówno dla Luciano, jak i źródłowego i docelowego vampire; drukowany tekst nie wymaga ready. Kod nie oferuje wskazanych opcji dla vampire w torpor. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201676,
+    "name": "Malachi (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201677,
+    "name": "Marialena (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "blockedToll 1 blood po block; porównano spec i silnik. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201678,
+    "name": "Neserian (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Warunkowe -1 bleed bez location i +1 vote przy location; crypt-wave-1.test.ts sprawdza bleed, nie bezpośrednio naliczanie vote. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201679,
+    "name": "Oleg Kaprizov (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201680,
+    "name": "Opikun (G7)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "preventForOther w compile.ts wymaga victim.id !== bearer.id i sprawdza tylko non-aggravated, a nie źródło opposing minion strike. Tekst dopuszcza vampire you control i ogranicza damage do strike przeciwnika; istniejące testy sprawdzają ofertę dla innego vampire i koszt, nie te brzegi. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201681,
+    "name": "Phaibun (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "discardFor random w chooseStrike daje dodge raz per combat; porównano spec i kompilator. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201682,
+    "name": "Prentis Derby (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201683,
+    "name": "Roberto Rivamonte (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201684,
+    "name": "Roy (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "lockAtDiscardPhase oraz warunkowa siła przeciw titled; crypt-wave-3.test.ts sprawdza lock i siłę w wybranych scenariuszach. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201685,
+    "name": "Sakhar (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "searchToHand equipment +1 stealth; crypt-wave-2.test.ts sprawdza wybór equipment i przeniesienie do hand. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201686,
+    "name": "Seraphina (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "grantedAction addBlood 2 capped +1 stealth; crypt-wave-5.test.ts sprawdza dodanie, limit i wybory celów w wybranych stanach. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201687,
+    "name": "Sreelekha (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "discardPhaseActions 1 z ready gate oraz +1 bleed; porównano spec i hook fazy. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201688,
+    "name": "Susie Kano (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201689,
+    "name": "Trung Chau Pham (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201690,
+    "name": "Whisper (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201691,
+    "name": "Yael (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201692,
+    "name": "Zafira (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201693,
+    "name": "Annabelle Triabell (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały +1 stealth Annabelle zamiast +1 stealth innym Toreador kontrolera tylko gdy Annabelle jest locked. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201694,
+    "name": "Diana Iadanza (G7)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 bleed, ale nie ma anulowania reaction card za 1 blood podczas własnego referendum. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201695,
+    "name": "Dónal O'Connor (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez unlock za 1 blood w minion phase. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201696,
+    "name": "François Villon (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 bleed, ale brak wyboru lock młodszego vampire za 2 blood w unlock phase. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201697,
+    "name": "Ian Carfax (G7)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 intercept, ale brak once-per-turn unlock po combat, gdy przeciwnik nie jest ready. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201698,
+    "name": "Juliet Parr (G7)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez +2 hand size po passed referendum i optional maneuver per combat. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201699,
+    "name": "Kazuki Hanabira (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201700,
+    "name": "Lucinde, Alastor (G7)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 bleed, ale brak wyboru vampire za 1 blood w master phase i przyznania rush własnym Camarilla na tę turę. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201702,
+    "name": "Marcos Belegrad (G7)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez kary pool dla Methuselah głosujących przeciw referendum Marcosa. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201703,
+    "name": "Modius (G7)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez discard master card w polling za dodatkowy vote. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201704,
+    "name": "Molly MacDonald (G7)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały +1 bleed i +1 strength, ale pomija +1 vote i warunek non-Camarilla vampire u prey dla bleed i vote. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201705,
+    "name": "Nikolaus Vermeulen (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez burn Edge w influence phase za blood na uncontrolled Nosferatu. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201706,
+    "name": "Silvian Popescu (G7)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez ruchu blood z kontrolowanego prince w unlock phase. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201707,
+    "name": "Valentina Osako (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201708,
+    "name": "Aintzane Arriaga (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201709,
+    "name": "Araceli \"Celia\" Rivera (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201710,
+    "name": "Azucena (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Dwie warunkowe statyki intercept przeciw młodszemu i starszemu Lasombra; crypt-wave-1.test.ts sprawdza trzy przypadki. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201711,
+    "name": "Braden White (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201712,
+    "name": "Gnaeus Aemilius Augustinus (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "unlockPhaseDamage z kontrolą ready, właściwej fazy i obowiązkowym wyborem prey; porównano spec i hook. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201713,
+    "name": "Kamaluddin (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla primogen.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201714,
+    "name": "María del Toro (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla Prince of Barcelona.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201715,
+    "name": "Rinaldo Albizzi (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla primogen: +1 intercept.”; importer odczytuje sektę i ewentualny tytuł, self-entry ma statystykę intercept +1. Wąski zakres."
+  },
+  {
+    "id": 201716,
+    "name": "Yewon Ong (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "discardFor obl w polling daje vote; porównano spec i kompilator. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201717,
+    "name": "Alek König (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201718,
+    "name": "Gebeyehu Abdu (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201719,
+    "name": "Hiromitsu Asano (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201720,
+    "name": "Holliday \"Burgundy\" Hall (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201721,
+    "name": "Lenelle, Mambo of Birmingham (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "grantedAction ashExchange za 1 blood i +1 stealth; crypt-wave-5.test.ts sprawdza przykłady wymiany i warunki. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201722,
+    "name": "Marchesa Liliana (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "discardFor siedem kart ash heap przy bleed za +1 oraz statyczny +1 bleed; crypt-wave-4.test.ts bada zapłatę i bonus w wybranych scenariuszach. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201723,
+    "name": "Monica Giovanni (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201724,
+    "name": "Mora, the Death Seer (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "discardPhaseChoice ashToLibraryBottom przy ready i +1 bleed; crypt-wave-5.test.ts bada wybór oraz ograniczenia. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201725,
+    "name": "\"Mother\" Anja Giovanni (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "unlockAfterAction other Hecata, ready, 1 blood, once/turn, Hecata lub obl; granted-action-requirements.test.ts sprawdza przypadki union i action grant. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201726,
+    "name": "Parijat, the Dark Oracle (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "globalBlockToll libraryCard przy wraith/zombie i ready; crypt-wave-7.test.ts sprawdza m.in. wraith i brak opłaty przy zwykłym vampire. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201727,
+    "name": "Peter St. John (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201728,
+    "name": "Tommaso Sforza (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "combatEndGrant dla własnego wraith/zombie, 1 blood, once/turn i ready; crypt-wave-7.test.ts bada ofertę i koszt. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201729,
+    "name": "Dafina Hanganu (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec rush targets minion; compileCrypt przekazuje go do rushGrant, title importowany osobno. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201730,
+    "name": "Egidia Arrú (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "combatLeaveDrain 1 oraz +1 strength; crypt-wave-3.test.ts bada utratę pool po wyjściu przeciwnika z ready region w jednym scenariuszu. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201731,
+    "name": "Hel-Blá (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "grantedAction reviveAlly dla Hecata lub obl, 1 blood i +1 stealth; porównano spec i kompilator. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201732,
+    "name": "Roger de Camden (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "playCostMod union Hecata/obl oraz discardFor maneuver; crypt-wave-4.test.ts sprawdza zniżki i ofertę dla własnego walczącego miniona. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201733,
+    "name": "Aaradhya, The Callous Tyrant (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "unlockAfterAction self politicalAction i +1 bleed; porównano spec i hook, nie wszystkie warianty referendum. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201734,
+    "name": "Abderrahim, Death's Hand (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "stealthGrant 1 blood dla own ally lub młodszego vampire oraz +1 strength; porównano spec i kompilator. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201735,
+    "name": "Aelswith, The Irresistible (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "blockedPoolToll 1 pool; porównano spec i ścieżkę block. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201736,
+    "name": "Agnieszka, Tempter of Legions (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "grantsStrikePerCombat combatEnds za 1 blood oraz +1 bleed; crypt-wave-3.test.ts sprawdza dostępność przy różnej ilości blood. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201737,
+    "name": "Aitana, The Unholy (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201738,
+    "name": "Algirdas, The Solar Prophet (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "playCostMod +1 blood dla strike card opposing młodszego vampire; porównano spec i warunki kosztu. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201739,
+    "name": "Anousha, The Maniac (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat bishop: +1 strength.”; importer odczytuje sektę i ewentualny tytuł, self-entry ma statystykę strength +1. Wąski zakres."
+  },
+  {
+    "id": 201740,
+    "name": "Anxo Vilela (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Warunkowy +1 strength przy controller.hasEdge; porównano spec i warunek. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201741,
+    "name": "Ashur-uballit, Son of the Abyss (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "recruitLifeBonus dla zombie i +1 bleed; startingLifeBonus działa na ścieżkach ally i retainer; crypt-wave-6.test.ts bada ally zombie i kontrolny non-zombie, nie retainer. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201742,
+    "name": "Berenguela, The Vicious (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201743,
+    "name": "Coco Thorn (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201744,
+    "name": "Concordia (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat bishop.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201745,
+    "name": "Crossbreaker (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "aggravatedForBlood za 1 blood w beforeStrikes i flaga rundy; porównano spec i kompilator. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201746,
+    "name": "Cyan Sin (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201747,
+    "name": "Damian (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Warunkowy +1 bleed przy ready cardinal; crypt-wave-1.test.ts sprawdza cardinal i prince jako kontrolę. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201748,
+    "name": "Devorah (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Warunkowy +1 stealth przy poolAtMost 5; porównano spec i warunek. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201749,
+    "name": "El Monseñor (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importer rozpoznaje sektę i ewentualny tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201750,
+    "name": "Eulogio Sánchez de los Reyes (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "grantedAction reorderTop 5, +1 stealth, 1 blood i unlockActor; porównano spec i kompilator. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201751,
+    "name": "Fotini Katsikaris (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "bleedSuccessHandSize przy successful bleed za co najmniej 1; crypt-wave-6.test.ts sprawdza bonus i wygaśnięcie w discard phase. Ograniczony zakres; bez nowego scenariusza."
   }
 ]

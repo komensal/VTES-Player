@@ -248,3 +248,9 @@ Wybrane testy: 241/242 w 10 plikach; znana porażka oczekiwania braku handlera N
 [Szczegóły 100 kart](batch-10-manual-03-partial.md), ID 201551–201650: 26 rozbieżności z analizy kodu bez nowych testów scenariuszowych i 74 ograniczone przeglądy bez wykrytej niezgodności. Łącznie przejrzano **400 z 500 pozycji**: 230 rozbieżności i 170 ograniczonych przeglądów. Pozostałych **100** nie przejrzano w ramach tych raportów i nie mają wcześniejszych wpisów. Druga flaga braku handlera dotyczy Octane: jego samą sect importer odczytuje niezależnie. Wpis nie dowodzi pełnej zgodności; nie ekstrapolować wyników.
 
 Wybrane testy: 241/242 w 10 plikach; znana porażka oczekiwania braku handlera Nosferatu Kingdom. Pełnego zestawu nie uruchomiono. Generator inwentarza, test generatora, typecheck i diff-check sprawdzono osobno. W całym inwentarzu **3922 z 4158** kart ma wpis, **236** go nie ma. Historyczne `CONFIRMED_BUG` może obejmować analizę statyczną bez niezależnego odtworzenia.
+
+## Paczka 10 — pozycje 401–500 i zakończenie
+
+[Szczegóły 100 kart](batch-10-manual-04.md), ID 201651–201751 bez 201701: 20 rozbieżności z analizy kodu bez nowych testów scenariuszowych, 79 ograniczonych przeglądów i 1 nierozstrzygnięty przypadek. Wszystkie **500 pozycji** paczki mają wpis: 250 rozbieżności, 249 ograniczonych przeglądów i 1 nierozstrzygnięty. Wpis nie dowodzi pełnej zgodności; wyników nie ekstrapolować.
+
+Wybrane testy: 241/242 w 10 plikach, znana porażka oczekiwania braku handlera Nosferatu Kingdom; dodatkowo filtrowany test Oluwafunmilayo 1/1. Pełnego zestawu nie uruchomiono. Generator inwentarza, test generatora, typecheck i diff-check sprawdzono osobno. W całym inwentarzu **4022 z 4158** kart ma wpis, **136** go nie ma. Historyczne `CONFIRMED_BUG` może obejmować analizę statyczną bez niezależnego odtworzenia.
