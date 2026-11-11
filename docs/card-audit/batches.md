@@ -194,3 +194,9 @@ Wybrane, częściowo pokrywające się testy: 464/468, 610/611 i 62/63; listę n
 [Szczegóły 100 wampirów](batch-07-manual-03-partial.md), ID 200021–200120: 77 rozbieżności z analizy kodu bez nowych testów odtwarzających i 23 ograniczone przeglądy. Łącznie przejrzano **370 z 500 pozycji**; pozostałych 130 nie przejrzano w ramach tych raportów, w tym trzy z zachowanymi wcześniejszymi wpisami `CONFIRMED_BUG`. Historyczny status może obejmować analizę statyczną bez niezależnego odtworzenia. Wyników nie ekstrapolować.
 
 Wybrane testy: 225/227 w 9 plikach; dwie znane porażki list/oczekiwań opisano w raporcie, nie są scenariuszowym potwierdzeniem nowych rozbieżności. Pełnego zestawu nie uruchomiono. Generator inwentarza, test generatora, typecheck i diff-check sprawdzono osobno. W inwentarzu **2395 z 4158** kart ma wpis, **1763** go nie ma.
+
+## Paczka 7 — pozycje 371–500 i zakończenie
+
+[Szczegóły 130 pozycji](batch-07-manual-04.md), ID 200121–200250: 86 nowych `CODE_DISCREPANCY` z analizy kodu bez nowego testu odtwarzającego, 41 ograniczonych przeglądów i 3 zachowane wpisy historyczne. Wszystkie **500 pozycji** paczki mają teraz ograniczony ręczny przegląd i wpis: 263 rozbieżności z analizy kodu, 231 ograniczonych przeglądów bez wykrytej niezgodności, 5 historycznych `CONFIRMED_BUG` i 1 `UNRESOLVED`. Historyczny status może obejmować analizę statyczną bez niezależnego odtworzenia; wpis nie dowodzi pełnej zgodności. Wyników nie ekstrapolować.
+
+Wybrane istniejące testy 241/242 w 10 plikach: znana porażka oczekiwania braku handlera Nosferatu Kingdom, szczegóły w raporcie. Pełnego zestawu nie uruchomiono. Generator inwentarza, jego test, typecheck i diff-check sprawdzono osobno. Łącznie **2522 z 4158** kart ma wpis, **1636** nie ma.
