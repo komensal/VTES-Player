@@ -182,3 +182,9 @@ Wybrane, częściowo pokrywające się zestawy testów: 337/338, 286/288, 251/25
 [Pozycje 1–150](batch-07-manual-01-partial.md), ID 102115–102264: 76 rozbieżności z analizy kodu bez nowych testów odtwarzających oraz 74 ograniczone przeglądy. Pozostałych 350 pozycji manifestu nie przejrzano w tym etapie; wśród nich jest 5 zachowanych wpisów historycznych `CONFIRMED_BUG`. Historyczny status może obejmować analizę statyczną bez niezależnego odtworzenia. Wpis nie dowodzi pełnej zgodności, a wyników nie należy ekstrapolować.
 
 Wybrane, częściowo pokrywające się zestawy: 296/297, 195/195 i 356/356. Porażka to znany test listy frenzy; szczegóły w raporcie. Generator inwentarza, test generatora, typecheck i diff-check uruchomiono oddzielnie. W całym inwentarzu **2177 z 4158** kart ma wpis, **1981** go nie ma.
+
+## Paczka 7 — pozycje 151–270
+
+[Szczegóły 120 pozycji](batch-07-manual-02-partial.md): 100 kart bibliotecznych i 20 pierwszych crypt, w tym 2 zachowane historyczne wpisy. Nowe wpisy: 24 rozbieżności z analizy kodu bez nowych testów odtwarzających, 93 ograniczone przeglądy i 1 nierozstrzygnięty wymóg. Łącznie przejrzano w paczce **270 z 500 pozycji**; pozostałych 230 nie przejrzano w ramach tych dwóch raportów. Trzy z nich mają wcześniejsze wpisy `CONFIRMED_BUG`, które mogą obejmować analizę statyczną bez niezależnego odtworzenia.
+
+Wybrane, częściowo pokrywające się testy: 464/468, 610/611 i 62/63; listę niepowodzeń podaje raport. Pełnego zestawu nie uruchomiono. Generator inwentarza, test generatora, typecheck i diff-check uruchomiono osobno. Łącznie w inwentarzu **2295 z 4158** kart ma wpis, **1863** go nie ma. Wyników nie należy ekstrapolować.

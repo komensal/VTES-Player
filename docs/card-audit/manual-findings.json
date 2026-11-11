@@ -13032,16 +13032,724 @@
     "evidence": "Wąski zakres: Ravnos wyklucza block allies, superior podczas bleed dodaje limited +2; block-restrictions.test.ts."
   },
   {
+    "id": 102265,
+    "name": "Visions of Zapathasura",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: oba obf/pre, basic -3 bleed przeciw kontrolerowi, superior lock i set bleed 0; bleed-answers.test.ts."
+  },
+  {
+    "id": 102266,
+    "name": "Voracious Vermin",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Superior dodaje nieograniczoną dodatkową akcję strike i jedynie oferuje osobny burnEquipment: w engine.ts nadal dostępny jest hand strike oraz dowolny equipment zamiast obowiązkowego ranged strike: burn weapon. cheap-tail.test.ts bada tylko wybranie broni i brak celu, nie wyklucza innych strike/nie-broni. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 102267,
+    "name": "The Vozhd of Sofia",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique Tzimisce ghoul z kosztem po wejściu, 3R, rushem i discard za life; vozhd-allies.test.ts."
+  },
+  {
+    "id": 102268,
+    "name": "Banu Haqim Justicar",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: factory Justicar i osobny titleGrant wybierają ready Camarilla Banu Haqim i dają głosy klanu; justicars.test.ts bada rodzinę, ale lista ma znaną porażkę."
+  },
+  {
+    "id": 102269,
+    "name": "Camarilla Conclave",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master ma jedynie modifyStealth zamiast unique, wymogu justicar/Inner Circle, 4 counterów, kosztu i ograniczenia działania/votes oraz burn przy 0. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 102270,
+    "name": "Camarilla's Iron Fist",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: political action z wymaga titled Camarilla, alokuje 5 między co najmniej dwa cele i daje 1 pool wybranemu; referendum-terms.test.ts."
+  },
+  {
+    "id": 102271,
+    "name": "Confiscation",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta political action bez wymogu titled vampire, wyboru equipment i vampire oraz przeniesienia kontroli po referendum. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 102272,
+    "name": "Lasombra Justicar",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: factory Justicar i osobny titleGrant wybierają ready Camarilla Lasombra, klan z dodatkowym vote; justicars.test.ts bada rodzinę, ale lista ma znaną porażkę."
+  },
+  {
+    "id": 102273,
+    "name": "Loup",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Modifier daje jednorazowy stealth zamiast permanenta, globalnego stealth Toreador, limitu jednej kopii na turę i burn po sukcesie/na koniec tury. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 102274,
+    "name": "Amici Noctis",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Lasombra po passed referendum dzieli blood/pool wg marginesu z różnym cap przy title; referendum-margin.test.ts."
+  },
+  {
+    "id": 102275,
+    "name": "Arms of Ahriman",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic limited additional strike, superior dodge z limited additional strike; combat-strikes.test.ts."
+  },
+  {
+    "id": 102276,
+    "name": "Expulsion",
+    "status": "UNRESOLVED",
+    "evidence": "Spec wymaga kontrolowania ready primogen lub prince przez Methuselah, bez wymogu tytułu samego aktora. Czy tekst „Requires a primogen or prince” wymaga tytułu aktora czy innego kontrolowanego vampire, wymaga rozstrzygnięcia reguł; referendum-outcomes.test.ts bada wybrane skutki."
+  },
+  {
+    "id": 102277,
+    "name": "Oblivion",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: factory master discipline daje poziom Oblivion i +1 capacity, nie na superior; discipline-cards.test.ts bada rodzinę, ale jeden test zbioru ma znaną porażkę."
+  },
+  {
+    "id": 102278,
+    "name": "Ominous Chorus",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Lasombra modifier/reaction +3 votes w polling; polling-votes.test.ts."
+  },
+  {
+    "id": 102279,
+    "name": "Pass Through Shadow",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: S:CE, superior po combat attach i osobny overlay burn za stealth; after-combat-ends.test.ts."
+  },
+  {
+    "id": 102280,
+    "name": "Shadow Cast",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic stealth, superior po udanej directed action attach i osobny overlay stealth na ten sam cel; after-resolution.test.ts."
+  },
+  {
+    "id": 102281,
+    "name": "Shadow Cloak",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic stealth, superior po udanej akcji ochrona od directed bez Auspex i burn w unlock; after-resolution.test.ts."
+  },
+  {
+    "id": 102282,
+    "name": "Stygian Shroud",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic -1 intercept blockera, superior płatne fail i zakaz ponownego block; fail-block.test.ts."
+  },
+  {
+    "id": 102283,
+    "name": "Touch of Oblivion",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic strike przyłącza dwa counters blokujące unlock, superior torpor/burn ally; touch-of-oblivion.test.ts."
+  },
+  {
+    "id": 102284,
+    "name": "Truth in Darkness",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: intercept i superior płatny unlock po block; blocker-riders.test.ts."
+  },
+  {
+    "id": 102285,
+    "name": "Where the Veil Thins",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: stealth i superior koszt blood przy block dla minionów bez Oblivion; block-tax.test.ts."
+  },
+  {
+    "id": 102286,
+    "name": "Aggressive Corpse",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Hecata zombie z rush, ograniczeniem directed działań, undodgeable strike i zakazem gain life; wraith-zombie.test.ts."
+  },
+  {
+    "id": 102287,
+    "name": "Biotech Company Hunting Ground",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: wspólna factory unique hunting ground, 1 blood ready vampire i koszt 2 pool; legacy-locations.test.ts bada rodzinę."
+  },
+  {
+    "id": 102288,
+    "name": "Consign to Oblivion",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: podczas announcement koszt reaction +1 blood/life, superior opóźnia replacement; play-cost.test.ts."
+  },
+  {
+    "id": 102289,
+    "name": "Family Gathering",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Trifle działa przez permanent i onEnterPlay cryptPeek, ale tekst nie umieszcza go w grze. Po rozpatrzeniu brak burn/usunięcia: karta pozostaje jako permanent. crypt-and-uncontrolled.test.ts sprawdza tylko crypt i blood, nie końcową strefę tej karty. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 102290,
+    "name": "The Gate of Acheron",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique Hecata action, counters, unlock toll prey, dodanie przez Hecata capacity 4 i akcja burn; unlock-tolls.test.ts."
+  },
+  {
+    "id": 102291,
+    "name": "Pit of Contemplation",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Bespoke handler porównuje m.capacity zamiast capacityOf, więc nie uwzględnia np. bonusu discipline master; ponadto wysyła vampire do regionu m.controller mimo drukowanego owner. pit-of-contemplation.test.ts nie rozstrzyga tych interakcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 102292,
+    "name": "Screamer",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Hecata wraith, burn za stealth penalty lub fail action na własnego ally; wraith-zombie.test.ts."
+  },
+  {
+    "id": 102293,
+    "name": "Bone Shambler",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Hecata ally bez equipment/retainers, bleed przez inną kopię i superior Hecata za blood; wraith-zombie.test.ts."
+  },
+  {
+    "id": 102294,
+    "name": "Shadow Sentinel",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: limit raz między unlock, basic wake locked self i superior wake undead ally; wraith-zombie.test.ts."
+  },
+  {
+    "id": 102295,
+    "name": "Shroud of Decay",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic bleed +1 i discard po sukcesie, superior usuwa 7 kart z ash heap prey za burn pool; ash-heap-cards.test.ts."
+  },
+  {
+    "id": 102296,
+    "name": "Spectral Servitor",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: wraith działa od rekrutacji, unlock rekrutera, basic Oblivion nie-action i upkeep superior za pool; wraith-zombie.test.ts."
+  },
+  {
+    "id": 102297,
+    "name": "Split the Veil",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: counters, maksymalnie dwa countdowny w unlock i powrót undead ally z ash heap; wraith-zombie.test.ts."
+  },
+  {
+    "id": 102298,
+    "name": "Cappadocian Crypt",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique location po udanej akcji wymagającej Hecata lub Oblivion dodaje blood Hecata; blood-locations.test.ts."
+  },
+  {
+    "id": 102299,
+    "name": "Dead Pool",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: bespoke unique master counters po opuszczeniu ready przez vampire w combat oraz bleed/votes za counter; dead-pool.test.ts."
+  },
+  {
+    "id": 102300,
+    "name": "Paths in Two Worlds",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: modifier przy announcement rekrutacji/employ undead +1 stealth, superior płatny unlock po sukcesie; wraith-zombie.test.ts."
+  },
+  {
+    "id": 102301,
+    "name": "Powerbase: Munich",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: osobny overlay płatności blood/pool przez vampire z Oblivion i akcja burn Independent; burn-family.test.ts."
+  },
+  {
+    "id": 102302,
+    "name": "Psychophagia",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Hecata hunt usuwa ally z ash heap za blood albo mniej blood i unlock; ash-heap-cards.test.ts."
+  },
+  {
+    "id": 102303,
+    "name": "Raising the Portcullis",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Tekst ogranicza liczbę kopii jednego Methuselah, ale spec oznacza kartę unique. Engine.settleContests używa isUnique i powoduje contest kopii kontrolowanych przez różnych Methuselahów. Test opposing-statics.test.ts sprawdza aurę, nie dwie kopie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 102304,
+    "name": "Rotting Behemoth",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Hecata zombie opłaca wejście ash heap, nie zyskuje life, rush za life i superior press za life; wraith-zombie.test.ts."
+  },
+  {
+    "id": 102305,
+    "name": "Shadow Shift",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic limited additional strike albo superior maneuver; combat-strikes.test.ts."
+  },
+  {
+    "id": 102306,
+    "name": "Umbrous Clutch",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: +1 stealth rush minion, superior optional maneuver; rush-cards.test.ts."
+  },
+  {
+    "id": 102307,
+    "name": "Praxis Seizure: York",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Camarilla political title grant Prince of York; praxis-seizure.test.ts bada rodzinę, ale ma znane wcześniejsze porażki."
+  },
+  {
+    "id": 102308,
+    "name": "Absolute Tyranny",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: w polling basic +3 votes, superior -1 vote poza określoną ścieżką; referendum-outcomes.test.ts."
+  },
+  {
+    "id": 102309,
+    "name": "Abuse of Power",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: rush z +1 stealth i burn pool kontrolera przeciwnika przy jednym gotowym combatancie; rush-outcome.test.ts."
+  },
+  {
+    "id": 102310,
+    "name": "Augury of Doom",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Tekst ogranicza do jednej kopii na Methuselah, lecz unique w spec prowadzi do contest między różnymi graczami w engine.settleContests. pool-drain.test.ts nie bada dwóch kontrolerów. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 102311,
+    "name": "Burial Site Hunting Ground",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique hunting ground daje blood vampire na ścieżce Death and the Soul lub life undead ally; wraith-zombie.test.ts."
+  },
+  {
+    "id": 102312,
+    "name": "Cold War",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: titled Sabbat wybiera Methuselah/lokację, cardinal/regent może oba; referendum-terms.test.ts."
+  },
+  {
+    "id": 102313,
+    "name": "Cursed Abattoir",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: location gromadzi counter po burn własnego zombie, counter za bleed zombie ally; wraith-zombie.test.ts."
+  },
+  {
+    "id": 102314,
+    "name": "Dance of the Dead",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Zdolność combatGrantForCounter jest oferowana tylko w combat.beforeRange, choć druk nie zawęża użycia do tego okna: brak aktywacji dla niezużytej karty po przejściu przed range, np. w kroku press. Pozostałe klauzule mają implementację w compile.ts. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 102315,
+    "name": "Dance with the Devil",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Superior „can burn” daje opcjonalny dodatkowy maneuver, lecz compile.ts przy rozpatrzeniu automatycznie spala blood i daje credit bez decyzji; round-end.test.ts wprost oczekuje obowiązkowej zapłaty. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 102316,
+    "name": "Dominant Personality",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic -1 intercept blokującego, superior przy announcement wybrany vampire nie może block; fail-block.test.ts."
+  },
+  {
+    "id": 102317,
+    "name": "Dread Mastiff",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: animal 2 life z close damage, superior optional press w combat; blood-and-gear.test.ts."
+  },
+  {
+    "id": 102318,
+    "name": "Empires Fall",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Sabbat political wybiera Methuselahów i nalicza dodatkowe 3 pool przy ready capacity 8+; in-this-referendum.test.ts."
+  },
+  {
+    "id": 102319,
+    "name": "Ensnare a Beast",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: intercept, superior po block podnosi koszt strike cards działającego miniona w resulting combat; play-cost.test.ts."
+  },
+  {
+    "id": 102320,
+    "name": "Enthrall",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: bleed +1, superior płatny crypt draw po sukcesie; bleed-riders.test.ts."
+  },
+  {
+    "id": 102321,
+    "name": "Fever Pitch",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Superior rozdzielono na niezależne zagranie +1 bleed i zagranie attach po udanym bleed. after-resolution.test.ts gra tylko attach po zwykłym bleed, bez uprzedniego zagrania tej karty za +1 bleed; karta zagrana wcześniej nie otrzymuje opisanego warunkowego attach. Globalny exclusiveKey blokuje również zagranie za bleed gdy karta już leży na vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 102322,
+    "name": "Fiorella, Empty One",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique wraith, lock za stealth/intercept innego undead ally; wraith-zombie.test.ts."
+  },
+  {
+    "id": 102323,
+    "name": "Forward Momentum",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique permanent, counters po bleed Cathari i opcjonalny unlock za dwa counters po akcji; compile.ts pathBleedCounters/pathUnlockForCounters, bez osobnego testu nazwy."
+  },
+  {
+    "id": 102324,
+    "name": "Freakish Conglomeration",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: zombie basic 3/superior 4 life z rush; osobny onControllerUnlock pali life; rush-cards.test.ts."
+  },
+  {
+    "id": 102325,
+    "name": "Gifts From Hereafter",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: inny unlocked vampire daje undead acting ally limited bleed i superior płatny unlock po akcji; other-vampire-modifiers.test.ts."
+  },
+  {
+    "id": 102326,
+    "name": "Gravebound Drone",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: zombie bez equipment, prevent za life dla drugiej kopii i superior bleed za jej life; wraith-zombie.test.ts."
+  },
+  {
+    "id": 102327,
+    "name": "Heartrender",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique wraith i osobny handler remove-self/burn nie-undead ally lub retainera; wraith-zombie.test.ts."
+  },
+  {
+    "id": 102328,
+    "name": "Hedonism",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: drugi unlocked vampire powoduje fail block i lock; basic kolejkowany combat, superior bez combat; other-vampire-modifiers.test.ts."
+  },
+  {
+    "id": 102329,
+    "name": "Hunting the Quarry",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: limit na combat, basic attach z rush grant lub superior restart za blood, gdy combat ma się skończyć i obaj ready; round-end.test.ts."
+  },
+  {
+    "id": 102330,
+    "name": "Kiss of Cathari",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: S:CE i superior stun po combat przy close; stun.test.ts."
+  },
+  {
+    "id": 102331,
+    "name": "Magnetic Authority",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: po passed referendum basic 2 blood jednemu Sabbat uncontrolled albo superior 1 każdemu; referendum-margin.test.ts."
+  },
+  {
+    "id": 102332,
+    "name": "Morbidity",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: before range store do 2 blood opposing vampire, zwrot po combat i superior +1 koszt combat cards; combat-attachments.test.ts."
+  },
+  {
+    "id": 102333,
+    "name": "Pillars Fall",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: rush vampire i opcjonalny attach +1 bleed po tym jak przeciwnik nie jest ready, limit jednej kopii; rush-outcome.test.ts."
+  },
+  {
+    "id": 102334,
+    "name": "Privileged Position",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique master wymaga dwóch ready vampire na Path i lock po passed referendum za burn pool prey; referendum-outcomes.test.ts."
+  },
+  {
+    "id": 102335,
+    "name": "Putrescent Sustenance",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: usuwa ally z dowolnego ash heap za 2/3 blood lub life zombie ally; ash-heap-cards.test.ts."
+  },
+  {
+    "id": 102336,
+    "name": "Rage of Apedemak",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec stosuje addStrength na cały combat zamiast zwiększyć tylko damage hand strikes. Engine dolicza strengthBonus do strength-based melee weapon; temporary-hand-size.test.ts sprawdza strengthBonus i hand size, nie rozróżnia hand i melee. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 102337,
+    "name": "Relentlessness",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic stealth lub superior fail block i zakaz ponawiania; fail-block.test.ts."
+  },
+  {
+    "id": 102338,
+    "name": "Seeds of Terror",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: announcement, koszt blood za block i superior wyłączenie wybranego vampire; block-tax.test.ts."
+  },
+  {
+    "id": 102339,
+    "name": "Sentry Signal",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: locked vampire unlock/block albo superior reduce bleed o 3; unlock-and-block.test.ts."
+  },
+  {
+    "id": 102340,
+    "name": "Soulgrinder",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: hand strike +2, superior prevention bar dla kart wymagających Fortitude; discipline-filtered.test.ts."
+  },
+  {
+    "id": 102341,
+    "name": "Subversion",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic stealth, superior wybór limited bleed lub stealth i limited bleed; sweep.test.ts."
+  },
+  {
+    "id": 102342,
+    "name": "Swift Cover",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic combat dodge, superior modifier stealth; modifier-or-combat.test.ts."
+  },
+  {
+    "id": 102343,
+    "name": "Terrifying Visage",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master attach ma scope own, choć tekst pozwala wybrać ready vampire na ścieżce Cathari bez ograniczenia do własnego. Kod attachTargets respektuje scope; crypt-wave-3.test.ts nie dowodzi wyboru vampire innego gracza. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 102344,
+    "name": "Twisted Bloodhound",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: ghoul retainer 3 life przyznaje employerowi rush; rush-cards.test.ts."
+  },
+  {
+    "id": 102345,
+    "name": "Unholy Sacrament",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: 3 blood titled Sabbat w uncontrolled, koszt 3 pool; unholy-sacrament.test.ts."
+  },
+  {
+    "id": 102346,
+    "name": "Unthinkable Humiliation",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: koszt blood/life za block, superior wszyscy minioni -1 intercept; block-tax.test.ts."
+  },
+  {
+    "id": 102347,
+    "name": "Wall of Filth",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: before range attach z burn za 2 prevention, basic tylko non-aggravated i limit jednej kopii; combat-attachments.test.ts."
+  },
+  {
+    "id": 102348,
+    "name": "War of Ages",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: titled Sabbat political tworzy unique permanent z drain prey, oust bonus i referendum burn; pool-drain.test.ts."
+  },
+  {
+    "id": 102349,
+    "name": "Angel's Gift",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Salubri before range wybiera melee equipment z ręki lub close-only maneuver, limit na rundę; play-from-hand.test.ts."
+  },
+  {
+    "id": 102350,
+    "name": "Anticipation",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Salubri basic hand lub melee strike +2, superior płatny cancel strike card; last-combat.test.ts."
+  },
+  {
+    "id": 102351,
+    "name": "Black Market Cache",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique location przechowuje do trzech non-unique equipment, pozwala zastąpić draw i spala się przy pustym store; library-search.test.ts."
+  },
+  {
+    "id": 102352,
+    "name": "Contraband",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Ravnos before range equip non-unique z ręki, superior dopłata części kosztu z blood, limit na combat; play-from-hand.test.ts."
+  },
+  {
+    "id": 102353,
+    "name": "Dogged Pursuit",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: locked Ravnos unlock/block z relock po niepowodzeniu, superior zachowuje kartę za intercept; dogged-pursuit.test.ts."
+  },
+  {
+    "id": 102354,
+    "name": "Fleshforge Chamber",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique location przyjmuje ghoul z ręki i pozwala Tzimisce go grać; play-from-hand.test.ts."
+  },
+  {
+    "id": 102355,
+    "name": "Go-getter",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Ravnos bez bleed basic stealth, superior kontynuuje zablokowaną akcję za blood; last-equipment-modifiers.test.ts."
+  },
+  {
+    "id": 102356,
+    "name": "Hunting the Beast",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Salubri aus rush vampire z +1 stealth, superior blood do uncontrolled po spełnionym warunku combat; rush-outcome.test.ts."
+  },
+  {
+    "id": 102358,
+    "name": "Phantasmagoria",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Ravnos attach do dowolnego miniona z -1 stealth i akcją burn, superior blood/life po block; action-attachments.test.ts."
+  },
+  {
+    "id": 102359,
+    "name": "Righteous Blade",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Salubri melee strength+1 i continue-only press co combat; weapon-riders.test.ts."
+  },
+  {
+    "id": 102360,
+    "name": "Szlachta Assistant",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Tzimisce ghoul retainer burn za discount rekrutowanego ghoul ally; retainer-wave.test.ts."
+  },
+  {
+    "id": 102361,
+    "name": "Szlachta Bodyguard",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Tzimisce ghoul retainer lock za prevention lub burn za fail directed action; retainer-wave.test.ts."
+  },
+  {
+    "id": 102362,
+    "name": "Tranquility Shield",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Salubri first-round frenzy shield i 1/2 prevention co rundę; round-recurring-combat.test.ts zawiera znany niepowiązany failing klasyfikacji."
+  },
+  {
+    "id": 102363,
+    "name": "The Vozhd of Gravesend",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique Tzimisce ghoul, wejście z burn, rush, prevention i cancel strike card za life; vozhd-allies.test.ts."
+  },
+  {
+    "id": 102364,
+    "name": "The Vozhd of Juiz de Fora",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique Tzimisce ghoul, wejście z burn, rush, basic Animalism i siphon blood do life; vozhd-allies.test.ts."
+  },
+  {
+    "id": 102365,
+    "name": "The Vozhd of Szczecin",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique Tzimisce ghoul, wejście z burn, rush, discard Protean za prevention i unlock w obcej minion phase za blood; vozhd-allies.test.ts."
+  },
+  {
+    "id": 200001,
+    "name": "Aabbt Kindred (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Brak handlera crypt tej nazwy; makeVampire nie importuje drukowanego non-unique, zaś engine.uniqueMinion uznaje go za unique. Nie znaleziono implementacji zakazu directed action bez ready Nefertiti ani prevention 1 co combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200002,
+    "name": "Aaron Bathurst (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: tekst ogranicza się do Sabbat; importCryptCard parsuje sektę, a makeVampire kopiuje clan, capacity i dyscypliny. Nie testowano wszystkich mechanik importerem."
+  },
+  {
+    "id": 200003,
+    "name": "Aaron Duggan, Cameron's Toady (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: tekst ogranicza się do Sabbat; importCryptCard parsuje sektę, makeVampire kopiuje dane crypt z registry. Bez osobnego testu karty."
+  },
+  {
+    "id": 200004,
+    "name": "Abd al-Rashid (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Importer odczytuje Independent i dyscypliny, ale nie przenosi cechy Blood cursed; w engine i handlery nie znaleziono jej modelu. Karta bez osobnego crypt handlera. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
     "id": 200005,
     "name": "Abdelsobek (G5)",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak specyfikacji i handlera o tej nazwie; tekst daje akcję odblokowania wampira lub mumii. src/cards/registry.json: 200005; buildHandlerRegistry."
   },
   {
+    "id": 200006,
+    "name": "Abebe (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: tekst ogranicza się do Independent; importer parsuje sektę oraz przekazuje registry clan/capacity/dyscypliny. Bez osobnego testu karty."
+  },
+  {
+    "id": 200007,
+    "name": "Abid bin Haji, Scholar of Mirrors (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Importer odczytuje Camarilla i dyscypliny, lecz brak odczytu Blood cursed i implementacji tej cechy w engine lub osobnym handlerze. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
     "id": 200008,
     "name": "Abiku (G4)",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak specyfikacji i handlera o tej nazwie; tekst daje +1 stealth podczas hunt. src/cards/registry.json: 200008; buildHandlerRegistry."
+  },
+  {
+    "id": 200009,
+    "name": "Abu Nuwasi (G4)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: tekst ogranicza się do Laibon; importer parsuje sektę oraz przekazuje registry clan/capacity/dyscypliny. Bez osobnego testu karty."
+  },
+  {
+    "id": 200010,
+    "name": "Accorri Giovanni (G5)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: tekst ogranicza się do Independent; importer parsuje sektę, crypt self-entry z pustego flatCrypt nie dodaje zdolności. Bez osobnego testu karty."
+  },
+  {
+    "id": 200011,
+    "name": "Adana de Sforza (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt ma puste statics; importer parsuje tytuł Inner Circle, ale nie ma +2 bleed ani zniżki 1 blood na combat cards. Nie znaleziono osobnego handlera Adany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200012,
+    "name": "Adelaide Davis (G3)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: tekst ogranicza się do Camarilla; importer parsuje sektę, pusty flatCrypt nie dodaje zdolności. Bez osobnego testu karty."
+  },
+  {
+    "id": 200013,
+    "name": "Adhiambo (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt ma puste statics i brak osobnego handlera warunkowego +1 stealth do equip weapon z ręki lub rush; importer uwzględnia sektę Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200014,
+    "name": "Adonai (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt ma puste statics; brak osobnego handlera rush na ready Camarilla, +1 strength przeciw Tremere oraz +1 bleed. Importer uwzględnia Sabbat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200015,
+    "name": "Adri, The Seeker (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt ma puste statics i brak warunkowego +1 intercept przeciw Followers of Set; Independent jest odczytywane z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200016,
+    "name": "Adrianne (G1)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt ma puste statics, importer daje bazowy bleedAmount 1 i nie parsuje drukowanego +1 bleed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200017,
+    "name": "Aeron (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "flatCrypt ma puste statics; brak dodatkowego damage close i płatnego press raz na combat. Importer odczytuje Sabbat Archbishop of London. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200018,
+    "name": "Afifa, The Herald (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "cryptPerm ma puste statics, bez osobnego handlera triggera Gehenna, drain prey ani kary w discard; Camarilla jest parsowana. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200019,
+    "name": "Agaitas, The Scholar of Antiquities (G2)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "cryptPerm ma puste statics, bez osobnej implementacji opcjonalnego replacement z library prey ani karty face-up w ręce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 200020,
+    "name": "Agatha (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: tekst ogranicza się do Sabbat; importer parsuje sektę, pusty flatCrypt nie dodaje zdolności. Bez osobnego testu karty."
   },
   {
     "id": 200229,
