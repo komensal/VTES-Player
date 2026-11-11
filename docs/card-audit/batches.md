@@ -224,3 +224,9 @@ Wybrane testy: 241/242 w 10 plikach; znana porażka oczekiwania braku handlera N
 [Szczegóły 150 kart](batch-09-manual-02-partial.md), ID 201001–201150: 111 rozbieżności z analizy kodu bez nowych testów scenariuszowych i 39 ograniczonych przeglądów bez wykrytej niezgodności. Łącznie przejrzano **400 z 500 pozycji**: 299 rozbieżności i 101 ograniczonych przeglądów. Pozostałych **100** nie przejrzano w tym etapie ani w pierwszym raporcie i nie mają wcześniejszych wpisów. Wpis nie dowodzi pełnej zgodności; nie ekstrapolować wyników.
 
 Wybrane testy: 241/242 w 10 plikach; znana porażka oczekiwania braku handlera Nosferatu Kingdom. Pełnego zestawu nie uruchomiono. Generator inwentarza, test generatora, typecheck i diff-check sprawdzono osobno. W całym inwentarzu **3422 z 4158** kart ma wpis, **736** go nie ma. Historyczne `CONFIRMED_BUG` może obejmować analizę statyczną bez niezależnego odtworzenia.
+
+## Paczka 9 — pozycje 401–500 i zakończenie
+
+[Szczegóły 100 kart](batch-09-manual-03.md), ID 201151–201250: 64 rozbieżności z analizy kodu bez nowych testów scenariuszowych i 36 ograniczonych przeglądów bez wykrytej niezgodności. Wszystkie **500 pozycji** paczki mają ograniczony przegląd i wpis: 363 rozbieżności oraz 137 ograniczonych przeglądów bez wykrytej niezgodności. Wpis nie dowodzi pełnej zgodności; wyników nie ekstrapolować.
+
+Wybrane testy: 241/242 w 10 plikach; znana porażka oczekiwania braku handlera Nosferatu Kingdom. Pełnego zestawu nie uruchomiono. Generator inwentarza, test generatora, typecheck i diff-check sprawdzono osobno. W całym inwentarzu **3522 z 4158** kart ma wpis, **636** go nie ma. Historyczne `CONFIRMED_BUG` może obejmować analizę statyczną bez niezależnego odtworzenia.
