@@ -272,3 +272,9 @@ Wybrane testy: 114/114 w 13 plikach; dodatkowy zestaw 86/89 w 6 plikach, trzy zn
 [Raport](batch-11-manual-03-partial.md) obejmuje 25 kart z ID 100055–100096 według manifestu: 7 statycznych rozbieżności bez nowego scenariusza, 15 ograniczonych przeglądów bez wykrytej niezgodności oraz 3 nierozstrzygnięte. W paczce łącznie wpisy ma **94/136** kart, pozostało **42**; w całym inwentarzu **4116/4158** ma wpis. Ograniczony przegląd nie dowodzi pełnej zgodności.
 
 Wybrane testy: 141/142 w 12 plikach, znana porażka listy klanów `referendum-terms.test.ts:301`; dodatkowe 62/62 w 6 plikach. Pełnego zestawu nie uruchomiono. Generator, test inwentarza, typecheck i diff-check sprawdzono osobno.
+
+## Paczka 11 — następne 20 kart biblioteki
+
+[Raport](batch-11-manual-04-partial.md) obejmuje 20 kart z ID 100099–100212 według manifestu: 8 statycznych rozbieżności bez nowego scenariusza i 12 ograniczonych przeglądów bez wykrytej niezgodności. W paczce łącznie wpisy ma **114/136** kart, pozostały **22**; w całym inwentarzu **4136/4158** ma wpis. Ograniczony przegląd nie dowodzi pełnej zgodności.
+
+Wybrane testy: 224/226 w 19 plikach; znane porażki listy dyscyplin `burn-the-equipment.test.ts:132` i klasyfikacji frenzy `round-recurring-combat.test.ts:624`. Pełnego zestawu nie uruchomiono. Generator, test inwentarza, typecheck i diff-check sprawdzono osobno.

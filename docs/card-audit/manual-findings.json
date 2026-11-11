@@ -588,16 +588,34 @@
     "evidence": "Zastąpiono gainPool przez unique master z +2 strength na ready Toreador antitribu, z zachowaniem clan requirement i kosztu 2 pool; testy celowania, unikalności i rzeczywistych obrażeń tests/cards/audit-batch-100.test.ts. Tekst: src/cards/registry.json, ID 100098; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100099,
+    "name": "Art Scam",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "actionStealth 1, actionGainPool 2 i requiresClan Toreador antitribu; legacy-actions.test.ts sprawdza wypłatę 2 pool przy ustawionym klanie, nie negatywny warunek klanu. Ograniczony zakres."
+  },
+  {
     "id": 100100,
     "name": "Art's Traumatic Essence",
     "status": "CONFIRMED_BUG",
     "evidence": "Oba tryby action zawierają tylko stealth; brak lock celu, blood/life i superior dołączenia. Tekst: src/cards/registry.json, ID 100100; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100101,
+    "name": "Artistically Inept",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Nakładka wymaga kontrolowanego ready Brujah dla zagrania master; attach dowolny ready Brujah, bar Toreador i vulnerableTo Toreador. block-taxes.test.ts sprawdza block i opcję burn, nie pełne celowanie attach. Ograniczony zakres."
+  },
+  {
     "id": 100102,
     "name": "As the Crow",
     "status": "CONFIRMED_BUG",
     "evidence": "Modifier daje stealth zamiast unlock po udanej akcji i ograniczenia jednej kopii. Tekst: src/cards/registry.json, ID 100102; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100103,
+    "name": "Asanbonsam Ghoul",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally spec ma tylko podstawowe statystyki i modifyIntercept, bez wymogu klanu Tzimisce, subtype ghoul, stałego intercept wyłącznie dla directed action ani ustawienia close range w pierwszej rundzie po bloku; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego."
   },
   {
     "id": 100104,
@@ -618,6 +636,24 @@
     "evidence": "Master daje natychmiast gainPool 3 zamiast odkładania trzech kopii, limitu per turn, usuwania kopii i wybierania kart z ash heap. Tekst: src/cards/registry.json, ID 100106; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100107,
+    "name": "Assault Rifle",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "weapon 4R z maneuverPerCombat oraz tag gun; weapons.test.ts rozgrywa maneuver na long i strike za 4. Nie sprawdzono wszystkich interakcji equipment. Ograniczony zakres."
+  },
+  {
+    "id": 100108,
+    "name": "Asylum Hunting Ground",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Fabryka huntingGround tworzy unique location, gain blood i limit hunting ground; masterClanRequirements dodaje wymaganie Malkavian. Testy rodziny badają wybrane przypadki, nie każdy wariant tej konkretnej karty. Ograniczony zakres."
+  },
+  {
+    "id": 100109,
+    "name": "Atonement",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Nadruk wymaga vampire o capacity co najwyżej 5; spec ma requiresMaxCapacity, ale nie requiresVampire. compileActionCard wybiera canAct minions, a meetsRequirements ogranicza capacityOf bez testu kind, zatem ally spełniający pozostałe warunki może przejść ten filtr. lock-as-price.test.ts bada progi vampire, nie ally. Statyczna analiza bez nowego testu scenariuszowego."
+  },
+  {
     "id": 100110,
     "name": "Augur",
     "status": "CONFIRMED_BUG",
@@ -628,6 +664,12 @@
     "name": "Aura Absorption",
     "status": "CONFIRMED_BUG",
     "evidence": "Basic myt i aus łączą stealth z intercept; brak osobnego superior modifier i wymogu spalenia blood w aus. Tekst: src/cards/registry.json, ID 100111; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100112,
+    "name": "Aura of Invincibility",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Bespoke auraOfInvincibility uzupełnia kompilowany attach o liczniki, vote bonus, burn i torpor oraz limit kopii; referendum-outcomes.test.ts sprawdza przejście, ponowne przejście, failure i cancellation, w wybranych stanach. Ograniczony zakres."
   },
   {
     "id": 100113,
@@ -708,6 +750,12 @@
     "evidence": "Sprawdzony zakres: maneuver tylko na long i press przeciwnika po zadaniu obrażeń; tests/cards/cancel-in-combat.test.ts. Źródła: src/cards/registry.json ID 100125; src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100126,
+    "name": "Backways",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec lockGrant stealth dla własnego Gangrel, unique location; masterClanRequirements wymaga ready Gangrel. clan-sect.test.ts i master-clan-requirements.test.ts sprawdzają wybrane pozytywne i negatywne przypadki. Ograniczony zakres."
+  },
+  {
     "id": 100127,
     "name": "Baleful Doll",
     "status": "CONFIRMED_BUG",
@@ -730,6 +778,12 @@
     "name": "Bang Nakh — Tiger's Claws",
     "status": "REVIEWED_NO_ISSUE_FOUND",
     "evidence": "W sprawdzonym zakresie koszt i melee strength+2; test obrażeń i zależności od strength tests/cards/legacy-weapons.test.ts. Tekst: src/cards/registry.json, ID 100130; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100131,
+    "name": "Banishment",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Bespoke referendumTerms porównuje m.capacity z actor.capacity, zamiast capacityOf uwzględniającego capacityBonus z kart. Zmiana capacity może zatem zmienić prawidłowy wybór younger vampire bez zmiany oferowanych terms; politics.test.ts sprawdza tylko bazowe wartości. Statyczna analiza bez nowego testu scenariuszowego."
   },
   {
     "id": 100132,
@@ -810,6 +864,12 @@
     "evidence": "Modifier daje bleed i prevent zamiast porównania crypt, warunkowej szkody albo zakończenia combat i dołączenia karty. Tekst: src/cards/registry.json, ID 100144; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100145,
+    "name": "Bear's Skin",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Basic combatCredits dla rundy, superior combat strength i preventEachRound, limit combat; round-recurring-combat.test.ts bada stany i odświeżanie credits oraz jedno faktyczne prevention, nie wszystkie interakcje. Ograniczony zakres."
+  },
+  {
     "id": 100146,
     "name": "Beast Meld",
     "status": "REVIEWED_NO_ISSUE_FOUND",
@@ -820,6 +880,12 @@
     "name": "The Becoming",
     "status": "CONFIRMED_BUG",
     "evidence": "Action ma tylko stealth, nie tworzy wampira i nie obsługuje dyscyplin, krwi ani ograniczeń. Tekst: src/cards/registry.json, ID 100147; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100148,
+    "name": "Becoming of Ennoia",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Event z gate 2 Gehenna kontrolowanych przez innych, delayedReplace discard, choice damage oraz modyfikatorem kosztu Earth Meld; gehenna-unlock.test.ts sprawdza gate i obowiązkową listę wyboru, nie obrażenia i koszt w pełnym scenariuszu. Ograniczony zakres."
   },
   {
     "id": 100149,
@@ -876,6 +942,12 @@
     "evidence": "W sprawdzonym zakresie referendum polling i +2/+4 votes; tests/cards/polling-votes.test.ts. Źródła: src/cards/registry.json ID 100157; src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100158,
+    "name": "Beyond Reproach",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec wymaga prince, refPutInPlay, global aura dla primogen oraz vulnerable referendum; table-referendums.test.ts sprawdza zakaz politycznej akcji, mimo nazwy testu nie asercję wartości vote. Pozostałe klauzule nie są tu osobno odtworzone. Ograniczony zakres."
+  },
+  {
     "id": 100159,
     "name": "Big Game",
     "status": "CONFIRMED_BUG",
@@ -910,6 +982,12 @@
     "name": "The Black Beast",
     "status": "CONFIRMED_BUG",
     "evidence": "Combatu nie dołącza jako karty, zamiast warunkowego +1 strength oraz spalania dla press do kontynuowania ma ogólny press i addStrength. Źródła: src/cards/registry.json ID 100164; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100165,
+    "name": "Black Forest Base",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec wymaga kontrolowanego ready Sabbat, daje raz na turę politicalGrant 2 pool oraz burn przez changeling; politics-locations.test.ts sprawdza payout, raz/turę, sect gate i brak opcji dla zwykłego ally, nie pozytywną akcję changeling. Ograniczony zakres."
   },
   {
     "id": 100166,
@@ -948,6 +1026,12 @@
     "evidence": "Reaction daje modifyIntercept zamiast unlock i próby bloku; brak superior i warunku directed dla basic. Źródła: src/cards/registry.json ID 100171; src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100172,
+    "name": "The Black Throne",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec lockGrant +2 votes uzupełnia bespoke onLeaveReady z opcjonalnym payout za kontrakt na minionie i wybranym Banu Haqim. lock-grant-locations.test.ts sprawdza głosy i wybrane pozytywne i negatywne przypadki kontraktu. Ograniczony zakres."
+  },
+  {
     "id": 100173,
     "name": "Blackmail",
     "status": "CONFIRMED_BUG",
@@ -976,6 +1060,12 @@
     "name": "Blanket of Night",
     "status": "CONFIRMED_BUG",
     "evidence": "Basic stealth jest obecny, ale brak superior granej innym gotowym wampirem: lock i nieudana próba bloku. Źródła: src/cards/registry.json ID 100177; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100178,
+    "name": "Bleeding the Vine",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Rejestr zastępuje spec handlerem bleedingTheVine z fabryki outOfTurnCancel: gra kartę z ręki jako out-of-turn cancel. Brakuje wejścia unique master do gry i unlock-phase lock-or-burn, a cancellation nie używa lock karty w grze. To odmienne od nadruku. Statyczna analiza bez nowego testu scenariuszowego."
   },
   {
     "id": 100179,
@@ -1056,6 +1146,12 @@
     "evidence": "Action ma jedynie modifyStealth zamiast dołączania, ograniczenia jednej kopii i warunkowego burn w combacie. Źródła: src/cards/registry.json ID 100191; src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100192,
+    "name": "Blood Agony",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Superior używa handStrikesAggravatedCombat, odczytywanego w engine.ts w gałęzi strength-based strike.damage === null i !ranged, nie według tagu melee. Wydruk obejmuje także melee weapon strikes o stałym damage. blood-agony.test.ts sprawdza jedynie hand strikes obu poziomów. Statyczna analiza bez nowego testu scenariuszowego."
+  },
+  {
     "id": 100193,
     "name": "Blood Awakening",
     "status": "CONFIRMED_BUG",
@@ -1066,6 +1162,12 @@
     "name": "Blood Bond",
     "status": "CONFIRMED_BUG",
     "evidence": "Action ma tylko stealth, bez dołączenia do wampira i zakazu blokowania aktora. Źródła: src/cards/registry.json ID 100194; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100195,
+    "name": "Blood Brother Ambush",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec zawiera burnAtCombatEnd, ale compileModifierOrReaction udostępnia allyEntry i permanentTags bez permanentStatics; putAllyFromCardInPlay tworzy self-attachment ze statics handlera albo {}, a burnOneFightAllies sprawdza tę statykę. Dlatego ścieżka końca/anulowania walki nie dostaje flagi. no-combat.test.ts sprawdza wejście do walki, nie usunięcie ally. Statyczna analiza bez nowego testu scenariuszowego."
   },
   {
     "id": 100196,
@@ -1086,6 +1188,12 @@
     "evidence": "Event ma pustą specyfikację bez inquisition, wymogu imbued i modyfikatorów kosztu/stealth. Źródła: src/cards/registry.json ID 100198; src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100199,
+    "name": "Blood Doll",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Bespoke bloodDoll.options mapuje wszystkie minions kontrolera bez filtra kind vampire, mimo wymogu karty „on a vampire you control”. permanents.test.ts sprawdza wybór własnego vampire, nie wykluczenie ally. Statyczna analiza bez nowego testu scenariuszowego."
+  },
+  {
     "id": 100200,
     "name": "Blood Feast",
     "status": "REVIEWED_NO_ISSUE_FOUND",
@@ -1096,6 +1204,12 @@
     "name": "Blood Fury",
     "status": "FIXED_TARGETED",
     "evidence": "Naprawiono zerowanie weapon damage wobec ally (tekst dotyczy opposing vampire); tests/cards/discipline-filtered.test.ts. Pozostałe zakresy w batch-04-manual-01.md."
+  },
+  {
+    "id": 100202,
+    "name": "Blood Hunt",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "requiresTitle prince/justicar, targetFilter vampire bez trzech tytułów także w torporze oraz rushGrant other controller; marked-vampires.test.ts sprawdza wybór, stealth i attach, nie wszystkie interakcje rushGrant. Ograniczony zakres."
   },
   {
     "id": 100203,
@@ -1150,6 +1264,12 @@
     "name": "Blood Sweat",
     "status": "REVIEWED_NO_ISSUE_FOUND",
     "evidence": "W sprawdzonym zakresie long range i 2R/3R unpreventable; tests/cards/blood-sweat.test.ts. Źródła: src/cards/registry.json ID 100211; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100212,
+    "name": "Blood Tears of Kephran",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Nadruk daje obie możliwości „the vampire with this equipment”; burnForBlood ma filtr bearer.kind vampire, lecz gałąź burnToPrevent w addEquipmentAbilities go nie sprawdza. W oknie obrażeń może zatem oferować zapłatę ally-bearerowi. Istniejący test Blood Tears bada zysk blood, nie ten przypadek. Statyczna analiza bez nowego testu scenariuszowego."
   },
   {
     "id": 100213,
