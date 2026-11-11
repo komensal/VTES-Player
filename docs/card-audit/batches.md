@@ -254,3 +254,9 @@ Wybrane testy: 241/242 w 10 plikach; znana porażka oczekiwania braku handlera N
 [Szczegóły 100 kart](batch-10-manual-04.md), ID 201651–201751 bez 201701: 20 rozbieżności z analizy kodu bez nowych testów scenariuszowych, 79 ograniczonych przeglądów i 1 nierozstrzygnięty przypadek. Wszystkie **500 pozycji** paczki mają wpis: 250 rozbieżności, 249 ograniczonych przeglądów i 1 nierozstrzygnięty. Wpis nie dowodzi pełnej zgodności; wyników nie ekstrapolować.
 
 Wybrane testy: 241/242 w 10 plikach, znana porażka oczekiwania braku handlera Nosferatu Kingdom; dodatkowo filtrowany test Oluwafunmilayo 1/1. Pełnego zestawu nie uruchomiono. Generator inwentarza, test generatora, typecheck i diff-check sprawdzono osobno. W całym inwentarzu **4022 z 4158** kart ma wpis, **136** go nie ma. Historyczne `CONFIRMED_BUG` może obejmować analizę statyczną bez niezależnego odtworzenia.
+
+## Paczka 11 — 35 crypt i dziewięć dyscyplin, częściowo
+
+[Manifest](batch-11-ids.json) obejmuje 136 pozycji bez wcześniejszych wpisów; [przegląd 44 kart](batch-11-manual-01-partial.md) dotyczy crypt 201752–201786 i kart dyscyplin 900001–900009. Wynik: 4 rozbieżności z analizy kodu bez nowych scenariuszy odtwarzających i 40 ograniczonych przeglądów bez wykrytej niezgodności. Pozostałe **92** pozycje manifestu w tej turze nie mają wpisu; wpis nie dowodzi pełnej zgodności.
+
+Dodano 27 testów dziewięciu dyscyplin (27/27); wybrane testy crypt-wave/supported 190/191 w 8 plikach, znana porażka dotycząca Nosferatu Kingdom. Pełnego zestawu nie uruchomiono. Generator inwentarza, jego test, typecheck i diff-check sprawdzono osobno. W całym inwentarzu **4066 z 4158** kart ma wpis, **92** go nie mają.

@@ -24130,5 +24130,269 @@
     "name": "Fotini Katsikaris (G6)",
     "status": "REVIEWED_NO_ISSUE_FOUND",
     "evidence": "bleedSuccessHandSize przy successful bleed za co najmniej 1; crypt-wave-6.test.ts sprawdza bonus i wygaśnięcie w discard phase. Ograniczony zakres; bez nowego scenariusza."
+  },
+  {
+    "id": 201752,
+    "name": "Frau Schädel (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Warunkowy stealth dla actionCardTypes ally/retainer; porównano spec i odczyt typu akcji w derived.ts, bez testu rekrutacji/employ tej karty. Ograniczony zakres."
+  },
+  {
+    "id": 201753,
+    "name": "Glissando (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201754,
+    "name": "Gostoso (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Tekst dopuszcza decyzję o zdobyciu blood; bleedSuccessBlood w compile.ts automatycznie emituje BloodGained bez opcji odmowy. Komentarz cards.ts świadomie przyjmuje automatyzację; crypt-wave-4.test.ts sprawdza zdobycie, nie wybór. Analiza kodu bez nowego scenariusza."
+  },
+  {
+    "id": 201755,
+    "name": "Grażyna \"Butcher\" Olesińska (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat bishop.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201756,
+    "name": "Hekla \"Bonecrusher\" Jónasdóttir (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201757,
+    "name": "Huldu, The Desecrator (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Tekst wymaga ready Huldu; preventForOther w compile.ts sprawdza istnienie bearer i blood, ale nie isReady, a abilityOptionsFor przegląda także attached minionów w torpor. Spec daje też +1 bleed. Analiza bez nowego scenariusza."
+  },
+  {
+    "id": 201758,
+    "name": "Jürgen, The Libertine (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "blockToll 1 bloodOrLife; crypt-wave-1.test.ts bada koszt próby block przez vampire, a nie wszystkie typy minionów. Ograniczony zakres."
+  },
+  {
+    "id": 201759,
+    "name": "Kalyani, Agent of Doom (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec zawiera -1 stealth na hunt i +1 strength; porównano warunek i statyki, bez osobnego testu karty. Ograniczony zakres."
+  },
+  {
+    "id": 201760,
+    "name": "Khin Aye (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "conditional handSize przy większej liczbie ready minionów predatora; crypt-wave-1.test.ts sprawdza remis i przewagę predatora. Ograniczony zakres."
+  },
+  {
+    "id": 201761,
+    "name": "Lawbringer (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201762,
+    "name": "Lika, The Purger (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201763,
+    "name": "Loyiso, The Ruthless (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201764,
+    "name": "Lyyli Yösydän (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201765,
+    "name": "Nadezhda (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201766,
+    "name": "Onkabetse, Arriviste (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201767,
+    "name": "Osvaldo Kühnemann (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "conditional bleed przy docelowym Methuselah kontrolującym Toreador lub Ventrue; derived.ts sprawdza klany minionów target seat, bez nowego scenariusza. Ograniczony zakres."
+  },
+  {
+    "id": 201768,
+    "name": "Przemysław, War Beast (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat bishop.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201769,
+    "name": "Rasha Tarabzouni (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat bishop.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201770,
+    "name": "Rexton \"Savage\" Abernathy (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec blokuje ally lub vampire capacity <=3; crypt-wave-1.test.ts sprawdza ally, małego i dużego vampire. Ograniczony zakres."
+  },
+  {
+    "id": 201771,
+    "name": "Sakura, The Merciless (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "unlockAfterAction sprawdza path aktora i obecność dowolnej karty akcji zamiast sprawdzić czy sama akcja wymaga Path of Death and the Soul. Test crypt-wave-2.test.ts sprawdza jedynie brak oferty przy zwykłym bleed. Analiza bez nowego scenariusza."
+  },
+  {
+    "id": 201772,
+    "name": "Serhat Gunde, Combat Junkie (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec daje 1 pressPerCombat, który engine oferuje opcjonalnie jako credit; bez osobnego scenariusza tej karty. Ograniczony zakres."
+  },
+  {
+    "id": 201773,
+    "name": "Surapong (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201774,
+    "name": "Suwira (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201775,
+    "name": "Üresség (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec przewiduje bleed i vote przy prey pool <=10; crypt-wave-1.test.ts sprawdza tylko bleed po obu stronach granicy, nie wynik vote. Ograniczony zakres."
+  },
+  {
+    "id": 201776,
+    "name": "Věnceslava, The Implacable (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Tekst pozwala wybrać zysk pool raz na turę; actionPoolGain automatycznie emituje PoolGained i oznacza usedThisTurn, bez możliwości odmowy i zachowania użycia na późniejszą akcję. Istniejące testy badają dodatni i ujemny trigger, nie wybór. Analiza bez nowego scenariusza."
+  },
+  {
+    "id": 201777,
+    "name": "Verrix, Naughty Boy (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec daje stealth tylko dla actionKind bleed; porównano z warunkiem w derived.ts, bez osobnego scenariusza tej karty. Ograniczony zakres."
+  },
+  {
+    "id": 201778,
+    "name": "Ximena (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201779,
+    "name": "Yurena, The Boor (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201780,
+    "name": "Zbigniew, Hunter of Mekhet (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Sabbat.”; importCryptCard rozpoznaje sect i ewentualny tytuł bishop, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariusza."
+  },
+  {
+    "id": 201781,
+    "name": "Barachiel (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "rush targets minion przekazywany przez compileCrypt do rushGrant; bez osobnego scenariusza. Ograniczony zakres."
+  },
+  {
+    "id": 201782,
+    "name": "Djeneba (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec daje stealth oraz koszt strike przeciwnika bloodOrLife; crypt-wave-5.test.ts sprawdza przeciwnika, ally i nie-strike jako kontrolę w wybranych stanach. Ograniczony zakres."
+  },
+  {
+    "id": 201783,
+    "name": "Hafthor Thorsteinsson (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Statyka +1 intercept; sect Anarch importowana osobno, bez osobnego scenariusza. Ograniczony zakres."
+  },
+  {
+    "id": 201784,
+    "name": "Máddji, Mistress of Szlachtas (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Zniżka bloodOrPool dla ally/retainer requiring Tzimisce; crypt-wave-4.test.ts sprawdza retainer i negatywne klan/typ; bez pełnej macierzy kosztów. Ograniczony zakres."
+  },
+  {
+    "id": 201785,
+    "name": "Noluthando (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec ma rangedDamageBonus 1; crypt-wave-3.test.ts sprawdza statykę i brak bonusu dla hand strike, nie faktyczny ranged strike. Ograniczony zakres."
+  },
+  {
+    "id": 201786,
+    "name": "Saankaláxt (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "grantedAction stealEquipment directed za 1 blood; porównano spec i kompilator, bez osobnego scenariusza. Ograniczony zakres."
+  },
+  {
+    "id": 900001,
+    "name": "Mythercerer",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec dyscypliny myt: +1 poziom, +1 capacity i zakaz celu z superior; nowy bloodline-discipline-audit.test.ts sprawdza dla tej karty none→basic, basic→superior, capacity i zakaz celu superior. Triage uppercase_level_without_superior_mode to fałszywy alarm: wielkie litery oznaczają zakaz superior, nie tryb karty. Ograniczony zakres."
+  },
+  {
+    "id": 900002,
+    "name": "Obeah",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec dyscypliny obe: +1 poziom, +1 capacity i zakaz celu z superior; nowy bloodline-discipline-audit.test.ts sprawdza dla tej karty none→basic, basic→superior, capacity i zakaz celu superior. Triage uppercase_level_without_superior_mode to fałszywy alarm: wielkie litery oznaczają zakaz superior, nie tryb karty. Ograniczony zakres."
+  },
+  {
+    "id": 900003,
+    "name": "Valeren",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec dyscypliny val: +1 poziom, +1 capacity i zakaz celu z superior; nowy bloodline-discipline-audit.test.ts sprawdza dla tej karty none→basic, basic→superior, capacity i zakaz celu superior. Triage uppercase_level_without_superior_mode to fałszywy alarm: wielkie litery oznaczają zakaz superior, nie tryb karty. Ograniczony zakres."
+  },
+  {
+    "id": 900004,
+    "name": "Visceratika",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec dyscypliny vis: +1 poziom, +1 capacity i zakaz celu z superior; nowy bloodline-discipline-audit.test.ts sprawdza dla tej karty none→basic, basic→superior, capacity i zakaz celu superior. Triage uppercase_level_without_superior_mode to fałszywy alarm: wielkie litery oznaczają zakaz superior, nie tryb karty. Ograniczony zakres."
+  },
+  {
+    "id": 900005,
+    "name": "Daimaite",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec dyscypliny dai: +1 poziom, +1 capacity i zakaz celu z superior; nowy bloodline-discipline-audit.test.ts sprawdza dla tej karty none→basic, basic→superior, capacity i zakaz celu superior. Triage uppercase_level_without_superior_mode to fałszywy alarm: wielkie litery oznaczają zakaz superior, nie tryb karty. Ograniczony zakres."
+  },
+  {
+    "id": 900006,
+    "name": "Melpominee",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec dyscypliny mel: +1 poziom, +1 capacity i zakaz celu z superior; nowy bloodline-discipline-audit.test.ts sprawdza dla tej karty none→basic, basic→superior, capacity i zakaz celu superior. Triage uppercase_level_without_superior_mode to fałszywy alarm: wielkie litery oznaczają zakaz superior, nie tryb karty. Ograniczony zakres."
+  },
+  {
+    "id": 900007,
+    "name": "Spiritus",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec dyscypliny spi: +1 poziom, +1 capacity i zakaz celu z superior; nowy bloodline-discipline-audit.test.ts sprawdza dla tej karty none→basic, basic→superior, capacity i zakaz celu superior. Triage uppercase_level_without_superior_mode to fałszywy alarm: wielkie litery oznaczają zakaz superior, nie tryb karty. Ograniczony zakres."
+  },
+  {
+    "id": 900008,
+    "name": "Temporis",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec dyscypliny tem: +1 poziom, +1 capacity i zakaz celu z superior; nowy bloodline-discipline-audit.test.ts sprawdza dla tej karty none→basic, basic→superior, capacity i zakaz celu superior. Triage uppercase_level_without_superior_mode to fałszywy alarm: wielkie litery oznaczają zakaz superior, nie tryb karty. Ograniczony zakres."
+  },
+  {
+    "id": 900009,
+    "name": "Thanatosis",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec dyscypliny thn: +1 poziom, +1 capacity i zakaz celu z superior; nowy bloodline-discipline-audit.test.ts sprawdza dla tej karty none→basic, basic→superior, capacity i zakaz celu superior. Triage uppercase_level_without_superior_mode to fałszywy alarm: wielkie litery oznaczają zakaz superior, nie tryb karty. Ograniczony zakres."
   }
 ]
