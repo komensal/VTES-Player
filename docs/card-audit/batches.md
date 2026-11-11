@@ -128,3 +128,9 @@ Razem 144 z tych 200 kart nadal nie ma ręcznego wpisu. W całym inwentarzu taki
 [Pozycje 601–750](batch-04-manual-09-partial.md) oraz [911–930](batch-04-manual-10-partial.md): 77 nowych wpisów — 58 przeglądów bez wykrytej niezgodności **tylko w opisanym zakresie**, 17 rozbieżności stwierdzonych w kodzie bez nowego testu scenariuszowego (`CODE_DISCREPANCY`) i dwa przypadki nierozstrzygnięte (`UNRESOLVED`). Istniejące testy uruchomiono dla wybranych zakresów; raporty podają wyniki i ograniczenia.
 
 W pozycjach 501–1000 jest 387 kart z wpisem, 113 bez wpisu; dwa wpisy są nierozstrzygnięte. W całym inwentarzu jest 915 kart z wpisem i 3243 bez wpisu. Historyczne `CONFIRMED_BUG` nie gwarantuje testu scenariuszowego: należy czytać dowody indywidualnych wpisów, a nie utożsamiać ten status z jednolitym poziomem pewności.
+
+## Paczka 4 — uzupełnienie wpisów w pozycjach 501–1000
+
+[Pozycje 931–1000](batch-04-manual-11-partial.md) i [pominięte pozycje 751–910](batch-04-manual-12-partial.md): 113 nowych wpisów, w tym 40 rozbieżności w kodzie bez nowego testu scenariuszowego oraz 73 ograniczone przeglądy bez wykrytej niezgodności w opisanym zakresie. Wybrane istniejące testy: 353/353 i 498/498 w dwóch częściowo pokrywających się zestawach; typecheck i diff-check poprawne. Pełnego zestawu nie uruchomiono.
+
+W pozycjach 501–1000 każda z **500 kart** ma teraz wpis: 259 historycznych `CONFIRMED_BUG`, 57 `CODE_DISCREPANCY`, 175 ograniczonych przeglądów bez wykrytej niezgodności, 7 celowanych napraw i 2 `UNRESOLVED`. Historyczny `CONFIRMED_BUG` nie gwarantuje odtworzenia testem, a ograniczony przegląd nie oznacza pełnej zgodności. Nierozstrzygnięte: Focus the Blood i Fragment of the Book of Nod. W całym inwentarzu 1028 z 4158 kart ma wpis, 3130 nadal nie ma wpisu.
