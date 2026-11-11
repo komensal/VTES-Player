@@ -8013,7 +8013,7 @@ export const cardSpecs: CardSpec[] = [
         },
       },
       tags: ["Charisma"],
-      attach: { scope: "own", kind: "vampire" },
+      attach: { scope: "any", kind: "vampire" },
     },
     usable: [],
     modes: [{ level: "basic", discipline: null, effects: [] }],
@@ -19981,8 +19981,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "strikeHandBonus", bonus: 2 }] },
-      { level: "basic", discipline: "thn", effects: [{ kind: "strikeDamage", amount: 2, ranged: false, aggravated: true }] },
+      { level: "basic", discipline: "pot", variant: "pot", effects: [{ kind: "strikeHandBonus", bonus: 2 }] },
+      { level: "basic", discipline: "thn", variant: "thn", effects: [{ kind: "strikeDamage", amount: 2, ranged: false, aggravated: true }] },
       { level: "superior", discipline: "thn", effects: [{ kind: "strikeDamage", amount: 3, ranged: false, aggravated: true }] },
     ],
   },
@@ -19994,9 +19994,9 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false }] },
-      { level: "superior", discipline: "dai", variant: "one", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }] },
-      { level: "superior", discipline: "dai", variant: "two", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: true }] },
+      { level: "basic", discipline: "pot", variant: "pot", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false }] },
+      { level: "basic", discipline: "dai", variant: "dai", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: true }] },
     ],
   },
   {
@@ -21520,14 +21520,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Changeling [100324] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Changeling: the bleed restriction belongs only to inferior Vicissitude.
     krcgId: 100324,
     name: "Changeling",
     cardType: "actionModifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "vic", usable: ["onlyDuringBleed"], effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }] },
     ],
   },
   {
@@ -21686,14 +21687,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Command of the Beast [100381] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Superior does not count against the limited bleed modifier rule.
     krcgId: 100381,
     name: "Command of the Beast",
     cardType: "actionModifier",
     bloodCost: 0,
-    usable: [],
+    usable: ["onlyDuringBleed"],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
+      { level: "superior", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: false }] },
     ],
   },
   {
@@ -21714,7 +21716,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Confusion",
     cardType: "actionModifier",
     bloodCost: 0,
-    usable: [],
+    usable: ["onlyDuringBleed"],
     modes: [
       { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
       {

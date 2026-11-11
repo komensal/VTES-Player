@@ -75,3 +75,16 @@ W tej turze poprawiono Biothaumaturgic Experiment i Blood Buff; w zakresie jest 
 | Nierozstrzygnięte | 17 |
 
 Naprawy: Blood Trade, Blooding by the Code, Bollix, Cardinal Benediction, Carver's Meat Packing and Storage, Cave of Apples. Wspólna poprawka Bollix dotyczy także Blood Fury z poprzedniej setki; nie oznacza zamknięcia wszystkich interakcji. Bez ręcznego rozstrzygnięcia w całym rejestrze: **3917 z 4158** (w tym 17 nierozstrzygniętych z tej setki). To nie liczba kart poprawnych.
+
+## Paczka 4 — ręczna kontynuacja, trzecia setka
+
+[Karta po karcie](batch-04-manual-03.md): ID 100315–100414, pozycje 201–300 manifestu. Chanjelin Ward miał wcześniejszy wpis.
+
+| Wynik | Liczba |
+|---|---:|
+| Bez wykrytej niezgodności w sprawdzonym zakresie | 27 |
+| Naprawa celowana | 6 |
+| Potwierdzone błędy nadal wymagające naprawy | 62 |
+| Nierozstrzygnięte | 5 |
+
+Naprawy: Changeling, Charisma, Command of the Beast, Compress, Conflagration i Confusion. Pozycje bez wykrytej niezgodności nie są dowodem pełnej poprawności; pozostaje **3823 z 4158** bez ręcznego rozstrzygnięcia, w tym 5 nierozstrzygniętych z tej setki.

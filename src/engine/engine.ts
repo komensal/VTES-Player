@@ -136,16 +136,17 @@ import {
 
 
 /**
- * The first discipline code printed on the spec's mode matching `level`,
- * falling back to the basic mode when `level` is null.
+ * The first discipline code printed on the selected mode. A variant
+ * distinguishes same-level modes that require different disciplines.
  */
 function disciplineOf(
   name: string,
   level: DisciplineLevel | null,
+  variant?: string,
 ): string | undefined {
   const spec = cardSpecs.find((s) => s.name === name);
   if (!spec) return undefined;
-  const mode = spec.modes.find((m) => m.level === (level ?? "basic"));
+  const mode = spec.modes.find((m) => m.level === (level ?? "basic") && (variant === undefined || m.variant === variant));
   if (!mode) return undefined;
   const d = mode.discipline;
   if (!d) return undefined;
@@ -13678,7 +13679,7 @@ export class VtesEngine implements EngineOps {
       }
     }
     const cf = this.combatFrame();
-    const discipline = disciplineOf(card.name, option.mode);
+    const discipline = disciplineOf(card.name, option.mode, option.params["variant"]);
     const target = cf ? getMinion(this.state, cf.opposing)?.name : undefined;
     this.emit({
       type: "CardPlayed",
