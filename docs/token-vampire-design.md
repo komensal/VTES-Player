@@ -22,10 +22,10 @@ p. 42:
 > **Sterile:** Sterile vampires cannot perform actions to put new vampires
 > in play.
 
-That is worth having in full, because it is the *general* rule these two
-cards are the instance of: they are the only "actions to put new vampires
-in play" in the pool, so the word "non-sterile" on them is the rulebook's
-own cross-reference.
+That is a *general* rule, of which these cards are instances. The pool
+has since expanded; the implemented vampire-creation actions use the
+`requiresNonSterile` gate, while other unimplemented creation actions
+still require their own audit.
 
 Two more that the design leans on and that already work:
 
@@ -72,19 +72,18 @@ other way before it acts, which nothing in the pool can do at that moment
 (it is not in combat, and no card targets a vampire that did not exist a
 moment ago). Worth knowing rather than worth building.
 
-## 4. Sterile: a real trait with no source in the pool
+## 4. Sterile: a printed crypt trait
 
-The rulebook defines it, and **no V5 card grants it** — a survey of all 661
-cards finds the word on exactly these two, both as a requirement. So
-`MinionState.sterile` is set by nobody today and the filter correctly
-passes every vampire.
+The expanded crypt contains 42 cards with a standalone printed `Sterile.`
+clause. The crypt importer carries this trait into `MinionState.sterile`
+in all starting zones. Parsing a standalone clause avoids treating a
+reference to a different sterile minion or a non-sterile requirement as a
+trait of the card. `tests/ui/crypt-sterile.test.ts` covers the import and
+the six currently implemented `requiresNonSterile` creation actions.
 
-It is modelled rather than skipped because it is a **rulebook trait**, and
-because phase 7's crypt importer is precisely where it would come from —
-the same position `clan`, `sect` and `title` are in right now (fixtures set
-them; the importer will). The Wall Street Night standard: a clause that
-matches nothing today is worth having when the rest of the card plays, and
-a test pins that it is empty for the *right* reason.
+This does not implement effects that grant or remove sterile during play,
+or prove that other unimplemented vampire-creation actions enforce the
+general restriction.
 
 ## 5. A bug this gate exposed: removing a minion that IS a card
 

@@ -14307,7 +14307,7 @@
     "id": 200021,
     "name": "Ági (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty flatCrypt nie daje zniżki blood na Sanguinus ani Budapest circle; importer nie ustawia sterile, choć engine posiada taki warunek. Sabbat jest odczytywane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusty flatCrypt nie daje zniżki blood na Sanguinus ani Budapest circle; importer nie ustawia sterile, choć engine posiada taki warunek. Sabbat jest odczytywane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200022,
@@ -14373,7 +14373,7 @@
     "id": 200032,
     "name": "Aiyana, The Wolfcatcher (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez press przeciw werewolf i płatnej prevention; importer nie ustawia sterile na vampire. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusty cryptPerm bez press przeciw werewolf i płatnej prevention; importer nie ustawia sterile na vampire. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200033,
@@ -14523,7 +14523,7 @@
     "id": 200057,
     "name": "Allonzo Montoya (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje stały stealth zamiast ograniczenia do akcji wymagających Serpentis; brak zakazu block undirected, a importer nie ustawia sterile ani Scarce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): flatCrypt daje stały stealth zamiast ograniczenia do akcji wymagających Serpentis; brak zakazu block undirected, a importer nie ustawia sterile ani Scarce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200058,
@@ -14745,7 +14745,7 @@
     "id": 200094,
     "name": "Angelo (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez reguły Sanguinus circle, akcji burn location, zakazu retainers i Red List; importer nie ustawia sterile. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusty cryptPerm bez reguły Sanguinus circle, akcji burn location, zakazu retainers i Red List; importer nie ustawia sterile. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200095,
@@ -15201,7 +15201,7 @@
     "id": 200170,
     "name": "Barry (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez warunkowego +1 strength przeciw ally lub młodszemu vampire, Chicago Circle i importu Sterile. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusty cryptPerm bez warunkowego +1 strength przeciw ally lub młodszemu vampire, Chicago Circle i importu Sterile. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200171,
@@ -16017,7 +16017,7 @@
     "id": 200306,
     "name": "Cynthia Ingold (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +1 strength zamiast tylko przeciw Camarilla vampire; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 strength zamiast tylko przeciw Camarilla vampire; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200307,
@@ -16095,7 +16095,7 @@
     "id": 200319,
     "name": "Danylo (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez akcji szukania location za 1 pool, Kiev circle oraz importu sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez akcji szukania location za 1 pool, Kiev circle oraz importu sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200320,
@@ -16113,7 +16113,7 @@
     "id": 200322,
     "name": "Darlene Killian (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez dodatkowego blood za allies/retainers; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez dodatkowego blood za allies/retainers; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200323,
@@ -16401,13 +16401,13 @@
     "id": 200370,
     "name": "Dorka (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez directed rush na miniona predatora/prey i bez Budapest circle; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez directed rush na miniona predatora/prey i bez Budapest circle; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200371,
     "name": "Dovey Ebfwe (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 stealth przy employ retainer; Black Hand i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 stealth przy employ retainer; Black Hand i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200372,
@@ -16604,8 +16604,8 @@
   {
     "id": 200404,
     "name": "Effie Lowery (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, ale importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono import drukowanego Sterile do stanu we wszystkich strefach krypty. crypt-sterile.test.ts sprawdza 42 karty i dostępność sześciu zaimplementowanych akcji tworzenia wampira dla kontrolnego niesterylnego i sterylnego wampira. Efekty nadające lub zdejmujące sterile w trakcie gry oraz inne niezaimplementowane akcje tworzenia wampirów nie zostały tym naprawione; pełna zgodność nie jest zagwarantowana."
   },
   {
     "id": 200405,
@@ -17103,7 +17103,7 @@
     "id": 200487,
     "name": "Gabi (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zakazu dodge przeciwnika w pierwszej rundzie i Budapest circle; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez zakazu dodge przeciwnika w pierwszej rundzie i Budapest circle; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200488,
@@ -17163,7 +17163,7 @@
     "id": 200497,
     "name": "Gavrylo (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 intercept dla allies i młodszych vampire przeciw Gavrylo oraz Kiev circle; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez -1 intercept dla allies i młodszych vampire przeciw Gavrylo oraz Kiev circle; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200498,
@@ -17211,7 +17211,7 @@
     "id": 200505,
     "name": "Gentha Shale (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed przeciw kontrolerowi ready Follower of Set; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 bleed przeciw kontrolerowi ready Follower of Set; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200506,
@@ -17691,7 +17691,7 @@
     "id": 200585,
     "name": "Helen Fairchild (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zakazu equipment; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez zakazu equipment; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200586,
@@ -17823,7 +17823,7 @@
     "id": 200607,
     "name": "Howler (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 strength, lecz brak optional maneuver i zakazu weapons; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje +1 strength, lecz brak optional maneuver i zakazu weapons; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200608,
@@ -17949,7 +17949,7 @@
     "id": 200628,
     "name": "Ilse (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz importer nie ustawia sterile ani nie zapisuje Torrance Circle. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Sabbat importowany, lecz importer nie ustawia sterile ani nie zapisuje Torrance Circle. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200629,
@@ -18093,7 +18093,7 @@
     "id": 200652,
     "name": "Jack (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength i lock za zniżkę location; Torrance Circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 strength i lock za zniżkę location; Torrance Circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200653,
@@ -18309,7 +18309,7 @@
     "id": 200688,
     "name": "Jenna Cross (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez dodatkowego blood na karty kosztujące blood; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez dodatkowego blood na karty kosztujące blood; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200689,
@@ -18363,7 +18363,7 @@
     "id": 200697,
     "name": "Jerry (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez przesuwania blood między Blood Brothers Chicago Circle w master phase; circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez przesuwania blood między Blood Brothers Chicago Circle w master phase; circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200698,
@@ -18560,8 +18560,8 @@
   {
     "id": 200730,
     "name": "Juanita Santiago (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, ale importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono import drukowanego Sterile do stanu we wszystkich strefach krypty. crypt-sterile.test.ts sprawdza 42 karty i dostępność sześciu zaimplementowanych akcji tworzenia wampira dla kontrolnego niesterylnego i sterylnego wampira. Efekty nadające lub zdejmujące sterile w trakcie gry oraz inne niezaimplementowane akcje tworzenia wampirów nie zostały tym naprawione; pełna zgodność nie jest zagwarantowana."
   },
   {
     "id": 200731,
@@ -18711,7 +18711,7 @@
     "id": 200755,
     "name": "Karl (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz sterile i Torrance Circle nie są przenoszone do stanu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Sabbat importowany, lecz sterile i Torrance Circle nie są przenoszone do stanu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200756,
@@ -18975,7 +18975,7 @@
     "id": 200799,
     "name": "Kyrylo (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Kiev circle i sterile nie są przenoszone do stanu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Sabbat importowany, lecz Kiev circle i sterile nie są przenoszone do stanu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200800,
@@ -19065,7 +19065,7 @@
     "id": 200814,
     "name": "Larry (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały intercept zamiast płatnego raz na akcję; Chicago Circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały intercept zamiast płatnego raz na akcję; Chicago Circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200815,
@@ -19335,7 +19335,7 @@
     "id": 200859,
     "name": "Lorrie Dunsirn (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 strength, ale brak zakazów reaction/equipment/retainers/maneuver/press, dodatkowego strike i press oraz kosztu non-hunt; Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje +1 strength, ale brak zakazów reaction/equipment/retainers/maneuver/press, dodatkowego strike i press oraz kosztu non-hunt; Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200860,
@@ -19719,7 +19719,7 @@
     "id": 200923,
     "name": "Maria Stone (G3 ADV)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 strength poza merged oraz superior Spiritus przy merged; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez -1 strength poza merged oraz superior Spiritus przy merged; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200924,
@@ -19797,7 +19797,7 @@
     "id": 200936,
     "name": "Mark (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 intercept przy próbie block bleed; Torrance Circle i sterile nie importowane, bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 intercept przy próbie block bleed; Torrance Circle i sterile nie importowane, bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200937,
@@ -20319,7 +20319,7 @@
     "id": 201023,
     "name": "Muricia (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength oraz przemiany własnego Gangrel antitribu w sterile Ahrimane z poziomem Spiritus za blood w unlock; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 strength oraz przemiany własnego Gangrel antitribu w sterile Ahrimane z poziomem Spiritus za blood w unlock; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201024,
@@ -20487,13 +20487,13 @@
     "id": 201051,
     "name": "Nettie Hale (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 stealth przy employ retainer/recruit ally; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 stealth przy employ retainer/recruit ally; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201052,
     "name": "New Blood (ANY)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez wyboru circle i draw crypt przy wejściu w influence; sterile i circle nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez wyboru circle i draw crypt przy wejściu w influence; sterile i circle nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201053,
@@ -20745,7 +20745,7 @@
     "id": 201094,
     "name": "Pariah (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength, discard master lub lock w master phase, zakazu undirected poza hunt i directed rush na dowolnego miniona; Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 strength, discard master lub lock w master phase, zakazu undirected poza hunt i directed rush na dowolnego miniona; Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201095,
@@ -20811,7 +20811,7 @@
     "id": 201105,
     "name": "Pavlo (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez przesunięcia blood do ready Blood Brother Kiev circle w unlock; Kiev circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez przesunięcia blood do ready Blood Brother Kiev circle w unlock; Kiev circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201106,
@@ -21500,8 +21500,8 @@
   {
     "id": 201220,
     "name": "Sahana (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz sterile nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono import drukowanego Sterile do stanu we wszystkich strefach krypty. crypt-sterile.test.ts sprawdza 42 karty i dostępność sześciu zaimplementowanych akcji tworzenia wampira dla kontrolnego niesterylnego i sterylnego wampira. Efekty nadające lub zdejmujące sterile w trakcie gry oraz inne niezaimplementowane akcje tworzenia wampirów nie zostały tym naprawione; pełna zgodność nie jest zagwarantowana."
   },
   {
     "id": 201221,
@@ -21890,8 +21890,8 @@
   {
     "id": 201285,
     "name": "The Siamese (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 bleed, ale sterile nie jest przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono import drukowanego Sterile do stanu we wszystkich strefach krypty. crypt-sterile.test.ts sprawdza 42 karty i dostępność sześciu zaimplementowanych akcji tworzenia wampira dla kontrolnego niesterylnego i sterylnego wampira. Test sprawdza także +1 bleed The Siamese. Efekty nadające lub zdejmujące sterile w trakcie gry oraz inne niezaimplementowane akcje tworzenia wampirów nie zostały tym naprawione; pełna zgodność nie jest zagwarantowana."
   },
   {
     "id": 201286,
@@ -22161,7 +22161,7 @@
     "id": 201330,
     "name": "Sylvie Helgon (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez discard political action za stealth albo intercept podczas akcji; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez discard political action za stealth albo intercept podczas akcji; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201331,
@@ -22335,7 +22335,7 @@
     "id": 201359,
     "name": "Terry (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez blood za press raz na combat; Chicago Circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez blood za press raz na combat; Chicago Circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201360,
@@ -22449,7 +22449,7 @@
     "id": 201378,
     "name": "Tom (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez dodatkowego blood za Sanguinus; Chicago Circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez dodatkowego blood za Sanguinus; Chicago Circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201379,
@@ -22515,7 +22515,7 @@
     "id": 201389,
     "name": "Truman (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Torrance Circle i sterile nie są przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Sabbat importowany, lecz Torrance Circle i sterile nie są przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201390,
@@ -22899,7 +22899,7 @@
     "id": 201453,
     "name": "Viri (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały strength zamiast tylko przy Zizi we własnym ready; Budapest circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały strength zamiast tylko przy Zizi we własnym ready; Budapest circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201454,
@@ -22935,7 +22935,7 @@
     "id": 201459,
     "name": "Volo (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 stealth przy hunt; Kiev circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez -1 stealth przy hunt; Kiev circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201460,
@@ -23229,7 +23229,7 @@
     "id": 201508,
     "name": "Zizi (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez lock Zizi za unlock innego Blood Brother tego samego circle przy własnym ready Viri; Budapest circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez lock Zizi za unlock innego Blood Brother tego samego circle przy własnym ready Viri; Budapest circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201509,
@@ -23241,7 +23241,7 @@
     "id": 201510,
     "name": "Zubeida (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi bez ready vampire capacity powyżej 6; Black Hand, Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi bez ready vampire capacity powyżej 6; Black Hand, Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201511,

@@ -353,14 +353,9 @@ export interface MinionState {
   /** Fixture/import-set title (p. 28); votes derive via TITLE_VOTES.
    *  Null for untitled vampires and all allies. */
   title: VampireTitle | null;
-  /** "Sterile vampires cannot perform actions to put new vampires in
-   *  play" (glossary, p. 42). A real rulebook trait that **no V5 card
-   *  grants** — only the two cards that require a non-sterile actor even
-   *  mention it — so nothing sets this today and the filter correctly
-   *  passes every vampire. It belongs here rather than nowhere because
-   *  phase 7's crypt importer is where it would come from, exactly as
-   *  `clan`/`sect`/`title` are set by fixtures now.
-   *  docs/token-vampire-design.md §4 */
+  /** Printed Sterile trait. Cards with requiresNonSterile consult this;
+   *  other vampire-creation actions must also implement the rulebook
+   *  restriction (glossary, p. 42). */
   sterile?: boolean;
   /** The Path of Enlightenment this vampire follows ("Cathari", "Power and
    *  the Inner Voice", "Death and the Soul").

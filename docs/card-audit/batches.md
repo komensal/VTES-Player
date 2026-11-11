@@ -339,3 +339,13 @@ Po tym etapie **2596 kart ma otwarte wpisy**: 1450 library (602 `CONFIRMED_BUG`,
 Generator inwentarza i kategorii, typecheck, diff-check oraz testy celowane przeszły (106/106 w 12 plikach, przed dodaniem dodatkowej kontroli niepowiązanego combat; nowy plik osobno 5/5).
 
 Pełny zestaw po drugim etapie: **3987 passed, 15 failed** w 12 plikach (373 pliki; 4002 testy). W porównaniu z poprzednim uruchomieniem nie pojawiły się nowe nazwy porażek; trzy dawne porażki dotyczące listy klanów zniknęły po poprawieniu implementacji i dostosowaniu testów do rozróżnienia klanów i creed oraz aktualnego rejestru. Pozostałe 15 to te same przypadki wymienione w poprzedniej sekcji poza tymi trzema. Build przeszedł z ostrzeżeniem Vite o dużych chunkach.
+
+## Naprawy po audycie — drukowany Sterile
+
+Importer rozpoznaje samodzielną klauzulę `Sterile.` na **42** kartach crypt i zapisuje cechę w ready, uncontrolled i crypt. Nie utożsamia wzmianki o sterylnym innym minionie ani wymogu non-sterile z cechą drukowaną. Test `crypt-sterile.test.ts` weryfikuje wszystkie 42 ID, kontrolę negatywną oraz opcje sześciu aktualnie zaimplementowanych akcji tworzenia wampira z `requiresNonSterile`, używając sterylnego i niesterylnego aktora; The Siamese zachowuje +1 bleed. Nie implementowano nadawania i usuwania sterile innymi kartami ani pozostałych niezaimplementowanych akcji tworzenia wampirów.
+
+Cztery karty (Effie Lowery, Juanita Santiago, Sahana, The Siamese), dla których brak importu był jedyną opisaną rozbieżnością, otrzymały `FIXED_TARGETED`. Pozostałych **38** nadal ma inne otwarte ustalenia; stare sformułowania o braku importu sterile w ich dowodach zachowano jako wyraźnie oznaczoną historię.
+
+Stan po etapie: **2592 karty z otwartymi wpisami**, w tym **1450 library** (602 `CONFIRMED_BUG`, 826 `CODE_DISCREPANCY`, 22 `UNRESOLVED`) oraz **1142 crypt** (5, 1136, 1). Statusy i ograniczenia opisano powyżej: wpis nie jest pojedynczym błędem, nierozstrzygnięte nie musi oznaczać błędu, a celowana poprawka nie dowodzi pełnej zgodności.
+
+Testy celowane: **114/114** w 10 plikach; generator audytu i kategorii, typecheck i diff-check przeszły. Pełnego zestawu w tym etapie nie uruchomiono; poprzedni wynik to 3987 passed i 15 failed przed tą zmianą. Po odtworzeniu środowiska `npm ci` zgłosiło 9 podatności zależności (4 moderate, 3 high, 2 critical); nie zmieniano zależności.

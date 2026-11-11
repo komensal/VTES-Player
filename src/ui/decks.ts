@@ -320,6 +320,7 @@ function makeVampire(v: DeckVampire, id: string, seat: string, inCrypt: boolean)
     ...path,
     ...titleCity,
     ...(card.nonUnique ? { nonUnique: true } : {}),
+    ...(card.sterile ? { sterile: true } : {}),
     id,
     name: card.name,
     kind: "vampire",

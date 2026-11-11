@@ -103,6 +103,8 @@ export interface CryptImport {
   title: VampireTitle | null;
   /** Explicit standalone printed exception to the crypt's usual uniqueness. */
   nonUnique: boolean;
+  /** The vampire itself prints Sterile, not merely a reference to another minion. */
+  sterile: boolean;
   /** The city a prince/baron/archbishop holds their title in — "Camarilla
    *  Prince of MELBOURNE". Undefined for every other title, and it is the
    *  key a title contest turns on. docs/contested-design.md §6 */
@@ -119,6 +121,12 @@ export interface CryptImport {
    *  marks the vampire rather than letting a playtest silently assume it
    *  works. */
   hasUnimplementedAbility: boolean;
+}
+
+/** Match a standalone printed trait rather than references within abilities,
+ * such as "become a sterile Ahrimane" or "non-sterile vampire". */
+export function hasStandaloneCryptTrait(text: string, trait: "sterile" | "non-unique"): boolean {
+  return new RegExp(`(?:^|[.:!?]\\s*)${trait}\\s*(?:[.!?]|$)`, "i").test(text.trim());
 }
 
 /**
@@ -200,9 +208,8 @@ export function importCryptCard(id: number): CryptImport {
     disciplines,
     sect,
     title,
-    // Match the standalone trait, not an ability that mentions a
-    // non-unique card or minion as its target.
-    nonUnique: /(?:^|[.!?]\s*)non-unique\s*(?:[.!?]|$)/i.test(card.cardText.trim()),
+    nonUnique: hasStandaloneCryptTrait(card.cardText, "non-unique"),
+    sterile: hasStandaloneCryptTrait(card.cardText, "sterile"),
     image: card.image,
     cardText: card.cardText,
     hasUnimplementedAbility,

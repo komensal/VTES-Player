@@ -249,10 +249,9 @@ export function meetsRequirements(m: MinionState, spec: CardSpec): boolean {
   // eleven printed titles instead would be the Priority Contract trap in
   // reverse: a filter that silently narrows.
   if (spec.requiresTitled && m.title === null) return false;
-  // "Requires a NON-STERILE …" (p. 42: "sterile vampires cannot perform
-  // actions to put new vampires in play"). Nothing in the V5 pool grants
-  // the trait, so this passes every vampire today — written because the
-  // rulebook defines it and phase 7's importer is where it comes from.
+  // "Requires a NON-STERILE …" (p. 42): printed Sterile is imported
+  // into the minion state. Cards without this requirement still need their
+  // own implementation of the general vampire-creation restriction.
   if (spec.requiresNonSterile && m.sterile === true) return false;
   if (spec.requiresSect && (m.sect === null || !spec.requiresSect.includes(m.sect))) {
     return false;
