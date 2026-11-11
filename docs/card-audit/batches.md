@@ -146,3 +146,9 @@ Wybrane testy: 403/404 w 35 plikach; jeden test `justicars.test.ts` zawodzi na l
 [Pozycje 101–250](batch-05-manual-02-partial.md), ID 101215–101364: 95 rozbieżności w kodzie bez nowych testów odtwarzających, 53 przeglądy bez wykrytej niezgodności tylko w podanym zakresie oraz 2 przypadki nierozstrzygnięte. W paczce 5 jest teraz **250 kart z wpisem i 250 bez wpisu**; wpis nie oznacza pełnego audytu reguł. Nie ekstrapolować tych wyników na pozostałe karty.
 
 Wybrane zestawy testów, częściowo pokrywające się: 382/384 (dwa niepowodzenia związane z listą dyscyplin występowały w poprzednim pełnym przebiegu) oraz 170/170; osobny test generatora po regeneracji 1/1. Typecheck i diff-check przeszły. Pełnego zestawu nie uruchomiono. Łącznie **1278 z 4158** kart ma wpis w inwentarzu, **2880** nie ma; historyczny `CONFIRMED_BUG` nie gwarantuje scenariuszowego odtworzenia.
+
+## Paczka 5 — pozycje 251–450
+
+[Przegląd 200 pozycji](batch-05-manual-03-partial.md), ID 101365–101564: 106 rozbieżności w kodzie bez nowych testów odtwarzających, 88 ograniczonych przeglądów bez wykrytej niezgodności oraz 6 nierozstrzygniętych. W paczce 5 **450 kart ma wpis, a 50 (pozycje 451–500) nadal go nie ma**. Wpisy nie dowodzą pełnej zgodności, a wyniki nie są próbą statystyczną.
+
+Wybrane, częściowo pokrywające się zestawy testów: 381/383, 192/193 oraz 238/238. Niepowodzenia dotyczą listy dyscyplin oraz oczekiwania pominięcia Praxis Seizure: Venice; oba rodzaje występowały w poprzednim pełnym przebiegu. Generator inwentarza, test generatora, typecheck i diff-check przeszły; pełnego zestawu nie uruchomiono. W całym inwentarzu **1478 z 4158** kart ma wpis, **2680** nie ma. Historyczny `CONFIRMED_BUG` obejmuje również ustalenia statyczne, nie gwarantuje odtworzenia scenariuszem.
