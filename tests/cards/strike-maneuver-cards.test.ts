@@ -73,6 +73,33 @@ describe("strike cards with optional maneuver riders", () => {
     expect(combat(state).presses.acting).toBe(1);
   });
 
+  it("Aid from Bats can be chosen as a strike after declining its optional maneuver", () => {
+    const state = threeSeatGame();
+    const v1 = state.seats[0]!.minions[0]!;
+    v1.disciplines = { ani: "basic" };
+    v1.blood = 5;
+    state.seats[0]!.hand.push({ id: "aid", name: "Aid from Bats" });
+    const engine = new VtesEngine(state, testRegistry);
+    enterCombat(engine);
+    let chosen = false;
+    for (let i = 0; i < 30; i++) {
+      const dp = engine.decision();
+      if (!dp) break;
+      if (dp.window === "combat.chooseStrike" && dp.seat === "Alice") {
+        const id = dp.options.find((o) => o.id.startsWith("play:Aid from Bats:basic:V1:aid"));
+        expect(id).toBeDefined();
+        resolveCard(engine, state, "aid", id!.id);
+        chosen = true;
+        break;
+      }
+      const pass = dp.options.find((o) => o.id === "pass");
+      if (!pass) throw new Error(`No pass in ${dp.window}`);
+      engine.choose(pass.id);
+    }
+    expect(chosen).toBe(true);
+    expect(combat(state).strikes.acting).toMatchObject({ name: "Aid from Bats", damage: 1, ranged: true });
+  });
+
   it("Diversion [tha] commits its ranged steal-blood strike in the range window", () => {
     const state = threeSeatGame();
     const v1 = state.seats[0]!.minions[0]!;

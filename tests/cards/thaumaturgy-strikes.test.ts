@@ -101,6 +101,33 @@ function playOut(engine: VtesEngine, state: GameState, limit = 24): void {
 
 // ---------------------------------------------------------------------------
 
+describe("Earth Swords (100602) — distinct discipline modes", () => {
+  it.each([
+    [{ pot: "basic" } as const, "basic:V1:pot", 1],
+    [{ myt: "basic" } as const, "basic:V1:myt", 2],
+    [{ myt: "superior" } as const, "superior:V1", 3],
+  ])("resolves %s as %i ranged damage", (disciplines, mode, damage) => {
+    const a = inCombat("Earth Swords");
+    a.v1.disciplines = disciplines;
+    const before = a.m.blood;
+    const ids = walkTo(a.engine, "combat.chooseStrike");
+    const id = ids.find((x) => x.startsWith(`play:Earth Swords:${mode}:`));
+    expect(id).toBeDefined();
+    a.engine.choose(id!);
+    settle(a.engine);
+    playOut(a.engine, a.state);
+    expect(before - a.m.blood).toBe(damage);
+  });
+
+  it("offers both distinct basic choices to a vampire with both disciplines", () => {
+    const a = inCombat("Earth Swords");
+    a.v1.disciplines = { pot: "basic", myt: "basic" };
+    const ids = walkTo(a.engine, "combat.chooseStrike");
+    expect(ids.some((x) => x.startsWith("play:Earth Swords:basic:V1:pot:"))).toBe(true);
+    expect(ids.some((x) => x.startsWith("play:Earth Swords:basic:V1:myt:"))).toBe(true);
+  });
+});
+
 describe("Drain Essence (100582) — steal, do not damage", () => {
   it("moves 2 blood at basic and 4 at superior", () => {
     for (const [mode, amount] of [

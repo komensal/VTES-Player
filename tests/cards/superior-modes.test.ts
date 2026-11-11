@@ -13,7 +13,8 @@
  *
  * Slam is the fixture because it is the plainest case in the pool: one
  * discipline and one clause at each level. Superior has a close-only
- * maneuver rider and is therefore checked in the range window.
+ * maneuver rider and may be chosen in the range window, or later as a
+ * strike if the maneuver was not used.
  */
 
 import { describe, expect, it } from "vitest";
@@ -78,7 +79,7 @@ describe("a card's superior mode follows the ACTING vampire", () => {
     // because superior is never offered to anybody, ever.
     const engine = combatWith("superior");
     expect(slamModes(engine, "combat.range")).toEqual(["superior:V1"]);
-    expect(slamModes(engine, "combat.chooseStrike")).toEqual(["basic:V1"]);
+    expect(slamModes(engine, "combat.chooseStrike")).toEqual(["basic:V1", "superior:V1"]);
   });
 
   it("offers only the inferior when that vampire has it at basic", () => {

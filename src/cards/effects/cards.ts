@@ -18026,7 +18026,7 @@ export const cardSpecs: CardSpec[] = [
       {
         level: "basic",
         discipline: "pot",
-        usable: ["onlyAtCloseRange", "onlyIfInflictedMoreThisRound", "byStillReadyCombatant"],
+        usable: ["onlyAtCloseRange", "onlyIfInflictedMoreThisRound", "byStillReadyCombatant", "onlyAgainstVampire"],
         effects: [
           {
             kind: "attachInCombat",
@@ -18040,7 +18040,7 @@ export const cardSpecs: CardSpec[] = [
       {
         level: "superior",
         discipline: "pot",
-        usable: ["onlyAtCloseRange", "onlyIfInflictedMoreThisRound", "byStillReadyCombatant"],
+        usable: ["onlyAtCloseRange", "onlyIfInflictedMoreThisRound", "byStillReadyCombatant", "onlyAgainstVampire"],
         effects: [
           {
             kind: "attachInCombat",
@@ -20088,9 +20088,10 @@ export const cardSpecs: CardSpec[] = [
     usable: ["onlyAtCloseRange"],
     requiresSect: ["anarch"],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "strikeHandBonus", bonus: 1, firstStrike: true }] },
-      { level: "basic", discipline: "pro", effects: [{ kind: "strikeHandBonus", bonus: 1, aggravated: true }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "strikeStealBlood", amount: 2 }] },
+      { level: "basic", discipline: "obf", variant: "equipment", effects: [{ kind: "strikeDestroyEquipment", firstStrike: true }] },
+      { level: "basic", discipline: "obf", variant: "retainer", effects: [{ kind: "strikeDestroyEquipment", firstStrike: true, retainer: true }] },
+      { level: "basic", discipline: "pro", variant: "pro", effects: [{ kind: "strikeHandBonus", bonus: 0, aggravated: true }] },
+      { level: "basic", discipline: "ser", variant: "ser", effects: [{ kind: "strikeStealBlood", amount: 2 }] },
     ],
   },
   {
@@ -20155,8 +20156,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: false }] },
-      { level: "basic", discipline: "myt", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false }] },
+      { level: "basic", discipline: "pot", variant: "pot", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: false }] },
+      { level: "basic", discipline: "myt", variant: "myt", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false }] },
       { level: "superior", discipline: "myt", effects: [{ kind: "strikeDamage", amount: 3, ranged: true, aggravated: false }] },
     ],
   },
@@ -22085,15 +22086,16 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Dust to Dust [100596] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // [obf] press to end; [thn] dodge with a press; [THN] also a maneuver.
     krcgId: 100596,
     name: "Dust to Dust",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }, { kind: "press", continueOnly: false }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }, { kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "obf", variant: "obf", effects: [{ kind: "press", continueOnly: false, endOnly: true }] },
+      { level: "basic", discipline: "thn", variant: "thn", effects: [{ kind: "strikeDodge", riders: { press: 1 } }] },
+      { level: "superior", discipline: "thn", effects: [{ kind: "strikeDodge", riders: { press: 1, maneuver: 1 } }] },
     ],
   },
   {

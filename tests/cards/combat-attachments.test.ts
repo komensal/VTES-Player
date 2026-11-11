@@ -261,6 +261,16 @@ describe("Disarm (100549)", () => {
     expect(find(state, "M").inTorpor).toBe(true);
   });
 
+  it.each(["basic", "superior"] as const)("%s cannot target an opposing ally", (level) => {
+    const { state, engine } = intoCombat(
+      [["Alice", "Disarm"]],
+      { v1: { pot: level } },
+      (s) => { find(s, "M").kind = "ally"; },
+    );
+    armDisarm(state, 2, 0);
+    expect(walkTo(engine, state, `play:Disarm:${level}`)).toBe(false);
+  });
+
   it("NEGATIVE SPACE: not offered when the OPPOSING vampire inflicted more", () => {
     const { state, engine } = intoCombat([["Alice", "Disarm"]], { v1: { pot: "basic" } });
     armDisarm(state, 0, 2);

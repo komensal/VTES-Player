@@ -3332,7 +3332,11 @@ function compileCombatCard(spec: CardSpec): CardHandler {
           if (limited && cf.usedLimitedAddl?.[side]) continue;
         } else {
           if (ctx.window === "combat.chooseStrike" && hasAddl && !hasStrikeEffect) continue;
-          if (window !== ctx.window) continue;
+          // An optional maneuver permits early commitment in the range step,
+          // but does not require it: the strike can also be chosen normally
+          // after both combatants decline to maneuver.
+          const strikeWithoutManeuver = ctx.window === "combat.chooseStrike" && strikeManeuverRider(mode) !== null;
+          if (window !== ctx.window && !strikeWithoutManeuver) continue;
         }
         // A before-range credit can also carry a limited additional strike
         // (Shadow of the Wolf). The limit belongs to the minion and round,

@@ -120,6 +120,71 @@ describe("the dodge itself", () => {
   }
 });
 
+describe("Dust to Dust (100596)", () => {
+  it("basic Thanatosis dodges and grants an optional press, but no maneuver", () => {
+    const a = inCombat(["Dust to Dust"], { thn: "basic" });
+    const ids = walkTo(a.engine, "combat.chooseStrike");
+    const id = ids.find((x) => x.startsWith("play:Dust to Dust:basic:V1:thn:dg0"));
+    expect(id).toBeDefined();
+    const before = a.v1.blood;
+    a.engine.choose(id!);
+    settle(a.engine);
+    expect(combat(a.state).presses.acting).toBe(1);
+    expect(combat(a.state).maneuverCredits.acting).toBe(0);
+    playOut(a.engine, a.state);
+    expect(a.v1.blood).toBe(before);
+  });
+
+  it("superior Thanatosis commits a dodge with a maneuver and press", () => {
+    const a = inCombat(["Dust to Dust"], { thn: "superior" });
+    const ids = walkTo(a.engine, "combat.range");
+    const id = ids.find((x) => x.startsWith("play:Dust to Dust:superior:V1:dg0"));
+    expect(id).toBeDefined();
+    a.engine.choose(id!);
+    settle(a.engine);
+    expect(combat(a.state).maneuverCredits.acting).toBe(1);
+    expect(combat(a.state).presses.acting).toBe(1);
+  });
+
+  it("superior can also be chosen after range without using the optional maneuver", () => {
+    const a = inCombat(["Dust to Dust"], { thn: "superior" });
+    const before = a.v1.blood;
+    const ids = walkTo(a.engine, "combat.chooseStrike");
+    const id = ids.find((x) => x.startsWith("play:Dust to Dust:superior:V1:dg0"));
+    expect(id).toBeDefined();
+    a.engine.choose(id!);
+    settle(a.engine);
+    expect(combat(a.state).presses.acting).toBe(1);
+    playOut(a.engine, a.state);
+    expect(a.v1.blood).toBe(before);
+  });
+
+  it("Obfuscate is only a press to end, not a dodge or maneuver", () => {
+    const a = inCombat(["Dust to Dust"], { obf: "basic" });
+    expect(walkTo(a.engine, "combat.range").some((x) => x.startsWith("play:Dust to Dust"))).toBe(false);
+    expect(walkTo(a.engine, "combat.chooseStrike").some((x) => x.startsWith("play:Dust to Dust"))).toBe(false);
+    combat(a.state).pressesCombat.opposing = 1;
+    const ids = walkTo(a.engine, "combat.press", 30);
+    expect(ids.some((x) => x.startsWith("play:Dust to Dust"))).toBe(false);
+    let continued = false;
+    for (let i = 0; i < 8; i++) {
+      const dp = a.engine.decision();
+      if (!dp || dp.window !== "combat.press") break;
+      const press = dp.seat === "Bob" && dp.options.find((o) => o.id === "press:continue");
+      if (press) { a.engine.choose(press.id); continued = true; break; }
+      a.engine.choose(dp.options.find((o) => o.id === "pass")!.id);
+    }
+    expect(continued).toBe(true);
+    const decision = a.engine.decision();
+    const id = decision?.options.find((o) => o.id.startsWith("play:Dust to Dust:basic:V1:obf:cancel:dg0"));
+    expect(id, JSON.stringify(decision)).toBeDefined();
+    a.engine.choose(id!.id);
+    settle(a.engine);
+    const cf = a.state.frames.find((f) => f.kind === "combat");
+    expect(cf?.kind === "combat" && cf.willContinue).toBe(false);
+  });
+});
+
 describe("Vampiric Speed (102089) — a dodge with a press", () => {
   it("superior grants a PER-ROUND press; basic grants none", () => {
     for (const [mode, expected] of [

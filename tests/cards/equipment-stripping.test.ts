@@ -165,6 +165,62 @@ describe("destroying equipment", () => {
   });
 });
 
+describe("Donnybrook (100576)", () => {
+  it.each([["equipment", ["equipment"]], ["retainer", ["retainer"]]] as const)(
+    "Obfuscate burns an opposing %s with first strike, without hand damage",
+    (variant, tags) => {
+      const a = inCombat("Donnybrook", { obf: "basic" }, { name: "Target", tags });
+      a.v1.sect = "anarch";
+      const before = a.m.blood;
+      const id = atStrike(a.engine).find((x) => x.includes(`:V1:${variant}:`) && x.includes("gear1"));
+      expect(id).toBeDefined();
+      a.engine.choose(id!);
+      settle(a.engine);
+      const cf = a.state.frames.find((f) => f.kind === "combat");
+      if (cf?.kind !== "combat") throw new Error("no combat frame");
+      expect(cf.strikes.acting?.firstStrike).toBe(true);
+      playOut(a.engine, a.state);
+      expect(inPlay(a.state, "gear1")).toBe(false);
+      expect(a.m.blood).toBe(before);
+    },
+  );
+
+  it("Protean uses ordinary strength as aggravated damage, without a bonus", () => {
+    const a = inCombat("Donnybrook", { pro: "basic" }, null);
+    a.v1.sect = "anarch";
+    const id = atStrike(a.engine).find((x) => x.includes(":V1:pro:"));
+    expect(id).toBeDefined();
+    a.engine.choose(id!);
+    settle(a.engine);
+    const cf = a.state.frames.find((f) => f.kind === "combat");
+    if (cf?.kind !== "combat") throw new Error("no combat frame");
+    expect(cf.strikes.acting).toMatchObject({ handStrike: true, handBonus: 0, aggravated: true });
+  });
+
+  it("Serpentis steals two blood instead of dealing hand damage", () => {
+    const a = inCombat("Donnybrook", { ser: "basic" }, null);
+    a.v1.sect = "anarch";
+    a.v1.blood = 2;
+    const before = a.m.blood;
+    const id = atStrike(a.engine).find((x) => x.includes(":V1:ser:"));
+    expect(id).toBeDefined();
+    a.engine.choose(id!);
+    settle(a.engine);
+    playOut(a.engine, a.state);
+    expect(a.m.blood).toBe(before - 2);
+    expect(a.v1.blood).toBeGreaterThan(2);
+  });
+
+  it("requires an Anarch and an equipment or retainer target for Obfuscate", () => {
+    const wrongSect = inCombat("Donnybrook", { obf: "basic" });
+    wrongSect.v1.sect = "camarilla";
+    expect(atStrike(wrongSect.engine).some((x) => x.startsWith("play:Donnybrook"))).toBe(false);
+    const noTarget = inCombat("Donnybrook", { obf: "basic" }, null);
+    noTarget.v1.sect = "anarch";
+    expect(atStrike(noTarget.engine).some((x) => x.startsWith("play:Donnybrook"))).toBe(false);
+  });
+});
+
 describe("Canine Horde (100290) — two different KINDS of strike", () => {
   it("basic deals 1R damage and takes nothing", () => {
     const a = inCombat("Canine Horde", { ani: "superior" });

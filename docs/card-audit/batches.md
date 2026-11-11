@@ -112,3 +112,9 @@ Naprawy: osiem Crusade (Amsterdam, Barcelona, Brussels, Dublin, Geneva, London, 
 | 501–600 | 22 | 0 | 78 |
 
 Razem 144 z tych 200 kart nadal nie ma ręcznego wpisu. W całym inwentarzu takich kart jest **3670 z 4158**; wpis o błędzie lub naprawie nie oznacza pełnej weryfikacji karty. Kontynuować od pominiętych pozycji, nie traktując szóstego zakresu jako ukończonego.
+
+## Paczka 4 — piąta setka, zakończenie wpisów
+
+[Kontynuacja karta po karcie](batch-04-manual-05-continuation.md) obejmuje 66 wcześniej pominiętych kart z pozycji 401–500 manifestu. Zapisano 24 otwarte błędy, cztery celowane naprawy i 38 ocen bez wykrytej niezgodności w podanym zakresie. Naprawiono Donnybrook, Disarm (cel wyłącznie vampire), Dust to Dust i wybór trybów Earth Swords; poprawiono też możliwość wyboru strike z opcjonalnym maneuver po pominięciu maneuver.
+
+Łącznie dla pozycji 401–500 (w tym wcześniejsze ustalenia): **57 błędów otwartych, 5 celowanych napraw i 38 ocen bez wykrytej niezgodności w opisanym zakresie**. Każda ma ręczny wpis, co nie oznacza pełnej zgodności ani pokrycia wszystkich interakcji. Pozycje 501–600 mają nadal 78 kart bez ręcznego wpisu. W całym rejestrze bez żadnego wpisu pozostaje **3604 z 4158**.
