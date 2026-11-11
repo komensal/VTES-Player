@@ -278,3 +278,9 @@ Wybrane testy: 141/142 w 12 plikach, znana porażka listy klanów `referendum-te
 [Raport](batch-11-manual-04-partial.md) obejmuje 20 kart z ID 100099–100212 według manifestu: 8 statycznych rozbieżności bez nowego scenariusza i 12 ograniczonych przeglądów bez wykrytej niezgodności. W paczce łącznie wpisy ma **114/136** kart, pozostały **22**; w całym inwentarzu **4136/4158** ma wpis. Ograniczony przegląd nie dowodzi pełnej zgodności.
 
 Wybrane testy: 224/226 w 19 plikach; znane porażki listy dyscyplin `burn-the-equipment.test.ts:132` i klasyfikacji frenzy `round-recurring-combat.test.ts:624`. Pełnego zestawu nie uruchomiono. Generator, test inwentarza, typecheck i diff-check sprawdzono osobno.
+
+## Paczka 11 — ostatnie 22 karty, komplet manifestu
+
+[Raport](batch-11-manual-05.md) obejmuje ostatnie 22 karty z ID 100219–100410 według manifestu: 6 statycznych rozbieżności bez nowego scenariusza, 13 ograniczonych przeglądów bez wykrytej niezgodności i 3 nierozstrzygnięte. Cała paczka: **136/136** wpisów, w tym **38 `CODE_DISCREPANCY`, 91 ograniczonych `REVIEWED_NO_ISSUE_FOUND`, 7 `UNRESOLVED`**. W całym inwentarzu **4158/4158** kart ma wpis; nie oznacza to pełnej zgodności ani pełnego pokrycia testowego. Historyczne `CONFIRMED_BUG` mogą obejmować analizy statyczne.
+
+Wybrane testy: 291/293 w 21 plikach; znane porażki `justicars.test.ts:27` i `referendum-terms.test.ts:301`. Pełnego zestawu nie uruchomiono. Generator, test inwentarza, typecheck i diff-check sprawdzono osobno.

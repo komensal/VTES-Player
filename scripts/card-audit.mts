@@ -3,9 +3,10 @@
  * Scans every registry entry against the runtime handler and the raw spec.
  * Signals are deliberately conservative and may have false positives (e.g.
  * a bespoke overlay or conditional text). Every row remains UNREVIEWED unless
- * separately documented with a scenario and rule references.
+ * it has a separate documented manual finding; the finding's status and
+ * evidence describe its scope and whether a scenario was actually tested.
  *
- * npm run cards:audit [-- <output directory>]
+ * npm run cards:audit [-- <output directory> [manual findings JSON]]
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -20,7 +21,8 @@ const entries = Object.values(registry.entries).sort((a, b) => a.card.id - b.car
 type ManualStatus = "CONFIRMED_BUG" | "CODE_DISCREPANCY" | "UNRESOLVED" | "FIXED_TARGETED" | "PARTIAL_FIX" | "REVIEWED_NO_ISSUE_FOUND";
 interface ManualFinding { id: number; name: string; status: ManualStatus; evidence: string }
 const validStatuses: readonly ManualStatus[] = ["CONFIRMED_BUG", "CODE_DISCREPANCY", "UNRESOLVED", "FIXED_TARGETED", "PARTIAL_FIX", "REVIEWED_NO_ISSUE_FOUND"];
-const findings = JSON.parse(readFileSync("docs/card-audit/manual-findings.json", "utf8")) as ManualFinding[];
+const findingsPath = process.argv[3] ?? "docs/card-audit/manual-findings.json";
+const findings = JSON.parse(readFileSync(findingsPath, "utf8")) as ManualFinding[];
 const manual = new Map<number, ManualFinding>();
 for (const finding of findings) {
   if (manual.has(finding.id) || registry.entries[finding.id]?.card.name !== finding.name || !validStatuses.includes(finding.status) || !finding.evidence) {

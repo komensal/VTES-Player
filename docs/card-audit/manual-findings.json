@@ -1308,6 +1308,12 @@
     "evidence": "Akcja ma wyłącznie stealth; brak wymogu tytułu, celu, blood i dołączenia z głosem. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100219,
+    "name": "Bloodform",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Superior ma press endOnly w tym samym trybie co shield przed range, ale case press w compile.ts wywołuje applyPressCard z domyślnym toContinue=true, zamiast przyznać opcjonalny end-only press. applyPressCard ustawia willContinue; test kotm-rigor-etc bada tylko brak basic przeciw vampire, nie superior press. Statyczna analiza bez nowego testu scenariuszowego."
+  },
+  {
     "id": 100220,
     "name": "Blooding",
     "status": "CONFIRMED_BUG",
@@ -1318,6 +1324,12 @@
     "name": "Blooding by the Code",
     "status": "FIXED_TARGETED",
     "evidence": "Zastąpiono efekt master dołączeniem do własnego Salubri antitribu, +1 Valeren/capacity/strength, jedna kopia per bearer; tests/cards/audit-manual-05.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100222,
+    "name": "Bloodlust",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec X blood, wybór X lub X+1 własnych minionów, frenzy, rushGrant, press i burn na koniec tury. bearer-rush-grants.test.ts bada X, wybór, koszt i wybrane granty. Ograniczenie do własnych wynika z interpretacji undirected action w docs/bearer-rush-grants-design.md, a nie dosłownego „you control”. Ograniczony zakres."
   },
   {
     "id": 100223,
@@ -1344,10 +1356,22 @@
     "evidence": "W sprawdzonym zakresie płaski 1 aggravated bez strength; tests/cards/legacy-weapons.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100227,
+    "name": "Blur",
+    "status": "UNRESOLVED",
+    "evidence": "Basic i superior zawierają ograniczone odpowiednio 1 i 2 additional strikes; combat-strikes.test.ts sprawdza superior po zwykłej parze strike. docs/additional-strike-followups.md wskazuje problem okna kolejnych źródeł przy pending strikes; brak odrębnego rozstrzygnięcia interakcji Blur z dalszymi źródłami."
+  },
+  {
     "id": 100228,
     "name": "Body Arsenal",
     "status": "REVIEWED_NO_ISSUE_FOUND",
     "evidence": "W sprawdzonym zakresie aggravated hand i superior +1 strength; tests/cards/body-arsenal.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100229,
+    "name": "Body Bag",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec haven i exclusiveKey, ability blood/ready/anarch; vehicles-and-havens.test.ts sprawdza użycie wobec directed action, sect gate i brak opcji przy bleed na Methuselah. Nie sprawdzono wszystkich okien i limitu haven. Ograniczony zakres."
   },
   {
     "id": 100230,
@@ -1386,6 +1410,12 @@
     "evidence": "Tryby basic vis i tha łączą dodge, press i combat ends; brak osobnego superior i wymaganych unlock. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100236,
+    "name": "Bonding",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Basic limited bleed +1, superior dodatkowo stealth +1, onlyDuringBleed; sweep.test.ts bada wybrane modyfikacje. Nie sprawdzono wszystkich kombinacji limited oraz okien. Ograniczony zakres."
+  },
+  {
     "id": 100237,
     "name": "Bone Spur",
     "status": "REVIEWED_NO_ISSUE_FOUND",
@@ -1422,6 +1452,12 @@
     "evidence": "Master daje gainPool zamiast dołączenia z licznikami i wypłat po torpor, burn albo diablerie; wcześniejszy wpis. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100243,
+    "name": "Bowl of Convergence",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Conditional intercept dla aus oraz blood za intercept przy superior; last-equipment-modifiers.test.ts sprawdza derived Auspex, brak dyscypliny, koszt i gate only-when-needed w wybranych stanach. Ograniczony zakres."
+  },
+  {
     "id": 100244,
     "name": "Boxed In",
     "status": "REVIEWED_NO_ISSUE_FOUND",
@@ -1432,6 +1468,18 @@
     "name": "Brainwash",
     "status": "CONFIRMED_BUG",
     "evidence": "Master ma tylko modifyStealth; nie dołącza do uncontrolled ani nie blokuje transferów. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100246,
+    "name": "Brass Knuckles",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Melee weapon strength+1 i usableOnce combat; legacy-weapons.test.ts sprawdza obrażenia Brass Knuckles, ogólny test once/combat dotyczy Chainsaw, nie drugiej rundy tej karty. Ograniczony zakres."
+  },
+  {
+    "id": 100247,
+    "name": "Bravo",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Bespoke bravo uzupełnia archetype attach o onCombatEnded i onTorporPrevented; archetypes.test.ts sprawdza udany rush, blocked action, torpor i Minor Boon w wybranych sekwencjach. Ograniczony zakres."
   },
   {
     "id": 100248,
@@ -1450,6 +1498,12 @@
     "name": "Breath of the Dragon",
     "status": "CONFIRMED_BUG",
     "evidence": "Combat ma maneuver zamiast obu ranged aggravated strikes i zwrotnych obrażeń. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100251,
+    "name": "Bribes",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Gain pool natychmiast i payVotedForOnly po tally z wyłączeniem gracza; referendum-riders.test.ts sprawdza głos za, przeciw i wypłatę w typowym przypadku, nie wszystkie mieszane głosy/ballots. Ograniczony zakres."
   },
   {
     "id": 100252,
@@ -1512,6 +1566,12 @@
     "evidence": "Master daje gainPool zamiast out-of-turn anulowania niezablokowanej akcji i wymuszenia combat. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100262,
+    "name": "Brujah Justicar",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Bespoke titleGrant z JUSTICAR_CLANS wybiera ready Brujah, daje title justicar i voteBonusClan; test justicars scenariuszowo bada tę fabrykę na Ventrue, nie osobny przebieg Brujah. Assercja liczby spec w tym pliku jest znaną porażką. Ograniczony zakres."
+  },
+  {
     "id": 100263,
     "name": "Brutal Influence",
     "status": "CONFIRMED_BUG",
@@ -1540,6 +1600,18 @@
     "name": "Bundi",
     "status": "CONFIRMED_BUG",
     "evidence": "Equipment nie ma weapon profile ani ograniczonej prewencji melee strike; ma ogólny prevent 1. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100268,
+    "name": "Burden the Mind",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Attach any minion, unlockEffectPoolTax i vulnerableTo bearerOnly z unlock; block-taxes.test.ts rozgrywa unlock Guard Dogs poza turą i self-burn action w wybranych stanach. Ograniczony zakres."
+  },
+  {
+    "id": 100269,
+    "name": "Bureaucratic Overload",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "playCostMod z cardTypes politicalAction podnosi koszt zagrania political action card, lecz politicalGrant i announceEntryAction dla politycznej akcji z karty w grze nie włączają tego modyfikatora do grantedCost. Nadruk dotyczy political actions, nie tylko zagranych kart; legacy-cost-masters.test.ts sprawdza koszt karty Anarchist Uprising. Statyczna analiza bez nowego testu scenariuszowego."
   },
   {
     "id": 100270,
@@ -1614,10 +1686,28 @@
     "evidence": "Combat ma maneuver zamiast steal blood na ally/minion oraz superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100282,
+    "name": "Call the Wild Hunt",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Dwa wymogi dyscypliny, combatLimit, frenzyShield i superior burnAnimalsForDamage; call-the-wild-hunt.test.ts rozgrywa wybór dwóch zwierząt i ranged damage, nie pełną macierz immunitetu i interakcji. Ograniczony zakres."
+  },
+  {
     "id": 100283,
     "name": "Camaraderie",
     "status": "CONFIRMED_BUG",
     "evidence": "Reaction daje intercept zamiast redukcji bleed 1/3 i warunku drugiego Blood Brother. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100284,
+    "name": "Camarilla Exemplary",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "blockToll nie ma filtra kinds, a blockTollFor traktuje blood toll jako niedostępny dla ally. Druk obciąża tylko vampire próbującego block, więc ally nie powinien być wykluczany z tego powodu. once-in-a-game.test.ts bada wybór i statykę na bearerze, nie blok ally. Osobno helper terms wymaga ready mimo braku tego słowa w nadruku; interpretacji tego zakresu tutaj nie rozstrzygnięto. Statyczna analiza bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100285,
+    "name": "Camarilla Threat",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "refPutInPlay, discardActionPoolTax i vulnerable referendum; table-referendums.test.ts bada dopłatę i przypadek nieudanego głosowania na burn, nie wszystkie sposoby discard. Ograniczony zakres."
   },
   {
     "id": 100286,
@@ -1638,6 +1728,12 @@
     "evidence": "W sprawdzonym zakresie unique hunting ground i blood dla gotowego wampira; tests/cards/legacy-locations.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100289,
+    "name": "Can't Take it with You",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "refPerSeatCards najpierw oblicza wszystkie tally, lecz w pojedynczej pętli emituje gain dla danego seat i zaraz potem burn tego seat. Tekst rozdziela gain każdego Methuselah od następującej po nim fazy burn każdego Methuselah. table-pool-swings.test.ts sprawdza końcowe pule bez sytuacji wrażliwej na kolejność, nie globalną sekwencję zdarzeń. Statyczna analiza bez nowego testu scenariuszowego."
+  },
+  {
     "id": 100290,
     "name": "Canine Horde",
     "status": "REVIEWED_NO_ISSUE_FOUND",
@@ -1648,6 +1744,12 @@
     "name": "Canopic Jar",
     "status": "CONFIRMED_BUG",
     "evidence": "Equipment ma modifyIntercept bez wyboru celu i brak opcji spalenia/unlock oraz superior damage. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100292,
+    "name": "Capitalist",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Bespoke capitalist uzupełnia archetype Sabbat i onBleedSuccess z prey check i once-per-turn; archetypes.test.ts sprawdza skuteczny bleed i zerowy bleed, nie wszystkie redirecty. Ograniczony zakres."
   },
   {
     "id": 100293,
@@ -2088,6 +2190,12 @@
     "evidence": "Akcja ma tylko stealth, brak crypt draw, blood w uncontrolled i superior dołączanego unlock. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100366,
+    "name": "Club Illusion",
+    "status": "UNRESOLVED",
+    "evidence": "Spec lockGrant ustawia ownOnly, a abilityOptions pyta kontrolera lokalizacji; nadruk mówi „An Anarch can burn 1 blood” bez „you control”. docs/action-time-locations-design.md interpretuje to jako uprawnienie własnych Anarchów. Wymaga potwierdzenia reguł co do Anarcha innego kontrolera i odrębnego scenariusza; test bada tylko własnego."
+  },
+  {
     "id": 100367,
     "name": "Club Zombie",
     "status": "REVIEWED_NO_ISSUE_FOUND",
@@ -2128,6 +2236,12 @@
     "name": "Codex of the Damned",
     "status": "CONFIRMED_BUG",
     "evidence": "Equipment ma pusty tryb; brak unique, warunkowego superior tha i efektu po diablerie. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100374,
+    "name": "Codex of the Edenic Groundskeepers",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Conditional -2 stealth podczas bleed i vampire bleedGrant z kosztem blood oraz bonusem przy braku ready unlocked minions; granted-bleed-target-costs.test.ts bada możliwość i wybór akcji oraz stealth w zwykłym bleed, nie pełny scenariusz bonusu i ceny. Ograniczony zakres."
   },
   {
     "id": 100375,
@@ -2304,6 +2418,12 @@
     "evidence": "Poprawiono poziom basic/superior dai i oddzielono wariant basic pot/dai; testy podstawowego i superior aggravated oraz dyscypliny w logu: tests/cards/audit-manual-06.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100404,
+    "name": "Conflict of Interests",
+    "status": "UNRESOLVED",
+    "evidence": "Spec przekłada „cancel the votes and ballots” na forceAbstain, które usuwa oddane głosy i blokuje przyszłe. Opcja może być oferowana przed oddaniem głosów; test legacy-reactions oczekuje abstention w takim przypadku. Wymaga potwierdzenia, czy dokładna zasada cancel votes pozwala działać przed cast i wyklucza późniejsze głosy, zanim porównanie zostanie rozstrzygnięte."
+  },
+  {
     "id": 100405,
     "name": "Confusion",
     "status": "FIXED_TARGETED",
@@ -2322,10 +2442,22 @@
     "evidence": "Master daje gainPool zamiast archetype i lock za zysk blood po stracie pool przez prey. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100408,
+    "name": "Conquer the Beast",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "conquerTheBeast zapisuje counters i mandatoryPress do pola CombatFrame i blokuje equipment również przeciwnikowi; wyszukiwanie użyć pola znajduje zapis, lecz nie reset counters przy kartach, ich spalanie ani przyznawanie obowiązkowych/opcjonalnych press. Brak widocznego umieszczenia karty w play i jej burn po combat. next-batch-a.test.ts weryfikuje tylko pojawienie się opcji. Statyczna analiza bez nowego testu scenariuszowego."
+  },
+  {
     "id": 100409,
     "name": "Conquest of Humanity",
     "status": "REVIEWED_NO_ISSUE_FOUND",
     "evidence": "W sprawdzonym zakresie wymóg dwóch innych Gehenna oraz wybór lokacji prey i ransom: tests/cards/gehenna-events.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100410,
+    "name": "Consanguineous Boon",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Opcje terms są enumerowane z CLANS w state.ts, które zawiera 14 pozycji, choć rejestr crypt zawiera również rzeczywiste klany jak Toreador antitribu. Nie można wybrać takich klanów do Boon. Znany test referendum-terms.test.ts:301 wykrywa rozjazd list, ale nie jest scenariuszem tej karty; nie wszystkie nazwy z rejestru (np. klasy imbued) muszą być poprawnymi klanami. Statyczna analiza bez nowego testu scenariuszowego."
   },
   {
     "id": 100411,
