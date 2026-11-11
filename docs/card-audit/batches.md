@@ -23,3 +23,16 @@ Bez żadnego ręcznego ustalenia po tej paczce: **4143 z 4158**. Wcześniej udok
 | Nadal wymagają naprawy | 3 z 4 | Abjure, Ablative Skin, Abomination. |
 
 Bez żadnego ręcznego ustalenia po tej paczce: **4138 z 4158**. Liczba ta nie obejmuje niezamkniętych problemów i nie oznacza, że pozostałe 20 kart z wpisami są w pełni zweryfikowane.
+
+## Paczka 3 — 100 nowych kart z ID 100011–100112
+
+Szczegóły per karta i zakres w [batch-03-100.md](batch-03-100.md). 100 kart wstępnie porównano, ale nie wszystkie miały scenariuszowe testy.
+
+| Wynik | Liczba |
+|---|---:|
+| Bez wykrytej niezgodności w sprawdzonym zakresie | 1 |
+| Potwierdzone błędy wciąż wymagające naprawy | 40 |
+| Wykryty błąd naprawiony celowo, niepełny audyt | 2 |
+| Wstępny przegląd, wynik nierozstrzygnięty | 57 |
+
+Powyższe 40 nie obejmuje dwóch celowanych napraw; ograniczenia AK-47 pozostają otwarte. Wspólna poprawka dotycząca Animalism dotyczy także innych zwykłych kart dyscyplin, które nie zostały przez to w całości przeaudytowane. Pozostało **4095 z 4158** bez wpisu w manual-findings; liczba obejmuje pozycje wstępnie przejrzane, ale nierozstrzygnięte, i nie oznacza liczby kart w pełni poprawnych.

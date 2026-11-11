@@ -51,10 +51,8 @@ const masterClanRequirements = new Map(
  * never written onto the minion — so they vanish correctly if the card
  * leaves play, with no bookkeeping.
  *
- * Reading on record: the text says "a vampire", not "a vampire you
- * control". Scoped to `own`, since handing an opponent's vampire a
- * Discipline level and a point of capacity is never a play anyone makes,
- * and it keeps the AI from generating one.
+ * "A vampire" includes another player's vampire and one in torpor.
+ * Strategy is the agent's decision; it must not narrow legal targets.
  */
 function disciplineCards(): CardSpec[] {
   const all: Array<[number, string, string]> = [
@@ -115,8 +113,9 @@ function disciplineCards(): CardSpec[] {
       // Discipline cards, and even two of the SAME one (none → basic →
       // superior). The superior gate below is what stops a third.
       attach: {
-        scope: "own" as const,
+        scope: "any" as const,
         kind: "vampire" as const,
+        inTorporToo: true,
         notSuperiorDiscipline: code,
       },
     },
@@ -26211,16 +26210,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Art of Pain [100098] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Unique master: put on any ready Toreador antitribu; +2 strength.
     krcgId: 100098,
     name: "The Art of Pain",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
+    permanent: {
+      where: "bearer", statics: { strength: 2 }, tags: ["The Art of Pain"],
+      attach: { scope: "any", kind: "vampire", clan: "Toreador antitribu" },
+    },
     usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
-    ],
+    modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
     // Art's Traumatic Essence [100100] — fala 49 wierna (300) pełna zgodność bez wydmuszek

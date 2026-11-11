@@ -66,10 +66,268 @@
     "evidence": "Spec ma dodge także dla myt i nie zawiera superior; tekst myt wymaga ranged steal blood, a MYT dodatkowo kradzieży Discipline. src/cards/effects/cards.ts: Absorb the Mind; src/cards/registry.json: 100013."
   },
   {
+    "id": 100017,
+    "name": "Achilles' Heel",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Zamiast dołączenia do cudzego wampira, wyboru circle, warunkowego bonusu i możliwości spalenia karta ma tylko modifyBleed. Tekst: src/cards/registry.json, ID 100017; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100019,
+    "name": "Acquired Ventrue Assets",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Zamiast magazynu krwi dla Giovanni i akcji spalenia master daje tylko gainPool. Tekst: src/cards/registry.json, ID 100019; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100022,
+    "name": "Adhocracy",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Trzy tryby ani/chi/pot mają ten sam bleed + strength; brakuje głosów chi i właściwego ridera pot po bloku. Tekst: src/cards/registry.json, ID 100022; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100023,
+    "name": "The Admonitions",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Zamiast unikalnego mastera i zdolności dobrania/odrzucenia oraz przekazania w discard karta daje gainPool. Tekst: src/cards/registry.json, ID 100023; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100025,
+    "name": "Agent of Power",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Zamiast trifle, wyboru dyscypliny i dołączenia do wampira, spalania w discard, master daje gainPool. Tekst: src/cards/registry.json, ID 100025; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100026,
+    "name": "Aggressive Tactics",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Zamiast karty w grze z wyborem Methuselah, redukcją hand size i akcją spalenia master daje gainPool. Tekst: src/cards/registry.json, ID 100026; implementacja: src/cards/effects/cards.ts."
+  },
+  {
     "id": 100027,
     "name": "Ahriman's Demesne",
     "status": "CONFIRMED_BUG",
     "evidence": "Spec daje wyłącznie maneuver, bez wymogu long range i późniejszej rundy, bez aggravated strike i superior burn. src/cards/effects/cards.ts: Ahriman's Demesne; src/cards/registry.json: 100027."
+  },
+  {
+    "id": 100030,
+    "name": "The Ailing Spirit",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko modifyBleed i actionStealth w trybach podstawowych; brak nadrukowanych trybów bleed i superior przejęcia kontroli. Tekst: src/cards/registry.json, ID 100030; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100032,
+    "name": "AK-47",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Znany błąd limitowanego dodatkowego strike: AK-47 otrzymuje opcjonalny strike automatycznie i może przez to zablokować inne limitowane źródło; także okno kolejnego źródła po oczekującym strike jest niekompletne. Szczegóły docs/additional-strike-followups.md. Tekst: src/cards/registry.json, ID 100032; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100034,
+    "name": "Akunanse Kholo",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Zamiast tytułu, 2 głosów, ograniczeń starszeństwa i przenoszenia tytułu karta daje modifyIntercept. Tekst: src/cards/registry.json, ID 100034; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100035,
+    "name": "Al's Army Apparatus",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Zamiast unikalnej lokacji, lock i wyszukania broni karta daje gainPool. Tekst: src/cards/registry.json, ID 100035; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100036,
+    "name": "Alacrity",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Jest tylko basic cel z dwoma modifyStealth; brak osobnego superior i opcjonalnego maneuver w pierwszej rundzie po bloku. Tekst: src/cards/registry.json, ID 100036; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100038,
+    "name": "Alastor",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Political action ma tylko modifyStealth; nie wybiera celu ani nie realizuje nagrody referendum, ekwipunku i dołączanego Alastor. Tekst: src/cards/registry.json, ID 100038; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100040,
+    "name": "Alpha Glint",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Dostępne są osobne basic ani i for zamiast kombinacji dyscyplin, brak ograniczenia przeciwnika i superior before-range. Tekst: src/cards/registry.json, ID 100040; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100041,
+    "name": "Alvusia",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master ma modifyBleed i addStrength zamiast unikalnej karty z licznikami, ich wydawaniem i odnawianiem. Tekst: src/cards/registry.json, ID 100041; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100043,
+    "name": "Amaranth",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Karta ma jedynie maneuver zamiast diablerie przeciwnika w oknie wysłania do torpor. Tekst: src/cards/registry.json, ID 100043; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100047,
+    "name": "Amria",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Basic chi łączy strikeDodge, maneuver i press, zamiast podstawowego maneuver tylko na long oraz superior dodge z press tylko do zakończenia. Tekst: src/cards/registry.json, ID 100047; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100050,
+    "name": "Anachronism",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast dołączenia do wampira o capacity powyżej 6 oraz zakazu i niszczenia ranged weapons. Tekst: src/cards/registry.json, ID 100050; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100057,
+    "name": "Anarch Secession",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko +1 stealth, nie zmienia wampira na Anarch, nie obsługuje baron ani ograniczenia bloku. Tekst: src/cards/registry.json, ID 100057; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100061,
+    "name": "Ancestor Spirit",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master ma jedynie modifyBleed, nie dołącza unikalnej karty na uprawnionym Laibon i nie dodaje głosu. Tekst: src/cards/registry.json, ID 100061; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100062,
+    "name": "Ancestor's Insight",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Jest jedynie basic aus modifyBleed; brak redukcji bleed jako reakcji i rozdzielenia od superior modifier. Tekst: src/cards/registry.json, ID 100062; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100066,
+    "name": "Anesthetic Touch",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Tryby basic aus/obe łączą dodge i combat ends, brak close-only, hand strike oraz superior first strike. Tekst: src/cards/registry.json, ID 100066; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100067,
+    "name": "Angel of Berlin",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool, zamiast out-of-turn unlock imbued lub equip z ręki. Tekst: src/cards/registry.json, ID 100067; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100068,
+    "name": "Anima Gathering",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma modifyBleed i stealth zamiast dołączenia, wybranego miniona, utrzymania lock oraz +2 intercept i superior +1 bleed. Tekst: src/cards/registry.json, ID 100068; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100069,
+    "name": "Animal Magnetism",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Występuje stealth na osobnych ani i obf zamiast głosów przy obu wymaganych dyscyplinach oraz wersji superior. Tekst: src/cards/registry.json, ID 100069; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100070,
+    "name": "Animalism",
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono celowanie: dowolny wampir, także przeciwnika i w torpor; superior jest wykluczony. Wspólna poprawka zwykłych Discipline masters; tests/cards/audit-batch-100.test.ts. Pozostałe interakcje nie są w pełni zweryfikowane. Tekst: src/cards/registry.json, ID 100070; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100072,
+    "name": "Anonymous Freight",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Jest tylko +1 stealth; brak +3 stealth i właściwego equip z ręki. Tekst: src/cards/registry.json, ID 100072; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100073,
+    "name": "Antediluvian Awakening",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast unikalnej karty ze stratą pool i opcją poświęcenia wampira w unlock. Tekst: src/cards/registry.json, ID 100073; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100075,
+    "name": "Antithesis",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko +1 stealth; nie dołącza do uprawnionego wampira ani nie blokuje hunt i nie wywołuje torpor. Tekst: src/cards/registry.json, ID 100075; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100078,
+    "name": "Approximation of Loyalty",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Jest tylko basic pre stealth zamiast wyboru blokującego i superior anulowania reakcji; brak ograniczenia capacity. Tekst: src/cards/registry.json, ID 100078; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100086,
+    "name": "Argent Baton",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment nie ma weapon profile ani strike strength+1 i opcjonalnego ranged efektu przeciw werewolf. Tekst: src/cards/registry.json, ID 100086; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100087,
+    "name": "Armor of Caine's Fury",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Basic val jest prevent 1 zamiast powtarzalnej prewencji przed strike i ochrony przed Frenzy; brak superior. Tekst: src/cards/registry.json, ID 100087; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100088,
+    "name": "Armor of Terra",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma prevent i stealth zamiast dołączenia do Gargoyle, traktowania aggravated jako normal i superior prewencji. Tekst: src/cards/registry.json, ID 100088; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100089,
+    "name": "Armor of Vitality",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Jest tylko basic prevent 3; brak superior niszczącego melee weapon po odpowiedniej prewencji. Tekst: src/cards/registry.json, ID 100089; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100092,
+    "name": "Army of Apparitions",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Reaction daje modifyIntercept zamiast głosów chi lub anulowania akcji w superior. Tekst: src/cards/registry.json, ID 100092; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100097,
+    "name": "The Art of Memory",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Modifier daje stealth zamiast usunięcia z gry i warunkowego odzyskania karty po udanej akcji. Tekst: src/cards/registry.json, ID 100097; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100098,
+    "name": "The Art of Pain",
+    "status": "FIXED_TARGETED",
+    "evidence": "Zastąpiono gainPool przez unique master z +2 strength na ready Toreador antitribu, z zachowaniem clan requirement i kosztu 2 pool; testy celowania, unikalności i rzeczywistych obrażeń tests/cards/audit-batch-100.test.ts. Tekst: src/cards/registry.json, ID 100098; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100100,
+    "name": "Art's Traumatic Essence",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Oba tryby action zawierają tylko stealth; brak lock celu, blood/life i superior dołączenia. Tekst: src/cards/registry.json, ID 100100; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100102,
+    "name": "As the Crow",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Modifier daje stealth zamiast unlock po udanej akcji i ograniczenia jednej kopii. Tekst: src/cards/registry.json, ID 100102; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100104,
+    "name": "Ascendance",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Master gain 1 pool zgodny z tekstem i testem wypłaty kontrolerowi tests/cards/legacy-masters.test.ts. Ocena obejmuje wyłącznie ten zakres. Tekst: src/cards/registry.json, ID 100104; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100105,
+    "name": "Ashes to Ashes",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Dwa tryby prevent 2 zamiast zamiany burn na torpor, prevent all z unlock/torpor oraz superior gain 2 blood. Tekst: src/cards/registry.json, ID 100105; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100106,
+    "name": "Ashur Tablets",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje natychmiast gainPool 3 zamiast odkładania trzech kopii, limitu per turn, usuwania kopii i wybierania kart z ash heap. Tekst: src/cards/registry.json, ID 100106; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100110,
+    "name": "Augur",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko stealth; brak obejrzenia rąk i kart biblioteki oraz unlock imbued. Tekst: src/cards/registry.json, ID 100110; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100111,
+    "name": "Aura Absorption",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Basic myt i aus łączą stealth z intercept; brak osobnego superior modifier i wymogu spalenia blood w aus. Tekst: src/cards/registry.json, ID 100111; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100207,
