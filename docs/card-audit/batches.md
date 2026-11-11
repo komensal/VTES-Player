@@ -176,3 +176,9 @@ Wybrane, częściowo pokrywające się zestawy testów: 140/141, 203/203, 279/27
 [Pozycje 301–500](batch-06-manual-03.md), ID 101915–102114: 126 rozbieżności z analizy kodu bez nowych testów odtwarzających, 72 ograniczone przeglądy i 2 przypadki nierozstrzygnięte. Wszystkie **500 kart** paczki mają teraz wpis: 346 `CODE_DISCREPANCY`, 151 ograniczonych `REVIEWED_NO_ISSUE_FOUND`, 2 `UNRESOLVED` oraz 1 zachowany historyczny `CONFIRMED_BUG`. Wpis nie dowodzi pełnej zgodności, a wyników nie należy ekstrapolować. Historyczny status może obejmować analizę statyczną bez niezależnego odtworzenia.
 
 Wybrane, częściowo pokrywające się zestawy testów: 337/338, 286/288, 251/252 i 283/285. Porażki to znane testy zbioru dyscyplin, listy frenzy i liczby Justicar; szczegóły w raporcie. Generator inwentarza, test generatora, typecheck i diff-check przeszły; pełnego zestawu nie uruchomiono. W całym inwentarzu **2027 z 4158** kart ma wpis, **2131** go nie ma.
+
+## Paczka 7 — pierwsze 150 z 500 pozycji
+
+[Pozycje 1–150](batch-07-manual-01-partial.md), ID 102115–102264: 76 rozbieżności z analizy kodu bez nowych testów odtwarzających oraz 74 ograniczone przeglądy. Pozostałych 350 pozycji manifestu nie przejrzano w tym etapie; wśród nich jest 5 zachowanych wpisów historycznych `CONFIRMED_BUG`. Historyczny status może obejmować analizę statyczną bez niezależnego odtworzenia. Wpis nie dowodzi pełnej zgodności, a wyników nie należy ekstrapolować.
+
+Wybrane, częściowo pokrywające się zestawy: 296/297, 195/195 i 356/356. Porażka to znany test listy frenzy; szczegóły w raporcie. Generator inwentarza, test generatora, typecheck i diff-check uruchomiono oddzielnie. W całym inwentarzu **2177 z 4158** kart ma wpis, **1981** go nie ma.
