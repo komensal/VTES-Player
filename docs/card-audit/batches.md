@@ -200,3 +200,9 @@ Wybrane testy: 225/227 w 9 plikach; dwie znane porażki list/oczekiwań opisano 
 [Szczegóły 130 pozycji](batch-07-manual-04.md), ID 200121–200250: 86 nowych `CODE_DISCREPANCY` z analizy kodu bez nowego testu odtwarzającego, 41 ograniczonych przeglądów i 3 zachowane wpisy historyczne. Wszystkie **500 pozycji** paczki mają teraz ograniczony ręczny przegląd i wpis: 263 rozbieżności z analizy kodu, 231 ograniczonych przeglądów bez wykrytej niezgodności, 5 historycznych `CONFIRMED_BUG` i 1 `UNRESOLVED`. Historyczny status może obejmować analizę statyczną bez niezależnego odtworzenia; wpis nie dowodzi pełnej zgodności. Wyników nie ekstrapolować.
 
 Wybrane istniejące testy 241/242 w 10 plikach: znana porażka oczekiwania braku handlera Nosferatu Kingdom, szczegóły w raporcie. Pełnego zestawu nie uruchomiono. Generator inwentarza, jego test, typecheck i diff-check sprawdzono osobno. Łącznie **2522 z 4158** kart ma wpis, **1636** nie ma.
+
+## Paczka 8 — pierwsze 250 z 500 pozycji
+
+[Manifest](batch-08-ids.json) obejmuje ID 200251–200750. [Ograniczony przegląd 250 kart](batch-08-manual-01-partial.md), ID 200251–200500: 167 rozbieżności z analizy kodu bez nowych testów scenariuszowych i 83 ograniczone przeglądy bez wykrytej niezgodności. Pozostałych **250 pozycji** paczki nie przejrzano w tym etapie i nie mają wcześniejszych wpisów. Przegląd nie potwierdza pełnej zgodności; nie ekstrapolować wyników.
+
+Wybrane testy: 241/242 w 10 plikach; znana porażka oczekiwania braku handlera Nosferatu Kingdom. Diagnostycznie porównano wartości importu i kluczy contest dla dwóch zapisów Waszyngtonu, bez scenariusza rozgrywki. Pełnego zestawu nie uruchomiono. Generator inwentarza, test generatora, typecheck i diff-check sprawdzono osobno. W całym inwentarzu **2772 z 4158** kart ma wpis, **1386** go nie ma. Historyczne `CONFIRMED_BUG` może obejmować analizę statyczną bez niezależnego odtworzenia.
