@@ -230,3 +230,9 @@ Wybrane testy: 241/242 w 10 plikach; znana porażka oczekiwania braku handlera N
 [Szczegóły 100 kart](batch-09-manual-03.md), ID 201151–201250: 64 rozbieżności z analizy kodu bez nowych testów scenariuszowych i 36 ograniczonych przeglądów bez wykrytej niezgodności. Wszystkie **500 pozycji** paczki mają ograniczony przegląd i wpis: 363 rozbieżności oraz 137 ograniczonych przeglądów bez wykrytej niezgodności. Wpis nie dowodzi pełnej zgodności; wyników nie ekstrapolować.
 
 Wybrane testy: 241/242 w 10 plikach; znana porażka oczekiwania braku handlera Nosferatu Kingdom. Pełnego zestawu nie uruchomiono. Generator inwentarza, test generatora, typecheck i diff-check sprawdzono osobno. W całym inwentarzu **3522 z 4158** kart ma wpis, **636** go nie ma. Historyczne `CONFIRMED_BUG` może obejmować analizę statyczną bez niezależnego odtworzenia.
+
+## Paczka 10 — pierwsze 150 z 500 pozycji
+
+[Manifest](batch-10-ids.json) obejmuje 500 wcześniej niezapisanych kart crypt, ID 201251–201751 bez niewystępującego ID 201701. [Ograniczony przegląd 150 kart](batch-10-manual-01-partial.md), ID 201251–201400: 111 rozbieżności z analizy kodu bez nowych testów scenariuszowych i 39 ograniczonych przeglądów bez wykrytej niezgodności. Pozostałych **350 pozycji** manifestu nie przejrzano w tym etapie i nie mają wcześniejszych wpisów. Triage wskazał w nich dwie pozycje bez raw spec/runtime handlera; flaga nie jest klasyfikacją. Wpis nie dowodzi pełnej zgodności; wyników nie ekstrapolować.
+
+Wybrane testy: 241/242 w 10 plikach; znana porażka oczekiwania braku handlera Nosferatu Kingdom. Pełnego zestawu nie uruchomiono. Generator inwentarza, test generatora, typecheck i diff-check sprawdzono osobno. W całym inwentarzu **3672 z 4158** kart ma wpis, **486** go nie ma. Historyczne `CONFIRMED_BUG` może obejmować analizę statyczną bez niezależnego odtworzenia.
