@@ -94,3 +94,56 @@ describe("Blood Sweat (100211)", () => {
     }
   });
 });
+
+describe("Exuding Blood (100677)", () => {
+  function setup() {
+    const state = threeSeatGame();
+    state.seats[0]!.minions[0]!.disciplines = { qui: "superior" };
+    state.seats[0]!.minions[0]!.blood = 5;
+    const foe = state.seats[1]!.minions.find((m) => m.id === "M")!;
+    foe.blood = 5;
+    state.seats[0]!.hand.push({ id: "ex", name: "Exuding Blood" });
+    const engine = new VtesEngine(state, testRegistry);
+    runTrace(engine, [
+      ["Alice", "bleed:V1"], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "block:M"], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+    ]);
+    return { state, engine, foe };
+  }
+
+  it("is not playable at close range", () => {
+    const { engine } = setup();
+    for (let i = 0; i < 30; i++) {
+      const dp = engine.decision();
+      if (!dp) throw new Error("combat ended before strike choice");
+      if (dp.window === "combat.chooseStrike" && dp.seat === "Alice") {
+        expect(dp.options.some((o) => o.id.startsWith("play:Exuding Blood"))).toBe(false);
+        return;
+      }
+      const pass = dp.options.find((o) => o.id === "pass");
+      if (!pass) throw new Error(`cannot pass ${dp.window}`);
+      engine.choose(pass.id);
+    }
+    throw new Error("did not reach strike choice");
+  });
+
+  it.each([["basic", 1], ["superior", 2]] as const)("%s deals %i unpreventable damage at long range", (mode, amount) => {
+    const { state, engine, foe } = setup();
+    const cf = currentCombat(state);
+    cf.range = "long";
+    cf.preventCredits.opposing = 3;
+    engine.choose(findOption(engine, `play:Exuding Blood:${mode}:V1:ex`));
+    for (let i = 0; i < 40 && !state.eventLog.some((e) => e.type === "DamageInflicted" && e.minion === "M"); i++) {
+      const dp = engine.decision();
+      if (!dp) throw new Error("no decision while resolving strike");
+      const choice = dp.options.find((o) => o.id === "strike:hand") ?? dp.options.find((o) => o.id === "pass");
+      if (!choice) throw new Error(`cannot proceed through ${dp.window}`);
+      engine.choose(choice.id);
+    }
+    expect(foe.blood).toBe(5 - amount);
+    expect(state.seats[0]!.minions[0]!.blood).toBe(5); // no blood cost; opposing hand strike misses at long range
+    expect(state.eventLog.find((e) => e.type === "DamageInflicted" && e.minion === "M")).toMatchObject({ amount });
+    expect(state.eventLog.some((e) => e.type === "DamagePrevented" && e.minion === "M")).toBe(false);
+    expect(cf.preventCredits.opposing).toBe(3);
+  });
+});

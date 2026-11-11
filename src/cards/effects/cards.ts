@@ -22240,14 +22240,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Exuding Blood [100677] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Only at long range: unpreventable 1R/2R damage.
     krcgId: 100677,
     name: "Exuding Blood",
     cardType: "combat",
     bloodCost: 0,
-    usable: [],
+    usable: ["onlyAtLongRange"],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: false, unpreventable: true }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false, unpreventable: true }] },
     ],
   },
   {
@@ -22299,14 +22300,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Eyes of Chaos [100682] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // During a bleed: +1/+2 bleed (limited).
     krcgId: 100682,
     name: "Eyes of Chaos",
     cardType: "actionModifier",
     bloodCost: 0,
-    usable: [],
+    usable: ["onlyDuringBleed"],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyBleed", amount: 2, limited: true }] },
     ],
   },
   {
@@ -22400,14 +22402,16 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Fata Morgana [100707] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // [chi] stealth; [CHI] during a bleed: bleed, or stealth and bleed.
     krcgId: 100707,
     name: "Fata Morgana",
     cardType: "actionModifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "chi", variant: "bleed", usable: ["onlyDuringBleed"], effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
+      { level: "superior", discipline: "chi", variant: "both", usable: ["onlyDuringBleed"], effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyBleed", amount: 1, limited: true }] },
     ],
   },
   {

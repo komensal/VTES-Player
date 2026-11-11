@@ -211,6 +211,17 @@ describe("Donnybrook (100576)", () => {
     expect(a.v1.blood).toBeGreaterThan(2);
   });
 
+  it("is not offered at long range even with Protean and Anarch", () => {
+    const a = inCombat("Donnybrook", { pro: "basic" }, null);
+    a.v1.sect = "anarch";
+    const cf = a.state.frames.find((f) => f.kind === "combat");
+    if (cf?.kind !== "combat") throw new Error("no combat frame");
+    cf.range = "long";
+    const ids = atStrike(a.engine);
+    expect(ids).toContain("strike:hand");
+    expect(ids.some((x) => x.startsWith("play:Donnybrook"))).toBe(false);
+  });
+
   it("requires an Anarch and an equipment or retainer target for Obfuscate", () => {
     const wrongSect = inCombat("Donnybrook", { obf: "basic" });
     wrongSect.v1.sect = "camarilla";

@@ -165,3 +165,84 @@ describe("Compress — distinct basic discipline modes", () => {
     expect(state.eventLog.some((e) => e.type === "DamageInflicted" && e.minion === "M" && e.amount === amount && !!e.aggravated === aggravated)).toBe(true);
   });
 });
+
+describe("Eyes of Chaos — bleed-only Dementation", () => {
+  it.each([["basic", 1], ["superior", 2]] as const)("%s adds %i limited bleed", (mode, amount) => {
+    const state = threeSeatGame();
+    state.seats[0]!.minions[0]!.disciplines = { dem: "superior" };
+    state.seats[0]!.hand = [{ id: "eye", name: "Eyes of Chaos" }];
+    const engine = new VtesEngine(state, testRegistry);
+    atEffects(engine);
+    playModifier(engine, `play:Eyes of Chaos:${mode}:`);
+    const af = state.frames.find((f) => f.kind === "action");
+    if (af?.kind !== "action") throw new Error("action missing");
+    expect(currentBleed(state, af)).toBe(1 + amount);
+  });
+
+  it("cannot be used in a hunt or after another limited bleed modifier", () => {
+    const hunt = threeSeatGame();
+    hunt.seats[0]!.minions[0]!.disciplines = { dem: "superior" };
+    hunt.seats[0]!.minions[0]!.blood = 1;
+    hunt.seats[0]!.hand = [{ id: "eye", name: "Eyes of Chaos" }];
+    const e1 = new VtesEngine(hunt, testRegistry);
+    atEffects(e1, "hunt:V1");
+    expect(e1.decision()!.options.some((o) => o.id.startsWith("play:Eyes of Chaos"))).toBe(false);
+
+    const state = threeSeatGame();
+    state.seats[0]!.minions[0]!.disciplines = { dem: "superior", dom: "basic" };
+    state.seats[0]!.hand = [{ id: "th", name: "Threats" }, { id: "eye", name: "Eyes of Chaos" }];
+    const engine = new VtesEngine(state, testRegistry);
+    atEffects(engine);
+    playModifier(engine, "play:Threats:basic:");
+    expect(engine.decision()!.options.some((o) => o.id.startsWith("play:Eyes of Chaos"))).toBe(false);
+  });
+});
+
+describe("Fata Morgana — separate basic and superior choices", () => {
+  it("superior bleed alone adds no stealth and costs one blood", () => {
+    const state = threeSeatGame();
+    const actor = state.seats[0]!.minions[0]!;
+    actor.disciplines = { chi: "superior" }; actor.blood = 4;
+    state.seats[0]!.hand = [{ id: "fm", name: "Fata Morgana" }];
+    const engine = new VtesEngine(state, testRegistry);
+    atEffects(engine);
+    playModifier(engine, "play:Fata Morgana:superior:V1:bleed:");
+    const af = state.frames.find((f) => f.kind === "action");
+    if (af?.kind !== "action") throw new Error("action missing");
+    expect(currentBleed(state, af)).toBe(2);
+    expect(actor.blood).toBe(3);
+    expect(state.eventLog.some((e) => e.type === "StealthModified" && e.source === "Fata Morgana")).toBe(false);
+  });
+
+  it("superior can combine stealth and bleed when a block makes stealth necessary", () => {
+    const state = threeSeatGame();
+    const actor = state.seats[0]!.minions[0]!;
+    actor.disciplines = { chi: "superior" }; actor.blood = 4;
+    state.seats[0]!.hand = [{ id: "fm", name: "Fata Morgana" }];
+    const engine = new VtesEngine(state, testRegistry);
+    atEffects(engine);
+    runTrace(engine, [["Alice", "pass"], ["Bob", "block:M"]]);
+    playModifier(engine, "play:Fata Morgana:superior:V1:both:");
+    const af = state.frames.find((f) => f.kind === "action");
+    if (af?.kind !== "action") throw new Error("action missing");
+    expect(currentBleed(state, af)).toBe(2);
+    expect(state.eventLog.some((e) => e.type === "StealthModified" && e.source === "Fata Morgana")).toBe(true);
+  });
+
+  it("during a hunt basic stealth remains available but superior bleed modes do not", () => {
+    const state = threeSeatGame();
+    const actor = state.seats[0]!.minions[0]!;
+    actor.disciplines = { chi: "superior" }; actor.blood = 2;
+    state.seats[0]!.hand = [{ id: "fm", name: "Fata Morgana" }];
+    state.seats[1]!.minions.find((m) => m.id === "M")!.attached.push({ card: { id: "i", name: "test" }, locked: false, usedThisPhase: false, statics: { intercept: 1 }, tags: [] });
+    const engine = new VtesEngine(state, testRegistry);
+    atEffects(engine, "hunt:V1");
+    runTrace(engine, [["Alice", "pass"], ["Bob", "block:M"]]);
+    const options = engine.decision()!.options.map((o) => o.id);
+    expect(options.some((id) => id.startsWith("play:Fata Morgana:basic:"))).toBe(true);
+    expect(options.some((id) => id.startsWith("play:Fata Morgana:superior:"))).toBe(false);
+    playModifier(engine, "play:Fata Morgana:basic:");
+    expect(state.eventLog.some((e) => e.type === "StealthModified" && e.source === "Fata Morgana")).toBe(true);
+    expect(state.eventLog.some((e) => e.type === "BleedAmountModified" && e.source === "Fata Morgana")).toBe(false);
+  });
+});

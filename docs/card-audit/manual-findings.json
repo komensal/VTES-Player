@@ -2901,7 +2901,7 @@
     "id": 100576,
     "name": "Donnybrook",
     "status": "FIXED_TARGETED",
-    "evidence": "Naprawiono tryb obf: wybór equipment lub retainer z first strike zamiast hand strike, oraz pro: aggravated hand strike bez +1. Tryb ser zachowuje steal 2. Testy equipment-stripping.test.ts obejmują oba cele, first strike, pro, ser i wymogi Anarch/cele; inne interakcje niezweryfikowane."
+    "evidence": "Naprawiono tryb obf: wybór equipment lub retainer z first strike zamiast hand strike, oraz pro: aggravated hand strike bez +1. Tryb ser zachowuje steal 2. Testy equipment-stripping.test.ts obejmują oba cele, first strike, pro, ser i wymogi Anarch/cele; inne interakcje niezweryfikowane. Dodatkowo naprawiono wspólne respektowanie card-wide onlyAtCloseRange i sprawdzono odmowę przy long range."
   },
   {
     "id": 100577,
@@ -2955,7 +2955,7 @@
     "id": 100585,
     "name": "Drawing Out the Beast",
     "status": "CONFIRMED_BUG",
-    "evidence": "Zamiast przez combat +1 strength przeciwnika jest round; brak zakazu manewrowania do long, ograniczenie press nie rozróżnia end/continue. Superior pressStepDamage resetuje się po rundzie, a tekst wymaga każdej rundy. Spec i engine.ts kroki końca rundy."
+    "evidence": "Zamiast przez combat +1 strength przeciwnika jest round; brak zakazu manewrowania do long, ograniczenie press nie rozróżnia end/continue. Superior pressStepDamage resetuje się po rundzie, a tekst wymaga każdej rundy. Spec i engine.ts kroki końca rundy. Naprawiono i przetestowano card-wide ograniczenie first round; pozostałe opisane błędy nadal otwarte."
   },
   {
     "id": 100586,
@@ -3132,6 +3132,30 @@
     "evidence": "Poza stealth brak basic spalenia Edge i pool oraz superior permanenta przechwytującego Edge. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
+    "id": 100615,
+    "name": "Edged Illusion",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action zamiast lock i 1 niepreventowalnych obrażeń wybranego miniona zawiera tylko prevent; brak superior obrażeń wszystkich ready minion wybranego Methuselah. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100616,
+    "name": "Effective Management",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: cryptToUncontrolled i master; legacy-masters.test.ts sprawdza przeniesienie górnej karty i zakaz przy pustym crypt. Dalszych interakcji nie badano w pełni."
+  },
+  {
+    "id": 100617,
+    "name": "Elder Impersonation",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic stealth oraz superior fail i zakaz ponownego bloku; fail-block.test.ts bada oba tryby i warunek aktywnej próby. Dalszych interakcji nie badano w pełni."
+  },
+  {
+    "id": 100618,
+    "name": "Elder Intervention",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: bleed kierowany do gracza, +2 intercept i delayed replacement w spec; sweep.test.ts testuje intercept i replacement. Konflikt Pack Tactics i inne interakcje nie są w pełni zweryfikowane. Dalszych interakcji nie badano w pełni."
+  },
+  {
     "id": 100621,
     "name": "Elder Michaelis's Hold",
     "status": "CONFIRMED_BUG",
@@ -3144,6 +3168,30 @@
     "evidence": "Spec daje intercept zamiast głosów Ravnos/Laibon Ravnos i nie rozróżnia wydrukowanych typów. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
+    "id": 100623,
+    "name": "The Eldest Command Undeath",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Political action nie zawiera wyboru i spalenia wampira prey po referendum ani ograniczenia pozyskiwania blood przez aktora. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100626,
+    "name": "Elephant Guardian",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Retainer ma 3 life, lecz brak wymogu ready Laibon, limitu jednej kopii i obrażeń działającego miniona podczas close strike resolution. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100627,
+    "name": "Elixir of Distillation",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment nie ma wymogu anarch ani strike spalającego blood i zmniejszającego capacity; brak spalenia po użyciu i sposobu usunięcia redukcji. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100634,
+    "name": "Emerald Legionnaire",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Ally ma statystyki, ale brak opcjonalnego powrotu z ash heap za usunięcie siedmiu kart, z warunkiem Harbinger. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
     "id": 100635,
     "name": "Emergency Powers",
     "status": "CONFIRMED_BUG",
@@ -3154,6 +3202,42 @@
     "name": "Emergency Rations",
     "status": "CONFIRMED_BUG",
     "evidence": "Poza stealth brak usunięcia mortal z ash heap, permanenta oraz przywrócenia krwi do capacity. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+  },
+  {
+    "id": 100639,
+    "name": "Empowering the Puppet King",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Modifier zagrywa działający minion zamiast innego ready vampire; brak możliwości zagrania superior przez locked vampire. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100641,
+    "name": "Enchanted Marionette",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment nie ma dołączanych statyk +1 bleed i stealth przy bleed ani warunku Malkavian antitribu; spec używa natychmiastowych efektów modifier. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100642,
+    "name": "Enforcer",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Brak dołączenia do Osebo, trwałego bonusu strength i limitu jednej kopii; spec ma addStrength i actionStealth. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100643,
+    "name": "Engling Fury",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action nie daje 2 blood ani odpowiednich unlock; spec zawiera tylko stealth dla for/spi i brak superior spi. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100644,
+    "name": "Enhanced Senses",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: +1/+2 intercept w spec; card-scenarios.test.ts sprawdza konieczność intercept i zagranie basic. Superior nie testowano w tym przebiegu. Dalszych interakcji nie badano w pełni."
+  },
+  {
+    "id": 100645,
+    "name": "Enkil Cog",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Modifier daje natychmiast +1 bleed zamiast dołączenia po successful bleed, stałego bonusu i akcji w cudzej minion phase. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
     "id": 100648,
@@ -3174,10 +3258,28 @@
     "evidence": "Spec daje maneuver zamiast basic strike spalającego ally i superior strike wysyłającego wampira do torpor. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
+    "id": 100654,
+    "name": "Ephor",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master zamiast dołączenia do Ventrue capacity 8+ z intercept i vote oraz działania na contested title zawiera efekty modifyStealth/Intercept. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
     "id": 100655,
     "name": "Epiphany",
     "status": "CONFIRMED_BUG",
     "evidence": "Spec daje +1 stealth zamiast +2 oraz nie implementuje unlock ani wyszukania i dołączenia wersji advanced. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+  },
+  {
+    "id": 100657,
+    "name": "Erebus Mask",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment zamiast trwałej staty stealth dla Harbinger ma wyłącznie modifyStealth; brak unique w spec. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100658,
+    "name": "Erosion",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Brak wyboru i dołączenia do cudzego miniona, ustawienia strength 0, zakazu melee i akcji usunięcia; spec ma tylko efekty stealth. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
     "id": 100659,
@@ -3192,6 +3294,18 @@
     "evidence": "Master daje gainPool zamiast unique trifle z lock przyznającym 3 głosy oraz przekazaniem predatorowi. Tekst: src/cards/registry.json, ID 100662; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100663,
+    "name": "Esprit de Corps",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Brak wymogu jednoczesnych pot i pre, dołączenia do gry, unlock, bonusu dla minionów, wygaśnięcia i anulowania superior. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100665,
+    "name": "The Eternal Mask",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Brak akcji bleed w basic oraz całego superior z odzyskaniem unique vampire z ash heap i ograniczeniami. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
     "id": 100667,
     "name": "The Eternals of Sirius",
     "status": "CONFIRMED_BUG",
@@ -3202,6 +3316,12 @@
     "name": "Evil Eye",
     "status": "CONFIRMED_BUG",
     "evidence": "Spec daje intercept zamiast anulowania strike albo action card; brak opóźnionego replacement. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+  },
+  {
+    "id": 100669,
+    "name": "Ex Nihilo",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Brak dołączenia i trwałych efektów immunity, braku damage/gain blood, kosztu upkeep i wariantów usunięcia; spec ma jedynie stealth. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
     "id": 100670,
@@ -3216,10 +3336,52 @@
     "evidence": "Poza stealth brak basic lock i unlock aktora oraz superior wysłania celu do uncontrolled za Orun. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
+    "id": 100674,
+    "name": "Expiate",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Power błędnie opisany jako combat wymagający mart i dający press/strike combat ends; brak wymogu conviction i skutków dwóch rund close. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
     "id": 100675,
     "name": "Extortion",
     "status": "CONFIRMED_BUG",
     "evidence": "Spec daje intercept zamiast permanenta blokującego unlock albo powodującego utratę pool, oraz sposobu usunięcia przez Edge. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+  },
+  {
+    "id": 100677,
+    "name": "Exuding Blood",
+    "status": "FIXED_TARGETED",
+    "evidence": "Poprawiono basic/superior na 1R/2R unpreventable i warunek long range; blood-sweat.test.ts sprawdza oba poziomy, long/close oraz niewykorzystanie prewencji. Pozostałe interakcje nie są w pełni zweryfikowane."
+  },
+  {
+    "id": 100678,
+    "name": "Eye of Hazimel",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec daje tylko superior Potence, nie Chimerstry; brak zakazu przenoszenia/kradzieży, upkeep 1 pool i 5 unpreventable damage przy spaleniu. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100679,
+    "name": "Eye of Unforgiving Heaven",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Zamiast strike 2R aggravated obejmującego wskazanych uczestników walki spec oferuje maneuver, bez superior i pool rider. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100681,
+    "name": "Eyes of Blades",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Nie zaimplementowano superior immunity i zakazu strike; basic poza dodge nie ogranicza prewencji do obrażeń retainera, brak delayed replacement. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100682,
+    "name": "Eyes of Chaos",
+    "status": "FIXED_TARGETED",
+    "evidence": "Dodano superior +2 limited i wymóg bleed na obu poziomach; audit-manual-06.test.ts obejmuje oba poziomy, hunt i zakaz drugiego limited."
+  },
+  {
+    "id": 100683,
+    "name": "Eyes of the Beast",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec basic ma dwa modifyIntercept zamiast jednego oraz nie dołącza karty z -1 stealth; brak superior maneuver. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
     "id": 100684,
@@ -3228,10 +3390,64 @@
     "evidence": "Spec daje tylko +1 intercept bez ograniczeń do bloku diablerie i bez superior +2. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
+    "id": 100685,
+    "name": "Eyes of the Night",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec basic ma dwa modifyIntercept i press zamiast pojedynczego intercept; brak superior z opcjonalnym maneuver albo press po bloku. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100686,
+    "name": "Eyes of the Serpent",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action modifier ma wyłącznie strike combat ends na basic, zamiast anty-ally block w basic i strike przeciw ally w superior. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100688,
+    "name": "Fade from View",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic press i superior dodge w spec; positional-combat.test.ts bada okna tych poziomów. Dalszych interakcji nie badano w pełni."
+  },
+  {
+    "id": 100689,
+    "name": "Fae Contortion",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Brak reflex anulującego grapple i obu combat maneuvers; action modifier stealth jest dostępny na basic zamiast superior myt. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100690,
+    "name": "Faerie Wards",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Brak ograniczeń celu i wieku oraz odpowiednich efektów: aus powinno dawać +2 intercept, myt powodować niepowodzenie akcji i lock, superior także opóźniać unlock. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
     "id": 100691,
     "name": "Failsafe",
     "status": "CONFIRMED_BUG",
     "evidence": "Master daje natychmiast gainPool 1 zamiast unique trifle spalanego za master phase action przy pool poniżej 3 dla 4 pool. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+  },
+  {
+    "id": 100693,
+    "name": "Fake Out",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: maneuver i delayed replacement po walce w spec; basic-combat.test.ts bada opóźnienie replacement. Dalszych interakcji nie badano w pełni."
+  },
+  {
+    "id": 100694,
+    "name": "Falcon's Eye",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Ani nie płaci wymaganego blood; brak superior spi umożliwiającego blokowanie z pominięciem ograniczeń pozycji. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100695,
+    "name": "Fall of the Camarilla",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Event nie wymaga trzech innych Gehenna, nie opóźnia replacement i nie zmienia Camarilla na Independent. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100696,
+    "name": "Fall of the Sabbat",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Event nie wymaga trzech innych Gehenna ani braku ready Black Hand, nie opóźnia replacement i nie zmienia Sabbat na Independent. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
     "id": 100697,
@@ -3246,10 +3462,40 @@
     "evidence": "Spec daje wyłącznie intercept, brak warunków celu/Laibon, opcji zakończenia akcji i warunkowego combat. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
+    "id": 100700,
+    "name": "Fanfare for Elysium",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Political action nie wybiera starszych wampirów i nie daje im blood po referendum; brak superior permanent i jego efektu. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
     "id": 100701,
     "name": "Fantasy World",
     "status": "CONFIRMED_BUG",
     "evidence": "Spec daje tylko stealth zamiast dołączenia, lock, ograniczeń działań i unlock oraz warunków spalenia. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+  },
+  {
+    "id": 100702,
+    "name": "Far Fatuus",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Zamiast long-range strike 2R spec oferuje prevent 2, bez superior prewencji strike do końca rundy. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100705,
+    "name": "Fast Reaction",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Reakcja zamiast nowego combat po bloku innego miniona oferuje sam press; brak lock, zakazu strike oraz superior. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100706,
+    "name": "Fata Amria",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Combat/reaction opisany jako modifierOrReaction z dodge zamiast undodgeable strike dołączającego kartę i reakcji po successful action; brak ograniczeń superior i usunięcia. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+  },
+  {
+    "id": 100707,
+    "name": "Fata Morgana",
+    "status": "FIXED_TARGETED",
+    "evidence": "Rozdzielono basic stealth i superior bleed/bleed+stealth wyłącznie przy bleed; audit-manual-06.test.ts bada oba warianty superior, basic podczas hunt i koszt."
   },
   {
     "id": 100708,
@@ -3262,6 +3508,12 @@
     "name": "Fear of Mekhet",
     "status": "CONFIRMED_BUG",
     "evidence": "Master daje gainPool 1 zamiast dołączenia do tytułowanego wampira, lock, cyklicznej utraty blood i przenoszenia. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+  },
+  {
+    "id": 100711,
+    "name": "Fear of the Void Below",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Dai nie ustawia long jako domyślnego range ani press end co rundę; brak limitu jednej kopii, superior discard i rozdziału trybów obf/dai. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
     "id": 100721,

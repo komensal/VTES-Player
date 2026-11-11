@@ -165,6 +165,18 @@ describe("Sympathetic Agony (101923)", () => {
 });
 
 describe("Drawing Out the Beast (100585)", () => {
+  it("a card-wide first-round restriction prevents play in a later round", () => {
+    const state = threeSeatGame();
+    state.seats[0]!.minions[0]!.disciplines = { ani: "superior" };
+    state.seats[0]!.hand.push({ id: "k", name: "Drawing Out the Beast" });
+    const engine = new VtesEngine(state, testRegistry);
+    toBeforeRange(engine);
+    const cf = combatFrame(engine)!;
+    expect(engine.decision()!.options.some((o) => o.id.startsWith("play:Drawing Out the Beast"))).toBe(true);
+    cf.round = 2;
+    expect(engine.decision()!.options.some((o) => o.id.startsWith("play:Drawing Out the Beast"))).toBe(false);
+  });
+
   it("[ANI] puts 1 unpreventable damage on the foe during the press step", () => {
     const state = threeSeatGame();
     const v1 = state.seats[0]!.minions[0]!;

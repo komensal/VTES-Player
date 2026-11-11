@@ -3391,16 +3391,16 @@ function compileCombatCard(spec: CardSpec): CardHandler {
         // inside `combat.chooseStrike`, so a card played in any other
         // combat window (Haymaker: "play after range is determined")
         // carried a range clause that did nothing.
-        if (mode.usable?.includes("onlyAtLongRange") && cf.range !== "long") continue;
-        if (mode.usable?.includes("onlyAtCloseRange") && cf.range !== "close") continue;
+        if ((spec.usable.includes("onlyAtLongRange") || mode.usable?.includes("onlyAtLongRange")) && cf.range !== "long") continue;
+        if ((spec.usable.includes("onlyAtCloseRange") || mode.usable?.includes("onlyAtCloseRange")) && cf.range !== "close") continue;
         // ROUND GATES, hoisted for the same reason (wave 73). They were
         // left behind when the range gates moved: "not usable first round"
         // was checked only inside `combat.chooseStrike` and "only usable
         // during the first round" only inside `combat.beforeRange`, so
         // either clause printed on a card whose effect lives in any other
         // window did nothing at all. docs/thrown-objects-design.md §3
-        if (mode.usable?.includes("onlyAfterFirstRound") && cf.round <= 1) continue;
-        if (mode.usable?.includes("onlyFirstRound") && cf.round > 1) continue;
+        if ((spec.usable.includes("onlyAfterFirstRound") || mode.usable?.includes("onlyAfterFirstRound")) && cf.round <= 1) continue;
+        if ((spec.usable.includes("onlyFirstRound") || mode.usable?.includes("onlyFirstRound")) && cf.round > 1) continue;
         // "Only usable if this vampire has MORE BLOOD than the opposing
         // vampire" (Mercy for the Weak) — strictly more, and only against a
         // VAMPIRE: an ally has life, not blood, so the comparison has no
