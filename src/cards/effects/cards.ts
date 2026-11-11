@@ -406,12 +406,12 @@ const PRAXIS_SEIZURES: CardSpec[] = (
 // title (docs/fee-stake-design.md §4).
 const FEE_STAKES: CardSpec[] = (
   [
-    [100712, "Boston", ["Toreador"]],
+    [100712, "Boston", ["Toreador", "Toreador antitribu"]],
     [100713, "Corte"],
     [100714, "Los Angeles"],
-    [100715, "New York", ["Brujah"]],
+    [100715, "New York", ["Brujah", "Brujah antitribu"]],
     [100716, "Perth"],
-    [100717, "Seattle", ["Gangrel"]],
+    [100717, "Seattle", ["Gangrel", "Gangrel antitribu"]],
   ] as Array<[number, string, string[]?]>
 ).map(([id, city, clans]) => feeStake(id, city, clans));
 

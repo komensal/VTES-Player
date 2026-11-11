@@ -10,7 +10,7 @@
 
 import { describe, expect, it } from "vitest";
 import type { GameState, MinionState } from "../../src/engine/index.ts";
-import { VtesEngine } from "../../src/engine/index.ts";
+import { VtesEngine, vampireVotes } from "../../src/engine/index.ts";
 import { makeMinion, runTrace, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
 
 function find(state: GameState, id: string): MinionState | undefined {
@@ -69,9 +69,32 @@ describe("the title it grants", () => {
       (testRegistry[name]!.attachOnSuccess!(null)?.statics ?? {}) as Record<string, unknown>;
     expect(statics("Fee Stake: Boston")["votesWhenCalling"]).toEqual({
       amount: 1,
-      bearerClan: ["Toreador"],
+      bearerClan: ["Toreador", "Toreador antitribu"],
     });
     expect(statics("Fee Stake: Corte")["votesWhenCalling"]).toBeUndefined();
+  });
+
+  it.each([
+    ["Fee Stake: Boston", "Toreador", "Toreador antitribu"],
+    ["Fee Stake: New York", "Brujah", "Brujah antitribu"],
+    ["Fee Stake: Seattle", "Gangrel", "Gangrel antitribu"],
+  ] as const)("%s grants its calling vote to both printed clans", (name, clan, antitribu) => {
+    const state = table({});
+    const v1 = find(state, "V1")!;
+    const attached = testRegistry[name]!.attachOnSuccess!(null)!;
+    v1.attached.push({ card: { id: "stake", name }, locked: false, usedThisPhase: false, statics: attached.statics ?? {}, tags: [] });
+    state.seats[0]!.hand.push({ id: "au", name: "Anarchist Uprising" });
+    const engine = new VtesEngine(state, testRegistry);
+    engine.choose(ids(engine).find((id) => id.startsWith("play:Anarchist Uprising"))!);
+    settle(engine, () => state.frames.some((f) => f.kind === "referendum"));
+    const rf = state.frames.find((f) => f.kind === "referendum");
+    if (rf?.kind !== "referendum") throw new Error("no referendum");
+    const votes = (value: string) => { v1.clan = value; return vampireVotes(state, rf, v1).votes; };
+    const unrelated = votes("Ventrue");
+    expect(votes(clan)).toBe(unrelated + 1);
+    expect(votes(antitribu)).toBe(unrelated + 1);
+    rf.callingMinion = "W";
+    expect(votes(antitribu)).toBe(unrelated);
   });
 
   it("all six cities are built, and each contests on ITS OWN city", () => {
