@@ -22930,5 +22930,605 @@
     "name": "Horst von Brühl (G6)",
     "status": "REVIEWED_NO_ISSUE_FOUND",
     "evidence": "Tekst „Camarilla Prince of Mannheim.”; importer rozpoznaje sektę i tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201551,
+    "name": "Inês Tristão (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla Prince of Rio de Janeiro.”; importer rozpoznaje sektę i tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201552,
+    "name": "Kathy Glens (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201553,
+    "name": "Larissa Moreira (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec discardFor ani przy własnym bleed za +1; tests/cards/crypt-wave-4.test.ts sprawdza kwalifikację karty, zapłatę i bleed oraz brak na hunt. Ograniczony zakres."
+  },
+  {
+    "id": 201554,
+    "name": "Lauren (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201555,
+    "name": "Lenny Burkhead (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla primogen: +1 bleed.”; importer rozpoznaje sektę i ewentualny tytuł, self-entry zawiera drukowaną statystykę. Wąski zakres."
+  },
+  {
+    "id": 201556,
+    "name": "Lloyd Brooks (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla primogen.”; importer rozpoznaje sektę i tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201557,
+    "name": "Madison (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201558,
+    "name": "Massimo Falconi (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201559,
+    "name": "Meaghan (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201560,
+    "name": "Min-seo (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201561,
+    "name": "Mkhokheli (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla Prince of Cape Town.”; importer rozpoznaje sektę i tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201562,
+    "name": "Naomi Stewart (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201563,
+    "name": "Nassir (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201564,
+    "name": "Nik Sikko (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201565,
+    "name": "Oshri Dahan (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201566,
+    "name": "Patrik Söderberg (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201567,
+    "name": "Rosalina Cortez (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201568,
+    "name": "Ryan (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201569,
+    "name": "Sully (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201570,
+    "name": "Sybren van Oosten (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec i compile.ts oferują unlock po passed referendum wywołanym przez bearer; brak odrębnego scenariusza karty w przeszukanych testach. Ograniczony zakres."
+  },
+  {
+    "id": 201571,
+    "name": "Tamoszius (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201572,
+    "name": "Trevon Parker (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201573,
+    "name": "Wauneka (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201574,
+    "name": "Kuyén (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec obniża koszt animal dla bearer; tests/cards/crypt-wave-4.test.ts porównuje animal retainer, brak tagu i cenę blood/pool. Nie sprawdzono wszystkich animal allies i interakcji."
+  },
+  {
+    "id": 201575,
+    "name": "Alicia Cortez (G4)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez opcji discard political action po successful directed action za lock młodszego vampire jednego z docelowych Methuselah; Prince of Tampa importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201576,
+    "name": "Aline Gädeke (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec i tests/cards/crypt-wave-2.test.ts sprawdzają ofertę po akcji innego Anarch i bramkę blood; nie zweryfikowano każdej interakcji i limitu pełnym scenariuszem."
+  },
+  {
+    "id": 201577,
+    "name": "Aluc Romas de Leon (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201578,
+    "name": "Asmin Kobane (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201579,
+    "name": "Atiena (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch Baron of Mombasa.”; importer rozpoznaje sektę i tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201580,
+    "name": "Bijou (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201581,
+    "name": "Brandon Grime (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201582,
+    "name": "Crystal Lynn (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201583,
+    "name": "Dario Ziggler (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201584,
+    "name": "Doctor Morocco (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201585,
+    "name": "Elen Kamjian (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec mustBleed; tests/cards/crypt-wave-7.test.ts sprawdza obowiązek, bonus, brak warunku i pierwszeństwo mandatory hunt. Ograniczony zakres."
+  },
+  {
+    "id": 201586,
+    "name": "Elisha Tucker (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch Baron of Pittsburgh.”; importer rozpoznaje sektę i tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201587,
+    "name": "Farah Sarroub (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla Prince of Detroit.”; importer rozpoznaje sektę i tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201588,
+    "name": "Faruq Abd al-Qadir (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec strength i zakaz combat ends dla przeciwnika z własnym corruption; tests/cards/crypt-wave-5.test.ts porównuje własne, obce i brak counterów. Ograniczony zakres."
+  },
+  {
+    "id": 201589,
+    "name": "Greg Mazouni (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201590,
+    "name": "Hanna Nokelainen (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201591,
+    "name": "Hesha Ruhadze (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec liczy unique equipment; tests/cards/crypt-wave-4.test.ts sprawdza zero, wiele oraz niekwalifikujące attachmenty. Ograniczony zakres."
+  },
+  {
+    "id": 201592,
+    "name": "Indira (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201593,
+    "name": "Jenny Silver (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201594,
+    "name": "Warmaksan (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla Prince of Algiers.”; importer rozpoznaje sektę i tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201595,
+    "name": "Joaquín de Cádiz (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201596,
+    "name": "Kalinda (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec unlockForEdge; tests/cards/crypt-wave-2.test.ts sprawdza dostępność, brak Edge i wykonanie z burn Edge. Ograniczony zakres."
+  },
+  {
+    "id": 201597,
+    "name": "Kamile Paukstys (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch: +1 bleed.”; importer rozpoznaje sektę i ewentualny tytuł, self-entry zawiera drukowaną statystykę. Wąski zakres."
+  },
+  {
+    "id": 201598,
+    "name": "Kasim Bayar (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec discard political przed range za +2 strength co combat oraz +1 bleed; tests/cards/crypt-wave-4.test.ts sprawdza payoff, limit, filtr i bleed. Ograniczony zakres."
+  },
+  {
+    "id": 201599,
+    "name": "Khadija Al-Kindi (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla primogen.”; importer rozpoznaje sektę i tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201600,
+    "name": "Marcel (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201601,
+    "name": "Martina Srnankova (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec warunkowego intercept przy bleed; tests/cards/crypt-wave-1.test.ts sprawdza bonus w bleed, bez wszystkich interakcji."
+  },
+  {
+    "id": 201602,
+    "name": "Massimiliano (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch Baron of Belo Horizonte: +1 strength.”; importer rozpoznaje sektę i ewentualny tytuł, self-entry zawiera drukowaną statystykę. Wąski zakres."
+  },
+  {
+    "id": 201603,
+    "name": "Melech (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201604,
+    "name": "Kassandra Tassaki (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla Prince of Thessaloniki.”; importer rozpoznaje sektę i tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201605,
+    "name": "Milton Fox (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201606,
+    "name": "Nathan Turner (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201607,
+    "name": "Nayarana (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201608,
+    "name": "Nonu Dis (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 bleed i afterMasterPlayed, ale compile.ts blokuje kolejne użycie przez usedThisPhase po pierwszym zastosowaniu, choć tekst nie podaje limitu raz na fazę; skan dowolnego CardPlayed od TurnBegan nie wiąże oferty z konkretnym właśnie zagranym masterem. Istniejący test crypt-wave-7 oczekuje jednego użycia, nie sprawdza drugiego mastera; bez nowego scenariusza. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201609,
+    "name": "Octane (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Brak handlera i spec wskazany przez triage; sam tekst „Anarch.” importer przenosi jako sect anarch, bez handlera cryptSelfEntry zwraca pustą listę. Wąski przegląd, bez samodzielnego testu importu tej karty."
+  },
+  {
+    "id": 201610,
+    "name": "Rayne (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201611,
+    "name": "Ruslan Fedorenko (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201612,
+    "name": "Siarhei Levchenko (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201613,
+    "name": "Theo Bell (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec rush minion i +1 strength; tests/cards/crypt-wave-2.test.ts sprawdza ofertę targetów i statykę, nie cały przebieg wszystkich walk. Ograniczony zakres."
+  },
+  {
+    "id": 201614,
+    "name": "Valeriya Zinovieva (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch Baron of Moscow: +1 strength.”; importer rozpoznaje sektę i ewentualny tytuł, self-entry zawiera drukowaną statystykę. Wąski zakres."
+  },
+  {
+    "id": 201615,
+    "name": "Vivian VI (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Anarch Baron of Johannesburg.”; importer rozpoznaje sektę i tytuł/miasto, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201616,
+    "name": "Fiorenza Savona (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez dodatkowego vote za burn Edge oraz za burn political action card w celu uzyskania vote. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201617,
+    "name": "Gilbert Duane (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez blood w influence za reveal/remove top crypt i zmiany non-titled vampire na Anarch przy Malkavian; Baron of Miami importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201618,
+    "name": "Okulos (G7)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez blood za draw karty raz na turę i discard down. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201619,
+    "name": "Victoria Ash (G7)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 bleed, ale brak discard karty przy ready Victoria podczas bleed za +1 bleed acting Assamite. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201620,
+    "name": "Ashlesha (G2)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Independent.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201621,
+    "name": "Karl Schrekt (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 intercept, ale brak prawa grania kart wymagających justicar; importer nie odczytuje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201622,
+    "name": "Len Konopka (G3)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez dodatkowego transfer na początku influence przy ready; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201623,
+    "name": "Abraham DuSable (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec discard tha za intercept lub stealth; tests/cards/crypt-wave-4.test.ts sprawdza warunek potrzebnego stealth i jego zastosowanie, nie wszystkie opcje intercept. Ograniczony zakres."
+  },
+  {
+    "id": 201624,
+    "name": "Amelia Locke (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201625,
+    "name": "Carmelita Neillson (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec conditional handSize, handSizeOf czyta go na ready minionach; tests/cards/crypt-wave-1.test.ts sprawdza +1 w ready. Ograniczony zakres."
+  },
+  {
+    "id": 201626,
+    "name": "Cedrick Calhoun (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec torporOnReferendumLoss; tests/cards/crypt-wave-6.test.ts sprawdza failed, passed, cancel i cudze referendum. Ograniczony zakres."
+  },
+  {
+    "id": 201627,
+    "name": "Evan Klein (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec coinFlipOnDirected; tests/cards/crypt-wave-7.test.ts sprawdza flip, wynik heads/tails i brak flip przy bleed. Ograniczony zakres."
+  },
+  {
+    "id": 201628,
+    "name": "Jason \"Son\" Newberry (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec +1 bleed i +2 votes przeciw blood hunt; tests/cards/crypt-wave-6.test.ts sprawdza kierunek, wariant i bleed. Ograniczony zakres."
+  },
+  {
+    "id": 201629,
+    "name": "Kevin Jackson (G7)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec warunkowego strength Kevina i opposingStrengthBonus Brujah; tests/cards/crypt-wave-3.test.ts sprawdza damage Kevina, lecz test opisany jako druga strona sprawdza tylko brak combat frame. Bez pełnego testu bonusu Brujah; ograniczony zakres."
+  },
+  {
+    "id": 201630,
+    "name": "Mason Ha (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201631,
+    "name": "Mateo García (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Tekst „Camarilla.”; importer rozpoznaje sektę, self-entry nie dodaje statystyk. Wąski zakres, bez osobnego scenariuszowego testu karty."
+  },
+  {
+    "id": 201632,
+    "name": "Nathaniel Bordruff (G6)",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec rush locked vampire; tests/cards/crypt-wave-2.test.ts sprawdza ofertę locked/unlocked. Ograniczony zakres."
+  },
+  {
+    "id": 201633,
+    "name": "Maila (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały stealth Maili zamiast discard political action przy ready podczas własnej tury za +1 stealth własnemu minionowi; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201634,
+    "name": "Abraham Mellon (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec ma płaski handSize miniona nieodczytywany przez handSizeOf; brak prawa grania kart wymagających Tremere jak gdyby Abraham był Tremere. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201635,
+    "name": "Adelino Da Silva (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez -2 blood za rescue starszego vampire z torpor. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201636,
+    "name": "Adisa (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez directed rush na ally lub młodszego vampire i pominięcia normalnego unlock po successful hunt. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201637,
+    "name": "Ayse Dhanial (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez discard phase action za dodanie blood przy ready Ayse. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201638,
+    "name": "Chun Hei (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 strength, ale brak blood za nielimitowany additional strike raz na combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201639,
+    "name": "Daria (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały stealth Darii zamiast lock za stealth innemu Nosferatu; brak dodatkowego blood dla directed actions. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201640,
+    "name": "Darius Shirazi (G5)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez directed action steal equipment z wykluczeniem electronic, vehicle i weapon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201641,
+    "name": "The Guardian (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez zakazu directed actions bez własnego ready unique starszego Nosferatu i lock po successful bleed przeciw kontrolerowi za enter combat z aktorem. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201642,
+    "name": "Gwenllian Arwyn (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 strength, ale brak blood za -1 intercept blocking vampire podczas własnej akcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201643,
+    "name": "Lady Scarlett Churchill (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez prawa Lady Scarlett i kontrolera grania kart wymagających Toreador jak gdyby była Toreador. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201644,
+    "name": "Mickey Wheeler (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały strength zamiast tylko w combat ze starszym vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201645,
+    "name": "Mithras (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +2 bleed i +1 strength, ale brak +2 votes i blood za próbę block lub vote przeciw referendum Mithrasa przez młodszych vampires. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201646,
+    "name": "Oskar Anasov (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 stealth i stały intercept Oskarowi zamiast blood za intercept własnemu vampire podczas akcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201647,
+    "name": "Queen Anne (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje +1 bleed, ale brak blood w polling własnego referendum za abstention młodszego Camarilla vampire i unlock po diablerie; Prince of London importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201648,
+    "name": "Regina Blake (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez opcji użycia do 1 blood Reginy na koszt blood/pool granej location. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201649,
+    "name": "Richard de Worde (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta spec bez podglądu ręki celu po successful bleed i opcji blood za discard karty z niej. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 201650,
+    "name": "Rose Abawi (G6)",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec daje stały bleed zamiast tylko podczas kontroli Mithrasa. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   }
 ]
