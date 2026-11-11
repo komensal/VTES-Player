@@ -101,3 +101,14 @@ Naprawy: Changeling, Charisma, Command of the Beast, Compress, Conflagration i C
 | Nierozstrzygnięte | 0 |
 
 Naprawy: osiem Crusade (Amsterdam, Barcelona, Brussels, Dublin, Geneva, London, Rome, Washington, D.C.) i Dark Steel. Wpis Convergence był wcześniejszy. Bez jakiegokolwiek ręcznego wpisu w całym rejestrze: **3724 z 4158**; to nie liczba kart w pełni sprawdzonych.
+
+## Paczka 4 — częściowy przegląd kandydatów z piątej i szóstej setki
+
+[Wybiórcze ustalenia](batch-04-manual-05-partial.md): pozycje 401–600 manifestu, ID 100515–100714. Nie jest to pełny audyt tych 200 kart. Zapisano 54 nowe ustalenia: 53 otwarte błędy i naprawę Disease, przetestowaną celowo. W tym zakresie dwa błędy (Demonstration i Esgrima) były już zapisane wcześniej.
+
+| Pozycje manifestu | Otwarte błędy | Naprawa celowana | Bez ręcznego wpisu |
+|---|---:|---:|---:|
+| 401–500 | 33 | 1 | 66 |
+| 501–600 | 22 | 0 | 78 |
+
+Razem 144 z tych 200 kart nadal nie ma ręcznego wpisu. W całym inwentarzu takich kart jest **3670 z 4158**; wpis o błędzie lub naprawie nie oznacza pełnej weryfikacji karty. Kontynuować od pominiętych pozycji, nie traktując szóstego zakresu jako ukończonego.

@@ -22011,14 +22011,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Disease [100553] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Before range: opposing minion gets -1/-2 strength for the combat.
     krcgId: 100553,
     name: "Disease",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "opposingStrength", amount: -1, scope: "combat" }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "opposingStrength", amount: -2, scope: "combat" }] },
     ],
   },
   {

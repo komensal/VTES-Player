@@ -255,6 +255,48 @@ describe("Song of Serenity (101827) — the OPPONENT's strength", () => {
   });
 });
 
+describe("Disease (100553) — opposing strength for the combat", () => {
+  it.each([["basic", -1], ["superior", -2]] as const)("%s costs one blood and reduces the opponent's hand damage", (mode, penalty) => {
+    const a = inCombat("Disease", { qui: "superior" });
+    a.m.strength = 3;
+    const before = a.v1.blood;
+    const ids = walkTo(a.engine, "combat.beforeRange");
+    const play = ids.find((id) => id.startsWith(`play:Disease:${mode}:V1:st1`));
+    expect(play).toBeDefined();
+    a.engine.choose(play!);
+    settle(a.engine);
+    expect(a.v1.blood).toBe(before - 1);
+    expect(combat(a.state).strengthBonus.opposing).toBe(penalty);
+    expect(combat(a.state).strengthBonusRound.opposing).toBe(0);
+    for (let i = 0; i < 30; i++) {
+      const dp = a.engine.decision();
+      if (!dp || dp.window === "combat.endOfRound") break;
+      const option = dp.options.find((o) => o.id === "strike:hand") ?? dp.options.find((o) => o.id === "pass");
+      if (!option) throw new Error(`no usable option in ${dp.window}`);
+      a.engine.choose(option.id);
+    }
+    expect(before - a.v1.blood).toBe(1 + 3 + penalty);
+  });
+
+  it("does not offer superior without superior Quietus", () => {
+    const a = inCombat("Disease", { qui: "basic" });
+    const ids = walkTo(a.engine, "combat.beforeRange");
+    expect(ids.some((id) => id.startsWith("play:Disease:basic"))).toBe(true);
+    expect(ids.some((id) => id.startsWith("play:Disease:superior"))).toBe(false);
+  });
+
+  it("requires its blood cost and cannot be played after range", () => {
+    const noBlood = inCombat("Disease", { qui: "superior" });
+    noBlood.v1.blood = 0;
+    expect(walkTo(noBlood.engine, "combat.beforeRange").some((id) => id.startsWith("play:Disease:"))).toBe(false);
+
+    const late = inCombat("Disease", { qui: "superior" });
+    const ids = walkTo(late.engine, "combat.beforeStrikes");
+    expect(ids).toContain("pass");
+    expect(ids.some((id) => id.startsWith("play:Disease:"))).toBe(false);
+  });
+});
+
 describe("Shadow of the Wolf (101741) — a strike and a strength, as credits", () => {
   it("grants the additional strike and the round strength before range", () => {
     const a = inCombat("Shadow of the Wolf", { pro: "superior" });
@@ -335,6 +377,13 @@ describe("the scopes tell themselves apart in round 2", () => {
     expect(r.round).toBe(2);
     expect(r.actingRound).toBe(0);
     expect(r.actingCombat).toBe(0);
+  });
+
+  it.each([["basic", -1], ["superior", -2]] as const)("Disease %s persists into round two", (mode, penalty) => {
+    const r = intoRoundTwo("Disease", mode, { qui: "superior" });
+    expect(r.round).toBe(2);
+    expect(r.oppCombat).toBe(penalty);
+    expect(r.oppRound).toBe(0);
   });
 
   it("Song of Serenity: the basic lapses and the superior persists", () => {
