@@ -8832,6 +8832,906 @@
     "evidence": "Wąski zakres: archetype/trifle i osobny onBlockDeclared; archetypes.test.ts bada warunki oraz limit na turę."
   },
   {
+    "id": 101565,
+    "name": "Rebirth",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action modifier daje stealth zamiast użycia przy udanej diablerie Red List, zakazu blood hunt i unlock; brak limitu na turę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101566,
+    "name": "Recalled to the Founder",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: event wymaga dwóch innych Gehenna, przy trzech vampire klanu wybiera burn i zwalnia gracza po burn capacity >=6; gehenna-unlock.test.ts bada wybór i zwolnienie."
+  },
+  {
+    "id": 101567,
+    "name": "Reckless Agitation",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Independent/Anarch capacity >=5, referendum alokuje 6 punktów co najmniej dwóm innym graczom; clan-sect.test.ts bada wymagania i alokację."
+  },
+  {
+    "id": 101568,
+    "name": "Recruiting Party",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast dodania blood każdemu Ventrue antitribu w uncontrolled region. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101569,
+    "name": "Recruitment",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast przeszukania crypt, pokazania wybranego vampire i przeniesienia do uncontrolled. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101570,
+    "name": "Recruitment Exercise",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast dobierania i ujawnienia karty crypt oraz blood dla Black Hand; brak wymogu Black Hand. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101571,
+    "name": "Recure of the Homeland",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast akcji locked vampire w torpor, wyjścia z torpor i skutków bloku/diablerie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101572,
+    "name": "Recurring Contemplation",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic dają stealth zamiast wyboru ally lub młodszego vampire i zakazu bloku; brak timingu announce, limitu na turę i superior lock za blood. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101573,
+    "name": "Red Herring",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic modifier daje stealth zamiast reakcji na block, unlock, zakończenia akcji i zwrotu karty; brak superior lock blockera. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101574,
+    "name": "Red List",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast wyboru młodszego vampire/ally, nadania Red List i zakazu bloku przez cel; brak wymogu titled non-Red-List. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101575,
+    "name": "The Red Question",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec ma typ actionModifier oraz stealth zamiast action dołączającej Anarch i spalanej po zmianie sect; brak ograniczeń aktora. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101576,
+    "name": "Redcap Wilder",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Retainer ma 2 life, lecz nie ma kosztu za próbę bloku, ani superior ze zniżką. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101577,
+    "name": "Redeem the Lost Soul",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: wybór vampire z własnego ash heap, gain połowy capacity zaokrąglonej w dół i remove; ash-heap-resource.test.ts."
+  },
+  {
+    "id": 101578,
+    "name": "Redirection",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: po odmowie bloków redirect bleed z lock, basic tylko od młodszego, superior bez ograniczenia wieku; bleed-redirects.test.ts."
+  },
+  {
+    "id": 101579,
+    "name": "Redistribution",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast gain blood i przenoszenia blood/equipment w circle; brak superior unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101580,
+    "name": "Redline",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master ma stealth i press zamiast out-of-turn przejęcia vampire po blood hunt i trwałych zdolności Independent, press i rush. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101581,
+    "name": "Reform Body",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Modifier/reaction ma intercept zamiast zastąpienia burn torporem przez locked/in-torpor vampire oraz superior gain blood. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101582,
+    "name": "Reformation",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Trzy tryby action mają tylko stealth zamiast kradzieży equipment, hunting ground i corruption counterów; brak wymogu Anarch. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101583,
+    "name": "Regaining the Upper Hand",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: referendum wybiera Methuselah i przekazuje Edge po sukcesie; the-edge.test.ts."
+  },
+  {
+    "id": 101584,
+    "name": "Regarhagan's Hold",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast out-of-turn permanenta na innym graczu, podniesienia kosztu wybranej reaction i gromadzenia pool do spalenia. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101585,
+    "name": "Regeneration",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast gain 4/5 blood w torpor i zasad bloku/diablerie; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101586,
+    "name": "Regenerative Blood",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique dołączanej do Samedi możliwości leczenia 2 normal damage za blood. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101587,
+    "name": "Regent",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: title Regent dla własnego Sabbat >=8, rush Sabbat i przeniesienie po diablerie; granted-rush.test.ts bada wymóg, tytuł, rush i diablerie."
+  },
+  {
+    "id": 101588,
+    "name": "Rego Motum",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba tryby mają ogólny prevent 2/4 bez ograniczenia do strike przeciwnika. compile.ts:combat.damageResolution sprawdza pending damage, lecz dla prevent nie filtruje źródła ani rodzaju; sweep2.test.ts bada trafienie przeciwnika, nie obrażenia z innych źródeł. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101589,
+    "name": "Reindoctrination",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast zmiany enslave, przejęcia i unlock młodszego Gargoyle. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101590,
+    "name": "Reinforcements",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusta political action bez wymogu titled vampire, wyboru Methuselahów i kart do wtasowania oraz usunięcia karty z gry po akcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101591,
+    "name": "Reins of Power",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: oncePerGameByName oraz wybór vampire każdego gracza, +6 pool i strata według capacity wyboru predatora; once-in-a-game.test.ts bada wybrane rozliczenia."
+  },
+  {
+    "id": 101592,
+    "name": "Rejuvenate",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec ma typ combat i dyscyplinę def zamiast imbued power z odzyskiwaniem life w unlock i action za conviction dodającą blood/life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101593,
+    "name": "Release of the Shackled Soul",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action daje modifyStealth zamiast burn ally lub retainera prey; brak superior z +1 stealth. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101594,
+    "name": "Relentless Pursuit",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: press i superior warunkowy +2 hand size po nowej rundzie w spec; round-sequencing.test.ts bada rider."
+  },
+  {
+    "id": 101595,
+    "name": "Relentless Reaper",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic thn ma press continueOnly, chociaż tekst pozwala także zakończyć combat. Superior startNewRound nie deklaruje onlyIfCombatWouldEnd ani onlyIfBothCombatantsReady; compile.ts sprawdza te warunki tylko, gdy figurują w mode.usable. library-audit.test.ts jedynie wymienia nazwę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101596,
+    "name": "Reliquary: Akunanse Remains",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Equipment zawiera modifyBleed jako efekt zagrania zamiast unique permanenta, wyboru dyscypliny w unlock oraz statycznych bleed i capacity dla Akunanse. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101597,
+    "name": "Reliquary: Biague",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty equipment bez oglądania wierzchu biblioteki i opcjonalnego oglądania hand za blood przez ready Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101598,
+    "name": "Reliquary: Shango Remains",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty equipment bez wymaganego usunięcia Assamite ani płatnej zdolności +2 hand size. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101599,
+    "name": "Reliquary: Trinket",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Equipment ma actionStealth zamiast statycznego hand size dla ready Laibon, akcji discard i limitu jednej kopii. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101600,
+    "name": "Remnant of the Endless Storm",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally ma podstawowe statystyki i addStrength 1 zamiast strength za każde life, rush, limitu damage i odzyskiwania life; brak unique i wymogu magaji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101601,
+    "name": "Remover",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master ma stealth zamiast dołączenia do Black Hand i przyznania akcji lock karty oraz limitu jednej kopii. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101602,
+    "name": "Renegade Garou",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally ma podstawowe statystyki, lecz dodatkowy strike i maneuver znajdują się w efektach zagrania zamiast trwałych zdolności; brak akcji rush i odzyskania life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101603,
+    "name": "Renewed Vigor",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic tryby mają tylko stealth zamiast dołączenia i wyjścia z torpor albo odnowienia life; brak superior uzupełniającego blood. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101604,
+    "name": "Repair the Undead Flesh",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma stealth +1 zamiast +3 oraz nie dołącza trwałej możliwości leczenia aggravated damage i nie ma superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101605,
+    "name": "Repo Man",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: osobny handler Repo Man, unlock aktora na koniec tury i wyszukanie pierwszego vehicle wraz z wyborem miniona i kosztem; equip-unlocks.test.ts."
+  },
+  {
+    "id": 101606,
+    "name": "Repulsion",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic mają po dwa stealth zamiast oddzielnych basic pre z maneuver po bloku i basic obe +1 stealth; brak superior trwałego stealth. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101607,
+    "name": "Research",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast przeszukania biblioteki, umieszczenia 3 kart w research area i limitu jednej na grę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101608,
+    "name": "Resilience",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic prevent 1, superior prevent 3 tylko normal damage; armour.test.ts i aggravated-damage.test.ts badają wybrane interakcje."
+  },
+  {
+    "id": 101609,
+    "name": "Resilient Mind",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast dołączenia z opcjonalną odpornością na określone karty za blood; brak superior unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101610,
+    "name": "Resist Earth's Grasp",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic press lub maneuver z grantPress oraz superior stealth; modifier-or-combat.test.ts bada ofertę maneuver i superior stealth, nie wszystkie interakcje press."
+  },
+  {
+    "id": 101611,
+    "name": "Respire",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec ma typ combat i dyscyplinę red zamiast dwóch imbued actions, zadania damage/odzyskania conviction lub dodania blood/life za conviction. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101612,
+    "name": "Resplendent Protector",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: mortal 1 life, wymóg Toreador i zapobieganie 1 damage na combat w spec; combat-retainers.test.ts bada użycie."
+  },
+  {
+    "id": 101613,
+    "name": "Restoration",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: +1 stealth i gain 2/3 blood; sweep2.test.ts bada wybrane wykonanie."
+  },
+  {
+    "id": 101614,
+    "name": "Restricted Vitae",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: zakaz hunt poza must hunt, opcjonalny directed hunt na młodszego i delayed replacement po udanym hunt; hunt-success.test.ts i granted-hunts.test.ts."
+  },
+  {
+    "id": 101615,
+    "name": "Restructure",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic action ma tylko stealth zamiast dołączenia do ally i płatnego unlock; brak superior kradnącego ally. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101616,
+    "name": "Resume the Coil",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic action ma tylko stealth zamiast wyjścia z torpor z obsługą bloku/diablerie; brak superior rescue. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101617,
+    "name": "Resurrection",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic mają tylko stealth zamiast przeniesienia ally/retainera z ash heap, z wymaganym warunkiem wcześniejszego burn; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101618,
+    "name": "Retain the Quick Blood",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic tryby mają tylko stealth i wymagają pojedynczej dyscypliny zamiast obu, bez permanenta magazynującego blood i superior transferu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101619,
+    "name": "Retribution",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje prevent zamiast 3 unpreventable damage minionowi, który zbleedował kontrolera za więcej niż 1 pool, i limitu raz na grę. opposing-statics.test.ts dotyczy karty Haqim's Law: Retribution, nie tej. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101620,
+    "name": "The Return to Innocence",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast bleed, dołączenia po sukcesie i warunkowego usunięcia vampire oraz spalenia pool prey. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101621,
+    "name": "Reunion Kamut",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast dodania 2 blood do Black Hand w uncontrolled; brak wymogu Black Hand. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101622,
+    "name": "Revelation of Desire",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic daje +1 bleed bez jawnego onlyDuringBleed; brak superior +3 po spaleniu corruption counter. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101623,
+    "name": "Revelation of Despair",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic daje intercept zamiast burn blood/life po bloku; brak superior corruption i steal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101624,
+    "name": "Revelation of Ecstasy",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma tylko stealth zamiast lock ready minion prey; brak superior corruption i steal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101625,
+    "name": "Revelation of the Sire",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast dołączenia do młodszego Caitiff, zmiany klanu i capacity oraz wymogów aktora. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101626,
+    "name": "Revelation of Wrath",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Combat ma maneuver zamiast counterów corruption na końcu rundy, z wymaganym damage i limitem na rundę; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101627,
+    "name": "Revelations",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic peek i wybór discard z hand prey, superior otwarta hand i możliwość burn; last-buildable.test.ts bada wybór, pamięć i różne tryby."
+  },
+  {
+    "id": 101628,
+    "name": "Revenant",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: ghoul retainer 2 life, intercept +1 i wymóg Tzimisce w spec; allies-retainers.test.ts bada wybrane interakcje retainera."
+  },
+  {
+    "id": 101629,
+    "name": "Reversal of Fortunes",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Puste political effects nie odwracają kolejności gry po referendum. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101630,
+    "name": "Revocation of Tyre",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Puste political effects nie tworzą permanenta z opcją wyboru Camarilla przez Assamite. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101631,
+    "name": "Revolutionary Council",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: wymóg baron, wybór unlocked Anarch i alokacja punktów do graczy/location/equipment; last-buildable.test.ts bada wybór i rozliczenie."
+  },
+  {
+    "id": 101632,
+    "name": "Rewilding",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Gangrel pali location i 2 pool jej kontrolera; permanent-target-actions.test.ts bada cel i skutek."
+  },
+  {
+    "id": 101633,
+    "name": "Rewind Time",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic dają intercept zamiast zmniejszenia bleed lub anulowania action card; brak superior anulowania master poza akcją. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101634,
+    "name": "Riddle Phantastique",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast dołączenia, riddle counters i zatrzymania unlock; brak doboru celów oraz globalnego limitu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101635,
+    "name": "Righteous Aura",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Combat ma modifyBleed zamiast dołączenia po pokonaniu przeciwnika, trwałego bleed +2 oraz warunkowego burn i limitu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101636,
+    "name": "Rigor Mortis",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Tryby thn zawierają press zamiast grantPress: barOpponentAdditionalStrikes umieszcza tryb w beforeRange, a wykonanie press wywołuje applyPressCard, od razu ustawiające willContinue i emitujące PressUsed. Tekst daje opcjonalny press później; kotm-rigor-etc.test.ts bada jedynie basic pre. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101637,
+    "name": "Riposte",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic combat ends bez wymaganego wyłączenia pierwszej rundy i nieprewencyjnych obrażeń po combat; brak superior 2 damage. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101638,
+    "name": "Rise of the Fallen",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast unique permanenta z utratą pool prey i akcją spalenia; brak wymogu infernal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101639,
+    "name": "Rise of the Nephtali",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty event bez wymogu innego Gehenna, delayed replacement, nadawania tytułu liaison i reguły contest. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101640,
+    "name": "The Rising",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: event ogranicza własnoturowe gain pool bez Edge/VP, wymaga innych Gehenna i opóźnia replacement; gehenna-taxes.test.ts bada Edge i replacement."
+  },
+  {
+    "id": 101641,
+    "name": "Ritual Challenge",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma addStrength jako efekt zagrania zamiast dołączenia z trwałym strength +1 i limitem jednej karty; brak wymogu Gangrel. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101642,
+    "name": "Ritual of the Bitter Rose",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action modifier daje stealth zamiast przyznania blood ready vampires przy burn vampire po diablerie lub w combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101643,
+    "name": "Ritual Scalpel",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Equipment ma prevent zamiast unique equipment z hunt +1 i action damage mortal/gain blood dla Nagaraja. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101644,
+    "name": "Robert Carter",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique ghoul 1 life, +2 bleed i koszt upkeep lub burn; retainer-upkeep.test.ts bada opłatę i jej odmowę."
+  },
+  {
+    "id": 101645,
+    "name": "Rock Cat",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally ma podstawowe statystyki i press jako efekt rekrutacji zamiast rush, zakazu strike młodych vampire, opcjonalnego press i gry Potence jako vampire capacity 3. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101646,
+    "name": "Rockheart",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Każdy basic łączy dodge z prevent 2 zamiast osobnego dodge tha i zapobiegania połowie strike vis; brak superior na cały combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101647,
+    "name": "Rogue",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: trifle na vampire po diablerie i rush dowolnych vampire z dodatkowym stealth Auspex; marked-vampires.test.ts."
+  },
+  {
+    "id": 101648,
+    "name": "Roll",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Combat ma maneuver, ale brak delayed replacement po combat, limitu raz na rundę i opcji odzyskania karty z ash heap przez ready miniona. after-combat-ends.test.ts dotyczy Rolling with the Punches, nie Roll. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101649,
+    "name": "Rolling with the Punches",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Superior preventAllThisRound jest oferowany dla dowolnego pending damage do grającego: compile.ts nie sprawdza źródła przed ofertą, choć tekst dotyczy strike przeciwnika; engine.ts następnie usuwa pending damage tylko od przeciwnika. after-combat-ends.test.ts bada jedynie poprawny strike. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101650,
+    "name": "Rom Gypsy",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: mortal ally, 1R, opcjonalny maneuver i lock za stealth Ravnos w spec; plain-allies-2.test.ts bada lock grant."
+  },
+  {
+    "id": 101651,
+    "name": "Rooftop Shadow",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic reaction +1 intercept nie ma wymaganego wykluczenia aktora z Celerity; brak superior dopuszczającego basic Celerity aktora, ale nie superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101652,
+    "name": "Root of Vitality",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast rescue vampire z torpor; brak superior dodającego life ally. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101653,
+    "name": "The Rose Foundation",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique location z lock i płatnością conviction za redukcję bleed lub votes. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101654,
+    "name": "Rötschreck",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master ma strikeCombatEnds zamiast out-of-turn frenzy uruchamianego próbą aggravated damage, z lock, torpor i czasowym zakazem unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101655,
+    "name": "Rowan Ring",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty equipment bez unique melee strike wysyłającego przeciwnika do torpor i przenoszącego tam kartę z zakazem unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101656,
+    "name": "RPG Launcher",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: weapon 6R, long only, nie w pierwszej rundzie; conditional-weapons.test.ts bada limit rundy."
+  },
+  {
+    "id": 101657,
+    "name": "Rubicon",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast wymagania titled vampire i spalenia kwalifikującego się młodszego non-titled vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101658,
+    "name": "Ruins of Ceoris",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Equipment ma maneuver i press jako efekty zagrania zamiast unique location z opcjonalnym maneuver lub press na combat dla Tremere antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101659,
+    "name": "Ruins of Charizel",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique location przechwytującej pool za infernal unlock, spalającej counters za redukcję bleed i czyszczonej w discard predatora. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101660,
+    "name": "Ruins of Villers Abbey, Belgium",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty equipment bez unique location i opcji płatnych maneuverów w pierwszej rundzie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101661,
+    "name": "Rumble",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast wymogu Sabbat, rush gotowego miniona, bonusu hand size i warunkowej straty pool. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101662,
+    "name": "The Rumor Mill, Tabloid Newspaper",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique location lock za wybór vampire, który może zapłacić blood za intercept; action-time-locations.test.ts."
+  },
+  {
+    "id": 101663,
+    "name": "Rumors of Gehenna",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Political action ma modifyStealth zamiast wyboru graczy, permanenta z dodatkowymi master actions i referendum do burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101664,
+    "name": "Rutor's Hand",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: action attach locked, obrażenie i lock za unlock w spec; action-attachments.test.ts bada przyłączenie, blok i ability. Superior opt-out oraz inne interakcje wymagają osobnej weryfikacji."
+  },
+  {
+    "id": 101665,
+    "name": "Saatet-ta",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique mummy 2 life, 2 strength, 1 bleed, lock za stealth/intercept/bleed Ministry oraz shuffle po burn; mummies.test.ts bada wybrane efekty."
+  },
+  {
+    "id": 101666,
+    "name": "Sabbat Inquisitor",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Political action ma bleed i stealth zamiast wymagania tytułu oraz dołączenia Inquisitor po referendum i jego zdolności oraz referendum burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101667,
+    "name": "Sabbat Priest",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Tekst wymaga ready Sabbat vampire, a spec używa requiresSect na callerze, zamiast warunku innego kontrolowanego ready Sabbat. Test once-in-a-game.test.ts używa Sabbat callera i nie rozróżnia tych przypadków; efekt block toll jest zaimplementowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101668,
+    "name": "Sabbat Threat",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Puste political effects bez wymogu prince/justicar, wyboru Methuselahów i threat counters z utratą pool oraz opcją burn Edge. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101669,
+    "name": "Sacrament of Carnage",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: ranged strike 2/3 damage; thrown-objects.test.ts bada wybrane ranged strikes."
+  },
+  {
+    "id": 101670,
+    "name": "Sacré-Cœur Cathedral, France",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique location notEquipment z zakazem bloku przez allies w spec; legacy-equipment.test.ts bada ograniczenia bloku; last-equipment-modifiers.test.ts sprawdza brak tagu equipment."
+  },
+  {
+    "id": 101671,
+    "name": "Sacrifice",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Sabbat capacity >=8 i referendum palące vampire tego samego clan o capacity <=6; legacy-political-removal.test.ts."
+  },
+  {
+    "id": 101672,
+    "name": "Sacrificial Lamb",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic action ma tylko stealth zamiast spalenia vampire w torpor, gain blood i transferu equipment; brak superior celu innego gracza. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101673,
+    "name": "Safe Passage",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic dają stealth zamiast zmniejszenia intercept allies oraz zwiększenia kosztu reaction; brak superior dołączającego i zwiększającego koszt directed actions. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101674,
+    "name": "Salt of Thoth",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Reaction daje intercept zamiast anulowania akcji na własną location i dołączenia z możliwością późniejszego burn; brak obsługi locked Tremere. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101675,
+    "name": "Samuel Haight",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally ma statystyki oraz efekty zagrania bleed/stealth zamiast unique i trwałych zdolności płatnego bleed, steal strike, dyscyplin, referendum i odzyskania life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101676,
+    "name": "San Lorenzo de El Escorial, Spain",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Equipment ma modifyStealth zamiast unique location z directed steal blood z uncontrolled predatora. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101677,
+    "name": "San Nicolás de los Servitas",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Equipment ma prevent zamiast unique location z kosztem directed actions, konsekwencjami burn i zakazem contest. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101678,
+    "name": "Sanguinary Wind",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: strike nie do uniknięcia w tej rundzie, z różnymi oknami basic/superior; round-sequencing.test.ts."
+  },
+  {
+    "id": 101679,
+    "name": "Sanguine Entrapment",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic łączą dodge i combat ends dla pojedynczych dyscyplin zamiast wymagać pary i ograniczać strike przeciwnika; brak superior, timingu i limitu rundy. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101680,
+    "name": "Sanguine Instruction",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast wyboru superior discipline i dołączenia do ready vampire tego samego klanu z poziomem dyscypliny i capacity. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101681,
+    "name": "The Sargon Fragment",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty equipment bez unique, superior Necromancy i płatnej akcji przeniesienia library card z ash heap do hand. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101682,
+    "name": "Saturday-Night Special",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: gun 1R z optional maneuver per combat; legacy-weapons.test.ts i armed-mid-combat.test.ts badają wybrane interakcje."
+  },
+  {
+    "id": 101683,
+    "name": "Savannah Runner",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic intercept nie wymaga Laibon i nie ma kosztu 1 blood; brak superior płatnego lock/unlock innego Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101684,
+    "name": "Save Face",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Combat daje press i combat ends zamiast użycia przez zewnętrznego unlocked vampire, mandatory press młodszego vampire tego samego klanu i gain blood po combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101685,
+    "name": "Sawed-Off Shotgun",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: gun 3R raz na combat w spec; legacy-weapons.test.ts i strike-sources.test.ts badają wybrane przypadki."
+  },
+  {
+    "id": 101686,
+    "name": "Scalpel Tongue",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: w polling wybór vampire, który głosował, lock i abstain; superior burn 1 blood; abstain-gate.test.ts bada warunki celu i skutki."
+  },
+  {
+    "id": 101687,
+    "name": "Scapelli, The Family \"Mechanic\"",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally nie ma statystyk life/strength/bleed ani unique, ranged strike 2R lub trwałego press-to-continue; press jest efektem zagrania. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101688,
+    "name": "Scarlet Lore",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic mają dodatkowe modifyStealth i actionStealth zamiast wyszukania/przeniesienia minion card na wierzch biblioteki; brak superior z dodatkowym stealth. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101689,
+    "name": "Scattershot",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: ammo +2 close/-2 long i zakaz drugiego ammo dla broni; ammo.test.ts bada różne odległości oraz limit."
+  },
+  {
+    "id": 101690,
+    "name": "SchreckNET",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast unique permanenta, warunkowego unlock Nosferatu i lock za oglądanie hand po referendum. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101691,
+    "name": "Scobax",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic dają intercept zamiast redukcji bleed pre lub stealth str; brak superior z warunkową opłatą albo niepowodzeniem akcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101692,
+    "name": "Scorn of Adonis",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Toreador w polling i utrata 1 pool przez głosujących przeciw po tally; abstain-gate.test.ts bada wybrane interakcje."
+  },
+  {
+    "id": 101693,
+    "name": "Scorpion Sting",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: hand strike +1, superior undodgeable; undodgeable-strikes.test.ts."
+  },
+  {
+    "id": 101694,
+    "name": "Scorpion's Touch",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Combat ma actionStealth zamiast hand/melee strike z dołączeniem i karą strength; brak superior i możliwości burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101695,
+    "name": "Scourge",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: titled caller, wybrany vampire tej samej sect, unlock caller i rush małego vampire/ally; bearer-rush-grants.test.ts."
+  },
+  {
+    "id": 101696,
+    "name": "Scourge of Alecto",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "compile.ts: strikeDamageCapacityDiff zawsze odejmuje capacity opposing od acting, niezależnie od tego, który combatant zagrywa kartę; nie uwzględnia kosztu ally jako wartości celu. Spec nie zapisuje ograniczenia do vampire lub werewolf. set-b.test.ts sprawdza jedynie strukturę spec. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101697,
+    "name": "Scourge of the Enochians",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty event bez opcjonalnego burn vampire capacity <=2 w discard phase i przekazania karty predatorowi. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101698,
+    "name": "Scouting Mission",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic bleed +1 i superior dodanie blood młodszemu uncontrolled vampire; sweep.test.ts."
+  },
+  {
+    "id": 101699,
+    "name": "Screw the Masquerade!",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: referendum pali 1 pool każdemu i dodatkowy 1 wybranemu; legacy-political-removal.test.ts."
+  },
+  {
+    "id": 101700,
+    "name": "Scrounging",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast obejrzenia do 3 kart biblioteki, wyboru do 2 do hand i tasowania/discard. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101701,
+    "name": "Scry the Hearthstone",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic dają po dwa intercept zamiast jednego, nie zapisują wymogu directed action; brak optional maneuver vis oraz superior cancel chi/obf. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101702,
+    "name": "Scrying of Secrets",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic modifier daje stealth zamiast oglądania 7 kart biblioteki po udanym bleed; brak superior z wyborem i discard. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101703,
+    "name": "Seal of Veddartha",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Equipment ma modifyBleed jako efekt zagrania zamiast unique, akcji bleed +1, wymagania capacity i counterów nadających Dominate/Fortitude. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101704,
+    "name": "Seattle Committee",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique permanenta, lock w master phase i nadania Anarch kwalifikującemu się vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101705,
+    "name": "Second Sight",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Conviction ma modifyIntercept zamiast dwóch efektów burn zależnych od monster oraz limitu jednej karty na akcję. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101706,
+    "name": "Second Tradition: Domain",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: prince/justicar, intercept +2 lub locked vampire płaci 1 blood, unlock i próba bloku z +2; unlock-and-block.test.ts."
+  },
+  {
+    "id": 101707,
+    "name": "Secret Horde",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast investment 2X counterów, wypłaty 1 pool za master action i burn po opróżnieniu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101708,
+    "name": "The Secret Library of Alexandria",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique location z opcjonalnym doborem po udanym bleed prey i discard. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101709,
+    "name": "The Secret Must Be Kept",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Puste political effects bez wymogu Laibon, wyboru ally/retainera i ich burn oraz utraty pool kontrolerów. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101710,
+    "name": "Secret Passage",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast dołączenia do ready miniona i opcji burn, aby zakończyć directed action; brak limitu jednej karty. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101711,
+    "name": "Secure Haven",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: osobny handler pali haven przy torpor, spec ma zakaz celowania przez innych, opłatę master i exclusive haven; granted-bleed-target-costs.test.ts bada wybrane ograniczenia."
+  },
+  {
+    "id": 101712,
+    "name": "Seduction",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec realizuje wybór młodszego lub dowolnego vampire do zakazu block, ale nie deklaruje onlyAsAnnounced. compile.ts dopuszcza inne okna action.effects, chyba że jest ten warunek; block-restrictions.test.ts bada wybór, nie późne zagranie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101713,
+    "name": "Seeds of Corruption",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast dołączenia do vampire prey, podniesienia kosztu akcji, zakazu special abilities i dwóch działań burn; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101714,
+    "name": "Selective Silence",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic maneuver nie ma ograniczenia pierwszej rundy; brak superior ustawiającego range za blood przed range determination. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
     "id": 101862,
     "name": "Static Virtue",
     "status": "CONFIRMED_BUG",

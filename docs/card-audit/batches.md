@@ -152,3 +152,15 @@ Wybrane zestawy testów, częściowo pokrywające się: 382/384 (dwa niepowodzen
 [Przegląd 200 pozycji](batch-05-manual-03-partial.md), ID 101365–101564: 106 rozbieżności w kodzie bez nowych testów odtwarzających, 88 ograniczonych przeglądów bez wykrytej niezgodności oraz 6 nierozstrzygniętych. W paczce 5 **450 kart ma wpis, a 50 (pozycje 451–500) nadal go nie ma**. Wpisy nie dowodzą pełnej zgodności, a wyniki nie są próbą statystyczną.
 
 Wybrane, częściowo pokrywające się zestawy testów: 381/383, 192/193 oraz 238/238. Niepowodzenia dotyczą listy dyscyplin oraz oczekiwania pominięcia Praxis Seizure: Venice; oba rodzaje występowały w poprzednim pełnym przebiegu. Generator inwentarza, test generatora, typecheck i diff-check przeszły; pełnego zestawu nie uruchomiono. W całym inwentarzu **1478 z 4158** kart ma wpis, **2680** nie ma. Historyczny `CONFIRMED_BUG` obejmuje również ustalenia statyczne, nie gwarantuje odtworzenia scenariuszem.
+
+## Paczka 5 — zakończenie 500 wpisów
+
+[Ostatnie 50 pozycji](batch-05-manual-04.md), ID 101565–101614: 36 rozbieżności w kodzie bez nowych testów odtwarzających i 14 ograniczonych przeglądów. Wszystkie **500 kart** paczki ma wpis: 304 `CODE_DISCREPANCY`, 186 ograniczonych `REVIEWED_NO_ISSUE_FOUND` i 10 `UNRESOLVED`. Wpis nie dowodzi pełnej zgodności, a wyniki nie stanowią statystycznej próby pozostałych kart.
+
+Wybrane testy tej części: 204/204 w 18 plikach. Typecheck, generator inwentarza, test generatora i diff-check przeszły; pełnego zestawu nie uruchomiono. W całym inwentarzu **1528 z 4158** kart ma wpis, **2630** go nie ma. Historyczne `CONFIRMED_BUG` obejmuje ustalenia statyczne bez niezależnego odtworzenia.
+
+## Paczka 6 — początek kolejnych 500 kart
+
+[Manifest](batch-06-ids.json) obejmuje ID 101615–102114; [pierwsze 100 pozycji](batch-06-manual-01-partial.md) otrzymało 73 wpisy `CODE_DISCREPANCY` na podstawie kodu bez nowych testów odtwarzających i 27 przeglądów bez wykrytej niezgodności w opisanym wąskim zakresie. Dalszych 400 nie przejrzano w tej turze; karta 101862 ma wcześniejszy historyczny wpis `CONFIRMED_BUG`, a pozostałych **399** nie ma wpisu. Bez ekstrapolowania wyników.
+
+Wybrane, częściowo pokrywające się zestawy testów: 161/161 i 269/269. Generator inwentarza, test generatora, typecheck i diff-check przeszły. Pełnego zestawu nie uruchomiono; testy nie dowodzą pełnej zgodności kart. W całym inwentarzu **1628 z 4158** kart ma wpis, **2530** go nie ma. Historyczne `CONFIRMED_BUG` obejmuje także analizy statyczne bez niezależnego odtworzenia.
