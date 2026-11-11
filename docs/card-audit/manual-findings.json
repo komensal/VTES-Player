@@ -336,10 +336,22 @@
     "evidence": "W spec tylko maneuver, zamiast basic otwierającego rękę przeciwnika w combat i superior +2 hand size; brak limitu superior. Tekst: src/cards/registry.json, ID 100113; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100114,
+    "name": "Auspex",
+    "status": "FIXED_TARGETED",
+    "evidence": "Celowanie zwykłych Discipline masters naprawiono wcześniej w 8273854: dowolny wampir w tym torpor, bez superior; test Auspex tests/cards/audit-batch-100.test.ts. Ocena nie obejmuje wszystkich interakcji. Źródła: src/cards/registry.json ID 100114; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
     "id": 100115,
     "name": "Autarkis Persecution",
     "status": "REVIEWED_NO_ISSUE_FOUND",
     "evidence": "W sprawdzonym zakresie wypłata 1 pool każdemu Methuselah za każdego kontrolowanego miniona, także sojusznika, tests/cards/legacy-referendums.test.ts. Tekst: src/cards/registry.json, ID 100115; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100116,
+    "name": "Auto-da-fé",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Brak efektu referendum i wymaganego tytułu; political action ma pusty tryb, a compilePoliticalAction przy braku primitive zwraca puste terms. Brak bespoke handlera. Źródła: src/cards/registry.json ID 100116; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100117,
@@ -390,6 +402,18 @@
     "evidence": "Combat ma tylko limited additional strike w basic, brak first strike, ograniczenia do blokującego i pierwszej rundy oraz właściwego superior. Tekst: src/cards/registry.json, ID 100124; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100125,
+    "name": "Backstep",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Sprawdzony zakres: maneuver tylko na long i press przeciwnika po zadaniu obrażeń; tests/cards/cancel-in-combat.test.ts. Źródła: src/cards/registry.json ID 100125; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100127,
+    "name": "Baleful Doll",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment nie ma unikalności, wyboru celu ani zdolności lock i burn 3 blood; jedyny basic nec z pustym efektem. Źródła: src/cards/registry.json ID 100127; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
     "id": 100128,
     "name": "Baltimore Purge",
     "status": "CONFIRMED_BUG",
@@ -408,10 +432,40 @@
     "evidence": "W sprawdzonym zakresie koszt i melee strength+2; test obrażeń i zależności od strength tests/cards/legacy-weapons.test.ts. Tekst: src/cards/registry.json, ID 100130; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100132,
+    "name": "Banner of Neutrality",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Sprawdzony zakres: wymagania sect aktora i reagującego oraz −1 bleed; tests/cards/acting-minion-reactions.test.ts. Źródła: src/cards/registry.json ID 100132; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100133,
+    "name": "Banshee Ironwail",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment nie ma weapon profile, unikalności, -1 stealth ani efektu na blok; zamiast strength+2 i warunkowego aggravated pusty tryb. Źródła: src/cards/registry.json ID 100133; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
     "id": 100134,
     "name": "Barrenness",
     "status": "CONFIRMED_BUG",
     "evidence": "Action ma tylko stealth, brak dołączenia karty, sterile/capacity i superior spalenia wampira. Tekst: src/cards/registry.json, ID 100134; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100135,
+    "name": "The Barrens",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Bespoke handler; w sprawdzonym zakresie unique location oraz lock/discard/draw; tests/cards/permanents.test.ts. Źródła: src/cards/registry.json ID 100135; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100136,
+    "name": "Base Hunting Ground",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie unique hunting ground i blood dla gotowego wampira; tests/cards/legacy-locations.test.ts. Źródła: src/cards/registry.json ID 100136; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100137,
+    "name": "Baseball Bat",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie strength+1 i unlock po udanym equip: tests/cards/equip-unlocks.test.ts; spec posiada delayedReplace. Źródła: src/cards/registry.json ID 100137; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100138,
@@ -456,16 +510,46 @@
     "evidence": "Modifier daje bleed i prevent zamiast porównania crypt, warunkowej szkody albo zakończenia combat i dołączenia karty. Tekst: src/cards/registry.json, ID 100144; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100146,
+    "name": "Beast Meld",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie superior ogranicza blok i basic daje stealth/prevent; tests/cards/actor-riders.test.ts. Źródła: src/cards/registry.json ID 100146; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
     "id": 100147,
     "name": "The Becoming",
     "status": "CONFIRMED_BUG",
     "evidence": "Action ma tylko stealth, nie tworzy wampira i nie obsługuje dyscyplin, krwi ani ograniczeń. Tekst: src/cards/registry.json, ID 100147; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100149,
+    "name": "Behind You!",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie first round, basic maneuver i superior dodge; tests/cards/dodges.test.ts. Źródła: src/cards/registry.json ID 100149; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
     "id": 100150,
     "name": "Belonging Grants Protection",
     "status": "CONFIRMED_BUG",
     "evidence": "Action ma tylko stealth, brak wyboru unlock Laibon lub umieszczenia krwi na młodszym Laibon w uncontrolled. Tekst: src/cards/registry.json, ID 100150; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100151,
+    "name": "Benefit Performance",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Political action ma pusty tryb; brak wypłaty pool i blood po udanym referendum; brak bespoke handlera. Źródła: src/cards/registry.json ID 100151; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100152,
+    "name": "Beretta 9mm",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment bez weapon profile i bez zdolności dwóch Beretta: nie ma ani strzału 1R/2R, ani manewru. Źródła: src/cards/registry.json ID 100152; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100153,
+    "name": "Bestial Vengeance",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Tylko maneuver zamiast wyboru retainera, efektu Frenzy, obrażeń 1/2, limitu combat i wymogu Laibon. Źródła: src/cards/registry.json ID 100153; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100154,
@@ -486,10 +570,292 @@
     "evidence": "Master daje gainPool zamiast wybrania Methuselah, strat pool i zgadywania imienia. Tekst: src/cards/registry.json, ID 100156; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100157,
+    "name": "Bewitching Oration",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie referendum polling i +2/+4 votes; tests/cards/polling-votes.test.ts. Źródła: src/cards/registry.json ID 100157; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100159,
+    "name": "Big Game",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Rush ma maneuver i press bez warunku Red List, przyznaje oba zamiast wyboru, brak unlock po akcji. Źródła: src/cards/registry.json ID 100159; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100160,
+    "name": "Bima",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Ally ma tylko podstawowe statystyki; brak wyboru Discipline z ręki po wejściu, ewentualnego burn i zdolności do gry kartami. Źródła: src/cards/registry.json ID 100160; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100161,
+    "name": "Bind the Night-Walker",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Reaction daje +1 intercept zamiast anulowania działania na nosiciela Kerrie; brak warunków celu/aktora i limitu per turn. Źródła: src/cards/registry.json ID 100161; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100162,
+    "name": "Biothaumaturgic Experiment",
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono brak +1 stealth w obu trybach; tests/cards/audit-manual-04.test.ts. Wcześniejsze testy play-from-hand.test.ts dotyczą retainera i dołączenia; inne interakcje wymagają sprawdzenia. Źródła: src/cards/registry.json ID 100162; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100163,
+    "name": "The Bitter and Sweet Story",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie +2 hand size za każdy victory point; tests/cards/events.test.ts. Źródła: src/cards/registry.json ID 100163; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100164,
+    "name": "The Black Beast",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Combatu nie dołącza jako karty, zamiast warunkowego +1 strength oraz spalania dla press do kontynuowania ma ogólny press i addStrength. Źródła: src/cards/registry.json ID 100164; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100166,
+    "name": "Black Gloves",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment bez weapon profile i bez unique; brak strength+1 aggravated oraz obrażeń nosiciela raz na combat. Źródła: src/cards/registry.json ID 100166; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100167,
+    "name": "Black Hand Emissary",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action zawiera jedynie modifyStealth i actionStealth; brak celu, unique, skalowanych głosów Black Hand i przeniesienia przez Seraph. Źródła: src/cards/registry.json ID 100167; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100168,
+    "name": "Black Hand Ritual",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action zawiera tylko stealth; brak wymogu Black Hand i wyboru unlock albo burn Gehenna z wymianą karty. Źródła: src/cards/registry.json ID 100168; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100169,
+    "name": "Black Metamorphosis",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action nie dołącza karty i nie daje limitowanego strike każdej rundy; efekt additionalStrike i press jest w basic action, brak superior. Źródła: src/cards/registry.json ID 100169; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100170,
+    "name": "Black Spiral Buddy",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Ally posiada statystyki, ale brak aggravated hand strike, prawidłowego dodatkowego strike raz na combat i odzyskania life w unlock. Źródła: src/cards/registry.json ID 100170; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100171,
+    "name": "Black Sunrise",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Reaction daje modifyIntercept zamiast unlock i próby bloku; brak superior i warunku directed dla basic. Źródła: src/cards/registry.json ID 100171; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100173,
+    "name": "Blackmail",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko stealth; brak lock gotowego wampira oraz superior dołączenia i możliwości spalenia za blood. Źródła: src/cards/registry.json ID 100173; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100174,
+    "name": "Blade Clot",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Modifier daje stealth zamiast warunku diablerie, clot counters i konsekwencji dla ofiar. Źródła: src/cards/registry.json ID 100174; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100175,
+    "name": "Blade of Bellona",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie strength+1 i maneuver tylko do close; tests/cards/conditional-weapons.test.ts. Źródła: src/cards/registry.json ID 100175; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100176,
+    "name": "Blade of Enoch",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment bez unique, weapon profile, ograniczenia capacity, aggravated przeciw Brujah i ochrony przed Frenzy. Źródła: src/cards/registry.json ID 100176; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100177,
+    "name": "Blanket of Night",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Basic stealth jest obecny, ale brak superior granej innym gotowym wampirem: lock i nieudana próba bloku. Źródła: src/cards/registry.json ID 100177; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100179,
+    "name": "Blessed Audience",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Oba tryby action mają jedynie modifyStealth; brak lock X−1 celów i superior zwiększenia capacity/kosztu. Źródła: src/cards/registry.json ID 100179; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100180,
+    "name": "Blessed Blade",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie cancel grapple i bonus do melee strike basic/superior; tests/cards/equipment-stripping.test.ts. Źródła: src/cards/registry.json ID 100180; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100181,
+    "name": "Blessed Resilience",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast przeniesienia właściwego spalonego wampira z ash heap do ready. Źródła: src/cards/registry.json ID 100181; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100182,
+    "name": "Blessing of Chaos",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko stealth; brak dołączenia, zakazu kart wybranych dyscyplin i superior ograniczenia akcji. Źródła: src/cards/registry.json ID 100182; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100183,
+    "name": "Blessing of Durga Syn",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie kradzież equipment basic i superior first strike; tests/cards/equipment-stripping.test.ts. Źródła: src/cards/registry.json ID 100183; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100184,
+    "name": "Blessing of the Beast",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast dołączenia do własnego Ahrimane i składowania / gry kartami Spiritus. Źródła: src/cards/registry.json ID 100184; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100185,
+    "name": "Blessing of the Name",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma modifyIntercept i stealth zamiast wybrania minionów, ich unlock, bonusów i późniejszego lock. Źródła: src/cards/registry.json ID 100185; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100186,
+    "name": "Blessings of the Loa",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master ma modifyBleed zamiast unikalnej karty ze skalowanym bonusem dla Samedi. Źródła: src/cards/registry.json ID 100186; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100187,
+    "name": "Blight",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Superior zabrania wszystkich presses (restrictOpponent.press), również press do zakończenia; tekst zabrania jedynie press do kontynuowania. Test blight.test.ts utrwala zbyt szerokie ograniczenie. Źródła: src/cards/registry.json ID 100187; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100188,
+    "name": "Blind Spot",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast wyboru dwóch minionów i czasowego zakazu bloku oraz reaction. Źródła: src/cards/registry.json ID 100188; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100189,
+    "name": "Bliss",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec błędnie daje combat ends w osobnych basic dom/pre zamiast anulowania Frenzy z dom i pre, brak poprawnego superior. Źródła: src/cards/registry.json ID 100189; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100190,
+    "name": "Blissful Agony",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Oba tryby basic dają combat ends i prevent zamiast hand strike ani i powtarzalnych obrażeń val; brak superior. Źródła: src/cards/registry.json ID 100190; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100191,
+    "name": "Blithe Acceptance",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma jedynie modifyStealth zamiast dołączania, ograniczenia jednej kopii i warunkowego burn w combacie. Źródła: src/cards/registry.json ID 100191; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100193,
+    "name": "Blood Awakening",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Basic intercept jest, ale brak superior modifier, który niweluje próbę bloku młodszego wampira. Źródła: src/cards/registry.json ID 100193; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100194,
+    "name": "Blood Bond",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko stealth, bez dołączenia do wampira i zakazu blokowania aktora. Źródła: src/cards/registry.json ID 100194; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100196,
+    "name": "Blood Buff",
+    "status": "FIXED_TARGETED",
+    "evidence": "Zamiast gainPool trifle na własnym ready Blood Brother, +1 Sanguinus bez capacity; tests/cards/audit-manual-04.test.ts. Dalsze interakcje nieweryfikowane. Źródła: src/cards/registry.json ID 100196; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100197,
+    "name": "Blood Clots",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko stealth; brak dołączenia, zakazu zysku blood/life, akcji burn i superior obrażeń. Źródła: src/cards/registry.json ID 100197; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100198,
+    "name": "Blood Cult Awareness Network",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Event ma pustą specyfikację bez inquisition, wymogu imbued i modyfikatorów kosztu/stealth. Źródła: src/cards/registry.json ID 100198; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100200,
+    "name": "Blood Feast",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie stealth i blood sweep gotowych własnych Sabbat z wymogiem tytułu; tests/cards/blood-bank-actions.test.ts. Źródła: src/cards/registry.json ID 100200; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100201,
+    "name": "Blood Fury",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie obrażenia hand, Fortitude prevention i ograniczenie weapon strike; tests/cards/discipline-filtered.test.ts. Źródła: src/cards/registry.json ID 100201; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100203,
+    "name": "Blood of Acid",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Combat ma tylko maneuver zamiast odbijanych obrażeń, ograniczenia close/once per round i aggravated superior. Źródła: src/cards/registry.json ID 100203; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100204,
+    "name": "Blood of Sandman",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko stealth bez spalenia ally i superior +6 stealth oraz dołączonego zakazu reakcji. Źródła: src/cards/registry.json ID 100204; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100205,
+    "name": "Blood of the Cobra",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Combat ma tylko maneuver zamiast basic ranged damage i superior użycia wybranego strike jako ranged. Źródła: src/cards/registry.json ID 100205; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100206,
+    "name": "Blood of the Sabbat",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko stealth; brak wymogu tytułu, dołączenia do innego Sabbat i efektu po directed action. Źródła: src/cards/registry.json ID 100206; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
     "id": 100207,
     "name": "Blood Puppy",
     "status": "FIXED_TARGETED",
     "evidence": "Zastąpiono niepoprawne gainPool przez unique, blood store i akcję burn; tests/cards/blood-puppy.test.ts. Nadal możliwe są nieodkryte interakcje z innymi kartami."
+  },
+  {
+    "id": 100208,
+    "name": "Blood Rage",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie dwa tryby i ograniczenie prewencji Fortitude; tests/cards/discipline-filtered.test.ts. Źródła: src/cards/registry.json ID 100208; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100209,
+    "name": "Blood Shield",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment ma prevent w trybie zagrania, nie ma stałej zdolności prewencji ani reakcyjnego burn blood, brak unique. Źródła: src/cards/registry.json ID 100209; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100210,
+    "name": "Blood Siege",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Political action ma pusty tryb; brak wyboru Sabbat i prince, title, blood-for-votes i zakazu modifierów; brak bespoke handlera. Źródła: src/cards/registry.json ID 100210; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100211,
+    "name": "Blood Sweat",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie long range i 2R/3R unpreventable; tests/cards/blood-sweat.test.ts. Źródła: src/cards/registry.json ID 100211; src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100213,
+    "name": "Blood Tempering",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma osobne basic for/qui z prevent i stealth zamiast obu dyscyplin, dołączenia do equipment i jego bonusów oraz superior unlock. Źródła: src/cards/registry.json ID 100213; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100216,

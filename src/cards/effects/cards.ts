@@ -17810,6 +17810,7 @@ export const cardSpecs: CardSpec[] = [
         // "Employ an animal retainer from your hand ignoring requirements
         // (pay cost as normal)."
         effects: [
+          { kind: "actionStealth", amount: 1 },
           {
             kind: "playFromHand",
             types: ["retainer"],
@@ -17824,6 +17825,7 @@ export const cardSpecs: CardSpec[] = [
         // "Put this card on a minion you control. The attached minion
         // gets 1 optional maneuver each combat and +1 strength."
         effects: [
+          { kind: "actionStealth", amount: 1 },
           { kind: "attachSelf", strength: 1, maneuverPerCombat: 1, target: "ownMinion" },
         ],
       },
@@ -26544,15 +26546,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Buff [100196] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Trifle: put on a ready Blood Brother you control; +1 Sanguinus.
     krcgId: 100196,
     name: "Blood Buff",
     cardType: "master",
     bloodCost: 0,
+    trifle: true,
+    permanent: {
+      where: "bearer", statics: { disciplineBoost: "san" }, tags: ["Blood Buff"],
+      attach: { scope: "own", kind: "vampire", clan: "Blood Brother" },
+    },
     usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
-    ],
+    modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
     // Blood Clots [100197] — fala 49 wierna (300) pełna zgodność bez wydmuszek

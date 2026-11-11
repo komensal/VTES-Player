@@ -49,3 +49,16 @@ Powyższe 40 nie obejmuje dwóch celowanych napraw; ograniczenia AK-47 pozostaj�
 | Bez ręcznego rozstrzygnięcia | 965 |
 
 Sygnał automatyczny otrzymało 406 kart; brak sygnału nie oznacza poprawności. Bez żadnego ręcznego ustalenia w całym rejestrze: **4060 z 4158**. Liczba ta nie oznacza liczby kart w pełni zweryfikowanych.
+
+## Paczka 4 — ręczna kontynuacja, pierwsze 100 kart
+
+Karta po karcie: [batch-04-manual-01.md](batch-04-manual-01.md). Wyniki obejmują także ustalenia z poprzedniej tury dla tego samego zakresu.
+
+| Wynik | Liczba |
+|---|---:|
+| Bez wykrytej niezgodności w zbadanym zakresie | 20 |
+| Znane błędy naprawione celowo | 4 |
+| Potwierdzone błędy nadal wymagające naprawy | 63 |
+| Konieczne dalsze sprawdzenie przed rozstrzygnięciem | 13 |
+
+W tej turze poprawiono Biothaumaturgic Experiment i Blood Buff; w zakresie jest też wcześniej poprawiony Bestial Visage i poprawiony wspólny mechanizm Auspex. Poza tą setką w tysiącu pozostaje 900 kart, spośród których 9 ma wcześniej potwierdzony błąd. Bez ręcznego wpisu w całym rejestrze: **3999 z 4158**. To nie liczba kart w pełni sprawdzonych.
