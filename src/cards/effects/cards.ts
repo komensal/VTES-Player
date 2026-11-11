@@ -331,11 +331,9 @@ function crusade(krcgId: number, city: string, unlockIfClan?: string): CardSpec 
 }
 
 /**
- * The twelve Crusades whose whole text is the shape above. The other
- * eleven each add a clan rider ("if this vampire is Tzimisce, they unlock
- * during your next discard phase", "if Lucita is in play…") naming a clan
- * or a vampire the pool does not have — inert by §0, and they cost
- * nothing the day §7 opens those clans.
+ * The twelve plain Crusades and two clan-rider versions originally admitted
+ * together. The remaining eight clan riders use this same factory below;
+ * Aragon has a different Lucita-specific title recipient and is separate.
  */
 const CRUSADES: CardSpec[] = (
   [
@@ -353,8 +351,8 @@ const CRUSADES: CardSpec[] = (
     [100472, "Toronto"],
     // WAVE 93: two of the "other eleven" name a clan the V5 crypt NOW HAS —
     // the recorded reason for leaving them out was a claim about the pool as
-    // it was (docs/title-riders-design.md §3). The remaining nine name an
-    // ANTITRIBU clan or Lucita, which it still does not.
+    // it was (docs/title-riders-design.md §3). The other clan riders are
+    // also implemented below even though the current V5 crypt lacks them.
     [100455, "Berlin", "Lasombra"],
     [100463, "Istanbul", "Tzimisce"],
   ] as Array<[number, string, string?]>
@@ -27319,17 +27317,7 @@ export const cardSpecs: CardSpec[] = [
       { level: "basic", discipline: null, effects: [] }
     ],
   },
-  {
-    // Crusade: Geneva [100461] — fala 49 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100461,
-    name: "Crusade: Geneva",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
+  crusade(100461, "Geneva", "Malkavian antitribu"),
   {
     // Cry Wolf [100475]
     krcgId: 100475,
@@ -33060,83 +33048,13 @@ export const cardSpecs: CardSpec[] = [
       { level: "basic", discipline: null, effects: [] }
     ],
   },
-  {
-    // Crusade: Amsterdam [100451] — fala 45 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100451,
-    name: "Crusade: Amsterdam",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
-  {
-    // Crusade: Barcelona [100454] — fala 45 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100454,
-    name: "Crusade: Barcelona",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
-  {
-    // Crusade: Brussels [100456] — fala 45 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100456,
-    name: "Crusade: Brussels",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
-  {
-    // Crusade: Dublin [100459] — fala 45 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100459,
-    name: "Crusade: Dublin",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
-  {
-    // Crusade: London [100464] — fala 45 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100464,
-    name: "Crusade: London",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
-  {
-    // Crusade: Rome [100471] — fala 45 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100471,
-    name: "Crusade: Rome",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
-  {
-    // Crusade: Washington, D.C. [100473] — fala 45 wierna (300) pełna zgodność bez wydmuszek
-    krcgId: 100473,
-    name: "Crusade: Washington, D.C.",
-    cardType: "politicalAction",
-    bloodCost: 0,
-    usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [] }
-    ],
-  },
+  crusade(100451, "Amsterdam", "Ventrue antitribu"),
+  crusade(100454, "Barcelona", "Tremere antitribu"),
+  crusade(100456, "Brussels", "Toreador antitribu"),
+  crusade(100459, "Dublin", "Gangrel antitribu"),
+  crusade(100464, "London", "Nosferatu antitribu"),
+  crusade(100471, "Rome", "Brujah antitribu"),
+  crusade(100473, "Washington, D.C.", "Ventrue antitribu"),
   {
     // The Crusader Sword [100474] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100474,

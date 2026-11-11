@@ -88,3 +88,7 @@ Naprawy: Blood Trade, Blooding by the Code, Bollix, Cardinal Benediction, Carver
 | Nierozstrzygnięte | 5 |
 
 Naprawy: Changeling, Charisma, Command of the Beast, Compress, Conflagration i Confusion. Pozycje bez wykrytej niezgodności nie są dowodem pełnej poprawności; pozostaje **3823 z 4158** bez ręcznego rozstrzygnięcia, w tym 5 nierozstrzygniętych z tej setki.
+
+## Paczka 4 — czwarta setka, praca w toku
+
+[Częściowe ustalenia karta po karcie](batch-04-manual-04.md): pozycje 301–400 manifestu, ID 100415–100514. Setka **nie jest jeszcze ukończona**: 8 celowanych napraw Crusade, 50 potwierdzonych otwartych błędów (w tym wcześniejszy Convergence), 0 bez wykrytej niezgodności i 42 nierozstrzygnięte. Bez jakiegokolwiek ręcznego wpisu w całym rejestrze: **3766 z 4158**; nie jest to liczba w pełni sprawdzonych kart.
