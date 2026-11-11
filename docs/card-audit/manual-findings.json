@@ -60,10 +60,40 @@
     "evidence": "Spec nie wymaga non-sterile vampire ani spalenia ready unlocked werewolf, nie tworzy unikalnego wampira, nie przenosi krwi i nie daje wskazanych stałych zdolności/akcji. src/cards/effects/cards.ts: Abomination; src/cards/registry.json: 100010."
   },
   {
+    "id": 100011,
+    "name": "Absimiliard's Army",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty event nie zawiera requiresOtherGehennaEvents, opóźnienia replacement, tworzenia ghoul allies ani końcowych usunięć i burn po oust; compileEventCard korzysta z tych pól i ich tu nie dostaje. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100012,
+    "name": "Absolution of the Diabolist",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Bespoke bloodHuntVictim i handler cancelBloodHunt; blood-hunt-answers.test.ts sprawdza cancel, koszt i wymóg ready justicar lub Inner Circle. Brak raw spec to nie brak handlera; nie sprawdzono wszystkich okien. Ograniczony zakres."
+  },
+  {
     "id": 100013,
     "name": "Absorb the Mind",
     "status": "CONFIRMED_BUG",
     "evidence": "Spec ma dodge także dla myt i nie zawiera superior; tekst myt wymaga ranged steal blood, a MYT dodatkowo kradzieży Discipline. src/cards/effects/cards.ts: Absorb the Mind; src/cards/registry.json: 100013."
+  },
+  {
+    "id": 100014,
+    "name": "Abyssal Hunter",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally ma tylko life/strength/bleed, bez klanowego wymogu Lasombra, directed damage, obrażeń własnego vampire w unlock i burn po ranged aggravated damage; nie przenosi też subtype demon. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100015,
+    "name": "Academic Hunting Ground",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wspólna fabryka huntingGround: unique location, gain 1 blood, ograniczenie ready i wykorzystania; hunting-grounds.test.ts sprawdza płatność i limit w wybranych stanach. Ograniczony zakres."
+  },
+  {
+    "id": 100016,
+    "name": "Acheron Vortex",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "modifyAllIntercept -1 z exemptDisciplines nec/obt, requiresClan Harbinger of Skulls; legacy-modifiers.test.ts sprawdza zdarzenie modyfikacji i przypadek posiadacza nec, ten ostatni nie mierzy bezpośrednio wartości intercept. Ograniczony zakres."
   },
   {
     "id": 100017,
@@ -72,10 +102,28 @@
     "evidence": "Zamiast dołączenia do cudzego wampira, wyboru circle, warunkowego bonusu i możliwości spalenia karta ma tylko modifyBleed. Tekst: src/cards/registry.json, ID 100017; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100018,
+    "name": "Aching Beauty",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "attach any Toreador i blockedPoolToll 1; block-taxes.test.ts sprawdza zapłatę kontrolera blockera i brak zapłaty po niezablokowanym bleed, nie pełną macierz attach. Ograniczony zakres."
+  },
+  {
     "id": 100019,
     "name": "Acquired Ventrue Assets",
     "status": "CONFIRMED_BUG",
     "evidence": "Zamiast magazynu krwi dla Giovanni i akcji spalenia master daje tylko gainPool. Tekst: src/cards/registry.json, ID 100019; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100020,
+    "name": "Acrobatics",
+    "status": "UNRESOLVED",
+    "evidence": "Basic i superior mają odpowiednie efekty, a dodges.test.ts sprawdza basic grant oraz superior dodge z grantem. compile.ts oferuje tryb superior także w grantAdditionalStrikes; docs/additional-strike-followups.md wskazuje timing strike-plus-additional jako wymagający osobnego przeglądu. Bez nowego scenariusza nie rozstrzygnięto całego przypadku."
+  },
+  {
+    "id": 100021,
+    "name": "Adaptability",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Obie opcje pro: treatOpposingStrikeAsNormal i preventAllAggravated; aggravated-damage.test.ts sprawdza trafienia aggravated, odmowę przy normal oraz interakcję z Resilience. Ograniczony zakres."
   },
   {
     "id": 100022,
@@ -88,6 +136,12 @@
     "name": "The Admonitions",
     "status": "CONFIRMED_BUG",
     "evidence": "Zamiast unikalnego mastera i zdolności dobrania/odrzucenia oraz przekazania w discard karta daje gainPool. Tekst: src/cards/registry.json, ID 100023; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100024,
+    "name": "Agate Talisman",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Equipment bez pól dla ograniczenia capacity >=4, lock za vote i limitu jednej kopii na vampire; compileEquipment nie otrzymuje tych warunków. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
   },
   {
     "id": 100025,
@@ -108,16 +162,40 @@
     "evidence": "Spec daje wyłącznie maneuver, bez wymogu long range i późniejszej rundy, bez aggravated strike i superior burn. src/cards/effects/cards.ts: Ahriman's Demesne; src/cards/registry.json: 100027."
   },
   {
+    "id": 100028,
+    "name": "Ahrimane Protectorate",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma modifyIntercept i actionStealth, lecz bez wymagania Ahrimane, unique permanent, zapłaty blood za unlock oraz obydwu opcji burn protectorate. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100029,
+    "name": "Aid from Bats",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Spec ma 1R, maneuver i superior press; strike-maneuver-cards.test.ts bada kredyty superior oraz zagranie basic jako strike po odmowie maneuver. Ograniczony zakres."
+  },
+  {
     "id": 100030,
     "name": "The Ailing Spirit",
     "status": "CONFIRMED_BUG",
     "evidence": "Action ma tylko modifyBleed i actionStealth w trybach podstawowych; brak nadrukowanych trybów bleed i superior przejęcia kontroli. Tekst: src/cards/registry.json, ID 100030; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100031,
+    "name": "Aire of Elation",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Obie wartości bleed ograniczone do bleed action i bonus Toreador; conditional-modifiers.test.ts sprawdza basic dla Toreador i Ventrue, nie osobny superior. Ograniczony zakres."
+  },
+  {
     "id": 100032,
     "name": "AK-47",
     "status": "CONFIRMED_BUG",
     "evidence": "Znany błąd limitowanego dodatkowego strike: AK-47 otrzymuje opcjonalny strike automatycznie i może przez to zablokować inne limitowane źródło; także okno kolejnego źródła po oczekującym strike jest niekompletne. Szczegóły docs/additional-strike-followups.md. Tekst: src/cards/registry.json, ID 100032; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100033,
+    "name": "Akhenaten, The Sun Pharaoh",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "allDamageAggravatedVsClan odczytywane jest w engine.ts tylko w gałęzi rozliczania strike, chociaż tekst obejmuje wszelkie damage inflicted w walce z Follower of Set. mummies-2.test.ts bada samą statykę, nie damage spoza strike; testuje też oddzielnie akcję burn i shuffle. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
   },
   {
     "id": 100034,
@@ -138,10 +216,22 @@
     "evidence": "Jest tylko basic cel z dwoma modifyStealth; brak osobnego superior i opcjonalnego maneuver w pierwszej rundzie po bloku. Tekst: src/cards/registry.json, ID 100036; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100037,
+    "name": "Alamut",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Bespoke Alamut ma naliczanie counters dla Banu Haqim i wydawanie ich na głosy; alamut.test.ts sprawdza po jednym przypadku każdego efektu, nie wszystkie interakcje i contest. Ograniczony zakres."
+  },
+  {
     "id": 100038,
     "name": "Alastor",
     "status": "CONFIRMED_BUG",
     "evidence": "Political action ma tylko modifyStealth; nie wybiera celu ani nie realizuje nagrody referendum, ekwipunku i dołączanego Alastor. Tekst: src/cards/registry.json, ID 100038; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100039,
+    "name": "Alia, God's Messenger",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec zawiera tylko ogólne statystyki ally i actionStealth, brak unique, wymogu dwóch Gehenna events, gry kart aus/obe jak vampire, rescue action, kosztu directed action przeciw niej i subtype dhampir. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
   },
   {
     "id": 100040,
@@ -156,10 +246,34 @@
     "evidence": "Master ma modifyBleed i addStrength zamiast unikalnej karty z licznikami, ich wydawaniem i odnawianiem. Tekst: src/cards/registry.json, ID 100041; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100042,
+    "name": "Amam the Devourer",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Amam ma ally.subtype mortal mimo drukowanego mummy; allyTags przenosi także tag mortal. Dodatkowo opposingBurnedGainLife automatycznie emituje zysk life, choć tekst daje wybór. plain-allies-3.test.ts sprawdza shuffle, nie te rozbieżności. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+  },
+  {
     "id": 100043,
     "name": "Amaranth",
     "status": "CONFIRMED_BUG",
     "evidence": "Karta ma jedynie maneuver zamiast diablerie przeciwnika w oknie wysłania do torpor. Tekst: src/cards/registry.json, ID 100043; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100044,
+    "name": "Ambrosius, The Ferryman",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec ma tylko statystyki ally, bez unique, wymogu Giovanni, subtype wraith, przenoszenia retainer z pathos oraz odporności na non-aggravated damage. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100045,
+    "name": "Ambulance",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec equipment z modifyStealth nie nadaje vehicle tagu, kontynuacji akcji po block, burn po kolejnym block, ani akcji na incapacitated imbued; brak też limitu jednego vehicle. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100046,
+    "name": "Ambush",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "actionEnterCombat lockedOnly z rider maneuver; legacy-rush-actions.test.ts sprawdza selekcję, sukces i wygaśnięcie celu po unlock, nie użycie maneuver. Ograniczony zakres."
   },
   {
     "id": 100047,
@@ -168,10 +282,46 @@
     "evidence": "Basic chi łączy strikeDodge, maneuver i press, zamiast podstawowego maneuver tylko na long oraz superior dodge z press tylko do zakończenia. Tekst: src/cards/registry.json, ID 100047; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100048,
+    "name": "Amulet of Temporal Perception",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty equipment nie ma unique ani once-per-turn opcji burn blood za grę kart wymagających basic Temporis. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100049,
+    "name": "Amusement Park Hunting Ground",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wspólna fabryka huntingGround tworzy unique location i gain 1 blood; kod i hunting-grounds.test.ts badają mechanikę rodziny, nie wszystkie interakcje tej konkretnej karty. Ograniczony zakres."
+  },
+  {
     "id": 100050,
     "name": "Anachronism",
     "status": "CONFIRMED_BUG",
     "evidence": "Master daje gainPool zamiast dołączenia do wampira o capacity powyżej 6 oraz zakazu i niszczenia ranged weapons. Tekst: src/cards/registry.json, ID 100050; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100051,
+    "name": "Ananasi Vampirephile",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally ma tylko ogólne statystyki i efekty maneuver/press/actionStealth zamiast wymagania Guruhi, subtype werewolf, combat maneuver, płatnego press z ustawieniem range, gain life i gry ani jak vampire. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100052,
+    "name": "The Anarch Free Press",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec i skompilowany The Anarch Free Press nadają tag location, choć drukowany tekst zawiera Unique bez location; system location w derived.ts i compile.ts filtruje po tym tagu. Osobny hook polowania i lockGrant istnieją; testy lock-grant-locations nie sprawdzają typu location. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100053,
+    "name": "Anarch Manifesto, An",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Equipment nie ma trwałych conditional stealth dla Anarcha, strength przeciwnych titled non-Anarch ani limitu jednej kopii; modifyStealth/addStrength w modes nie implementują tych klauzul. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+  },
+  {
+    "id": 100054,
+    "name": "Anarch Railroad",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "lockGrant stealth z sect anarch bez ownOnly; compile.ts dopuszcza aktora innego kontrolera, ale wymagany jest działający kontekst okna. W tym zakresie bez osobnego scenariusza wszystkich miejsc przy stole. Ograniczony zakres."
   },
   {
     "id": 100057,

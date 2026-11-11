@@ -260,3 +260,9 @@ Wybrane testy: 241/242 w 10 plikach, znana porażka oczekiwania braku handlera N
 [Manifest](batch-11-ids.json) obejmuje 136 pozycji bez wcześniejszych wpisów; [przegląd 44 kart](batch-11-manual-01-partial.md) dotyczy crypt 201752–201786 i kart dyscyplin 900001–900009. Wynik: 4 rozbieżności z analizy kodu bez nowych scenariuszy odtwarzających i 40 ograniczonych przeglądów bez wykrytej niezgodności. Pozostałe **92** pozycje manifestu w tej turze nie mają wpisu; wpis nie dowodzi pełnej zgodności.
 
 Dodano 27 testów dziewięciu dyscyplin (27/27); wybrane testy crypt-wave/supported 190/191 w 8 plikach, znana porażka dotycząca Nosferatu Kingdom. Pełnego zestawu nie uruchomiono. Generator inwentarza, jego test, typecheck i diff-check sprawdzono osobno. W całym inwentarzu **4066 z 4158** kart ma wpis, **92** go nie mają.
+
+## Paczka 11 — pierwsze 25 kart biblioteki
+
+[Raport](batch-11-manual-02-partial.md) obejmuje 25 kart z ID 100011–100054 według manifestu: 13 statycznych rozbieżności bez nowego scenariusza odtwarzającego, 11 ograniczonych przeglądów bez wykrytej niezgodności oraz jeden przypadek nierozstrzygnięty. W paczce łącznie wpisy ma **69/136** kart, pozostało **67**; w całym inwentarzu **4091/4158** ma wpis. Ograniczony przegląd nie dowodzi pełnej zgodności.
+
+Wybrane testy: 114/114 w 13 plikach; dodatkowy zestaw 86/89 w 6 plikach, trzy znane porażki listy dyscyplin, klanów i frenzy. Pełnego zestawu nie uruchomiono. Generator, test inwentarza, typecheck i diff-check sprawdzono osobno.
