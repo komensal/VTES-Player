@@ -209,3 +209,9 @@ blocked by a vampire → diablerise opportunity → blood hunt; blocked by an
 ally → action just fails. Fuzz: give some fuzz vampires a path to torpor
 (combat already does) and enable the diablerise/rescue actions; existing
 invariants hold (all pool/blood via events; MinionBurned already swept).
+
+## Aktualizacja: Blood Cursed
+
+Reguła [VEKN, 9. Quick Reference / Traits](https://www.vekn.net/179-rules/vtes-rulebook) zabrania Blood Cursed wampirzyc diablerii; cecha nie wynika z samego klanu. Importuje ją `crypt-blood-cursed.test.ts`, a `canCommitDiablerie` jest sprawdzane dla akcji podstawowej, istniejących akcji kart oraz oferty po bloku wyjścia z torporu i przy rozwiązaniu. Testy obejmują również normalne rescue oraz zmianę cechy podczas akcji.
+
+To nie jest kompletna implementacja wszystkich modyfikatorów diablerii: Tajdid (zniesienie ograniczenia), Humanitas i Alastor (inne zakazy), Amaranth i Web of Knives Recruit są odrębnymi, nadal otwartymi kartami. Zmiana cechy w trakcie Stealing Years nie została zbadana pod kątem pozostałych efektów karty. Starszy opis powyżej jest historyczny.

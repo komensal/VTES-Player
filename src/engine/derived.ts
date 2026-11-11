@@ -1127,6 +1127,13 @@ export function minionTags(m: MinionState): string[] {
   return m.attached.find((e) => e.card.id === m.id)?.tags ?? [];
 }
 
+/** Diablerie requires a ready vampire and is forbidden by Blood Cursed.
+ * Other card-specific prohibitions and exemptions must also be modeled here
+ * when implemented (for example Humanitas, Alastor and Tajdid). */
+export function canCommitDiablerie(m: MinionState): boolean {
+  return m.kind === "vampire" && isReady(m) && m.bloodCursed !== true;
+}
+
 /** Flight may be printed on the minion or granted by an attached card.
  * Older snapshots can also carry it in the discipline-like field. Do not
  * add it to disciplinesOf: Flight has no basic/superior levels. */

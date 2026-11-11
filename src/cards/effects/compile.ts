@@ -39,6 +39,7 @@ import {
   actionRequiresClans,
   receivedVictoryPointSinceLastTurn,
   committedDiablerieSinceLastTurn,
+  canCommitDiablerie,
   blockEligibleSeats,
   auraBlocksPolitical,
   bleedAnnounceTax,
@@ -1513,6 +1514,7 @@ function enumerateActionTargets(
       }
     }
   } else if (e.kind === "actionDiablerize") {
+    if (!canCommitDiablerie(actor)) return [];
     // "Diablerize a vampire IN TORPOR" (p. 24): any Methuselah's, the
     // actor's own included — the rules bar neither — and never an ally,
     // which has no blood to drink and no torpor to lie in (p. 22).
@@ -2094,7 +2096,7 @@ function compileActionCard(spec: CardSpec): CardHandler {
             if (!victimId) throw new Error(`${spec.name}: no diablerie target`);
             const prey = findMinion(ops.state, victimId);
             const eater = findMinion(ops.state, af.acting);
-            if (!prey || !eater || !prey.inTorpor) break;
+            if (!prey || !eater || !prey.inTorpor || !canCommitDiablerie(eater)) break;
             // "…may gain one level of a Discipline THE VICTIM HAD": read now,
             // because after step 3 there is no victim to read.
             const victimDisciplines =

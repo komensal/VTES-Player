@@ -357,6 +357,8 @@ export interface MinionState {
    *  other vampire-creation actions must also implement the rulebook
    *  restriction (glossary, p. 42). */
   sterile?: boolean;
+  /** Printed Blood Cursed trait; currently prevents committing diablerie. */
+  bloodCursed?: boolean;
   /** The Path of Enlightenment this vampire follows ("Cathari", "Power and
    *  the Inner Voice", "Death and the Soul").
    *

@@ -14204,8 +14204,8 @@
   {
     "id": 200004,
     "name": "Abd al-Rashid (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Importer odczytuje Independent i dyscypliny, ale nie przenosi cechy Blood cursed; w engine i handlery nie znaleziono jej modelu. Karta bez osobnego crypt handlera. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200005,
@@ -14222,8 +14222,8 @@
   {
     "id": 200007,
     "name": "Abid bin Haji, Scholar of Mirrors (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Importer odczytuje Camarilla i dyscypliny, lecz brak odczytu Blood cursed i implementacji tej cechy w engine lub osobnym handlerze. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200008,
@@ -14391,13 +14391,13 @@
     "id": 200035,
     "name": "Al-Ashrad, Amr of Alamut (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt realizuje +1 bleed, lecz nie ma akcji burn location za 2 blood; importer i runtime nie modelują Blood cursed. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: flatCrypt realizuje +1 bleed, lecz nie ma akcji burn location za 2 blood; importer i runtime nie modelują Blood cursed. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200036,
     "name": "Al-Ashrad, Amr of Alamut (G2 ADV)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez wyjątku first-round dla strike tha i bez Blood cursed; nie znaleziono obsługi drukowanego merged tytułu i +1 bleed. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusty cryptPerm bez wyjątku first-round dla strike tha i bez Blood cursed; nie znaleziono obsługi drukowanego merged tytułu i +1 bleed. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200037,
@@ -14498,8 +14498,8 @@
   {
     "id": 200053,
     "name": "Ali Kar (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty flatCrypt i importer nie zapisują drukowanej cechy Blood cursed; implementacji cechy w runtime nie znaleziono. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200054,
@@ -14552,8 +14552,8 @@
   {
     "id": 200062,
     "name": "Alu (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty flatCrypt i importer nie zapisują cechy Blood cursed; implementacji w runtime nie znaleziono. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200063,
@@ -14571,7 +14571,7 @@
     "id": 200065,
     "name": "Amaravati (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez płatnych votes ready Assamite; Blood cursed nie jest odczytywane przez importer ani modelowane w runtime. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusty cryptPerm bez płatnych votes ready Assamite; Blood cursed nie jest odczytywane przez importer ani modelowane w runtime. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200066,
@@ -14829,7 +14829,7 @@
     "id": 200108,
     "name": "Antara (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez intercept przeciw Sabbat i burn blood po Gehenna; Blood cursed nie jest importowane ani modelowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusty cryptPerm bez intercept przeciw Sabbat i burn blood po Gehenna; Blood cursed nie jest importowane ani modelowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200109,
@@ -14906,8 +14906,8 @@
   {
     "id": 200121,
     "name": "Anwar (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Independent jest importowany, ale Blood cursed nie jest przenoszone do stanu ani obsługiwane w znalezionym runtime. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200122,
@@ -15111,7 +15111,7 @@
     "id": 200155,
     "name": "Aziz, Dammar of Istanbul (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez +1 strength, status counters i głosów za nie; importer nie odczytuje 2 titled votes po kropce ani Blood cursed. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusty cryptPerm bez +1 strength, status counters i głosów za nie; importer nie odczytuje 2 titled votes po kropce ani Blood cursed. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200156,
@@ -15146,20 +15146,20 @@
   {
     "id": 200161,
     "name": "Badr al-Budur (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Independent importowany, ale Blood cursed nie jest przenoszone do stanu ani obsługiwane w znalezionym runtime. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200162,
     "name": "Bajazet al-Nasir (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty flatCrypt bez płatnego aggravated hand strikes raz na combat; Blood cursed nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusty flatCrypt bez płatnego aggravated hand strikes raz na combat; Blood cursed nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200163,
     "name": "Bakr (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje stały stealth zamiast wyłącznie dla akcji enter combat za blood; samej akcji brak, Blood cursed nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: flatCrypt daje stały stealth zamiast wyłącznie dla akcji enter combat za blood; samej akcji brak, Blood cursed nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200164,
@@ -15231,7 +15231,7 @@
     "id": 200175,
     "name": "Basir (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez gain blood po master Discipline i zakazu block/reaction; Blood cursed nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusty cryptPerm bez gain blood po master Discipline i zakazu block/reaction; Blood cursed nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200176,
@@ -15332,8 +15332,8 @@
   {
     "id": 200192,
     "name": "Bertrand d'Anjou (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Independent importowany, lecz Blood cursed nie jest przenoszone do stanu ani obsługiwane w znalezionym runtime. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200193,
@@ -16281,7 +16281,7 @@
     "id": 200350,
     "name": "Dmitri Borodin (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez płatnej prevention obrażeń ze strike raz na combat oraz płatnego stealth; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez płatnej prevention obrażeń ze strike raz na combat oraz płatnego stealth; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200351,
@@ -16712,8 +16712,8 @@
   {
     "id": 200422,
     "name": "Enam (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Prince of Cordoba importowany, ale Blood cursed nie jest przenoszone do stanu ani obsługiwane w znalezionym runtime. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200423,
@@ -16850,8 +16850,8 @@
   {
     "id": 200445,
     "name": "Evan Rogers (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Independent importowany, ale Blood cursed nie jest przenoszone do stanu ani obsługiwane w znalezionym runtime. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200446,
@@ -16935,7 +16935,7 @@
     "id": 200459,
     "name": "Fatima al-Faqadi (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez equip weapon z ręki przed range raz na combat; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez equip weapon z ręki przed range raz na combat; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200460,
@@ -16977,7 +16977,7 @@
     "id": 200466,
     "name": "Fida'i (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Import non-unique naprawiony i testowany w crypt-non-unique.test.ts. Pusta spec bez braku normalnego unlock i płatnego unlock przez ready Assamite capacity co najmniej 7; Blood cursed nie jest importowane. Analiza statyczna."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Import non-unique naprawiony i testowany w crypt-non-unique.test.ts. Pusta spec bez braku normalnego unlock i płatnego unlock przez ready Assamite capacity co najmniej 7; Blood cursed nie jest importowane. Analiza statyczna."
   },
   {
     "id": 200467,
@@ -16994,8 +16994,8 @@
   {
     "id": 200469,
     "name": "Flavia, Avenging Angel (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Independent importowany, lecz Blood cursed nie jest przenoszone do stanu ani obsługiwane w znalezionym runtime. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200470,
@@ -17535,7 +17535,7 @@
     "id": 200559,
     "name": "Hafsa, The Watcher (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 bleed Hafsie zamiast Assamite bleedującym jej kontrolera; brak block tax Camarilla i importu Blood cursed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Spec daje +1 bleed Hafsie zamiast Assamite bleedującym jej kontrolera; brak block tax Camarilla i importu Blood cursed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200560,
@@ -17594,8 +17594,8 @@
   {
     "id": 200569,
     "name": "Harika Guljan (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Independent importowany, lecz Blood cursed nie jest przenoszone do stanu ani obsługiwane w znalezionym runtime. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200570,
@@ -17865,7 +17865,7 @@
     "id": 200614,
     "name": "Husamettin (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez wyszukania master Discipline po spaleniu vampire z contract; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez wyszukania master Discipline po spaleniu vampire z contract; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200615,
@@ -17961,7 +17961,7 @@
     "id": 200630,
     "name": "Imanna (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 vote w referendach Imanny; 1 titled vote po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez +1 vote w referendach Imanny; 1 titled vote po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200631,
@@ -18177,7 +18177,7 @@
     "id": 200666,
     "name": "Jalal Sayad (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez płatnego rozpoczęcia kolejnego combat z przeciwnikiem raz na turę po combat; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez płatnego rozpoczęcia kolejnego combat z przeciwnikiem raz na turę po combat; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200667,
@@ -18189,7 +18189,7 @@
     "id": 200668,
     "name": "Jamal (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 bleed i stały +1 strength zamiast strength tylko przeciw ally lub Camarilla; 2 titled votes, Blood cursed i Red List nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Spec daje +1 bleed i stały +1 strength zamiast strength tylko przeciw ally lub Camarilla; 2 titled votes, Blood cursed i Red List nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200669,
@@ -18237,7 +18237,7 @@
     "id": 200676,
     "name": "Janni (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 damage przy strike weapon i directed rush na Follower of Set; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez +1 damage przy strike weapon i directed rush na Follower of Set; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200677,
@@ -18651,7 +18651,7 @@
     "id": 200745,
     "name": "Kalinda (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały bleed i stealth zamiast osobnej directed bleed action za 2 blood; Blood cursed nie importowane. Testy Kalinda w crypt-wave-2 dotyczą wersji G6, nie tej G2. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Spec daje stały bleed i stealth zamiast osobnej directed bleed action za 2 blood; Blood cursed nie importowane. Testy Kalinda w crypt-wave-2 dotyczą wersji G6, nie tej G2. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200746,
@@ -18692,8 +18692,8 @@
   {
     "id": 200752,
     "name": "Kanya Akhtar (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Independent importowany, ale Blood cursed nie jest przenoszone do stanu ani obsługiwane w znalezionym runtime. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200753,
@@ -18735,7 +18735,7 @@
     "id": 200759,
     "name": "Kashan (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Importer nie rozpoznaje 1 titled vote po kropce ani nie przenosi Blood cursed; spec ma puste statics. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Importer nie rozpoznaje 1 titled vote po kropce ani nie przenosi Blood cursed; spec ma puste statics. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200760,
@@ -19088,8 +19088,8 @@
   {
     "id": 200818,
     "name": "Layla bint-Nadr (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Independent importowany, ale Blood cursed nie jest przenoszone do stanu ani obsługiwane w znalezionym runtime. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200819,
@@ -19995,7 +19995,7 @@
     "id": 200969,
     "name": "Melek (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez strike dodge raz na combat; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez strike dodge raz na combat; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200970,
@@ -20660,8 +20660,8 @@
   {
     "id": 201080,
     "name": "Omer (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Independent importowany, lecz Blood cursed nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 201081,
@@ -20751,13 +20751,13 @@
     "id": 201095,
     "name": "Parmenides (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 strength, ale brak przejęcia przez predatora do następnego unlock po wejściu; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Spec daje +1 strength, ale brak przejęcia przez predatora do następnego unlock po wejściu; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201096,
     "name": "Parnassus (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 strength, lecz Blood cursed nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 201097,
@@ -21003,7 +21003,7 @@
     "id": 201137,
     "name": "Qadir ul-Ghani (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 bleed i stały stealth zamiast tylko akcji zmiany klanu za blood, której brak; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Spec daje +1 bleed i stały stealth zamiast tylko akcji zmiany klanu za blood, której brak; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201138,
@@ -21201,7 +21201,7 @@
     "id": 201170,
     "name": "Rebekah (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez discard Auspex za +2 votes w polling; Blood cursed nie importowane, Prince of Athens importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez discard Auspex za +2 votes w polling; Blood cursed nie importowane, Prince of Athens importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201171,
@@ -21519,7 +21519,7 @@
     "id": 201223,
     "name": "Sajid al Misbah (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zniżki blood kart Quietus i zakazu block starszych vampires; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez zniżki blood kart Quietus i zakazu block starszych vampires; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201224,
@@ -22118,8 +22118,8 @@
   {
     "id": 201323,
     "name": "Sukainah (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Independent importowany, lecz Blood cursed nie jest przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 201324,
@@ -22220,8 +22220,8 @@
   {
     "id": 201340,
     "name": "Tansu Bekir (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Independent importowany, lecz Blood cursed nie jest przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 201341,
@@ -22293,13 +22293,13 @@
     "id": 201352,
     "name": "Tegyrius, Vizier (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 strength i stały stealth Tegyriusowi zamiast tylko dla akcji Assamite za allegiance counter; brak tej akcji i traktowania Assamite z counter jako Camarilla, Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Spec daje +1 strength i stały stealth Tegyriusowi zamiast tylko dla akcji Assamite za allegiance counter; brak tej akcji i traktowania Assamite z counter jako Camarilla, Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201353,
     "name": "Tegyrius, Vizier (G2 ADV)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez blood za vote Camarilla Assamite w polling przy ready Tegyrius i merged Assamite Justicar; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez blood za vote Camarilla Assamite w polling przy ready Tegyrius i merged Assamite Justicar; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201354,
@@ -22371,7 +22371,7 @@
     "id": 201365,
     "name": "Thetmes, Caliph of Alamut (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez aggravated hand strikes; 2 titled votes po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez aggravated hand strikes; 2 titled votes po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201366,
@@ -22401,7 +22401,7 @@
     "id": 201370,
     "name": "Thucimia (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 hand size i -2 hand size do następnego unlock za +1 bleed podczas bleed; 1 titled vote po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez +1 hand size i -2 hand size do następnego unlock za +1 bleed podczas bleed; 1 titled vote po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201371,
@@ -22659,7 +22659,7 @@
     "id": 201413,
     "name": "Ur-Shulgi, The Shepherd (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i wyszukania Tajdid do ręki w unlock przy ready; 2 titled votes po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez +1 bleed i wyszukania Tajdid do ręki w unlock przy ready; 2 titled votes po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201414,
@@ -22737,7 +22737,7 @@
     "id": 201426,
     "name": "Vardar Vardarian (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 strength Followers of Set w combat z Vardarem; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez -1 strength Followers of Set w combat z Vardarem; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201427,
@@ -23013,7 +23013,7 @@
     "id": 201472,
     "name": "Wise Frog (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez first strike przeciw młodszemu vampire; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez first strike przeciw młodszemu vampire; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201473,
@@ -23151,7 +23151,7 @@
     "id": 201495,
     "name": "Yusuf, Scribe of Alamut (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez opcji unlock w discard phase po successful equip equipment wymagającego Assamite; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez opcji unlock w discard phase po successful equip equipment wymagającego Assamite; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201496,
@@ -23181,7 +23181,7 @@
     "id": 201500,
     "name": "Zahir, Hand of the Silsila (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały stealth zamiast tylko dla akcji wyszukania contract do ręki, której brak; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Spec daje stały stealth zamiast tylko dla akcji wyszukania contract do ręki, której brak; Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201501,

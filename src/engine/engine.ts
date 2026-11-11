@@ -41,6 +41,7 @@ import {
   auraBlocksHunt,
   actionKeyOf,
   canRepeatAction,
+  canCommitDiablerie,
   heldHostage,
   playCostFor,
   untargetableBy,
@@ -2145,6 +2146,9 @@ export class VtesEngine implements EngineOps {
   }
 
   commitDiablerie(diablerist: MinionId, victim: MinionId): void {
+    // Recheck at commitment: a restriction can change after announcement.
+    const d = findMinion(this.state, diablerist);
+    if (!d || !canCommitDiablerie(d)) return;
     // p. 34 — treated as a single unit; no effect interrupts.
     const v = getMinion(this.state, victim);
     // 1. All the victim's blood moves to the diablerist (excess drains).
@@ -2202,6 +2206,8 @@ export class VtesEngine implements EngineOps {
   }
 
   private startDiablerieWithInterrupt(diablerist: MinionId, victim: MinionId): void {
+    const actor = findMinion(this.state, diablerist);
+    if (!actor || !canCommitDiablerie(actor)) return;
     const victimMinion = findMinion(this.state, victim);
     if (!victimMinion) {
       this.commitDiablerie(diablerist, victim);
@@ -2239,6 +2245,8 @@ export class VtesEngine implements EngineOps {
 
   private resolveDiablerieInterrupt(frame: import("./state.ts").DiablerieInterruptFrame): void {
     const { diablerist, victim, cancelBurn, burnBoth } = frame;
+    const actor = findMinion(this.state, diablerist);
+    if (!actor || !canCommitDiablerie(actor)) return;
     if (cancelBurn !== undefined) {
       // "[ani] The diablerie is canceled and the diablerist burns 1 blood."
       const d = findMinion(this.state, diablerist);
@@ -5027,7 +5035,7 @@ export class VtesEngine implements EngineOps {
         // path below is not reached today — but p. 24 gives the
         // opportunity to a blocking VAMPIRE, and a gone one is not that.
         const blocker = findMinion(this.state, ba.blocker);
-        if (blocker?.kind === "vampire") {
+        if (blocker && canCommitDiablerie(blocker)) {
           this.state.frames.push({
             kind: "diablerieOffer",
             diablerist: ba.blocker,
@@ -11294,14 +11302,16 @@ export class VtesEngine implements EngineOps {
         // "…cannot be the target of other Methuselahs' actions" (Secure
         // Haven) — a diablerie and a rescue both name a minion.
         if (untargetableBy(victim, actor.controller, actor)) continue;
-        options.push({
-          id: `diablerize:${actor.id}:${victim.id}`,
-          kind: "takeAction",
-          label: `${actor.name}: diablerise ${victim.name}`,
-          minion: actor.id,
-          action: "diablerize",
-          targetMinion: victim.id,
-        });
+        if (canCommitDiablerie(actor)) {
+          options.push({
+            id: `diablerize:${actor.id}:${victim.id}`,
+            kind: "takeAction",
+            label: `${actor.name}: diablerise ${victim.name}`,
+            minion: actor.id,
+            action: "diablerize",
+            targetMinion: victim.id,
+          });
+        }
         // The 2-blood cost may be paid by the actor, the rescued
         // vampire, or split (p. 23) — fixed at announcement.
         // "Rescuing a non-Tremere vampire costs this Salubri -2 blood"

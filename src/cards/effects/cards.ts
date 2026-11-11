@@ -13723,9 +13723,8 @@ export const cardSpecs: CardSpec[] = [
     //  of a Discipline the victim had. In the resulting blood hunt
     //  referendum, this vampire gets an additional 2 votes."
     //
-    // "Capacity ABOVE 5" is capacity 6 or more. "Who can commit diablerie"
-    // is what the action itself requires (p. 24) — a vampire, not an ally —
-    // and the engine's own diablerie option answers it the same way.
+    // "Capacity ABOVE 5" is capacity 6 or more. The action target gate
+    // consults canCommitDiablerie, as the built-in diablerie action does.
     krcgId: 100360,
     name: "Cloak of Blood",
     cardType: "action",
