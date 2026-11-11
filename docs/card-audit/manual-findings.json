@@ -500,8 +500,8 @@
   {
     "id": 100084,
     "name": "Archon",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Archon nakłada blockToll z payWith blood bez filtra kinds, a blockTollFor w derived.ts odrzuca ally niezdolnego zapłacić blood. Druk wymaga zapłaty tylko od vampires; opposing-statics.test.ts:245 wręcz oczekuje niedopuszczenia ally. Rozbieżność jest statyczna, istniejący test koduje przeciwne oczekiwanie, a nie nowe odtworzenie poprawnego scenariusza. Statyczna analiza bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Poprawiono filtr kinds dla blockToll Archon: opłata dotyczy wampirów, nie ally. opposing-statics.test.ts rozgrywa referendum i opłatę wampira, batch-11-discrepancies.test.ts bada również ally i wampira bez blood. Pozostałych interakcji karty nie zweryfikowano kompleksowo."
   },
   {
     "id": 100085,
@@ -1700,8 +1700,8 @@
   {
     "id": 100284,
     "name": "Camarilla Exemplary",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Test batch-11-discrepancies.test.ts odtwarza okno bloku po ręcznym dołączeniu skompilowanej statyki karty do aktora: ally może blokować bez karty, ale nie może z kartą, a wampir z blood zachowuje opcję. To test aktualnego wadliwego zachowania, nie pełnej ścieżki referendum; kwestii ready nie rozstrzyga."
+    "status": "FIXED_TARGETED",
+    "evidence": "Poprawiono filtr kinds dla blockToll: ally nie płaci i może próbować blokować, wampir bez blood nie może. batch-11-discrepancies.test.ts bada statykę ręcznie dołączoną do aktora; once-in-a-game.test.ts bada dołączenie przez referendum. Osobna kwestia wymogu ready pozostaje nierozstrzygnięta."
   },
   {
     "id": 100285,
@@ -1730,8 +1730,8 @@
   {
     "id": 100289,
     "name": "Can't Take it with You",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Test batch-11-discrepancies.test.ts rozgrywa udane referendum z lokacją Alice i stwierdza kolejność PoolGained Alice, PoolBurned Alice, PoolGained Bob, PoolGained Carol, zamiast wszystkich gain przed burn. To test aktualnego wadliwego zachowania, nie scenariusz oustingu."
+    "status": "FIXED_TARGETED",
+    "evidence": "refPerSeatCards emituje wszystkie gain przed fazą burn; batch-11-discrepancies.test.ts rozgrywa referendum i sprawdza kolejność, table-pool-swings.test.ts sprawdza naliczenie. Nie sprawdzono wszystkich interakcji, w szczególności oustingu."
   },
   {
     "id": 100290,
@@ -9999,7 +9999,7 @@
     "id": 101667,
     "name": "Sabbat Priest",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Tekst wymaga ready Sabbat vampire, a spec używa requiresSect na callerze, zamiast warunku innego kontrolowanego ready Sabbat. Test once-in-a-game.test.ts używa Sabbat callera i nie rozróżnia tych przypadków; efekt block toll jest zaimplementowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Naprawiono blockToll: dotyczy wampirów, nie ally; test batch-11-discrepancies.test.ts bada statykę na aktorze. Tekst wymaga ready Sabbat vampire, a spec używa requiresSect na callerze, zamiast warunku innego kontrolowanego ready Sabbat. Test once-in-a-game.test.ts używa Sabbat callera i nie rozróżnia tych przypadków; ta rozbieżność pozostaje statyczna i nierozstrzygnięta scenariuszowo."
   },
   {
     "id": 101668,
@@ -14187,7 +14187,7 @@
     "id": 200001,
     "name": "Aabbt Kindred (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Brak handlera crypt tej nazwy; makeVampire nie importuje drukowanego non-unique, zaś engine.uniqueMinion uznaje go za unique. Nie znaleziono implementacji zakazu directed action bez ready Nefertiti ani prevention 1 co combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Import non-unique naprawiony i testowany w crypt-non-unique.test.ts. Nadal brak handlera: nie znaleziono implementacji zakazu directed action bez ready Nefertiti ani prevention 1 co combat; analiza statyczna."
   },
   {
     "id": 200002,
@@ -16977,7 +16977,7 @@
     "id": 200466,
     "name": "Fida'i (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez braku normalnego unlock i płatnego unlock przez ready Assamite capacity co najmniej 7; Blood cursed i non-unique nie są importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Import non-unique naprawiony i testowany w crypt-non-unique.test.ts. Pusta spec bez braku normalnego unlock i płatnego unlock przez ready Assamite capacity co najmniej 7; Blood cursed nie jest importowane. Analiza statyczna."
   },
   {
     "id": 200467,
@@ -17427,7 +17427,7 @@
     "id": 200541,
     "name": "Grotesque (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez wyboru i powiązania location oraz remove z gry po utracie tej location; non-unique, Flight i Tremere slave nie są przenoszone do stanu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Import non-unique naprawiony i testowany w crypt-non-unique.test.ts. Pusta spec bez wyboru i powiązania location oraz remove z gry po utracie tej location; Flight i Tremere slave nie są importowane. Analiza statyczna."
   },
   {
     "id": 200542,
@@ -17811,7 +17811,7 @@
     "id": 200605,
     "name": "The Horde (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez lock za +1 bleed innemu działającemu infernal minionowi; Infernal i non-unique nie są przenoszone do stanu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Import non-unique naprawiony i testowany w crypt-non-unique.test.ts. Pusta spec bez lock za +1 bleed innemu działającemu infernal minionowi; Infernal nie jest importowane. Analiza statyczna."
   },
   {
     "id": 200606,
@@ -22719,7 +22719,7 @@
     "id": 201423,
     "name": "Valkyrie (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 strength, ale brak zakazu directed actions bez ready Brunhilde; non-unique nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Import non-unique naprawiony i testowany w crypt-non-unique.test.ts. Spec daje +1 strength, ale brak zakazu directed actions bez ready Brunhilde; analiza statyczna."
   },
   {
     "id": 201424,

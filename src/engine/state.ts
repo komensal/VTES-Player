@@ -365,10 +365,8 @@ export interface MinionState {
    * Winning restores it from here; yielding drops it for good.
    */
   titleContest?: { title: VampireTitle; city?: string };
-  /** A minion that is NOT a unique card, so it never contests: the two
-   *  token vampires, which print "non-unique" in as many words. Every
-   *  other vampire is a crypt card, and "all crypt cards represent unique
-   *  minions" (p. 17). docs/token-vampire-design.md, contested-design §3 */
+  /** Explicit non-unique exception for a token or printed crypt card.
+   *  Other crypt vampires are unique and may be contested. */
   nonUnique?: boolean;
   /** Clan (e.g. "Gangrel") and sect — static crypt facts for "Requires a
    *  …" gating and clan-locked cards. Null for allies and untagged. */
@@ -1202,6 +1200,8 @@ export interface PermanentStatics {
   blockToll?: {
     amount: number;
     payWith: "blood" | "bloodOrLife";
+    /** Restrict the toll to the printed kind of blocker, e.g. vampires. */
+    kinds?: MinionKind[];
     /** "Minions with 1 or more of YOUR corruption counters must burn 1
      *  blood or life to attempt to block Sergio" — the toll falls only on
      *  a blocker the card's controller has corrupted.

@@ -10233,14 +10233,14 @@ function compilePoliticalAction(spec: CardSpec): CardHandler {
             }
             return { seat: s.id, n: tagHits.get(s.id) ?? 0 };
           });
-          for (const { seat, n } of tallies) {
-            // "Each Methuselah GAINS 1 pool. Each Methuselah THEN burns…"
-            // — both halves run for every standing seat, including one
-            // whose tally is zero, which is how a seat with nothing in
-            // play comes out ahead.
-            if (primitive.everyoneGains) {
+          // The printed "then" separates two table-wide phases: every
+          // gain happens before any burn. Tallies remain a single snapshot.
+          if (primitive.everyoneGains) {
+            for (const { seat } of tallies) {
               ops.emit({ type: "PoolGained", seat, amount: primitive.everyoneGains });
             }
+          }
+          for (const { seat, n } of tallies) {
             const total = n * primitive.amount;
             if (total > 0) {
               ops.emit({

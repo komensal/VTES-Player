@@ -12058,7 +12058,7 @@ export const cardSpecs: CardSpec[] = [
     requiresSect: ["camarilla"],
     permanent: {
       where: "bearer",
-      statics: { blockToll: { amount: 1, payWith: "blood" } },
+      statics: { blockToll: { amount: 1, payWith: "blood", kinds: ["vampire"] } },
       tags: ["Camarilla Exemplary"],
     },
     usable: [],
@@ -12088,7 +12088,7 @@ export const cardSpecs: CardSpec[] = [
     requiresSect: ["sabbat"],
     permanent: {
       where: "bearer",
-      statics: { blockToll: { amount: 1, payWith: "blood" } },
+      statics: { blockToll: { amount: 1, payWith: "blood", kinds: ["vampire"] } },
       tags: ["Sabbat Priest"],
     },
     usable: [],
@@ -14788,7 +14788,7 @@ export const cardSpecs: CardSpec[] = [
     permanent: {
       where: "bearer",
       statics: {
-        blockToll: { amount: 1, payWith: "blood" },
+        blockToll: { amount: 1, payWith: "blood", kinds: ["vampire"] },
         noBloodHunt: true,
       },
       tags: ["Archon"],

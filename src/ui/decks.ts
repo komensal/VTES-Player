@@ -319,6 +319,7 @@ function makeVampire(v: DeckVampire, id: string, seat: string, inCrypt: boolean)
   return {
     ...path,
     ...titleCity,
+    ...(card.nonUnique ? { nonUnique: true } : {}),
     id,
     name: card.name,
     kind: "vampire",

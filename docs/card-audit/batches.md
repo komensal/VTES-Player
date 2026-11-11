@@ -294,3 +294,36 @@ Po ukończeniu pierwszego przeglądu dodano `tests/cards/batch-11-discrepancies.
 - **Can't Take it with You (100289)**: po udanym referendum z lokacją u Alice log pokazuje gain Alice, burn Alice, gain Bob, gain Carol, nie dwie globalne fazy. Test nie bada skutków oustingu ani reakcji na kolejność.
 
 Te trzy wpisy zaktualizowano do `CONFIRMED_BUG` w inwentarzu z zaznaczeniem powyższych ograniczeń; wcześniejszy raport części 05 opisuje stan przed tymi testami. W całej paczce 11 po aktualizacji: **35 `CODE_DISCREPANCY`, 3 `CONFIRMED_BUG`, 91 ograniczonych `REVIEWED_NO_ISSUE_FOUND`, 7 `UNRESOLVED`**. Pozostałe statyczne ustalenia bez zmian.
+
+## Naprawy po audycie — pierwszy etap
+
+Aktualną mapę tematów i metodologię klasyfikacji zawiera [open-issue-categories.md](open-issue-categories.md), a kolejność dalszych prac — [remediation-plan.md](remediation-plan.md). Kategorie są nakładającymi się kandydatami, nie potwierdzonymi wspólnymi przyczynami.
+
+- Dodano filtr rodzaju miniona do trwałego `blockToll`; Archon, Camarilla Exemplary i Sabbat Priest obciążają tylko wampiry, nie ally. Sabbat Priest zachowuje inne otwarte ustalenie, a Camarilla Exemplary ma nierozstrzygnięty zakres wymogu ready.
+- Dla Can't Take it with You rozdzielono wspólną realizację efektu na globalną fazę gain i następującą po niej fazę burn. Test obejmuje kolejność zdarzeń po udanym referendum, nie wszystkie interakcje z oustingiem.
+- Import pięciu crypt z osobną klauzulą `Non-unique.` przenosi tę cechę do ready, uncontrolled i crypt. Testy potwierdzają brak contestu oraz contest kontrolnego unikalnego wampira. Pozostałe znane braki tych pięciu kart nadal są otwarte.
+
+Poprzednie części raportów są historyczne. Aktualne szczegóły i statusy znajdują się w inwentarzu. Testy celowane: 133/133 w 10 plikach; generator inwentarza, typecheck oraz diff-check przeszły.
+
+Pełny zestaw uruchomiono przed doprecyzowaniem asercji w testach regresyjnych: **3976 passed, 18 failed** w 14 plikach (372 pliki łącznie). Wśród porażek są m.in. nieaktualne listy klanów i dyscyplin, oczekiwana liczba Justicarów oraz test klasyfikacji frenzy; żadna nie pochodzi z plików objętych tymi zmianami. Po doprecyzowaniu testów ponowiono zestaw celowany. `npm run build` przeszedł z ostrzeżeniem Vite o dużych chunkach.
+
+Porażki pełnego zestawu (nazwy przypadków):
+
+- ` tests/cards/burn-the-equipment.test.ts > Vial of Elder Vitae (102114) > DISCIPLINES names every Discipline the pool actually uses`
+- ` tests/cards/central-queries.test.ts > every registered handler answers the central queries > names at least one printed type — every LIBRARY card`
+- ` tests/cards/clan-vocabulary.test.ts > clan vocabulary > is exactly what CLANS offers — 'an EXISTING clan' means the pool's`
+- ` tests/cards/clan-vocabulary.test.ts > clan vocabulary > the legacy library's clan icons stayed OUT of the vocabulary`
+- ` tests/cards/crypt-wave-1.test.ts > the crypt pipeline > a vampire with a bare sect/title line gets NO entry`
+- ` tests/cards/discipline-cards.test.ts > Discipline master cards > §0: exactly the Disciplines the pool actually requires`
+- ` tests/cards/granted-action-requirements.test.ts > a granted action requires the clan its grant lists [LSJ 20080604] > Keegan has no positive to build: no supported grant lists Gangrel`
+- ` tests/cards/justicars.test.ts > every Justicar is unique > carries `unique` on the spec, which is what the card contest reads`
+- ` tests/cards/library-audit.test.ts > the coverage guard > every supported card is named by some test or fuzz deck`
+- ` tests/cards/no-partial-cards.test.ts > no partial cards > counts up — the two whole kinds account for the entire pool`
+- ` tests/cards/path-cards.test.ts > Paths come from the crypt, not from a card in play > NO card in the pool grants a Path — that is why it must be printed`
+- ` tests/cards/pool-widening.test.ts > what the widening admits > admits only the configured groups`
+- ` tests/cards/pool-widening.test.ts > what the widening admits > admits no sect the engine cannot represent`
+- ` tests/cards/pool-widening.test.ts > what the widening admits > leaves the precons V5-only — a legacy set's decks are half-built here`
+- ` tests/cards/pool-widening.test.ts > what the widened cards carry > matches the config — widened when groups are open, empty when not`
+- ` tests/cards/praxis-seizure.test.ts > the admission path (§6) > the Praxis Seizures still OUT are exactly the ones whose rider is unbuilt`
+- ` tests/cards/referendum-terms.test.ts > CLANS is derived, not guessed > matches exactly the clans the V5 crypt contains`
+- ` tests/cards/round-recurring-combat.test.ts > frenzy classification (docs/round-recurring-combat-design.md §6) > every frenzy mode in the pool classifies, and matches its printed text`

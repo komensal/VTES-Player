@@ -308,8 +308,8 @@ describe("two Methuselahs with the same vampire", () => {
   });
 
   it("does not contest a NON-UNIQUE token vampire", () => {
-    // "It becomes a 1-capacity (non-unique) vampire" — the two token
-    // cards are the only vampires in the game that never contest.
+    // "It becomes a 1-capacity (non-unique) vampire" — these tokens,
+    // like crypt vampires explicitly printed non-unique, never contest.
     const state = threeSeatGame();
     state.seats[0]!.minions.push(makeMinion("t1", "Alice", { name: "Waters of Duat", nonUnique: true }));
     state.seats[1]!.minions.push(makeMinion("t2", "Bob", { name: "Waters of Duat", nonUnique: true }));
