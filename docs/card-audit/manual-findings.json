@@ -1938,6 +1938,12 @@
     "evidence": "Brak basic steal i superior dołączenia oraz cyklicznej utraty blood/life; spec zawiera tylko stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
+    "id": 100416,
+    "name": "Constant Revolution",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Anarch, unique, stealth i początkowy counter w spec; test unlock-tolls.test.ts sprawdza wzrost, wybór i losowe odrzucenie z replacement, koszt akcji burn. Nie sprawdzono wszystkich interakcji."
+  },
+  {
     "id": 100417,
     "name": "Consume the Dead",
     "status": "CONFIRMED_BUG",
@@ -1948,6 +1954,18 @@
     "name": "Contagion",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak wymogu infernal, unique, permanenta i straty pool przez inne osoby; brak superior strike/corruption. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+  },
+  {
+    "id": 100419,
+    "name": "Contingency Planning",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Osobny handler outOfTurnCancel dopuszcza własną turę, anuluje redirect bez kosztu i ustawia limit bleed 1; scenariusze bleed-redirects.test.ts."
+  },
+  {
+    "id": 100420,
+    "name": "Contract",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Spec dołącza do ready miniona i przyznaje rush +1 stealth; osobny handler wybiera dowolnego Banu Haqim, w tym przeciwnika: marked-vampires.test.ts. Oceniono ten zakres."
   },
   {
     "id": 100421,
@@ -1980,16 +1998,40 @@
     "evidence": "Brak trifle i dołączenia do Black Hand oraz zdolności lock/unlock; spec ma jedynie prevent. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
+    "id": 100426,
+    "name": "Corporate Hunting Ground",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Unique hunting ground, koszt 2, opcjonalny blood do ready własnego wampira i wspólny limit hunting grounds; legacy-locations.test.ts i wspólny mechanizm."
+  },
+  {
     "id": 100427,
     "name": "Corpse Balloon",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak warunku blokowania directed action i poprawnego rozdzielenia poziomów; basic błędnie otrzymuje intercept. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
+    "id": 100428,
+    "name": "Corpse Minion",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Koszt 1 pool i wymóg Tremere pochodzą z ikon; life 1 i kupowanie intercept za blood: retainer-prices.test.ts. Zakres nie obejmuje wszystkich reakcji."
+  },
+  {
     "id": 100429,
     "name": "Corrupt Construction",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak usuwania kart dla życia, siły zależnej od life, utraty life w unlock i superior. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+  },
+  {
+    "id": 100430,
+    "name": "Corruption",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec akcji zawiera tylko stealth; brak wyboru miniona prey, corruption counter oraz opcjonalnego przejęcia po przekroczeniu capacity/cost. Nie znaleziono osobnego handlera tej karty. Tekst registry.json; kod src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100431,
+    "name": "Corruption's Purge",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Kontrolowany prince/justicar/Inner Circle oraz burn blood Ministry i torpor po referendum: torpor-prey.test.ts; tekstowa nazwa Follower of Set jest aliasem Ministry."
   },
   {
     "id": 100432,
@@ -2008,6 +2050,12 @@
     "name": "Courier",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak -1 intercept przeciw vampire i przeglądania/odrzucania wierzchniej karty po sukcesie bleed. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+  },
+  {
+    "id": 100435,
+    "name": "The Coven",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Pusta spec jest uzupełniona osobnym handlerem: unique/trifle, lock dla +2 blood i przekazanie predator w discard; cross-table-masters.test.ts."
   },
   {
     "id": 100436,
@@ -2040,16 +2088,46 @@
     "evidence": "Brak wymogu non-sterile i tworzenia Gargoyle z Dyscypliną, wyszukania master, przekazania krwi i zakazu akcji. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
+    "id": 100441,
+    "name": "Creation Rites",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Wymóg tytułu/non-sterile, tworzenie 1-capacity Sabbat tego samego klanu, wyszukanie Discipline i opcjonalne do 1 blood: new-vampires.test.ts, compile.ts."
+  },
+  {
+    "id": 100442,
+    "name": "Creep Show",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Sabbat, trifle i limit archetype w spec; osobny handler reaguje raz na dodge lub combat ends przeciwnika: archetypes.test.ts."
+  },
+  {
     "id": 100443,
     "name": "Creeping Infection",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak strike, dołączenia, sterowania blokiem i limitu; +1 bleed występuje błędnie na basic. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
+    "id": 100444,
+    "name": "Creepshow Casino",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Koszt 2 pool, unique i lock dla stealth przy ogłoszeniu własnej undirected: action-time-locations.test.ts. Pozostałe kombinacje niezweryfikowane."
+  },
+  {
+    "id": 100445,
+    "name": "Crematorium",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Unique, 1 pool, lock podczas unlock i spalenie pozbawionego blood wampira w torpor: torpor-prey.test.ts."
+  },
+  {
     "id": 100446,
     "name": "CrimethInc.",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak warunku successful anarch action i trzech odrębnych efektów unlock/permanent; zamiast nich stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+  },
+  {
+    "id": 100447,
+    "name": "Crimson Fury",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Basic anuluje diablerie i pobiera blood; superior spala obie strony, uwzględnia stan locked/torpor i koszt: crimson-fury.test.ts."
   },
   {
     "id": 100448,
@@ -2082,10 +2160,22 @@
     "evidence": "Pusta specyfikacja referendum nie przyznaje tytułu Archbishop of Aragon ani nie umieszcza karty na Sabbat Lucicie zamiast aktora, gdy jest w grze. Brak osobnego handlera Aragon; src/cards/effects/cards.ts, registry.json."
   },
   {
+    "id": 100453,
+    "name": "Crusade: Atlanta",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie Sabbat, referendum, tytuł Archbishop of Atlanta i mechanizm contest: wspólna fabryka crusade, praxis-seizure.test.ts. Pełnych interakcji nie dowiedziono."
+  },
+  {
     "id": 100454,
     "name": "Crusade: Barcelona",
     "status": "FIXED_TARGETED",
     "evidence": "Pusta specyfikacja nie przyznawała tytułu. Zastąpiono ją wspólną implementacją referendum arcybiskupa z właściwym miastem i odblokowaniem klanu z tekstu w następnej fazie discard; tests/cards/title-riders.test.ts sprawdza rzeczywiste referendum, oba warianty klanu oraz wymóg Sabbat. Inne interakcje wymagają dalszej weryfikacji."
+  },
+  {
+    "id": 100455,
+    "name": "Crusade: Berlin",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie Sabbat, referendum, tytuł Archbishop of Berlin i mechanizm contest: wspólna fabryka crusade, praxis-seizure.test.ts. Wariant Lasombra odblokowuje w następnej fazie discard: title-riders.test.ts. Pełnych interakcji nie dowiedziono."
   },
   {
     "id": 100456,
@@ -2094,10 +2184,28 @@
     "evidence": "Pusta specyfikacja nie przyznawała tytułu. Zastąpiono ją wspólną implementacją referendum arcybiskupa z właściwym miastem i odblokowaniem klanu z tekstu w następnej fazie discard; tests/cards/title-riders.test.ts sprawdza rzeczywiste referendum, oba warianty klanu oraz wymóg Sabbat. Inne interakcje wymagają dalszej weryfikacji."
   },
   {
+    "id": 100457,
+    "name": "Crusade: Chicago",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie Sabbat, referendum, tytuł Archbishop of Chicago i mechanizm contest: wspólna fabryka crusade, praxis-seizure.test.ts. Pełnych interakcji nie dowiedziono."
+  },
+  {
+    "id": 100458,
+    "name": "Crusade: Detroit",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie Sabbat, referendum, tytuł Archbishop of Detroit i mechanizm contest: wspólna fabryka crusade, praxis-seizure.test.ts. Pełnych interakcji nie dowiedziono."
+  },
+  {
     "id": 100459,
     "name": "Crusade: Dublin",
     "status": "FIXED_TARGETED",
     "evidence": "Pusta specyfikacja nie przyznawała tytułu. Zastąpiono ją wspólną implementacją referendum arcybiskupa z właściwym miastem i odblokowaniem klanu z tekstu w następnej fazie discard; tests/cards/title-riders.test.ts sprawdza rzeczywiste referendum, oba warianty klanu oraz wymóg Sabbat. Inne interakcje wymagają dalszej weryfikacji."
+  },
+  {
+    "id": 100460,
+    "name": "Crusade: Frankfurt",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie Sabbat, referendum, tytuł Archbishop of Frankfurt i mechanizm contest: wspólna fabryka crusade, praxis-seizure.test.ts. Pełnych interakcji nie dowiedziono."
   },
   {
     "id": 100461,
@@ -2106,16 +2214,70 @@
     "evidence": "Pusta specyfikacja nie przyznawała tytułu. Zastąpiono ją wspólną implementacją referendum arcybiskupa z właściwym miastem i odblokowaniem klanu z tekstu w następnej fazie discard; tests/cards/title-riders.test.ts sprawdza rzeczywiste referendum, oba warianty klanu oraz wymóg Sabbat. Inne interakcje wymagają dalszej weryfikacji."
   },
   {
+    "id": 100462,
+    "name": "Crusade: Houston",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie Sabbat, referendum, tytuł Archbishop of Houston i mechanizm contest: wspólna fabryka crusade, praxis-seizure.test.ts. Pełnych interakcji nie dowiedziono."
+  },
+  {
+    "id": 100463,
+    "name": "Crusade: Istanbul",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie Sabbat, referendum, tytuł Archbishop of Istanbul i mechanizm contest: wspólna fabryka crusade, praxis-seizure.test.ts. Wariant Tzimisce odblokowuje w następnej fazie discard: title-riders.test.ts. Pełnych interakcji nie dowiedziono."
+  },
+  {
     "id": 100464,
     "name": "Crusade: London",
     "status": "FIXED_TARGETED",
     "evidence": "Pusta specyfikacja nie przyznawała tytułu. Zastąpiono ją wspólną implementacją referendum arcybiskupa z właściwym miastem i odblokowaniem klanu z tekstu w następnej fazie discard; tests/cards/title-riders.test.ts sprawdza rzeczywiste referendum, oba warianty klanu oraz wymóg Sabbat. Inne interakcje wymagają dalszej weryfikacji."
   },
   {
+    "id": 100465,
+    "name": "Crusade: Mexico City",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie Sabbat, referendum, tytuł Archbishop of Mexico City i mechanizm contest: wspólna fabryka crusade, praxis-seizure.test.ts. Pełnych interakcji nie dowiedziono."
+  },
+  {
+    "id": 100466,
+    "name": "Crusade: Miami",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie Sabbat, referendum, tytuł Archbishop of Miami i mechanizm contest: wspólna fabryka crusade, praxis-seizure.test.ts. Pełnych interakcji nie dowiedziono."
+  },
+  {
+    "id": 100467,
+    "name": "Crusade: New York",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie Sabbat, referendum, tytuł Archbishop of New York i mechanizm contest: wspólna fabryka crusade, praxis-seizure.test.ts. Pełnych interakcji nie dowiedziono."
+  },
+  {
+    "id": 100468,
+    "name": "Crusade: Paris",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie Sabbat, referendum, tytuł Archbishop of Paris i mechanizm contest: wspólna fabryka crusade, praxis-seizure.test.ts. Pełnych interakcji nie dowiedziono."
+  },
+  {
+    "id": 100469,
+    "name": "Crusade: Philadelphia",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie Sabbat, referendum, tytuł Archbishop of Philadelphia i mechanizm contest: wspólna fabryka crusade, praxis-seizure.test.ts. Pełnych interakcji nie dowiedziono."
+  },
+  {
+    "id": 100470,
+    "name": "Crusade: Pittsburgh",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie Sabbat, referendum, tytuł Archbishop of Pittsburgh i mechanizm contest: wspólna fabryka crusade, praxis-seizure.test.ts. Pełnych interakcji nie dowiedziono."
+  },
+  {
     "id": 100471,
     "name": "Crusade: Rome",
     "status": "FIXED_TARGETED",
     "evidence": "Pusta specyfikacja nie przyznawała tytułu. Zastąpiono ją wspólną implementacją referendum arcybiskupa z właściwym miastem i odblokowaniem klanu z tekstu w następnej fazie discard; tests/cards/title-riders.test.ts sprawdza rzeczywiste referendum, oba warianty klanu oraz wymóg Sabbat. Inne interakcje wymagają dalszej weryfikacji."
+  },
+  {
+    "id": 100472,
+    "name": "Crusade: Toronto",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie Sabbat, referendum, tytuł Archbishop of Toronto i mechanizm contest: wspólna fabryka crusade, praxis-seizure.test.ts. Pełnych interakcji nie dowiedziono."
   },
   {
     "id": 100473,
@@ -2130,10 +2292,28 @@
     "evidence": "Brak unique melee weapon, aggravated strike, wymogu True Faith/imbued i ograniczenia manewrów. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
+    "id": 100475,
+    "name": "Cry Wolf",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec ma rush i press, ale brak obowiązku rush, torpor aktora gdy rekrutacja jest blokowana, zakazu normalnego unlock i spalenia locked werewolfa w unlock. Brak osobnego handlera. Tekst registry.json; kod src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100476,
+    "name": "Crypt's Sons",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Unique, koszt 1 pool i Anarch; retainer life 3, damage 1R i wydanie life do uniknięcia bloku: retainer-wave.test.ts."
+  },
+  {
     "id": 100477,
     "name": "Cryptic Mission",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak directed celu i obrażeń/burn oraz superior gain blood; spec zawiera prevent i stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+  },
+  {
+    "id": 100478,
+    "name": "Cryptic Rider",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Okno po wygranym referendum i grant na następne w tej turze: referendum-riders.test.ts; referendum-outcomes.test.ts sprawdza brak okna po przegranej."
   },
   {
     "id": 100479,
@@ -2146,6 +2326,12 @@
     "name": "Cultivated Blood Shortage",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak permanenta, podatku blood Ventrue, lock przy braku krwi i akcji burn. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+  },
+  {
+    "id": 100481,
+    "name": "Cunctator Motion",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Pusta spec oferuje referendum bez warunku gry o ante ani wyboru i przestawienia kart ante; silnik nie implementuje ante. Tekst registry.json; kod src/cards/effects/cards.ts."
   },
   {
     "id": 100482,
@@ -2166,10 +2352,22 @@
     "evidence": "Brak wymogu Baali i trwałego bonusu bleed pracodawcy; spec używa doraźnego modifyBleed. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
+    "id": 100485,
+    "name": "Dabbler",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Archetype/trifle i wyłączność w spec; osobny handler liczy użyte dyscypliny i oferuje wybór, testy archetypes.test.ts porównują 2 i 3 dyscypliny. Inne interakcje poza zakresem."
+  },
+  {
     "id": 100486,
     "name": "Daemonic Possession",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak wyboru spalonego miniona i wskrzeszenia do ready z 1 blood/life oraz różnicy lock poziomów; błędny stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+  },
+  {
+    "id": 100487,
+    "name": "Dagger",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec sprzętu nie implementuje melee strike, rzutu na dystans, obrażeń aggravated przeciw Kiasyd, dodatkowego Dagger ani spalenia po prevent. Brak osobnego handlera. Tekst registry.json; kod src/cards/effects/cards.ts."
   },
   {
     "id": 100488,
@@ -2194,6 +2392,30 @@
     "name": "Danse Macabre",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak wyboru ready Sabbat i jednorazowego płatnego unlock po successful action; zamiast tego gainPool. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+  },
+  {
+    "id": 100492,
+    "name": "Daring the Dawn",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Dwa poziomy blokują vampire i zadają właściwe 2/1 aggravated po akcji; block-tax.test.ts. Szczególne interakcje niezbadane."
+  },
+  {
+    "id": 100493,
+    "name": "Dark Influences",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Osobny out-of-turn handler anuluje minion card, zapisuje zakaz i osłonę przed kolejnym anulowaniem; out-of-turn-cancels.test.ts obejmuje kilka wariantów osłony."
+  },
+  {
+    "id": 100494,
+    "name": "Dark Mirror of the Mind",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Capacity co najmniej 8, +1 stealth i zysk 2 pool po sukcesie: legacy-actions.test.ts."
+  },
+  {
+    "id": 100495,
+    "name": "Dark Steel",
+    "status": "FIXED_TARGETED",
+    "evidence": "Zastąpiono wykonywany natychmiast maneuver opcjonalnym kredytem na close range: poprzednio blokował zagranie na close i mógł wymusić nieprawidłową zmianę dystansu przed range. tests/cards/audit-manual-07.test.ts: oba poziomy, obrażenia i wybór maneuver oraz limit. Dalsze interakcje poza zakresem."
   },
   {
     "id": 100496,
@@ -2226,6 +2448,12 @@
     "evidence": "Brak obu przyznanych akcji: przeniesienia master Discipline i spalenia siebie z Tremere antitribu. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
+    "id": 100501,
+    "name": "Dawn Operation",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Podstawowy i superior ustalają aggravated w walce, przy basic możliwe wycofanie bloku: dawn-operation.test.ts."
+  },
+  {
     "id": 100502,
     "name": "Day Operation",
     "status": "CONFIRMED_BUG",
@@ -2238,10 +2466,22 @@
     "evidence": "Brak hand strike +1 i superior zakazu prevent Fortitude; spec daje maneuver. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
+    "id": 100504,
+    "name": "Dead-End Alley",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Press wyłącznie do kontynuacji w odpowiedniej sytuacji; basic-combat.test.ts porównuje z end-only Open Grate."
+  },
+  {
     "id": 100505,
     "name": "The Deadliest Sin",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak okna diablerie, +2 intercept i warunkowego +2 strength; spec daje +1 intercept. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+  },
+  {
+    "id": 100506,
+    "name": "Deal with the Devil",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Master odrzuca rękę i dobiera ją po odrzuceniu, karta zastąpiona po rozwiązaniu: hand-churn.test.ts."
   },
   {
     "id": 100507,
@@ -2260,6 +2500,18 @@
     "name": "Death Pact",
     "status": "CONFIRMED_BUG",
     "evidence": "Brak karty na celu, przekształcenia w wraith retainer po spaleniu oraz redukcji aggravated i superior life. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+  },
+  {
+    "id": 100510,
+    "name": "Death Seeker",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Salubri antitribu i koszt 1 blood z ikon, raz na rundę oraz anulowanie dowolnej combat card przeciwnika bez kosztu: one-each-round.test.ts."
+  },
+  {
+    "id": 100511,
+    "name": "Decapitate",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie: Superior oferuje spalenie przeciwnika w oknie torpor, nie gdy grający również zmierza do torpor; basic dostępny w strike. tests/cards/decapitate.test.ts; dalsza weryfikacja melee i obrażeń potrzebna."
   },
   {
     "id": 100512,

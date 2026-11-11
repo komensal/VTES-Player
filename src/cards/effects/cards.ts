@@ -20047,8 +20047,8 @@ export const cardSpecs: CardSpec[] = [
     usable: [],
     combatLimit: "combat",
     modes: [
-      { level: "basic", discipline: { all: ["obt", "pot"] }, effects: [{ kind: "roundDamage", amount: 1, targets: "opposing", ranged: false, when: "strikeResolution" }, { kind: "maneuver", onlyToClose: true }] },
-      { level: "superior", discipline: { all: ["obt", "pot"] }, effects: [{ kind: "roundDamage", amount: 2, targets: "opposing", ranged: false, when: "strikeResolution" }, { kind: "maneuver", onlyToClose: true }] },
+      { level: "basic", discipline: { all: ["obt", "pot"] }, effects: [{ kind: "roundDamage", amount: 1, targets: "opposing", ranged: false, when: "strikeResolution" }, { kind: "roundCloseManeuver" }] },
+      { level: "superior", discipline: { all: ["obt", "pot"] }, effects: [{ kind: "roundDamage", amount: 2, targets: "opposing", ranged: false, when: "strikeResolution" }, { kind: "roundCloseManeuver" }] },
     ],
   },
   {
