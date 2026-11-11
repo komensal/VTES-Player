@@ -164,3 +164,9 @@ Wybrane testy tej części: 204/204 w 18 plikach. Typecheck, generator inwentarz
 [Manifest](batch-06-ids.json) obejmuje ID 101615–102114; [pierwsze 100 pozycji](batch-06-manual-01-partial.md) otrzymało 73 wpisy `CODE_DISCREPANCY` na podstawie kodu bez nowych testów odtwarzających i 27 przeglądów bez wykrytej niezgodności w opisanym wąskim zakresie. Dalszych 400 nie przejrzano w tej turze; karta 101862 ma wcześniejszy historyczny wpis `CONFIRMED_BUG`, a pozostałych **399** nie ma wpisu. Bez ekstrapolowania wyników.
 
 Wybrane, częściowo pokrywające się zestawy testów: 161/161 i 269/269. Generator inwentarza, test generatora, typecheck i diff-check przeszły. Pełnego zestawu nie uruchomiono; testy nie dowodzą pełnej zgodności kart. W całym inwentarzu **1628 z 4158** kart ma wpis, **2530** go nie ma. Historyczne `CONFIRMED_BUG` obejmuje także analizy statyczne bez niezależnego odtworzenia.
+
+## Paczka 6 — pozycje 101–300
+
+[Przegląd 200 pozycji](batch-06-manual-02-partial.md), ID 101715–101914: 199 nowych wpisów — 147 `CODE_DISCREPANCY` z analizy kodu bez nowego testu odtwarzającego i 52 ograniczone przeglądy. Historyczny wpis `CONFIRMED_BUG` dla 101862 zachowano bez zmiany. Pierwszych **300 kart** paczki ma wpis, ostatnich **200 nie ma**; ograniczony przegląd nie jest pełnym potwierdzeniem zgodności. Nie ekstrapolować wyników.
+
+Wybrane, częściowo pokrywające się zestawy testów: 140/141, 203/203, 279/279 i 222/222. Jedna porażka `discipline-cards.test.ts:207` występowała w poprzednim pełnym przebiegu. Generator inwentarza, test generatora, typecheck i diff-check przeszły; pełnego zestawu nie uruchomiono. W całym inwentarzu **1827 z 4158** kart ma wpis, **2331** nie ma. Historyczne `CONFIRMED_BUG` obejmują także statyczne analizy bez niezależnego odtworzenia.

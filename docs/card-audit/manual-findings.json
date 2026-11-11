@@ -9732,10 +9732,1204 @@
     "evidence": "Basic maneuver nie ma ograniczenia pierwszej rundy; brak superior ustawiającego range za blood przed range determination. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
+    "id": 101715,
+    "name": "Sengir Dagger",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique melee weapon z aggravated damage równym strength; legacy-weapons.test.ts bada wybrane strikes, strike-sources.test.ts interakcje melee."
+  },
+  {
+    "id": 101716,
+    "name": "Sense Death",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba tryby dają stealth i press zamiast odrębnych rush na młodszego vampire/na dowolnego miniona; brak superior maneuver. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101717,
+    "name": "Sense the Savage Way",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: vampire capacity >=7, basic intercept i superior unlock/attempt block; unlock-and-block.test.ts i requires-vampire.test.ts."
+  },
+  {
+    "id": 101718,
+    "name": "Sense the Sin",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic zawierają jednocześnie bleed i intercept zamiast odrębnych reakcji; brak warunków acting vampire/corruption i superior modifier. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101719,
+    "name": "Sense Vibrations",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast trifle na Laibon z Auspex, lock za głos i limitu jednej kopii. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101720,
+    "name": "Sense Vitality",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic mają tylko stealth zamiast gain 2 blood lub rescue; brak superior dającego blood ocalonemu vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101721,
+    "name": "Sensory Deprivation",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma tylko stealth zamiast burn retainera lub dołączenia blokującego unlock ally do opuszczenia ready przez aktora; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101722,
+    "name": "Sensory Overload",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast dołączenia blokującego action i block oraz warunkowego terminu burn; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101723,
+    "name": "Seraph",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Puste political effects bez wymogu Black Hand, wyboru kandydata, nadania Seraph/blood i ograniczenia głosów; crypt-wave-5.test.ts zawiera niepowiązaną nazwę Seraphina. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101724,
+    "name": "Seraph's Second",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Modifier daje stealth zamiast unlock non-Seraph Black Hand po akcji przez Seraph i limitu na turę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101725,
+    "name": "Serenading the Kami",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma addStrength bez jawnego warunku announce, brak superior +2 strength. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101726,
+    "name": "Sermon of Caine",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast przeniesienia wybranej ilości blood z jednego ready vampire do innych. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101727,
+    "name": "Serpent's Numbing Kiss",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic tryby dla pojedynczych dyscyplin dają maneuver zamiast combat ends wymagającego obu; brak superior attach/lock. Runtime ma ogólny prymityw dla tego efektu, ale ta aktywna spec go nie używa; kotm-rigor-etc.test.ts sprawdza tylko obecność handlera. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101728,
+    "name": "Serpentis",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: factory discipline masters dodaje poziom Serpentis i capacity oraz wyklucza superior; discipline-cards.test.ts bada wspólną rodzinę, ale test zbioru dyscyplin nie przechodzi."
+  },
+  {
+    "id": 101729,
+    "name": "Servitor of Irad",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: attach do własnego vampire, once-per-bearer, opcjonalny draw 2 po Gehenna przy ready; hand-churn.test.ts bada wybrane przypadki."
+  },
+  {
+    "id": 101730,
+    "name": "Set's Call",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic reaction daje intercept zamiast przejęcia retainera po bloku; brak superior dotyczącego ally. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101731,
+    "name": "Set's Curse",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma tylko stealth zamiast burn ally/retainera i stworzenia animal ally; brak superior burn małego vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101732,
+    "name": "Shaal Fragment",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty equipment bez unique Nod fragment, +2 hand size i akcji steal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101733,
+    "name": "Shackles of Enkidu",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Equipment ma strikeCombatEnds jako efekt zagrania zamiast unique permanenta przenoszonego na przeciwnika z combat ends, blokadą unlock, burn blood i akcją burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101734,
+    "name": "Shade",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Retainer ma 2 life bez damage co rundę; brak superior 3 life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101735,
+    "name": "Shadow Body",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic combat ends istnieje, ale brak superior pozwalającego kontynuować wybrane zablokowane akcje. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101736,
+    "name": "Shadow Boxing",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Superior continueAsUnblocked nie deklaruje afterResolutionByActor ani ifActionBlocked i nie sprawdza, czy blocker nie jest ready; next-batch-a.test.ts nazwany jak scenariusz superior sprawdza tylko istnienie handlera. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101737,
+    "name": "Shadow Court Satyr",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally ma podstawowe statystyki, ale brak dołączenia combat card z hand i użycia jej raz na combat z dostępem do basic discipline. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101738,
+    "name": "Shadow Feint",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic tryby dają dodge przy pojedynczej dyscyplinie zamiast first strike wymagającego obu przed range; brak superior undodgeable. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101739,
+    "name": "Shadow of Taint",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic dają stealth zamiast przenoszenia karty na innego ally/miniona; brak superior +1 stealth. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101740,
+    "name": "Shadow of the Beast",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action daje stealth i press zamiast permanenta z opcjonalnym maneuver co combat i limitu jednej kopii; brak superior press. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101741,
+    "name": "Shadow of the Wolf",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: before range dodatkowy limited strike, +1 strength na rundę i superior press; strength-before-range.test.ts bada kredyty obu trybów."
+  },
+  {
+    "id": 101742,
+    "name": "Shadow Parasite",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma maneuver zamiast 3R strike tylko na long; brak superior 4R. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101743,
+    "name": "Shadow Play",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic +1 stealth jest, lecz brak superior +2 stealth. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101744,
+    "name": "Shadow Step",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic maneuver jest, lecz brak superior ustalającego range za 2 blood przed range. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101745,
+    "name": "Shadow Strike",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Combat ma maneuver i press zamiast ranged strength strike z opcjonalnym maneuver; brak superior z dodatkowym press. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101746,
+    "name": "Shadow Twin",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma prevent i stealth zamiast 1 unpreventable damage minionowi/retainerowi; brak superior attach z -1 stealth. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101747,
+    "name": "Shadowed Eyes",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic tryby wymagają pojedynczej dyscypliny i dają tylko stealth zamiast obu dyscyplin oraz dołączenia z karami i akcją burn; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101748,
+    "name": "Shakar",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast dołączenia do Black Hand i przyznania rush młodszego non-Black-Hand; brak limitu jednej kopii. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101749,
+    "name": "Shakar: the Hunt",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje stealth zamiast unique trifle contract na ready minion, nadania rush i warunkowego burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101750,
+    "name": "Shaman",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Retainer ma life oraz modyfikatory jako efekty zagrania zamiast unique i stałego intercept oraz shuffle za stealth; brak wymogu Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101751,
+    "name": "Shambling Hordes",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally ma podstawowe statystyki i jednorazowe addStrength zamiast zdolności strength za life, rush, kosztu po wejściu i zakazu gain life; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101752,
+    "name": "Shame",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec combat z red i combat ends zamiast imbued power za conviction, wymaganych celów, damage według strength oraz burn karty. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101753,
+    "name": "Shanty Town Hunting Ground",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: factory unique hunting ground daje 1 blood ready vampire, poolCost 2; legacy-locations.test.ts bada rodzinę, nie wszystkie interakcje tej nazwy."
+  },
+  {
+    "id": 101754,
+    "name": "Shape Mastery",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic reaction intercept zamiast combat cancel kart obt/pro/vic oraz zakazu ponownego zagrania; brak superior reaction cancel action modifier. library-audit.test.ts jedynie wymienia nazwę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101755,
+    "name": "Shared Nightmare",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast wyboru minionów predator/prey z zakazem block i vote do końca tury; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101756,
+    "name": "Shared Strength",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec umieszcza byOutsideUnlockedVampire na poziomie karty, zaś compile.ts enumeruje outside tylko dla mode.usable; grantDisciplineLevel nie ma widocznej implementacji w compile.ts. Tekst wymaga ready, nie koniecznie unlocked; library-audit.test.ts jedynie wymienia nazwę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101757,
+    "name": "Shatter the Gate",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast wymogu infernal Baali capacity >=9, zbierania trzech kopii i shattered counters oraz możliwości burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101758,
+    "name": "Shattered Mirror",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic reaction daje intercept zamiast zakończenia bleed po bloku z attach i karą bleed; brak superior bez lock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101759,
+    "name": "Shattering",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Każdy basic daje prevent i stealth zamiast osobnych chi peek/discard, dem burn event, pro damage; brak wymogu Anarch. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101760,
+    "name": "Shattering Blow",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: destroy equipment strike i superior first strike; equipment-stripping.test.ts."
+  },
+  {
+    "id": 101761,
+    "name": "Shattering Crescendo",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic dają prevent zamiast damage ally/retainer lub discard drugiej kopii za damage minionom; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101762,
+    "name": "Sheepdog",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast gain 4 blood, dołączenia i pominięcia unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101763,
+    "name": "Shell Break",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma bleed i intercept jako efekty zagrania zamiast attach do unique miniona i przekształcenia w wraith retainera po burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101764,
+    "name": "Shell Game",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic daje +1 stealth zamiast płatności lock X Blood Brothers za +X stealth, wyboru unlock i timingu announce; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101765,
+    "name": "Shepherd's Innocence",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic action ma tylko stealth zamiast przejęcia karty wymagającej Animalism i przeniesienia equipment/retainer; brak superior przejmującego wszystkie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101766,
+    "name": "Shilmulo Deception",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic reaction daje intercept zamiast zastąpienia blockera podczas bloku własnego miniona; brak superior maneuver. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101767,
+    "name": "Shilmulo Tarot",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique equipment Ravnos odkłada dwie karty, umożliwia redirect draw z ready bearer i dodawanie karty w unlock; library-search.test.ts."
+  },
+  {
+    "id": 101768,
+    "name": "Shock Troops",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast tworzenia Sabbat vampires z discipline cards i ograniczeń ich akcji; brak wymogu ready title. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101769,
+    "name": "Short-Term Investment",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: investment z 3 counterami, master action za transfer 1 pool i burn po opróżnieniu; investments.test.ts."
+  },
+  {
+    "id": 101770,
+    "name": "Shotgun Ritual",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic press zamiast prawa zagrania strike tha w pierwszej rundzie; brak timingu i superior opcjonalnego press. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101771,
+    "name": "Shoulder Drop",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Combat daje press zamiast damage po trafieniu hand strike i zakazu press przeciwnika; brak warunku oraz limitu na strike. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101772,
+    "name": "Show of Force",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: pary pot/pre, bleed +1/+2 oraz opcjonalny strength po bloku; bleed-riders.test.ts bada wybrane przypadki."
+  },
+  {
+    "id": 101773,
+    "name": "Shroud Mastery",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic daje stealth bez warunku ready innego vampire/wraith jako aktora; brak superior unlock po udanym recruit/employ wraith. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101774,
+    "name": "Shroud of Absence",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic wymagają pojedynczej dyscypliny i łączą stealth z combat ends zamiast wymagać obu oraz tylko stealth; brak superior z późniejszym combat ends. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101775,
+    "name": "Shroud of Night",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic stealth nie ogranicza użycia podczas bleed, mimo że superior jest dostępny podczas bleed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101776,
+    "name": "Shroudsight",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic daje stealth zamiast odłożonego odzyskania action card po akcji wymagającej nec/Giovanni; brak superior dla dowolnej karty akcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101777,
+    "name": "Sibyl's Tongue",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast kosztu X zależnego od kopii w ash heap i wyszukania nazwanej karty w library. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101778,
+    "name": "Side Strike",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic dodge, superior limited additional strike; combat-strikes.test.ts bada wybrane przypadki, nie wszystkie follow-up."
+  },
+  {
+    "id": 101779,
+    "name": "Sideslip",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic dodge i superior prevent 1 z limitem superior na rundę; dodges.test.ts bada wybrane zachowania."
+  },
+  {
+    "id": 101780,
+    "name": "Sight Beyond Sight",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique karta na własnego Salubri z +1 intercept i burn option; sweep4.test.ts oraz burn-option.test.ts."
+  },
+  {
+    "id": 101781,
+    "name": "The Signet of King Saul",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique equipment blokujący próby vampire capacity >=8; legacy-equipment.test.ts."
+  },
+  {
+    "id": 101782,
+    "name": "Silence of Death",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma maneuver zamiast first strike hand/melee przed range; brak superior maneuver. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101783,
+    "name": "Sins of the Cauchemar",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic +1 intercept jest, ale brak superior attach z intercept na przyszłe bleed aktora i akcją burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101784,
+    "name": "Siphon",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast wyboru vampire w torpor, steal blood i opcjonalnego odzyskania kart Giovanni; brak limitu na turę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101785,
+    "name": "Sire's Index Finger",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty equipment bez unique i odporności bearera na frenzy. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101786,
+    "name": "Siren's Lure",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic dają stealth bez rozróżnienia kosztu cel i zewnętrznego mel blokującego próbę oraz późniejszego combat; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101787,
+    "name": "Sires Command, Childer Inherit",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast gain blood dla innego Laibon lub wyboru dwóch Laibon do lock przez magaji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101788,
+    "name": "Sixth Tradition: Destruction",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast burn vampire po diablerie i wymogu ready prince/justicar. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101789,
+    "name": "Skaald",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma modifyStealth oraz actionStealth zamiast unique attach, unlock, votes i akcji steal; brak wymogów Gangrel. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101790,
+    "name": "Skin of Night",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: konwersja aggravated na normal na rundę i superior prevent 1; armour.test.ts bada wybrane interakcje."
+  },
+  {
+    "id": 101791,
+    "name": "Skin of Rock",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: prevent 1/2 damage; armour.test.ts."
+  },
+  {
+    "id": 101792,
+    "name": "Skin of Steel",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic preventAll w compile.ts nie filtruje źródła pending damage, choć tekst ogranicza do strike przeciwnika. Superior preventAllThisRound także oferowany przy dowolnym pending damage, a engine usuwa tylko damage od przeciwnika. armour.test.ts sprawdza trafienia strike, nie negative space innych źródeł. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101793,
+    "name": "Skin of the Adder",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic prevent 1 działa jednorazowo przy pending damage zamiast możliwości co rundę; brak before-range, limitu na combat i superior +1 hand damage. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101794,
+    "name": "Skin of the Chameleon",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic zawierają po dwa stealth i press zamiast osobnych tha/vis z opcjonalnym maneuver lub press po bloku; brak superior +2 stealth. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101795,
+    "name": "Skin Trap",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic jest strike dodge zamiast zakazu dodge przeciwnika przed range; brak limitu rundy i superior z opłatą za strike. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101796,
+    "name": "Skullduggery",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Wszystkie trzy basic łączą bleed +1 i dwa stealth zamiast osobnych trybów obf/pre/pro; brak wymogu ready Anarch i maneuver po bloku. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101797,
+    "name": "Slake the Thirst",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Spec ma actionModifier dający stealth zamiast basic combat oraz superior modifier kopiujących gain blood innemu Blood Brother tej samej circle. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101798,
+    "name": "Slam",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: hand strike +2 i superior optional maneuver tylko do close; slam.test.ts."
+  },
+  {
+    "id": 101799,
+    "name": "The Slashers",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique mortal 3 life, 0 strength/bleed i ranged strike 1, wymaganie Brujah; plain-allies.test.ts."
+  },
+  {
+    "id": 101800,
+    "name": "The Slaughterhouse",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast location z lock za burn dwóch kart z wierzchu biblioteki prey. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101801,
+    "name": "Slaughtering the Herd",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic bleed +2 bez bloku allies oraz superior attach do vampire predatora i siphon z burn; taking-actions.test.ts bada wybrane interakcje."
+  },
+  {
+    "id": 101802,
+    "name": "Slave Auction",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique investment z counterem za Methuselah, master action za pool i burn po opróżnieniu; investments.test.ts."
+  },
+  {
+    "id": 101803,
+    "name": "Sleep of Reason",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma tylko stealth zamiast wysłania younger vampire z 0/1 blood do torpor; brak superior bez ograniczenia wieku. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101804,
+    "name": "Sleep Unseen",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic daje stealth zamiast dołączenia po udanej akcji, ochrony przed directed actions i burn w unlock; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101805,
+    "name": "The Sleeping Mind",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Superior w spec nie tylko zabrania unlock, ale również nakazuje wybór locked vampire i zakazuje mu bloku, chociaż tekst superior nie zawiera basic. block-tax.test.ts oczekuje wyboru celu również w superior, więc nie bada wersji bez dodatkowego ograniczenia. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101806,
+    "name": "Sleight of Hand",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma tylko stealth zamiast obejrzenia hand innego gracza i discard equipment; brak superior dołączającego jedną kartę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101807,
+    "name": "The Slow Withering",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Gehenna podwyższa koszt superior discipline, z wyjątkiem diablerist do następnego eventu i delayed replacement; gehenna-taxes.test.ts."
+  },
+  {
+    "id": 101808,
+    "name": "Slum Hunting Ground",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: factory unique hunting ground daje 1 blood ready vampire, poolCost 2; bez osobnego testu tej nazwy, legacy-locations.test.ts bada rodzinę."
+  },
+  {
+    "id": 101809,
+    "name": "Smash and Grab",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Wszystkie basic łączą bleed i stealth zamiast odrębnych efektów burn life, bleed i burn location; brak wymogu Anarch. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101810,
+    "name": "Smear Campaign",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master ma wymóg ready Anarch, ale daje gainPool zamiast unique permanenta z lock, burn wybranej karty i zmianą kontroli. master-clan-requirements.test.ts bada wymóg, nie efekt. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101811,
+    "name": "Smiling Jack, The Anarch",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique, counter z pool, toll dla innych graczy i akcja burn; unlock-punish-counters.test.ts i unlock-tolls.test.ts."
+  },
+  {
+    "id": 101812,
+    "name": "Smite",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Combat daje dodge z dyscypliną ven zamiast aggravated ranged strike strength+1 oraz burn electronic equipment nawet po dodge. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101813,
+    "name": "Smoke and Mirrors",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Wszystkie tryby dają po dwa stealth zamiast osobnych chi stealth/maneuver, obf +2 stealth z ograniczeniem i obt -1 intercept; brak wymogu Anarch. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101814,
+    "name": "Smoke Grenade",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: broń long-only combat ends i burn po użyciu; one-shot-weapons.test.ts bada wybrane interakcje."
+  },
+  {
+    "id": 101815,
+    "name": "Snipe Hunt",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Puste political effects bez permanenta, lock vampire capacity <4, zatrzymania unlock i burn w następnej master phase. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101816,
+    "name": "Sniper Rifle",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: gun 2R long-only i opcja ustalenia long po bloku z wymuszonym strike tej broni; weapon-riders.test.ts."
+  },
+  {
+    "id": 101817,
+    "name": "Soak",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: prevent 2/4 non-aggravated i limit raz na rundę; sweep2.test.ts i inne testy prewencji."
+  },
+  {
+    "id": 101818,
+    "name": "Soar",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic stealth nie deklaruje warunku undirected action; spec używa flight jako discipline, którego dostępność dla źródeł flight wymaga osobnej weryfikacji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101819,
+    "name": "Social Charm",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: bleed +1, superior gain 1 pool po udanym bleed; sweep.test.ts."
+  },
+  {
+    "id": 101820,
+    "name": "Social Ladder",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: na własnego ready vampire i przeniesienie jego blood do starszego uncontrolled po usunięciu; uncontrolled-graduation.test.ts."
+  },
+  {
+    "id": 101821,
+    "name": "Society Hunting Ground",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: factory unique hunting ground daje 1 blood ready vampire, poolCost 2; bez osobnego testu tej nazwy, legacy-locations.test.ts bada rodzinę."
+  },
+  {
+    "id": 101822,
+    "name": "Society of Leopold",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Osobny handler w cards.ts przyłącza unique kartę do ready vampire, ale nie definiuje upkeep burn blood/burn vampire ani akcji przesunięcia; wyszukiwanie nazwy w runtime nie ujawniło innej implementacji. library-audit.test.ts tylko wymienia nazwę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101823,
+    "name": "Sociopath",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: archetype na własnego Sabbat i osobny handler blood po burn/torpor w combat; archetypes.test.ts bada wybrane przypadki."
+  },
+  {
+    "id": 101824,
+    "name": "Sonar",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic Sonar ma actionDirectedAtYou, które w compile.ts wymaga af.target == controller, choć tekst wymaga jedynie directed action. conditional-reactions.test.ts bada bleed skierowany do reagującego, nie akcję directed gdzie inny gracz może reagować. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101825,
+    "name": "Song in the Dark",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: strike 2 damage, superior aggravated; aggravated-damage.test.ts bada wybrane skutki."
+  },
+  {
+    "id": 101826,
+    "name": "Song of Pan",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma bleed, prevent i stealth zamiast unique permanenta, unlock Kiasyd, globalnego bleed i kary w discard. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101827,
+    "name": "Song of Serenity",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: przed range -1 strength przeciwnika na rundę/combat i limit raz na combat; strength-before-range.test.ts."
+  },
+  {
+    "id": 101828,
+    "name": "Songs of the Distant Vitae",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma bleed i stealth zamiast wysłania diableristy do torpor i burn blood; brak superior warunkowego bleed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101829,
+    "name": "Soul Burn",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: 1R/2R bez prewencji Fortitude i nullify weapon damage wampira przeciwnika; discipline-filtered.test.ts i armour.test.ts."
+  },
+  {
+    "id": 101830,
+    "name": "Soul Decoration",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic wymaga pojedynczej dyscypliny i ma tylko stealth zamiast bleed wymagającego pary; brak superior permanenta anulującego Auspex. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101831,
+    "name": "Soul Feasting",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma tylko stealth zamiast hunt lub burn wraith dla +3 hunt; brak superior +1 hunt. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101832,
+    "name": "Soul Gem of Etrius",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty equipment bez unique i efektów przy burn/diablerie oraz tworzenia vampire z crypt. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101833,
+    "name": "Soul of the Earth",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast dołączenia do slave Gargoyle i burn za zniżkę rekrutacji/employ. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101834,
+    "name": "Soul Painting",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic mają intercept i stealth przy pojedynczej dyscyplinie zamiast pary i dołączenia z warunkowym intercept dla blockerów; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101835,
+    "name": "Soul Scan",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma tylko stealth zamiast przeszukania crypt po młodszego vampire bez Obfuscate; brak superior z jedną level Obfuscate. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101836,
+    "name": "Soul Stealing",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic modifier daje stealth zamiast gain blood po burn vampire prey; brak superior combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101837,
+    "name": "Sound of a Breaking Oath",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic wymagają pojedynczej dyscypliny oraz dają prevent i stealth zamiast attach z ochroną przed steal; brak superior reaction. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101838,
+    "name": "Sowing Dissension",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast lock młodszego vampire przez każdego innego gracza i opcji cancel combat/unlock; brak wymogu Anarch. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101839,
+    "name": "The Spawning Pool",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique location, przechowanie blood Nosferatu i lock w drugiej rundzie combat po block bleed; blood-and-gear.test.ts."
+  },
+  {
+    "id": 101840,
+    "name": "Speak with Spirits",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ani ma intercept bez ograniczenia do bleed, brak superior locked vampire unlock/block z opcją płatnego intercept. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101841,
+    "name": "Special Report",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: osobny out-of-turn handler daje ready vampire unlock/attempt block i możliwość 1 pool za intercept; master-intercept.test.ts."
+  },
+  {
+    "id": 101842,
+    "name": "Specialization",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: unique location lock i discard pary za 1 pool w unlock; hand-churn.test.ts."
+  },
+  {
+    "id": 101843,
+    "name": "Spectral Divination",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Jedyny basic łączy stealth i intercept w typie modifierOrReaction zamiast basic action modifier stealth i superior reaction intercept. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101844,
+    "name": "Speed of Thought",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma tylko stealth zamiast bleed ograniczonego do 1 pool i blokady minionów bez Celerity; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101845,
+    "name": "Spell of Life",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast permanenta z limitem na turę i zamiany pięciu kopii na mummy allies. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101846,
+    "name": "Spike-Thrower",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty equipment bez long-range 1R weapon, limitu raz na rundę i warunkowej blokady unlock trafionego vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101847,
+    "name": "Spirit Claws",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic tryby mają maneuver dla pojedynczej dyscypliny zamiast aggravated hand strike pro oraz pro/spi z maneuver; brak unique superior action. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101848,
+    "name": "Spirit Marionette",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic obe daje targetLocksOwnMinion, którego compile.ts przydziela wybór celowi bleed, choć karta wskazuje miniona kontrolowanego przez prey nawet po redirect. Superior daje bleed +2 zamiast przejęcia unlocked miniona do kolejnej akcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101849,
+    "name": "Spirit Summoning Chamber",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique location i lock/blood za wyszukanie minion card wymagającej tha. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101850,
+    "name": "Spirit's Touch",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: +1 intercept i superior maneuver po bloku; intercept-reactions.test.ts."
+  },
+  {
+    "id": 101851,
+    "name": "Spiritual Guidance",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Combat daje maneuver zamiast zagrania combat card z ash heap i usunięcia jej z gry, z limitem na combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101852,
+    "name": "Spiritual Intervention",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic łączy dodge i combat ends zamiast osobnego basic dodge oraz superior combat ends. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101853,
+    "name": "Spiritual Protector",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Retainer ma 1 life, lecz brak unique, odporności na normal damage i zakazu equipment przeciwnika w wynikłym combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101854,
+    "name": "Spoils of War",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Brujah antitribu po udanej directed action gains blood i pool; legacy-modifiers.test.ts bada wybrane skutki."
+  },
+  {
+    "id": 101855,
+    "name": "Spontaneous Power",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique dołączenia z wyborem i poziomem dyscypliny oraz traktowania jako discipline master. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101856,
+    "name": "Sport Bike",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: vehicle z +1 intercept i zakazem drugiego vehicle w kompilatorze; permanents.test.ts bada wybrane interakcje."
+  },
+  {
+    "id": 101857,
+    "name": "Spying Mission",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic stealth i superior odroczenie udanego bleed z późniejszym +2 na tym samym graczu; last-equipment-modifiers.test.ts."
+  },
+  {
+    "id": 101858,
+    "name": "Squirrel Balance",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic dają stealth zamiast automatycznego long range po bloku lub ujemnego intercept bez flight/spi; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101859,
+    "name": "Staredown",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic dodge i superior combat ends; dodges.test.ts."
+  },
+  {
+    "id": 101860,
+    "name": "Starshell Grenade Launcher",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Pusty equipment bez long-range aggravated weapon raz na combat i lock za -1 stealth działającemu minionowi. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101861,
+    "name": "Starvation of Marena",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma press zamiast 2R strike z opcjonalnym press; brak superior 3R. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
     "id": 101862,
     "name": "Static Virtue",
     "status": "CONFIRMED_BUG",
     "evidence": "Poza wymogiem Laibon spec daje tylko gainPool; tekst dotyczy wyszukiwania i umieszczania kart Aye/Orun. src/cards/effects/cards.ts: Static Virtue; src/cards/registry.json: 101862."
+  },
+  {
+    "id": 101863,
+    "name": "The Status Perfectus",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast unique permanenta z transferem blood Anarch i opcją drugiego combat; brak wymogu ready Anarch. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101864,
+    "name": "Steadfastness",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic intercept przy action directed at controller oraz superior redukcja bleed przeciw controllerowi; conditional-reactions.test.ts."
+  },
+  {
+    "id": 101865,
+    "name": "Steal the Mind",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic myt/dom mają tylko stealth zamiast odpowiednio attach z intercept lub lock miniona; brak superior bleed penalty. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101866,
+    "name": "Stealing Years",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Anarch diablerizuje starszego vampire w torpor, attach z capacity i dodatkowe anarch votes w blood hunt; torpor-prey.test.ts."
+  },
+  {
+    "id": 101867,
+    "name": "Stealth Ritus",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "requiresSect wymaga Sabbat u aktora (compile.ts), tekst wymaga ready Sabbat i wybrania innego kontrolowanego ready Sabbat; helper bez krwi nie jest oferowany mimo możliwości wyboru bez efektu. second-minion-modifiers.test.ts używa aktora Sabbat i sprawdza płacącego helpera. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101868,
+    "name": "Steam Tunnels",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique location lock do obejrzenia 3 kart biblioteki prey. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101869,
+    "name": "Steely Tenacity",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Trzy basic mają maneuver zamiast odrębnych strike +1 z press, bleed +1 i rush; brak wymogu Anarch i delayed replacement/odzyskania. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101870,
+    "name": "Stiff Contempt",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: Samedi przy announce nakłada koszt 1 blood przy próbie bloku vampires; legacy-modifiers.test.ts."
+  },
+  {
+    "id": 101871,
+    "name": "Still the Mortal Flesh",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic łączy maneuver i press zamiast wyboru, bez ograniczeń przeciwnika; brak superior strike burn ally. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101872,
+    "name": "Stolen Police Cruiser",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: vehicle dla Anarch, bleed, kara intercept ally/younger vampire i płatna akcja burn z lock/skip unlock; last-equipment-modifiers.test.ts."
+  },
+  {
+    "id": 101873,
+    "name": "Stone Dog",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Retainer ma life 4, lecz brak rush nadawanego Gargoyle i close damage co initial strike resolution. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101874,
+    "name": "Stone Quills",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic mają maneuver zamiast tha strike 2R lub vis strike 2R z optional maneuver; brak superior 3R. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101875,
+    "name": "Stone Travel",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic obt daje stealth bez płatności 1 blood; brak superior myt cancel combat po bloku. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101876,
+    "name": "Stonestrength",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic łączą press i prevent zamiast tha continue-only press oraz vis wyboru; brak superior prevent 2. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101877,
+    "name": "Storage Annex",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: location z obowiązkowym zakrytym przechowaniem karty z hand oraz wymianą w master phase; store-plays.test.ts."
+  },
+  {
+    "id": 101878,
+    "name": "Storm Sewers",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique location, lock przy announce i ustawienia close bez range step. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101879,
+    "name": "Strained Vitae Supply",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje stealth zamiast permanenta odbierającego hunt stealth i opcji wspólnego burn przez wpłaty. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101880,
+    "name": "Strange Day",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Modifier daje stealth zamiast zakazu block przez vampire, limitu raz na grę i timingu announce; brak wymogu Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101881,
+    "name": "The Stranger Among Us",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast wyszukania scarce vampire z crypt do uncontrolled. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101882,
+    "name": "Street Cred",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "oncePerTurnPerVampire w compile.ts czyta playedHistory bieżącego combat i playedSinceUnlock, czyszczone podczas unlock kontrolera: może utrzymać zakaz przez kolejne tury innych graczy, zamiast limitu per turn. street-cred.test.ts bada wybrane przypadki, nie to przejście tur. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101883,
+    "name": "Strength of the Bear",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: przed range strength na rundę albo combat, superior optional press; strength-before-range.test.ts."
+  },
+  {
+    "id": 101884,
+    "name": "Striga",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast trifle na infernal vampire z dostępem do poziomów Striga i warunkowego burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101885,
+    "name": "Strike at the True Flesh",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic daje maneuver zamiast nieprewentalności non-aggravated melee z wyjątkami; brak superior +1 damage i właściwego timingu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101886,
+    "name": "Strike with Conviction",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Conviction ma modifyBleed zamiast dwóch opcji burn na strike +1 przeciw monster lub bleed action +1. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101887,
+    "name": "Strix",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic intercept nie deklaruje evenIfNotNeeded i unlock po udanym block; brak superior reakcji na udany bleed i combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101888,
+    "name": "Stunt Cycle",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "celerityCancelStrike zapisuje cf.celerityCancel w engine.ts, ale brak widocznego odczytu w src/engine i compile.ts; test next-batch-a.test.ts sprawdza tylko ofertę strike przy long, nie opcję przeciwnika za blood ani prewencję. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101889,
+    "name": "Stutter-Step",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic łączy dodge i additional strike zamiast samego dodge; brak superior hand strike + dodge z ograniczeniami. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101890,
+    "name": "Subdued by the Blood",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast out-of-turn trifle po diablerie, przywrócenia ofiary i usunięcia diableristy. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101891,
+    "name": "Submachine Gun",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: gun 3R i optional maneuver co combat; legacy-weapons.test.ts i armed-mid-combat.test.ts."
+  },
+  {
+    "id": 101892,
+    "name": "Succubus",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally ma statystyki, ale efekty modifyBleed i stealth zamiast aggravated hand strikes, płatnego bleed raz na turę i akcji steal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101893,
+    "name": "Succubus Club",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast unique location i lock do dobrowolnego trade z ograniczeniem hand size. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101894,
+    "name": "Succulent Vitae",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic daje stealth zamiast attach przy udanym hunt i burn za zniżkę Quietus; brak superior hunt +1. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101895,
+    "name": "Sudario Refraction",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast odzyskania trzech kart ash heap na library i random discard 3. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101896,
+    "name": "Sudden Reversal",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: osobny out-of-turn handler cancel cudzego master bez zapłaty kosztu; out-of-turn-cancels.test.ts."
+  },
+  {
+    "id": 101897,
+    "name": "Summon History",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma tylko stealth zamiast kosztu X i wyszukania ally/retainer/equipment; brak superior vampire z crypt/ash heap. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101898,
+    "name": "Summon Soul",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma tylko stealth zamiast gain 2 blood; brak superior usunięcia karty i shuffle dwóch kart ash heap. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101899,
+    "name": "Summon Spirit Beast",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Oba basic dają intercept zamiast discard X lub przywrócenia X animal retainers; brak superior i prawidłowych typów combat/reaction. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101900,
+    "name": "Summon the Abyss",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma stealth zamiast burn 1 blood każdego ready vampire prey; brak superior z dodatkowym stealth. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101901,
+    "name": "Summon the Serpent",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast wyszukania vampire z Serpentis i 1 blood w uncontrolled. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101902,
+    "name": "The Summoning",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic ma tylko stealth zamiast wyszukania ally/retainer do hand; brak superior rekrutującego ally. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101903,
+    "name": "Sunrise Service",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Action ma tylko stealth zamiast dołączenia, unpreventable aggravated damage i burn za unblockable; brak wymogu Sabbat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101904,
+    "name": "Sunset Strip, Hollywood",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje stealth zamiast unique location lock za globalny hunt stealth lub zniżkę mortal ally/retainer. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101905,
+    "name": "Superior Mettle",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "preventOpposingStrike mapowany na combat.beforeRange i ustawia flagę całej rundy, a tekst chroni przed jednym strike; initialStrikeShield w pushPendingDamage automatycznie pali blood przy normal strikeRound zamiast zaoferować wybór i nie sprawdza strikePhase. library-audit.test.ts tylko wymienia nazwę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101906,
+    "name": "Supernatural Resistance",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Reaction/modifier daje intercept zamiast lock Orun dla cancel action/strike i ograniczeń dyscyplin; brak wymogu Laibon i trzech Orun. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101907,
+    "name": "Suppressing Fire",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: inny ready unlocked minion z gun daje blockerowi -1 intercept; second-minion-modifiers.test.ts."
+  },
+  {
+    "id": 101908,
+    "name": "Surge",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Combat ma ven i prevent 2 zamiast imbued combat/reaction za conviction, trzech liczników i dowolnej prewencji non-aggravated. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101909,
+    "name": "Surprise Influence",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: ready vampire podczas referendum zdobywa 2 votes; requires-vampire.test.ts i referendum-outcomes.test.ts."
+  },
+  {
+    "id": 101910,
+    "name": "Survivalist",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Ally ma statystyki, brak ranged strike 2 i lock za maneuver dla Brujah antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101911,
+    "name": "Suspension of Disbelief",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Basic modifyBleed zamiast actionBleed, brak superior kosztu kart zmieniających/redukujących bleed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101912,
+    "name": "Svadharma",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Master daje gainPool zamiast dodania 2 blood ready Ravnos. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+  },
+  {
+    "id": 101913,
+    "name": "Swallowed by the Night",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "Wąski zakres: basic stealth modifier i superior combat maneuver; modifier-or-combat.test.ts."
+  },
+  {
+    "id": 101914,
+    "name": "Swarm",
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Retainer ma life i efekt stealth, lecz brak wymogu ready Laibon, dołączenia do cudzego miniona, obsługi blocked action i upkeep/life oraz limitu Swarm. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200005,
