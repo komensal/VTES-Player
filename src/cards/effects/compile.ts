@@ -17268,7 +17268,8 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
         const who = carry.who ?? {};
         const eligible = getSeat(ctx.state, mine).minions.filter(
           (m) =>
-            isReady(m) &&
+            (isReady(m) || (carry.inTorporToo === true && m.inTorpor)) &&
+            (who.kind === undefined || m.kind === who.kind) &&
             (who.sect === undefined || m.sect === who.sect) &&
             (who.clan === undefined || m.clan === who.clan),
         );
@@ -17292,7 +17293,7 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
               ? ctx.state.seats
                   .filter((s) => s.id !== mine && !s.ousted)
                   .flatMap((s) => s.minions)
-                  .filter((m) => m.kind === "vampire" && isReady(m))
+                  .filter((m) => m.kind === "vampire" && (isReady(m) || (carry.inTorporToo === true && m.inTorpor)))
               : eligible.filter((m) => m.id !== from.id);
             for (const to of targets) {
               // A vampire already at capacity gains nothing: the counter

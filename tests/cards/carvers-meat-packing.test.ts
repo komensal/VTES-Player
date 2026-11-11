@@ -71,6 +71,19 @@ describe("Carver's Meat Packing (100303)", () => {
     expect(hostageCount(state, "M")).toBe(1);
   });
 
+  it("recognizes uniqueness and modified capacity at the torpor threshold", () => {
+    expect(testRegistry[CARD]!.isUnique).toBe(true);
+    for (const [base, bonus, expected] of [[3, 1, 0], [4, -1, 1]] as const) {
+      const state = threeSeatGame();
+      state.seats[0]!.permanents.push(carvers());
+      const m = find(state, "M");
+      Object.assign(m, { capacity: base, blood: 0 });
+      m.attached.push({ card: { id: "modifier", name: "test" }, locked: false, usedThisPhase: false, statics: { capacityBonus: bonus }, tags: [] });
+      torporByCombat(state, "M");
+      expect(hostageCount(state, "M")).toBe(expected);
+    }
+  });
+
   it("leaves a bigger vampire alone", () => {
     const state = threeSeatGame();
     state.seats[0]!.permanents.push(carvers());

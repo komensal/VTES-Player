@@ -13913,6 +13913,8 @@ export const cardSpecs: CardSpec[] = [
       carryTransfer: {
         window: "unlock",
         blood: 1,
+        who: { kind: "vampire" },
+        inTorporToo: true,
         crossSeat: true,
         anySeat: true,
       },
@@ -26673,16 +26675,22 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blooding by the Code [100221] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Master on a Salubri antitribu you control: +1 val, capacity and
+    // strength. "A vampire can have only one" is per bearer, not unique.
     krcgId: 100221,
     name: "Blooding by the Code",
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    permanent: {
+      where: "bearer",
+      statics: { disciplineBoost: "val", capacityBonus: 1, strength: 1 },
+      tags: ["Blooding by the Code"],
+      exclusiveKey: "Blooding by the Code",
+      attach: { scope: "own", kind: "vampire", clan: "Salubri antitribu", inTorporToo: true },
+    },
     usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "addStrength", amount: 1 }] }
-    ],
+    modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
     // Bloodwork [100225] — fala 49 wierna (300) pełna zgodność bez wydmuszek
@@ -42571,7 +42579,7 @@ const JUSTICAR_HANDLERS: CardHandler[] = JUSTICAR_CLANS.map(([, clan, camarillaO
 const cardinalBenediction = titleGrant({
   name: "Cardinal Benediction",
   title: "cardinal",
-  eligible: (m) => isReady(m) && m.sect === "sabbat" && m.capacity >= 7,
+  eligible: (m) => isReady(m) && m.sect === "sabbat" && capacityOf(m) >= 7,
   restrictSect: "sabbat", // "non-Sabbat vampires cannot cast votes or ballots"
 });
 
@@ -43989,7 +43997,7 @@ const caveOfApples: CardHandler = {
       }
       for (const victim of getSeat(ctx.state, prey).minions) {
         // "an ally or younger vampire": younger = lower capacity.
-        if (victim.kind === "vampire" && victim.capacity >= actor.capacity) continue;
+        if (victim.kind === "vampire" && capacityOf(victim) >= capacityOf(actor)) continue;
         opts.push({
           id: `act:Cave of Apples:${entry.card.id}:corrupt:${actor.id}:${victim.id}`,
           kind: "useEntryAction",
@@ -44021,7 +44029,7 @@ const caveOfApples: CardHandler = {
     ops.addCorruption(victim.id, seat, 1);
     // "…equals or exceeds their capacity or cost": vampires are measured
     // by capacity, allies by their printed pool cost.
-    const threshold = victim.kind === "ally" ? (victim.cost ?? 0) : victim.capacity;
+    const threshold = victim.kind === "ally" ? (victim.cost ?? 0) : capacityOf(victim);
     const counters = victim.corruption?.[seat] ?? 0;
     if (counters >= threshold) {
       // "You CAN burn those counters to steal that minion" — the
@@ -45942,6 +45950,7 @@ function hostages(state: GameState): MinionState[] {
  */
 const carversMeatPacking: CardHandler = {
   name: "Carver's Meat Packing and Storage",
+  isUnique: true,
   bloodCost: 0,
   poolCost: 1,
   isMasterCard: true,
@@ -45979,7 +45988,7 @@ const carversMeatPacking: CardHandler = {
     // hostage counter on them" — torpor only; a burned vampire is gone.
     if (info.how !== "torpor") return;
     const m = findMinion(ops.state, info.minion);
-    if (!m || m.kind !== "vampire" || m.capacity > 3) return;
+    if (!m || m.kind !== "vampire" || capacityOf(m) > 3) return;
     ops.addMinionCounters(info.minion, "hostage", 1);
   },
   abilityOptions(entry, owner, ctx) {

@@ -3192,7 +3192,9 @@ export interface CardSpec {
        *  means the clause is free and p. 16's once-per-phase is the limit. */
       lock?: boolean;
       /** Who may give and receive. */
-      who?: { sect?: Sect; clan?: string };
+      who?: { sect?: Sect; clan?: string; kind?: "vampire" | "ally" };
+      /** "a vampire", not "a ready vampire" (Blood Trade). */
+      inTorporToo?: boolean;
       /** "…move N blood between them." */
       blood?: number;
       /** "…to THIS CARD" (The Spawning Pool): the blood becomes a counter on

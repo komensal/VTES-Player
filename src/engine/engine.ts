@@ -9059,7 +9059,8 @@ export class VtesEngine implements EngineOps {
   nullifyOpposingWeaponDamage(play: CardPlayFrame): void {
     const cf = this.requireCombat();
     const other = this.sideOf(cf, play.minion) === "acting" ? "opposing" : "acting";
-    cf.weaponDamageNullified[other] = true;
+    const opponent = other === "acting" ? cf.acting : cf.opposing;
+    if (getMinion(this.state, opponent).kind === "vampire") cf.weaponDamageNullified[other] = true;
   }
 
   /** "This combat, combat cards cost the OPPOSING vampire +1 blood"

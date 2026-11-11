@@ -794,8 +794,8 @@
   {
     "id": 100201,
     "name": "Blood Fury",
-    "status": "REVIEWED_NO_ISSUE_FOUND",
-    "evidence": "W sprawdzonym zakresie obrażenia hand, Fortitude prevention i ograniczenie weapon strike; tests/cards/discipline-filtered.test.ts. Źródła: src/cards/registry.json ID 100201; src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono zerowanie weapon damage wobec ally (tekst dotyczy opposing vampire); tests/cards/discipline-filtered.test.ts. Pozostałe zakresy w batch-04-manual-01.md."
   },
   {
     "id": 100203,
@@ -858,16 +858,508 @@
     "evidence": "Action ma osobne basic for/qui z prevent i stealth zamiast obu dyscyplin, dołączenia do equipment i jego bonusów oraz superior unlock. Źródła: src/cards/registry.json ID 100213; src/cards/effects/cards.ts i compile.ts."
   },
   {
+    "id": 100214,
+    "name": "Blood to Water",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie 3/5 blood na vampire i basic burn ally, superior nie na ally; tests/cards/blood-to-water.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100215,
+    "name": "Blood Trade",
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono przenoszenie blood: wyłącznie wampiry, także w torpor, również jako odbiorcy. tests/cards/blood-and-gear.test.ts; inne klauzule wymagają dalszej kontroli. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
     "id": 100216,
     "name": "Blood Turnip",
     "status": "CONFIRMED_BUG",
     "evidence": "Poza wymogiem Anarch spec daje tylko gainPool; tekst opisuje unikalny master na minionie, przenoszony z krwią/life po rozpoczęciu combatu. src/cards/effects/cards.ts: Blood Turnip; src/cards/registry.json: 100216."
   },
   {
+    "id": 100217,
+    "name": "Blood Weakens",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Event ma pusty tryb; nie opóźnia replacement ani nie obsługuje wyjątków po diablerie. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100218,
+    "name": "Bloodbath",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Akcja ma wyłącznie stealth; brak wymogu tytułu, celu, blood i dołączenia z głosem. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100220,
+    "name": "Blooding",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Akcja ma wyłącznie stealth; brak wymagania Sabbat, dołączenia, blood i Black Hand. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100221,
+    "name": "Blooding by the Code",
+    "status": "FIXED_TARGETED",
+    "evidence": "Zastąpiono efekt master dołączeniem do własnego Salubri antitribu, +1 Valeren/capacity/strength, jedna kopia per bearer; tests/cards/audit-manual-05.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100223,
+    "name": "Bloodstone",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment nie wybiera dowolnego miniona i nie tworzy relacji dającej +2 intercept przeciw nosicielowi. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100224,
+    "name": "Bloodstorm of Chorazin",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Reaction daje prevent 2 zamiast przerwać akcję i zadać nieprewencyjne obrażenia aktorowi i retainerom. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100225,
+    "name": "Bloodwork",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma ogólne bleed/stealth bez wymogu Black Hand, limitu 2 bled i warunku Sabbat u celu. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100226,
+    "name": "Blow Torch",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie płaski 1 aggravated bez strength; tests/cards/legacy-weapons.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100228,
+    "name": "Body Arsenal",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie aggravated hand i superior +1 strength; tests/cards/body-arsenal.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100230,
+    "name": "Body Flare",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie strike aggravated; tests/cards/strike-effects.test.ts; spec odróżnia close i ranged. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100231,
+    "name": "Body of Sun",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Combat ma tylko maneuver, bez drukowanych strike i obrażeń dla retainers oraz aktora. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100232,
+    "name": "Bollix",
+    "status": "FIXED_TARGETED",
+    "evidence": "Wspólny efekt nie zeruje już weapon damage przeciwnika będącego ally; test Bollix i Blood Fury w tests/cards/discipline-filtered.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100233,
+    "name": "Bomb",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment nie ma weapon profile 5R, samouszkodzenia ani akcji niszczenia lokacji i spalania. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100234,
+    "name": "Bond",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma jedynie stealth, bez ratowania incapacitated imbued i przywrócenia life. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100235,
+    "name": "Bond with the Mountain",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Tryby basic vis i tha łączą dodge, press i combat ends; brak osobnego superior i wymaganych unlock. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100237,
+    "name": "Bone Spur",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie podstawowy efekt na rundę i superior na cały combat; tests/cards/aggravated-damage.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100238,
+    "name": "Bonecraft",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Nie ma strike 1 damage, dołączania ani ujemnego strength i akcji spalenia; spec ma actionStealth. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100239,
+    "name": "The Book of Going Forth by Night",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Jest unique i superior Serpentis, ale brak zastąpienia spalenia ally przejęciem i lock. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100240,
+    "name": "Border Skirmish",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Akcja ma jedynie stealth; brak wymogu anarch, losowego discard pozostałych i unlock na koniec tury. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100241,
+    "name": "Botched Move",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Combat daje prevent 2 zamiast reveal, warunkowego cancel i damage, bez limitu combat. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
     "id": 100242,
     "name": "Bounty",
     "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast dołączenia do ready wampira z X+1 licznikami i wypłaty za torpor/burn. Tekst: src/cards/registry.json, ID 100242; implementacja: src/cards/effects/cards.ts."
+    "evidence": "Master daje gainPool zamiast dołączenia z licznikami i wypłat po torpor, burn albo diablerie; wcześniejszy wpis. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100244,
+    "name": "Boxed In",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie press i delayed replacement po combat; spec oraz tests/cards/basic-combat.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100245,
+    "name": "Brainwash",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master ma tylko modifyStealth; nie dołącza do uncontrolled ani nie blokuje transferów. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100248,
+    "name": "Break the Code",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Event ma pusty tryb; brak -1 intercept dla imbued i przyznanego rush na imbued. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100249,
+    "name": "Breath of Thanatos",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Brak rozdzielenia +2 stealth dla wraith i superior combat strike aggravated; jest tylko +1 stealth basic. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100250,
+    "name": "Breath of the Dragon",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Combat ma maneuver zamiast obu ranged aggravated strikes i zwrotnych obrażeń. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100252,
+    "name": "Brick by Brick",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Basic vis ma tylko maneuver; brak 2R strike, maneuver przy strike i superior ustawiania range. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100253,
+    "name": "Brick Laying",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Akcja ma tylko stealth; brak directed wyboru haven/lock oraz superior damage. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100254,
+    "name": "Brigitte Gebauer",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Ally ma statystyki, ale brak zdolności lock przy ogłoszeniu bleed i kosztu life po bloku. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100255,
+    "name": "Brinksmanship",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Political action jest pusta: brak karty w grze, obowiązkowego withdraw i konsekwencji oust. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100256,
+    "name": "Brother in Arms",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Akcja ma tylko stealth; nie tworzy 2-capacity Salubri ani nie obsługuje transferu i limitu. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100257,
+    "name": "Brother's Blood",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Jest zwykły prevent 2 zamiast płacenia blood innego członka circle i stałego superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100258,
+    "name": "Brothers Grimm",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast unique karty z licznikami i przejmowaniem kontroli. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100259,
+    "name": "The Bruisers",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie akcja spalania lokacji prey i skierowanie; tests/cards/destroyer-allies.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100260,
+    "name": "Brujah Debate",
+    "status": "CONFIRMED_BUG",
+    "evidence": "oldestBrujah filtruje już zablokowanych przed znalezieniem najstarszego i porównuje bazowe capacity; może zablokować młodszego zamiast najstarszego (cards.ts, bespoke handler). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100261,
+    "name": "Brujah Frenzy",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast out-of-turn anulowania niezablokowanej akcji i wymuszenia combat. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100263,
+    "name": "Brutal Influence",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Jest jeden basic pot z bleed i stealth; brak wyboru i X Orun i superior transferu krwi. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100264,
+    "name": "Brute Force",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie wartości obu hand/melee trybów i delayed replacement; tests/cards/bigger-strikes.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100265,
+    "name": "Bujo",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Akcja ma tylko stealth zamiast wyboru political action z cudzego ash heap, referendum i +3 votes. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100266,
+    "name": "Bum's Rush",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie rush na miniona i delayed replacement; tests/cards/legacy-rush-actions.test.ts i spec. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100267,
+    "name": "Bundi",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment nie ma weapon profile ani ograniczonej prewencji melee strike; ma ogólny prevent 1. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100270,
+    "name": "Burning Touch",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Brak combat tha i ridera val; dwa podstawowe tryby dają modifyBleed zamiast drukowanych efektów. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100271,
+    "name": "Burning Wrath",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie hand strike +1/+2 aggravated; tests/cards/aggravated-damage.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100272,
+    "name": "Burnt Offerings",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie superior po udanym bleed predator spala mu 1 pool; tests/cards/reading-the-outcome.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100273,
+    "name": "Burst of Sunlight",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie superior zadaje 2R aggravated i 2 aggravated aktorowi; tests/cards/aggravated-damage.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100274,
+    "name": "Business Pressure",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Modifier daje stealth zamiast burn pool za głosy dla Methuselahów i superior bonusu. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100275,
+    "name": "Cadet",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast trifle na uncontrolled Sabbat i Black Hand. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100276,
+    "name": "Caiaphas Smith",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Ally ma bazowe statystyki, lecz bez ranged strike, maneuver, spalenia blokującego i zmiany kontroli. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100277,
+    "name": "Cairo Int'l Airport",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast unikalnej lokacji i akcji palącej blood w uncontrolled prey. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100278,
+    "name": "The Call",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Oba podstawowe tryby mają jedynie stealth; brak kombinacji aus/dem, wyboru i blood w uncontrolled. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100279,
+    "name": "Call of the Hungry Dead",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Modifier daje stealth zamiast -1 intercept oraz superior nieudanej próby bloku. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100280,
+    "name": "Call the Great Beast",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec nie tworzy Great Beast; jedynie prevent i stealth zamiast ritual counters i transformacji. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100281,
+    "name": "Call the Lamprey",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Combat ma maneuver zamiast steal blood na ally/minion oraz superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100283,
+    "name": "Camaraderie",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Reaction daje intercept zamiast redukcji bleed 1/3 i warunku drugiego Blood Brother. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100286,
+    "name": "Camarilla Vitae Slave",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Retainer ma tylko life; brak +1 capacity i wyboru okresowego podniesienia dyscypliny. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100287,
+    "name": "Camera Phone",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment ma modifyBleed, nie przyznaną akcję bleed ani zakaz zwiększania innym equipment. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100288,
+    "name": "Campground Hunting Ground",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie unique hunting ground i blood dla gotowego wampira; tests/cards/legacy-locations.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100290,
+    "name": "Canine Horde",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie superior niszczy equipment z first strike; tests/cards/equipment-stripping.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100291,
+    "name": "Canopic Jar",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment ma modifyIntercept bez wyboru celu i brak opcji spalenia/unlock oraz superior damage. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100293,
+    "name": "Car Bomb",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Reaction daje intercept zamiast lock, efektu pojazdu i -1 stealth przy jego braku. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100294,
+    "name": "Cardinal Benediction",
+    "status": "FIXED_TARGETED",
+    "evidence": "Bespoke Cardinal Benediction kwalifikuje cel według bieżącej capacityOf zamiast wartości bazowej; tests/cards/ballots.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100295,
+    "name": "Cardinal Sin: Failure of Mission",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Reaction daje intercept zamiast wymagania tytułu, przyłączenia do Sabbat i przyznanych akcji. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100296,
+    "name": "Cardinal Sin: Insubordination",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Reaction daje intercept zamiast warunkowego wysłania przeciwnika do torpor po combat. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100297,
+    "name": "Carfax Abbey",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie anarch, bonus przy ready baron i ograniczenie jednej wypłaty na wampira; tests/cards/blood-locations.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100298,
+    "name": "Carlton Van Wyk",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Ally ma bazowe statystyki i ogólny intercept/dodge, brak ranged strike i discard-phase diablerist burn. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100299,
+    "name": "Carnivale",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master ma tylko modifyStealth; brak unique i dołączenia do ready Toreador ze spalaniem. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100300,
+    "name": "Carrion Coffin",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Akcja ma tylko basic stealth zamiast dołączenia, unlock za blood i akcji burn; brak superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100301,
+    "name": "Carrion Crows",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie 1R/2R environmental damage w kolejnych rundach; tests/cards/round-recurring-combat.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100302,
+    "name": "Carthage Remembered",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master ma ogólny stealth zamiast stałej karty z warunkowymi bonusami i akcją burn. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100303,
+    "name": "Carver's Meat Packing and Storage",
+    "status": "FIXED_TARGETED",
+    "evidence": "Bespoke Carver ma isUnique oraz używa bieżącej capacity przy torpor; tests/cards/carvers-meat-packing.test.ts. Inne interakcje nadal wymagają kontroli. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100304,
+    "name": "Caseless Rounds",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Opcjonalny limited additional strike jest przyznawany automatycznie, co może zablokować inne źródło; docs/additional-strike-followups.md. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100305,
+    "name": "Cat Burglary",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Akcja ma tylko stealth; brak obu trybów bleed, limitu 1 i wyboru dowolnego Methuselah na superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100306,
+    "name": "Catacombs",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Equipment ma jedynie modifyStealth, brak unique location i warunkowego zmniejszenia kosztu rescue. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100307,
+    "name": "Catatonic Fear",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie zakończenie combat i superior obrażenia po combat na close; tests/cards/after-combat-ends.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100308,
+    "name": "Cats' Guidance",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie basic unlock po block resolution; tests/cards/post-block-unlock.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100309,
+    "name": "Cauldron of Blood",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie zakaz pierwszej rundy i hand +2/+4; tests/cards/bigger-strikes.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100310,
+    "name": "Cavalier",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast archetype, dołączenia i opcjonalnego unlock za blood. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100311,
+    "name": "Cave of Apples",
+    "status": "FIXED_TARGETED",
+    "evidence": "Bespoke Cave używa bieżącej capacity przy porównaniu wieku i progu przejęcia; tests/cards/steal-cards.test.ts. Dalsze interakcje pozostają do kontroli. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100312,
+    "name": "Celerity",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie zwykły Discipline master i celowanie; tests/cards/audit-batch-100.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100313,
+    "name": "Celestial Harmony",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Akcja ma tylko stealth; brak ujawniania ręki, wyboru Methuselah i superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+  },
+  {
+    "id": 100314,
+    "name": "Census Taker",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master ma bleed/intercept zamiast unique karty na Black Hand z aktywacją lock i głosami. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100326,

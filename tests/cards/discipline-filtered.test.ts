@@ -146,6 +146,32 @@ describe("Blood Fury (100201) — prevention filtered by required Discipline", (
     ).toBe(true);
   });
 
+  it("Bollix suppresses a vampire's weapon but not an ally's", () => {
+    for (const kind of ["vampire", "ally"] as const) {
+      const state = combatGame(["Bollix"]);
+      find(state, "V1").sect = "anarch";
+      Object.assign(find(state, "M"), { kind, life: 8 });
+      find(state, "M").attached.push(entry("gun1", ".44 Magnum", { tags: ["weapon", "gun"] }));
+      const engine = new VtesEngine(state, testRegistry);
+      intoStrikes(engine);
+      playStrike(engine, "Alice", "play:Bollix:basic:V1:strike:a0");
+      runTrace(engine, [["Bob", "ability:.44 Magnum:gun1:strike"]]);
+      const gunHit = state.eventLog.some((e) => e.type === "DamageInflicted" && e.minion === "V1" && e.amount === 2);
+      expect(gunHit).toBe(kind === "ally");
+    }
+  });
+
+  it("does not nullify an opposing ally's weapon", () => {
+    const state = combatGame(["Blood Fury"]);
+    Object.assign(find(state, "M"), { kind: "ally", life: 8 });
+    find(state, "M").attached.push(entry("gun1", ".44 Magnum", { tags: ["weapon", "gun"] }));
+    const engine = new VtesEngine(state, testRegistry);
+    intoStrikes(engine);
+    playStrike(engine, "Alice", "play:Blood Fury:superior:V1:a0");
+    runTrace(engine, [["Bob", "ability:.44 Magnum:gun1:strike"]]);
+    expect(state.eventLog.some((e) => e.type === "DamageInflicted" && e.minion === "V1" && e.amount === 2)).toBe(true);
+  });
+
   it("is not playable at long range", () => {
     // "Only usable at close range" — the mirror of onlyAtLongRange.
     const state = combatGame(["Blood Fury"]);

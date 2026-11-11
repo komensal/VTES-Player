@@ -54,6 +54,22 @@ describe("Closed Session (100364) — non-Camarilla cannot cast votes", () => {
 });
 
 describe("Cardinal Benediction (100294) — non-Sabbat cannot cast votes", () => {
+  it("uses current capacity, including modifiers, for the title target", () => {
+    const state = threeSeatGame();
+    const v1 = state.seats[0]!.minions[0]!;
+    Object.assign(v1, { sect: "sabbat", title: "archbishop", capacity: 6 });
+    v1.attached.push({ card: { id: "boost", name: "Fortitude" }, locked: false, usedThisPhase: false, statics: { capacityBonus: 1 }, tags: ["discipline"] });
+    const w = state.seats[1]!.minions.find((m) => m.id === "W")!;
+    Object.assign(w, { sect: "sabbat", capacity: 7 });
+    w.attached.push({ card: { id: "penalty", name: "test" }, locked: false, usedThisPhase: false, statics: { capacityBonus: -1 }, tags: [] });
+    state.seats[0]!.hand.push({ id: "cb1", name: "Cardinal Benediction" });
+    const engine = new VtesEngine(state, testRegistry);
+    runTrace(engine, politicalActionTrace("play:Cardinal Benediction"));
+    const ids = engine.decision()!.options.map((o) => o.id);
+    expect(ids).toContain("terms:V1");
+    expect(ids).not.toContain("terms:W");
+  });
+
   it("restricts voting to Sabbat and grants the cardinal title on a pass", () => {
     const state = threeSeatGame();
     const v1 = state.seats[0]!.minions[0]!;
