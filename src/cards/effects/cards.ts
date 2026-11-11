@@ -26348,15 +26348,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Bestial Visage [100154] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // "Put this card on a Gangrel antitribu. The vampire ... gets -1 stealth."
     krcgId: 100154,
     name: "Bestial Visage",
     cardType: "master",
     bloodCost: 0,
+    permanent: {
+      where: "bearer", statics: { stealth: -1 }, tags: ["Bestial Visage"],
+      attach: { scope: "any", kind: "vampire", clan: "Gangrel antitribu", inTorporToo: true },
+    },
     usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
-    ],
+    modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
     // Bestow Vigor [100155] — fala 49 wierna (300) pełna zgodność bez wydmuszek

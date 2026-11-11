@@ -36,3 +36,16 @@ Szczegóły per karta i zakres w [batch-03-100.md](batch-03-100.md). 100 kart ws
 | Wstępny przegląd, wynik nierozstrzygnięty | 57 |
 
 Powyższe 40 nie obejmuje dwóch celowanych napraw; ograniczenia AK-47 pozostają otwarte. Wspólna poprawka dotycząca Animalism dotyczy także innych zwykłych kart dyscyplin, które nie zostały przez to w całości przeaudytowane. Pozostało **4095 z 4158** bez wpisu w manual-findings; liczba obejmuje pozycje wstępnie przejrzane, ale nierozstrzygnięte, i nie oznacza liczby kart w pełni poprawnych.
+
+## Paczka 4 — 1000 nowych kart w pętli
+
+[Szczegóły i wyniki per karta](batch-04-1000.md). Automatyczny triage 1000 kart; ręcznie rozstrzygnięto tylko 35, pozostałe wymagają sprawdzenia.
+
+| Wynik | Liczba |
+|---|---:|
+| Bez wykrytej niezgodności w ograniczonym zakresie | 4 |
+| Wykryty błąd naprawiony celowo | 1 |
+| Potwierdzone błędy nadal wymagające naprawy | 30 |
+| Bez ręcznego rozstrzygnięcia | 965 |
+
+Sygnał automatyczny otrzymało 406 kart; brak sygnału nie oznacza poprawności. Bez żadnego ręcznego ustalenia w całym rejestrze: **4060 z 4158**. Liczba ta nie oznacza liczby kart w pełni zweryfikowanych.

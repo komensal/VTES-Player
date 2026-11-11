@@ -330,6 +330,162 @@
     "evidence": "Basic myt i aus łączą stealth z intercept; brak osobnego superior modifier i wymogu spalenia blood w aus. Tekst: src/cards/registry.json, ID 100111; implementacja: src/cards/effects/cards.ts."
   },
   {
+    "id": 100113,
+    "name": "Aura Reading",
+    "status": "CONFIRMED_BUG",
+    "evidence": "W spec tylko maneuver, zamiast basic otwierającego rękę przeciwnika w combat i superior +2 hand size; brak limitu superior. Tekst: src/cards/registry.json, ID 100113; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100115,
+    "name": "Autarkis Persecution",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie wypłata 1 pool każdemu Methuselah za każdego kontrolowanego miniona, także sojusznika, tests/cards/legacy-referendums.test.ts. Tekst: src/cards/registry.json, ID 100115; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100117,
+    "name": "Autonomic Mastery",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec ma dodge i combat ends w basic, zamiast spalenia non-wraith ally/retainer i superior hand strike z ograniczeniami. Tekst: src/cards/registry.json, ID 100117; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100118,
+    "name": "Aversion",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec ma modifyStealth w obu basic zamiast redukcji bleed cel/val; brak superior dołączanego efektu. Tekst: src/cards/registry.json, ID 100118; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100119,
+    "name": "Awe",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Spec ma modifyStealth zamiast głosów X+1 i 2X+1 oraz obu poziomów. Tekst: src/cards/registry.json, ID 100119; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100120,
+    "name": "Aye",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast trifle Aye na Laibon, cancel Frenzy, wake i warunków spalenia. Tekst: src/cards/registry.json, ID 100120; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100121,
+    "name": "Baal's Bloody Talons",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Combat ma tylko maneuver zamiast nadania melee aggravated i spalenia broni oraz superior +1 obrażeń. Tekst: src/cards/registry.json, ID 100121; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100122,
+    "name": "Babble",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Basic spec daje zwykły modifyIntercept zamiast przydzielenia innemu minionowi; brak superior z lock i unlock. Tekst: src/cards/registry.json, ID 100122; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100123,
+    "name": "Backflip",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie long range, dodge i opcjonalny press; tests/cards/strike-sources.test.ts. Tekst: src/cards/registry.json, ID 100123; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100124,
+    "name": "Backstab",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Combat ma tylko limited additional strike w basic, brak first strike, ograniczenia do blokującego i pierwszej rundy oraz właściwego superior. Tekst: src/cards/registry.json, ID 100124; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100128,
+    "name": "Baltimore Purge",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma wyłącznie +1 stealth bez zależności od Ravnos; brak dołączenia karty i późniejszego wysyłania wampirów do torpor. Tekst: src/cards/registry.json, ID 100128; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100129,
+    "name": "Bamba",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko stealth, bez utworzenia Laibon ani opcji dyscypliny i krwi dla magaji. Tekst: src/cards/registry.json, ID 100129; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100130,
+    "name": "Bang Nakh — Tiger's Claws",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie koszt i melee strength+2; test obrażeń i zależności od strength tests/cards/legacy-weapons.test.ts. Tekst: src/cards/registry.json, ID 100130; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100134,
+    "name": "Barrenness",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko stealth, brak dołączenia karty, sterile/capacity i superior spalenia wampira. Tekst: src/cards/registry.json, ID 100134; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100138,
+    "name": "Basilisk's Touch",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Oba basic mają addStrength, nie ma efektu myt wysyłającego do torpor/burn, ograniczenia przeciwnika ani superior. Tekst: src/cards/registry.json, ID 100138; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100139,
+    "name": "Bastard Sword",
+    "status": "REVIEWED_NO_ISSUE_FOUND",
+    "evidence": "W sprawdzonym zakresie koszt i melee strength+1; test obrażeń tests/cards/legacy-weapons.test.ts. Tekst: src/cards/registry.json, ID 100139; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100140,
+    "name": "Bastille Opera House",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast unikalnej lokacji, lock i głosów zależnych od Daughter of Cacophony. Tekst: src/cards/registry.json, ID 100140; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100141,
+    "name": "Battle Frenzy",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master ma limited additionalStrike i press zamiast out-of-turn, wyboru Osebo, non-limited strike każdej rundy oraz kosztu blood. Tekst: src/cards/registry.json, ID 100141; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100142,
+    "name": "Bauble",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko stealth; nie dołącza karty ani nie wyszukuje i łączy equipment, brak ograniczeń aktora i superior. Tekst: src/cards/registry.json, ID 100142; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100143,
+    "name": "Bay and Howl",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast przenoszenia krwi ready Gangrel antitribu do uncontrolled. Tekst: src/cards/registry.json, ID 100143; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100144,
+    "name": "Bear-Baiting",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Modifier daje bleed i prevent zamiast porównania crypt, warunkowej szkody albo zakończenia combat i dołączenia karty. Tekst: src/cards/registry.json, ID 100144; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100147,
+    "name": "The Becoming",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko stealth, nie tworzy wampira i nie obsługuje dyscyplin, krwi ani ograniczeń. Tekst: src/cards/registry.json, ID 100147; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100150,
+    "name": "Belonging Grants Protection",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko stealth, brak wyboru unlock Laibon lub umieszczenia krwi na młodszym Laibon w uncontrolled. Tekst: src/cards/registry.json, ID 100150; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100154,
+    "name": "Bestial Visage",
+    "status": "FIXED_TARGETED",
+    "evidence": "Zastąpiono niepoprawne gainPool dołączeniem do dowolnego Gangrel antitribu, także w torpor, ze stałym -1 stealth. Testy celowania, kontroli, stackowania i wpływu na działanie: tests/cards/audit-batch-1000.test.ts. Inne interakcje wymagają dalszej weryfikacji. Tekst: src/cards/registry.json, ID 100154; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100155,
+    "name": "Bestow Vigor",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Action ma tylko stealth, nie dołącza karty dającej Fortitude, nie unlockuje aktora i nie posiada superior. Tekst: src/cards/registry.json, ID 100155; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100156,
+    "name": "Betrayer",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast wybrania Methuselah, strat pool i zgadywania imienia. Tekst: src/cards/registry.json, ID 100156; implementacja: src/cards/effects/cards.ts."
+  },
+  {
     "id": 100207,
     "name": "Blood Puppy",
     "status": "FIXED_TARGETED",
@@ -340,6 +496,60 @@
     "name": "Blood Turnip",
     "status": "CONFIRMED_BUG",
     "evidence": "Poza wymogiem Anarch spec daje tylko gainPool; tekst opisuje unikalny master na minionie, przenoszony z krwią/life po rozpoczęciu combatu. src/cards/effects/cards.ts: Blood Turnip; src/cards/registry.json: 100216."
+  },
+  {
+    "id": 100242,
+    "name": "Bounty",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast dołączenia do ready wampira z X+1 licznikami i wypłaty za torpor/burn. Tekst: src/cards/registry.json, ID 100242; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100326,
+    "name": "Chanjelin Ward",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast dołączenia i podwyższenia kosztu obcych akcji oraz ich anulowania. Tekst: src/cards/registry.json, ID 100326; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100421,
+    "name": "Convergence",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast przeniesienia krwi od ready Pander do Pander w uncontrolled. Tekst: src/cards/registry.json, ID 100421; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100522,
+    "name": "Demonstration",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast unikalnej karty z lock anulującym głosy i ballots. Tekst: src/cards/registry.json, ID 100522; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100662,
+    "name": "Esgrima",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast unique trifle z lock przyznającym 3 głosy oraz przekazaniem predatorowi. Tekst: src/cards/registry.json, ID 100662; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100721,
+    "name": "Feral Spirit",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast konwersji kontrolowanego Gangrel na Ahrimane Sabbat z Spiritus i sterile. Tekst: src/cards/registry.json, ID 100721; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100826,
+    "name": "Gift of Experience",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast lock własnego wampira i wyszukania w crypt jego advancement lub base. Tekst: src/cards/registry.json, ID 100826; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 100942,
+    "name": "House of Sorrow",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast unikalnej lokacji z lock/unlock karty i opóźnieniem odblokowania. Tekst: src/cards/registry.json, ID 100942; implementacja: src/cards/effects/cards.ts."
+  },
+  {
+    "id": 101019,
+    "name": "Jake Washington",
+    "status": "CONFIRMED_BUG",
+    "evidence": "Master daje gainPool zamiast unikalnego śmiertelnego sojusznika i opcji spalenia go dla krwi wampira. Tekst: src/cards/registry.json, ID 101019; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 101862,
