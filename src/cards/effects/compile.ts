@@ -9864,8 +9864,8 @@ function compilePoliticalAction(spec: CardSpec): CardHandler {
         }
       } else if (primitive.kind === "refClanBoon" || primitive.kind === "refLockClan") {
         // "You must choose an EXISTING clan, even if no vampires of the
-        // chosen clan are in play" (p. 49) — so the terms are the pool's
-        // fourteen clans, not the ones on the table (§1). Condemnation
+        // chosen clan are in play" (p. 49) — so the terms include the
+        // pool's vampire clans, not just the ones on the table (§1). Condemnation
         // asks the same question as Boon and must answer it the same way:
         // one enumeration, two cards, per the "one question asked in two
         // places will drift" rule.

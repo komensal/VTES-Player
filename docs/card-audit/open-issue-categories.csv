@@ -265,7 +265,6 @@ id,name,kind,status,categories
 100406,Confusion of the Eye,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 100407,Conniver,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby
 100408,Conquer the Beast,library,CODE_DISCREPANCY,akcje_i_blok; walka; karty_i_strefy
-100410,Consanguineous Boon,library,CONFIRMED_BUG,akcje_i_blok
 100412,Conscripted Statue,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 100413,Consecration Rites,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 100415,Consignment to Duat,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
@@ -1859,7 +1858,7 @@ id,name,kind,status,categories
 200585,Helen Fairchild (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy
 200586,Helena (G3),crypt,CODE_DISCREPANCY,akcje_i_blok
 200587,Helena (G3 ADV),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
-200589,Henri Lavenant (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; walka; karty_i_strefy
+200589,Henri Lavenant (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 200590,Henry Taylor (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 200591,Herbert Westin (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200592,Hermana Hambrienta Mayor (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
@@ -2190,7 +2189,7 @@ id,name,kind,status,categories
 201032,Nails (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; karty_i_strefy
 201033,Nakhthorheb (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 201034,"Nakova, Advocate of Golconda (G2)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; karty_i_strefy
-201035,Nana Buruku (G4),crypt,CODE_DISCREPANCY,akcje_i_blok; czas_i_warunki
+201035,Nana Buruku (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; karty_i_strefy; czas_i_warunki
 201036,Nangila Were (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 201038,Natasha Volfchek (G1),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 201039,Navar McClaren (G1),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
@@ -2554,7 +2553,7 @@ id,name,kind,status,categories
 201621,Karl Schrekt (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; polityka_i_glosy
 201622,Len Konopka (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 201633,Maila (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
-201634,Abraham Mellon (G6),crypt,CODE_DISCREPANCY,inne_do_recznego_przegladu
+201634,Abraham Mellon (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; karty_i_strefy; czas_i_warunki
 201635,Adelino Da Silva (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
 201636,Adisa (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 201637,Ayse Dhanial (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki

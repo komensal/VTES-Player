@@ -2456,14 +2456,14 @@
   {
     "id": 100410,
     "name": "Consanguineous Boon",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Test batch-11-discrepancies.test.ts rozgrywa akcję do wyboru terms; Brujah i nieobecny Nosferatu są dostępne, ale Toreador antitribu nie jest, mimo wampira tego klanu w grze i wpisów w rejestrze. To test aktualnego wadliwego zachowania, bez testowania wypłaty dla tego klanu."
+    "status": "FIXED_TARGETED",
+    "evidence": "Rozszerzono CLANS o 40 klanów wampirów z aktualnej krypty, z wyłączeniem siedmiu creed imbued w tym samym polu rejestru. batch-11-discrepancies.test.ts rozgrywa wybór Toreador antitribu i wypłatę po referendum, a także sprawdza klan nieobecny i wykluczenie creed. Pokrycie klanów spoza rejestru nie jest ustalone; inne interakcje nie są w pełni sprawdzone."
   },
   {
     "id": 100411,
     "name": "Consanguineous Condemnation",
-    "status": "REVIEWED_NO_ISSUE_FOUND",
-    "evidence": "W sprawdzonym zakresie blokowanie wszystkich wampirów wybranego klanu po udanym referendum: tests/cards/legacy-political.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Rozszerzono wspólne CLANS: batch-11-discrepancies.test.ts rozgrywa wybór Toreador antitribu i udane referendum, sprawdzając lock wybranego wampira i brak lock innego klanu i ally; test sprawdza wykluczenie creed. Pokrycie klanów spoza rejestru nie jest ustalone."
   },
   {
     "id": 100412,
@@ -17715,7 +17715,7 @@
     "id": 200589,
     "name": "Henri Lavenant (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec ma płaski handSize bez ograniczenia do combat, lecz handSizeOf czyta tylko conditional handSize na minionach; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Warunkowy +1 hand size podczas combat naprawiono i sprawdzono testem crypt-hand-size-audit.test.ts od importu do końca ramki combat. Wymieniony w tekście Black Hand nadal nie jest importowany; pozostałych interakcji nie zweryfikowano."
   },
   {
     "id": 200590,
@@ -20391,7 +20391,7 @@
     "id": 201035,
     "name": "Nana Buruku (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec ma płaski handSize bez warunku ready, lecz handSizeOf nie odczytuje go na minionach; brak drugiej master phase action przy ready. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Warunkowy +1 hand size while ready naprawiono i sprawdzono przez import, locked, torpor i opuszczenie gry w crypt-hand-size-audit.test.ts. Brak drugiej master phase action przy ready pozostaje rozbieżnością stwierdzoną statycznie."
   },
   {
     "id": 201036,
@@ -22641,7 +22641,7 @@
     "id": 201410,
     "name": "Unmada (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec ma płaski handSize miniona nieodczytywany przez handSizeOf; brak dodatkowej discard phase action przy ready; Malkavian Justicar importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Warunkowy +1 hand size while ready naprawiono i sprawdzono przez import, locked, torpor i opuszczenie gry w crypt-hand-size-audit.test.ts. Brak dodatkowej discard phase action przy ready pozostaje rozbieżnością stwierdzoną statycznie."
   },
   {
     "id": 201411,
@@ -23985,7 +23985,7 @@
     "id": 201634,
     "name": "Abraham Mellon (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec ma płaski handSize miniona nieodczytywany przez handSizeOf; brak prawa grania kart wymagających Tremere jak gdyby Abraham był Tremere. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Warunkowy +1 hand size while ready naprawiono i sprawdzono przez import, locked, torpor i opuszczenie gry w crypt-hand-size-audit.test.ts. Brak prawa grania kart wymagających Tremere jak gdyby Abraham był Tremere pozostaje rozbieżnością stwierdzoną statycznie."
   },
   {
     "id": 201635,

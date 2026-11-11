@@ -327,3 +327,15 @@ Porażki pełnego zestawu (nazwy przypadków):
 - ` tests/cards/praxis-seizure.test.ts > the admission path (§6) > the Praxis Seizures still OUT are exactly the ones whose rider is unbuilt`
 - ` tests/cards/referendum-terms.test.ts > CLANS is derived, not guessed > matches exactly the clans the V5 crypt contains`
 - ` tests/cards/round-recurring-combat.test.ts > frenzy classification (docs/round-recurring-combat-design.md §6) > every frenzy mode in the pool classifies, and matches its printed text`
+
+## Naprawy po audycie — drugi etap
+
+- `CLANS` rozszerzono z 14 do 40 klanów wampirów z aktualnej krypty, z wyłączeniem siedmiu creed imbued. Testy obu referendów rozgrywają wybór Toreador antitribu i wynik oraz sprawdzają klan nieobecny, inne klany, ally i wyłączenie creed. Nie ustalono kompletności listy klanów spoza rejestru. Poprawione testy porównują listę z rejestrem bez utożsamiania creed z klanami; stara asercja o istnieniu library-only klanu była nieaktualna dla poszerzonego rejestru.
+- Nana Buruku, Unmada i Abraham Mellon otrzymali +1 hand size ograniczony do ready; Henri Lavenant — tylko w swoim combat. Testy używają rzeczywistego importu, sprawdzają ready, locked, torpor i opuszczenie gry albo czas i uczestników combat. Inne opisane braki czterech kart wciąż pozostają otwarte.
+- Status Boon i Condemnation zmieniono na `FIXED_TARGETED` wyłącznie dla zakresu wyboru klanu; nie oznacza to pełnej zgodności. Wcześniejsze raporty są historyczne.
+
+Po tym etapie **2596 kart ma otwarte wpisy**: 1450 library (602 `CONFIRMED_BUG`, 826 `CODE_DISCREPANCY`, 22 `UNRESOLVED`) i 1146 crypt (5, 1140, 1). Historyczne `CONFIRMED_BUG` nie zawsze ma odtworzenie scenariuszowe; `UNRESOLVED` wymaga rozstrzygnięcia, a nie musi okazać się błędem. Wpis może zawierać wiele problemów; `FIXED_TARGETED` i ograniczone przeglądy też nie gwarantują pełnej zgodności.
+
+Generator inwentarza i kategorii, typecheck, diff-check oraz testy celowane przeszły (106/106 w 12 plikach, przed dodaniem dodatkowej kontroli niepowiązanego combat; nowy plik osobno 5/5).
+
+Pełny zestaw po drugim etapie: **3987 passed, 15 failed** w 12 plikach (373 pliki; 4002 testy). W porównaniu z poprzednim uruchomieniem nie pojawiły się nowe nazwy porażek; trzy dawne porażki dotyczące listy klanów zniknęły po poprawieniu implementacji i dostosowaniu testów do rozróżnienia klanów i creed oraz aktualnego rejestru. Pozostałe 15 to te same przypadki wymienione w poprzedniej sekcji poza tymi trzema. Build przeszedł z ostrzeżeniem Vite o dużych chunkach.

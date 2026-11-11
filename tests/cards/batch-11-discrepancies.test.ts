@@ -1,6 +1,4 @@
-/** Targeted regressions and remaining characterization from batch 11.
- * The Consanguineous Boon test still records a known defect.
- */
+/** Targeted regressions for discrepancies identified in batch 11. */
 import { describe, expect, it } from "vitest";
 import { VtesEngine } from "../../src/engine/index.ts";
 import { makeMinion, runTrace, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
@@ -14,18 +12,44 @@ const announce = (card: string): Array<[string, string]> => [
 ];
 
 describe("batch 11 audit: observed behavior", () => {
-  it("Consanguineous Boon omits a registered clan from its terms", () => {
+  it.each(["Consanguineous Boon", "Consanguineous Condemnation"])("%s offers legacy clans, but not imbued creeds", (card) => {
     const state = threeSeatGame();
     Object.assign(state.seats[0]!.minions[0]!, { title: "prince", clan: "Brujah" });
     state.seats[1]!.minions[0]!.clan = "Toreador antitribu";
-    state.seats[0]!.hand.push({ id: "boon", name: "Consanguineous Boon" });
+    state.seats[0]!.hand.push({ id: "political", name: card });
     const engine = new VtesEngine(state, testRegistry);
-    runTrace(engine, announce("Consanguineous Boon"));
+    runTrace(engine, announce(card));
     const terms = engine.decision()!.options.map((option) => option.id);
-    expect(terms).toContain("terms:Brujah"); // control: we reached the terms decision
-    expect(terms).toContain("terms:Nosferatu"); // not limited to clans in play
-    // Known defect: this actual clan should be available too.
-    expect(terms).not.toContain("terms:Toreador antitribu");
+    expect(terms).toContain("terms:Brujah");
+    expect(terms).toContain("terms:Nosferatu"); // clan need not be in play
+    expect(terms).toContain("terms:Toreador antitribu");
+    expect(terms).toContain("terms:Giovanni"); // legacy clan not in this fixture
+    expect(terms).not.toContain("terms:Avenger"); // creed, not clan
+  });
+
+  it.each(["Consanguineous Boon", "Consanguineous Condemnation"])("%s resolves for a selected legacy clan", (card) => {
+    const state = threeSeatGame();
+    Object.assign(state.seats[0]!.minions[0]!, { title: "prince", clan: "Brujah" });
+    state.seats[1]!.minions[0]!.clan = "Toreador antitribu";
+    state.seats[1]!.minions[1]!.clan = "Toreador";
+    const ally = makeMinion("ally", "Bob", { kind: "ally", clan: "Toreador antitribu" });
+    state.seats[1]!.minions.push(ally);
+    state.seats[0]!.hand.push({ id: "political", name: card });
+    const engine = new VtesEngine(state, testRegistry);
+    const poolBefore = state.seats[1]!.pool;
+    runTrace(engine, [
+      ...announce(card), ["Alice", "terms:Toreador antitribu"],
+      ["Alice", "vote:V1:for"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+    ]);
+    expect(state.eventLog.some((e) => e.type === "ReferendumResolved" && e.passed)).toBe(true);
+    if (card === "Consanguineous Boon") {
+      expect(state.seats[1]!.pool).toBe(poolBefore + 1); // vampire only
+    } else {
+      expect(state.seats[1]!.minions[0]!.locked).toBe(true);
+      expect(state.seats[1]!.minions[1]!.locked).toBe(false);
+      expect(ally.locked).toBe(false);
+    }
   });
 
   it.each(["Camarilla Exemplary", "Sabbat Priest", "Archon"])("%s charges vampires but not allies attempting to block", (card) => {

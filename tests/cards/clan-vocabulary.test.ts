@@ -25,22 +25,15 @@ interface RegistryShape {
   entries: Record<string, { card: { kind: string; clan?: string; clans?: string[] } }>;
 }
 
-/**
- * The clans a VAMPIRE in this pool can be — crypt cards only.
- *
- * This is the set that matters, and the distinction became load-bearing
- * when the library widened past V5 (docs/pool-widening-design.md §6). A
- * library card carries a clan too, but it is an ICON or a requirement,
- * not a vampire: Morgue Hunting Ground is a Giovanni card and no Giovanni
- * exists in this pool. Letting those into the vocabulary would offer
- * "Giovanni" in a Consanguineous Boon referendum, where it can never
- * match anyone — the p. 49 list is the clans in the game, not the clans
- * printed on cardboard.
- */
+/** The registry stores imbued creeds in the same field as vampire clans.
+ * They are not clans and must not be offered as referendum terms. The
+ * registry currently lacks an explicit crypt subtype; this exclusion is
+ * intentionally explicit and must be revisited if the pool expands. */
+const CREEDS = new Set(["Avenger", "Defender", "Innocent", "Judge", "Martyr", "Redeemer", "Visionary"]);
 function cryptClans(): Set<string> {
   const out = new Set<string>();
   for (const { card } of Object.values((registry as unknown as RegistryShape).entries)) {
-    if (card.kind === "crypt" && card.clan) out.add(card.clan);
+    if (card.kind === "crypt" && card.clan && !CREEDS.has(card.clan)) out.add(card.clan);
   }
   return out;
 }
@@ -83,6 +76,7 @@ describe("clan vocabulary", () => {
     // every clan in the pool (p. 49), so a hand-listed engine constant and
     // the registry cannot be allowed to drift. This is the cross-check
     // that lets `CLANS` stay a plain list in the kernel.
+    expect(new Set(CLANS).size).toBe(CLANS.length);
     expect([...CLANS].sort()).toEqual([...clans].sort());
   });
 
@@ -98,17 +92,16 @@ describe("clan vocabulary", () => {
     }
   });
 
-  it("the legacy library's clan icons stayed OUT of the vocabulary", () => {
-    // The control for the split above: those names really are in the
-    // registry, so `clans` excluding them is a decision this test is
-    // making rather than a set that happens to be empty.
-    const libraryClans = new Set<string>();
-    for (const { card } of Object.values((registry as unknown as RegistryShape).entries)) {
-      if (card.kind === "library") for (const c of card.clans ?? []) libraryClans.add(c);
+  it("includes legacy clans while excluding crypt creeds", () => {
+    expect(CLANS).toContain("Giovanni");
+    expect(CLANS).toContain("Toreador antitribu");
+    const rawCrypt = new Set(Object.values((registry as unknown as RegistryShape).entries)
+      .filter(({ card }) => card.kind === "crypt")
+      .map(({ card }) => card.clan));
+    for (const creed of CREEDS) {
+      expect(rawCrypt.has(creed)).toBe(true); // exclusion is not vacuous
+      expect(CLANS).not.toContain(creed);
     }
-    const iconOnly = [...libraryClans].filter((c) => !clans.has(c));
-    expect(iconOnly.length).toBeGreaterThan(0);
-    expect(iconOnly.some((c) => CLANS.includes(c as (typeof CLANS)[number]))).toBe(false);
   });
 
   it("finds the bug it was written for, if it comes back", () => {

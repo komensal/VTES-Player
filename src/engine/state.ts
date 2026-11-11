@@ -150,30 +150,56 @@ export const TITLE_SECT: Record<VampireTitle, Sect> = {
  * clan, **even if no vampires of the chosen clan are in play**." So this
  * is every clan in the pool, not every clan on the table.
  *
- * IT GROWS WITH THE POOL. Widening the crypt beyond the V5 sets took this
- * from the fourteen V5 clans to thirty-five, because the bloodlines and
- * the antitribu arrived with it — and "every clan in the pool" is a
- * rulebook phrase, so a card that offers fourteen of thirty-five is
- * simply wrong. Hand-listed rather than read from the registry so the
- * kernel stays free of the card data; `tests/cards/clan-vocabulary.test.ts`
- * cross-checks it against the registry so it cannot drift.
+ * The list covers the vampire clans represented in the current crypt,
+ * including bloodlines and antitribu, even when absent from the table.
+ * The registry also stores imbued creeds in its `clan` field; these are
+ * not vampire clans and must not become referendum choices. Hand-listed
+ * so the kernel stays independent of card data; clan-vocabulary.test.ts
+ * cross-checks the registry with explicit creed exclusions. This covers
+ * the current pool, not necessarily every clan outside that pool.
  * docs/referendum-terms-design.md §1, docs/pool-widening-design.md §3
  */
 export const CLANS: string[] = [
+  "Abomination",
+  "Ahrimane",
+  "Akunanse",
+  "Baali",
   "Banu Haqim",
+  "Blood Brother",
   "Brujah",
+  "Brujah antitribu",
+  "Caitiff",
+  "Daughter of Cacophony",
   "Gangrel",
+  "Gangrel antitribu",
+  "Gargoyle",
+  "Giovanni",
+  "Guruhi",
+  "Harbinger of Skulls",
   "Hecata",
+  "Ishtarri",
+  "Kiasyd",
   "Lasombra",
   "Malkavian",
+  "Malkavian antitribu",
   "Ministry",
+  "Nagaraja",
   "Nosferatu",
+  "Nosferatu antitribu",
+  "Osebo",
+  "Pander",
   "Ravnos",
   "Salubri",
+  "Salubri antitribu",
+  "Samedi",
   "Toreador",
+  "Toreador antitribu",
   "Tremere",
+  "Tremere antitribu",
+  "True Brujah",
   "Tzimisce",
   "Ventrue",
+  "Ventrue antitribu",
 ];
 
 /** Printed lineage queried by Toreador's Bane. Antitribu are a named
