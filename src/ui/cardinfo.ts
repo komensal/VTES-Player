@@ -134,6 +134,22 @@ export function hasStandaloneCryptTrait(text: string, trait: "sterile" | "non-un
   return new RegExp(`(?:^|[.:!?]\\s*)${trait}${suffix}\\s*(?:[.!?]|$)`, "i").test(text.trim());
 }
 
+/** Extract only a personal title printed for this crypt card, not a bonus,
+ * a different vampire's title or the merged text of an advanced card. */
+export function personalTitleFromText(text: string, name: string): VampireTitle | null {
+  const unmerged = text.replace(/^Advanced,\s*/i, "").split(/\[MERGED\]/i, 1)[0]!;
+  const headerVotes = /^(?:Camarilla|Sabbat|Anarch|Independent|Laibon)\b[^.:]*\.\s*([123])\s+votes?\s*\(titled\)\s*[:.]/i.exec(unmerged);
+  const selfVotes = /^(?:Camarilla|Sabbat|Anarch|Independent|Laibon)\b[^.:]*:\s*([^.:\n]+?)\s+has\s+([123])\s+votes?\s*\(titled\)\s*[.:]/i.exec(unmerged);
+  const subject = selfVotes?.[1]?.trim().toLowerCase();
+  const ownName = name.replace(/\s*\(G\d+.*\)$/, "").toLowerCase();
+  const selfMatch = subject !== undefined && (ownName === subject || ownName.startsWith(`${subject} `) || ownName.startsWith(`${subject},`));
+  const votes = headerVotes?.[1] ?? (selfMatch ? selfVotes?.[2] : undefined);
+  if (votes === "1") return "personal1";
+  if (votes === "2") return "personal2";
+  if (votes === "3") return "personal3";
+  return null;
+}
+
 /**
  * Read a real V5 crypt card into the fields `MinionState` needs. Sect and
  * title come from the card text prefix — "Camarilla Prince of Melbourne:",
@@ -195,6 +211,8 @@ export function importCryptCard(id: number): CryptImport {
       titleCity = city[1]!.trim();
     }
   }
+
+  if (title === null) title = personalTitleFromText(text, card.name);
 
   // Anything after the sect/title clause is a real ability.
   // Ability text beyond the sect/title line — AND no implementation for

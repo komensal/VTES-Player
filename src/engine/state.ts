@@ -105,7 +105,12 @@ export type VampireTitle =
   | "archbishop"
   | "priscus"
   | "cardinal"
-  | "regent";
+  | "regent"
+  // Personal titles are not sect-bound or contestable. The number is the
+  // title's votes, not a vote bonus; gaining another title replaces it.
+  | "personal1"
+  | "personal2"
+  | "personal3";
 
 /**
  * Titles "associated with a particular city" (p. 39–40) — the three the
@@ -123,11 +128,10 @@ export const CITY_TITLES: VampireTitle[] = ["prince", "baron", "archbishop"];
  * primogen, prince, justicar and Inner Circle, only Sabbat vampires the
  * five Sabbat titles. So a card that requires a title requires that sect
  * too [LSJ 20080603: Open War "requires an Anarch, for eg. Powerbase: Los
- * Angeles"]. A `Record`, so a new title is a compile error until it says.
- * Independent votes "are not tied to a sect" and are not titles here.
+ * Angeles"]. Personal titles have no sect requirement and are omitted.
  * docs/granted-action-requirements-design.md §5
  */
-export const TITLE_SECT: Record<VampireTitle, Sect> = {
+export const TITLE_SECT: Partial<Record<VampireTitle, Sect>> = {
   primogen: "camarilla",
   prince: "camarilla",
   justicar: "camarilla",
@@ -263,6 +267,9 @@ export const TITLE_VOTES: Record<VampireTitle, number> = {
   priscus: 1,
   cardinal: 3,
   regent: 4,
+  personal1: 1,
+  personal2: 2,
+  personal3: 3,
 };
 
 /** V5 sects (p. 39). A minion's sect and clan are static facts, set by

@@ -14588,8 +14588,8 @@
   {
     "id": 200068,
     "name": "Ambrogino Giovanni (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje +1 bleed, lecz importer zatrzymuje prefiks na pierwszej kropce i nie odczytuje „1 vote (titled)”; brak tej wartości w statics i tytułu w MinionState. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowany osobisty tytuł i głosy importowane do wszystkich stref; sprawdzono głosowanie, wymóg titled, zastąpienie tytułu, brak contest oraz nadrukowany bleed Ambrogino/Kephamos i Blood cursed Kashana (crypt-personal-title.test.ts, crypt-blood-cursed.test.ts). Test celowany nie dowodzi pełnej zgodności."
   },
   {
     "id": 200069,
@@ -14625,7 +14625,7 @@
     "id": 200074,
     "name": "Amisa (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez akcji lock vampire capacity 8+. Importer nie odczytuje „2 votes (titled)” po kropce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusty cryptPerm bez akcji lock vampire capacity 8+. Importer nie odczytuje „2 votes (titled)” po kropce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200075,
@@ -14805,7 +14805,7 @@
     "id": 200104,
     "name": "Annazir (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje +1 bleed, ale brak akcji burn location/steal equipment; importer nie odczytuje „2 votes (titled)” ani Infernal. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: flatCrypt daje +1 bleed, ale brak akcji burn location/steal equipment; importer nie odczytuje „2 votes (titled)” ani Infernal. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200105,
@@ -14997,7 +14997,7 @@
     "id": 200136,
     "name": "Arishat (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez płatnego wymuszenia abstention; importer nie odczytuje 1 titled vote po kropce ani Infernal. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusty cryptPerm bez płatnego wymuszenia abstention; importer nie odczytuje 1 titled vote po kropce ani Infernal. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200137,
@@ -15075,7 +15075,7 @@
     "id": 200149,
     "name": "Augustus Giovanni (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje +1 bleed, ale brak akcji za 1 pool przywrócenia niedawno spalonego własnego vampire z ash heap; importer nie odczytuje 2 titled votes po kropce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: flatCrypt daje +1 bleed, ale brak akcji za 1 pool przywrócenia niedawno spalonego własnego vampire z ash heap; importer nie odczytuje 2 titled votes po kropce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200150,
@@ -15111,7 +15111,7 @@
     "id": 200155,
     "name": "Aziz, Dammar of Istanbul (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusty cryptPerm bez +1 strength, status counters i głosów za nie; importer nie odczytuje 2 titled votes po kropce ani Blood cursed. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusty cryptPerm bez +1 strength, status counters i głosów za nie; importer nie odczytuje 2 titled votes po kropce ani Blood cursed. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200156,
@@ -15183,7 +15183,7 @@
     "id": 200167,
     "name": "The Baron (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm nie daje +1 bleed ani podglądu rąk kontrolerów ready Giovanni; importer nie odczytuje 2 titled votes w treści. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusty cryptPerm nie daje +1 bleed ani podglądu rąk kontrolerów ready Giovanni; importer nie odczytuje 2 titled votes w treści. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200168,
@@ -15663,7 +15663,7 @@
     "id": 200247,
     "name": "Carmine Giovanni (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje stały stealth samemu Carmine zamiast lock za stealth ally; brak dodatkowego life wraithów i 2 titled votes nie są importowane po kropce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: flatCrypt daje stały stealth samemu Carmine zamiast lock za stealth ally; brak dodatkowego life wraithów i 2 titled votes nie są importowane po kropce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200248,
@@ -16077,7 +16077,7 @@
     "id": 200316,
     "name": "Danielle Diron (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez gain 2 blood w unlock przy ready bez blood; importer nie rozpoznaje 1 titled vote w treści. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez gain 2 blood w unlock przy ready bez blood; importer nie rozpoznaje 1 titled vote w treści. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200317,
@@ -16359,7 +16359,7 @@
     "id": 200363,
     "name": "Don Michael Antonio Giovanni (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zakazu strike/press to end combat i +1 strength po pierwszej rundzie; importer nie rozpoznaje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez zakazu strike/press to end combat i +1 strength po pierwszej rundzie; importer nie rozpoznaje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200364,
@@ -16881,7 +16881,7 @@
     "id": 200450,
     "name": "Ezmerelda (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i opcji remove self za gain 11 pool w unlock; importer nie rozpoznaje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez +1 bleed i opcji remove self za gain 11 pool w unlock; importer nie rozpoznaje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200451,
@@ -17649,7 +17649,7 @@
     "id": 200578,
     "name": "Hazimel (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 bleed, ale brak kosztu 2 blood dla non-Ravnos przy akcji na Hazimela/kartę/counter na nim; importer nie odczytuje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Spec daje +1 bleed, ale brak kosztu 2 blood dla non-Ravnos przy akcji na Hazimela/kartę/counter na nim; importer nie odczytuje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200579,
@@ -17961,7 +17961,7 @@
     "id": 200630,
     "name": "Imanna (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez +1 vote w referendach Imanny; 1 titled vote po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez +1 vote w referendach Imanny; 1 titled vote po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200631,
@@ -18189,7 +18189,7 @@
     "id": 200668,
     "name": "Jamal (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Spec daje +1 bleed i stały +1 strength zamiast strength tylko przeciw ally lub Camarilla; 2 titled votes, Blood cursed i Red List nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Spec daje +1 bleed i stały +1 strength zamiast strength tylko przeciw ally lub Camarilla; 2 titled votes, Blood cursed i Red List nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200669,
@@ -18633,7 +18633,7 @@
     "id": 200742,
     "name": "Kahina the Sorceress (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały stealth zamiast tylko dla political action referendum damage minionom z własnymi corruption counters; brak akcji i importu 1 titled vote po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Spec daje stały stealth zamiast tylko dla political action referendum damage minionom z własnymi corruption counters; brak akcji i importu 1 titled vote po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200743,
@@ -18734,8 +18734,8 @@
   {
     "id": 200759,
     "name": "Kashan (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Importer nie rozpoznaje 1 titled vote po kropce ani nie przenosi Blood cursed; spec ma puste statics. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowany osobisty tytuł i głosy importowane do wszystkich stref; sprawdzono głosowanie, wymóg titled, zastąpienie tytułu, brak contest oraz nadrukowany bleed Ambrogino/Kephamos i Blood cursed Kashana (crypt-personal-title.test.ts, crypt-blood-cursed.test.ts). Test celowany nie dowodzi pełnej zgodności."
   },
   {
     "id": 200760,
@@ -18818,8 +18818,8 @@
   {
     "id": 200773,
     "name": "Kephamos, High Priest of Marrakech (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 bleed, lecz importer nie odczytuje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Drukowany osobisty tytuł i głosy importowane do wszystkich stref; sprawdzono głosowanie, wymóg titled, zastąpienie tytułu, brak contest oraz nadrukowany bleed Ambrogino/Kephamos i Blood cursed Kashana (crypt-personal-title.test.ts, crypt-blood-cursed.test.ts). Test celowany nie dowodzi pełnej zgodności."
   },
   {
     "id": 200774,
@@ -19005,7 +19005,7 @@
     "id": 200804,
     "name": "Lady Constancia (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez burn Edge i discard phase action za losowy discard i replacement z ash heap; importer nie odczytuje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez burn Edge i discard phase action za losowy discard i replacement z ash heap; importer nie odczytuje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200805,
@@ -19047,7 +19047,7 @@
     "id": 200811,
     "name": "Lambach (G2 ADV)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały stealth zamiast tylko akcji wyszukania Eye of Hazimel i equip bez kosztu; brak tej akcji, 2 titled votes i merged unlock po put vampire in play. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Spec daje stały stealth zamiast tylko akcji wyszukania Eye of Hazimel i equip bez kosztu; brak tej akcji, 2 titled votes i merged unlock po put vampire in play. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200812,
@@ -19491,7 +19491,7 @@
     "id": 200885,
     "name": "Luna Giovanni (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez usuwania political action cards z ash heaps za votes; importer nie odczytuje 1 titled vote po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez usuwania political action cards z ash heaps za votes; importer nie odczytuje 1 titled vote po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200886,
@@ -19527,7 +19527,7 @@
     "id": 200891,
     "name": "Lydia, Grand Praetor (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez blood za stealth i zakazu Celerity; 1 titled vote po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez blood za stealth i zakazu Celerity; 1 titled vote po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200892,
@@ -19653,7 +19653,7 @@
     "id": 200912,
     "name": "Marcia Felicia Licinia (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez blood za dodge raz na combat; importer nie odczytuje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez blood za dodge raz na combat; importer nie odczytuje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200913,
@@ -19911,7 +19911,7 @@
     "id": 200955,
     "name": "Mata Hari (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez prawa grania kart jak gdyby Mata spełniała sect/clan i Red List; importer nie odczytuje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez prawa grania kart jak gdyby Mata spełniała sect/clan i Red List; importer nie odczytuje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200956,
@@ -19965,7 +19965,7 @@
     "id": 200964,
     "name": "Maureen, Dark Priestess (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez gain pool raz na turę po udanej akcji wymagającej Baali lub Daimoinon; 1 titled vote po kropce i Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez gain pool raz na turę po udanej akcji wymagającej Baali lub Daimoinon; 1 titled vote po kropce i Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200965,
@@ -20217,7 +20217,7 @@
     "id": 201006,
     "name": "Montano (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed, zniżki Obtenebration i blood za +1 stealth własnemu minionowi; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez +1 bleed, zniżki Obtenebration i blood za +1 stealth własnemu minionowi; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201007,
@@ -20439,19 +20439,19 @@
     "id": 201043,
     "name": "Neferu (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez blood za zmianę votes/ballots vampire z własnym corruption counter w polling; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez blood za zmianę votes/ballots vampire z własnym corruption counter w polling; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201044,
     "name": "Nehemiah (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez przesunięcia do 2 kart z ręki na spód library w unlock i zakazu Celerity; 2 titled votes po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez przesunięcia do 2 kart z ręki na spód library w unlock i zakazu Celerity; 2 titled votes po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201045,
     "name": "Nehsi (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez optional maneuver co combat; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez optional maneuver co combat; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201046,
@@ -21141,7 +21141,7 @@
     "id": 201160,
     "name": "Randall (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez blood za prevention 1 non-aggravated damage innego miniona w combat raz na minion phase; 1 titled vote po kropce nie importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez blood za prevention 1 non-aggravated damage innego miniona w combat raz na minion phase; 1 titled vote po kropce nie importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201161,
@@ -21231,7 +21231,7 @@
     "id": 201175,
     "name": "Regina Giovanni, The Right Hand of Augustus (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zniżki blood/pool allies i retainers; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez zniżki blood/pool allies i retainers; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201176,
@@ -21699,7 +21699,7 @@
     "id": 201253,
     "name": "Scout Youngwood (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez 2 blood za lock ally/młodszego vampire prey w unlock i dodatkowego blood za reaction; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez 2 blood za lock ally/młodszego vampire prey w unlock i dodatkowego blood za reaction; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201254,
@@ -21873,7 +21873,7 @@
     "id": 201282,
     "name": "Shemti (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez environmental damage minionom po udanej akcji skierowanej przeciw kontrolerowi lub jego karcie przy ready i unlocked Shemti; 1 titled vote po kropce nie importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez environmental damage minionom po udanej akcji skierowanej przeciw kontrolerowi lub jego karcie przy ready i unlocked Shemti; 1 titled vote po kropce nie importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201283,
@@ -22143,7 +22143,7 @@
     "id": 201327,
     "name": "Sutekh, The Dark God (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed, gain pool po successful recruit mummy i przesunięcia blood między Sutekhem a innym własnym Follower of Set w unlock; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez +1 bleed, gain pool po successful recruit mummy i przesunięcia blood między Sutekhem a innym własnym Follower of Set w unlock; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201328,
@@ -22167,7 +22167,7 @@
     "id": 201331,
     "name": "Synesios (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez burn pool przy out-of-turn master za dodatkową następną master phase action i zakazu Celerity; 2 titled votes po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez burn pool przy out-of-turn master za dodatkową następną master phase action i zakazu Celerity; 2 titled votes po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201332,
@@ -22371,7 +22371,7 @@
     "id": 201365,
     "name": "Thetmes, Caliph of Alamut (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez aggravated hand strikes; 2 titled votes po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez aggravated hand strikes; 2 titled votes po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201366,
@@ -22401,7 +22401,7 @@
     "id": 201370,
     "name": "Thucimia (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez +1 hand size i -2 hand size do następnego unlock za +1 bleed podczas bleed; 1 titled vote po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez +1 hand size i -2 hand size do następnego unlock za +1 bleed podczas bleed; 1 titled vote po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201371,
@@ -22659,7 +22659,7 @@
     "id": 201413,
     "name": "Ur-Shulgi, The Shepherd (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez +1 bleed i wyszukania Tajdid do ręki w unlock przy ready; 2 titled votes po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez +1 bleed i wyszukania Tajdid do ręki w unlock przy ready; 2 titled votes po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201414,
@@ -23043,7 +23043,7 @@
     "id": 201477,
     "name": "Xaviar (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez prevention 1 damage co combat i 2 blood za +2 strength przed range raz na combat; importer nie rozpoznaje 2 titled votes po dwukropku. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez prevention 1 damage co combat i 2 blood za +2 strength przed range raz na combat; importer nie rozpoznaje 2 titled votes po dwukropku. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201478,
@@ -23193,7 +23193,7 @@
     "id": 201502,
     "name": "Zayyat, The Sandstorm (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały stealth zamiast tylko dla akcji przesunięcia do 3 blood młodszemu uncontrolled vampire; brak tej akcji i 2 blood raz na turę za +2 stealth, 2 titled votes po dwukropku nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Spec daje stały stealth zamiast tylko dla akcji przesunięcia do 3 blood młodszemu uncontrolled vampire; brak tej akcji i 2 blood raz na turę za +2 stealth, 2 titled votes po dwukropku nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201503,
@@ -23907,7 +23907,7 @@
     "id": 201621,
     "name": "Karl Schrekt (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 intercept, ale brak prawa grania kart wymagających justicar; importer nie odczytuje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Spec daje +1 intercept, ale brak prawa grania kart wymagających justicar; importer nie odczytuje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201622,
@@ -24105,7 +24105,7 @@
     "id": 201654,
     "name": "Tegyrius, Vizier (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 strength, lecz nie dodaje +2 votes przy ready Victoria Ash; importer pomija też drukowane 2 titled votes po kropce. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Spec daje +1 strength, lecz nie dodaje +2 votes przy ready Victoria Ash; importer pomija też drukowane 2 titled votes po kropce. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
   },
   {
     "id": 201655,

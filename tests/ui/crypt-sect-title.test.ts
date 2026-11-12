@@ -44,6 +44,7 @@ const clauseOf = (text: string): string =>
 const TITLE_WORDS: Array<{ word: string; title: VampireTitle }> = (
   Object.keys(TITLE_VOTES) as VampireTitle[]
 )
+  .filter((t) => !t.startsWith("personal")) // personal titles print votes, not a title word
   .map((t) => ({ word: t === "innerCircle" ? "inner circle" : t, title: t }))
   .sort((a, b) => b.word.length - a.word.length);
 
@@ -97,7 +98,12 @@ describe("every crypt card's title", () => {
   it("invents no title for a card that prints none", () => {
     const invented = crypt.filter((c) => {
       const clause = clauseOf(c.cardText).toLowerCase();
-      return printedTitle(clause) === null && importCryptCard(c.id).title !== null;
+      // Personal titles print "N votes (titled)" outside the sect clause.
+      // Exclude merged-only text; exact IDs and negative cases are independently
+      // pinned in crypt-personal-title.test.ts.
+      const unmerged = c.cardText.split(/\[MERGED\]/i)[0]!;
+      const personal = /\b[123]\s+votes?\s*\(titled\)/i.test(unmerged);
+      return printedTitle(clause) === null && !personal && importCryptCard(c.id).title !== null;
     });
     expect(invented.map((c) => `${c.name}: ${clauseOf(c.cardText)}`)).toEqual([]);
   });

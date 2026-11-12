@@ -10866,7 +10866,7 @@ export function compileSpec(spec: CardSpec): CardHandler {
   handler.requiresSects = () => [
     ...new Set([
       ...(spec.requiresSect ?? []),
-      ...(spec.requiresTitle ?? []).map((t) => TITLE_SECT[t]),
+      ...(spec.requiresTitle ?? []).map((t) => TITLE_SECT[t]).filter((s): s is Sect => s !== undefined),
     ]),
   ];
   // Recurring pool drains and their removal clauses
