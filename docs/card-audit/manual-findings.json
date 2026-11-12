@@ -11558,8 +11558,8 @@
   {
     "id": 101927,
     "name": "Tajdid",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Master daje gainPool zamiast trwałego zniesienia Blood Curse dla Assamite oraz limitu raz na grę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Tajdid wymaga gotowego Banu Haqim, limit raz na grę oraz globalne zniesienie zakazu diablerii wynikającego z Blood Curse do końca gry; testy obejmują anulowanie przez Wash, zwykłą i karcianą diablerię, block, inne klany i trwałość stanu (tests/cards/tajdid.test.ts). Ograniczenia wynikające z innych niewdrożonych kart pozostają otwarte."
   },
   {
     "id": 101928,
@@ -14205,7 +14205,7 @@
     "id": 200004,
     "name": "Abd al-Rashid (G2)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200005,
@@ -14223,7 +14223,7 @@
     "id": 200007,
     "name": "Abid bin Haji, Scholar of Mirrors (G6)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200008,
@@ -14499,7 +14499,7 @@
     "id": 200053,
     "name": "Ali Kar (G3)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200054,
@@ -14553,7 +14553,7 @@
     "id": 200062,
     "name": "Alu (G5)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200063,
@@ -14907,7 +14907,7 @@
     "id": 200121,
     "name": "Anwar (G2)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200122,
@@ -15147,7 +15147,7 @@
     "id": 200161,
     "name": "Badr al-Budur (G2)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200162,
@@ -15333,7 +15333,7 @@
     "id": 200192,
     "name": "Bertrand d'Anjou (G4)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200193,
@@ -16713,7 +16713,7 @@
     "id": 200422,
     "name": "Enam (G3)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200423,
@@ -16851,7 +16851,7 @@
     "id": 200445,
     "name": "Evan Rogers (G4)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200446,
@@ -16995,7 +16995,7 @@
     "id": 200469,
     "name": "Flavia, Avenging Angel (G6)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200470,
@@ -17595,7 +17595,7 @@
     "id": 200569,
     "name": "Harika Guljan (G2)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200570,
@@ -18693,7 +18693,7 @@
     "id": 200752,
     "name": "Kanya Akhtar (G2)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200753,
@@ -19089,7 +19089,7 @@
     "id": 200818,
     "name": "Layla bint-Nadr (G4)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 200819,
@@ -20661,7 +20661,7 @@
     "id": 201080,
     "name": "Omer (G6)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 201081,
@@ -20757,7 +20757,7 @@
     "id": 201096,
     "name": "Parnassus (G2)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 201097,
@@ -22119,7 +22119,7 @@
     "id": 201323,
     "name": "Sukainah (G5)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 201324,
@@ -22221,7 +22221,7 @@
     "id": 201340,
     "name": "Tansu Bekir (G2)",
     "status": "FIXED_TARGETED",
-    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid i inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
+    "evidence": "Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności."
   },
   {
     "id": 201341,

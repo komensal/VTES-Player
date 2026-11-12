@@ -1806,6 +1806,8 @@ export type GameEvent =
     }
   | { type: "CardResolved"; cardId: CardInstanceId; name: string; seat?: SeatId }
   | { type: "CardCanceled"; cardId: CardInstanceId; name: string }
+  /** A game-long exception to the Blood Curse's diablerie restriction. */
+  | { type: "BloodCurseDiablerieBarLifted"; clan: string }
   | { type: "CardDrawn"; seat: SeatId; cardId: CardInstanceId }
   /** "You must shuffle it afterwards" (p. 14) — emitted after EVERY
    *  search, including one that found nothing. */
@@ -4417,6 +4419,9 @@ export interface GameState {
   edge: SeatId | null;
   frames: Frame[];
   eventLog: GameEvent[];
+  /** Clans for which the Blood Curse does not bar diablerie for this game.
+   * The trait itself and any other diablerie restrictions are unaffected. */
+  bloodCurseDiablerieExceptions?: string[];
   /** The most recent referendum that reached its tally, and the votes each
    *  vampire cast in it: "a vampire who cast any votes in the most recent
    *  referendum (must be since your last turn)" (Tribunal Judgment). A

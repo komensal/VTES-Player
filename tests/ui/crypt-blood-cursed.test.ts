@@ -32,10 +32,11 @@ describe("Blood Cursed", () => {
     expect(hasStandaloneCryptTrait("Independent: Blood cursed.", "blood cursed")).toBe(true);
     expect(hasStandaloneCryptTrait("Independent: Blood cursed vampires cannot act.", "blood cursed")).toBe(false);
     expect(hasStandaloneCryptTrait("Independent: Another vampire is blood cursed.", "blood cursed")).toBe(false);
-    const ordinary = game(200132).seats[0]!.minions[0]!;
+    const normalState = game(200132);
+    const ordinary = normalState.seats[0]!.minions[0]!;
     ordinary.clan = "Banu Haqim"; // clan alone does not confer the curse
     expect(ordinary.bloodCursed).toBeUndefined();
-    expect(canCommitDiablerie(ordinary)).toBe(true);
+    expect(canCommitDiablerie(normalState, ordinary)).toBe(true);
   });
 
   it.each([200004, 200007, 200053, 200062, 200121, 200161, 200192, 200422, 200445, 200469, 200569, 200752, 200818, 201080, 201096, 201323, 201340])("%i cannot take the ordinary diablerie action", (id) => {

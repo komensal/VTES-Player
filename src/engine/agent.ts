@@ -294,14 +294,30 @@ export function isFaceDown(m: { name: string }): boolean {
 }
 
 function faceDownMinion(m: MinionState): MinionState {
+  // Whitelist public information instead of copying the real card: new
+  // optional crypt traits (Blood Cursed, Sterile, non-unique, title city,
+  // path, etc.) must not leak through a spread as the model grows. Visible
+  // counters in the uncontrolled region live on the enclosing entry.
   return {
-    ...m,
+    id: m.id,
+    controller: m.controller,
     name: FACE_DOWN,
+    kind: "vampire",
+    blood: 0,
     capacity: 0,
+    strength: 0,
+    bleedAmount: 0,
+    locked: false,
+    awake: false,
+    inTorpor: false,
     disciplines: {},
+    bledThisTurn: false,
+    calledPoliticalThisTurn: false,
     clan: null,
     sect: null,
     title: null,
+    cannotActThisTurn: false,
+    playedSinceUnlock: [],
     attached: [],
   };
 }

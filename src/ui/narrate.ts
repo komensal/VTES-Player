@@ -125,6 +125,8 @@ export function narrate(ev: GameEvent, state: GameState): LogLine | null {
     }
     case "CardCanceled":
       return { text: `${ev.name} is cancelled.`, weight: "major" };
+    case "BloodCurseDiablerieBarLifted":
+      return { text: `The Blood Curse no longer prevents ${ev.clan} vampires from committing diablerie this game.`, weight: "major" };
     case "TargetChanged":
       return { text: `The action is redirected from ${ev.from} to ${ev.to}.`, weight: "major" };
 

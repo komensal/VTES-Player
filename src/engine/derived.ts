@@ -1127,11 +1127,13 @@ export function minionTags(m: MinionState): string[] {
   return m.attached.find((e) => e.card.id === m.id)?.tags ?? [];
 }
 
-/** Diablerie requires a ready vampire and is forbidden by Blood Cursed.
- * Other card-specific prohibitions and exemptions must also be modeled here
- * when implemented (for example Humanitas, Alastor and Tajdid). */
-export function canCommitDiablerie(m: MinionState): boolean {
-  return m.kind === "vampire" && isReady(m) && m.bloodCursed !== true;
+/** Diablerie requires a ready vampire. Tajdid lifts only the Blood Curse's
+ * restriction for the specified clan; it does not remove the trait or other
+ * prohibitions (such as those on Humanitas and Alastor, not yet modeled). */
+export function canCommitDiablerie(state: GameState, m: MinionState): boolean {
+  if (m.kind !== "vampire" || !isReady(m)) return false;
+  return m.bloodCursed !== true || (m.clan !== null &&
+    (state.bloodCurseDiablerieExceptions ?? []).includes(m.clan));
 }
 
 /** Flight may be printed on the minion or granted by an attached card.

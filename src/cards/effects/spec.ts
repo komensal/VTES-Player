@@ -2215,6 +2215,8 @@ export type EffectPrimitive =
   /** "Gain N pool" (Ascendance) — the whole card, and the simplest
    *  possible master (docs/pool-widening-design.md §6, tranche 3 wave 7). */
   | { kind: "gainPool"; amount: number }
+  /** The Blood Curse no longer bars this clan from diablerie for the game. */
+  | { kind: "liftBloodCurseDiablerieBar"; clan: string }
   /** "Discard your hand and draw a new one" (Deal with the Devil) — the whole
    *  hand goes, and the replacement for THIS card is deferred so it is not
    *  drawn into the hand this card is about to throw away.

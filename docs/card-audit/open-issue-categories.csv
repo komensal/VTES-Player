@@ -1242,7 +1242,6 @@ id,name,kind,status,categories
 101923,Sympathetic Agony,library,CODE_DISCREPANCY,walka
 101924,Tabriz Assembly,library,CODE_DISCREPANCY,polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 101925,Tainted Spring,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
-101927,Tajdid,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
 101928,Taking the Skin: Minion,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101929,Taking the Skin: Vulture,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101930,"Talaq, The Immortal",library,CODE_DISCREPANCY,walka; karty_i_strefy

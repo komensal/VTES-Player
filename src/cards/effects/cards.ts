@@ -31705,14 +31705,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tajdid [101927] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    // Tajdid: the clan icon requires a ready Banu Haqim. On resolution the
+    // game-long exception is global, not owned by the player or the card.
     krcgId: 101927,
     name: "Tajdid",
     cardType: "master",
     bloodCost: 0,
+    requiresClan: ["Banu Haqim"],
+    requiresControlledClan: ["Banu Haqim"],
+    oncePerGameByName: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "liftBloodCurseDiablerieBar", clan: "Banu Haqim" }] }
     ],
   },
   {
