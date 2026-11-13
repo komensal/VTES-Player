@@ -12,8 +12,8 @@ To powtarzalne, zgrubne grupowanie po słowach w tekście evidence, a nie potwie
 | `walka` | 740 |
 | `polityka_i_glosy` | 364 |
 | `koszty_i_zasoby` | 869 |
-| `karty_i_strefy` | 1503 |
-| `czas_i_warunki` | 647 |
+| `karty_i_strefy` | 1515 |
+| `czas_i_warunki` | 669 |
 | `inne_do_recznego_przegladu` | 7 |
 
 Wykaz per karta: `open-issue-categories.csv`; dowody i ograniczenia: `manual-findings.json`. Regeneracja: `python3 scripts/categorize-card-audit.py`.

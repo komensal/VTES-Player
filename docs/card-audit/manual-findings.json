@@ -14403,13 +14403,13 @@
     "id": 200037,
     "name": "Al-Muntaquim, The Avenger (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez burn Caitiff za trwały bleed, unlock po Gehenna i zakazu kart wymagających Celerity; tekst Scarce również nie jest importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusty cryptPerm bez burn Caitiff za trwały bleed, unlock po Gehenna i zakazu kart wymagających Celerity; tekst Scarce również nie jest importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200038,
     "name": "Al-Muntathir, God's Witness (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty flatCrypt bez warunku burn przy czterech True Brujah, zakazu kart Celerity oraz oznaczeń Black Hand i Scarce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusty flatCrypt bez warunku burn przy czterech True Brujah, zakazu kart Celerity oraz oznaczeń Black Hand i Scarce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200039,
@@ -14523,7 +14523,7 @@
     "id": 200057,
     "name": "Allonzo Montoya (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): flatCrypt daje stały stealth zamiast ograniczenia do akcji wymagających Serpentis; brak zakazu block undirected, a importer nie ustawia sterile ani Scarce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): flatCrypt daje stały stealth zamiast ograniczenia do akcji wymagających Serpentis; brak zakazu block undirected, a importer nie ustawia sterile ani Scarce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200058,
@@ -14895,7 +14895,7 @@
     "id": 200119,
     "name": "Anu Diptinatpa (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez opcji blood za bleed acting miniona i bez importu Scarce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusty cryptPerm bez opcji blood za bleed acting miniona i bez importu Scarce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200120,
@@ -15051,7 +15051,7 @@
     "id": 200145,
     "name": "Asguresh (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez cancel combat card przeciwnika przed zapłatą kosztu; Scarce nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusty cryptPerm bez cancel combat card przeciwnika przed zapłatą kosztu; Scarce nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200146,
@@ -15417,7 +15417,7 @@
     "id": 200206,
     "name": "Blanche Hill (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez unlock po successful hunt raz na turę; Scarce nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusty cryptPerm bez unlock po successful hunt raz na turę; Scarce nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200207,
@@ -16839,7 +16839,7 @@
     "id": 200443,
     "name": "Eurayle Gelasia Mylonas (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez akcji unlock miniona z +2 stealth na własnym celu; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez akcji unlock miniona z +2 stealth na własnym celu; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200444,
@@ -17889,7 +17889,7 @@
     "id": 200618,
     "name": "Ibn Khaldun, Scholar (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez blood za unlock w discard phase i zakazu kart Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez blood za unlock w discard phase i zakazu kart Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200619,
@@ -18549,7 +18549,7 @@
     "id": 200728,
     "name": "Jozz (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez directed rush na ally lub vampire capacity do dwukrotności jego własnej; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez directed rush na ally lub vampire capacity do dwukrotności jego własnej; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200729,
@@ -18687,7 +18687,7 @@
     "id": 200751,
     "name": "Kanimana Belghazi (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały stealth zamiast tylko dla akcji za blood dodającej research counter; brak akcji, hand size za counters oraz importu Scarce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Spec daje stały stealth zamiast tylko dla akcji za blood dodającej research counter; brak akcji, hand size za counters oraz importu Scarce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200752,
@@ -18939,7 +18939,7 @@
     "id": 200793,
     "name": "Krassimir (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez unlock i end action przed block resolution raz na turę i zakazu kart Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez unlock i end action przed block resolution raz na turę i zakazu kart Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200794,
@@ -19125,7 +19125,7 @@
     "id": 200824,
     "name": "Le Dinh Tho (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez directed action podglądu ręki i discard, -1 stealth przy hunt oraz importu Scarce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez directed action podglądu ręki i discard, -1 stealth przy hunt oraz importu Scarce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200825,
@@ -19335,7 +19335,7 @@
     "id": 200859,
     "name": "Lorrie Dunsirn (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje +1 strength, ale brak zakazów reaction/equipment/retainers/maneuver/press, dodatkowego strike i press oraz kosztu non-hunt; Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje +1 strength, ale brak zakazów reaction/equipment/retainers/maneuver/press, dodatkowego strike i press oraz kosztu non-hunt; Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200860,
@@ -19527,7 +19527,7 @@
     "id": 200891,
     "name": "Lydia, Grand Praetor (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez blood za stealth i zakazu Celerity; 1 titled vote po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez blood za stealth i zakazu Celerity; 1 titled vote po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200892,
@@ -19947,7 +19947,7 @@
     "id": 200961,
     "name": "Matthew (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zniżki 1 pool dla master przy ready w master phase; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez zniżki 1 pool dla master przy ready w master phase; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200962,
@@ -19959,7 +19959,7 @@
     "id": 200963,
     "name": "Matthias (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 intercept, ale brak -1 bleed Baali/Followers of Set przeciw kontrolerowi przy ready i importu Scarce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Spec daje +1 intercept, ale brak -1 bleed Baali/Followers of Set przeciw kontrolerowi przy ready i importu Scarce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200964,
@@ -20109,7 +20109,7 @@
     "id": 200988,
     "name": "Mikael Birkholm (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 hand size, użycia pierwszej aim z library przy gun strike i zakazu Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez +1 hand size, użycia pierwszej aim z library przy gun strike i zakazu Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200989,
@@ -20151,7 +20151,7 @@
     "id": 200995,
     "name": "Miriam Benyona (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zniżki blood przy rescue i przesunięcia blood do ready vampire w unlock; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez zniżki blood przy rescue i przesunięcia blood do ready vampire w unlock; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200996,
@@ -20277,7 +20277,7 @@
     "id": 201016,
     "name": "Mr. Noir (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez gain 2 pool po burn w combat; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez gain 2 pool po burn w combat; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201017,
@@ -20367,7 +20367,7 @@
     "id": 201031,
     "name": "Nahum Enosh (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i gain blood innego własnego ready vampire w unlock przy ready Nahum; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez +1 bleed i gain blood innego własnego ready vampire w unlock przy ready Nahum; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201032,
@@ -20445,7 +20445,7 @@
     "id": 201044,
     "name": "Nehemiah (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez przesunięcia do 2 kart z ręki na spód library w unlock i zakazu Celerity; 2 titled votes po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez przesunięcia do 2 kart z ręki na spód library w unlock i zakazu Celerity; 2 titled votes po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201045,
@@ -20583,7 +20583,7 @@
     "id": 201067,
     "name": "Nu, The Pillar (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez blood za unlock w minion phase i zakazu Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez blood za unlock w minion phase i zakazu Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201068,
@@ -20601,7 +20601,7 @@
     "id": 201070,
     "name": "Obaluaye (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez stealth przy hunt i burn przy kontroli co najmniej czterech Salubri; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez stealth przy hunt i burn przy kontroli co najmniej czterech Salubri; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201071,
@@ -20745,7 +20745,7 @@
     "id": 201094,
     "name": "Pariah (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 strength, discard master lub lock w master phase, zakazu undirected poza hunt i directed rush na dowolnego miniona; Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 strength, discard master lub lock w master phase, zakazu undirected poza hunt i directed rush na dowolnego miniona; Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201095,
@@ -20973,7 +20973,7 @@
     "id": 201132,
     "name": "Prejudice (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +2 bleed zamiast usunięcia ally/retainer z ash heap prey raz na akcję; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Spec daje stały +2 bleed zamiast usunięcia ally/retainer z ash heap prey raz na akcję; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201133,
@@ -21099,7 +21099,7 @@
     "id": 201153,
     "name": "Raful al-Zarqa (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały stealth zamiast blood za stealth raz na akcję; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Spec daje stały stealth zamiast blood za stealth raz na akcję; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201154,
@@ -21669,7 +21669,7 @@
     "id": 201248,
     "name": "Saulot, The Wanderer (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed, +1 strength, redukcji damage Baali do 0 i przesunięcia 2 blood do vampire w grze/uncontrolled w unlock; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez +1 bleed, +1 strength, redukcji damage Baali do 0 i przesunięcia 2 blood do vampire w grze/uncontrolled w unlock; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201249,
@@ -21759,7 +21759,7 @@
     "id": 201263,
     "name": "Sennadurek (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez unlock i podglądu ręki Methuselah tracącego Edge poza turą kontrolera; Black Hand i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez unlock i podglądu ręki Methuselah tracącego Edge poza turą kontrolera; Black Hand i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201264,
@@ -21777,7 +21777,7 @@
     "id": 201266,
     "name": "Serenna the White (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez blood za redukcję bleed przeciw kontrolerowi o 2 raz na turę przy ready; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez blood za redukcję bleed przeciw kontrolerowi o 2 raz na turę przy ready; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201267,
@@ -21825,7 +21825,7 @@
     "id": 201274,
     "name": "Shalmath (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez unlock raz na turę i zakazu kart Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez unlock raz na turę i zakazu kart Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201275,
@@ -22167,7 +22167,7 @@
     "id": 201331,
     "name": "Synesios (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez burn pool przy out-of-turn master za dodatkową następną master phase action i zakazu Celerity; 2 titled votes po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez burn pool przy out-of-turn master za dodatkową następną master phase action i zakazu Celerity; 2 titled votes po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201332,
@@ -22779,7 +22779,7 @@
     "id": 201433,
     "name": "Veejay Vinod (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez 2 blood za stealth podczas akcji; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez 2 blood za stealth podczas akcji; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201434,
@@ -23085,7 +23085,7 @@
     "id": 201484,
     "name": "Yavu Matebo (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez 2 blood przy ready za fail ogłaszanej akcji ally/młodszego vampire i przesunięcia Yavu do uncontrolled; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez 2 blood przy ready za fail ogłaszanej akcji ally/młodszego vampire i przesunięcia Yavu do uncontrolled; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201485,
@@ -23241,7 +23241,7 @@
     "id": 201510,
     "name": "Zubeida (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi bez ready vampire capacity powyżej 6; Black Hand, Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi bez ready vampire capacity powyżej 6; Black Hand, Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201511,

@@ -30,6 +30,22 @@ import type { HandlerRegistry } from "./handlers.ts";
 // answered rather than as an error anyone can act on.
 import { TITLE_VOTES, findMinion, getSeat, isReady, mustHunt } from "./state.ts";
 
+/** Scarce penalty on moving this vampire out during its controller's
+ * influence phase. Controlled vampires in torpor count; allies and cards
+ * out of play (including contested minions) do not. */
+export function scarcePenalty(state: GameState, seat: SeatId, m: MinionState): number {
+  if (!m.scarce || m.kind !== "vampire" || m.clan === null) return 0;
+  const controller = state.seats.find((s) => s.id === seat);
+  return 3 * (controller?.minions.filter((other) => other.kind === "vampire" && other.clan === m.clan).length ?? 0);
+}
+
+/** Expected pool burn for a move out during the controller's influence phase. */
+export function influenceMovePoolBurn(state: GameState, seat: SeatId, m: MinionState): number {
+  return scarcePenalty(state, seat, m) + state.seats.reduce(
+    (total, s) => total + s.permanents.reduce((sum, p) => sum + (p.statics.influenceOutPoolTax ?? 0), 0), 0,
+  );
+}
+
 /**
  * A vampire's capacity, including cards that raise it (the Discipline
  * master cards: "+1 level of Celerity and +1 capacity").

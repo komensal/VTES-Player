@@ -888,7 +888,7 @@ export interface EngineOps {
    *  with any counters he or she has" (Gather, Tomb of Rameses III) — the
    *  same move `inf:out` makes, pool tax and all.
    *  docs/uncontrolled-graduation-design.md §2 */
-  moveUncontrolledToReady(seat: SeatId, minion: MinionId): void;
+  moveUncontrolledToReady(seat: SeatId, minion: MinionId, duringInfluenceEnd?: boolean): void;
   /** "Choose a vampire in your uncontrolled region" (Gather, Tomb of
    *  Rameses III) — the card in play remembers which one. §2 */
   linkUncontrolled(cardId: CardInstanceId, minion: MinionId): void;

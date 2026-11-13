@@ -323,6 +323,7 @@ function makeVampire(v: DeckVampire, id: string, seat: string, inCrypt: boolean)
     ...(card.sterile ? { sterile: true } : {}),
     ...(card.bloodCursed ? { bloodCursed: true } : {}),
     ...(card.infernal ? { infernal: true } : {}),
+    ...(card.scarce ? { scarce: true } : {}),
     id,
     name: card.name,
     kind: "vampire",

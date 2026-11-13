@@ -40,6 +40,7 @@ import {
   receivedVictoryPointSinceLastTurn,
   committedDiablerieSinceLastTurn,
   canCommitDiablerie,
+  influenceMovePoolBurn,
   blockEligibleSeats,
   auraBlocksPolitical,
   bleedAnnounceTax,
@@ -17370,19 +17371,20 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
         // The chosen vampire may have left the region since — a card that
         // names a vampire has to re-ask where they are (a derived read must
         // be TOTAL).
-        const still = seat.uncontrolled.some((u) => u.card.id === chosen);
+        const still = seat.uncontrolled.find((u) => u.card.id === chosen);
         // "…UNLESS that vampire would contest a vampire in play": a gate on
         // the option, not a no-op on use, so the player is never offered a
         // move that cannot happen (§3).
         const contested =
           grad.notIfContest === true && wouldContestInPlay(ctx.state, chosen);
         if (still && !contested) {
+          const poolBurn = influenceMovePoolBurn(ctx.state, controller, still.card);
           out.push({
             id: `ability:${spec.name}:${entry.card.id}:graduate:${chosen}`,
             kind: "useAbility",
-            label: `${spec.name}: move ${chosen} to your ready region`,
+            label: `${spec.name}: move ${chosen} to your ready region${poolBurn ? ` (burn ${poolBurn} pool)` : ""}`,
             source: entry.card.id,
-            params: { act: "graduate", target: chosen },
+            params: { act: "graduate", target: chosen, poolBurn: String(poolBurn) },
           });
         }
       }
@@ -18664,12 +18666,16 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
           }));
       }
       if (frame.key === "graduateAtEnd") {
+        const entry = allPermanents(state).find((p) => p.card.id === frame.cardId);
+        const u = getSeat(state, frame.seat).uncontrolled.find((x) => x.card.id === entry?.linkedUncontrolled);
+        if (!u) return [];
+        const poolBurn = influenceMovePoolBurn(state, frame.seat, u.card);
         return [
           {
             id: `choice:${spec.name}:${frame.cardId}:graduateAtEnd:yes`,
             kind: "answerChoice" as const,
-            label: `${spec.name}: move the vampire to your ready region`,
-            params: {},
+            label: `${spec.name}: move the vampire to your ready region${poolBurn ? ` (burn ${poolBurn} pool)` : ""}`,
+            params: { poolBurn: String(poolBurn) },
           },
         ];
       }
@@ -18690,7 +18696,9 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
         if (!getSeat(ops.state, frame.seat).uncontrolled.some((u) => u.card.id === chosen)) {
           return;
         }
-        ops.moveUncontrolledToReady(frame.seat, chosen);
+        // The optional end-of-influence choice is answered after the turn
+        // frame has advanced to discard, but the move belongs to influence.
+        ops.moveUncontrolledToReady(frame.seat, chosen, true);
         return;
       }
       priorUncApply?.(frame, choice, ops);

@@ -42,6 +42,8 @@ import {
   actionKeyOf,
   canRepeatAction,
   canCommitDiablerie,
+  scarcePenalty,
+  influenceMovePoolBurn,
   heldHostage,
   playCostFor,
   untargetableBy,
@@ -7225,8 +7227,14 @@ export class VtesEngine implements EngineOps {
    * the MOVE, not of the phase, and a card doing it by hand would have
    * either of them wrong. docs/uncontrolled-graduation-design.md §2
    */
-  moveUncontrolledToReady(seatId: SeatId, minion: MinionId): void {
+  moveUncontrolledToReady(seatId: SeatId, minion: MinionId, duringInfluenceEnd = false): void {
     const entry = findUncontrolled(this.state, seatId, minion);
+    const tf = this.state.frames[0];
+    // Tomb's end-of-influence decision is resolved on a choice frame after
+    // the turn frame has already advanced to discard.
+    const duringInfluence = tf?.kind === "turn" && tf.seat === seatId &&
+      (tf.phase === "influence" || duringInfluenceEnd);
+    const penalty = duringInfluence ? scarcePenalty(this.state, seatId, entry.card) : 0;
     // "When any Methuselah moves a vampire from uncontrolled to
     // controlled, he or she burns 1 ADDITIONAL POOL" (Masquerade
     // Enforcement).
@@ -7239,6 +7247,10 @@ export class VtesEngine implements EngineOps {
       // Counters become blood; the excess drains immediately (p. 36).
       blood: Math.min(entry.counters, capacityOf(entry.card)),
     });
+    // Scarce is a consequence of the move, not a prerequisite or a cost.
+    // Only counters still available can be burned if the penalty is lethal.
+    const burn = Math.min(penalty, Math.max(0, getSeat(this.state, seatId).pool));
+    if (burn > 0) this.emit({ type: "PoolBurned", seat: seatId, amount: burn });
     this.notifyUncontrolledLeft(minion);
   }
 
@@ -11094,11 +11106,13 @@ export class VtesEngine implements EngineOps {
         (this.tableStatic("influenceOutPoolTax") === 0 ||
           seat.pool > this.tableStatic("influenceOutPoolTax"))
       ) {
+        const poolBurn = influenceMovePoolBurn(this.state, tf.seat, u.card);
         options.push({
           id: `inf:out:${u.card.id}`,
           kind: "influenceOut",
-          label: `Move ${u.card.name} to the ready region`,
+          label: `Move ${u.card.name} to the ready region${poolBurn ? ` (burn ${poolBurn} pool)` : ""}`,
           minion: u.card.id,
+          poolBurn,
         });
       }
     }

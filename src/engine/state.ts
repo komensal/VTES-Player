@@ -368,6 +368,8 @@ export interface MinionState {
   bloodCursed?: boolean;
   /** Infernal minions do not unlock as normal; their controller may pay pool. */
   infernal?: boolean;
+  /** Scarce vampires incur a clan-based pool penalty when influenced out. */
+  scarce?: boolean;
   /** The Path of Enlightenment this vampire follows ("Cathari", "Power and
    *  the Inner Voice", "Death and the Soul").
    *
