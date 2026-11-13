@@ -8,6 +8,7 @@ export * from "./state.ts";
 export * from "./options.ts";
 export * from "./handlers.ts";
 export * from "./derived.ts";
+export * from "./draw-redirect.ts";
 export * from "./engine.ts";
 export * from "./agent.ts";
 export * from "./rng.ts";

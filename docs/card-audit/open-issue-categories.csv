@@ -556,7 +556,7 @@ id,name,kind,status,categories
 100899,Hay Ride,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100901,Healing Touch,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100902,Heart of Darkness,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
-100903,Heart of Nizchetus,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy; czas_i_warunki
+100903,Heart of Nizchetus,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy; czas_i_warunki
 100905,Heart's Desire,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
 100907,Heaven's Gate,library,CONFIRMED_BUG,walka; karty_i_strefy; czas_i_warunki
 100908,"Heidelberg Castle, Germany",library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki

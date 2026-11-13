@@ -57,6 +57,7 @@ import {
   CLANS,
   DISCIPLINES,
   disciplinesOf,
+  drawRedirectSources,
   currentBleed,
   currentIntercept,
   isToreadorOrAntitribuClan,
@@ -17877,7 +17878,9 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
       const bearer = owner.minion ? findMinion(ctx.state, owner.minion) : null;
       const seat = getSeat(ctx.state, controller);
       if (bearer && isReady(bearer) && !entry.usedThisPhase) {
-        const most = Math.min(drawBury.max, seat.library.length);
+        const available = seat.library.length + drawRedirectSources(ctx.state, controller, ctx.registry)
+          .reduce((total, source) => total + (source.stored?.length ?? 0), 0);
+        const most = Math.min(drawBury.max, available);
         for (let x = 1; x <= most; x++) {
           out.push({
             id: `ability:${spec.name}:${entry.card.id}:drawbury:${x}`,
@@ -18877,16 +18880,14 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
       const controller = entry.controller ?? owner.seat;
       const x = Number(choice.params["x"] ?? "0");
       entry.usedThisPhase = true;
-      ops.drawCards(controller, x);
-      // "…and THEN move the same number to the bottom": N successive
-      // choices, re-raised one at a time so each list is computed against
-      // the hand the previous answer left (the targetDiscard shape).
-      ops.raiseChoice({
+      // Redirects are choices themselves. Wait for every actual draw,
+      // then bury exactly that many cards, including newly drawn cards.
+      ops.drawCardsThenChoice({
         seat: controller,
+        count: x,
         cardName: spec.name,
         cardId: entry.card.id,
         key: "bury",
-        params: { left: String(x) },
       });
     };
   }

@@ -825,6 +825,15 @@ export interface EngineOps {
   }): void;
   /** Draw N cards from the library (extra cards, not replacements). */
   drawCards(seat: SeatId, count: number): void;
+  /** Draw up to count extra cards, then ask a nonoptional card choice with
+   *  `left` set to the number actually drawn. Suspends across draw redirects. */
+  drawCardsThenChoice(args: {
+    seat: SeatId;
+    count: number;
+    cardName: string;
+    cardId: CardInstanceId;
+    key: string;
+  }): void;
   /** "…and draw a new one" / "…draws back up to his or her hand size"
    *  (Deal with the Devil, Lupine Assault). docs/hand-churn-design.md §2 */
   drawUpToHandSize(seat: SeatId): void;

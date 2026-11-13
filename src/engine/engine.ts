@@ -61,6 +61,7 @@ import {
   vampireVotes,
 } from "./derived.ts";
 import { rngInt } from "./rng.ts";
+import { drawRedirectSources } from "./draw-redirect.ts";
 import type {
   CardActionParams,
   CardHandler,
@@ -6824,6 +6825,50 @@ export class VtesEngine implements EngineOps {
     for (let i = 0; i < count; i++) this.drawToReplace(seatId, "extra");
   }
 
+  /** A counted sequence whose follow-up depends on how many cards were
+   * actually drawn (Heart of Nizchetus). State lives in the redirect choice,
+   * not a closure, so an in-progress sequence survives serialization. */
+  drawCardsThenChoice(args: {
+    seat: SeatId;
+    count: number;
+    cardName: string;
+    cardId: CardInstanceId;
+    key: string;
+  }): void {
+    this.continueCountedDraw(args, args.count, 0);
+  }
+
+  private continueCountedDraw(
+    after: { seat: SeatId; cardName: string; cardId: CardInstanceId; key: string },
+    remaining: number,
+    drawn: number,
+  ): void {
+    const seat = getSeat(this.state, after.seat);
+    while (remaining > 0) {
+      const before = seat.hand.length;
+      const continuation = {
+        countedRemaining: String(remaining - 1),
+        countedDrawn: String(drawn),
+        countedCardName: after.cardName,
+        countedCardId: after.cardId,
+        countedChoiceKey: after.key,
+      };
+      if (!this.drawToReplace(after.seat, "extra", false, continuation)) return;
+      if (seat.hand.length <= before) break;
+      drawn++;
+      remaining--;
+    }
+    if (drawn > 0) {
+      this.raiseChoice({
+        seat: after.seat,
+        cardName: after.cardName,
+        cardId: after.cardId,
+        key: after.key,
+        params: { left: String(drawn) },
+      });
+    }
+  }
+
   /** "…and draw a new one" / "…then draws back up to his or her hand size"
    *  (Deal with the Devil, Lupine Assault). A redirected draw suspends this
    *  refill in the choice frame, so it survives save/load and resumes only
@@ -13555,7 +13600,12 @@ export class VtesEngine implements EngineOps {
    *  only the former (docs/counter-sinks-design.md §2). */
   /** Returns false if a counter sink or a store choice interrupted the
    *  draw; true means the library was attempted, even if it was empty. */
-  private drawToReplace(seatId: SeatId, kind: "replace" | "extra" = "replace", resumeDrawUp = false): boolean {
+  private drawToReplace(
+    seatId: SeatId,
+    kind: "replace" | "extra" = "replace",
+    resumeDrawUp = false,
+    continuation?: Record<string, string>,
+  ): boolean {
     // "Each time you would replace a card, instead burn 1 counter from
     // this card" (Visit from the Capuchin). This goes FIRST and keeps
     // precedence over the redirect below: a draw that does not happen
@@ -13572,7 +13622,9 @@ export class VtesEngine implements EngineOps {
         cardName: source.card.name,
         cardId: source.card.id,
         key: "drawFrom",
-        ...(resumeDrawUp ? { params: { resumeDrawUp: "1" } } : {}),
+        ...(resumeDrawUp || continuation
+          ? { params: { ...continuation, ...(resumeDrawUp ? { resumeDrawUp: "1" } : {}) } }
+          : {}),
       });
       return false;
     }
@@ -13595,13 +13647,7 @@ export class VtesEngine implements EngineOps {
   /** Every live store that can redirect this seat's next library draw.
    * A player can choose between them; enumeration order is not priority. */
   private drawRedirectSources(seatId: SeatId): PermanentInPlay[] {
-    return this.allEntries()
-      .filter(({ entry, owner }) =>
-        (entry.controller ?? owner.seat) === seatId &&
-        (entry.stored?.length ?? 0) > 0 &&
-        this.registry[entry.card.name]?.canRedirectDraw?.(entry, owner, this.state) === true,
-      )
-      .map(({ entry }) => entry);
+    return drawRedirectSources(this.state, seatId, this.registry);
   }
 
   /** Burn a counter off a card attached to this minion that pays to keep
@@ -14395,14 +14441,21 @@ export class VtesEngine implements EngineOps {
     // refill. Resume only if it drew a card: choosing an empty library must
     // end the attempt instead of asking the same question forever.
     const resumeDrawUp = frame.key === "drawFrom" && frame.params["resumeDrawUp"] === "1";
-    const before = resumeDrawUp ? getSeat(this.state, frame.seat).hand.length : 0;
+    const counted = frame.key === "drawFrom" && frame.params["countedCardName"] !== undefined;
+    const before = resumeDrawUp || counted ? getSeat(this.state, frame.seat).hand.length : 0;
     const redirect = frame.key === "drawFrom" && option.params["redirectSource"]
       ? this.drawRedirectSources(frame.seat).find((source) => source.card.id === option.params["redirectSource"])
       : undefined;
     const chosenFrame = redirect ? { ...frame, cardName: redirect.card.name, cardId: redirect.card.id } : frame;
     this.handler(chosenFrame.cardName).applyChoice?.(chosenFrame, option, this);
-    if (resumeDrawUp && getSeat(this.state, frame.seat).hand.length > before) {
-      this.drawUpToHandSize(frame.seat);
+    const didDraw = (resumeDrawUp || counted) && getSeat(this.state, frame.seat).hand.length > before;
+    if (resumeDrawUp && didDraw) this.drawUpToHandSize(frame.seat);
+    if (counted) {
+      this.continueCountedDraw(
+        { seat: frame.seat, cardName: frame.params["countedCardName"]!, cardId: frame.params["countedCardId"]!, key: frame.params["countedChoiceKey"]! },
+        didDraw ? Number(frame.params["countedRemaining"]) : 0,
+        Number(frame.params["countedDrawn"]) + (didDraw ? 1 : 0),
+      );
     }
   }
 }

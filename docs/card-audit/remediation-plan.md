@@ -36,3 +36,7 @@ Przesuwanie do dwóch kart i zwykłe dobieranie wdrożono celowo; szczegóły w 
 ## Kilka źródeł redirect — kolejny etap
 
 Wybór pomiędzy dostępnymi store przy pojedynczym draw i podczas refill poprawiono; szczegóły oraz scenariusze w `batches.md`. Priorytet: sekwencyjna, wznawialna kolejka liczonych draw i ich następnych efektów (Heart: najpierw wszystkie rzeczywiste draw, potem tyle samo kart na spód; dobór z store oraz pusta biblioteka), inne ścieżki wielu replacement, możliwość ciągłego wyboru Tarot przy pustej bibliotece oraz rozróżnienie zagrania/wyposażenia od samego umieszczenia Tarot w grze. Nie usuwać zależnych ramek ani nie zakładać, że asynchroniczny choice kończy się natychmiast.
+
+## Heart — stan po naprawie liczonego draw
+
+Heart korzysta z wznawialnego ciągu draw i wyboru po nim; szczegóły i ograniczenia w `batches.md`. Nie podłączono pozostałych wywołań `drawCards` ani kolejek replacement. Potrzebna jest reprezentacja właściciela kart dla Agaitas i innych efektów przenoszenia cudzych kart oraz weryfikacja dokładnej semantyki wyboru liczby i dodatkowych faz. Heart pozostaje `PARTIAL_FIX`.
