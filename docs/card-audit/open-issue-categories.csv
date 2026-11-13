@@ -1128,6 +1128,7 @@ id,name,kind,status,categories
 101764,Shell Game,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 101765,Shepherd's Innocence,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101766,Shilmulo Deception,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
+101767,Shilmulo Tarot,library,PARTIAL_FIX,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 101768,Shock Troops,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; czas_i_warunki
 101770,Shotgun Ritual,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; czas_i_warunki
 101771,Shoulder Drop,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy; czas_i_warunki

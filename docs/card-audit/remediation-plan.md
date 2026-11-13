@@ -28,3 +28,7 @@ Zaimplementowano i przetestowano ich opcjonalne odblokowanie za blood w bieżąc
 ## Nehemiah — kontynuacja po przekierowaniu dobierania i prywatność
 
 Przesuwanie do dwóch kart i zwykłe dobieranie wdrożono celowo; szczegóły w `batches.md`. Wspólny mechanizm dobierania do hand size wymaga wznawialnej kontynuacji po wyborze przekierowania (m.in. Shilmulo Tarot), z testami wielu kart, pustej biblioteki, innych źródeł draw i save/load. Osobno należy sprawdzić prywatność identyfikatorów i kolejności kart w maskowanych strefach oraz surowych logów; maskowanie pojedynczych eventów i komend nie zamyka tego problemu. Nehemiah pozostaje `PARTIAL_FIX`.
+
+## Kontynuacja dobierania — stan po poprawce
+
+`drawUpToHandSize` oraz refill przy wzroście hand size wznawiają się po wyborze źródła; testy i pozostałe ograniczenia w `batches.md`. Dalsza praca: ciągła opcja Shilmulo Tarot przy pustej bibliotece i niepełnej ręce (LSJ), kolejka wielu osobnych dobierań, kolejność wielu możliwych źródeł i współdziałanie z odroczonymi replacement (w tym Lupine Assault). Odseparować te problemy od samego pojedynczego replacement; nie oznaczać kart kompletnością po naprawie wspólnego refill.

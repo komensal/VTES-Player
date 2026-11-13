@@ -3033,7 +3033,7 @@
     "id": 100506,
     "name": "Deal with the Devil",
     "status": "REVIEWED_NO_ISSUE_FOUND",
-    "evidence": "W sprawdzonym zakresie: Master odrzuca rękę i dobiera ją po odrzuceniu, karta zastąpiona po rozwiązaniu: hand-churn.test.ts."
+    "evidence": "W sprawdzonym zakresie: Master odrzuca rękę i dobiera ją po odrzuceniu, karta zastąpiona po rozwiązaniu: hand-churn.test.ts. Wspólny refill po redirect i unikanie podwójnego pytania o wybór źródła sprawdzone w draw-up-redirect.test.ts; inne interakcje nie w pełni zweryfikowane."
   },
   {
     "id": 100507,
@@ -6795,7 +6795,7 @@
     "id": 101133,
     "name": "Lupine Assault",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec wymaga delayedReplace unlock zamiast influence; engine.ts zwalnia taki dobór w następnej fazie unlock, zaś handler tableDiscardRedraw dobiera od razu do pełnej ręki. hand-churn.test.ts nie sprawdza timingu zastąpienia karty; bez nowego scenariusza. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Refill po wyborze redirect dla innego gracza sprawdzony w draw-up-redirect.test.ts; poniższy niezależny problem timingu pozostaje otwarty. Spec wymaga delayedReplace unlock zamiast influence; engine.ts zwalnia taki dobór w następnej fazie unlock, zaś handler tableDiscardRedraw dobiera od razu do pełnej ręki. hand-churn.test.ts nie sprawdza timingu zastąpienia karty; bez nowego scenariusza. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 101134,
@@ -10598,8 +10598,8 @@
   {
     "id": 101767,
     "name": "Shilmulo Tarot",
-    "status": "REVIEWED_NO_ISSUE_FOUND",
-    "evidence": "Wąski zakres: unique equipment Ravnos odkłada dwie karty, umożliwia redirect draw z ready bearer i dodawanie karty w unlock; library-search.test.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Celowana poprawka wspólnego refill: po wybraniu karty z Tarot dalsze dobieranie do rozmiaru ręki jest wznawiane, także po save/load; draw-up-redirect.test.ts i nehemiah.test.ts. Nadal brak stale dostępnej możliwości dobrania z Tarot przy pustej bibliotece i niepełnej ręce, potwierdzonej w rulingu LSJ; w odtworzonym oknie unlock oferowane są wycofanie, Edge i pass, nie dobór z Tarot. Inne ścieżki wielokrotnego dobierania i wybór wielu źródeł nie są objęte poprawką. Poprzednia ocena: Wąski zakres: unique equipment Ravnos odkłada dwie karty, umożliwia redirect draw z ready bearer i dodawanie karty w unlock; library-search.test.ts."
   },
   {
     "id": 101768,
@@ -14103,7 +14103,7 @@
     "id": 102351,
     "name": "Black Market Cache",
     "status": "REVIEWED_NO_ISSUE_FOUND",
-    "evidence": "Wąski zakres: unique location przechowuje do trzech non-unique equipment, pozwala zastąpić draw i spala się przy pustym store; library-search.test.ts."
+    "evidence": "Wąski zakres: unique location przechowuje do trzech non-unique equipment, pozwala zastąpić draw i spala się przy pustym store; library-search.test.ts. Wspólny refill po opróżnieniu i spaleniu Cache sprawdzony w draw-up-redirect.test.ts; nie jest to pełny audyt wszystkich interakcji."
   },
   {
     "id": 102352,
@@ -20445,7 +20445,7 @@
     "id": 201044,
     "name": "Nehemiah (G4)",
     "status": "PARTIAL_FIX",
-    "evidence": "Celowana naprawa: Nehemiah może raz w swojej fazie unlock przesunąć wybrane 0–2 karty z ręki na spód biblioteki i potem dobrać do bieżącego hand size; testy tests/ui/nehemiah.test.ts, w tym kolejność, torpor, kontroler, pusta biblioteka i serializacja. Przekierowane dobieranie przerywa refill bez wznowienia po wyborze; ukryte ID stref i surowy log wymagają dalszego audytu prywatności. Zakaz Celerity i Scarce nadal częściowe; pełnej zgodności nie stwierdzono. Aktualizacja: drukowany niemerged zakaz używania Celerity importowany; celowane ścieżki kompilatora, warianty i alternatywy sprawdzone w crypt-discipline-bars.test.ts, lecz niezweryfikowane ścieżki i inne zdolności pozostają otwarte. Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez przesunięcia do 2 kart z ręki na spód library w unlock i zakazu Celerity; 2 titled votes po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Celowana naprawa: Nehemiah może raz w swojej fazie unlock przesunąć wybrane 0–2 karty z ręki na spód biblioteki i potem dobrać do bieżącego hand size; testy tests/ui/nehemiah.test.ts, w tym kolejność, torpor, kontroler, pusta biblioteka i serializacja. Aktualizacja: refill wznawia się po przekierowaniu, w tym po serializacji (draw-up-redirect.test.ts i nehemiah.test.ts); ukryte ID stref i surowy log wymagają dalszego audytu prywatności. Zakaz Celerity i Scarce nadal częściowe; pełnej zgodności nie stwierdzono. Aktualizacja: drukowany niemerged zakaz używania Celerity importowany; celowane ścieżki kompilatora, warianty i alternatywy sprawdzone w crypt-discipline-bars.test.ts, lecz niezweryfikowane ścieżki i inne zdolności pozostają otwarte. Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez przesunięcia do 2 kart z ręki na spód library w unlock i zakazu Celerity; 2 titled votes po kropce i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201045,

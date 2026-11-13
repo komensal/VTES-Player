@@ -160,6 +160,11 @@ describe("Nehemiah (201044)", () => {
     engine.choose(second("h1"));
     expect(state.seats[0]!.library.map((c) => c.id)).toEqual(["h0", "h1"]);
     expect(ids(engine)).toContain("choice:Shilmulo Tarot:tarot:drawFrom:stored");
+    const saved = JSON.parse(JSON.stringify(state)) as GameState;
+    const resumed = new VtesEngine(saved, testRegistry);
+    resumed.choose("choice:Shilmulo Tarot:tarot:drawFrom:stored");
+    expect(saved.seats[0]!.hand.map((c) => c.id)).toEqual(["h2", "h3", "h4", "h5", "h6", "stored", "h0"]);
+    expect(saved.seats[0]!.library.map((c) => c.id)).toEqual(["h1"]);
   });
 
   it("does not expose buried card names or selections in opponents' projected logs", () => {

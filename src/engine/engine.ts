@@ -526,18 +526,9 @@ export class VtesEngine implements EngineOps {
   }
 
   private reconcileHandSize(seatId: SeatId): void {
-    const seat = getSeat(this.state, seatId);
-    while (seat.hand.length < this.handSizeOf(seatId) && seat.library.length > 0) {
-      // STOP when the draw did not actually happen. A draw can be
-      // redirected to a store (Black Market Cache, Shilmulo Tarot), which
-      // asks a question instead of drawing — and this loop's condition is
-      // unchanged by asking, so it span forever. Worse, inside action
-      // resolution `raiseChoice` only queues, so it emitted no event and
-      // pushed no frame: an invisible infinite loop that exhausted the
-      // heap. The queued question draws when answered, and the next event
-      // brings the hand back here.
-      if (!this.drawToReplace(seatId, "extra")) return;
-    }
+    // A hand-size increase is another refill, including its suspended
+    // continuation if a store redirects the first or a later draw.
+    this.drawUpToHandSize(seatId);
   }
 
   // -- the mutation channel -------------------------------------------------
@@ -6834,17 +6825,22 @@ export class VtesEngine implements EngineOps {
   }
 
   /** "…and draw a new one" / "…then draws back up to his or her hand size"
-   *  (Deal with the Devil, Lupine Assault) — refill to the size the seat
-   *  currently has, which is `handSizeOf` and so honours every temporary
-   *  grant in force. An empty library simply stops.
-   *  docs/hand-churn-design.md §2 */
+   *  (Deal with the Devil, Lupine Assault). A redirected draw suspends this
+   *  refill in the choice frame, so it survives save/load and resumes only
+   *  after the player has actually drawn. Re-read hand size after each draw. */
   drawUpToHandSize(seatId: SeatId): void {
+    // Deal with the Devil requests a refill in its effect and again after
+    // resolution. If the first is awaiting a draw-source choice, the second
+    // is not a new draw: it is the same obligation to reach hand size.
+    if (this.state.frames.some((f) => f.kind === "choice" && f.seat === seatId && f.params["resumeDrawUp"] === "1") ||
+        this.deferredChoices.some((f) => f.seat === seatId && f.params?.["resumeDrawUp"] === "1")) return;
     const seat = getSeat(this.state, seatId);
-    // Bounded by the hand size rather than by a count: the draw itself can
-    // change what the hand holds (a redirect), so the loop re-reads.
-    for (let i = 0; i < 20; i++) {
+    for (;;) {
       if (seat.hand.length >= handSizeOf(this.state, seatId)) return;
-      if (!this.drawToReplace(seatId, "extra")) return;
+      const before = seat.hand.length;
+      if (!this.drawToReplace(seatId, "extra", true)) return;
+      // drawFromLibrary does nothing on an empty library.
+      if (seat.hand.length === before) return;
     }
   }
 
@@ -13560,7 +13556,7 @@ export class VtesEngine implements EngineOps {
   /** Returns true only when a card actually moved from library to hand —
    *  a counter sink or a store redirect means it did not, and a caller
    *  looping until the hand is full must stop rather than ask again. */
-  private drawToReplace(seatId: SeatId, kind: "replace" | "extra" = "replace"): boolean {
+  private drawToReplace(seatId: SeatId, kind: "replace" | "extra" = "replace", resumeDrawUp = false): boolean {
     const seat = getSeat(this.state, seatId);
     // "Each time you would replace a card, instead burn 1 counter from
     // this card" (Visit from the Capuchin). This goes FIRST and keeps
@@ -13578,6 +13574,7 @@ export class VtesEngine implements EngineOps {
         cardName: source.card.name,
         cardId: source.card.id,
         key: "drawFrom",
+        ...(resumeDrawUp ? { params: { resumeDrawUp: "1" } } : {}),
       });
       return false;
     }
@@ -14376,7 +14373,15 @@ export class VtesEngine implements EngineOps {
       this.shuffleLibrary(frame.seat);
       return;
     }
+    // A redirect raised during a refill represents one draw, not the whole
+    // refill. Resume only if it drew a card: choosing an empty library must
+    // end the attempt instead of asking the same question forever.
+    const resumeDrawUp = frame.key === "drawFrom" && frame.params["resumeDrawUp"] === "1";
+    const before = resumeDrawUp ? getSeat(this.state, frame.seat).hand.length : 0;
     this.handler(frame.cardName).applyChoice?.(frame, option, this);
+    if (resumeDrawUp && getSeat(this.state, frame.seat).hand.length > before) {
+      this.drawUpToHandSize(frame.seat);
+    }
   }
 }
 
