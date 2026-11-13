@@ -17888,8 +17888,8 @@
   {
     "id": 200618,
     "name": "Ibn Khaldun, Scholar (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged zakaz używania Celerity importowany; celowane ścieżki kompilatora, warianty i alternatywy sprawdzone w crypt-discipline-bars.test.ts, lecz niezweryfikowane ścieżki i inne zdolności pozostają otwarte. Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez blood za unlock w discard phase i zakazu kart Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Aktualizacja: opcjonalny unlock za 1 blood we własnej fazie discard wdrożony w sprawdzonych oknach, wraz z limitem, torporem i zmianą kontroli; testy crypt-true-brujah-unlock.test.ts. Nie wszystkie okna i ograniczenia używania Celerity/Scarce są pełne. Aktualizacja: drukowany niemerged zakaz używania Celerity importowany; celowane ścieżki kompilatora, warianty i alternatywy sprawdzone w crypt-discipline-bars.test.ts, lecz niezweryfikowane ścieżki i inne zdolności pozostają otwarte. Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez blood za unlock w discard phase i zakazu kart Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200619,
@@ -20582,8 +20582,8 @@
   {
     "id": 201067,
     "name": "Nu, The Pillar (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged zakaz używania Celerity importowany; celowane ścieżki kompilatora, warianty i alternatywy sprawdzone w crypt-discipline-bars.test.ts, lecz niezweryfikowane ścieżki i inne zdolności pozostają otwarte. Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez blood za unlock w minion phase i zakazu Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Aktualizacja: opcjonalny unlock za 1 blood we własnej fazie minion wdrożony w sprawdzonych oknach, wraz z limitem, torporem i zmianą kontroli; testy crypt-true-brujah-unlock.test.ts. Nie wszystkie okna i ograniczenia używania Celerity/Scarce są pełne. Aktualizacja: drukowany niemerged zakaz używania Celerity importowany; celowane ścieżki kompilatora, warianty i alternatywy sprawdzone w crypt-discipline-bars.test.ts, lecz niezweryfikowane ścieżki i inne zdolności pozostają otwarte. Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez blood za unlock w minion phase i zakazu Celerity; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201068,

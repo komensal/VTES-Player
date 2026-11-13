@@ -1864,7 +1864,7 @@ id,name,kind,status,categories
 200613,Humo (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 200614,Husamettin (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 200616,Ian Forestal (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu
-200618,"Ibn Khaldun, Scholar (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
+200618,"Ibn Khaldun, Scholar (G4)",crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200619,"Icarus, The Manchurian (G4)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200620,"Idalia, Prophet of Guadalajara (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 200624,Ignazio Giovanni (G3),crypt,CODE_DISCREPANCY,akcje_i_blok
@@ -2191,7 +2191,7 @@ id,name,kind,status,categories
 201063,Nkechi (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 201064,Nkule Galadima (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; polityka_i_glosy; czas_i_warunki
 201066,Nostoket (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
-201067,"Nu, The Pillar (G2)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
+201067,"Nu, The Pillar (G2)",crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 201069,Nuriel (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; czas_i_warunki
 201070,Obaluaye (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 201072,Ogwon (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy

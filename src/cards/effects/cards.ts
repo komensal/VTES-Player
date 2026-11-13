@@ -43375,6 +43375,51 @@ const saulotsHealingTouch: CardHandler = {
   },
 };
 
+/** The phase-limited self-unlocks of Nu and Ibn Khaldun. Their printed
+ * abilities do not require readiness, so a controlled vampire in torpor can
+ * use them too. The existing per-phase latch is reset in each unlock sweep. */
+function phaseBloodSelfUnlock(name: string, phase: "minion" | "discard"): CardHandler {
+  const spec = cryptSpecs.find((s) => s.name === name);
+  if (!spec) throw new Error(`no crypt spec named ${name}`);
+  const base = compileSpec(spec);
+  return {
+    ...base,
+    abilityOptions(entry, owner, ctx) {
+      const tf = ctx.state.frames[0];
+      if (!tf || tf.kind !== "turn" || tf.phase !== phase || !owner.minion) return [];
+      const bearer = findMinion(ctx.state, owner.minion);
+      // The self-entry's recorded controller can be stale after a control
+      // change; this text belongs to the vampire's CURRENT controller.
+      if (!bearer || bearer.controller !== tf.seat || bearer.controller !== ctx.seat) return [];
+      // This effect can be used during an action or its polling step, not
+      // merely between actions. The as-played window has its own rules.
+      const windows = phase === "minion"
+        ? ["turn.minion", "action.announce", "action.effects", "action.afterResolution", "referendum.polling", "referendum.afterResolution"]
+        : ["turn.discard"];
+      if (!windows.includes(ctx.window) || entry.usedThisPhase) return [];
+      // The Sleeping Mind's superior bar applies until the action resolves.
+      if (ctx.action?.noUnlock && ctx.action.step !== "afterResolution") return [];
+      if (bearer.id !== entry.card.id || !bearer.locked || bearer.blood < 1) return [];
+      return [{
+        id: `ability:${name}:${entry.card.id}:unlock`,
+        kind: "useAbility",
+        label: `${bearer.name}: burn 1 blood to unlock`,
+        source: entry.card.id,
+        params: { act: "phaseBloodUnlock" },
+      }];
+    },
+    useAbility(entry, owner, choice, ops) {
+      if (choice.params["act"] !== "phaseBloodUnlock" || !owner.minion) throw new Error(`${name}: invalid ability`);
+      entry.usedThisPhase = true;
+      ops.emit({ type: "BloodBurned", minion: owner.minion, amount: 1 });
+      ops.emit({ type: "MinionUnlocked", minion: owner.minion });
+    },
+  };
+}
+
+const nuSelfUnlock = phaseBloodSelfUnlock("Nu, The Pillar (G2)", "minion");
+const ibnSelfUnlock = phaseBloodSelfUnlock("Ibn Khaldun, Scholar (G4)", "discard");
+
 const saulotsGuidingWisdom: CardHandler = {
   ...compileSpec(specByName("Saulot's Guiding Wisdom")),
   abilityOptions(entry, owner, ctx) {
@@ -46330,6 +46375,8 @@ export function buildHandlerRegistry(): HandlerRegistry {
     yorubaShrine,
     saulotsGuidingWisdom,
     saulotsHealingTouch,
+    nuSelfUnlock,
+    ibnSelfUnlock,
     openWar,
     diaDeLosMuertos,
     ...JUSTICAR_HANDLERS,

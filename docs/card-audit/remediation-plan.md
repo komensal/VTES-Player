@@ -20,3 +20,7 @@ Historia przeglądów w `batch-11-manual-*.md` oraz starszych paczkach opisuje s
 ## Zakaz Celerity True Brujah — częściowy zakres
 
 Drukowany niemerged zakaz w 10 kryptach jest importowany i uwzględniony przy wyborze trybów kart kompilowanych ze specyfikacji; szczegóły i ograniczenia w `batches.md`. Priorytetem dalszej pracy pozostaje egzekwowanie **używania** już znajdujących się w grze kart, bespoke handlerów i niestandardowych źródeł zagrania, z rzeczywistym wyborem dyscyplin w kartach wielodyscyplinowych. Nie zastępować tego globalnym filtrem wszystkich nadrukowanych dyscyplin: legalne są efekty przez inne dyscypliny.
+
+## Nu i Ibn Khaldun — fazowe odblokowanie
+
+Zaimplementowano i przetestowano ich opcjonalne odblokowanie za blood w bieżących oknach fazowych, akcji i głosowania (szczegóły i ograniczenia w `batches.md`). Pozostała obsługa wszystkich okien, w tym wpływu innych ograniczeń oraz używania Celerity ze źródeł i przez handlery nieobjęte poprzednią poprawką.
