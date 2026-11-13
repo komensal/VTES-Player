@@ -43420,6 +43420,76 @@ function phaseBloodSelfUnlock(name: string, phase: "minion" | "discard"): CardHa
 const nuSelfUnlock = phaseBloodSelfUnlock("Nu, The Pillar (G2)", "minion");
 const ibnSelfUnlock = phaseBloodSelfUnlock("Ibn Khaldun, Scholar (G4)", "discard");
 
+/** Nehemiah: first move zero, one or two cards to the bottom, in chosen
+ * order, THEN draw up. No replacement occurs between the two selections. */
+const nehemiahName = "Nehemiah (G4)";
+const nehemiahSpec = cryptSpecs.find((s) => s.name === nehemiahName);
+if (!nehemiahSpec) throw new Error("no Nehemiah crypt spec");
+const nehemiah: CardHandler = {
+  ...compileSpec(nehemiahSpec),
+  abilityOptions(entry, owner, ctx) {
+    if (ctx.window !== "turn.unlock" || entry.usedThisPhase || !owner.minion) return [];
+    const bearer = findMinion(ctx.state, owner.minion);
+    if (!bearer || bearer.id !== entry.card.id || bearer.controller !== ctx.turnSeat || bearer.controller !== ctx.seat) return [];
+    const seat = getSeat(ctx.state, bearer.controller);
+    const out: LegalOption[] = seat.hand.map((card) => ({
+      id: `ability:${nehemiahName}:${entry.card.id}:bury:${card.id}`,
+      kind: "useAbility" as const,
+      label: `Nehemiah: move ${card.name} to the bottom of the library`,
+      source: entry.card.id,
+      params: { act: "bury", card: card.id },
+    }));
+    // A draw may also be redirected from a store when the library is empty.
+    if (seat.hand.length < handSizeOf(ctx.state, seat.id)) {
+      out.push({
+        id: `ability:${nehemiahName}:${entry.card.id}:bury:none`,
+        kind: "useAbility",
+        label: "Nehemiah: move no cards and draw up",
+        source: entry.card.id,
+        params: { act: "bury" },
+      });
+    }
+    return out;
+  },
+  useAbility(entry, owner, choice, ops) {
+    if (!owner.minion || choice.params["act"] !== "bury") throw new Error("Nehemiah: invalid ability");
+    const bearer = findMinion(ops.state, owner.minion);
+    if (!bearer) throw new Error("Nehemiah: no bearer");
+    const seat = bearer.controller;
+    entry.usedThisPhase = true;
+    const card = choice.params["card"];
+    if (!card) {
+      ops.drawUpToHandSize(seat);
+      return;
+    }
+    ops.buryInLibrary(seat, card);
+    if (getSeat(ops.state, seat).hand.length === 0) {
+      ops.drawUpToHandSize(seat);
+      return;
+    }
+    ops.raiseChoice({ seat, cardName: nehemiahName, cardId: entry.card.id, key: "burySecond" });
+  },
+  choiceOptions(frame, state) {
+    if (frame.key !== "burySecond") return [];
+    return [
+      { id: `choice:${nehemiahName}:${frame.cardId}:bury:done`, kind: "answerChoice" as const,
+        label: "Move no more cards and draw up", params: {} },
+      ...getSeat(state, frame.seat).hand.map((card) => ({
+        id: `choice:${nehemiahName}:${frame.cardId}:bury:${card.id}`,
+        kind: "answerChoice" as const,
+        label: `Move ${card.name} to the bottom, then draw up`,
+        params: { card: card.id },
+      })),
+    ];
+  },
+  applyChoice(frame, choice, ops) {
+    if (frame.key !== "burySecond") throw new Error("Nehemiah: invalid choice");
+    const card = choice.params["card"];
+    if (card) ops.buryInLibrary(frame.seat, card);
+    ops.drawUpToHandSize(frame.seat);
+  },
+};
+
 const saulotsGuidingWisdom: CardHandler = {
   ...compileSpec(specByName("Saulot's Guiding Wisdom")),
   abilityOptions(entry, owner, ctx) {
@@ -46377,6 +46447,7 @@ export function buildHandlerRegistry(): HandlerRegistry {
     saulotsHealingTouch,
     nuSelfUnlock,
     ibnSelfUnlock,
+    nehemiah,
     openWar,
     diaDeLosMuertos,
     ...JUSTICAR_HANDLERS,

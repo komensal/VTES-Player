@@ -305,6 +305,8 @@ export function narrate(ev: GameEvent, state: GameState): LogLine | null {
       return { text: `${ev.seat} draws ${cardName(state, ev.cardId)}.`, weight: "minor" };
     case "CardDiscarded":
       return { text: `${ev.seat} discards ${cardName(state, ev.cardId)}.`, weight: "minor" };
+    case "CardBuried":
+      return { text: `${ev.seat} moves a card to the bottom of their library.`, weight: "minor" };
     case "CryptCardDrawn":
       return { text: `${ev.seat} draws a vampire from their crypt.`, weight: "minor" };
     case "LibraryShuffled":

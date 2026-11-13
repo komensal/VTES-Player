@@ -24,3 +24,7 @@ Drukowany niemerged zakaz w 10 kryptach jest importowany i uwzględniony przy wy
 ## Nu i Ibn Khaldun — fazowe odblokowanie
 
 Zaimplementowano i przetestowano ich opcjonalne odblokowanie za blood w bieżących oknach fazowych, akcji i głosowania (szczegóły i ograniczenia w `batches.md`). Pozostała obsługa wszystkich okien, w tym wpływu innych ograniczeń oraz używania Celerity ze źródeł i przez handlery nieobjęte poprzednią poprawką.
+
+## Nehemiah — kontynuacja po przekierowaniu dobierania i prywatność
+
+Przesuwanie do dwóch kart i zwykłe dobieranie wdrożono celowo; szczegóły w `batches.md`. Wspólny mechanizm dobierania do hand size wymaga wznawialnej kontynuacji po wyborze przekierowania (m.in. Shilmulo Tarot), z testami wielu kart, pustej biblioteki, innych źródeł draw i save/load. Osobno należy sprawdzić prywatność identyfikatorów i kolejności kart w maskowanych strefach oraz surowych logów; maskowanie pojedynczych eventów i komend nie zamyka tego problemu. Nehemiah pozostaje `PARTIAL_FIX`.

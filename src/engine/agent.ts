@@ -357,6 +357,22 @@ export function redactFor(state: GameState, seat: SeatId): GameState {
   const known = new Set(state.knowledge?.[seat] ?? []);
   return {
     ...state,
+    // A card moved from a private hand to the face-down library is not
+    // revealed. Neither the event nor the selected card handle in the
+    // command log may identify it to another Methuselah. The live state
+    // retains the complete logs for replay; only this projection is masked.
+    eventLog: state.eventLog.map((ev) =>
+      ev.type === "CardBuried" && ev.seat !== seat
+        ? { ...ev, cardId: "", name: FACE_DOWN }
+        : ev,
+    ),
+    commandLog: state.commandLog.map((cmd) =>
+      cmd.seat !== seat &&
+      (/^ability:Nehemiah \(G4\):.*:bury:/.test(cmd.option) ||
+       /^choice:(?:Nehemiah \(G4\)|Heart of Nizchetus):.*:bury:/.test(cmd.option))
+        ? { ...cmd, option: "[hidden card selection]" }
+        : cmd,
+    ),
     seats: state.seats.map((seatState) => {
       const mine = seatState.id === seat;
       // Taken OUT of the spread rather than overwritten with undefined:

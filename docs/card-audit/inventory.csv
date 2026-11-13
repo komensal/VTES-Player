@@ -3406,7 +3406,7 @@
 "201041","Neel Ramanathan (G4)","crypt","true","REVIEWED_NO_ISSUE_FOUND",""
 "201042","Nefertiti (G2)","crypt","true","CODE_DISCREPANCY",""
 "201043","Neferu (G4)","crypt","true","CODE_DISCREPANCY","crypt_empty_spec_with_text_review"
-"201044","Nehemiah (G4)","crypt","true","CODE_DISCREPANCY","crypt_empty_spec_with_text_review"
+"201044","Nehemiah (G4)","crypt","true","PARTIAL_FIX","crypt_empty_spec_with_text_review"
 "201045","Nehsi (G2)","crypt","true","CODE_DISCREPANCY","crypt_empty_spec_with_text_review"
 "201046","Neighbor John (G4)","crypt","true","REVIEWED_NO_ISSUE_FOUND",""
 "201047","Nepata (G2)","crypt","true","REVIEWED_NO_ISSUE_FOUND",""
