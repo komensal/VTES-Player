@@ -111,6 +111,8 @@ export interface CryptImport {
   infernal: boolean;
   /** The crypt card itself prints Scarce. */
   scarce: boolean;
+  /** Printed restrictions on using cards requiring particular Disciplines. */
+  cannotUseDisciplines: string[];
   /** Standalone printed Flight trait, rather than an ability mentioning flight. */
   flight: boolean;
   /** The city a prince/baron/archbishop holds their title in — "Camarilla
@@ -136,6 +138,21 @@ export interface CryptImport {
 export function hasStandaloneCryptTrait(text: string, trait: "sterile" | "non-unique" | "flight" | "blood cursed" | "infernal" | "scarce"): boolean {
   const suffix = trait === "flight" ? "\\s*\\[flight\\]" : "";
   return new RegExp(`(?:^|[.:!?]\\s*)${trait}${suffix}\\s*(?:[.!?]|$)`, "i").test(text.trim());
+}
+
+/** Read only the card's own unmerged restriction, never a restriction on a
+ * different minion or on opponents. The current crypt uses this sentence for
+ * Celerity. Name prefixes cover e.g. "Nu cannot use ...", not other subjects. */
+export function printedDisciplineUseBars(text: string, name: string): string[] {
+  const unmerged = text.split(/\[MERGED\]/i, 1)[0]!;
+  const ownName = name.replace(/\s*\(G\d+.*\)$/, "").toLowerCase();
+  const matches = unmerged.matchAll(/(?:^|[.:!?]\s*)([^.:!?]+?)\s+cannot\s+use\s+cards\s+requiring\s+celerity\s*\[cel\]\s*(?:[.!?]|$)/gi);
+  for (const match of matches) {
+    const subject = match[1]!.trim().toLowerCase();
+    if (subject === "he" || subject === "she" || subject === ownName ||
+        ownName.startsWith(`${subject} `) || ownName.startsWith(`${subject},`)) return ["cel"];
+  }
+  return [];
 }
 
 /** Extract only a personal title printed for this crypt card, not a bonus,
@@ -240,6 +257,7 @@ export function importCryptCard(id: number): CryptImport {
     bloodCursed: hasStandaloneCryptTrait(card.cardText, "blood cursed"),
     infernal: hasStandaloneCryptTrait(card.cardText.split(/\[MERGED\]/i, 1)[0]!, "infernal"),
     scarce: hasStandaloneCryptTrait(card.cardText.split(/\[MERGED\]/i, 1)[0]!, "scarce"),
+    cannotUseDisciplines: printedDisciplineUseBars(card.cardText, card.name),
     flight: hasStandaloneCryptTrait(card.cardText, "flight"),
     image: card.image,
     cardText: card.cardText,

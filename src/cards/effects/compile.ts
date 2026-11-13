@@ -361,9 +361,20 @@ function canPlayMode(m: MinionState, mode: CardMode, spec: CardSpec): boolean {
   return disciplineOk(m, mode);
 }
 
+function disciplineUseAllowed(m: MinionState, mode: CardMode): boolean {
+  if (mode.discipline === null) return true;
+  const allowed = (d: string) => !(m.cannotUseDisciplines ?? []).includes(d);
+  if (typeof mode.discipline === "object" && !Array.isArray(mode.discipline)) {
+    return mode.discipline.all.every(allowed);
+  }
+  const alternatives = Array.isArray(mode.discipline) ? mode.discipline : [mode.discipline];
+  return alternatives.some(allowed);
+}
+
 function disciplineOk(m: MinionState, mode: CardMode): boolean {
   if (mode.discipline === null) return true;
   const hasAt = (d: string): boolean => {
+    if ((m.cannotUseDisciplines ?? []).includes(d)) return false;
     // Flight is an unleveled trait, represented in mode requirements by
     // the "flight" code; it can be printed or granted by a card in play.
     if (d === "flight") return hasFlight(m);
@@ -10700,7 +10711,7 @@ export function compileSpec(spec: CardSpec): CardHandler {
     if (!ignoreRequirements && !meetsRequirements(m, spec)) return [];
     if (spec.modes.length === 0) return ["basic"];
     return spec.modes
-      .filter((mode) => ignoreRequirements || canPlayMode(m, mode, spec))
+      .filter((mode) => ignoreRequirements ? disciplineUseAllowed(m, mode) : canPlayMode(m, mode, spec))
       .map((mode) => mode.level);
   };
   // The types a play-cost modifier can key on. Central for the same

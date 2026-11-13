@@ -16,3 +16,7 @@ Wpis audytu nie musi oznaczać jednego błędu: jedna karta może mieć wiele br
 Zmieniać status po sprawdzeniu konkretnej karty, nie hurtowo po wspólnym refaktorze. `FIXED_TARGETED` oznacza naprawę wskazanego problemu, nie dowód kompletności. Wpis pozostaje otwarty, jeśli inne opisane rozbieżności pozostały. Testy regresyjne powinny sprawdzać poprawne zachowanie oraz kontrole negatywne; wcześniejsze testy charakteryzujące błędy trzeba zastępować, a nie utrwalać wadliwe wyniki.
 
 Historia przeglądów w `batch-11-manual-*.md` oraz starszych paczkach opisuje stan z czasu audytu; bieżące statusy i dowody są w `manual-findings.json` i generowanym inwentarzu.
+
+## Zakaz Celerity True Brujah — częściowy zakres
+
+Drukowany niemerged zakaz w 10 kryptach jest importowany i uwzględniony przy wyborze trybów kart kompilowanych ze specyfikacji; szczegóły i ograniczenia w `batches.md`. Priorytetem dalszej pracy pozostaje egzekwowanie **używania** już znajdujących się w grze kart, bespoke handlerów i niestandardowych źródeł zagrania, z rzeczywistym wyborem dyscyplin w kartach wielodyscyplinowych. Nie zastępować tego globalnym filtrem wszystkich nadrukowanych dyscyplin: legalne są efekty przez inne dyscypliny.

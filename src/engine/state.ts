@@ -370,6 +370,8 @@ export interface MinionState {
   infernal?: boolean;
   /** Scarce vampires incur a clan-based pool penalty when influenced out. */
   scarce?: boolean;
+  /** Printed restriction on using cards requiring these Discipline codes. */
+  cannotUseDisciplines?: string[];
   /** The Path of Enlightenment this vampire follows ("Cathari", "Power and
    *  the Inner Voice", "Death and the Soul").
    *
