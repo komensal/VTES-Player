@@ -579,7 +579,7 @@
     "id": 100097,
     "name": "The Art of Memory",
     "status": "CONFIRMED_BUG",
-    "evidence": "Modifier daje stealth zamiast usunięcia z gry i warunkowego odzyskania karty po udanej akcji. Tekst: src/cards/registry.json, ID 100097; implementacja: src/cards/effects/cards.ts."
+    "evidence": "Modifier daje stealth zamiast usunięcia z gry i warunkowego odzyskania karty po udanej akcji. Tekst: src/cards/registry.json, ID 100097; implementacja: src/cards/effects/cards.ts. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100098,
@@ -999,13 +999,13 @@
     "id": 100167,
     "name": "Black Hand Emissary",
     "status": "CONFIRMED_BUG",
-    "evidence": "Action zawiera jedynie modifyStealth i actionStealth; brak celu, unique, skalowanych głosów Black Hand i przeniesienia przez Seraph. Źródła: src/cards/registry.json ID 100167; src/cards/effects/cards.ts i compile.ts."
+    "evidence": "Action zawiera jedynie modifyStealth i actionStealth; brak celu, unique, skalowanych głosów Black Hand i przeniesienia przez Seraph. Źródła: src/cards/registry.json ID 100167; src/cards/effects/cards.ts i compile.ts. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100168,
     "name": "Black Hand Ritual",
     "status": "CONFIRMED_BUG",
-    "evidence": "Action zawiera tylko stealth; brak wymogu Black Hand i wyboru unlock albo burn Gehenna z wymianą karty. Źródła: src/cards/registry.json ID 100168; src/cards/effects/cards.ts i compile.ts."
+    "evidence": "Action zawiera tylko stealth; brak wymogu Black Hand i wyboru unlock albo burn Gehenna z wymianą karty. Źródła: src/cards/registry.json ID 100168; src/cards/effects/cards.ts i compile.ts. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100169,
@@ -1347,7 +1347,7 @@
     "id": 100225,
     "name": "Bloodwork",
     "status": "CONFIRMED_BUG",
-    "evidence": "Action ma ogólne bleed/stealth bez wymogu Black Hand, limitu 2 bled i warunku Sabbat u celu. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "evidence": "Action ma ogólne bleed/stealth bez wymogu Black Hand, limitu 2 bled i warunku Sabbat u celu. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100226,
@@ -2073,7 +2073,7 @@
     "id": 100346,
     "name": "Chronicle of the Lost Tribe",
     "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth; brak wymogu Black Hand, unique, hand size i możliwości kradzieży. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "evidence": "Akcja ma tylko stealth; brak wymogu Black Hand, unique, hand size i możliwości kradzieży. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100347,
@@ -2097,7 +2097,7 @@
     "id": 100350,
     "name": "Circumspect Revelation",
     "status": "CONFIRMED_BUG",
-    "evidence": "Modifier daje stealth zamiast wymogu Black Hand i anulowania próby bloku Sabbat. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "evidence": "Modifier daje stealth zamiast wymogu Black Hand i anulowania próby bloku Sabbat. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100351,
@@ -2595,7 +2595,7 @@
     "id": 100433,
     "name": "Council of Seraphim",
     "status": "CONFIRMED_BUG",
-    "evidence": "Brak wymogu Seraph oraz specjalnego anulowania bloku Sabbat albo -1 intercept innego miniona; zamiast tego stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "evidence": "Brak wymogu Seraph oraz specjalnego anulowania bloku Sabbat albo -1 intercept innego miniona; zamiast tego stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100434,
@@ -3081,7 +3081,7 @@
     "id": 100514,
     "name": "Deep Cover Agent",
     "status": "CONFIRMED_BUG",
-    "evidence": "Brak Seraph, unique, dołączenia do młodszego vampire, oglądania ręki i przyznanej akcji burn. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "evidence": "Brak Seraph, unique, dołączenia do młodszego vampire, oglądania ręki i przyznanej akcji burn. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100515,
@@ -3537,7 +3537,7 @@
     "id": 100590,
     "name": "Drop Point Network",
     "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool 1 zamiast usunięcia siedmiu kart z ash heap i wyszukania minion card; brak wymogu Black Hand. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "evidence": "Master daje gainPool 1 zamiast usunięcia siedmiu kart z ash heap i wyszukania minion card; brak wymogu Black Hand. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100591,
@@ -3807,7 +3807,7 @@
     "id": 100635,
     "name": "Emergency Powers",
     "status": "CONFIRMED_BUG",
-    "evidence": "Poza stealth brak unikalnego permanenta z głosami za Gehenna i warunku spalenia przy ich braku. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "evidence": "Poza stealth brak unikalnego permanenta z głosami za Gehenna i warunku spalenia przy ich braku. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100636,
@@ -4539,7 +4539,7 @@
     "id": 100757,
     "name": "Follow the Blood",
     "status": "CONFIRMED_BUG",
-    "evidence": "Reaction daje intercept i press zamiast wejścia do walki po udanym hunt, lock Black Hand i opcjonalnego maneuver lub press. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "evidence": "Reaction daje intercept i press zamiast wejścia do walki po udanym hunt, lock Black Hand i opcjonalnego maneuver lub press. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100758,
@@ -5187,7 +5187,7 @@
     "id": 100865,
     "name": "Guarded Rubrics",
     "status": "CONFIRMED_BUG",
-    "evidence": "Equipment nie wymaga Black Hand ani nie ma unique, zdolności bleed za blood i podwyższonego kosztu Gehenna; ma tylko modifyBleed. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "evidence": "Equipment nie wymaga Black Hand ani nie ma unique, zdolności bleed za blood i podwyższonego kosztu Gehenna; ma tylko modifyBleed. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100866,
@@ -6987,7 +6987,7 @@
     "id": 101165,
     "name": "Marijava Thuggee",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma podstawowe statystyki, bez wymogu Black Hand, gry obf jako vampire, działania damage i lock w unlock. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Ally ma podstawowe statystyki, bez wymogu Black Hand, gry obf jako vampire, działania damage i lock w unlock. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 101166,
@@ -7305,7 +7305,7 @@
     "id": 101218,
     "name": "Ministry",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Reaction ma intercept +1, a nie +2 z dodatkowym +1 przeciw Sabbat; nie ma wymogu Black Hand, opóźnionego replacement ani lock po nieudanym bloku. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Reaction ma intercept +1, a nie +2 z dodatkowym +1 przeciw Sabbat; nie ma wymogu Black Hand, opóźnionego replacement ani lock po nieudanym bloku. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 101219,
@@ -7545,7 +7545,7 @@
     "id": 101258,
     "name": "Mustajib",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth; brak wymogu Black Hand, dołączenia do młodszego kwalifikującego się Sabbat, unlock i nadania Black Hand. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Action ma tylko stealth; brak wymogu Black Hand, dołączenia do młodszego kwalifikującego się Sabbat, unlock i nadania Black Hand. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 101259,
@@ -8673,7 +8673,7 @@
     "id": 101446,
     "name": "Praetorian Backer",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast wymogu Seraph, unique tytułu cardinal na wybranym Sabbat i warunków spalenia. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Action ma tylko stealth zamiast wymogu Seraph, unique tytułu cardinal na wybranym Sabbat i warunków spalenia. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 101447,
@@ -9417,7 +9417,7 @@
     "id": 101570,
     "name": "Recruitment Exercise",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast dobierania i ujawnienia karty crypt oraz blood dla Black Hand; brak wymogu Black Hand. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Action ma tylko stealth zamiast dobierania i ujawnienia karty crypt oraz blood dla Black Hand; brak wymogu Black Hand. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 101571,
@@ -9723,7 +9723,7 @@
     "id": 101621,
     "name": "Reunion Kamut",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast dodania 2 blood do Black Hand w uncontrolled; brak wymogu Black Hand. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Action ma tylko stealth zamiast dodania 2 blood do Black Hand w uncontrolled; brak wymogu Black Hand. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 101622,
@@ -10335,13 +10335,13 @@
     "id": 101723,
     "name": "Seraph",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Puste political effects bez wymogu Black Hand, wyboru kandydata, nadania Seraph/blood i ograniczenia głosów; crypt-wave-5.test.ts zawiera niepowiązaną nazwę Seraphina. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Puste political effects bez wymogu Black Hand, wyboru kandydata, nadania Seraph/blood i ograniczenia głosów; crypt-wave-5.test.ts zawiera niepowiązaną nazwę Seraphina. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 101724,
     "name": "Seraph's Second",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Modifier daje stealth zamiast unlock non-Seraph Black Hand po akcji przez Seraph i limitu na turę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Modifier daje stealth zamiast unlock non-Seraph Black Hand po akcji przez Seraph i limitu na turę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 101725,
@@ -11673,7 +11673,7 @@
     "id": 101946,
     "name": "Tattoo Signal",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast wymogu Seraph, attach z lock za unlock Black Hand i limitu na miniona. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Action ma tylko stealth zamiast wymogu Seraph, attach z lock za unlock Black Hand i limitu na miniona. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 101947,
@@ -12255,7 +12255,7 @@
     "id": 102043,
     "name": "Truth in Ink",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Reaction daje intercept zamiast redukcji bleed o 2 od vampire non-Black-Hand; brak wymogu Black Hand. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Reaction daje intercept zamiast redukcji bleed o 2 od vampire non-Black-Hand; brak wymogu Black Hand. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 102044,
@@ -12920,26 +12920,26 @@
   {
     "id": 102154,
     "name": "Watch Commander",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Basic intercept nie deklaruje wymogu Black Hand ani ograniczenia do block directed action. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Watch Commander wymaga Black Hand vampire, jest oferowany wyłącznie przy próbie bloku akcji directed i potrzebnym intercept oraz daje +1 intercept; testy black-hand-traits.test.ts obejmują bleed, rush w miniona, undirected, brak cechy i brak potrzeby. Zmiany cech i inne interakcje nie są w całości zaimplementowane."
   },
   {
     "id": 102155,
     "name": "Watchtower: Chosen are Called",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Master daje gainPool zamiast watchtower, wymogu ready Seraph, master action draw 3 i burn przy innym watchtower. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Master daje gainPool zamiast watchtower, wymogu ready Seraph, master action draw 3 i burn przy innym watchtower. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 102156,
     "name": "Watchtower: Four Ride Forth",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Master daje gainPool zamiast watchtower, wymogu Seraph, lock w discard za unlock Black Hand i burn przy innym watchtower. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Master daje gainPool zamiast watchtower, wymogu Seraph, lock w discard za unlock Black Hand i burn przy innym watchtower. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 102157,
     "name": "Watchtower: Greatest Fall",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Puste political effects bez wymogu Seraph, dodatkowych votes, watchtower i lock za blood Sabbat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Puste political effects bez wymogu Seraph, dodatkowych votes, watchtower i lock za blood Sabbat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 102158,
@@ -14409,7 +14409,7 @@
     "id": 200038,
     "name": "Al-Muntathir, God's Witness (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged zakaz używania Celerity importowany; celowane ścieżki kompilatora, warianty i alternatywy sprawdzone w crypt-discipline-bars.test.ts, lecz niezweryfikowane ścieżki i inne zdolności pozostają otwarte. Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusty flatCrypt bez warunku burn przy czterech True Brujah, zakazu kart Celerity oraz oznaczeń Black Hand i Scarce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged zakaz używania Celerity importowany; celowane ścieżki kompilatora, warianty i alternatywy sprawdzone w crypt-discipline-bars.test.ts, lecz niezweryfikowane ścieżki i inne zdolności pozostają otwarte. Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusty flatCrypt bez warunku burn przy czterech True Brujah, zakazu kart Celerity oraz oznaczeń Black Hand i Scarce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200039,
@@ -14925,7 +14925,7 @@
     "id": 200124,
     "name": "Appius Claudius Corvus (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje +1 stealth, ale importer i self-entry nie przenoszą cech Black Hand ani Seraph. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "flatCrypt daje +1 stealth, ale importer i self-entry nie przenoszą cech Black Hand ani Seraph. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200125,
@@ -14954,8 +14954,8 @@
   {
     "id": 200129,
     "name": "Aredhel (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, ale Black Hand nie jest przenoszone do stanu ani self-entry. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 200130,
@@ -15057,7 +15057,7 @@
     "id": 200146,
     "name": "Ash Harrison (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty flatCrypt bez raz na rundę 1R aggravated strike przy long range; Black Hand nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Pusty flatCrypt bez raz na rundę 1R aggravated strike przy long range; Black Hand nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200147,
@@ -15170,8 +15170,8 @@
   {
     "id": 200165,
     "name": "Banjoko (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty flatCrypt i importer nie przenoszą cech Black Hand ani Seraph; Sabbat importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand i Seraph są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 200166,
@@ -15405,7 +15405,7 @@
     "id": 200204,
     "name": "Blackhorse Tanner (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez opcji raz na turę przełożenia właśnie dobranej karty na spód library i dobrania nowej; Black Hand nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Pusty cryptPerm bez opcji raz na turę przełożenia właśnie dobranej karty na spód library i dobrania nowej; Black Hand nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200205,
@@ -15657,7 +15657,7 @@
     "id": 200246,
     "name": "Carmen (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje stały stealth samej Carmen zamiast bonusu do equip dla własnych non-Camarilla; Black Hand nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "flatCrypt daje stały stealth samej Carmen zamiast bonusu do equip dla własnych non-Camarilla; Black Hand nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200247,
@@ -15842,8 +15842,8 @@
   {
     "id": 200277,
     "name": "Claudia (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 200278,
@@ -15902,8 +15902,8 @@
   {
     "id": 200287,
     "name": "The Colonel (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 200288,
@@ -16131,7 +16131,7 @@
     "id": 200325,
     "name": "Darvag, The Butcher of Rus (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez directed action burn location; Black Hand nie jest przenoszone do stanu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez directed action burn location; Black Hand nie jest przenoszone do stanu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200326,
@@ -16268,8 +16268,8 @@
   {
     "id": 200348,
     "name": "Djuhah, The Bronze Bow (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand i Seraph nie są przenoszone do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand i Seraph są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 200349,
@@ -16335,7 +16335,7 @@
     "id": 200359,
     "name": "Dominique Santo Paulo (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +1 strength zamiast tylko w combat z Nosferatu lub Nosferatu antitribu; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Spec daje stały +1 strength zamiast tylko w combat z Nosferatu lub Nosferatu antitribu; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200360,
@@ -16407,7 +16407,7 @@
     "id": 200371,
     "name": "Dovey Ebfwe (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 stealth przy employ retainer; Black Hand i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 stealth przy employ retainer; Black Hand i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200372,
@@ -16467,7 +16467,7 @@
     "id": 200381,
     "name": "Dr. Morrow, The Skindoctor (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez directed action graft counter na ally i -1 stealth dla ally z counterem; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez directed action graft counter na ally i -1 stealth dla ally z counterem; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200382,
@@ -16641,7 +16641,7 @@
     "id": 200410,
     "name": "Elimelech the Twice-Damned (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 bleed i strength, ale nie daje first strike; Black Hand i Seraph nie są przenoszone do stanu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Spec daje +1 bleed i strength, ale nie daje first strike; Black Hand i Seraph nie są przenoszone do stanu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200411,
@@ -16790,8 +16790,8 @@
   {
     "id": 200435,
     "name": "Ermenegildo, The Rake (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 200436,
@@ -16874,8 +16874,8 @@
   {
     "id": 200449,
     "name": "Ezekiel, Lord of Montreal (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 200450,
@@ -17108,8 +17108,8 @@
   {
     "id": 200488,
     "name": "Gabriel de Cambrai (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 200489,
@@ -17156,8 +17156,8 @@
   {
     "id": 200496,
     "name": "Gatjil Munyarryun (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 200497,
@@ -17223,7 +17223,7 @@
     "id": 200507,
     "name": "Gerald FitzGerald (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez płatnego uczynienia młodszego non-titled Sabbat Black Hand w unlock; Black Hand i Seraph nie są importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez płatnego uczynienia młodszego non-titled Sabbat Black Hand w unlock; Black Hand i Seraph nie są importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200508,
@@ -17541,7 +17541,7 @@
     "id": 200560,
     "name": "Hagar Stone (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 hand size przy ready i opóźnionego replacement przy unlocked; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez +1 hand size przy ready i opóźnionego replacement przy unlocked; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200561,
@@ -17715,7 +17715,7 @@
     "id": 200589,
     "name": "Henri Lavenant (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Warunkowy +1 hand size podczas combat naprawiono i sprawdzono testem crypt-hand-size-audit.test.ts od importu do końca ramki combat. Wymieniony w tekście Black Hand nadal nie jest importowany; pozostałych interakcji nie zweryfikowano."
+    "evidence": "Warunkowy +1 hand size podczas combat naprawiono i sprawdzono testem crypt-hand-size-audit.test.ts od importu do końca ramki combat. Wymieniony w tekście Black Hand nadal nie jest importowany; pozostałych interakcji nie zweryfikowano. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200590,
@@ -17978,8 +17978,8 @@
   {
     "id": 200633,
     "name": "Ingram Frizer (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 200634,
@@ -18081,7 +18081,7 @@
     "id": 200650,
     "name": "Izhim abd Azrael (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zniżki blood na Quietus i blood/pool na weapon; Black Hand i Seraph nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez zniżki blood na Quietus i blood/pool na weapon; Black Hand i Seraph nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200651,
@@ -18183,7 +18183,7 @@
     "id": 200667,
     "name": "Jalan-Aajav (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez płatnego potraktowania aggravated damage jako normal raz na rundę i optional press; Black Hand i Seraph nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez płatnego potraktowania aggravated damage jako normal raz na rundę i optional press; Black Hand i Seraph nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200668,
@@ -18441,7 +18441,7 @@
     "id": 200710,
     "name": "Joe \"Boot\" Hill (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength, directed rush +1 stealth na werewolf i optional maneuver w tym combat; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez +1 strength, directed rush +1 stealth na werewolf i optional maneuver w tym combat; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200711,
@@ -18705,7 +18705,7 @@
     "id": 200754,
     "name": "Karif al Numair (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed, +1 strength i lock/unlock innego ready Black Hand w swojej turze; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez +1 bleed, +1 strength i lock/unlock innego ready Black Hand w swojej turze; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200755,
@@ -18765,7 +18765,7 @@
     "id": 200764,
     "name": "Katherine Stoddard (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec z requiresReady nie oferuje discard karty Auspex raz w swojej turze i replacement; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec z requiresReady nie oferuje discard karty Auspex raz w swojej turze i replacement; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200765,
@@ -18777,7 +18777,7 @@
     "id": 200766,
     "name": "Kazimir Savostin (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez optional press w combat po block; Black Hand i Seraph nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez optional press w combat po block; Black Hand i Seraph nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200767,
@@ -18831,7 +18831,7 @@
     "id": 200775,
     "name": "Kestrelle Hayes (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez warunkowego stealth przy directed action na Methuselah bez ready Sabbat; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez warunkowego stealth przy directed action na Methuselah bez ready Sabbat; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200776,
@@ -19293,7 +19293,7 @@
     "id": 200852,
     "name": "Lord Aaron Wesley Wilkshire (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez dodatkowego kosztu blood/pool dla frenzy na Aaronie; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez dodatkowego kosztu blood/pool dla frenzy na Aaronie; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200853,
@@ -19371,7 +19371,7 @@
     "id": 200865,
     "name": "Lubomira Hradok (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez pominięcia normalnego unlock po successful bleed kontrolera ready titled vampire; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez pominięcia normalnego unlock po successful bleed kontrolera ready titled vampire; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200866,
@@ -19694,8 +19694,8 @@
   {
     "id": 200919,
     "name": "Marge Khan (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 200920,
@@ -19736,8 +19736,8 @@
   {
     "id": 200926,
     "name": "Mariano Pomposo (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 200927,
@@ -19833,7 +19833,7 @@
     "id": 200942,
     "name": "Marthe Dizier (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i blood za odzyskanie karty zagranej w combat po jego końcu; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez +1 bleed i blood za odzyskanie karty zagranej w combat po jego końcu; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200943,
@@ -20247,7 +20247,7 @@
     "id": 201011,
     "name": "Morlock (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 bleed, ale brak ranged strike burn retainer; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Spec daje +1 bleed, ale brak ranged strike burn retainer; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201012,
@@ -20258,8 +20258,8 @@
   {
     "id": 201013,
     "name": "Mosfair (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 201014,
@@ -20372,8 +20372,8 @@
   {
     "id": 201032,
     "name": "Nails (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 201033,
@@ -20523,7 +20523,7 @@
     "id": 201057,
     "name": "Nicomedes (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez blood w swojej turze za shuffle ręki w library i draw up; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez blood w swojej turze za shuffle ręki w library i draw up; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201058,
@@ -20553,7 +20553,7 @@
     "id": 201062,
     "name": "Nizzam al-Latif (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez aggravated hand strikes; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez aggravated hand strikes; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201063,
@@ -20577,7 +20577,7 @@
     "id": 201066,
     "name": "Nostoket (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez directed action 2 damage ready minionowi predatora/prey; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez directed action 2 damage ready minionowi predatora/prey; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201067,
@@ -20679,7 +20679,7 @@
     "id": 201083,
     "name": "Ondine \"Boudicca\" Sinclair (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength i stealth przy bleed z Edge; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez +1 strength i stealth przy bleed z Edge; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201084,
@@ -20919,7 +20919,7 @@
     "id": 201123,
     "name": "Phillipe Rigaud (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zakazu block undirected i obowiązku diablerie starszego vampire w torpor gdy możliwe, z wyjątkiem wymuszonego hunt; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez zakazu block undirected i obowiązku diablerie starszego vampire w torpor gdy możliwe, z wyjątkiem wymuszonego hunt; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201124,
@@ -20936,8 +20936,8 @@
   {
     "id": 201126,
     "name": "Piotr Andreikov (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 201127,
@@ -21176,8 +21176,8 @@
   {
     "id": 201166,
     "name": "Rashid Stockton (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 201167,
@@ -21290,8 +21290,8 @@
   {
     "id": 201185,
     "name": "Reza Fatir, The Dark Angel (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 201186,
@@ -21315,7 +21315,7 @@
     "id": 201189,
     "name": "Rico Loco (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez przesunięcia Bomb na Rico albo damage w master phase oraz burn Bomb i damage innemu własnemu ready minionowi w unlock; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez przesunięcia Bomb na Rico albo damage w master phase oraz burn Bomb i damage innemu własnemu ready minionowi w unlock; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201190,
@@ -21368,8 +21368,8 @@
   {
     "id": 201198,
     "name": "Roger Farnsworth (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 201199,
@@ -21663,7 +21663,7 @@
     "id": 201247,
     "name": "Saul Meira (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez blood za unlock innego ready Black Hand vampire w discard phase; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez blood za unlock innego ready Black Hand vampire w discard phase; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201248,
@@ -21747,7 +21747,7 @@
     "id": 201261,
     "name": "Selena (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez aggravated damage zadawanego Selenie przez werewolf; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez aggravated damage zadawanego Selenie przez werewolf; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201262,
@@ -21759,7 +21759,7 @@
     "id": 201263,
     "name": "Sennadurek (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez unlock i podglądu ręki Methuselah tracącego Edge poza turą kontrolera; Black Hand i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez unlock i podglądu ręki Methuselah tracącego Edge poza turą kontrolera; Black Hand i Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201264,
@@ -21807,7 +21807,7 @@
     "id": 201271,
     "name": "Shaggydog (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez optional press w pierwszej rundzie combat; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez optional press w pierwszej rundzie combat; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201272,
@@ -21956,8 +21956,8 @@
   {
     "id": 201296,
     "name": "Skryta Zyleta (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu ani self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 201297,
@@ -22005,7 +22005,7 @@
     "id": 201304,
     "name": "Soldat (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez burn Edge za optional maneuver dowolnemu Black Hand vampire; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez burn Edge za optional maneuver dowolnemu Black Hand vampire; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201305,
@@ -22239,7 +22239,7 @@
     "id": 201343,
     "name": "Tarbaby Jack (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez dodatkowego transfer na początku influence przy ready Tarbaby; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez dodatkowego transfer na początku influence przy ready Tarbaby; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201344,
@@ -22251,7 +22251,7 @@
     "id": 201345,
     "name": "Tariq, The Silent (G2 ADV)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -4 capacity przy controlled poza merged, ranged strike steal blood/life i merged Independent; Black Hand i Red List nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez -4 capacity przy controlled poza merged, ranged strike steal blood/life i merged Independent; Black Hand i Red List nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201346,
@@ -22305,7 +22305,7 @@
     "id": 201354,
     "name": "Teresita, The Godmother (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały intercept zamiast tylko przeciw Camarilla vampires; Black Hand i Seraph nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Spec daje stały intercept zamiast tylko przeciw Camarilla vampires; Black Hand i Seraph nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201355,
@@ -22946,8 +22946,8 @@
   {
     "id": 201461,
     "name": "Wah Chun-Yuen (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 201462,
@@ -22983,7 +22983,7 @@
     "id": 201467,
     "name": "White Lily (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez opcji equip weapon z ręki przed range raz na combat; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez opcji equip weapon z ręki przed range raz na combat; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201468,
@@ -23078,8 +23078,8 @@
   {
     "id": 201483,
     "name": "Yasmin the Black (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Sabbat importowany, lecz Black Hand nie jest przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Nadrukowane Black Hand są importowane do każdej strefy krypt i używane przez wymagania wybranych kart; testy black-hand-traits.test.ts obejmują pełną listę nadruków, negatywne przypadki i działanie wymagań. To naprawa celowana — nie zaimplementowano wszystkich źródeł zmiany cech ani wszystkich kart z nimi związanych."
   },
   {
     "id": 201484,
@@ -23091,13 +23091,13 @@
     "id": 201485,
     "name": "Yazid Tamari (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 bleed, ale Black Hand i Seraph nie są przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Spec daje +1 bleed, ale Black Hand i Seraph nie są przenoszone z tekstu do stanu/self-entry. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201486,
     "name": "Yazid Tamari (G3 ADV)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały stealth zamiast tylko dla directed actions; brak merged Anarch, Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Spec daje stały stealth zamiast tylko dla directed actions; brak merged Anarch, Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201487,
@@ -23241,7 +23241,7 @@
     "id": 201510,
     "name": "Zubeida (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi bez ready vampire capacity powyżej 6; Black Hand, Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi bez ready vampire capacity powyżej 6; Black Hand, Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201511,
@@ -23913,7 +23913,7 @@
     "id": 201622,
     "name": "Len Konopka (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez dodatkowego transfer na początku influence przy ready; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Pusta spec bez dodatkowego transfer na początku influence przy ready; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201623,

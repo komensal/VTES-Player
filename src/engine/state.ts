@@ -368,6 +368,9 @@ export interface MinionState {
   bloodCursed?: boolean;
   /** Infernal minions do not unlock as normal; their controller may pay pool. */
   infernal?: boolean;
+  /** Black Hand and Seraph are independent, non-title traits. */
+  blackHand?: boolean;
+  seraph?: boolean;
   /** Scarce vampires incur a clan-based pool penalty when influenced out. */
   scarce?: boolean;
   /** Printed restriction on using cards requiring these Discipline codes. */

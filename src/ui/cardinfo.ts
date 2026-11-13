@@ -109,6 +109,9 @@ export interface CryptImport {
   bloodCursed: boolean;
   /** The crypt card itself prints Infernal. */
   infernal: boolean;
+  /** Printed Black Hand and Seraph are independent traits, not sects or titles. */
+  blackHand: boolean;
+  seraph: boolean;
   /** The crypt card itself prints Scarce. */
   scarce: boolean;
   /** Printed restrictions on using cards requiring particular Disciplines. */
@@ -138,6 +141,16 @@ export interface CryptImport {
 export function hasStandaloneCryptTrait(text: string, trait: "sterile" | "non-unique" | "flight" | "blood cursed" | "infernal" | "scarce"): boolean {
   const suffix = trait === "flight" ? "\\s*\\[flight\\]" : "";
   return new RegExp(`(?:^|[.:!?]\\s*)${trait}${suffix}\\s*(?:[.!?]|$)`, "i").test(text.trim());
+}
+
+/** Parse self-describing trait clauses, never mentions in another ability.
+ * Older cards can write the two traits together as "Black Hand Seraph". */
+export function printedBlackHandTraits(text: string): { blackHand: boolean; seraph: boolean } {
+  const unmerged = text.split(/\[MERGED\]/i, 1)[0]!;
+  const clauses = unmerged.replace(/^Advanced,\s*/i, "").split(/[.:!?]/).map((s) => s.trim());
+  const blackHand = clauses.some((s) => /^Black Hand(?:\s+Seraph)?$/i.test(s));
+  const seraph = clauses.some((s) => /^(?:Black Hand\s+)?Seraph$/i.test(s));
+  return { blackHand, seraph };
 }
 
 /** Read only the card's own unmerged restriction, never a restriction on a
@@ -256,6 +269,7 @@ export function importCryptCard(id: number): CryptImport {
     sterile: hasStandaloneCryptTrait(card.cardText, "sterile"),
     bloodCursed: hasStandaloneCryptTrait(card.cardText, "blood cursed"),
     infernal: hasStandaloneCryptTrait(card.cardText.split(/\[MERGED\]/i, 1)[0]!, "infernal"),
+    ...printedBlackHandTraits(card.cardText),
     scarce: hasStandaloneCryptTrait(card.cardText.split(/\[MERGED\]/i, 1)[0]!, "scarce"),
     cannotUseDisciplines: printedDisciplineUseBars(card.cardText, card.name),
     flight: hasStandaloneCryptTrait(card.cardText, "flight"),

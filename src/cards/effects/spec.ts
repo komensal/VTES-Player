@@ -4607,6 +4607,9 @@ export interface CardSpec {
    *  V5 card grants, so this correctly passes every vampire today.
    *  docs/token-vampire-design.md §4 */
   requiresNonSterile?: boolean;
+  /** Printed Black Hand / Seraph requirements apply to the acting minion. */
+  requiresBlackHand?: boolean;
+  requiresSeraph?: boolean;
   /** "Requires an Anarch" / "…a Sabbat vampire" — the playing vampire's
    *  sect must be one of these. */
   requiresSect?: Sect[];
@@ -4675,6 +4678,9 @@ export interface CardSpec {
   requiresControlledSect?: Sect[];
   /** "Requires a ready [clan]" on a Master card — the clan sibling. */
   requiresControlledClan?: string[];
+  /** A master card requires a ready controlled vampire with this trait. */
+  requiresControlledBlackHand?: boolean;
+  requiresControlledSeraph?: boolean;
   /** Minimum capacity of the same qualifying ready vampire, when printed. */
   requiresControlledCapacity?: number;
   usable: UsabilityRule[];

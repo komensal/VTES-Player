@@ -21577,6 +21577,8 @@ export const cardSpecs: CardSpec[] = [
     // Circumspect Revelation [100350] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100350,
     name: "Circumspect Revelation",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "actionModifier",
     bloodCost: 0,
     usable: [],
@@ -21772,6 +21774,8 @@ export const cardSpecs: CardSpec[] = [
     // Council of Seraphim [100433] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100433,
     name: "Council of Seraphim",
+    requiresSeraph: true,
+    requiresVampire: true,
     cardType: "actionModifier",
     bloodCost: 0,
     usable: [],
@@ -22535,6 +22539,8 @@ export const cardSpecs: CardSpec[] = [
     // Follow the Blood [100757] — fala 50 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100757,
     name: "Follow the Blood",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
@@ -23542,6 +23548,8 @@ export const cardSpecs: CardSpec[] = [
     // Marijava Thuggee [101165] — fala 50 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101165,
     name: "Marijava Thuggee",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "ally",
     ally: { life: 3, strength: 1, bleed: 1 },
     bloodCost: 0,
@@ -23728,6 +23736,8 @@ export const cardSpecs: CardSpec[] = [
     // Ministry [101218] — fala 50 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101218,
     name: "Ministry",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
@@ -24784,6 +24794,8 @@ export const cardSpecs: CardSpec[] = [
     // Seraph's Second [101724] — fala 51 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101724,
     name: "Seraph's Second",
+    requiresSeraph: true,
+    requiresVampire: true,
     cardType: "actionModifier",
     bloodCost: 0,
     usable: [],
@@ -25618,6 +25630,8 @@ export const cardSpecs: CardSpec[] = [
     // Truth in Ink [102043] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
     krcgId: 102043,
     name: "Truth in Ink",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
@@ -25847,9 +25861,11 @@ export const cardSpecs: CardSpec[] = [
     // Watch Commander [102154] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
     krcgId: 102154,
     name: "Watch Commander",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "reaction",
     bloodCost: 0,
-    usable: [],
+    usable: ["ifActionDirected"],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
     ],
@@ -26413,6 +26429,8 @@ export const cardSpecs: CardSpec[] = [
     // Black Hand Emissary [100167] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100167,
     name: "Black Hand Emissary",
+    requiresSeraph: true,
+    requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
@@ -26703,6 +26721,8 @@ export const cardSpecs: CardSpec[] = [
     // Bloodwork [100225] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100225,
     name: "Bloodwork",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
     usable: [],
@@ -26998,6 +27018,8 @@ export const cardSpecs: CardSpec[] = [
     // Chronicle of the Lost Tribe [100346] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100346,
     name: "Chronicle of the Lost Tribe",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
     usable: [],
@@ -27460,6 +27482,8 @@ export const cardSpecs: CardSpec[] = [
     // Deep Cover Agent [100514] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100514,
     name: "Deep Cover Agent",
+    requiresSeraph: true,
+    requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
     usable: [],
@@ -29532,6 +29556,8 @@ export const cardSpecs: CardSpec[] = [
     // Mustajib [101258] — fala 51 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101258,
     name: "Mustajib",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
     usable: [],
@@ -30244,6 +30270,8 @@ export const cardSpecs: CardSpec[] = [
     // Praetorian Backer [101446] — fala 51 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101446,
     name: "Praetorian Backer",
+    requiresSeraph: true,
+    requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
@@ -30806,6 +30834,8 @@ export const cardSpecs: CardSpec[] = [
     // Reunion Kamut [101621] — fala 51 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101621,
     name: "Reunion Kamut",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
     usable: [],
@@ -31076,6 +31106,8 @@ export const cardSpecs: CardSpec[] = [
     // Seraph [101723] — fala 51 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101723,
     name: "Seraph",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
@@ -31735,6 +31767,8 @@ export const cardSpecs: CardSpec[] = [
     // Tattoo Signal [101946] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
     krcgId: 101946,
     name: "Tattoo Signal",
+    requiresSeraph: true,
+    requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
     usable: [],
@@ -32263,6 +32297,7 @@ export const cardSpecs: CardSpec[] = [
     // Watchtower: Chosen are Called [102155] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
     krcgId: 102155,
     name: "Watchtower: Chosen are Called",
+    requiresControlledSeraph: true,
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
@@ -32275,6 +32310,7 @@ export const cardSpecs: CardSpec[] = [
     // Watchtower: Four Ride Forth [102156] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
     krcgId: 102156,
     name: "Watchtower: Four Ride Forth",
+    requiresControlledSeraph: true,
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
@@ -32287,6 +32323,8 @@ export const cardSpecs: CardSpec[] = [
     // Watchtower: Greatest Fall [102157] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
     krcgId: 102157,
     name: "Watchtower: Greatest Fall",
+    requiresSeraph: true,
+    requiresVampire: true,
     cardType: "politicalAction",
     bloodCost: 0,
     poolCost: 1,
@@ -32676,6 +32714,8 @@ export const cardSpecs: CardSpec[] = [
     // The Art of Memory [100097] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100097,
     name: "The Art of Memory",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "actionModifier",
     bloodCost: 0,
     usable: [],
@@ -32753,6 +32793,8 @@ export const cardSpecs: CardSpec[] = [
     // Black Hand Ritual [100168] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100168,
     name: "Black Hand Ritual",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
     usable: [],
@@ -33249,6 +33291,7 @@ export const cardSpecs: CardSpec[] = [
     // Drop Point Network [100590] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100590,
     name: "Drop Point Network",
+    requiresControlledBlackHand: true,
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
@@ -33352,6 +33395,8 @@ export const cardSpecs: CardSpec[] = [
     // Emergency Powers [100635] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100635,
     name: "Emergency Powers",
+    requiresSeraph: true,
+    requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
     usable: [],
@@ -33669,6 +33714,8 @@ export const cardSpecs: CardSpec[] = [
     // Guarded Rubrics [100865] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100865,
     name: "Guarded Rubrics",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
@@ -34618,6 +34665,8 @@ export const cardSpecs: CardSpec[] = [
     // Recruitment Exercise [101570] — fala 45 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 101570,
     name: "Recruitment Exercise",
+    requiresBlackHand: true,
+    requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
     usable: [],

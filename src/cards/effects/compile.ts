@@ -187,7 +187,7 @@ function rulesHold(
         if (af.resolvedSuccess !== false || af.blockedBy === null) return false;
         break;
       case "ifActionDirected":
-        if (!af.directed || af.target === null) return false;
+        if (!af.directed) return false;
         break;
       case "targetHasTheEdge": {
         // "…directed at the METHUSELAH WITH THE EDGE" (Esteem). An action
@@ -257,6 +257,8 @@ export function meetsRequirements(m: MinionState, spec: CardSpec): boolean {
   // into the minion state. Cards without this requirement still need their
   // own implementation of the general vampire-creation restriction.
   if (spec.requiresNonSterile && m.sterile === true) return false;
+  if (spec.requiresBlackHand && m.blackHand !== true) return false;
+  if (spec.requiresSeraph && m.seraph !== true) return false;
   if (spec.requiresSect && (m.sect === null || !spec.requiresSect.includes(m.sect))) {
     return false;
   }
@@ -309,6 +311,8 @@ export function controllerMeetsRequirements(
     CardSpec,
     | "requiresControlledSect"
     | "requiresControlledClan"
+    | "requiresControlledBlackHand"
+    | "requiresControlledSeraph"
     | "requiresControlledCapacity"
     | "requiresControlledTitle"
     | "requiresControlledPath"
@@ -328,13 +332,16 @@ export function controllerMeetsRequirements(
     ).length;
     if (n < reqPath.count) return false;
   }
-  if (!reqSect && !reqClan && !reqTitle && reqCapacity === undefined) return true;
+  if (!reqSect && !reqClan && !reqTitle && reqCapacity === undefined &&
+      !spec.requiresControlledBlackHand && !spec.requiresControlledSeraph) return true;
   return getSeat(state, seatId).minions.some(
     (m) =>
       m.kind === "vampire" &&
       isReady(m) &&
       (!reqSect || (m.sect !== null && reqSect.includes(m.sect))) &&
       (!reqClan || (m.clan !== null && reqClan.includes(m.clan))) &&
+      (!spec.requiresControlledBlackHand || m.blackHand === true) &&
+      (!spec.requiresControlledSeraph || m.seraph === true) &&
       (reqCapacity === undefined || capacityOf(m) >= reqCapacity) &&
       (!reqTitle || (m.title !== null && reqTitle.includes(m.title))),
   );
