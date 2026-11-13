@@ -2438,6 +2438,7 @@ export class VtesEngine implements EngineOps {
           // arrives. docs/stun-design.md §2
           const stunCounters = m.counters?.["stun"] ?? 0;
           const suppressed =
+            m.infernal === true ||
             stunCounters > 0 ||
             m.skipNextUnlock === true ||
             unlockSuppressed(this.state, m.id);
@@ -10894,7 +10895,23 @@ export class VtesEngine implements EngineOps {
   private unlockWindowOptions(seat: SeatId): LegalOption[] {
     const out = this.abilityOptionsFor(seat, "turn.unlock");
     const tf = this.state.frames[0];
-    if (!tf || tf.kind !== "turn" || (tf.burnOptionUsed ?? []).includes(seat)) return out;
+    if (!tf || tf.kind !== "turn") return out;
+    if (tf.phase === "unlock" && tf.seat === seat && !tf.unlockAbilitiesDone) {
+      const controller = getSeat(this.state, seat);
+      for (const m of controller.minions) {
+        const surcharge = this.unlockSurchargeFor(m);
+        if (!m.infernal || !m.locked || (tf.infernalUnlockUsed ?? []).includes(m.id) ||
+            controller.pool < 1 || m.blood < surcharge) continue;
+        out.push({
+          id: `infernal:unlock:${m.id}`,
+          kind: "useAbility",
+          source: m.id,
+          params: { infernalUnlock: m.id },
+          label: `${m.name}: burn 1 pool${surcharge ? ` and ${surcharge} blood` : ""} to unlock (Infernal)`,
+        });
+      }
+    }
+    if ((tf.burnOptionUsed ?? []).includes(seat)) return out;
     for (const card of getSeat(this.state, seat).hand) {
       if (!this.registry[card.name]?.burnOptionDiscardable?.(this.state, seat)) continue;
       out.push({
@@ -11962,6 +11979,19 @@ export class VtesEngine implements EngineOps {
         return;
       }
       case "useAbility": {
+        // Infernal is a minion trait, not necessarily a card entry with a
+        // handler. The option is enumerated only for the controller's unlock
+        // phase, and costs on the unlock itself still apply.
+        if (option.params["infernalUnlock"] !== undefined) {
+          if (top.kind !== "turn" || top.phase !== "unlock") throw new Error("infernal unlock outside unlock phase");
+          const m = getMinion(this.state, option.params["infernalUnlock"]);
+          const surcharge = this.unlockSurchargeFor(m);
+          (top.infernalUnlockUsed ??= []).push(m.id);
+          this.emit({ type: "PoolBurned", seat: top.seat, amount: 1 });
+          if (surcharge > 0) this.emit({ type: "BloodBurned", minion: m.id, amount: surcharge });
+          this.emit({ type: "MinionUnlocked", minion: m.id });
+          return;
+        }
         // A rider's offer, not a card in play: "burn N blood to unlock
         // after block resolution" (Truth in Darkness).
         if (option.source.startsWith("unlockForBlood:")) {

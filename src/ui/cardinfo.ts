@@ -107,6 +107,8 @@ export interface CryptImport {
   sterile: boolean;
   /** The vampire itself prints Blood cursed. */
   bloodCursed: boolean;
+  /** The crypt card itself prints Infernal. */
+  infernal: boolean;
   /** Standalone printed Flight trait, rather than an ability mentioning flight. */
   flight: boolean;
   /** The city a prince/baron/archbishop holds their title in — "Camarilla
@@ -129,7 +131,7 @@ export interface CryptImport {
 
 /** Match a standalone printed trait rather than references within abilities,
  * such as "become a sterile Ahrimane" or "non-sterile vampire". */
-export function hasStandaloneCryptTrait(text: string, trait: "sterile" | "non-unique" | "flight" | "blood cursed"): boolean {
+export function hasStandaloneCryptTrait(text: string, trait: "sterile" | "non-unique" | "flight" | "blood cursed" | "infernal"): boolean {
   const suffix = trait === "flight" ? "\\s*\\[flight\\]" : "";
   return new RegExp(`(?:^|[.:!?]\\s*)${trait}${suffix}\\s*(?:[.!?]|$)`, "i").test(text.trim());
 }
@@ -234,6 +236,7 @@ export function importCryptCard(id: number): CryptImport {
     nonUnique: hasStandaloneCryptTrait(card.cardText, "non-unique"),
     sterile: hasStandaloneCryptTrait(card.cardText, "sterile"),
     bloodCursed: hasStandaloneCryptTrait(card.cardText, "blood cursed"),
+    infernal: hasStandaloneCryptTrait(card.cardText.split(/\[MERGED\]/i, 1)[0]!, "infernal"),
     flight: hasStandaloneCryptTrait(card.cardText, "flight"),
     image: card.image,
     cardText: card.cardText,

@@ -14805,7 +14805,7 @@
     "id": 200104,
     "name": "Annazir (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: flatCrypt daje +1 bleed, ale brak akcji burn location/steal equipment; importer nie odczytuje „2 votes (titled)” ani Infernal. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: flatCrypt daje +1 bleed, ale brak akcji burn location/steal equipment; importer nie odczytuje „2 votes (titled)” ani Infernal. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200105,
@@ -14997,7 +14997,7 @@
     "id": 200136,
     "name": "Arishat (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusty cryptPerm bez płatnego wymuszenia abstention; importer nie odczytuje 1 titled vote po kropce ani Infernal. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusty cryptPerm bez płatnego wymuszenia abstention; importer nie odczytuje 1 titled vote po kropce ani Infernal. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200137,
@@ -15105,7 +15105,7 @@
     "id": 200154,
     "name": "Azaneal (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty flatCrypt bez zniżki kosztu akcji wystawiających vampire; Infernal nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusty flatCrypt bez zniżki kosztu akcji wystawiających vampire; Infernal nie importowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200155,
@@ -15177,7 +15177,7 @@
     "id": 200166,
     "name": "Barbaro Lucchese (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje stały stealth zamiast wyłącznie dwóch opisanych akcji; brak zmiany klanu, taint counters oraz importu Infernal. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: flatCrypt daje stały stealth zamiast wyłącznie dwóch opisanych akcji; brak zmiany klanu, taint counters oraz importu Infernal. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200167,
@@ -16011,7 +16011,7 @@
     "id": 200305,
     "name": "Cybele (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +2 bleed zamiast płatnej directed bleed action; brak dodatkowego master phase action przy unlocked oraz importu Infernal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Spec daje stały +2 bleed zamiast płatnej directed bleed action; brak dodatkowego master phase action przy unlocked oraz importu Infernal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200306,
@@ -16551,7 +16551,7 @@
     "id": 200395,
     "name": "Dylan (G2 ADV)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength, +1 stealth przy bleed, Red List i importu Infernal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez +1 strength, +1 stealth przy bleed, Red List i importu Infernal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200396,
@@ -16635,7 +16635,7 @@
     "id": 200409,
     "name": "Elihu (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +2 damage i undodgeable melee weapon strikes oraz importu Infernal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez +2 damage i undodgeable melee weapon strikes oraz importu Infernal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200410,
@@ -17301,7 +17301,7 @@
     "id": 200520,
     "name": "Giotto Verducci (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez discard w discard phase innego Methuselah i kosztu blood dla blokujących vampire; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez discard w discard phase innego Methuselah i kosztu blood dla blokujących vampire; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200521,
@@ -17703,7 +17703,7 @@
     "id": 200587,
     "name": "Helena (G3 ADV)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zwolnienia z kosztu blood reaction aus/dom, merged odporności na demony i poziomów dai/obt; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez zwolnienia z kosztu blood reaction aus/dom, merged odporności na demony i poziomów dai/obt; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200588,
@@ -17763,7 +17763,7 @@
     "id": 200597,
     "name": "High Priest Angra Mainyu (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 hand size prey przy ready i burn Edge za stealth w non-bleed; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez -1 hand size prey przy ready i burn Edge za stealth w non-bleed; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200598,
@@ -17811,7 +17811,7 @@
     "id": 200605,
     "name": "The Horde (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Import non-unique naprawiony i testowany w crypt-non-unique.test.ts. Pusta spec bez lock za +1 bleed innemu działającemu infernal minionowi; Infernal nie jest importowane. Analiza statyczna."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Import non-unique naprawiony i testowany w crypt-non-unique.test.ts. Pusta spec bez lock za +1 bleed innemu działającemu infernal minionowi; Infernal nie jest importowane. Analiza statyczna."
   },
   {
     "id": 200606,
@@ -17847,7 +17847,7 @@
     "id": 200611,
     "name": "Huitzilopochtli (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i opcji 1 pool za dodatkowe master phase action przy ready; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez +1 bleed i opcji 1 pool za dodatkowe master phase action przy ready; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200612,
@@ -19869,7 +19869,7 @@
     "id": 200948,
     "name": "Mary the Black (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez blood za aggravated hand strikes na rundę; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez blood za aggravated hand strikes na rundę; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200949,
@@ -19965,7 +19965,7 @@
     "id": 200964,
     "name": "Maureen, Dark Priestess (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez gain pool raz na turę po udanej akcji wymagającej Baali lub Daimoinon; 1 titled vote po kropce i Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez gain pool raz na turę po udanej akcji wymagającej Baali lub Daimoinon; 1 titled vote po kropce i Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200965,
@@ -20091,7 +20091,7 @@
     "id": 200985,
     "name": "Midget (G3)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez pozbawienia animal retainers zdolności podczas działania lub combat Midget; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez pozbawienia animal retainers zdolności podczas działania lub combat Midget; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200986,
@@ -20469,13 +20469,13 @@
     "id": 201048,
     "name": "Nergal (G5)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +2 bleed, ale brak zniżki karty o blood raz na turę; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Spec daje +2 bleed, ale brak zniżki karty o blood raz na turę; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201049,
     "name": "Nergal (G5 ADV)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez dodatkowego blood za reaction cards podczas akcji Nergala i blood za stealth; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez dodatkowego blood za reaction cards podczas akcji Nergala i blood za stealth; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201050,
@@ -20853,13 +20853,13 @@
     "id": 201112,
     "name": "Petaniqua (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 bleed, ale brak 2 damage przeciwnikowi przed range po pierwszej rundzie i zniżki allies/retainers; Infernal i Red List nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Spec daje +1 bleed, ale brak 2 damage przeciwnikowi przed range po pierwszej rundzie i zniżki allies/retainers; Infernal i Red List nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201113,
     "name": "Petaniqua (G4 ADV)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 strength, ale brak blood za press raz na combat i uprawnienia do recruit werewolf bez wymagań; Infernal i Red List nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Spec daje +1 strength, ale brak blood za press raz na combat i uprawnienia do recruit werewolf bez wymagań; Infernal i Red List nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201114,
@@ -21621,7 +21621,7 @@
     "id": 201240,
     "name": "Sargon (G2)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 strength, ale brak gain Edge po successful action; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Spec daje +1 strength, ale brak gain Edge po successful action; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201241,
@@ -22647,7 +22647,7 @@
     "id": 201411,
     "name": "The unnamed (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez blood za strike 2R aggravated i opcji gain 2 pool po successful bleed; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez blood za strike 2R aggravated i opcji gain 2 pool po successful bleed; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201412,
@@ -22707,13 +22707,13 @@
     "id": 201421,
     "name": "Valerius Maior, Hell's Fool (G4)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec z requiresReady bez opcjonalnego limited additional strike dla strike Blood Sorcery po takim strike; Red List i Infernal nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec z requiresReady bez opcjonalnego limited additional strike dla strike Blood Sorcery po takim strike; Red List i Infernal nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201422,
     "name": "Valerius Maior, Hell's Fool (G4 ADV)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zakazu action modifier/combat chi/obf aktora przy próbie block Valeriusa i merged Independent, utraty infernal/Red List oraz -2 capacity; Infernal i Red List nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez zakazu action modifier/combat chi/obf aktora przy próbie block Valeriusa i merged Independent, utraty infernal/Red List oraz -2 capacity; Infernal i Red List nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201423,
@@ -23061,7 +23061,7 @@
     "id": 201480,
     "name": "Xeper, Sultan of Lepers (G6)",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 vote za każdego własnego ready unique infernal vampire i directed action steal ally innego Methuselah; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez +1 vote za każdego własnego ready unique infernal vampire i directed action steal ally innego Methuselah; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201481,

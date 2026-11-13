@@ -366,6 +366,8 @@ export interface MinionState {
   sterile?: boolean;
   /** Printed Blood Cursed trait; currently prevents committing diablerie. */
   bloodCursed?: boolean;
+  /** Infernal minions do not unlock as normal; their controller may pay pool. */
+  infernal?: boolean;
   /** The Path of Enlightenment this vampire follows ("Cathari", "Power and
    *  the Inner Voice", "Death and the Soul").
    *
@@ -2343,6 +2345,8 @@ export interface TurnFrame {
   oncePerTurnCards?: string[];
   /** Unlock-phase permanent abilities declined/finished (Vessel etc.). */
   unlockAbilitiesDone: boolean;
+  /** Infernal unlock choices already used this phase, keyed by minion id. */
+  infernalUnlockUsed?: MinionId[];
   /** Other seats that passed their "during any Methuselah's unlock phase"
    *  abilities (Homunculus) — asked after the turn's seat, clockwise. */
   unlockOthersDone: SeatId[];

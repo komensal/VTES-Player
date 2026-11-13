@@ -8,11 +8,11 @@ To powtarzalne, zgrubne grupowanie po słowach w tekście evidence, a nie potwie
 |---|---:|
 | `crypt_import_lub_cechy` | 606 |
 | `placeholder_lub_brak_efektu` | 2020 |
-| `akcje_i_blok` | 1596 |
+| `akcje_i_blok` | 1602 |
 | `walka` | 740 |
 | `polityka_i_glosy` | 364 |
-| `koszty_i_zasoby` | 856 |
-| `karty_i_strefy` | 1491 |
+| `koszty_i_zasoby` | 869 |
+| `karty_i_strefy` | 1503 |
 | `czas_i_warunki` | 647 |
 | `inne_do_recznego_przegladu` | 7 |
 
