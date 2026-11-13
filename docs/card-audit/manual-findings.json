@@ -5414,8 +5414,8 @@
   {
     "id": 100903,
     "name": "Heart of Nizchetus",
-    "status": "REVIEWED_NO_ISSUE_FOUND",
-    "evidence": "Wąski zakres: opcjonalne draw do 3 i umieszczenie takiej samej liczby na spodzie biblioteki; cheap-tail.test.ts."
+    "status": "CONFIRMED_BUG",
+    "evidence": "Odtworzony błąd: przy Heart i Shilmulo Tarot w fazie unlock wybór draw 2 natychmiast pyta o przesunięcie karty na spód, przed rozwiązaniem któregokolwiek przekierowanego dobierania; świeżo dobranych kart nie można wtedy wybrać. W compile.ts drawCards tworzy oczekujące wybory, lecz bury jest umieszczane nad nimi. Ponadto liczba opcji draw jest ograniczona długością biblioteki bez uwzględnienia store; pozostałe interakcje wymagają sprawdzenia. Poprzednia wąska ocena: Wąski zakres: opcjonalne draw do 3 i umieszczenie takiej samej liczby na spodzie biblioteki; cheap-tail.test.ts."
   },
   {
     "id": 100904,
@@ -10599,7 +10599,7 @@
     "id": 101767,
     "name": "Shilmulo Tarot",
     "status": "PARTIAL_FIX",
-    "evidence": "Celowana poprawka wspólnego refill: po wybraniu karty z Tarot dalsze dobieranie do rozmiaru ręki jest wznawiane, także po save/load; draw-up-redirect.test.ts i nehemiah.test.ts. Nadal brak stale dostępnej możliwości dobrania z Tarot przy pustej bibliotece i niepełnej ręce, potwierdzonej w rulingu LSJ; w odtworzonym oknie unlock oferowane są wycofanie, Edge i pass, nie dobór z Tarot. Inne ścieżki wielokrotnego dobierania i wybór wielu źródeł nie są objęte poprawką. Poprzednia ocena: Wąski zakres: unique equipment Ravnos odkłada dwie karty, umożliwia redirect draw z ready bearer i dodawanie karty w unlock; library-search.test.ts."
+    "evidence": "Celowana poprawka wspólnego refill: po wybraniu karty z Tarot dalsze dobieranie do rozmiaru ręki jest wznawiane, także po save/load; draw-up-redirect.test.ts i nehemiah.test.ts. Nadal brak stale dostępnej możliwości dobrania z Tarot przy pustej bibliotece i niepełnej ręce, potwierdzonej w rulingu LSJ; w odtworzonym oknie unlock oferowane są wycofanie, Edge i pass, nie dobór z Tarot. Aktualizacja: wybór pomiędzy Tarot i Black Market Cache przy pojedynczym draw oraz refill przetestowany w multiple-draw-redirects.test.ts; kolejki wielokrotnego dobierania nadal otwarte. Dodatkowo onEnterPlay napełnia Tarot również przy samym put into play, nie tylko przy zagraniu/wyposażeniu; ruling LSJ https://groups.google.com/g/rec.games.trading-cards.jyhad/c/887DQTpntKI/m/uTcPGmJbHRYJ wyklucza Alastor. Istniejący test library-search.test.ts używa putPermanentInPlay i oczekuje napełnienia, więc nie jest dowodem poprawnego rozróżnienia wejścia w grę. Poprzednia ocena: Wąski zakres: unique equipment Ravnos odkłada dwie karty, umożliwia redirect draw z ready bearer i dodawanie karty w unlock; library-search.test.ts."
   },
   {
     "id": 101768,
@@ -14103,7 +14103,7 @@
     "id": 102351,
     "name": "Black Market Cache",
     "status": "REVIEWED_NO_ISSUE_FOUND",
-    "evidence": "Wąski zakres: unique location przechowuje do trzech non-unique equipment, pozwala zastąpić draw i spala się przy pustym store; library-search.test.ts. Wspólny refill po opróżnieniu i spaleniu Cache sprawdzony w draw-up-redirect.test.ts; nie jest to pełny audyt wszystkich interakcji."
+    "evidence": "Wąski zakres: unique location przechowuje do trzech non-unique equipment, pozwala zastąpić draw i spala się przy pustym store; library-search.test.ts. Wspólny refill po opróżnieniu i spaleniu Cache sprawdzony w draw-up-redirect.test.ts; nie jest to pełny audyt wszystkich interakcji. Wielokrotny wybór źródła jednego draw i refill wraz z Tarot przetestowany w multiple-draw-redirects.test.ts; nie obejmuje pozostałych ścieżek."
   },
   {
     "id": 102352,

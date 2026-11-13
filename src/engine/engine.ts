@@ -13553,11 +13553,9 @@ export class VtesEngine implements EngineOps {
    *  `kind` separates a real replacement from a plain draw-up (a hand-size
    *  increase, "draw N extra cards"), because a counter sink intercepts
    *  only the former (docs/counter-sinks-design.md §2). */
-  /** Returns true only when a card actually moved from library to hand —
-   *  a counter sink or a store redirect means it did not, and a caller
-   *  looping until the hand is full must stop rather than ask again. */
+  /** Returns false if a counter sink or a store choice interrupted the
+   *  draw; true means the library was attempted, even if it was empty. */
   private drawToReplace(seatId: SeatId, kind: "replace" | "extra" = "replace", resumeDrawUp = false): boolean {
-    const seat = getSeat(this.state, seatId);
     // "Each time you would replace a card, instead burn 1 counter from
     // this card" (Visit from the Capuchin). This goes FIRST and keeps
     // precedence over the redirect below: a draw that does not happen
@@ -13567,7 +13565,7 @@ export class VtesEngine implements EngineOps {
     // those cards instead" (Black Market Cache, Shilmulo Tarot). Only
     // asked when a live store can actually supply the draw, so an empty
     // or absent store costs no decision.
-    const source = this.drawRedirectSource(seatId);
+    const source = this.drawRedirectSources(seatId)[0];
     if (source) {
       this.raiseChoice({
         seat: seatId,
@@ -13594,19 +13592,16 @@ export class VtesEngine implements EngineOps {
     }
   }
 
-  /** A card in play of `seat`'s that may supply a draw in place of the
-   *  library right now — it must hold cards, and its own condition must
-   *  hold (Shilmulo Tarot: "while this Ravnos is ready"). */
-  private drawRedirectSource(seatId: SeatId): PermanentInPlay | null {
-    for (const { entry, owner } of this.allEntries()) {
-      if ((entry.controller ?? owner.seat) !== seatId) continue;
-      if (!entry.stored || entry.stored.length === 0) continue;
-      if (!this.registry[entry.card.name]?.canRedirectDraw?.(entry, owner, this.state)) {
-        continue;
-      }
-      return entry;
-    }
-    return null;
+  /** Every live store that can redirect this seat's next library draw.
+   * A player can choose between them; enumeration order is not priority. */
+  private drawRedirectSources(seatId: SeatId): PermanentInPlay[] {
+    return this.allEntries()
+      .filter(({ entry, owner }) =>
+        (entry.controller ?? owner.seat) === seatId &&
+        (entry.stored?.length ?? 0) > 0 &&
+        this.registry[entry.card.name]?.canRedirectDraw?.(entry, owner, this.state) === true,
+      )
+      .map(({ entry }) => entry);
   }
 
   /** Burn a counter off a card attached to this minion that pays to keep
@@ -14101,6 +14096,29 @@ export class VtesEngine implements EngineOps {
    * after-resolution probes each drifted. §4
    */
   private choiceOptionsFor(frame: ChoiceFrame): LegalOption[] {
+    if (frame.key === "drawFrom") {
+      // The saved frame names the first store, but it is not privileged:
+      // each currently legal store can replace this same draw. Keep the
+      // existing per-card option IDs for replays and delegate the actual
+      // move and empty-store consequences to the chosen store's handler.
+      const out: LegalOption[] = [];
+      for (const source of this.drawRedirectSources(frame.seat)) {
+        const sourceFrame = { ...frame, cardName: source.card.name, cardId: source.card.id };
+        for (const opt of this.handler(source.card.name).choiceOptions?.(sourceFrame, this.state, this.registry) ?? []) {
+          if (opt.kind !== "answerChoice" || opt.params["pick"] === "library") continue;
+          out.push(this.withPickedCardName({ ...opt, params: { ...opt.params, redirectSource: source.card.id } }));
+        }
+      }
+      // The original library option stays valid even if its store left play
+      // while this decision was queued behind another effect.
+      out.push({
+        id: `choice:${frame.cardName}:${frame.cardId}:drawFrom:library`,
+        kind: "answerChoice",
+        label: "Draw from your library as normal",
+        params: { pick: "library" },
+      });
+      return out;
+    }
     if (frame.key === PRE_PLAY_PICK) {
       const option = JSON.parse(frame.params["option"] ?? "{}") as Extract<LegalOption, { kind: "playCard" }>;
       const picks = this.registry[option.name]?.prePlayPicks?.(option, this.state);
@@ -14378,7 +14396,11 @@ export class VtesEngine implements EngineOps {
     // end the attempt instead of asking the same question forever.
     const resumeDrawUp = frame.key === "drawFrom" && frame.params["resumeDrawUp"] === "1";
     const before = resumeDrawUp ? getSeat(this.state, frame.seat).hand.length : 0;
-    this.handler(frame.cardName).applyChoice?.(frame, option, this);
+    const redirect = frame.key === "drawFrom" && option.params["redirectSource"]
+      ? this.drawRedirectSources(frame.seat).find((source) => source.card.id === option.params["redirectSource"])
+      : undefined;
+    const chosenFrame = redirect ? { ...frame, cardName: redirect.card.name, cardId: redirect.card.id } : frame;
+    this.handler(chosenFrame.cardName).applyChoice?.(chosenFrame, option, this);
     if (resumeDrawUp && getSeat(this.state, frame.seat).hand.length > before) {
       this.drawUpToHandSize(frame.seat);
     }

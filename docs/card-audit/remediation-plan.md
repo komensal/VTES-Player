@@ -32,3 +32,7 @@ Przesuwanie do dwóch kart i zwykłe dobieranie wdrożono celowo; szczegóły w 
 ## Kontynuacja dobierania — stan po poprawce
 
 `drawUpToHandSize` oraz refill przy wzroście hand size wznawiają się po wyborze źródła; testy i pozostałe ograniczenia w `batches.md`. Dalsza praca: ciągła opcja Shilmulo Tarot przy pustej bibliotece i niepełnej ręce (LSJ), kolejka wielu osobnych dobierań, kolejność wielu możliwych źródeł i współdziałanie z odroczonymi replacement (w tym Lupine Assault). Odseparować te problemy od samego pojedynczego replacement; nie oznaczać kart kompletnością po naprawie wspólnego refill.
+
+## Kilka źródeł redirect — kolejny etap
+
+Wybór pomiędzy dostępnymi store przy pojedynczym draw i podczas refill poprawiono; szczegóły oraz scenariusze w `batches.md`. Priorytet: sekwencyjna, wznawialna kolejka liczonych draw i ich następnych efektów (Heart: najpierw wszystkie rzeczywiste draw, potem tyle samo kart na spód; dobór z store oraz pusta biblioteka), inne ścieżki wielu replacement, możliwość ciągłego wyboru Tarot przy pustej bibliotece oraz rozróżnienie zagrania/wyposażenia od samego umieszczenia Tarot w grze. Nie usuwać zależnych ramek ani nie zakładać, że asynchroniczny choice kończy się natychmiast.
