@@ -49,6 +49,27 @@ const printedUniqueCards = new Set(libraryCards
 const printedUniqueNames = new Set(libraryCards
   .filter((card) => printedUniqueCards.has(card.id))
   .map((card) => card.name));
+// Printed subtypes are independent of a card's implemented abilities. Read
+// only the printed stat line for allies/retainers and the leading type line
+// for equipment, never later mentions of somebody else's subtype. These tags
+// must reach both queries on cards in hand and the permanent entering play.
+const printedSubtypeTags = new Map<number, string[]>(libraryCards.flatMap<readonly [number, string[]]>((card) => {
+  if (card.types.includes("Ally") || card.types.includes("Retainer")) {
+    const firstLine = card.cardText.split("\n", 1)[0] ?? "";
+    const match = firstLine.match(/\b(gargoyle creature|ghoul|mortal|wraith|zombie|werewolf|animal|mage|mummy|demon|changeling|dhampir) with (?:\d+|X) life\b/i);
+    return match ? [[card.id, [match[1]!.toLowerCase()]]] : [];
+  }
+  if (!card.types.includes("Equipment")) return [];
+  const text = card.cardText;
+  const tags: string[] = [];
+  if (/^(?:unique\s+)?melee weapon\b/i.test(text)) tags.push("weapon", "melee");
+  else if (/^(?:unique\s+)?weapon\b/i.test(text)) {
+    tags.push("weapon");
+    if (/^(?:unique\s+)?weapon\s*[:,.]\s*gun\b/i.test(text)) tags.push("gun");
+    if (/^(?:unique\s+)?weapon\s*[:,.]\s*melee\b/i.test(text)) tags.push("melee");
+  } else if (/^(?:unique\s+)?vehicle\b/i.test(text)) tags.push("vehicle");
+  return tags.length ? [[card.id, tags]] : [];
+}));
 const masterClanRequirements = new Map(
   libraryCards
     .filter((card) => card.types.includes("Master") && card.clans.length > 0)
@@ -4642,7 +4663,7 @@ export const cardSpecs: CardSpec[] = [
       life: 3,
       strength: 2,
       bleed: 0,
-      subtype: "mortal",
+      subtype: "mummy",
       opposingBurnedGainLife: 1,
       shuffleIntoLibraryOnBurn: true,
     },
@@ -24746,6 +24767,7 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101687,
     name: "Scapelli, The Family \"Mechanic\"",
     cardType: "ally",
+    ally: { life: 3, strength: 0, bleed: 1 },
     bloodCost: 0,
     poolCost: 3,
     usable: [],
@@ -46457,6 +46479,7 @@ export function buildHandlerRegistry(): HandlerRegistry {
   const registry: HandlerRegistry = {};
   for (const spec of cardSpecs) {
     const printedClans = minionClanRequirements.get(spec.krcgId);
+    const printedTags = printedSubtypeTags.get(spec.krcgId);
     // A printed clan icon is a requirement in addition to any requirements
     // in the text. Multiple printed clan icons are alternatives. Preserve
     // any narrower explicit requirement rather than replacing it with the
@@ -46464,6 +46487,12 @@ export function buildHandlerRegistry(): HandlerRegistry {
     const effectiveSpec = {
       ...spec,
       ...(printedUniqueCards.has(spec.krcgId) ? { unique: true } : {}),
+      ...(printedTags ? { permanent: {
+        where: "bearer" as const,
+        statics: {},
+        ...spec.permanent,
+        tags: [...new Set([...(spec.permanent?.tags ?? []), ...printedTags])],
+      } } : {}),
       ...(printedClans ? {
         requiresClan: spec.requiresClan
           ? printedClans.filter((clan) => spec.requiresClan!.includes(clan))

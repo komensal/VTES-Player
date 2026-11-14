@@ -629,8 +629,10 @@ export function playFromHandChoices(
       if (filter.nonUniqueOnly && h.isUnique) continue;
       // "The weapon cannot inflict (WITH A REGULAR STRIKE) aggravated
       // damage or 4 or more damage" (Concealed Weapon, §4). A card with
-      // no weapon profile at all is not a weapon, and the `tags` filter
-      // above has already excluded it; these two only ever narrow.
+      // no weapon profile may still be a printed weapon, but its damage
+      // is unknown; do not treat missing metadata as safe or non-aggravated.
+      // The remaining checks only ever narrow the printed tag filter.
+      if ((filter.maxDamage !== undefined || filter.noAggravated) && !h.weaponProfile) continue;
       if (filter.maxDamage !== undefined && (h.weaponProfile?.damage ?? 0) > filter.maxDamage) {
         continue;
       }

@@ -81,7 +81,7 @@
     "id": 100014,
     "name": "Abyssal Hunter",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma tylko life/strength/bleed, bez klanowego wymogu Lasombra, directed damage, obrażeń własnego vampire w unlock i burn po ranged aggravated damage; nie przenosi też subtype demon. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma tylko life/strength/bleed, bez klanowego wymogu Lasombra, directed damage, obrażeń własnego vampire w unlock i burn po ranged aggravated damage; nie przenosi też subtype demon. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100015,
@@ -231,7 +231,7 @@
     "id": 100039,
     "name": "Alia, God's Messenger",
     "status": "PARTIAL_FIX",
-    "evidence": "Spec zawiera tylko ogólne statystyki ally i actionStealth, brak unique, wymogu dwóch Gehenna events, gry kart aus/obe jak vampire, rescue action, kosztu directed action przeciw niej i subtype dhampir. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Spec zawiera tylko ogólne statystyki ally i actionStealth, brak unique, wymogu dwóch Gehenna events, gry kart aus/obe jak vampire, rescue action, kosztu directed action przeciw niej i subtype dhampir. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100040,
@@ -248,8 +248,8 @@
   {
     "id": 100042,
     "name": "Amam the Devourer",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Amam ma ally.subtype mortal mimo drukowanego mummy; allyTags przenosi także tag mortal. Dodatkowo opposingBurnedGainLife automatycznie emituje zysk life, choć tekst daje wybór. plain-allies-3.test.ts sprawdza shuffle, nie te rozbieżności. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Amam ma ally.subtype mortal mimo drukowanego mummy; allyTags przenosi także tag mortal. Dodatkowo opposingBurnedGainLife automatycznie emituje zysk life, choć tekst daje wybór. plain-allies-3.test.ts sprawdza shuffle, nie te rozbieżności. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte. Błędny tag mortal usunięto; Amam zachowuje prawidłowy mummy."
   },
   {
     "id": 100043,
@@ -261,13 +261,13 @@
     "id": 100044,
     "name": "Ambrosius, The Ferryman",
     "status": "PARTIAL_FIX",
-    "evidence": "Spec ma tylko statystyki ally, bez unique, wymogu Giovanni, subtype wraith, przenoszenia retainer z pathos oraz odporności na non-aggravated damage. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Spec ma tylko statystyki ally, bez unique, wymogu Giovanni, subtype wraith, przenoszenia retainer z pathos oraz odporności na non-aggravated damage. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100045,
     "name": "Ambulance",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec equipment z modifyStealth nie nadaje vehicle tagu, kontynuacji akcji po block, burn po kolejnym block, ani akcji na incapacitated imbued; brak też limitu jednego vehicle. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec equipment z modifyStealth nie nadaje vehicle tagu, kontynuacji akcji po block, burn po kolejnym block, ani akcji na incapacitated imbued; brak też limitu jednego vehicle. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100046,
@@ -303,7 +303,7 @@
     "id": 100051,
     "name": "Ananasi Vampirephile",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma tylko ogólne statystyki i efekty maneuver/press/actionStealth zamiast wymagania Guruhi, subtype werewolf, combat maneuver, płatnego press z ustawieniem range, gain life i gry ani jak vampire. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma tylko ogólne statystyki i efekty maneuver/press/actionStealth zamiast wymagania Guruhi, subtype werewolf, combat maneuver, płatnego press z ustawieniem range, gain life i gry ani jak vampire. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100052,
@@ -477,7 +477,7 @@
     "id": 100080,
     "name": "Arcane Appraiser",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally zawiera podstawowe statystyki i modifyStealth, lecz bez unique, subtype ghoul, akcji przenoszenia equipment i zapobiegania drugiej kopii unique equipment; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally zawiera podstawowe statystyki i modifyStealth, lecz bez unique, subtype ghoul, akcji przenoszenia equipment i zapobiegania drugiej kopii unique equipment; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100081,
@@ -513,7 +513,7 @@
     "id": 100086,
     "name": "Argent Baton",
     "status": "PARTIAL_FIX",
-    "evidence": "Equipment nie ma weapon profile ani strike strength+1 i opcjonalnego ranged efektu przeciw werewolf. Tekst: src/cards/registry.json, ID 100086; implementacja: src/cards/effects/cards.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Equipment nie ma weapon profile ani strike strength+1 i opcjonalnego ranged efektu przeciw werewolf. Tekst: src/cards/registry.json, ID 100086; implementacja: src/cards/effects/cards.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100087,
@@ -537,7 +537,7 @@
     "id": 100090,
     "name": "Arms Dealer",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma jedynie statystyki i actionStealth, brak subtype mortal i akcji wyszukania weapon w library, shuffle oraz discard; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma jedynie statystyki i actionStealth, brak subtype mortal i akcji wyszukania weapon w library, shuffle oraz discard; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100091,
@@ -615,7 +615,7 @@
     "id": 100103,
     "name": "Asanbonsam Ghoul",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally spec ma tylko podstawowe statystyki i modifyIntercept, bez wymogu klanu Tzimisce, subtype ghoul, stałego intercept wyłącznie dla directed action ani ustawienia close range w pierwszej rundzie po bloku; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally spec ma tylko podstawowe statystyki i modifyIntercept, bez wymogu klanu Tzimisce, subtype ghoul, stałego intercept wyłącznie dla directed action ani ustawienia close range w pierwszej rundzie po bloku; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100104,
@@ -795,7 +795,7 @@
     "id": 100133,
     "name": "Banshee Ironwail",
     "status": "PARTIAL_FIX",
-    "evidence": "Equipment nie ma weapon profile, unikalności, -1 stealth ani efektu na blok; zamiast strength+2 i warunkowego aggravated pusty tryb. Źródła: src/cards/registry.json ID 100133; src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Equipment nie ma weapon profile, unikalności, -1 stealth ani efektu na blok; zamiast strength+2 i warunkowego aggravated pusty tryb. Źródła: src/cards/registry.json ID 100133; src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100134,
@@ -908,8 +908,8 @@
   {
     "id": 100152,
     "name": "Beretta 9mm",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Equipment bez weapon profile i bez zdolności dwóch Beretta: nie ma ani strzału 1R/2R, ani manewru. Źródła: src/cards/registry.json ID 100152; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment bez weapon profile i bez zdolności dwóch Beretta: nie ma ani strzału 1R/2R, ani manewru. Źródła: src/cards/registry.json ID 100152; src/cards/effects/cards.ts i compile.ts. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100153,
@@ -957,7 +957,7 @@
     "id": 100160,
     "name": "Bima",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma tylko podstawowe statystyki; brak wyboru Discipline z ręki po wejściu, ewentualnego burn i zdolności do gry kartami. Źródła: src/cards/registry.json ID 100160; src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma tylko podstawowe statystyki; brak wyboru Discipline z ręki po wejściu, ewentualnego burn i zdolności do gry kartami. Źródła: src/cards/registry.json ID 100160; src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100161,
@@ -993,7 +993,7 @@
     "id": 100166,
     "name": "Black Gloves",
     "status": "PARTIAL_FIX",
-    "evidence": "Equipment bez weapon profile i bez unique; brak strength+1 aggravated oraz obrażeń nosiciela raz na combat. Źródła: src/cards/registry.json ID 100166; src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Equipment bez weapon profile i bez unique; brak strength+1 aggravated oraz obrażeń nosiciela raz na combat. Źródła: src/cards/registry.json ID 100166; src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100167,
@@ -1017,7 +1017,7 @@
     "id": 100170,
     "name": "Black Spiral Buddy",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally posiada statystyki, ale brak aggravated hand strike, prawidłowego dodatkowego strike raz na combat i odzyskania life w unlock. Źródła: src/cards/registry.json ID 100170; src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally posiada statystyki, ale brak aggravated hand strike, prawidłowego dodatkowego strike raz na combat i odzyskania life w unlock. Źródła: src/cards/registry.json ID 100170; src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100171,
@@ -1053,7 +1053,7 @@
     "id": 100176,
     "name": "Blade of Enoch",
     "status": "PARTIAL_FIX",
-    "evidence": "Equipment bez unique, weapon profile, ograniczenia capacity, aggravated przeciw Brujah i ochrony przed Frenzy. Źródła: src/cards/registry.json ID 100176; src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Equipment bez unique, weapon profile, ograniczenia capacity, aggravated przeciw Brujah i ochrony przed Frenzy. Źródła: src/cards/registry.json ID 100176; src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100177,
@@ -1394,8 +1394,8 @@
   {
     "id": 100233,
     "name": "Bomb",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Equipment nie ma weapon profile 5R, samouszkodzenia ani akcji niszczenia lokacji i spalania. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment nie ma weapon profile 5R, samouszkodzenia ani akcji niszczenia lokacji i spalania. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100234,
@@ -1521,7 +1521,7 @@
     "id": 100254,
     "name": "Brigitte Gebauer",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, ale brak zdolności lock przy ogłoszeniu bleed i kosztu life po bloku. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki, ale brak zdolności lock przy ogłoszeniu bleed i kosztu life po bloku. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100255,
@@ -1598,8 +1598,8 @@
   {
     "id": 100267,
     "name": "Bundi",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Equipment nie ma weapon profile ani ograniczonej prewencji melee strike; ma ogólny prevent 1. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment nie ma weapon profile ani ograniczonej prewencji melee strike; ma ogólny prevent 1. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100268,
@@ -1653,7 +1653,7 @@
     "id": 100276,
     "name": "Caiaphas Smith",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma bazowe statystyki, lecz bez ranged strike, maneuver, spalenia blokującego i zmiany kontroli. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma bazowe statystyki, lecz bez ranged strike, maneuver, spalenia blokującego i zmiany kontroli. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100277,
@@ -1785,7 +1785,7 @@
     "id": 100298,
     "name": "Carlton Van Wyk",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma bazowe statystyki i ogólny intercept/dodge, brak ranged strike i discard-phase diablerist burn. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma bazowe statystyki i ogólny intercept/dodge, brak ranged strike i discard-phase diablerist burn. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100299,
@@ -1983,7 +1983,7 @@
     "id": 100331,
     "name": "Charigger, The Axe",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer ma ogólne bleed/stealth zamiast warunkowego hunt, usuwania minionów i liczenia soul counters. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Retainer ma ogólne bleed/stealth zamiast warunkowego hunt, usuwania minionów i liczenia soul counters. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100332,
@@ -2007,7 +2007,7 @@
     "id": 100335,
     "name": "Charnas the Imp",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer ma tylko stealth i life; brak wyboru cudzego pracodawcy, damage w unlock, odporności i przeniesienia. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Retainer ma tylko stealth i life; brak wyboru cudzego pracodawcy, damage w unlock, odporności i przeniesienia. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100336,
@@ -2349,7 +2349,7 @@
     "id": 100392,
     "name": "Concealed Weapon",
     "status": "CODE_DISCREPANCY",
-    "evidence": "W sprawdzonym zakresie wybór broni z ręki i ograniczenia kosztu/obrażeń/unique: tests/cards/armed-mid-combat.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Nowe ustalenie statyczne: wyekwipowana broń przechodzi przez playCardFromHand i generuje CardPlayed oraz replacement jak zagranie, choć https://www.vekn.net/forum/rules-questions/79511-vidal-jarbeaux wskazuje, że nie jest zagrywana. Inne interakcje do sprawdzenia; bez nowego scenariusza regresyjnego tego zdarzenia."
+    "evidence": "W sprawdzonym zakresie wybór broni z ręki i ograniczenia kosztu/obrażeń/unique: tests/cards/armed-mid-combat.test.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Nowe ustalenie statyczne: wyekwipowana broń przechodzi przez playCardFromHand i generuje CardPlayed oraz replacement jak zagranie, choć https://www.vekn.net/forum/rules-questions/79511-vidal-jarbeaux wskazuje, że nie jest zagrywana. Inne interakcje do sprawdzenia; bez nowego scenariusza regresyjnego tego zdarzenia. Aktualizacja: broń bez zaimplementowanego profilu strike nie jest oferowana, jeśli nie da się sprawdzić limitu damage/aggravated; może to tymczasowo wykluczyć także legalną broń (np. Dagger)."
   },
   {
     "id": 100393,
@@ -2558,8 +2558,8 @@
   {
     "id": 100427,
     "name": "Corpse Balloon",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak warunku blokowania directed action i poprawnego rozdzielenia poziomów; basic błędnie otrzymuje intercept. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak warunku blokowania directed action i poprawnego rozdzielenia poziomów; basic błędnie otrzymuje intercept. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100428,
@@ -2570,8 +2570,8 @@
   {
     "id": 100429,
     "name": "Corrupt Construction",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak usuwania kart dla życia, siły zależnej od life, utraty life w unlock i superior. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak usuwania kart dla życia, siły zależnej od life, utraty life w unlock i superior. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100430,
@@ -2601,7 +2601,7 @@
     "id": 100434,
     "name": "Courier",
     "status": "PARTIAL_FIX",
-    "evidence": "Brak -1 intercept przeciw vampire i przeglądania/odrzucania wierzchniej karty po sukcesie bleed. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Brak -1 intercept przeciw vampire i przeglądania/odrzucania wierzchniej karty po sukcesie bleed. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100435,
@@ -2685,7 +2685,7 @@
     "id": 100448,
     "name": "The Crimson Sentinel",
     "status": "PARTIAL_FIX",
-    "evidence": "Brak statystyk broni, unique oraz soul counters i ich resetu przy zmianie kontrolera. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Brak statystyk broni, unique oraz soul counters i ich resetu przy zmianie kontrolera. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100449,
@@ -2841,7 +2841,7 @@
     "id": 100474,
     "name": "The Crusader Sword",
     "status": "PARTIAL_FIX",
-    "evidence": "Brak unique melee weapon, aggravated strike, wymogu True Faith/imbued i ograniczenia manewrów. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Brak unique melee weapon, aggravated strike, wymogu True Faith/imbued i ograniczenia manewrów. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100475,
@@ -2901,7 +2901,7 @@
     "id": 100484,
     "name": "D'habi Revenant",
     "status": "PARTIAL_FIX",
-    "evidence": "Brak wymogu Baali i trwałego bonusu bleed pracodawcy; spec używa doraźnego modifyBleed. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Brak wymogu Baali i trwałego bonusu bleed pracodawcy; spec używa doraźnego modifyBleed. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100485,
@@ -2918,8 +2918,8 @@
   {
     "id": 100487,
     "name": "Dagger",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec sprzętu nie implementuje melee strike, rzutu na dystans, obrażeń aggravated przeciw Kiasyd, dodatkowego Dagger ani spalenia po prevent. Brak osobnego handlera. Tekst registry.json; kod src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec sprzętu nie implementuje melee strike, rzutu na dystans, obrażeń aggravated przeciw Kiasyd, dodatkowego Dagger ani spalenia po prevent. Brak osobnego handlera. Tekst registry.json; kod src/cards/effects/cards.ts. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100488,
@@ -2997,7 +2997,7 @@
     "id": 100500,
     "name": "Dauntain Black Magician",
     "status": "PARTIAL_FIX",
-    "evidence": "Brak obu przyznanych akcji: przeniesienia master Discipline i spalenia siebie z Tremere antitribu. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Brak obu przyznanych akcji: przeniesienia master Discipline i spalenia siebie z Tremere antitribu. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100501,
@@ -3213,7 +3213,7 @@
     "id": 100536,
     "name": "Deviki Prasanta",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma podstawowe statystyki, ale brak unique i zdolności lock do wyszukania i położenia master Discipline na ready Banu Haqim. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma podstawowe statystyki, ale brak unique i zdolności lock do wyszukania i położenia master Discipline na ready Banu Haqim. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100537,
@@ -3471,7 +3471,7 @@
     "id": 100579,
     "name": "Draeven Softfoot",
     "status": "PARTIAL_FIX",
-    "evidence": "Spec ally zawiera jedynie prevent, nie opisuje unique, lock dla ochrony Kiasyd ani ograniczenia kart Chimerstry. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Spec ally zawiera jedynie prevent, nie opisuje unique, lock dla ochrony Kiasyd ani ograniczenia kart Chimerstry. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100580,
@@ -3555,7 +3555,7 @@
     "id": 100593,
     "name": "Duma Rafiki",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer ma life 2, lecz brak wyboru spalenia broni albo 1 damage podczas strike resolution na close. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Retainer ma life 2, lecz brak wyboru spalenia broni albo 1 damage podczas strike resolution na close. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100594,
@@ -3639,7 +3639,7 @@
     "id": 100607,
     "name": "Eccentric Billionaire",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, ale brak opcji lock i zniżki na equipment/location oraz limitu jednego Billionaire na kartę. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma statystyki, ale brak opcji lock i zniżki na equipment/location oraz limitu jednego Billionaire na kartę. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100608,
@@ -3752,14 +3752,14 @@
   {
     "id": 100626,
     "name": "Elephant Guardian",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Retainer ma 3 life, lecz brak wymogu ready Laibon, limitu jednej kopii i obrażeń działającego miniona podczas close strike resolution. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma 3 life, lecz brak wymogu ready Laibon, limitu jednej kopii i obrażeń działającego miniona podczas close strike resolution. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100627,
     "name": "Elixir of Distillation",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Equipment nie ma wymogu anarch ani strike spalającego blood i zmniejszającego capacity; brak spalenia po użyciu i sposobu usunięcia redukcji. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment nie ma wymogu anarch ani strike spalającego blood i zmniejszającego capacity; brak spalenia po użyciu i sposobu usunięcia redukcji. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100628,
@@ -3801,7 +3801,7 @@
     "id": 100634,
     "name": "Emerald Legionnaire",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, ale brak opcjonalnego powrotu z ash heap za usunięcie siedmiu kart, z warunkiem Harbinger. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma statystyki, ale brak opcjonalnego powrotu z ash heap za usunięcie siedmiu kart, z warunkiem Harbinger. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100635,
@@ -3963,7 +3963,7 @@
     "id": 100661,
     "name": "Escaped Mental Patient",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma podstawowe statystyki, lecz brak aggravated hand strike +1 ze spaleniem po combat i akcji wejścia do combat. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma podstawowe statystyki, lecz brak aggravated hand strike +1 ze spaleniem po combat i akcji wejścia do combat. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100662,
@@ -4466,8 +4466,8 @@
   {
     "id": 100745,
     "name": "Flash Grenade",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Equipment nie opisuje weapon strike z lock i opóźnieniem unlock, ani spalenia broni; zawiera tylko efekt strikeCombatEnds. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment nie opisuje weapon strike z lock i opóźnieniem unlock, ani spalenia broni; zawiera tylko efekt strikeCombatEnds. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100746,
@@ -4520,8 +4520,8 @@
   {
     "id": 100754,
     "name": "Foldable Machine Gun",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Equipment nie zawiera profilu gun 1R ani ograniczeń maneuver i dodatkowego strike bronią; ma ogólne efekty combat w trybie zagrania. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment nie zawiera profilu gun 1R ani ograniczeń maneuver i dodatkowego strike bronią; ma ogólne efekty combat w trybie zagrania. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100755,
@@ -4856,8 +4856,8 @@
   {
     "id": 100810,
     "name": "Garrote",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Equipment nie ma melee weapon profile ani opcji spalenia torporującego vampire przez spalenie broni. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment nie ma melee weapon profile ani opcji spalenia torporującego vampire przez spalenie broni. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100811,
@@ -4904,14 +4904,14 @@
   {
     "id": 100818,
     "name": "Ghoul Messenger",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Retainer ma 1 life, ale brak wymogu Laibon, akcji przeniesienia, blood i unlock oraz skutków zablokowania. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma 1 life, ale brak wymogu Laibon, akcji przeniesienia, blood i unlock oraz skutków zablokowania. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100819,
     "name": "Ghoul Retainer",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Retainer ma 2 life, ale brak obrażeń podczas initial strike resolution i używania weapon. Wspólny mechanizm w engine.ts wymaga statics.combatRoundDamage, której ten spec nie dostarcza. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma 2 life, ale brak obrażeń podczas initial strike resolution i używania weapon. Wspólny mechanizm w engine.ts wymaga statics.combatRoundDamage, której ten spec nie dostarcza. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100820,
@@ -4923,19 +4923,19 @@
     "id": 100821,
     "name": "Ghouled Street Thug",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma podstawowe statystyki, ale brak ranged strike i zdolności zagrywania kart Potence jak vampire. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma podstawowe statystyki, ale brak ranged strike i zdolności zagrywania kart Potence jak vampire. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100822,
     "name": "The Ghouls of Plaza Morería",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally nie ma unique, ranged strike, counterów ani akcji ich dodania i wydania; maneuver jest efektem zagrania, nie stałą zdolnością. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally nie ma unique, ranged strike, counterów ani akcji ich dodania i wydania; maneuver jest efektem zagrania, nie stałą zdolnością. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100823,
     "name": "Gianna di Canneto",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally nie ma unique ani zewnętrznych zdolności spalenia equipment i zadania unpreventable damage; spec ma jedynie prevent. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally nie ma unique ani zewnętrznych zdolności spalenia equipment i zadania unpreventable damage; spec ma jedynie prevent. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100824,
@@ -4989,13 +4989,13 @@
     "id": 100832,
     "name": "Giulia Giovanni Abruzzina",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally nie ma unique ani zdolności lock do ustalenia close range przy walce kontrolowanego Giovanni. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally nie ma unique ani zdolności lock do ustalenia close range przy walce kontrolowanego Giovanni. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100833,
     "name": "Giuseppe, Gravedigger",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer nie opisuje unique ani stałego stealth w akcjach wymagających Necromancy; zawiera tylko modifyStealth w trybie. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Retainer nie opisuje unique ani stałego stealth w akcjach wymagających Necromancy; zawiera tylko modifyStealth w trybie. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100834,
@@ -5061,7 +5061,7 @@
     "id": 100844,
     "name": "Goth Band",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally nie ma unique ani akcji przenoszenia countera między master cards; ma tylko modifyStealth w spec. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally nie ma unique ani akcji przenoszenia countera między master cards; ma tylko modifyStealth w spec. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100845,
@@ -5145,7 +5145,7 @@
     "id": 100858,
     "name": "Grey Thorne",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally nie ma unique, wymogu Anarch, zdolności zagrywania Celerity/Potence i uzupełniania life. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally nie ma unique, wymogu Anarch, zdolności zagrywania Celerity/Potence i uzupełniania life. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100859,
@@ -5199,7 +5199,7 @@
     "id": 100867,
     "name": "Guardian Ghoul",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, ale nie ma możliwości spalenia się zamiast niszczonej location. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma statystyki, ale nie ma możliwości spalenia się zamiast niszczonej location. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100868,
@@ -5337,7 +5337,7 @@
     "id": 100890,
     "name": "Harzomatuili",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma podstawowe statystyki, lecz brak unique, wymogu tytułu, aggravated hand strike, płatnego intercept i odzyskania life. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma podstawowe statystyki, lecz brak unique, wymogu tytułu, aggravated hand strike, płatnego intercept i odzyskania life. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100891,
@@ -5462,14 +5462,14 @@
   {
     "id": 100911,
     "name": "Hellhound",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally ma statystyki, ale brak zakazu akcji i odnawiania 1 life w unlock phase. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki, ale brak zakazu akcji i odnawiania 1 life w unlock phase. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100912,
     "name": "Herald of Topheth",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally nie ma flight, infernal, wymaganych zdolności Disciplines, rush ani odnowienia life. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally nie ma flight, infernal, wymaganych zdolności Disciplines, rush ani odnowienia life. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100913,
@@ -5571,13 +5571,13 @@
     "id": 100929,
     "name": "High Top",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, lecz brak unique, trwałego intercept, rush, dodatkowych strike, Disciplines i odzyskania life. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki, lecz brak unique, trwałego intercept, rush, dodatkowych strike, Disciplines i odzyskania life. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100930,
     "name": "Highway Haven: RV",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Equipment nie ma profilu vehicle/haven, ograniczeń, first-round press, efektu na directed actions ani akcji werewolf. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment nie ma profilu vehicle/haven, ograniczeń, first-round press, efektu na directed actions ani akcji werewolf. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100931,
@@ -5732,8 +5732,8 @@
   {
     "id": 100956,
     "name": "Ilomba",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Retainer nie wymaga Laibon i nie określa wybranego nosiciela, limitu ani zastąpienia utraty życia kosztem nosiciela. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer nie wymaga Laibon i nie określa wybranego nosiciela, limitu ani zastąpienia utraty życia kosztem nosiciela. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100957,
@@ -5780,8 +5780,8 @@
   {
     "id": 100964,
     "name": "Improvised Flamethrower",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Equipment nie ma weapon 2R aggravated ani limitu i wybuchu; spec zawiera tylko prevent. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment nie ma weapon 2R aggravated ani limitu i wybuchu; spec zawiera tylko prevent. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100965,
@@ -5793,7 +5793,7 @@
     "id": 100966,
     "name": "Impundulu",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally nie ma unique, flight, ranged strike, akcji kradzieży life/blood ani trwałego maneuver. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally nie ma unique, flight, ranged strike, akcji kradzieży life/blood ani trwałego maneuver. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100967,
@@ -5864,8 +5864,8 @@
   {
     "id": 100978,
     "name": "Infernal Familiar",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Retainer ma life, lecz nie pozwala grać brakujących Disciplines ani nie dodaje counterów i warunku spalenia vampire. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma life, lecz nie pozwala grać brakujących Disciplines ani nie dodaje counterów i warunku spalenia vampire. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100979,
@@ -5883,7 +5883,7 @@
     "id": 100981,
     "name": "Infernal Servitor",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally nie wymaga infernal vampire, nie implementuje wejścia do gry i usunięcia ani superior Disciplines. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally nie wymaga infernal vampire, nie implementuje wejścia do gry i usunięcia ani superior Disciplines. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100982,
@@ -5895,7 +5895,7 @@
     "id": 100983,
     "name": "Informant",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally nie ma zakazu akcji/bloku, ujawniania ręki Ishtarri ani przekazania predator w discard. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally nie ma zakazu akcji/bloku, ujawniania ręki Ishtarri ani przekazania predator w discard. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100984,
@@ -6098,8 +6098,8 @@
   {
     "id": 101017,
     "name": "Jackal",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Retainer ma natychmiastowy modifyStealth zamiast warunkowej stałej staty zależnej od minionów prey; brak superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma natychmiastowy modifyStealth zamiast warunkowej stałej staty zależnej od minionów prey; brak superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101018,
@@ -6117,7 +6117,7 @@
     "id": 101020,
     "name": "Jar of Skin Eaters",
     "status": "PARTIAL_FIX",
-    "evidence": "Equipment ma tylko actionStealth zamiast weapon, warunku blood, działania z aggravated i akcji uzupełnienia. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Equipment ma tylko actionStealth zamiast weapon, warunku blood, działania z aggravated i akcji uzupełnienia. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101021,
@@ -6147,7 +6147,7 @@
     "id": 101025,
     "name": "Joumlon's Axe",
     "status": "PARTIAL_FIX",
-    "evidence": "Spec equipment nie zawiera profilu unique melee strength+1 ani aggravated na Kiasyd i anulowania grapple. Nie znaleziono osobnego handlera karty; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Spec equipment nie zawiera profilu unique melee strength+1 ani aggravated na Kiasyd i anulowania grapple. Nie znaleziono osobnego handlera karty; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101026,
@@ -6230,8 +6230,8 @@
   {
     "id": 101039,
     "name": "Kerrie",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty tryb equipment bez wymogu Laibon, profilu melee strength+1 i alternatywnego ranged strike odwracającego broń. Bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusty tryb equipment bez wymogu Laibon, profilu melee strength+1 i alternatywnego ranged strike odwracającego broń. Bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101040,
@@ -6386,8 +6386,8 @@
   {
     "id": 101065,
     "name": "Kpist m/45",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Equipment nie ma profilu gun 1R, a additional strike i maneuver zapisano jako efekty zagrania, bez ograniczenia dodatkowego strike do tej broni. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment nie ma profilu gun 1R, a additional strike i maneuver zapisano jako efekty zagrania, bez ograniczenia dodatkowego strike do tej broni. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101066,
@@ -6476,8 +6476,8 @@
   {
     "id": 101080,
     "name": "Learjet",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty equipment bez vehicle i możliwości opcjonalnego dodatkowego draw po zastąpieniu karty granej przez acting minion. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusty equipment bez vehicle i możliwości opcjonalnego dodatkowego draw po zastąpieniu karty granej przez acting minion. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101081,
@@ -6561,7 +6561,7 @@
     "id": 101094,
     "name": "Leonardo, Mortician",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma podstawowe statystyki, ale brak unique i działania dodania blood do ready vampire. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma podstawowe statystyki, ale brak unique i działania dodania blood do ready vampire. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101095,
@@ -6687,7 +6687,7 @@
     "id": 101115,
     "name": "Living Wood Staff",
     "status": "PARTIAL_FIX",
-    "evidence": "Pusta spec equipment nie ma unique ani profilu melee strength, bonusu imbued za X i interakcji z Cleave. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Ikona Avenger jest creed Imbued, nie klanem wampira; wymaganie creed i sama obsługa Imbued pozostają niezaimplementowane i nie zostały naprawione w paczce ikon klanowych. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Pusta spec equipment nie ma unique ani profilu melee strength, bonusu imbued za X i interakcji z Cleave. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Ikona Avenger jest creed Imbued, nie klanem wampira; wymaganie creed i sama obsługa Imbued pozostają niezaimplementowane i nie zostały naprawione w paczce ikon klanowych. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101116,
@@ -6980,14 +6980,14 @@
   {
     "id": 101164,
     "name": "Marijava Ghoul",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Retainer ma jedynie natychmiastowy modifyStealth zamiast trwałego +1 stealth przy action wymagającym Presence. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma jedynie natychmiastowy modifyStealth zamiast trwałego +1 stealth przy action wymagającym Presence. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101165,
     "name": "Marijava Thuggee",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma podstawowe statystyki, bez wymogu Black Hand, gry obf jako vampire, działania damage i lock w unlock. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma podstawowe statystyki, bez wymogu Black Hand, gry obf jako vampire, działania damage i lock w unlock. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101166,
@@ -7088,8 +7088,8 @@
   {
     "id": 101182,
     "name": "Masquer",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Retainer ma natychmiastowy modifyIntercept zamiast odporności, trwałego intercept i burn za intercept innego miniona; brak superior life. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma natychmiastowy modifyIntercept zamiast odporności, trwałego intercept i burn za intercept innego miniona; brak superior life. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101183,
@@ -7142,8 +7142,8 @@
   {
     "id": 101191,
     "name": "Meat Hook",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Equipment ma dodge i press zamiast profilu melee strength+1, ograniczeń użycia, warunkowego press i opcji zniszczenia przez Potence. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment ma dodge i press zamiast profilu melee strength+1, ograniczeń użycia, warunkowego press i opcji zniszczenia przez Potence. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101192,
@@ -7161,7 +7161,7 @@
     "id": 101194,
     "name": "Mehemet of the Ahl-i-Batin",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, ale brak unique, ranged 2 damage i działania spalenia Discipline card wraz z kosztem. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki, ale brak unique, ranged 2 damage i działania spalenia Discipline card wraz z kosztem. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101195,
@@ -7179,7 +7179,7 @@
     "id": 101197,
     "name": "Member of the Entourage",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki i modifyIntercept jako efekt zagrania zamiast zakazu działań, płatnego intercept i spalenia po bloku vampire; brak wymogu klanu. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma statystyki i modifyIntercept jako efekt zagrania zamiast zakazu działań, płatnego intercept i spalenia po bloku vampire; brak wymogu klanu. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101198,
@@ -7383,7 +7383,7 @@
     "id": 101231,
     "name": "Moise Kasavubu",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma podstawowe statystyki i actionStealth, lecz nie ma unique, wymogu imbued, ranged strike ani akcji wyszukania i przekazania equipment. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma podstawowe statystyki i actionStealth, lecz nie ma unique, wymogu imbued, ranged strike ani akcji wyszukania i przekazania equipment. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101232,
@@ -7563,7 +7563,7 @@
     "id": 101261,
     "name": "Mylan Horseed",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki i efekty strikeDodge/actionStealth, ale brak unique, akcji unlock kwalifikującego się vampire i zakazu blokowania vampires. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki i efekty strikeDodge/actionStealth, ale brak unique, akcji unlock kwalifikującego się vampire i zakazu blokowania vampires. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101262,
@@ -7581,7 +7581,7 @@
     "id": 101264,
     "name": "Nar-Sheptha",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer ma 1 life, ale brak unique, hand size w combat i zmiany acting minion. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Retainer ma 1 life, ale brak unique, hand size w combat i zmiany acting minion. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101265,
@@ -7616,8 +7616,8 @@
   {
     "id": 101270,
     "name": "Neighborhood Watch Commander",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma podstawowe statystyki, ale brak lock po nieudanej akcji do damage acting vampire i limitu jednego takiego użycia. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma podstawowe statystyki, ale brak lock po nieudanej akcji do damage acting vampire i limitu jednego takiego użycia. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101271,
@@ -7718,8 +7718,8 @@
   {
     "id": 101287,
     "name": "Nightstick",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Equipment ma prevent 3 jako efekt trybu, ale brak profilu melee strength+1 i opcjonalnego strike prevent o ograniczonym zakresie oraz limitu na rundę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment ma prevent 3 jako efekt trybu, ale brak profilu melee strength+1 i opcjonalnego strike prevent o ograniczonym zakresie oraz limitu na rundę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101288,
@@ -7754,8 +7754,8 @@
   {
     "id": 101293,
     "name": "Nocturn",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma statystyki i basic obt, ale brak gry kart obt, działania w turze rekrutacji, unlock aktora, spalenia w unlock i superior ponawiającego akcję. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki i basic obt, ale brak gry kart obt, działania w turze rekrutacji, unlock aktora, spalenia w unlock i superior ponawiającego akcję. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101294,
@@ -7899,7 +7899,7 @@
     "id": 101317,
     "name": "Ohoyo Hopoksia (Bastet)",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma tylko statystyki, bez unique, przekierowania combat na siebie, maneuver i regeneracji life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma tylko statystyki, bez unique, przekierowania combat na siebie, maneuver i regeneracji life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101318,
@@ -7971,7 +7971,7 @@
     "id": 101329,
     "name": "Order of Hermes Cabal",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, lecz brak unique, 1R aggravated strike i działania combat z Tremere innego gracza. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki, lecz brak unique, 1R aggravated strike i działania combat z Tremere innego gracza. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101330,
@@ -7995,7 +7995,7 @@
     "id": 101333,
     "name": "Ossian",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, modifyStealth i maneuver, ale brak unique, Red List, rush vampire i specjalnych efektów combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki, modifyStealth i maneuver, ale brak unique, Red List, rush vampire i specjalnych efektów combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101334,
@@ -8444,14 +8444,14 @@
   {
     "id": 101408,
     "name": "Poker",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty equipment bez melee strength+1, aggravated damage wobec Kiasyd i warunkowego spalenia przez prevention Fortitude. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusty equipment bez melee strength+1, aggravated damage wobec Kiasyd i warunkowego spalenia przez prevention Fortitude. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101409,
     "name": "Polaris Coach",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Equipment ma modifyStealth zamiast vehicle/haven z utrzymaniem, counterami za stealth i ograniczeniem reakcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment ma modifyStealth zamiast vehicle/haven z utrzymaniem, counterami za stealth i ograniczeniem reakcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101410,
@@ -8469,7 +8469,7 @@
     "id": 101412,
     "name": "Political Antagonist",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki i modifyIntercept zamiast trwałej zdolności lock za intercept Ventrue antitribu podczas political action. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma statystyki i modifyIntercept zamiast trwałej zdolności lock za intercept Ventrue antitribu podczas political action. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101413,
@@ -8511,7 +8511,7 @@
     "id": 101419,
     "name": "Ponticulus",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki i modifyIntercept, bez unique, odporności, zakazu akcji/equipment oraz zdolności lock za intercept Tremere. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki i modifyIntercept, bez unique, odporności, zakazu akcji/equipment oraz zdolności lock za intercept Tremere. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101420,
@@ -8901,7 +8901,7 @@
     "id": 101484,
     "name": "Priestess of Sekhmet",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer ma life i modifyBleed zamiast trwałego warunkowego bleed, kary intercept dla Camarilla i limitu jednej kopii. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Retainer ma life i modifyBleed zamiast trwałego warunkowego bleed, kary intercept dla Camarilla i limitu jednej kopii. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101485,
@@ -9110,8 +9110,8 @@
   {
     "id": 101519,
     "name": "Puppeteer",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma tylko 1 life/strength/bleed; brak akcji przejęcia ally lub małego vampire oraz superior 2 life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma tylko 1 life/strength/bleed; brak akcji przejęcia ally lub małego vampire oraz superior 2 life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101520,
@@ -9333,7 +9333,7 @@
     "id": 101556,
     "name": "Razor Bat",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer zawiera life i modifyIntercept, ale brak obrażeń 1R w każdej rundzie i wymogu Gargoyle. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Retainer zawiera life i modifyIntercept, ale brak obrażeń 1R w każdej rundzie i wymogu Gargoyle. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101557,
@@ -9374,8 +9374,8 @@
   {
     "id": 101563,
     "name": "Reanimated Corpse",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma podstawowe statystyki, ale brak X pathos, zużywania, usunięcia z gry, gry Fortitude i superior +2 counters. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma podstawowe statystyki, ale brak X pathos, zużywania, usunięcia z gry, gry Fortitude i superior +2 counters. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101564,
@@ -9452,8 +9452,8 @@
   {
     "id": 101576,
     "name": "Redcap Wilder",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Retainer ma 2 life, lecz nie ma kosztu za próbę bloku, ani superior ze zniżką. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma 2 life, lecz nie ma kosztu za próbę bloku, ani superior ze zniżką. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101577,
@@ -9597,7 +9597,7 @@
     "id": 101600,
     "name": "Remnant of the Endless Storm",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma podstawowe statystyki i addStrength 1 zamiast strength za każde life, rush, limitu damage i odzyskiwania life; brak unique i wymogu magaji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma podstawowe statystyki i addStrength 1 zamiast strength za każde life, rush, limitu damage i odzyskiwania life; brak unique i wymogu magaji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101601,
@@ -9609,7 +9609,7 @@
     "id": 101602,
     "name": "Renegade Garou",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma podstawowe statystyki, lecz dodatkowy strike i maneuver znajdują się w efektach zagrania zamiast trwałych zdolności; brak akcji rush i odzyskania life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma podstawowe statystyki, lecz dodatkowy strike i maneuver znajdują się w efektach zagrania zamiast trwałych zdolności; brak akcji rush i odzyskania life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101603,
@@ -9867,7 +9867,7 @@
     "id": 101645,
     "name": "Rock Cat",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma podstawowe statystyki i press jako efekt rekrutacji zamiast rush, zakazu strike młodych vampire, opcjonalnego press i gry Potence jako vampire capacity 3. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma podstawowe statystyki i press jako efekt rekrutacji zamiast rush, zakazu strike młodych vampire, opcjonalnego press i gry Potence jako vampire capacity 3. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101646,
@@ -9927,7 +9927,7 @@
     "id": 101655,
     "name": "Rowan Ring",
     "status": "PARTIAL_FIX",
-    "evidence": "Pusty equipment bez unique melee strike wysyłającego przeciwnika do torpor i przenoszącego tam kartę z zakazem unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Pusty equipment bez unique melee strike wysyłającego przeciwnika do torpor i przenoszącego tam kartę z zakazem unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101656,
@@ -10047,7 +10047,7 @@
     "id": 101675,
     "name": "Samuel Haight",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki oraz efekty zagrania bleed/stealth zamiast unique i trwałych zdolności płatnego bleed, steal strike, dyscyplin, referendum i odzyskania life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki oraz efekty zagrania bleed/stealth zamiast unique i trwałych zdolności płatnego bleed, steal strike, dyscyplin, referendum i odzyskania life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101676,
@@ -10119,7 +10119,7 @@
     "id": 101687,
     "name": "Scapelli, The Family \"Mechanic\"",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally nie ma statystyk life/strength/bleed ani unique, ranged strike 2R lub trwałego press-to-continue; press jest efektem zagrania. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally nie ma statystyk life/strength/bleed ani unique, ranged strike 2R lub trwałego press-to-continue; press jest efektem zagrania. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte. Uzupełniono też brakujące drukowane life/strength/bleed Scapelli, dzięki czemu jego rekrutacja nie zgłasza braku ally stats; strike i press pozostają do osobnej naprawy."
   },
   {
     "id": 101688,
@@ -10400,8 +10400,8 @@
   {
     "id": 101734,
     "name": "Shade",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Retainer ma 2 life bez damage co rundę; brak superior 3 life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma 2 life bez damage co rundę; brak superior 3 life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101735,
@@ -10419,7 +10419,7 @@
     "id": 101737,
     "name": "Shadow Court Satyr",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma podstawowe statystyki, ale brak dołączenia combat card z hand i użycia jej raz na combat z dostępem do basic discipline. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma podstawowe statystyki, ale brak dołączenia combat card z hand i użycia jej raz na combat z dostępem do basic discipline. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101738,
@@ -10497,13 +10497,13 @@
     "id": 101750,
     "name": "Shaman",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer ma life oraz modyfikatory jako efekty zagrania zamiast unique i stałego intercept oraz shuffle za stealth; brak wymogu Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Retainer ma life oraz modyfikatory jako efekty zagrania zamiast unique i stałego intercept oraz shuffle za stealth; brak wymogu Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101751,
     "name": "Shambling Hordes",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma podstawowe statystyki i jednorazowe addStrength zamiast zdolności strength za life, rush, kosztu po wejściu i zakazu gain life; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma podstawowe statystyki i jednorazowe addStrength zamiast zdolności strength za life, rush, kosztu po wejściu i zakazu gain life; brak superior. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101752,
@@ -11072,8 +11072,8 @@
   {
     "id": 101846,
     "name": "Spike-Thrower",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty equipment bez long-range 1R weapon, limitu raz na rundę i warunkowej blokady unlock trafionego vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusty equipment bez long-range 1R weapon, limitu raz na rundę i warunkowej blokady unlock trafionego vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101847,
@@ -11115,7 +11115,7 @@
     "id": 101853,
     "name": "Spiritual Protector",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer ma 1 life, lecz brak unique, odporności na normal damage i zakazu equipment przeciwnika w wynikłym combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Retainer ma 1 life, lecz brak unique, odporności na normal damage i zakazu equipment przeciwnika w wynikłym combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101854,
@@ -11156,8 +11156,8 @@
   {
     "id": 101860,
     "name": "Starshell Grenade Launcher",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty equipment bez long-range aggravated weapon raz na combat i lock za -1 stealth działającemu minionowi. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusty equipment bez long-range aggravated weapon raz na combat i lock za -1 stealth działającemu minionowi. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101861,
@@ -11235,7 +11235,7 @@
     "id": 101873,
     "name": "Stone Dog",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer ma life 4, lecz brak rush nadawanego Gargoyle i close damage co initial strike resolution. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Retainer ma life 4, lecz brak rush nadawanego Gargoyle i close damage co initial strike resolution. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101874,
@@ -11349,7 +11349,7 @@
     "id": 101892,
     "name": "Succubus",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, ale efekty modifyBleed i stealth zamiast aggravated hand strikes, płatnego bleed raz na turę i akcji steal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma statystyki, ale efekty modifyBleed i stealth zamiast aggravated hand strikes, płatnego bleed raz na turę i akcji steal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101893,
@@ -11457,7 +11457,7 @@
     "id": 101910,
     "name": "Survivalist",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, brak ranged strike 2 i lock za maneuver dla Brujah antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma statystyki, brak ranged strike 2 i lock za maneuver dla Brujah antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101911,
@@ -11480,8 +11480,8 @@
   {
     "id": 101914,
     "name": "Swarm",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Retainer ma life i efekt stealth, lecz brak wymogu ready Laibon, dołączenia do cudzego miniona, obsługi blocked action i upkeep/life oraz limitu Swarm. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma life i efekt stealth, lecz brak wymogu ready Laibon, dołączenia do cudzego miniona, obsługi blocked action i upkeep/life oraz limitu Swarm. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101915,
@@ -11511,13 +11511,13 @@
     "id": 101919,
     "name": "Sword of Judgment",
     "status": "PARTIAL_FIX",
-    "evidence": "Equipment z additionalStrike jako efektem zagrania zamiast unique melee weapon strength+1 i dodatkowego strike co rundę; brak wymogu Brujah antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Equipment z additionalStrike jako efektem zagrania zamiast unique melee weapon strength+1 i dodatkowego strike co rundę; brak wymogu Brujah antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101920,
     "name": "Sword of Nuln",
     "status": "PARTIAL_FIX",
-    "evidence": "Pusty equipment bez unique melee strength damage i podwojenia kosztu leczenia. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Pusty equipment bez unique melee strength damage i podwojenia kosztu leczenia. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101921,
@@ -11529,7 +11529,7 @@
     "id": 101922,
     "name": "Sword of Troile",
     "status": "PARTIAL_FIX",
-    "evidence": "Pusty equipment bez unique melee weapon, superior Potence/Presence oraz ograniczeń wyboru strike i maneuver. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Pusty equipment bez unique melee weapon, superior Potence/Presence oraz ograniczeń wyboru strike i maneuver. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101923,
@@ -11577,7 +11577,7 @@
     "id": 101930,
     "name": "Talaq, The Immortal",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, ale brak unique, ranged strike 1, basic qui/tha jako vampire capacity 3 i optional maneuver. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki, ale brak unique, ranged strike 1, basic qui/tha jako vampire capacity 3 i optional maneuver. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101931,
@@ -11589,7 +11589,7 @@
     "id": 101932,
     "name": "Talith",
     "status": "PARTIAL_FIX",
-    "evidence": "Pusty equipment bez melee weapon strength+1 i Ravnos strike burn weapon z first strike. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Pusty equipment bez melee weapon strength+1 i Ravnos strike burn weapon z first strike. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101933,
@@ -11619,7 +11619,7 @@
     "id": 101937,
     "name": "Tara, The Hollow One",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, lecz brak unique, ranged strike 1 i akcji burn equipment na Ravnos z gain blood. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki, lecz brak unique, ranged strike 1 i akcji burn equipment na Ravnos z gain blood. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101938,
@@ -11763,7 +11763,7 @@
     "id": 101961,
     "name": "Terrorists",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, ale actionStealth jako efekt zagrania zamiast przyznania akcji znalezienia i wyposażenia Bomb. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma statystyki, ale actionStealth jako efekt zagrania zamiast przyznania akcji znalezienia i wyposażenia Bomb. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101962,
@@ -11906,8 +11906,8 @@
   {
     "id": 101985,
     "name": "Tinglestripe",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty equipment zamiast broni 2R z limitem raz na rundę i alternatywnego superior 1R/maneuver. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusty equipment zamiast broni 2R z limitem raz na rundę i alternatywnego superior 1R/maneuver. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101986,
@@ -12279,7 +12279,7 @@
     "id": 102047,
     "name": "Tunnel Runner",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma podstawowe statystyki i modifyStealth zamiast gry ani jako vampire, płatnego stealth, podglądu po bleed, damage za steal i regeneracji life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma podstawowe statystyki i modifyStealth zamiast gry ani jako vampire, płatnego stealth, podglądu po bleed, damage za steal i regeneracji life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102048,
@@ -12615,7 +12615,7 @@
     "id": 102103,
     "name": "Veneficti",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki i jednorazowy stealth, ale brak unique, statycznego stealth, wymogu infernal, akcji demon oraz ochrony przed directed actions. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki i jednorazowy stealth, ale brak unique, statycznego stealth, wymogu infernal, akcji demon oraz ochrony przed directed actions. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102104,
@@ -12765,7 +12765,7 @@
     "id": 102128,
     "name": "Vivienne Géroux",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, ale brak unique, wymogu Anarch, dostępu cel/for, kary stealth political i akcji przekazania/steal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki, ale brak unique, wymogu Anarch, dostępu cel/for, kary stealth political i akcji przekazania/steal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102129,
@@ -12843,7 +12843,7 @@
     "id": 102141,
     "name": "Walks-With-Might",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki i jednorazowy intercept zamiast unique, intercept przeciw Followers of Set, podatku master cards i redukcji każdego damage. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki i jednorazowy intercept zamiast unique, intercept przeciw Followers of Set, podatku master cards i redukcji każdego damage. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102142,
@@ -13035,13 +13035,13 @@
     "id": 102173,
     "name": "Wendell Delburton",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma podstawowe statystyki i jednorazowy maneuver/prevent zamiast unique, strike 2R, melee bonus, maneuver, rush i skutków w unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma podstawowe statystyki i jednorazowy maneuver/prevent zamiast unique, strike 2R, melee bonus, maneuver, rush i skutków w unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102174,
     "name": "Werewolf Pack",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, ale brak unique i odporności na melee damage. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki, ale brak unique i odporności na melee damage. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102175,
@@ -13142,14 +13142,14 @@
   {
     "id": 102191,
     "name": "Wolf Companion",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Basic retainer ma 2 life, ale brak damage na close w strike resolution; brak superior 3 life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Basic retainer ma 2 life, ale brak damage na close w strike resolution; brak superior 3 life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102192,
     "name": "Wooden Stake",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty equipment bez melee strength strike, torpor po odpowiednim damage, transferu broni i zakazu unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusty equipment bez melee strength strike, torpor po odpowiednim damage, transferu broni i zakazu unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102193,
@@ -13407,7 +13407,7 @@
     "id": 102235,
     "name": "Dark Web Procurer",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki i jednorazowy actionStealth zamiast +1 stealth action wyszukiwania non-unique equipment o koszcie <=1 pool. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Ally ma statystyki i jednorazowy actionStealth zamiast +1 stealth action wyszukiwania non-unique equipment o koszcie <=1 pool. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102236,
@@ -13424,14 +13424,14 @@
   {
     "id": 102238,
     "name": "Enhanced Coagulant",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Equipment daje prevent 2 zamiast strike 3 unpreventable i attachment podatku discipline z usunięciem po hunt. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment daje prevent 2 zamiast strike 3 unpreventable i attachment podatku discipline z usunięciem po hunt. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102239,
     "name": "Michael Harris, the Incinerator",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki i jednorazowy actionStealth zamiast unique, Operation Antigen, equip z library i płatnego set range. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma statystyki i jednorazowy actionStealth zamiast unique, Operation Antigen, equip z library i płatnego set range. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102240,
@@ -13467,7 +13467,7 @@
     "id": 102245,
     "name": "Valerie Diaz, Antigen Commander",
     "status": "PARTIAL_FIX",
-    "evidence": "Ally ma tylko statystyki, bez unique Operation Antigen, płatnej odporności i unlock po combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Ally ma tylko statystyki, bez unique Operation Antigen, płatnej odporności i unlock po combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102246,

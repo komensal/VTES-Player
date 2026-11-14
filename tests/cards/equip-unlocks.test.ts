@@ -295,6 +295,19 @@ describe("Powder of Rigidity (101427)", () => {
     expect(bob.some((i) => i.startsWith("play:Earth Meld:"))).toBe(true);
   });
 
+  it("recognises the printed werewolf subtype on Werewolf Pack", () => {
+    const wolf = intoCombat((s) => {
+      find(s, "V1").attached.push(entry("pr", "Powder of Rigidity"));
+      const pack = makeAlly("PACK", "Bob", 3, { name: "Werewolf Pack", strength: 3 });
+      pack.attached.push(entry("PACK", "Werewolf Pack"));
+      s.seats[1]!.minions.push(pack);
+    }, "PACK");
+    passUntil(wolf.engine, "ability:Powder of Rigidity:pr:ban");
+    runTrace(wolf.engine, [["Alice", "ability:Powder of Rigidity:pr:ban"]]);
+    expect(combat(wolf.state)!.strengthBonus.opposing).toBe(-2);
+    expect(find(wolf.state, "V1").attached.some((p) => p.card.id === "pr")).toBe(false);
+  });
+
   it("gives a werewolf -2 strength for the combat, and nobody else", () => {
     const wolf = intoCombat((s) => {
       find(s, "V1").attached.push(entry("pr", "Powder of Rigidity"));

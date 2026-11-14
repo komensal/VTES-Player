@@ -8,12 +8,12 @@ To powtarzalne, zgrubne grupowanie po słowach w tekście evidence, a nie potwie
 |---|---:|
 | `crypt_import_lub_cechy` | 562 |
 | `placeholder_lub_brak_efektu` | 1950 |
-| `akcje_i_blok` | 1612 |
+| `akcje_i_blok` | 1652 |
 | `walka` | 754 |
 | `polityka_i_glosy` | 357 |
 | `koszty_i_zasoby` | 873 |
 | `karty_i_strefy` | 1572 |
-| `czas_i_warunki` | 693 |
-| `inne_do_recznego_przegladu` | 7 |
+| `czas_i_warunki` | 694 |
+| `inne_do_recznego_przegladu` | 6 |
 
 Wykaz per karta: `open-issue-categories.csv`; dowody i ograniczenia: `manual-findings.json`. Regeneracja: `python3 scripts/categorize-card-audit.py`.

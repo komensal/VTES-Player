@@ -4414,7 +4414,7 @@ export interface CardSpec {
      *  declare its sub-type in one place and be filtered in another. The
      *  word carries no rules of its own: it appears nowhere in the
      *  rulebook, exactly like "ghoul". docs/wraith-zombie-design.md §§1–2 */
-    subtype?: "wraith" | "zombie" | "ghoul" | "mortal";
+    subtype?: "wraith" | "zombie" | "ghoul" | "mortal" | "mummy";
     /** "This ally cannot have or use equipment (or retainers)" (Bone
      *  Shambler, Gravebound Drone) — a gate on OPTIONS: the ally is not
      *  offered as a bearer. */

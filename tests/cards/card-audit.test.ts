@@ -9,7 +9,19 @@ describe("the card audit inventory", () => {
   it("scans every registry card and distinguishes evidence from triage", () => {
     const dir = mkdtempSync(join(tmpdir(), "vtes-card-audit-"));
     try {
-      execFileSync(process.execPath, ["--import", "tsx", "scripts/card-audit.mts", dir], { cwd: process.cwd() });
+      // Audit statuses evolve as repairs land. Supply a small controlled
+      // findings file so this test verifies status propagation without
+      // freezing historical conclusions about individual cards forever.
+      const findings = join(dir, "findings.json");
+      writeFileSync(findings, JSON.stringify([
+        { id: 100207, name: "Blood Puppy", status: "FIXED_TARGETED", evidence: "test" },
+        { id: 100216, name: "Blood Turnip", status: "CONFIRMED_BUG", evidence: "test" },
+        { id: 100791, name: "Frenzy", status: "CODE_DISCREPANCY", evidence: "test" },
+        { id: 101043, name: "Khabar: Glory", status: "CODE_DISCREPANCY", evidence: "test" },
+        { id: 100753, name: "Focus the Blood", status: "UNRESOLVED", evidence: "test" },
+        { id: 200232, name: "Cailean (G2)", status: "CONFIRMED_BUG", evidence: "test" },
+      ]));
+      execFileSync(process.execPath, ["--import", "tsx", "scripts/card-audit.mts", dir, findings], { cwd: process.cwd() });
       const csv = readFileSync(join(dir, "inventory.csv"), "utf8");
       const rows = csv.trimEnd().split("\n");
       expect(rows).toHaveLength(Object.keys(registry.entries).length + 1);
