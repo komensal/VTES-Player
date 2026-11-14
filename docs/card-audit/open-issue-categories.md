@@ -9,9 +9,9 @@ To powtarzalne, zgrubne grupowanie po słowach w tekście evidence, a nie potwie
 | `crypt_import_lub_cechy` | 557 |
 | `placeholder_lub_brak_efektu` | 1938 |
 | `akcje_i_blok` | 1651 |
-| `walka` | 745 |
+| `walka` | 746 |
 | `polityka_i_glosy` | 358 |
-| `koszty_i_zasoby` | 870 |
+| `koszty_i_zasoby` | 871 |
 | `karty_i_strefy` | 1564 |
 | `czas_i_warunki` | 723 |
 | `inne_do_recznego_przegladu` | 6 |

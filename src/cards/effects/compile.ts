@@ -788,7 +788,7 @@ function searchEquipDeterministic(
   if (found && bearer) {
     const h = ops.registry[found.name]!;
     const modes = h.modesPlayableBy?.(bearer) ?? [];
-    if (modes.length === 0 || (h.isUnique && seatControlsCopy(ops.state, seatId, found.name))) {
+    if (cannotBeEquipped(bearer, "equipment") || modes.length === 0 || (h.isUnique && seatControlsCopy(ops.state, seatId, found.name))) {
       ops.emit({ type: "CardLeftZone", seat: seatId, cardId: found.id, name: found.name, zone: "library" });
       ops.emit({ type: "CardBurned", seat: seatId, cardId: found.id, name: found.name });
       ops.shuffleLibrary(seatId);
@@ -3672,6 +3672,8 @@ function compileCombatCard(spec: CardSpec): CardHandler {
                   }
                   break;
                 }
+                // A minion that cannot have equipment cannot steal it.
+                if (strip.kind === "strikeStealEquipment" && cannotBeEquipped(m, "equipment")) break;
                 // Destroying takes any EQUIPMENT; stealing takes a WEAPON.
                 const wants =
                   strip.kind === "strikeStealEquipment" && strip.weaponOnly !== false
@@ -11210,7 +11212,7 @@ export function compileSpec(spec: CardSpec): CardHandler {
         // "Requirements and cost apply as normal": a card this vampire
         // could not equip with is not a legal find, including a unique card
         // whose copy the searching Methuselah already controls.
-        if (!bearer || (h.modesPlayableBy?.(bearer) ?? []).length === 0) continue;
+        if (!bearer || cannotBeEquipped(bearer, "equipment") || (h.modesPlayableBy?.(bearer) ?? []).length === 0) continue;
         if (h.isUnique && seatControlsCopy(state, frame.seat, c.name)) continue;
         const mode = h.modesPlayableBy?.(bearer)?.[0] ?? null;
         const cost = playCostFor(
@@ -11253,7 +11255,7 @@ export function compileSpec(spec: CardSpec): CardHandler {
       if (pick !== "none" && minion) {
         const card = getSeat(ops.state, frame.seat).library.find((c) => c.id === pick);
         const bearer = findMinion(ops.state, minion);
-        if (card && bearer) {
+        if (card && bearer && !cannotBeEquipped(bearer, "equipment")) {
           const mode = (ops.registry[card.name]?.modesPlayableBy?.(bearer) ?? [null])[0] ?? null;
           ops.playCardFromHand({
             cardId: pick,
@@ -13860,7 +13862,7 @@ function addCryptAbilities(
           const cardId = p["card"];
           const actor = findMinion(ops.state, af.acting);
           // Both can have left play between announcement and resolution.
-          if (!cardId || !actor) return;
+          if (!cardId || !actor || cannotBeEquipped(actor, "equipment")) return;
           ops.moveAttachment(cardId, actor.id, seat);
           return;
         }
@@ -17434,7 +17436,7 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
                 if (ctx.registry[p.card.name]?.isEquipment !== true) continue;
               }
               for (const to of eligible) {
-                if (to.id === from.id) continue;
+                if (to.id === from.id || cannotBeEquipped(to, "equipment")) continue;
                 out.push({
                   id: `ability:${spec.name}:${entry.card.id}:carrygear:${p.card.id}:${to.id}`,
                   kind: "useAbility",
@@ -18497,6 +18499,8 @@ function addLocationAbilities(spec: CardSpec, handler: CardHandler): void {
       const from = choice.params["from"];
       const to = choice.params["to"];
       if (!card || !from || !to) return;
+      const target = findMinion(ops.state, to);
+      if (!target || cannotBeEquipped(target, "equipment")) return;
       if (carry.lock === true) ops.emit({ type: "PermanentLocked", cardId: entry.card.id });
       entry.phaseUses = (entry.phaseUses ?? 0) + 1;
       ops.emit({ type: "EquipmentMoved", cardId: card, from, to });

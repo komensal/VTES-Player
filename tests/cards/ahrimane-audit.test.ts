@@ -266,6 +266,19 @@ describe("Helen and Howler equipment restrictions", () => {
     expect(opts.some((o) => o.kind === "playCard" && o.params.weapon === "sword")).toBe(allowed);
     expect(opts.some((o) => o.kind === "playCard" && !o.params.weapon)).toBe(true);
   });
+  it.each([["Howler (G2)", 1], ["", 2]] as const)("%s: weapon press is usable only when allowed", (name, presses) => {
+    const { s, m, e } = board(name);
+    const h = testRegistry["Talbot's Chainsaw"]!;
+    m.attached.push({ card: { id: "chainsaw", name: "Talbot's Chainsaw" }, controller: "Alice", owner: "Alice", locked: false, usedThisPhase: false, statics: h.permanentStatics ?? {}, tags: h.permanentTags ?? [] });
+    m.attached.push({ card: { id: "bonus", name: "test retainer" }, locked: false, usedThisPhase: false, statics: { pressPerCombat: 1 }, tags: ["retainer"] });
+    runTrace(e, [
+      ["Alice", "bleed:V1"], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "block:M"], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+    ]);
+    const cf = s.frames.find((f) => f.kind === "combat");
+    if (!cf || cf.kind !== "combat") throw new Error("no combat");
+    expect(cf.pressesCombat.acting).toBe(presses);
+  });
   it.each([["Helen Fairchild (G6)", false], ["Howler (G2)", false], ["", true]] as const)("%s: gun strike available=%s", (name, allowed) => {
     const { s, m, e } = board(name);
     m.attached.push({ card: { id: "gun", name: ".44 Magnum" }, controller: "Alice", owner: "Alice", locked: false, usedThisPhase: false, statics: {}, tags: ["equipment", "weapon", "gun"] });

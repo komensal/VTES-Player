@@ -5150,7 +5150,9 @@ export class VtesEngine implements EngineOps {
     const combatPresses = (minionId: MinionId): number => {
       let n = 0;
       const other = getMinion(this.state, minionId === acting ? opposing : acting);
-      for (const p of getMinion(this.state, minionId).attached) {
+      const bearer = getMinion(this.state, minionId);
+      for (const p of bearer.attached) {
+        if (cannotUseEquipmentEntry(bearer, p, this.registry[p.card.name]?.isEquipment === true)) continue;
         n += p.statics.pressPerCombat ?? 0;
         if (p.statics.pressPerCombatAgainstTag && minionHasTag(other, p.statics.pressPerCombatAgainstTag)) n++;
       }
@@ -5167,7 +5169,9 @@ export class VtesEngine implements EngineOps {
     // combat, each combat" (Righteous Blade, weapon-riders §4).
     const continuePresses = (minionId: MinionId): number => {
       let n = 0;
-      for (const p of getMinion(this.state, minionId).attached) {
+      const bearer = getMinion(this.state, minionId);
+      for (const p of bearer.attached) {
+        if (cannotUseEquipmentEntry(bearer, p, this.registry[p.card.name]?.isEquipment === true)) continue;
         n += p.statics.continuePressPerCombat ?? 0;
       }
       return n;
@@ -5176,7 +5180,9 @@ export class VtesEngine implements EngineOps {
     // usable to END combat" (Qetu, docs/mummies-design.md §1).
     const endPresses = (minionId: MinionId): number => {
       let n = 0;
-      for (const p of getMinion(this.state, minionId).attached) {
+      const bearer = getMinion(this.state, minionId);
+      for (const p of bearer.attached) {
+        if (cannotUseEquipmentEntry(bearer, p, this.registry[p.card.name]?.isEquipment === true)) continue;
         n += p.statics.endPressPerCombat ?? 0;
       }
       return n;
@@ -5185,7 +5191,9 @@ export class VtesEngine implements EngineOps {
     // each combat" (Biothaumaturgic Experiment superior).
     const combatManeuvers = (minionId: MinionId): number => {
       let n = 0;
-      for (const p of getMinion(this.state, minionId).attached) {
+      const bearer = getMinion(this.state, minionId);
+      for (const p of bearer.attached) {
+        if (cannotUseEquipmentEntry(bearer, p, this.registry[p.card.name]?.isEquipment === true)) continue;
         n += p.statics.maneuverPerCombat ?? 0;
       }
       return n;

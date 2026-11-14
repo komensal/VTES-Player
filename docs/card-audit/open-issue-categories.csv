@@ -1796,7 +1796,7 @@ id,name,kind,status,categories
 200580,Hecate (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200582,Hector Trelane (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
 200584,Hektor (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
-200585,Helen Fairchild (G6),crypt,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
+200585,Helen Fairchild (G6),crypt,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 200586,Helena (G3),crypt,CODE_DISCREPANCY,akcje_i_blok
 200587,Helena (G3 ADV),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 200589,Henri Lavenant (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki

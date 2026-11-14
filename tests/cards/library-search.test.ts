@@ -108,6 +108,14 @@ describe("Magic of the Smith (101143)", () => {
     void state;
   });
 
+  it("does not offer equipment to a bearer who cannot have it", () => {
+    const { state, engine } = game("basic");
+    const self = testRegistry["Helen Fairchild (G6)"]!.cryptEntry!();
+    find(state, "V1").attached.push({ card: { id: "V1", name: "Helen Fairchild (G6)" }, locked: false, usedThisPhase: false, statics: self.statics, tags: self.tags });
+    resolveAction(engine, "play:Magic of the Smith:basic:V1:ms");
+    expect(engine.decision()!.options.map((o) => o.id)).toEqual(["choice:Magic of the Smith:ms:searchEquip:none"]);
+  });
+
   it("equips the chosen card, charges its cost, and shuffles the library", () => {
     const { state, engine } = game("basic");
     const pool = alice(state).pool;

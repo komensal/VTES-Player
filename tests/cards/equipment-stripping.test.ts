@@ -115,6 +115,23 @@ const heldBy = (state: GameState, cardId: string): string | null => {
 
 // ---------------------------------------------------------------------------
 
+describe("equipment restrictions on stealing strikes", () => {
+  it("Helen cannot steal a weapon but Howler can possess one", () => {
+    for (const [name, offered] of [["Helen Fairchild (G6)", false], ["Howler (G2)", true]] as const) {
+      const a = inCombat("Fast Hands", { cel: "basic" }, { name: ".44 Magnum", tags: ["equipment", "weapon"] });
+      const self = testRegistry[name]!.cryptEntry!();
+      a.v1.attached.push({ card: { id: "V1", name }, locked: false, usedThisPhase: false, statics: self.statics, tags: self.tags });
+      const opts = atStrike(a.engine);
+      expect(opts.some((id) => id.startsWith("play:Fast Hands"))).toBe(offered);
+      if (offered) {
+        a.engine.choose(opts.find((id) => id.startsWith("play:Fast Hands"))!);
+        playOut(a.engine, a.state);
+        expect(heldBy(a.state, "gear1")).toBe("V1");
+      }
+    }
+  });
+});
+
 describe("destroying equipment", () => {
   for (const card of ["Fractured Armament", "Shattering Blow"] as const) {
     it(`${card} offers one option per equipment and destroys the chosen one`, () => {
