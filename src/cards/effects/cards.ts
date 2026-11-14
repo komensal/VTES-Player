@@ -25486,7 +25486,7 @@ export const cardSpecs: CardSpec[] = [
     weapon: { damage: 3, ranged: false, aggravated: false },
     permanent: {
       where: "bearer",
-      statics: { pressPerCombat: 1 },
+      statics: { pressPerCombat: 1, cannotHunt: true },
       rushGrant: { who: { scope: "bearer" }, target: { scope: "any" }, stealth: 1 },
       retainerAbilities: { preventPerCombat: 1 },
       tags: ["weapon", "melee"],

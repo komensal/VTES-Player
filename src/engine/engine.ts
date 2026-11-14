@@ -11265,6 +11265,14 @@ export class VtesEngine implements EngineOps {
     return options;
   }
 
+  /** A prohibition on all hunt actions, as distinct from an aura that
+   *  only removes the normal hunt (Week of Nightmares). An unusable weapon
+   *  cannot impose its bearer restriction: Howler can hunt with Talbot's. */
+  private cannotHunt(m: MinionState): boolean {
+    return m.attached.some((p) => p.statics.cannotHunt === true &&
+      !cannotUseEquipmentEntry(m, p, this.registry[p.card.name]?.isEquipment === true));
+  }
+
   private minionPhaseOptions(tf: TurnFrame): LegalOption[] {
     const seat = getSeat(this.state, tf.seat);
     const options: LegalOption[] = [];
@@ -11291,6 +11299,7 @@ export class VtesEngine implements EngineOps {
     const stuck = new Set<MinionId>();
     if (hungry.length > 0) {
       for (const m of hungry) {
+        if (this.cannotHunt(m)) continue;
         // "…and do not hunt as normal" (Week of Nightmares) — asked here as
         // in the ordinary branch. Only this branch had forgotten it, so a
         // Ravnos with no blood hunted as normal. The non-standard hunts
@@ -11324,7 +11333,7 @@ export class VtesEngine implements EngineOps {
       // A HUNT ACTION CARD is a hunt (Psychophagia), so it discharges the
       // obligation too — offered to the hungry minion only.
       // docs/hunt-success-design.md §1
-      const hungryIds = new Set(hungry.map((m) => m.id));
+      const hungryIds = new Set(hungry.filter((m) => !this.cannotHunt(m)).map((m) => m.id));
       for (const o of this.handlerOptions(tf.seat, "turn.minion")) {
         if (o.kind === "playCard" && o.minion !== null && hungryIds.has(o.minion) &&
             this.registry[o.name]?.huntAction === true) {
@@ -11411,6 +11420,7 @@ export class VtesEngine implements EngineOps {
       // must hunt never reaches this branch.
       if (
         m.kind === "vampire" &&
+        !this.cannotHunt(m) &&
         !auraBlocksHunt(this.state, m) &&
         !huntingRestricted(this.state) &&
         canRepeatAction(this.state, m, "hunt")
@@ -11430,18 +11440,22 @@ export class VtesEngine implements EngineOps {
     // basic one (docs/hunt-success-design.md §5).
     const restricted = huntingRestricted(this.state);
     options.push(
-      ...this.handlerOptions(tf.seat, "turn.minion").filter(
-        (o) => !(restricted && o.kind === "playCard" && this.registry[o.name]?.huntAction === true),
-      ),
+      ...this.handlerOptions(tf.seat, "turn.minion").filter((o) => {
+        if (o.kind !== "playCard" || this.registry[o.name]?.huntAction !== true) return true;
+        const actor = o.minion === null ? null : findMinion(this.state, o.minion);
+        return !restricted && (!actor || !this.cannotHunt(actor));
+      }),
     );
     // Actions granted by cards in play (rush design §2.5) and in-play
     // abilities usable in the minion phase (The Barrens, ruling p. 47).
     // A granted HUNT is barred by Restricted Vitae like a hunt action card;
     // nobody reaching this branch must hunt, or they would be stuck.
     options.push(
-      ...this.entryActionOptionsFor(tf.seat).filter(
-        (o) => !(restricted && o.kind === "useEntryAction" && o.huntAction === true),
-      ),
+      ...this.entryActionOptionsFor(tf.seat).filter((o) => {
+        if (o.kind !== "useEntryAction" || o.huntAction !== true) return true;
+        const actor = findMinion(this.state, o.minion);
+        return !restricted && (!actor || !this.cannotHunt(actor));
+      }),
     );
     options.push(...this.abilityOptionsFor(tf.seat, "turn.minion"));
     // A vampire in torpor can perform no action except leave torpor

@@ -11,7 +11,7 @@ To powtarzalne, zgrubne grupowanie po słowach w tekście evidence, a nie potwie
 | `akcje_i_blok` | 1652 |
 | `walka` | 746 |
 | `polityka_i_glosy` | 358 |
-| `koszty_i_zasoby` | 872 |
+| `koszty_i_zasoby` | 873 |
 | `karty_i_strefy` | 1565 |
 | `czas_i_warunki` | 723 |
 | `inne_do_recznego_przegladu` | 6 |

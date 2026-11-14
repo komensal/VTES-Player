@@ -1244,7 +1244,7 @@ id,name,kind,status,categories
 101928,Taking the Skin: Minion,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101929,Taking the Skin: Vulture,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101930,"Talaq, The Immortal",library,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
-101931,Talbot's Chainsaw,library,CODE_DISCREPANCY,akcje_i_blok; walka
+101931,Talbot's Chainsaw,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby
 101932,Talith,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101933,Talons of the Dead,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101934,Taming the Beast,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy

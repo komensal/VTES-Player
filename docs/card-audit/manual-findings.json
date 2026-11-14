@@ -11582,8 +11582,8 @@
   {
     "id": 101931,
     "name": "Talbot's Chainsaw",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec ma unique weapon i rush/prevent, lecz brak upkeep 3 unpreventable damage oraz zakazu hunt; pressPerCombat nie deklaruje mandatory i ograniczenia do kontynuacji w pierwszej rundzie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano zakaz wszystkich akcji hunt dla nosiciela, w tym hunt z karty i granted hunt; wyjątek dla Howler, która nie może używać broni. Tests/cards/talbots-hunt.test.ts sprawdza m.in. stuck przy 0 blood. Nadal brak upkeep 3 unpreventable damage; jego źródłem jest broń, a nie environmental damage, i trzeba uwzględnić immunity. pressPerCombat nie deklaruje mandatory i ograniczenia do kontynuacji w pierwszej rundzie. Rush/prevent oraz inne interakcje wymagają dalszej weryfikacji."
   },
   {
     "id": 101932,
@@ -17823,7 +17823,7 @@
     "id": 200607,
     "name": "Howler (G2)",
     "status": "PARTIAL_FIX",
-    "evidence": "Dodano zakaz aktywacji posiadanej broni oraz wybierania jej do strike przez wspólne prymitywy; nadal można ją posiadać. Testy ahrimane-audit.test.ts sprawdzają broń i alternatywę na karcie combat, a statics sprawdza optional maneuver i strength. Inne specjalne ścieżki wykorzystania broni wymagają dalszego przeglądu; wpis pozostaje otwarty. Dodatkowo wyłączono press/maneuver per combat z broni, której nie może używać; rzeczywisty combat z Talbot's Chainsaw w ahrimane-audit.test.ts. Inne zastosowania statyk i efekty automatyczne broni nadal wymagają przeglądu."
+    "evidence": "Dodano zakaz aktywacji posiadanej broni oraz wybierania jej do strike przez wspólne prymitywy; nadal można ją posiadać. Testy ahrimane-audit.test.ts sprawdzają broń i alternatywę na karcie combat, a statics sprawdza optional maneuver i strength. Inne specjalne ścieżki wykorzystania broni wymagają dalszego przeglądu; wpis pozostaje otwarty. Dodatkowo wyłączono press/maneuver per combat z broni, której nie może używać; rzeczywisty combat z Talbot's Chainsaw w ahrimane-audit.test.ts. Zakaz hunt z Chainsaw nie dotyczy Howler: tests/cards/talbots-hunt.test.ts. Upkeep Chainsaw nie jest jeszcze zaimplementowany; inne zastosowania statyk i efekty automatyczne broni nadal wymagają przeglądu."
   },
   {
     "id": 200608,

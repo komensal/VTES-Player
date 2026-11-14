@@ -775,6 +775,8 @@ export interface PermanentStatics {
   cannotBeEquipped?: { retainers?: boolean };
   /** May possess weapons but cannot activate or strike with them (Howler). */
   cannotUseWeapons?: boolean;
+  /** The bearer cannot take any hunt action (Talbot's Chainsaw). */
+  cannotHunt?: boolean;
   /** "This ally cannot gain life" (Rotting Behemoth) — read in the
    *  `BloodGained` applier, so burning and paying are unaffected. */
   cannotGainLife?: boolean;
