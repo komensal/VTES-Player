@@ -1,5 +1,5 @@
 id,name,kind,status,categories
-100002,419 Operation,library,CONFIRMED_BUG,akcje_i_blok; koszty_i_zasoby
+100002,419 Operation,library,PARTIAL_FIX,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100004,Abactor,library,CONFIRMED_BUG,akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
 100005,Abandoning the Flesh,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100007,Abjure,library,CONFIRMED_BUG,walka
@@ -7,7 +7,7 @@ id,name,kind,status,categories
 100010,Abomination,library,CONFIRMED_BUG,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100011,Absimiliard's Army,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 100013,Absorb the Mind,library,CONFIRMED_BUG,koszty_i_zasoby
-100014,Abyssal Hunter,library,CODE_DISCREPANCY,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+100014,Abyssal Hunter,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 100017,Achilles' Heel,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100019,Acquired Ventrue Assets,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100020,Acrobatics,library,UNRESOLVED,walka; czas_i_warunki
@@ -17,11 +17,11 @@ id,name,kind,status,categories
 100025,Agent of Power,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; karty_i_strefy
 100026,Aggressive Tactics,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100027,Ahriman's Demesne,library,CONFIRMED_BUG,walka; karty_i_strefy
-100028,Ahrimane Protectorate,library,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+100028,Ahrimane Protectorate,library,PARTIAL_FIX,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100030,The Ailing Spirit,library,CONFIRMED_BUG,akcje_i_blok
 100032,AK-47,library,CONFIRMED_BUG,akcje_i_blok; walka; czas_i_warunki
 100033,"Akhenaten, The Sun Pharaoh",library,CODE_DISCREPANCY,akcje_i_blok; walka; karty_i_strefy
-100034,Akunanse Kholo,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
+100034,Akunanse Kholo,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 100035,Al's Army Apparatus,library,CONFIRMED_BUG,placeholder_lub_brak_efektu
 100036,Alacrity,library,CONFIRMED_BUG,akcje_i_blok; walka
 100038,Alastor,library,CONFIRMED_BUG,akcje_i_blok; polityka_i_glosy; karty_i_strefy
@@ -30,12 +30,12 @@ id,name,kind,status,categories
 100041,Alvusia,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
 100042,Amam the Devourer,library,CODE_DISCREPANCY,koszty_i_zasoby; karty_i_strefy
 100043,Amaranth,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka
-100044,"Ambrosius, The Ferryman",library,CODE_DISCREPANCY,walka; karty_i_strefy
+100044,"Ambrosius, The Ferryman",library,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
 100045,Ambulance,library,CODE_DISCREPANCY,akcje_i_blok; karty_i_strefy; czas_i_warunki
 100047,Amria,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka
 100048,Amulet of Temporal Perception,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100050,Anachronism,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; karty_i_strefy
-100051,Ananasi Vampirephile,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+100051,Ananasi Vampirephile,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 100052,The Anarch Free Press,library,CODE_DISCREPANCY,walka; karty_i_strefy
 100053,"Anarch Manifesto, An",library,CODE_DISCREPANCY,akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 100056,Anarch Salon,library,UNRESOLVED,polityka_i_glosy; koszty_i_zasoby; czas_i_warunki
@@ -44,29 +44,29 @@ id,name,kind,status,categories
 100060,Anathema,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100061,Ancestor Spirit,library,CONFIRMED_BUG,akcje_i_blok; polityka_i_glosy; karty_i_strefy
 100062,Ancestor's Insight,library,CONFIRMED_BUG,akcje_i_blok
-100063,The Ancestor's Talisman,library,CODE_DISCREPANCY,akcje_i_blok; karty_i_strefy; czas_i_warunki
+100063,The Ancestor's Talisman,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy; czas_i_warunki
 100066,Anesthetic Touch,library,CONFIRMED_BUG,walka; karty_i_strefy
 100067,Angel of Berlin,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 100068,Anima Gathering,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100069,Animal Magnetism,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
-100071,"The Ankara Citadel, Turkey",library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+100071,"The Ankara Citadel, Turkey",library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100072,Anonymous Freight,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
 100073,Antediluvian Awakening,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby
 100074,"Anthelios, The Red Star",library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100075,Antithesis,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
 100078,Approximation of Loyalty,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
-100080,Arcane Appraiser,library,CODE_DISCREPANCY,akcje_i_blok; karty_i_strefy
+100080,Arcane Appraiser,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 100086,Argent Baton,library,CONFIRMED_BUG,walka; karty_i_strefy
 100087,Armor of Caine's Fury,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka
 100088,Armor of Terra,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 100089,Armor of Vitality,library,CONFIRMED_BUG,walka
-100090,Arms Dealer,library,CODE_DISCREPANCY,akcje_i_blok; karty_i_strefy
+100090,Arms Dealer,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 100091,Arms of the Abyss,library,UNRESOLVED,walka; czas_i_warunki
 100092,Army of Apparitions,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 100097,The Art of Memory,library,CONFIRMED_BUG,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100100,Art's Traumatic Essence,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100102,As the Crow,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
-100103,Asanbonsam Ghoul,library,CODE_DISCREPANCY,akcje_i_blok; karty_i_strefy
+100103,Asanbonsam Ghoul,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 100105,Ashes to Ashes,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
 100106,Ashur Tablets,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 100109,Atonement,library,CODE_DISCREPANCY,akcje_i_blok; karty_i_strefy; czas_i_warunki
@@ -95,20 +95,20 @@ id,name,kind,status,categories
 100144,Bear-Baiting,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 100147,The Becoming,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 100150,Belonging Grants Protection,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
-100151,Benefit Performance,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
+100151,Benefit Performance,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 100152,Beretta 9mm,library,CONFIRMED_BUG,karty_i_strefy
 100153,Bestial Vengeance,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; karty_i_strefy; czas_i_warunki
 100155,Bestow Vigor,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100156,Betrayer,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby
 100159,Big Game,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; czas_i_warunki
-100160,Bima,library,CONFIRMED_BUG,karty_i_strefy
+100160,Bima,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 100161,Bind the Night-Walker,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
-100164,The Black Beast,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; karty_i_strefy; czas_i_warunki
+100164,The Black Beast,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 100166,Black Gloves,library,CONFIRMED_BUG,walka; karty_i_strefy
 100167,Black Hand Emissary,library,CONFIRMED_BUG,crypt_import_lub_cechy; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 100168,Black Hand Ritual,library,CONFIRMED_BUG,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100169,Black Metamorphosis,library,CONFIRMED_BUG,akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
-100170,Black Spiral Buddy,library,CONFIRMED_BUG,walka; koszty_i_zasoby; karty_i_strefy
+100170,Black Spiral Buddy,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 100171,Black Sunrise,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 100173,Blackmail,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100174,Blade Clot,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
@@ -119,7 +119,7 @@ id,name,kind,status,categories
 100181,Blessed Resilience,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 100182,Blessing of Chaos,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100184,Blessing of the Beast,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; karty_i_strefy
-100185,Blessing of the Name,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
+100185,Blessing of the Name,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100186,Blessings of the Loa,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
 100187,Blight,library,CONFIRMED_BUG,walka
 100188,Blind Spot,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
@@ -137,7 +137,7 @@ id,name,kind,status,categories
 100204,Blood of Sandman,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100205,Blood of the Cobra,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka
 100206,Blood of the Sabbat,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
-100209,Blood Shield,library,CONFIRMED_BUG,walka; koszty_i_zasoby; karty_i_strefy
+100209,Blood Shield,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 100210,Blood Siege,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
 100212,Blood Tears of Kephran,library,CODE_DISCREPANCY,walka; koszty_i_zasoby; karty_i_strefy
 100213,Blood Tempering,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
@@ -147,7 +147,7 @@ id,name,kind,status,categories
 100219,Bloodform,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 100220,Blooding,library,CONFIRMED_BUG,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100223,Bloodstone,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
-100224,Bloodstorm of Chorazin,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
+100224,Bloodstorm of Chorazin,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 100225,Bloodwork,library,CONFIRMED_BUG,crypt_import_lub_cechy; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100227,Blur,library,UNRESOLVED,akcje_i_blok; walka
 100231,Body of Sun,library,CONFIRMED_BUG,walka; karty_i_strefy
@@ -165,15 +165,15 @@ id,name,kind,status,categories
 100250,Breath of the Dragon,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka
 100252,Brick by Brick,library,CONFIRMED_BUG,walka
 100253,Brick Laying,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka
-100254,Brigitte Gebauer,library,CONFIRMED_BUG,akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
+100254,Brigitte Gebauer,library,PARTIAL_FIX,akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 100255,Brinksmanship,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
-100256,Brother in Arms,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
+100256,Brother in Arms,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100257,Brother's Blood,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; koszty_i_zasoby
 100258,Brothers Grimm,library,CONFIRMED_BUG,placeholder_lub_brak_efektu
 100260,Brujah Debate,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
 100261,Brujah Frenzy,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; czas_i_warunki
 100263,Brutal Influence,library,CONFIRMED_BUG,akcje_i_blok; koszty_i_zasoby
-100265,Bujo,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
+100265,Bujo,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 100267,Bundi,library,CONFIRMED_BUG,walka; karty_i_strefy
 100269,Bureaucratic Overload,library,CODE_DISCREPANCY,akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
 100270,Burning Touch,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka
@@ -183,10 +183,10 @@ id,name,kind,status,categories
 100277,Cairo Int'l Airport,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 100278,The Call,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 100279,Call of the Hungry Dead,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
-100280,Call the Great Beast,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka
+100280,Call the Great Beast,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 100281,Call the Lamprey,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
 100283,Camaraderie,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
-100286,Camarilla Vitae Slave,library,CONFIRMED_BUG,koszty_i_zasoby; karty_i_strefy
+100286,Camarilla Vitae Slave,library,PARTIAL_FIX,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100287,Camera Phone,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
 100291,Canopic Jar,library,CONFIRMED_BUG,akcje_i_blok; walka; karty_i_strefy
 100293,Car Bomb,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
@@ -210,10 +210,10 @@ id,name,kind,status,categories
 100322,Champion,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka
 100326,Chanjelin Ward,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100330,Charge of the Buffalo,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka
-100331,"Charigger, The Axe",library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+100331,"Charigger, The Axe",library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100333,Charismatic Aura,library,CONFIRMED_BUG,akcje_i_blok; walka; czas_i_warunki
 100334,Charming Lobby,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
-100335,Charnas the Imp,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+100335,Charnas the Imp,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 100336,Cheat the Fates,library,CONFIRMED_BUG,akcje_i_blok
 100340,Children of Stone,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
 100341,Chill of Oblivion,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -228,7 +228,7 @@ id,name,kind,status,categories
 100351,City Gangrel Connections,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 100352,Claiming the Body,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 100353,Clan Impersonation,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-100355,Clandestine Contract,library,CONFIRMED_BUG,akcje_i_blok; walka
+100355,Clandestine Contract,library,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
 100357,Cleansing Ritual,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 100358,Cleave,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka
 100359,Clio's Kiss,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -252,7 +252,7 @@ id,name,kind,status,categories
 100386,Communal Haven: Temple,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 100387,Community Justice,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100388,Compel the Spirit,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-100393,Concert Tour,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+100393,Concert Tour,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100394,Concoction of Vitality,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100395,Concordance,library,CONFIRMED_BUG,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100396,Condemn the Sins of the Father,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
@@ -268,7 +268,7 @@ id,name,kind,status,categories
 100412,Conscripted Statue,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 100413,Consecration Rites,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 100415,Consignment to Duat,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-100417,Consume the Dead,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+100417,Consume the Dead,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100418,Contagion,library,CONFIRMED_BUG,crypt_import_lub_cechy; walka; koszty_i_zasoby; karty_i_strefy
 100421,Convergence,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
 100422,Cooler,library,CONFIRMED_BUG,koszty_i_zasoby; karty_i_strefy
@@ -277,15 +277,15 @@ id,name,kind,status,categories
 100425,Corporal Reservoir,library,CONFIRMED_BUG,crypt_import_lub_cechy; walka; karty_i_strefy
 100427,Corpse Balloon,library,CONFIRMED_BUG,akcje_i_blok; czas_i_warunki
 100429,Corrupt Construction,library,CONFIRMED_BUG,koszty_i_zasoby
-100430,Corruption,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
+100430,Corruption,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100432,Coterie Tactics,library,CONFIRMED_BUG,akcje_i_blok
 100433,Council of Seraphim,library,CONFIRMED_BUG,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-100434,Courier,library,CONFIRMED_BUG,akcje_i_blok
+100434,Courier,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 100436,Covenant of Blood,library,CONFIRMED_BUG,akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
-100437,Covincraft,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
+100437,Covincraft,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 100438,Cracking the Wall,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby
 100439,Crawling Chamber,library,CONFIRMED_BUG,walka
-100440,Create Gargoyle,library,CONFIRMED_BUG,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby
+100440,Create Gargoyle,library,PARTIAL_FIX,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100443,Creeping Infection,library,CONFIRMED_BUG,akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 100446,CrimethInc.,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100448,The Crimson Sentinel,library,CONFIRMED_BUG,inne_do_recznego_przegladu
@@ -300,7 +300,7 @@ id,name,kind,status,categories
 100481,Cunctator Motion,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; polityka_i_glosy; czas_i_warunki
 100482,Curmudgeon,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
 100483,Curse of Nitocris,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby
-100484,D'habi Revenant,library,CONFIRMED_BUG,akcje_i_blok
+100484,D'habi Revenant,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 100486,Daemonic Possession,library,CONFIRMED_BUG,akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 100487,Dagger,library,CONFIRMED_BUG,walka; karty_i_strefy
 100488,Dagon's Call,library,CONFIRMED_BUG,walka; karty_i_strefy; czas_i_warunki
@@ -311,7 +311,7 @@ id,name,kind,status,categories
 100497,Darkness Within,library,CONFIRMED_BUG,walka; koszty_i_zasoby; karty_i_strefy
 100498,Darksight,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
 100499,"Dartmoor, England",library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
-100500,Dauntain Black Magician,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
+100500,Dauntain Black Magician,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 100502,Day Operation,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 100503,Dead Hand,library,CONFIRMED_BUG,walka; karty_i_strefy
 100505,The Deadliest Sin,library,CONFIRMED_BUG,akcje_i_blok; czas_i_warunki
@@ -321,88 +321,88 @@ id,name,kind,status,categories
 100512,Decompose,library,CONFIRMED_BUG,akcje_i_blok; walka; karty_i_strefy
 100513,Deed the Heart's Desire,library,CONFIRMED_BUG,akcje_i_blok
 100514,Deep Cover Agent,library,CONFIRMED_BUG,crypt_import_lub_cechy; akcje_i_blok; karty_i_strefy; czas_i_warunki
-100517,Defender of the Haven,library,CONFIRMED_BUG,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+100517,Defender of the Haven,library,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100522,Demonstration,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; polityka_i_glosy
 100523,Denial of Aphrodite's Favor,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
 100524,Deny,library,CONFIRMED_BUG,akcje_i_blok; walka
 100525,Deploy the Hand,library,CONFIRMED_BUG,walka; polityka_i_glosy; karty_i_strefy
-100527,Derange,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
+100527,Derange,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 100528,Descent into Darkness,library,CONFIRMED_BUG,akcje_i_blok; koszty_i_zasoby
-100530,Despiral,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
-100531,Destructive Secrets,library,CONFIRMED_BUG,akcje_i_blok
+100530,Despiral,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
+100531,Destructive Secrets,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 100532,Detect Authority,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 100534,Determine,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
 100535,Development,library,CONFIRMED_BUG,placeholder_lub_brak_efektu
-100536,Deviki Prasanta,library,CONFIRMED_BUG,karty_i_strefy; czas_i_warunki
+100536,Deviki Prasanta,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy; czas_i_warunki
 100537,Devil-Channel: Back,library,CONFIRMED_BUG,walka; koszty_i_zasoby; karty_i_strefy
 100538,Devil-Channel: Feet,library,CONFIRMED_BUG,crypt_import_lub_cechy; walka; czas_i_warunki
 100539,Devil-Channel: Hands,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; karty_i_strefy
 100540,Devil-Channel: Throat,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka
 100542,Diabolic Lure,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
 100543,The Diamond Thunderbolt,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
-100544,Din of the Damned,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+100544,Din of the Damned,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100546,Dirty Contract,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
-100547,Dirty Little Secrets,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+100547,Dirty Little Secrets,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100548,Dis Pater,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100551,Discern,library,CONFIRMED_BUG,akcje_i_blok; walka
-100552,Disciple of Lazarus,library,CONFIRMED_BUG,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+100552,Disciple of Lazarus,library,PARTIAL_FIX,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100555,Disguised Weapon,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
 100556,Dismemberment of Osiris,library,CONFIRMED_BUG,akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 100561,Dive Bomb,library,CONFIRMED_BUG,akcje_i_blok; walka
 100562,Dive into Madness,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100565,Divine Image,library,CONFIRMED_BUG,akcje_i_blok; polityka_i_glosy; czas_i_warunki
 100566,Divine Sign,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
-100569,Dogs of War,library,CONFIRMED_BUG,akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
+100569,Dogs of War,library,PARTIAL_FIX,akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 100571,Domain of Evernight,library,CONFIRMED_BUG,czas_i_warunki
 100574,Dominion,library,CONFIRMED_BUG,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100575,Donate,library,CONFIRMED_BUG,walka; koszty_i_zasoby
 100578,Draba,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
-100579,Draeven Softfoot,library,CONFIRMED_BUG,walka; karty_i_strefy
+100579,Draeven Softfoot,library,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
 100583,Dramatic Upheaval,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; polityka_i_glosy
 100584,Draught of the Soul,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100585,Drawing Out the Beast,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka
 100587,Dream World,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 100588,Dreams of the Sphinx,library,CONFIRMED_BUG,koszty_i_zasoby; czas_i_warunki
-100589,Drink the Blood of Ahriman,library,CONFIRMED_BUG,koszty_i_zasoby; karty_i_strefy
+100589,Drink the Blood of Ahriman,library,PARTIAL_FIX,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100590,Drop Point Network,library,CONFIRMED_BUG,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 100592,Dual Form,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
-100593,Duma Rafiki,library,CONFIRMED_BUG,walka; koszty_i_zasoby; karty_i_strefy
+100593,Duma Rafiki,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 100595,Dusk Work,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
 100599,Ears of the Hare,library,CONFIRMED_BUG,akcje_i_blok; koszty_i_zasoby
 100603,Earth-Feeder,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100606,Ebony Fox Hunt,library,CONFIRMED_BUG,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
-100607,Eccentric Billionaire,library,CONFIRMED_BUG,karty_i_strefy; czas_i_warunki
+100607,Eccentric Billionaire,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy; czas_i_warunki
 100608,Echo of Harmonies,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 100610,Ecstasy,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100611,Ecstatic Agony,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 100612,Edge Explosion,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; karty_i_strefy
-100613,Edge of the World,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
+100613,Edge of the World,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100614,Edge Vitiation,library,CONFIRMED_BUG,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100615,Edged Illusion,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; czas_i_warunki
 100621,Elder Michaelis's Hold,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-100622,The Eldest Are Kholo,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
+100622,The Eldest Are Kholo,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 100623,The Eldest Command Undeath,library,CONFIRMED_BUG,akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 100625,Elemental Stoicism,library,CONFIRMED_BUG,inne_do_recznego_przegladu
 100626,Elephant Guardian,library,CONFIRMED_BUG,walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100627,Elixir of Distillation,library,CONFIRMED_BUG,walka; koszty_i_zasoby; karty_i_strefy
-100634,Emerald Legionnaire,library,CONFIRMED_BUG,karty_i_strefy; czas_i_warunki
+100634,Emerald Legionnaire,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy; czas_i_warunki
 100635,Emergency Powers,library,CONFIRMED_BUG,crypt_import_lub_cechy; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
-100637,Emergency Rations,library,CONFIRMED_BUG,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+100637,Emergency Rations,library,PARTIAL_FIX,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100639,Empowering the Puppet King,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; czas_i_warunki
-100641,Enchanted Marionette,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy; czas_i_warunki
-100642,Enforcer,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy; czas_i_warunki
+100641,Enchanted Marionette,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy; czas_i_warunki
+100642,Enforcer,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy; czas_i_warunki
 100643,Engling Fury,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 100645,Enkil Cog,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100648,Ensconced,library,CONFIRMED_BUG,akcje_i_blok; walka; karty_i_strefy
-100649,Ensemble,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
+100649,Ensemble,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100650,Enticement,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100651,Entombment,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; karty_i_strefy
 100654,Ephor,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 100655,Epiphany,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-100657,Erebus Mask,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+100657,Erebus Mask,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100658,Erosion,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
 100659,Eruption of Vitae,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka
-100661,Escaped Mental Patient,library,CONFIRMED_BUG,akcje_i_blok; walka; karty_i_strefy
+100661,Escaped Mental Patient,library,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
 100662,Esgrima,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; polityka_i_glosy
 100663,Esprit de Corps,library,CONFIRMED_BUG,karty_i_strefy
 100665,The Eternal Mask,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
@@ -450,13 +450,13 @@ id,name,kind,status,categories
 100741,Flames of the Netherworld,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; koszty_i_zasoby
 100742,Flamethrower,library,CODE_DISCREPANCY,walka
 100745,Flash Grenade,library,CONFIRMED_BUG,walka; karty_i_strefy
-100746,Fleecing the Gaje,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+100746,Fleecing the Gaje,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100750,Fleshcraft,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 100751,Flow Within the Mountain,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka
 100753,Focus the Blood,library,UNRESOLVED,koszty_i_zasoby
 100754,Foldable Machine Gun,library,CONFIRMED_BUG,walka; karty_i_strefy
 100755,Folderol,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
-100756,Follow the Alpha,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka
+100756,Follow the Alpha,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 100757,Follow the Blood,library,CONFIRMED_BUG,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 100758,Force of Personality,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka
 100759,Force of Will,library,CONFIRMED_BUG,akcje_i_blok; walka
@@ -469,7 +469,7 @@ id,name,kind,status,categories
 100775,Fortschritt Library,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; czas_i_warunki
 100778,Foul Blood,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka
 100779,Foundation Exhibit,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; polityka_i_glosy; karty_i_strefy
-100780,Founders of the Ebony Kingdom,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
+100780,Founders of the Ebony Kingdom,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100781,The Fourth Cycle,library,CONFIRMED_BUG,karty_i_strefy
 100783,Fractura,library,CONFIRMED_BUG,walka; karty_i_strefy
 100785,Fragment of the Book of Nod,library,UNRESOLVED,karty_i_strefy; czas_i_warunki
@@ -484,41 +484,41 @@ id,name,kind,status,categories
 100798,Galaric's Legacy,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; polityka_i_glosy; karty_i_strefy
 100800,Game of Malkav,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby
 100801,Games of Instinct,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; czas_i_warunki
-100802,Gang Tactics,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka
+100802,Gang Tactics,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 100803,Gang Territory,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 100804,Gangrel Atavism,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100805,Gangrel Conspiracy,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby
 100806,Gangrel Justicar,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy
-100808,Gargoyle Slave,library,CONFIRMED_BUG,akcje_i_blok; walka; karty_i_strefy
+100808,Gargoyle Slave,library,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
 100810,Garrote,library,CONFIRMED_BUG,karty_i_strefy
 100813,Gear Up,library,CONFIRMED_BUG,inne_do_recznego_przegladu
 100814,Gemini's Mirror,library,CONFIRMED_BUG,walka; czas_i_warunki
 100815,Gestalt,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
-100816,Ghost-Eater,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+100816,Ghost-Eater,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100818,Ghoul Messenger,library,CONFIRMED_BUG,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100819,Ghoul Retainer,library,CONFIRMED_BUG,walka; koszty_i_zasoby; karty_i_strefy
 100820,Ghouled,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
-100821,Ghouled Street Thug,library,CONFIRMED_BUG,walka; karty_i_strefy
-100822,The Ghouls of Plaza Morería,library,CONFIRMED_BUG,akcje_i_blok; walka; karty_i_strefy
-100823,Gianna di Canneto,library,CONFIRMED_BUG,walka; karty_i_strefy
+100821,Ghouled Street Thug,library,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
+100822,The Ghouls of Plaza Morería,library,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
+100823,Gianna di Canneto,library,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
 100825,Gift of Bellona,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 100826,Gift of Experience,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; karty_i_strefy
 100828,Gift of Sleep,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100829,Giovanni Acceptance,library,CONFIRMED_BUG,akcje_i_blok; polityka_i_glosy; karty_i_strefy
 100830,Giovanni Discrimination,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100831,Gird Minions,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby
-100832,Giulia Giovanni Abruzzina,library,CONFIRMED_BUG,karty_i_strefy
-100833,"Giuseppe, Gravedigger",library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
+100832,Giulia Giovanni Abruzzina,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
+100833,"Giuseppe, Gravedigger",library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 100835,Glare of Lies,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100837,Glass Walker Pact,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100839,Glutton,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100840,Go Anarch,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 100841,Goblinism,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100843,"Goodnight, Sweet Prince",library,CONFIRMED_BUG,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
-100844,Goth Band,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
+100844,Goth Band,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 100846,Gramle,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100847,"Gran Madre di Dio, Italy",library,CONFIRMED_BUG,koszty_i_zasoby; karty_i_strefy
-100849,The Grandest Trick,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+100849,The Grandest Trick,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100850,Grasp of the Python,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; karty_i_strefy
 100851,Grasp the Ghostly,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100853,Great Symposium,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
@@ -527,12 +527,12 @@ id,name,kind,status,categories
 100858,Grey Thorne,library,CONFIRMED_BUG,koszty_i_zasoby; karty_i_strefy
 100859,Groaning Corpse,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; koszty_i_zasoby
 100865,Guarded Rubrics,library,CONFIRMED_BUG,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-100867,Guardian Ghoul,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; karty_i_strefy
+100867,Guardian Ghoul,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100868,Guardian Vigil,library,CONFIRMED_BUG,akcje_i_blok
 100869,Guide and Mentor,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100870,Guinea-Bissau Carnival,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
-100873,The Guruhi Are the Land,library,CONFIRMED_BUG,akcje_i_blok
-100874,Guruhi Kholo,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; czas_i_warunki
+100873,The Guruhi Are the Land,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
+100874,Guruhi Kholo,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 100876,Hackerspace,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 100877,Hag's Wrinkles,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
 100878,Hall of Hades' Court,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
@@ -542,13 +542,13 @@ id,name,kind,status,categories
 100882,Hand of Conrad,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
 100883,Hanging Fermata,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; czas_i_warunki
 100884,Haqim's Law: Judgment,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
-100885,Haqim's Law: Leadership,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
+100885,Haqim's Law: Leadership,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100886,Harass,library,CONFIRMED_BUG,akcje_i_blok; walka
 100887,Hard Case,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
-100888,Harmony,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+100888,Harmony,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100890,Harzomatuili,library,CONFIRMED_BUG,akcje_i_blok; walka; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 100891,Hatch the Viper,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; karty_i_strefy
-100892,Hatchling,library,CONFIRMED_BUG,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
+100892,Hatchling,library,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100893,Haunt,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100894,The Haunting,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100895,Haven Affinity,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka
@@ -562,20 +562,20 @@ id,name,kind,status,categories
 100908,"Heidelberg Castle, Germany",library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100910,Hell-for-Leather,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100911,Hellhound,library,CONFIRMED_BUG,akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-100912,Herald of Topheth,library,CONFIRMED_BUG,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-100914,Hexaped,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy; czas_i_warunki
+100912,Herald of Topheth,library,PARTIAL_FIX,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+100914,Hexaped,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy; czas_i_warunki
 100915,Hexe,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka
 100916,Hidden Lurker,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka
 100917,Hidden Pathways,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100919,Hide,library,CONFIRMED_BUG,akcje_i_blok; walka; koszty_i_zasoby
 100920,Hide the Heart,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 100922,Hiding in the Open,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
-100923,Hierophant,library,CONFIRMED_BUG,akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
+100923,Hierophant,library,PARTIAL_FIX,akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 100924,High Aye,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
 100926,"High Museum of Art, Atlanta",library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100927,High Orun,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-100928,High Stakes,library,CONFIRMED_BUG,akcje_i_blok; polityka_i_glosy; czas_i_warunki
-100929,High Top,library,CONFIRMED_BUG,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+100928,High Stakes,library,PARTIAL_FIX,akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
+100929,High Top,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 100930,Highway Haven: RV,library,CONFIRMED_BUG,akcje_i_blok; walka; karty_i_strefy
 100931,Hive Mind,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 100933,Honor the Elders,library,CONFIRMED_BUG,akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; czas_i_warunki
@@ -587,7 +587,7 @@ id,name,kind,status,categories
 100947,I am Legion,library,CONFIRMED_BUG,akcje_i_blok
 100948,Ignis Fatuus,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
 100949,Ignore the Searing Flames,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka
-100950,Igoli's Loyalty,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
+100950,Igoli's Loyalty,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 100951,Illegal Search and Seizure,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; karty_i_strefy
 100952,Illegalism,library,CONFIRMED_BUG,akcje_i_blok
 100953,Illuminate,library,CONFIRMED_BUG,akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
@@ -615,12 +615,12 @@ id,name,kind,status,categories
 100980,Infernal Pursuit,library,CONFIRMED_BUG,walka
 100981,Infernal Servitor,library,CONFIRMED_BUG,crypt_import_lub_cechy; karty_i_strefy
 100982,Inflict,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; karty_i_strefy
-100983,Informant,library,CONFIRMED_BUG,akcje_i_blok; karty_i_strefy
+100983,Informant,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 100985,Information Network,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 100986,Inner Essence,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; czas_i_warunki
 100988,Inquisition,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; czas_i_warunki
 100989,Inscription,library,CONFIRMED_BUG,koszty_i_zasoby; karty_i_strefy
-100990,Inside Dirt,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+100990,Inside Dirt,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100991,Inspire,library,CONFIRMED_BUG,akcje_i_blok; walka; koszty_i_zasoby
 100992,Inspire Greatness,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; czas_i_warunki
 100994,Instantaneous Transformation,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
@@ -633,37 +633,37 @@ id,name,kind,status,categories
 101005,Invoke Poison Glands,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101006,Invoking the Beast,library,CONFIRMED_BUG,walka; czas_i_warunki
 101009,Iron Heart,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
-101011,Ishtarri Kholo,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
+101011,Ishtarri Kholo,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 101012,Ishtarri Warlord,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101013,Island of Yiaros,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; polityka_i_glosy; karty_i_strefy
 101016,Jack of Both Sides,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok
 101017,Jackal,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101019,Jake Washington,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
-101020,Jar of Skin Eaters,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
+101020,Jar of Skin Eaters,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101021,Jar the Soul,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101023,The Jones,library,CONFIRMED_BUG,walka; karty_i_strefy
 101024,Joseph Pander,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101025,Joumlon's Axe,library,CODE_DISCREPANCY,karty_i_strefy
-101026,Journal of Hrorsh,library,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+101026,Journal of Hrorsh,library,PARTIAL_FIX,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101027,Jua Vema,library,CODE_DISCREPANCY,akcje_i_blok
 101029,Judgment: Death to the Brujah!,library,CODE_DISCREPANCY,akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 101030,Jungle Hunting Ground,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
 101031,Justicar Retribution,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
-101033,Karavalanisha Vrana,library,CODE_DISCREPANCY,akcje_i_blok; karty_i_strefy
+101033,Karavalanisha Vrana,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 101035,Kaymakli Fragment,library,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; walka; karty_i_strefy
 101036,Kaymakli Nightmares,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 101037,Kduva's Mask,library,CODE_DISCREPANCY,akcje_i_blok; polityka_i_glosy; karty_i_strefy
 101039,Kerrie,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101041,Keystone Kine,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 101043,Khabar: Glory,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-101044,The Khabar: Honor,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
-101046,Khazar's Diary (Endless Night),library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101044,The Khabar: Honor,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
+101046,Khazar's Diary (Endless Night),library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101048,"Khobar Towers, Al-Khubar",library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
-101051,Kindred Manipulation,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
+101051,Kindred Manipulation,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 101052,Kindred Restructure,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; czas_i_warunki
 101054,Kindred Society Games,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 101055,Kindred Spirits,library,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby
-101058,King's Favor,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
+101058,King's Favor,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 101061,Kiss of Lachesis,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101062,The Kiss of Ra,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 101064,Knotted Cord,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
@@ -684,10 +684,10 @@ id,name,kind,status,categories
 101086,Legacy of Caine,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 101087,Legacy of Pander,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 101088,Legacy of Power,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
-101090,Legend of the Leopard,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
+101090,Legend of the Leopard,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101091,Legendary Vampire,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 101092,Legion,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-101094,"Leonardo, Mortician",library,CODE_DISCREPANCY,koszty_i_zasoby; karty_i_strefy; czas_i_warunki
+101094,"Leonardo, Mortician",library,PARTIAL_FIX,akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101096,Lessons in the Steel,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101101,Liberty Club Intrigue,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 101105,Lifeless Tongues,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -696,7 +696,7 @@ id,name,kind,status,categories
 101109,Lily Prelude,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
 101111,Liquefy the Mortal Coil,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101112,Liquidation,library,CODE_DISCREPANCY,koszty_i_zasoby; karty_i_strefy
-101113,Little Mountain Cemetery,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
+101113,Little Mountain Cemetery,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101115,Living Wood Staff,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101116,Lobotomy,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101117,Local 1111,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
@@ -709,7 +709,7 @@ id,name,kind,status,categories
 101125,Lost in Crowds,library,CODE_DISCREPANCY,akcje_i_blok
 101126,Lost in Translation,library,UNRESOLVED,akcje_i_blok; czas_i_warunki
 101128,Loving Agony,library,CODE_DISCREPANCY,walka; karty_i_strefy
-101130,Loyalist,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; czas_i_warunki
+101130,Loyalist,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101132,Lunatic Eruption,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101133,Lupine Assault,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 101134,Lure of the Serpent,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -718,7 +718,7 @@ id,name,kind,status,categories
 101139,Madness Network,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101140,Madness of the Bard,library,UNRESOLVED,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101141,Madrigal,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
-101146,Make an Example,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; czas_i_warunki
+101146,Make an Example,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 101149,Maleficia,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 101151,Malkavian Derangement: Alternate Personality,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu
 101152,Malkavian Derangement: Paranoia,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
@@ -732,7 +732,7 @@ id,name,kind,status,categories
 101165,Marijava Thuggee,library,CODE_DISCREPANCY,crypt_import_lub_cechy; walka; karty_i_strefy; czas_i_warunki
 101166,Mark of Damnation,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101169,Marked Path,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-101170,Marked Territory,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101170,Marked Territory,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101172,The Marrakesh Codex,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 101173,Martial Ritus,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101174,Martinelli's Ring,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
@@ -744,21 +744,21 @@ id,name,kind,status,categories
 101181,Masque of Judas,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy; czas_i_warunki
 101182,Masquer,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101185,Mass Reality,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
-101186,Massassi's Honor,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
+101186,Massassi's Honor,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101188,Mayaparisatya,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 101189,"Mbare Market, Harare",library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 101191,Meat Hook,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy; czas_i_warunki
 101192,The Meddling of Semsith,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 101194,Mehemet of the Ahl-i-Batin,library,CODE_DISCREPANCY,walka; koszty_i_zasoby; karty_i_strefy
 101196,Meld with the Land,library,CODE_DISCREPANCY,walka
-101197,Member of the Entourage,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101197,Member of the Entourage,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101198,Memories of Mortality,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101199,Memory Rift,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 101200,Memory's Fading Glimpse,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101201,Mental Maze,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101203,Mercy for Seth,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101205,Mesmerize,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-101206,Mesu Bedshet,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
+101206,Mesu Bedshet,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101207,Metro Underground,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 101208,Might of the Camarilla,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy
 101209,Mighty Grapple,library,CODE_DISCREPANCY,walka; karty_i_strefy
@@ -775,7 +775,7 @@ id,name,kind,status,categories
 101227,Mistaken Identity,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 101228,Mistrust,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 101231,Moise Kasavubu,library,CODE_DISCREPANCY,akcje_i_blok; walka; karty_i_strefy
-101232,Mokolé Blood,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
+101232,Mokolé Blood,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101233,The Mole,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 101234,Mole's Tunneling,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 101236,Momentary Delay,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; czas_i_warunki
@@ -794,11 +794,11 @@ id,name,kind,status,categories
 101261,Mylan Horseed,library,CODE_DISCREPANCY,akcje_i_blok; walka; karty_i_strefy
 101262,Mythic Form,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; czas_i_warunki
 101263,The Name Forgotten,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-101264,Nar-Sheptha,library,CODE_DISCREPANCY,walka; koszty_i_zasoby; karty_i_strefy
+101264,Nar-Sheptha,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 101266,National Guard Support,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 101269,Neebi,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 101270,Neighborhood Watch Commander,library,CODE_DISCREPANCY,akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
-101272,Nephandus,library,CODE_DISCREPANCY,akcje_i_blok; walka; karty_i_strefy
+101272,Nephandus,library,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
 101275,Netwar,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101276,Neutral Guard,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby
 101278,New in Town,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -816,10 +816,10 @@ id,name,kind,status,categories
 101294,Nocturn Theater,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 101295,Nod,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 101296,Nose of the Hound,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
-101297,Nosferatu Bestial,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101297,Nosferatu Bestial,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101298,Nosferatu Hosting,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101300,Nosferatu Kingdom,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
-101301,Nosferatu Performance Art,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101301,Nosferatu Performance Art,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101304,Notorious Brutality,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
 101306,NSA Trio,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101307,The Oath,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; czas_i_warunki
@@ -829,17 +829,17 @@ id,name,kind,status,categories
 101313,Occlusion,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 101314,Octopod,library,CODE_DISCREPANCY,walka; koszty_i_zasoby; czas_i_warunki
 101315,Of Noble Blood,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
-101316,Off Kilter,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-101317,Ohoyo Hopoksia (Bastet),library,CODE_DISCREPANCY,walka; koszty_i_zasoby; karty_i_strefy
-101319,Olid Loa,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
+101316,Off Kilter,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101317,Ohoyo Hopoksia (Bastet),library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+101319,Olid Loa,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101322,Open Dossier,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 101325,Ophidian Gaze,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
-101327,Oppugnant Night,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
+101327,Oppugnant Night,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101328,Orb of Ulain,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101329,Order of Hermes Cabal,library,CODE_DISCREPANCY,walka; karty_i_strefy
 101330,Orgy of Blood,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
 101331,Orun,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy; karty_i_strefy; czas_i_warunki
-101332,Osebo Kholo,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; czas_i_warunki
+101332,Osebo Kholo,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 101333,Ossian,library,CODE_DISCREPANCY,akcje_i_blok; walka; karty_i_strefy
 101334,Oubliette,library,CODE_DISCREPANCY,walka; koszty_i_zasoby; karty_i_strefy
 101335,Out of Control,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
@@ -856,7 +856,7 @@ id,name,kind,status,categories
 101352,Paris Opera House,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101355,The Parthenon,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101356,Passion,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
-101357,Patagia: Flaps Allowing Limited Flight,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
+101357,Patagia: Flaps Allowing Limited Flight,library,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 101358,The Path of Blood,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101359,The Path of Bone,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101360,Path of Death and the Soul,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
@@ -867,10 +867,10 @@ id,name,kind,status,categories
 101368,The Path of Service,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101369,The Path of Tears,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 101370,The Path of the Feral Heart,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
-101371,The Path of the Scorched Heart,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
+101371,The Path of the Scorched Heart,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101372,Path of the Void,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101374,Patrol,library,UNRESOLVED,crypt_import_lub_cechy; akcje_i_blok
-101375,Patronage,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
+101375,Patronage,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101377,Patsy,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
 101378,Patterns in the Chaos,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101379,The Peace of Khetamon,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
@@ -883,7 +883,7 @@ id,name,kind,status,categories
 101392,Persistent Echo,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 101393,Persona Non Grata,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 101395,Personal Scourge,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
-101396,Petra Resonance,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+101396,Petra Resonance,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101397,Phantom Speaker,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 101398,Phased Motion Detector,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101399,Phobia,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
@@ -895,14 +895,14 @@ id,name,kind,status,categories
 101408,Poker,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy; czas_i_warunki
 101409,Polaris Coach,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101410,Police Department,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
-101412,Political Antagonist,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
+101412,Political Antagonist,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 101414,Political Flux,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 101416,Political Seizure,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
-101418,Political Struggle,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; karty_i_strefy; czas_i_warunki
-101419,Ponticulus,library,CODE_DISCREPANCY,akcje_i_blok; karty_i_strefy
-101422,The Portrait,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+101418,Political Struggle,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; karty_i_strefy; czas_i_warunki
+101419,Ponticulus,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
+101422,The Portrait,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101423,Possession,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-101425,Potio Martyrium,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
+101425,Potio Martyrium,library,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 101426,Pounce,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101428,Power of All,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101429,Power of One,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
@@ -921,19 +921,19 @@ id,name,kind,status,categories
 101478,Predator's Mastery,library,CODE_DISCREPANCY,akcje_i_blok; walka
 101479,Predator's Transformation,library,CODE_DISCREPANCY,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101481,Pressing Flesh,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-101484,Priestess of Sekhmet,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
+101484,Priestess of Sekhmet,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101485,Primal Instincts,library,CODE_DISCREPANCY,walka
 101486,Principia Discordia,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101488,Priority Shift,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 101489,Prison of the Mind,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101490,Private Audience,library,CODE_DISCREPANCY,polityka_i_glosy; czas_i_warunki
 101492,Project,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
-101494,Promise of 1528,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
+101494,Promise of 1528,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101496,Propaganda of the Deed,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 101497,Prophecies of Gehenna,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 101499,Protect Thine Own,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 101500,Protected Resources,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-101503,Provision of the Silsila,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+101503,Provision of the Silsila,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 101504,Proxy Kissed,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101505,Psalm of the Damned,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 101506,Pseudo-Blindness,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
@@ -957,7 +957,7 @@ id,name,kind,status,categories
 101531,Quicken Sight,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 101533,Quicksilver Contemplation,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 101537,Rafastio Ghoul,library,UNRESOLVED,karty_i_strefy
-101538,Raking Talons,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
+101538,Raking Talons,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101539,Rampage,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101540,Random Patterns,library,CODE_DISCREPANCY,akcje_i_blok
 101541,Rant!,library,UNRESOLVED,placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby; czas_i_warunki
@@ -966,20 +966,20 @@ id,name,kind,status,categories
 101548,Ravager,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101549,Rave,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101551,Ravnos Acceptance,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
-101554,Raw Recruit,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
+101554,Raw Recruit,library,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101555,Rayzeel's Song,library,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-101556,Razor Bat,library,CODE_DISCREPANCY,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+101556,Razor Bat,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 101557,React with Conviction,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 101559,Read the Winds,library,CODE_DISCREPANCY,akcje_i_blok
 101560,Reality,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
-101561,Reality Mirror,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
+101561,Reality Mirror,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101562,The Realm of the Black Sun,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101563,Reanimated Corpse,library,CODE_DISCREPANCY,karty_i_strefy
 101565,Rebirth,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
-101568,Recruiting Party,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
+101568,Recruiting Party,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101569,Recruitment,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 101570,Recruitment Exercise,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-101571,Recure of the Homeland,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
+101571,Recure of the Homeland,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101572,Recurring Contemplation,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101573,Red Herring,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 101574,Red List,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
@@ -993,18 +993,18 @@ id,name,kind,status,categories
 101585,Regeneration,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 101586,Regenerative Blood,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
 101588,Rego Motum,library,CODE_DISCREPANCY,walka
-101589,Reindoctrination,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
+101589,Reindoctrination,library,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101590,Reinforcements,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 101592,Rejuvenate,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby
 101593,Release of the Shackled Soul,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101595,Relentless Reaper,library,CODE_DISCREPANCY,walka; karty_i_strefy; czas_i_warunki
-101596,Reliquary: Akunanse Remains,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101596,Reliquary: Akunanse Remains,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101597,Reliquary: Biague,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-101598,Reliquary: Shango Remains,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
+101598,Reliquary: Shango Remains,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101599,Reliquary: Trinket,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101600,Remnant of the Endless Storm,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101601,Remover,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-101602,Renegade Garou,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+101602,Renegade Garou,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 101603,Renewed Vigor,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101604,Repair the Undead Flesh,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101606,Repulsion,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
@@ -1026,16 +1026,16 @@ id,name,kind,status,categories
 101629,Reversal of Fortunes,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy; czas_i_warunki
 101630,Revocation of Tyre,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy; karty_i_strefy
 101633,Rewind Time,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
-101634,Riddle Phantastique,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-101635,Righteous Aura,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
+101634,Riddle Phantastique,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+101635,Righteous Aura,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 101636,Rigor Mortis,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 101637,Riposte,library,CODE_DISCREPANCY,walka
 101638,Rise of the Fallen,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101639,Rise of the Nephtali,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy
-101641,Ritual Challenge,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+101641,Ritual Challenge,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101642,Ritual of the Bitter Rose,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-101643,Ritual Scalpel,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
-101645,Rock Cat,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
+101643,Ritual Scalpel,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+101645,Rock Cat,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101646,Rockheart,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 101648,Roll,library,CODE_DISCREPANCY,walka; karty_i_strefy; czas_i_warunki
 101649,Rolling with the Punches,library,CODE_DISCREPANCY,walka
@@ -1045,7 +1045,7 @@ id,name,kind,status,categories
 101654,Rötschreck,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; czas_i_warunki
 101655,Rowan Ring,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101657,Rubicon,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
-101658,Ruins of Ceoris,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
+101658,Ruins of Ceoris,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101659,Ruins of Charizel,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101660,"Ruins of Villers Abbey, Belgium",library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101661,Rumble,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
@@ -1055,18 +1055,18 @@ id,name,kind,status,categories
 101668,Sabbat Threat,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 101672,Sacrificial Lamb,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101673,Safe Passage,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-101674,Salt of Thoth,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101674,Salt of Thoth,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101675,Samuel Haight,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 101676,"San Lorenzo de El Escorial, Spain",library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-101677,San Nicolás de los Servitas,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+101677,San Nicolás de los Servitas,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 101679,Sanguine Entrapment,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; czas_i_warunki
 101680,Sanguine Instruction,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101681,The Sargon Fragment,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101683,Savannah Runner,library,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby
 101684,Save Face,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby
-101687,"Scapelli, The Family ""Mechanic""",library,CODE_DISCREPANCY,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+101687,"Scapelli, The Family ""Mechanic""",library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 101688,Scarlet Lore,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-101690,SchreckNET,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
+101690,SchreckNET,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 101691,Scobax,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 101694,Scorpion's Touch,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101696,Scourge of Alecto,library,CODE_DISCREPANCY,walka; koszty_i_zasoby; karty_i_strefy
@@ -1097,12 +1097,12 @@ id,name,kind,status,categories
 101727,Serpent's Numbing Kiss,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101730,Set's Call,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101731,Set's Curse,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-101732,Shaal Fragment,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-101733,Shackles of Enkidu,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+101732,Shaal Fragment,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101733,Shackles of Enkidu,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 101734,Shade,library,CODE_DISCREPANCY,walka; koszty_i_zasoby; karty_i_strefy
 101735,Shadow Body,library,CODE_DISCREPANCY,akcje_i_blok; walka
 101736,Shadow Boxing,library,CODE_DISCREPANCY,akcje_i_blok; czas_i_warunki
-101737,Shadow Court Satyr,library,CODE_DISCREPANCY,walka; karty_i_strefy
+101737,Shadow Court Satyr,library,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
 101738,Shadow Feint,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 101739,Shadow of Taint,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101740,Shadow of the Beast,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
@@ -1120,12 +1120,12 @@ id,name,kind,status,categories
 101754,Shape Mastery,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101755,Shared Nightmare,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 101756,Shared Strength,library,CODE_DISCREPANCY,karty_i_strefy; czas_i_warunki
-101757,Shatter the Gate,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101757,Shatter the Gate,library,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101758,Shattered Mirror,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101759,Shattering,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101761,Shattering Crescendo,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101762,Sheepdog,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-101763,Shell Break,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101763,Shell Break,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101764,Shell Game,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 101765,Shepherd's Innocence,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101766,Shilmulo Deception,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
@@ -1137,7 +1137,7 @@ id,name,kind,status,categories
 101774,Shroud of Absence,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 101775,Shroud of Night,library,CODE_DISCREPANCY,akcje_i_blok
 101776,Shroudsight,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
-101777,Sibyl's Tongue,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+101777,Sibyl's Tongue,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101782,Silence of Death,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101783,Sins of the Cauchemar,library,CODE_DISCREPANCY,akcje_i_blok; karty_i_strefy
 101784,Siphon,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
@@ -1145,7 +1145,7 @@ id,name,kind,status,categories
 101786,Siren's Lure,library,CODE_DISCREPANCY,akcje_i_blok; walka; koszty_i_zasoby
 101787,"Sires Command, Childer Inherit",library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 101788,Sixth Tradition: Destruction,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-101789,Skaald,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
+101789,Skaald,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 101792,Skin of Steel,library,CODE_DISCREPANCY,walka
 101793,Skin of the Adder,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy; czas_i_warunki
 101794,Skin of the Chameleon,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
@@ -1165,12 +1165,12 @@ id,name,kind,status,categories
 101818,Soar,library,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; czas_i_warunki
 101822,Society of Leopold,library,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101824,Sonar,library,CODE_DISCREPANCY,akcje_i_blok
-101826,Song of Pan,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
+101826,Song of Pan,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101828,Songs of the Distant Vitae,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101830,Soul Decoration,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101831,Soul Feasting,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101832,Soul Gem of Etrius,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
-101833,Soul of the Earth,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101833,Soul of the Earth,library,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101834,Soul Painting,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101835,Soul Scan,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101836,Soul Stealing,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
@@ -1179,14 +1179,14 @@ id,name,kind,status,categories
 101840,Speak with Spirits,library,CODE_DISCREPANCY,akcje_i_blok
 101843,Spectral Divination,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 101844,Speed of Thought,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
-101845,Spell of Life,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+101845,Spell of Life,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101846,Spike-Thrower,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101847,Spirit Claws,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101848,Spirit Marionette,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 101849,Spirit Summoning Chamber,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
-101851,Spiritual Guidance,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy; czas_i_warunki
+101851,Spiritual Guidance,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 101852,Spiritual Intervention,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
-101853,Spiritual Protector,library,CODE_DISCREPANCY,walka; koszty_i_zasoby; karty_i_strefy
+101853,Spiritual Protector,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 101855,Spontaneous Power,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 101858,Squirrel Balance,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
 101860,Starshell Grenade Launcher,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
@@ -1198,7 +1198,7 @@ id,name,kind,status,categories
 101868,Steam Tunnels,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 101869,Steely Tenacity,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 101871,Still the Mortal Flesh,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
-101873,Stone Dog,library,CODE_DISCREPANCY,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+101873,Stone Dog,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 101874,Stone Quills,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 101875,Stone Travel,library,CODE_DISCREPANCY,akcje_i_blok; walka; koszty_i_zasoby
 101876,Stonestrength,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
@@ -1214,22 +1214,22 @@ id,name,kind,status,categories
 101888,Stunt Cycle,library,CODE_DISCREPANCY,walka; koszty_i_zasoby
 101889,Stutter-Step,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101890,Subdued by the Blood,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; czas_i_warunki
-101892,Succubus,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
+101892,Succubus,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101893,Succubus Club,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 101894,Succulent Vitae,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-101895,Sudario Refraction,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101895,Sudario Refraction,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101897,Summon History,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101898,Summon Soul,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101899,Summon Spirit Beast,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101900,Summon the Abyss,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-101901,Summon the Serpent,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
+101901,Summon the Serpent,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101902,The Summoning,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101903,Sunrise Service,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101904,"Sunset Strip, Hollywood",library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101905,Superior Mettle,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
 101906,Supernatural Resistance,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 101908,Surge,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
-101910,Survivalist,library,CODE_DISCREPANCY,walka; karty_i_strefy
+101910,Survivalist,library,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
 101911,Suspension of Disbelief,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 101912,Svadharma,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
 101914,Swarm,library,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
@@ -1237,10 +1237,10 @@ id,name,kind,status,categories
 101916,Swiftness of the Stag,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 101917,Swiss Cut,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
 101918,Swoop,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; czas_i_warunki
-101919,Sword of Judgment,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
-101920,Sword of Nuln,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
+101919,Sword of Judgment,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
+101920,Sword of Nuln,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 101921,Sword of the Righteous,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
-101922,Sword of Troile,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
+101922,Sword of Troile,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101923,Sympathetic Agony,library,CODE_DISCREPANCY,walka
 101924,Tabriz Assembly,library,CODE_DISCREPANCY,polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 101925,Tainted Spring,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
@@ -1248,12 +1248,12 @@ id,name,kind,status,categories
 101929,Taking the Skin: Vulture,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101930,"Talaq, The Immortal",library,CODE_DISCREPANCY,walka; karty_i_strefy
 101931,Talbot's Chainsaw,library,CODE_DISCREPANCY,akcje_i_blok; walka
-101932,Talith,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
+101932,Talith,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101933,Talons of the Dead,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101934,Taming the Beast,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101935,Tangle Atropos' Hand,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 101936,Tapestry of Blood,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-101937,"Tara, The Hollow One",library,CODE_DISCREPANCY,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+101937,"Tara, The Hollow One",library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 101941,Target Retainer,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101944,Taste of Death,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 101946,Tattoo Signal,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
@@ -1264,17 +1264,17 @@ id,name,kind,status,categories
 101957,Tenebrous Form,library,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby
 101959,Terra Incognita,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 101960,Terror Frenzy,library,CODE_DISCREPANCY,walka
-101961,Terrorists,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101961,Terrorists,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101962,The Textbook Damnation,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 101964,Thanks for the Donation,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-101967,Their Master's Voice,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101967,Their Master's Voice,library,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101969,Thicker than Blood,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
 101970,Thin Blood,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101971,Thin-Blooded Seer,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 101975,Those Who Endure Judge,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; czas_i_warunki
 101976,Thoughts Betrayed,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
-101977,Threading the Path of Orpheus,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-101979,Three's a Crowd,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby
+101977,Threading the Path of Orpheus,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+101979,Three's a Crowd,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 101981,Thrones Crumble,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101985,Tinglestripe,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy; czas_i_warunki
 101986,Tithings,library,UNRESOLVED,akcje_i_blok; polityka_i_glosy; czas_i_warunki
@@ -1286,7 +1286,7 @@ id,name,kind,status,categories
 102000,Tourette's Voice,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 102001,Tower of London,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 102002,Toy Chest Test,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
-102003,Tracker's Mark,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
+102003,Tracker's Mark,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 102004,Tradition Upheld,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 102006,Tragic Love Affair,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 102007,Trainer,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -1300,7 +1300,7 @@ id,name,kind,status,categories
 102018,Treaty of Laibach,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 102020,Tremere Convocation,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 102024,The Trick of the Danya,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
-102025,Triole's Revenge,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+102025,Triole's Revenge,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 102026,Trochomancy,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 102027,Trophy: Chosen,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 102028,Trophy: Clan Respect,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
@@ -1322,10 +1322,10 @@ id,name,kind,status,categories
 102044,Truth of a Thousand Lies,library,CODE_DISCREPANCY,akcje_i_blok
 102045,Truth of Blood,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 102046,Tumnimos,library,CODE_DISCREPANCY,koszty_i_zasoby; czas_i_warunki
-102047,Tunnel Runner,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
+102047,Tunnel Runner,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 102049,Twilight Camp,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 102050,Twisted Forest,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-102053,Tye Cooper,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+102053,Tye Cooper,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 102055,Unacceptable Appearance,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 102056,Unburdening the Bestial Soul,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 102057,The Uncoiling,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -1333,8 +1333,8 @@ id,name,kind,status,categories
 102062,Under My Skin,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 102067,Undue Influence,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 102068,Undying Tenacity,library,CODE_DISCREPANCY,walka
-102069,Undying Thirst,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-102070,Unexpected Coalition,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; czas_i_warunki
+102069,Undying Thirst,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+102070,Unexpected Coalition,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 102072,Unholy Penance,library,CODE_DISCREPANCY,akcje_i_blok; walka; karty_i_strefy
 102073,Unholy Radiance,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 102074,Unity,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
@@ -1346,16 +1346,16 @@ id,name,kind,status,categories
 102086,Using the Advantage,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 102088,Vampiric Disease,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
 102091,Vascular Explosion,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
-102093,Vaticination,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+102093,Vaticination,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 102094,Vaulderie,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 102095,Veil of Darkness,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu
 102096,Veil of Silence,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 102097,Veil the Legions,library,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 102098,Veiled Sight,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
-102099,Veles' Hunt,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
+102099,Veles' Hunt,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 102100,Velvet Tongue,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
-102101,Vendetta,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-102103,Veneficti,library,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; karty_i_strefy
+102101,Vendetta,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+102103,Veneficti,library,PARTIAL_FIX,crypt_import_lub_cechy; akcje_i_blok; karty_i_strefy
 102104,Venenation,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 102106,Vengeance of Samiel,library,CODE_DISCREPANCY,karty_i_strefy
 102108,Ventrue Directorate Assembly,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
@@ -1369,7 +1369,7 @@ id,name,kind,status,categories
 102122,Violation of Trust,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 102123,Virolax Facility,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 102124,Virtuosa,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
-102125,Visionquest,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+102125,Visionquest,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 102127,Vitae Block,library,CODE_DISCREPANCY,walka; koszty_i_zasoby; czas_i_warunki
 102128,Vivienne Géroux,library,CODE_DISCREPANCY,akcje_i_blok; polityka_i_glosy; karty_i_strefy
 102129,Voice of Madness,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
@@ -1379,7 +1379,7 @@ id,name,kind,status,categories
 102136,Waiting Game,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 102138,Walk of Caine,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 102141,Walks-With-Might,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
-102143,Wanderer's Counsel,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
+102143,Wanderer's Counsel,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 102144,War Ghoul,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu
 102146,Warding the Beast,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 102155,Watchtower: Chosen are Called,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
@@ -1390,22 +1390,22 @@ id,name,kind,status,categories
 102160,Wave of Insanity,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 102161,Wave of Lethargy,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; czas_i_warunki
 102163,Weakness,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
-102165,Web of Knives Recruit,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
+102165,Web of Knives Recruit,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 102167,Weeping Stone,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 102168,Weigh the Heart,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
-102170,Weirding Stone,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
+102170,Weirding Stone,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 102172,Well-Marked,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 102173,Wendell Delburton,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
-102174,Werewolf Pack,library,CODE_DISCREPANCY,walka; karty_i_strefy
+102174,Werewolf Pack,library,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
 102175,Whispers from the Dead,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 102177,Whistling Up the Beast,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 102178,White Nights Massacre,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
-102181,The Wildebeest,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+102181,The Wildebeest,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 102182,Will of the Council,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 102183,Will-o'-the-Wisp,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 102184,Winchester Mansion,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 102186,Winged Second,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
-102187,Wise Spider,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+102187,Wise Spider,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 102188,Withering,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 102190,Wolf Claws,library,CODE_DISCREPANCY,walka; karty_i_strefy
 102191,Wolf Companion,library,CODE_DISCREPANCY,walka; koszty_i_zasoby; karty_i_strefy
@@ -1416,14 +1416,14 @@ id,name,kind,status,categories
 102196,Writ of Acceptance,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 102197,Wrong and Crosswise,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 102200,Year of Fortune,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
-102203,Zaire River Ferry,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+102203,Zaire River Ferry,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 102206,Zillah's Tears,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 102207,Zillah's Valley,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
 102209,Zip Line,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 102211,Zoning Board,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 102224,Form of the Cobra,library,CODE_DISCREPANCY,walka; koszty_i_zasoby
 102233,Revelation of the Serpent,library,CODE_DISCREPANCY,karty_i_strefy
-102235,Dark Web Procurer,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+102235,Dark Web Procurer,library,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 102236,"The British Museum, London",library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 102238,Enhanced Coagulant,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 102239,"Michael Harris, the Incinerator",library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -1438,7 +1438,7 @@ id,name,kind,status,categories
 102266,Voracious Vermin,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 102269,Camarilla Conclave,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 102271,Confiscation,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
-102273,Loup,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+102273,Loup,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 102276,Expulsion,library,UNRESOLVED,polityka_i_glosy; czas_i_warunki
 102289,Family Gathering,library,CODE_DISCREPANCY,koszty_i_zasoby; karty_i_strefy
 102291,Pit of Contemplation,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok

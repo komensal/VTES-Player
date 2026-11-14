@@ -165,6 +165,33 @@ describe("Vast Wealth (102092)", () => {
     return { state, engine: new VtesEngine(state, testRegistry) };
   }
 
+  it("enforces a searched equipment's clan and includes its clan in the cost", () => {
+    function resolve(clan: string, pool: number) {
+      const { state, engine } = game();
+      const bearer = find(state, "V1");
+      bearer.clan = clan;
+      bearer.attached.push(inPlay("tax", "test", {
+        statics: { playCostMod: { amount: 1, pays: "pool", requiresClan: ["Osebo"], minions: "bearer" } },
+      }));
+      alice(state).pool = pool;
+      alice(state).library = [{ id: "shield", name: "Blood Shield" }];
+      const option = engine.decision()!.options.find((o) => o.id.startsWith("act:Vast Wealth:vw:equip:"));
+      expect(option).toBeDefined();
+      runTrace(engine, [
+        ["Alice", option!.id],
+        ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+        ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+        ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ]);
+      return state;
+    }
+    expect(find(resolve("Ventrue", 10), "V1").attached.some((p) => p.card.id === "shield")).toBe(false);
+    expect(find(resolve("Osebo", 3), "V1").attached.some((p) => p.card.id === "shield")).toBe(false);
+    const state = resolve("Osebo", 4);
+    expect(find(state, "V1").attached.some((p) => p.card.id === "shield")).toBe(true);
+    expect(alice(state).pool).toBe(1);
+  });
+
   it("takes the FIRST equipment from the top — no choice at all", () => {
     const { state, engine } = game();
     const opt = engine

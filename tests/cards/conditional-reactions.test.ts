@@ -25,7 +25,7 @@ function setup(
 ): { state: GameState; engine: VtesEngine; v1: MinionState; m: MinionState } {
   const state = threeSeatGame();
   const v1 = state.seats[0]!.minions[0]!;
-  Object.assign(v1, { blood: 5, capacity: 5 });
+  Object.assign(v1, { blood: 5, capacity: 5, clan: "Ishtarri" }); // Uncontrolled Impulse's clan icon
   const m = state.seats[1]!.minions.find((x) => x.id === "M")!;
   Object.assign(m, { blood: m.capacity, disciplines: bobDisciplines });
   state.seats[0]!.hand.push({ id: "ui1", name: "Uncontrolled Impulse" });

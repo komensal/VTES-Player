@@ -8,8 +8,8 @@
   {
     "id": 100002,
     "name": "419 Operation",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec action ma jedynie actionStealth; brak umieszczenia karty w grze, przenoszenia pool, wypłaty i możliwości użycia Edge przez prey. src/cards/effects/cards.ts: 419 Operation; registry.json: 100002."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec action ma jedynie actionStealth; brak umieszczenia karty w grze, przenoszenia pool, wypłaty i możliwości użycia Edge przez prey. src/cards/effects/cards.ts: 419 Operation; registry.json: 100002. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100003,
@@ -80,8 +80,8 @@
   {
     "id": 100014,
     "name": "Abyssal Hunter",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma tylko life/strength/bleed, bez klanowego wymogu Lasombra, directed damage, obrażeń własnego vampire w unlock i burn po ranged aggravated damage; nie przenosi też subtype demon. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma tylko life/strength/bleed, bez klanowego wymogu Lasombra, directed damage, obrażeń własnego vampire w unlock i burn po ranged aggravated damage; nie przenosi też subtype demon. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100015,
@@ -164,8 +164,8 @@
   {
     "id": 100028,
     "name": "Ahrimane Protectorate",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma modifyIntercept i actionStealth, lecz bez wymagania Ahrimane, unique permanent, zapłaty blood za unlock oraz obydwu opcji burn protectorate. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma modifyIntercept i actionStealth, lecz bez wymagania Ahrimane, unique permanent, zapłaty blood za unlock oraz obydwu opcji burn protectorate. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100029,
@@ -200,8 +200,8 @@
   {
     "id": 100034,
     "name": "Akunanse Kholo",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Zamiast tytułu, 2 głosów, ograniczeń starszeństwa i przenoszenia tytułu karta daje modifyIntercept. Tekst: src/cards/registry.json, ID 100034; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Zamiast tytułu, 2 głosów, ograniczeń starszeństwa i przenoszenia tytułu karta daje modifyIntercept. Tekst: src/cards/registry.json, ID 100034; implementacja: src/cards/effects/cards.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100035,
@@ -260,8 +260,8 @@
   {
     "id": 100044,
     "name": "Ambrosius, The Ferryman",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec ma tylko statystyki ally, bez unique, wymogu Giovanni, subtype wraith, przenoszenia retainer z pathos oraz odporności na non-aggravated damage. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec ma tylko statystyki ally, bez unique, wymogu Giovanni, subtype wraith, przenoszenia retainer z pathos oraz odporności na non-aggravated damage. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100045,
@@ -302,8 +302,8 @@
   {
     "id": 100051,
     "name": "Ananasi Vampirephile",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma tylko ogólne statystyki i efekty maneuver/press/actionStealth zamiast wymagania Guruhi, subtype werewolf, combat maneuver, płatnego press z ustawieniem range, gain life i gry ani jak vampire. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma tylko ogólne statystyki i efekty maneuver/press/actionStealth zamiast wymagania Guruhi, subtype werewolf, combat maneuver, płatnego press z ustawieniem range, gain life i gry ani jak vampire. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100052,
@@ -374,8 +374,8 @@
   {
     "id": 100063,
     "name": "The Ancestor's Talisman",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec equipment ma jedynie modifyIntercept w modes, bez unique permanent i warunku actions requiring dom lub pre; brak znalezionego nazwanego handlera. Wymagania klanowe equipment oraz inne interakcje nie zostały osobno odtworzone. Statyczna analiza bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec equipment ma jedynie modifyIntercept w modes, bez unique permanent i warunku actions requiring dom lub pre; brak znalezionego nazwanego handlera. Wymagania klanowe equipment oraz inne interakcje nie zostały osobno odtworzone. Statyczna analiza bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100064,
@@ -422,8 +422,8 @@
   {
     "id": 100071,
     "name": "The Ankara Citadel, Turkey",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec equipment nie zawiera unique, reprezentowania location zamiast equipment ani obniżenia kosztu non-action modifier cards; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusta spec equipment nie zawiera unique, reprezentowania location zamiast equipment ani obniżenia kosztu non-action modifier cards; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100072,
@@ -476,8 +476,8 @@
   {
     "id": 100080,
     "name": "Arcane Appraiser",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally zawiera podstawowe statystyki i modifyStealth, lecz bez unique, subtype ghoul, akcji przenoszenia equipment i zapobiegania drugiej kopii unique equipment; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally zawiera podstawowe statystyki i modifyStealth, lecz bez unique, subtype ghoul, akcji przenoszenia equipment i zapobiegania drugiej kopii unique equipment; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100081,
@@ -536,8 +536,8 @@
   {
     "id": 100090,
     "name": "Arms Dealer",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma jedynie statystyki i actionStealth, brak subtype mortal i akcji wyszukania weapon w library, shuffle oraz discard; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma jedynie statystyki i actionStealth, brak subtype mortal i akcji wyszukania weapon w library, shuffle oraz discard; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100091,
@@ -614,8 +614,8 @@
   {
     "id": 100103,
     "name": "Asanbonsam Ghoul",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally spec ma tylko podstawowe statystyki i modifyIntercept, bez wymogu klanu Tzimisce, subtype ghoul, stałego intercept wyłącznie dla directed action ani ustawienia close range w pierwszej rundzie po bloku; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally spec ma tylko podstawowe statystyki i modifyIntercept, bez wymogu klanu Tzimisce, subtype ghoul, stałego intercept wyłącznie dla directed action ani ustawienia close range w pierwszej rundzie po bloku; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100104,
@@ -902,8 +902,8 @@
   {
     "id": 100151,
     "name": "Benefit Performance",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Political action ma pusty tryb; brak wypłaty pool i blood po udanym referendum; brak bespoke handlera. Źródła: src/cards/registry.json ID 100151; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Political action ma pusty tryb; brak wypłaty pool i blood po udanym referendum; brak bespoke handlera. Źródła: src/cards/registry.json ID 100151; src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100152,
@@ -956,8 +956,8 @@
   {
     "id": 100160,
     "name": "Bima",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally ma tylko podstawowe statystyki; brak wyboru Discipline z ręki po wejściu, ewentualnego burn i zdolności do gry kartami. Źródła: src/cards/registry.json ID 100160; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma tylko podstawowe statystyki; brak wyboru Discipline z ręki po wejściu, ewentualnego burn i zdolności do gry kartami. Źródła: src/cards/registry.json ID 100160; src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100161,
@@ -980,8 +980,8 @@
   {
     "id": 100164,
     "name": "The Black Beast",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Combatu nie dołącza jako karty, zamiast warunkowego +1 strength oraz spalania dla press do kontynuowania ma ogólny press i addStrength. Źródła: src/cards/registry.json ID 100164; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Combatu nie dołącza jako karty, zamiast warunkowego +1 strength oraz spalania dla press do kontynuowania ma ogólny press i addStrength. Źródła: src/cards/registry.json ID 100164; src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100165,
@@ -1016,8 +1016,8 @@
   {
     "id": 100170,
     "name": "Black Spiral Buddy",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally posiada statystyki, ale brak aggravated hand strike, prawidłowego dodatkowego strike raz na combat i odzyskania life w unlock. Źródła: src/cards/registry.json ID 100170; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally posiada statystyki, ale brak aggravated hand strike, prawidłowego dodatkowego strike raz na combat i odzyskania life w unlock. Źródła: src/cards/registry.json ID 100170; src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100171,
@@ -1106,8 +1106,8 @@
   {
     "id": 100185,
     "name": "Blessing of the Name",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma modifyIntercept i stealth zamiast wybrania minionów, ich unlock, bonusów i późniejszego lock. Źródła: src/cards/registry.json ID 100185; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma modifyIntercept i stealth zamiast wybrania minionów, ich unlock, bonusów i późniejszego lock. Źródła: src/cards/registry.json ID 100185; src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100186,
@@ -1250,8 +1250,8 @@
   {
     "id": 100209,
     "name": "Blood Shield",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Equipment ma prevent w trybie zagrania, nie ma stałej zdolności prewencji ani reakcyjnego burn blood, brak unique. Źródła: src/cards/registry.json ID 100209; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment ma prevent w trybie zagrania, nie ma stałej zdolności prewencji ani reakcyjnego burn blood, brak unique. Źródła: src/cards/registry.json ID 100209; src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100210,
@@ -1340,8 +1340,8 @@
   {
     "id": 100224,
     "name": "Bloodstorm of Chorazin",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Reaction daje prevent 2 zamiast przerwać akcję i zadać nieprewencyjne obrażenia aktorowi i retainerom. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Reaction daje prevent 2 zamiast przerwać akcję i zadać nieprewencyjne obrażenia aktorowi i retainerom. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100225,
@@ -1520,8 +1520,8 @@
   {
     "id": 100254,
     "name": "Brigitte Gebauer",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally ma statystyki, ale brak zdolności lock przy ogłoszeniu bleed i kosztu life po bloku. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki, ale brak zdolności lock przy ogłoszeniu bleed i kosztu life po bloku. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100255,
@@ -1532,8 +1532,8 @@
   {
     "id": 100256,
     "name": "Brother in Arms",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth; nie tworzy 2-capacity Salubri ani nie obsługuje transferu i limitu. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth; nie tworzy 2-capacity Salubri ani nie obsługuje transferu i limitu. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100257,
@@ -1586,8 +1586,8 @@
   {
     "id": 100265,
     "name": "Bujo",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth zamiast wyboru political action z cudzego ash heap, referendum i +3 votes. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth zamiast wyboru political action z cudzego ash heap, referendum i +3 votes. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100266,
@@ -1676,8 +1676,8 @@
   {
     "id": 100280,
     "name": "Call the Great Beast",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec nie tworzy Great Beast; jedynie prevent i stealth zamiast ritual counters i transformacji. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec nie tworzy Great Beast; jedynie prevent i stealth zamiast ritual counters i transformacji. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100281,
@@ -1712,8 +1712,8 @@
   {
     "id": 100286,
     "name": "Camarilla Vitae Slave",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Retainer ma tylko life; brak +1 capacity i wyboru okresowego podniesienia dyscypliny. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma tylko life; brak +1 capacity i wyboru okresowego podniesienia dyscypliny. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100287,
@@ -1982,8 +1982,8 @@
   {
     "id": 100331,
     "name": "Charigger, The Axe",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Retainer ma ogólne bleed/stealth zamiast warunkowego hunt, usuwania minionów i liczenia soul counters. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma ogólne bleed/stealth zamiast warunkowego hunt, usuwania minionów i liczenia soul counters. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100332,
@@ -2006,8 +2006,8 @@
   {
     "id": 100335,
     "name": "Charnas the Imp",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Retainer ma tylko stealth i life; brak wyboru cudzego pracodawcy, damage w unlock, odporności i przeniesienia. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma tylko stealth i life; brak wyboru cudzego pracodawcy, damage w unlock, odporności i przeniesienia. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100336,
@@ -2126,8 +2126,8 @@
   {
     "id": 100355,
     "name": "Clandestine Contract",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja nie tworzy contract, nie celuje miniona ani nie rozpoczyna combat i nie daje powtórnego rush. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja nie tworzy contract, nie celuje miniona ani nie rozpoczyna combat i nie daje powtórnego rush. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100356,
@@ -2354,8 +2354,8 @@
   {
     "id": 100393,
     "name": "Concert Tour",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth, bez dołączenia do Daughter i późniejszego pełnego uzupełnienia blood. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth, bez dołączenia do Daughter i późniejszego pełnego uzupełnienia blood. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100394,
@@ -2498,8 +2498,8 @@
   {
     "id": 100417,
     "name": "Consume the Dead",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak obu wydrukowanych wariantów akcji przeciw wraith oraz reakcji na spalenie i uzyskania blood; spec ma tylko stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak obu wydrukowanych wariantów akcji przeciw wraith oraz reakcji na spalenie i uzyskania blood; spec ma tylko stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100418,
@@ -2576,8 +2576,8 @@
   {
     "id": 100430,
     "name": "Corruption",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec akcji zawiera tylko stealth; brak wyboru miniona prey, corruption counter oraz opcjonalnego przejęcia po przekroczeniu capacity/cost. Nie znaleziono osobnego handlera tej karty. Tekst registry.json; kod src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec akcji zawiera tylko stealth; brak wyboru miniona prey, corruption counter oraz opcjonalnego przejęcia po przekroczeniu capacity/cost. Nie znaleziono osobnego handlera tej karty. Tekst registry.json; kod src/cards/effects/cards.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100431,
@@ -2600,8 +2600,8 @@
   {
     "id": 100434,
     "name": "Courier",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak -1 intercept przeciw vampire i przeglądania/odrzucania wierzchniej karty po sukcesie bleed. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak -1 intercept przeciw vampire i przeglądania/odrzucania wierzchniej karty po sukcesie bleed. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100435,
@@ -2618,8 +2618,8 @@
   {
     "id": 100437,
     "name": "Covincraft",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak obu wariantów: redukcji bleed i 4 votes; zamiast nich +1 intercept. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak obu wariantów: redukcji bleed i 4 votes; zamiast nich +1 intercept. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100438,
@@ -2636,8 +2636,8 @@
   {
     "id": 100440,
     "name": "Create Gargoyle",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak wymogu non-sterile i tworzenia Gargoyle z Dyscypliną, wyszukania master, przekazania krwi i zakazu akcji. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak wymogu non-sterile i tworzenia Gargoyle z Dyscypliną, wyszukania master, przekazania krwi i zakazu akcji. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100441,
@@ -2900,8 +2900,8 @@
   {
     "id": 100484,
     "name": "D'habi Revenant",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak wymogu Baali i trwałego bonusu bleed pracodawcy; spec używa doraźnego modifyBleed. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak wymogu Baali i trwałego bonusu bleed pracodawcy; spec używa doraźnego modifyBleed. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100485,
@@ -2996,8 +2996,8 @@
   {
     "id": 100500,
     "name": "Dauntain Black Magician",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak obu przyznanych akcji: przeniesienia master Discipline i spalenia siebie z Tremere antitribu. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak obu przyznanych akcji: przeniesienia master Discipline i spalenia siebie z Tremere antitribu. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100501,
@@ -3098,8 +3098,8 @@
   {
     "id": 100517,
     "name": "Defender of the Haven",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec daje tylko stealth; brak dołączenia do slave Gargoyle, warunku capacity, +2 intercept i limitu. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec daje tylko stealth; brak dołączenia do slave Gargoyle, warunku capacity, +2 intercept i limitu. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100518,
@@ -3158,8 +3158,8 @@
   {
     "id": 100527,
     "name": "Derange",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Poza stealth brak dołączenia do młodszego wampira, zmiany klanu/sekty, ograniczenia unlock i możliwości przesunięcia karty. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Poza stealth brak dołączenia do młodszego wampira, zmiany klanu/sekty, ograniczenia unlock i możliwości przesunięcia karty. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100528,
@@ -3176,14 +3176,14 @@
   {
     "id": 100530,
     "name": "Despiral",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Poza stealth brak permanenta, licznika, zależnego od niego bleed i akcji zwiększenia liczników. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Poza stealth brak permanenta, licznika, zależnego od niego bleed i akcji zwiększenia liczników. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100531,
     "name": "Destructive Secrets",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Poza stealth brak wyboru miniona i zakazu blokowania Nosferatu do końca tury. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Poza stealth brak wyboru miniona i zakazu blokowania Nosferatu do końca tury. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100532,
@@ -3212,8 +3212,8 @@
   {
     "id": 100536,
     "name": "Deviki Prasanta",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally ma podstawowe statystyki, ale brak unique i zdolności lock do wyszukania i położenia master Discipline na ready Banu Haqim. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma podstawowe statystyki, ale brak unique i zdolności lock do wyszukania i położenia master Discipline na ready Banu Haqim. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100537,
@@ -3260,8 +3260,8 @@
   {
     "id": 100544,
     "name": "Din of the Damned",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec daje stealth zamiast ograniczenia intercept z equipment/conviction i podwyższenia kosztu reakcji. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec daje stealth zamiast ograniczenia intercept z equipment/conviction i podwyższenia kosztu reakcji. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100545,
@@ -3278,8 +3278,8 @@
   {
     "id": 100547,
     "name": "Dirty Little Secrets",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec daje stealth zamiast usuwania kart z library celu proporcjonalnie do udanego bleed. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec daje stealth zamiast usuwania kart z library celu proporcjonalnie do udanego bleed. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100548,
@@ -3308,8 +3308,8 @@
   {
     "id": 100552,
     "name": "Disciple of Lazarus",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Poza stealth brak przeniesienia blood lub wyszukania Harbinger of Skulls w crypt. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Poza stealth brak przeniesienia blood lub wyszukania Harbinger of Skulls w crypt. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100553,
@@ -3410,8 +3410,8 @@
   {
     "id": 100569,
     "name": "Dogs of War",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Referendum opisujące permanent z rush i anulowaniem blood hunt zastąpiono stealth; brak mechanizmu usunięcia. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Referendum opisujące permanent z rush i anulowaniem blood hunt zastąpiono stealth; brak mechanizmu usunięcia. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100570,
@@ -3470,8 +3470,8 @@
   {
     "id": 100579,
     "name": "Draeven Softfoot",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec ally zawiera jedynie prevent, nie opisuje unique, lock dla ochrony Kiasyd ani ograniczenia kart Chimerstry. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec ally zawiera jedynie prevent, nie opisuje unique, lock dla ochrony Kiasyd ani ograniczenia kart Chimerstry. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100580,
@@ -3530,8 +3530,8 @@
   {
     "id": 100589,
     "name": "Drink the Blood of Ahriman",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec nie dołącza permanenta, nie przyznaje trwałego strength i rabatu Obtenebration ani nie obsługuje cyklicznego kosztu i spalenia. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec nie dołącza permanenta, nie przyznaje trwałego strength i rabatu Obtenebration ani nie obsługuje cyklicznego kosztu i spalenia. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100590,
@@ -3554,8 +3554,8 @@
   {
     "id": 100593,
     "name": "Duma Rafiki",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Retainer ma life 2, lecz brak wyboru spalenia broni albo 1 damage podczas strike resolution na close. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma life 2, lecz brak wyboru spalenia broni albo 1 damage podczas strike resolution na close. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100594,
@@ -3638,8 +3638,8 @@
   {
     "id": 100607,
     "name": "Eccentric Billionaire",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally ma statystyki, ale brak opcji lock i zniżki na equipment/location oraz limitu jednego Billionaire na kartę. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki, ale brak opcji lock i zniżki na equipment/location oraz limitu jednego Billionaire na kartę. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100608,
@@ -3674,8 +3674,8 @@
   {
     "id": 100613,
     "name": "Edge of the World",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec daje stealth zamiast 4 pool po uzyskaniu VP, warunkowego unlock/uzupełnienia blood i limitu na akcję. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec daje stealth zamiast 4 pool po uzyskaniu VP, warunkowego unlock/uzupełnienia blood i limitu na akcję. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100614,
@@ -3728,8 +3728,8 @@
   {
     "id": 100622,
     "name": "The Eldest Are Kholo",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec daje intercept zamiast głosów Ravnos/Laibon Ravnos i nie rozróżnia wydrukowanych typów. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec daje intercept zamiast głosów Ravnos/Laibon Ravnos i nie rozróżnia wydrukowanych typów. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100623,
@@ -3800,8 +3800,8 @@
   {
     "id": 100634,
     "name": "Emerald Legionnaire",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally ma statystyki, ale brak opcjonalnego powrotu z ash heap za usunięcie siedmiu kart, z warunkiem Harbinger. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki, ale brak opcjonalnego powrotu z ash heap za usunięcie siedmiu kart, z warunkiem Harbinger. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100635,
@@ -3818,8 +3818,8 @@
   {
     "id": 100637,
     "name": "Emergency Rations",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Poza stealth brak usunięcia mortal z ash heap, permanenta oraz przywrócenia krwi do capacity. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Poza stealth brak usunięcia mortal z ash heap, permanenta oraz przywrócenia krwi do capacity. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100638,
@@ -3842,14 +3842,14 @@
   {
     "id": 100641,
     "name": "Enchanted Marionette",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Equipment nie ma dołączanych statyk +1 bleed i stealth przy bleed ani warunku Malkavian antitribu; spec używa natychmiastowych efektów modifier. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment nie ma dołączanych statyk +1 bleed i stealth przy bleed ani warunku Malkavian antitribu; spec używa natychmiastowych efektów modifier. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100642,
     "name": "Enforcer",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak dołączenia do Osebo, trwałego bonusu strength i limitu jednej kopii; spec ma addStrength i actionStealth. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak dołączenia do Osebo, trwałego bonusu strength i limitu jednej kopii; spec ma addStrength i actionStealth. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100643,
@@ -3890,8 +3890,8 @@
   {
     "id": 100649,
     "name": "Ensemble",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec daje stealth zamiast ograniczonego bleed zależnego od unlocked Daughters i zablokowania wszystkich ready Daughters. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec daje stealth zamiast ograniczonego bleed zależnego od unlocked Daughters i zablokowania wszystkich ready Daughters. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100650,
@@ -3938,8 +3938,8 @@
   {
     "id": 100657,
     "name": "Erebus Mask",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Equipment zamiast trwałej staty stealth dla Harbinger ma wyłącznie modifyStealth; brak unique w spec. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment zamiast trwałej staty stealth dla Harbinger ma wyłącznie modifyStealth; brak unique w spec. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100658,
@@ -3962,8 +3962,8 @@
   {
     "id": 100661,
     "name": "Escaped Mental Patient",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally ma podstawowe statystyki, lecz brak aggravated hand strike +1 ze spaleniem po combat i akcji wejścia do combat. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma podstawowe statystyki, lecz brak aggravated hand strike +1 ze spaleniem po combat i akcji wejścia do combat. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100662,
@@ -4472,8 +4472,8 @@
   {
     "id": 100746,
     "name": "Fleecing the Gaje",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action zamiast przenoszenia retainera, equipment lub blood młodszego cudzego vampire do Ravnos ma jedynie stealth. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action zamiast przenoszenia retainera, equipment lub blood młodszego cudzego vampire do Ravnos ma jedynie stealth. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100747,
@@ -4532,8 +4532,8 @@
   {
     "id": 100756,
     "name": "Follow the Alpha",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Modifier daje stealth zamiast wejścia do nowej walki innym Gangrel antitribu z ograniczeniem manewru. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier daje stealth zamiast wejścia do nowej walki innym Gangrel antitribu z ograniczeniem manewru. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100757,
@@ -4676,8 +4676,8 @@
   {
     "id": 100780,
     "name": "Founders of the Ebony Kingdom",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth zamiast dołączenia do młodszego Laibon w uncontrolled i dodania 4 blood oraz warunków spalenia. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast dołączenia do młodszego Laibon w uncontrolled i dodania 4 blood oraz warunków spalenia. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100781,
@@ -4808,8 +4808,8 @@
   {
     "id": 100802,
     "name": "Gang Tactics",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Modifier daje stealth zamiast ustalenia close range i pominięcia determine range podczas wynikłej walki. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier daje stealth zamiast ustalenia close range i pominięcia determine range podczas wynikłej walki. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100803,
@@ -4844,8 +4844,8 @@
   {
     "id": 100808,
     "name": "Gargoyle Slave",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally ma statystyki, ale brak ograniczenia ranged weapon, zdolności prevent 1/combat i akcji odzyskania życia. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki, ale brak ograniczenia ranged weapon, zdolności prevent 1/combat i akcji odzyskania życia. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100809,
@@ -4892,8 +4892,8 @@
   {
     "id": 100816,
     "name": "Ghost-Eater",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko modifyStealth zamiast hunt wykorzystującego ash heap i blood zależnego od capacity/life wybranego miniona. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko modifyStealth zamiast hunt wykorzystującego ash heap i blood zależnego od capacity/life wybranego miniona. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100817,
@@ -4922,20 +4922,20 @@
   {
     "id": 100821,
     "name": "Ghouled Street Thug",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally ma podstawowe statystyki, ale brak ranged strike i zdolności zagrywania kart Potence jak vampire. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma podstawowe statystyki, ale brak ranged strike i zdolności zagrywania kart Potence jak vampire. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100822,
     "name": "The Ghouls of Plaza Morería",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally nie ma unique, ranged strike, counterów ani akcji ich dodania i wydania; maneuver jest efektem zagrania, nie stałą zdolnością. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally nie ma unique, ranged strike, counterów ani akcji ich dodania i wydania; maneuver jest efektem zagrania, nie stałą zdolnością. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100823,
     "name": "Gianna di Canneto",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally nie ma unique ani zewnętrznych zdolności spalenia equipment i zadania unpreventable damage; spec ma jedynie prevent. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally nie ma unique ani zewnętrznych zdolności spalenia equipment i zadania unpreventable damage; spec ma jedynie prevent. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100824,
@@ -4988,14 +4988,14 @@
   {
     "id": 100832,
     "name": "Giulia Giovanni Abruzzina",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally nie ma unique ani zdolności lock do ustalenia close range przy walce kontrolowanego Giovanni. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally nie ma unique ani zdolności lock do ustalenia close range przy walce kontrolowanego Giovanni. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100833,
     "name": "Giuseppe, Gravedigger",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Retainer nie opisuje unique ani stałego stealth w akcjach wymagających Necromancy; zawiera tylko modifyStealth w trybie. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer nie opisuje unique ani stałego stealth w akcjach wymagających Necromancy; zawiera tylko modifyStealth w trybie. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100834,
@@ -5060,8 +5060,8 @@
   {
     "id": 100844,
     "name": "Goth Band",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally nie ma unique ani akcji przenoszenia countera między master cards; ma tylko modifyStealth w spec. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally nie ma unique ani akcji przenoszenia countera między master cards; ma tylko modifyStealth w spec. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100845,
@@ -5090,8 +5090,8 @@
   {
     "id": 100849,
     "name": "The Grandest Trick",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Modifier ma tylko stealth zamiast zakazu blokowania przez vampires, czasowej zmiany aktora na mortal ally i ograniczeń akcji. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier ma tylko stealth zamiast zakazu blokowania przez vampires, czasowej zmiany aktora na mortal ally i ograniczeń akcji. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100850,
@@ -5198,8 +5198,8 @@
   {
     "id": 100867,
     "name": "Guardian Ghoul",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally ma statystyki, ale nie ma możliwości spalenia się zamiast niszczonej location. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki, ale nie ma możliwości spalenia się zamiast niszczonej location. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100868,
@@ -5234,14 +5234,14 @@
   {
     "id": 100873,
     "name": "The Guruhi Are the Land",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Modifier daje tylko bleed; brak wymogu Guruhi oraz rozdzielonych korzyści przy hunt i equip. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier daje tylko bleed; brak wymogu Guruhi oraz rozdzielonych korzyści przy hunt i equip. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100874,
     "name": "Guruhi Kholo",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Zamiast tytułu Laibon Kholo z warunkami starszeństwa i przenoszenia modifier/reaction daje intercept. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Zamiast tytułu Laibon Kholo z warunkami starszeństwa i przenoszenia modifier/reaction daje intercept. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100875,
@@ -5306,8 +5306,8 @@
   {
     "id": 100885,
     "name": "Haqim's Law: Leadership",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth; nie wypłaca 2 pool kontrolerom najstarszych ready Assamite. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; nie wypłaca 2 pool kontrolerom najstarszych ready Assamite. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100886,
@@ -5324,8 +5324,8 @@
   {
     "id": 100888,
     "name": "Harmony",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth, bez spalenia Choir i po 3 pool prey za każdą kopię. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth, bez spalenia Choir i po 3 pool prey za każdą kopię. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100889,
@@ -5348,8 +5348,8 @@
   {
     "id": 100892,
     "name": "Hatchling",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth, bez wymogu non-sterile Gargoyle i tworzenia 1-capacity Gargoyle z Visceratika i flight. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth, bez wymogu non-sterile Gargoyle i tworzenia 1-capacity Gargoyle z Visceratika i flight. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100893,
@@ -5468,8 +5468,8 @@
   {
     "id": 100912,
     "name": "Herald of Topheth",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally nie ma flight, infernal, wymaganych zdolności Disciplines, rush ani odnowienia life. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally nie ma flight, infernal, wymaganych zdolności Disciplines, rush ani odnowienia life. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100913,
@@ -5480,8 +5480,8 @@
   {
     "id": 100914,
     "name": "Hexaped",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally nie opisuje akcji link counter i usunięcia z gry ani warunkowego bleed/stealth rekrutującego Tremere antitribu. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally nie opisuje akcji link counter i usunięcia z gry ani warunkowego bleed/stealth rekrutującego Tremere antitribu. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100915,
@@ -5534,8 +5534,8 @@
   {
     "id": 100923,
     "name": "Hierophant",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Political action nie wybiera Follower of Set ani nie dołącza karty z głosem i kosztem krwi dla blockera. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Political action nie wybiera Follower of Set ani nie dołącza karty z głosem i kosztem krwi dla blockera. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100924,
@@ -5564,14 +5564,14 @@
   {
     "id": 100928,
     "name": "High Stakes",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Political action nie zawiera warunku ante, równoczesnych wyborów graczy ani skutków wyboru. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Political action nie zawiera warunku ante, równoczesnych wyborów graczy ani skutków wyboru. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100929,
     "name": "High Top",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally ma statystyki, lecz brak unique, trwałego intercept, rush, dodatkowych strike, Disciplines i odzyskania life. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki, lecz brak unique, trwałego intercept, rush, dodatkowych strike, Disciplines i odzyskania life. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100930,
@@ -5696,8 +5696,8 @@
   {
     "id": 100950,
     "name": "Igoli's Loyalty",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Modifier daje stealth zamiast licytacji w referendum, kosztów i kary dla głosujących przeciw. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier daje stealth zamiast licytacji w referendum, kosztów i kary dla głosujących przeciw. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100951,
@@ -5894,8 +5894,8 @@
   {
     "id": 100983,
     "name": "Informant",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ally nie ma zakazu akcji/bloku, ujawniania ręki Ishtarri ani przekazania predator w discard. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally nie ma zakazu akcji/bloku, ujawniania ręki Ishtarri ani przekazania predator w discard. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100984,
@@ -5918,8 +5918,8 @@
   {
     "id": 100987,
     "name": "Innocent Bystander",
-    "status": "REVIEWED_NO_ISSUE_FOUND",
-    "evidence": "Wąski zakres: usunięcie wierzchniej karty crypt celu po udanym bleed; reading-the-outcome.test.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wąski zakres: usunięcie wierzchniej karty crypt celu po udanym bleed; reading-the-outcome.test.ts. Aktualizacja: naprawiono brakujące wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejszy przegląd dotyczył tylko wskazanego wąskiego zakresu, nie pełnej zgodności."
   },
   {
     "id": 100988,
@@ -5936,8 +5936,8 @@
   {
     "id": 100990,
     "name": "Inside Dirt",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth zamiast spalenia Edge i wyboru 3 blood vampire albo 3 pool prey. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast spalenia Edge i wyboru 3 blood vampire albo 3 pool prey. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 100991,
@@ -6062,8 +6062,8 @@
   {
     "id": 101011,
     "name": "Ishtarri Kholo",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Modifier/reaction daje intercept zamiast tytułu Ishtarri Kholo z ograniczeniem starszeństwa i przenoszeniem. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier/reaction daje intercept zamiast tytułu Ishtarri Kholo z ograniczeniem starszeństwa i przenoszeniem. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101012,
@@ -6116,8 +6116,8 @@
   {
     "id": 101020,
     "name": "Jar of Skin Eaters",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Equipment ma tylko actionStealth zamiast weapon, warunku blood, działania z aggravated i akcji uzupełnienia. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment ma tylko actionStealth zamiast weapon, warunku blood, działania z aggravated i akcji uzupełnienia. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101021,
@@ -6152,8 +6152,8 @@
   {
     "id": 101026,
     "name": "Journal of Hrorsh",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec equipment nie zawiera unique, counterów za action i ich spalania ani usunięcia Salubri za pool. Nie znaleziono osobnego handlera; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec equipment nie zawiera unique, counterów za action i ich spalania ani usunięcia Salubri za pool. Nie znaleziono osobnego handlera; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101027,
@@ -6194,8 +6194,8 @@
   {
     "id": 101033,
     "name": "Karavalanisha Vrana",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec equipment ma tylko actionStealth: brak unique i akcji zasilenia młodszego Ravnos oraz rabatu Chimerstry. Bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec equipment ma tylko actionStealth: brak unique i akcji zasilenia młodszego Ravnos oraz rabatu Chimerstry. Bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101034,
@@ -6260,8 +6260,8 @@
   {
     "id": 101044,
     "name": "The Khabar: Honor",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec combat oferuje maneuver zamiast hand strike +3 i wymogu wybrania do kontraktu na przeciwnika. Bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec combat oferuje maneuver zamiast hand strike +3 i wymogu wybrania do kontraktu na przeciwnika. Bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101045,
@@ -6272,8 +6272,8 @@
   {
     "id": 101046,
     "name": "Khazar's Diary (Endless Night)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec action ma jedynie stealth i modifyStealth zamiast permanenta, counterów oraz zdolności Giovanni po osiągnięciu siedmiu counterów. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec action ma jedynie stealth i modifyStealth zamiast permanenta, counterów oraz zdolności Giovanni po osiągnięciu siedmiu counterów. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101047,
@@ -6302,8 +6302,8 @@
   {
     "id": 101051,
     "name": "Kindred Manipulation",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action modifier daje stealth zamiast zmiany głosów młodszego vampire podczas referendum. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action modifier daje stealth zamiast zmiany głosów młodszego vampire podczas referendum. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101052,
@@ -6344,8 +6344,8 @@
   {
     "id": 101058,
     "name": "King's Favor",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Reaction daje intercept zamiast głosów Guruhi, warunkowego permanenta Boon i jego dalszych efektów. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Reaction daje intercept zamiast głosów Guruhi, warunkowego permanenta Boon i jego dalszych efektów. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101059,
@@ -6536,8 +6536,8 @@
   {
     "id": 101090,
     "name": "Legend of the Leopard",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth; brak wyboru damage vampire albo przejęcia ally predator/prey. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak wyboru damage vampire albo przejęcia ally predator/prey. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101091,
@@ -6560,8 +6560,8 @@
   {
     "id": 101094,
     "name": "Leonardo, Mortician",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma podstawowe statystyki, ale brak unique i działania dodania blood do ready vampire. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma podstawowe statystyki, ale brak unique i działania dodania blood do ready vampire. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101095,
@@ -6674,8 +6674,8 @@
   {
     "id": 101113,
     "name": "Little Mountain Cemetery",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth; nie dodaje blood aktorowi Samedi i młodszym Samedi w uncontrolled. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; nie dodaje blood aktorowi Samedi i młodszym Samedi w uncontrolled. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101114,
@@ -6687,7 +6687,7 @@
     "id": 101115,
     "name": "Living Wood Staff",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec equipment nie ma unique ani profilu melee strength, bonusu imbued za X i interakcji z Cleave. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Pusta spec equipment nie ma unique ani profilu melee strength, bonusu imbued za X i interakcji z Cleave. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Ikona Avenger jest creed Imbued, nie klanem wampira; wymaganie creed i sama obsługa Imbued pozostają niezaimplementowane i nie zostały naprawione w paczce ikon klanowych."
   },
   {
     "id": 101116,
@@ -6776,8 +6776,8 @@
   {
     "id": 101130,
     "name": "Loyalist",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Reaction daje intercept zamiast 3 głosów przeciw i warunkowego transferu blood; brak wymogu klanu. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Reaction daje intercept zamiast 3 głosów przeciw i warunkowego transferu blood; brak wymogu klanu. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101131,
@@ -6872,8 +6872,8 @@
   {
     "id": 101146,
     "name": "Make an Example",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Modifier ma prevent zamiast warunkowego działania innego Guruhi, 2 unpreventable damage dla obu minionów i zakończenia akcji. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier ma prevent zamiast warunkowego działania innego Guruhi, 2 unpreventable damage dla obu minionów i zakończenia akcji. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101147,
@@ -7016,8 +7016,8 @@
   {
     "id": 101170,
     "name": "Marked Territory",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma +1 zamiast +2 stealth, nie dołącza karty, nie unlockuje i nie daje burn za intercept. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma +1 zamiast +2 stealth, nie dołącza karty, nie unlockuje i nie daje burn za intercept. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101171,
@@ -7112,8 +7112,8 @@
   {
     "id": 101186,
     "name": "Massassi's Honor",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Modifier daje stealth zamiast przekazania ponawianej akcji wybranemu Osebo i przechowywania kart. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier daje stealth zamiast przekazania ponawianej akcji wybranemu Osebo i przechowywania kart. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101187,
@@ -7178,8 +7178,8 @@
   {
     "id": 101197,
     "name": "Member of the Entourage",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma statystyki i modifyIntercept jako efekt zagrania zamiast zakazu działań, płatnego intercept i spalenia po bloku vampire; brak wymogu klanu. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki i modifyIntercept jako efekt zagrania zamiast zakazu działań, płatnego intercept i spalenia po bloku vampire; brak wymogu klanu. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101198,
@@ -7232,8 +7232,8 @@
   {
     "id": 101206,
     "name": "Mesu Bedshet",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast wyboru z wierzchu crypt, warunkowego blood i tasowania; brak wymogu klanu. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast wyboru z wierzchu crypt, warunkowego blood i tasowania; brak wymogu klanu. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101207,
@@ -7388,8 +7388,8 @@
   {
     "id": 101232,
     "name": "Mokolé Blood",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec equipment jest pusta: brak unique, wyszukiwania i gry przechowywanych kart wymagających Serpentis oraz spalenia, gdy brak kart. cards.ts opisuje wycofany projekt ze względu na dawną pulę, ale w bieżącej puli jest np. Lure of the Serpent (101134) wymagająca ser. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec equipment jest pusta: brak unique, wyszukiwania i gry przechowywanych kart wymagających Serpentis oraz spalenia, gdy brak kart. cards.ts opisuje wycofany projekt ze względu na dawną pulę, ale w bieżącej puli jest np. Lure of the Serpent (101134) wymagająca ser. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101233,
@@ -7580,8 +7580,8 @@
   {
     "id": 101264,
     "name": "Nar-Sheptha",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Retainer ma 1 life, ale brak unique, hand size w combat i zmiany acting minion. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma 1 life, ale brak unique, hand size w combat i zmiany acting minion. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101265,
@@ -7628,8 +7628,8 @@
   {
     "id": 101272,
     "name": "Nephandus",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec ma statystyki, press i akcję burn vampire, ale brak ranged strike 1R i redukcji damage ze strike i damaging effects; nie znaleziono osobnego handlera tej nazwy. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec ma statystyki, press i akcję burn vampire, ale brak ranged strike 1R i redukcji damage ze strike i damaging effects; nie znaleziono osobnego handlera tej nazwy. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101273,
@@ -7778,8 +7778,8 @@
   {
     "id": 101297,
     "name": "Nosferatu Bestial",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast utworzenia unique Nosferatu z ograniczeniami i zdolnością zatrudnienia retainera. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast utworzenia unique Nosferatu z ograniczeniami i zdolnością zatrudnienia retainera. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101298,
@@ -7802,8 +7802,8 @@
   {
     "id": 101301,
     "name": "Nosferatu Performance Art",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action daje modifyStealth zamiast wysłania Toreador do torpor lub spalenia wymagającej Toreador location; brak wymogu Nosferatu i progu capacity dla stealth. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action daje modifyStealth zamiast wysłania Toreador do torpor lub spalenia wymagającej Toreador location; brak wymogu Nosferatu i progu capacity dla stealth. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101302,
@@ -7892,14 +7892,14 @@
   {
     "id": 101316,
     "name": "Off Kilter",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth; brak gainPool i opcji przejęcia lub spalenia Edge. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak gainPool i opcji przejęcia lub spalenia Edge. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101317,
     "name": "Ohoyo Hopoksia (Bastet)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma tylko statystyki, bez unique, przekierowania combat na siebie, maneuver i regeneracji life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma tylko statystyki, bez unique, przekierowania combat na siebie, maneuver i regeneracji life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101318,
@@ -7910,8 +7910,8 @@
   {
     "id": 101319,
     "name": "Olid Loa",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Combat daje maneuver i press zamiast ograniczeń przeciwnika oraz utraty zdolności jego retainers. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Combat daje maneuver i press zamiast ograniczeń przeciwnika oraz utraty zdolności jego retainers. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101320,
@@ -7958,8 +7958,8 @@
   {
     "id": 101327,
     "name": "Oppugnant Night",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast permanenta z unlock Blood Brother, akcji walki dla circle i wygaśnięcia; brak limitu jednej karty na turę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast permanenta z unlock Blood Brother, akcji walki dla circle i wygaśnięcia; brak limitu jednej karty na turę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101328,
@@ -7988,8 +7988,8 @@
   {
     "id": 101332,
     "name": "Osebo Kholo",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Modifier/reaction daje intercept zamiast unique tytułu Osebo Kholo, wymaganych warunków i przekazywania tytułu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier/reaction daje intercept zamiast unique tytułu Osebo Kholo, wymaganych warunków i przekazywania tytułu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101333,
@@ -8138,8 +8138,8 @@
   {
     "id": 101357,
     "name": "Patagia: Flaps Allowing Limited Flight",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action zawiera stealth zamiast dołączenia do Nosferatu, optional maneuver, płatnego flight i limitu jednej Patagia. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action zawiera stealth zamiast dołączenia do Nosferatu, optional maneuver, płatnego flight i limitu jednej Patagia. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101358,
@@ -8222,8 +8222,8 @@
   {
     "id": 101371,
     "name": "The Path of the Scorched Heart",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma wyłącznie stealth zamiast dołączenia do True Brujah, unlock oraz ograniczeń Frenzy i Presence. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma wyłącznie stealth zamiast dołączenia do True Brujah, unlock oraz ograniczeń Frenzy i Presence. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101372,
@@ -8246,8 +8246,8 @@
   {
     "id": 101375,
     "name": "Patronage",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast unlock młodszego Toreador antitribu i aktora; brak limitu jednej karty na turę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast unlock młodszego Toreador antitribu i aktora; brak limitu jednej karty na turę. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101376,
@@ -8372,8 +8372,8 @@
   {
     "id": 101396,
     "name": "Petra Resonance",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast ujawnienia i porównania wierzchu crypt, rozliczenia pool i tasowania. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast ujawnienia i porównania wierzchu crypt, rozliczenia pool i tasowania. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101397,
@@ -8468,8 +8468,8 @@
   {
     "id": 101412,
     "name": "Political Antagonist",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma statystyki i modifyIntercept zamiast trwałej zdolności lock za intercept Ventrue antitribu podczas political action. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki i modifyIntercept zamiast trwałej zdolności lock za intercept Ventrue antitribu podczas political action. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101413,
@@ -8504,14 +8504,14 @@
   {
     "id": 101418,
     "name": "Political Struggle",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma modyfikatory stealth zamiast dołączenia do vampire innego gracza, akcji combat i warunkowego bonusu głosów. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma modyfikatory stealth zamiast dołączenia do vampire innego gracza, akcji combat i warunkowego bonusu głosów. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101419,
     "name": "Ponticulus",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma statystyki i modifyIntercept, bez unique, odporności, zakazu akcji/equipment oraz zdolności lock za intercept Tremere. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki i modifyIntercept, bez unique, odporności, zakazu akcji/equipment oraz zdolności lock za intercept Tremere. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101420,
@@ -8528,8 +8528,8 @@
   {
     "id": 101422,
     "name": "The Portrait",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma modifyBleed i modifyStealth zamiast ujawnienia karty crypt i zależnych od jej kosztu lub klanu skutków. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma modifyBleed i modifyStealth zamiast ujawnienia karty crypt i zależnych od jej kosztu lub klanu skutków. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101423,
@@ -8546,8 +8546,8 @@
   {
     "id": 101425,
     "name": "Potio Martyrium",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast dołączenia do enslaved Gargoyle i warunkowych aggravated damage. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast dołączenia do enslaved Gargoyle i warunkowych aggravated damage. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101426,
@@ -8900,8 +8900,8 @@
   {
     "id": 101484,
     "name": "Priestess of Sekhmet",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Retainer ma life i modifyBleed zamiast trwałego warunkowego bleed, kary intercept dla Camarilla i limitu jednej kopii. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma life i modifyBleed zamiast trwałego warunkowego bleed, kary intercept dla Camarilla i limitu jednej kopii. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101485,
@@ -8960,8 +8960,8 @@
   {
     "id": 101494,
     "name": "Promise of 1528",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Modifier/reaction daje intercept zamiast zakończenia akcji przez Giovanni, wymaganych okien i warunków Camarilla. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier/reaction daje intercept zamiast zakończenia akcji przez Giovanni, wymaganych okien i warunków Camarilla. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101495,
@@ -9014,8 +9014,8 @@
   {
     "id": 101503,
     "name": "Provision of the Silsila",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Modifier/reaction daje intercept zamiast uzupełnienia blood Assamite po kwalifikującym się combat i spalenia kontraktu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier/reaction daje intercept zamiast uzupełnienia blood Assamite po kwalifikującym się combat i spalenia kontraktu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101504,
@@ -9224,8 +9224,8 @@
   {
     "id": 101538,
     "name": "Raking Talons",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Combat daje maneuver zamiast aggravated hand strikes do końca combat oraz ograniczenia raz na combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Combat daje maneuver zamiast aggravated hand strikes do końca combat oraz ograniczenia raz na combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101539,
@@ -9320,8 +9320,8 @@
   {
     "id": 101554,
     "name": "Raw Recruit",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast przeniesienia vampire w torpor poza grę i późniejszego tworzenia Gargoyle; brak wymogu slave. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast przeniesienia vampire w torpor poza grę i późniejszego tworzenia Gargoyle; brak wymogu slave. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101555,
@@ -9332,8 +9332,8 @@
   {
     "id": 101556,
     "name": "Razor Bat",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Retainer zawiera life i modifyIntercept, ale brak obrażeń 1R w każdej rundzie i wymogu Gargoyle. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer zawiera life i modifyIntercept, ale brak obrażeń 1R w każdej rundzie i wymogu Gargoyle. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101557,
@@ -9362,8 +9362,8 @@
   {
     "id": 101561,
     "name": "Reality Mirror",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Combat daje maneuver zamiast jednorazowego zagrania combat card z ash heap przeciwnika z możliwością basic discipline. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Combat daje maneuver zamiast jednorazowego zagrania combat card z ash heap przeciwnika z możliwością basic discipline. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101562,
@@ -9404,8 +9404,8 @@
   {
     "id": 101568,
     "name": "Recruiting Party",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast dodania blood każdemu Ventrue antitribu w uncontrolled region. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast dodania blood każdemu Ventrue antitribu w uncontrolled region. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101569,
@@ -9422,8 +9422,8 @@
   {
     "id": 101571,
     "name": "Recure of the Homeland",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast akcji locked vampire w torpor, wyjścia z torpor i skutków bloku/diablerie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast akcji locked vampire w torpor, wyjścia z torpor i skutków bloku/diablerie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101572,
@@ -9530,8 +9530,8 @@
   {
     "id": 101589,
     "name": "Reindoctrination",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast zmiany enslave, przejęcia i unlock młodszego Gargoyle. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast zmiany enslave, przejęcia i unlock młodszego Gargoyle. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101590,
@@ -9572,8 +9572,8 @@
   {
     "id": 101596,
     "name": "Reliquary: Akunanse Remains",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Equipment zawiera modifyBleed jako efekt zagrania zamiast unique permanenta, wyboru dyscypliny w unlock oraz statycznych bleed i capacity dla Akunanse. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment zawiera modifyBleed jako efekt zagrania zamiast unique permanenta, wyboru dyscypliny w unlock oraz statycznych bleed i capacity dla Akunanse. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101597,
@@ -9584,8 +9584,8 @@
   {
     "id": 101598,
     "name": "Reliquary: Shango Remains",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty equipment bez wymaganego usunięcia Assamite ani płatnej zdolności +2 hand size. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusty equipment bez wymaganego usunięcia Assamite ani płatnej zdolności +2 hand size. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101599,
@@ -9608,8 +9608,8 @@
   {
     "id": 101602,
     "name": "Renegade Garou",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma podstawowe statystyki, lecz dodatkowy strike i maneuver znajdują się w efektach zagrania zamiast trwałych zdolności; brak akcji rush i odzyskania life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma podstawowe statystyki, lecz dodatkowy strike i maneuver znajdują się w efektach zagrania zamiast trwałych zdolności; brak akcji rush i odzyskania life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101603,
@@ -9800,14 +9800,14 @@
   {
     "id": 101634,
     "name": "Riddle Phantastique",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast dołączenia, riddle counters i zatrzymania unlock; brak doboru celów oraz globalnego limitu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast dołączenia, riddle counters i zatrzymania unlock; brak doboru celów oraz globalnego limitu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101635,
     "name": "Righteous Aura",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Combat ma modifyBleed zamiast dołączenia po pokonaniu przeciwnika, trwałego bleed +2 oraz warunkowego burn i limitu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Combat ma modifyBleed zamiast dołączenia po pokonaniu przeciwnika, trwałego bleed +2 oraz warunkowego burn i limitu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101636,
@@ -9842,8 +9842,8 @@
   {
     "id": 101641,
     "name": "Ritual Challenge",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma addStrength jako efekt zagrania zamiast dołączenia z trwałym strength +1 i limitem jednej karty; brak wymogu Gangrel. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma addStrength jako efekt zagrania zamiast dołączenia z trwałym strength +1 i limitem jednej karty; brak wymogu Gangrel. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101642,
@@ -9854,8 +9854,8 @@
   {
     "id": 101643,
     "name": "Ritual Scalpel",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Equipment ma prevent zamiast unique equipment z hunt +1 i action damage mortal/gain blood dla Nagaraja. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment ma prevent zamiast unique equipment z hunt +1 i action damage mortal/gain blood dla Nagaraja. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101644,
@@ -9866,8 +9866,8 @@
   {
     "id": 101645,
     "name": "Rock Cat",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma podstawowe statystyki i press jako efekt rekrutacji zamiast rush, zakazu strike młodych vampire, opcjonalnego press i gry Potence jako vampire capacity 3. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma podstawowe statystyki i press jako efekt rekrutacji zamiast rush, zakazu strike młodych vampire, opcjonalnego press i gry Potence jako vampire capacity 3. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101646,
@@ -9944,8 +9944,8 @@
   {
     "id": 101658,
     "name": "Ruins of Ceoris",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Equipment ma maneuver i press jako efekty zagrania zamiast unique location z opcjonalnym maneuver lub press na combat dla Tremere antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment ma maneuver i press jako efekty zagrania zamiast unique location z opcjonalnym maneuver lub press na combat dla Tremere antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101659,
@@ -10040,8 +10040,8 @@
   {
     "id": 101674,
     "name": "Salt of Thoth",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Reaction daje intercept zamiast anulowania akcji na własną location i dołączenia z możliwością późniejszego burn; brak obsługi locked Tremere. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Reaction daje intercept zamiast anulowania akcji na własną location i dołączenia z możliwością późniejszego burn; brak obsługi locked Tremere. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101675,
@@ -10058,8 +10058,8 @@
   {
     "id": 101677,
     "name": "San Nicolás de los Servitas",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Equipment ma prevent zamiast unique location z kosztem directed actions, konsekwencjami burn i zakazem contest. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment ma prevent zamiast unique location z kosztem directed actions, konsekwencjami burn i zakazem contest. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101678,
@@ -10118,8 +10118,8 @@
   {
     "id": 101687,
     "name": "Scapelli, The Family \"Mechanic\"",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally nie ma statystyk life/strength/bleed ani unique, ranged strike 2R lub trwałego press-to-continue; press jest efektem zagrania. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally nie ma statystyk life/strength/bleed ani unique, ranged strike 2R lub trwałego press-to-continue; press jest efektem zagrania. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101688,
@@ -10136,8 +10136,8 @@
   {
     "id": 101690,
     "name": "SchreckNET",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast unique permanenta, warunkowego unlock Nosferatu i lock za oglądanie hand po referendum. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast unique permanenta, warunkowego unlock Nosferatu i lock za oglądanie hand po referendum. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101691,
@@ -10388,14 +10388,14 @@
   {
     "id": 101732,
     "name": "Shaal Fragment",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty equipment bez unique Nod fragment, +2 hand size i akcji steal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusty equipment bez unique Nod fragment, +2 hand size i akcji steal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101733,
     "name": "Shackles of Enkidu",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Equipment ma strikeCombatEnds jako efekt zagrania zamiast unique permanenta przenoszonego na przeciwnika z combat ends, blokadą unlock, burn blood i akcją burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment ma strikeCombatEnds jako efekt zagrania zamiast unique permanenta przenoszonego na przeciwnika z combat ends, blokadą unlock, burn blood i akcją burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101734,
@@ -10418,8 +10418,8 @@
   {
     "id": 101737,
     "name": "Shadow Court Satyr",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma podstawowe statystyki, ale brak dołączenia combat card z hand i użycia jej raz na combat z dostępem do basic discipline. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma podstawowe statystyki, ale brak dołączenia combat card z hand i użycia jej raz na combat z dostępem do basic discipline. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101738,
@@ -10538,8 +10538,8 @@
   {
     "id": 101757,
     "name": "Shatter the Gate",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast wymogu infernal Baali capacity >=9, zbierania trzech kopii i shattered counters oraz możliwości burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast wymogu infernal Baali capacity >=9, zbierania trzech kopii i shattered counters oraz możliwości burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101758,
@@ -10574,8 +10574,8 @@
   {
     "id": 101763,
     "name": "Shell Break",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma bleed i intercept jako efekty zagrania zamiast attach do unique miniona i przekształcenia w wraith retainera po burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma bleed i intercept jako efekty zagrania zamiast attach do unique miniona i przekształcenia w wraith retainera po burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101764,
@@ -10658,8 +10658,8 @@
   {
     "id": 101777,
     "name": "Sibyl's Tongue",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast kosztu X zależnego od kopii w ash heap i wyszukania nazwanej karty w library. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast kosztu X zależnego od kopii w ash heap i wyszukania nazwanej karty w library. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101778,
@@ -10730,8 +10730,8 @@
   {
     "id": 101789,
     "name": "Skaald",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma modifyStealth oraz actionStealth zamiast unique attach, unlock, votes i akcji steal; brak wymogów Gangrel. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma modifyStealth oraz actionStealth zamiast unique attach, unlock, votes i akcji steal; brak wymogów Gangrel. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101790,
@@ -10952,8 +10952,8 @@
   {
     "id": 101826,
     "name": "Song of Pan",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma bleed, prevent i stealth zamiast unique permanenta, unlock Kiasyd, globalnego bleed i kary w discard. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma bleed, prevent i stealth zamiast unique permanenta, unlock Kiasyd, globalnego bleed i kary w discard. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101827,
@@ -10994,8 +10994,8 @@
   {
     "id": 101833,
     "name": "Soul of the Earth",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast dołączenia do slave Gargoyle i burn za zniżkę rekrutacji/employ. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast dołączenia do slave Gargoyle i burn za zniżkę rekrutacji/employ. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101834,
@@ -11066,8 +11066,8 @@
   {
     "id": 101845,
     "name": "Spell of Life",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast permanenta z limitem na turę i zamiany pięciu kopii na mummy allies. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast permanenta z limitem na turę i zamiany pięciu kopii na mummy allies. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101846,
@@ -11102,8 +11102,8 @@
   {
     "id": 101851,
     "name": "Spiritual Guidance",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Combat daje maneuver zamiast zagrania combat card z ash heap i usunięcia jej z gry, z limitem na combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Combat daje maneuver zamiast zagrania combat card z ash heap i usunięcia jej z gry, z limitem na combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101852,
@@ -11114,8 +11114,8 @@
   {
     "id": 101853,
     "name": "Spiritual Protector",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Retainer ma 1 life, lecz brak unique, odporności na normal damage i zakazu equipment przeciwnika w wynikłym combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma 1 life, lecz brak unique, odporności na normal damage i zakazu equipment przeciwnika w wynikłym combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101854,
@@ -11234,8 +11234,8 @@
   {
     "id": 101873,
     "name": "Stone Dog",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Retainer ma life 4, lecz brak rush nadawanego Gargoyle i close damage co initial strike resolution. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Retainer ma life 4, lecz brak rush nadawanego Gargoyle i close damage co initial strike resolution. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101874,
@@ -11348,8 +11348,8 @@
   {
     "id": 101892,
     "name": "Succubus",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma statystyki, ale efekty modifyBleed i stealth zamiast aggravated hand strikes, płatnego bleed raz na turę i akcji steal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki, ale efekty modifyBleed i stealth zamiast aggravated hand strikes, płatnego bleed raz na turę i akcji steal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101893,
@@ -11366,8 +11366,8 @@
   {
     "id": 101895,
     "name": "Sudario Refraction",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast odzyskania trzech kart ash heap na library i random discard 3. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast odzyskania trzech kart ash heap na library i random discard 3. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101896,
@@ -11402,8 +11402,8 @@
   {
     "id": 101901,
     "name": "Summon the Serpent",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast wyszukania vampire z Serpentis i 1 blood w uncontrolled. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast wyszukania vampire z Serpentis i 1 blood w uncontrolled. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101902,
@@ -11456,8 +11456,8 @@
   {
     "id": 101910,
     "name": "Survivalist",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma statystyki, brak ranged strike 2 i lock za maneuver dla Brujah antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki, brak ranged strike 2 i lock za maneuver dla Brujah antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101911,
@@ -11510,14 +11510,14 @@
   {
     "id": 101919,
     "name": "Sword of Judgment",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Equipment z additionalStrike jako efektem zagrania zamiast unique melee weapon strength+1 i dodatkowego strike co rundę; brak wymogu Brujah antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment z additionalStrike jako efektem zagrania zamiast unique melee weapon strength+1 i dodatkowego strike co rundę; brak wymogu Brujah antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101920,
     "name": "Sword of Nuln",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty equipment bez unique melee strength damage i podwojenia kosztu leczenia. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusty equipment bez unique melee strength damage i podwojenia kosztu leczenia. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101921,
@@ -11528,8 +11528,8 @@
   {
     "id": 101922,
     "name": "Sword of Troile",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty equipment bez unique melee weapon, superior Potence/Presence oraz ograniczeń wyboru strike i maneuver. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusty equipment bez unique melee weapon, superior Potence/Presence oraz ograniczeń wyboru strike i maneuver. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101923,
@@ -11588,8 +11588,8 @@
   {
     "id": 101932,
     "name": "Talith",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty equipment bez melee weapon strength+1 i Ravnos strike burn weapon z first strike. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusty equipment bez melee weapon strength+1 i Ravnos strike burn weapon z first strike. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101933,
@@ -11618,8 +11618,8 @@
   {
     "id": 101937,
     "name": "Tara, The Hollow One",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma statystyki, lecz brak unique, ranged strike 1 i akcji burn equipment na Ravnos z gain blood. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki, lecz brak unique, ranged strike 1 i akcji burn equipment na Ravnos z gain blood. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101938,
@@ -11762,8 +11762,8 @@
   {
     "id": 101961,
     "name": "Terrorists",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma statystyki, ale actionStealth jako efekt zagrania zamiast przyznania akcji znalezienia i wyposażenia Bomb. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki, ale actionStealth jako efekt zagrania zamiast przyznania akcji znalezienia i wyposażenia Bomb. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101962,
@@ -11798,8 +11798,8 @@
   {
     "id": 101967,
     "name": "Their Master's Voice",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Reaction daje intercept zamiast unlock Gargoyle ally/slave; brak możliwości użycia przez locked vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Reaction daje intercept zamiast unlock Gargoyle ally/slave; brak możliwości użycia przez locked vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101968,
@@ -11858,8 +11858,8 @@
   {
     "id": 101977,
     "name": "Threading the Path of Orpheus",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast burn cudzej karty na własnym vampire i lock tego vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast burn cudzej karty na własnym vampire i lock tego vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101978,
@@ -11870,8 +11870,8 @@
   {
     "id": 101979,
     "name": "Three's a Crowd",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Combat daje ogólny press zamiast ustawienia close przed range i opcjonalnego press continue dla innego Blood Brother; brak wymogu unlocked tej samej circle. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Combat daje ogólny press zamiast ustawienia close przed range i opcjonalnego press continue dla innego Blood Brother; brak wymogu unlocked tej samej circle. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 101980,
@@ -12014,8 +12014,8 @@
   {
     "id": 102003,
     "name": "Tracker's Mark",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Combat daje intercept i stealth jako efekty zagrania zamiast attach po blood/life lost od damage, warunkowego intercept/rush i akcji burn; brak limitu na combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Combat daje intercept i stealth jako efekty zagrania zamiast attach po blood/life lost od damage, warunkowego intercept/rush i akcji burn; brak limitu na combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102004,
@@ -12146,8 +12146,8 @@
   {
     "id": 102025,
     "name": "Triole's Revenge",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast attach do niepełnego Ventrue, obowiązkowego hunt, warunkowego burn vampire i akcji burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast attach do niepełnego Ventrue, obowiązkowego hunt, warunkowego burn vampire i akcji burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102026,
@@ -12278,8 +12278,8 @@
   {
     "id": 102047,
     "name": "Tunnel Runner",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma podstawowe statystyki i modifyStealth zamiast gry ani jako vampire, płatnego stealth, podglądu po bleed, damage za steal i regeneracji life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma podstawowe statystyki i modifyStealth zamiast gry ani jako vampire, płatnego stealth, podglądu po bleed, damage za steal i regeneracji life. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102048,
@@ -12314,8 +12314,8 @@
   {
     "id": 102053,
     "name": "Tye Cooper",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec ma unique wraith i podstawowe statystyki, ale grantedAction ogranicza burn do vampire w torpor zamiast dowolnego non-ready miniona; brak odzyskania library card i odporności na non-aggravated. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec ma unique wraith i podstawowe statystyki, ale grantedAction ogranicza burn do vampire w torpor zamiast dowolnego non-ready miniona; brak odzyskania library card i odporności na non-aggravated. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102054,
@@ -12350,8 +12350,8 @@
   {
     "id": 102059,
     "name": "Uncontrolled Impulse",
-    "status": "REVIEWED_NO_ISSUE_FOUND",
-    "evidence": "Wąski zakres: +2 stealth przy braku wcześniejszych non-mandatory actions; avoiding-the-block.test.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wąski zakres: +2 stealth przy braku wcześniejszych non-mandatory actions; avoiding-the-block.test.ts. Aktualizacja: naprawiono brakujące wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejszy przegląd dotyczył tylko wskazanego wąskiego zakresu, nie pełnej zgodności."
   },
   {
     "id": 102060,
@@ -12410,14 +12410,14 @@
   {
     "id": 102069,
     "name": "Undying Thirst",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Reaction daje intercept zamiast attach po block Baali i ograniczenia do diablerie z wyjątkiem must hunt. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Reaction daje intercept zamiast attach po block Baali i ograniczenia do diablerie z wyjątkiem must hunt. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102070,
     "name": "Unexpected Coalition",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Modifier/reaction daje intercept zamiast warunkowych dodatkowych głosów Brujah antitribu w referendum. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier/reaction daje intercept zamiast warunkowych dodatkowych głosów Brujah antitribu w referendum. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102071,
@@ -12554,8 +12554,8 @@
   {
     "id": 102093,
     "name": "Vaticination",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma +1 zamiast +3 stealth i brak podglądu wszystkich rąk oraz wyboru discard. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma +1 zamiast +3 stealth i brak podglądu wszystkich rąk oraz wyboru discard. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102094,
@@ -12590,8 +12590,8 @@
   {
     "id": 102099,
     "name": "Veles' Hunt",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Puste political effects bez blood hunt referendum, celu prey, burn i zakazu dalszych kopii po porażce/cancel. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Puste political effects bez blood hunt referendum, celu prey, burn i zakazu dalszych kopii po porażce/cancel. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102100,
@@ -12602,8 +12602,8 @@
   {
     "id": 102101,
     "name": "Vendetta",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Reaction daje addStrength zamiast attach przy bleed >2, warunkowego strength/rush i burn przy torpor. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Reaction daje addStrength zamiast attach przy bleed >2, warunkowego strength/rush i burn przy torpor. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102102,
@@ -12614,8 +12614,8 @@
   {
     "id": 102103,
     "name": "Veneficti",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma statystyki i jednorazowy stealth, ale brak unique, statycznego stealth, wymogu infernal, akcji demon oraz ochrony przed directed actions. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki i jednorazowy stealth, ale brak unique, statycznego stealth, wymogu infernal, akcji demon oraz ochrony przed directed actions. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102104,
@@ -12746,8 +12746,8 @@
   {
     "id": 102125,
     "name": "Visionquest",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast attach do Ahrimane, poziomu Spiritus i skip unlock po bloku. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast attach do Ahrimane, poziomu Spiritus i skip unlock po bloku. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102126,
@@ -12836,8 +12836,8 @@
   {
     "id": 102140,
     "name": "Walk through Arcadia",
-    "status": "REVIEWED_NO_ISSUE_FOUND",
-    "evidence": "Wąski zakres: coin flip unblockable albo 1 unpreventable environmental damage; avoiding-the-block.test.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wąski zakres: coin flip unblockable albo 1 unpreventable environmental damage; avoiding-the-block.test.ts. Aktualizacja: naprawiono brakujące wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejszy przegląd dotyczył tylko wskazanego wąskiego zakresu, nie pełnej zgodności."
   },
   {
     "id": 102141,
@@ -12854,8 +12854,8 @@
   {
     "id": 102143,
     "name": "Wanderer's Counsel",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Modifier/reaction daje intercept zamiast +1 vote locked Akunanse w referendum lub blood po udanym hunt. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier/reaction daje intercept zamiast +1 vote locked Akunanse w referendum lub blood po udanym hunt. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102144,
@@ -12986,8 +12986,8 @@
   {
     "id": 102165,
     "name": "Web of Knives Recruit",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast karty w uncontrolled z training counters, ograniczeniem spalania oraz przekształceniem w vampire po trzech unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast karty w uncontrolled z training counters, ograniczeniem spalania oraz przekształceniem w vampire po trzech unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102166,
@@ -13016,8 +13016,8 @@
   {
     "id": 102170,
     "name": "Weirding Stone",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty equipment bez podglądu top card i płatnego burn master podczas unlock dowolnego Methuselah. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusty equipment bez podglądu top card i płatnego burn master podczas unlock dowolnego Methuselah. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102171,
@@ -13040,8 +13040,8 @@
   {
     "id": 102174,
     "name": "Werewolf Pack",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma statystyki, ale brak unique i odporności na melee damage. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki, ale brak unique i odporności na melee damage. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102175,
@@ -13082,8 +13082,8 @@
   {
     "id": 102181,
     "name": "The Wildebeest",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action daje jednorazowe stealth/strength zamiast attach na Ahrimane z dauer bonusami, zakazem equipment i retainers oraz limitem. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action daje jednorazowe stealth/strength zamiast attach na Ahrimane z dauer bonusami, zakazem equipment i retainers oraz limitem. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102182,
@@ -13118,8 +13118,8 @@
   {
     "id": 102187,
     "name": "Wise Spider",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast attach do Akunanse, delayed unlock i hand size gdy ready. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast attach do Akunanse, delayed unlock i hand size gdy ready. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102188,
@@ -13214,8 +13214,8 @@
   {
     "id": 102203,
     "name": "Zaire River Ferry",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Equipment daje jednorazowy stealth zamiast unique haven/location, lock za fail directed action lub +1 stealth i limitu haven. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment daje jednorazowy stealth zamiast unique haven/location, lock za fail directed action lub +1 stealth i limitu haven. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102204,
@@ -13406,8 +13406,8 @@
   {
     "id": 102235,
     "name": "Dark Web Procurer",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Ally ma statystyki i jednorazowy actionStealth zamiast +1 stealth action wyszukiwania non-unique equipment o koszcie <=1 pool. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Ally ma statystyki i jednorazowy actionStealth zamiast +1 stealth action wyszukiwania non-unique equipment o koszcie <=1 pool. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102236,
@@ -13634,8 +13634,8 @@
   {
     "id": 102273,
     "name": "Loup",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Modifier daje jednorazowy stealth zamiast permanenta, globalnego stealth Toreador, limitu jednej kopii na turę i burn po sukcesie/na koniec tury. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier daje jednorazowy stealth zamiast permanenta, globalnego stealth Toreador, limitu jednej kopii na turę i burn po sukcesie/na koniec tury. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
   },
   {
     "id": 102274,

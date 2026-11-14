@@ -27,11 +27,24 @@ import type { CardRegistry } from "../types.ts";
 // Printed clan icons on masters require a ready controlled member when
 // played (VTES rulebook, library-card requirements). This also applies to
 // bespoke and out-of-turn masters; a clan icon is not merely thematic.
+const libraryCards = Object.values((cardRegistry as unknown as CardRegistry).entries)
+  .map((entry) => entry.card)
+  .filter((card) => card.kind === "library");
 const masterClanRequirements = new Map(
-  Object.values((cardRegistry as unknown as CardRegistry).entries)
-    .map((entry) => entry.card)
-    .filter((card) => card.kind === "library" && card.types.includes("Master") && card.clans.length > 0)
-    .map((card) => [card.name, card.kind === "library" ? card.clans : []] as const),
+  libraryCards
+    .filter((card) => card.types.includes("Master") && card.clans.length > 0)
+    .map((card) => [card.name, card.clans] as const),
+);
+// A minion card's icon instead constrains the minion PLAYING the card,
+// not merely some other ready vampire controlled by that Methuselah. The
+// registry also puts Imbued creeds in `clans`; those are NOT vampire clans
+// and need the still-unimplemented Imbued/creed rules, not this gate.
+const imbuedCreeds = new Set(["Avenger", "Defender", "Innocent", "Judge", "Martyr", "Redeemer", "Visionary"]);
+const minionClanRequirements = new Map(
+  libraryCards
+    .filter((card) => !card.types.includes("Master") && card.clans.length > 0 &&
+      !card.clans.some((clan) => imbuedCreeds.has(clan)))
+    .map((card) => [card.id, card.clans] as const),
 );
 
 /**
@@ -46424,7 +46437,28 @@ function backfillCentralQueries(h: CardHandler): void {
 export function buildHandlerRegistry(): HandlerRegistry {
   const registry: HandlerRegistry = {};
   for (const spec of cardSpecs) {
-    registry[spec.name] = compileSpec(spec);
+    const printedClans = minionClanRequirements.get(spec.krcgId);
+    // A printed clan icon is a requirement in addition to any requirements
+    // in the text. Multiple printed clan icons are alternatives. Preserve
+    // any narrower explicit requirement rather than replacing it with the
+    // registry's list; never mutate the exported specs shared by workers.
+    const effectiveSpec = printedClans
+      ? {
+          ...spec,
+          requiresClan: spec.requiresClan
+            ? printedClans.filter((clan) => spec.requiresClan!.includes(clan))
+            : [...printedClans],
+          requiresVampire: true,
+        }
+      : spec;
+    // An empty intersection would correctly reject ordinary plays but be
+    // indistinguishable from "no clan requirement" to cost queries (notably
+    // when another card waives requirements). Fail fast rather than silently
+    // assign incorrect prices if a future spec introduces such a conflict.
+    if (printedClans && effectiveSpec.requiresClan?.length === 0) {
+      throw new Error(`Conflicting printed and explicit clan requirements: ${spec.name}`);
+    }
+    registry[spec.name] = compileSpec(effectiveSpec);
   }
   // The crypt. Keyed by name like every other handler — verified to have
   // no duplicate crypt names and no collisions with library card names
