@@ -1211,6 +1211,12 @@ export function minionHasTag(m: MinionState, ...tags: string[]): boolean {
   return tags.some((t) => mine.includes(t));
 }
 
+/** A possession restriction differs from a restriction on using weapons. */
+export function cannotBeEquipped(m: MinionState, kind: "equipment" | "retainer"): boolean {
+  const restriction = m.attached.find((e) => e.card.id === m.id)?.statics.cannotBeEquipped;
+  return !!restriction && (kind === "equipment" || restriction.retainers === true);
+}
+
 /** Restrictions on using equipment are not restrictions on possessing it. */
 export function cannotUseEquipmentEntry(m: MinionState, entry: PermanentInPlay, isEquipment: boolean): boolean {
   const own = m.attached.find((p) => p.card.id === m.id)?.statics;

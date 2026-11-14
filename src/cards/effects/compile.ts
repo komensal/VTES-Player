@@ -65,6 +65,7 @@ import {
   hasFlight,
   minionHasTag,
   cannotUseEquipmentEntry,
+  cannotBeEquipped,
   cardRequiresDiscipline,
   otherCopies,
   currentStealth,
@@ -9288,12 +9289,6 @@ export function playsNonActionOnly(m: MinionState): boolean {
   return (
     m.attached.find((e) => e.card.id === m.id)?.statics.playsAsVampireNonActionOnly === true
   );
-}
-
-export function cannotBeEquipped(m: MinionState, kind: "equipment" | "retainer"): boolean {
-  const st = m.attached.find((e) => e.card.id === m.id)?.statics.cannotBeEquipped;
-  if (!st) return false;
-  return kind === "equipment" ? true : st.retainers === true;
 }
 
 /** An ally's tags: whatever the spec declares, plus its printed SUB-TYPE

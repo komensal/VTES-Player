@@ -35,6 +35,7 @@ import {
   libraryBlockToll,
   minionHasTag,
   cannotUseEquipmentEntry,
+  cannotBeEquipped,
   currentBleed,
   currentIntercept,
   currentStealth,
@@ -2359,13 +2360,15 @@ export class VtesEngine implements EngineOps {
    * (docs/choice-frames-design.md §3), by which time the victim, and its
    * equipment, are already burned.
    *
-   * The one thing that is NOT taken is equipment that would give its new
-   * controller a second copy of a unique they already control — that is
-   * the engine's own-duplicate rule, and it burns with the victim.
+   * Equipment the diablerist cannot possess, or that would give its new
+   * controller a second copy of a unique they already control, is left to
+   * burn with the victim.
    */
   private takeDiablerieEquipment(diablerist: MinionId, victim: MinionState): void {
     const taker = findMinion(this.state, diablerist);
-    if (!taker) return;
+    // Taking equipment is optional. If the diablerist cannot have it,
+    // leave it on the victim to burn normally with the victim.
+    if (!taker || cannotBeEquipped(taker, "equipment")) return;
     const held = new Set(
       getSeat(this.state, taker.controller)
         .minions.flatMap((m) => m.attached)
@@ -5641,7 +5644,11 @@ export class VtesEngine implements EngineOps {
       if (strike.stealEquipment) {
         const v = findMinion(this.state, victim);
         const eq = v?.attached.find((p) => p.card.id === strike.stealEquipment);
-        if (eq && findMinion(this.state, source)) {
+        const taker = findMinion(this.state, source);
+        // A restriction can arise after choosing a strike (e.g. an earlier
+        // first strike). Recheck at resolution rather than relying on the
+        // play option's eligibility alone.
+        if (eq && taker && !cannotBeEquipped(taker, "equipment")) {
           this.emit({
             type: "EquipmentMoved",
             cardId: eq.card.id,

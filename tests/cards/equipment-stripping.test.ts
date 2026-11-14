@@ -116,6 +116,21 @@ const heldBy = (state: GameState, cardId: string): string | null => {
 // ---------------------------------------------------------------------------
 
 describe("equipment restrictions on stealing strikes", () => {
+  it("rechecks a possession restriction at strike resolution", () => {
+    const a = inCombat("Fast Hands", { cel: "basic" }, { name: ".44 Magnum", tags: ["equipment", "weapon"] });
+    const id = atStrike(a.engine).find((option) => option.startsWith("play:Fast Hands"));
+    expect(id).toBeDefined();
+    a.engine.choose(id!);
+    settle(a.engine);
+    // Model an intervening effect after the strike was chosen.
+    const self = testRegistry["Helen Fairchild (G6)"]!.cryptEntry!();
+    a.v1.attached.push({ card: { id: "V1", name: "Helen Fairchild (G6)" }, locked: false,
+      usedThisPhase: false, statics: self.statics, tags: self.tags });
+    playOut(a.engine, a.state);
+    expect(heldBy(a.state, "gear1")).toBe("M");
+    expect(a.state.eventLog.some((e) => e.type === "EquipmentMoved" && e.cardId === "gear1")).toBe(false);
+  });
+
   it("Helen cannot steal a weapon but Howler can possess one", () => {
     for (const [name, offered] of [["Helen Fairchild (G6)", false], ["Howler (G2)", true]] as const) {
       const a = inCombat("Fast Hands", { cel: "basic" }, { name: ".44 Magnum", tags: ["equipment", "weapon"] });
