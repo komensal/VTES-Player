@@ -23,6 +23,7 @@ function setup(
   const state = threeSeatGame();
   const v1 = state.seats[0]!.minions[0]!;
   Object.assign(v1, { blood: 5, capacity: 5, disciplines: { cel: "superior" as const } });
+  if (aliceCards.includes("Innocent Bystander")) v1.clan = "Ventrue antitribu";
   const m = state.seats[1]!.minions.find((x) => x.id === "M")!;
   Object.assign(m, { blood: m.capacity, disciplines: bobDisciplines });
   // `threeSeatGame` leaves every crypt EMPTY, and Innocent Bystander removes

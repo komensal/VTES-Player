@@ -70,9 +70,10 @@ Camarilla vampires can call a referendum to burn this card as a +1
 - **`PermanentStatics.blockToll`** is the persistent twin of
   `ActionFrame.blockCosts`: `blockTollFor` now takes the acting minion
   and sums both. That one change gives the toll the whole block-tax
-  gate's behaviour for free — an ally facing a toll printed in **blood**
-  cannot pay it and therefore cannot attempt (p. 22), and the toll is
-  paid to **attempt**, not to succeed.
+  gate's behaviour for free. The toll is restricted to **vampires** as
+  printed, so allies are unaffected; a vampire pays to **attempt**, not
+  to succeed. An unrestricted blood-only toll is different: an ally cannot
+  pay blood (p. 22).
 - **`PermanentStatics.noBloodHunt`** is checked in `pushBloodHunt`, which
   **returns without pushing the referendum at all** rather than pushing
   one and discarding the result. A referendum nobody's vote can change is

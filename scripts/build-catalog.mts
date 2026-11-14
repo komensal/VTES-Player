@@ -135,7 +135,8 @@ function requiredSects(card: RawKrcgCard): string[] {
     for (const t of m[1]!.matchAll(ONE_TITLE)) {
       const word = t[0].toLowerCase().replace(/\s+/g, " ").replace(/ member$/, "");
       const title = TITLE_WORDS[word];
-      if (title) add(TITLE_SECT[title]);
+      const sect = title && TITLE_SECT[title];
+      if (sect) add(sect);
     }
   }
   return [...out].sort();

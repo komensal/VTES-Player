@@ -30,6 +30,22 @@ import type { HandlerRegistry } from "./handlers.ts";
 // answered rather than as an error anyone can act on.
 import { TITLE_VOTES, findMinion, getSeat, isReady, mustHunt } from "./state.ts";
 
+/** Scarce penalty on moving this vampire out during its controller's
+ * influence phase. Controlled vampires in torpor count; allies and cards
+ * out of play (including contested minions) do not. */
+export function scarcePenalty(state: GameState, seat: SeatId, m: MinionState): number {
+  if (!m.scarce || m.kind !== "vampire" || m.clan === null) return 0;
+  const controller = state.seats.find((s) => s.id === seat);
+  return 3 * (controller?.minions.filter((other) => other.kind === "vampire" && other.clan === m.clan).length ?? 0);
+}
+
+/** Expected pool burn for a move out during the controller's influence phase. */
+export function influenceMovePoolBurn(state: GameState, seat: SeatId, m: MinionState): number {
+  return scarcePenalty(state, seat, m) + state.seats.reduce(
+    (total, s) => total + s.permanents.reduce((sum, p) => sum + (p.statics.influenceOutPoolTax ?? 0), 0), 0,
+  );
+}
+
 /**
  * A vampire's capacity, including cards that raise it (the Discipline
  * master cards: "+1 level of Celerity and +1 capacity").
@@ -366,17 +382,20 @@ function bleedOf(
           target,
           directed: true,
         }
-      : ((state.eventLog.find(
-          (ev) => ev.type === "ActionAnnounced" && ev.actionId === actionId,
-        ) as Extract<GameEvent, { type: "ActionAnnounced" }> | undefined) ?? {
-          type: "ActionAnnounced",
-          actionId,
-          seat: acting.controller,
-          acting: acting.id,
-          actionKind,
+      : {
+          ...((state.eventLog.find(
+            (ev) => ev.type === "ActionAnnounced" && ev.actionId === actionId,
+          ) as Extract<GameEvent, { type: "ActionAnnounced" }> | undefined) ?? {
+            type: "ActionAnnounced" as const,
+            actionId,
+            seat: acting.controller,
+            acting: acting.id,
+            actionKind,
+            directed: target !== null,
+          }),
+          // Redirects change the live action target, not its announcement.
           target,
-          directed: target !== null,
-        }),
+        },
     acting,
     "bleed",
   );
@@ -825,6 +844,8 @@ function conditionHolds(
   // constrain, so a purely board-conditioned static still applies.
   const needsAction =
     c.actionKinds !== undefined ||
+    c.excludedActionKinds !== undefined ||
+    c.targetReady !== undefined ||
     c.actionCardTypes !== undefined ||
     c.directedAtController !== undefined ||
     c.actionDirected !== undefined ||
@@ -833,6 +854,24 @@ function conditionHolds(
   if (needsAction && !announced) return false;
   if (announced) {
     if (c.actionKinds && !c.actionKinds.includes(announced.actionKind)) return false;
+    if (c.excludedActionKinds?.includes(announced.actionKind)) return false;
+    if (c.targetReady) {
+      if (!announced.directed || announced.target === null) return false;
+      const target = state.seats.find((s) => s.id === announced.target && !s.ousted);
+      if (!target) return false;
+      const f = c.targetReady.minion;
+      const matches = target.minions.some((m) =>
+        isReady(m) &&
+        (f.kind === undefined || m.kind === f.kind) &&
+        (f.clans === undefined || (m.clan !== null && f.clans.includes(m.clan))) &&
+        (f.sect === undefined || (m.kind === "vampire" && m.sect === f.sect)) &&
+        (f.notSect === undefined || (m.kind === "vampire" && m.sect !== f.notSect)) &&
+        (f.titled === undefined || (m.kind === "vampire" && (m.title !== null) === f.titled)) &&
+        (f.titles === undefined || (m.kind === "vampire" && m.title !== null && f.titles.includes(m.title))) &&
+        (f.minCapacity === undefined || (m.kind === "vampire" && capacityOf(m) >= f.minCapacity)),
+      );
+      if (matches !== c.targetReady.exists) return false;
+    }
     if (c.actionCardTypes) {
       const types = announced.cardTypes ?? [];
       if (!c.actionCardTypes.some((t) => types.includes(t))) return false;
@@ -855,6 +894,8 @@ function conditionHolds(
       if (f.titled === true && a.title === null) return false;
       if (f.titled === false && a.title !== null) return false;
       if (f.clan !== undefined && a.clan !== f.clan) return false;
+      if (f.clans !== undefined && (a.clan === null || !f.clans.includes(a.clan))) return false;
+      if (f.sect !== undefined && (a.kind !== "vampire" || a.sect !== f.sect)) return false;
       if (f.kind !== undefined && a.kind !== f.kind) return false;
       if (f.maxCapacity !== undefined && capacityOf(a) > f.maxCapacity) return false;
       // Relative to the BEARER's DERIVED capacity, so a granted point
@@ -887,8 +928,21 @@ function conditionHolds(
     if (!foe) return false;
     if (f.titled === true && foe.title === null) return false;
     if (f.clan !== undefined && foe.clan !== f.clan) return false;
+    if (f.clans !== undefined && (foe.clan === null || !f.clans.includes(foe.clan))) return false;
+    if (f.sect !== undefined && (foe.kind !== "vampire" || foe.sect !== f.sect)) return false;
     if (f.kind !== undefined && foe.kind !== f.kind) return false;
+    if (f.maxCapacity !== undefined && capacityOf(foe) > f.maxCapacity) return false;
     if (f.younger === true && capacityOf(foe) >= capacityOf(bearer)) return false;
+    if (f.older === true && capacityOf(foe) <= capacityOf(bearer)) return false;
+  }
+  // Crypt names in game state include a group/advanced suffix used by the
+  // catalog; the printed name on another card does not. A named vampire
+  // can be controlled by any Methuselah and can be locked, but not torpid.
+  if (c.readyNamedVampire !== undefined) {
+    const printedName = (name: string): string => name.replace(/\s*\(G\d+(?:\s+ADV)?\)$/i, "");
+    if (!state.seats.some((seat) => !seat.ousted && seat.minions.some((m) =>
+      m.kind === "vampire" && isReady(m) && printedName(m.name) === c.readyNamedVampire,
+    ))) return false;
   }
   // Board conditions, every one derived on this read.
   const cc = c.controller;
@@ -937,7 +991,13 @@ export function conditionalStatic(
     (ev) => ev.type === "ActionAnnounced" && ev.actionId === actionId,
   );
   if (!announced || announced.type !== "ActionAnnounced") return 0;
-  return conditionalStaticFor(state, announced, minion, field);
+  const action = state.frames.find((f) => f.kind === "action" && f.actionId === actionId);
+  return conditionalStaticFor(
+    state,
+    action?.kind === "action" ? { ...announced, target: action.target, directed: action.directed } : announced,
+    minion,
+    field,
+  );
 }
 
 /**
@@ -1127,10 +1187,41 @@ export function minionTags(m: MinionState): string[] {
   return m.attached.find((e) => e.card.id === m.id)?.tags ?? [];
 }
 
+/** Diablerie requires a ready vampire. Tajdid lifts only the Blood Curse's
+ * restriction for the specified clan; it does not remove the trait or other
+ * prohibitions (such as those on Humanitas and Alastor, not yet modeled). */
+export function canCommitDiablerie(state: GameState, m: MinionState): boolean {
+  if (m.kind !== "vampire" || !isReady(m)) return false;
+  return m.bloodCursed !== true || (m.clan !== null &&
+    (state.bloodCurseDiablerieExceptions ?? []).includes(m.clan));
+}
+
+/** Flight may be printed on the minion or granted by an attached card.
+ * Older snapshots can also carry it in the discipline-like field. Do not
+ * add it to disciplinesOf: Flight has no basic/superior levels. */
+export function hasFlight(m: MinionState): boolean {
+  return m.disciplines["flight"] !== undefined || m.attached.some((p) =>
+    (p.card.id === m.id && p.tags.includes("flight")) || p.statics.grantsFlight === true,
+  );
+}
+
 /** Does this minion print any of these sub-types? */
 export function minionHasTag(m: MinionState, ...tags: string[]): boolean {
   const mine = minionTags(m);
   return tags.some((t) => mine.includes(t));
+}
+
+/** A possession restriction differs from a restriction on using weapons. */
+export function cannotBeEquipped(m: MinionState, kind: "equipment" | "retainer"): boolean {
+  const restriction = m.attached.find((e) => e.card.id === m.id)?.statics.cannotBeEquipped;
+  return !!restriction && (kind === "equipment" || restriction.retainers === true);
+}
+
+/** Restrictions on using equipment are not restrictions on possessing it. */
+export function cannotUseEquipmentEntry(m: MinionState, entry: PermanentInPlay, isEquipment: boolean): boolean {
+  const own = m.attached.find((p) => p.card.id === m.id)?.statics;
+  return !!own && ((!!own.cannotBeEquipped && (isEquipment || entry.tags.includes("equipment"))) ||
+    (!!own.cannotUseWeapons && entry.tags.includes("weapon")));
 }
 
 /** "a wraith or zombie ally you control" — the gate's whole vocabulary. */
@@ -1832,6 +1923,12 @@ export function vampireVotes(
   // (Saulot's Guiding Wisdom represents "a unique Independent title worth
   // 2 votes", which is not one of the eleven VampireTitles).
   const cardVotes = m.attached.reduce((n, p) => n + (p.statics.votes ?? 0), 0);
+  // Orun's vote is one per group of THREE cards on the Laibon, not one
+  // per Orun that prints the sentence. Locked cards and cards played by
+  // another Methuselah still count. Read live so a burned card stops counting.
+  const orunVotes = m.sect === "laibon"
+    ? Math.floor(m.attached.filter((p) => p.card.name === "Orun").length / 3)
+    : 0;
   const titleVotes = m.title === null ? 0 : TITLE_VOTES[m.title];
   // Global vote statics ("titled Brujah get +1 vote, Ventrue get −1",
   // New Carthage). CLAMPED at zero: a negative subtracts a Ventrue's
@@ -1887,6 +1984,7 @@ export function vampireVotes(
     0,
     titleVotes +
       cardVotes +
+      orunVotes +
       auraBonus(state, m, "votes") +
       // "While you control 1 or more locations, Neserian gets +1
       // vote" — a crypt card's conditional static, board-conditioned.

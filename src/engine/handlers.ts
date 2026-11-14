@@ -825,6 +825,15 @@ export interface EngineOps {
   }): void;
   /** Draw N cards from the library (extra cards, not replacements). */
   drawCards(seat: SeatId, count: number): void;
+  /** Draw up to count extra cards, then ask a nonoptional card choice with
+   *  `left` set to the number actually drawn. Suspends across draw redirects. */
+  drawCardsThenChoice(args: {
+    seat: SeatId;
+    count: number;
+    cardName: string;
+    cardId: CardInstanceId;
+    key: string;
+  }): void;
   /** "…and draw a new one" / "…draws back up to his or her hand size"
    *  (Deal with the Devil, Lupine Assault). docs/hand-churn-design.md §2 */
   drawUpToHandSize(seat: SeatId): void;
@@ -888,7 +897,7 @@ export interface EngineOps {
    *  with any counters he or she has" (Gather, Tomb of Rameses III) — the
    *  same move `inf:out` makes, pool tax and all.
    *  docs/uncontrolled-graduation-design.md §2 */
-  moveUncontrolledToReady(seat: SeatId, minion: MinionId): void;
+  moveUncontrolledToReady(seat: SeatId, minion: MinionId, duringInfluenceEnd?: boolean): void;
   /** "Choose a vampire in your uncontrolled region" (Gather, Tomb of
    *  Rameses III) — the card in play remembers which one. §2 */
   linkUncontrolled(cardId: CardInstanceId, minion: MinionId): void;
@@ -1200,6 +1209,8 @@ export interface CardHandler {
    *  a vampire who must hunt may play it and Restricted Vitae's bar reaches
    *  it. docs/hunt-success-design.md §1 */
   huntAction?: boolean;
+  /** A successful action calls a blood hunt before after-resolution effects. */
+  bloodHuntAfterSuccess?: boolean;
   /** Whether this mode is an ACTION TO ENTER COMBAT — what Enrage
    *  superior's toll exempts. Asked by the minion phase's toll gate, which
    *  has only the play option; the charge itself reads the announced

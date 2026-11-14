@@ -33,16 +33,16 @@ rules by name (p. 49):
 > **no vampires of the chosen clan are in play**."
 
 That settles what would otherwise have been the obvious implementation.
-The terms are **not** "clans currently on the table" — they are the
-fourteen clans the V5 crypt contains, whether or not anyone controls one,
-and a referendum that passes on a clan nobody plays simply pays nobody.
+The terms are **not** "clans currently on the table". `CLANS` in
+state.ts covers the vampire clans in the current registry, including
+legacy bloodlines and antitribu, whether or not anyone controls one.
+A referendum that passes on a clan nobody plays pays nobody. Coverage of
+clans outside the current registry has not been established.
 
-So **`CLANS` in state.ts**, the `CITY_TITLES` precedent applied exactly:
-a constant, **derived** rather than guessed, with a test that re-derives
-it from `registry.json` so it cannot rot the way the "Assamite" clan
-filter did. Fourteen: Banu Haqim, Brujah, Gangrel, Hecata, Lasombra,
-Malkavian, Ministry, Nosferatu, Ravnos, Salubri, Toreador, Tremere,
-Tzimisce, Ventrue.
+A test cross-checks the hand-listed constant against `registry.json`,
+excluding the explicitly listed imbued creeds, which the registry stores
+in the same field as vampire clans. The registry lacks an explicit crypt
+subtype, so that exclusion must be revisited if the pool changes.
 
 **Reading on record: the payout counts VAMPIRES, not minions.** "For each
 vampire of the chosen clan they control" — an ally has no clan at all in

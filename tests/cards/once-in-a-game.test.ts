@@ -176,7 +176,7 @@ describe("the block-toll twins — one sect apart", () => {
     const n = find(state, "N")!;
     expect(n.attached.map((p) => p.card.name)).toContain("Camarilla Exemplary");
     expect(n.attached.find((p) => p.card.name === "Camarilla Exemplary")!.statics.blockToll)
-      .toEqual({ amount: 1, payWith: "blood" });
+      .toEqual({ amount: 1, payWith: "blood", kinds: ["vampire"] });
   });
 
   it("Sabbat Priest is the same card one sect over: only SABBAT vampires", () => {

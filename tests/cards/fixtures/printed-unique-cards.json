@@ -1,0 +1,1807 @@
+[
+  {
+    "id": 100017,
+    "name": "Achilles' Heel",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100023,
+    "name": "The Admonitions",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100025,
+    "name": "Agent of Power",
+    "types": [
+      "Master"
+    ],
+    "late": true
+  },
+  {
+    "id": 100028,
+    "name": "Ahrimane Protectorate",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 100035,
+    "name": "Al's Army Apparatus",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100037,
+    "name": "Alamut",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100039,
+    "name": "Alia, God's Messenger",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100041,
+    "name": "Alvusia",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100044,
+    "name": "Ambrosius, The Ferryman",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100048,
+    "name": "Amulet of Temporal Perception",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100061,
+    "name": "Ancestor Spirit",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100063,
+    "name": "The Ancestor's Talisman",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100071,
+    "name": "The Ankara Citadel, Turkey",
+    "types": [
+      "Equipment"
+    ],
+    "late": true
+  },
+  {
+    "id": 100073,
+    "name": "Antediluvian Awakening",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100080,
+    "name": "Arcane Appraiser",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100086,
+    "name": "Argent Baton",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100127,
+    "name": "Baleful Doll",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100133,
+    "name": "Banshee Ironwail",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100135,
+    "name": "The Barrens",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100140,
+    "name": "Bastille Opera House",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100166,
+    "name": "Black Gloves",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100167,
+    "name": "Black Hand Emissary",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 100176,
+    "name": "Blade of Enoch",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100178,
+    "name": "Bleeding the Vine",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100186,
+    "name": "Blessings of the Loa",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100209,
+    "name": "Blood Shield",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100216,
+    "name": "Blood Turnip",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100254,
+    "name": "Brigitte Gebauer",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100258,
+    "name": "Brothers Grimm",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100276,
+    "name": "Caiaphas Smith",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100277,
+    "name": "Cairo Int'l Airport",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100298,
+    "name": "Carlton Van Wyk",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100299,
+    "name": "Carnivale",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100306,
+    "name": "Catacombs",
+    "types": [
+      "Equipment"
+    ],
+    "late": true
+  },
+  {
+    "id": 100314,
+    "name": "Census Taker",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100319,
+    "name": "Chalice of Kinship",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100331,
+    "name": "Charigger, The Axe",
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 100335,
+    "name": "Charnas the Imp",
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 100346,
+    "name": "Chronicle of the Lost Tribe",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 100347,
+    "name": "Church of the Order of St. Blaise",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100348,
+    "name": "The Church of Vindicated Faith",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100351,
+    "name": "City Gangrel Connections",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100372,
+    "name": "Code of Samiel",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100373,
+    "name": "Codex of the Damned",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100383,
+    "name": "Command Performance",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100394,
+    "name": "Concoction of Vitality",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100402,
+    "name": "Conductor",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100418,
+    "name": "Contagion",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 100448,
+    "name": "The Crimson Sentinel",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100449,
+    "name": "The Crocodile Temple",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100474,
+    "name": "The Crusader Sword",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100483,
+    "name": "Curse of Nitocris",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100490,
+    "name": "The Damned",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100499,
+    "name": "Dartmoor, England",
+    "types": [
+      "Equipment"
+    ],
+    "late": true
+  },
+  {
+    "id": 100514,
+    "name": "Deep Cover Agent",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 100522,
+    "name": "Demonstration",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100536,
+    "name": "Deviki Prasanta",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100548,
+    "name": "Dis Pater",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100579,
+    "name": "Draeven Softfoot",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100588,
+    "name": "Dreams of the Sphinx",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100594,
+    "name": "Dummy Corporation",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100635,
+    "name": "Emergency Powers",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 100641,
+    "name": "Enchanted Marionette",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100654,
+    "name": "Ephor",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100657,
+    "name": "Erebus Mask",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100662,
+    "name": "Esgrima",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100663,
+    "name": "Esprit de Corps",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 100691,
+    "name": "Failsafe",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100728,
+    "name": "Filchware's Pawn Shop",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100766,
+    "name": "Forest of Shadows",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100779,
+    "name": "Foundation Exhibit",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100803,
+    "name": "Gang Territory",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100822,
+    "name": "The Ghouls of Plaza Morería",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100823,
+    "name": "Gianna di Canneto",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100830,
+    "name": "Giovanni Discrimination",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100832,
+    "name": "Giulia Giovanni Abruzzina",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100833,
+    "name": "Giuseppe, Gravedigger",
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 100837,
+    "name": "Glass Walker Pact",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100839,
+    "name": "Glutton",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100844,
+    "name": "Goth Band",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100858,
+    "name": "Grey Thorne",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100865,
+    "name": "Guarded Rubrics",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100882,
+    "name": "Hand of Conrad",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100890,
+    "name": "Harzomatuili",
+    "types": [
+      "Ally"
+    ],
+    "late": true
+  },
+  {
+    "id": 100895,
+    "name": "Haven Affinity",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100908,
+    "name": "Heidelberg Castle, Germany",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100926,
+    "name": "High Museum of Art, Atlanta",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100929,
+    "name": "High Top",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100940,
+    "name": "Houngan",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100942,
+    "name": "House of Sorrow",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100943,
+    "name": "Humanitas",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100955,
+    "name": "Illusory Resources",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 100966,
+    "name": "Impundulu",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100967,
+    "name": "In Memory of the Two Lands",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100969,
+    "name": "Inceptor",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100975,
+    "name": "Infamous Insurgent",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100979,
+    "name": "Infernal Pact",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 100981,
+    "name": "Infernal Servitor",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100985,
+    "name": "Information Network",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101002,
+    "name": "Inveraray, Scotland",
+    "types": [
+      "Equipment"
+    ],
+    "late": true
+  },
+  {
+    "id": 101013,
+    "name": "Island of Yiaros",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101019,
+    "name": "Jake Washington",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101024,
+    "name": "Joseph Pander",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101025,
+    "name": "Joumlon's Axe",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101026,
+    "name": "Journal of Hrorsh",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101030,
+    "name": "Jungle Hunting Ground",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101033,
+    "name": "Karavalanisha Vrana",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101035,
+    "name": "Kaymakli Fragment",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101037,
+    "name": "Kduva's Mask",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101048,
+    "name": "Khobar Towers, Al-Khubar",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101074,
+    "name": "Last Stand",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101076,
+    "name": "Lazarene Inquisitor",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101078,
+    "name": "Leadership Vacuum",
+    "types": [
+      "Master"
+    ],
+    "late": true
+  },
+  {
+    "id": 101091,
+    "name": "Legendary Vampire",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101094,
+    "name": "Leonardo, Mortician",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101115,
+    "name": "Living Wood Staff",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101117,
+    "name": "Local 1111",
+    "types": [
+      "Equipment"
+    ],
+    "late": true
+  },
+  {
+    "id": 101135,
+    "name": "Lyndhurst Estate, New York",
+    "types": [
+      "Equipment"
+    ],
+    "late": true
+  },
+  {
+    "id": 101139,
+    "name": "Madness Network",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101140,
+    "name": "Madness of the Bard",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101163,
+    "name": "Mapatano Utando",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101172,
+    "name": "The Marrakesh Codex",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101174,
+    "name": "Martinelli's Ring",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101176,
+    "name": "Masai Blood Milk",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 101189,
+    "name": "Mbare Market, Harare",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101194,
+    "name": "Mehemet of the Ahl-i-Batin",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101207,
+    "name": "Metro Underground",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101210,
+    "name": "Millicent Smith, Puritan Vampire Hunter",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101231,
+    "name": "Moise Kasavubu",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101232,
+    "name": "Mokolé Blood",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101240,
+    "name": "Monocle of Clarity",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101261,
+    "name": "Mylan Horseed",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101264,
+    "name": "Nar-Sheptha",
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 101278,
+    "name": "New in Town",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101289,
+    "name": "Nkishi",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101294,
+    "name": "Nocturn Theater",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101297,
+    "name": "Nosferatu Bestial",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 101300,
+    "name": "Nosferatu Kingdom",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101317,
+    "name": "Ohoyo Hopoksia (Bastet)",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101328,
+    "name": "Orb of Ulain",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101329,
+    "name": "Order of Hermes Cabal",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101333,
+    "name": "Ossian",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101344,
+    "name": "Palace Hunting Ground",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101345,
+    "name": "Palatial Estate",
+    "types": [
+      "Equipment"
+    ],
+    "late": true
+  },
+  {
+    "id": 101346,
+    "name": "Palla Grande",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101351,
+    "name": "Paragon",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101352,
+    "name": "Paris Opera House",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101355,
+    "name": "The Parthenon",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101358,
+    "name": "The Path of Blood",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101359,
+    "name": "The Path of Bone",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101360,
+    "name": "Path of Death and the Soul",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101361,
+    "name": "Path of Evil Revelations",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101362,
+    "name": "The Path of Harmony",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101363,
+    "name": "The Path of Lilith",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101367,
+    "name": "The Path of Retribution",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101368,
+    "name": "The Path of Service",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101370,
+    "name": "The Path of the Feral Heart",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101372,
+    "name": "Path of the Void",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101383,
+    "name": "Pentex™ Loves You!",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101385,
+    "name": "Père Lachaise, France",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101400,
+    "name": "Pier 13, Port of Baltimore",
+    "types": [
+      "Equipment"
+    ],
+    "late": true
+  },
+  {
+    "id": 101403,
+    "name": "Playing for Keeps",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101410,
+    "name": "Police Department",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101419,
+    "name": "Ponticulus",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101432,
+    "name": "Powerbase: Berlin",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101433,
+    "name": "Powerbase: Cape Verde",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101436,
+    "name": "Powerbase: Luanda",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101437,
+    "name": "Powerbase: Madrid",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101441,
+    "name": "Powerbase: Rome",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101443,
+    "name": "Powerbase: Tshwane",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101445,
+    "name": "Powerbase: Zürich",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101446,
+    "name": "Praetorian Backer",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 101497,
+    "name": "Prophecies of Gehenna",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101520,
+    "name": "Purchase Pact",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101552,
+    "name": "Ravnos Cache",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101553,
+    "name": "Ravnos Carnival",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101562,
+    "name": "The Realm of the Black Sun",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101586,
+    "name": "Regenerative Blood",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101596,
+    "name": "Reliquary: Akunanse Remains",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101600,
+    "name": "Remnant of the Endless Storm",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101638,
+    "name": "Rise of the Fallen",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 101643,
+    "name": "Ritual Scalpel",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101653,
+    "name": "The Rose Foundation",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101655,
+    "name": "Rowan Ring",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101658,
+    "name": "Ruins of Ceoris",
+    "types": [
+      "Equipment"
+    ],
+    "late": true
+  },
+  {
+    "id": 101659,
+    "name": "Ruins of Charizel",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101660,
+    "name": "Ruins of Villers Abbey, Belgium",
+    "types": [
+      "Equipment"
+    ],
+    "late": true
+  },
+  {
+    "id": 101675,
+    "name": "Samuel Haight",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101676,
+    "name": "San Lorenzo de El Escorial, Spain",
+    "types": [
+      "Equipment"
+    ],
+    "late": true
+  },
+  {
+    "id": 101677,
+    "name": "San Nicolás de los Servitas",
+    "types": [
+      "Equipment"
+    ],
+    "late": true
+  },
+  {
+    "id": 101681,
+    "name": "The Sargon Fragment",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101687,
+    "name": "Scapelli, The Family \"Mechanic\"",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101690,
+    "name": "SchreckNET",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 101703,
+    "name": "Seal of Veddartha",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101704,
+    "name": "Seattle Committee",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101708,
+    "name": "The Secret Library of Alexandria",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101732,
+    "name": "Shaal Fragment",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101733,
+    "name": "Shackles of Enkidu",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101749,
+    "name": "Shakar: the Hunt",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101750,
+    "name": "Shaman",
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 101785,
+    "name": "Sire's Index Finger",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101789,
+    "name": "Skaald",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 101810,
+    "name": "Smear Campaign",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101826,
+    "name": "Song of Pan",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 101832,
+    "name": "Soul Gem of Etrius",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101849,
+    "name": "Spirit Summoning Chamber",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101853,
+    "name": "Spiritual Protector",
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 101855,
+    "name": "Spontaneous Power",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101863,
+    "name": "The Status Perfectus",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 101868,
+    "name": "Steam Tunnels",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101878,
+    "name": "Storm Sewers",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101893,
+    "name": "Succubus Club",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101904,
+    "name": "Sunset Strip, Hollywood",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101917,
+    "name": "Swiss Cut",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101919,
+    "name": "Sword of Judgment",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101920,
+    "name": "Sword of Nuln",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101922,
+    "name": "Sword of Troile",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101930,
+    "name": "Talaq, The Immortal",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101933,
+    "name": "Talons of the Dead",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 101936,
+    "name": "Tapestry of Blood",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101937,
+    "name": "Tara, The Hollow One",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101962,
+    "name": "The Textbook Damnation",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 102001,
+    "name": "Tower of London",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102009,
+    "name": "Transcendent Laibon",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102018,
+    "name": "Treaty of Laibach",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102020,
+    "name": "Tremere Convocation",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102040,
+    "name": "True Faith",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102050,
+    "name": "Twisted Forest",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102074,
+    "name": "Unity",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102076,
+    "name": "Unleash Hell's Fury",
+    "types": [
+      "Action"
+    ],
+    "late": true
+  },
+  {
+    "id": 102103,
+    "name": "Veneficti",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 102119,
+    "name": "Vigil: The Thin Line",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102123,
+    "name": "Virolax Facility",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102126,
+    "name": "Visit from the Capuchin",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102128,
+    "name": "Vivienne Géroux",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 102133,
+    "name": "Vox Senis",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102141,
+    "name": "Walks-With-Might",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 102152,
+    "name": "Wasserschloss Anif, Austria",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102167,
+    "name": "Weeping Stone",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102173,
+    "name": "Wendell Delburton",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 102174,
+    "name": "Werewolf Pack",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 102184,
+    "name": "Winchester Mansion",
+    "types": [
+      "Equipment"
+    ],
+    "late": true
+  },
+  {
+    "id": 102203,
+    "name": "Zaire River Ferry",
+    "types": [
+      "Equipment"
+    ],
+    "late": true
+  },
+  {
+    "id": 102211,
+    "name": "Zoning Board",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102236,
+    "name": "The British Museum, London",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102239,
+    "name": "Michael Harris, the Incinerator",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 102240,
+    "name": "The Mithraeum, London",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102242,
+    "name": "Mobile HQ, Operation Antigen",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102243,
+    "name": "Ritual Goblet",
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 102244,
+    "name": "The Shard, London",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102245,
+    "name": "Valerie Diaz, Antigen Commander",
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 102269,
+    "name": "Camarilla Conclave",
+    "types": [
+      "Master"
+    ]
+  },
+  {
+    "id": 102299,
+    "name": "Dead Pool",
+    "types": [
+      "Master"
+    ]
+  }
+]

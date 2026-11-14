@@ -76,14 +76,37 @@ describe("Shadow Boxing", () => {
 });
 
 describe("Stunt Cycle", () => {
-  it("offers 3R/4R at long range with prevent 1/2", () => {
+  it("offers both modes at long range but neither at close range", () => {
     const { state, engine } = withCombatState();
     state.seats[0]!.hand.push({ id: "sc", name: "Stunt Cycle" });
     engine.choose("bleed:V1");
-    for(let i=0;i<20;i++) { const dp=engine.decision(); if(!dp) break; if(dp.window==="action.effects" && dp.options.some(o=>o.id==="block:M")) { engine.choose("block:M"); break; } engine.choose(dp.options.find(o=>o.id==="pass")!.id); }
-    // force long range
-    for(let i=0;i<60;i++) { const dp=engine.decision(); if(!dp) break; if(dp.window==="combat.chooseStrike") { const opts=dp.options.filter(o=>o.id.includes("Stunt Cycle")); expect(opts.length).toBeGreaterThan(0); // check that basic and superior both require long range - if range is not long, they should not be offered
-        break; } const p=dp.options.find(o=>o.id==="pass"); if(p) engine.choose(p.id); else break; }
+    for (let i = 0; i < 20; i++) {
+      const dp = engine.decision();
+      if (!dp) throw new Error("no decision before block");
+      if (dp.window === "action.effects" && dp.options.some((o) => o.id === "block:M")) { engine.choose("block:M"); break; }
+      const pass = dp.options.find((o) => o.id === "pass");
+      if (!pass) throw new Error(`cannot pass ${dp.window}`);
+      engine.choose(pass.id);
+    }
+    for (let i = 0; i < 60; i++) {
+      const dp = engine.decision();
+      if (!dp) throw new Error("combat ended before strike choice");
+      if (dp.window === "combat.chooseStrike" && dp.seat === "Alice") {
+        const cf = state.frames.find((f) => f.kind === "combat");
+        if (cf?.kind !== "combat") throw new Error("no combat frame");
+        expect(cf.range).toBe("close");
+        expect(dp.options.some((o) => o.id.includes("Stunt Cycle"))).toBe(false);
+        cf.range = "long";
+        const ids = engine.decision()!.options.map((o) => o.id);
+        expect(ids.some((id) => id.startsWith("play:Stunt Cycle:basic:"))).toBe(true);
+        expect(ids.some((id) => id.startsWith("play:Stunt Cycle:superior:"))).toBe(true);
+        return;
+      }
+      const pass = dp.options.find((o) => o.id === "pass");
+      if (!pass) throw new Error(`cannot pass ${dp.window}`);
+      engine.choose(pass.id);
+    }
+    throw new Error("strike choice not reached");
   });
 });
 

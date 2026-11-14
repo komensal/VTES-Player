@@ -319,6 +319,14 @@ function makeVampire(v: DeckVampire, id: string, seat: string, inCrypt: boolean)
   return {
     ...path,
     ...titleCity,
+    ...(card.nonUnique ? { nonUnique: true } : {}),
+    ...(card.sterile ? { sterile: true } : {}),
+    ...(card.bloodCursed ? { bloodCursed: true } : {}),
+    ...(card.infernal ? { infernal: true } : {}),
+    ...(card.blackHand ? { blackHand: true } : {}),
+    ...(card.seraph ? { seraph: true } : {}),
+    ...(card.scarce ? { scarce: true } : {}),
+    ...(card.cannotUseDisciplines.length ? { cannotUseDisciplines: [...card.cannotUseDisciplines] } : {}),
     id,
     name: card.name,
     kind: "vampire",
@@ -344,15 +352,15 @@ function makeVampire(v: DeckVampire, id: string, seat: string, inCrypt: boolean)
     // the whole `permanent` vocabulary reach it (docs/crypt-plan.md §2).
     // A vampire whose card is a bare sect/title line has no spec and gets
     // no entry, which is most of the crypt.
-    attached: cryptSelfEntry(card.name, id, seat),
+    attached: cryptSelfEntry(card.name, id, seat, card.flight),
   };
 }
 
 /** The self-attached entry a crypt card puts on its own vampire, or none. */
-function cryptSelfEntry(name: string, id: string, seat: string): PermanentInPlay[] {
+function cryptSelfEntry(name: string, id: string, seat: string, flight: boolean): PermanentInPlay[] {
   const handler = registryHandlers[name];
   const entry = handler?.cryptEntry?.();
-  if (!entry) return [];
+  if (!entry && !flight) return [];
   return [
     {
       card: { id, name },
@@ -360,8 +368,8 @@ function cryptSelfEntry(name: string, id: string, seat: string): PermanentInPlay
       owner: seat,
       locked: false,
       usedThisPhase: false,
-      statics: entry.statics,
-      tags: entry.tags,
+      statics: entry?.statics ?? {},
+      tags: [...new Set([...(entry?.tags ?? []), ...(flight ? ["flight"] : [])])],
     },
   ];
 }

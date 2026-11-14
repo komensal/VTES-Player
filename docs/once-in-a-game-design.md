@@ -24,8 +24,9 @@ nothing but the sibling makes that visible.
 
 The block-toll pair also needed no new code at all: `refAttachToChosen` already
 puts a card on a referendum-chosen vampire filtered by sect, and `blockToll`
-already taxes anyone attempting to block the bearer — both written for **Archon**,
-which is these two cards plus a rush grant and blood-hunt immunity.
+taxes vampires attempting to block the bearer — both written for **Archon**,
+which is these two cards plus a rush grant and blood-hunt immunity. The
+persistent toll now includes a kind filter so that allies are not charged.
 
 ## 2. The per-seat choice sweep
 

@@ -145,6 +145,21 @@ describe("Communal Haven: Cathedral (100385)", () => {
     expect(optionIds(engine).some((i) => i.includes("Cathedral"))).toBe(false);
   });
 
+  it("cannot move equipment to Helen, but can move it away from her", () => {
+    const state = game();
+    const helen = find(state, "S2");
+    const self = testRegistry["Helen Fairchild (G6)"]!.cryptEntry!();
+    helen.attached.push(inPlay("S2", "Helen Fairchild (G6)", "Alice", { statics: self.statics, tags: self.tags }));
+    find(state, "V1").attached.push(inPlay("gun", ".44 Magnum", "Alice"));
+    helen.attached.push(inPlay("jacket", "Leather Jacket", "Alice"));
+    const engine = new VtesEngine(state, testRegistry);
+    expect(optionIds(engine)).not.toContain("ability:Communal Haven: Cathedral:ch:carrygear:gun:S2");
+    const away = "ability:Communal Haven: Cathedral:ch:carrygear:jacket:V1";
+    expect(optionIds(engine)).toContain(away);
+    runTrace(engine, [["Alice", away]]);
+    expect(find(state, "V1").attached.some((p) => p.card.id === "jacket")).toBe(true);
+  });
+
   it("offers nothing while locked", () => {
     const state = game();
     seatOf(state, "Alice").permanents[0]!.locked = true;

@@ -115,6 +115,38 @@ const heldBy = (state: GameState, cardId: string): string | null => {
 
 // ---------------------------------------------------------------------------
 
+describe("equipment restrictions on stealing strikes", () => {
+  it("rechecks a possession restriction at strike resolution", () => {
+    const a = inCombat("Fast Hands", { cel: "basic" }, { name: ".44 Magnum", tags: ["equipment", "weapon"] });
+    const id = atStrike(a.engine).find((option) => option.startsWith("play:Fast Hands"));
+    expect(id).toBeDefined();
+    a.engine.choose(id!);
+    settle(a.engine);
+    // Model an intervening effect after the strike was chosen.
+    const self = testRegistry["Helen Fairchild (G6)"]!.cryptEntry!();
+    a.v1.attached.push({ card: { id: "V1", name: "Helen Fairchild (G6)" }, locked: false,
+      usedThisPhase: false, statics: self.statics, tags: self.tags });
+    playOut(a.engine, a.state);
+    expect(heldBy(a.state, "gear1")).toBe("M");
+    expect(a.state.eventLog.some((e) => e.type === "EquipmentMoved" && e.cardId === "gear1")).toBe(false);
+  });
+
+  it("Helen cannot steal a weapon but Howler can possess one", () => {
+    for (const [name, offered] of [["Helen Fairchild (G6)", false], ["Howler (G2)", true]] as const) {
+      const a = inCombat("Fast Hands", { cel: "basic" }, { name: ".44 Magnum", tags: ["equipment", "weapon"] });
+      const self = testRegistry[name]!.cryptEntry!();
+      a.v1.attached.push({ card: { id: "V1", name }, locked: false, usedThisPhase: false, statics: self.statics, tags: self.tags });
+      const opts = atStrike(a.engine);
+      expect(opts.some((id) => id.startsWith("play:Fast Hands"))).toBe(offered);
+      if (offered) {
+        a.engine.choose(opts.find((id) => id.startsWith("play:Fast Hands"))!);
+        playOut(a.engine, a.state);
+        expect(heldBy(a.state, "gear1")).toBe("V1");
+      }
+    }
+  });
+});
+
 describe("destroying equipment", () => {
   for (const card of ["Fractured Armament", "Shattering Blow"] as const) {
     it(`${card} offers one option per equipment and destroys the chosen one`, () => {
@@ -162,6 +194,73 @@ describe("destroying equipment", () => {
     playOut(a.engine, a.state);
     expect(inPlay(a.state, "gear1")).toBe(false);
     expect(a.m.blood).toBe(before);
+  });
+});
+
+describe("Donnybrook (100576)", () => {
+  it.each([["equipment", ["equipment"]], ["retainer", ["retainer"]]] as const)(
+    "Obfuscate burns an opposing %s with first strike, without hand damage",
+    (variant, tags) => {
+      const a = inCombat("Donnybrook", { obf: "basic" }, { name: "Target", tags });
+      a.v1.sect = "anarch";
+      const before = a.m.blood;
+      const id = atStrike(a.engine).find((x) => x.includes(`:V1:${variant}:`) && x.includes("gear1"));
+      expect(id).toBeDefined();
+      a.engine.choose(id!);
+      settle(a.engine);
+      const cf = a.state.frames.find((f) => f.kind === "combat");
+      if (cf?.kind !== "combat") throw new Error("no combat frame");
+      expect(cf.strikes.acting?.firstStrike).toBe(true);
+      playOut(a.engine, a.state);
+      expect(inPlay(a.state, "gear1")).toBe(false);
+      expect(a.m.blood).toBe(before);
+    },
+  );
+
+  it("Protean uses ordinary strength as aggravated damage, without a bonus", () => {
+    const a = inCombat("Donnybrook", { pro: "basic" }, null);
+    a.v1.sect = "anarch";
+    const id = atStrike(a.engine).find((x) => x.includes(":V1:pro:"));
+    expect(id).toBeDefined();
+    a.engine.choose(id!);
+    settle(a.engine);
+    const cf = a.state.frames.find((f) => f.kind === "combat");
+    if (cf?.kind !== "combat") throw new Error("no combat frame");
+    expect(cf.strikes.acting).toMatchObject({ handStrike: true, handBonus: 0, aggravated: true });
+  });
+
+  it("Serpentis steals two blood instead of dealing hand damage", () => {
+    const a = inCombat("Donnybrook", { ser: "basic" }, null);
+    a.v1.sect = "anarch";
+    a.v1.blood = 2;
+    const before = a.m.blood;
+    const id = atStrike(a.engine).find((x) => x.includes(":V1:ser:"));
+    expect(id).toBeDefined();
+    a.engine.choose(id!);
+    settle(a.engine);
+    playOut(a.engine, a.state);
+    expect(a.m.blood).toBe(before - 2);
+    expect(a.v1.blood).toBeGreaterThan(2);
+  });
+
+  it("is not offered at long range even with Protean and Anarch", () => {
+    const a = inCombat("Donnybrook", { pro: "basic" }, null);
+    a.v1.sect = "anarch";
+    const cf = a.state.frames.find((f) => f.kind === "combat");
+    if (cf?.kind !== "combat") throw new Error("no combat frame");
+    cf.range = "long";
+    const ids = atStrike(a.engine);
+    expect(ids).toContain("strike:hand");
+    expect(ids.some((x) => x.startsWith("play:Donnybrook"))).toBe(false);
+  });
+
+  it("requires an Anarch and an equipment or retainer target for Obfuscate", () => {
+    const wrongSect = inCombat("Donnybrook", { obf: "basic" });
+    wrongSect.v1.sect = "camarilla";
+    expect(atStrike(wrongSect.engine).some((x) => x.startsWith("play:Donnybrook"))).toBe(false);
+    const noTarget = inCombat("Donnybrook", { obf: "basic" }, null);
+    noTarget.v1.sect = "anarch";
+    expect(atStrike(noTarget.engine).some((x) => x.startsWith("play:Donnybrook"))).toBe(false);
   });
 });
 

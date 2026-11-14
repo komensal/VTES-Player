@@ -27,6 +27,10 @@ function ready(
   if (seed !== undefined) state.rngState = seed;
   const v1 = state.seats[0]!.minions[0]!;
   Object.assign(v1, { blood: 5, capacity: 5, disciplines, strength: 1 });
+  // These two modifiers have printed clan icons; the actor, not merely
+  // another vampire at the table, must meet the requirement.
+  if (cards.includes("Uncontrolled Impulse")) v1.clan = "Ishtarri";
+  if (cards.includes("Walk through Arcadia")) v1.clan = "Malkavian antitribu";
   // `threeSeatGame` gives Alice ONE minion, and two of these tests need a
   // second action in the turn.
   const v2 = makeMinion("V2", "Alice", { blood: 3, capacity: 3, strength: 1 });

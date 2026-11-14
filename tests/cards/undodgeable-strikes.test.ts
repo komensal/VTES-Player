@@ -22,19 +22,19 @@ import { runTrace, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
 function inCombat(
   card: string,
   disciplines: Record<string, "basic" | "superior">,
-  opts: { foeGear?: { name: string; tags: readonly string[] }; ownGear?: { name: string; tags: readonly string[] } } = {},
+  opts: { foeGear?: { name: string; tags: readonly string[]; grantsFlight?: boolean }; ownGear?: { name: string; tags: readonly string[]; grantsFlight?: boolean } } = {},
 ): { state: GameState; engine: VtesEngine; v1: MinionState; m: MinionState } {
   const state = threeSeatGame();
   const v1 = state.seats[0]!.minions[0]!;
   Object.assign(v1, { blood: 4, capacity: 4, disciplines, strength: 1 });
   const m = state.seats[1]!.minions.find((x) => x.id === "M")!;
   m.blood = m.capacity;
-  const attach = (to: MinionState, g: { name: string; tags: readonly string[] }, id: string): void => {
+  const attach = (to: MinionState, g: { name: string; tags: readonly string[]; grantsFlight?: boolean }, id: string): void => {
     to.attached.push({
       card: { id, name: g.name },
       locked: false,
       usedThisPhase: false,
-      statics: {},
+      statics: g.grantsFlight ? { grantsFlight: true } : {},
       tags: [...g.tags],
     });
   };
@@ -185,7 +185,7 @@ describe("Earthshock (100604) — strength damage that REACHES", () => {
 
   it("NEGATIVE SPACE: not offered against a minion with FLIGHT", () => {
     const withFlight = inCombat("Earthshock", { pot: "superior" }, {
-      foeGear: { name: "Raven Spy", tags: ["retainer", "flight"] },
+      foeGear: { name: "synthetic flight grant", tags: [], grantsFlight: true },
     });
     const ids = atStrike(withFlight.engine);
     // The window is open and Alice is being asked, so the negative is real.

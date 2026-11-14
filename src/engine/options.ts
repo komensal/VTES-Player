@@ -457,7 +457,7 @@ export type LegalOption =
     }
   | { id: string; kind: "transferToPool"; label: string; minion: MinionId }
   | { id: string; kind: "cryptDraw"; label: string }
-  | { id: string; kind: "influenceOut"; label: string; minion: MinionId };
+  | { id: string; kind: "influenceOut"; label: string; minion: MinionId; poolBurn?: number };
 
 export interface DecisionPoint {
   seq: number;

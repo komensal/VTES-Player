@@ -232,7 +232,7 @@ whole p. 39 table.
 - **Rebel is a third §4 reader.** "If they block … a political action"
   read the played card's type; it now reads `af.political`.
 - **The table covers all ten titles**, Sabbat included (p. 40), as a
-  `Record<VampireTitle, Sect>` named `TITLE_SECT` in `state.ts`.
+  `TITLE_SECT` in `state.ts`. Personal titles were later added to `VampireTitle`; they have no sect requirement and are omitted from this table.
 - **§5's Deck Builder side effect does not happen.** The catalogue parses
   sect requirements from card text (`scripts/build-catalog.mts`), not
   from `requiresSects`. Left as a follow-up.

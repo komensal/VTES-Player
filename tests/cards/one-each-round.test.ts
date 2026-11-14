@@ -127,8 +127,8 @@ describe("High Ground (100925)", () => {
       card: { id: `w-${id}`, name: "wings" },
       locked: false,
       usedThisPhase: false,
-      statics: {},
-      tags: ["flight"],
+      statics: { grantsFlight: true },
+      tags: [],
     });
   }
 

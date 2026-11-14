@@ -725,7 +725,9 @@ export class HeuristicAgent implements Agent {
       case "transferToVampire":
         return this.scoreInfluence(o, view, me);
       case "influenceOut":
-        return w.influenceOut;
+        // Scarce and table taxes can make an otherwise free graduation
+        // lethal. Never prefer self-ousting to a legal alternative.
+        return poolAfter(view, me, o.poolBurn ?? 0) <= 0 ? w.selfOustGuard : w.influenceOut;
       case "cryptDraw":
         return poolAfter(view, me, 1) <= 0 ? w.selfOustGuard : w.cryptDraw;
       case "transferToPool":
@@ -746,6 +748,13 @@ export class HeuristicAgent implements Agent {
         return w.diablerize;
 
       case "useAbility":
+        if (o.params["poolBurn"] !== undefined && poolAfter(view, me, Number(o.params["poolBurn"])) <= 0) return w.selfOustGuard;
+        // Unlocking an infernal minion costs pool, unlike a free ability.
+        // Never deliberately oust ourselves, and preserve pool at the floor.
+        if (o.params["infernalUnlock"] !== undefined) {
+          const pool = seatOf(view, me)?.pool ?? 0;
+          return pool <= 1 ? w.selfOustGuard : pool <= w.poolFloor ? w.pass - 0.1 : w.playCard;
+        }
         // A WEAPON THAT REACHES, at a range where hands do not. The
         // engine says which abilities are ranged strikes, so this is a
         // positive reason to pick the gun rather than the leftover after
@@ -919,6 +928,7 @@ export class HeuristicAgent implements Agent {
   ): number {
     const w = this.w;
     const base = w.answerChoice;
+    if (o.params["poolBurn"] !== undefined && poolAfter(view, me, Number(o.params["poolBurn"])) <= 0) return w.selfOustGuard;
     const wildHuntX = o.params["wildHuntX"];
     if (wildHuntX !== undefined) return base + Number(wildHuntX) * w.strikeDamage;
 

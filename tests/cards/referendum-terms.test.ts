@@ -285,16 +285,17 @@ describe("Camarilla's Iron Fist (102270)", () => {
   });
 });
 
-describe("CLANS is derived, not guessed", () => {
-  it("matches exactly the clans the V5 crypt contains", async () => {
+describe("CLANS covers vampire clans in the registry", () => {
+  it("matches registry clans while excluding imbued creeds", async () => {
     // The CITY_TITLES precedent: a constant that must not rot the way the
     // "Assamite" filter did (docs/referendum-terms-design.md §1).
     const registry = (await import("../../src/cards/registry.json", {
       with: { type: "json" },
     })) as unknown as { default: { entries: Record<string, { card: Record<string, unknown> }> } };
     const fromRegistry = new Set<string>();
+    const creeds = ["Avenger", "Defender", "Innocent", "Judge", "Martyr", "Redeemer", "Visionary"];
     for (const e of Object.values(registry.default.entries)) {
-      if (e.card["kind"] === "crypt" && typeof e.card["clan"] === "string") {
+      if (e.card["kind"] === "crypt" && typeof e.card["clan"] === "string" && !creeds.includes(e.card["clan"])) {
         fromRegistry.add(e.card["clan"]);
       }
     }

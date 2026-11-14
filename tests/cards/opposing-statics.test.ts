@@ -238,13 +238,13 @@ describe("Archon (100084)", () => {
     ]);
     const on = find(state, "W").attached.find((p) => p.card.name === "Archon");
     expect(on).toBeDefined();
-    expect(on!.statics.blockToll).toEqual({ amount: 1, payWith: "blood" });
+    expect(on!.statics.blockToll).toEqual({ amount: 1, payWith: "blood", kinds: ["vampire"] });
     expect(on!.statics.noBloodHunt).toBe(true);
   });
 
-  it("the block toll: a vampire pays, and an ALLY cannot attempt at all", () => {
-    // p. 22 — allies hold life, not blood, so a toll printed in blood
-    // locks them out. That falls out of the block-tax gate for free.
+  it("the block toll: a vampire pays, and an ally can block without paying", () => {
+    // Archon explicitly charges vampires, so the blood-only cost does not
+    // apply to allies at all.
     const state = threeSeatGame();
     Object.assign(find(state, "W"), { sect: "camarilla", blood: 3 });
     attach(state, "W", "ar", "Archon");
@@ -260,7 +260,7 @@ describe("Archon (100084)", () => {
     ]);
     const blocks = optionIds(engine).filter((o) => o.startsWith("block:"));
     expect(blocks).toContain("block:N"); // Carol's vampire, paying 1 blood
-    expect(blocks).not.toContain("block:CA"); // her ally cannot pay
+    expect(blocks).toContain("block:CA"); // her ally is not subject to the toll
     const pool = find(state, "N").blood;
     runTrace(engine, [["Carol", "block:N"]]);
     // Paid to ATTEMPT, not to succeed (docs/block-tax-design.md).

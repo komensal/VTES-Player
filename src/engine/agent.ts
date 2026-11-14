@@ -294,14 +294,30 @@ export function isFaceDown(m: { name: string }): boolean {
 }
 
 function faceDownMinion(m: MinionState): MinionState {
+  // Whitelist public information instead of copying the real card: new
+  // optional crypt traits (Blood Cursed, Sterile, non-unique, title city,
+  // path, etc.) must not leak through a spread as the model grows. Visible
+  // counters in the uncontrolled region live on the enclosing entry.
   return {
-    ...m,
+    id: m.id,
+    controller: m.controller,
     name: FACE_DOWN,
+    kind: "vampire",
+    blood: 0,
     capacity: 0,
+    strength: 0,
+    bleedAmount: 0,
+    locked: false,
+    awake: false,
+    inTorpor: false,
     disciplines: {},
+    bledThisTurn: false,
+    calledPoliticalThisTurn: false,
     clan: null,
     sect: null,
     title: null,
+    cannotActThisTurn: false,
+    playedSinceUnlock: [],
     attached: [],
   };
 }
@@ -341,6 +357,22 @@ export function redactFor(state: GameState, seat: SeatId): GameState {
   const known = new Set(state.knowledge?.[seat] ?? []);
   return {
     ...state,
+    // A card moved from a private hand to the face-down library is not
+    // revealed. Neither the event nor the selected card handle in the
+    // command log may identify it to another Methuselah. The live state
+    // retains the complete logs for replay; only this projection is masked.
+    eventLog: state.eventLog.map((ev) =>
+      ev.type === "CardBuried" && ev.seat !== seat
+        ? { ...ev, cardId: "", name: FACE_DOWN }
+        : ev,
+    ),
+    commandLog: state.commandLog.map((cmd) =>
+      cmd.seat !== seat &&
+      (/^ability:Nehemiah \(G4\):.*:bury:/.test(cmd.option) ||
+       /^choice:(?:Nehemiah \(G4\)|Heart of Nizchetus):.*:bury:/.test(cmd.option))
+        ? { ...cmd, option: "[hidden card selection]" }
+        : cmd,
+    ),
     seats: state.seats.map((seatState) => {
       const mine = seatState.id === seat;
       // Taken OUT of the spread rather than overwritten with undefined:

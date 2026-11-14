@@ -1,0 +1,1930 @@
+[
+  {
+    "id": 100002,
+    "name": "419 Operation",
+    "clans": [
+      "Osebo"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100014,
+    "name": "Abyssal Hunter",
+    "clans": [
+      "Lasombra"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100028,
+    "name": "Ahrimane Protectorate",
+    "clans": [
+      "Ahrimane"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100034,
+    "name": "Akunanse Kholo",
+    "clans": [
+      "Akunanse"
+    ],
+    "types": [
+      "Action Modifier",
+      "Reaction"
+    ]
+  },
+  {
+    "id": 100044,
+    "name": "Ambrosius, The Ferryman",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100051,
+    "name": "Ananasi Vampirephile",
+    "clans": [
+      "Guruhi"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100063,
+    "name": "The Ancestor's Talisman",
+    "clans": [
+      "Banu Haqim"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100071,
+    "name": "The Ankara Citadel, Turkey",
+    "clans": [
+      "Tremere"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100080,
+    "name": "Arcane Appraiser",
+    "clans": [
+      "Toreador"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100090,
+    "name": "Arms Dealer",
+    "clans": [
+      "Brujah"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100103,
+    "name": "Asanbonsam Ghoul",
+    "clans": [
+      "Tzimisce"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100151,
+    "name": "Benefit Performance",
+    "clans": [
+      "Daughter of Cacophony"
+    ],
+    "types": [
+      "Political Action"
+    ]
+  },
+  {
+    "id": 100160,
+    "name": "Bima",
+    "clans": [
+      "Ministry"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100164,
+    "name": "The Black Beast",
+    "clans": [
+      "Salubri antitribu"
+    ],
+    "types": [
+      "Combat"
+    ]
+  },
+  {
+    "id": 100170,
+    "name": "Black Spiral Buddy",
+    "clans": [
+      "Gangrel antitribu"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100185,
+    "name": "Blessing of the Name",
+    "clans": [
+      "Salubri antitribu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100209,
+    "name": "Blood Shield",
+    "clans": [
+      "Osebo"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100224,
+    "name": "Bloodstorm of Chorazin",
+    "clans": [
+      "Baali"
+    ],
+    "types": [
+      "Reaction"
+    ]
+  },
+  {
+    "id": 100254,
+    "name": "Brigitte Gebauer",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100256,
+    "name": "Brother in Arms",
+    "clans": [
+      "Salubri antitribu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100265,
+    "name": "Bujo",
+    "clans": [
+      "Ravnos"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100280,
+    "name": "Call the Great Beast",
+    "clans": [
+      "Baali"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100286,
+    "name": "Camarilla Vitae Slave",
+    "clans": [
+      "Lasombra"
+    ],
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 100331,
+    "name": "Charigger, The Axe",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 100335,
+    "name": "Charnas the Imp",
+    "clans": [
+      "Tremere"
+    ],
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 100355,
+    "name": "Clandestine Contract",
+    "clans": [
+      "Banu Haqim"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100393,
+    "name": "Concert Tour",
+    "clans": [
+      "Daughter of Cacophony"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100417,
+    "name": "Consume the Dead",
+    "clans": [
+      "Nagaraja"
+    ],
+    "types": [
+      "Action",
+      "Reaction"
+    ]
+  },
+  {
+    "id": 100430,
+    "name": "Corruption",
+    "clans": [
+      "Ministry"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100434,
+    "name": "Courier",
+    "clans": [
+      "Nosferatu antitribu"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100437,
+    "name": "Covincraft",
+    "clans": [
+      "Kiasyd"
+    ],
+    "types": [
+      "Reaction"
+    ]
+  },
+  {
+    "id": 100440,
+    "name": "Create Gargoyle",
+    "clans": [
+      "Tremere",
+      "Tremere antitribu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100484,
+    "name": "D'habi Revenant",
+    "clans": [
+      "Baali"
+    ],
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 100500,
+    "name": "Dauntain Black Magician",
+    "clans": [
+      "Malkavian antitribu"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100517,
+    "name": "Defender of the Haven",
+    "clans": [
+      "Tremere",
+      "Tremere antitribu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100527,
+    "name": "Derange",
+    "clans": [
+      "Malkavian",
+      "Malkavian antitribu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100530,
+    "name": "Despiral",
+    "clans": [
+      "Ishtarri"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100531,
+    "name": "Destructive Secrets",
+    "clans": [
+      "Nosferatu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100536,
+    "name": "Deviki Prasanta",
+    "clans": [
+      "Banu Haqim"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100544,
+    "name": "Din of the Damned",
+    "clans": [
+      "Harbinger of Skulls"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 100547,
+    "name": "Dirty Little Secrets",
+    "clans": [
+      "Nosferatu antitribu"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 100552,
+    "name": "Disciple of Lazarus",
+    "clans": [
+      "Harbinger of Skulls"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100569,
+    "name": "Dogs of War",
+    "clans": [
+      "Brujah antitribu"
+    ],
+    "types": [
+      "Political Action"
+    ]
+  },
+  {
+    "id": 100579,
+    "name": "Draeven Softfoot",
+    "clans": [
+      "Kiasyd"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100589,
+    "name": "Drink the Blood of Ahriman",
+    "clans": [
+      "Lasombra"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100593,
+    "name": "Duma Rafiki",
+    "clans": [
+      "Akunanse"
+    ],
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 100607,
+    "name": "Eccentric Billionaire",
+    "clans": [
+      "Toreador antitribu"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100613,
+    "name": "Edge of the World",
+    "clans": [
+      "Guruhi"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 100622,
+    "name": "The Eldest Are Kholo",
+    "clans": [
+      "Ravnos"
+    ],
+    "types": [
+      "Action Modifier",
+      "Reaction"
+    ]
+  },
+  {
+    "id": 100634,
+    "name": "Emerald Legionnaire",
+    "clans": [
+      "Harbinger of Skulls"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100637,
+    "name": "Emergency Rations",
+    "clans": [
+      "Nagaraja"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100641,
+    "name": "Enchanted Marionette",
+    "clans": [
+      "Malkavian antitribu"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100642,
+    "name": "Enforcer",
+    "clans": [
+      "Osebo"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100649,
+    "name": "Ensemble",
+    "clans": [
+      "Daughter of Cacophony"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 100657,
+    "name": "Erebus Mask",
+    "clans": [
+      "Harbinger of Skulls"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 100661,
+    "name": "Escaped Mental Patient",
+    "clans": [
+      "Malkavian antitribu"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100746,
+    "name": "Fleecing the Gaje",
+    "clans": [
+      "Ravnos"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100756,
+    "name": "Follow the Alpha",
+    "clans": [
+      "Gangrel antitribu"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 100780,
+    "name": "Founders of the Ebony Kingdom",
+    "clans": [
+      "Guruhi"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100802,
+    "name": "Gang Tactics",
+    "clans": [
+      "Nosferatu antitribu"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 100808,
+    "name": "Gargoyle Slave",
+    "clans": [
+      "Tremere antitribu"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100816,
+    "name": "Ghost-Eater",
+    "clans": [
+      "Harbinger of Skulls"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100821,
+    "name": "Ghouled Street Thug",
+    "clans": [
+      "Pander"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100822,
+    "name": "The Ghouls of Plaza Morería",
+    "clans": [
+      "Banu Haqim"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100823,
+    "name": "Gianna di Canneto",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100832,
+    "name": "Giulia Giovanni Abruzzina",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100833,
+    "name": "Giuseppe, Gravedigger",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 100844,
+    "name": "Goth Band",
+    "clans": [
+      "Toreador antitribu"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100849,
+    "name": "The Grandest Trick",
+    "clans": [
+      "Kiasyd"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 100867,
+    "name": "Guardian Ghoul",
+    "clans": [
+      "Tzimisce"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100873,
+    "name": "The Guruhi Are the Land",
+    "clans": [
+      "Guruhi"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 100874,
+    "name": "Guruhi Kholo",
+    "clans": [
+      "Guruhi"
+    ],
+    "types": [
+      "Action Modifier",
+      "Reaction"
+    ]
+  },
+  {
+    "id": 100885,
+    "name": "Haqim's Law: Leadership",
+    "clans": [
+      "Banu Haqim"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100888,
+    "name": "Harmony",
+    "clans": [
+      "Daughter of Cacophony"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100892,
+    "name": "Hatchling",
+    "clans": [
+      "Gargoyle"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 100912,
+    "name": "Herald of Topheth",
+    "clans": [
+      "Baali"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100914,
+    "name": "Hexaped",
+    "clans": [
+      "Tremere antitribu"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100923,
+    "name": "Hierophant",
+    "clans": [
+      "Ministry"
+    ],
+    "types": [
+      "Political Action"
+    ]
+  },
+  {
+    "id": 100928,
+    "name": "High Stakes",
+    "clans": [
+      "Ventrue"
+    ],
+    "types": [
+      "Political Action"
+    ]
+  },
+  {
+    "id": 100929,
+    "name": "High Top",
+    "clans": [
+      "Ahrimane"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100950,
+    "name": "Igoli's Loyalty",
+    "clans": [
+      "Ishtarri"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 100983,
+    "name": "Informant",
+    "clans": [
+      "Ishtarri"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 100987,
+    "name": "Innocent Bystander",
+    "clans": [
+      "Ventrue antitribu"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 100990,
+    "name": "Inside Dirt",
+    "clans": [
+      "Nosferatu antitribu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101011,
+    "name": "Ishtarri Kholo",
+    "clans": [
+      "Ishtarri"
+    ],
+    "types": [
+      "Action Modifier",
+      "Reaction"
+    ]
+  },
+  {
+    "id": 101020,
+    "name": "Jar of Skin Eaters",
+    "clans": [
+      "Tremere",
+      "Tremere antitribu"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101026,
+    "name": "Journal of Hrorsh",
+    "clans": [
+      "Salubri"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101033,
+    "name": "Karavalanisha Vrana",
+    "clans": [
+      "Ravnos"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101044,
+    "name": "The Khabar: Honor",
+    "clans": [
+      "Banu Haqim"
+    ],
+    "types": [
+      "Combat"
+    ]
+  },
+  {
+    "id": 101046,
+    "name": "Khazar's Diary (Endless Night)",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101051,
+    "name": "Kindred Manipulation",
+    "clans": [
+      "Ventrue antitribu"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 101058,
+    "name": "King's Favor",
+    "clans": [
+      "Guruhi"
+    ],
+    "types": [
+      "Reaction"
+    ]
+  },
+  {
+    "id": 101090,
+    "name": "Legend of the Leopard",
+    "clans": [
+      "Osebo"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101094,
+    "name": "Leonardo, Mortician",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101113,
+    "name": "Little Mountain Cemetery",
+    "clans": [
+      "Samedi"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101130,
+    "name": "Loyalist",
+    "clans": [
+      "Ventrue antitribu"
+    ],
+    "types": [
+      "Reaction"
+    ]
+  },
+  {
+    "id": 101146,
+    "name": "Make an Example",
+    "clans": [
+      "Guruhi"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 101170,
+    "name": "Marked Territory",
+    "clans": [
+      "Gangrel antitribu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101186,
+    "name": "Massassi's Honor",
+    "clans": [
+      "Osebo"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 101197,
+    "name": "Member of the Entourage",
+    "clans": [
+      "Daughter of Cacophony"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101206,
+    "name": "Mesu Bedshet",
+    "clans": [
+      "Ministry"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101232,
+    "name": "Mokolé Blood",
+    "clans": [
+      "Ministry"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101264,
+    "name": "Nar-Sheptha",
+    "clans": [
+      "Banu Haqim"
+    ],
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 101272,
+    "name": "Nephandus",
+    "clans": [
+      "Tremere antitribu"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101297,
+    "name": "Nosferatu Bestial",
+    "clans": [
+      "Nosferatu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101301,
+    "name": "Nosferatu Performance Art",
+    "clans": [
+      "Nosferatu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101316,
+    "name": "Off Kilter",
+    "clans": [
+      "Samedi"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101317,
+    "name": "Ohoyo Hopoksia (Bastet)",
+    "clans": [
+      "Ahrimane"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101319,
+    "name": "Olid Loa",
+    "clans": [
+      "Samedi"
+    ],
+    "types": [
+      "Combat"
+    ]
+  },
+  {
+    "id": 101327,
+    "name": "Oppugnant Night",
+    "clans": [
+      "Blood Brother"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101332,
+    "name": "Osebo Kholo",
+    "clans": [
+      "Osebo"
+    ],
+    "types": [
+      "Action Modifier",
+      "Reaction"
+    ]
+  },
+  {
+    "id": 101357,
+    "name": "Patagia: Flaps Allowing Limited Flight",
+    "clans": [
+      "Nosferatu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101371,
+    "name": "The Path of the Scorched Heart",
+    "clans": [
+      "True Brujah"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101375,
+    "name": "Patronage",
+    "clans": [
+      "Toreador antitribu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101396,
+    "name": "Petra Resonance",
+    "clans": [
+      "Malkavian"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101412,
+    "name": "Political Antagonist",
+    "clans": [
+      "Ventrue antitribu"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101418,
+    "name": "Political Struggle",
+    "clans": [
+      "Lasombra"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101419,
+    "name": "Ponticulus",
+    "clans": [
+      "Tremere"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101422,
+    "name": "The Portrait",
+    "clans": [
+      "Toreador"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101425,
+    "name": "Potio Martyrium",
+    "clans": [
+      "Tremere",
+      "Tremere antitribu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101484,
+    "name": "Priestess of Sekhmet",
+    "clans": [
+      "Ministry"
+    ],
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 101494,
+    "name": "Promise of 1528",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Action Modifier",
+      "Reaction"
+    ]
+  },
+  {
+    "id": 101503,
+    "name": "Provision of the Silsila",
+    "clans": [
+      "Banu Haqim"
+    ],
+    "types": [
+      "Action Modifier",
+      "Reaction"
+    ]
+  },
+  {
+    "id": 101538,
+    "name": "Raking Talons",
+    "clans": [
+      "Gargoyle"
+    ],
+    "types": [
+      "Combat"
+    ]
+  },
+  {
+    "id": 101554,
+    "name": "Raw Recruit",
+    "clans": [
+      "Gargoyle"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101556,
+    "name": "Razor Bat",
+    "clans": [
+      "Gargoyle"
+    ],
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 101561,
+    "name": "Reality Mirror",
+    "clans": [
+      "Malkavian antitribu"
+    ],
+    "types": [
+      "Combat"
+    ]
+  },
+  {
+    "id": 101568,
+    "name": "Recruiting Party",
+    "clans": [
+      "Ventrue antitribu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101571,
+    "name": "Recure of the Homeland",
+    "clans": [
+      "Tremere antitribu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101589,
+    "name": "Reindoctrination",
+    "clans": [
+      "Tremere",
+      "Tremere antitribu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101596,
+    "name": "Reliquary: Akunanse Remains",
+    "clans": [
+      "Akunanse"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101598,
+    "name": "Reliquary: Shango Remains",
+    "clans": [
+      "Banu Haqim"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101602,
+    "name": "Renegade Garou",
+    "clans": [
+      "Gangrel"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101634,
+    "name": "Riddle Phantastique",
+    "clans": [
+      "Kiasyd"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101635,
+    "name": "Righteous Aura",
+    "clans": [
+      "Salubri antitribu"
+    ],
+    "types": [
+      "Combat"
+    ]
+  },
+  {
+    "id": 101641,
+    "name": "Ritual Challenge",
+    "clans": [
+      "Gangrel"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101643,
+    "name": "Ritual Scalpel",
+    "clans": [
+      "Nagaraja"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101645,
+    "name": "Rock Cat",
+    "clans": [
+      "Gargoyle"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101658,
+    "name": "Ruins of Ceoris",
+    "clans": [
+      "Tremere antitribu"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101674,
+    "name": "Salt of Thoth",
+    "clans": [
+      "Tremere"
+    ],
+    "types": [
+      "Reaction"
+    ]
+  },
+  {
+    "id": 101677,
+    "name": "San Nicolás de los Servitas",
+    "clans": [
+      "Lasombra"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101687,
+    "name": "Scapelli, The Family \"Mechanic\"",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101690,
+    "name": "SchreckNET",
+    "clans": [
+      "Nosferatu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101732,
+    "name": "Shaal Fragment",
+    "clans": [
+      "Harbinger of Skulls"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101733,
+    "name": "Shackles of Enkidu",
+    "clans": [
+      "Gangrel"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101737,
+    "name": "Shadow Court Satyr",
+    "clans": [
+      "Gangrel antitribu"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101757,
+    "name": "Shatter the Gate",
+    "clans": [
+      "Baali"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101763,
+    "name": "Shell Break",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101777,
+    "name": "Sibyl's Tongue",
+    "clans": [
+      "Malkavian antitribu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101789,
+    "name": "Skaald",
+    "clans": [
+      "Gangrel"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101826,
+    "name": "Song of Pan",
+    "clans": [
+      "Kiasyd"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101833,
+    "name": "Soul of the Earth",
+    "clans": [
+      "Tremere",
+      "Tremere antitribu"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101845,
+    "name": "Spell of Life",
+    "clans": [
+      "Ministry"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101851,
+    "name": "Spiritual Guidance",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Combat"
+    ]
+  },
+  {
+    "id": 101853,
+    "name": "Spiritual Protector",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 101873,
+    "name": "Stone Dog",
+    "clans": [
+      "Gargoyle"
+    ],
+    "types": [
+      "Retainer"
+    ]
+  },
+  {
+    "id": 101892,
+    "name": "Succubus",
+    "clans": [
+      "Tremere antitribu"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101895,
+    "name": "Sudario Refraction",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101901,
+    "name": "Summon the Serpent",
+    "clans": [
+      "Ministry"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101910,
+    "name": "Survivalist",
+    "clans": [
+      "Brujah antitribu"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101919,
+    "name": "Sword of Judgment",
+    "clans": [
+      "Brujah antitribu"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101920,
+    "name": "Sword of Nuln",
+    "clans": [
+      "Tremere"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101922,
+    "name": "Sword of Troile",
+    "clans": [
+      "Brujah"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101932,
+    "name": "Talith",
+    "clans": [
+      "Ravnos"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 101937,
+    "name": "Tara, The Hollow One",
+    "clans": [
+      "Ravnos"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101961,
+    "name": "Terrorists",
+    "clans": [
+      "Banu Haqim"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 101967,
+    "name": "Their Master's Voice",
+    "clans": [
+      "Tremere",
+      "Tremere antitribu"
+    ],
+    "types": [
+      "Reaction"
+    ]
+  },
+  {
+    "id": 101977,
+    "name": "Threading the Path of Orpheus",
+    "clans": [
+      "Harbinger of Skulls"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 101979,
+    "name": "Three's a Crowd",
+    "clans": [
+      "Blood Brother"
+    ],
+    "types": [
+      "Combat"
+    ]
+  },
+  {
+    "id": 102003,
+    "name": "Tracker's Mark",
+    "clans": [
+      "Salubri antitribu"
+    ],
+    "types": [
+      "Combat"
+    ]
+  },
+  {
+    "id": 102025,
+    "name": "Triole's Revenge",
+    "clans": [
+      "Brujah"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 102047,
+    "name": "Tunnel Runner",
+    "clans": [
+      "Akunanse"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 102053,
+    "name": "Tye Cooper",
+    "clans": [
+      "Giovanni"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 102059,
+    "name": "Uncontrolled Impulse",
+    "clans": [
+      "Ishtarri"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 102069,
+    "name": "Undying Thirst",
+    "clans": [
+      "Baali"
+    ],
+    "types": [
+      "Reaction"
+    ]
+  },
+  {
+    "id": 102070,
+    "name": "Unexpected Coalition",
+    "clans": [
+      "Brujah antitribu"
+    ],
+    "types": [
+      "Action Modifier",
+      "Reaction"
+    ]
+  },
+  {
+    "id": 102093,
+    "name": "Vaticination",
+    "clans": [
+      "True Brujah"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 102099,
+    "name": "Veles' Hunt",
+    "clans": [
+      "Gangrel"
+    ],
+    "types": [
+      "Political Action"
+    ]
+  },
+  {
+    "id": 102101,
+    "name": "Vendetta",
+    "clans": [
+      "Brujah antitribu"
+    ],
+    "types": [
+      "Reaction"
+    ]
+  },
+  {
+    "id": 102103,
+    "name": "Veneficti",
+    "clans": [
+      "Baali"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 102125,
+    "name": "Visionquest",
+    "clans": [
+      "Ahrimane"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 102140,
+    "name": "Walk through Arcadia",
+    "clans": [
+      "Malkavian antitribu"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  },
+  {
+    "id": 102143,
+    "name": "Wanderer's Counsel",
+    "clans": [
+      "Akunanse"
+    ],
+    "types": [
+      "Action Modifier",
+      "Reaction"
+    ]
+  },
+  {
+    "id": 102165,
+    "name": "Web of Knives Recruit",
+    "clans": [
+      "Banu Haqim"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 102170,
+    "name": "Weirding Stone",
+    "clans": [
+      "Tzimisce"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 102174,
+    "name": "Werewolf Pack",
+    "clans": [
+      "Gangrel"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 102181,
+    "name": "The Wildebeest",
+    "clans": [
+      "Ahrimane"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 102187,
+    "name": "Wise Spider",
+    "clans": [
+      "Akunanse"
+    ],
+    "types": [
+      "Action"
+    ]
+  },
+  {
+    "id": 102203,
+    "name": "Zaire River Ferry",
+    "clans": [
+      "Lasombra"
+    ],
+    "types": [
+      "Equipment"
+    ]
+  },
+  {
+    "id": 102235,
+    "name": "Dark Web Procurer",
+    "clans": [
+      "Banu Haqim"
+    ],
+    "types": [
+      "Ally"
+    ]
+  },
+  {
+    "id": 102273,
+    "name": "Loup",
+    "clans": [
+      "Toreador"
+    ],
+    "types": [
+      "Action Modifier"
+    ]
+  }
+]

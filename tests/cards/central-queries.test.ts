@@ -82,6 +82,13 @@ describe("every registered handler answers the central queries", () => {
     expect(crypt.length).toBeGreaterThan(0);
   });
 
+  it("reports Conviction as its own printed type, without claiming the card's effects work", () => {
+    for (const name of ["React with Conviction", "Second Sight", "Strike with Conviction"]) {
+      expect(registry[name]?.costTypes?.(null), name).toEqual(["conviction"]);
+    }
+    expect(registry["Abjure"]?.costTypes?.(null)).not.toContain("conviction");
+  });
+
   it("gives the hand-rolled .44 Magnum its equipment type and one version", () => {
     const magnum = registry[".44 Magnum"]!;
     expect(magnum.costTypes?.(null, undefined)).toEqual(["equipment"]);

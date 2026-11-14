@@ -101,6 +101,23 @@ export interface CryptImport {
   disciplines: Record<string, DisciplineLevel>;
   sect: Sect | null;
   title: VampireTitle | null;
+  /** Explicit standalone printed exception to the crypt's usual uniqueness. */
+  nonUnique: boolean;
+  /** The vampire itself prints Sterile, not merely a reference to another minion. */
+  sterile: boolean;
+  /** The vampire itself prints Blood cursed. */
+  bloodCursed: boolean;
+  /** The crypt card itself prints Infernal. */
+  infernal: boolean;
+  /** Printed Black Hand and Seraph are independent traits, not sects or titles. */
+  blackHand: boolean;
+  seraph: boolean;
+  /** The crypt card itself prints Scarce. */
+  scarce: boolean;
+  /** Printed restrictions on using cards requiring particular Disciplines. */
+  cannotUseDisciplines: string[];
+  /** Standalone printed Flight trait, rather than an ability mentioning flight. */
+  flight: boolean;
   /** The city a prince/baron/archbishop holds their title in — "Camarilla
    *  Prince of MELBOURNE". Undefined for every other title, and it is the
    *  key a title contest turns on. docs/contested-design.md §6 */
@@ -117,6 +134,54 @@ export interface CryptImport {
    *  marks the vampire rather than letting a playtest silently assume it
    *  works. */
   hasUnimplementedAbility: boolean;
+}
+
+/** Match a standalone printed trait rather than references within abilities,
+ * such as "become a sterile Ahrimane" or "non-sterile vampire". */
+export function hasStandaloneCryptTrait(text: string, trait: "sterile" | "non-unique" | "flight" | "blood cursed" | "infernal" | "scarce"): boolean {
+  const suffix = trait === "flight" ? "\\s*\\[flight\\]" : "";
+  return new RegExp(`(?:^|[.:!?]\\s*)${trait}${suffix}\\s*(?:[.!?]|$)`, "i").test(text.trim());
+}
+
+/** Parse self-describing trait clauses, never mentions in another ability.
+ * Older cards can write the two traits together as "Black Hand Seraph". */
+export function printedBlackHandTraits(text: string): { blackHand: boolean; seraph: boolean } {
+  const unmerged = text.split(/\[MERGED\]/i, 1)[0]!;
+  const clauses = unmerged.replace(/^Advanced,\s*/i, "").split(/[.:!?]/).map((s) => s.trim());
+  const blackHand = clauses.some((s) => /^Black Hand(?:\s+Seraph)?$/i.test(s));
+  const seraph = clauses.some((s) => /^(?:Black Hand\s+)?Seraph$/i.test(s));
+  return { blackHand, seraph };
+}
+
+/** Read only the card's own unmerged restriction, never a restriction on a
+ * different minion or on opponents. The current crypt uses this sentence for
+ * Celerity. Name prefixes cover e.g. "Nu cannot use ...", not other subjects. */
+export function printedDisciplineUseBars(text: string, name: string): string[] {
+  const unmerged = text.split(/\[MERGED\]/i, 1)[0]!;
+  const ownName = name.replace(/\s*\(G\d+.*\)$/, "").toLowerCase();
+  const matches = unmerged.matchAll(/(?:^|[.:!?]\s*)([^.:!?]+?)\s+cannot\s+use\s+cards\s+requiring\s+celerity\s*\[cel\]\s*(?:[.!?]|$)/gi);
+  for (const match of matches) {
+    const subject = match[1]!.trim().toLowerCase();
+    if (subject === "he" || subject === "she" || subject === ownName ||
+        ownName.startsWith(`${subject} `) || ownName.startsWith(`${subject},`)) return ["cel"];
+  }
+  return [];
+}
+
+/** Extract only a personal title printed for this crypt card, not a bonus,
+ * a different vampire's title or the merged text of an advanced card. */
+export function personalTitleFromText(text: string, name: string): VampireTitle | null {
+  const unmerged = text.replace(/^Advanced,\s*/i, "").split(/\[MERGED\]/i, 1)[0]!;
+  const headerVotes = /^(?:Camarilla|Sabbat|Anarch|Independent|Laibon)\b[^.:]*\.\s*([123])\s+votes?\s*\(titled\)\s*[:.]/i.exec(unmerged);
+  const selfVotes = /^(?:Camarilla|Sabbat|Anarch|Independent|Laibon)\b[^.:]*:\s*([^.:\n]+?)\s+has\s+([123])\s+votes?\s*\(titled\)\s*[.:]/i.exec(unmerged);
+  const subject = selfVotes?.[1]?.trim().toLowerCase();
+  const ownName = name.replace(/\s*\(G\d+.*\)$/, "").toLowerCase();
+  const selfMatch = subject !== undefined && (ownName === subject || ownName.startsWith(`${subject} `) || ownName.startsWith(`${subject},`));
+  const votes = headerVotes?.[1] ?? (selfMatch ? selfVotes?.[2] : undefined);
+  if (votes === "1") return "personal1";
+  if (votes === "2") return "personal2";
+  if (votes === "3") return "personal3";
+  return null;
 }
 
 /**
@@ -181,6 +246,8 @@ export function importCryptCard(id: number): CryptImport {
     }
   }
 
+  if (title === null) title = personalTitleFromText(text, card.name);
+
   // Anything after the sect/title clause is a real ability.
   // Ability text beyond the sect/title line — AND no implementation for
   // it. Until the crypt waves this was simply "has ability text", because
@@ -198,6 +265,14 @@ export function importCryptCard(id: number): CryptImport {
     disciplines,
     sect,
     title,
+    nonUnique: hasStandaloneCryptTrait(card.cardText, "non-unique"),
+    sterile: hasStandaloneCryptTrait(card.cardText, "sterile"),
+    bloodCursed: hasStandaloneCryptTrait(card.cardText, "blood cursed"),
+    infernal: hasStandaloneCryptTrait(card.cardText.split(/\[MERGED\]/i, 1)[0]!, "infernal"),
+    ...printedBlackHandTraits(card.cardText),
+    scarce: hasStandaloneCryptTrait(card.cardText.split(/\[MERGED\]/i, 1)[0]!, "scarce"),
+    cannotUseDisciplines: printedDisciplineUseBars(card.cardText, card.name),
+    flight: hasStandaloneCryptTrait(card.cardText, "flight"),
     image: card.image,
     cardText: card.cardText,
     hasUnimplementedAbility,

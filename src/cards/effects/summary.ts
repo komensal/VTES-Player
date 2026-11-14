@@ -62,6 +62,7 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   actionDamageMinion: "damage",
   actionDrawThenDiscard: "board",
   eachUnlockedVampireGainsBlood: "bloodGain",
+  actionHunt: "bloodGain",
   otherMinionPaysBlood: "stealth",
   blockCost: "stealth",
   blockRestriction: "stealth",
@@ -88,6 +89,7 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   refPerSeatCards: "poolGain",
   // Tranche 3 wave 7 — the one-shot masters.
   gainPool: "poolGain",
+  liftBloodCurseDiablerieBar: "board",
   gainPoolThreshold: "poolGain",
   preyBurnsPoolIfRicher: "poolDrain",
   // Diablerie is a board swing the summary vocabulary has no word for, and

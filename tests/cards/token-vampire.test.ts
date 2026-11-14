@@ -108,7 +108,7 @@ describe("Waters of Duat (102159)", () => {
     expect(walkTo(wrongClan.engine, "play:Waters of Duat", 6)).toBe(false);
   });
 
-  it("a STERILE vampire cannot play it (p. 42), though nothing in the pool is sterile", () => {
+  it("a STERILE vampire cannot play it (p. 42)", () => {
     const ok = board();
     expect(walkTo(ok.engine, "play:Waters of Duat", 6)).toBe(true);
     const sterile = board({ sterile: true });

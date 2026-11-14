@@ -121,8 +121,9 @@ by the player who played it. So the sweep keys on
 `entry.controller ?? <holder>`.
 
 **What counts as unique:** `handler.isUnique` for a card in play; **every
-vampire** (p. 17's "all crypt cards"), except the two token vampires,
-which print "non-unique" in as many words and now carry
+vampire** (p. 17's "all crypt cards"), except vampires explicitly
+printed as non-unique, including token vampires and five crypt cards in
+this registry. The importer and token creation carry that exception as
 `MinionState.nonUnique`. An ally is an ordinary library card and is
 unique only if it says so — read off its own self-attached entry, which
 is where an ally's printed card lives.

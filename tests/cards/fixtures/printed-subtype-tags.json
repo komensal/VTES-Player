@@ -1,0 +1,1478 @@
+[
+  {
+    "id": 100014,
+    "name": "Abyssal Hunter",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "demon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100039,
+    "name": "Alia, God's Messenger",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "dhampir"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100042,
+    "name": "Amam the Devourer",
+    "type": [
+      "Ally"
+    ],
+    "add": [],
+    "remove": [
+      "mortal"
+    ]
+  },
+  {
+    "id": 100044,
+    "name": "Ambrosius, The Ferryman",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "wraith"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100045,
+    "name": "Ambulance",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "vehicle"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100051,
+    "name": "Ananasi Vampirephile",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "werewolf"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100080,
+    "name": "Arcane Appraiser",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100086,
+    "name": "Argent Baton",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100090,
+    "name": "Arms Dealer",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100103,
+    "name": "Asanbonsam Ghoul",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100133,
+    "name": "Banshee Ironwail",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100152,
+    "name": "Beretta 9mm",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "gun"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100160,
+    "name": "Bima",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100166,
+    "name": "Black Gloves",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100170,
+    "name": "Black Spiral Buddy",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "werewolf"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100176,
+    "name": "Blade of Enoch",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100233,
+    "name": "Bomb",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100254,
+    "name": "Brigitte Gebauer",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "wraith"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100267,
+    "name": "Bundi",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100276,
+    "name": "Caiaphas Smith",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100298,
+    "name": "Carlton Van Wyk",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100331,
+    "name": "Charigger, The Axe",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "wraith"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100335,
+    "name": "Charnas the Imp",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "demon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100427,
+    "name": "Corpse Balloon",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100429,
+    "name": "Corrupt Construction",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100434,
+    "name": "Courier",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100448,
+    "name": "The Crimson Sentinel",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100474,
+    "name": "The Crusader Sword",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100484,
+    "name": "D'habi Revenant",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100487,
+    "name": "Dagger",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100500,
+    "name": "Dauntain Black Magician",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "changeling"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100536,
+    "name": "Deviki Prasanta",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100579,
+    "name": "Draeven Softfoot",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "changeling"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100593,
+    "name": "Duma Rafiki",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "animal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100607,
+    "name": "Eccentric Billionaire",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100626,
+    "name": "Elephant Guardian",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "animal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100627,
+    "name": "Elixir of Distillation",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100634,
+    "name": "Emerald Legionnaire",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "wraith"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100661,
+    "name": "Escaped Mental Patient",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100745,
+    "name": "Flash Grenade",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100754,
+    "name": "Foldable Machine Gun",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "gun"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100810,
+    "name": "Garrote",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100818,
+    "name": "Ghoul Messenger",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100819,
+    "name": "Ghoul Retainer",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100821,
+    "name": "Ghouled Street Thug",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100822,
+    "name": "The Ghouls of Plaza Morería",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100823,
+    "name": "Gianna di Canneto",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "wraith"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100832,
+    "name": "Giulia Giovanni Abruzzina",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "wraith"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100833,
+    "name": "Giuseppe, Gravedigger",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100844,
+    "name": "Goth Band",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100858,
+    "name": "Grey Thorne",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100867,
+    "name": "Guardian Ghoul",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100890,
+    "name": "Harzomatuili",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "werewolf"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100911,
+    "name": "Hellhound",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100912,
+    "name": "Herald of Topheth",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "demon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100929,
+    "name": "High Top",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "werewolf"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100930,
+    "name": "Highway Haven: RV",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "vehicle"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100956,
+    "name": "Ilomba",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "animal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100964,
+    "name": "Improvised Flamethrower",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100966,
+    "name": "Impundulu",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "demon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100978,
+    "name": "Infernal Familiar",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "demon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100981,
+    "name": "Infernal Servitor",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "demon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 100983,
+    "name": "Informant",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101017,
+    "name": "Jackal",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "animal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101020,
+    "name": "Jar of Skin Eaters",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101025,
+    "name": "Joumlon's Axe",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101039,
+    "name": "Kerrie",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101065,
+    "name": "Kpist m/45",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "gun"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101080,
+    "name": "Learjet",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "vehicle"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101094,
+    "name": "Leonardo, Mortician",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101115,
+    "name": "Living Wood Staff",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101164,
+    "name": "Marijava Ghoul",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101165,
+    "name": "Marijava Thuggee",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101182,
+    "name": "Masquer",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "wraith"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101191,
+    "name": "Meat Hook",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101194,
+    "name": "Mehemet of the Ahl-i-Batin",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mage"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101197,
+    "name": "Member of the Entourage",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101231,
+    "name": "Moise Kasavubu",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101261,
+    "name": "Mylan Horseed",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "changeling"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101264,
+    "name": "Nar-Sheptha",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "wraith"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101270,
+    "name": "Neighborhood Watch Commander",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101287,
+    "name": "Nightstick",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101293,
+    "name": "Nocturn",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "demon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101317,
+    "name": "Ohoyo Hopoksia (Bastet)",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "werewolf"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101329,
+    "name": "Order of Hermes Cabal",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mage"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101333,
+    "name": "Ossian",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "werewolf"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101408,
+    "name": "Poker",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101409,
+    "name": "Polaris Coach",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "vehicle"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101412,
+    "name": "Political Antagonist",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101419,
+    "name": "Ponticulus",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "wraith"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101484,
+    "name": "Priestess of Sekhmet",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101519,
+    "name": "Puppeteer",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "wraith"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101556,
+    "name": "Razor Bat",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "gargoyle creature"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101563,
+    "name": "Reanimated Corpse",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "zombie"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101576,
+    "name": "Redcap Wilder",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "changeling"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101600,
+    "name": "Remnant of the Endless Storm",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "werewolf"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101602,
+    "name": "Renegade Garou",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "werewolf"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101645,
+    "name": "Rock Cat",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "gargoyle creature"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101655,
+    "name": "Rowan Ring",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101675,
+    "name": "Samuel Haight",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "werewolf"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101687,
+    "name": "Scapelli, The Family \"Mechanic\"",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101734,
+    "name": "Shade",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "demon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101737,
+    "name": "Shadow Court Satyr",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "changeling"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101750,
+    "name": "Shaman",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "mage"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101751,
+    "name": "Shambling Hordes",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "zombie"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101846,
+    "name": "Spike-Thrower",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101853,
+    "name": "Spiritual Protector",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "wraith"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101860,
+    "name": "Starshell Grenade Launcher",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101873,
+    "name": "Stone Dog",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "gargoyle creature"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101892,
+    "name": "Succubus",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "demon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101910,
+    "name": "Survivalist",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101914,
+    "name": "Swarm",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "animal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101919,
+    "name": "Sword of Judgment",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101920,
+    "name": "Sword of Nuln",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101922,
+    "name": "Sword of Troile",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101930,
+    "name": "Talaq, The Immortal",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mage"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101932,
+    "name": "Talith",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101937,
+    "name": "Tara, The Hollow One",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mage"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101961,
+    "name": "Terrorists",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 101985,
+    "name": "Tinglestripe",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 102047,
+    "name": "Tunnel Runner",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "werewolf"
+    ],
+    "remove": []
+  },
+  {
+    "id": 102103,
+    "name": "Veneficti",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mage"
+    ],
+    "remove": []
+  },
+  {
+    "id": 102128,
+    "name": "Vivienne Géroux",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "ghoul"
+    ],
+    "remove": []
+  },
+  {
+    "id": 102141,
+    "name": "Walks-With-Might",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "werewolf"
+    ],
+    "remove": []
+  },
+  {
+    "id": 102173,
+    "name": "Wendell Delburton",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 102174,
+    "name": "Werewolf Pack",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "werewolf"
+    ],
+    "remove": []
+  },
+  {
+    "id": 102191,
+    "name": "Wolf Companion",
+    "type": [
+      "Retainer"
+    ],
+    "add": [
+      "animal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 102192,
+    "name": "Wooden Stake",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon",
+      "melee"
+    ],
+    "remove": []
+  },
+  {
+    "id": 102235,
+    "name": "Dark Web Procurer",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 102238,
+    "name": "Enhanced Coagulant",
+    "type": [
+      "Equipment"
+    ],
+    "add": [
+      "weapon"
+    ],
+    "remove": []
+  },
+  {
+    "id": 102239,
+    "name": "Michael Harris, the Incinerator",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  },
+  {
+    "id": 102245,
+    "name": "Valerie Diaz, Antigen Commander",
+    "type": [
+      "Ally"
+    ],
+    "add": [
+      "mortal"
+    ],
+    "remove": []
+  }
+]

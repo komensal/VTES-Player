@@ -33,6 +33,9 @@ import {
   huntingRestricted,
   stealHuntTargets,
   libraryBlockToll,
+  minionHasTag,
+  cannotUseEquipmentEntry,
+  cannotBeEquipped,
   currentBleed,
   currentIntercept,
   currentStealth,
@@ -41,6 +44,9 @@ import {
   auraBlocksHunt,
   actionKeyOf,
   canRepeatAction,
+  canCommitDiablerie,
+  scarcePenalty,
+  influenceMovePoolBurn,
   heldHostage,
   playCostFor,
   untargetableBy,
@@ -58,6 +64,7 @@ import {
   vampireVotes,
 } from "./derived.ts";
 import { rngInt } from "./rng.ts";
+import { drawRedirectSources } from "./draw-redirect.ts";
 import type {
   CardActionParams,
   CardHandler,
@@ -224,6 +231,27 @@ const AIM_BURN_WEAPON = "aimBurnWeapon";
  *  over a title, where there is no card to ask at all.
  *  docs/contested-design.md §4 */
 const CONTEST = "contest";
+
+/** Catalog group and ADV suffixes distinguish printings, not vampire names. */
+function contestName(m: MinionState): string {
+  return m.kind === "vampire"
+    ? m.name.replace(/\s*\((?:g\s*\d+(?:\s+adv)?|adv)\)\s*$/i, "").trim()
+    : m.name;
+}
+
+function clanWhenControlled(m: MinionState): string | null {
+  if (!m.clanChanges) return m.clan;
+  // Temporary card effects overlay permanent changes even when the
+  // permanent change happened later; within a layer the latest wins.
+  const temporary = m.clanChanges.filter((change) => change.source !== undefined).at(-1);
+  return temporary ? temporary.clan : (m.clanChanges.filter((change) => change.source === undefined).at(-1)?.clan ?? null);
+}
+
+function removeClanChange(m: MinionState, source: CardInstanceId): void {
+  if (!m.clanChanges?.some((change) => change.source === source)) return;
+  m.clanChanges = m.clanChanges.filter((change) => change.source !== source);
+  m.clan = clanWhenControlled(m);
+}
 
 /** "<cardId>/<blood>/<pool>[,…]" — the payment split a play option carried
  *  (docs/cost-sources-design.md §4). */
@@ -428,7 +456,11 @@ export class VtesEngine implements EngineOps {
     // BURN THE INCOMING COPY of the unique card)" (p. 17). Stealing is
     // the only effect that can force it, so this is where it belongs —
     // the sweep in settle cannot tell which copy is the incoming one.
-    if (this.uniqueMinion(m) && getSeat(this.state, to).minions.some((x) => x.name === m.name)) {
+    const taker = getSeat(this.state, to);
+    if (this.uniqueMinion(m) && (
+      taker.minions.some((x) => this.uniqueMinion(x) && contestName(x) === contestName(m)) ||
+      (taker.contested ?? []).some((c) => c.minion && this.uniqueMinion(c.minion) && contestName(c.minion) === contestName(m))
+    )) {
       this.burnMinion(minionId);
       return;
     }
@@ -523,18 +555,9 @@ export class VtesEngine implements EngineOps {
   }
 
   private reconcileHandSize(seatId: SeatId): void {
-    const seat = getSeat(this.state, seatId);
-    while (seat.hand.length < this.handSizeOf(seatId) && seat.library.length > 0) {
-      // STOP when the draw did not actually happen. A draw can be
-      // redirected to a store (Black Market Cache, Shilmulo Tarot), which
-      // asks a question instead of drawing — and this loop's condition is
-      // unchanged by asking, so it span forever. Worse, inside action
-      // resolution `raiseChoice` only queues, so it emitted no event and
-      // pushed no frame: an invisible infinite loop that exhausted the
-      // heap. The queued question draws when answered, and the next event
-      // brings the hand back here.
-      if (!this.drawToReplace(seatId, "extra")) return;
-    }
+    // A hand-size increase is another refill, including its suspended
+    // continuation if a store redirects the first or a later draw.
+    this.drawUpToHandSize(seatId);
   }
 
   // -- the mutation channel -------------------------------------------------
@@ -702,6 +725,11 @@ export class VtesEngine implements EngineOps {
       case "PoolGained":
         getSeat(this.state, ev.seat).pool += ev.amount;
         break;
+      case "BloodCurseDiablerieBarLifted": {
+        const clans = (this.state.bloodCurseDiablerieExceptions ??= []);
+        if (!clans.includes(ev.clan)) clans.push(ev.clan);
+        break;
+      }
       case "EdgeTaken":
         this.state.edge = ev.seat;
         break;
@@ -730,6 +758,25 @@ export class VtesEngine implements EngineOps {
         if (!gained) break;
         gained.disciplines[ev.discipline] =
           gained.disciplines[ev.discipline] === undefined ? "basic" : "superior";
+        break;
+      }
+      case "VampireTransformed": {
+        const vampire = findMinion(this.state, ev.minion);
+        if (vampire?.kind === "vampire") {
+          (vampire.clanChanges ??= [{ clan: vampire.clan }]).push({ clan: ev.clan });
+          vampire.clan = clanWhenControlled(vampire);
+          vampire.sterile = ev.sterile;
+        }
+        break;
+      }
+      case "ClanChanged": {
+        const vampire = findMinion(this.state, ev.minion);
+        if (vampire?.kind === "vampire") {
+          (vampire.clanChanges ??= [{ clan: vampire.clan }]).push({ clan: ev.clan, source: ev.source });
+          vampire.clan = ev.clan;
+          const entry = vampire.attached.find((p) => p.card.id === ev.source);
+          if (entry) entry.chosen = ev.clan;
+        }
         break;
       }
       case "DiablerieCommitted": {
@@ -825,6 +872,7 @@ export class VtesEngine implements EngineOps {
         entry.card.blood = ev.blood; // excess over capacity already drained
         entry.card.locked = false; // enters play face up, unlocked (p. 36)
         entry.card.owner ??= ev.seat; // p. 16: ownership, fixed for the game
+        entry.card.clan = clanWhenControlled(entry.card);
         seat.minions.push(entry.card);
         break;
       }
@@ -1027,6 +1075,7 @@ export class VtesEngine implements EngineOps {
             const ai = m.attached.findIndex((p) => p.card.id === ev.cardId);
             if (ai >= 0) {
               m.attached.splice(ai, 1);
+              removeClanChange(m, ev.cardId);
               removed = true;
               break;
             }
@@ -1060,6 +1109,7 @@ export class VtesEngine implements EngineOps {
           seat.permanents = seat.permanents.filter((p) => p.card.id !== ev.cardId);
           for (const m of seat.minions) {
             m.attached = m.attached.filter((p) => p.card.id !== ev.cardId);
+            removeClanChange(m, ev.cardId);
           }
         }
         break;
@@ -1164,7 +1214,7 @@ export class VtesEngine implements EngineOps {
         // emit site supplies it. docs/ash-heap-design.md §3
         if (ev.seat !== undefined) {
           const s = getSeat(this.state, ev.seat);
-          (s.ashHeap ??= []).push({ id: ev.cardId, name: ev.name });
+          (s.ashHeap ??= []).push({ id: ev.cardId, name: ev.name, ...(ev.crypt ? { crypt: true as const } : {}), ...(ev.capacity !== undefined ? { capacity: ev.capacity } : {}) });
         }
         break;
       }
@@ -1221,14 +1271,22 @@ export class VtesEngine implements EngineOps {
         for (const seat of this.state.seats) {
           for (const m of seat.minions) {
             const idx = m.attached.findIndex((p) => p.card.id === ev.cardId);
-            if (idx >= 0) moved = m.attached.splice(idx, 1)[0] ?? null;
+            if (idx >= 0) {
+              moved = m.attached.splice(idx, 1)[0] ?? null;
+              removeClanChange(m, ev.cardId);
+            }
           }
           const si = seat.permanents.findIndex((p) => p.card.id === ev.cardId);
           if (si >= 0) moved = seat.permanents.splice(si, 1)[0] ?? null;
         }
         if (!moved) throw new Error(`no card to move: ${ev.cardId}`);
         moved.controller = ev.controller;
-        getMinion(this.state, ev.to).attached.push(moved);
+        const bearer = getMinion(this.state, ev.to);
+        bearer.attached.push(moved);
+        if (moved.card.name === "Clan Impersonation" && moved.chosen && bearer.kind === "vampire") {
+          (bearer.clanChanges ??= [{ clan: bearer.clan }]).push({ clan: moved.chosen, source: moved.card.id });
+          bearer.clan = moved.chosen;
+        }
         break;
       }
       case "CountersChanged": {
@@ -1261,7 +1319,14 @@ export class VtesEngine implements EngineOps {
         const i = from.attached.findIndex((p) => p.card.id === ev.cardId);
         if (i < 0) break;
         const [entry] = from.attached.splice(i, 1);
-        if (entry) to.attached.push(entry);
+        if (entry) {
+          removeClanChange(from, entry.card.id);
+          to.attached.push(entry);
+          if (entry.card.name === "Clan Impersonation" && entry.chosen && to.kind === "vampire") {
+            (to.clanChanges ??= [{ clan: to.clan }]).push({ clan: entry.chosen, source: entry.card.id });
+            to.clan = entry.chosen;
+          }
+        }
         break;
       }
       case "AllyEnteredPlay": {
@@ -1439,6 +1504,9 @@ export class VtesEngine implements EngineOps {
         const [m] = seat.minions.splice(idx, 1);
         const home = getSeat(this.state, m!.owner ?? ev.seat);
         m!.controller = home.id;
+        // Cards stacked on the banished vampire are out of play until it
+        // returns; retain their changes for re-entry but suppress them here.
+        if (m!.clanChanges) m!.clan = m!.clanChanges.filter((c) => c.source === undefined).at(-1)?.clan ?? null;
         home.uncontrolled.push({ card: m!, counters: m!.blood });
         break;
       }
@@ -1625,6 +1693,16 @@ export class VtesEngine implements EngineOps {
           this.resolveAction(top, false);
           continue;
         }
+        if (top.step === "afterResolution" && top.awaitingBloodHunt) {
+          // The independent blood-hunt referendum has finished; only now
+          // may cards such as Freak Drive use the action's aftermath.
+          delete top.awaitingBloodHunt;
+          const entered = top.bloodHuntResolutionEntered;
+          delete top.bloodHuntResolutionEntered;
+          if (entered !== undefined) this.resolveAction(top, true, entered);
+          else this.openActionAfterResolution(top, top.resolvedSuccess === true, true);
+          continue;
+        }
         if (top.step === "afterResolution" && cycleQuiescent(top.cycle)) {
           // The post-resolution impulse is over. THIS is where the window
           // closes — `resolveActionInner` only opens it — so anything that
@@ -1757,7 +1835,7 @@ export class VtesEngine implements EngineOps {
     };
     for (const s of this.state.seats) {
       if (s.ousted) continue;
-      for (const c of s.contested ?? []) add(c.card.name, { seat: s.id, held: true });
+      for (const c of s.contested ?? []) add(c.minion ? contestName(c.minion) : c.card.name, { seat: s.id, held: true });
       for (const p of s.permanents) {
         if (this.registry[p.card.name]?.isUnique === true) {
           // "CONTROL of the card is being contested" (p. 17), so the
@@ -1768,7 +1846,7 @@ export class VtesEngine implements EngineOps {
         }
       }
       for (const m of s.minions) {
-        if (this.uniqueMinion(m)) add(m.name, { seat: m.controller, held: false, minion: m });
+        if (this.uniqueMinion(m)) add(contestName(m), { seat: m.controller, held: false, minion: m });
         for (const p of m.attached) {
           // The minion's own card is the minion, already counted; count
           // it twice and every unique ally would contest with itself.
@@ -1785,7 +1863,7 @@ export class VtesEngine implements EngineOps {
       }
     }
 
-    for (const [name, list] of claims) {
+    for (const list of claims.values()) {
       // "If MORE THAN ONE unique card with the same name is brought into
       // play" — by more than one Methuselah. A seat cannot contest with
       // itself (p. 17's deck-construction note), and the one way that can
@@ -1812,7 +1890,8 @@ export class VtesEngine implements EngineOps {
           type: "ContestBegan",
           seat: c.seat,
           cardId: c.minion ? c.minion.id : c.entry!.card.id,
-          name,
+          // Retain the exact catalog name for the held physical card.
+          name: c.minion?.name ?? c.entry!.card.name,
           ...(c.minion ? { minion: c.minion.id } : {}),
           ...(c.bearer !== undefined ? { bearer: c.bearer } : {}),
           ...(heldTitle !== undefined ? { title: heldTitle } : {}),
@@ -1854,16 +1933,17 @@ export class VtesEngine implements EngineOps {
   }
 
   /** Every seat holding a copy of this contested name, in play or held. */
-  private contestClaimants(name: string): Set<SeatId> {
+  private contestClaimants(held: ContestedCard): Set<SeatId> {
+    const name = held.minion ? contestName(held.minion) : held.card.name;
     const out = new Set<SeatId>();
     for (const s of this.state.seats) {
       if (s.ousted) continue;
-      if ((s.contested ?? []).some((c) => c.card.name === name)) out.add(s.id);
+      if ((s.contested ?? []).some((c) => (c.minion ? contestName(c.minion) : c.card.name) === name)) out.add(s.id);
       for (const p of s.permanents) {
         if (p.card.name === name) out.add(p.controller ?? s.id);
       }
       for (const m of s.minions) {
-        if (m.name === name && this.uniqueMinion(m)) out.add(m.controller);
+        if (contestName(m) === name && this.uniqueMinion(m)) out.add(m.controller);
         for (const p of m.attached) {
           if (p.card.id !== m.id && p.card.name === name) out.add(p.controller ?? m.controller);
         }
@@ -1890,7 +1970,7 @@ export class VtesEngine implements EngineOps {
     //    then the card is unlocked and turned face up during your NEXT
     //    unlock phase, ending the contest."
     for (const held of [...(seat.contested ?? [])]) {
-      if (this.contestClaimants(held.card.name).size > 1) continue;
+      if (this.contestClaimants(held).size > 1) continue;
       this.emit({
         type: "ContestWon",
         seat: seat.id,
@@ -1959,6 +2039,12 @@ export class VtesEngine implements EngineOps {
 
   private burnDepleted(): boolean {
     for (const seat of this.state.seats) {
+      for (const p of seat.permanents) {
+        if (p.statics.burnWhenCountersEmpty && (p.counters ?? 0) <= 0) {
+          this.burnPermanent(p.card.id);
+          return true;
+        }
+      }
       for (const m of seat.minions) {
         if (m.kind === "ally" && m.blood <= 0) {
           this.burnMinion(m.id);
@@ -1967,6 +2053,10 @@ export class VtesEngine implements EngineOps {
         for (const p of m.attached) {
           if (p.life !== undefined && p.life <= 0) {
             this.emit({ type: "PermanentBurned", cardId: p.card.id, name: p.card.name });
+            return true;
+          }
+          if (p.statics.burnWhenCountersEmpty && (p.counters ?? 0) <= 0) {
+            this.burnPermanent(p.card.id);
             return true;
           }
         }
@@ -2145,6 +2235,9 @@ export class VtesEngine implements EngineOps {
   }
 
   commitDiablerie(diablerist: MinionId, victim: MinionId): void {
+    // Recheck at commitment: a restriction can change after announcement.
+    const d = findMinion(this.state, diablerist);
+    if (!d || !canCommitDiablerie(this.state, d)) return;
     // p. 34 — treated as a single unit; no effect interrupts.
     const v = getMinion(this.state, victim);
     // 1. All the victim's blood moves to the diablerist (excess drains).
@@ -2202,6 +2295,8 @@ export class VtesEngine implements EngineOps {
   }
 
   private startDiablerieWithInterrupt(diablerist: MinionId, victim: MinionId): void {
+    const actor = findMinion(this.state, diablerist);
+    if (!actor || !canCommitDiablerie(this.state, actor)) return;
     const victimMinion = findMinion(this.state, victim);
     if (!victimMinion) {
       this.commitDiablerie(diablerist, victim);
@@ -2239,6 +2334,8 @@ export class VtesEngine implements EngineOps {
 
   private resolveDiablerieInterrupt(frame: import("./state.ts").DiablerieInterruptFrame): void {
     const { diablerist, victim, cancelBurn, burnBoth } = frame;
+    const actor = findMinion(this.state, diablerist);
+    if (!actor || !canCommitDiablerie(this.state, actor)) return;
     if (cancelBurn !== undefined) {
       // "[ani] The diablerie is canceled and the diablerist burns 1 blood."
       const d = findMinion(this.state, diablerist);
@@ -2283,13 +2380,15 @@ export class VtesEngine implements EngineOps {
    * (docs/choice-frames-design.md §3), by which time the victim, and its
    * equipment, are already burned.
    *
-   * The one thing that is NOT taken is equipment that would give its new
-   * controller a second copy of a unique they already control — that is
-   * the engine's own-duplicate rule, and it burns with the victim.
+   * Equipment the diablerist cannot possess, or that would give its new
+   * controller a second copy of a unique they already control, is left to
+   * burn with the victim.
    */
   private takeDiablerieEquipment(diablerist: MinionId, victim: MinionState): void {
     const taker = findMinion(this.state, diablerist);
-    if (!taker) return;
+    // Taking equipment is optional. If the diablerist cannot have it,
+    // leave it on the victim to burn normally with the victim.
+    if (!taker || cannotBeEquipped(taker, "equipment")) return;
     const held = new Set(
       getSeat(this.state, taker.controller)
         .minions.flatMap((m) => m.attached)
@@ -2425,6 +2524,7 @@ export class VtesEngine implements EngineOps {
           // arrives. docs/stun-design.md §2
           const stunCounters = m.counters?.["stun"] ?? 0;
           const suppressed =
+            m.infernal === true ||
             stunCounters > 0 ||
             m.skipNextUnlock === true ||
             unlockSuppressed(this.state, m.id);
@@ -5027,7 +5127,7 @@ export class VtesEngine implements EngineOps {
         // path below is not reached today — but p. 24 gives the
         // opportunity to a blocking VAMPIRE, and a gone one is not that.
         const blocker = findMinion(this.state, ba.blocker);
-        if (blocker?.kind === "vampire") {
+        if (blocker && canCommitDiablerie(this.state, blocker)) {
           this.state.frames.push({
             kind: "diablerieOffer",
             diablerist: ba.blocker,
@@ -5131,8 +5231,12 @@ export class VtesEngine implements EngineOps {
     // granted once, persisting across rounds until spent.
     const combatPresses = (minionId: MinionId): number => {
       let n = 0;
-      for (const p of getMinion(this.state, minionId).attached) {
+      const other = getMinion(this.state, minionId === acting ? opposing : acting);
+      const bearer = getMinion(this.state, minionId);
+      for (const p of bearer.attached) {
+        if (cannotUseEquipmentEntry(bearer, p, this.registry[p.card.name]?.isEquipment === true)) continue;
         n += p.statics.pressPerCombat ?? 0;
+        if (p.statics.pressPerCombatAgainstTag && minionHasTag(other, p.statics.pressPerCombatAgainstTag)) n++;
       }
       // "Each CHOSEN minion gets an optional press each combat" (Bloodlust)
       // — a seat-level card, so it is not among the minion's attachments.
@@ -5147,7 +5251,9 @@ export class VtesEngine implements EngineOps {
     // combat, each combat" (Righteous Blade, weapon-riders §4).
     const continuePresses = (minionId: MinionId): number => {
       let n = 0;
-      for (const p of getMinion(this.state, minionId).attached) {
+      const bearer = getMinion(this.state, minionId);
+      for (const p of bearer.attached) {
+        if (cannotUseEquipmentEntry(bearer, p, this.registry[p.card.name]?.isEquipment === true)) continue;
         n += p.statics.continuePressPerCombat ?? 0;
       }
       return n;
@@ -5156,7 +5262,9 @@ export class VtesEngine implements EngineOps {
     // usable to END combat" (Qetu, docs/mummies-design.md §1).
     const endPresses = (minionId: MinionId): number => {
       let n = 0;
-      for (const p of getMinion(this.state, minionId).attached) {
+      const bearer = getMinion(this.state, minionId);
+      for (const p of bearer.attached) {
+        if (cannotUseEquipmentEntry(bearer, p, this.registry[p.card.name]?.isEquipment === true)) continue;
         n += p.statics.endPressPerCombat ?? 0;
       }
       return n;
@@ -5165,7 +5273,9 @@ export class VtesEngine implements EngineOps {
     // each combat" (Biothaumaturgic Experiment superior).
     const combatManeuvers = (minionId: MinionId): number => {
       let n = 0;
-      for (const p of getMinion(this.state, minionId).attached) {
+      const bearer = getMinion(this.state, minionId);
+      for (const p of bearer.attached) {
+        if (cannotUseEquipmentEntry(bearer, p, this.registry[p.card.name]?.isEquipment === true)) continue;
         n += p.statics.maneuverPerCombat ?? 0;
       }
       return n;
@@ -5463,18 +5573,6 @@ export class VtesEngine implements EngineOps {
       // Found by the fuzz on seed 1 the moment a card that burns allies
       // outside combat entered the deck; the gap predates it.
       if (!findMinion(this.state, source) || !findMinion(this.state, victim)) return;
-      // "Steal blood" strikes move blood before damage (p. 33) — not
-      // damage, so not dodged or prevented; ranged.
-      if (strike.stealBlood > 0) {
-        if (cf.range === "long" && !strike.ranged) return;
-        const v = getMinion(this.state, victim);
-        const taken = Math.min(v.blood, strike.stealBlood);
-        if (taken > 0) {
-          this.emit({ type: "BloodBurned", minion: victim, amount: taken });
-          this.emit({ type: "BloodGained", minion: source, amount: taken });
-        }
-        return;
-      }
       // A dodge "cancels the effects of the opposing strike on this
       // minion" (p. 33) — damage and these non-damage strike effects
       // alike, UNLESS the strike says otherwise (Dust Up: "this strike
@@ -5492,6 +5590,19 @@ export class VtesEngine implements EngineOps {
         // docs/round-sequencing-design.md §3
         (cf.strikesUndodgeableRound?.[from] ?? false);
       if (victimStrike?.dodge && !strike.undodgeable && !strikerUndodgeable) return;
+      // A steal is a strike effect, so it CAN be dodged, but it is not
+      // damage and cannot be prevented as damage. It resolves before the
+      // mend step, and only reaches long range if the strike is ranged.
+      if (strike.stealBlood > 0) {
+        if (cf.range === "long" && !strike.ranged) return;
+        const v = getMinion(this.state, victim);
+        const taken = Math.min(v.blood, strike.stealBlood);
+        if (taken > 0) {
+          this.emit({ type: "BloodBurned", minion: victim, amount: taken });
+          this.emit({ type: "BloodGained", minion: source, amount: taken });
+        }
+        return;
+      }
       // "Strike: put this card on the opposing minion with N counters"
       // (Touch of Oblivion) — close range only, and not damage, so
       // prevention has nothing to bite on.
@@ -5553,7 +5664,11 @@ export class VtesEngine implements EngineOps {
       if (strike.stealEquipment) {
         const v = findMinion(this.state, victim);
         const eq = v?.attached.find((p) => p.card.id === strike.stealEquipment);
-        if (eq && findMinion(this.state, source)) {
+        const taker = findMinion(this.state, source);
+        // A restriction can arise after choosing a strike (e.g. an earlier
+        // first strike). Recheck at resolution rather than relying on the
+        // play option's eligibility alone.
+        if (eq && taker && !cannotBeEquipped(taker, "equipment")) {
           this.emit({
             type: "EquipmentMoved",
             cardId: eq.card.id,
@@ -6817,18 +6932,67 @@ export class VtesEngine implements EngineOps {
     for (let i = 0; i < count; i++) this.drawToReplace(seatId, "extra");
   }
 
+  /** A counted sequence whose follow-up depends on how many cards were
+   * actually drawn (Heart of Nizchetus). State lives in the redirect choice,
+   * not a closure, so an in-progress sequence survives serialization. */
+  drawCardsThenChoice(args: {
+    seat: SeatId;
+    count: number;
+    cardName: string;
+    cardId: CardInstanceId;
+    key: string;
+  }): void {
+    this.continueCountedDraw(args, args.count, 0);
+  }
+
+  private continueCountedDraw(
+    after: { seat: SeatId; cardName: string; cardId: CardInstanceId; key: string },
+    remaining: number,
+    drawn: number,
+  ): void {
+    const seat = getSeat(this.state, after.seat);
+    while (remaining > 0) {
+      const before = seat.hand.length;
+      const continuation = {
+        countedRemaining: String(remaining - 1),
+        countedDrawn: String(drawn),
+        countedCardName: after.cardName,
+        countedCardId: after.cardId,
+        countedChoiceKey: after.key,
+      };
+      if (!this.drawToReplace(after.seat, "extra", false, continuation)) return;
+      if (seat.hand.length <= before) break;
+      drawn++;
+      remaining--;
+    }
+    if (drawn > 0) {
+      this.raiseChoice({
+        seat: after.seat,
+        cardName: after.cardName,
+        cardId: after.cardId,
+        key: after.key,
+        params: { left: String(drawn) },
+      });
+    }
+  }
+
   /** "…and draw a new one" / "…then draws back up to his or her hand size"
-   *  (Deal with the Devil, Lupine Assault) — refill to the size the seat
-   *  currently has, which is `handSizeOf` and so honours every temporary
-   *  grant in force. An empty library simply stops.
-   *  docs/hand-churn-design.md §2 */
+   *  (Deal with the Devil, Lupine Assault). A redirected draw suspends this
+   *  refill in the choice frame, so it survives save/load and resumes only
+   *  after the player has actually drawn. Re-read hand size after each draw. */
   drawUpToHandSize(seatId: SeatId): void {
+    // Deal with the Devil requests a refill in its effect and again after
+    // resolution. If the first is awaiting a draw-source choice, the second
+    // is not a new draw: it is the same obligation to reach hand size.
+    if (this.state.frames.some((f) => f.kind === "choice" && f.seat === seatId && f.params["resumeDrawUp"] === "1") ||
+        this.deferredChoices.some((f) => f.seat === seatId && f.params?.["resumeDrawUp"] === "1")) return;
     const seat = getSeat(this.state, seatId);
-    // Bounded by the hand size rather than by a count: the draw itself can
-    // change what the hand holds (a redirect), so the loop re-reads.
-    for (let i = 0; i < 20; i++) {
+    for (;;) {
       if (seat.hand.length >= handSizeOf(this.state, seatId)) return;
-      if (!this.drawToReplace(seatId, "extra")) return;
+      const before = seat.hand.length;
+      if (!this.drawToReplace(seatId, "extra", true)) return;
+      // drawFromLibrary does nothing on an empty library.
+      if (seat.hand.length === before) return;
     }
   }
 
@@ -7211,8 +7375,17 @@ export class VtesEngine implements EngineOps {
    * the MOVE, not of the phase, and a card doing it by hand would have
    * either of them wrong. docs/uncontrolled-graduation-design.md §2
    */
-  moveUncontrolledToReady(seatId: SeatId, minion: MinionId): void {
+  moveUncontrolledToReady(seatId: SeatId, minion: MinionId, duringInfluenceEnd = false): void {
     const entry = findUncontrolled(this.state, seatId, minion);
+    const tf = this.state.frames[0];
+    // Tomb's end-of-influence decision is resolved on a choice frame after
+    // the turn frame has already advanced to discard.
+    const duringInfluence = tf?.kind === "turn" && tf.seat === seatId &&
+      (tf.phase === "influence" || duringInfluenceEnd);
+    // Scarce is assessed as the vampire enters play, when its stacked
+    // Clan Impersonation is active again, not while it is face down.
+    const arriving = { ...entry.card, clan: clanWhenControlled(entry.card) };
+    const penalty = duringInfluence ? scarcePenalty(this.state, seatId, arriving) : 0;
     // "When any Methuselah moves a vampire from uncontrolled to
     // controlled, he or she burns 1 ADDITIONAL POOL" (Masquerade
     // Enforcement).
@@ -7225,6 +7398,10 @@ export class VtesEngine implements EngineOps {
       // Counters become blood; the excess drains immediately (p. 36).
       blood: Math.min(entry.counters, capacityOf(entry.card)),
     });
+    // Scarce is a consequence of the move, not a prerequisite or a cost.
+    // Only counters still available can be burned if the penalty is lethal.
+    const burn = Math.min(penalty, Math.max(0, getSeat(this.state, seatId).pool));
+    if (burn > 0) this.emit({ type: "PoolBurned", seat: seatId, amount: burn });
     this.notifyUncontrolledLeft(minion);
   }
 
@@ -9967,15 +10144,15 @@ export class VtesEngine implements EngineOps {
     af.huntBonusBlood = [...(af.huntBonusBlood ?? []), { minion, amount }];
   }
 
-  private resolveAction(af: ActionFrame, success: boolean): void {
+  private resolveAction(af: ActionFrame, success: boolean, resumeEntered?: boolean): void {
     this.deferChoices = true;
     try {
-      this.resolveActionInner(af, success);
+      this.resolveActionInner(af, success, resumeEntered);
       // The offers registered above. Raised here, they are QUEUED (the
       // action is resolving) and flushed the instant it is over, which is
       // exactly "after action resolution" — no new window, and no change
       // to the after-resolution probe, which only sees cards.
-      for (const u of af.afterResolutionUnlocks ?? []) {
+      for (const u of af.awaitingBloodHunt ? [] : af.afterResolutionUnlocks ?? []) {
         if (u.ifSuccessful && !success) continue;
         const payer = findMinion(this.state, u.payer);
         const target = findMinion(this.state, u.target);
@@ -10236,8 +10413,15 @@ export class VtesEngine implements EngineOps {
     return entered;
   }
 
-  private resolveActionInner(af: ActionFrame, success: boolean): void {
-    let entered = success ? this.applySuccessEffects(af) : false;
+  private resolveActionInner(af: ActionFrame, success: boolean, resumeEntered?: boolean): void {
+    const enteredAtSuccess = resumeEntered ?? (success ? this.applySuccessEffects(af) : false);
+    // Abactor's blood hunt interrupts the action as soon as its hunt has
+    // succeeded, before after-resolution damage, effects, and impulses.
+    if (resumeEntered === undefined && success && this.interruptForActionBloodHunt(af)) {
+      af.bloodHuntResolutionEntered = enteredAtSuccess;
+      return;
+    }
+    let entered = enteredAtSuccess;
     // "They burn 1 blood before action resolution" unless they blocked
     // (Forced Awakening) — applies whether the action succeeded or not.
     // "…become locked BEFORE ACTION RESOLUTION" (Faceless Night). p. 48:
@@ -10357,7 +10541,21 @@ export class VtesEngine implements EngineOps {
     // can actually use it — a recorded deviation, the same one already
     // taken for combat.damageResolution (docs/after-resolution-design.md §3).
     af.resolvedSuccess = success;
-    if (af.step !== "afterResolution") {
+    this.openActionAfterResolution(af, success, resumeEntered !== undefined);
+  }
+
+  private interruptForActionBloodHunt(af: ActionFrame): boolean {
+    const actor = findMinion(this.state, af.acting);
+    if (!af.card || !this.handler(af.card.instance.name).bloodHuntAfterSuccess || !af.huntSucceeded || !actor ||
+        actor.attached.some((p) => p.statics.noBloodHunt)) return false;
+    af.step = "afterResolution";
+    af.awaitingBloodHunt = true;
+    this.pushBloodHunt(actor.id);
+    return true;
+  }
+
+  private openActionAfterResolution(af: ActionFrame, success: boolean, resumeAfterBloodHunt = false): void {
+    if (af.step !== "afterResolution" || resumeAfterBloodHunt) {
       // The step has to be set BEFORE probing: a card's own usable rule
       // asserts it is in this window, so asking first would always answer
       // "nobody can play anything". Set it, ask, and put it back if the
@@ -10396,6 +10594,7 @@ export class VtesEngine implements EngineOps {
     this.applySuccessEffects(af);
     // Cards keyed on "after a SUCCESSFUL action" read this.
     af.resolvedSuccess = true;
+    if (this.interruptForActionBloodHunt(af)) return;
     this.finishAction(af, true);
   }
 
@@ -10881,7 +11080,23 @@ export class VtesEngine implements EngineOps {
   private unlockWindowOptions(seat: SeatId): LegalOption[] {
     const out = this.abilityOptionsFor(seat, "turn.unlock");
     const tf = this.state.frames[0];
-    if (!tf || tf.kind !== "turn" || (tf.burnOptionUsed ?? []).includes(seat)) return out;
+    if (!tf || tf.kind !== "turn") return out;
+    if (tf.phase === "unlock" && tf.seat === seat && !tf.unlockAbilitiesDone) {
+      const controller = getSeat(this.state, seat);
+      for (const m of controller.minions) {
+        const surcharge = this.unlockSurchargeFor(m);
+        if (!m.infernal || !m.locked || (tf.infernalUnlockUsed ?? []).includes(m.id) ||
+            controller.pool < 1 || m.blood < surcharge) continue;
+        out.push({
+          id: `infernal:unlock:${m.id}`,
+          kind: "useAbility",
+          source: m.id,
+          params: { infernalUnlock: m.id },
+          label: `${m.name}: burn 1 pool${surcharge ? ` and ${surcharge} blood` : ""} to unlock (Infernal)`,
+        });
+      }
+    }
+    if ((tf.burnOptionUsed ?? []).includes(seat)) return out;
     for (const card of getSeat(this.state, seat).hand) {
       if (!this.registry[card.name]?.burnOptionDiscardable?.(this.state, seat)) continue;
       out.push({
@@ -10949,6 +11164,7 @@ export class VtesEngine implements EngineOps {
           // A card ON the barred minion that required the Discipline is a
           // card they would be using (Powder of Rigidity, §4).
           if (this.bannedInCombat(m.id, p.card.name)) continue;
+          if (cannotUseEquipmentEntry(m, p, h?.isEquipment === true)) continue;
           if (h?.abilityOptions) {
             options.push(
               ...h.abilityOptions(p, { seat: p.controller ?? s.id, minion: m.id }, ctx),
@@ -10987,6 +11203,7 @@ export class VtesEngine implements EngineOps {
       for (const m of s.minions) {
         for (const p of m.attached) {
           const h = this.registry[p.card.name];
+          if (cannotUseEquipmentEntry(m, p, h?.isEquipment === true)) continue;
           if (h?.actionOptions) {
             options.push(...h.actionOptions(p, { seat: s.id, minion: m.id }, ctx));
           }
@@ -11059,16 +11276,23 @@ export class VtesEngine implements EngineOps {
           minion: u.card.id,
         });
       }
+      // Influencing out a second copy would voluntarily contest yourself.
+      const selfContest = this.uniqueMinion(u.card) && (
+        seat.minions.some((m) => this.uniqueMinion(m) && contestName(m) === contestName(u.card)) ||
+        (seat.contested ?? []).some((c) => c.minion && this.uniqueMinion(c.minion) && contestName(c.minion) === contestName(u.card))
+      );
       if (
-        u.counters >= capacityOf(u.card) &&
+        !selfContest && u.counters >= capacityOf(u.card) &&
         (this.tableStatic("influenceOutPoolTax") === 0 ||
           seat.pool > this.tableStatic("influenceOutPoolTax"))
       ) {
+        const poolBurn = influenceMovePoolBurn(this.state, tf.seat, { ...u.card, clan: clanWhenControlled(u.card) });
         options.push({
           id: `inf:out:${u.card.id}`,
           kind: "influenceOut",
-          label: `Move ${u.card.name} to the ready region`,
+          label: `Move ${u.card.name} to the ready region${poolBurn ? ` (burn ${poolBurn} pool)` : ""}`,
           minion: u.card.id,
+          poolBurn,
         });
       }
     }
@@ -11081,6 +11305,14 @@ export class VtesEngine implements EngineOps {
     }
     options.push(...this.handlerOptions(tf.seat, "turn.influence"));
     return options;
+  }
+
+  /** A prohibition on all hunt actions, as distinct from an aura that
+   *  only removes the normal hunt (Week of Nightmares). An unusable weapon
+   *  cannot impose its bearer restriction: Howler can hunt with Talbot's. */
+  private cannotHunt(m: MinionState): boolean {
+    return m.attached.some((p) => p.statics.cannotHunt === true &&
+      !cannotUseEquipmentEntry(m, p, this.registry[p.card.name]?.isEquipment === true));
   }
 
   private minionPhaseOptions(tf: TurnFrame): LegalOption[] {
@@ -11109,6 +11341,7 @@ export class VtesEngine implements EngineOps {
     const stuck = new Set<MinionId>();
     if (hungry.length > 0) {
       for (const m of hungry) {
+        if (this.cannotHunt(m)) continue;
         // "…and do not hunt as normal" (Week of Nightmares) — asked here as
         // in the ordinary branch. Only this branch had forgotten it, so a
         // Ravnos with no blood hunted as normal. The non-standard hunts
@@ -11142,7 +11375,7 @@ export class VtesEngine implements EngineOps {
       // A HUNT ACTION CARD is a hunt (Psychophagia), so it discharges the
       // obligation too — offered to the hungry minion only.
       // docs/hunt-success-design.md §1
-      const hungryIds = new Set(hungry.map((m) => m.id));
+      const hungryIds = new Set(hungry.filter((m) => !this.cannotHunt(m)).map((m) => m.id));
       for (const o of this.handlerOptions(tf.seat, "turn.minion")) {
         if (o.kind === "playCard" && o.minion !== null && hungryIds.has(o.minion) &&
             this.registry[o.name]?.huntAction === true) {
@@ -11229,6 +11462,7 @@ export class VtesEngine implements EngineOps {
       // must hunt never reaches this branch.
       if (
         m.kind === "vampire" &&
+        !this.cannotHunt(m) &&
         !auraBlocksHunt(this.state, m) &&
         !huntingRestricted(this.state) &&
         canRepeatAction(this.state, m, "hunt")
@@ -11248,18 +11482,22 @@ export class VtesEngine implements EngineOps {
     // basic one (docs/hunt-success-design.md §5).
     const restricted = huntingRestricted(this.state);
     options.push(
-      ...this.handlerOptions(tf.seat, "turn.minion").filter(
-        (o) => !(restricted && o.kind === "playCard" && this.registry[o.name]?.huntAction === true),
-      ),
+      ...this.handlerOptions(tf.seat, "turn.minion").filter((o) => {
+        if (o.kind !== "playCard" || this.registry[o.name]?.huntAction !== true) return true;
+        const actor = o.minion === null ? null : findMinion(this.state, o.minion);
+        return !restricted && (!actor || !this.cannotHunt(actor));
+      }),
     );
     // Actions granted by cards in play (rush design §2.5) and in-play
     // abilities usable in the minion phase (The Barrens, ruling p. 47).
     // A granted HUNT is barred by Restricted Vitae like a hunt action card;
     // nobody reaching this branch must hunt, or they would be stuck.
     options.push(
-      ...this.entryActionOptionsFor(tf.seat).filter(
-        (o) => !(restricted && o.kind === "useEntryAction" && o.huntAction === true),
-      ),
+      ...this.entryActionOptionsFor(tf.seat).filter((o) => {
+        if (o.kind !== "useEntryAction" || o.huntAction !== true) return true;
+        const actor = findMinion(this.state, o.minion);
+        return !restricted && (!actor || !this.cannotHunt(actor));
+      }),
     );
     options.push(...this.abilityOptionsFor(tf.seat, "turn.minion"));
     // A vampire in torpor can perform no action except leave torpor
@@ -11294,14 +11532,16 @@ export class VtesEngine implements EngineOps {
         // "…cannot be the target of other Methuselahs' actions" (Secure
         // Haven) — a diablerie and a rescue both name a minion.
         if (untargetableBy(victim, actor.controller, actor)) continue;
-        options.push({
-          id: `diablerize:${actor.id}:${victim.id}`,
-          kind: "takeAction",
-          label: `${actor.name}: diablerise ${victim.name}`,
-          minion: actor.id,
-          action: "diablerize",
-          targetMinion: victim.id,
-        });
+        if (canCommitDiablerie(this.state, actor)) {
+          options.push({
+            id: `diablerize:${actor.id}:${victim.id}`,
+            kind: "takeAction",
+            label: `${actor.name}: diablerise ${victim.name}`,
+            minion: actor.id,
+            action: "diablerize",
+            targetMinion: victim.id,
+          });
+        }
         // The 2-blood cost may be paid by the actor, the rescued
         // vampire, or split (p. 23) — fixed at announcement.
         // "Rescuing a non-Tremere vampire costs this Salubri -2 blood"
@@ -11947,6 +12187,19 @@ export class VtesEngine implements EngineOps {
         return;
       }
       case "useAbility": {
+        // Infernal is a minion trait, not necessarily a card entry with a
+        // handler. The option is enumerated only for the controller's unlock
+        // phase, and costs on the unlock itself still apply.
+        if (option.params["infernalUnlock"] !== undefined) {
+          if (top.kind !== "turn" || top.phase !== "unlock") throw new Error("infernal unlock outside unlock phase");
+          const m = getMinion(this.state, option.params["infernalUnlock"]);
+          const surcharge = this.unlockSurchargeFor(m);
+          (top.infernalUnlockUsed ??= []).push(m.id);
+          this.emit({ type: "PoolBurned", seat: top.seat, amount: 1 });
+          if (surcharge > 0) this.emit({ type: "BloodBurned", minion: m.id, amount: surcharge });
+          this.emit({ type: "MinionUnlocked", minion: m.id });
+          return;
+        }
         // A rider's offer, not a card in play: "burn N blood to unlock
         // after block resolution" (Truth in Darkness).
         if (option.source.startsWith("unlockForBlood:")) {
@@ -12881,6 +13134,19 @@ export class VtesEngine implements EngineOps {
       const pd = cf.pendingDamage[0];
       if (!pd) return moved;
       const side = pd.minion === cf.acting ? "acting" : pd.minion === cf.opposing ? "opposing" : null;
+      // A purchased round-long shield prevents only preventable damage from
+      // a source that is currently a minion with the named subtype.
+      const source = pd.source ? findMinion(this.state, pd.source) : null;
+      if (!pd.unpreventable && source && cf.preventFromTagRound?.some(
+        (s) => s.minion === pd.minion && s.round === cf.round && minionHasTag(source, s.tag),
+      )) {
+        this.emit({ type: "DamagePrevented", minion: pd.minion, amount: pd.amount });
+        cf.pendingDamage.shift();
+        delete cf.damageCycle;
+        delete cf.damageCycleLen;
+        moved = true;
+        continue;
+      }
       // "Prevent N damage from the opposing minion's next HAND STRIKE
       // this round" (Forearm Block). Automatic, like every other
       // prevention the engine applies without asking: the card was
@@ -13498,11 +13764,14 @@ export class VtesEngine implements EngineOps {
    *  `kind` separates a real replacement from a plain draw-up (a hand-size
    *  increase, "draw N extra cards"), because a counter sink intercepts
    *  only the former (docs/counter-sinks-design.md §2). */
-  /** Returns true only when a card actually moved from library to hand —
-   *  a counter sink or a store redirect means it did not, and a caller
-   *  looping until the hand is full must stop rather than ask again. */
-  private drawToReplace(seatId: SeatId, kind: "replace" | "extra" = "replace"): boolean {
-    const seat = getSeat(this.state, seatId);
+  /** Returns false if a counter sink or a store choice interrupted the
+   *  draw; true means the library was attempted, even if it was empty. */
+  private drawToReplace(
+    seatId: SeatId,
+    kind: "replace" | "extra" = "replace",
+    resumeDrawUp = false,
+    continuation?: Record<string, string>,
+  ): boolean {
     // "Each time you would replace a card, instead burn 1 counter from
     // this card" (Visit from the Capuchin). This goes FIRST and keeps
     // precedence over the redirect below: a draw that does not happen
@@ -13512,13 +13781,16 @@ export class VtesEngine implements EngineOps {
     // those cards instead" (Black Market Cache, Shilmulo Tarot). Only
     // asked when a live store can actually supply the draw, so an empty
     // or absent store costs no decision.
-    const source = this.drawRedirectSource(seatId);
+    const source = this.drawRedirectSources(seatId)[0];
     if (source) {
       this.raiseChoice({
         seat: seatId,
         cardName: source.card.name,
         cardId: source.card.id,
         key: "drawFrom",
+        ...(resumeDrawUp || continuation
+          ? { params: { ...continuation, ...(resumeDrawUp ? { resumeDrawUp: "1" } : {}) } }
+          : {}),
       });
       return false;
     }
@@ -13538,19 +13810,10 @@ export class VtesEngine implements EngineOps {
     }
   }
 
-  /** A card in play of `seat`'s that may supply a draw in place of the
-   *  library right now — it must hold cards, and its own condition must
-   *  hold (Shilmulo Tarot: "while this Ravnos is ready"). */
-  private drawRedirectSource(seatId: SeatId): PermanentInPlay | null {
-    for (const { entry, owner } of this.allEntries()) {
-      if ((entry.controller ?? owner.seat) !== seatId) continue;
-      if (!entry.stored || entry.stored.length === 0) continue;
-      if (!this.registry[entry.card.name]?.canRedirectDraw?.(entry, owner, this.state)) {
-        continue;
-      }
-      return entry;
-    }
-    return null;
+  /** Every live store that can redirect this seat's next library draw.
+   * A player can choose between them; enumeration order is not priority. */
+  private drawRedirectSources(seatId: SeatId): PermanentInPlay[] {
+    return drawRedirectSources(this.state, seatId, this.registry);
   }
 
   /** Burn a counter off a card attached to this minion that pays to keep
@@ -14045,6 +14308,29 @@ export class VtesEngine implements EngineOps {
    * after-resolution probes each drifted. §4
    */
   private choiceOptionsFor(frame: ChoiceFrame): LegalOption[] {
+    if (frame.key === "drawFrom") {
+      // The saved frame names the first store, but it is not privileged:
+      // each currently legal store can replace this same draw. Keep the
+      // existing per-card option IDs for replays and delegate the actual
+      // move and empty-store consequences to the chosen store's handler.
+      const out: LegalOption[] = [];
+      for (const source of this.drawRedirectSources(frame.seat)) {
+        const sourceFrame = { ...frame, cardName: source.card.name, cardId: source.card.id };
+        for (const opt of this.handler(source.card.name).choiceOptions?.(sourceFrame, this.state, this.registry) ?? []) {
+          if (opt.kind !== "answerChoice" || opt.params["pick"] === "library") continue;
+          out.push(this.withPickedCardName({ ...opt, params: { ...opt.params, redirectSource: source.card.id } }));
+        }
+      }
+      // The original library option stays valid even if its store left play
+      // while this decision was queued behind another effect.
+      out.push({
+        id: `choice:${frame.cardName}:${frame.cardId}:drawFrom:library`,
+        kind: "answerChoice",
+        label: "Draw from your library as normal",
+        params: { pick: "library" },
+      });
+      return out;
+    }
     if (frame.key === PRE_PLAY_PICK) {
       const option = JSON.parse(frame.params["option"] ?? "{}") as Extract<LegalOption, { kind: "playCard" }>;
       const picks = this.registry[option.name]?.prePlayPicks?.(option, this.state);
@@ -14292,7 +14578,8 @@ export class VtesEngine implements EngineOps {
           type: "CardBurned",
           cardId: held.card.id,
           name: held.card.name,
-          seat: held.permanent?.owner ?? frame.seat,
+          seat: held.minion?.owner ?? held.permanent?.owner ?? frame.seat,
+          ...(held.minion?.kind === "vampire" ? { crypt: true as const, capacity: capacityOf(held.minion) } : {}),
         });
         return;
       }
@@ -14317,7 +14604,26 @@ export class VtesEngine implements EngineOps {
       this.shuffleLibrary(frame.seat);
       return;
     }
-    this.handler(frame.cardName).applyChoice?.(frame, option, this);
+    // A redirect raised during a refill represents one draw, not the whole
+    // refill. Resume only if it drew a card: choosing an empty library must
+    // end the attempt instead of asking the same question forever.
+    const resumeDrawUp = frame.key === "drawFrom" && frame.params["resumeDrawUp"] === "1";
+    const counted = frame.key === "drawFrom" && frame.params["countedCardName"] !== undefined;
+    const before = resumeDrawUp || counted ? getSeat(this.state, frame.seat).hand.length : 0;
+    const redirect = frame.key === "drawFrom" && option.params["redirectSource"]
+      ? this.drawRedirectSources(frame.seat).find((source) => source.card.id === option.params["redirectSource"])
+      : undefined;
+    const chosenFrame = redirect ? { ...frame, cardName: redirect.card.name, cardId: redirect.card.id } : frame;
+    this.handler(chosenFrame.cardName).applyChoice?.(chosenFrame, option, this);
+    const didDraw = (resumeDrawUp || counted) && getSeat(this.state, frame.seat).hand.length > before;
+    if (resumeDrawUp && didDraw) this.drawUpToHandSize(frame.seat);
+    if (counted) {
+      this.continueCountedDraw(
+        { seat: frame.seat, cardName: frame.params["countedCardName"]!, cardId: frame.params["countedCardId"]!, key: frame.params["countedChoiceKey"]! },
+        didDraw ? Number(frame.params["countedRemaining"]) : 0,
+        Number(frame.params["countedDrawn"]) + (didDraw ? 1 : 0),
+      );
+    }
   }
 }
 

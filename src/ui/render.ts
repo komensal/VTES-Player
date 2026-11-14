@@ -20,6 +20,7 @@ import type {
   MinionState,
   PermanentInPlay,
   SeatState,
+  VampireTitle,
 } from "../engine/index.ts";
 import type { DecisionPoint, LegalOption } from "../engine/index.ts";
 import { isFaceDown, resolvePerSeat } from "../engine/index.ts";
@@ -373,6 +374,14 @@ function attachedList(m: MinionState, ctx: TableCtx | null): string {
     .join("")}</div>`;
 }
 
+/** Display a personal title as printed votes, rather than its internal key. */
+export function titleLabel(title: VampireTitle): string {
+  if (title === "personal1") return "1 vote (titled)";
+  if (title === "personal2") return "2 votes (titled)";
+  if (title === "personal3") return "3 votes (titled)";
+  return title;
+}
+
 /**
  * A minion: the actual card scan, with the state that a physical table
  * would show with counters and card orientation laid over it — blood pips,
@@ -384,7 +393,7 @@ function minionTile(m: MinionState, highlight: boolean, ctx: TableCtx | null): s
   const badges = [
     m.inTorpor ? `<span class="badge torpor">torpor</span>` : "",
     m.awake ? `<span class="badge awake">awake</span>` : "",
-    m.title ? `<span class="badge title">${esc(m.title)}</span>` : "",
+    m.title ? `<span class="badge title">${esc(titleLabel(m.title))}</span>` : "",
   ].join("");
   const counters = m.counters
     ? Object.entries(m.counters)

@@ -286,6 +286,21 @@ describe("diablerie step 2 — taking the victim's equipment", () => {
     );
   });
 
+  it.each([
+    ["Helen Fairchild (G6)", false],
+    ["Howler (G2)", true],
+  ] as const)("%s respects possession restrictions during diablerie", (name, canTake) => {
+    const state = game([gear("g1", ".44 Magnum", ["equipment", "weapon"])]);
+    const taker = state.seats[0]!.minions[0]!;
+    const self = testRegistry[name]!.cryptEntry!();
+    taker.attached.push({ ...gear(taker.id, name, self.tags), statics: self.statics });
+    const engine = new VtesEngine(state, testRegistry);
+    runTrace(engine, commitAndSurvive);
+    expect(taker.attached.some((p) => p.card.id === "g1")).toBe(canTake);
+    expect(state.eventLog.some((e) => e.type === "PermanentBurned" && e.cardId === "g1")).toBe(!canTake);
+    expect(state.seats[1]!.ashHeap?.some((c) => c.id === "g1") ?? false).toBe(!canTake);
+  });
+
   it("leaves NON-equipment behind to burn with the victim", () => {
     // A retainer is not equipment, and p. 34 says equipment. The negative
     // half matters: a filter that took everything would look identical on

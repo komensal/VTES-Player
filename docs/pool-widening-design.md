@@ -2210,7 +2210,7 @@ three kinds of blow.
    the moment a second kind reaches it.**
 
 Also `orRangedWeapon` as `orMeleeWeapon`'s sibling, and a flight gate for
-Earthshock (flight only ever arrives from a card — no V5 vampire prints it).
+Earthshock (now using `hasFlight` for printed and explicitly granted Flight).
 
 **What the wave found in its own test:** the walker asked Bob to dodge and
 **Bob never dodged** — a dodge is not a free option, it comes from a card, so
@@ -3182,11 +3182,9 @@ Still per frame, and now the only remainder of that deviation: the
 per-MODE limit (`modeCombatLimit`, Terror Frenzy), because
 `playedHistory` does not record modes.
 
-Second, smaller: High Ground's flight test cannot be `minionHasTag`,
-which reads the SELF-attached entry and so answers "what does this minion
-PRINT". No vampire in the pool prints flight, so the printed-only
-question would have made the clause permanently dead — whole by the
-letter of §0 and inert in fact.
+Second, smaller: High Ground uses `hasFlight` rather than `minionHasTag`,
+which reads only the self-entry. The current pool includes vampires with
+printed Flight, and explicit attached `grantsFlight` statics are also read.
 
 Also new: `cancelCombatCard` (`cancelStrikeCard` one condition wider) and
 `maneuver.onlyToLong` (the mirror of `onlyToClose`). Death Seeker's six

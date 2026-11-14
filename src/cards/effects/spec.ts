@@ -265,10 +265,9 @@ export type EffectPrimitive =
   /** "This vampire can burn X blood to give the next X actions minions you
    *  control perform this turn +1 stealth" (Veil the Legions superior).
    *  X is chosen at play time, so the compiler emits one option per
-   *  affordable X and the choice rides in the option id (`x=N`), the way
-   *  `paymentSplits` already does for cost sources. `max` caps the offer
-   *  so a big-blood vampire does not flood the option list. */
-  | { kind: "bankStealth"; max: number }
+   *  affordable X after the play cost and the choice rides in the option
+   *  id (`x=N`), the way `paymentSplits` already does for cost sources. */
+  | { kind: "bankStealth" }
   /** "Force a vampire to abstain (this cancels their votes and ballots)"
    *  (Scalpel Tongue, Telepathic Vote Counting superior). `onlyIfVoted`
    *  is Scalpel Tongue's "a vampire who HAS CAST votes or ballots in this
@@ -463,6 +462,8 @@ export type EffectPrimitive =
    *  she gains 4 blood" (Entrenching) — read at RESOLUTION on the actor,
    *  so blood spent getting there counts against the threshold. */
   | { kind: "actionGainBlood"; amount: number; ifActorBloodAtLeast?: number }
+  /** Blood from the bank on a hunt action, including its printed hunt bonus. */
+  | { kind: "actionHunt"; amount: number }
   /** "…and YOU gain N pool" (Spoils of War) — the acting minion's
    *  controller, the pool twin of `actionGainBlood`. */
   | { kind: "actionGainPool"; amount: number }
@@ -754,9 +755,8 @@ export type EffectPrimitive =
        *  because a strength-based strike is a hand strike to every other
        *  card that prints one. docs/undodgeable-strikes-design.md §2 */
       ranged?: boolean;
-      /** "NOT USABLE against a minion with flight [FLIGHT]" (Earthshock) — a
-       *  gate on the option. Flight only ever arrives from a card in this
-       *  pool, since no V5 vampire prints it. §4 */
+      /** "NOT USABLE against a minion with flight [FLIGHT]" (Earthshock) —
+       *  gate on the opposing minion's printed or granted Flight. */
       notVsFlight?: boolean;
       /** \"Not usable first round of combat\" (Growing Fury) — gate on the
        *  strike option itself. */
@@ -1214,10 +1214,13 @@ export type EffectPrimitive =
    *  that vampire instead" (Decapitate superior). This is a torpor-window
    *  effect, not a strike rider. */
   | { kind: "burnTorporOpponent" }
-  /** "Strike, ranged: steal N blood" (Theft of Vitae). */
+  /** "Strike, ranged: steal N blood" (Theft of Vitae), or a close-only
+   *  steal strike (Tongue of the Serpent). Ranged defaults to true for
+   *  compatibility; close-only cards must explicitly set it false. */
   | {
       kind: "strikeStealBlood";
       amount: number;
+      ranged?: boolean;
       riders?: { maneuver?: number; maneuverOnlyToClose?: boolean; press?: number };
     }
   /**
@@ -2216,6 +2219,8 @@ export type EffectPrimitive =
   /** "Gain N pool" (Ascendance) — the whole card, and the simplest
    *  possible master (docs/pool-widening-design.md §6, tranche 3 wave 7). */
   | { kind: "gainPool"; amount: number }
+  /** The Blood Curse no longer bars this clan from diablerie for the game. */
+  | { kind: "liftBloodCurseDiablerieBar"; clan: string }
   /** "Discard your hand and draw a new one" (Deal with the Devil) — the whole
    *  hand goes, and the replacement for THIS card is deferred so it is not
    *  drawn into the hand this card is about to throw away.
@@ -3594,6 +3599,14 @@ export interface CardSpec {
      *  behaviour — a ranged strike already works at close range — so the
      *  only new thing is the bonus (docs/crypt-wave-3.md §4). */
     rangedDamageBonus?: number;
+    /** Burn blood once per round to prevent all damage from a subtype. */
+    preventFromTagEachRound?: { blood: number; tag: string };
+    /** This minion can prevent their own damage once each combat. */
+    preventSelfEachCombat?: { amount: number; nonAggravatedOnly?: boolean };
+    /** During their bleed action, burn blood for bleed once per action. */
+    bleedForBlood?: { blood: number; amount: number };
+    /** During your unlock phase, one controlled vampire pays to change clan. */
+    unlockTransformClan?: { from: string; to: string; blood: number; discipline: string };
     /** "Once each combat involving \<a minion you control\>, \<this
      *  vampire\> can burn N blood to prevent up to M damage to that
      *  minion" (Opikun, Huldu). The bystander prevention built for
@@ -3601,6 +3614,9 @@ export interface CardSpec {
     preventForOther?: {
       blood: number;
       amount: number;
+      /** Huldu's ability explicitly requires her to be ready; an ability
+       *  without that wording can still be used from torpor. */
+      requiresReady?: boolean;
       /** "…prevent up to 2 NON-AGGRAVATED damage" (Opikun). */
       nonAggravated?: boolean;
       /** Opikun says "a vampire you control"; Huldu "another minion you
@@ -4010,6 +4026,7 @@ export interface CardSpec {
       amount: number;
       oncePerCombat?: boolean;
       oncePerTurn?: boolean;
+      oncePerAction?: boolean;
     };
     /** "\<This vampire\> can \<do Y\> as a \[+N stealth\] \[Ⓓ\] action
      *  \[that costs 1 blood\]" — six crypt cards, one clause
@@ -4042,6 +4059,8 @@ export interface CardSpec {
         | "reviveAlly"
         | "reorderTop"
         | "stripMinion"
+        /** `unlockControlledVampireOrMummy` — Abdelsobek's own action. */
+        | "unlockControlledVampireOrMummy"
         /** `burnSelfForBlood` — "this vampire can BURN THIS RETAINER to
          *  gain N blood" (Zombie). The cost is the card granting the
          *  action, which is why it is its own arm rather than `addBlood`
@@ -4135,17 +4154,16 @@ export interface CardSpec {
      *  never answers for another. `grantedAction` stays the first grant so
      *  no existing card moves. docs/plain-allies-design.md §5 */
     grantedActions?: Array<NonNullable<NonNullable<CardSpec["permanent"]>["grantedAction"]>>;
-    /** "If \<this vampire\> is ready during your DISCARD phase, you can
-     *  \<do Y\>" — a phase hook that asks its controller a question
-     *  (Mora, Luciano). Optional, because both cards say "you can": an
-     *  optional `ChoiceFrame`, whose decline is a plain pass.
-     *  docs/crypt-wave-5.md §5 */
+    /** An optional discard-phase choice (Mora, Luciano). Readiness is
+     *  required only when printed, not for every vampire special. */
     discardPhaseChoice?: {
       /** `ashToLibraryBottom` — "move a library card from your ash heap
        *  to the BOTTOM of your library" (Mora). `moveAnimalRetainer` —
        *  "move an animal retainer from a vampire you control to another
        *  vampire you control" (Luciano). */
       do: "ashToLibraryBottom" | "moveAnimalRetainer";
+      /** "If this vampire is ready" (Mora), absent on Luciano. */
+      requiresReady?: boolean;
       /** The printed sub-type the retainer must carry. */
       tag?: string;
     };
@@ -4413,7 +4431,7 @@ export interface CardSpec {
      *  declare its sub-type in one place and be filtered in another. The
      *  word carries no rules of its own: it appears nowhere in the
      *  rulebook, exactly like "ghoul". docs/wraith-zombie-design.md §§1–2 */
-    subtype?: "wraith" | "zombie" | "ghoul" | "mortal";
+    subtype?: "wraith" | "zombie" | "ghoul" | "mortal" | "mummy";
     /** "This ally cannot have or use equipment (or retainers)" (Bone
      *  Shambler, Gravebound Drone) — a gate on OPTIONS: the ally is not
      *  offered as a bearer. */
@@ -4606,9 +4624,23 @@ export interface CardSpec {
    *  V5 card grants, so this correctly passes every vampire today.
    *  docs/token-vampire-design.md §4 */
   requiresNonSterile?: boolean;
+  /** Printed Black Hand / Seraph requirements apply to the acting minion. */
+  requiresBlackHand?: boolean;
+  requiresSeraph?: boolean;
   /** "Requires an Anarch" / "…a Sabbat vampire" — the playing vampire's
    *  sect must be one of these. */
   requiresSect?: Sect[];
+  /** "Requires a Laibon or non-titled vampire" (Mozambique Allure):
+   *  either a listed sect or an untitled vampire, or both. This does not
+   *  make the sect unconditionally required for requiresSects queries. */
+  requiresSectOrUntitled?: Sect[];
+  /** A printed requirement for a ready playing minion, including in modifier
+   *  windows where an acting vampire may otherwise be in torpor. */
+  requiresReady?: boolean;
+  /** Action is unavailable to actors of these sects when their controller's
+   *  crypt is empty (Mozambique Allure's mandatory draw). Checked in action
+   *  enumeration, not the minion-only modesPlayableBy query. */
+  requiresCryptForSect?: Sect[];
   /** "Requires a Ravnos" etc. — the playing vampire's clan. */
   requiresClan?: string[];
   /** "Only usable by a … minion WITH A GUN" (Suppressing Fire) — the
@@ -4616,6 +4648,9 @@ export interface CardSpec {
    *  Not a discipline, not a clan: a piece of equipment.
    *  docs/second-minion-modifiers-design.md §1 */
   requiresAttachedTag?: string[];
+  /** Minimum number of named cards on the playing minion, including locked
+   *  cards and those owned by another Methuselah (Aye / Orun requirements). */
+  requiresAttachedCount?: { name: string; min: number };
   /** A condition on the ACTING minion, which is a different question from
    *  every `requires*` above: those gate who may PLAY the card, this gates
    *  who the card may be played AGAINST. "Only usable if a Camarilla or
@@ -4637,9 +4672,7 @@ export interface CardSpec {
     /** "…or a WRAITH" — read with `isUndeadAlly`, which is the engine's
      *  one answer to that question. */
     notUndeadAlly?: boolean;
-    /** "…or has FLIGHT" — a printed advantage. No minion in the pool has
-     *  it today, so this correctly excludes nobody; it is here because
-     *  the card prints it and a clause that is not built is not built. */
+    /** "…or has FLIGHT" — checked against the minion's printed or granted trait. */
     notTags?: string[];
   };
   /** "…with capacity N or more". */
@@ -4676,6 +4709,9 @@ export interface CardSpec {
   requiresControlledSect?: Sect[];
   /** "Requires a ready [clan]" on a Master card — the clan sibling. */
   requiresControlledClan?: string[];
+  /** A master card requires a ready controlled vampire with this trait. */
+  requiresControlledBlackHand?: boolean;
+  requiresControlledSeraph?: boolean;
   /** Minimum capacity of the same qualifying ready vampire, when printed. */
   requiresControlledCapacity?: number;
   usable: UsabilityRule[];
@@ -4777,6 +4813,8 @@ export interface CardSpec {
    *  hunt, and its blood is the hunt's, paid through `payHunt`.
    *  docs/hunt-success-design.md §1 */
   huntAction?: true;
+  /** On success, call a blood hunt before the action's after-resolution window. */
+  bloodHuntAfterSuccess?: true;
   /** "Not usable by a vampire with more than 0 intercept" (Legwork) — a
    *  gate on the REACTING minion, which is why it cannot be a
    *  `UsabilityRule`: those are asked once per card play, and this has to

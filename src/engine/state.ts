@@ -105,7 +105,12 @@ export type VampireTitle =
   | "archbishop"
   | "priscus"
   | "cardinal"
-  | "regent";
+  | "regent"
+  // Personal titles are not sect-bound or contestable. The number is the
+  // title's votes, not a vote bonus; gaining another title replaces it.
+  | "personal1"
+  | "personal2"
+  | "personal3";
 
 /**
  * Titles "associated with a particular city" (p. 39–40) — the three the
@@ -123,11 +128,10 @@ export const CITY_TITLES: VampireTitle[] = ["prince", "baron", "archbishop"];
  * primogen, prince, justicar and Inner Circle, only Sabbat vampires the
  * five Sabbat titles. So a card that requires a title requires that sect
  * too [LSJ 20080603: Open War "requires an Anarch, for eg. Powerbase: Los
- * Angeles"]. A `Record`, so a new title is a compile error until it says.
- * Independent votes "are not tied to a sect" and are not titles here.
+ * Angeles"]. Personal titles have no sect requirement and are omitted.
  * docs/granted-action-requirements-design.md §5
  */
-export const TITLE_SECT: Record<VampireTitle, Sect> = {
+export const TITLE_SECT: Partial<Record<VampireTitle, Sect>> = {
   primogen: "camarilla",
   prince: "camarilla",
   justicar: "camarilla",
@@ -150,30 +154,56 @@ export const TITLE_SECT: Record<VampireTitle, Sect> = {
  * clan, **even if no vampires of the chosen clan are in play**." So this
  * is every clan in the pool, not every clan on the table.
  *
- * IT GROWS WITH THE POOL. Widening the crypt beyond the V5 sets took this
- * from the fourteen V5 clans to thirty-five, because the bloodlines and
- * the antitribu arrived with it — and "every clan in the pool" is a
- * rulebook phrase, so a card that offers fourteen of thirty-five is
- * simply wrong. Hand-listed rather than read from the registry so the
- * kernel stays free of the card data; `tests/cards/clan-vocabulary.test.ts`
- * cross-checks it against the registry so it cannot drift.
+ * The list covers the vampire clans represented in the current crypt,
+ * including bloodlines and antitribu, even when absent from the table.
+ * The registry also stores imbued creeds in its `clan` field; these are
+ * not vampire clans and must not become referendum choices. Hand-listed
+ * so the kernel stays independent of card data; clan-vocabulary.test.ts
+ * cross-checks the registry with explicit creed exclusions. This covers
+ * the current pool, not necessarily every clan outside that pool.
  * docs/referendum-terms-design.md §1, docs/pool-widening-design.md §3
  */
 export const CLANS: string[] = [
+  "Abomination",
+  "Ahrimane",
+  "Akunanse",
+  "Baali",
   "Banu Haqim",
+  "Blood Brother",
   "Brujah",
+  "Brujah antitribu",
+  "Caitiff",
+  "Daughter of Cacophony",
   "Gangrel",
+  "Gangrel antitribu",
+  "Gargoyle",
+  "Giovanni",
+  "Guruhi",
+  "Harbinger of Skulls",
   "Hecata",
+  "Ishtarri",
+  "Kiasyd",
   "Lasombra",
   "Malkavian",
+  "Malkavian antitribu",
   "Ministry",
+  "Nagaraja",
   "Nosferatu",
+  "Nosferatu antitribu",
+  "Osebo",
+  "Pander",
   "Ravnos",
   "Salubri",
+  "Salubri antitribu",
+  "Samedi",
   "Toreador",
+  "Toreador antitribu",
   "Tremere",
+  "Tremere antitribu",
+  "True Brujah",
   "Tzimisce",
   "Ventrue",
+  "Ventrue antitribu",
 ];
 
 /** Printed lineage queried by Toreador's Bane. Antitribu are a named
@@ -237,6 +267,9 @@ export const TITLE_VOTES: Record<VampireTitle, number> = {
   priscus: 1,
   cardinal: 3,
   regent: 4,
+  personal1: 1,
+  personal2: 2,
+  personal3: 3,
 };
 
 /** V5 sects (p. 39). A minion's sect and clan are static facts, set by
@@ -254,6 +287,9 @@ export interface MinionState {
    *  so fixtures need not set it — it defaults to `controller` at entry.
    *  Read it, not `controller`, for "their owner's …" effects. */
   owner?: SeatId;
+  /** Clan changes in chronological order. Source-less changes are permanent;
+   *  card-sourced changes overlay them while that card is in play. */
+  clanChanges?: Array<{ clan: string | null; source?: CardInstanceId }>;
   /** Blood counters for vampires; life for allies (the rulebook says ally
    *  life IS blood counters from the bank, p. 22). An ally at 0 is burned;
    *  ally life may exceed `capacity` and does not drain off (p. 11). */
@@ -327,15 +363,21 @@ export interface MinionState {
   /** Fixture/import-set title (p. 28); votes derive via TITLE_VOTES.
    *  Null for untitled vampires and all allies. */
   title: VampireTitle | null;
-  /** "Sterile vampires cannot perform actions to put new vampires in
-   *  play" (glossary, p. 42). A real rulebook trait that **no V5 card
-   *  grants** — only the two cards that require a non-sterile actor even
-   *  mention it — so nothing sets this today and the filter correctly
-   *  passes every vampire. It belongs here rather than nowhere because
-   *  phase 7's crypt importer is where it would come from, exactly as
-   *  `clan`/`sect`/`title` are set by fixtures now.
-   *  docs/token-vampire-design.md §4 */
+  /** Printed Sterile trait. Cards with requiresNonSterile consult this;
+   *  other vampire-creation actions must also implement the rulebook
+   *  restriction (glossary, p. 42). */
   sterile?: boolean;
+  /** Printed Blood Cursed trait; currently prevents committing diablerie. */
+  bloodCursed?: boolean;
+  /** Infernal minions do not unlock as normal; their controller may pay pool. */
+  infernal?: boolean;
+  /** Black Hand and Seraph are independent, non-title traits. */
+  blackHand?: boolean;
+  seraph?: boolean;
+  /** Scarce vampires incur a clan-based pool penalty when influenced out. */
+  scarce?: boolean;
+  /** Printed restriction on using cards requiring these Discipline codes. */
+  cannotUseDisciplines?: string[];
   /** The Path of Enlightenment this vampire follows ("Cathari", "Power and
    *  the Inner Voice", "Death and the Soul").
    *
@@ -365,10 +407,8 @@ export interface MinionState {
    * Winning restores it from here; yielding drops it for good.
    */
   titleContest?: { title: VampireTitle; city?: string };
-  /** A minion that is NOT a unique card, so it never contests: the two
-   *  token vampires, which print "non-unique" in as many words. Every
-   *  other vampire is a crypt card, and "all crypt cards represent unique
-   *  minions" (p. 17). docs/token-vampire-design.md, contested-design §3 */
+  /** Explicit non-unique exception for a token or printed crypt card.
+   *  Other crypt vampires are unique and may be contested. */
   nonUnique?: boolean;
   /** Clan (e.g. "Gangrel") and sect — static crypt facts for "Requires a
    *  …" gating and clan-locked cards. Null for allies and untagged. */
@@ -476,6 +516,8 @@ export type PlayCostCardType =
   | "retainer"
   | "equipment"
   | "politicalAction"
+  /** Conviction is a printed library card type, not combat or reaction. */
+  | "conviction"
   /** An EVENT (p. 37). Nothing in the pool prices one today, but the type
    *  is printed and `central-queries` requires every library card to name
    *  one — the cost vocabulary is the printed type line, not the set of
@@ -620,12 +662,32 @@ export interface ConditionalStatic {
   bleed?: number;
   strength?: number;
   votes?: number;
+  /** "While /<name>/ is ready" — any Methuselah's vampire, not only
+   *  one controlled by the bearer. The name is the printed crypt name. */
+  readyNamedVampire?: string;
   /** "…you get +1 hand size" (Carmelita Neillson, Khin Aye). Read by
    *  `handSizeOf`, which asks with NO action — so a static combining this
    *  with an action condition would never apply. */
   handSize?: number;
   /** Built-in action kinds (bleed, hunt, diablerize, …). */
   actionKinds?: ActionKind[];
+  /** The complement of actionKinds, e.g. "non-hunt actions". */
+  excludedActionKinds?: ActionKind[];
+  /** A live condition on the Methuselah targeted by a directed action.
+   *  Conditions within `minion` are conjunctive; `exists: false` means
+   *  that no ready minion matching them may be controlled by the target. */
+  targetReady?: {
+    exists: boolean;
+    minion: {
+      kind?: MinionKind;
+      clans?: string[];
+      sect?: Sect;
+      notSect?: Sect;
+      titles?: VampireTitle[];
+      titled?: boolean;
+      minCapacity?: number;
+    };
+  };
   /** "Recruit and employ actions" — an ally or retainer played as an
    *  action announces as `cardEffect` like any other action card, so what
    *  tells them apart is the printed type of the announcing card. */
@@ -655,6 +717,8 @@ export interface ConditionalStatic {
   actingMinion?: {
     titled?: boolean;
     clan?: string;
+    clans?: string[];
+    sect?: Sect;
     kind?: MinionKind;
     younger?: boolean;
     older?: boolean;
@@ -673,8 +737,12 @@ export interface ConditionalStatic {
   inCombatWith?: {
     titled?: boolean;
     clan?: string;
+    clans?: string[];
+    sect?: Sect;
     kind?: MinionKind;
     younger?: boolean;
+    older?: boolean;
+    maxCapacity?: number;
   };
   /** A condition on the BEARER's controller and the board around them —
    *  "while you have 9 or fewer pool", "while you have the Edge", "while
@@ -700,11 +768,17 @@ export interface ConditionalStatic {
 }
 
 export interface PermanentStatics {
+  /** This permanent grants its bearer Flight; a retainer's own tags do not. */
+  grantsFlight?: boolean;
   /** "This ally cannot have or use equipment (or retainers)" (Bone
    *  Shambler, Gravebound Drone) — a gate on OPTIONS: the minion is never
    *  offered as a bearer, which covers "have" and "use" at once.
    *  docs/wraith-zombie-design.md §4 */
   cannotBeEquipped?: { retainers?: boolean };
+  /** May possess weapons but cannot activate or strike with them (Howler). */
+  cannotUseWeapons?: boolean;
+  /** The bearer cannot take any hunt action (Talbot's Chainsaw). */
+  cannotHunt?: boolean;
   /** "This ally cannot gain life" (Rotting Behemoth) — read in the
    *  `BloodGained` applier, so burning and paying are unaffected. */
   cannotGainLife?: boolean;
@@ -855,6 +929,8 @@ export interface PermanentStatics {
    *  running when the first "as played" window opens.
    *  docs/counter-clock-events-design.md §1 */
   startsWithCounters?: number;
+  /** Burn this permanent when it has no counters (Ablative Skin). */
+  burnWhenCountersEmpty?: boolean;
   /** "After another Gehenna event is played, burn 1 counter from this
    *  card" — a clock that runs DOWN, driven by other cards being played.
    *  docs/counter-clock-events-design.md §1 */
@@ -1007,6 +1083,8 @@ export interface PermanentStatics {
   /** "The employer gets N optional press(es) each combat" — credits that
    *  persist across rounds until spent (Dread Mastiff superior). */
   pressPerCombat?: number;
+  /** An optional press when the opposing minion has this subtype. */
+  pressPerCombatAgainstTag?: string;
   /** "1 optional press, ONLY USABLE TO CONTINUE COMBAT, each combat"
    *  (Righteous Blade) — the restricted sibling, spent before a general
    *  credit. docs/weapon-riders-design.md §4 */
@@ -1202,6 +1280,8 @@ export interface PermanentStatics {
   blockToll?: {
     amount: number;
     payWith: "blood" | "bloodOrLife";
+    /** Restrict the toll to the printed kind of blocker, e.g. vampires. */
+    kinds?: MinionKind[];
     /** "Minions with 1 or more of YOUR corruption counters must burn 1
      *  blood or life to attempt to block Sergio" — the toll falls only on
      *  a blocker the card's controller has corrupted.
@@ -1774,6 +1854,8 @@ export type GameEvent =
     }
   | { type: "CardResolved"; cardId: CardInstanceId; name: string; seat?: SeatId }
   | { type: "CardCanceled"; cardId: CardInstanceId; name: string }
+  /** A game-long exception to the Blood Curse's diablerie restriction. */
+  | { type: "BloodCurseDiablerieBarLifted"; clan: string }
   | { type: "CardDrawn"; seat: SeatId; cardId: CardInstanceId }
   /** "You must shuffle it afterwards" (p. 14) — emitted after EVERY
    *  search, including one that found nothing. */
@@ -2006,7 +2088,7 @@ export type GameEvent =
   /** "…to prevent that vampire from going to torpor" (Minor Boon). */
   | { type: "TorporPrevented"; minion: MinionId }
   // Action cards (phase 3).
-  | { type: "CardBurned"; cardId: CardInstanceId; name: string; seat?: SeatId }
+  | { type: "CardBurned"; cardId: CardInstanceId; name: string; seat?: SeatId; crypt?: true; capacity?: number }
   /** A card moved into an ash heap (p. 16). Emitted alongside the event
    *  that caused it rather than folded into one, so the log still says
    *  WHY the card left where it was. docs/ash-heap-design.md §3 */
@@ -2088,6 +2170,9 @@ export type GameEvent =
    *  card that granted it is burned at action resolution. Absent → basic,
    *  basic → superior. docs/torpor-prey-design.md §3 */
   | { type: "DisciplineGained"; minion: MinionId; discipline: string }
+  /** A permanent change to a vampire's clan and Sterile trait. */
+  | { type: "VampireTransformed"; minion: MinionId; clan: string; sterile: boolean }
+  | { type: "ClanChanged"; minion: MinionId; clan: string; source: CardInstanceId }
   // Allies and retainers (phase 3, allies gate).
   /** `disciplines`: "plays cards requiring \<X\> as a vampire" (p. 11) —
    *  optional, so every existing fixture and saved log is untouched.
@@ -2309,6 +2394,8 @@ export interface TurnFrame {
   oncePerTurnCards?: string[];
   /** Unlock-phase permanent abilities declined/finished (Vessel etc.). */
   unlockAbilitiesDone: boolean;
+  /** Infernal unlock choices already used this phase, keyed by minion id. */
+  infernalUnlockUsed?: MinionId[];
   /** Other seats that passed their "during any Methuselah's unlock phase"
    *  abilities (Homunculus) — asked after the turn's seat, clockwise. */
   unlockOthersDone: SeatId[];
@@ -2622,6 +2709,10 @@ export interface ActionFrame {
    *  to. Read by "only usable when a vampire successfully hunts" (XTC-Laced
    *  Blood) after resolution. §1 */
   huntSucceeded?: boolean;
+  /** A blood hunt interrupted action resolution; resume the tail with this
+   *  permanent-entry result once the referendum has finished. */
+  awaitingBloodHunt?: boolean;
+  bloodHuntResolutionEntered?: boolean;
   /** Seats whose card replacement waits "until after this action". */
   drawAfter: SeatId[];
   /** "Reaction cards cost +1 blood or life" (Consign to Oblivion), "the
@@ -3731,6 +3822,8 @@ export interface CombatFrame {
   /** Card instances whose "each round of combat" ability was used this
    *  round (War Ghoul's prevention) — cleared when a new round begins. */
   usedThisRound: CardInstanceId[];
+  /** Prevention purchased for this round against damage from a subtype. */
+  preventFromTagRound?: Array<{ minion: MinionId; tag: string; round: number }>;
   /** The same, scoped to the whole COMBAT rather than the round
    *  ("can prevent 1 damage each combat", Guardian Angel) — never reset
    *  while the frame lives. docs/conditional-statics-design.md §4 */
@@ -4385,6 +4478,9 @@ export interface GameState {
   edge: SeatId | null;
   frames: Frame[];
   eventLog: GameEvent[];
+  /** Clans for which the Blood Curse does not bar diablerie for this game.
+   * The trait itself and any other diablerie restrictions are unaffected. */
+  bloodCurseDiablerieExceptions?: string[];
   /** The most recent referendum that reached its tally, and the votes each
    *  vampire cast in it: "a vampire who cast any votes in the most recent
    *  referendum (must be since your last turn)" (Tribunal Judgment). A

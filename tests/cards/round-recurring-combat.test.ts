@@ -114,6 +114,42 @@ const passCycle = (id: string): Array<[string, string]> => [
   ["Alice", id], ["Bob", "pass"], ["Carol", "pass"],
 ];
 
+describe("Horrid Form (100934)", () => {
+  it.each([["basic", 0], ["superior", 1]] as const)("%s gives combat strength and %i prevention per round", (mode, prevention) => {
+    const { state, engine } = intoBeforeRange(["Horrid Form"], { vic: mode });
+    const ids = engine.decision()!.options.map((o) => o.id);
+    expect(ids.some((id) => id.startsWith("play:Horrid Form:superior"))).toBe(mode === "superior");
+    runTrace(engine, [["Alice", `play:Horrid Form:${mode}:V1:a0`], ...passCycle("pass")]);
+    expect(find(state, "V1").blood).toBe(3);
+    const cf = combat(state);
+    expect(cf.strengthBonus.acting).toBe(1);
+    expect(cf.preventPerRound.acting).toBe(prevention);
+    expect(cf.preventCredits.acting).toBe(0);
+  });
+
+  it("offers superior prevention and refreshes it in the next round", () => {
+    const { state, engine } = intoBeforeRange(["Horrid Form"], { vic: "superior" });
+    runTrace(engine, [["Alice", "play:Horrid Form:superior:V1:a0"], ...passCycle("pass")]);
+    let spent = false;
+    for (let i = 0; i < 40; i++) {
+      const dp = engine.decision();
+      if (!dp) throw new Error("combat ended before damage");
+      const credit = dp.seat === "Alice" && dp.options.find((o) => o.id === "prevent:credit");
+      if (credit) { engine.choose(credit.id); spent = true; break; }
+      const pick = dp.options.find((o) => o.id === "pass") ?? dp.options.find((o) => o.id === "strike:hand");
+      if (!pick) throw new Error(`cannot proceed through ${dp.window}`);
+      engine.choose(pick.id);
+    }
+    expect(spent).toBe(true);
+    expect(combat(state).preventPerRoundUsed.acting).toBe(1);
+    pressToNextRound(engine, state);
+    expect(combat(state).round).toBe(2);
+    expect(combat(state).preventPerRound.acting).toBe(1);
+    expect(combat(state).preventPerRoundUsed.acting).toBe(0);
+    expect(combat(state).strengthBonus.acting).toBe(1);
+  });
+});
+
 describe("Bear's Skin (100145)", () => {
   it("inferior is the existing ROUND-scoped credit: +1 strength, prevent 1, gone next round", () => {
     const { state, engine } = intoBeforeRange(["Bear's Skin"], {
