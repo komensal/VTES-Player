@@ -33392,6 +33392,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100603,
     name: "Earth-Feeder",
     cardType: "action",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -33437,6 +33439,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100623,
     name: "The Eldest Command Undeath",
     cardType: "politicalAction",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -33448,6 +33452,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100626,
     name: "Elephant Guardian",
     cardType: "retainer",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 1,
     usable: [],
     modes: [
@@ -33598,6 +33604,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100735,
     name: "Fire on the Mountain",
     cardType: "action",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -33698,6 +33706,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100818,
     name: "Ghoul Messenger",
     cardType: "retainer",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -33853,6 +33863,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100922,
     name: "Hiding in the Open",
     cardType: "politicalAction",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -33944,6 +33956,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100956,
     name: "Ilomba",
     cardType: "retainer",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -34078,6 +34092,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101037,
     name: "Kduva's Mask",
     cardType: "equipment",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     poolCost: 2,
     usable: [],
@@ -34090,6 +34106,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101039,
     name: "Kerrie",
     cardType: "equipment",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     poolCost: 1,
     usable: [],
@@ -34147,6 +34165,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101069,
     name: "Kuta",
     cardType: "politicalAction",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -34281,6 +34301,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101176,
     name: "Masai Blood Milk",
     cardType: "action",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 1,
     usable: [],
     modes: [
@@ -34407,6 +34429,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101289,
     name: "Nkishi",
     cardType: "equipment",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -34443,6 +34467,9 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101339,
     name: "Overseer",
     cardType: "politicalAction",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
+    requiresCapacity: 5,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -35041,6 +35068,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101709,
     name: "The Secret Must Be Kept",
     cardType: "politicalAction",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -35052,6 +35081,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101750,
     name: "Shaman",
     cardType: "retainer",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 1,
     usable: [],
     modes: [
@@ -35130,6 +35161,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101787,
     name: "Sires Command, Childer Inherit",
     cardType: "action",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -35321,6 +35354,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101914,
     name: "Swarm",
     cardType: "retainer",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 1,
     usable: [],
     modes: [
@@ -35776,6 +35811,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 102172,
     name: "Well-Marked",
     cardType: "action",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 1,
     usable: [],
     modes: [

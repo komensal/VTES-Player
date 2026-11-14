@@ -10,10 +10,10 @@ To powtarzalne, zgrubne grupowanie po słowach w tekście evidence, a nie potwie
 | `placeholder_lub_brak_efektu` | 1950 |
 | `akcje_i_blok` | 1652 |
 | `walka` | 754 |
-| `polityka_i_glosy` | 357 |
+| `polityka_i_glosy` | 358 |
 | `koszty_i_zasoby` | 873 |
 | `karty_i_strefy` | 1572 |
-| `czas_i_warunki` | 703 |
+| `czas_i_warunki` | 716 |
 | `inne_do_recznego_przegladu` | 6 |
 
 Wykaz per karta: `open-issue-categories.csv`; dowody i ograniczenia: `manual-findings.json`. Regeneracja: `python3 scripts/categorize-card-audit.py`.

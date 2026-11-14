@@ -3614,8 +3614,8 @@
   {
     "id": 100603,
     "name": "Earth-Feeder",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec daje modifyStealth 1 zamiast +2 stealth hunt i permanenta z +1 stealth przy polowaniu. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec daje modifyStealth 1 zamiast +2 stealth hunt i permanenta z +1 stealth przy polowaniu. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 100604,
@@ -3734,8 +3734,8 @@
   {
     "id": 100623,
     "name": "The Eldest Command Undeath",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Political action nie zawiera wyboru i spalenia wampira prey po referendum ani ograniczenia pozyskiwania blood przez aktora. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Political action nie zawiera wyboru i spalenia wampira prey po referendum ani ograniczenia pozyskiwania blood przez aktora. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 100624,
@@ -3753,7 +3753,7 @@
     "id": 100626,
     "name": "Elephant Guardian",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer ma 3 life, lecz brak wymogu ready Laibon, limitu jednej kopii i obrażeń działającego miniona podczas close strike resolution. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "evidence": "Retainer ma 3 life, lecz brak wymogu ready Laibon, limitu jednej kopii i obrażeń działającego miniona podczas close strike resolution. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 100627,
@@ -4406,8 +4406,8 @@
   {
     "id": 100735,
     "name": "Fire on the Mountain",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak wymogu ready Laibon, wyboru locked vampire w torpor, diablerie i dodatkowych głosów. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak wymogu ready Laibon, wyboru locked vampire w torpor, diablerie i dodatkowych głosów. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 100736,
@@ -4905,7 +4905,7 @@
     "id": 100818,
     "name": "Ghoul Messenger",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer ma 1 life, ale brak wymogu Laibon, akcji przeniesienia, blood i unlock oraz skutków zablokowania. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "evidence": "Retainer ma 1 life, ale brak wymogu Laibon, akcji przeniesienia, blood i unlock oraz skutków zablokowania. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 100819,
@@ -5528,8 +5528,8 @@
   {
     "id": 100922,
     "name": "Hiding in the Open",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Political action daje modifyBleed zamiast dołączenia po referendum, trwałego bleed i ograniczenia kart title. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Political action daje modifyBleed zamiast dołączenia po referendum, trwałego bleed i ograniczenia kart title. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 100923,
@@ -5733,7 +5733,7 @@
     "id": 100956,
     "name": "Ilomba",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer nie wymaga Laibon i nie określa wybranego nosiciela, limitu ani zastąpienia utraty życia kosztem nosiciela. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "evidence": "Retainer nie wymaga Laibon i nie określa wybranego nosiciela, limitu ani zastąpienia utraty życia kosztem nosiciela. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 100957,
@@ -6219,7 +6219,7 @@
     "id": 101037,
     "name": "Kduva's Mask",
     "status": "PARTIAL_FIX",
-    "evidence": "Equipment ma jedynie modifyBleed, bez unique, wymogu Laibon, trwałego bleed i votes oraz podatku na reaction Auspex. Bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Equipment ma jedynie modifyBleed, bez unique, wymogu Laibon, trwałego bleed i votes oraz podatku na reaction Auspex. Bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 101038,
@@ -6231,7 +6231,7 @@
     "id": 101039,
     "name": "Kerrie",
     "status": "PARTIAL_FIX",
-    "evidence": "Pusty tryb equipment bez wymogu Laibon, profilu melee strength+1 i alternatywnego ranged strike odwracającego broń. Bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "evidence": "Pusty tryb equipment bez wymogu Laibon, profilu melee strength+1 i alternatywnego ranged strike odwracającego broń. Bez nowego testu scenariuszowego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 101040,
@@ -6410,8 +6410,8 @@
   {
     "id": 101069,
     "name": "Kuta",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Political action daje modifyStealth zamiast wymogu Laibon, celu młodszego capacity 6 lub mniej i permanenta z ograniczeniami oraz referendum do spalenia. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Political action daje modifyStealth zamiast wymogu Laibon, celu młodszego capacity 6 lub mniej i permanenta z ograniczeniami oraz referendum do spalenia. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 101070,
@@ -7053,7 +7053,7 @@
     "id": 101176,
     "name": "Masai Blood Milk",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma addStrength i stealth zamiast unique karty na Laibon, działania burn dającego trwały strength oraz wygaśnięcia. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Action ma addStrength i stealth zamiast unique karty na Laibon, działania burn dającego trwały strength oraz wygaśnięcia. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 101177,
@@ -7485,7 +7485,7 @@
     "id": 101248,
     "name": "Mozambique Allure",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Action daje tylko stealth; brak wyboru pomiędzy dobraniem crypt a zmianą sekty i warunkowym unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Action daje tylko stealth; brak wyboru pomiędzy dobraniem crypt a zmianą sekty i warunkowym unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Uzupełnienie analizy statycznej: brak także kontroli alternatywnego wymogu Laibon albo nietytułowanego wampira; nie należy zastępować go bezwarunkowym requiresSect. Bez scenariusza obu stron tej alternatywy."
   },
   {
     "id": 101249,
@@ -7731,7 +7731,7 @@
     "id": 101289,
     "name": "Nkishi",
     "status": "PARTIAL_FIX",
-    "evidence": "Pusty spec equipment bez unique, wymogu Laibon i wyszukania Aye/Orun w bibliotece lub ash heap za master phase action. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "evidence": "Pusty spec equipment bez unique, wymogu Laibon i wyszukania Aye/Orun w bibliotece lub ash heap za master phase action. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 101290,
@@ -8030,8 +8030,8 @@
   {
     "id": 101339,
     "name": "Overseer",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta political action bez wymogu Laibon i capacity, głosów Guruhi, ignorowania głosów magaji i przyznania tytułu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusta political action bez wymogu Laibon i capacity, głosów Guruhi, ignorowania głosów magaji i przyznania tytułu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Dodano również próg capacity powyżej 4. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 101340,
@@ -10250,8 +10250,8 @@
   {
     "id": 101709,
     "name": "The Secret Must Be Kept",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Puste political effects bez wymogu Laibon, wyboru ally/retainera i ich burn oraz utraty pool kontrolerów. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Puste political effects bez wymogu Laibon, wyboru ally/retainera i ich burn oraz utraty pool kontrolerów. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 101710,
@@ -10497,7 +10497,7 @@
     "id": 101750,
     "name": "Shaman",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer ma life oraz modyfikatory jako efekty zagrania zamiast unique i stałego intercept oraz shuffle za stealth; brak wymogu Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "evidence": "Retainer ma life oraz modyfikatory jako efekty zagrania zamiast unique i stałego intercept oraz shuffle za stealth; brak wymogu Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 101751,
@@ -10718,8 +10718,8 @@
   {
     "id": 101787,
     "name": "Sires Command, Childer Inherit",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast gain blood dla innego Laibon lub wyboru dwóch Laibon do lock przez magaji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast gain blood dla innego Laibon lub wyboru dwóch Laibon do lock przez magaji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 101788,
@@ -11481,7 +11481,7 @@
     "id": 101914,
     "name": "Swarm",
     "status": "PARTIAL_FIX",
-    "evidence": "Retainer ma life i efekt stealth, lecz brak wymogu ready Laibon, dołączenia do cudzego miniona, obsługi blocked action i upkeep/life oraz limitu Swarm. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "evidence": "Retainer ma life i efekt stealth, lecz brak wymogu ready Laibon, dołączenia do cudzego miniona, obsługi blocked action i upkeep/life oraz limitu Swarm. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 101915,
@@ -13028,8 +13028,8 @@
   {
     "id": 102172,
     "name": "Well-Marked",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action daje jednorazowy prevent i stealth zamiast attach na Laibon, unlock przy capacity >=5 i ograniczonej prewencji co combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action daje jednorazowy prevent i stealth zamiast attach na Laibon, unlock przy capacity >=5 i ograniczonej prewencji co combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: dodano wymóg działającego wampira Laibon (tests/cards/printed-laibon-requirements.test.ts); historyczne stwierdzenia o braku tego wymogu są nieaktualne. Pozostałe opisane efekty, cele i warunki pozostają otwarte; testy wymagania nie potwierdzają ich poprawności."
   },
   {
     "id": 102173,
