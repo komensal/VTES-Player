@@ -36636,7 +36636,7 @@ export const cryptSpecs: CardSpec[] = [
   }),
   cryptPerm(201757, "Huldu, The Desecrator (G6)", {
     statics: { bleed: 1 },
-    preventForOther: { blood: 1, amount: 1 },
+    preventForOther: { blood: 1, amount: 1, requiresReady: true },
   }),
 
   // "1 press (mandatory) each combat, only usable to continue combat" —

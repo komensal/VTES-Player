@@ -24716,8 +24716,8 @@
   {
     "id": 201757,
     "name": "Huldu, The Desecrator (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Tekst wymaga ready Huldu; preventForOther w compile.ts sprawdza istnienie bearer i blood, ale nie isReady, a abilityOptionsFor przegląda także attached minionów w torpor. Spec daje też +1 bleed. Analiza bez nowego scenariusza."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono wymaganie ready: preventForOther Huldu wymaga isReady (także torporPending), a Opikun bez tego warunku nadal działa w torporze. Ograniczono cel do innego własnego miniona uczestniczącego w walce. tests/cards/hecata-huldu-audit.test.ts: koszt, zapobieganie, once/combat, locked-ready, torpor, ally, aggravated, obie strony oraz +1 bleed; również regresja Opikun. Weryfikacja wybranych scenariuszy, nie wszystkich interakcji."
   },
   {
     "id": 201758,

@@ -3604,6 +3604,9 @@ export interface CardSpec {
     preventForOther?: {
       blood: number;
       amount: number;
+      /** Huldu's ability explicitly requires her to be ready; an ability
+       *  without that wording can still be used from torpor. */
+      requiresReady?: boolean;
       /** "…prevent up to 2 NON-AGGRAVATED damage" (Opikun). */
       nonAggravated?: boolean;
       /** Opikun says "a vampire you control"; Huldu "another minion you

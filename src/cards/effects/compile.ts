@@ -14059,6 +14059,7 @@ function addCryptAbilities(
         cf &&
         ctx.window === "combat.damageResolution" &&
         bearer.blood >= preventOther.blood &&
+        (!preventOther.requiresReady || isReady(bearer)) &&
         !cf.usedThisCombat.includes(entry.card.id)
       ) {
         const pd = cf.pendingDamage[0];
@@ -14068,6 +14069,7 @@ function addCryptAbilities(
           victim &&
           victim.controller === ctx.seat &&
           victim.id !== bearer.id &&
+          (victim.id === cf.acting || victim.id === cf.opposing) &&
           (preventOther.kind !== "vampire" || victim.kind === "vampire") &&
           // "…up to 2 NON-AGGRAVATED damage" (Opikun): a gate on OPTIONS,
           // the `noPreventBy` precedent — a card that provably cannot
