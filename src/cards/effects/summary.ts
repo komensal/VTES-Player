@@ -62,6 +62,7 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   actionDamageMinion: "damage",
   actionDrawThenDiscard: "board",
   eachUnlockedVampireGainsBlood: "bloodGain",
+  actionHunt: "bloodGain",
   otherMinionPaysBlood: "stealth",
   blockCost: "stealth",
   blockRestriction: "stealth",

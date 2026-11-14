@@ -1209,6 +1209,8 @@ export interface CardHandler {
    *  a vampire who must hunt may play it and Restricted Vitae's bar reaches
    *  it. docs/hunt-success-design.md §1 */
   huntAction?: boolean;
+  /** A successful action calls a blood hunt before after-resolution effects. */
+  bloodHuntAfterSuccess?: boolean;
   /** Whether this mode is an ACTION TO ENTER COMBAT — what Enrage
    *  superior's toll exempts. Asked by the minion phase's toll gate, which
    *  has only the play option; the charge itself reads the announced

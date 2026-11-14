@@ -32645,14 +32645,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Abactor [100004] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    // The blood hunt interrupts the action before after-resolution effects;
+    // it is not an actual diablerie. +4 hunt adds to the normal 1 blood.
     krcgId: 100004,
     name: "Abactor",
     cardType: "action",
     bloodCost: 0,
+    requiresVampire: true,
+    huntAction: true,
+    bloodHuntAfterSuccess: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "actionHunt", amount: 5 }] }
     ],
   },
   {

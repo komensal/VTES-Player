@@ -462,6 +462,8 @@ export type EffectPrimitive =
    *  she gains 4 blood" (Entrenching) — read at RESOLUTION on the actor,
    *  so blood spent getting there counts against the threshold. */
   | { kind: "actionGainBlood"; amount: number; ifActorBloodAtLeast?: number }
+  /** Blood from the bank on a hunt action, including its printed hunt bonus. */
+  | { kind: "actionHunt"; amount: number }
   /** "…and YOU gain N pool" (Spoils of War) — the acting minion's
    *  controller, the pool twin of `actionGainBlood`. */
   | { kind: "actionGainPool"; amount: number }
@@ -4805,6 +4807,8 @@ export interface CardSpec {
    *  hunt, and its blood is the hunt's, paid through `payHunt`.
    *  docs/hunt-success-design.md §1 */
   huntAction?: true;
+  /** On success, call a blood hunt before the action's after-resolution window. */
+  bloodHuntAfterSuccess?: true;
   /** "Not usable by a vampire with more than 0 intercept" (Legwork) — a
    *  gate on the REACTING minion, which is why it cannot be a
    *  `UsabilityRule`: those are asked once per card play, and this has to

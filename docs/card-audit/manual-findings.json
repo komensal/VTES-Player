@@ -20,8 +20,8 @@
   {
     "id": 100004,
     "name": "Abactor",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec action daje wyłącznie +1 stealth, brak hunt +4 i blood hunt referendum po sukcesie. src/cards/effects/cards.ts: Abactor; registry.json: 100004."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano akcję hunt +4, wspólną wypłatę hunt i referendum blood hunt po udanym hunt, przed oknem Freak Drive; sama akcja nie stanowi diablerie. tests/cards/abactor-audit.test.ts sprawdza m.in. bonusy, blok, zakaz hunt, Masquerade Endangered, ochronę przed blood hunt, przejście referendum i Go-getter. Kolejność innych automatycznych/odroczonych efektów hunt wymaga dalszej weryfikacji; Vampiric Disease i Ex Nihilo nadal mają niekompletne implementacje, więc nie można uznać całej karty za naprawioną."
   },
   {
     "id": 100005,

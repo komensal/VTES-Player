@@ -1693,6 +1693,16 @@ export class VtesEngine implements EngineOps {
           this.resolveAction(top, false);
           continue;
         }
+        if (top.step === "afterResolution" && top.awaitingBloodHunt) {
+          // The independent blood-hunt referendum has finished; only now
+          // may cards such as Freak Drive use the action's aftermath.
+          delete top.awaitingBloodHunt;
+          const entered = top.bloodHuntResolutionEntered;
+          delete top.bloodHuntResolutionEntered;
+          if (entered !== undefined) this.resolveAction(top, true, entered);
+          else this.openActionAfterResolution(top, top.resolvedSuccess === true, true);
+          continue;
+        }
         if (top.step === "afterResolution" && cycleQuiescent(top.cycle)) {
           // The post-resolution impulse is over. THIS is where the window
           // closes — `resolveActionInner` only opens it — so anything that
@@ -10124,15 +10134,15 @@ export class VtesEngine implements EngineOps {
     af.huntBonusBlood = [...(af.huntBonusBlood ?? []), { minion, amount }];
   }
 
-  private resolveAction(af: ActionFrame, success: boolean): void {
+  private resolveAction(af: ActionFrame, success: boolean, resumeEntered?: boolean): void {
     this.deferChoices = true;
     try {
-      this.resolveActionInner(af, success);
+      this.resolveActionInner(af, success, resumeEntered);
       // The offers registered above. Raised here, they are QUEUED (the
       // action is resolving) and flushed the instant it is over, which is
       // exactly "after action resolution" — no new window, and no change
       // to the after-resolution probe, which only sees cards.
-      for (const u of af.afterResolutionUnlocks ?? []) {
+      for (const u of af.awaitingBloodHunt ? [] : af.afterResolutionUnlocks ?? []) {
         if (u.ifSuccessful && !success) continue;
         const payer = findMinion(this.state, u.payer);
         const target = findMinion(this.state, u.target);
@@ -10393,8 +10403,15 @@ export class VtesEngine implements EngineOps {
     return entered;
   }
 
-  private resolveActionInner(af: ActionFrame, success: boolean): void {
-    let entered = success ? this.applySuccessEffects(af) : false;
+  private resolveActionInner(af: ActionFrame, success: boolean, resumeEntered?: boolean): void {
+    const enteredAtSuccess = resumeEntered ?? (success ? this.applySuccessEffects(af) : false);
+    // Abactor's blood hunt interrupts the action as soon as its hunt has
+    // succeeded, before after-resolution damage, effects, and impulses.
+    if (resumeEntered === undefined && success && this.interruptForActionBloodHunt(af)) {
+      af.bloodHuntResolutionEntered = enteredAtSuccess;
+      return;
+    }
+    let entered = enteredAtSuccess;
     // "They burn 1 blood before action resolution" unless they blocked
     // (Forced Awakening) — applies whether the action succeeded or not.
     // "…become locked BEFORE ACTION RESOLUTION" (Faceless Night). p. 48:
@@ -10514,7 +10531,21 @@ export class VtesEngine implements EngineOps {
     // can actually use it — a recorded deviation, the same one already
     // taken for combat.damageResolution (docs/after-resolution-design.md §3).
     af.resolvedSuccess = success;
-    if (af.step !== "afterResolution") {
+    this.openActionAfterResolution(af, success, resumeEntered !== undefined);
+  }
+
+  private interruptForActionBloodHunt(af: ActionFrame): boolean {
+    const actor = findMinion(this.state, af.acting);
+    if (!af.card || !this.handler(af.card.instance.name).bloodHuntAfterSuccess || !af.huntSucceeded || !actor ||
+        actor.attached.some((p) => p.statics.noBloodHunt)) return false;
+    af.step = "afterResolution";
+    af.awaitingBloodHunt = true;
+    this.pushBloodHunt(actor.id);
+    return true;
+  }
+
+  private openActionAfterResolution(af: ActionFrame, success: boolean, resumeAfterBloodHunt = false): void {
+    if (af.step !== "afterResolution" || resumeAfterBloodHunt) {
       // The step has to be set BEFORE probing: a card's own usable rule
       // asserts it is in this window, so asking first would always answer
       // "nobody can play anything". Set it, ask, and put it back if the
@@ -10553,6 +10584,7 @@ export class VtesEngine implements EngineOps {
     this.applySuccessEffects(af);
     // Cards keyed on "after a SUCCESSFUL action" read this.
     af.resolvedSuccess = true;
+    if (this.interruptForActionBloodHunt(af)) return;
     this.finishAction(af, true);
   }
 

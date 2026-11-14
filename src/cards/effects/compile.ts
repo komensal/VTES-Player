@@ -2221,6 +2221,9 @@ function compileActionCard(spec: CardSpec): CardHandler {
             ops.emit({ type: "BloodGained", minion: af.acting, amount: e.amount });
             break;
           }
+          case "actionHunt":
+            if (af.actionKind === "hunt") ops.payHunt(af, e.amount);
+            break;
           case "actionGainPool":
             // "…and YOU gain N pool" (Spoils of War) — the acting
             // minion's CONTROLLER, which is the seat that played the card.
@@ -10725,6 +10728,7 @@ export function compileSpec(spec: CardSpec): CardHandler {
   if (spec.delayedReplaceUntil) handler.delayedReplaceUntil = spec.delayedReplaceUntil;
   if (spec.successUnlocksActor) handler.successUnlocksActor = spec.successUnlocksActor;
   if (spec.huntAction) handler.huntAction = true;
+  if (spec.bloodHuntAfterSuccess) handler.bloodHuntAfterSuccess = true;
   // The printed type line, for cancel-as-played effects that name a type.
   // A dual-typed Action Modifier/Reaction really is a reaction card, so it
   // counts as one however this particular play is being made.

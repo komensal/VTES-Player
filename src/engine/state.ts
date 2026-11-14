@@ -2705,6 +2705,10 @@ export interface ActionFrame {
    *  to. Read by "only usable when a vampire successfully hunts" (XTC-Laced
    *  Blood) after resolution. §1 */
   huntSucceeded?: boolean;
+  /** A blood hunt interrupted action resolution; resume the tail with this
+   *  permanent-entry result once the referendum has finished. */
+  awaitingBloodHunt?: boolean;
+  bloodHuntResolutionEntered?: boolean;
   /** Seats whose card replacement waits "until after this action". */
   drawAfter: SeatId[];
   /** "Reaction cards cost +1 blood or life" (Consign to Oblivion), "the
