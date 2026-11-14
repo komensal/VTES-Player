@@ -266,6 +266,77 @@ describe("Malkavian Time Auction — the two highest bidders pay you", () => {
     expect(seat(state, "Alice").pool).toBe(11);
   });
 
+  it("offers Howler but not Helen as bearer of auctioned equipment", () => {
+    const { state, engine } = auction();
+    for (const [id, name] of [["W", "Howler (G2)"], ["M", "Helen Fairchild (G6)"]] as const) {
+      const m = minion(state, id);
+      const self = testRegistry[name]!.cryptEntry!();
+      m.attached.push(entry(m.id, name, { statics: self.statics, tags: self.tags }));
+    }
+    play(engine, "Alice", "play:Malkavian Time Auction:-:mag:mta");
+    runTrace(engine, [
+      ["Bob", "choice:Malkavian Time Auction:mta:bid:1"],
+      ["Carol", "choice:Malkavian Time Auction:mta:bid:pass"],
+    ]);
+    expect(ids(engine)).toEqual(["choice:Malkavian Time Auction:mta:bearer:W"]);
+    runTrace(engine, [["Bob", "choice:Malkavian Time Auction:mta:bearer:W"]]);
+    expect(minion(state, "W").attached.some((p) => p.card.id === "mag")).toBe(true);
+    expect(minion(state, "M").attached.some((p) => p.card.id === "mag")).toBe(false);
+  });
+
+  it("allows Helen to receive a location that does not count as equipment in play", () => {
+    const { state, engine } = auction();
+    const helen = minion(state, "M");
+    const self = testRegistry["Helen Fairchild (G6)"]!.cryptEntry!();
+    helen.attached.push(entry(helen.id, "Helen Fairchild (G6)", { statics: self.statics, tags: self.tags }));
+    minion(state, "V1").attached.push(entry("manse", "Living Manse", {
+      owner: "Alice", tags: ["location", "notEquipment"],
+    }));
+    play(engine, "Alice", "play:Malkavian Time Auction:-:manse:mta");
+    runTrace(engine, [
+      ["Bob", "choice:Malkavian Time Auction:mta:bid:1"],
+      ["Carol", "choice:Malkavian Time Auction:mta:bid:pass"],
+    ]);
+    expect(ids(engine)).toContain("choice:Malkavian Time Auction:mta:bearer:M");
+    runTrace(engine, [["Bob", "choice:Malkavian Time Auction:mta:bearer:M"]]);
+    expect(helen.attached.some((p) => p.card.id === "manse")).toBe(true);
+  });
+
+  it("burns auctioned equipment when the winner has no permissible bearer", () => {
+    const { state, engine } = auction();
+    seat(state, "Bob").minions = [minion(state, "M")];
+    const m = minion(state, "M");
+    const self = testRegistry["Helen Fairchild (G6)"]!.cryptEntry!();
+    m.attached.push(entry(m.id, "Helen Fairchild (G6)", { statics: self.statics, tags: self.tags }));
+    play(engine, "Alice", "play:Malkavian Time Auction:-:mag:mta");
+    runTrace(engine, [
+      ["Bob", "choice:Malkavian Time Auction:mta:bid:1"],
+      ["Carol", "choice:Malkavian Time Auction:mta:bid:pass"],
+    ]);
+    expect(ids(engine).some((id) => id.includes(":bearer:"))).toBe(false);
+    expect((seat(state, "Alice").ashHeap ?? []).map((c) => c.id)).toContain("mag");
+    expect(seat(state, "Bob").pool).toBe(9);
+    expect(seat(state, "Alice").pool).toBe(11);
+  });
+
+  it("Helen may receive a retainer, unlike a minion barred from retainers", () => {
+    const { state, engine } = auction();
+    minion(state, "V1").attached.push(entry("raven", "Raven Spy", { owner: "Alice", tags: ["retainer"] }));
+    const helen = minion(state, "M");
+    const self = testRegistry["Helen Fairchild (G6)"]!.cryptEntry!();
+    helen.attached.push(entry(helen.id, "Helen Fairchild (G6)", { statics: self.statics, tags: self.tags }));
+    const restricted = minion(state, "W");
+    restricted.attached.push(entry(restricted.id, "restricted", { statics: { cannotBeEquipped: { retainers: true } } }));
+    play(engine, "Alice", "play:Malkavian Time Auction:-:raven:mta");
+    runTrace(engine, [
+      ["Bob", "choice:Malkavian Time Auction:mta:bid:1"],
+      ["Carol", "choice:Malkavian Time Auction:mta:bid:pass"],
+    ]);
+    expect(ids(engine)).toEqual(["choice:Malkavian Time Auction:mta:bearer:M"]);
+    runTrace(engine, [["Bob", "choice:Malkavian Time Auction:mta:bearer:M"]]);
+    expect(helen.attached.some((p) => p.card.id === "raven")).toBe(true);
+  });
+
   it("equipment won by a Methuselah with no minion has nothing to sit on, and burns", () => {
     const { state, engine } = auction();
     seat(state, "Carol").minions = [];

@@ -36899,7 +36899,7 @@ export const cryptSpecs: CardSpec[] = [
   // card from your ash heap to the BOTTOM of your library. +1 bleed."
   cryptPerm(201724, "Mora, the Death Seer (G6)", {
     statics: { bleed: 1 },
-    discardPhaseChoice: { do: "ashToLibraryBottom" },
+    discardPhaseChoice: { do: "ashToLibraryBottom", requiresReady: true },
   }),
 
   // "During your discard phase, you can move an ANIMAL retainer from a
@@ -41070,6 +41070,19 @@ function bearerOf(state: GameState, cardId: CardInstanceId): MinionState | null 
  * (a master) changes controller and stays where it is. A bidder may bid up
  * to their pool, the Hostile Takeover line [LSJ 19990825]. §3
  */
+/** The new controller must choose a bearer who can possess the card.
+ * Printed requirements are ignored for a card already in play, but a
+ * minion's "cannot have equipment/retainers" is not such a requirement. */
+function auctionBearerCanHave(entry: PermanentInPlay, target: MinionState, registry: HandlerRegistry): boolean {
+  const handler = registry[entry.card.name];
+  // Loquipment is an equipment card but explicitly not equipment in play.
+  if (!entry.tags.includes("notEquipment") && (handler?.isEquipment || entry.tags.includes("equipment"))) {
+    return !cannotBeEquipped(target, "equipment");
+  }
+  if (handler?.isRetainer || entry.tags.includes("retainer")) return !cannotBeEquipped(target, "retainer");
+  return true; // a location is not equipment or a retainer
+}
+
 const timeAuctionRules: AuctionRules = {
   opening: () => 1,
   most: (state, _p, seat) => getSeat(state, seat).pool,
@@ -41106,9 +41119,9 @@ const timeAuctionRules: AuctionRules = {
     const h = ops.registry[entry.card.name];
     const possession = h?.isEquipment === true || h?.isRetainer === true || entry.tags.includes("location");
     if (!possession || bearer.controller === leader) return;
-    // A possession needs a minion of its new controller to sit on. With
-    // none, there is nothing to put it on, and it is burned.
-    if (getSeat(ops.state, leader).minions.length === 0) {
+    // A possession needs a legal bearer controlled by its new controller.
+    // If none exists, it has nowhere to sit and burns, as for no minion.
+    if (!getSeat(ops.state, leader).minions.some((m) => auctionBearerCanHave(entry, m, ops.registry))) {
       ops.burnPermanent(target);
       return;
     }
@@ -41150,11 +41163,15 @@ const malkavianTimeAuction: CardHandler = {
       seller: play.seat,
     });
   },
-  choiceOptions(frame, state) {
+  choiceOptions(frame, state, registry) {
     if (frame.key === "bid") return auctionOptions(this.name, frame, state, timeAuctionRules);
     // "…the new controller chooses a new target they control for them."
-    const what = frame.params["targetName"] ?? frame.params["target"];
-    return getSeat(state, frame.seat).minions.map((m) => ({
+    const target = frame.params["target"] ?? "";
+    const bearer = bearerOf(state, target);
+    const entry = bearer?.attached.find((p) => p.card.id === target);
+    if (!entry) return [];
+    const what = frame.params["targetName"] ?? target;
+    return getSeat(state, frame.seat).minions.filter((m) => auctionBearerCanHave(entry, m, registry)).map((m) => ({
       id: `choice:${this.name}:${frame.cardId}:bearer:${m.id}`,
       kind: "answerChoice" as const,
       label: `${this.name}: put ${what} on ${m.name}`,
@@ -41169,7 +41186,10 @@ const malkavianTimeAuction: CardHandler = {
     const target = frame.params["target"] ?? "";
     const from = bearerOf(ops.state, target);
     const to = choice.params["bearer"];
-    if (!from || !to || !findMinion(ops.state, to)) return;
+    const entry = from?.attached.find((p) => p.card.id === target);
+    const targetMinion = to ? findMinion(ops.state, to) : null;
+    if (!from || !to || !entry || !targetMinion || targetMinion.controller !== frame.seat ||
+        !auctionBearerCanHave(entry, targetMinion, ops.registry)) return;
     ops.emit({ type: "EquipmentMoved", cardId: target, from: from.id, to });
   },
 };

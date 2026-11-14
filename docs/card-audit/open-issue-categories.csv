@@ -726,6 +726,7 @@ id,name,kind,status,categories
 101153,Malkavian Game,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
 101155,Malkavian Prank,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu
 101157,The Malkavian Seven Miseries,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
+101158,Malkavian Time Auction,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 101159,Malleable Visage,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 101161,Mantle of the Bestial Majesty,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101163,Mapatano Utando,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -2445,7 +2446,6 @@ id,name,kind,status,categories
 201664,Adrino Manauara (G6),crypt,CODE_DISCREPANCY,walka; karty_i_strefy
 201666,Aniel (G7),crypt,CODE_DISCREPANCY,karty_i_strefy
 201672,Gathii (G7),crypt,UNRESOLVED,akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-201675,Luciano Carvalho (G7),crypt,CODE_DISCREPANCY,karty_i_strefy; czas_i_warunki
 201680,Opikun (G7),crypt,CODE_DISCREPANCY,walka; koszty_i_zasoby
 201693,Annabelle Triabell (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 201694,Diana Iadanza (G7),crypt,CODE_DISCREPANCY,akcje_i_blok; polityka_i_glosy; koszty_i_zasoby

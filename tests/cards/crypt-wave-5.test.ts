@@ -448,6 +448,15 @@ describe("Mora", () => {
     expect(state.seats[0]!.ashHeap).toHaveLength(1);
   });
 
+  it("does not offer Mora's choice while she is in torpor", () => {
+    const { state, engine } = withCrypt("Mora, the Death Seer (G6)", (s) => {
+      Object.assign(find(s, "V1"), { inTorpor: true, locked: true });
+      s.seats[0]!.ashHeap = [{ id: "ash1", name: "Cats' Guidance" }];
+    });
+    expect(toPhase(engine, state, "discard")).toBe(true);
+    expect(optionIds(engine).some((id) => id.includes("discardPhaseChoice:ash1"))).toBe(false);
+  });
+
   it("will not move a burnt VAMPIRE — 'a LIBRARY card in your ash heap'", () => {
     const { state, engine } = withCrypt("Mora, the Death Seer (G6)", (s) => {
       s.seats[0]!.ashHeap = [{ id: "v1c", name: "Alexa Draper (G6)", crypt: true }];
@@ -469,6 +478,52 @@ describe("Luciano Carvalho", () => {
     runTrace(engine, [["Alice", opt!]]);
     expect(find(state, "V9").attached.some((p) => p.card.id === "pet")).toBe(true);
     expect(find(state, "V1").attached.some((p) => p.card.id === "pet")).toBe(false);
+  });
+
+  it("works while Luciano, the source and the destination are in torpor", () => {
+    const { state, engine } = withCrypt("Luciano Carvalho (G7)", (s) => {
+      Object.assign(find(s, "V1"), { inTorpor: true, locked: true });
+      s.seats[0]!.minions.push(makeMinion("V9", "Alice", { inTorpor: true, locked: true }));
+      attach(find(s, "V1"), "pet", "Raven Spy", {}, ["animal"]);
+    });
+    expect(toPhase(engine, state, "discard")).toBe(true);
+    const opt = optionIds(engine).find((o) => o.includes("discardPhaseChoice:pet:V9"));
+    expect(opt).toBeDefined();
+    expect(find(state, "V1").inTorpor).toBe(true);
+    expect(find(state, "V9").inTorpor).toBe(true);
+    runTrace(engine, [["Alice", opt!]]);
+    expect(find(state, "V9").attached.some((p) => p.card.id === "pet")).toBe(true);
+    expect(find(state, "V1").attached.some((p) => p.card.id === "pet")).toBe(false);
+  });
+
+  it("does not offer a destination forbidden to have retainers, but allows Helen", () => {
+    const { state, engine } = withCrypt("Luciano Carvalho (G7)", (s) => {
+      const restricted = makeMinion("V9", "Alice");
+      attach(restricted, "V9", "restricted", { cannotBeEquipped: { retainers: true } });
+      s.seats[0]!.minions.push(restricted);
+      const helen = asVampire(makeMinion("V10", "Alice", { inTorpor: true }), "Helen Fairchild (G6)");
+      s.seats[0]!.minions.push(helen);
+      attach(find(s, "V1"), "pet", "Raven Spy", {}, ["animal"]);
+    });
+    expect(toPhase(engine, state, "discard")).toBe(true);
+    const options = optionIds(engine);
+    expect(options.some((o) => o.includes("discardPhaseChoice:pet:V9"))).toBe(false);
+    const move = options.find((o) => o.includes("discardPhaseChoice:pet:V10"));
+    expect(move).toBeDefined();
+    runTrace(engine, [["Alice", move!]]);
+    expect(find(state, "V10").attached.some((p) => p.card.id === "pet")).toBe(true);
+  });
+
+  it("cannot move an animal retainer from another Methuselah's vampire", () => {
+    const { state, engine } = withCrypt("Luciano Carvalho (G7)", (s) => {
+      s.seats[0]!.minions.push(makeMinion("V9", "Alice"));
+      attach(find(s, "W"), "enemyPet", "Raven Spy", {}, ["animal"]);
+      attach(find(s, "V1"), "pet", "Raven Spy", {}, ["animal"]);
+    });
+    expect(toPhase(engine, state, "discard")).toBe(true);
+    const options = optionIds(engine);
+    expect(options.some((o) => o.includes("discardPhaseChoice:pet:V9"))).toBe(true);
+    expect(options.some((o) => o.includes("discardPhaseChoice:enemyPet:"))).toBe(false);
   });
 
   it("does not move a retainer that is not an ANIMAL", () => {

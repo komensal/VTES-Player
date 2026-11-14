@@ -4146,17 +4146,16 @@ export interface CardSpec {
      *  never answers for another. `grantedAction` stays the first grant so
      *  no existing card moves. docs/plain-allies-design.md §5 */
     grantedActions?: Array<NonNullable<NonNullable<CardSpec["permanent"]>["grantedAction"]>>;
-    /** "If \<this vampire\> is ready during your DISCARD phase, you can
-     *  \<do Y\>" — a phase hook that asks its controller a question
-     *  (Mora, Luciano). Optional, because both cards say "you can": an
-     *  optional `ChoiceFrame`, whose decline is a plain pass.
-     *  docs/crypt-wave-5.md §5 */
+    /** An optional discard-phase choice (Mora, Luciano). Readiness is
+     *  required only when printed, not for every vampire special. */
     discardPhaseChoice?: {
       /** `ashToLibraryBottom` — "move a library card from your ash heap
        *  to the BOTTOM of your library" (Mora). `moveAnimalRetainer` —
        *  "move an animal retainer from a vampire you control to another
        *  vampire you control" (Luciano). */
       do: "ashToLibraryBottom" | "moveAnimalRetainer";
+      /** "If this vampire is ready" (Mora), absent on Luciano. */
+      requiresReady?: boolean;
       /** The printed sub-type the retainer must carry. */
       tag?: string;
     };

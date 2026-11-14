@@ -14166,8 +14166,8 @@ function addCryptAbilities(
     };
   }
 
-  // "If <this vampire> is ready during your discard phase, you can <do
-  // Y>" (Mora, Luciano) — a phase hook that asks its controller.
+  // Optional discard-phase choices: Mora requires readiness; Luciano's
+  // text does not, so his ability also works from torpor.
   const dpc = perm?.discardPhaseChoice;
   if (dpc) {
     const priorDpc = handler.onDiscardPhase?.bind(handler);
@@ -14176,7 +14176,7 @@ function addCryptAbilities(
       const controller = entry.controller ?? owner.seat;
       if (turnSeat !== controller) return;
       const bearer = owner.minion === null ? null : findMinion(ops.state, owner.minion);
-      if (!bearer || !isReady(bearer)) return;
+      if (!bearer || (dpc.requiresReady && !isReady(bearer))) return;
       ops.raiseChoice({
         seat: controller,
         cardName: spec.name,
@@ -14207,15 +14207,14 @@ function addCryptAbilities(
           // "Move an animal retainer FROM a vampire you control TO
           // ANOTHER vampire you control" — one option per (card, new
           // bearer) pair, the choice made in one decision.
-          const mine = getSeat(state, frame.seat).minions.filter(
-            (m) => m.kind === "vampire" && isReady(m),
-          );
+          // Torpid vampires are still controlled and retain their cards.
+          const mine = getSeat(state, frame.seat).minions.filter((m) => m.kind === "vampire");
           for (const from of mine) {
             for (const p of from.attached) {
               if (dpc.tag && !p.tags.includes(dpc.tag)) continue;
               if (!(registry[p.card.name]?.isRetainer ?? false)) continue;
               for (const to of mine) {
-                if (to.id === from.id) continue;
+                if (to.id === from.id || cannotBeEquipped(to, "retainer")) continue;
                 out.push({
                   id: `choice:${spec.name}:${frame.cardId}:discardPhaseChoice:${p.card.id}:${to.id}`,
                   kind: "answerChoice" as const,
@@ -14236,7 +14235,11 @@ function addCryptAbilities(
           // end — `takeFromAshHeap` would put it in the HAND instead.
           ops.ashHeapToLibraryBottom(frame.seat, card);
         } else if (choice.params["to"]) {
-          ops.moveAttachment(card, choice.params["to"]);
+          const to = findMinion(ops.state, choice.params["to"]);
+          const from = getSeat(ops.state, frame.seat).minions.find((m) => m.attached.some((p) => p.card.id === card));
+          if (!to || to.controller !== frame.seat || to.kind !== "vampire" ||
+              !from || from.id === to.id || from.kind !== "vampire" || cannotBeEquipped(to, "retainer")) return;
+          ops.moveAttachment(card, to.id);
         }
       },
     };
