@@ -265,10 +265,9 @@ export type EffectPrimitive =
   /** "This vampire can burn X blood to give the next X actions minions you
    *  control perform this turn +1 stealth" (Veil the Legions superior).
    *  X is chosen at play time, so the compiler emits one option per
-   *  affordable X and the choice rides in the option id (`x=N`), the way
-   *  `paymentSplits` already does for cost sources. `max` caps the offer
-   *  so a big-blood vampire does not flood the option list. */
-  | { kind: "bankStealth"; max: number }
+   *  affordable X after the play cost and the choice rides in the option
+   *  id (`x=N`), the way `paymentSplits` already does for cost sources. */
+  | { kind: "bankStealth" }
   /** "Force a vampire to abstain (this cancels their votes and ballots)"
    *  (Scalpel Tongue, Telepathic Vote Counting superior). `onlyIfVoted`
    *  is Scalpel Tongue's "a vampire who HAS CAST votes or ballots in this

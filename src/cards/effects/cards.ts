@@ -6115,7 +6115,7 @@ export const cardSpecs: CardSpec[] = [
         // and the mode is still worth playing for its +1.
         effects: [
           { kind: "modifyStealth", amount: 1 },
-          { kind: "bankStealth", max: 3 },
+          { kind: "bankStealth" },
         ],
       },
     ],
@@ -8414,13 +8414,12 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // "Choose a younger vampire; it cannot block this action." Superior:
-    // any vampire. ("Only usable as the action is announced" is naturally
-    // satisfied — action modifiers resolve before the block window.)
+    // any vampire. Only usable as the action is announced.
     krcgId: 101712,
     name: "Seduction",
     cardType: "actionModifier",
     bloodCost: 0,
-    usable: [],
+    usable: ["onlyAsAnnounced"],
     modes: [
       {
         level: "basic",
@@ -24861,14 +24860,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Serenading the Kami [101725] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // Serenading the Kami [101725] — action-scoped strength; the actor
+    // rider currently covers combat from a block, not a successful rush.
     krcgId: 101725,
     name: "Serenading the Kami",
     cardType: "actionModifier",
     bloodCost: 1,
-    usable: [],
+    requiresVampire: true,
+    usable: ["onlyAsAnnounced"],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "addStrength", amount: 1 }] }
+      { level: "basic", discipline: "tha", effects: [{ kind: "actorCombatRider", strength: 1 }] },
+      { level: "superior", discipline: "tha", effects: [{ kind: "actorCombatRider", strength: 2 }] },
     ],
   },
   {
@@ -24977,14 +24979,16 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Strike [101745] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // Shadow Strike [101745] — strength ranged, with optional maneuver
+    // and (at superior) press.
     krcgId: 101745,
     name: "Shadow Strike",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }, { kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "strikeHandBonus", bonus: 0, ranged: true, riders: { maneuver: 1 } }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "strikeHandBonus", bonus: 0, ranged: true, riders: { maneuver: 1, press: 1 } }] },
     ],
   },
   {

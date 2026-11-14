@@ -3478,6 +3478,14 @@ function compileCombatCard(spec: CardSpec): CardHandler {
           const younger = capacityOf(foe) < capacityOf(m);
           if (foe.kind !== "ally" && !namedClan && !younger) continue;
         }
+        // A strength-based ranged strike is not a hand strike. Check both
+        // declaration windows, since a strike with an optional maneuver can
+        // be committed in the range step as well as chosen later.
+        if (cf.handStrikesOnly && (ctx.window === "combat.chooseStrike" ||
+            (ctx.window === "combat.range" && strikeManeuverRider(mode) !== null))) {
+          const hand = mode.effects.some((e) => e.kind === "strikeHandBonus" && !e.ranged);
+          if (!hand) continue;
+        }
         switch (ctx.window) {
           case "combat.chooseStrike": {
             if (cf.strikes[side] !== null) continue;
@@ -4129,7 +4137,7 @@ function compileCombatCard(spec: CardSpec): CardHandler {
                 play.params["weapon"] && e.weaponBonus !== undefined
                   ? e.weaponBonus
                   : e.bonus,
-              handStrike: !play.params["weapon"],
+              handStrike: !play.params["weapon"] && !e.ranged,
               ...(e.aggravated ? { aggravated: true } : {}),
               ...(e.undodgeable ? { undodgeable: true } : {}),
               ...(e.firstStrike ? { firstStrike: true } : {}),
@@ -5828,16 +5836,9 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
               }
             }
           } else if (mode.effects.some((e) => e.kind === "bankStealth")) {
-            // "Burn X blood to give the next X actions +1 stealth" — X is
-            // chosen now, so one option per affordable X, capped by the
-            // spec so a full vampire does not flood the list. X = 0 is
-            // offered too: the mode's other clause (+1 stealth on this
-            // action) is worth playing on its own.
-            const eff = mode.effects.find((e) => e.kind === "bankStealth") as Extract<
-              EffectPrimitive,
-              { kind: "bankStealth" }
-            >;
-            const most = Math.min(eff.max, m.blood);
+            // X is optional, unbounded by the card, and paid in addition
+            // to any play cost. Offer every affordable value, including 0.
+            const most = Math.max(0, m.blood - costOf(spec, ctx, m, mode).blood);
             for (let x = 0; x <= most; x++) {
               options.push(makeOption(spec, card, m, mode, { x: String(x) }));
             }

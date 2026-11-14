@@ -3621,7 +3621,7 @@
     "id": 100604,
     "name": "Earthshock",
     "status": "REVIEWED_NO_ISSUE_FOUND",
-    "evidence": "Ograniczony zakres: ranged strength/strength+1, undodgeable oraz ograniczenie flight w spec; undodgeable-strikes.test.ts."
+    "evidence": "Ograniczony zakres: ranged strength/strength+1, undodgeable oraz ograniczenie flight w spec; undodgeable-strikes.test.ts. Naprawiono również oznaczenie ranged strength strike jako nie-hand; tests/cards/audit-action-and-shadow.test.ts. Pozostałe interakcje poza zakresem."
   },
   {
     "id": 100605,
@@ -10268,8 +10268,8 @@
   {
     "id": 101712,
     "name": "Seduction",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec realizuje wybór młodszego lub dowolnego vampire do zakazu block, ale nie deklaruje onlyAsAnnounced. compile.ts dopuszcza inne okna action.effects, chyba że jest ten warunek; block-restrictions.test.ts bada wybór, nie późne zagranie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano onlyAsAnnounced: karta dostępna przy ogłoszeniu, niedostępna w trakcie próby bloku; tests/cards/audit-action-and-shadow.test.ts, block-restrictions.test.ts. Wspólny gate nadal dopuszcza ją po nieudanej próbie bloku, ponieważ stan A jest ponownie otwierany (odtworzenie /home/user/shadow-window-diagnostic.log); dokładne okno wymaga poprawki silnika. Wybór działającego wampira w trybie superior wyklucza go bez jawnego ograniczenia w tekście; wymaga rozstrzygnięcia."
   },
   {
     "id": 101713,
@@ -10346,8 +10346,8 @@
   {
     "id": 101725,
     "name": "Serenading the Kami",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Basic ma addStrength bez jawnego warunku announce, brak superior +2 strength. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano warunek onlyAsAnnounced, wymóg vampire oraz basic/superior actorCombatRider +1/+2 dla walki z bloku; tests/cards/audit-action-and-shadow.test.ts sprawdza koszt, oba trafienia i brak opcji podczas bloku. Nadal brak bonusu w walce z niezablokowanego rusha i ewentualnych innych zastosowaniach siły podczas akcji; wspólny gate onlyAsAnnounced może ponownie się otworzyć po nieudanym bloku."
   },
   {
     "id": 101726,
@@ -10466,8 +10466,8 @@
   {
     "id": 101745,
     "name": "Shadow Strike",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Combat ma maneuver i press zamiast ranged strength strike z opcjonalnym maneuver; brak superior z dodatkowym press. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Zastąpiono placeholder przez ranged strength strike z opcjonalnym maneuver, na superior również press. tests/cards/audit-action-and-shadow.test.ts sprawdza oba tryby, trafienie, koszt, deklarację w obu oknach i zakaz przy hand-strikes-only. Strike jest oznaczony jako nie-hand, również dla wspólnego Earthshock. Nie jest to pełny audyt wszystkich interakcji, w szczególności celowania w retainery."
   },
   {
     "id": 101746,
@@ -12578,8 +12578,8 @@
   {
     "id": 102097,
     "name": "Veil the Legions",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Superior bankStealth ma max: 3 i compile.ts ogranicza X do min(3, blood), choć tekst nie zawiera takiego limitu; other-vampire-modifiers.test.ts bada wybrane kwoty. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Usunięto nieuprawniony limit X=3, uwzględniając modyfikowany koszt zagrania przed określeniem dostępnego X; tests/cards/audit-action-and-shadow.test.ts sprawdza X=0..7, wydanie 6, oraz surcharge i saldo. Pozostałe interakcje opisane w other-vampire-modifiers.test.ts; ocena obejmuje naprawione ustalenie, nie wszystkie możliwe interakcje."
   },
   {
     "id": 102098,

@@ -1082,7 +1082,7 @@ id,name,kind,status,categories
 101708,The Secret Library of Alexandria,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101709,The Secret Must Be Kept,library,PARTIAL_FIX,placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101710,Secret Passage,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-101712,Seduction,library,CODE_DISCREPANCY,akcje_i_blok; czas_i_warunki
+101712,Seduction,library,PARTIAL_FIX,akcje_i_blok; polityka_i_glosy
 101713,Seeds of Corruption,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101714,Selective Silence,library,CODE_DISCREPANCY,walka; koszty_i_zasoby
 101716,Sense Death,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
@@ -1093,7 +1093,7 @@ id,name,kind,status,categories
 101722,Sensory Overload,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101723,Seraph,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101724,Seraph's Second,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-101725,Serenading the Kami,library,CODE_DISCREPANCY,czas_i_warunki
+101725,Serenading the Kami,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; czas_i_warunki
 101726,Sermon of Caine,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
 101727,Serpent's Numbing Kiss,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101730,Set's Call,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -1108,7 +1108,6 @@ id,name,kind,status,categories
 101739,Shadow of Taint,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101740,Shadow of the Beast,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 101744,Shadow Step,library,CODE_DISCREPANCY,walka; koszty_i_zasoby
-101745,Shadow Strike,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 101746,Shadow Twin,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 101747,Shadowed Eyes,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101748,Shakar,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
@@ -1346,7 +1345,6 @@ id,name,kind,status,categories
 102094,Vaulderie,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 102095,Veil of Darkness,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu
 102096,Veil of Silence,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
-102097,Veil the Legions,library,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 102098,Veiled Sight,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 102099,Veles' Hunt,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 102100,Velvet Tongue,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
