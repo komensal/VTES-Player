@@ -74,8 +74,8 @@
   {
     "id": 100013,
     "name": "Absorb the Mind",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec ma dodge także dla myt i nie zawiera superior; tekst myt wymaga ranged steal blood, a MYT dodatkowo kradzieży Discipline. src/cards/effects/cards.ts: Absorb the Mind; src/cards/registry.json: 100013."
+    "status": "PARTIAL_FIX",
+    "evidence": "Poprawiono [myt] na ranged strike: steal 1 blood, zachowując [dom] jako dodge; oba warianty mają odrębne opcje. tests/cards/audit-strike-repairs.test.ts sprawdza rozstrzygnięcie, zasięg, dodge przeciwnika i dostępność obu wariantów. [MYT] nadal niezaimplementowane: oprócz kradzieży krwi wymaga przeniesienia master: Discipline z przeciwnika; nie oferuje się pozornego niepełnego trybu superior. Pozostałe interakcje nieweryfikowane."
   },
   {
     "id": 100014,

@@ -20666,15 +20666,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Absorb the Mind [100013] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Absorb the Mind: the basic Mytherceria strike steals blood; only
+    // Dominate dodges. Superior Mytherceria's Discipline steal is not yet
+    // implemented, so do not advertise a superior mode that omits it.
     krcgId: 100013,
     name: "Absorb the Mind",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "strikeDodge" }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "strikeDodge" }] }
+      { level: "basic", variant: "myt", discipline: "myt", effects: [{ kind: "strikeStealBlood", amount: 1 }] },
+      { level: "basic", variant: "dom", discipline: "dom", effects: [{ kind: "strikeDodge" }] }
     ],
   },
   {

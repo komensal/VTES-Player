@@ -6,7 +6,7 @@ id,name,kind,status,categories
 100008,Ablative Skin,library,CONFIRMED_BUG,akcje_i_blok; walka; karty_i_strefy
 100010,Abomination,library,CONFIRMED_BUG,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100011,Absimiliard's Army,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
-100013,Absorb the Mind,library,CONFIRMED_BUG,koszty_i_zasoby
+100013,Absorb the Mind,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby
 100014,Abyssal Hunter,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 100017,Achilles' Heel,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100019,Acquired Ventrue Assets,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy

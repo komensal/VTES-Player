@@ -34,9 +34,9 @@ function walk(engine: VtesEngine, window: string, seat = "Alice") {
   }
   throw new Error(`did not reach ${window} for ${seat}`);
 }
-function play(engine: VtesEngine, name: string, mode: string) {
+function play(engine: VtesEngine, name: string, mode: string, variant?: string) {
   const dp = walk(engine, "combat.chooseStrike");
-  const option = dp.options.find((o) => o.id.startsWith(`play:${name}:${mode}:V1:repair`));
+  const option = dp.options.find((o) => o.id.startsWith(`play:${name}:${mode}:V1:${variant ? `${variant}:` : ""}repair`));
   expect(option, `${name} ${mode}`).toBeDefined();
   engine.choose(option!.id);
   for (let i = 0; i < 3; i++) {
@@ -139,6 +139,49 @@ describe("audited strike cards", () => {
     play(a.engine, name, "superior");
     const bob = walk(a.engine, "combat.chooseStrike", "Bob");
     const dodge = bob.options.find((o) => o.id.startsWith("play:Dodge:"));
+    expect(dodge).toBeDefined();
+    a.engine.choose(dodge!.id);
+    for (let i = 0; i < 4 && a.engine.decision()?.window === "card.asPlayed"; i++) a.engine.choose("pass");
+    expect(a.foe.blood).toBe(7);
+    expect(a.actor.blood).toBe(3);
+  });
+});
+
+describe("Absorb the Mind", () => {
+  it("basic Mytherceria steals one blood at long range instead of dodging", () => {
+    const a = combatGame("Absorb the Mind", "myt", "long");
+    a.actor.disciplines.myt = "basic";
+    play(a.engine, "Absorb the Mind", "basic", "myt");
+    expect(a.cf.strikes.acting).toMatchObject({ stealBlood: 1, ranged: true, dodge: false });
+    a.engine.choose("strike:hand");
+    expect(a.foe.blood).toBe(6);
+    expect(a.actor.blood).toBe(4);
+  });
+
+  it("basic Dominate dodges rather than stealing blood", () => {
+    const a = combatGame("Absorb the Mind", "dom");
+    a.actor.disciplines.dom = "basic";
+    play(a.engine, "Absorb the Mind", "basic", "dom");
+    expect(a.cf.strikes.acting).toMatchObject({ dodge: true, stealBlood: 0 });
+    a.engine.choose("strike:hand");
+    expect(a.foe.blood).toBe(7);
+    expect(a.actor.blood).toBe(3);
+  });
+
+  it("offers distinct basic options when the vampire has both Disciplines", () => {
+    const a = combatGame("Absorb the Mind", "myt", "long");
+    a.actor.disciplines.dom = "basic";
+    const opts = walk(a.engine, "combat.chooseStrike").options.filter((o) => o.id.startsWith("play:Absorb the Mind:"));
+    expect(opts).toHaveLength(2);
+    expect(new Set(opts.map((o) => o.id)).size).toBe(2);
+    expect(opts.some((o) => o.id.includes(":myt"))).toBe(true);
+    expect(opts.some((o) => o.id.includes(":dom"))).toBe(true);
+  });
+
+  it("the Mytherceria strike can be dodged", () => {
+    const a = combatGame("Absorb the Mind", "myt", "long", 1, ["Dodge"]);
+    play(a.engine, "Absorb the Mind", "basic", "myt");
+    const dodge = walk(a.engine, "combat.chooseStrike", "Bob").options.find((o) => o.id.startsWith("play:Dodge:"));
     expect(dodge).toBeDefined();
     a.engine.choose(dodge!.id);
     for (let i = 0; i < 4 && a.engine.decision()?.window === "card.asPlayed"; i++) a.engine.choose("pass");

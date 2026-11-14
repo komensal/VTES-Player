@@ -8,8 +8,8 @@ To powtarzalne, zgrubne grupowanie po słowach w tekście evidence, a nie potwie
 |---|---:|
 | `crypt_import_lub_cechy` | 558 |
 | `placeholder_lub_brak_efektu` | 1937 |
-| `akcje_i_blok` | 1653 |
-| `walka` | 746 |
+| `akcje_i_blok` | 1654 |
+| `walka` | 747 |
 | `polityka_i_glosy` | 358 |
 | `koszty_i_zasoby` | 873 |
 | `karty_i_strefy` | 1565 |
