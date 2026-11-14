@@ -32664,14 +32664,22 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ablative Skin [100008] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // The two versions attach distinct, stackable counter stores.
     krcgId: 100008,
     name: "Ablative Skin",
     cardType: "action",
     bloodCost: 0,
+    requiresVampire: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "for", effects: [
+        { kind: "actionStealth", amount: 1 },
+        { kind: "attachSelf", stacks: true, statics: { startsWithCounters: 3, burnWhenCountersEmpty: true } },
+      ] },
+      { level: "superior", discipline: "for", effects: [
+        { kind: "actionStealth", amount: 1 },
+        { kind: "attachSelf", stacks: true, statics: { startsWithCounters: 3, burnWhenCountersEmpty: true }, tags: ["ablativeSuperior"] },
+      ] },
     ],
   },
   {
@@ -41147,6 +41155,41 @@ const timeAuctionRules: AuctionRules = {
 
 /** 419 Operation stores the current prey's pool; ownership and prey can
  * change, so neither is fixed when the card enters play. */
+const ablativeSkin: CardHandler = {
+  ...compileSpec(specByName("Ablative Skin")),
+  // The ability belongs to the vampire, not necessarily the card's owner.
+  abilityAnySeat: true,
+  abilityOptions(entry, owner, ctx) {
+    const bearer = owner.minion ? findMinion(ctx.state, owner.minion) : null;
+    const damage = ctx.combat?.pendingDamage[0];
+    if (!bearer || bearer.controller !== ctx.seat || ctx.window !== "combat.damageResolution" ||
+        !damage || damage.minion !== bearer.id || damage.unpreventable ||
+        damage.noPreventBy?.includes("for") ||
+        (damage.aggravated && !entry.tags.includes("ablativeSuperior"))) return [];
+    const max = Math.min(entry.counters ?? 0, damage.amount);
+    return Array.from({ length: max }, (_, i) => {
+      const amount = i + 1;
+      return { id: `ability:Ablative Skin:${entry.card.id}:prevent:${amount}`, kind: "useAbility" as const,
+        label: `Ablative Skin: burn ${amount} counter${amount === 1 ? "" : "s"} to prevent ${amount} damage`,
+        source: entry.card.id, params: { amount: String(amount), bearer: bearer.id } };
+    });
+  },
+  useAbility(entry, _owner, choice, ops) {
+    const bearer = choice.params["bearer"];
+    const requested = Number(choice.params["amount"]);
+    const combat = [...ops.state.frames].reverse().find((f) => f.kind === "combat");
+    const damage = combat?.kind === "combat" ? combat.pendingDamage[0] : undefined;
+    if (!bearer || !damage || damage.minion !== bearer || damage.unpreventable ||
+        damage.noPreventBy?.includes("for") ||
+        (damage.aggravated && !entry.tags.includes("ablativeSuperior"))) return;
+    const amount = Math.min(requested, entry.counters ?? 0, damage.amount);
+    if (!Number.isInteger(amount) || amount <= 0) return;
+    ops.removeCounters(entry.card.id, amount);
+    ops.preventDamageFor(bearer, amount);
+    if ((entry.counters ?? 0) === 0) ops.burnPermanent(entry.card.id);
+  },
+};
+
 const operation419: CardHandler = {
   ...compileSpec(specByName("419 Operation")),
   abilityAnySeat: true,
@@ -46812,6 +46855,7 @@ export function buildHandlerRegistry(): HandlerRegistry {
     hostileTakeover,
     malkavianTimeAuction,
     operation419,
+    ablativeSkin,
     temptationOfGreaterPower,
     repoMan,
     absolutionOfTheDiabolist,

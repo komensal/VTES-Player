@@ -44,8 +44,8 @@
   {
     "id": 100008,
     "name": "Ablative Skin",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec zawiera jedynie +1 stealth i prevent 2 w action, bez dołączenia karty, 3 liczników, wydawania liczników i wersji superior zapobiegającej aggravated. src/cards/effects/cards.ts: Ablative Skin; src/cards/registry.json: 100008."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano dołączenie z trzema counterami, wydawanie ich w combat oraz odrębne wersje basic (tylko non-aggravated) i superior, z zakazem zapobiegania obrażeniom Blood Fury; karta pali się po wydaniu ostatniego countera i przy sprawdzeniu stanu po usunięciu counterów przez inny efekt. tests/cards/ablative-skin-audit.test.ts obejmuje sukces, blok, obie wersje, wiele kopii, podział wydatków i rzeczywisty Blood Fury. Termin spalenia w środku złożonych efektów i pozostałe interakcje wymagają weryfikacji."
   },
   {
     "id": 100009,

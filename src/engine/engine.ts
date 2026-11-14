@@ -2039,6 +2039,12 @@ export class VtesEngine implements EngineOps {
 
   private burnDepleted(): boolean {
     for (const seat of this.state.seats) {
+      for (const p of seat.permanents) {
+        if (p.statics.burnWhenCountersEmpty && (p.counters ?? 0) <= 0) {
+          this.burnPermanent(p.card.id);
+          return true;
+        }
+      }
       for (const m of seat.minions) {
         if (m.kind === "ally" && m.blood <= 0) {
           this.burnMinion(m.id);
@@ -2047,6 +2053,10 @@ export class VtesEngine implements EngineOps {
         for (const p of m.attached) {
           if (p.life !== undefined && p.life <= 0) {
             this.emit({ type: "PermanentBurned", cardId: p.card.id, name: p.card.name });
+            return true;
+          }
+          if (p.statics.burnWhenCountersEmpty && (p.counters ?? 0) <= 0) {
+            this.burnPermanent(p.card.id);
             return true;
           }
         }

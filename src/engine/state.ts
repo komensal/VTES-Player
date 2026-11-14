@@ -927,6 +927,8 @@ export interface PermanentStatics {
    *  running when the first "as played" window opens.
    *  docs/counter-clock-events-design.md §1 */
   startsWithCounters?: number;
+  /** Burn this permanent when it has no counters (Ablative Skin). */
+  burnWhenCountersEmpty?: boolean;
   /** "After another Gehenna event is played, burn 1 counter from this
    *  card" — a clock that runs DOWN, driven by other cards being played.
    *  docs/counter-clock-events-design.md §1 */

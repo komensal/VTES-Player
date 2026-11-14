@@ -3,7 +3,7 @@ id,name,kind,status,categories
 100004,Abactor,library,PARTIAL_FIX,akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; czas_i_warunki
 100005,Abandoning the Flesh,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100007,Abjure,library,CONFIRMED_BUG,walka
-100008,Ablative Skin,library,CONFIRMED_BUG,akcje_i_blok; walka; karty_i_strefy
+100008,Ablative Skin,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 100010,Abomination,library,CONFIRMED_BUG,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 100011,Absimiliard's Army,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 100013,Absorb the Mind,library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby
