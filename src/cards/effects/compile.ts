@@ -14082,6 +14082,41 @@ function addCryptAbilities(
     };
   }
 
+  // "During a bleed action, she can burn 1 blood to get +1 bleed"
+  // (Lizette): "during" limits the use to once per action, and the
+  // increase is an in-play ability, not a limited action modifier card.
+  const bleedForBlood = perm?.bleedForBlood;
+  if (bleedForBlood) {
+    const priorOptions = handler.abilityOptions?.bind(handler);
+    handler.abilityOptions = (entry, owner, ctx) => {
+      const out = [...(priorOptions?.(entry, owner, ctx) ?? [])];
+      const bearer = owner.minion ? findMinion(ctx.state, owner.minion) : null;
+      const af = ctx.action;
+      // Bleed-increasing effects cannot be used during combat or after
+      // resolution, even though the action frame still exists then.
+      if (bearer && bearer.controller === ctx.seat && bearer.blood >= bleedForBlood.blood &&
+          af && af.acting === bearer.id && af.actionKind === "bleed" &&
+          (ctx.window === "action.announce" || ctx.window === "action.effects") &&
+          af.step !== "blocked" && af.step !== "afterResolution" &&
+          !af.usedInPlayAbilities.includes(entry.card.id)) {
+        out.push({ id: `ability:${spec.name}:${entry.card.id}:bleedForBlood`, kind: "useAbility",
+          label: `${spec.name}: burn ${bleedForBlood.blood} blood for +${bleedForBlood.amount} bleed`,
+          source: entry.card.id, params: { act: "bleedForBlood" } });
+      }
+      return out;
+    };
+    const priorUse = handler.useAbility?.bind(handler);
+    handler.useAbility = (entry, owner, choice, ops) => {
+      if (choice.params["act"] !== "bleedForBlood") return priorUse?.(entry, owner, choice, ops);
+      const af = ops.action();
+      if (!af || !owner.minion) return;
+      ops.markInPlayAbilityUsed(entry.card.id);
+      ops.emit({ type: "BloodBurned", minion: owner.minion, amount: bleedForBlood.blood });
+      ops.emit({ type: "BleedAmountModified", actionId: af.actionId, delta: bleedForBlood.amount,
+        source: spec.name, limited: false });
+    };
+  }
+
   // "This vampire can prevent N damage each combat" (Aabbt Kindred).
   // This is the minion's own ability, not a Fortitude card: Blood Fury's
   // restriction on cards requiring Fortitude does not bar it.

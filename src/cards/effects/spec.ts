@@ -3603,6 +3603,8 @@ export interface CardSpec {
     preventFromTagEachRound?: { blood: number; tag: string };
     /** This minion can prevent their own damage once each combat. */
     preventSelfEachCombat?: { amount: number; nonAggravatedOnly?: boolean };
+    /** During their bleed action, burn blood for bleed once per action. */
+    bleedForBlood?: { blood: number; amount: number };
     /** During your unlock phase, one controlled vampire pays to change clan. */
     unlockTransformClan?: { from: string; to: string; blood: number; discipline: string };
     /** "Once each combat involving \<a minion you control\>, \<this

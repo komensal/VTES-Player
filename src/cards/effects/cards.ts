@@ -38170,7 +38170,7 @@ export const cryptSpecs: CardSpec[] = [
     cryptPerm(200842, "Lisette Vizquel (G2)", { statics: { conditional: [{intercept: 1, actionKinds: ["diablerize"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(200843, "Lithrac (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200844, "Little Tailor of Prague (G2)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
-    cryptPerm(200847, "Lizette (G4)", { preventSelfEachCombat: { amount: 1 } }), // Paid bleed ability remains open.
+    cryptPerm(200847, "Lizette (G4)", { preventSelfEachCombat: { amount: 1 }, bleedForBlood: { blood: 1, amount: 1 } }),
     flatCrypt(200848, "Lodin (Olaf Holte) (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     flatCrypt(200852, "Lord Aaron Wesley Wilkshire (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     flatCrypt(200853, "Lord Ashton (G3)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)

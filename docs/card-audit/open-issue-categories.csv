@@ -1416,6 +1416,7 @@ id,name,kind,status,categories
 102207,Zillah's Valley,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
 102209,Zip Line,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 102211,Zoning Board,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
+102226,Haqim's Law: Retribution,library,CODE_DISCREPANCY,akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 102233,Revelation of the Serpent,library,CODE_DISCREPANCY,karty_i_strefy
 102235,Dark Web Procurer,library,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 102236,"The British Museum, London",library,PARTIAL_FIX,placeholder_lub_brak_efektu; karty_i_strefy
@@ -1973,7 +1974,6 @@ id,name,kind,status,categories
 200843,Lithrac (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; koszty_i_zasoby
 200844,Little Tailor of Prague (G2),crypt,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 200846,"Liz ""Ticket312"" Thornton (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu
-200847,Lizette (G4),crypt,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
 200848,Lodin (Olaf Holte) (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka
 200852,Lord Aaron Wesley Wilkshire (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 200853,Lord Ashton (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy

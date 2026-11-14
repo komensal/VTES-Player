@@ -13352,8 +13352,8 @@
   {
     "id": 102226,
     "name": "Haqim's Law: Retribution",
-    "status": "REVIEWED_NO_ISSUE_FOUND",
-    "evidence": "Wąski zakres: permanent daje Assamite discard combat card za bleed; opposing-statics.test.ts."
+    "status": "CODE_DISCREPANCY",
+    "evidence": "Dotychczasowy opposing-statics.test.ts sprawdza tylko dodatni wybór combat card i ograniczenia klanu. Warunek discardForBleed w compile.ts nie sprawdza okna ani limitu użyć danej kopii; engine.ts wywołuje zdolności w oknach combat i action.afterResolution, gdy ramka akcji może nadal istnieć. Oficjalny ruling zabrania tego boostu w combat i po rozstrzygnięciu: https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12 ; forma during ogranicza użycie do jednego na wskazany przedział. Statyczna analiza, bez nowego testu scenariuszowego; dostępność zależy też od ogólnych ograniczeń silnika."
   },
   {
     "id": 102227,
@@ -17139,7 +17139,7 @@
     "id": 200493,
     "name": "Ganhuru (G4)",
     "status": "PARTIAL_FIX",
-    "evidence": "Dodano zapobieganie 1 non-aggravated damage raz na combat; tests/cards/crypt-self-prevention-audit.test.ts sprawdza zwykłe i aggravated, także aggravated traktowane jako normalne. Nie zaimplementowano gain 1 pool po udanym bleed prey przy ready Ubende; pozostałe interakcje nieweryfikowane."
+    "evidence": "Dodano zapobieganie 1 non-aggravated damage raz na combat; tests/cards/crypt-self-prevention-audit.test.ts sprawdza zwykłe i aggravated, także aggravated traktowane jako normalne. Nie zaimplementowano gain 1 pool po udanym bleed prey przy ready Ubende; pozostałe interakcje nieweryfikowane. Ruling wymaga sprawdzenia gotowego Ubende przy sukcesie, a przyrost pool następuje po rozstrzygnięciu, również gdy prey z Ubende zostaje ousted: https://www.vekn.net/forum/rules-questions/79644-timing-of-the-oust-pool-gain-vp-gain-and-life-boon ."
   },
   {
     "id": 200494,
@@ -19262,8 +19262,8 @@
   {
     "id": 200847,
     "name": "Lizette (G4)",
-    "status": "PARTIAL_FIX",
-    "evidence": "Dodano zapobieganie 1 damage raz na combat, także aggravated; tests/cards/crypt-self-prevention-audit.test.ts sprawdza rzeczywiste walki. Nie zaimplementowano płatnego +1 bleed w trakcie akcji bleed; pozostałe interakcje nieweryfikowane."
+    "status": "FIXED_TARGETED",
+    "evidence": "Dodano prevention 1 damage co combat oraz płatny +1 bleed raz na własną akcję bleed. tests/cards/crypt-self-prevention-audit.test.ts sprawdza obie kategorie damage; tests/cards/lizette-audit.test.ts koszt, rzeczywisty bleed, oba porządki użycia z limited modifier, brak po rozstrzygnięciu i w walce, ograniczenie do własnego bleed oraz zmianę kontrolera. Test braku blood i zmiany kontrolera korzysta z bezpośredniej operacji silnika; pozostałe interakcje wymagają dalszej weryfikacji."
   },
   {
     "id": 200848,
