@@ -1213,10 +1213,13 @@ export type EffectPrimitive =
    *  that vampire instead" (Decapitate superior). This is a torpor-window
    *  effect, not a strike rider. */
   | { kind: "burnTorporOpponent" }
-  /** "Strike, ranged: steal N blood" (Theft of Vitae). */
+  /** "Strike, ranged: steal N blood" (Theft of Vitae), or a close-only
+   *  steal strike (Tongue of the Serpent). Ranged defaults to true for
+   *  compatibility; close-only cards must explicitly set it false. */
   | {
       kind: "strikeStealBlood";
       amount: number;
+      ranged?: boolean;
       riders?: { maneuver?: number; maneuverOnlyToClose?: boolean; press?: number };
     }
   /**

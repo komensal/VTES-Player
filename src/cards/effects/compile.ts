@@ -4587,7 +4587,7 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             ops.storeCombatBlood(play, Number(play.params["x"] ?? "0"));
             break;
           case "strikeStealBlood":
-            ops.chooseCardStrike(play, { stealBlood: e.amount, ranged: true });
+            ops.chooseCardStrike(play, { stealBlood: e.amount, ranged: e.ranged ?? true });
             if (e.riders?.maneuver) {
               for (let i = 0; i < e.riders.maneuver; i++) {
                 ops.grantManeuverCredit(play, e.riders.maneuverOnlyToClose, modeDisciplines(mode));

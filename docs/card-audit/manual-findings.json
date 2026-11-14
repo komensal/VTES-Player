@@ -3014,8 +3014,8 @@
   {
     "id": 100503,
     "name": "Dead Hand",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak hand strike +1 i superior zakazu prevent Fortitude; spec daje maneuver. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono basic i superior hand strike +1; superior filtruje zapobieganie kartą wymagającą Fortitude. Test obejmuje Soak, Rego Motum i faktyczną wartość damage; nie weryfikuje wszystkich kombinacji kart zapobiegających. tests/cards/audit-strike-repairs.test.ts. Ocena ograniczona do naprawionych ustaleń i opisanych scenariuszy; inne interakcje mogą wymagać weryfikacji."
   },
   {
     "id": 100504,
@@ -3453,7 +3453,7 @@
     "id": 100576,
     "name": "Donnybrook",
     "status": "FIXED_TARGETED",
-    "evidence": "Naprawiono tryb obf: wybór equipment lub retainer z first strike zamiast hand strike, oraz pro: aggravated hand strike bez +1. Tryb ser zachowuje steal 2. Testy equipment-stripping.test.ts obejmują oba cele, first strike, pro, ser i wymogi Anarch/cele; inne interakcje niezweryfikowane. Dodatkowo naprawiono wspólne respektowanie card-wide onlyAtCloseRange i sprawdzono odmowę przy long range."
+    "evidence": "Naprawiono tryb obf: wybór equipment lub retainer z first strike zamiast hand strike, oraz pro: aggravated hand strike bez +1. Tryb ser zachowuje steal 2. Testy equipment-stripping.test.ts obejmują oba cele, first strike, pro, ser i wymogi Anarch/cele; inne interakcje niezweryfikowane. Dodatkowo naprawiono wspólne respektowanie card-wide onlyAtCloseRange i sprawdzono odmowę przy long range. Doprecyzowano, że wariant ser jest close strike, także w modelu strike; testy equipment-stripping.test.ts sprawdzają jego użycie i card-wide zakaz na long."
   },
   {
     "id": 100577,
@@ -10448,14 +10448,14 @@
   {
     "id": 101742,
     "name": "Shadow Parasite",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Basic ma maneuver zamiast 3R strike tylko na long; brak superior 4R. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Zastąpiono maneuver przez 3R/4R, oba tryby tylko przy long range; test obejmuje koszt, trafienie i niedostępność przy close. tests/cards/audit-strike-repairs.test.ts. Ocena ograniczona do naprawionych ustaleń i opisanych scenariuszy; inne interakcje mogą wymagać weryfikacji."
   },
   {
     "id": 101743,
     "name": "Shadow Play",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Basic +1 stealth jest, lecz brak superior +2 stealth. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Dodano superior +2 stealth obok basic +1; test po próbie bloku sprawdza obie wartości oraz koszt. tests/cards/audit-strike-repairs.test.ts. Ocena ograniczona do naprawionych ustaleń i opisanych scenariuszy; inne interakcje mogą wymagać weryfikacji."
   },
   {
     "id": 101744,
@@ -11162,8 +11162,8 @@
   {
     "id": 101861,
     "name": "Starvation of Marena",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Basic ma press zamiast 2R strike z opcjonalnym press; brak superior 3R. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Zastąpiono sam press przez 2R/3R z opcjonalnym press; test obejmuje oba trafienia, koszt i użycie press do kontynuacji. tests/cards/audit-strike-repairs.test.ts. Ocena ograniczona do naprawionych ustaleń i opisanych scenariuszy; inne interakcje mogą wymagać weryfikacji."
   },
   {
     "id": 101862,
@@ -11660,8 +11660,8 @@
   {
     "id": 101944,
     "name": "Taste of Death",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Basic daje maneuver zamiast 1R aggravated przy long range; brak superior 2R. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Zastąpiono maneuver przez 1R/2R aggravated i ograniczenie do long range; test obejmuje oba tryby, koszt, trafienie i zakaz przy close. tests/cards/audit-strike-repairs.test.ts. Ocena ograniczona do naprawionych ustaleń i opisanych scenariuszy; inne interakcje mogą wymagać weryfikacji."
   },
   {
     "id": 101945,
@@ -11924,8 +11924,8 @@
   {
     "id": 101988,
     "name": "Tongue of the Serpent",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Basic daje maneuver zamiast close strike steal 1 blood/life; brak superior steal 2. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Zastąpiono maneuver przez close strike kradnący 1/2 blood lub life; poprawiono wspólne rozliczenie uniku. Test obejmuje obie wartości, brak trafienia na long, unikanie, życie ally i limit capacity. tests/cards/audit-strike-repairs.test.ts. Ocena ograniczona do naprawionych ustaleń i opisanych scenariuszy; inne interakcje mogą wymagać weryfikacji."
   },
   {
     "id": 101989,
@@ -11948,8 +11948,8 @@
   {
     "id": 101992,
     "name": "Torment the Soul",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Basic daje maneuver zamiast 1R damage po pierwszej rundzie; brak superior aggravated. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Zastąpiono maneuver przez 1R normal/aggravated w trybach basic/superior; test obejmuje trafienie, znacznik aggravated i zakaz w pierwszej rundzie. tests/cards/audit-strike-repairs.test.ts. Ocena ograniczona do naprawionych ustaleń i opisanych scenariuszy; inne interakcje mogą wymagać weryfikacji."
   },
   {
     "id": 101993,
@@ -13340,8 +13340,8 @@
   {
     "id": 102224,
     "name": "Form of the Cobra",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Basic strikeStealBlood w compile.ts ustawia ranged: true, choć karta drukuje zwykły strike: steal bez ranged. modifier-or-combat.test.ts trzeba traktować jako ograniczone pokrycie, nie dowód poprawnego zasięgu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono basic strike steal 1 na close zamiast błędnego ranged; testy rzeczywistego zagrania na close i long oraz modifier-or-combat.test.ts. Naprawiono wspólny dodge przeciw steal. Ocena ograniczona do opisanych ustaleń i scenariuszy, pozostałe interakcje mogą wymagać weryfikacji."
   },
   {
     "id": 102225,

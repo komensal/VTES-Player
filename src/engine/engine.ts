@@ -5471,18 +5471,6 @@ export class VtesEngine implements EngineOps {
       // Found by the fuzz on seed 1 the moment a card that burns allies
       // outside combat entered the deck; the gap predates it.
       if (!findMinion(this.state, source) || !findMinion(this.state, victim)) return;
-      // "Steal blood" strikes move blood before damage (p. 33) — not
-      // damage, so not dodged or prevented; ranged.
-      if (strike.stealBlood > 0) {
-        if (cf.range === "long" && !strike.ranged) return;
-        const v = getMinion(this.state, victim);
-        const taken = Math.min(v.blood, strike.stealBlood);
-        if (taken > 0) {
-          this.emit({ type: "BloodBurned", minion: victim, amount: taken });
-          this.emit({ type: "BloodGained", minion: source, amount: taken });
-        }
-        return;
-      }
       // A dodge "cancels the effects of the opposing strike on this
       // minion" (p. 33) — damage and these non-damage strike effects
       // alike, UNLESS the strike says otherwise (Dust Up: "this strike
@@ -5500,6 +5488,19 @@ export class VtesEngine implements EngineOps {
         // docs/round-sequencing-design.md §3
         (cf.strikesUndodgeableRound?.[from] ?? false);
       if (victimStrike?.dodge && !strike.undodgeable && !strikerUndodgeable) return;
+      // A steal is a strike effect, so it CAN be dodged, but it is not
+      // damage and cannot be prevented as damage. It resolves before the
+      // mend step, and only reaches long range if the strike is ranged.
+      if (strike.stealBlood > 0) {
+        if (cf.range === "long" && !strike.ranged) return;
+        const v = getMinion(this.state, victim);
+        const taken = Math.min(v.blood, strike.stealBlood);
+        if (taken > 0) {
+          this.emit({ type: "BloodBurned", minion: victim, amount: taken });
+          this.emit({ type: "BloodGained", minion: source, amount: taken });
+        }
+        return;
+      }
       // "Strike: put this card on the opposing minion with N counters"
       // (Touch of Oblivion) — close range only, and not damage, so
       // prevention has nothing to bite on.

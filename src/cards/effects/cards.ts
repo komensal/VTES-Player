@@ -6591,7 +6591,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "strikeStealBlood", amount: 1 }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "strikeStealBlood", amount: 1, ranged: false }] },
       {
         level: "superior",
         discipline: "pro",
@@ -20143,7 +20143,7 @@ export const cardSpecs: CardSpec[] = [
       { level: "basic", discipline: "obf", variant: "equipment", effects: [{ kind: "strikeDestroyEquipment", firstStrike: true }] },
       { level: "basic", discipline: "obf", variant: "retainer", effects: [{ kind: "strikeDestroyEquipment", firstStrike: true, retainer: true }] },
       { level: "basic", discipline: "pro", variant: "pro", effects: [{ kind: "strikeHandBonus", bonus: 0, aggravated: true }] },
-      { level: "basic", discipline: "ser", variant: "ser", effects: [{ kind: "strikeStealBlood", amount: 2 }] },
+      { level: "basic", discipline: "ser", variant: "ser", effects: [{ kind: "strikeStealBlood", amount: 2, ranged: false }] },
     ],
   },
   {
@@ -22012,14 +22012,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Dead Hand [100503] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Dead Hand [100503] — naprawione tryby opisane w audycie
     krcgId: 100503,
     name: "Dead Hand",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "strikeHandBonus", bonus: 1 }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "strikeHandBonus", bonus: 1, riders: { noPreventBy: ["for"] } }] },
     ],
   },
   {
@@ -24941,25 +24942,27 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Shadow Parasite [101742] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // Shadow Parasite [101742] — naprawione tryby opisane w audycie
     krcgId: 101742,
     name: "Shadow Parasite",
     cardType: "combat",
     bloodCost: 1,
-    usable: [],
+    usable: ["onlyAtLongRange"],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "strikeDamage", amount: 3, ranged: true, aggravated: false }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "strikeDamage", amount: 4, ranged: true, aggravated: false }] },
     ],
   },
   {
-    // Shadow Play [101743] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // Shadow Play [101743] — naprawione tryby opisane w audycie
     krcgId: 101743,
     name: "Shadow Play",
     cardType: "actionModifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 2 }] },
     ],
   },
   {
@@ -25258,14 +25261,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Starvation of Marena [101861] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // Starvation of Marena [101861] — naprawione tryby opisane w audycie
     krcgId: 101861,
     name: "Starvation of Marena",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "vic", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false, riders: { press: 1 } }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "strikeDamage", amount: 3, ranged: true, aggravated: false, riders: { press: 1 } }] },
     ],
   },
   {
@@ -25537,14 +25541,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Taste of Death [101944] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    // Taste of Death [101944] — naprawione tryby opisane w audycie
     krcgId: 101944,
     name: "Taste of Death",
     cardType: "combat",
     bloodCost: 1,
-    usable: [],
+    usable: ["onlyAtLongRange"],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: true }] },
     ],
   },
   {
@@ -25627,25 +25632,27 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Tongue of the Serpent [101988] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    // Tongue of the Serpent [101988] — naprawione tryby opisane w audycie
     krcgId: 101988,
     name: "Tongue of the Serpent",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "ser", effects: [{ kind: "strikeStealBlood", amount: 1, ranged: false }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "strikeStealBlood", amount: 2, ranged: false }] },
     ],
   },
   {
-    // Torment the Soul [101992] — fala 52 wierna (147) ostatnie stare <45 bez wydmuszek
+    // Torment the Soul [101992] — naprawione tryby opisane w audycie
     krcgId: 101992,
     name: "Torment the Soul",
     cardType: "combat",
     bloodCost: 0,
-    usable: [],
+    usable: ["onlyAfterFirstRound"],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: false }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }] },
     ],
   },
   {

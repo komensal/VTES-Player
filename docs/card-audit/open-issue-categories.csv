@@ -314,7 +314,6 @@ id,name,kind,status,categories
 100499,"Dartmoor, England",library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 100500,Dauntain Black Magician,library,PARTIAL_FIX,akcje_i_blok; karty_i_strefy
 100502,Day Operation,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
-100503,Dead Hand,library,CONFIRMED_BUG,walka; karty_i_strefy
 100505,The Deadliest Sin,library,CONFIRMED_BUG,akcje_i_blok; czas_i_warunki
 100507,The Death of My Conscience,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka; karty_i_strefy; czas_i_warunki
 100508,Death of the Drum,library,CONFIRMED_BUG,walka
@@ -1108,8 +1107,6 @@ id,name,kind,status,categories
 101738,Shadow Feint,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 101739,Shadow of Taint,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101740,Shadow of the Beast,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
-101742,Shadow Parasite,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
-101743,Shadow Play,library,CODE_DISCREPANCY,akcje_i_blok
 101744,Shadow Step,library,CODE_DISCREPANCY,walka; koszty_i_zasoby
 101745,Shadow Strike,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 101746,Shadow Twin,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
@@ -1192,7 +1189,6 @@ id,name,kind,status,categories
 101855,Spontaneous Power,library,PARTIAL_FIX,placeholder_lub_brak_efektu; karty_i_strefy
 101858,Squirrel Balance,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
 101860,Starshell Grenade Launcher,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
-101861,Starvation of Marena,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 101862,Static Virtue,library,CONFIRMED_BUG,placeholder_lub_brak_efektu
 101863,The Status Perfectus,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101865,Steal the Mind,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -1257,7 +1253,6 @@ id,name,kind,status,categories
 101936,Tapestry of Blood,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 101937,"Tara, The Hollow One",library,PARTIAL_FIX,akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 101941,Target Retainer,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
-101944,Taste of Death,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 101946,Tattoo Signal,library,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 101947,Taunt the Caged Beast,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 101952,Templar,library,UNRESOLVED,akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
@@ -1280,8 +1275,6 @@ id,name,kind,status,categories
 101981,Thrones Crumble,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 101985,Tinglestripe,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 101986,Tithings,library,UNRESOLVED,akcje_i_blok; polityka_i_glosy; czas_i_warunki
-101988,Tongue of the Serpent,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby
-101992,Torment the Soul,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 101996,Tortured Confession,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 101997,Total Insanity,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 101998,Touch of Clarity,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; czas_i_warunki
@@ -1424,7 +1417,6 @@ id,name,kind,status,categories
 102207,Zillah's Valley,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
 102209,Zip Line,library,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 102211,Zoning Board,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
-102224,Form of the Cobra,library,CODE_DISCREPANCY,walka; koszty_i_zasoby
 102233,Revelation of the Serpent,library,CODE_DISCREPANCY,karty_i_strefy
 102235,Dark Web Procurer,library,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 102236,"The British Museum, London",library,PARTIAL_FIX,placeholder_lub_brak_efektu; karty_i_strefy
