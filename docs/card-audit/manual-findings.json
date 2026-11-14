@@ -14186,8 +14186,8 @@
   {
     "id": 200001,
     "name": "Aabbt Kindred (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Import non-unique naprawiony i testowany w crypt-non-unique.test.ts. Nadal brak handlera: nie znaleziono implementacji zakazu directed action bez ready Nefertiti ani prevention 1 co combat; analiza statyczna."
+    "status": "PARTIAL_FIX",
+    "evidence": "Import non-unique wcześniej naprawiony. Dodano zapobieganie 1 damage co combat: tests/cards/aabbt-audit.test.ts sprawdza rzeczywisty combat, limit, ponowne użycie w kolejnym combat, aggravated, Blood Fury i unpreventable. Nadal brak zakazu directed actions bez ready Nefertiti; gotowy helper readyNamedVampire nie wystarcza, bo zgodnie z rulingiem także ready mummy Nefertiti spełnia warunek. Pozostałe interakcje niesprawdzone."
   },
   {
     "id": 200002,

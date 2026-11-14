@@ -7,7 +7,7 @@ To **triage, nie ręczny audyt ani potwierdzenie poprawności**. UNREVIEWED ozna
 | Sygnał | Kart |
 |---|---:|
 | crypt_empty_spec_with_text_review | 659 |
-| no_runtime_handler | 9 |
+| no_runtime_handler | 8 |
 | simple_gain_pool_text_mismatch_review | 180 |
 
 ## Udokumentowane ustalenia ręczne
@@ -2380,7 +2380,7 @@ To udokumentowane ustalenia, a nie pełne sprawdzenie wszystkich interakcji tych
 | 102363 | The Vozhd of Gravesend | REVIEWED_NO_ISSUE_FOUND | Wąski zakres: unique Tzimisce ghoul, wejście z burn, rush, prevention i cancel strike card za life; vozhd-allies.test.ts. |
 | 102364 | The Vozhd of Juiz de Fora | REVIEWED_NO_ISSUE_FOUND | Wąski zakres: unique Tzimisce ghoul, wejście z burn, rush, basic Animalism i siphon blood do life; vozhd-allies.test.ts. |
 | 102365 | The Vozhd of Szczecin | REVIEWED_NO_ISSUE_FOUND | Wąski zakres: unique Tzimisce ghoul, wejście z burn, rush, discard Protean za prevention i unlock w obcej minion phase za blood; vozhd-allies.test.ts. |
-| 200001 | Aabbt Kindred (G2) | CODE_DISCREPANCY | Import non-unique naprawiony i testowany w crypt-non-unique.test.ts. Nadal brak handlera: nie znaleziono implementacji zakazu directed action bez ready Nefertiti ani prevention 1 co combat; analiza statyczna. |
+| 200001 | Aabbt Kindred (G2) | PARTIAL_FIX | Import non-unique wcześniej naprawiony. Dodano zapobieganie 1 damage co combat: tests/cards/aabbt-audit.test.ts sprawdza rzeczywisty combat, limit, ponowne użycie w kolejnym combat, aggravated, Blood Fury i unpreventable. Nadal brak zakazu directed actions bez ready Nefertiti; gotowy helper readyNamedVampire nie wystarcza, bo zgodnie z rulingiem także ready mummy Nefertiti spełnia warunek. Pozostałe interakcje niesprawdzone. |
 | 200002 | Aaron Bathurst (G4) | REVIEWED_NO_ISSUE_FOUND | Wąski zakres: tekst ogranicza się do Sabbat; importCryptCard parsuje sektę, a makeVampire kopiuje clan, capacity i dyscypliny. Nie testowano wszystkich mechanik importerem. |
 | 200003 | Aaron Duggan, Cameron's Toady (G2) | REVIEWED_NO_ISSUE_FOUND | Wąski zakres: tekst ogranicza się do Sabbat; importCryptCard parsuje sektę, makeVampire kopiuje dane crypt z registry. Bez osobnego testu karty. |
 | 200004 | Abd al-Rashid (G2) | FIXED_TARGETED | Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności. |

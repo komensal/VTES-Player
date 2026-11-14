@@ -36402,6 +36402,8 @@ export const cardSpecs: CardSpec[] = [
  * action, the acting minion, or the board. Nothing here needs a hook.
  */
 export const cryptSpecs: CardSpec[] = [
+  // Prevention is modelled here; the directed-action restriction is still open.
+  cryptPerm(200001, "Aabbt Kindred (G2)", { preventSelfEachCombat: 1 }),
   // Independent: unlock a vampire or mummy you control as a +1 stealth action.
   cryptPerm(200005, "Abdelsobek (G5)", {
     grantedAction: { do: "unlockControlledVampireOrMummy", stealth: 1 },

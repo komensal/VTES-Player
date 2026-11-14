@@ -14082,6 +14082,38 @@ function addCryptAbilities(
     };
   }
 
+  // "This vampire can prevent N damage each combat" (Aabbt Kindred).
+  // This is the minion's own ability, not a Fortitude card: Blood Fury's
+  // restriction on cards requiring Fortitude does not bar it.
+  const preventSelf = perm?.preventSelfEachCombat;
+  if (preventSelf !== undefined && preventSelf > 0) {
+    const priorOptions = handler.abilityOptions?.bind(handler);
+    handler.abilityOptions = (entry, owner, ctx) => {
+      const out = [...(priorOptions?.(entry, owner, ctx) ?? [])];
+      const bearer = owner.minion ? findMinion(ctx.state, owner.minion) : null;
+      const cf = ctx.combat;
+      const damage = cf?.pendingDamage[0];
+      if (bearer && bearer.controller === ctx.seat && ctx.window === "combat.damageResolution" &&
+          cf && damage && damage.minion === bearer.id && !damage.unpreventable &&
+          (cf.acting === bearer.id || cf.opposing === bearer.id) &&
+          !cf.usedThisCombat.includes(entry.card.id)) {
+        out.push({
+          id: `ability:${spec.name}:${entry.card.id}:preventSelf`,
+          kind: "useAbility",
+          label: `${spec.name}: prevent ${preventSelf} damage (once each combat)`,
+          source: entry.card.id,
+          params: { act: "preventSelf" },
+        });
+      }
+      return out;
+    };
+    const priorUse = handler.useAbility?.bind(handler);
+    handler.useAbility = (entry, owner, choice, ops) => {
+      if (choice.params["act"] !== "preventSelf") return priorUse?.(entry, owner, choice, ops);
+      if (owner.minion) ops.preventDamageAbility(owner.minion, entry.card.id, preventSelf, "combat");
+    };
+  }
+
   const aggro = perm?.aggravatedForBlood;
   const preventOther = perm?.preventForOther;
   const preventFromTag = perm?.preventFromTagEachRound;
