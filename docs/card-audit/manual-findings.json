@@ -14265,13 +14265,13 @@
     "id": 200014,
     "name": "Adonai (G2)",
     "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): flatCrypt ma puste statics; brak osobnego handlera rush na ready Camarilla, +1 strength przeciw Tremere oraz +1 bleed. Importer uwzględnia Sabbat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): flatCrypt ma puste statics; brak osobnego handlera rush na ready Camarilla, +1 strength przeciw Tremere oraz +1 bleed. Importer uwzględnia Sabbat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200015,
     "name": "Adri, The Seeker (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt ma puste statics i brak warunkowego +1 intercept przeciw Followers of Set; Independent jest odczytywane z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): flatCrypt ma puste statics i brak warunkowego +1 intercept przeciw Followers of Set; Independent jest odczytywane z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200016,
@@ -14456,8 +14456,8 @@
   {
     "id": 200046,
     "name": "Alessandro Garcia (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje stały +1 strength, choć druk ogranicza bonus do walki z Lasombra. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): flatCrypt daje stały +1 strength, choć druk ogranicza bonus do walki z Lasombra. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200047,
@@ -14480,14 +14480,14 @@
   {
     "id": 200050,
     "name": "Alexis Sorokin (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje bezwarunkowe +1 bleed zamiast tylko przeciw kontrolerowi ready Toreador. Brak dodge raz na combat, akcji steal equipment i oznaczenia Red List. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): flatCrypt daje bezwarunkowe +1 bleed zamiast tylko przeciw kontrolerowi ready Toreador. Brak dodge raz na combat, akcji steal equipment i oznaczenia Red List. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200051,
     "name": "Alfred Benezri (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty flatCrypt bez -1 strength w combat z ally; tytuł bishop importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusty flatCrypt bez -1 strength w combat z ally; tytuł bishop importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200052,
@@ -14828,8 +14828,8 @@
   {
     "id": 200108,
     "name": "Antara (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusty cryptPerm bez intercept przeciw Sabbat i burn blood po Gehenna; Blood cursed nie jest importowane ani modelowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusty cryptPerm bez intercept przeciw Sabbat i burn blood po Gehenna; Blood cursed nie jest importowane ani modelowane. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200109,
@@ -14870,8 +14870,8 @@
   {
     "id": 200115,
     "name": "Antonino (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje +1 stealth zawsze, choć druk ogranicza bonus do undirected actions. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): flatCrypt daje +1 stealth zawsze, choć druk ogranicza bonus do undirected actions. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200116,
@@ -14960,8 +14960,8 @@
   {
     "id": 200130,
     "name": "Aren, Priest of Eshu (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez stealth w political actions i burn blood vampire głosujących przeciw referendum Aren. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusty cryptPerm bez stealth w political actions i burn blood vampire głosujących przeciw referendum Aren. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200131,
@@ -15236,14 +15236,14 @@
   {
     "id": 200176,
     "name": "Batsheva (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje stały +1 strength zamiast tylko w combat z Tzimisce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): flatCrypt daje stały +1 strength zamiast tylko w combat z Tzimisce. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200177,
     "name": "Batsheva (G4 ADV)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje stały +1 strength zamiast bonusu przeciw Malkavian; brak zależnego od merged dodatkowego strength. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): flatCrypt daje stały +1 strength zamiast bonusu przeciw Malkavian; brak zależnego od merged dodatkowego strength. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200178,
@@ -15440,8 +15440,8 @@
   {
     "id": 200210,
     "name": "Blythe Candeleria (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez -1 strength w combat z Malkavian. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusty cryptPerm bez -1 strength w combat z Malkavian. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200211,
@@ -15458,8 +15458,8 @@
   {
     "id": 200213,
     "name": "Boss Callihan (G3 ADV)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty flatCrypt bez -1 intercept przeciw Sabbat i bez merged Baron of New York. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusty flatCrypt bez -1 intercept przeciw Sabbat i bez merged Baron of New York. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200214,
@@ -15518,8 +15518,8 @@
   {
     "id": 200223,
     "name": "Brunhilde (G3)",
-    "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm bez +1 strength i warunkowego +1 bleed przeciw kontrolerowi ready Ventrue. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm bez +1 strength i warunkowego +1 bleed przeciw kontrolerowi ready Ventrue. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200224,
@@ -15728,8 +15728,8 @@
   {
     "id": 200258,
     "name": "Céleste, The Voice of a Secret (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez warunkowego +1 bleed przeciw kontrolerowi ready Toreador i -1 intercept podczas bleed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed, intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez warunkowego +1 bleed przeciw kontrolerowi ready Toreador i -1 intercept podczas bleed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200259,
@@ -15770,8 +15770,8 @@
   {
     "id": 200265,
     "name": "Chandler Hungerford (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 intercept przy próbie block innego Gangrel. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 intercept przy próbie block innego Gangrel. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200266,
@@ -15788,8 +15788,8 @@
   {
     "id": 200268,
     "name": "Chas Giovanni Tello (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +1 strength zamiast tylko przeciw titled vampire; brak opcji innych Methuselah discard master jako out-of-turn za fail ogłoszonej akcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Spec daje stały +1 strength zamiast tylko przeciw titled vampire; brak opcji innych Methuselah discard master jako out-of-turn za fail ogłoszonej akcji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200269,
@@ -15818,8 +15818,8 @@
   {
     "id": 200273,
     "name": "Christine Boscacci (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 intercept podczas bleed actions. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez -1 intercept podczas bleed actions. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200274,
@@ -15914,8 +15914,8 @@
   {
     "id": 200289,
     "name": "Constanza Vinti (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +2 bleed przeciw kontrolerowi ready Ventrue; Prince of Rome importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +2 bleed przeciw kontrolerowi ready Ventrue; Prince of Rome importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200290,
@@ -15926,8 +15926,8 @@
   {
     "id": 200291,
     "name": "Cornelius Ottavio (G2)",
-    "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez stałego +1 bleed i dodatkowego +1 bleed przeciw kontrolerowi ready non-Camarilla. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez stałego +1 bleed i dodatkowego +1 bleed przeciw kontrolerowi ready non-Camarilla. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200292,
@@ -16016,8 +16016,8 @@
   {
     "id": 200306,
     "name": "Cynthia Ingold (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 strength zamiast tylko przeciw Camarilla vampire; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 strength zamiast tylko przeciw Camarilla vampire; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200307,
@@ -16088,8 +16088,8 @@
   {
     "id": 200318,
     "name": "Danny Larkshill (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +1 strength zamiast tylko w combat z młodszym vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały +1 strength zamiast tylko w combat z młodszym vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200319,
@@ -16106,8 +16106,8 @@
   {
     "id": 200321,
     "name": "Dark Selina (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 stealth przy political actions; cardinal importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 stealth przy political actions; cardinal importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200322,
@@ -16136,8 +16136,8 @@
   {
     "id": 200326,
     "name": "David Morgan, The Scourge (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 intercept przy block vampire capacity 2 lub mniej. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 intercept przy block vampire capacity 2 lub mniej. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200327,
@@ -16148,8 +16148,8 @@
   {
     "id": 200328,
     "name": "Dedefra (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +1 strength zamiast tylko w combat z Camarilla vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały +1 strength zamiast tylko w combat z Camarilla vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200329,
@@ -16166,8 +16166,8 @@
   {
     "id": 200331,
     "name": "Delilah Monroe (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 intercept przeciw starszym vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez -1 intercept przeciw starszym vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200332,
@@ -16334,8 +16334,8 @@
   {
     "id": 200359,
     "name": "Dominique Santo Paulo (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +1 strength zamiast tylko w combat z Nosferatu lub Nosferatu antitribu; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały +1 strength zamiast tylko w combat z Nosferatu lub Nosferatu antitribu; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200360,
@@ -16406,8 +16406,8 @@
   {
     "id": 200371,
     "name": "Dovey Ebfwe (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 stealth przy employ retainer; Black Hand i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 stealth przy employ retainer; Black Hand i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200372,
@@ -16551,7 +16551,7 @@
     "id": 200395,
     "name": "Dylan (G2 ADV)",
     "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez +1 strength, +1 stealth przy bleed, Red List i importu Infernal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez +1 strength, +1 stealth przy bleed, Red List i importu Infernal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200396,
@@ -16652,8 +16652,8 @@
   {
     "id": 200412,
     "name": "Elisabetta Romano (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed przeciw kontrolerowi ready Follower of Set; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 bleed przeciw kontrolerowi ready Follower of Set; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200413,
@@ -16778,8 +16778,8 @@
   {
     "id": 200433,
     "name": "Erinyi (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez -1 strength w combat z Gangrel antitribu; Flight nie występuje w disciplines registry i nie jest importowane z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez -1 strength w combat z Gangrel antitribu; Flight nie występuje w disciplines registry i nie jest importowane z tekstu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200434,
@@ -16904,8 +16904,8 @@
   {
     "id": 200454,
     "name": "Fairuza (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez directed action burn blood/life miniona prey i -1 bleed przeciw kontrolerowi ready miniona. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez directed action burn blood/life miniona prey i -1 bleed przeciw kontrolerowi ready miniona. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200455,
@@ -17030,8 +17030,8 @@
   {
     "id": 200475,
     "name": "Francis Milliner (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +1 strength zamiast tylko w combat z Toreador lub Toreador antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały +1 strength zamiast tylko w combat z Toreador lub Toreador antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200476,
@@ -17132,8 +17132,8 @@
   {
     "id": 200492,
     "name": "Ganesh (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi ready Giovanni. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi ready Giovanni. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200493,
@@ -17210,8 +17210,8 @@
   {
     "id": 200505,
     "name": "Gentha Shale (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 bleed przeciw kontrolerowi ready Follower of Set; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 bleed przeciw kontrolerowi ready Follower of Set; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200506,
@@ -17288,8 +17288,8 @@
   {
     "id": 200518,
     "name": "Gillespi Giovanni (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi ready Camarilla. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi ready Camarilla. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200519,
@@ -17744,8 +17744,8 @@
   {
     "id": 200594,
     "name": "Hesha Ruhadze (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 stealth podczas hunt i +1 hunt; test crypt-wave-4 dotyczy innej wersji Hesha (G6). Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez +1 stealth podczas hunt i +1 hunt; test crypt-wave-4 dotyczy innej wersji Hesha (G6). Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200595,
@@ -17840,8 +17840,8 @@
   {
     "id": 200610,
     "name": "Hugo (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 intercept przeciw Lasombra i Tzimisce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez -1 intercept przeciw Lasombra i Tzimisce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200611,
@@ -18014,8 +18014,8 @@
   {
     "id": 200639,
     "name": "Ira Rivers (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec z requiresReady bez +1 intercept przy próbie block political actions i draw przy karcie Auspex; Prince of Dallas importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec z requiresReady bez +1 intercept przy próbie block political actions i draw przy karcie Auspex; Prince of Dallas importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200640,
@@ -18380,8 +18380,8 @@
   {
     "id": 200700,
     "name": "Jessica (G2 ADV)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały stealth zamiast wyłącznie dla political actions; brak merged Archbishop of Brussels, bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Spec daje stały stealth zamiast wyłącznie dla political actions; brak merged Archbishop of Brussels, bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200701,
@@ -18434,8 +18434,8 @@
   {
     "id": 200709,
     "name": "Joaquina Amaya (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 stealth podczas equip. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Sprawdzone equip kartą z ręki; equip z innego miniona nie jest tu objęty. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez +1 stealth podczas equip. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200710,
@@ -18488,8 +18488,8 @@
   {
     "id": 200718,
     "name": "Jorge De La Muerte, The Agent (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed przeciw kontrolerowi ready Sabbat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 bleed przeciw kontrolerowi ready Sabbat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200719,
@@ -18536,8 +18536,8 @@
   {
     "id": 200726,
     "name": "Joshua Tarnopolski (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez zniżki allies/retainers i +2 strength w combat z Sabbat vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez zniżki allies/retainers i +2 strength w combat z Sabbat vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200727,
@@ -18566,8 +18566,8 @@
   {
     "id": 200731,
     "name": "Jubal (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 intercept przy próbie block Follower of Set. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 intercept przy próbie block Follower of Set. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200732,
@@ -18626,8 +18626,8 @@
   {
     "id": 200741,
     "name": "Kabede Maru (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 intercept podczas political actions; tytuł magaji nie jest rozpoznawany przez importer/model. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez +1 intercept podczas political actions; tytuł magaji nie jest rozpoznawany przez importer/model. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200742,
@@ -18746,8 +18746,8 @@
   {
     "id": 200761,
     "name": "Katarina (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed przeciw kontrolerowi ready Ravnos; Prince of Glasgow importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 bleed przeciw kontrolerowi ready Ravnos; Prince of Glasgow importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200762,
@@ -18830,8 +18830,8 @@
   {
     "id": 200775,
     "name": "Kestrelle Hayes (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez warunkowego stealth przy directed action na Methuselah bez ready Sabbat; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
+    "status": "PARTIAL_FIX",
+    "evidence": "Premia przetestowana dla pojedynczego celu. Akcje skierowane na wielu Methuselahów i ich wpływ na ten warunek nie są obsłużone w obecnym modelu pojedynczego celu; w szczególności ruling Kestrelle wymaga bonusu, gdy choć jeden cel spełnia warunek. Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez warunkowego stealth przy directed action na Methuselah bez ready Sabbat; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200776,
@@ -18848,8 +18848,8 @@
   {
     "id": 200778,
     "name": "Khalil Ravana (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 stealth przy diablerie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 stealth przy diablerie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200779,
@@ -18860,8 +18860,8 @@
   {
     "id": 200780,
     "name": "Khay'tall, Snake of Eden (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez stealth przy political actions i zakazu votes/ballots przeciw referendum dla vampire z corruption counters. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez stealth przy political actions i zakazu votes/ballots przeciw referendum dla vampire z corruption counters. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200781,
@@ -18890,8 +18890,8 @@
   {
     "id": 200785,
     "name": "Kisha Bhimji (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 stealth na non-hunt; magaji nie jest rozpoznawany importerem/model tytułów. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez -1 stealth na non-hunt; magaji nie jest rozpoznawany importerem/model tytułów. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200786,
@@ -18980,8 +18980,8 @@
   {
     "id": 200800,
     "name": "L'Épuisette (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +1 bleed zamiast warunkowego przeciw kontrolerowi ready Toreador. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały +1 bleed zamiast warunkowego przeciw kontrolerowi ready Toreador. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200801,
@@ -19124,8 +19124,8 @@
   {
     "id": 200824,
     "name": "Le Dinh Tho (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez directed action podglądu ręki i discard, -1 stealth przy hunt oraz importu Scarce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez directed action podglądu ręki i discard, -1 stealth przy hunt oraz importu Scarce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200825,
@@ -19190,8 +19190,8 @@
   {
     "id": 200835,
     "name": "Lille Haake (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed przeciw kontrolerowi ready Sabbat i discard przez master phase action; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez +1 bleed przeciw kontrolerowi ready Sabbat i discard przez master phase action; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200836,
@@ -19232,8 +19232,8 @@
   {
     "id": 200842,
     "name": "Lisette Vizquel (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 intercept podczas diablerie actions; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 intercept podczas diablerie actions; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200843,
@@ -19376,8 +19376,8 @@
   {
     "id": 200866,
     "name": "Luc (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez stealth przy diablerie i akcji +1 stealth dającej +3 hand size do następnego unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez stealth przy diablerie i akcji +1 stealth dającej +3 hand size do następnego unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200867,
@@ -19412,8 +19412,8 @@
   {
     "id": 200872,
     "name": "Lucina (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength przeciw vampire capacity do 4 i gain blood w unlock przy Edge; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez +1 strength przeciw vampire capacity do 4 i gain blood w unlock przy Edge; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200873,
@@ -19514,8 +19514,8 @@
   {
     "id": 200889,
     "name": "Luther (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed przeciw kontrolerowi ready Pander. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 bleed przeciw kontrolerowi ready Pander. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200890,
@@ -19598,8 +19598,8 @@
   {
     "id": 200903,
     "name": "Maldavis (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez akcji ready primogen za burn blood Maldavis i -1 bleed przeciw kontrolerowi ready primogen. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez akcji ready primogen za burn blood Maldavis i -1 bleed przeciw kontrolerowi ready primogen. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200904,
@@ -19700,14 +19700,14 @@
   {
     "id": 200920,
     "name": "Marguerite Foccart (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały intercept zamiast tylko przeciw political actions. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały intercept zamiast tylko przeciw political actions. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200921,
     "name": "Marguerite Foccart (G4 ADV)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +1 strength zamiast bonusu tylko przeciw titled vampire i dodatkowego strength przy merged. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Spec daje stały +1 strength zamiast bonusu tylko przeciw titled vampire i dodatkowego strength przy merged. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200922,
@@ -19730,8 +19730,8 @@
   {
     "id": 200925,
     "name": "Marianna (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez burn pool innych kontrolerów ready Giovanni przy ready Mariannie i +1 strength przeciw Giovanni. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez burn pool innych kontrolerów ready Giovanni przy ready Mariannie i +1 strength przeciw Giovanni. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200926,
@@ -19796,8 +19796,8 @@
   {
     "id": 200936,
     "name": "Mark (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 intercept przy próbie block bleed; Torrance Circle i sterile nie importowane, bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 intercept przy próbie block bleed; Torrance Circle i sterile nie importowane, bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200937,
@@ -19838,8 +19838,8 @@
   {
     "id": 200943,
     "name": "Martin Franckel (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 bleed przeciw kontrolerowi niemającemu ready Tremere ani Tremere antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez -1 bleed przeciw kontrolerowi niemającemu ready Tremere ani Tremere antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200944,
@@ -20408,8 +20408,8 @@
   {
     "id": 201038,
     "name": "Natasha Volfchek (G1)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały stealth zamiast tylko dla political actions, oraz +1 bleed; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały stealth zamiast tylko dla political actions, oraz +1 bleed; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201039,
@@ -20486,8 +20486,8 @@
   {
     "id": 201051,
     "name": "Nettie Hale (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 stealth przy employ retainer/recruit ally; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 stealth przy employ retainer/recruit ally; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201052,
@@ -20600,8 +20600,8 @@
   {
     "id": 201070,
     "name": "Obaluaye (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez stealth przy hunt i burn przy kontroli co najmniej czterech Salubri; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez stealth przy hunt i burn przy kontroli co najmniej czterech Salubri; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201071,
@@ -20648,8 +20648,8 @@
   {
     "id": 201078,
     "name": "Olugbenga (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez płacenia blood zamiast pool za contest vampire i +1 intercept podczas bleed; magaji nie importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez płacenia blood zamiast pool za contest vampire i +1 intercept podczas bleed; magaji nie importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201079,
@@ -20672,14 +20672,14 @@
   {
     "id": 201082,
     "name": "Onaedo (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 stealth podczas diablerie przy ready Otieno. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 stealth podczas diablerie przy ready Otieno. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201083,
     "name": "Ondine \"Boudicca\" Sinclair (G5)",
-    "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 strength i stealth przy bleed z Edge; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 strength i stealth przy bleed z Edge; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201084,
@@ -20696,8 +20696,8 @@
   {
     "id": 201086,
     "name": "Otieno (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi ready Guruhi. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi ready Guruhi. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201087,
@@ -20864,8 +20864,8 @@
   {
     "id": 201114,
     "name": "Peter Blaine (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed przeciw kontrolerowi ready Ventrue. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 bleed przeciw kontrolerowi ready Ventrue. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201115,
@@ -20888,8 +20888,8 @@
   {
     "id": 201118,
     "name": "Phaedyme (G5)",
-    "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 strength i stealth przy bleed kontrolera ready Camarilla vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 strength i stealth przy bleed kontrolera ready Camarilla vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201119,
@@ -20966,8 +20966,8 @@
   {
     "id": 201131,
     "name": "Portia (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez stealth przy hunt i environmental damage po block hunt przed range w pierwszej rundzie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez stealth przy hunt i environmental damage po block hunt przed range w pierwszej rundzie. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201132,
@@ -20978,8 +20978,8 @@
   {
     "id": 201133,
     "name": "Preston Varrick (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed przeciw kontrolerowi ready ally. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 bleed przeciw kontrolerowi ready ally. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201134,
@@ -21014,8 +21014,8 @@
   {
     "id": 201139,
     "name": "Queen Anne (G2)",
-    "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i dodatkowego +1 przeciw kontrolerowi ready Tremere; Prince of London importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i dodatkowego +1 przeciw kontrolerowi ready Tremere; Prince of London importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201140,
@@ -21104,14 +21104,14 @@
   {
     "id": 201154,
     "name": "Rain (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały stealth zamiast tylko na akcje skierowane na Methuselah bez ready titled vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Premia przetestowana dla pojedynczego celu. Akcje skierowane na wielu Methuselahów i ich wpływ na ten warunek nie są obsłużone w obecnym modelu pojedynczego celu; w szczególności ruling Kestrelle wymaga bonusu, gdy choć jeden cel spełnia warunek. Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały stealth zamiast tylko na akcje skierowane na Methuselah bez ready titled vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201155,
     "name": "Rake (G1)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały strength zamiast tylko w combat z Ventrue; Prince of Atlanta importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały strength zamiast tylko w combat z Ventrue; Prince of Atlanta importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201156,
@@ -21152,14 +21152,14 @@
   {
     "id": 201162,
     "name": "Ranjan Rishi, Camarilla Scholar (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed przeciw kontrolerowi ready Brujah. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 bleed przeciw kontrolerowi ready Brujah. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201163,
     "name": "Ransam, The Old Man (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały strength zamiast tylko w combat z Tremere. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały strength zamiast tylko w combat z Tremere. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201164,
@@ -21188,8 +21188,8 @@
   {
     "id": 201168,
     "name": "Rathmere (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały strength zamiast tylko w combat z Sabbat vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały strength zamiast tylko w combat z Sabbat vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201169,
@@ -21206,8 +21206,8 @@
   {
     "id": 201171,
     "name": "Rebekka, Chantry Elder of Munich (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 stealth na akcjach i warunkowego +1 bleed przeciw kontrolerowi ready Malkavian. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Dodano również drukowane stałe +1 stealth. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 stealth na akcjach i warunkowego +1 bleed przeciw kontrolerowi ready Malkavian. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201172,
@@ -21236,8 +21236,8 @@
   {
     "id": 201176,
     "name": "Reginald Moore (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały strength zamiast tylko w combat z Tremere/Tremere antitribu; brak zakazów block i akcji enter combat przeciw tym klanom, primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Spec daje stały strength zamiast tylko w combat z Tremere/Tremere antitribu; brak zakazów block i akcji enter combat przeciw tym klanom, primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201177,
@@ -21260,8 +21260,8 @@
   {
     "id": 201180,
     "name": "Reverend Adams (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 stealth na political actions i braku lock starszych vampire za successful block Adamsa. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez -1 stealth na political actions i braku lock starszych vampire za successful block Adamsa. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201181,
@@ -21296,8 +21296,8 @@
   {
     "id": 201186,
     "name": "Richard Tauber, Ayelea's Puppet (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 intercept przy próbie block Lasombra i Tzimisce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez -1 intercept przy próbie block Lasombra i Tzimisce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201187,
@@ -21344,8 +21344,8 @@
   {
     "id": 201194,
     "name": "Rocia (G4)",
-    "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono: opcjonalny press co combat. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez +1 intercept przy próbie block Tremere/Tremere antitribu i optional press co combat; Flight nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Częściowo naprawiono: opcjonalny press co combat. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez +1 intercept przy próbie block Tremere/Tremere antitribu i optional press co combat; Flight nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201195,
@@ -21398,8 +21398,8 @@
   {
     "id": 201203,
     "name": "Rosa Hernández (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 stealth przy employ retainer. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 stealth przy employ retainer. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201204,
@@ -21428,8 +21428,8 @@
   {
     "id": 201208,
     "name": "Royce (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 stealth podczas bleed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez -1 stealth podczas bleed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201209,
@@ -21470,8 +21470,8 @@
   {
     "id": 201215,
     "name": "Ryder (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez podglądu ręki kontrolera przeciwnika przed range w pierwszej rundzie i +1 intercept przy block directed actions. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez podglądu ręki kontrolera przeciwnika przed range w pierwszej rundzie i +1 intercept przy block directed actions. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201216,
@@ -21548,8 +21548,8 @@
   {
     "id": 201228,
     "name": "Samantha (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały intercept zamiast tylko przeciw Lasombra; brak aggravated hand strikes, bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Spec daje stały intercept zamiast tylko przeciw Lasombra; brak aggravated hand strikes, bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201229,
@@ -21602,8 +21602,8 @@
   {
     "id": 201237,
     "name": "Sarah Brando (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez -1 stealth podczas akcji skierowanych na kontrolera ready bishop/archbishop. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Premia przetestowana dla pojedynczego celu. Akcje skierowane na wielu Methuselahów i ich wpływ na ten warunek nie są obsłużone w obecnym modelu pojedynczego celu; w szczególności ruling Kestrelle wymaga bonusu, gdy choć jeden cel spełnia warunek. Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez -1 stealth podczas akcji skierowanych na kontrolera ready bishop/archbishop. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201238,
@@ -21728,8 +21728,8 @@
   {
     "id": 201258,
     "name": "Sébastien Goulet (G3 ADV)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały stealth zamiast tylko dla recruit/employ oraz merged directed action steal ally/retainer, której brak. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Spec daje stały stealth zamiast tylko dla recruit/employ oraz merged directed action steal ally/retainer, której brak. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201259,
@@ -21740,8 +21740,8 @@
   {
     "id": 201260,
     "name": "Sela (G2 ADV)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały stealth zamiast tylko dla akcji skierowanych na kontrolera ready bishop; Archbishop of Rome importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Spec daje stały stealth zamiast tylko dla akcji skierowanych na kontrolera ready bishop; Archbishop of Rome importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201261,
@@ -21752,8 +21752,8 @@
   {
     "id": 201262,
     "name": "Selma the Repugnant (G1)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 intercept przy próbie block Nosferatu vampire; Prince of Cleveland importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 intercept przy próbie block Nosferatu vampire; Prince of Cleveland importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201263,
@@ -21878,8 +21878,8 @@
   {
     "id": 201283,
     "name": "Sheva Carr (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały +1 strength zamiast tylko w combat z Lasombra. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały +1 strength zamiast tylko w combat z Lasombra. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201284,
@@ -21896,8 +21896,8 @@
   {
     "id": 201286,
     "name": "Sigrid Bekker (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed przeciw kontrolerowi ready Nosferatu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 bleed przeciw kontrolerowi ready Nosferatu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201287,
@@ -21926,8 +21926,8 @@
   {
     "id": 201291,
     "name": "Sir Ralph Hamilton (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength w combat z młodszym Camarilla vampire i +1 bleed Followers of Set przeciw kontrolerowi. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Pusta spec bez +1 strength w combat z młodszym Camarilla vampire i +1 bleed Followers of Set przeciw kontrolerowi. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201292,
@@ -22070,8 +22070,8 @@
   {
     "id": 201315,
     "name": "Stephen Bateson (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 stealth, ale bleed jest stały zamiast tylko przeciw kontrolerowi ready Tremere. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje +1 stealth, ale bleed jest stały zamiast tylko przeciw kontrolerowi ready Tremere. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201316,
@@ -22304,8 +22304,8 @@
   {
     "id": 201354,
     "name": "Teresita, The Godmother (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały intercept zamiast tylko przeciw Camarilla vampires; Black Hand i Seraph nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały intercept zamiast tylko przeciw Camarilla vampires; Black Hand i Seraph nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201355,
@@ -22544,8 +22544,8 @@
   {
     "id": 201394,
     "name": "Tura Vaughn (G1)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 intercept przy próbie block innych Brujah; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Pusta spec bez +1 intercept przy próbie block innych Brujah; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201395,
@@ -22700,8 +22700,8 @@
   {
     "id": 201420,
     "name": "Vaclav Petalengro (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały intercept zamiast tylko przeciw Gangrel. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe intercept i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały intercept zamiast tylko przeciw Gangrel. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201421,
@@ -22742,8 +22742,8 @@
   {
     "id": 201427,
     "name": "Vasantasena (G2)",
-    "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i stealth podczas bleed przeciw kontrolerowi bez ready titled vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i stealth podczas bleed przeciw kontrolerowi bez ready titled vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201428,
@@ -22934,8 +22934,8 @@
   {
     "id": 201459,
     "name": "Volo (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez -1 stealth przy hunt; Kiev circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez -1 stealth przy hunt; Kiev circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201460,
@@ -23096,8 +23096,8 @@
   {
     "id": 201486,
     "name": "Yazid Tamari (G3 ADV)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały stealth zamiast tylko dla directed actions; brak merged Anarch, Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe stealth i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Spec daje stały stealth zamiast tylko dla directed actions; brak merged Anarch, Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201487,
@@ -23240,8 +23240,8 @@
   {
     "id": 201510,
     "name": "Zubeida (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi bez ready vampire capacity powyżej 6; Black Hand, Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi bez ready vampire capacity powyżej 6; Black Hand, Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201511,
@@ -24044,8 +24044,8 @@
   {
     "id": 201644,
     "name": "Mickey Wheeler (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały strength zamiast tylko w combat ze starszym vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono warunkowe strength i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe interakcje wymagają dalszej weryfikacji. Historyczna analiza (może opisywać już naprawione braki): Spec daje stały strength zamiast tylko w combat ze starszym vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201645,

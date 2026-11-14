@@ -666,6 +666,23 @@ export interface ConditionalStatic {
   handSize?: number;
   /** Built-in action kinds (bleed, hunt, diablerize, …). */
   actionKinds?: ActionKind[];
+  /** The complement of actionKinds, e.g. "non-hunt actions". */
+  excludedActionKinds?: ActionKind[];
+  /** A live condition on the Methuselah targeted by a directed action.
+   *  Conditions within `minion` are conjunctive; `exists: false` means
+   *  that no ready minion matching them may be controlled by the target. */
+  targetReady?: {
+    exists: boolean;
+    minion: {
+      kind?: MinionKind;
+      clans?: string[];
+      sect?: Sect;
+      notSect?: Sect;
+      titles?: VampireTitle[];
+      titled?: boolean;
+      minCapacity?: number;
+    };
+  };
   /** "Recruit and employ actions" — an ally or retainer played as an
    *  action announces as `cardEffect` like any other action card, so what
    *  tells them apart is the printed type of the announcing card. */
@@ -695,6 +712,8 @@ export interface ConditionalStatic {
   actingMinion?: {
     titled?: boolean;
     clan?: string;
+    clans?: string[];
+    sect?: Sect;
     kind?: MinionKind;
     younger?: boolean;
     older?: boolean;
@@ -713,8 +732,12 @@ export interface ConditionalStatic {
   inCombatWith?: {
     titled?: boolean;
     clan?: string;
+    clans?: string[];
+    sect?: Sect;
     kind?: MinionKind;
     younger?: boolean;
+    older?: boolean;
+    maxCapacity?: number;
   };
   /** A condition on the BEARER's controller and the board around them —
    *  "while you have 9 or fewer pool", "while you have the Edge", "while

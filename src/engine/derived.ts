@@ -382,17 +382,20 @@ function bleedOf(
           target,
           directed: true,
         }
-      : ((state.eventLog.find(
-          (ev) => ev.type === "ActionAnnounced" && ev.actionId === actionId,
-        ) as Extract<GameEvent, { type: "ActionAnnounced" }> | undefined) ?? {
-          type: "ActionAnnounced",
-          actionId,
-          seat: acting.controller,
-          acting: acting.id,
-          actionKind,
+      : {
+          ...((state.eventLog.find(
+            (ev) => ev.type === "ActionAnnounced" && ev.actionId === actionId,
+          ) as Extract<GameEvent, { type: "ActionAnnounced" }> | undefined) ?? {
+            type: "ActionAnnounced" as const,
+            actionId,
+            seat: acting.controller,
+            acting: acting.id,
+            actionKind,
+            directed: target !== null,
+          }),
+          // Redirects change the live action target, not its announcement.
           target,
-          directed: target !== null,
-        }),
+        },
     acting,
     "bleed",
   );
@@ -841,6 +844,8 @@ function conditionHolds(
   // constrain, so a purely board-conditioned static still applies.
   const needsAction =
     c.actionKinds !== undefined ||
+    c.excludedActionKinds !== undefined ||
+    c.targetReady !== undefined ||
     c.actionCardTypes !== undefined ||
     c.directedAtController !== undefined ||
     c.actionDirected !== undefined ||
@@ -849,6 +854,24 @@ function conditionHolds(
   if (needsAction && !announced) return false;
   if (announced) {
     if (c.actionKinds && !c.actionKinds.includes(announced.actionKind)) return false;
+    if (c.excludedActionKinds?.includes(announced.actionKind)) return false;
+    if (c.targetReady) {
+      if (!announced.directed || announced.target === null) return false;
+      const target = state.seats.find((s) => s.id === announced.target && !s.ousted);
+      if (!target) return false;
+      const f = c.targetReady.minion;
+      const matches = target.minions.some((m) =>
+        isReady(m) &&
+        (f.kind === undefined || m.kind === f.kind) &&
+        (f.clans === undefined || (m.clan !== null && f.clans.includes(m.clan))) &&
+        (f.sect === undefined || (m.kind === "vampire" && m.sect === f.sect)) &&
+        (f.notSect === undefined || (m.kind === "vampire" && m.sect !== f.notSect)) &&
+        (f.titled === undefined || (m.kind === "vampire" && (m.title !== null) === f.titled)) &&
+        (f.titles === undefined || (m.kind === "vampire" && m.title !== null && f.titles.includes(m.title))) &&
+        (f.minCapacity === undefined || (m.kind === "vampire" && capacityOf(m) >= f.minCapacity)),
+      );
+      if (matches !== c.targetReady.exists) return false;
+    }
     if (c.actionCardTypes) {
       const types = announced.cardTypes ?? [];
       if (!c.actionCardTypes.some((t) => types.includes(t))) return false;
@@ -871,6 +894,8 @@ function conditionHolds(
       if (f.titled === true && a.title === null) return false;
       if (f.titled === false && a.title !== null) return false;
       if (f.clan !== undefined && a.clan !== f.clan) return false;
+      if (f.clans !== undefined && (a.clan === null || !f.clans.includes(a.clan))) return false;
+      if (f.sect !== undefined && (a.kind !== "vampire" || a.sect !== f.sect)) return false;
       if (f.kind !== undefined && a.kind !== f.kind) return false;
       if (f.maxCapacity !== undefined && capacityOf(a) > f.maxCapacity) return false;
       // Relative to the BEARER's DERIVED capacity, so a granted point
@@ -903,8 +928,12 @@ function conditionHolds(
     if (!foe) return false;
     if (f.titled === true && foe.title === null) return false;
     if (f.clan !== undefined && foe.clan !== f.clan) return false;
+    if (f.clans !== undefined && (foe.clan === null || !f.clans.includes(foe.clan))) return false;
+    if (f.sect !== undefined && (foe.kind !== "vampire" || foe.sect !== f.sect)) return false;
     if (f.kind !== undefined && foe.kind !== f.kind) return false;
+    if (f.maxCapacity !== undefined && capacityOf(foe) > f.maxCapacity) return false;
     if (f.younger === true && capacityOf(foe) >= capacityOf(bearer)) return false;
+    if (f.older === true && capacityOf(foe) <= capacityOf(bearer)) return false;
   }
   // Crypt names in game state include a group/advanced suffix used by the
   // catalog; the printed name on another card does not. A named vampire
@@ -962,7 +991,13 @@ export function conditionalStatic(
     (ev) => ev.type === "ActionAnnounced" && ev.actionId === actionId,
   );
   if (!announced || announced.type !== "ActionAnnounced") return 0;
-  return conditionalStaticFor(state, announced, minion, field);
+  const action = state.frames.find((f) => f.kind === "action" && f.actionId === actionId);
+  return conditionalStaticFor(
+    state,
+    action?.kind === "action" ? { ...announced, target: action.target, directed: action.directed } : announced,
+    minion,
+    field,
+  );
 }
 
 /**

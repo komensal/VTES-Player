@@ -154,6 +154,9 @@ describe("printed crypt statics in a real game", () => {
       const own = copy.attached.find((p) => p.card.id === copy.id)!;
       for (const [key, value] of Object.entries(expected)) expect(own.statics[key as keyof Expected], `${id} zone ${key}`).toBe(value);
     }
+    // Isolate the flat clause: Cornelius also has a separate conditional
+    // bonus when the target controls a ready non-Camarilla vampire.
+    if (id === 200291) state.seats[1]!.minions[0]!.sect = "camarilla";
     if (expected.bleed !== undefined) expect(prospectiveBleed(state, actor, "Bob"), `${id} bleed`).toBe(1 + expected.bleed);
     const engine = new VtesEngine(state, testRegistry);
     runTrace(engine, [["Alice", `bleed:${actor.id}`]]);

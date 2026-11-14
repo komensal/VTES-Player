@@ -37349,8 +37349,8 @@ export const cryptSpecs: CardSpec[] = [
 
   flatCrypt(200011, "Adana de Sforza (G4)", { bleed: 2 }), // fala 47 wierna (300) domknięcie 2
   flatCrypt(200013, "Adhiambo (G4)", {}), // fala 47 wierna (300) domknięcie 4
-  flatCrypt(200014, "Adonai (G2)", { bleed: 1 }), // fala 47 wierna (300) domknięcie 5
-  flatCrypt(200015, "Adri, The Seeker (G6)", {}), // fala 47 wierna (300) domknięcie 6
+  flatCrypt(200014, "Adonai (G2)", { bleed: 1, conditional: [{strength: 1, inCombatWith: {kind: "vampire", clan: "Tremere"}}] }), // fala 47 wierna (300) domknięcie 5
+  flatCrypt(200015, "Adri, The Seeker (G6)", { conditional: [{intercept: 1, actingMinion: {kind: "vampire", clan: "Ministry"}}] }), // fala 47 wierna (300) domknięcie 6
   flatCrypt(200016, "Adrianne (G1)", { bleed: 1 }), // fala 47 wierna (300) domknięcie 7
   flatCrypt(200017, "Aeron (G3)", {}), // fala 47 wierna (300) domknięcie 8
           cryptPerm(200018, "Afifa, The Herald (G4)", {}), // fala 46 wierna (300) cryptPerm
@@ -37378,12 +37378,12 @@ export const cryptSpecs: CardSpec[] = [
         cryptPerm(200042, "Alcoan (G6)", {}), // fala 46 wierna (300) cryptPerm
         flatCrypt(200043, "Aleister Crowley (G5)", {}), // fala 46 wierna (300) dobrane vanilla
         flatCrypt(200044, "Alejandro Aguirre (G3)", {}), // fala 46 wierna (300) dobrane vanilla
-    flatCrypt(200046, "Alessandro Garcia (G4)", { strength: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200046, "Alessandro Garcia (G4)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", clan: "Lasombra"}}] }), // fala 46 wierna (300) statics
     cryptPerm(200047, "Alex Camille (G5)", {}), // fala 46 wierna (300) cryptPerm Gehenna
         cryptPerm(200048, "Alex Wilkins (G5)", {}), // fala 46 wierna (300) cryptPerm
     cryptPerm(200049, "Alexandra (G2)", { statics: { bleed: 2 } }), // fala 46 wierna (300) cryptPerm Gehenna
-    flatCrypt(200050, "Alexis Sorokin (G4)", { bleed: 1 }), // fala 46 wierna (300) statics
-        flatCrypt(200051, "Alfred Benezri (G3)", {}), // fala 46 wierna (300) dobrane vanilla
+    flatCrypt(200050, "Alexis Sorokin (G4)", { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Toreador"]}}}] }), // fala 46 wierna (300) statics
+        flatCrypt(200051, "Alfred Benezri (G3)", { conditional: [{strength: -1, inCombatWith: {kind: "ally"}}] }), // fala 46 wierna (300) dobrane vanilla
         cryptPerm(200052, "Alfred Benezri (G3 ADV)", {}), // fala 46 wierna (300) cryptPerm
         flatCrypt(200053, "Ali Kar (G3)", {}), // fala 46 wierna (300) dobrane vanilla
         cryptPerm(200054, "Alicia Barrows (G4)", {}), // fala 46 wierna (300) cryptPerm
@@ -37430,12 +37430,12 @@ export const cryptSpecs: CardSpec[] = [
         flatCrypt(200105, "Anne-Marie Bourgeois, Inconnu Recruiter (G5)", {}), // fala 46 wierna (300) dobrane vanilla
     flatCrypt(200106, "Anneke (G1)", { bleed: 1 }), // fala 46 wierna (300) dobrane
         cryptPerm(200107, "Anson (G1)", {}), // fala 46 wierna (300) cryptPerm
-    cryptPerm(200108, "Antara (G4)", {}), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200108, "Antara (G4)", { statics: { conditional: [{intercept: 1, actingMinion: {kind: "vampire", sect: "sabbat"}}] } }), // fala 46 wierna (300) cryptPerm Gehenna
         flatCrypt(200111, "Antoinette Dubois (G4)", { intercept: -1 }), // fala 46 wierna (300) dobrane vanilla
         flatCrypt(200112, "Antoinette DuChamp (G2)", {}), // fala 46 wierna (300) dobrane vanilla
     flatCrypt(200113, "Anton (G2)", { intercept: 1 }), // fala 46 wierna (300) dobrane
         cryptPerm(200114, "Antón de Concepción (G4)", {}), // fala 46 wierna (300) cryptPerm
-    flatCrypt(200115, "Antonino (G3)", { stealth: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200115, "Antonino (G3)", { conditional: [{stealth: 1, actionDirected: false}] }), // fala 46 wierna (300) statics
         flatCrypt(200116, "Antonio d'Erlette (G4)", {}), // fala 46 wierna (300) dobrane vanilla
         cryptPerm(200117, "Antonio Delgado (G2)", {}), // fala 46 wierna (300) cryptPerm
     cryptPerm(200118, "Antonio Veradas (G3)", {}), // fala 46 wierna (300) cryptPerm Gehenna
@@ -37448,7 +37448,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200127, "The Arcadian (G5)", { bleed: 1, stealth: 1 }), // fala 46 wierna (300) dobrane
         cryptPerm(200128, "Ardan Lane (G3)", { requiresReady: true }), // fala 46 wierna (300) cryptPerm
         flatCrypt(200129, "Aredhel (G4)", {}), // fala 46 wierna (300) dobrane vanilla
-    cryptPerm(200130, "Aren, Priest of Eshu (G4)", {}), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200130, "Aren, Priest of Eshu (G4)", { statics: { conditional: [{stealth: 1, actionCardTypes: ["politicalAction"]}] } }), // fala 46 wierna (300) cryptPerm Gehenna
         flatCrypt(200131, "Ariadne (G5)", {}), // fala 46 wierna (300) dobrane vanilla
       cryptPerm(200133, "Arianne, The Conqueror (G5)", {}), // fala 46 wierna (300) cryptPerm
     cryptPerm(200135, "Arika (G2)", { statics: { bleed: 2 } }), // fala 46 wierna (300) cryptPerm Gehenna
@@ -37487,8 +37487,8 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200173, "Basil (G2)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
       flatCrypt(200174, "Basilia (G1)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
       cryptPerm(200175, "Basir (G4)", {}), // fala 46 wierna (300) cryptPerm
-    flatCrypt(200176, "Batsheva (G4)", { strength: 1 }), // fala 46 wierna (300) statics
-    flatCrypt(200177, "Batsheva (G4 ADV)", { strength: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200176, "Batsheva (G4)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", clan: "Tzimisce"}}] }), // fala 46 wierna (300) statics
+    flatCrypt(200177, "Batsheva (G4 ADV)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", clan: "Malkavian"}}] }), // fala 46 wierna (300) statics
     flatCrypt(200179, "Beast, The Leatherface of Detroit (G2)", { strength: 1 }), // fala 46 wierna (300) statics
   flatCrypt(200181, "Béatrice \"Oracle171\" Tremblay (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla // fala 48 wierna (300) weryfikacja
     flatCrypt(200183, "Beckett (G3)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500) // fala 48 wierna (300) weryfikacja
@@ -37510,12 +37510,12 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200205, "Blaise (G2)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200206, "Blanche Hill (G2)", {}), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200209, "Bloody Mary (G5)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      cryptPerm(200210, "Blythe Candeleria (G2)", {}), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200210, "Blythe Candeleria (G2)", { statics: { conditional: [{strength: -1, inCombatWith: {kind: "vampire", clan: "Malkavian"}}] } }), // fala 46 wierna (300) cryptPerm
       flatCrypt(200212, "Boss Callihan (G3)", {}), // fala 47 wierna (300) vanilla
-      flatCrypt(200213, "Boss Callihan (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200213, "Boss Callihan (G3 ADV)", { conditional: [{intercept: -1, actingMinion: {kind: "vampire", sect: "sabbat"}}] }), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200220, "Bronwen (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200222, "Bruce de Guy (G4)", { statics: { bleed: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
-    cryptPerm(200223, "Brunhilde (G3)", { statics: { strength: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200223, "Brunhilde (G3)", { statics: { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Ventrue"]}}}], strength: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
       flatCrypt(200224, "Brunhilde (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200225, "Bryan Van Duesen (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200226, "Bulscu (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37541,18 +37541,18 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200253, "Cassandra, Magus Prime (G1)", { strength: 1 }), // fala 46 wierna (300) statics
       flatCrypt(200255, "Castiel (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200257, "Cedric (G4)", {}), // fala 46 wierna (300) cryptPerm
-    cryptPerm(200258, "Céleste, The Voice of a Secret (G2)", {}), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200258, "Céleste, The Voice of a Secret (G2)", { statics: { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Toreador"]}}}, {intercept: -1, actionKinds: ["bleed"]}] } }), // fala 46 wierna (300) cryptPerm Gehenna
     flatCrypt(200259, "Céleste Lamontagne (G4)", { intercept: 1 }), // fala 46 wierna (300) statics
       flatCrypt(200261, "César Holfield (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200262, "Cesewayo (G4)", { intercept: 1 }), // fala 46 wierna (300) statics
       cryptPerm(200263, "Cesewayo (G4 ADV)", {}), // fala 46 wierna (300) cryptPerm
       flatCrypt(200264, "Chalcedony (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    cryptPerm(200265, "Chandler Hungerford (G2)", {}), // fala 46 wierna (300) cryptPerm Gehenna
-    flatCrypt(200268, "Chas Giovanni Tello (G2)", { strength: 1 }), // fala 46 wierna (300) statics
+    cryptPerm(200265, "Chandler Hungerford (G2)", { statics: { conditional: [{intercept: 1, actingMinion: {kind: "vampire", clan: "Gangrel"}}] } }), // fala 46 wierna (300) cryptPerm Gehenna
+    flatCrypt(200268, "Chas Giovanni Tello (G2)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", titled: true}}] }), // fala 46 wierna (300) statics
       flatCrypt(200269, "Chaundice (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200270, "Chavi Oraczko (G5)", {}), // fala 46 wierna (300) cryptPerm Gehenna
       flatCrypt(200272, "Christanius Lionel, The Mad Chronicler (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      cryptPerm(200273, "Christine Boscacci (G2)", {}), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200273, "Christine Boscacci (G2)", { statics: { conditional: [{intercept: -1, actionKinds: ["bleed"]}] } }), // fala 46 wierna (300) cryptPerm
       cryptPerm(200274, "Christopher Houghton (G3)", {}), // fala 46 wierna (300) cryptPerm
       cryptPerm(200275, "Cicatriz (G2)", {}), // fala 46 wierna (300) cryptPerm
       flatCrypt(200277, "Claudia (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37561,9 +37561,9 @@ export const cryptSpecs: CardSpec[] = [
     cryptPerm(200284, "Cock Robin (G3)", { requiresReady: true, statics: { strength: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
       flatCrypt(200287, "The Colonel (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200288, "Conrad Adoula (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    cryptPerm(200289, "Constanza Vinti (G2)", {}), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200289, "Constanza Vinti (G2)", { statics: { conditional: [{bleed: 2, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Ventrue"]}}}] } }), // fala 46 wierna (300) cryptPerm Gehenna
     flatCrypt(200290, "Corine Marcón (G2)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    cryptPerm(200291, "Cornelius Ottavio (G2)", { statics: { bleed: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200291, "Cornelius Ottavio (G2)", { statics: { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", notSect: "camarilla"}}}], bleed: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
       flatCrypt(200292, "Count Germaine (G4)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200293, "Count Germaine (G4 ADV)", { bleed: 2 }), // fala 46 wierna (300) statics
     cryptPerm(200294, "Count Jocalo (G6)", { statics: { bleed: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
@@ -37572,7 +37572,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200302, "Cristos Mantigo (G3)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200304, "Crusher (G1)", { strength: 1 }), // fala 46 wierna (300) statics
     flatCrypt(200305, "Cybele (G4)", { bleed: 2 }), // fala 46 wierna (300) statics
-    flatCrypt(200306, "Cynthia Ingold (G2)", { strength: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200306, "Cynthia Ingold (G2)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", sect: "camarilla"}}] }), // fala 46 wierna (300) statics
     cryptPerm(200307, "Cyscek (G4)", { statics: { stealth: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
       cryptPerm(200308, "Daliah (G4)", {}), // fala 46 wierna (300) cryptPerm
       flatCrypt(200310, "Damaskenos, Herald of Leandro (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37581,17 +37581,17 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200314, "Dancin' Dana (G1 ADV)", { handSize: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200316, "Danielle Diron (G3)", {}), // fala 46 wierna (300) cryptPerm
       cryptPerm(200317, "Danielle Diron (G3 ADV)", {}), // fala 46 wierna (300) cryptPerm
-    flatCrypt(200318, "Danny Larkshill (G2)", { strength: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200318, "Danny Larkshill (G2)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", younger: true}}] }), // fala 46 wierna (300) statics
       flatCrypt(200319, "Danylo (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200320, "Darius Styx (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    cryptPerm(200321, "Dark Selina (G5)", {}), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200321, "Dark Selina (G5)", { statics: { conditional: [{stealth: 1, actionCardTypes: ["politicalAction"]}] } }), // fala 46 wierna (300) cryptPerm Gehenna
       flatCrypt(200322, "Darlene Killian (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200325, "Darvag, The Butcher of Rus (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    cryptPerm(200326, "David Morgan, The Scourge (G3)", {}), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200326, "David Morgan, The Scourge (G3)", { statics: { conditional: [{intercept: 1, actingMinion: {kind: "vampire", maxCapacity: 2}}] } }), // fala 46 wierna (300) cryptPerm Gehenna
       flatCrypt(200327, "De Sade (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200328, "Dedefra (G2)", { strength: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200328, "Dedefra (G2)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", sect: "camarilla"}}] }), // fala 46 wierna (300) statics
     flatCrypt(200329, "Dela Eden (G3)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200331, "Delilah Monroe (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200331, "Delilah Monroe (G2)", { conditional: [{intercept: -1, actingMinion: {kind: "vampire", older: true}}] }), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200332, "Delizbieta of the Dark Eyes (G3)", {}), // fala 46 wierna (300) cryptPerm Gehenna
     cryptPerm(200333, "Demdemeh (G4)", {}), // fala 46 wierna (300) cryptPerm Gehenna
     flatCrypt(200335, "Democritus (G1)", { bleed: 1 }), // fala 46 wierna (300) statics
@@ -37604,7 +37604,7 @@ export const cryptSpecs: CardSpec[] = [
       cryptPerm(200351, "Doctor Streck (G3)", {}), // fala 46 wierna (300) cryptPerm
       flatCrypt(200357, "Dominique (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200358, "Dominique (G2 ADV)", {}), // fala 46 wierna (300) cryptPerm
-    flatCrypt(200359, "Dominique Santo Paulo (G4)", { strength: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200359, "Dominique Santo Paulo (G4)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", clans: ["Nosferatu", "Nosferatu antitribu"]}}] }), // fala 46 wierna (300) statics
       flatCrypt(200360, "Don Caravelli (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200362, "Don Cruez, The Idealist (G1)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200363, "Don Michael Antonio Giovanni (G4)", {}), // fala 46 wierna (300) cryptPerm Gehenna
@@ -37613,7 +37613,7 @@ export const cryptSpecs: CardSpec[] = [
       cryptPerm(200366, "Donatello Giovanni (G4)", {}), // fala 46 wierna (300) cryptPerm
     flatCrypt(200367, "Donatien (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200370, "Dorka (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    cryptPerm(200371, "Dovey Ebfwe (G6)", {}), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200371, "Dovey Ebfwe (G6)", { statics: { conditional: [{stealth: 1, actionCardTypes: ["retainer"]}] } }), // fala 46 wierna (300) cryptPerm Gehenna
     cryptPerm(200372, "Doyle Fincher (G4)", { statics: { bleed: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
       cryptPerm(200375, "Dr. Jest (G1)", {}), // fala 46 wierna (300) cryptPerm
       cryptPerm(200377, "Dr. John Dee (G4)", {}), // fala 46 wierna (300) cryptPerm
@@ -37630,7 +37630,7 @@ export const cryptSpecs: CardSpec[] = [
       cryptPerm(200391, "Duality (G4)", {}), // fala 46 wierna (300) cryptPerm
       flatCrypt(200393, "Durga Syn (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200394, "Dylan (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    cryptPerm(200395, "Dylan (G2 ADV)", { statics: { strength: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200395, "Dylan (G2 ADV)", { statics: { conditional: [{stealth: 1, actionKinds: ["bleed"]}], strength: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
   flatCrypt(200397, "Earl \"Shaka74\" Deams (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
       flatCrypt(200398, "Ebanezer Roush (G1)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200399, "Echo (G4)", { strength: 1 }), // fala 46 wierna (300) statics
@@ -37643,7 +37643,7 @@ export const cryptSpecs: CardSpec[] = [
       flatCrypt(200409, "Elihu (G4)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200410, "Elimelech the Twice-Damned (G5)", { bleed: 1, strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200411, "Eliott Sinclair, Virtuoso Thespian (G1)", { strength: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    cryptPerm(200412, "Elisabetta Romano (G2)", {}), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200412, "Elisabetta Romano (G2)", { statics: { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Ministry"]}}}] } }), // fala 46 wierna (300) cryptPerm Gehenna
       flatCrypt(200414, "Elizabeth Dimitros (G3)", {}), // fala 47 wierna (300) vanilla
       flatCrypt(200416, "Ellen Fence, the Tracker (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200417, "Ellison Humboldt (G3)", {}), // fala 46 wierna (300) cryptPerm
@@ -37657,7 +37657,7 @@ export const cryptSpecs: CardSpec[] = [
       flatCrypt(200428, "Erebus (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200429, "Eric Kressida (G4)", {}), // fala 46 wierna (300) cryptPerm
       flatCrypt(200431, "Erichtho (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200433, "Erinyi (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200433, "Erinyi (G2)", { conditional: [{strength: -1, inCombatWith: {kind: "vampire", clan: "Gangrel antitribu"}}] }), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200434, "Erlik (G3)", { bleed: 1, handSize: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200435, "Ermenegildo, The Rake (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200436, "Esau (G3)", { statics: { bleed: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
@@ -37672,7 +37672,7 @@ export const cryptSpecs: CardSpec[] = [
       flatCrypt(200449, "Ezekiel, Lord of Montreal (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200450, "Ezmerelda (G2)", { statics: { bleed: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
       flatCrypt(200452, "Fabrizia Contreraz (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      cryptPerm(200454, "Fairuza (G5)", {}), // fala 46 wierna (300) cryptPerm
+      cryptPerm(200454, "Fairuza (G5)", { statics: { conditional: [{bleed: -1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {}}}] } }), // fala 46 wierna (300) cryptPerm
     cryptPerm(200455, "Fakir al Sidi (G4)", { statics: { bleed: 1, strength: 1, pressPerCombat: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
       flatCrypt(200456, "Falhu Shibaba (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200457, "Faruq (G2)", { strength: 1 }), // fala 46 wierna (300) statics
@@ -37687,7 +37687,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200467, "Fidus, The Shrunken Beast (G2)", { conditional: [{ stealth: 1, actionDirected: false }], strength: -1 }), // fala 46 wierna (300) statics
       flatCrypt(200469, "Flavia, Avenging Angel (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200470, "Fleurdumal (G3)", {}), // fala 46 wierna (300) cryptPerm
-    flatCrypt(200475, "Francis Milliner (G4)", { strength: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200475, "Francis Milliner (G4)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", clans: ["Toreador", "Toreador antitribu"]}}] }), // fala 46 wierna (300) statics
     flatCrypt(200476, "Francisco Domingo de Polonia (G2)", { bleed: 1 }), // fala 46 wierna (300) statics
       cryptPerm(200477, "Franciscus (G2)", {}), // fala 46 wierna (300) cryptPerm
     flatCrypt(200478, "François Villon (G2)", { bleed: 1, stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37699,7 +37699,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200489, "Gabrielle di Righetti (G5)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200490, "Gabrin (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200491, "Gaël Pilet (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200492, "Ganesh (G5)", { bleed: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200492, "Ganesh (G5)", { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Giovanni"]}}}] }), // fala 46 wierna (300) statics
       flatCrypt(200493, "Ganhuru (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200495, "Gaspare Giovanni (G2)", { statics: { strength: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
       flatCrypt(200496, "Gatjil Munyarryun (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37711,14 +37711,14 @@ export const cryptSpecs: CardSpec[] = [
       flatCrypt(200502, "Gengis (G3)", {}), // fala 47 wierna (300) vanilla
       cryptPerm(200503, "Gengis (G3 ADV)", {}), // fala 46 wierna (300) cryptPerm
     flatCrypt(200504, "Genina, The Red Poet (G3)", { stealth: 1 }), // fala 46 wierna (300) statics
-    cryptPerm(200505, "Gentha Shale (G4)", {}), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200505, "Gentha Shale (G4)", { statics: { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Ministry"]}}}] } }), // fala 46 wierna (300) cryptPerm Gehenna
       cryptPerm(200507, "Gerald FitzGerald (G5)", {}), // fala 46 wierna (300) cryptPerm
     flatCrypt(200508, "Gerald Windham (G5)", { stealth: 1 }), // fala 46 wierna (300) statics
       cryptPerm(200510, "Gerard Rafin (G3)", {}), // fala 46 wierna (300) cryptPerm
       flatCrypt(200511, "Gharston Roland (G4)", {}), // fala 47 wierna (300) vanilla
       flatCrypt(200512, "Ghede (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200514, "Giangaleazzo, The Traitor (G4)", {}), // fala 46 wierna (300) cryptPerm
-    flatCrypt(200518, "Gillespi Giovanni (G2)", { bleed: 1 }), // fala 46 wierna (300) statics
+    flatCrypt(200518, "Gillespi Giovanni (G2)", { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", sect: "camarilla"}}}] }), // fala 46 wierna (300) statics
       flatCrypt(200519, "Gillian Krader (G2)", {}), // fala 47 wierna (300) vanilla
       cryptPerm(200520, "Giotto Verducci (G2)", {}), // fala 46 wierna (300) cryptPerm
     flatCrypt(200521, "Giovanni del Georgio (G5)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37779,7 +37779,7 @@ export const cryptSpecs: CardSpec[] = [
       cryptPerm(200591, "Herbert Westin (G4)", {}), // fala 46 wierna (300) cryptPerm
       cryptPerm(200592, "Hermana Hambrienta Mayor (G4)", {}), // fala 46 wierna (300) cryptPerm
       cryptPerm(200593, "Hermana Hambrienta Menor (G4)", {}), // fala 46 wierna (300) cryptPerm
-    cryptPerm(200594, "Hesha Ruhadze (G2)", {}), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200594, "Hesha Ruhadze (G2)", { statics: { conditional: [{stealth: 1, actionKinds: ["hunt"]}] } }), // fala 46 wierna (300) cryptPerm Gehenna
     cryptPerm(200597, "High Priest Angra Mainyu (G2)", {}), // fala 46 wierna (300) cryptPerm Gehenna
     cryptPerm(200598, "Hillanvale (G6)", {}), // fala 46 wierna (300) cryptPerm Gehenna
   flatCrypt(200599, "Hiram \"Hide\" DeVries (G5)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
@@ -37789,7 +37789,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200607, "Howler (G2)", { strength: 1, maneuverPerCombat: 1 }), // fala 46 wierna (300) statics
       flatCrypt(200608, "Hrothulf (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200609, "Huang, Blood Cultist (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200610, "Hugo (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      flatCrypt(200610, "Hugo (G2)", { conditional: [{intercept: -1, actingMinion: {kind: "vampire", clans: ["Lasombra", "Tzimisce"]}}] }), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200611, "Huitzilopochtli (G2)", { statics: { bleed: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
       cryptPerm(200612, "Hukros (G4)", {}), // fala 46 wierna (300) cryptPerm
     flatCrypt(200613, "Humo (G4)", { stealth: 1 }), // fala 46 wierna (300) statics
@@ -37811,7 +37811,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200636, "Iniko, The Black Lion (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200637, "Intisar (G2)", {}), // fala 46 wierna (300) cryptPerm
     flatCrypt(200638, "Inyanga (G4)", { intercept: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    cryptPerm(200639, "Ira Rivers (G3)", { requiresReady: true }), // fala 46 wierna (300) cryptPerm Gehenna
+    cryptPerm(200639, "Ira Rivers (G3)", { requiresReady: true, statics: { conditional: [{intercept: 1, actionCardTypes: ["politicalAction"]}] } }), // fala 46 wierna (300) cryptPerm Gehenna
       flatCrypt(200641, "Iris Bennett (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200644, "Isanwayen (G4)", {}), // fala 46 wierna (300) cryptPerm
       cryptPerm(200646, "Isouda de Blaise (G4)", {}), // fala 46 wierna (300) cryptPerm
@@ -37855,30 +37855,30 @@ export const cryptSpecs: CardSpec[] = [
   flatCrypt(200696, "Jeremy \"Wix\" Wyzchovsky (G4)", {}), // fala 34 wierna (28) — ostatnie crypt vanilla
       cryptPerm(200697, "Jerry (G2)", {}), // fala 47 wierna (300) cryptPerm
       flatCrypt(200698, "Jesse Menks (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200700, "Jessica (G2 ADV)", { stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(200700, "Jessica (G2 ADV)", { conditional: [{stealth: 1, actionCardTypes: ["politicalAction"]}] }), // fala 47 wierna (300) statics
       flatCrypt(200702, "Jezebelle (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200703, "Jibade el-Bahrawi (G4)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
       flatCrypt(200704, "Jibade el-Bahrawi (G4 ADV)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200705, "Jimmy Dunn (G2)", {}), // fala 47 wierna (300) vanilla
     cryptPerm(200707, "João Bilé (G4)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
       flatCrypt(200708, "Joaquin Murietta (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    cryptPerm(200709, "Joaquina Amaya (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200709, "Joaquina Amaya (G2)", { statics: { conditional: [{stealth: 1, actionCardTypes: ["equipment"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
   flatCrypt(200710, "Joe \"Boot\" Hill (G4)", { strength: 1 }), // fala 34 wierna (28) — ostatnie crypt vanilla
       flatCrypt(200711, "Johan Wrede (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200712, "Johann Matheson (G5)", {}), // fala 47 wierna (300) vanilla
       flatCrypt(200713, "Johannes Castelein (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200716, "John Paleologus (G3)", {}), // fala 47 wierna (300) cryptPerm
-    cryptPerm(200718, "Jorge De La Muerte, The Agent (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200718, "Jorge De La Muerte, The Agent (G2)", { statics: { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", sect: "sabbat"}}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200720, "Josef von Bauren (G4)", { bleed: 1, stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200721, "Joseph Cambridge (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200722, "Joseph DiGiaccomo (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200724, "Joseph O'Grady (G3)", { statics: { strength: 1 } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
       flatCrypt(200725, "Josette (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-      flatCrypt(200726, "Joshua Tarnopolski (G3)", {}), // fala 47 wierna (300) vanilla
+      flatCrypt(200726, "Joshua Tarnopolski (G3)", { conditional: [{strength: 2, inCombatWith: {kind: "vampire", sect: "sabbat"}}] }), // fala 47 wierna (300) vanilla
     flatCrypt(200727, "Jost Werner (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200728, "Jozz (G6)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200730, "Juanita Santiago (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    cryptPerm(200731, "Jubal (G4)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200731, "Jubal (G4)", { statics: { conditional: [{intercept: 1, actingMinion: {kind: "vampire", clan: "Ministry"}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
       flatCrypt(200733, "Juggler (G3)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200734, "Julia Prima (G2)", { bleed: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200735, "Julian Sanders (G2)", { pressPerCombat: 1 }), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37886,7 +37886,7 @@ export const cryptSpecs: CardSpec[] = [
       flatCrypt(200737, "Julius (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200738, "Juniper (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200739, "Justine, Elder of Dallas (G1)", {}), // fala 47 wierna (300) cryptPerm
-    cryptPerm(200741, "Kabede Maru (G5)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200741, "Kabede Maru (G5)", { statics: { conditional: [{intercept: 1, actionCardTypes: ["politicalAction"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200742, "Kahina the Sorceress (G3)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200743, "Kai Simmons (G4)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200744, "Kalila (G5)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
@@ -37903,7 +37903,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200758, "Karsh (G3 ADV)", { intercept: 1 }), // fala 47 wierna (300) statics
       flatCrypt(200759, "Kashan (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       cryptPerm(200760, "Kassiym Malikhair (G2)", {}), // fala 47 wierna (300) cryptPerm
-    cryptPerm(200761, "Katarina (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200761, "Katarina (G2)", { statics: { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Ravnos"]}}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200762, "Katarina Kornfeld (G3)", { stealth: 1 }), // fala 47 wierna (300) statics
     cryptPerm(200763, "Kateline Nadasdy (G4)", {}), // fala 47 wierna (300) cryptPerm
     cryptPerm(200764, "Katherine Stoddard (G3)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm
@@ -37914,15 +37914,15 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200770, "Kemintiri (G2 ADV)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     cryptPerm(200771, "Kendrick (G2)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(200773, "Kephamos, High Priest of Marrakech (G2)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    cryptPerm(200775, "Kestrelle Hayes (G5)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200775, "Kestrelle Hayes (G5)", { statics: { conditional: [{stealth: 1, actionDirected: true, targetReady: {exists: false, minion: {kind: "vampire", sect: "sabbat"}}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(200776, "Khalid (G3)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm
-    cryptPerm(200778, "Khalil Ravana (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200778, "Khalil Ravana (G2)", { statics: { conditional: [{stealth: 1, actionKinds: ["diablerize"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200779, "Khalu (G3)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    cryptPerm(200780, "Khay'tall, Snake of Eden (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200780, "Khay'tall, Snake of Eden (G2)", { statics: { conditional: [{stealth: 1, actionCardTypes: ["politicalAction"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200781, "Khurshid (G6)", { strength: 2 }), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200783, "The Kikiyaon (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200784, "Kiradin (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
-    flatCrypt(200785, "Kisha Bhimji (G3)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+    flatCrypt(200785, "Kisha Bhimji (G3)", { conditional: [{stealth: -1, excludedActionKinds: ["hunt"]}] }), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200786, "Kite (G2)", { intercept: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200788, "Klaus van der Veken (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200790, "Konrad Fleischer (G4)", { pressPerCombat: 1 }), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -37933,7 +37933,7 @@ export const cryptSpecs: CardSpec[] = [
     cryptPerm(200797, "Kyle Strathcona, Cardinal of Canada (G2)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(200798, "Kyoko Shinsegawa (G3)", { stealth: 1 }), // fala 47 wierna (300) statics
     flatCrypt(200799, "Kyrylo (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
-    flatCrypt(200800, "L'Épuisette (G4)", { bleed: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(200800, "L'Épuisette (G4)", { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Toreador"]}}}] }), // fala 47 wierna (300) statics
     flatCrypt(200801, "La Viuda Blanca (G6)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200804, "Lady Constancia (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200805, "Lady Zara Slatikov (G4)", { pressPerCombat: 1 }), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
@@ -37950,7 +37950,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200821, "Lazarus (G1 ADV)", { maneuverPerCombat: 1 }), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200822, "Lazarus James (G4)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200823, "Lazverinus, Thrall of Lambach (G2)", { strength: 2 }), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
-    cryptPerm(200824, "Le Dinh Tho (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200824, "Le Dinh Tho (G2)", { statics: { conditional: [{stealth: -1, actionKinds: ["hunt"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(200826, "Leandro (G2)", { statics: { bleed: 2 } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200828, "Legba (G6)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200829, "Leila Monroe (G4)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
@@ -37958,11 +37958,11 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200831, "Leo Washington (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
     cryptPerm(200832, "Leon (G2)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(200833, "Lernean (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
-    cryptPerm(200835, "Lille Haake (G3)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200835, "Lille Haake (G3)", { statics: { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", sect: "sabbat"}}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200837, "Lin Jun (G4)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200839, "Lisa Noble (G3)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500)
     flatCrypt(200840, "Lisandro Giovanni (G3)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+) // fala 27 wierna (500)
-    cryptPerm(200842, "Lisette Vizquel (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200842, "Lisette Vizquel (G2)", { statics: { conditional: [{intercept: 1, actionKinds: ["diablerize"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(200843, "Lithrac (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200844, "Little Tailor of Prague (G2)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
     cryptPerm(200847, "Lizette (G4)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
@@ -37978,13 +37978,13 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200863, "Louis Fortier (G4 ADV)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(200864, "Luanda Magere (G4)", { strength: 1 }), // fala 47 wierna (300) statics
     cryptPerm(200865, "Lubomira Hradok (G5)", {}), // fala 47 wierna (300) cryptPerm
-    cryptPerm(200866, "Luc (G4)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200866, "Luc (G4)", { statics: { conditional: [{stealth: 1, actionKinds: ["diablerize"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200867, "Luca Italicus (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     cryptPerm(200868, "Lucas Halton (G3)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(200869, "Luccia Paciola (G1)", { strength: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
     flatCrypt(200870, "Lucian (G1)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     flatCrypt(200871, "Lucian, the Perfect (G4)", { bleed: 3 }), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    cryptPerm(200872, "Lucina (G3)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200872, "Lucina (G3)", { statics: { conditional: [{strength: 1, inCombatWith: {kind: "vampire", maxCapacity: 4}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(200873, "Lucinde, Alastor (G3)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(200874, "Lucita (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     cryptPerm(200875, "Lucita (G2 ADV)", {}), // fala 47 wierna (300) cryptPerm
@@ -37995,7 +37995,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200883, "Luma, Stone Beauty (G2)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     cryptPerm(200885, "Luna Giovanni (G5)", {}), // fala 47 wierna (300) cryptPerm
     cryptPerm(200888, "Lupo Giovanni (G6)", {}), // fala 47 wierna (300) cryptPerm
-    cryptPerm(200889, "Luther (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200889, "Luther (G2)", { statics: { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Pander"]}}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200890, "Lutz von Hohenzollern (G4)", { bleed: 2 }), // wierna fala 31 (500) // fala 28 wierna (500+)
     cryptPerm(200891, "Lydia, Grand Praetor (G6)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200892, "Lydia Van Cuelen (G1)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
@@ -38007,7 +38007,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200899, "Makarios, The Seducer (G2)", { bleed: 1 }), // fala 47 wierna (300) statics
     flatCrypt(200900, "Malabranca (G4)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
     flatCrypt(200901, "Malachai (G6)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
-    cryptPerm(200903, "Maldavis (G3)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200903, "Maldavis (G3)", { statics: { conditional: [{bleed: -1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", titles: ["primogen"]}}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200904, "Maldavis (G3 ADV)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     flatCrypt(200905, "Malgorzata (G4)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
     flatCrypt(200906, "Mamadou Keita (G4)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
@@ -38024,10 +38024,10 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200917, "Margaret Milliner (G4)", { bleed: 1 }), // fala 47 wierna (300) statics
     flatCrypt(200918, "Margarite (G4)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200919, "Marge Khan (G5)", {}), // wierna fala 31 (500): przejrzane
-    flatCrypt(200920, "Marguerite Foccart (G4)", { intercept: 1 }), // fala 47 wierna (300) statics
-    flatCrypt(200921, "Marguerite Foccart (G4 ADV)", { strength: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(200920, "Marguerite Foccart (G4)", { conditional: [{intercept: 1, actionCardTypes: ["politicalAction"]}] }), // fala 47 wierna (300) statics
+    flatCrypt(200921, "Marguerite Foccart (G4 ADV)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", titled: true}}] }), // fala 47 wierna (300) statics
     flatCrypt(200923, "Maria Stone (G3 ADV)", { strength: -1 }), // wierna fala 31 (500): przejrzane
-    cryptPerm(200925, "Marianna (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200925, "Marianna (G2)", { statics: { conditional: [{strength: 1, inCombatWith: {kind: "vampire", clan: "Giovanni"}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
 
     flatCrypt(200926, "Mariano Pomposo (G3)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200927, "Marie Faucigny (G3)", {}), // wierna fala 31 (500): przejrzane
@@ -38035,12 +38035,12 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200929, "Mariel, Lady Thunder (G1)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200931, "Marino Reymundo Vásquez (G3)", { bleed: 1 }), // wierna fala 31 (500)
     flatCrypt(200935, "Maris Streck (G3)", { intercept: 1, stealth: 1 }), // wierna fala 31 (500)
-    cryptPerm(200936, "Mark (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200936, "Mark (G2)", { statics: { conditional: [{intercept: 1, actionKinds: ["bleed"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200937, "Mark Decker (G3)", { strength: 1 }), // wierna fala 31 (500)
     cryptPerm(200939, "Marlena (G3)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(200941, "Marta (G4)", {}), // wierna fala 31 (500): przejrzane
     cryptPerm(200942, "Marthe Dizier (G3)", { statics: { bleed: 1 } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
-    cryptPerm(200943, "Martin Franckel (G3)", {}), // fala 47 wierna (300) cryptPerm
+    cryptPerm(200943, "Martin Franckel (G3)", { statics: { conditional: [{bleed: -1, actionKinds: ["bleed"], targetReady: {exists: false, minion: {kind: "vampire", clans: ["Tremere", "Tremere antitribu"]}}}] } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(200944, "Martino della Passaglia (G6)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200945, "Marty Lechtansi (G1)", {}), // wierna fala 31 (500): przejrzane
     flatCrypt(200946, "Mary Anne Blaire (G5)", { stealth: 1 }), // wierna fala 31 (500)
@@ -38116,7 +38116,7 @@ export const cryptSpecs: CardSpec[] = [
     condCrypt(201035, "Nana Buruku (G4)", [{ handSize: 1 }]), // fala 32 wierna (421)
     flatCrypt(201036, "Nangila Were (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201037, "Natalia (G2)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201038, "Natasha Volfchek (G1)", { bleed: 1, stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201038, "Natasha Volfchek (G1)", { bleed: 1, conditional: [{stealth: 1, actionCardTypes: ["politicalAction"]}] }), // fala 47 wierna (300) statics
     flatCrypt(201039, "Navar McClaren (G1)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(201040, "Nedal, The Careless (G3)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201042, "Nefertiti (G2)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
@@ -38126,7 +38126,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201046, "Neighbor John (G4)", { intercept: 1 }), // fala 32 wierna (421)
     flatCrypt(201048, "Nergal (G5)", { bleed: 2 }), // fala 32 wierna (421)
     cryptPerm(201049, "Nergal (G5 ADV)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
-    cryptPerm(201051, "Nettie Hale (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201051, "Nettie Hale (G2)", { statics: { conditional: [{stealth: 1, actionCardTypes: ["ally", "retainer"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(201052, "New Blood (ANY)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201053, "Ngozi Ekwensu (G5)", {}), // fala 32 wierna (421): przejrzane
 
@@ -38141,20 +38141,20 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201066, "Nostoket (G4)", {}), // fala 32 wierna (421): przejrzane
     cryptPerm(201067, "Nu, The Pillar (G2)", {}), // fala 47 wierna (300) cryptPerm
     cryptPerm(201069, "Nuriel (G6)", {}), // fala 47 wierna (300) cryptPerm
-    cryptPerm(201070, "Obaluaye (G5)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201070, "Obaluaye (G5)", { statics: { conditional: [{stealth: 1, actionKinds: ["hunt"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201071, "Obsidian (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201072, "Ogwon (G5)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201075, "Olga Triminov (G3)", {}), // fala 32 wierna (421): przejrzane
     cryptPerm(201076, "Oliver Thrace (G3)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm Gehenna/statics
-    cryptPerm(201078, "Olugbenga (G4)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201078, "Olugbenga (G4)", { statics: { conditional: [{intercept: 1, actionKinds: ["bleed"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201079, "Omaya (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201080, "Omer (G6)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201081, "Omme Enberbenight (G4)", {}), // fala 32 wierna (421): przejrzane
-    cryptPerm(201082, "Onaedo (G4)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
-  flatCrypt(201083, "Ondine \"Boudicca\" Sinclair (G5)", { strength: 1 }), // fala 34 wierna (28) — ostatnie crypt vanilla
+    cryptPerm(201082, "Onaedo (G4)", { statics: { conditional: [{stealth: 1, actionKinds: ["diablerize"], readyNamedVampire: "Otieno"}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+  flatCrypt(201083, "Ondine \"Boudicca\" Sinclair (G5)", { strength: 1, conditional: [{stealth: 1, actionKinds: ["bleed"], controller: {hasEdge: true}}] }), // fala 34 wierna (28) — ostatnie crypt vanilla
     cryptPerm(201084, "Orlando Oriundus (G4)", { statics: { bleed: 1 } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201085, "Osric Vladislav (G5)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201086, "Otieno (G4)", { bleed: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201086, "Otieno (G4)", { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Guruhi"]}}}] }), // fala 47 wierna (300) statics
     cryptPerm(201087, "Owain Evans, The Wanderer (G3)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201089, "Ozmo (G1)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201092, "Paolo Sardenzo (G5)", { intercept: 1 }), // fala 32 wierna (421)
@@ -38174,10 +38174,10 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201111, "Persia, The Beautiful Statue (G3)", { intercept: 1 }), // fala 32 wierna (421)
     flatCrypt(201112, "Petaniqua (G4)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201113, "Petaniqua (G4 ADV)", { strength: 1 }), // fala 32 wierna (421)
-    cryptPerm(201114, "Peter Blaine (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201114, "Peter Blaine (G2)", { statics: { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Ventrue"]}}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201116, "Petra (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201117, "Petru Sipos (G2)", {}), // fala 32 wierna (421): przejrzane
-    cryptPerm(201118, "Phaedyme (G5)", { statics: { strength: 1 } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201118, "Phaedyme (G5)", { statics: { conditional: [{stealth: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", sect: "camarilla"}}}], strength: 1 } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201119, "Phagian (G4)", {}), // fala 32 wierna (421): przejrzane
     cryptPerm(201120, "Pherydima (G4)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201121, "Philip van Vermeer IV (G2)", {}), // fala 32 wierna (421): przejrzane
@@ -38188,13 +38188,13 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201127, "Pochtli (G2)", { stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201129, "Porphyrion (G5)", { stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201130, "Porphyry (G6)", { bleed: 2 }), // fala 47 wierna (300) statics
-    cryptPerm(201131, "Portia (G5)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201131, "Portia (G5)", { statics: { conditional: [{stealth: 1, actionKinds: ["hunt"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201132, "Prejudice (G4)", { bleed: 2 }), // fala 32 wierna (421)
-    cryptPerm(201133, "Preston Varrick (G4)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201133, "Preston Varrick (G4)", { statics: { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "ally"}}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201136, "Pugfar (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201137, "Qadir ul-Ghani (G2)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
     cryptPerm(201138, "Qawiyya el-Ghaduba (G5)", { statics: { strength: 2 } }), // fala 47 wierna (300) cryptPerm
-    cryptPerm(201139, "Queen Anne (G2)", { statics: { bleed: 1 } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201139, "Queen Anne (G2)", { statics: { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Tremere"]}}}], bleed: 1 } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201140, "Quentin (G2)", {}), // fala 32 wierna (421): przejrzane
     cryptPerm(201142, "Quentin King III (G3 ADV)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(201143, "Qufur am-Heru (G2)", {}), // fala 47 wierna (300) cryptPerm
@@ -38208,60 +38208,60 @@ export const cryptSpecs: CardSpec[] = [
     cryptPerm(201151, "Rafael de Corazon (G4)", { statics: { bleed: 2 } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201152, "Rafaele Giovanni (G2)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201153, "Raful al-Zarqa (G2)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201154, "Rain (G4)", { stealth: 1 }), // fala 47 wierna (300) statics
-    flatCrypt(201155, "Rake (G1)", { strength: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201154, "Rain (G4)", { conditional: [{stealth: 1, actionDirected: true, targetReady: {exists: false, minion: {kind: "vampire", titled: true}}}] }), // fala 47 wierna (300) statics
+    flatCrypt(201155, "Rake (G1)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", clan: "Ventrue"}}] }), // fala 47 wierna (300) statics
     cryptPerm(201158, "Ramona (G2)", {}), // fala 47 wierna (300) cryptPerm
     cryptPerm(201159, "Ramona (G2 ADV)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201160, "Randall (G4)", {}), // fala 32 wierna (421): przejrzane
-    cryptPerm(201162, "Ranjan Rishi, Camarilla Scholar (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
-    flatCrypt(201163, "Ransam, The Old Man (G4)", { strength: 1 }), // fala 47 wierna (300) statics
+    cryptPerm(201162, "Ranjan Rishi, Camarilla Scholar (G2)", { statics: { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Brujah"]}}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    flatCrypt(201163, "Ransam, The Old Man (G4)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", clan: "Tremere"}}] }), // fala 47 wierna (300) statics
     flatCrypt(201164, "Raphael Catarari (G4)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201166, "Rashid Stockton (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201168, "Rathmere (G5)", { strength: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201168, "Rathmere (G5)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", sect: "sabbat"}}] }), // fala 47 wierna (300) statics
     cryptPerm(201170, "Rebekah (G3)", {}), // fala 47 wierna (300) cryptPerm
-    cryptPerm(201171, "Rebekka, Chantry Elder of Munich (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201171, "Rebekka, Chantry Elder of Munich (G2)", { statics: { stealth: 1, conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Malkavian"]}}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201172, "Redbone McCray (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201173, "Reg Driscoll (G2)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201175, "Regina Giovanni, The Right Hand of Augustus (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201176, "Reginald Moore (G4)", { strength: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201176, "Reginald Moore (G4)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", clans: ["Tremere", "Tremere antitribu"]}}] }), // fala 47 wierna (300) statics
     flatCrypt(201177, "Reiner Stoschka (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201180, "Reverend Adams (G4)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201180, "Reverend Adams (G4)", { conditional: [{stealth: -1, actionCardTypes: ["politicalAction"]}] }), // fala 32 wierna (421): przejrzane
     cryptPerm(201181, "Reverend Adams (G4 ADV)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201182, "Reverend Blackwood (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201184, "Rex, The Necronomist (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201185, "Reza Fatir, The Dark Angel (G4)", {}), // fala 32 wierna (421): przejrzane
 
-    cryptPerm(201186, "Richard Tauber, Ayelea's Puppet (G2)", {}), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201186, "Richard Tauber, Ayelea's Puppet (G2)", { statics: { conditional: [{intercept: -1, actingMinion: {kind: "vampire", clans: ["Lasombra", "Tzimisce"]}}] } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201187, "Richter, The Templar of Du Mont (G2)", { strength: 1 }), // fala 32 wierna (421)
     cryptPerm(201189, "Rico Loco (G4)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201190, "Rigby, Crusade Vanguard (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201191, "Righteous Endeavor (G5)", { intercept: 1, strength: 1 }), // fala 47 wierna (300) statics
-    cryptPerm(201194, "Rocia (G4)", { statics: { pressPerCombat: 1 } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201194, "Rocia (G4)", { statics: { conditional: [{intercept: 1, actingMinion: {kind: "vampire", clans: ["Tremere", "Tremere antitribu"]}}], pressPerCombat: 1 } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201195, "Roderick Phillips March (G4)", { stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201196, "Rodolfo (G3)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201198, "Roger Farnsworth (G3)", {}), // fala 32 wierna (421): przejrzane
-    cryptPerm(201203, "Rosa Hernández (G4)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201203, "Rosa Hernández (G4)", { statics: { conditional: [{stealth: 1, actionCardTypes: ["retainer"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(201204, "Rosa Martínez (G3)", { statics: { bleed: 1 } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201206, "Rosemarie (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201207, "Roxanne, Rectrix of the 13th Floor (G1)", { stealth: 1 }), // fala 32 wierna (421)
-    cryptPerm(201208, "Royce (G2)", {}), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201208, "Royce (G2)", { statics: { conditional: [{stealth: -1, actionKinds: ["bleed"]}] } }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201211, "Rusticus (G5)", {}), // fala 32 wierna (421): przejrzane
     cryptPerm(201212, "Ruth McGinley (G3)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201213, "Rutor (G5)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201214, "Ruxandra (G5)", {}), // fala 32 wierna (421): przejrzane
-    cryptPerm(201215, "Ryder (G4)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201215, "Ryder (G4)", { statics: { conditional: [{intercept: 1, actionDirected: true}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201216, "Ryszard (G4)", {}), // fala 47 wierna (300) vanilla
     cryptPerm(201217, "Sabine Lafitte (G1)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201220, "Sahana (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201223, "Sajid al Misbah (G5)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(201225, "Salinger (G2)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201226, "Salvador Garcia (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201228, "Samantha (G2)", { intercept: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201228, "Samantha (G2)", { conditional: [{intercept: 1, actingMinion: {kind: "vampire", clan: "Lasombra"}}] }), // fala 47 wierna (300) statics
     flatCrypt(201229, "Samat Ramal-Ra, Archon (G2)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(201232, "Sandra White (G3)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201235, "Santaleous (G5)", { bleed: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201236, "Saqqaf, Keeper of the Grand Temple of Set (G2)", {}), // fala 32 wierna (421): przejrzane
-    cryptPerm(201237, "Sarah Brando (G2)", {}), // fala 47 wierna (300) cryptPerm
+    cryptPerm(201237, "Sarah Brando (G2)", { statics: { conditional: [{stealth: -1, actionDirected: true, targetReady: {exists: true, minion: {kind: "vampire", titles: ["bishop", "archbishop"]}}}] } }), // fala 47 wierna (300) cryptPerm
     cryptPerm(201239, "Sarah Raines (G3)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201240, "Sargon (G2)", { strength: 1 }), // fala 32 wierna (421)
     cryptPerm(201242, "Sarrasine (G2)", {}), // fala 47 wierna (300) cryptPerm
@@ -38277,11 +38277,11 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201255, "Sean Rycek (G4)", { stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201256, "Sebastian Marley (G1)", { strength: 1 }), // fala 32 wierna (421)
     flatCrypt(201257, "Sébastien Goulet (G3)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201258, "Sébastien Goulet (G3 ADV)", { stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201258, "Sébastien Goulet (G3 ADV)", { conditional: [{stealth: 1, actionCardTypes: ["ally", "retainer"]}] }), // fala 47 wierna (300) statics
     flatCrypt(201259, "Sela (G2)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201260, "Sela (G2 ADV)", { stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201260, "Sela (G2 ADV)", { conditional: [{stealth: 1, actionDirected: true, targetReady: {exists: true, minion: {kind: "vampire", titles: ["bishop"]}}}] }), // fala 47 wierna (300) statics
     flatCrypt(201261, "Selena (G3)", {}), // fala 32 wierna (421): przejrzane
-    cryptPerm(201262, "Selma the Repugnant (G1)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201262, "Selma the Repugnant (G1)", { statics: { conditional: [{intercept: 1, actingMinion: {kind: "vampire", clan: "Nosferatu"}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(201263, "Sennadurek (G4)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201265, "Seren Sukardi (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201266, "Serenna the White (G6)", {}), // fala 32 wierna (421): przejrzane
@@ -38296,13 +38296,13 @@ export const cryptSpecs: CardSpec[] = [
     cryptPerm(201279, "Sheela Na Gig (G5)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201280, "Sheila Mezarin (G2)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201282, "Shemti (G5)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201283, "Sheva Carr (G5)", { strength: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201283, "Sheva Carr (G5)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", clan: "Lasombra"}}] }), // fala 47 wierna (300) statics
     cryptPerm(201284, "Shiloh Marie, Vengeance (G5)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201285, "The Siamese (G2)", { bleed: 1 }), // fala 32 wierna (421)
-    cryptPerm(201286, "Sigrid Bekker (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201286, "Sigrid Bekker (G2)", { statics: { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Nosferatu"]}}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(201287, "Silas (G6)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201288, "Silvia Giovanni (G2)", { strength: 1, pressPerCombat: 1 }), // fala 32 wierna (421)
-    cryptPerm(201291, "Sir Ralph Hamilton (G3)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201291, "Sir Ralph Hamilton (G3)", { statics: { conditional: [{strength: 1, inCombatWith: {kind: "vampire", sect: "camarilla", younger: true}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(201295, "Skidmark (G4)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201296, "Skryta Zyleta (G3)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201298, "Slag (G5)", {}), // fala 32 wierna (421): przejrzane
@@ -38317,7 +38317,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201311, "Spleen, Georgio Gutterpunk (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201312, "Stanislava (G2)", { bleed: 2 }), // fala 47 wierna (300) statics
     cryptPerm(201314, "Stefano Giovanni (G2)", {}), // fala 47 wierna (300) cryptPerm
-    flatCrypt(201315, "Stephen Bateson (G5)", { bleed: 1, stealth: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201315, "Stephen Bateson (G5)", { stealth: 1, conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Tremere"]}}}] }), // fala 47 wierna (300) statics
     flatCrypt(201319, "Stravinsky (G2)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201320, "Strohmann (G5)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201321, "Styles Margs (G5)", {}), // fala 32 wierna (421): przejrzane
@@ -38351,7 +38351,7 @@ export const cryptSpecs: CardSpec[] = [
     cryptPerm(201351, "Tears, The Dark Pierrot (G4)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201352, "Tegyrius, Vizier (G2)", { stealth: 1, strength: 1 }), // fala 32 wierna (421)
     cryptPerm(201353, "Tegyrius, Vizier (G2 ADV)", {}), // fala 47 wierna (300) cryptPerm
-    flatCrypt(201354, "Teresita, The Godmother (G3)", { intercept: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201354, "Teresita, The Godmother (G3)", { conditional: [{intercept: 1, actingMinion: {kind: "vampire", sect: "camarilla"}}] }), // fala 47 wierna (300) statics
     flatCrypt(201355, "Tereza Rostas (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201356, "Terrell Harding (G3)", { stealth: 1 }), // fala 32 wierna (421)
     cryptPerm(201358, "Terrifisto (G4)", {}), // fala 47 wierna (300) cryptPerm
@@ -38380,7 +38380,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201389, "Truman (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201390, "Tryphosa (G4)", { stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201393, "Tupdog (G3)", {}), // fala 32 wierna (421): przejrzane
-    cryptPerm(201394, "Tura Vaughn (G1)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201394, "Tura Vaughn (G1)", { statics: { conditional: [{intercept: 1, actingMinion: {kind: "vampire", clan: "Brujah"}}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201395, "Tusk, The Talebearer (G1)", {}), // fala 32 wierna (421): przejrzane
     cryptPerm(201396, "Tusk, The Talebearer (G1 ADV)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(201397, "Tyler (G3)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
@@ -38400,12 +38400,12 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201416, "Uriel (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201417, "Urraca (G4)", { bleed: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201418, "Uta Kovacs (G4)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201420, "Vaclav Petalengro (G2)", { intercept: 1 }), // fala 47 wierna (300) statics
+    flatCrypt(201420, "Vaclav Petalengro (G2)", { conditional: [{intercept: 1, actingMinion: {kind: "vampire", clan: "Gangrel"}}] }), // fala 47 wierna (300) statics
     cryptPerm(201421, "Valerius Maior, Hell's Fool (G4)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm
     flatCrypt(201422, "Valerius Maior, Hell's Fool (G4 ADV)", {}), // fala 47 wierna (300) vanilla
     flatCrypt(201423, "Valkyrie (G3)", { strength: 1 }), // fala 47 wierna (300) statics
     flatCrypt(201426, "Vardar Vardarian (G4)", {}), // fala 32 wierna (421): przejrzane
-    cryptPerm(201427, "Vasantasena (G2)", { statics: { bleed: 1 } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201427, "Vasantasena (G2)", { statics: { conditional: [{stealth: 1, actionKinds: ["bleed"], targetReady: {exists: false, minion: {kind: "vampire", titled: true}}}], bleed: 1 } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(201428, "Vasilis, The Traitor of Don Cruez (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(201429, "Vasiliy Vasilevich (G5)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201430, "Vasily (G5)", {}), // fala 32 wierna (421): przejrzane
@@ -38431,7 +38431,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201454, "Virstania, The Great Mother (G3)", { bleed: 1, stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201456, "Vlad Tepes (G3)", { bleed: 1 }), // fala 32 wierna (421)
     flatCrypt(201458, "Volker, The Puppet Prince (G2)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201459, "Volo (G5)", {}), // fala 32 wierna (421): przejrzane
+    flatCrypt(201459, "Volo (G5)", { conditional: [{stealth: -1, actionKinds: ["hunt"]}] }), // fala 32 wierna (421): przejrzane
 
     cryptPerm(201460, "Vulture (G2)", {}), // fala 32 wierna (421)
     flatCrypt(201461, "Wah Chun-Yuen (G3)", {}), // fala 32 wierna (421): przejrzane
@@ -38454,7 +38454,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201483, "Yasmin the Black (G3)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201484, "Yavu Matebo (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201485, "Yazid Tamari (G3)", { bleed: 1 }), // fala 32 wierna (421)
-    flatCrypt(201486, "Yazid Tamari (G3 ADV)", { stealth: 1 }), // fala 32 wierna (421)
+    flatCrypt(201486, "Yazid Tamari (G3 ADV)", { conditional: [{stealth: 1, actionDirected: true}] }), // fala 32 wierna (421)
     flatCrypt(201487, "Yitzak (G3)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201488, "Yong-Sun, Harmonist (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201489, "Yong-Sun, Harmonist (G2 ADV)", {}), // fala 32 wierna (421): przejrzane
@@ -38471,7 +38471,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201506, "Zhenga (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201508, "Zizi (G6)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201509, "Zöe (G2)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201510, "Zubeida (G5)", { bleed: 1 }), // fala 32 wierna (421)
+    flatCrypt(201510, "Zubeida (G5)", { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: false, minion: {kind: "vampire", minCapacity: 7}}}] }), // fala 32 wierna (421)
     flatCrypt(201511, "Zygodat (G4)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201513, "Charles Delmare (G5)", { pressPerCombat: 1 }), // fala 32 wierna (421): przejrzane
     flatCrypt(201516, "Lady Vadislava (G5)", {}), // fala 32 wierna (421): przejrzane
@@ -38499,7 +38499,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201641, "The Guardian (G6)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201642, "Gwenllian Arwyn (G6)", { strength: 1 }), // fala 32 wierna (421)
     flatCrypt(201643, "Lady Scarlett Churchill (G6)", {}), // fala 32 wierna (421): przejrzane
-    flatCrypt(201644, "Mickey Wheeler (G6)", { strength: 1 }), // fala 32 wierna (421)
+    flatCrypt(201644, "Mickey Wheeler (G6)", { conditional: [{strength: 1, inCombatWith: {kind: "vampire", older: true}}] }), // fala 32 wierna (421)
     flatCrypt(201645, "Mithras (G6)", { bleed: 2, strength: 1 }), // fala 32 wierna (421)
     flatCrypt(201646, "Oskar Anasov (G6)", { intercept: 1, stealth: 1 }), // fala 32 wierna (421)
     flatCrypt(201647, "Queen Anne (G6)", { bleed: 1 }), // fala 32 wierna (421)

@@ -1,0 +1,1741 @@
+[
+  {
+    "id": 200050,
+    "name": "Alexis Sorokin (G4)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Toreador"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": [
+      "bleed"
+    ]
+  },
+  {
+    "id": 200258,
+    "name": "Céleste, The Voice of a Secret (G2)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Toreador"
+            ]
+          }
+        }
+      },
+      {
+        "intercept": -1,
+        "actionKinds": [
+          "bleed"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200800,
+    "name": "L'Épuisette (G4)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Toreador"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": [
+      "bleed"
+    ]
+  },
+  {
+    "id": 200223,
+    "name": "Brunhilde (G3)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Ventrue"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200289,
+    "name": "Constanza Vinti (G2)",
+    "conditions": [
+      {
+        "bleed": 2,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Ventrue"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201114,
+    "name": "Peter Blaine (G2)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Ventrue"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200412,
+    "name": "Elisabetta Romano (G2)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Ministry"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200505,
+    "name": "Gentha Shale (G4)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Ministry"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200492,
+    "name": "Ganesh (G5)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Giovanni"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": [
+      "bleed"
+    ]
+  },
+  {
+    "id": 200761,
+    "name": "Katarina (G2)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Ravnos"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200889,
+    "name": "Luther (G2)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Pander"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201086,
+    "name": "Otieno (G4)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Guruhi"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": [
+      "bleed"
+    ]
+  },
+  {
+    "id": 201162,
+    "name": "Ranjan Rishi, Camarilla Scholar (G2)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Brujah"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201171,
+    "name": "Rebekka, Chantry Elder of Munich (G2)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Malkavian"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201286,
+    "name": "Sigrid Bekker (G2)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Nosferatu"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201315,
+    "name": "Stephen Bateson (G5)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Tremere"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": [
+      "bleed"
+    ]
+  },
+  {
+    "id": 201139,
+    "name": "Queen Anne (G2)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Tremere"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200518,
+    "name": "Gillespi Giovanni (G2)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "sect": "camarilla"
+          }
+        }
+      }
+    ],
+    "remove": [
+      "bleed"
+    ]
+  },
+  {
+    "id": 200718,
+    "name": "Jorge De La Muerte, The Agent (G2)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "sect": "sabbat"
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200835,
+    "name": "Lille Haake (G3)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "sect": "sabbat"
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200291,
+    "name": "Cornelius Ottavio (G2)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "notSect": "camarilla"
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200454,
+    "name": "Fairuza (G5)",
+    "conditions": [
+      {
+        "bleed": -1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {}
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201133,
+    "name": "Preston Varrick (G4)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "ally"
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200903,
+    "name": "Maldavis (G3)",
+    "conditions": [
+      {
+        "bleed": -1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "titles": [
+              "primogen"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200943,
+    "name": "Martin Franckel (G3)",
+    "conditions": [
+      {
+        "bleed": -1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": false,
+          "minion": {
+            "kind": "vampire",
+            "clans": [
+              "Tremere",
+              "Tremere antitribu"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201510,
+    "name": "Zubeida (G5)",
+    "conditions": [
+      {
+        "bleed": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": false,
+          "minion": {
+            "kind": "vampire",
+            "minCapacity": 7
+          }
+        }
+      }
+    ],
+    "remove": [
+      "bleed"
+    ]
+  },
+  {
+    "id": 201118,
+    "name": "Phaedyme (G5)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "sect": "camarilla"
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201427,
+    "name": "Vasantasena (G2)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "targetReady": {
+          "exists": false,
+          "minion": {
+            "kind": "vampire",
+            "titled": true
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200775,
+    "name": "Kestrelle Hayes (G5)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionDirected": true,
+        "targetReady": {
+          "exists": false,
+          "minion": {
+            "kind": "vampire",
+            "sect": "sabbat"
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201154,
+    "name": "Rain (G4)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionDirected": true,
+        "targetReady": {
+          "exists": false,
+          "minion": {
+            "kind": "vampire",
+            "titled": true
+          }
+        }
+      }
+    ],
+    "remove": [
+      "stealth"
+    ]
+  },
+  {
+    "id": 201237,
+    "name": "Sarah Brando (G2)",
+    "conditions": [
+      {
+        "stealth": -1,
+        "actionDirected": true,
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "titles": [
+              "bishop",
+              "archbishop"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201260,
+    "name": "Sela (G2 ADV)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionDirected": true,
+        "targetReady": {
+          "exists": true,
+          "minion": {
+            "kind": "vampire",
+            "titles": [
+              "bishop"
+            ]
+          }
+        }
+      }
+    ],
+    "remove": [
+      "stealth"
+    ]
+  },
+  {
+    "id": 200014,
+    "name": "Adonai (G2)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "clan": "Tremere"
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201163,
+    "name": "Ransam, The Old Man (G4)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "clan": "Tremere"
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 200046,
+    "name": "Alessandro Garcia (G4)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "clan": "Lasombra"
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 201283,
+    "name": "Sheva Carr (G5)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "clan": "Lasombra"
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 200177,
+    "name": "Batsheva (G4 ADV)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "clan": "Malkavian"
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 200210,
+    "name": "Blythe Candeleria (G2)",
+    "conditions": [
+      {
+        "strength": -1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "clan": "Malkavian"
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200176,
+    "name": "Batsheva (G4)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "clan": "Tzimisce"
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 200433,
+    "name": "Erinyi (G2)",
+    "conditions": [
+      {
+        "strength": -1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "clan": "Gangrel antitribu"
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201155,
+    "name": "Rake (G1)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "clan": "Ventrue"
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 200925,
+    "name": "Marianna (G2)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "clan": "Giovanni"
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200051,
+    "name": "Alfred Benezri (G3)",
+    "conditions": [
+      {
+        "strength": -1,
+        "inCombatWith": {
+          "kind": "ally"
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200268,
+    "name": "Chas Giovanni Tello (G2)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "titled": true
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 200306,
+    "name": "Cynthia Ingold (G2)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "sect": "camarilla"
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 200318,
+    "name": "Danny Larkshill (G2)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "younger": true
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 200328,
+    "name": "Dedefra (G2)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "sect": "camarilla"
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 200359,
+    "name": "Dominique Santo Paulo (G4)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "clans": [
+            "Nosferatu",
+            "Nosferatu antitribu"
+          ]
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 200475,
+    "name": "Francis Milliner (G4)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "clans": [
+            "Toreador",
+            "Toreador antitribu"
+          ]
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 200726,
+    "name": "Joshua Tarnopolski (G3)",
+    "conditions": [
+      {
+        "strength": 2,
+        "inCombatWith": {
+          "kind": "vampire",
+          "sect": "sabbat"
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200872,
+    "name": "Lucina (G3)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "maxCapacity": 4
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200921,
+    "name": "Marguerite Foccart (G4 ADV)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "titled": true
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 201644,
+    "name": "Mickey Wheeler (G6)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "older": true
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 201168,
+    "name": "Rathmere (G5)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "sect": "sabbat"
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 201176,
+    "name": "Reginald Moore (G4)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "clans": [
+            "Tremere",
+            "Tremere antitribu"
+          ]
+        }
+      }
+    ],
+    "remove": [
+      "strength"
+    ]
+  },
+  {
+    "id": 201291,
+    "name": "Sir Ralph Hamilton (G3)",
+    "conditions": [
+      {
+        "strength": 1,
+        "inCombatWith": {
+          "kind": "vampire",
+          "sect": "camarilla",
+          "younger": true
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200015,
+    "name": "Adri, The Seeker (G6)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actingMinion": {
+          "kind": "vampire",
+          "clan": "Ministry"
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200731,
+    "name": "Jubal (G4)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actingMinion": {
+          "kind": "vampire",
+          "clan": "Ministry"
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200265,
+    "name": "Chandler Hungerford (G2)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actingMinion": {
+          "kind": "vampire",
+          "clan": "Gangrel"
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201420,
+    "name": "Vaclav Petalengro (G2)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actingMinion": {
+          "kind": "vampire",
+          "clan": "Gangrel"
+        }
+      }
+    ],
+    "remove": [
+      "intercept"
+    ]
+  },
+  {
+    "id": 201228,
+    "name": "Samantha (G2)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actingMinion": {
+          "kind": "vampire",
+          "clan": "Lasombra"
+        }
+      }
+    ],
+    "remove": [
+      "intercept"
+    ]
+  },
+  {
+    "id": 201262,
+    "name": "Selma the Repugnant (G1)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actingMinion": {
+          "kind": "vampire",
+          "clan": "Nosferatu"
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201394,
+    "name": "Tura Vaughn (G1)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actingMinion": {
+          "kind": "vampire",
+          "clan": "Brujah"
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200108,
+    "name": "Antara (G4)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actingMinion": {
+          "kind": "vampire",
+          "sect": "sabbat"
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200213,
+    "name": "Boss Callihan (G3 ADV)",
+    "conditions": [
+      {
+        "intercept": -1,
+        "actingMinion": {
+          "kind": "vampire",
+          "sect": "sabbat"
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200326,
+    "name": "David Morgan, The Scourge (G3)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actingMinion": {
+          "kind": "vampire",
+          "maxCapacity": 2
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200331,
+    "name": "Delilah Monroe (G2)",
+    "conditions": [
+      {
+        "intercept": -1,
+        "actingMinion": {
+          "kind": "vampire",
+          "older": true
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200610,
+    "name": "Hugo (G2)",
+    "conditions": [
+      {
+        "intercept": -1,
+        "actingMinion": {
+          "kind": "vampire",
+          "clans": [
+            "Lasombra",
+            "Tzimisce"
+          ]
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201186,
+    "name": "Richard Tauber, Ayelea's Puppet (G2)",
+    "conditions": [
+      {
+        "intercept": -1,
+        "actingMinion": {
+          "kind": "vampire",
+          "clans": [
+            "Lasombra",
+            "Tzimisce"
+          ]
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201194,
+    "name": "Rocia (G4)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actingMinion": {
+          "kind": "vampire",
+          "clans": [
+            "Tremere",
+            "Tremere antitribu"
+          ]
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201354,
+    "name": "Teresita, The Godmother (G3)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actingMinion": {
+          "kind": "vampire",
+          "sect": "camarilla"
+        }
+      }
+    ],
+    "remove": [
+      "intercept"
+    ]
+  },
+  {
+    "id": 200273,
+    "name": "Christine Boscacci (G2)",
+    "conditions": [
+      {
+        "intercept": -1,
+        "actionKinds": [
+          "bleed"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200639,
+    "name": "Ira Rivers (G3)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actionCardTypes": [
+          "politicalAction"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200741,
+    "name": "Kabede Maru (G5)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actionCardTypes": [
+          "politicalAction"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200842,
+    "name": "Lisette Vizquel (G2)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actionKinds": [
+          "diablerize"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200920,
+    "name": "Marguerite Foccart (G4)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actionCardTypes": [
+          "politicalAction"
+        ]
+      }
+    ],
+    "remove": [
+      "intercept"
+    ]
+  },
+  {
+    "id": 200936,
+    "name": "Mark (G2)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actionKinds": [
+          "bleed"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201078,
+    "name": "Olugbenga (G4)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actionKinds": [
+          "bleed"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201215,
+    "name": "Ryder (G4)",
+    "conditions": [
+      {
+        "intercept": 1,
+        "actionDirected": true
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200115,
+    "name": "Antonino (G3)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionDirected": false
+      }
+    ],
+    "remove": [
+      "stealth"
+    ]
+  },
+  {
+    "id": 200130,
+    "name": "Aren, Priest of Eshu (G4)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionCardTypes": [
+          "politicalAction"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200321,
+    "name": "Dark Selina (G5)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionCardTypes": [
+          "politicalAction"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200371,
+    "name": "Dovey Ebfwe (G6)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionCardTypes": [
+          "retainer"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200395,
+    "name": "Dylan (G2 ADV)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionKinds": [
+          "bleed"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200594,
+    "name": "Hesha Ruhadze (G2)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionKinds": [
+          "hunt"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200700,
+    "name": "Jessica (G2 ADV)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionCardTypes": [
+          "politicalAction"
+        ]
+      }
+    ],
+    "remove": [
+      "stealth"
+    ]
+  },
+  {
+    "id": 200709,
+    "name": "Joaquina Amaya (G2)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionCardTypes": [
+          "equipment"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200778,
+    "name": "Khalil Ravana (G2)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionKinds": [
+          "diablerize"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200780,
+    "name": "Khay'tall, Snake of Eden (G2)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionCardTypes": [
+          "politicalAction"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200785,
+    "name": "Kisha Bhimji (G3)",
+    "conditions": [
+      {
+        "stealth": -1,
+        "excludedActionKinds": [
+          "hunt"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200824,
+    "name": "Le Dinh Tho (G2)",
+    "conditions": [
+      {
+        "stealth": -1,
+        "actionKinds": [
+          "hunt"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 200866,
+    "name": "Luc (G4)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionKinds": [
+          "diablerize"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201038,
+    "name": "Natasha Volfchek (G1)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionCardTypes": [
+          "politicalAction"
+        ]
+      }
+    ],
+    "remove": [
+      "stealth"
+    ]
+  },
+  {
+    "id": 201051,
+    "name": "Nettie Hale (G2)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionCardTypes": [
+          "ally",
+          "retainer"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201070,
+    "name": "Obaluaye (G5)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionKinds": [
+          "hunt"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201082,
+    "name": "Onaedo (G4)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionKinds": [
+          "diablerize"
+        ],
+        "readyNamedVampire": "Otieno"
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201083,
+    "name": "Ondine \"Boudicca\" Sinclair (G5)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionKinds": [
+          "bleed"
+        ],
+        "controller": {
+          "hasEdge": true
+        }
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201131,
+    "name": "Portia (G5)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionKinds": [
+          "hunt"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201180,
+    "name": "Reverend Adams (G4)",
+    "conditions": [
+      {
+        "stealth": -1,
+        "actionCardTypes": [
+          "politicalAction"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201203,
+    "name": "Rosa Hernández (G4)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionCardTypes": [
+          "retainer"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201208,
+    "name": "Royce (G2)",
+    "conditions": [
+      {
+        "stealth": -1,
+        "actionKinds": [
+          "bleed"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201258,
+    "name": "Sébastien Goulet (G3 ADV)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionCardTypes": [
+          "ally",
+          "retainer"
+        ]
+      }
+    ],
+    "remove": [
+      "stealth"
+    ]
+  },
+  {
+    "id": 201459,
+    "name": "Volo (G5)",
+    "conditions": [
+      {
+        "stealth": -1,
+        "actionKinds": [
+          "hunt"
+        ]
+      }
+    ],
+    "remove": []
+  },
+  {
+    "id": 201486,
+    "name": "Yazid Tamari (G3 ADV)",
+    "conditions": [
+      {
+        "stealth": 1,
+        "actionDirected": true
+      }
+    ],
+    "remove": [
+      "stealth"
+    ]
+  }
+]

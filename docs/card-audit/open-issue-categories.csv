@@ -1454,8 +1454,7 @@ id,name,kind,status,categories
 200008,Abiku (G4),crypt,CONFIRMED_BUG,akcje_i_blok
 200011,Adana de Sforza (G4),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 200013,Adhiambo (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-200014,Adonai (G2),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-200015,"Adri, The Seeker (G6)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+200014,Adonai (G2),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 200017,Aeron (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; karty_i_strefy
 200018,"Afifa, The Herald (G4)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 200019,"Agaitas, The Scholar of Antiquities (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
@@ -1479,12 +1478,10 @@ id,name,kind,status,categories
 200042,Alcoan (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 200043,Aleister Crowley (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 200044,Alejandro Aguirre (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
-200046,Alessandro Garcia (G4),crypt,CODE_DISCREPANCY,walka; karty_i_strefy
 200047,Alex Camille (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 200048,Alex Wilkins (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 200049,Alexandra (G2),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-200050,Alexis Sorokin (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
-200051,Alfred Benezri (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; polityka_i_glosy; karty_i_strefy
+200050,Alexis Sorokin (G4),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 200052,Alfred Benezri (G3 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; polityka_i_glosy; karty_i_strefy
 200054,Alicia Barrows (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 200057,Allonzo Montoya (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
@@ -1523,11 +1520,10 @@ id,name,kind,status,categories
 200105,"Anne-Marie Bourgeois, Inconnu Recruiter (G5)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 200106,Anneke (G1),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; karty_i_strefy
 200107,Anson (G1),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-200108,Antara (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+200108,Antara (G4),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200111,Antoinette Dubois (G4),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200112,Antoinette DuChamp (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 200114,Antón de Concepción (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; karty_i_strefy
-200115,Antonino (G3),crypt,CODE_DISCREPANCY,akcje_i_blok; karty_i_strefy
 200116,Antonio d'Erlette (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 200117,Antonio Delgado (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 200118,Antonio Veradas (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -1537,7 +1533,7 @@ id,name,kind,status,categories
 200126,Appolonius (G1 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; karty_i_strefy
 200127,The Arcadian (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 200128,Ardan Lane (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
-200130,"Aren, Priest of Eshu (G4)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
+200130,"Aren, Priest of Eshu (G4)",crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200131,Ariadne (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 200133,"Arianne, The Conqueror (G5)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 200135,Arika (G2),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
@@ -1574,8 +1570,7 @@ id,name,kind,status,categories
 200173,Basil (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 200174,Basilia (G1),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; karty_i_strefy
 200175,Basir (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-200176,Batsheva (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
-200177,Batsheva (G4 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
+200177,Batsheva (G4 ADV),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; walka; karty_i_strefy; czas_i_warunki
 200179,"Beast, The Leatherface of Detroit (G2)",crypt,CODE_DISCREPANCY,akcje_i_blok; karty_i_strefy; czas_i_warunki
 200181,"Béatrice ""Oracle171"" Tremblay (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 200183,Beckett (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -1592,12 +1587,10 @@ id,name,kind,status,categories
 200201,Black Cat (G1),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 200204,Blackhorse Tanner (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200206,Blanche Hill (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
-200210,Blythe Candeleria (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 200212,Boss Callihan (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
-200213,Boss Callihan (G3 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+200213,Boss Callihan (G3 ADV),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 200220,Bronwen (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; karty_i_strefy
 200222,Bruce de Guy (G4),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
-200223,Brunhilde (G3),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 200224,Brunhilde (G3 ADV),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 200226,Bulscu (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200227,Bulscu (G5 ADV),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -1619,26 +1612,21 @@ id,name,kind,status,categories
 200253,"Cassandra, Magus Prime (G1)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; karty_i_strefy; czas_i_warunki
 200255,Castiel (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 200257,Cedric (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
-200258,"Céleste, The Voice of a Secret (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 200259,Céleste Lamontagne (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 200261,César Holfield (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200262,Cesewayo (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
 200263,Cesewayo (G4 ADV),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 200264,Chalcedony (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu
-200265,Chandler Hungerford (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
-200268,Chas Giovanni Tello (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
+200268,Chas Giovanni Tello (G2),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 200269,Chaundice (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka
 200270,Chavi Oraczko (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 200272,"Christanius Lionel, The Mad Chronicler (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
-200273,Christine Boscacci (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200274,Christopher Houghton (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 200275,Cicatriz (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 200278,Claudio Severino (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
 200279,Claudio Severino (G5 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200284,Cock Robin (G3),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200288,Conrad Adoula (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
-200289,Constanza Vinti (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
-200291,Cornelius Ottavio (G2),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 200292,Count Germaine (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 200293,Count Germaine (G4 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; czas_i_warunki
 200294,Count Jocalo (G6),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
@@ -1647,7 +1635,6 @@ id,name,kind,status,categories
 200302,Cristos Mantigo (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200304,Crusher (G1),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; walka
 200305,Cybele (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-200306,Cynthia Ingold (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy
 200307,Cyscek (G4),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 200308,Daliah (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby
 200310,"Damaskenos, Herald of Leandro (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
@@ -1655,16 +1642,11 @@ id,name,kind,status,categories
 200314,Dancin' Dana (G1 ADV),crypt,CODE_DISCREPANCY,walka; czas_i_warunki
 200316,Danielle Diron (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200317,Danielle Diron (G3 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby
-200318,Danny Larkshill (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 200319,Danylo (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 200320,Darius Styx (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-200321,Dark Selina (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 200322,Darlene Killian (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 200325,"Darvag, The Butcher of Rus (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-200326,"David Morgan, The Scourge (G3)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200327,De Sade (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby
-200328,Dedefra (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
-200331,Delilah Monroe (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200332,Delizbieta of the Dark Eyes (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200333,Demdemeh (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 200335,Democritus (G1),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby
@@ -1676,7 +1658,6 @@ id,name,kind,status,categories
 200351,Doctor Streck (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200357,Dominique (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 200358,Dominique (G2 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
-200359,Dominique Santo Paulo (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 200360,Don Caravelli (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 200362,"Don Cruez, The Idealist (G1)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka
 200363,Don Michael Antonio Giovanni (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; polityka_i_glosy; karty_i_strefy
@@ -1685,7 +1666,6 @@ id,name,kind,status,categories
 200366,Donatello Giovanni (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 200367,Donatien (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok
 200370,Dorka (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-200371,Dovey Ebfwe (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200372,Doyle Fincher (G4),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200375,Dr. Jest (G1),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy
 200377,Dr. John Dee (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; polityka_i_glosy; karty_i_strefy
@@ -1700,7 +1680,7 @@ id,name,kind,status,categories
 200390,Drusilla Euphemia (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 200391,Duality (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu
 200393,Durga Syn (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
-200395,Dylan (G2 ADV),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
+200395,Dylan (G2 ADV),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200397,"Earl ""Shaka74"" Deams (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 200398,Ebanezer Roush (G1),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200399,Echo (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
@@ -1711,7 +1691,6 @@ id,name,kind,status,categories
 200405,Egothha (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 200409,Elihu (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 200410,Elimelech the Twice-Damned (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; walka; karty_i_strefy
-200412,Elisabetta Romano (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 200414,Elizabeth Dimitros (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200416,"Ellen Fence, the Tracker (G2)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
 200417,Ellison Humboldt (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; czas_i_warunki
@@ -1726,7 +1705,6 @@ id,name,kind,status,categories
 200429,Eric Kressida (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 200431,Erichtho (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 200432,"Erick ""Shophet125"" Franco (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; karty_i_strefy
-200433,Erinyi (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka
 200434,Erlik (G3),crypt,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby
 200436,Esau (G3),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200438,Ethan Locke (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
@@ -1738,7 +1716,7 @@ id,name,kind,status,categories
 200448,"Eze, The Demon Prince (G3)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 200450,Ezmerelda (G2),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 200452,Fabrizia Contreraz (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; polityka_i_glosy; czas_i_warunki
-200454,Fairuza (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
+200454,Fairuza (G5),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200455,Fakir al Sidi (G4),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 200456,Falhu Shibaba (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 200457,Faruq (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
@@ -1752,7 +1730,6 @@ id,name,kind,status,categories
 200466,Fida'i (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200467,"Fidus, The Shrunken Beast (G2)",crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200470,Fleurdumal (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
-200475,Francis Milliner (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 200476,Francisco Domingo de Polonia (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 200477,Franciscus (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy; czas_i_warunki
 200478,François Villon (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
@@ -1764,7 +1741,6 @@ id,name,kind,status,categories
 200489,Gabrielle di Righetti (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 200490,Gabrin (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200491,Gaël Pilet (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
-200492,Ganesh (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 200493,Ganhuru (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; czas_i_warunki
 200495,Gaspare Giovanni (G2),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200497,Gavrylo (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -1775,14 +1751,12 @@ id,name,kind,status,categories
 200502,Gengis (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200503,Gengis (G3 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 200504,"Genina, The Red Poet (G3)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-200505,Gentha Shale (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 200507,Gerald FitzGerald (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 200508,Gerald Windham (G5),crypt,CODE_DISCREPANCY,akcje_i_blok; polityka_i_glosy
 200510,Gerard Rafin (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 200511,Gharston Roland (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200512,Ghede (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby
 200514,"Giangaleazzo, The Traitor (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
-200518,Gillespi Giovanni (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 200519,Gillian Krader (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 200520,Giotto Verducci (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200521,Giovanni del Georgio (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -1837,7 +1811,7 @@ id,name,kind,status,categories
 200591,Herbert Westin (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200592,Hermana Hambrienta Mayor (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200593,Hermana Hambrienta Menor (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-200594,Hesha Ruhadze (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+200594,Hesha Ruhadze (G2),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 200597,High Priest Angra Mainyu (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200598,Hillanvale (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 200599,"Hiram ""Hide"" DeVries (G5)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
@@ -1847,7 +1821,6 @@ id,name,kind,status,categories
 200607,Howler (G2),crypt,PARTIAL_FIX,crypt_import_lub_cechy; walka; karty_i_strefy
 200608,Hrothulf (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 200609,"Huang, Blood Cultist (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
-200610,Hugo (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200611,Huitzilopochtli (G2),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200612,Hukros (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 200613,Humo (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
@@ -1867,7 +1840,7 @@ id,name,kind,status,categories
 200634,Ingrid Rossler (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; czas_i_warunki
 200637,Intisar (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
 200638,Inyanga (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-200639,Ira Rivers (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
+200639,Ira Rivers (G3),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 200641,Iris Bennett (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200644,Isanwayen (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 200646,Isouda de Blaise (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
@@ -1912,36 +1885,34 @@ id,name,kind,status,categories
 200696,"Jeremy ""Wix"" Wyzchovsky (G4)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200697,Jerry (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200698,Jesse Menks (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; czas_i_warunki
-200700,Jessica (G2 ADV),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
+200700,Jessica (G2 ADV),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 200702,Jezebelle (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy; czas_i_warunki
 200703,Jibade el-Bahrawi (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 200704,Jibade el-Bahrawi (G4 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
 200705,Jimmy Dunn (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 200707,João Bilé (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 200708,Joaquin Murietta (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; czas_i_warunki
-200709,Joaquina Amaya (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
+200709,Joaquina Amaya (G2),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 200710,"Joe ""Boot"" Hill (G4)",crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 200711,Johan Wrede (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 200712,Johann Matheson (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
 200713,Johannes Castelein (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 200715,"John ""Cop90"" O'Malley (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
 200716,John Paleologus (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-200718,"Jorge De La Muerte, The Agent (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 200720,Josef von Bauren (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; karty_i_strefy; czas_i_warunki
 200721,Joseph Cambridge (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 200722,Joseph DiGiaccomo (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 200724,Joseph O'Grady (G3),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 200725,Josette (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
-200726,Joshua Tarnopolski (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
+200726,Joshua Tarnopolski (G3),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; walka; karty_i_strefy; czas_i_warunki
 200728,Jozz (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-200731,Jubal (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200733,Juggler (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; czas_i_warunki
 200734,Julia Prima (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 200736,Julio Martinez (G3),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200737,Julius (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 200738,Juniper (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200739,"Justine, Elder of Dallas (G1)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
-200741,Kabede Maru (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
+200741,Kabede Maru (G5),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 200742,Kahina the Sorceress (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; karty_i_strefy
 200743,Kai Simmons (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 200744,Kalila (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -1956,7 +1927,6 @@ id,name,kind,status,categories
 200757,Karsh (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200758,Karsh (G3 ADV),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
 200760,Kassiym Malikhair (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
-200761,Katarina (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 200762,Katarina Kornfeld (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 200763,Kateline Nadasdy (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu
 200764,Katherine Stoddard (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -1966,14 +1936,13 @@ id,name,kind,status,categories
 200769,Kemintiri (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 200770,Kemintiri (G2 ADV),crypt,CODE_DISCREPANCY,akcje_i_blok; polityka_i_glosy
 200771,Kendrick (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
-200775,Kestrelle Hayes (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+200775,Kestrelle Hayes (G5),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 200776,Khalid (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-200778,Khalil Ravana (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200779,Khalu (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
-200780,"Khay'tall, Snake of Eden (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
+200780,"Khay'tall, Snake of Eden (G2)",crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 200783,The Kikiyaon (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka
 200784,Kiradin (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; czas_i_warunki
-200785,Kisha Bhimji (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
+200785,Kisha Bhimji (G3),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 200788,Klaus van der Veken (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu
 200790,Konrad Fleischer (G4),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; walka; karty_i_strefy
 200792,"Kostantin, Baro of the Caravan (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -1982,7 +1951,6 @@ id,name,kind,status,categories
 200797,"Kyle Strathcona, Cardinal of Canada (G2)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby
 200798,Kyoko Shinsegawa (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 200799,Kyrylo (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; karty_i_strefy
-200800,L'Épuisette (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 200801,La Viuda Blanca (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200804,Lady Constancia (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 200805,Lady Zara Slatikov (G4),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
@@ -1996,7 +1964,7 @@ id,name,kind,status,categories
 200819,Lázár Dobrescu (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 200820,Lazarus (G1),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka
 200821,Lazarus (G1 ADV),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; karty_i_strefy
-200824,Le Dinh Tho (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+200824,Le Dinh Tho (G2),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 200825,"Leaf ""Potter116"" Pankowski (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 200826,Leandro (G2),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 200828,Legba (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; polityka_i_glosy
@@ -2005,11 +1973,10 @@ id,name,kind,status,categories
 200831,Leo Washington (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 200832,Leon (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200833,Lernean (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; czas_i_warunki
-200835,Lille Haake (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+200835,Lille Haake (G3),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 200837,Lin Jun (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200839,Lisa Noble (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 200840,Lisandro Giovanni (G3),crypt,CODE_DISCREPANCY,akcje_i_blok
-200842,Lisette Vizquel (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
 200843,Lithrac (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; koszty_i_zasoby
 200844,Little Tailor of Prague (G2),crypt,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 200846,"Liz ""Ticket312"" Thornton (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu
@@ -2026,12 +1993,12 @@ id,name,kind,status,categories
 200863,Louis Fortier (G4 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu
 200864,Luanda Magere (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu
 200865,Lubomira Hradok (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
-200866,Luc (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+200866,Luc (G4),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 200867,Luca Italicus (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka
 200868,Lucas Halton (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 200870,Lucian (G1),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; karty_i_strefy
 200871,"Lucian, the Perfect (G4)",crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
-200872,Lucina (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby
+200872,Lucina (G3),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200873,"Lucinde, Alastor (G3)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200874,Lucita (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200875,Lucita (G2 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
@@ -2042,7 +2009,6 @@ id,name,kind,status,categories
 200885,Luna Giovanni (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 200886,"Lupe ""Cabbie22"" Droin (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 200888,Lupo Giovanni (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
-200889,Luther (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 200890,Lutz von Hohenzollern (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200891,"Lydia, Grand Praetor (G6)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200893,Lynn Thompson (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
@@ -2051,7 +2017,7 @@ id,name,kind,status,categories
 200898,Magdelena Schaefer (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby
 200899,"Makarios, The Seducer (G2)",crypt,CODE_DISCREPANCY,akcje_i_blok
 200900,Malabranca (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
-200903,Maldavis (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
+200903,Maldavis (G3),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200904,Maldavis (G3 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy
 200905,Malgorzata (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 200906,Mamadou Keita (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; czas_i_warunki
@@ -2067,21 +2033,19 @@ id,name,kind,status,categories
 200916,Marcus Vitel (G3 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 200917,Margaret Milliner (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 200918,Margarite (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
-200920,Marguerite Foccart (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
-200921,Marguerite Foccart (G4 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy
+200921,Marguerite Foccart (G4 ADV),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; walka; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 200923,Maria Stone (G3 ADV),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy
-200925,Marianna (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
+200925,Marianna (G2),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200927,Marie Faucigny (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
 200928,Marie-Pierre (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
 200929,"Mariel, Lady Thunder (G1)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 200934,"Marion ""Teacher193"" Perks (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka
 200935,Maris Streck (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-200936,Mark (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+200936,Mark (G2),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 200937,Mark Decker (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy
 200939,Marlena (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 200941,Marta (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
 200942,Marthe Dizier (G3),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
-200943,Martin Franckel (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 200944,Martino della Passaglia (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 200945,Marty Lechtansi (G1),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; koszty_i_zasoby
 200946,Mary Anne Blaire (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
@@ -2149,7 +2113,6 @@ id,name,kind,status,categories
 201034,"Nakova, Advocate of Golconda (G2)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; karty_i_strefy
 201035,Nana Buruku (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; karty_i_strefy; czas_i_warunki
 201036,Nangila Were (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-201038,Natasha Volfchek (G1),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 201039,Navar McClaren (G1),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 201040,"Nedal, The Careless (G3)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 201042,Nefertiti (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
@@ -2157,7 +2120,6 @@ id,name,kind,status,categories
 201044,Nehemiah (G4),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 201048,Nergal (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 201049,Nergal (G5 ADV),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-201051,Nettie Hale (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 201052,New Blood (ANY),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; karty_i_strefy
 201053,Ngozi Ekwensu (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; karty_i_strefy
 201056,"Nickolai, The Survivor (G4)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
@@ -2171,18 +2133,15 @@ id,name,kind,status,categories
 201066,Nostoket (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 201067,"Nu, The Pillar (G2)",crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 201069,Nuriel (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; czas_i_warunki
-201070,Obaluaye (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+201070,Obaluaye (G5),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 201072,Ogwon (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 201075,Olga Triminov (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 201076,Oliver Thrace (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
-201078,Olugbenga (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
+201078,Olugbenga (G4),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 201079,Omaya (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 201081,Omme Enberbenight (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby
-201082,Onaedo (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
-201083,"Ondine ""Boudicca"" Sinclair (G5)",crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 201084,Orlando Oriundus (G4),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 201085,Osric Vladislav (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-201086,Otieno (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 201087,"Owain Evans, The Wanderer (G3)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
 201092,Paolo Sardenzo (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 201093,Papa Legba (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
@@ -2200,11 +2159,9 @@ id,name,kind,status,categories
 201111,"Persia, The Beautiful Statue (G3)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 201112,Petaniqua (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 201113,Petaniqua (G4 ADV),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
-201114,Peter Blaine (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 201115,"Peter ""Outback295"" Rophail (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka
 201116,Petra (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
 201117,Petru Sipos (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
-201118,Phaedyme (G5),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 201119,Phagian (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
 201120,Pherydima (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 201121,Philip van Vermeer IV (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu
@@ -2214,13 +2171,11 @@ id,name,kind,status,categories
 201127,Pochtli (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 201129,Porphyrion (G5),crypt,CODE_DISCREPANCY,akcje_i_blok; karty_i_strefy
 201130,Porphyry (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
-201131,Portia (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
+201131,Portia (G5),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 201132,Prejudice (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-201133,Preston Varrick (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 201136,Pugfar (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; koszty_i_zasoby
 201137,Qadir ul-Ghani (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 201138,Qawiyya el-Ghaduba (G5),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-201139,Queen Anne (G2),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 201140,Quentin (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
 201142,Quentin King III (G3 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 201143,Qufur am-Heru (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
@@ -2232,53 +2187,44 @@ id,name,kind,status,categories
 201151,Rafael de Corazon (G4),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy
 201152,Rafaele Giovanni (G2),crypt,CODE_DISCREPANCY,akcje_i_blok
 201153,Raful al-Zarqa (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-201154,Rain (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; czas_i_warunki
-201155,Rake (G1),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka
+201154,Rain (G4),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 201158,Ramona (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
 201159,Ramona (G2 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
 201160,Randall (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-201162,"Ranjan Rishi, Camarilla Scholar (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
-201163,"Ransam, The Old Man (G4)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 201164,Raphael Catarari (G4),crypt,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-201168,Rathmere (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 201170,Rebekah (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
-201171,"Rebekka, Chantry Elder of Munich (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 201172,Redbone McCray (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 201173,Reg Driscoll (G2),crypt,CODE_DISCREPANCY,akcje_i_blok; karty_i_strefy; czas_i_warunki
 201175,"Regina Giovanni, The Right Hand of Augustus (G2)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
-201176,Reginald Moore (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka
+201176,Reginald Moore (G4),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 201177,Reiner Stoschka (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; czas_i_warunki
-201180,Reverend Adams (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
+201180,Reverend Adams (G4),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 201181,Reverend Adams (G4 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 201182,Reverend Blackwood (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; koszty_i_zasoby
 201184,"Rex, The Necronomist (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby
-201186,"Richard Tauber, Ayelea's Puppet (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 201189,Rico Loco (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 201190,"Rigby, Crusade Vanguard (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 201191,Righteous Endeavor (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka
-201194,Rocia (G4),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
 201195,Roderick Phillips March (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
-201203,Rosa Hernández (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 201204,Rosa Martínez (G3),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 201206,Rosemarie (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; koszty_i_zasoby
 201207,"Roxanne, Rectrix of the 13th Floor (G1)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
-201208,Royce (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 201211,Rusticus (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy
 201212,Ruth McGinley (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka
 201213,Rutor (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 201214,Ruxandra (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-201215,Ryder (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+201215,Ryder (G4),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 201216,Ryszard (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 201217,Sabine Lafitte (G1),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
 201223,Sajid al Misbah (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 201225,Salinger (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; czas_i_warunki
 201226,Salvador Garcia (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; czas_i_warunki
-201228,Samantha (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
+201228,Samantha (G2),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 201229,"Samat Ramal-Ra, Archon (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
 201232,Sandra White (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy
 201235,Santaleous (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 201236,"Saqqaf, Keeper of the Grand Temple of Set (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
-201237,Sarah Brando (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
+201237,Sarah Brando (G2),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 201239,Sarah Raines (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy
 201240,Sargon (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 201242,Sarrasine (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
@@ -2293,11 +2239,10 @@ id,name,kind,status,categories
 201253,Scout Youngwood (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 201255,Sean Rycek (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 201257,Sébastien Goulet (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
-201258,Sébastien Goulet (G3 ADV),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+201258,Sébastien Goulet (G3 ADV),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 201259,Sela (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-201260,Sela (G2 ADV),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
+201260,Sela (G2 ADV),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 201261,Selena (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy
-201262,Selma the Repugnant (G1),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
 201263,Sennadurek (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 201265,Seren Sukardi (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; czas_i_warunki
 201266,Serenna the White (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
@@ -2311,11 +2256,9 @@ id,name,kind,status,categories
 201277,Shasa Abu Badr (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 201279,Sheela Na Gig (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
 201282,Shemti (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; karty_i_strefy; czas_i_warunki
-201283,Sheva Carr (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 201284,"Shiloh Marie, Vengeance (G5)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; czas_i_warunki
-201286,Sigrid Bekker (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 201287,Silas (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-201291,Sir Ralph Hamilton (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
+201291,Sir Ralph Hamilton (G3),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 201295,Skidmark (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 201298,Slag (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 201299,Smallpox Griet (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka; karty_i_strefy; czas_i_warunki
@@ -2329,7 +2272,6 @@ id,name,kind,status,categories
 201311,"Spleen, Georgio Gutterpunk (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 201312,Stanislava (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; walka; karty_i_strefy
 201314,Stefano Giovanni (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
-201315,Stephen Bateson (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 201319,Stravinsky (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; czas_i_warunki
 201320,Strohmann (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby
 201321,Styles Margs (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby
@@ -2356,7 +2298,6 @@ id,name,kind,status,categories
 201351,"Tears, The Dark Pierrot (G4)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 201352,"Tegyrius, Vizier (G2)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 201353,"Tegyrius, Vizier (G2 ADV)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
-201354,"Teresita, The Godmother (G3)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 201355,Tereza Rostas (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 201356,Terrell Harding (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 201358,Terrifisto (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; polityka_i_glosy; koszty_i_zasoby; czas_i_warunki
@@ -2387,7 +2328,6 @@ id,name,kind,status,categories
 201390,Tryphosa (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 201392,Tsunda (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; polityka_i_glosy
 201393,Tupdog (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
-201394,Tura Vaughn (G1),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
 201395,"Tusk, The Talebearer (G1)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy; czas_i_warunki
 201396,"Tusk, The Talebearer (G1 ADV)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 201397,Tyler (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
@@ -2408,12 +2348,10 @@ id,name,kind,status,categories
 201416,Uriel (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; karty_i_strefy
 201417,Urraca (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 201418,Uta Kovacs (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
-201420,Vaclav Petalengro (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 201421,"Valerius Maior, Hell's Fool (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 201422,"Valerius Maior, Hell's Fool (G4 ADV)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; koszty_i_zasoby; karty_i_strefy
 201423,Valkyrie (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; karty_i_strefy; czas_i_warunki
 201426,Vardar Vardarian (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
-201427,Vasantasena (G2),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy; karty_i_strefy; czas_i_warunki
 201428,"Vasilis, The Traitor of Don Cruez (G2)",crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 201429,Vasiliy Vasilevich (G5),crypt,CODE_DISCREPANCY,akcje_i_blok
 201430,Vasily (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby
@@ -2438,7 +2376,7 @@ id,name,kind,status,categories
 201454,"Virstania, The Great Mother (G3)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; czas_i_warunki
 201456,Vlad Tepes (G3),crypt,CODE_DISCREPANCY,akcje_i_blok; polityka_i_glosy
 201458,"Volker, The Puppet Prince (G2)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok
-201459,Volo (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+201459,Volo (G5),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 201460,Vulture (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; karty_i_strefy
 201462,Walker Grimes (G5),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; koszty_i_zasoby
 201463,Wamukota (G4),crypt,CODE_DISCREPANCY,akcje_i_blok
@@ -2459,7 +2397,7 @@ id,name,kind,status,categories
 201482,Xipe Totec (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 201484,Yavu Matebo (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 201485,Yazid Tamari (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; karty_i_strefy
-201486,Yazid Tamari (G3 ADV),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+201486,Yazid Tamari (G3 ADV),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 201487,Yitzak (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 201488,"Yong-Sun, Harmonist (G2)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 201489,"Yong-Sun, Harmonist (G2 ADV)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
@@ -2475,7 +2413,7 @@ id,name,kind,status,categories
 201506,Zhenga (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 201508,Zizi (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 201509,Zöe (G2),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
-201510,Zubeida (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
+201510,Zubeida (G5),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 201511,Zygodat (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 201516,Lady Vadislava (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
 201517,Lord Leopold Valdemar (G5),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; koszty_i_zasoby
@@ -2502,7 +2440,6 @@ id,name,kind,status,categories
 201641,The Guardian (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka; czas_i_warunki
 201642,Gwenllian Arwyn (G6),crypt,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby
 201643,Lady Scarlett Churchill (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu
-201644,Mickey Wheeler (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; walka
 201645,Mithras (G6),crypt,CODE_DISCREPANCY,akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
 201646,Oskar Anasov (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 201647,Queen Anne (G6),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; akcje_i_blok; polityka_i_glosy; koszty_i_zasoby
