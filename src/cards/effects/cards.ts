@@ -30,6 +30,25 @@ import type { CardRegistry } from "../types.ts";
 const libraryCards = Object.values((cardRegistry as unknown as CardRegistry).entries)
   .map((entry) => entry.card)
   .filter((card) => card.kind === "library");
+// Unconditional leading "Unique" on the card itself, plus separately
+// reviewed IDs where the same trait occurs after a requirement/type line.
+// Do not infer it from references to unique cards/titles or from a single
+// discipline mode: Fanfare for Elysium and Spirit Claws are mode-dependent.
+// The rest of each card's effects still have to be implemented.
+const latePrintedUniqueIds = new Set([
+  100025, 100028, 100071, 100167, 100306, 100346, 100418, 100499,
+  100514, 100635, 100663, 100890, 100955, 101002, 101078, 101117,
+  101135, 101176, 101297, 101345, 101400, 101446, 101638, 101658,
+  101660, 101676, 101677, 101690, 101789, 101826, 101863, 102076,
+  102184, 102203,
+]);
+const printedUniqueCards = new Set(libraryCards
+  .filter((card) => latePrintedUniqueIds.has(card.id) ||
+    /^\s*(?:(?:master|equipment|ally|retainer|event)\s*[:.]\s*)?unique\b/i.test(card.cardText))
+  .map((card) => card.id));
+const printedUniqueNames = new Set(libraryCards
+  .filter((card) => printedUniqueCards.has(card.id))
+  .map((card) => card.name));
 const masterClanRequirements = new Map(
   libraryCards
     .filter((card) => card.types.includes("Master") && card.clans.length > 0)
@@ -46442,15 +46461,16 @@ export function buildHandlerRegistry(): HandlerRegistry {
     // in the text. Multiple printed clan icons are alternatives. Preserve
     // any narrower explicit requirement rather than replacing it with the
     // registry's list; never mutate the exported specs shared by workers.
-    const effectiveSpec = printedClans
-      ? {
-          ...spec,
-          requiresClan: spec.requiresClan
-            ? printedClans.filter((clan) => spec.requiresClan!.includes(clan))
-            : [...printedClans],
-          requiresVampire: true,
-        }
-      : spec;
+    const effectiveSpec = {
+      ...spec,
+      ...(printedUniqueCards.has(spec.krcgId) ? { unique: true } : {}),
+      ...(printedClans ? {
+        requiresClan: spec.requiresClan
+          ? printedClans.filter((clan) => spec.requiresClan!.includes(clan))
+          : [...printedClans],
+        requiresVampire: true,
+      } : {}),
+    };
     // An empty intersection would correctly reject ordinary plays but be
     // indistinguishable from "no clan requirement" to cost queries (notably
     // when another card waives requirements). Fail fast rather than silently
@@ -46598,6 +46618,22 @@ export function buildHandlerRegistry(): HandlerRegistry {
     registry[bespoke.name] = bespoke;
   }
   for (const h of Object.values(registry)) backfillCentralQueries(h);
+  // Overlays replace compiled handlers and may omit the printed uniqueness
+  // metadata or its own-copy gate. Preserve their other windows and abilities.
+  // Compile-time uniqueness already handles ordinary compiled play options.
+  for (const name of printedUniqueNames) {
+    const handler = registry[name];
+    if (!handler || handler.isUnique) continue;
+    registry[name] = {
+      ...handler,
+      isUnique: true,
+      options: (card, ctx) => {
+        const options = handler.options(card, ctx);
+        return seatControlsCopy(ctx.state, ctx.seat, name)
+          ? options.filter((option) => option.kind !== "playCard") : options;
+      },
+    };
+  }
   for (const [name, clans] of masterClanRequirements) {
     const handler = registry[name];
     if (!handler) continue;

@@ -130,6 +130,46 @@ describe("Magic of the Smith (101143)", () => {
     expect(state.eventLog.some((e) => e.type === "LibraryShuffled")).toBe(true);
   });
 
+  it("does not find a second unique equipment you control, but permits a rival's copy", () => {
+    function search(owner: "Alice" | "Bob" | null) {
+      const { state, engine } = game("basic");
+      find(state, "V1").clan = "Osebo";
+      alice(state).library.push({ id: "shield", name: "Blood Shield" });
+      if (owner) state.seats[owner === "Alice" ? 0 : 1]!.minions[0]!.attached.push(inPlay("old-shield", "Blood Shield"));
+      resolveAction(engine, "play:Magic of the Smith:basic:V1:ms");
+      return { state, engine };
+    }
+    const own = search("Alice");
+    expect(own.engine.decision()!.options.some((o) => o.id.endsWith(":shield"))).toBe(false);
+    const rival = search("Bob");
+    expect(rival.engine.decision()!.options.some((o) => o.id.endsWith(":shield"))).toBe(true);
+    runTrace(rival.engine, [["Alice", "choice:Magic of the Smith:ms:searchEquip:shield"]]);
+    rival.engine.decision();
+    expect(alice(rival.state).contested?.some((c) => c.card.id === "shield")).toBe(true);
+    expect(rival.state.seats[1]!.contested?.some((c) => c.card.id === "old-shield")).toBe(true);
+  });
+
+  it("includes the equipment's printed clan when pricing a search choice", () => {
+    function search(pool: number) {
+      const { state, engine } = game("basic");
+      const bearer = find(state, "V1");
+      bearer.clan = "Osebo";
+      bearer.attached.push(inPlay("tax", "test", {
+        statics: { playCostMod: { amount: 1, pays: "pool", requiresClan: ["Osebo"], minions: "bearer" } },
+      }));
+      alice(state).pool = pool;
+      alice(state).library.push({ id: "shield", name: "Blood Shield" });
+      resolveAction(engine, "play:Magic of the Smith:basic:V1:ms");
+      return { state, engine };
+    }
+    expect(search(3).engine.decision()!.options.some((o) => o.id.endsWith(":shield"))).toBe(false);
+    const { state, engine } = search(4);
+    expect(engine.decision()!.options.some((o) => o.id.endsWith(":shield"))).toBe(true);
+    runTrace(engine, [["Alice", "choice:Magic of the Smith:ms:searchEquip:shield"]]);
+    expect(alice(state).pool).toBe(1);
+    expect(find(state, "V1").attached.some((p) => p.card.id === "shield")).toBe(true);
+  });
+
   it("superior is the +3 stealth version", () => {
     const { state, engine } = game("superior");
     runTrace(engine, [
@@ -192,6 +232,45 @@ describe("Vast Wealth (102092)", () => {
     expect(alice(state).pool).toBe(1);
   });
 
+  it("does not put a second copy of a unique equipment under the same controller", () => {
+    const { state, engine } = game();
+    find(state, "V1").clan = "Osebo";
+    find(state, "V1").attached.push(inPlay("old-shield", "Blood Shield"));
+    alice(state).library = [{ id: "shield", name: "Blood Shield" }];
+    const option = engine.decision()!.options.find((o) => o.id.startsWith("act:Vast Wealth:vw:equip:"));
+    expect(option).toBeDefined();
+    runTrace(engine, [["Alice", option!.id],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"]]);
+    expect(find(state, "V1").attached.filter((p) => p.card.name === "Blood Shield").map((p) => p.card.id)).toEqual(["old-shield"]);
+    expect(alice(state).ashHeap?.map((c) => c.id)).toContain("shield");
+    expect(alice(state).library.some((c) => c.id === "shield")).toBe(false);
+    expect(alice(state).pool).toBe(10);
+    expect(state.eventLog.some((e) => e.type === "LibraryShuffled")).toBe(true);
+  });
+
+  it("burns the first equipment when requirements fail instead of skipping to a later one", () => {
+    const { state, engine } = game();
+    find(state, "V1").clan = "Ventrue";
+    alice(state).library = [
+      { id: "other", name: "Conditioning" },
+      { id: "shield", name: "Blood Shield" },
+      { id: "gun", name: ".44 Magnum" },
+    ];
+    const option = engine.decision()!.options.find((o) => o.id.startsWith("act:Vast Wealth:vw:equip:"));
+    expect(option).toBeDefined();
+    runTrace(engine, [["Alice", option!.id],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"]]);
+    expect(alice(state).ashHeap?.map((c) => c.id)).toContain("shield");
+    expect(alice(state).library.map((c) => c.id).sort()).toEqual(["gun", "other"]);
+    expect(find(state, "V1").attached.some((p) => p.card.id === "gun")).toBe(false);
+    expect(alice(state).pool).toBe(10);
+    expect(state.eventLog.some((e) => e.type === "LibraryShuffled")).toBe(true);
+  });
+
   it("takes the FIRST equipment from the top — no choice at all", () => {
     const { state, engine } = game();
     const opt = engine
@@ -224,6 +303,7 @@ describe("Black Market Cache (102351)", () => {
       { id: "l2", name: "Assault Rifle" }, // non-unique
       { id: "l3", name: "Kali's Fang" }, // Unique — excluded
       { id: "l4", name: "Conditioning" }, // not equipment
+      { id: "l5", name: "Sword of Nuln" }, // newly recognised Unique — excluded
     );
     return { state, engine: new VtesEngine(state, testRegistry) };
   }
@@ -258,7 +338,7 @@ describe("Black Market Cache (102351)", () => {
     expect(entry?.stored?.map((c) => c.name)).toEqual([".44 Magnum", "Assault Rifle"]);
     expect(entry?.storedFaceUp).toBe(true);
     // Out of play means out of the library too.
-    expect(alice(state).library.map((c) => c.id).sort()).toEqual(["l3", "l4"]);
+    expect(alice(state).library.map((c) => c.id).sort()).toEqual(["l3", "l4", "l5"]);
     expect(state.eventLog.some((e) => e.type === "LibraryShuffled")).toBe(true);
   });
 

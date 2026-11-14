@@ -72,7 +72,8 @@ describe("The Bruisers (100259)", () => {
   it("reaches the PREY's location and not the predator's", () => {
     const { state, engine: make } = withAlly("The Bruisers", "br");
     state.seats[1]!.permanents.push(location("preyloc", "Alamut")); // Bob = prey
-    state.seats[2]!.permanents.push(location("predloc", "Alamut")); // Carol = predator
+    // Two Alamut copies would contest each other and leave play.
+    state.seats[2]!.permanents.push(location("predloc", "The Barrens")); // Carol = predator
     const engine = make();
     const ids = options(engine);
     expect(ids).toContain("act:The Bruisers:br:granted:br:burn:preyloc");

@@ -762,18 +762,23 @@ function searchEquipDeterministic(
 ): void {
   const seat = getSeat(ops.state, seatId);
   const bearer = findMinion(ops.state, minion);
-  const found = bearer
-    ? seat.library.find(
-        (c) =>
-          searchMatches(c, ops.registry, e.cardTypes, false) &&
-          (ops.registry[c.name]?.modesPlayableBy?.(bearer) ?? []).length > 0,
-      )
-    : undefined;
+  // Vast Wealth finds the first equipment, not the first one the bearer
+  // qualifies for. If it cannot legally be equipped, it is burned without
+  // cost; skipping it would incorrectly fetch a later card instead.
+  // https://www.vekn.net/forum/rules-questions/79883-enkidu-vast-wealth
+  const found = bearer ? seat.library.find((c) => searchMatches(c, ops.registry, e.cardTypes, false)) : undefined;
   if (found && bearer) {
+    const h = ops.registry[found.name]!;
+    const modes = h.modesPlayableBy?.(bearer) ?? [];
+    if (modes.length === 0 || (h.isUnique && seatControlsCopy(ops.state, seatId, found.name))) {
+      ops.emit({ type: "CardLeftZone", seat: seatId, cardId: found.id, name: found.name, zone: "library" });
+      ops.emit({ type: "CardBurned", seat: seatId, cardId: found.id, name: found.name });
+      ops.shuffleLibrary(seatId);
+      return;
+    }
     // "…requirements and cost apply as normal": priced and paid exactly as
     // an equip action would (docs/play-from-hand-design.md §4).
-    const h = ops.registry[found.name]!;
-    const mode = (h.modesPlayableBy?.(bearer) ?? [null])[0] ?? null;
+    const mode = modes[0] ?? null;
     const cost = playCostFor(
       ops.state,
       {
@@ -11176,16 +11181,20 @@ export function compileSpec(spec: CardSpec): CardHandler {
         if (!searchMatches(c, registry, eff.cardTypes, false)) continue;
         const h = registry[c.name]!;
         // "Requirements and cost apply as normal": a card this vampire
-        // could not equip with is not a legal find.
+        // could not equip with is not a legal find, including a unique card
+        // whose copy the searching Methuselah already controls.
         if (!bearer || (h.modesPlayableBy?.(bearer) ?? []).length === 0) continue;
+        if (h.isUnique && seatControlsCopy(state, frame.seat, c.name)) continue;
+        const mode = h.modesPlayableBy?.(bearer)?.[0] ?? null;
         const cost = playCostFor(
           state,
           {
             name: h.name,
             bloodCost: h.bloodCost,
             poolCost: h.poolCost ?? 0,
-            types: h.costTypes?.(null, undefined) ?? [],
-            requires: h.requiresDisciplines?.(null, undefined) ?? [],
+            types: h.costTypes?.(mode, undefined) ?? [],
+            requires: h.requiresDisciplines?.(mode, undefined) ?? [],
+            requiresClans: h.requiresClans?.() ?? [],
           },
           bearer,
           null,
