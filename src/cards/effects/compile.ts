@@ -259,9 +259,17 @@ export function meetsRequirements(m: MinionState, spec: CardSpec): boolean {
   if (spec.requiresNonSterile && m.sterile === true) return false;
   if (spec.requiresBlackHand && m.blackHand !== true) return false;
   if (spec.requiresSeraph && m.seraph !== true) return false;
+  if (spec.requiresReady && !isReady(m)) return false;
   if (spec.requiresSect && (m.sect === null || !spec.requiresSect.includes(m.sect))) {
     return false;
   }
+  // Mozambique Allure: titled Laibon OR any non-titled vampire. An ally
+  // with no title does not satisfy the second branch. This is deliberately
+  // separate from requiresSect, which would incorrectly require both.
+  if (spec.requiresSectOrUntitled && (
+    m.kind !== "vampire" ||
+    (m.title !== null && (m.sect === null || !spec.requiresSectOrUntitled.includes(m.sect)))
+  )) return false;
   if (spec.requiresClan && (m.clan === null || !spec.requiresClan.includes(m.clan))) {
     return false;
   }
@@ -1717,6 +1725,11 @@ function compileActionCard(spec: CardSpec): CardHandler {
         if (!canRepeatAction(ctx.state, m, spec.name)) continue;
         // "Requires a prince or justicar" / "…an Anarch" etc.
         if (!meetsRequirements(m, spec)) continue;
+        // Mozambique Allure's Laibon branch MUST draw a crypt card, so it
+        // cannot be announced with an empty crypt. The alternative branch
+        // (an untitled non-Laibon) does not draw and remains available.
+        if (spec.requiresCryptForSect && m.sect !== null &&
+            spec.requiresCryptForSect.includes(m.sect) && seat.crypt.length === 0) continue;
         for (const mode of modesFor(spec, m)) {
           if (!canPlayMode(m, mode, spec)) continue;
           const bleeds = mode.effects.some((e) => e.kind === "actionBleed");

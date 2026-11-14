@@ -368,8 +368,8 @@
   {
     "id": 100062,
     "name": "Ancestor's Insight",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Jest jedynie basic aus modifyBleed; brak redukcji bleed jako reakcji i rozdzielenia od superior modifier. Tekst: src/cards/registry.json, ID 100062; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Jest jedynie basic aus modifyBleed; brak redukcji bleed jako reakcji i rozdzielenia od superior modifier. Tekst: src/cards/registry.json, ID 100062; implementacja: src/cards/effects/cards.ts. Aktualizacja: dodano wymaganie grającego Laibon (tests/cards/laibon-window-requirements.test.ts); wcześniejsza wzmianka o jego braku jest nieaktualna. Dla wymogu ready sprawdzany jest również torpor i torporPending. Pozostałe warunki, timing, tryby i efekty wymagają dalszej pracy."
   },
   {
     "id": 100063,
@@ -914,8 +914,8 @@
   {
     "id": 100153,
     "name": "Bestial Vengeance",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Tylko maneuver zamiast wyboru retainera, efektu Frenzy, obrażeń 1/2, limitu combat i wymogu Laibon. Źródła: src/cards/registry.json ID 100153; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Tylko maneuver zamiast wyboru retainera, efektu Frenzy, obrażeń 1/2, limitu combat i wymogu Laibon. Źródła: src/cards/registry.json ID 100153; src/cards/effects/cards.ts i compile.ts. Aktualizacja: dodano wymaganie grającego Laibon (tests/cards/laibon-window-requirements.test.ts); wcześniejsza wzmianka o jego braku jest nieaktualna. Pozostałe warunki, timing, tryby i efekty wymagają dalszej pracy."
   },
   {
     "id": 100154,
@@ -4190,8 +4190,8 @@
   {
     "id": 100699,
     "name": "Familial Bond",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec daje wyłącznie intercept, brak warunków celu/Laibon, opcji zakończenia akcji i warunkowego combat. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec daje wyłącznie intercept, brak warunków celu/Laibon, opcji zakończenia akcji i warunkowego combat. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: dodano wymaganie grającego Laibon (tests/cards/laibon-window-requirements.test.ts); wcześniejsza wzmianka o jego braku jest nieaktualna. Pozostałe warunki, timing, tryby i efekty wymagają dalszej pracy."
   },
   {
     "id": 100700,
@@ -7484,8 +7484,8 @@
   {
     "id": 101248,
     "name": "Mozambique Allure",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action daje tylko stealth; brak wyboru pomiędzy dobraniem crypt a zmianą sekty i warunkowym unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Uzupełnienie analizy statycznej: brak także kontroli alternatywnego wymogu Laibon albo nietytułowanego wampira; nie należy zastępować go bezwarunkowym requiresSect. Bez scenariusza obu stron tej alternatywy."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action daje tylko stealth; brak wyboru pomiędzy dobraniem crypt a zmianą sekty i warunkowym unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Uzupełnienie analizy statycznej: brak także kontroli alternatywnego wymogu Laibon albo nietytułowanego wampira; nie należy zastępować go bezwarunkowym requiresSect. Bez scenariusza obu stron tej alternatywy. Aktualizacja: kontrola aktora obsługuje alternatywę Laibon lub nietytułowany wampir oraz osobny zakaz zagrania Laibonem z pustym cryptem (tests/cards/laibon-window-requirements.test.ts). Wcześniejsza uwaga o braku tych kontroli jest historyczna. Efekty, tytuły niewspierane przez model oraz inne interakcje pozostają otwarte."
   },
   {
     "id": 101249,
@@ -10094,8 +10094,8 @@
   {
     "id": 101683,
     "name": "Savannah Runner",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Basic intercept nie wymaga Laibon i nie ma kosztu 1 blood; brak superior płatnego lock/unlock innego Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Basic intercept nie wymaga Laibon i nie ma kosztu 1 blood; brak superior płatnego lock/unlock innego Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: dodano wymaganie grającego Laibon (tests/cards/laibon-window-requirements.test.ts); wcześniejsza wzmianka o jego braku jest nieaktualna. Pozostałe warunki, timing, tryby i efekty wymagają dalszej pracy."
   },
   {
     "id": 101684,
@@ -11276,8 +11276,8 @@
   {
     "id": 101880,
     "name": "Strange Day",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Modifier daje stealth zamiast zakazu block przez vampire, limitu raz na grę i timingu announce; brak wymogu Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier daje stealth zamiast zakazu block przez vampire, limitu raz na grę i timingu announce; brak wymogu Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: dodano wymaganie grającego Laibon (tests/cards/laibon-window-requirements.test.ts); wcześniejsza wzmianka o jego braku jest nieaktualna. Pozostałe warunki, timing, tryby i efekty wymagają dalszej pracy."
   },
   {
     "id": 101881,
@@ -11750,8 +11750,8 @@
   {
     "id": 101959,
     "name": "Terra Incognita",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Reaction daje intercept zamiast redukcji bleed lub cancel redirect za blood z wymaganiami Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Reaction daje intercept zamiast redukcji bleed lub cancel redirect za blood z wymaganiami Laibon. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: dodano wymaganie grającego Laibon (tests/cards/laibon-window-requirements.test.ts); wcześniejsza wzmianka o jego braku jest nieaktualna. Dla wymogu ready sprawdzany jest również torpor i torporPending. Pozostałe warunki, timing, tryby i efekty wymagają dalszej pracy."
   },
   {
     "id": 101960,
@@ -11846,8 +11846,8 @@
   {
     "id": 101975,
     "name": "Those Who Endure Judge",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Modifier daje stealth zamiast votes i warunkowej opłaty młodszego blockera; brak wymogu Laibon capacity >4 i timingu announce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier daje stealth zamiast votes i warunkowej opłaty młodszego blockera; brak wymogu Laibon capacity >4 i timingu announce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: dodano wymaganie grającego Laibon (tests/cards/laibon-window-requirements.test.ts); wcześniejsza wzmianka o jego braku jest nieaktualna. Dodano również próg capacity powyżej 4. Pozostałe warunki, timing, tryby i efekty wymagają dalszej pracy."
   },
   {
     "id": 101976,

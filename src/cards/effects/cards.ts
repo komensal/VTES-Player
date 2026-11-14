@@ -20832,6 +20832,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100153,
     name: "Bestial Vengeance",
     cardType: "combat",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -32755,6 +32757,9 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100062,
     name: "Ancestor's Insight",
     cardType: "modifierOrReaction",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
+    requiresReady: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -33581,6 +33586,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100699,
     name: "Familial Bond",
     cardType: "reaction",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 1,
     usable: [],
     modes: [
@@ -34362,6 +34369,9 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101248,
     name: "Mozambique Allure",
     cardType: "action",
+    requiresSectOrUntitled: ["laibon"],
+    requiresCryptForSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -35023,6 +35033,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101683,
     name: "Savannah Runner",
     cardType: "reaction",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -35243,6 +35255,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101880,
     name: "Strange Day",
     cardType: "actionModifier",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
     bloodCost: 2,
     usable: [],
     modes: [
@@ -35444,6 +35458,9 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101959,
     name: "Terra Incognita",
     cardType: "reaction",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
+    requiresReady: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -35489,6 +35506,9 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101975,
     name: "Those Who Endure Judge",
     cardType: "actionModifier",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
+    requiresCapacity: 5,
     bloodCost: 1,
     usable: [],
     modes: [

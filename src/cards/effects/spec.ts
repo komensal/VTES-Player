@@ -4613,6 +4613,17 @@ export interface CardSpec {
   /** "Requires an Anarch" / "…a Sabbat vampire" — the playing vampire's
    *  sect must be one of these. */
   requiresSect?: Sect[];
+  /** "Requires a Laibon or non-titled vampire" (Mozambique Allure):
+   *  either a listed sect or an untitled vampire, or both. This does not
+   *  make the sect unconditionally required for requiresSects queries. */
+  requiresSectOrUntitled?: Sect[];
+  /** A printed requirement for a ready playing minion, including in modifier
+   *  windows where an acting vampire may otherwise be in torpor. */
+  requiresReady?: boolean;
+  /** Action is unavailable to actors of these sects when their controller's
+   *  crypt is empty (Mozambique Allure's mandatory draw). Checked in action
+   *  enumeration, not the minion-only modesPlayableBy query. */
+  requiresCryptForSect?: Sect[];
   /** "Requires a Ravnos" etc. — the playing vampire's clan. */
   requiresClan?: string[];
   /** "Only usable by a … minion WITH A GUN" (Suppressing Fire) — the

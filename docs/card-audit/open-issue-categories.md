@@ -13,7 +13,7 @@ To powtarzalne, zgrubne grupowanie po słowach w tekście evidence, a nie potwie
 | `polityka_i_glosy` | 358 |
 | `koszty_i_zasoby` | 873 |
 | `karty_i_strefy` | 1572 |
-| `czas_i_warunki` | 716 |
+| `czas_i_warunki` | 719 |
 | `inne_do_recznego_przegladu` | 6 |
 
 Wykaz per karta: `open-issue-categories.csv`; dowody i ograniczenia: `manual-findings.json`. Regeneracja: `python3 scripts/categorize-card-audit.py`.
