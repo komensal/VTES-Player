@@ -14246,8 +14246,8 @@
   {
     "id": 200011,
     "name": "Adana de Sforza (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt ma puste statics; importer parsuje tytuł Inner Circle, ale nie ma +2 bleed ani zniżki 1 blood na combat cards. Nie znaleziono osobnego handlera Adany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +2 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): flatCrypt ma puste statics; importer parsuje tytuł Inner Circle, ale nie ma +2 bleed ani zniżki 1 blood na combat cards. Nie znaleziono osobnego handlera Adany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200012,
@@ -14264,8 +14264,8 @@
   {
     "id": 200014,
     "name": "Adonai (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt ma puste statics; brak osobnego handlera rush na ready Camarilla, +1 strength przeciw Tremere oraz +1 bleed. Importer uwzględnia Sabbat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): flatCrypt ma puste statics; brak osobnego handlera rush na ready Camarilla, +1 strength przeciw Tremere oraz +1 bleed. Importer uwzględnia Sabbat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200015,
@@ -14276,8 +14276,8 @@
   {
     "id": 200016,
     "name": "Adrianne (G1)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt ma puste statics, importer daje bazowy bleedAmount 1 i nie parsuje drukowanego +1 bleed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: +1 bleed. tests/cards/crypt-printed-statics-audit.test.ts sprawdza import i właściwą mechanikę w grze, w tym wartości walki lub kredyt. Weryfikacja celowana, nie dowód poprawności wszystkich interakcji."
   },
   {
     "id": 200017,
@@ -14330,8 +14330,8 @@
   {
     "id": 200025,
     "name": "Aidan Lyle (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty flatCrypt nie daje optional press raz na combat; Camarilla jest parsowana. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: opcjonalny press co combat. tests/cards/crypt-printed-statics-audit.test.ts sprawdza import i właściwą mechanikę w grze, w tym wartości walki lub kredyt. Weryfikacja celowana, nie dowód poprawności wszystkich interakcji."
   },
   {
     "id": 200026,
@@ -14360,8 +14360,8 @@
   {
     "id": 200030,
     "name": "Aisha az-Zahra (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm nie daje +1 bleed ani płatnych votes według liczby ready Anarch w polling. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm nie daje +1 bleed ani płatnych votes według liczby ready Anarch w polling. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200031,
@@ -14474,8 +14474,8 @@
   {
     "id": 200049,
     "name": "Alexandra (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez +2 bleed i raz na turę lock/unlock innego ready Toreador; Inner Circle jest parsowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +2 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm bez +2 bleed i raz na turę lock/unlock innego ready Toreador; Inner Circle jest parsowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200050,
@@ -14540,8 +14540,8 @@
   {
     "id": 200060,
     "name": "Alonso Petrodon (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez +1 bleed i unpreventable damage anarchom po udanym bleed; Nosferatu Justicar jest parsowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm bez +1 bleed i unpreventable damage anarchom po udanym bleed; Nosferatu Justicar jest parsowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200061,
@@ -14558,8 +14558,8 @@
   {
     "id": 200063,
     "name": "Alvaro, The Scion of Angelica (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez +1 bleed oraz gain 2 blood po abstention w political action, również w torpor; tytuł Archbishop importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm bez +1 bleed oraz gain 2 blood po abstention w political action, również w torpor; tytuł Archbishop importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200064,
@@ -14594,8 +14594,8 @@
   {
     "id": 200069,
     "name": "Ambrogino Giovanni (G2 ADV)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez +1 bleed, opcji usunięcia 7 kart ash heap za 2 blood w unlock, Red List oraz merged +1 stealth. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm bez +1 bleed, opcji usunięcia 7 kart ash heap za 2 blood w unlock, Red List oraz merged +1 stealth. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200070,
@@ -14654,8 +14654,8 @@
   {
     "id": 200079,
     "name": "Anatole, Prophet of Gehenna (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez +1 intercept i opcji podglądu/shuffle top 5 library w master phase. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 intercept. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm bez +1 intercept i opcji podglądu/shuffle top 5 library w master phase. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200080,
@@ -14780,8 +14780,8 @@
   {
     "id": 200100,
     "name": "Ankla Hotep (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty flatCrypt bez zniżki rescue z torpor i optional press co combat. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: opcjonalny press co combat. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty flatCrypt bez zniżki rescue z torpor i optional press co combat. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200101,
@@ -14846,8 +14846,8 @@
   {
     "id": 200111,
     "name": "Antoinette Dubois (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez zakazu block przez Toreador/Toreador antitribu i drukowanego -1 intercept. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: -1 intercept. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm bez zakazu block przez Toreador/Toreador antitribu i drukowanego -1 intercept. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200112,
@@ -14930,8 +14930,8 @@
   {
     "id": 200125,
     "name": "Appolonius (G1)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "flatCrypt daje +1 bleed, importer tytuł primogen, lecz brak optional press raz na combat. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: opcjonalny press co combat. tests/cards/crypt-printed-statics-audit.test.ts sprawdza import i właściwą mechanikę w grze, w tym wartości walki lub kredyt. Weryfikacja celowana, nie dowód poprawności wszystkich interakcji."
   },
   {
     "id": 200126,
@@ -14990,8 +14990,8 @@
   {
     "id": 200135,
     "name": "Arika (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm nie daje +2 bleed ani wyboru prey pomiędzy burn pool a location w unlock; Inner Circle importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +2 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm nie daje +2 bleed ani wyboru prey pomiędzy burn pool a location w unlock; Inner Circle importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200136,
@@ -15110,8 +15110,8 @@
   {
     "id": 200155,
     "name": "Aziz, Dammar of Istanbul (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusty cryptPerm bez +1 strength, status counters i głosów za nie; importer nie odczytuje 2 titled votes po kropce ani Blood cursed. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusty cryptPerm bez +1 strength, status counters i głosów za nie; importer nie odczytuje 2 titled votes po kropce ani Blood cursed. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200156,
@@ -15122,8 +15122,8 @@
   {
     "id": 200157,
     "name": "Baba Yaga, the Iron Hag (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez +1 strength, +1 bleed, unlock po recruit/employ i płatnego aggravated hand strike. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength, +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm bez +1 strength, +1 bleed, unlock po recruit/employ i płatnego aggravated hand strike. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200158,
@@ -15182,8 +15182,8 @@
   {
     "id": 200167,
     "name": "The Baron (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusty cryptPerm nie daje +1 bleed ani podglądu rąk kontrolerów ready Giovanni; importer nie odczytuje 2 titled votes w treści. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusty cryptPerm nie daje +1 bleed ani podglądu rąk kontrolerów ready Giovanni; importer nie odczytuje 2 titled votes w treści. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200168,
@@ -15296,8 +15296,8 @@
   {
     "id": 200186,
     "name": "Bela (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty flatCrypt nie daje -1 stealth ani zakazu political actions. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: -1 stealth. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty flatCrypt nie daje -1 stealth ani zakazu political actions. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200187,
@@ -15512,14 +15512,14 @@
   {
     "id": 200222,
     "name": "Bruce de Guy (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez +1 bleed i opcji blood przy ogłaszaniu political action wykluczającej głosy Camarilla; cardinal importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm bez +1 bleed i opcji blood przy ogłaszaniu political action wykluczającej głosy Camarilla; cardinal importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200223,
     "name": "Brunhilde (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez +1 strength i warunkowego +1 bleed przeciw kontrolerowi ready Ventrue. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm bez +1 strength i warunkowego +1 bleed przeciw kontrolerowi ready Ventrue. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200224,
@@ -15542,8 +15542,8 @@
   {
     "id": 200227,
     "name": "Bulscu (G5 ADV)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez +1 strength, stealth przy akcji na location/equipment i merged Prince of Budapest. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm bez +1 strength, stealth przy akcji na location/equipment i merged Prince of Budapest. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200228,
@@ -15644,8 +15644,8 @@
   {
     "id": 200244,
     "name": "Carlak (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty flatCrypt bez blood za Methuselah głosujących wyłącznie przeciw referendum oraz optional press; Prince of Prague importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: opcjonalny press co combat. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty flatCrypt bez blood za Methuselah głosujących wyłącznie przeciw referendum oraz optional press; Prince of Prague importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200245,
@@ -15668,8 +15668,8 @@
   {
     "id": 200248,
     "name": "Carna, The Princess Witch (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusty cryptPerm bez +1 intercept i opcji burn retainera za 2 blood w unlock; primogen importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 intercept. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusty cryptPerm bez +1 intercept i opcji burn retainera za 2 blood w unlock; primogen importowany. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
   },
   {
     "id": 200249,
@@ -15884,8 +15884,8 @@
   {
     "id": 200284,
     "name": "Cock Robin (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec (requiresReady nie daje statics) bez +1 strength i unlock raz na turę po udanej akcji wymagającej Animalism; Nosferatu Justicar importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec (requiresReady nie daje statics) bez +1 strength i unlock raz na turę po udanej akcji wymagającej Animalism; Nosferatu Justicar importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200285,
@@ -15926,8 +15926,8 @@
   {
     "id": 200291,
     "name": "Cornelius Ottavio (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez stałego +1 bleed i dodatkowego +1 bleed przeciw kontrolerowi ready non-Camarilla. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez stałego +1 bleed i dodatkowego +1 bleed przeciw kontrolerowi ready non-Camarilla. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200292,
@@ -15944,8 +15944,8 @@
   {
     "id": 200294,
     "name": "Count Jocalo (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed, +1 hand size oraz podglądu ręki po discard phase action predatora lub prey. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed, +1 hand size oraz podglądu ręki po discard phase action predatora lub prey. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200295,
@@ -16022,8 +16022,8 @@
   {
     "id": 200307,
     "name": "Cyscek (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 stealth i gain Edge/burn pool po zagraniu Gehenna przez dowolnego Methuselah. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 stealth. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 stealth i gain Edge/burn pool po zagraniu Gehenna przez dowolnego Methuselah. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200308,
@@ -16202,8 +16202,8 @@
   {
     "id": 200337,
     "name": "DeSalle (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 stealth i możliwości blood za intercept dla Sabbat podczas akcji DeSalle. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 stealth. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 stealth i możliwości blood za intercept dla Sabbat podczas akcji DeSalle. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200338,
@@ -16412,8 +16412,8 @@
   {
     "id": 200372,
     "name": "Doyle Fincher (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i dwóch przesunięć blood w discard phase, gdy ready vampire prey nie jest pełny. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i dwóch przesunięć blood w discard phase, gdy ready vampire prey nie jest pełny. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200373,
@@ -16490,8 +16490,8 @@
   {
     "id": 200385,
     "name": "The Dracon (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Spec daje +1 bleed, ale brak +2 strength, zniżki Vicissitude i dodatkowego damage lub steal z ranged strikes; Flight nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +2 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Spec daje +1 bleed, ale brak +2 strength, zniżki Vicissitude i dodatkowego damage lub steal z ranged strikes; Flight nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200386,
@@ -16550,8 +16550,8 @@
   {
     "id": 200395,
     "name": "Dylan (G2 ADV)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez +1 strength, +1 stealth przy bleed, Red List i importu Infernal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez +1 strength, +1 stealth przy bleed, Red List i importu Infernal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200396,
@@ -16724,8 +16724,8 @@
   {
     "id": 200424,
     "name": "Enkidu, The Noah (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +2 strength, directed rush, delayed unlock po employ retainer i zakazu equipment; brak Red List. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +2 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +2 strength, directed rush, delayed unlock po employ retainer i zakazu equipment; brak Red List. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200425,
@@ -16796,8 +16796,8 @@
   {
     "id": 200436,
     "name": "Esau (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez stałego +1 bleed i płatnego rzutu monetą o dodatkowy bleed przy deklaracji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez stałego +1 bleed i płatnego rzutu monetą o dodatkowy bleed przy deklaracji. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200437,
@@ -16880,8 +16880,8 @@
   {
     "id": 200450,
     "name": "Ezmerelda (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez +1 bleed i opcji remove self za gain 11 pool w unlock; importer nie rozpoznaje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez +1 bleed i opcji remove self za gain 11 pool w unlock; importer nie rozpoznaje 2 titled votes po kropce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200451,
@@ -16910,8 +16910,8 @@
   {
     "id": 200455,
     "name": "Fakir al Sidi (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed, +1 strength, optional press oraz burn 3 blood w polling za fail referendum. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed, +1 strength, opcjonalny press co combat. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed, +1 strength, optional press oraz burn 3 blood w polling za fail referendum. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200456,
@@ -16982,8 +16982,8 @@
   {
     "id": 200467,
     "name": "Fidus, The Shrunken Beast (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Spec daje stały stealth zamiast wyłącznie dla undirected actions, brak -1 strength; Flight i Tremere slave nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: -1 strength. Poprawiono też +1 stealth tylko dla undirected zamiast stałego; reguły Tremere slave nadal otwarte. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Spec daje stały stealth zamiast wyłącznie dla undirected actions, brak -1 strength; Flight i Tremere slave nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200468,
@@ -17150,8 +17150,8 @@
   {
     "id": 200495,
     "name": "Gaspare Giovanni (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength i opcji 2 blood za przesunięcie vampire z ash heap na top crypt w master phase. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 strength i opcji 2 blood za przesunięcie vampire z ash heap na top crypt w master phase. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200496,
@@ -17480,8 +17480,8 @@
   {
     "id": 200550,
     "name": "Gustav Breidenstein (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i lock za 5 votes podczas polling; Prince of Berlin importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i lock za 5 votes podczas polling; Prince of Berlin importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200551,
@@ -17588,8 +17588,8 @@
   {
     "id": 200568,
     "name": "Hardestadt (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed, +2 strength i wymuszonego yield tytułu przez contestującego vampire; Ventrue Inner Circle importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed, +2 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed, +2 strength i wymuszonego yield tytułu przez contestującego vampire; Ventrue Inner Circle importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200569,
@@ -17618,8 +17618,8 @@
   {
     "id": 200573,
     "name": "Harrod (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +2 bleed i podglądu karty w uncontrolled prey; Nosferatu Inner Circle importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +2 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +2 bleed i podglądu karty w uncontrolled prey; Nosferatu Inner Circle importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200574,
@@ -17822,8 +17822,8 @@
   {
     "id": 200607,
     "name": "Howler (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje +1 strength, lecz brak optional maneuver i zakazu weapons; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: opcjonalny maneuver co combat. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje +1 strength, lecz brak optional maneuver i zakazu weapons; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200608,
@@ -17846,8 +17846,8 @@
   {
     "id": 200611,
     "name": "Huitzilopochtli (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez +1 bleed i opcji 1 pool za dodatkowe master phase action przy ready; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowany niemerged Infernal importowany, wybór odblokowania za pool testowany w crypt-infernal.test.ts; pozostałe problemy nadal otwarte. Historyczna analiza sprzed poprawki Infernal: Pusta spec bez +1 bleed i opcji 1 pool za dodatkowe master phase action przy ready; Infernal nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200612,
@@ -18068,8 +18068,8 @@
   {
     "id": 200648,
     "name": "Ivan Krenyenko (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength i wyszukania non-location equipment w unlock przy ready. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 strength i wyszukania non-location equipment w unlock przy ready. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200649,
@@ -18092,8 +18092,8 @@
   {
     "id": 200652,
     "name": "Jack (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 strength i lock za zniżkę location; Torrance Circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 strength i lock za zniżkę location; Torrance Circle i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200653,
@@ -18110,8 +18110,8 @@
   {
     "id": 200655,
     "name": "Jack Drake (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength i płatnej zmiany młodszego vampire na Anarch przy wejściu z uncontrolled. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 strength i płatnej zmiany młodszego vampire na Anarch przy wejściu z uncontrolled. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200656,
@@ -18158,8 +18158,8 @@
   {
     "id": 200663,
     "name": "Jacob Fermor (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 bleed Jacobowi zamiast własnym werewolves przy ready; brak optional press. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: opcjonalny press co combat. Usunięto nieprawidłowe +1 bleed Jacoba; bonus dla jego werewolves pozostaje otwarty. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Spec daje +1 bleed Jacobowi zamiast własnym werewolves przy ready; brak optional press. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200664,
@@ -18182,8 +18182,8 @@
   {
     "id": 200667,
     "name": "Jalan-Aajav (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez płatnego potraktowania aggravated damage jako normal raz na rundę i optional press; Black Hand i Seraph nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: opcjonalny press co combat. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez płatnego potraktowania aggravated damage jako normal raz na rundę i optional press; Black Hand i Seraph nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200668,
@@ -18260,8 +18260,8 @@
   {
     "id": 200680,
     "name": "Javier Montoya (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i zniżki blood przy rescue z torpor; Prince of Barcelona importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i zniżki blood przy rescue z torpor; Prince of Barcelona importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200681,
@@ -18440,8 +18440,8 @@
   {
     "id": 200710,
     "name": "Joe \"Boot\" Hill (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength, directed rush +1 stealth na werewolf i optional maneuver w tym combat; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 strength, directed rush +1 stealth na werewolf i optional maneuver w tym combat; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200711,
@@ -18524,8 +18524,8 @@
   {
     "id": 200724,
     "name": "Joseph O'Grady (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength i blood za 1 vote podczas referendum. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 strength i blood za 1 vote podczas referendum. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200725,
@@ -18590,14 +18590,14 @@
   {
     "id": 200735,
     "name": "Julian Sanders (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez optional press co combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: opcjonalny press co combat. tests/cards/crypt-printed-statics-audit.test.ts sprawdza import i właściwą mechanikę w grze, w tym wartości walki lub kredyt. Weryfikacja celowana, nie dowód poprawności wszystkich interakcji."
   },
   {
     "id": 200736,
     "name": "Julio Martinez (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength i płatnego intercept przy próbie block Camarilla; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 strength i płatnego intercept przy próbie block Camarilla; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200737,
@@ -18704,8 +18704,8 @@
   {
     "id": 200754,
     "name": "Karif al Numair (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed, +1 strength i lock/unlock innego ready Black Hand w swojej turze; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed, +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed, +1 strength i lock/unlock innego ready Black Hand w swojej turze; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200755,
@@ -18866,8 +18866,8 @@
   {
     "id": 200781,
     "name": "Khurshid (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez drukowanego +2 strength. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: +2 strength. tests/cards/crypt-printed-statics-audit.test.ts sprawdza import i właściwą mechanikę w grze, w tym wartości walki lub kredyt. Weryfikacja celowana, nie dowód poprawności wszystkich interakcji."
   },
   {
     "id": 200782,
@@ -18920,8 +18920,8 @@
   {
     "id": 200790,
     "name": "Konrad Fleischer (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez traktowania 1 aggravated damage jako normal raz na rundę i optional press co combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: opcjonalny press co combat. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez traktowania 1 aggravated damage jako normal raz na rundę i optional press co combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200791,
@@ -18950,8 +18950,8 @@
   {
     "id": 200795,
     "name": "Kurt Densch (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 intercept i podglądu top library oraz płatnego odłożenia na spód w unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 intercept. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 intercept i podglądu top library oraz płatnego odłożenia na spód w unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200796,
@@ -19010,8 +19010,8 @@
   {
     "id": 200805,
     "name": "Lady Zara Slatikov (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez optional press co combat i directed rush na Baali; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: opcjonalny press co combat. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez optional press co combat i directed rush na Baali; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200806,
@@ -19070,8 +19070,8 @@
   {
     "id": 200815,
     "name": "Laszlo Mirac (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i wykluczenia młodszego vampire z głosowania w referendum Laszlo; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i wykluczenia młodszego vampire z głosowania w referendum Laszlo; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200816,
@@ -19106,8 +19106,8 @@
   {
     "id": 200821,
     "name": "Lazarus (G1 ADV)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez optional maneuver co combat i płatnego press to continue raz na combat przy merged; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: opcjonalny maneuver co combat. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez optional maneuver co combat i płatnego press to continue raz na combat przy merged; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200822,
@@ -19118,8 +19118,8 @@
   {
     "id": 200823,
     "name": "Lazverinus, Thrall of Lambach (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +2 strength; Archbishop of Houston importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: +2 strength. tests/cards/crypt-printed-statics-audit.test.ts sprawdza import i właściwą mechanikę w grze, w tym wartości walki lub kredyt. Weryfikacja celowana, nie dowód poprawności wszystkich interakcji."
   },
   {
     "id": 200824,
@@ -19136,8 +19136,8 @@
   {
     "id": 200826,
     "name": "Leandro (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +2 bleed i wyboru pool lub utraty transfers przez innych Methuselah w unlock; Malkavian Inner Circle importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +2 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +2 bleed i wyboru pool lub utraty transfers przez innych Methuselah w unlock; Malkavian Inner Circle importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200827,
@@ -19316,8 +19316,8 @@
   {
     "id": 200856,
     "name": "Lord Tremere (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +2 bleed, +1 intercept, zniżki tha i lock/unlock innego ready Tremere/Tremere antitribu w minion phase. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +2 bleed, +1 intercept. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +2 bleed, +1 intercept, zniżki tha i lock/unlock innego ready Tremere/Tremere antitribu w minion phase. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200857,
@@ -19406,8 +19406,8 @@
   {
     "id": 200871,
     "name": "Lucian, the Perfect (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +3 bleed, kosztu blood/life strike przeciwnika i jego opcji nie wykonywać strike. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +3 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +3 bleed, kosztu blood/life strike przeciwnika i jego opcji nie wykonywać strike. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200872,
@@ -19628,14 +19628,14 @@
   {
     "id": 200908,
     "name": "Mambo Jeanne (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i 2 environmental damage przeciwnikowi podczas normal strike resolution przy close. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i 2 environmental damage przeciwnikowi podczas normal strike resolution przy close. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200909,
     "name": "Marcel de Breau (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i gain pool po zagraniu Gehenna przy Edge; Archbishop of Paris importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i gain pool po zagraniu Gehenna przy Edge; Archbishop of Paris importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200910,
@@ -19718,8 +19718,8 @@
   {
     "id": 200923,
     "name": "Maria Stone (G3 ADV)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez -1 strength poza merged oraz superior Spiritus przy merged; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: -1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez -1 strength poza merged oraz superior Spiritus przy merged; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200924,
@@ -19832,8 +19832,8 @@
   {
     "id": 200942,
     "name": "Marthe Dizier (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i blood za odzyskanie karty zagranej w combat po jego końcu; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i blood za odzyskanie karty zagranej w combat po jego końcu; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 200943,
@@ -19880,8 +19880,8 @@
   {
     "id": 200950,
     "name": "Masika (G1)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i opcjonalnego unlock w dowolnym discard phase; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i opcjonalnego unlock w dowolnym discard phase; primogen importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200951,
@@ -19916,20 +19916,20 @@
   {
     "id": 200956,
     "name": "Matasuntha (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +2 strength i opcjonalnego gain pool po opuszczeniu ready przez przeciwnika w combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +2 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +2 strength i opcjonalnego gain pool po opuszczeniu ready przez przeciwnika w combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200957,
     "name": "Matata (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 strength, ale brak optional press co combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: opcjonalny press co combat. tests/cards/crypt-printed-statics-audit.test.ts sprawdza import i właściwą mechanikę w grze, w tym wartości walki lub kredyt. Weryfikacja celowana, nie dowód poprawności wszystkich interakcji."
   },
   {
     "id": 200958,
     "name": "Mateusz Gryzbowsky (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +2 strength i -1 damage własnych strikes przy long range. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +2 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +2 strength i -1 damage własnych strikes przy long range. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200959,
@@ -20030,8 +20030,8 @@
   {
     "id": 200975,
     "name": "Menele (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i przesunięcia 2 blood Menele do młodszego uncontrolled vampire w unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i przesunięcia 2 blood Menele do młodszego uncontrolled vampire w unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200976,
@@ -20096,8 +20096,8 @@
   {
     "id": 200986,
     "name": "Miguel Cordovera (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i opcji predatora za pool unlock i kontrolowania Miguela do końca jego minion phase. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i opcji predatora za pool unlock i kontrolowania Miguela do końca jego minion phase. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 200987,
@@ -20216,8 +20216,8 @@
   {
     "id": 201006,
     "name": "Montano (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez +1 bleed, zniżki Obtenebration i blood za +1 stealth własnemu minionowi; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez +1 bleed, zniżki Obtenebration i blood za +1 stealth własnemu minionowi; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201007,
@@ -20318,8 +20318,8 @@
   {
     "id": 201023,
     "name": "Muricia (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 strength oraz przemiany własnego Gangrel antitribu w sterile Ahrimane z poziomem Spiritus za blood w unlock; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 strength oraz przemiany własnego Gangrel antitribu w sterile Ahrimane z poziomem Spiritus za blood w unlock; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201024,
@@ -20330,8 +20330,8 @@
   {
     "id": 201025,
     "name": "Muse (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez drukowanego -1 intercept. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: -1 intercept. tests/cards/crypt-printed-statics-audit.test.ts sprawdza import i właściwą mechanikę w grze, w tym wartości walki lub kredyt. Weryfikacja celowana, nie dowód poprawności wszystkich interakcji."
   },
   {
     "id": 201026,
@@ -20348,8 +20348,8 @@
   {
     "id": 201028,
     "name": "Myrna Goldman (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i opcji podejrzenia top 3 library w unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i opcji podejrzenia top 3 library w unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201029,
@@ -20366,8 +20366,8 @@
   {
     "id": 201031,
     "name": "Nahum Enosh (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez +1 bleed i gain blood innego własnego ready vampire w unlock przy ready Nahum; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez +1 bleed i gain blood innego własnego ready vampire w unlock przy ready Nahum; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201032,
@@ -20378,8 +20378,8 @@
   {
     "id": 201033,
     "name": "Nakhthorheb (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength, unlock w minion phase i zakazu block przez miniony z własnymi corruption counters. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 strength, unlock w minion phase i zakazu block przez miniony z własnymi corruption counters. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201034,
@@ -20450,8 +20450,8 @@
   {
     "id": 201045,
     "name": "Nehsi (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez optional maneuver co combat; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: opcjonalny maneuver co combat. tests/cards/crypt-printed-statics-audit.test.ts sprawdza import i właściwą mechanikę w grze, w tym wartości walki lub kredyt. Weryfikacja celowana, nie dowód poprawności wszystkich interakcji."
   },
   {
     "id": 201046,
@@ -20678,14 +20678,14 @@
   {
     "id": 201083,
     "name": "Ondine \"Boudicca\" Sinclair (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength i stealth przy bleed z Edge; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 strength i stealth przy bleed z Edge; Black Hand nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts)."
   },
   {
     "id": 201084,
     "name": "Orlando Oriundus (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i podwojenia votes własnych vampire w referendum przy ready Orlando oraz zakazu innych multipliers; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i podwojenia votes własnych vampire w referendum przy ready Orlando oraz zakazu innych multipliers; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201085,
@@ -20744,8 +20744,8 @@
   {
     "id": 201094,
     "name": "Pariah (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 strength, discard master lub lock w master phase, zakazu undirected poza hunt i directed rush na dowolnego miniona; Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 strength, discard master lub lock w master phase, zakazu undirected poza hunt i directed rush na dowolnego miniona; Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201095,
@@ -20888,8 +20888,8 @@
   {
     "id": 201118,
     "name": "Phaedyme (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength i stealth przy bleed kontrolera ready Camarilla vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 strength i stealth przy bleed kontrolera ready Camarilla vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201119,
@@ -21008,14 +21008,14 @@
   {
     "id": 201138,
     "name": "Qawiyya el-Ghaduba (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +2 strength, unlock za 2 blood w minion phase i Red List. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +2 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +2 strength, unlock za 2 blood w minion phase i Red List. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201139,
     "name": "Queen Anne (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i dodatkowego +1 przeciw kontrolerowi ready Tremere; Prince of London importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i dodatkowego +1 przeciw kontrolerowi ready Tremere; Prince of London importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201140,
@@ -21068,8 +21068,8 @@
   {
     "id": 201148,
     "name": "Rachel Brandywine (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i opcji wtasowania discardowanych kart discard phase w library przy ready Rachel; Prince of Cleveland importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i opcji wtasowania discardowanych kart discard phase w library przy ready Rachel; Prince of Cleveland importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201149,
@@ -21086,8 +21086,8 @@
   {
     "id": 201151,
     "name": "Rafael de Corazon (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +2 bleed i obowiązku yield przez vampire contestującego tytuł Rafaela; Toreador Inner Circle importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +2 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +2 bleed i obowiązku yield przez vampire contestującego tytuł Rafaela; Toreador Inner Circle importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201152,
@@ -21344,8 +21344,8 @@
   {
     "id": 201194,
     "name": "Rocia (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez +1 intercept przy próbie block Tremere/Tremere antitribu i optional press co combat; Flight nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: opcjonalny press co combat. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez +1 intercept przy próbie block Tremere/Tremere antitribu i optional press co combat; Flight nie przenoszone. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201195,
@@ -21404,8 +21404,8 @@
   {
     "id": 201204,
     "name": "Rosa Martínez (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i gain blood w unlock przy innym własnym ready Regent; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i gain blood w unlock przy innym własnym ready Regent; bishop importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201205,
@@ -21668,8 +21668,8 @@
   {
     "id": 201248,
     "name": "Saulot, The Wanderer (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez +1 bleed, +1 strength, redukcji damage Baali do 0 i przesunięcia 2 blood do vampire w grze/uncontrolled w unlock; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed, +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Pusta spec bez +1 bleed, +1 strength, redukcji damage Baali do 0 i przesunięcia 2 blood do vampire w grze/uncontrolled w unlock; Scarce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201249,
@@ -21908,8 +21908,8 @@
   {
     "id": 201288,
     "name": "Silvia Giovanni (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje +1 strength, ale brak optional press co combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: opcjonalny press co combat. tests/cards/crypt-printed-statics-audit.test.ts sprawdza import i właściwą mechanikę w grze, w tym wartości walki lub kredyt. Weryfikacja celowana, nie dowód poprawności wszystkich interakcji."
   },
   {
     "id": 201289,
@@ -22124,8 +22124,8 @@
   {
     "id": 201324,
     "name": "Sundervere, The Devil Brahmin (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed, dodatkowego bleed za blood, burn pool po burn Sundervere i Red List. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed, dodatkowego bleed za blood, burn pool po burn Sundervere i Red List. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201325,
@@ -22142,8 +22142,8 @@
   {
     "id": 201327,
     "name": "Sutekh, The Dark God (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez +1 bleed, gain pool po successful recruit mummy i przesunięcia blood między Sutekhem a innym własnym Follower of Set w unlock; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez +1 bleed, gain pool po successful recruit mummy i przesunięcia blood między Sutekhem a innym własnym Follower of Set w unlock; 2 titled votes po kropce nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201328,
@@ -22208,8 +22208,8 @@
   {
     "id": 201338,
     "name": "Tammy Walenski (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez optional maneuver co combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: opcjonalny maneuver co combat. tests/cards/crypt-printed-statics-audit.test.ts sprawdza import i właściwą mechanikę w grze, w tym wartości walki lub kredyt. Weryfikacja celowana, nie dowód poprawności wszystkich interakcji."
   },
   {
     "id": 201339,
@@ -22484,8 +22484,8 @@
   {
     "id": 201384,
     "name": "Torvus Bloodbeard (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 strength i burn Edge za unlock w dowolnej minion phase. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 strength i burn Edge za unlock w dowolnej minion phase. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201385,
@@ -22658,8 +22658,8 @@
   {
     "id": 201413,
     "name": "Ur-Shulgi, The Shepherd (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez +1 bleed i wyszukania Tajdid do ręki w unlock przy ready; 2 titled votes po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Aktualizacja: drukowane Blood cursed importowane i zakaz diablerii w istniejących ścieżkach testowany w crypt-blood-cursed.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Blood cursed: Pusta spec bez +1 bleed i wyszukania Tajdid do ręki w unlock przy ready; 2 titled votes po kropce i Blood cursed nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201414,
@@ -22742,8 +22742,8 @@
   {
     "id": 201427,
     "name": "Vasantasena (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i stealth podczas bleed przeciw kontrolerowi bez ready titled vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i stealth podczas bleed przeciw kontrolerowi bez ready titled vampire. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201428,
@@ -22802,8 +22802,8 @@
   {
     "id": 201437,
     "name": "Vestgeir (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +1 bleed i zagrania political action z ash heap innego Methuselah z usunięciem zamiast burn; priscus importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: +1 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +1 bleed i zagrania political action z ash heap innego Methuselah z usunięciem zamiast burn; priscus importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201438,
@@ -22850,8 +22850,8 @@
   {
     "id": 201445,
     "name": "Victorine Lafourcade (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez burn Edge za fail bleed vampire capacity do 4 i optional press co combat; Prince of Atlanta importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: opcjonalny press co combat. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez burn Edge za fail bleed vampire capacity do 4 i optional press co combat; Prince of Atlanta importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201446,
@@ -23258,8 +23258,8 @@
   {
     "id": 201513,
     "name": "Charles Delmare (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez optional press co combat; cardinal importowany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: opcjonalny press co combat. tests/cards/crypt-printed-statics-audit.test.ts sprawdza import i właściwą mechanikę w grze, w tym wartości walki lub kredyt. Weryfikacja celowana, nie dowód poprawności wszystkich interakcji."
   },
   {
     "id": 201514,
@@ -23294,8 +23294,8 @@
   {
     "id": 201519,
     "name": "Rurik Rakoczy (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały bleed zamiast tylko przy ready Ludmijla Rakoczy; brak optional press co combat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: opcjonalny press co combat. +1 bleed jest warunkowy, wyłącznie gdy Ludmijla Rakoczy jest ready, także pod kontrolą innego gracza; testy obejmują lock, torpor i błędną nazwę. tests/cards/crypt-printed-statics-audit.test.ts sprawdza import i właściwą mechanikę w grze, w tym wartości walki lub kredyt. Weryfikacja celowana, nie dowód poprawności wszystkich interakcji."
   },
   {
     "id": 201520,
@@ -23342,8 +23342,8 @@
   {
     "id": 201527,
     "name": "Gabriel Tremblay (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Spec daje stały strength zamiast discard karty wymagającej Anarch za +1 strength tego combat raz na combat; brak -1 stealth. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: -1 stealth. Usunięto nieprawidłowy stały strength; opcjonalne discard za bonus pozostaje otwarte. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Spec daje stały strength zamiast discard karty wymagającej Anarch za +1 strength tego combat raz na combat; brak -1 stealth. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
   },
   {
     "id": 201528,
@@ -24368,8 +24368,8 @@
   {
     "id": 201698,
     "name": "Juliet Parr (G7)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez +2 hand size po passed referendum i optional maneuver per combat. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiono: opcjonalny maneuver co combat. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Pusta spec bez +2 hand size po passed referendum i optional maneuver per combat. Porównano tekst, spec i dostępne ścieżki; bez nowego testu scenariuszowego."
   },
   {
     "id": 201699,

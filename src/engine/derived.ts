@@ -906,6 +906,15 @@ function conditionHolds(
     if (f.kind !== undefined && foe.kind !== f.kind) return false;
     if (f.younger === true && capacityOf(foe) >= capacityOf(bearer)) return false;
   }
+  // Crypt names in game state include a group/advanced suffix used by the
+  // catalog; the printed name on another card does not. A named vampire
+  // can be controlled by any Methuselah and can be locked, but not torpid.
+  if (c.readyNamedVampire !== undefined) {
+    const printedName = (name: string): string => name.replace(/\s*\(G\d+(?:\s+ADV)?\)$/i, "");
+    if (!state.seats.some((seat) => !seat.ousted && seat.minions.some((m) =>
+      m.kind === "vampire" && isReady(m) && printedName(m.name) === c.readyNamedVampire,
+    ))) return false;
+  }
   // Board conditions, every one derived on this read.
   const cc = c.controller;
   if (cc) {

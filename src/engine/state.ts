@@ -657,6 +657,9 @@ export interface ConditionalStatic {
   bleed?: number;
   strength?: number;
   votes?: number;
+  /** "While /<name>/ is ready" — any Methuselah's vampire, not only
+   *  one controlled by the bearer. The name is the printed crypt name. */
+  readyNamedVampire?: string;
   /** "…you get +1 hand size" (Carmelita Neillson, Khin Aye). Read by
    *  `handSizeOf`, which asks with NO action — so a static combining this
    *  with an action condition would never apply. */
