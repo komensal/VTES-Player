@@ -227,7 +227,7 @@ id,name,kind,status,categories
 100350,Circumspect Revelation,library,CONFIRMED_BUG,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 100351,City Gangrel Connections,library,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; polityka_i_glosy
 100352,Claiming the Body,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
-100353,Clan Impersonation,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
+100353,Clan Impersonation,library,PARTIAL_FIX,crypt_import_lub_cechy; akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 100355,Clandestine Contract,library,PARTIAL_FIX,akcje_i_blok; walka; karty_i_strefy
 100357,Cleansing Ritual,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby
 100358,Cleave,library,CONFIRMED_BUG,placeholder_lub_brak_efektu; walka
@@ -2027,7 +2027,7 @@ id,name,kind,status,categories
 200917,Margaret Milliner (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki
 200918,Margarite (G4),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok
 200921,Marguerite Foccart (G4 ADV),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; walka; polityka_i_glosy; karty_i_strefy; czas_i_warunki
-200923,Maria Stone (G3 ADV),crypt,PARTIAL_FIX,crypt_import_lub_cechy
+200923,Maria Stone (G3 ADV),crypt,PARTIAL_FIX,crypt_import_lub_cechy; akcje_i_blok
 200925,Marianna (G2),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200927,Marie Faucigny (G3),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; koszty_i_zasoby; karty_i_strefy
 200928,Marie-Pierre (G6),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; walka
@@ -2097,7 +2097,7 @@ id,name,kind,status,categories
 201019,Muhandis (G4),crypt,CODE_DISCREPANCY,akcje_i_blok; koszty_i_zasoby; karty_i_strefy
 201021,Mukhtar Bey (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; karty_i_strefy
 201022,Murat (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; walka; koszty_i_zasoby
-201023,Muricia (G4),crypt,PARTIAL_FIX,crypt_import_lub_cechy; koszty_i_zasoby; czas_i_warunki
+201023,Muricia (G4),crypt,PARTIAL_FIX,crypt_import_lub_cechy; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 201026,"Mustafa, The Heir (G4)",crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; polityka_i_glosy; koszty_i_zasoby
 201028,Myrna Goldman (G6),crypt,PARTIAL_FIX,placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy
 201030,Nahir (G3),crypt,CODE_DISCREPANCY,placeholder_lub_brak_efektu; akcje_i_blok; koszty_i_zasoby; czas_i_warunki

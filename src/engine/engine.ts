@@ -231,6 +231,27 @@ const AIM_BURN_WEAPON = "aimBurnWeapon";
  *  docs/contested-design.md §4 */
 const CONTEST = "contest";
 
+/** Catalog group and ADV suffixes distinguish printings, not vampire names. */
+function contestName(m: MinionState): string {
+  return m.kind === "vampire"
+    ? m.name.replace(/\s*\((?:g\s*\d+(?:\s+adv)?|adv)\)\s*$/i, "").trim()
+    : m.name;
+}
+
+function clanWhenControlled(m: MinionState): string | null {
+  if (!m.clanChanges) return m.clan;
+  // Temporary card effects overlay permanent changes even when the
+  // permanent change happened later; within a layer the latest wins.
+  const temporary = m.clanChanges.filter((change) => change.source !== undefined).at(-1);
+  return temporary ? temporary.clan : (m.clanChanges.filter((change) => change.source === undefined).at(-1)?.clan ?? null);
+}
+
+function removeClanChange(m: MinionState, source: CardInstanceId): void {
+  if (!m.clanChanges?.some((change) => change.source === source)) return;
+  m.clanChanges = m.clanChanges.filter((change) => change.source !== source);
+  m.clan = clanWhenControlled(m);
+}
+
 /** "<cardId>/<blood>/<pool>[,…]" — the payment split a play option carried
  *  (docs/cost-sources-design.md §4). */
 function parsePayFrom(
@@ -434,7 +455,11 @@ export class VtesEngine implements EngineOps {
     // BURN THE INCOMING COPY of the unique card)" (p. 17). Stealing is
     // the only effect that can force it, so this is where it belongs —
     // the sweep in settle cannot tell which copy is the incoming one.
-    if (this.uniqueMinion(m) && getSeat(this.state, to).minions.some((x) => x.name === m.name)) {
+    const taker = getSeat(this.state, to);
+    if (this.uniqueMinion(m) && (
+      taker.minions.some((x) => this.uniqueMinion(x) && contestName(x) === contestName(m)) ||
+      (taker.contested ?? []).some((c) => c.minion && this.uniqueMinion(c.minion) && contestName(c.minion) === contestName(m))
+    )) {
       this.burnMinion(minionId);
       return;
     }
@@ -737,8 +762,19 @@ export class VtesEngine implements EngineOps {
       case "VampireTransformed": {
         const vampire = findMinion(this.state, ev.minion);
         if (vampire?.kind === "vampire") {
-          vampire.clan = ev.clan;
+          (vampire.clanChanges ??= [{ clan: vampire.clan }]).push({ clan: ev.clan });
+          vampire.clan = clanWhenControlled(vampire);
           vampire.sterile = ev.sterile;
+        }
+        break;
+      }
+      case "ClanChanged": {
+        const vampire = findMinion(this.state, ev.minion);
+        if (vampire?.kind === "vampire") {
+          (vampire.clanChanges ??= [{ clan: vampire.clan }]).push({ clan: ev.clan, source: ev.source });
+          vampire.clan = ev.clan;
+          const entry = vampire.attached.find((p) => p.card.id === ev.source);
+          if (entry) entry.chosen = ev.clan;
         }
         break;
       }
@@ -835,6 +871,7 @@ export class VtesEngine implements EngineOps {
         entry.card.blood = ev.blood; // excess over capacity already drained
         entry.card.locked = false; // enters play face up, unlocked (p. 36)
         entry.card.owner ??= ev.seat; // p. 16: ownership, fixed for the game
+        entry.card.clan = clanWhenControlled(entry.card);
         seat.minions.push(entry.card);
         break;
       }
@@ -1037,6 +1074,7 @@ export class VtesEngine implements EngineOps {
             const ai = m.attached.findIndex((p) => p.card.id === ev.cardId);
             if (ai >= 0) {
               m.attached.splice(ai, 1);
+              removeClanChange(m, ev.cardId);
               removed = true;
               break;
             }
@@ -1070,6 +1108,7 @@ export class VtesEngine implements EngineOps {
           seat.permanents = seat.permanents.filter((p) => p.card.id !== ev.cardId);
           for (const m of seat.minions) {
             m.attached = m.attached.filter((p) => p.card.id !== ev.cardId);
+            removeClanChange(m, ev.cardId);
           }
         }
         break;
@@ -1174,7 +1213,7 @@ export class VtesEngine implements EngineOps {
         // emit site supplies it. docs/ash-heap-design.md §3
         if (ev.seat !== undefined) {
           const s = getSeat(this.state, ev.seat);
-          (s.ashHeap ??= []).push({ id: ev.cardId, name: ev.name });
+          (s.ashHeap ??= []).push({ id: ev.cardId, name: ev.name, ...(ev.crypt ? { crypt: true as const } : {}), ...(ev.capacity !== undefined ? { capacity: ev.capacity } : {}) });
         }
         break;
       }
@@ -1231,14 +1270,22 @@ export class VtesEngine implements EngineOps {
         for (const seat of this.state.seats) {
           for (const m of seat.minions) {
             const idx = m.attached.findIndex((p) => p.card.id === ev.cardId);
-            if (idx >= 0) moved = m.attached.splice(idx, 1)[0] ?? null;
+            if (idx >= 0) {
+              moved = m.attached.splice(idx, 1)[0] ?? null;
+              removeClanChange(m, ev.cardId);
+            }
           }
           const si = seat.permanents.findIndex((p) => p.card.id === ev.cardId);
           if (si >= 0) moved = seat.permanents.splice(si, 1)[0] ?? null;
         }
         if (!moved) throw new Error(`no card to move: ${ev.cardId}`);
         moved.controller = ev.controller;
-        getMinion(this.state, ev.to).attached.push(moved);
+        const bearer = getMinion(this.state, ev.to);
+        bearer.attached.push(moved);
+        if (moved.card.name === "Clan Impersonation" && moved.chosen && bearer.kind === "vampire") {
+          (bearer.clanChanges ??= [{ clan: bearer.clan }]).push({ clan: moved.chosen, source: moved.card.id });
+          bearer.clan = moved.chosen;
+        }
         break;
       }
       case "CountersChanged": {
@@ -1271,7 +1318,14 @@ export class VtesEngine implements EngineOps {
         const i = from.attached.findIndex((p) => p.card.id === ev.cardId);
         if (i < 0) break;
         const [entry] = from.attached.splice(i, 1);
-        if (entry) to.attached.push(entry);
+        if (entry) {
+          removeClanChange(from, entry.card.id);
+          to.attached.push(entry);
+          if (entry.card.name === "Clan Impersonation" && entry.chosen && to.kind === "vampire") {
+            (to.clanChanges ??= [{ clan: to.clan }]).push({ clan: entry.chosen, source: entry.card.id });
+            to.clan = entry.chosen;
+          }
+        }
         break;
       }
       case "AllyEnteredPlay": {
@@ -1449,6 +1503,9 @@ export class VtesEngine implements EngineOps {
         const [m] = seat.minions.splice(idx, 1);
         const home = getSeat(this.state, m!.owner ?? ev.seat);
         m!.controller = home.id;
+        // Cards stacked on the banished vampire are out of play until it
+        // returns; retain their changes for re-entry but suppress them here.
+        if (m!.clanChanges) m!.clan = m!.clanChanges.filter((c) => c.source === undefined).at(-1)?.clan ?? null;
         home.uncontrolled.push({ card: m!, counters: m!.blood });
         break;
       }
@@ -1767,7 +1824,7 @@ export class VtesEngine implements EngineOps {
     };
     for (const s of this.state.seats) {
       if (s.ousted) continue;
-      for (const c of s.contested ?? []) add(c.card.name, { seat: s.id, held: true });
+      for (const c of s.contested ?? []) add(c.minion ? contestName(c.minion) : c.card.name, { seat: s.id, held: true });
       for (const p of s.permanents) {
         if (this.registry[p.card.name]?.isUnique === true) {
           // "CONTROL of the card is being contested" (p. 17), so the
@@ -1778,7 +1835,7 @@ export class VtesEngine implements EngineOps {
         }
       }
       for (const m of s.minions) {
-        if (this.uniqueMinion(m)) add(m.name, { seat: m.controller, held: false, minion: m });
+        if (this.uniqueMinion(m)) add(contestName(m), { seat: m.controller, held: false, minion: m });
         for (const p of m.attached) {
           // The minion's own card is the minion, already counted; count
           // it twice and every unique ally would contest with itself.
@@ -1795,7 +1852,7 @@ export class VtesEngine implements EngineOps {
       }
     }
 
-    for (const [name, list] of claims) {
+    for (const list of claims.values()) {
       // "If MORE THAN ONE unique card with the same name is brought into
       // play" — by more than one Methuselah. A seat cannot contest with
       // itself (p. 17's deck-construction note), and the one way that can
@@ -1822,7 +1879,8 @@ export class VtesEngine implements EngineOps {
           type: "ContestBegan",
           seat: c.seat,
           cardId: c.minion ? c.minion.id : c.entry!.card.id,
-          name,
+          // Retain the exact catalog name for the held physical card.
+          name: c.minion?.name ?? c.entry!.card.name,
           ...(c.minion ? { minion: c.minion.id } : {}),
           ...(c.bearer !== undefined ? { bearer: c.bearer } : {}),
           ...(heldTitle !== undefined ? { title: heldTitle } : {}),
@@ -1864,16 +1922,17 @@ export class VtesEngine implements EngineOps {
   }
 
   /** Every seat holding a copy of this contested name, in play or held. */
-  private contestClaimants(name: string): Set<SeatId> {
+  private contestClaimants(held: ContestedCard): Set<SeatId> {
+    const name = held.minion ? contestName(held.minion) : held.card.name;
     const out = new Set<SeatId>();
     for (const s of this.state.seats) {
       if (s.ousted) continue;
-      if ((s.contested ?? []).some((c) => c.card.name === name)) out.add(s.id);
+      if ((s.contested ?? []).some((c) => (c.minion ? contestName(c.minion) : c.card.name) === name)) out.add(s.id);
       for (const p of s.permanents) {
         if (p.card.name === name) out.add(p.controller ?? s.id);
       }
       for (const m of s.minions) {
-        if (m.name === name && this.uniqueMinion(m)) out.add(m.controller);
+        if (contestName(m) === name && this.uniqueMinion(m)) out.add(m.controller);
         for (const p of m.attached) {
           if (p.card.id !== m.id && p.card.name === name) out.add(p.controller ?? m.controller);
         }
@@ -1900,7 +1959,7 @@ export class VtesEngine implements EngineOps {
     //    then the card is unlocked and turned face up during your NEXT
     //    unlock phase, ending the contest."
     for (const held of [...(seat.contested ?? [])]) {
-      if (this.contestClaimants(held.card.name).size > 1) continue;
+      if (this.contestClaimants(held).size > 1) continue;
       this.emit({
         type: "ContestWon",
         seat: seat.id,
@@ -7296,7 +7355,10 @@ export class VtesEngine implements EngineOps {
     // the turn frame has already advanced to discard.
     const duringInfluence = tf?.kind === "turn" && tf.seat === seatId &&
       (tf.phase === "influence" || duringInfluenceEnd);
-    const penalty = duringInfluence ? scarcePenalty(this.state, seatId, entry.card) : 0;
+    // Scarce is assessed as the vampire enters play, when its stacked
+    // Clan Impersonation is active again, not while it is face down.
+    const arriving = { ...entry.card, clan: clanWhenControlled(entry.card) };
+    const penalty = duringInfluence ? scarcePenalty(this.state, seatId, arriving) : 0;
     // "When any Methuselah moves a vampire from uncontrolled to
     // controlled, he or she burns 1 ADDITIONAL POOL" (Masquerade
     // Enforcement).
@@ -11165,12 +11227,17 @@ export class VtesEngine implements EngineOps {
           minion: u.card.id,
         });
       }
+      // Influencing out a second copy would voluntarily contest yourself.
+      const selfContest = this.uniqueMinion(u.card) && (
+        seat.minions.some((m) => this.uniqueMinion(m) && contestName(m) === contestName(u.card)) ||
+        (seat.contested ?? []).some((c) => c.minion && this.uniqueMinion(c.minion) && contestName(c.minion) === contestName(u.card))
+      );
       if (
-        u.counters >= capacityOf(u.card) &&
+        !selfContest && u.counters >= capacityOf(u.card) &&
         (this.tableStatic("influenceOutPoolTax") === 0 ||
           seat.pool > this.tableStatic("influenceOutPoolTax"))
       ) {
-        const poolBurn = influenceMovePoolBurn(this.state, tf.seat, u.card);
+        const poolBurn = influenceMovePoolBurn(this.state, tf.seat, { ...u.card, clan: clanWhenControlled(u.card) });
         options.push({
           id: `inf:out:${u.card.id}`,
           kind: "influenceOut",
@@ -14448,7 +14515,8 @@ export class VtesEngine implements EngineOps {
           type: "CardBurned",
           cardId: held.card.id,
           name: held.card.name,
-          seat: held.permanent?.owner ?? frame.seat,
+          seat: held.minion?.owner ?? held.permanent?.owner ?? frame.seat,
+          ...(held.minion?.kind === "vampire" ? { crypt: true as const, capacity: capacityOf(held.minion) } : {}),
         });
         return;
       }

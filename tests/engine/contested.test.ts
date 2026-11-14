@@ -284,6 +284,37 @@ describe("two Methuselahs with the same vampire", () => {
     expect(state.seats[0]!.contested?.map((c) => c.card.id)).toEqual(["x1"]);
   });
 
+  it("contests base and advanced printings by printed name, preserving each card's catalog name", () => {
+    const state = threeSeatGame();
+    state.seats[0]!.minions.push(makeMinion("base", "Alice", { name: "Maria Stone (G3)", blood: 3 }));
+    state.seats[1]!.minions.push(makeMinion("adv", "Bob", { name: "Maria Stone (G3 ADV)", blood: 1 }));
+    const engine = new VtesEngine(state, testRegistry);
+    engine.decision();
+    expect(state.seats[0]!.contested?.[0]?.card.name).toBe("Maria Stone (G3)");
+    expect(state.seats[1]!.contested?.[0]?.card.name).toBe("Maria Stone (G3 ADV)");
+    unlockPhase(state, "Alice");
+    const a = new VtesEngine(state, testRegistry);
+    answer(a, ":yield");
+    expect(state.seats[0]!.ashHeap?.some((c) => c.name === "Maria Stone (G3)")).toBe(true);
+    unlockPhase(state, "Bob");
+    new VtesEngine(state, testRegistry).decision();
+    expect(state.seats[1]!.minions.some((m) => m.name === "Maria Stone (G3 ADV)" && m.id === "adv")).toBe(true);
+  });
+
+  it("cannot voluntarily influence a different printing out against your own copy", () => {
+    const state = threeSeatGame();
+    state.seats[0]!.minions.push(makeMinion("base", "Alice", { name: "Maria Stone (G3)" }));
+    const adv = makeMinion("adv", "Alice", { name: "Maria Stone (G3 ADV)", capacity: 5 });
+    state.seats[0]!.uncontrolled.push({ card: adv, counters: 5 });
+    const tf = state.frames[0]!;
+    if (tf.kind !== "turn") throw new Error("fixture");
+    tf.phase = "influence";
+    tf.transfersLeft = 4;
+    const engine = new VtesEngine(state, testRegistry);
+    expect(optionIds(engine)).not.toContain("inf:out:adv");
+    expect(optionIds(engine)).toContain("inf:take:adv");
+  });
+
   it("keeps the vampire WHOLE while it is out of play", () => {
     // A contest ends by the card coming back with everything on it, so
     // the minion is parked rather than rebuilt.
@@ -305,6 +336,16 @@ describe("two Methuselahs with the same vampire", () => {
     const ash = (state.seats[0]!.ashHeap ?? []).map((c) => c.id);
     expect(ash).toContain("x1"); // the vampire's own card
     expect(ash).toContain("gun"); // "any cards … stacked on the yielded card"
+  });
+
+  it("yielding a controlled but stolen vampire burns the crypt card to its owner's ash heap", () => {
+    const state = sameVampire();
+    Object.assign(state.seats[0]!.minions.at(-1)!, { owner: "Carol", capacity: 6 });
+    unlockPhase(state, "Alice");
+    const engine = new VtesEngine(state, testRegistry);
+    answer(engine, ":yield");
+    expect(state.seats[0]!.ashHeap?.some((c) => c.id === "x1") ?? false).toBe(false);
+    expect(state.seats[2]!.ashHeap).toContainEqual({ id: "x1", name: "Rudolf Bruckner", crypt: true, capacity: 6 });
   });
 
   it("does not contest a NON-UNIQUE token vampire", () => {

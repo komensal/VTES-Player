@@ -7,7 +7,7 @@
  */
 
 import type { ActionFrame, CardHandler, CardInstanceId, CardPlayFrame, ChoiceFrame, ConditionalStatic, MinionId, EngineOps, GameState, HandlerRegistry, LegalOption, MinionState, PermanentInPlay, PermanentStatics, PlayContext, PlayCostCardType, SeatId, VampireTitle } from "../../engine/index.ts";
-import { blockEligibleSeats, blockWouldSucceed, bleedAnnounceTax, bleedBarred, canReact, mayAttemptBlock, canAct, isMinionCardPlay, playCostFor, canGainBlood, capacityOf, CITY_TITLES, disciplinesOf, handSizeOf, minionHasTag, currentBleed, currentIntercept, currentStealth, findMinion, getMinion, getSeat, hasVoice, isReady, playOptionId, predatorOf, preyOf, referendumOpenToPlay, untargetableBy, vampireMayVote, vampireVotes } from "../../engine/index.ts";
+import { blockEligibleSeats, blockWouldSucceed, bleedAnnounceTax, bleedBarred, canReact, mayAttemptBlock, canAct, isMinionCardPlay, playCostFor, canGainBlood, capacityOf, CITY_TITLES, CLANS, disciplinesOf, handSizeOf, minionHasTag, currentBleed, currentIntercept, currentStealth, findMinion, getMinion, getSeat, hasVoice, isReady, playOptionId, predatorOf, preyOf, referendumOpenToPlay, untargetableBy, vampireMayVote, vampireVotes } from "../../engine/index.ts";
 import {
   allocToParams,
   applyReferendumRiders,
@@ -27120,14 +27120,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Clan Impersonation [100353] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Clan Impersonation [100353]: clan choice is made on successful entry.
     krcgId: 100353,
     name: "Clan Impersonation",
     cardType: "action",
     bloodCost: 2,
+    requiresVampire: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "attachSelf", stacks: true }] }
     ],
   },
   {
@@ -44935,6 +44936,43 @@ const dummyCorporation: CardHandler = {
  * card lasts exactly one turn cycle and its cost is decided by how well
  * the prey's minions survived.
  */
+const clanImpersonation: CardHandler = {
+  ...compileSpec(specByName("Clan Impersonation")),
+  onEnterPlay(entry, owner, ops) {
+    if (!owner.minion) return;
+    const vampire = findMinion(ops.state, owner.minion);
+    if (!vampire || vampire.kind !== "vampire") return;
+    ops.raiseChoice({ seat: vampire.controller, cardName: "Clan Impersonation", cardId: entry.card.id, key: "clan", params: { minion: vampire.id } });
+  },
+  choiceOptions(frame) {
+    return CLANS.map((clan) => ({
+      id: `choice:Clan Impersonation:${frame.cardId}:clan:${clan}`,
+      kind: "answerChoice" as const,
+      label: `Choose ${clan}`,
+      params: { clan },
+    }));
+  },
+  applyChoice(frame, choice, ops) {
+    const minion = frame.params["minion"];
+    const clan = choice.params["clan"];
+    const vampire = minion ? findMinion(ops.state, minion) : null;
+    if (!vampire || !clan || !CLANS.includes(clan) || !vampire.attached.some((p) => p.card.id === frame.cardId)) return;
+    ops.emit({ type: "ClanChanged", minion: vampire.id, clan, source: frame.cardId });
+  },
+  actionOptions(entry, owner, ctx) {
+    if (ctx.window !== "turn.minion" || !owner.minion || owner.seat !== ctx.seat) return [];
+    const vampire = findMinion(ctx.state, owner.minion);
+    if (!vampire || !canAct(vampire) || entry.grantedActionUses?.some((u) => u.minion === vampire.id && u.key === "burnSelf")) return [];
+    return [{ id: `act:Clan Impersonation:${entry.card.id}:burn:${vampire.id}`, kind: "useEntryAction", label: `${vampire.name}: burn Clan Impersonation`, source: entry.card.id, minion: vampire.id, params: {} }];
+  },
+  useActionOption(entry, _owner, choice, ops) {
+    ops.announceEntryAction(entry, choice.minion, { effect: { key: "burnSelf" } });
+  },
+  resolveGrantedAction(entry, af, ops) {
+    if (af.grantedEffect?.key === "burnSelf") ops.burnPermanent(entry.card.id);
+  },
+};
+
 const frontalAssault: CardHandler = {
   ...compileSpec(specByName("Frontal Assault")),
   onLeaveReady(entry, owner, info, ops) {
@@ -46745,6 +46783,7 @@ export function buildHandlerRegistry(): HandlerRegistry {
     platinumProtocol,
     dummyCorporation,
     frontalAssault,
+    clanImpersonation,
     priorityContract,
     contract,
     regent,

@@ -287,6 +287,9 @@ export interface MinionState {
    *  so fixtures need not set it — it defaults to `controller` at entry.
    *  Read it, not `controller`, for "their owner's …" effects. */
   owner?: SeatId;
+  /** Clan changes in chronological order. Source-less changes are permanent;
+   *  card-sourced changes overlay them while that card is in play. */
+  clanChanges?: Array<{ clan: string | null; source?: CardInstanceId }>;
   /** Blood counters for vampires; life for allies (the rulebook says ally
    *  life IS blood counters from the bank, p. 22). An ally at 0 is burned;
    *  ally life may exceed `capacity` and does not drain off (p. 11). */
@@ -2079,7 +2082,7 @@ export type GameEvent =
   /** "…to prevent that vampire from going to torpor" (Minor Boon). */
   | { type: "TorporPrevented"; minion: MinionId }
   // Action cards (phase 3).
-  | { type: "CardBurned"; cardId: CardInstanceId; name: string; seat?: SeatId }
+  | { type: "CardBurned"; cardId: CardInstanceId; name: string; seat?: SeatId; crypt?: true; capacity?: number }
   /** A card moved into an ash heap (p. 16). Emitted alongside the event
    *  that caused it rather than folded into one, so the log still says
    *  WHY the card left where it was. docs/ash-heap-design.md §3 */
@@ -2163,6 +2166,7 @@ export type GameEvent =
   | { type: "DisciplineGained"; minion: MinionId; discipline: string }
   /** A permanent change to a vampire's clan and Sterile trait. */
   | { type: "VampireTransformed"; minion: MinionId; clan: string; sterile: boolean }
+  | { type: "ClanChanged"; minion: MinionId; clan: string; source: CardInstanceId }
   // Allies and retainers (phase 3, allies gate).
   /** `disciplines`: "plays cards requiring \<X\> as a vampire" (p. 11) —
    *  optional, so every existing fixture and saved log is untouched.

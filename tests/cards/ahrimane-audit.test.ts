@@ -88,6 +88,101 @@ describe("Muricia", () => {
     const { e } = game("minion");
     expect(ids(e).some((id) => id.includes(":transform:"))).toBe(false);
   });
+  it("a chosen impersonation moved to another vampire restores the old bearer and affects the new one", () => {
+    const s = threeSeatGame();
+    const first = find(s, "V1");
+    Object.assign(first, { clan: "Ahrimane", blood: 5 });
+    const second = makeMinion("V2", "Alice", { clan: "Brujah", blood: 4 });
+    s.seats[0]!.minions.push(second);
+    s.seats[0]!.hand.push({ id: "ci", name: "Clan Impersonation" });
+    const e = new VtesEngine(s, testRegistry);
+    e.choose(ids(e).find((id) => id.startsWith("play:Clan Impersonation:") && id.includes(":V1:"))!);
+    expect(walk(e, "choice:Clan Impersonation:ci:clan:")).toBe(true);
+    e.choose("choice:Clan Impersonation:ci:clan:Gangrel antitribu");
+    e.moveAttachment("ci", "V2");
+    expect(first.clan).toBe("Ahrimane");
+    expect(second.clan).toBe("Gangrel antitribu");
+    e.burnPermanent("ci");
+    expect(second.clan).toBe("Brujah");
+  });
+  it("suspends Clan Impersonation in the uncontrolled region and restores it before scarce is assessed", () => {
+    const s = threeSeatGame();
+    const target = find(s, "V1");
+    Object.assign(target, { name: "scarce vampire", clan: "Ahrimane", blood: 5, capacity: 5, scarce: true });
+    s.seats[0]!.minions.push(makeMinion("V2", "Alice", { clan: "Gangrel antitribu" }));
+    s.seats[0]!.hand.push({ id: "ci", name: "Clan Impersonation" });
+    const e = new VtesEngine(s, testRegistry);
+    e.choose(ids(e).find((id) => id.startsWith("play:Clan Impersonation:") && id.includes(":V1:"))!);
+    expect(walk(e, "choice:Clan Impersonation:ci:clan:")).toBe(true);
+    e.choose("choice:Clan Impersonation:ci:clan:Gangrel antitribu");
+    expect(walk(e, "end")).toBe(true);
+    e.emit({ type: "MovedToUncontrolled", seat: "Alice", minion: "V1" });
+    expect(target.clan).toBe("Ahrimane");
+    const u = s.seats[0]!.uncontrolled.find((x) => x.card.id === "V1")!;
+    u.counters = 5;
+    const tf = s.frames[0]!;
+    if (tf.kind !== "turn") throw new Error("no turn");
+    tf.phase = "influence"; tf.transfersLeft = 0;
+    const option = e.decision()!.options.find((o) => o.id === "inf:out:V1");
+    expect(option?.kind === "influenceOut" && option.poolBurn).toBe(3);
+    const pool = s.seats[0]!.pool;
+    e.choose("inf:out:V1");
+    expect(target.clan).toBe("Gangrel antitribu");
+    expect(s.seats[0]!.pool).toBe(pool - 3);
+    expect(target.attached.some((p) => p.card.id === "ci")).toBe(true);
+  });
+  it("an impersonation played after transformation can be burned as an undirected action", () => {
+    const s = threeSeatGame();
+    const target = find(s, "V1");
+    Object.assign(target, { clan: "Gangrel antitribu", sect: "sabbat", blood: 5, capacity: 6 });
+    s.seats[0]!.hand.push({ id: "ci", name: "Clan Impersonation" });
+    const e = new VtesEngine(s, testRegistry);
+    e.emit({ type: "VampireTransformed", minion: "V1", clan: "Ahrimane", sterile: true });
+    e.choose(ids(e).find((id) => id.startsWith("play:Clan Impersonation:") && id.includes(":V1:"))!);
+    expect(walk(e, "choice:Clan Impersonation:ci:clan:")).toBe(true);
+    e.choose("choice:Clan Impersonation:ci:clan:Gangrel antitribu");
+    expect(target.clan).toBe("Gangrel antitribu");
+    expect(walk(e, "end")).toBe(true);
+    e.emit({ type: "MinionUnlocked", minion: "V1" });
+    expect(walk(e, "act:Clan Impersonation:ci:burn:V1")).toBe(true);
+    e.choose("act:Clan Impersonation:ci:burn:V1");
+    const af = s.frames.find((f) => f.kind === "action");
+    expect(af && af.kind === "action" && af.directed).toBe(false);
+    expect(walk(e, "end")).toBe(true);
+    expect(target.clan).toBe("Ahrimane");
+    expect(target.sterile).toBe(true);
+    expect(s.seats[0]!.ashHeap?.some((c) => c.id === "ci")).toBe(true);
+  });
+  it("Clan Impersonation can restore eligibility and burning it reveals the later transformation", () => {
+    const s = threeSeatGame();
+    const muricia = asVampire(find(s, "V1"), "Muricia (G4)");
+    const target = makeMinion("G1", "Alice", { clan: "Ahrimane", sect: "sabbat", blood: 5, capacity: 6 });
+    s.seats[0]!.minions.push(target);
+    s.seats[0]!.hand.push({ id: "ci", name: "Clan Impersonation" });
+    const e = new VtesEngine(s, testRegistry);
+    const play = ids(e).find((id) => id.startsWith("play:Clan Impersonation:") && id.includes(":G1:"));
+    expect(play).toBeDefined();
+    e.choose(play!);
+    expect(walk(e, "choice:Clan Impersonation:ci:clan:")).toBe(true);
+    e.choose("choice:Clan Impersonation:ci:clan:Gangrel antitribu");
+    expect(target.clan).toBe("Gangrel antitribu");
+    expect(target.blood).toBe(3);
+    expect(walk(e, "end")).toBe(true);
+    const tf = s.frames[0]!;
+    if (tf.kind !== "turn") throw new Error("no turn");
+    // Start Alice's next unlock window with the resolved attachment intact.
+    s.frames = [tf];
+    tf.seat = "Alice"; tf.phase = "unlock"; tf.unlockDone = false; tf.unlockAbilitiesDone = false;
+    expect(walk(e, "ability:Muricia (G4):V1:transform:G1", 5)).toBe(true);
+    e.choose("ability:Muricia (G4):V1:transform:G1");
+    // The temporary Clan Impersonation still overlays Muricia's permanent
+    // change; burning the card exposes the new underlying clan.
+    expect(target).toMatchObject({ clan: "Gangrel antitribu", sterile: true, blood: 2, disciplines: { spi: "basic" } });
+    e.burnPermanent("ci");
+    expect(target.clan).toBe("Ahrimane");
+    expect(target.disciplines.spi).toBe("basic");
+    expect(muricia.blood).toBe(2);
+  });
 });
 
 describe("Sylvie Helgon", () => {

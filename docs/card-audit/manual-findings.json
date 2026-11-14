@@ -2114,8 +2114,8 @@
   {
     "id": 100353,
     "name": "Clan Impersonation",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth; brak wyboru klanu, dołączenia i możliwości spalenia. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano akcję z kosztem, stealth, dołączeniem, wyborem klanu i akcją spalenia; warstwy zmian klanu uwzględniają trwałe transformacje, przesunięcie i spalenie, oraz zawieszenie efektu w uncontrolled i scarce przy powrocie. Testy tests/cards/ahrimane-audit.test.ts. Pozostaje weryfikacja momentu wyboru klanu, innych efektów zmiany klanu, contest i wszystkich dróg opuszczania gry."
   },
   {
     "id": 100354,
@@ -19719,7 +19719,7 @@
     "id": 200923,
     "name": "Maria Stone (G3 ADV)",
     "status": "PARTIAL_FIX",
-    "evidence": "Niezmienione: unmerged -1 strength i Sterile są zaimplementowane. Brak mechanizmu merge advanced/base w silniku, dlatego tekst merged (zniesienie -1 strength i superior Spiritus) pozostaje otwarty."
+    "evidence": "Niezmienione: unmerged -1 strength i Sterile są zaimplementowane. Brak mechanizmu merge advanced/base w silniku, dlatego tekst merged (zniesienie -1 strength i superior Spiritus) pozostaje otwarty. Contest różnych wersji wampira porównuje nazwę drukowaną, a self-contest przy wpływaniu jest blokowany; tests/engine/contested.test.ts. Nie jest to implementacja merge."
   },
   {
     "id": 200924,
@@ -20319,7 +20319,7 @@
     "id": 201023,
     "name": "Muricia (G4)",
     "status": "PARTIAL_FIX",
-    "evidence": "Dodano opcję raz w fazie unlock: własny Gangrel antitribu z blood płaci 1, staje się sterile Ahrimane i zyskuje poziom spi; testy ahrimane-audit.test.ts. +1 strength i drukowane Sterile były wcześniej zaimplementowane. Dynamiczne nakładanie efektów zmieniających klan, np. Clan Impersonation, wymaga poprawnego modelu pierwszeństwa; wpis pozostaje otwarty."
+    "evidence": "Dodano opcję raz w fazie unlock: własny Gangrel antitribu z blood płaci 1, staje się sterile Ahrimane i zyskuje poziom spi; testy ahrimane-audit.test.ts. +1 strength i drukowane Sterile były wcześniej zaimplementowane. Dynamiczne nakładanie efektów zmieniających klan, np. Clan Impersonation, wymaga poprawnego modelu pierwszeństwa; wpis pozostaje otwarty. Uzupełniono model warstw dla Clan Impersonation: efekt tymczasowy przesłania trwałą zmianę także po transformacji, a spalenie karty przywraca trwały klan; scenariusze w ahrimane-audit.test.ts. Inne efekty i sytuacje wyjścia z gry wymagają weryfikacji; status pozostaje otwarty."
   },
   {
     "id": 201024,

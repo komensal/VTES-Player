@@ -351,7 +351,7 @@
 "100350","Circumspect Revelation","library","true","CONFIRMED_BUG",""
 "100351","City Gangrel Connections","library","true","PARTIAL_FIX","simple_gain_pool_text_mismatch_review"
 "100352","Claiming the Body","library","true","CONFIRMED_BUG",""
-"100353","Clan Impersonation","library","true","CONFIRMED_BUG",""
+"100353","Clan Impersonation","library","true","PARTIAL_FIX",""
 "100354","Clan Loyalty","library","true","REVIEWED_NO_ISSUE_FOUND",""
 "100355","Clandestine Contract","library","true","PARTIAL_FIX",""
 "100356","Claws of the Dead","library","true","REVIEWED_NO_ISSUE_FOUND",""

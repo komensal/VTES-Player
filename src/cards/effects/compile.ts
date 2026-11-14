@@ -1759,7 +1759,7 @@ function compileActionCard(spec: CardSpec): CardHandler {
           const attach = mode.effects.find((e) => e.kind === "attachSelf");
           if (
             attach?.kind === "attachSelf" &&
-            attach.target === undefined &&
+            attach.target === undefined && !attach.stacks &&
             m.attached.some((p) => p.tags.includes(spec.name))
           ) {
             continue;
