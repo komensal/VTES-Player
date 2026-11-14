@@ -14372,8 +14372,8 @@
   {
     "id": 200032,
     "name": "Aiyana, The Wolfcatcher (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusty cryptPerm bez press przeciw werewolf i płatnej prevention; importer nie ustawia sterile na vampire. Porównano tekst, spec i wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Dodano opcjonalny press przeciw minionowi ze znacznikiem werewolf oraz koszt 1 blood za prewencję obrażeń od werewolf w bieżącej rundzie, w tym kolejnych pakietów; tests/cards/ahrimane-audit.test.ts. Prewencja odczytuje źródło z aktualnego stanu miniona, a testy kolejnych pakietów i następnej rundy modyfikują otwartą ramkę. Dalsze interakcje nie są objęte."
   },
   {
     "id": 200033,
@@ -16112,8 +16112,8 @@
   {
     "id": 200322,
     "name": "Darlene Killian (G5)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez dodatkowego blood za allies/retainers; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Dodano modyfikator +1 blood dla zagrań ally i retainer przez Darlene; tests/cards/ahrimane-audit.test.ts sprawdza koszt, dostępność i opłacenie przy normalnym recruit/employ. Inne specjalne ścieżki nie zostały wyczerpująco sprawdzone."
   },
   {
     "id": 200323,
@@ -17690,8 +17690,8 @@
   {
     "id": 200585,
     "name": "Helen Fairchild (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez zakazu equipment; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano zakaz zwykłego equip i wybranych sposobów wyposażania oraz blokadę aktywacji wyposażenia; tests/cards/ahrimane-audit.test.ts. Inne drogi przenoszenia lub wprowadzania equipment na miniona oraz automatyczne efekty wymagają dalszego przeglądu; wpis pozostaje otwarty."
   },
   {
     "id": 200586,
@@ -17823,7 +17823,7 @@
     "id": 200607,
     "name": "Howler (G2)",
     "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono: opcjonalny maneuver co combat. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje +1 strength, lecz brak optional maneuver i zakazu weapons; importer nie ustawia sterile. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Dodano zakaz aktywacji posiadanej broni oraz wybierania jej do strike przez wspólne prymitywy; nadal można ją posiadać. Testy ahrimane-audit.test.ts sprawdzają broń i alternatywę na karcie combat, a statics sprawdza optional maneuver i strength. Inne specjalne ścieżki wykorzystania broni wymagają dalszego przeglądu; wpis pozostaje otwarty."
   },
   {
     "id": 200608,
@@ -19719,7 +19719,7 @@
     "id": 200923,
     "name": "Maria Stone (G3 ADV)",
     "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono: -1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez -1 strength poza merged oraz superior Spiritus przy merged; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Niezmienione: unmerged -1 strength i Sterile są zaimplementowane. Brak mechanizmu merge advanced/base w silniku, dlatego tekst merged (zniesienie -1 strength i superior Spiritus) pozostaje otwarty."
   },
   {
     "id": 200924,
@@ -20319,7 +20319,7 @@
     "id": 201023,
     "name": "Muricia (G4)",
     "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono: +1 strength. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez +1 strength oraz przemiany własnego Gangrel antitribu w sterile Ahrimane z poziomem Spiritus za blood w unlock; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "evidence": "Dodano opcję raz w fazie unlock: własny Gangrel antitribu z blood płaci 1, staje się sterile Ahrimane i zyskuje poziom spi; testy ahrimane-audit.test.ts. +1 strength i drukowane Sterile były wcześniej zaimplementowane. Dynamiczne nakładanie efektów zmieniających klan, np. Clan Impersonation, wymaga poprawnego modelu pierwszeństwa; wpis pozostaje otwarty."
   },
   {
     "id": 201024,
@@ -22160,8 +22160,8 @@
   {
     "id": 201330,
     "name": "Sylvie Helgon (G6)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Pusta spec bez discard political action za stealth albo intercept podczas akcji; sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Dodano discard karty political action za +1 stealth albo intercept, gdy wymagane, raz na akcję; tests/cards/ahrimane-audit.test.ts sprawdzają obie strony, discard i limit. Sterile było wcześniej zaimplementowane. Dalsze interakcje nie są wyczerpująco sprawdzone."
   },
   {
     "id": 201331,

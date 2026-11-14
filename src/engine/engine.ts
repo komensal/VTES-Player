@@ -33,6 +33,8 @@ import {
   huntingRestricted,
   stealHuntTargets,
   libraryBlockToll,
+  minionHasTag,
+  cannotUseEquipmentEntry,
   currentBleed,
   currentIntercept,
   currentStealth,
@@ -730,6 +732,14 @@ export class VtesEngine implements EngineOps {
         if (!gained) break;
         gained.disciplines[ev.discipline] =
           gained.disciplines[ev.discipline] === undefined ? "basic" : "superior";
+        break;
+      }
+      case "VampireTransformed": {
+        const vampire = findMinion(this.state, ev.minion);
+        if (vampire?.kind === "vampire") {
+          vampire.clan = ev.clan;
+          vampire.sterile = ev.sterile;
+        }
         break;
       }
       case "DiablerieCommitted": {
@@ -5139,8 +5149,10 @@ export class VtesEngine implements EngineOps {
     // granted once, persisting across rounds until spent.
     const combatPresses = (minionId: MinionId): number => {
       let n = 0;
+      const other = getMinion(this.state, minionId === acting ? opposing : acting);
       for (const p of getMinion(this.state, minionId).attached) {
         n += p.statics.pressPerCombat ?? 0;
+        if (p.statics.pressPerCombatAgainstTag && minionHasTag(other, p.statics.pressPerCombatAgainstTag)) n++;
       }
       // "Each CHOSEN minion gets an optional press each combat" (Bloodlust)
       // — a seat-level card, so it is not among the minion's attachments.
@@ -11033,6 +11045,7 @@ export class VtesEngine implements EngineOps {
           // A card ON the barred minion that required the Discipline is a
           // card they would be using (Powder of Rigidity, §4).
           if (this.bannedInCombat(m.id, p.card.name)) continue;
+          if (cannotUseEquipmentEntry(m, p, h?.isEquipment === true)) continue;
           if (h?.abilityOptions) {
             options.push(
               ...h.abilityOptions(p, { seat: p.controller ?? s.id, minion: m.id }, ctx),
@@ -11071,6 +11084,7 @@ export class VtesEngine implements EngineOps {
       for (const m of s.minions) {
         for (const p of m.attached) {
           const h = this.registry[p.card.name];
+          if (cannotUseEquipmentEntry(m, p, h?.isEquipment === true)) continue;
           if (h?.actionOptions) {
             options.push(...h.actionOptions(p, { seat: s.id, minion: m.id }, ctx));
           }
@@ -12982,6 +12996,19 @@ export class VtesEngine implements EngineOps {
       const pd = cf.pendingDamage[0];
       if (!pd) return moved;
       const side = pd.minion === cf.acting ? "acting" : pd.minion === cf.opposing ? "opposing" : null;
+      // A purchased round-long shield prevents only preventable damage from
+      // a source that is currently a minion with the named subtype.
+      const source = pd.source ? findMinion(this.state, pd.source) : null;
+      if (!pd.unpreventable && source && cf.preventFromTagRound?.some(
+        (s) => s.minion === pd.minion && s.round === cf.round && minionHasTag(source, s.tag),
+      )) {
+        this.emit({ type: "DamagePrevented", minion: pd.minion, amount: pd.amount });
+        cf.pendingDamage.shift();
+        delete cf.damageCycle;
+        delete cf.damageCycleLen;
+        moved = true;
+        continue;
+      }
       // "Prevent N damage from the opposing minion's next HAND STRIKE
       // this round" (Forearm Block). Automatic, like every other
       // prevention the engine applies without asking: the card was

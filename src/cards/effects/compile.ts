@@ -64,6 +64,7 @@ import {
   isUndeadAlly,
   hasFlight,
   minionHasTag,
+  cannotUseEquipmentEntry,
   cardRequiresDiscipline,
   otherCopies,
   currentStealth,
@@ -633,6 +634,8 @@ export function playFromHandChoices(
       if (!h) continue;
       const types = h.costTypes?.(null, undefined) ?? [];
       if (!filter.types.some((t) => types.includes(t))) continue;
+      if (h.isEquipment && cannotBeEquipped(bearer, "equipment")) continue;
+      if (h.isRetainer && cannotBeEquipped(bearer, "retainer")) continue;
       // "a melee weapon", "an animal retainer" — printed sub-types the
       // permanent already carries as tags.
       const tags = h.permanentTags ?? [];
@@ -3575,6 +3578,7 @@ function compileCombatCard(spec: CardSpec): CardHandler {
               // legal strike option, so the card is not offered.
               for (const p of m.attached) {
                 if (!p.tags.includes("weapon") || !p.tags.includes("melee")) continue;
+                if (cannotUseEquipmentEntry(m, p, ctx.registry[p.card.name]?.isEquipment === true)) continue;
                 options.push(makeOption(spec, card, m, mode, { weapon: p.card.id }));
               }
               break;
@@ -3582,6 +3586,7 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             if (hb?.kind === "strikeHandBonus" && hb.orMeleeWeapon) {
               for (const p of m.attached) {
                 if (!p.tags.includes("weapon") || !p.tags.includes("melee")) continue;
+                if (cannotUseEquipmentEntry(m, p, ctx.registry[p.card.name]?.isEquipment === true)) continue;
                 options.push(
                   makeOption(spec, card, m, mode, { weapon: p.card.id }),
                 );
@@ -3596,6 +3601,7 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             if (sd?.kind === "strikeDamage" && sd.orRangedWeapon) {
               for (const p of m.attached) {
                 if (!p.tags.includes("weapon") || p.tags.includes("melee")) continue;
+                if (cannotUseEquipmentEntry(m, p, ctx.registry[p.card.name]?.isEquipment === true)) continue;
                 options.push(makeOption(spec, card, m, mode, { weapon: p.card.id }));
               }
             }
@@ -8019,7 +8025,7 @@ export function searchEquipGrant(
       // Methuselah who controls them right now (p. 16).
       if (owner.minion === null || ctx.seat !== owner.seat) return [];
       const m = findMinion(ctx.state, owner.minion);
-      if (!m || !canAct(m)) return [];
+      if (!m || !canAct(m) || cannotBeEquipped(m, "equipment")) return [];
       if (
         entry.grantedActionUses?.some(
           (u) => u.minion === m.id && u.key === "searchEquip",
@@ -13578,6 +13584,7 @@ function addCryptAbilities(
           break;
         }
         case "stealEquipment": {
+          if (cannotBeEquipped(actor, "equipment")) break;
           for (const s of state.seats) {
             for (const m of s.minions) {
               // "…from a vampire IN TORPOR" (Tutu).
@@ -14024,9 +14031,37 @@ function addCryptAbilities(
     };
   }
 
+  const transform = perm?.unlockTransformClan;
+  if (transform) {
+    const priorOptions = handler.abilityOptions?.bind(handler);
+    handler.abilityOptions = (entry, owner, ctx) => {
+      const out = [...(priorOptions?.(entry, owner, ctx) ?? [])];
+      const controller = entry.controller ?? owner.seat;
+      if (ctx.window !== "turn.unlock" || ctx.turnSeat !== controller || ctx.seat !== controller || entry.usedThisPhase) return out;
+      for (const m of getSeat(ctx.state, controller).minions) {
+        if (m.kind !== "vampire" || m.clan !== transform.from || m.blood < transform.blood) continue;
+        out.push({ id: `ability:${spec.name}:${entry.card.id}:transform:${m.id}`, kind: "useAbility",
+          label: `${spec.name}: ${m.name} burns ${transform.blood} blood to become ${transform.to}`,
+          source: entry.card.id, params: { act: "transformClan", target: m.id } });
+      }
+      return out;
+    };
+    const priorUse = handler.useAbility?.bind(handler);
+    handler.useAbility = (entry, owner, choice, ops) => {
+      if (choice.params["act"] !== "transformClan") return priorUse?.(entry, owner, choice, ops);
+      const id = choice.params["target"];
+      if (!id) return;
+      entry.usedThisPhase = true;
+      ops.emit({ type: "BloodBurned", minion: id, amount: transform.blood });
+      ops.emit({ type: "VampireTransformed", minion: id, clan: transform.to, sterile: true });
+      ops.emit({ type: "DisciplineGained", minion: id, discipline: transform.discipline });
+    };
+  }
+
   const aggro = perm?.aggravatedForBlood;
   const preventOther = perm?.preventForOther;
-  if (aggro || preventOther) {
+  const preventFromTag = perm?.preventFromTagEachRound;
+  if (aggro || preventOther || preventFromTag) {
     const priorOpts = handler.abilityOptions?.bind(handler);
     handler.abilityOptions = (entry, owner, ctx) => {
       const out: LegalOption[] = [...(priorOpts?.(entry, owner, ctx) ?? [])];
@@ -14047,6 +14082,19 @@ function addCryptAbilities(
             source: entry.card.id,
             params: { act: "aggravated" },
           });
+        }
+      }
+
+      // Purchase a shield only when a qualifying preventable packet is
+      // resolving. The shield also covers subsequent packets that round.
+      if (preventFromTag && cf && ctx.window === "combat.damageResolution" &&
+          bearer.blood >= preventFromTag.blood && !cf.usedThisRound.includes(entry.card.id)) {
+        const pd = cf.pendingDamage[0];
+        const source = pd?.source ? findMinion(ctx.state, pd.source) : null;
+        if (pd && pd.minion === bearer.id && !pd.unpreventable && source && minionHasTag(source, preventFromTag.tag)) {
+          out.push({ id: `ability:${spec.name}:${entry.card.id}:preventFromTag`, kind: "useAbility",
+            label: `${spec.name}: burn ${preventFromTag.blood} blood to prevent damage from ${preventFromTag.tag} this round`,
+            source: entry.card.id, params: { act: "preventFromTag" } });
         }
       }
 
@@ -14096,6 +14144,15 @@ function addCryptAbilities(
           ops.emit({ type: "BloodBurned", minion: owner.minion, amount: aggro.blood });
           ops.setHandStrikesAggravatedFor(owner.minion);
         }
+        return;
+      }
+      if (act === "preventFromTag" && preventFromTag && owner.minion) {
+        const cf = [...ops.state.frames].reverse().find((f) => f.kind === "combat");
+        if (!cf || cf.kind !== "combat") return;
+        ops.emit({ type: "BloodBurned", minion: owner.minion, amount: preventFromTag.blood });
+        ops.markUsedThisRound(entry.card.id);
+        (cf.preventFromTagRound ??= []).push({ minion: owner.minion, tag: preventFromTag.tag, round: cf.round });
+        ops.preventDamageFor(owner.minion, cf.pendingDamage[0]?.amount ?? 0);
         return;
       }
       if (act === "preventOther" && preventOther) {
@@ -14554,6 +14611,7 @@ function addCryptAbilities(
       if (!bearer || ctx.seat !== controller) return out;
       if (sale.oncePerTurn && entry.usedThisTurn) return out;
       if (sale.oncePerCombat && ctx.combat?.usedThisCombat.includes(entry.card.id)) return out;
+      if (sale.oncePerAction && (ctx.action?.usedInPlayAbilities ?? []).includes(entry.card.id)) return out;
 
       // Which minion the bonus lands on, and whether the window is open.
       // Each arm answers both, because for two of them the recipient is
@@ -14780,6 +14838,7 @@ function addCryptAbilities(
       }
       if (sale.oncePerTurn) entry.usedThisTurn = true;
       if (sale.oncePerCombat) ops.markUsedThisCombat(entry.card.id);
+      if (sale.oncePerAction) ops.markInPlayAbilityUsed(entry.card.id);
     };
   }
 

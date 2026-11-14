@@ -770,6 +770,8 @@ export interface PermanentStatics {
    *  offered as a bearer, which covers "have" and "use" at once.
    *  docs/wraith-zombie-design.md §4 */
   cannotBeEquipped?: { retainers?: boolean };
+  /** May possess weapons but cannot activate or strike with them (Howler). */
+  cannotUseWeapons?: boolean;
   /** "This ally cannot gain life" (Rotting Behemoth) — read in the
    *  `BloodGained` applier, so burning and paying are unaffected. */
   cannotGainLife?: boolean;
@@ -1072,6 +1074,8 @@ export interface PermanentStatics {
   /** "The employer gets N optional press(es) each combat" — credits that
    *  persist across rounds until spent (Dread Mastiff superior). */
   pressPerCombat?: number;
+  /** An optional press when the opposing minion has this subtype. */
+  pressPerCombatAgainstTag?: string;
   /** "1 optional press, ONLY USABLE TO CONTINUE COMBAT, each combat"
    *  (Righteous Blade) — the restricted sibling, spent before a general
    *  credit. docs/weapon-riders-design.md §4 */
@@ -2157,6 +2161,8 @@ export type GameEvent =
    *  card that granted it is burned at action resolution. Absent → basic,
    *  basic → superior. docs/torpor-prey-design.md §3 */
   | { type: "DisciplineGained"; minion: MinionId; discipline: string }
+  /** A permanent change to a vampire's clan and Sterile trait. */
+  | { type: "VampireTransformed"; minion: MinionId; clan: string; sterile: boolean }
   // Allies and retainers (phase 3, allies gate).
   /** `disciplines`: "plays cards requiring \<X\> as a vampire" (p. 11) —
    *  optional, so every existing fixture and saved log is untouched.
@@ -3802,6 +3808,8 @@ export interface CombatFrame {
   /** Card instances whose "each round of combat" ability was used this
    *  round (War Ghoul's prevention) — cleared when a new round begins. */
   usedThisRound: CardInstanceId[];
+  /** Prevention purchased for this round against damage from a subtype. */
+  preventFromTagRound?: Array<{ minion: MinionId; tag: string; round: number }>;
   /** The same, scoped to the whole COMBAT rather than the round
    *  ("can prevent 1 damage each combat", Guardian Angel) — never reset
    *  while the frame lives. docs/conditional-statics-design.md §4 */

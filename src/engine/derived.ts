@@ -1211,6 +1211,13 @@ export function minionHasTag(m: MinionState, ...tags: string[]): boolean {
   return tags.some((t) => mine.includes(t));
 }
 
+/** Restrictions on using equipment are not restrictions on possessing it. */
+export function cannotUseEquipmentEntry(m: MinionState, entry: PermanentInPlay, isEquipment: boolean): boolean {
+  const own = m.attached.find((p) => p.card.id === m.id)?.statics;
+  return !!own && ((!!own.cannotBeEquipped && (isEquipment || entry.tags.includes("equipment"))) ||
+    (!!own.cannotUseWeapons && entry.tags.includes("weapon")));
+}
+
 /** "a wraith or zombie ally you control" — the gate's whole vocabulary. */
 export function isUndeadAlly(m: MinionState): boolean {
   return m.kind === "ally" && minionHasTag(m, "wraith", "zombie");

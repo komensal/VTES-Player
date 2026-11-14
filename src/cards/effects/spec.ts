@@ -3597,6 +3597,10 @@ export interface CardSpec {
      *  behaviour — a ranged strike already works at close range — so the
      *  only new thing is the bonus (docs/crypt-wave-3.md §4). */
     rangedDamageBonus?: number;
+    /** Burn blood once per round to prevent all damage from a subtype. */
+    preventFromTagEachRound?: { blood: number; tag: string };
+    /** During your unlock phase, one controlled vampire pays to change clan. */
+    unlockTransformClan?: { from: string; to: string; blood: number; discipline: string };
     /** "Once each combat involving \<a minion you control\>, \<this
      *  vampire\> can burn N blood to prevent up to M damage to that
      *  minion" (Opikun, Huldu). The bystander prevention built for
@@ -4016,6 +4020,7 @@ export interface CardSpec {
       amount: number;
       oncePerCombat?: boolean;
       oncePerTurn?: boolean;
+      oncePerAction?: boolean;
     };
     /** "\<This vampire\> can \<do Y\> as a \[+N stealth\] \[Ⓓ\] action
      *  \[that costs 1 blood\]" — six crypt cards, one clause
