@@ -29869,10 +29869,15 @@ export const cardSpecs: CardSpec[] = [
     name: "Orun",
     cardType: "master",
     bloodCost: 0,
+    trifle: true,
+    permanent: {
+      where: "bearer",
+      statics: {},
+      tags: ["Orun"],
+      attach: { scope: "any", kind: "vampire", sect: "laibon", inTorporToo: true },
+    },
     usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
-    ],
+    modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
     // Osebo Kholo [101332] — fala 51 wierna (300) pełna zgodność bez wydmuszek
@@ -32830,10 +32835,15 @@ export const cardSpecs: CardSpec[] = [
     name: "Aye",
     cardType: "master",
     bloodCost: 0,
+    trifle: true,
+    permanent: {
+      where: "bearer",
+      statics: {},
+      tags: ["Aye"],
+      attach: { scope: "any", kind: "vampire", sect: "laibon", inTorporToo: true },
+    },
     usable: [],
-    modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
-    ],
+    modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
     // Bamba [100129] — fala 45 wierna (300) pełna zgodność bez wydmuszek
@@ -33386,6 +33396,9 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100595,
     name: "Dusk Work",
     cardType: "actionModifier",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
+    requiresAttachedCount: { name: "Aye", min: 3 },
     bloodCost: 0,
     usable: [],
     modes: [
@@ -33883,6 +33896,9 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100924,
     name: "High Aye",
     cardType: "actionModifier",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
+    requiresAttachedCount: { name: "Aye", min: 3 },
     bloodCost: 0,
     usable: [],
     modes: [
@@ -33905,6 +33921,9 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100927,
     name: "High Orun",
     cardType: "modifierOrReaction",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
+    requiresAttachedCount: { name: "Orun", min: 3 },
     bloodCost: 0,
     usable: [],
     modes: [
@@ -34428,6 +34447,9 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101269,
     name: "Neebi",
     cardType: "combat",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
+    requiresAttachedCount: { name: "Aye", min: 3 },
     bloodCost: 0,
     usable: [],
     modes: [
@@ -35357,6 +35379,9 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101906,
     name: "Supernatural Resistance",
     cardType: "modifierOrReaction",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
+    requiresAttachedCount: { name: "Orun", min: 3 },
     bloodCost: 0,
     usable: [],
     modes: [
@@ -35646,6 +35671,9 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 102073,
     name: "Unholy Radiance",
     cardType: "modifierOrReaction",
+    requiresSect: ["laibon"],
+    requiresVampire: true,
+    requiresAttachedCount: { name: "Orun", min: 3 },
     bloodCost: 0,
     usable: [],
     modes: [

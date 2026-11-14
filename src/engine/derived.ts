@@ -1910,6 +1910,12 @@ export function vampireVotes(
   // (Saulot's Guiding Wisdom represents "a unique Independent title worth
   // 2 votes", which is not one of the eleven VampireTitles).
   const cardVotes = m.attached.reduce((n, p) => n + (p.statics.votes ?? 0), 0);
+  // Orun's vote is one per group of THREE cards on the Laibon, not one
+  // per Orun that prints the sentence. Locked cards and cards played by
+  // another Methuselah still count. Read live so a burned card stops counting.
+  const orunVotes = m.sect === "laibon"
+    ? Math.floor(m.attached.filter((p) => p.card.name === "Orun").length / 3)
+    : 0;
   const titleVotes = m.title === null ? 0 : TITLE_VOTES[m.title];
   // Global vote statics ("titled Brujah get +1 vote, Ventrue get −1",
   // New Carthage). CLAMPED at zero: a negative subtracts a Ventrue's
@@ -1965,6 +1971,7 @@ export function vampireVotes(
     0,
     titleVotes +
       cardVotes +
+      orunVotes +
       auraBonus(state, m, "votes") +
       // "While you control 1 or more locations, Neserian gets +1
       // vote" — a crypt card's conditional static, board-conditioned.

@@ -716,8 +716,8 @@
   {
     "id": 100120,
     "name": "Aye",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast trifle Aye na Laibon, cancel Frenzy, wake i warunków spalenia. Tekst: src/cards/registry.json, ID 100120; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast trifle Aye na Laibon, cancel Frenzy, wake i warunków spalenia. Tekst: src/cards/registry.json, ID 100120; implementacja: src/cards/effects/cards.ts. Aktualizacja: Zastąpiono placeholder trifle dołączanym do dowolnego Laibon, także w torpor, bez błędnego gain pool. tests/cards/aye-orun-partial.test.ts. Historyczne wzmianki o brakach w tym zakresie są nieaktualne. Pozostałe efekty, timing oraz spalanie i limit Aye/Orun nadal wymagają implementacji."
   },
   {
     "id": 100121,
@@ -3566,8 +3566,8 @@
   {
     "id": 100595,
     "name": "Dusk Work",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec daje stealth zamiast unlock po akcji po zablokowaniu trzech Aye i wymagania Laibon. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec daje stealth zamiast unlock po akcji po zablokowaniu trzech Aye i wymagania Laibon. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: Dodano warunek grającego Laibon oraz trzech kart Aye; liczą się również zablokowane oraz cudze karty na tym minionie. tests/cards/aye-orun-partial.test.ts. Historyczne wzmianki o brakach w tym zakresie są nieaktualne. Pozostałe efekty, timing oraz spalanie i limit Aye/Orun nadal wymagają implementacji."
   },
   {
     "id": 100596,
@@ -5540,8 +5540,8 @@
   {
     "id": 100924,
     "name": "High Aye",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Modifier daje tylko +1 stealth; brak wymogu Laibon z trzema Aye, bonusu undirected i opcjonalnego discard. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier daje tylko +1 stealth; brak wymogu Laibon z trzema Aye, bonusu undirected i opcjonalnego discard. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: Dodano warunek grającego Laibon oraz trzech kart Aye; liczą się również zablokowane oraz cudze karty na tym minionie. tests/cards/aye-orun-partial.test.ts. Historyczne wzmianki o brakach w tym zakresie są nieaktualne. Pozostałe efekty, timing oraz spalanie i limit Aye/Orun nadal wymagają implementacji."
   },
   {
     "id": 100925,
@@ -5558,8 +5558,8 @@
   {
     "id": 100927,
     "name": "High Orun",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Modifier/reaction daje intercept zamiast obniżki kosztu Disciplines i zwiększenia hand size; brak wymogu Laibon i trzech Orun. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier/reaction daje intercept zamiast obniżki kosztu Disciplines i zwiększenia hand size; brak wymogu Laibon i trzech Orun. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: Dodano warunek grającego Laibon oraz trzech kart Orun; liczą się również zablokowane oraz cudze karty na tym minionie. tests/cards/aye-orun-partial.test.ts. Historyczne wzmianki o brakach w tym zakresie są nieaktualne. Pozostałe efekty, timing oraz spalanie i limit Aye/Orun nadal wymagają implementacji."
   },
   {
     "id": 100928,
@@ -7610,8 +7610,8 @@
   {
     "id": 101269,
     "name": "Neebi",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Combat ma zwykły maneuver zamiast ustawienia range przed determine range; brak wymogu Laibon z trzema Aye. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Combat ma zwykły maneuver zamiast ustawienia range przed determine range; brak wymogu Laibon z trzema Aye. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: Dodano warunek grającego Laibon oraz trzech kart Aye; liczą się również zablokowane oraz cudze karty na tym minionie. tests/cards/aye-orun-partial.test.ts. Historyczne wzmianki o brakach w tym zakresie są nieaktualne. Pozostałe efekty, timing oraz spalanie i limit Aye/Orun nadal wymagają implementacji."
   },
   {
     "id": 101270,
@@ -7982,8 +7982,8 @@
   {
     "id": 101331,
     "name": "Orun",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Master daje gainPool zamiast trifle na Laibon, dodatkowej capacity i głosów oraz warunków spalenia. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast trifle na Laibon, dodatkowej capacity i głosów oraz warunków spalenia. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: Zastąpiono placeholder trifle dołączanym do dowolnego Laibon; głosy są liczone po jednym za każdą pełną trójkę Orun. tests/cards/aye-orun-partial.test.ts. Historyczne wzmianki o brakach w tym zakresie są nieaktualne. Pozostałe efekty, timing oraz spalanie i limit Aye/Orun nadal wymagają implementacji."
   },
   {
     "id": 101332,
@@ -11432,8 +11432,8 @@
   {
     "id": 101906,
     "name": "Supernatural Resistance",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Reaction/modifier daje intercept zamiast lock Orun dla cancel action/strike i ograniczeń dyscyplin; brak wymogu Laibon i trzech Orun. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Reaction/modifier daje intercept zamiast lock Orun dla cancel action/strike i ograniczeń dyscyplin; brak wymogu Laibon i trzech Orun. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: Dodano warunek grającego Laibon oraz trzech kart Orun; liczą się również zablokowane oraz cudze karty na tym minionie. tests/cards/aye-orun-partial.test.ts. Historyczne wzmianki o brakach w tym zakresie są nieaktualne. Pozostałe efekty, timing oraz spalanie i limit Aye/Orun nadal wymagają implementacji."
   },
   {
     "id": 101907,
@@ -12434,8 +12434,8 @@
   {
     "id": 102073,
     "name": "Unholy Radiance",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Modifier/reaction daje intercept zamiast 4 votes w referendum i użycia przez locked Laibon; brak wymogu trzech Orun. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier/reaction daje intercept zamiast 4 votes w referendum i użycia przez locked Laibon; brak wymogu trzech Orun. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: Dodano warunek grającego Laibon oraz trzech kart Orun; liczą się również zablokowane oraz cudze karty na tym minionie. tests/cards/aye-orun-partial.test.ts. Historyczne wzmianki o brakach w tym zakresie są nieaktualne. Pozostałe efekty, timing oraz spalanie i limit Aye/Orun nadal wymagają implementacji."
   },
   {
     "id": 102074,

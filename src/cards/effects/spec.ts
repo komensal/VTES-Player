@@ -4631,6 +4631,9 @@ export interface CardSpec {
    *  Not a discipline, not a clan: a piece of equipment.
    *  docs/second-minion-modifiers-design.md §1 */
   requiresAttachedTag?: string[];
+  /** Minimum number of named cards on the playing minion, including locked
+   *  cards and those owned by another Methuselah (Aye / Orun requirements). */
+  requiresAttachedCount?: { name: string; min: number };
   /** A condition on the ACTING minion, which is a different question from
    *  every `requires*` above: those gate who may PLAY the card, this gates
    *  who the card may be played AGAINST. "Only usable if a Camarilla or

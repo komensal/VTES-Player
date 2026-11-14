@@ -285,6 +285,11 @@ export function meetsRequirements(m: MinionState, spec: CardSpec): boolean {
   // Way, Ghoul Escort) — an ally is a minion and may otherwise play
   // reactions or employ retainers. Found by the 2026-09-14 library audit.
   if (spec.requiresVampire && m.kind !== "vampire") return false;
+  // "With three or more Aye/Orun": the cards on this minion, whether
+  // locked or not, and regardless of which Methuselah played them.
+  if (spec.requiresAttachedCount &&
+      m.attached.filter((p) => p.card.name === spec.requiresAttachedCount!.name).length <
+        spec.requiresAttachedCount.min) return false;
   // "Only usable by a … minion WITH A GUN" (Suppressing Fire) — a card in
   // play on them, read off the tags the equipment compiler already sets.
   if (
