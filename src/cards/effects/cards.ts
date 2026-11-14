@@ -36403,7 +36403,7 @@ export const cardSpecs: CardSpec[] = [
  */
 export const cryptSpecs: CardSpec[] = [
   // Prevention is modelled here; the directed-action restriction is still open.
-  cryptPerm(200001, "Aabbt Kindred (G2)", { preventSelfEachCombat: 1 }),
+  cryptPerm(200001, "Aabbt Kindred (G2)", { preventSelfEachCombat: { amount: 1 } }),
   // Independent: unlock a vampire or mummy you control as a +1 stealth action.
   cryptPerm(200005, "Abdelsobek (G5)", {
     grantedAction: { do: "unlockControlledVampireOrMummy", stealth: 1 },
@@ -37905,7 +37905,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(200490, "Gabrin (G2)", { stealth: 1 }), // wierna fala 30 (500) // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200491, "Gaël Pilet (G2)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
     flatCrypt(200492, "Ganesh (G5)", { conditional: [{bleed: 1, actionKinds: ["bleed"], targetReady: {exists: true, minion: {kind: "vampire", clans: ["Giovanni"]}}}] }), // fala 46 wierna (300) statics
-      flatCrypt(200493, "Ganhuru (G4)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
+      cryptPerm(200493, "Ganhuru (G4)", { preventSelfEachCombat: { amount: 1, nonAggravatedOnly: true } }), // Other ability remains open.
     cryptPerm(200495, "Gaspare Giovanni (G2)", { statics: { strength: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
       flatCrypt(200496, "Gatjil Munyarryun (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
       flatCrypt(200497, "Gavrylo (G5)", {}), // wierna fala 31 (500): przejrzane // wierna fala 30 (500): przejrzane // fala 28 wierna (500+) // fala 27 wierna (500) // fala 26 wierna (500)
@@ -38170,7 +38170,7 @@ export const cryptSpecs: CardSpec[] = [
     cryptPerm(200842, "Lisette Vizquel (G2)", { statics: { conditional: [{intercept: 1, actionKinds: ["diablerize"]}] } }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(200843, "Lithrac (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
     flatCrypt(200844, "Little Tailor of Prague (G2)", { bleed: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
-    cryptPerm(200847, "Lizette (G4)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(200847, "Lizette (G4)", { preventSelfEachCombat: { amount: 1 } }), // Paid bleed ability remains open.
     flatCrypt(200848, "Lodin (Olaf Holte) (G5)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     flatCrypt(200852, "Lord Aaron Wesley Wilkshire (G4)", {}), // wierna fala 31 (500): przejrzane // fala 28 wierna (500+)
     flatCrypt(200853, "Lord Ashton (G3)", { stealth: 1 }), // wierna fala 31 (500) // fala 28 wierna (500+)
@@ -38595,7 +38595,7 @@ export const cryptSpecs: CardSpec[] = [
     cryptPerm(201396, "Tusk, The Talebearer (G1 ADV)", { requiresReady: true }), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(201397, "Tyler (G3)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
     cryptPerm(201398, "Tyler McGill (G5)", {}), // fala 47 wierna (300) cryptPerm
-    cryptPerm(201400, "Ublo-Satha (G2)", {}), // fala 47 wierna (300) cryptPerm Gehenna/statics
+    cryptPerm(201400, "Ublo-Satha (G2)", { preventSelfEachCombat: { amount: 1 } }), // Slave and Brujah bleed rules remain open.
     cryptPerm(201401, "Uchenna (G4)", {}), // fala 47 wierna (300) cryptPerm
     flatCrypt(201402, "Ugadja (G4)", { stealth: 1 }), // fala 32 wierna (421)
     cryptPerm(201404, "Ulugh Beg, The Watcher (G1)", {}), // fala 47 wierna (300) cryptPerm
@@ -38657,7 +38657,7 @@ export const cryptSpecs: CardSpec[] = [
     flatCrypt(201472, "Wise Frog (G6)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201473, "Wolf Valentine (G2)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201476, "Wynn (G1)", { stealth: 1 }), // fala 32 wierna (421)
-    flatCrypt(201477, "Xaviar (G3)", {}), // fala 32 wierna (421): przejrzane
+    cryptPerm(201477, "Xaviar (G3)", { preventSelfEachCombat: { amount: 1 } }), // Strength ability remains open.
     flatCrypt(201478, "Xaviar (G3 ADV)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201480, "Xeper, Sultan of Lepers (G6)", {}), // fala 32 wierna (421): przejrzane
     flatCrypt(201482, "Xipe Totec (G5)", { stealth: 1, strength: 1 }), // fala 32 wierna (421)

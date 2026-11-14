@@ -7,12 +7,12 @@ To powtarzalne, zgrubne grupowanie po słowach w tekście evidence, a nie potwie
 | Obszar do dalszej analizy | Kandydatów |
 |---|---:|
 | `crypt_import_lub_cechy` | 558 |
-| `placeholder_lub_brak_efektu` | 1937 |
+| `placeholder_lub_brak_efektu` | 1933 |
 | `akcje_i_blok` | 1653 |
 | `walka` | 747 |
 | `polityka_i_glosy` | 359 |
 | `koszty_i_zasoby` | 875 |
-| `karty_i_strefy` | 1565 |
+| `karty_i_strefy` | 1568 |
 | `czas_i_warunki` | 724 |
 | `inne_do_recznego_przegladu` | 6 |
 

@@ -17138,8 +17138,8 @@
   {
     "id": 200493,
     "name": "Ganhuru (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez prevention 1 non-aggravated damage co combat i gain pool po successful bleed prey przy ready Ubende. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano zapobieganie 1 non-aggravated damage raz na combat; tests/cards/crypt-self-prevention-audit.test.ts sprawdza zwykłe i aggravated, także aggravated traktowane jako normalne. Nie zaimplementowano gain 1 pool po udanym bleed prey przy ready Ubende; pozostałe interakcje nieweryfikowane."
   },
   {
     "id": 200494,
@@ -19262,8 +19262,8 @@
   {
     "id": 200847,
     "name": "Lizette (G4)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Pusta spec bez prevention 1 damage co combat i płatnego +1 bleed podczas bleed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano zapobieganie 1 damage raz na combat, także aggravated; tests/cards/crypt-self-prevention-audit.test.ts sprawdza rzeczywiste walki. Nie zaimplementowano płatnego +1 bleed w trakcie akcji bleed; pozostałe interakcje nieweryfikowane."
   },
   {
     "id": 200848,
@@ -22580,8 +22580,8 @@
   {
     "id": 201400,
     "name": "Ublo-Satha (G2)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowane Flight jest importowane i testowane (flight-audit.test.ts); pozostałe problemy w analizie poniżej nadal otwarte. Historyczna analiza sprzed poprawki Flight: Pusta spec bez prevention 1 damage co combat i +1 bleed Brujah przeciw kontrolerowi Ublo-Satha; Flight i Tremere slave nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano zapobieganie 1 damage raz na combat; tests/cards/crypt-self-prevention-audit.test.ts sprawdza walkę i import Flight do trzech stref. Nie zaimplementowano Tremere slave ani bonusu bleed Brujah przeciw kontrolerowi; pozostałe interakcje nieweryfikowane."
   },
   {
     "id": 201401,
@@ -23042,8 +23042,8 @@
   {
     "id": 201477,
     "name": "Xaviar (G3)",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Aktualizacja: drukowany niemerged osobisty tytuł importowany i jego głosy testowane w crypt-personal-title.test.ts; inne wymienione problemy pozostają otwarte. Historyczna analiza sprzed poprawki tytułów: Pusta spec bez prevention 1 damage co combat i 2 blood za +2 strength przed range raz na combat; importer nie rozpoznaje 2 titled votes po dwukropku. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano zapobieganie 1 damage raz na combat; tests/cards/crypt-self-prevention-audit.test.ts sprawdza walkę i import personal2 do trzech stref. Nie zaimplementowano spalenia 2 blood za +2 strength przed range; nie zweryfikowano tytułu w rzeczywistym referendum. Wcześniejszy zapis powoływał nieistniejący plik crypt-personal-title.test.ts."
   },
   {
     "id": 201478,
