@@ -1447,7 +1447,6 @@ id,name,kind,status,categories
 102352,Contraband,library,UNRESOLVED,crypt_import_lub_cechy; walka; koszty_i_zasoby; karty_i_strefy; czas_i_warunki
 200001,Aabbt Kindred (G2),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki
 200005,Abdelsobek (G5),crypt,CONFIRMED_BUG,akcje_i_blok
-200008,Abiku (G4),crypt,CONFIRMED_BUG,akcje_i_blok
 200011,Adana de Sforza (G4),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; polityka_i_glosy; koszty_i_zasoby; karty_i_strefy
 200013,Adhiambo (G4),crypt,CODE_DISCREPANCY,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; karty_i_strefy; czas_i_warunki
 200014,Adonai (G2),crypt,PARTIAL_FIX,crypt_import_lub_cechy; placeholder_lub_brak_efektu; akcje_i_blok; walka; karty_i_strefy; czas_i_warunki

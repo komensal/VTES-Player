@@ -36413,6 +36413,7 @@ export const cryptSpecs: CardSpec[] = [
   flatCrypt(201783, "Hafthor Thorsteinsson (G7)", { intercept: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
 
   // --- Conditioned on the ACTION being performed. ---
+  condCrypt(200008, "Abiku (G4)", [{ stealth: 1, actionKinds: ["hunt"] }]),
   condCrypt(200132, "Ariane (G5)", [{ stealth: -1, actionDirected: false }]),
   condCrypt(201545, "The Dowager (G6)", [{ intercept: 1, actionDirected: true }]),
   condCrypt(201601, "Martina Srnankova (G6)", [{ intercept: 1, actionKinds: ["bleed"] }]),

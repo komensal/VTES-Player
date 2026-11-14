@@ -7,7 +7,7 @@ To **triage, nie ręczny audyt ani potwierdzenie poprawności**. UNREVIEWED ozna
 | Sygnał | Kart |
 |---|---:|
 | crypt_empty_spec_with_text_review | 659 |
-| no_runtime_handler | 11 |
+| no_runtime_handler | 10 |
 | simple_gain_pool_text_mismatch_review | 180 |
 
 ## Udokumentowane ustalenia ręczne
@@ -2387,7 +2387,7 @@ To udokumentowane ustalenia, a nie pełne sprawdzenie wszystkich interakcji tych
 | 200005 | Abdelsobek (G5) | CONFIRMED_BUG | Brak specyfikacji i handlera o tej nazwie; tekst daje akcję odblokowania wampira lub mumii. src/cards/registry.json: 200005; buildHandlerRegistry. |
 | 200006 | Abebe (G4) | REVIEWED_NO_ISSUE_FOUND | Wąski zakres: tekst ogranicza się do Independent; importer parsuje sektę oraz przekazuje registry clan/capacity/dyscypliny. Bez osobnego testu karty. |
 | 200007 | Abid bin Haji, Scholar of Mirrors (G6) | FIXED_TARGETED | Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności. |
-| 200008 | Abiku (G4) | CONFIRMED_BUG | Brak specyfikacji i handlera o tej nazwie; tekst daje +1 stealth podczas hunt. src/cards/registry.json: 200008; buildHandlerRegistry. |
+| 200008 | Abiku (G4) | FIXED_TARGETED | Dodano +1 stealth podczas hunt, również specjalnego hunt Abactor; brak bonusu na bleed. tests/cards/abiku-audit.test.ts sprawdza import w trzech strefach i rzeczywiste akcje. Ocena nie obejmuje wszystkich możliwych interakcji. |
 | 200009 | Abu Nuwasi (G4) | REVIEWED_NO_ISSUE_FOUND | Wąski zakres: tekst ogranicza się do Laibon; importer parsuje sektę oraz przekazuje registry clan/capacity/dyscypliny. Bez osobnego testu karty. |
 | 200010 | Accorri Giovanni (G5) | REVIEWED_NO_ISSUE_FOUND | Wąski zakres: tekst ogranicza się do Independent; importer parsuje sektę, crypt self-entry z pustego flatCrypt nie dodaje zdolności. Bez osobnego testu karty. |
 | 200011 | Adana de Sforza (G4) | PARTIAL_FIX | Częściowo naprawiono: +2 bleed. Testy crypt-printed-statics-audit.test.ts sprawdzają tę klauzulę; pozostałe problemy nadal są otwarte (poniższa wcześniejsza analiza statyczna może opisywać naprawioną klauzulę): flatCrypt ma puste statics; importer parsuje tytuł Inner Circle, ale nie ma +2 bleed ani zniżki 1 blood na combat cards. Nie znaleziono osobnego handlera Adany. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. |

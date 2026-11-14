@@ -631,3 +631,8 @@ Testy celowane: **114/114** w 10 plikach; generator audytu i kategorii, typechec
 
 - Rozszerzono `PlayCostCardType` o drukowany typ `conviction` i zwracanie go dla React with Conviction, Second Sight i Strike with Conviction. Metadane nie implementują zdolności tych kart ani mechaniki imbued; ich wcześniejsze rozbieżności pozostają otwarte. Audyt przestał sygnalizować brak typu dla tych trzech kart (0 zamiast 3), 2463 otwarte ustalenia z 4158 bez zmian.
 - `tests/cards/central-queries.test.ts` sprawdza typ każdej z trzech kart. Testy w 4 plikach **36/36**, typecheck, build i diff check OK. Pełny zestaw **5370 passed / 14 failed** w 11 plikach: zniknął jeden błąd central-queries, pozostałe 14 nazw odpowiadają poprzednim. Build ostrzega o dużych chunkach.
+
+### Abiku (G4) — +1 stealth podczas hunt
+
+- Dodano brakujący handler warunkowy dla drukowanego +1 stealth podczas hunt. `tests/cards/abiku-audit.test.ts` sprawdza import zdolności do ready, uncontrolled i crypt oraz rzeczywisty normalny hunt, Abactor i brak bonusu na bleed. Status `FIXED_TARGETED` dotyczy sprawdzonej klauzuli, a nie każdej interakcji.
+- Testy w czterech plikach **206/206**; typecheck, build i diff check OK. Pełny zestaw **5373 passed / 14 failed**, te same 14 nazw co po poprawce typu Conviction. Build ostrzega o dużych chunkach. Audyt: **2462 otwarte z 4158**, brak handlera dla 10 kart (było 11).

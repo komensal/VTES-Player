@@ -14228,8 +14228,8 @@
   {
     "id": 200008,
     "name": "Abiku (G4)",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak specyfikacji i handlera o tej nazwie; tekst daje +1 stealth podczas hunt. src/cards/registry.json: 200008; buildHandlerRegistry."
+    "status": "FIXED_TARGETED",
+    "evidence": "Dodano +1 stealth podczas hunt, również specjalnego hunt Abactor; brak bonusu na bleed. tests/cards/abiku-audit.test.ts sprawdza import w trzech strefach i rzeczywiste akcje. Ocena nie obejmuje wszystkich możliwych interakcji."
   },
   {
     "id": 200009,
