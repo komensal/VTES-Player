@@ -26747,6 +26747,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100220,
     name: "Blooding",
     cardType: "action",
+    requiresSect: ["sabbat"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -27394,6 +27396,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100452,
     name: "Crusade: Aragon",
     cardType: "politicalAction",
+    requiresSect: ["sabbat"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -28220,6 +28224,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100801,
     name: "Games of Instinct",
     cardType: "action",
+    requiresSect: ["sabbat"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -28791,6 +28797,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100988,
     name: "Inquisition",
     cardType: "action",
+    requiresSect: ["sabbat"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -29083,6 +29091,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101087,
     name: "Legacy of Pander",
     cardType: "politicalAction",
+    requiresSect: ["sabbat"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -29389,6 +29399,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101173,
     name: "Martial Ritus",
     cardType: "action",
+    requiresSect: ["sabbat"],
+    requiresVampire: true,
     bloodCost: 1,
     usable: [],
     modes: [
@@ -29578,6 +29590,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101241,
     name: "Monomancy",
     cardType: "action",
+    requiresSect: ["sabbat"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -30979,6 +30993,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101661,
     name: "Rumble",
     cardType: "action",
+    requiresSect: ["sabbat"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -31709,6 +31725,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101903,
     name: "Sunrise Service",
     cardType: "action",
+    requiresSect: ["sabbat"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -32505,6 +32523,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 102206,
     name: "Zillah's Tears",
     cardType: "action",
+    requiresSect: ["sabbat"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -32996,6 +33016,8 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 100371,
     name: "Code of Milan Suspended",
     cardType: "politicalAction",
+    requiresSect: ["sabbat"],
+    requiresVampire: true,
     bloodCost: 0,
     usable: [],
     modes: [
@@ -34396,6 +34418,9 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101304,
     name: "Notorious Brutality",
     cardType: "actionModifier",
+    requiresSect: ["sabbat"],
+    requiresVampire: true,
+    requiresCapacity: 8,
     bloodCost: 1,
     usable: [],
     modes: [

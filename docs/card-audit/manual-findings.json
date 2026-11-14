@@ -1316,8 +1316,8 @@
   {
     "id": 100220,
     "name": "Blooding",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma wyłącznie stealth; brak wymagania Sabbat, dołączenia, blood i Black Hand. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma wyłącznie stealth; brak wymagania Sabbat, dołączenia, blood i Black Hand. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: wymaganie wampira Sabbatu jest egzekwowane przez kompilator i widoczne w metadanych (tests/cards/printed-sabbat-requirements.test.ts); wcześniejsze stwierdzenie o braku wymogu jest historyczne. Inne wcześniej opisane efekty, cele i warunki pozostają otwarte; testy legalności nie potwierdzają poprawności efektów."
   },
   {
     "id": 100221,
@@ -2222,8 +2222,8 @@
   {
     "id": 100371,
     "name": "Code of Milan Suspended",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Political action ma pusty tryb; brak wymogu Sabbat oraz wybrania posiadacza Edge i burn pool. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Political action ma pusty tryb; brak wymogu Sabbat oraz wybrania posiadacza Edge i burn pool. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: wymaganie wampira Sabbatu jest egzekwowane przez kompilator i widoczne w metadanych (tests/cards/printed-sabbat-requirements.test.ts); wcześniejsze stwierdzenie o braku wymogu jest historyczne. Inne wcześniej opisane efekty, cele i warunki pozostają otwarte; testy legalności nie potwierdzają poprawności efektów."
   },
   {
     "id": 100372,
@@ -2708,8 +2708,8 @@
   {
     "id": 100452,
     "name": "Crusade: Aragon",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Pusta specyfikacja referendum nie przyznaje tytułu Archbishop of Aragon ani nie umieszcza karty na Sabbat Lucicie zamiast aktora, gdy jest w grze. Brak osobnego handlera Aragon; src/cards/effects/cards.ts, registry.json."
+    "status": "PARTIAL_FIX",
+    "evidence": "Pusta specyfikacja referendum nie przyznaje tytułu Archbishop of Aragon ani nie umieszcza karty na Sabbat Lucicie zamiast aktora, gdy jest w grze. Brak osobnego handlera Aragon; src/cards/effects/cards.ts, registry.json. Aktualizacja: wymaganie wampira Sabbatu jest egzekwowane przez kompilator i widoczne w metadanych (tests/cards/printed-sabbat-requirements.test.ts); wcześniejsze stwierdzenie o braku wymogu jest historyczne. Inne wcześniej opisane efekty, cele i warunki pozostają otwarte; testy legalności nie potwierdzają poprawności efektów."
   },
   {
     "id": 100453,
@@ -4802,8 +4802,8 @@
   {
     "id": 100801,
     "name": "Games of Instinct",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth zamiast wymogu ready Sabbat, walki z cudzym starszym vampire i blood po combat. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast wymogu ready Sabbat, walki z cudzym starszym vampire i blood po combat. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: wymaganie wampira Sabbatu jest egzekwowane przez kompilator i widoczne w metadanych (tests/cards/printed-sabbat-requirements.test.ts); wcześniejsze stwierdzenie o braku wymogu jest historyczne. Inne wcześniej opisane efekty, cele i warunki pozostają otwarte; testy legalności nie potwierdzają poprawności efektów."
   },
   {
     "id": 100802,
@@ -5924,8 +5924,8 @@
   {
     "id": 100988,
     "name": "Inquisition",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma prevent i stealth zamiast wymogu ready Sabbat, wyboru bishops, utraty title i unpreventable damage. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma prevent i stealth zamiast wymogu ready Sabbat, wyboru bishops, utraty title i unpreventable damage. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: wymaganie wampira Sabbatu jest egzekwowane przez kompilator i widoczne w metadanych (tests/cards/printed-sabbat-requirements.test.ts); wcześniejsze stwierdzenie o braku wymogu jest historyczne. Inne wcześniej opisane efekty, cele i warunki pozostają otwarte; testy legalności nie potwierdzają poprawności efektów."
   },
   {
     "id": 100989,
@@ -6518,8 +6518,8 @@
   {
     "id": 101087,
     "name": "Legacy of Pander",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Political action daje modifyStealth zamiast wymogu Sabbat, permanenta z głosami nietytułowanych Pander i referendum do spalenia. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Political action daje modifyStealth zamiast wymogu Sabbat, permanenta z głosami nietytułowanych Pander i referendum do spalenia. Porównano tekst i metadane registry z aktualnym kodem; bez nowego testu scenariuszowego. Aktualizacja: wymaganie wampira Sabbatu jest egzekwowane przez kompilator i widoczne w metadanych (tests/cards/printed-sabbat-requirements.test.ts); wcześniejsze stwierdzenie o braku wymogu jest historyczne. Inne wcześniej opisane efekty, cele i warunki pozostają otwarte; testy legalności nie potwierdzają poprawności efektów."
   },
   {
     "id": 101088,
@@ -7034,8 +7034,8 @@
   {
     "id": 101173,
     "name": "Martial Ritus",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action daje natychmiast addStrength i stealth zamiast wymogu Sabbat, przyłączenia do młodszego Sabbat, unlock aktora i późniejszego spalenia. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action daje natychmiast addStrength i stealth zamiast wymogu Sabbat, przyłączenia do młodszego Sabbat, unlock aktora i późniejszego spalenia. Porównano registry.json i effects/cards.ts oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: wymaganie wampira Sabbatu jest egzekwowane przez kompilator i widoczne w metadanych (tests/cards/printed-sabbat-requirements.test.ts); wcześniejsze stwierdzenie o braku wymogu jest historyczne. Inne wcześniej opisane efekty, cele i warunki pozostają otwarte; testy legalności nie potwierdzają poprawności efektów."
   },
   {
     "id": 101174,
@@ -7442,8 +7442,8 @@
   {
     "id": 101241,
     "name": "Monomancy",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth; brak wymaganego Sabbat, rush innego Sabbat i możliwości przeciwnika zakończenia combat z karą bleed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak wymaganego Sabbat, rush innego Sabbat i możliwości przeciwnika zakończenia combat z karą bleed. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: wymaganie wampira Sabbatu jest egzekwowane przez kompilator i widoczne w metadanych (tests/cards/printed-sabbat-requirements.test.ts); wcześniejsze stwierdzenie o braku wymogu jest historyczne. Inne wcześniej opisane efekty, cele i warunki pozostają otwarte; testy legalności nie potwierdzają poprawności efektów."
   },
   {
     "id": 101242,
@@ -7820,8 +7820,8 @@
   {
     "id": 101304,
     "name": "Notorious Brutality",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Modifier daje stealth zamiast zakazu blokowania przez non-infernal vampire poniżej 6 capacity; brak wymogu Sabbat, progu capacity i announce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier daje stealth zamiast zakazu blokowania przez non-infernal vampire poniżej 6 capacity; brak wymogu Sabbat, progu capacity i announce. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: wymaganie wampira Sabbatu jest egzekwowane przez kompilator i widoczne w metadanych (tests/cards/printed-sabbat-requirements.test.ts); wcześniejsze stwierdzenie o braku wymogu jest historyczne. Próg capacity powyżej 7 również dodano, lecz timing i efekt nadal nie odpowiadają nadrukowi. Inne wcześniej opisane efekty, cele i warunki pozostają otwarte; testy legalności nie potwierdzają poprawności efektów."
   },
   {
     "id": 101305,
@@ -9962,8 +9962,8 @@
   {
     "id": 101661,
     "name": "Rumble",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast wymogu Sabbat, rush gotowego miniona, bonusu hand size i warunkowej straty pool. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast wymogu Sabbat, rush gotowego miniona, bonusu hand size i warunkowej straty pool. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: wymaganie wampira Sabbatu jest egzekwowane przez kompilator i widoczne w metadanych (tests/cards/printed-sabbat-requirements.test.ts); wcześniejsze stwierdzenie o braku wymogu jest historyczne. Inne wcześniej opisane efekty, cele i warunki pozostają otwarte; testy legalności nie potwierdzają poprawności efektów."
   },
   {
     "id": 101662,
@@ -11414,8 +11414,8 @@
   {
     "id": 101903,
     "name": "Sunrise Service",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast dołączenia, unpreventable aggravated damage i burn za unblockable; brak wymogu Sabbat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast dołączenia, unpreventable aggravated damage i burn za unblockable; brak wymogu Sabbat. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: wymaganie wampira Sabbatu jest egzekwowane przez kompilator i widoczne w metadanych (tests/cards/printed-sabbat-requirements.test.ts); wcześniejsze stwierdzenie o braku wymogu jest historyczne. Inne wcześniej opisane efekty, cele i warunki pozostają otwarte; testy legalności nie potwierdzają poprawności efektów."
   },
   {
     "id": 101904,
@@ -13232,8 +13232,8 @@
   {
     "id": 102206,
     "name": "Zillah's Tears",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "Action ma tylko stealth zamiast wymogu Sabbat, attach z gain blood i późniejszym burn za unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast wymogu Sabbat, attach z gain blood i późniejszym burn za unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: wymaganie wampira Sabbatu jest egzekwowane przez kompilator i widoczne w metadanych (tests/cards/printed-sabbat-requirements.test.ts); wcześniejsze stwierdzenie o braku wymogu jest historyczne. Inne wcześniej opisane efekty, cele i warunki pozostają otwarte; testy legalności nie potwierdzają poprawności efektów."
   },
   {
     "id": 102207,
