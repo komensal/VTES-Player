@@ -435,7 +435,7 @@ const COST_TYPES_BY_CARD_TYPE: Record<CardSpec["cardType"], PlayCostCardType[]> 
   // and every other play-cost modifier is about cards you play, and a
   // vampire is never played (docs/crypt-plan.md §4).
   crypt: [],
-  conviction: [],
+  conviction: ["conviction"],
 };
 
 /**

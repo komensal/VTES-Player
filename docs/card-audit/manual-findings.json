@@ -9339,7 +9339,7 @@
     "id": 101557,
     "name": "React with Conviction",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Conviction ma maneuver zamiast opcji anulowania zmiany kontroli oraz określonych działań i strikes. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Conviction ma maneuver zamiast opcji anulowania zmiany kontroli oraz określonych działań i strikes. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: centralne zapytanie typu rozpoznaje wydrukowany typ Conviction (tests/cards/central-queries.test.ts); nie implementuje to zdolności karty ani mechaniki imbued."
   },
   {
     "id": 101558,
@@ -10227,7 +10227,7 @@
     "id": 101705,
     "name": "Second Sight",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Conviction ma modifyIntercept zamiast dwóch efektów burn zależnych od monster oraz limitu jednej karty na akcję. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Conviction ma modifyIntercept zamiast dwóch efektów burn zależnych od monster oraz limitu jednej karty na akcję. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: centralne zapytanie typu rozpoznaje wydrukowany typ Conviction (tests/cards/central-queries.test.ts); nie implementuje to zdolności karty ani mechaniki imbued."
   },
   {
     "id": 101706,
@@ -11313,7 +11313,7 @@
     "id": 101886,
     "name": "Strike with Conviction",
     "status": "CODE_DISCREPANCY",
-    "evidence": "Conviction ma modifyBleed zamiast dwóch opcji burn na strike +1 przeciw monster lub bleed action +1. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego."
+    "evidence": "Conviction ma modifyBleed zamiast dwóch opcji burn na strike +1 przeciw monster lub bleed action +1. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: centralne zapytanie typu rozpoznaje wydrukowany typ Conviction (tests/cards/central-queries.test.ts); nie implementuje to zdolności karty ani mechaniki imbued."
   },
   {
     "id": 101887,

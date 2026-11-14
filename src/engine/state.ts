@@ -516,6 +516,8 @@ export type PlayCostCardType =
   | "retainer"
   | "equipment"
   | "politicalAction"
+  /** Conviction is a printed library card type, not combat or reaction. */
+  | "conviction"
   /** An EVENT (p. 37). Nothing in the pool prices one today, but the type
    *  is printed and `central-queries` requires every library card to name
    *  one — the cost vocabulary is the printed type line, not the set of
