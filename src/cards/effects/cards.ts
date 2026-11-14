@@ -32634,14 +32634,18 @@ export const cardSpecs: CardSpec[] = [
   },
 
   {
-    // 419 Operation [100002] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    // Its pool store and prey's burn-the-Edge ability are in the overlay.
     krcgId: 100002,
     name: "419 Operation",
     cardType: "action",
     bloodCost: 0,
+    requiresClan: ["Osebo"],
+    requiresVampire: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [
+        { kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSuccess", tags: ["419 Operation"] },
+      ] }
     ],
   },
   {
@@ -41141,6 +41145,70 @@ const timeAuctionRules: AuctionRules = {
   },
 };
 
+/** 419 Operation stores the current prey's pool; ownership and prey can
+ * change, so neither is fixed when the card enters play. */
+const operation419: CardHandler = {
+  ...compileSpec(specByName("419 Operation")),
+  abilityAnySeat: true,
+  abilityOptions(entry, owner, ctx) {
+    const controller = entry.controller ?? owner.seat;
+    const prey = preyOf(ctx.state, controller);
+    const options: LegalOption[] = [];
+    if (ctx.seat === controller && ctx.turnSeat === controller && ctx.window === "turn.unlock" &&
+        (entry.phaseUses ?? 0) === 0) {
+      if (getSeat(ctx.state, prey).pool > 0) {
+        options.push({ id: `ability:419 Operation:${entry.card.id}:collect`, kind: "useAbility",
+          label: "419 Operation: move 1 pool from your prey to this card", source: entry.card.id,
+          params: { act: "collect", seat: controller } });
+      }
+      if ((entry.counters ?? 0) > 0) {
+        options.push({ id: `ability:419 Operation:${entry.card.id}:cash`, kind: "useAbility",
+          label: "419 Operation: move all counters to your pool", source: entry.card.id,
+          params: { act: "cash", seat: controller } });
+      }
+    }
+    // An empty card can also be burned (Ankha, 419 Operation with no
+    // counters, 2016). The engine offers
+    // these abilities in its existing impulse windows, not literally every
+    // time an opponent may wish to interrupt a turn phase.
+    if (ctx.seat === prey && ctx.state.edge === prey) {
+      options.push({ id: `ability:419 Operation:${entry.card.id}:burn:${prey}`, kind: "useAbility",
+        label: "419 Operation: burn the Edge to recover the counters and burn this card",
+        source: entry.card.id, params: { act: "burn", seat: prey } });
+    }
+    return options;
+  },
+  useAbility(entry, _owner, choice, ops) {
+    // Seat-level cards have no bearer; find their current holder, rather
+    // than assuming the acting seat (which is the prey for the Edge option).
+    const home = ops.state.seats.find((s) => s.permanents.some((p) => p.card.id === entry.card.id));
+    if (!home) return;
+    const controller = entry.controller ?? home.id;
+    const prey = preyOf(ops.state, controller);
+    const seat = choice.params["seat"];
+    const act = choice.params["act"];
+    if (act === "burn" && seat === prey && ops.state.edge === prey) {
+      const amount = entry.counters ?? 0;
+      ops.burnEdge(prey);
+      if (amount > 0) ops.removeCounters(entry.card.id, amount);
+      if (amount > 0) ops.emit({ type: "PoolGained", seat: prey, amount });
+      ops.burnPermanent(entry.card.id);
+      return;
+    }
+    if (seat !== controller || (entry.phaseUses ?? 0) !== 0) return;
+    if (act === "collect" && getSeat(ops.state, prey).pool > 0) {
+      entry.phaseUses = 1;
+      ops.emit({ type: "PoolBurned", seat: prey, amount: 1 });
+      ops.addCounters(entry.card.id, 1);
+    } else if (act === "cash" && (entry.counters ?? 0) > 0) {
+      entry.phaseUses = 1;
+      const amount = entry.counters!;
+      ops.removeCounters(entry.card.id, amount);
+      ops.emit({ type: "PoolGained", seat: controller, amount });
+    }
+  },
+};
+
 const malkavianTimeAuction: CardHandler = {
   ...compileSpec(specByName("Malkavian Time Auction")),
   options(card, ctx) {
@@ -46743,6 +46811,7 @@ export function buildHandlerRegistry(): HandlerRegistry {
     extremisBoon,
     hostileTakeover,
     malkavianTimeAuction,
+    operation419,
     temptationOfGreaterPower,
     repoMan,
     absolutionOfTheDiabolist,

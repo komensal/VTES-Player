@@ -9,7 +9,7 @@
     "id": 100002,
     "name": "419 Operation",
     "status": "PARTIAL_FIX",
-    "evidence": "Spec action ma jedynie actionStealth; brak umieszczenia karty w grze, przenoszenia pool, wypłaty i możliwości użycia Edge przez prey. src/cards/effects/cards.ts: 419 Operation; registry.json: 100002. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Dodano pozostawienie karty w grze po niezablokowanej akcji, przelewy pool w unlock kontrolera oraz możliwość spalenia Edge przez aktualną prey, także przy zerowych counterach. tests/cards/operation-419-audit.test.ts sprawdza wymaganie Osebo, stealth, blok, oba przelewy, limit użycia, pustą kartę i zmianę prey. Spalenie Edge jest dostępne w istniejących oknach decyzji, nie we wszystkich momentach dowolnej fazy; kolejność z innymi efektami Edge oraz implikacje The Rising pozostają do zbadania."
   },
   {
     "id": 100003,

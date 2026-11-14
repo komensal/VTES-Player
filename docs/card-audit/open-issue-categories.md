@@ -7,13 +7,13 @@ To powtarzalne, zgrubne grupowanie po słowach w tekście evidence, a nie potwie
 | Obszar do dalszej analizy | Kandydatów |
 |---|---:|
 | `crypt_import_lub_cechy` | 558 |
-| `placeholder_lub_brak_efektu` | 1937 |
+| `placeholder_lub_brak_efektu` | 1938 |
 | `akcje_i_blok` | 1654 |
 | `walka` | 747 |
 | `polityka_i_glosy` | 358 |
 | `koszty_i_zasoby` | 873 |
 | `karty_i_strefy` | 1565 |
-| `czas_i_warunki` | 723 |
+| `czas_i_warunki` | 724 |
 | `inne_do_recznego_przegladu` | 6 |
 
 Wykaz per karta: `open-issue-categories.csv`; dowody i ograniczenia: `manual-findings.json`. Regeneracja: `python3 scripts/categorize-card-audit.py`.
