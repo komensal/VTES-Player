@@ -36402,6 +36402,10 @@ export const cardSpecs: CardSpec[] = [
  * action, the acting minion, or the board. Nothing here needs a hook.
  */
 export const cryptSpecs: CardSpec[] = [
+  // Independent: unlock a vampire or mummy you control as a +1 stealth action.
+  cryptPerm(200005, "Abdelsobek (G5)", {
+    grantedAction: { do: "unlockControlledVampireOrMummy", stealth: 1 },
+  }),
   // --- Flat traits. The whole ability is one printed line. ---
   flatCrypt(201540, "Catalina Vega (G6)", { bleed: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja
   flatCrypt(201555, "Lenny Burkhead (G6)", { bleed: 1 }), // fala 40 wierna (31) — ostatnie vanilla crypt, pełna implementacja

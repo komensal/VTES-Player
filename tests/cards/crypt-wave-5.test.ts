@@ -10,7 +10,7 @@
 
 import { describe, expect, it } from "vitest";
 import type { GameState, MinionState, PermanentStatics } from "../../src/engine/index.ts";
-import { VtesEngine, blockTollFor, playCostFor } from "../../src/engine/index.ts";
+import { VtesEngine, blockTollFor, currentStealth, playCostFor } from "../../src/engine/index.ts";
 import { buildHandlerRegistry } from "../../src/cards/effects/cards.ts";
 import { makeAlly, makeMinion, runTrace, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
 
@@ -805,5 +805,71 @@ describe("Aniel", () => {
     });
     walkTo(engine, "end");
     expect(optionIds(engine).some((o) => o.includes("corrupt:W"))).toBe(false);
+  });
+});
+
+describe("Abdelsobek — unlock a vampire or mummy", () => {
+  it("offers controlled vampires including himself, torpid and unlocked vampires, and mummies only", () => {
+    const { state, engine } = withCrypt("Abdelsobek (G5)", (s) => {
+      s.seats[0]!.minions.push(makeMinion("torpid", "Alice", { inTorpor: true, locked: true }));
+      const mummy = makeAlly("mummy", "Alice", 3, { locked: true });
+      attach(mummy, "mummy", "mummy", {}, ["mummy"]);
+      s.seats[0]!.minions.push(mummy, makeAlly("ghoul", "Alice", 3, { locked: true }));
+    });
+    expect(walkTo(engine, "act:Abdelsobek")).toBe(true);
+    const ids = optionIds(engine);
+    for (const target of ["V1", "torpid", "mummy"]) expect(ids.some((id) => id.endsWith(`unlock:${target}`))).toBe(true);
+    expect(ids.some((id) => id.endsWith("unlock:ghoul") || id.endsWith("unlock:W"))).toBe(false);
+    engine.choose(ids.find((id) => id.endsWith("unlock:torpid"))!);
+    const action = state.frames.find((f) => f.kind === "action");
+    if (!action || action.kind !== "action") throw new Error("no action");
+    expect(currentStealth(state, action.actionId)).toBe(1);
+    resolve(engine, state);
+    expect(find(state, "torpid").locked).toBe(false);
+    expect(find(state, "torpid").inTorpor).toBe(true);
+  });
+
+  it("unlocks himself after the action and cannot repeat it with a different target", () => {
+    const { state, engine } = withCrypt("Abdelsobek (G5)", (s) => {
+      s.seats[0]!.minions.push(makeMinion("V9", "Alice", { locked: true }));
+    });
+    expect(walkTo(engine, "act:Abdelsobek")).toBe(true);
+    engine.choose(optionIds(engine).find((id) => id.endsWith("unlock:V1"))!);
+    expect(find(state, "V1").locked).toBe(true);
+    resolve(engine, state);
+    expect(find(state, "V1").locked).toBe(false);
+    expect(optionIds(engine).some((id) => id.startsWith("act:Abdelsobek"))).toBe(false);
+  });
+
+  it("unlocks a mummy after resolution, but not a target that changes controller", () => {
+    for (const stolen of [false, true]) {
+      const { state, engine } = withCrypt("Abdelsobek (G5)", (s) => {
+        const mummy = makeAlly("mummy", "Alice", 3, { locked: true });
+        attach(mummy, "mummy", "mummy", {}, ["mummy"]);
+        s.seats[0]!.minions.push(mummy);
+      });
+      expect(walkTo(engine, "act:Abdelsobek")).toBe(true);
+      engine.choose(optionIds(engine).find((id) => id.endsWith("unlock:mummy"))!);
+      if (stolen) engine.changeMinionControl("mummy", "Bob");
+      resolve(engine, state);
+      expect(find(state, "mummy").locked).toBe(stolen);
+    }
+  });
+
+  it("does not unlock the target if blocked", () => {
+    const { state, engine } = withCrypt("Abdelsobek (G5)", (s) => {
+      s.seats[0]!.minions.push(makeMinion("V9", "Alice", { locked: true }));
+      attach(find(s, "W"), "intercept", "test", { intercept: 2 });
+    });
+    expect(walkTo(engine, "act:Abdelsobek")).toBe(true);
+    engine.choose(optionIds(engine).find((id) => id.endsWith("unlock:V9"))!);
+    expect(walkTo(engine, "block:W")).toBe(true);
+    engine.choose("block:W");
+    resolve(engine, state);
+    expect(state.eventLog.some((e) => e.type === "BlockSucceeded")).toBe(true);
+    expect(find(state, "V9").locked).toBe(true);
+    // Model a separate unlock after combat; a blocked action still counts.
+    engine.emit({ type: "MinionUnlocked", minion: "V1" });
+    expect(optionIds(engine).some((id) => id.startsWith("act:Abdelsobek"))).toBe(false);
   });
 });

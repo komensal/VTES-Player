@@ -2367,7 +2367,7 @@
 "200002","Aaron Bathurst (G4)","crypt","true","REVIEWED_NO_ISSUE_FOUND","no_runtime_handler"
 "200003","Aaron Duggan, Cameron's Toady (G2)","crypt","true","REVIEWED_NO_ISSUE_FOUND","no_runtime_handler"
 "200004","Abd al-Rashid (G2)","crypt","true","FIXED_TARGETED","no_runtime_handler"
-"200005","Abdelsobek (G5)","crypt","true","CONFIRMED_BUG","no_runtime_handler"
+"200005","Abdelsobek (G5)","crypt","true","PARTIAL_FIX",""
 "200006","Abebe (G4)","crypt","true","REVIEWED_NO_ISSUE_FOUND","no_runtime_handler"
 "200007","Abid bin Haji, Scholar of Mirrors (G6)","crypt","true","FIXED_TARGETED","no_runtime_handler"
 "200008","Abiku (G4)","crypt","true","FIXED_TARGETED",""

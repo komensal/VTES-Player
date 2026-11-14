@@ -13523,6 +13523,14 @@ function addCryptAbilities(
         targetPermanent?: CardInstanceId;
       }> = [];
       switch (ga.do) {
+        case "unlockControlledVampireOrMummy": {
+          // No "locked", "ready", or "another" restriction is printed.
+          for (const m of getSeat(state, actor.controller).minions) {
+            if (m.kind !== "vampire" && !(m.kind === "ally" && minionHasTag(m, "mummy"))) continue;
+            out.push({ key: `unlock:${m.id}`, label: `unlock ${m.name}`, params: { target: m.id } });
+          }
+          break;
+        }
         case "burnSelfForBlood": {
           // "This vampire can burn this retainer to gain N blood"
           // (Zombie) — one option, no target: the actor is the employer
@@ -13765,10 +13773,16 @@ function addCryptAbilities(
     handler.actionOptions = (entry, owner, ctx) => {
       const out: LegalOption[] = [...(priorGaActions?.(entry, owner, ctx) ?? [])];
       if (ctx.window !== "turn.minion" || owner.minion === null) return out;
-      const controller = entry.controller ?? owner.seat;
-      if (ctx.seat !== controller) return out;
       const actor = findMinion(ctx.state, owner.minion);
       if (!actor || !canAct(actor)) return out;
+      // Crypt self entries follow the minion, even after control changes.
+      const controller = ga.do === "unlockControlledVampireOrMummy" ? actor.controller : entry.controller ?? owner.seat;
+      if (ctx.seat !== controller) return out;
+      // Abdelsobek has exactly one granted action; different targets do not
+      // make it a different action. Do not conflate other multi-action cards.
+      if (ga.do === "unlockControlledVampireOrMummy" && entry.grantedActionUses?.some(
+        (use) => use.minion === actor.id && use.key === "cryptGrantedAction",
+      )) return out;
       // The cost gates the OPTION as well as being paid: a price the
       // actor cannot meet is not a choice. Paid at RESOLUTION (p. 27),
       // so a blocked action spends nothing.
@@ -13835,6 +13849,15 @@ function addCryptAbilities(
       if ((p["grant"] ?? "0") !== String(gaIndex)) return;
       const seat = af.actingSeat;
       switch (ga.do) {
+        case "unlockControlledVampireOrMummy": {
+          const actor = findMinion(ops.state, af.acting);
+          const target = p["target"] ? findMinion(ops.state, p["target"]) : null;
+          if (actor && target && target.controller === seat &&
+              (target.kind === "vampire" || (target.kind === "ally" && minionHasTag(target, "mummy"))) && target.locked) {
+            ops.emit({ type: "MinionUnlocked", minion: target.id });
+          }
+          return;
+        }
         case "burnSelfForBlood": {
           const m = p["target"] ? findMinion(ops.state, p["target"]) : null;
           // Blood FIRST, then the burn: the retainer pays for a gain that

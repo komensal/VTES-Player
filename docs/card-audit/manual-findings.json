@@ -14210,8 +14210,8 @@
   {
     "id": 200005,
     "name": "Abdelsobek (G5)",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak specyfikacji i handlera o tej nazwie; tekst daje akcję odblokowania wampira lub mumii. src/cards/registry.json: 200005; buildHandlerRegistry."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano niezależną akcję +1 stealth, wybór kontrolowanego wampira (również w torporze lub samego aktora) albo mumii oraz unlock po sukcesie; tests/cards/crypt-wave-5.test.ts i abdelsobek-audit.test.ts. Brak zakazu powtórzenia innych akcji z ogólnego generatora; dla Abdelsobeka użycie zapisywane przy ogłoszeniu, co może błędnie uniemożliwiać ponowienie akcji zakończonej przed rozstrzygnięciem. Nie sprawdzono jednoznacznego rulingu o wyborze samego aktora ani wszystkich interakcji, w tym skutków utraty celu i Vampiric Disease."
   },
   {
     "id": 200006,

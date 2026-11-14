@@ -7,7 +7,7 @@ To **triage, nie ręczny audyt ani potwierdzenie poprawności**. UNREVIEWED ozna
 | Sygnał | Kart |
 |---|---:|
 | crypt_empty_spec_with_text_review | 659 |
-| no_runtime_handler | 10 |
+| no_runtime_handler | 9 |
 | simple_gain_pool_text_mismatch_review | 180 |
 
 ## Udokumentowane ustalenia ręczne
@@ -2384,7 +2384,7 @@ To udokumentowane ustalenia, a nie pełne sprawdzenie wszystkich interakcji tych
 | 200002 | Aaron Bathurst (G4) | REVIEWED_NO_ISSUE_FOUND | Wąski zakres: tekst ogranicza się do Sabbat; importCryptCard parsuje sektę, a makeVampire kopiuje clan, capacity i dyscypliny. Nie testowano wszystkich mechanik importerem. |
 | 200003 | Aaron Duggan, Cameron's Toady (G2) | REVIEWED_NO_ISSUE_FOUND | Wąski zakres: tekst ogranicza się do Sabbat; importCryptCard parsuje sektę, makeVampire kopiuje dane crypt z registry. Bez osobnego testu karty. |
 | 200004 | Abd al-Rashid (G2) | FIXED_TARGETED | Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności. |
-| 200005 | Abdelsobek (G5) | CONFIRMED_BUG | Brak specyfikacji i handlera o tej nazwie; tekst daje akcję odblokowania wampira lub mumii. src/cards/registry.json: 200005; buildHandlerRegistry. |
+| 200005 | Abdelsobek (G5) | PARTIAL_FIX | Dodano niezależną akcję +1 stealth, wybór kontrolowanego wampira (również w torporze lub samego aktora) albo mumii oraz unlock po sukcesie; tests/cards/crypt-wave-5.test.ts i abdelsobek-audit.test.ts. Brak zakazu powtórzenia innych akcji z ogólnego generatora; dla Abdelsobeka użycie zapisywane przy ogłoszeniu, co może błędnie uniemożliwiać ponowienie akcji zakończonej przed rozstrzygnięciem. Nie sprawdzono jednoznacznego rulingu o wyborze samego aktora ani wszystkich interakcji, w tym skutków utraty celu i Vampiric Disease. |
 | 200006 | Abebe (G4) | REVIEWED_NO_ISSUE_FOUND | Wąski zakres: tekst ogranicza się do Independent; importer parsuje sektę oraz przekazuje registry clan/capacity/dyscypliny. Bez osobnego testu karty. |
 | 200007 | Abid bin Haji, Scholar of Mirrors (G6) | FIXED_TARGETED | Drukowane Blood cursed importowane we wszystkich strefach; test rzeczywistej karty sprawdza zakaz zwykłej diablerii, wspólne testy obejmują Cloak of Blood, Stealing Years i block wyjścia z torporu (crypt-blood-cursed.test.ts). Enam: sprawdzono tytuł; Parnassus: statics +1 strength. Tajdid znosi zakaz wynikający z Blood Curse dla Banu Haqim; inne niewdrożone modyfikatory zakazu pozostają otwarte. Weryfikacja celowana, nie dowód pełnej zgodności. |
 | 200008 | Abiku (G4) | FIXED_TARGETED | Dodano +1 stealth podczas hunt, również specjalnego hunt Abactor; brak bonusu na bleed. tests/cards/abiku-audit.test.ts sprawdza import w trzech strefach i rzeczywiste akcje. Ocena nie obejmuje wszystkich możliwych interakcji. |

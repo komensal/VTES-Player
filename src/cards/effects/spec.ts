@@ -4055,6 +4055,8 @@ export interface CardSpec {
         | "reviveAlly"
         | "reorderTop"
         | "stripMinion"
+        /** `unlockControlledVampireOrMummy` — Abdelsobek's own action. */
+        | "unlockControlledVampireOrMummy"
         /** `burnSelfForBlood` — "this vampire can BURN THIS RETAINER to
          *  gain N blood" (Zombie). The cost is the card granting the
          *  action, which is why it is its own arm rather than `addBlood`

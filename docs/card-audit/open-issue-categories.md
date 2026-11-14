@@ -10,9 +10,9 @@ To powtarzalne, zgrubne grupowanie po słowach w tekście evidence, a nie potwie
 | `placeholder_lub_brak_efektu` | 1938 |
 | `akcje_i_blok` | 1653 |
 | `walka` | 747 |
-| `polityka_i_glosy` | 358 |
+| `polityka_i_glosy` | 359 |
 | `koszty_i_zasoby` | 874 |
-| `karty_i_strefy` | 1565 |
+| `karty_i_strefy` | 1566 |
 | `czas_i_warunki` | 724 |
 | `inne_do_recznego_przegladu` | 6 |
 
