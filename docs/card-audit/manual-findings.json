@@ -13808,8 +13808,8 @@
   {
     "id": 102302,
     "name": "Psychophagia",
-    "status": "PARTIAL_FIX",
-    "evidence": "Wąski zakres: Hecata hunt usuwa ally z ash heap za blood albo mniej blood i unlock; ash-heap-cards.test.ts. Aktualizacja: Unlock przy wariancie 2 blood jest pomijany przy superior Sleeping Mind, blood gain pozostaje; brak osobnego testu end-to-end tego połączenia."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wąski zakres domknięty: hunt z ally z ash heap dowolnego Methuselah, gain 3 albo gain 2 + unlock (ash-heap-cards.test.ts). Połączenie z superior The Sleeping Mind end-to-end (tests/cards/psychophagia-sleeping-mind.test.ts): Sleeping Mind blokuje unlock po rozstrzygnięciu [PIB 20150703], ale 2 blood zostaje, a aktor pozostaje locked. Nieweryfikowane: pozostałe interakcje karty poza tym wariantem."
   },
   {
     "id": 102303,

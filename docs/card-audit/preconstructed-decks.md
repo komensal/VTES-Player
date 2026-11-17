@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **55 różnych kart**: CODE_DISCREPANCY 1, PARTIAL_FIX 54, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
-- **29/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **82**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- Otwarte ustalenia dotyczą **54 różnych kart**: CODE_DISCREPANCY 1, PARTIAL_FIX 53, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- **28/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **83**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -47,7 +47,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | New Blood II / Brujah | half-deck | 30 | 1 | [Childe of the Revolution](#karta-102246) |
 | New Blood II / Gangrel | half-deck | 31 | 0 | — |
 | New Blood II / Ministry | half-deck | 33 | 2 | [Waters of Duat](#karta-102159), [Revelation of the Serpent](#karta-102233) |
-| New Blood III / Hecata | half-deck | 25 | 1 | [Psychophagia](#karta-102302) |
+| New Blood III / Hecata | half-deck | 25 | 0 | — |
 | New Blood III / Lasombra | half-deck | 24 | 1 | [Raising the Portcullis](#karta-102303) |
 | New Blood III / Ravnos | half-deck | 31 | 2 | [AK-47](#karta-100032), [Terror Frenzy](#karta-101960) |
 | New Blood III / Salubri | half-deck | 27 | 4 | [Vast Wealth](#karta-102092), [Touch of Valeren](#karta-102262), [Tranquility Shield](#karta-102362), [Opikun (G7)](#karta-201680) |
@@ -230,11 +230,6 @@ Występuje w **2** taliach. Combat ograniczono do strike przeciwnika; prevention
 ### Touch of Oblivion (102283) — PARTIAL_FIX
 
 Występuje w **1** taliach. Basic dołącza counters, superior wysyła wampira do torpor lub spala ally. Naprawiono równoczesny strike oraz okno odroczenia bezpośredniego strike: torpor; tests/cards/entombment-audit.test.ts i touch-of-oblivion.test.ts. Pozostałe interakcje wymagają weryfikacji.
-
-<a id="karta-102302"></a>
-### Psychophagia (102302) — PARTIAL_FIX
-
-Występuje w **1** taliach. Wąski zakres: Hecata hunt usuwa ally z ash heap za blood albo mniej blood i unlock; ash-heap-cards.test.ts. Aktualizacja: Unlock przy wariancie 2 blood jest pomijany przy superior Sleeping Mind, blood gain pozostaje; brak osobnego testu end-to-end tego połączenia.
 
 <a id="karta-102303"></a>
 ### Raising the Portcullis (102303) — PARTIAL_FIX
