@@ -12950,8 +12950,8 @@
   {
     "id": 102159,
     "name": "Waters of Duat",
-    "status": "PARTIAL_FIX",
-    "evidence": "Obowiązek hunt: token ma mustHuntThisTurn; blood go nie zdejmuje, ogłoszenie hunt zdejmuje, koniec tury zdejmuje (tests/cards/token-vampire.test.ts oraz waters-of-duat-boundary.test.ts, który sprawdza granicę tury i to, że pętla rzeczywiście zakończyła turę). Nadal nieweryfikowane: przeszukanie biblioteki, ręki i ash heap pod kątem Discipline master (searchDisciplineMaster) poza ścieżką \"none\"; wpływ innych kart na obowiązek."
+    "status": "FIXED_TARGETED",
+    "evidence": "Obowiązek hunt: mustHuntThisTurn; krew go nie zdejmuje, ogłoszenie hunt i koniec tury tak (tests/cards/token-vampire.test.ts, waters-of-duat-boundary.test.ts). Wyszukiwanie Discipline master: z ash heap i z ręki oferowane i przypinane do nowego wampira; karta bez tagu dyscypliny nie jest oferowana; \"find nothing\" zostaje odpowiedzią (waters-of-duat-search.test.ts, 3 testy). Nieweryfikowane: wpływ innych kart na obowiązek hunt oraz przeszukanie biblioteki po zakończeniu gry poza tym testem."
   },
   {
     "id": 102160,

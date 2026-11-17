@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **49 różnych kart**: CODE_DISCREPANCY 2, PARTIAL_FIX 47, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- Otwarte ustalenia dotyczą **48 różnych kart**: CODE_DISCREPANCY 2, PARTIAL_FIX 46, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
 - **27/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **88**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **89**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -46,7 +46,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | New Blood II / Banu Haqim | half-deck | 32 | 1 | [Blur](#karta-100227) |
 | New Blood II / Brujah | half-deck | 30 | 1 | [Childe of the Revolution](#karta-102246) |
 | New Blood II / Gangrel | half-deck | 31 | 0 | — |
-| New Blood II / Ministry | half-deck | 33 | 2 | [Waters of Duat](#karta-102159), [Revelation of the Serpent](#karta-102233) |
+| New Blood II / Ministry | half-deck | 33 | 1 | [Revelation of the Serpent](#karta-102233) |
 | New Blood III / Hecata | half-deck | 25 | 0 | — |
 | New Blood III / Lasombra | half-deck | 24 | 0 | — |
 | New Blood III / Ravnos | half-deck | 31 | 1 | [AK-47](#karta-100032) |
@@ -185,11 +185,6 @@ Występuje w **1** taliach. Paczka 4: upkeep z karty — "If the bearer is ready
 ### War Ghoul (102144) — PARTIAL_FIX
 
 Występuje w **1** taliach. Overlay wymaga rekrutującego Tzimisce i uwzględnia modyfikatory kosztu; testy rush-cards.test.ts i retainer-wave.test.ts. Pozostałe interakcje alternatywnych kosztów i rekrutacji wymagają dalszej weryfikacji.
-
-<a id="karta-102159"></a>
-### Waters of Duat (102159) — PARTIAL_FIX
-
-Występuje w **1** taliach. Obowiązek hunt: token ma mustHuntThisTurn; blood go nie zdejmuje, ogłoszenie hunt zdejmuje, koniec tury zdejmuje (tests/cards/token-vampire.test.ts oraz waters-of-duat-boundary.test.ts, który sprawdza granicę tury i to, że pętla rzeczywiście zakończyła turę). Nadal nieweryfikowane: przeszukanie biblioteki, ręki i ash heap pod kątem Discipline master (searchDisciplineMaster) poza ścieżką "none"; wpływ innych kart na obowiązek.
 
 <a id="karta-102199"></a>
 ### Yawp Court (102199) — PARTIAL_FIX
