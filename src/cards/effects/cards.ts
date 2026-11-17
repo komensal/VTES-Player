@@ -25871,7 +25871,7 @@ export const cardSpecs: CardSpec[] = [
     permanent: {
       where: "bearer",
       statics: {},
-      grantedAction: { do: "burnTorporVampire", directed: true },
+      grantedAction: { do: "burnTorporVampire", directed: true, ashHeapToHand: true },
       tags: ["wraith"],
     },
     bloodCost: 0,

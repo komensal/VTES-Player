@@ -14389,6 +14389,36 @@ function addCryptAbilities(
       });
     };
 
+    // Tye Cooper's rider: a library card from the ash heap to hand, after a
+    // successful burn, then discard down. An optional choice, so declining
+    // is a real option. Keyed by grant index so two grants never collide.
+    if (ga.ashHeapToHand) {
+      const key = `grantedAshHeap:${gaIndex}`;
+      const priorOpts = handler.choiceOptions?.bind(handler);
+      handler.choiceOptions = (frame, state, registry) => {
+        if (frame.key !== key) return priorOpts ? priorOpts(frame, state, registry) : [];
+        return (getSeat(state, frame.seat).ashHeap ?? [])
+          .filter((c) => !c.crypt)
+          .map((c) => ({
+            id: `choice:${spec.name}:${frame.cardId}:${key}:${c.id}`,
+            kind: "answerChoice" as const,
+            label: `Take ${c.name} from your ash heap`,
+            params: { take: c.id },
+          }));
+      };
+      const priorApply = handler.applyChoice?.bind(handler);
+      handler.applyChoice = (frame, choice, ops) => {
+        if (frame.key !== key) {
+          priorApply?.(frame, choice, ops);
+          return;
+        }
+        const take = choice.params["take"];
+        if (!take) return;
+        ops.takeFromAshHeap(frame.seat, take);
+        ops.discardDownToHandSize(frame.seat, spec.name, frame.cardId);
+      };
+    }
+
     const priorGaResolve = handler.resolveGrantedAction?.bind(handler);
     handler.resolveGrantedAction = (entry, af, ops) => {
       priorGaResolve?.(entry, af, ops);
@@ -14468,6 +14498,17 @@ function addCryptAbilities(
           if (ga.gainLife) {
             const actor = findMinion(ops.state, af.acting);
             if (actor) ops.emit({ type: "BloodGained", minion: actor.id, amount: ga.gainLife });
+          }
+          // "If that action is successful, you can move a library card from
+          // your ash heap to your hand" (Tye Cooper). Only after the burn.
+          if (ga.ashHeapToHand && (getSeat(ops.state, seat).ashHeap ?? []).some((c) => !c.crypt)) {
+            ops.raiseChoice({
+              seat,
+              cardName: spec.name,
+              cardId: entry.card.id,
+              key: `grantedAshHeap:${gaIndex}`,
+              optional: true,
+            });
           }
           return;
         }

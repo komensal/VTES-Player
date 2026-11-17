@@ -12314,8 +12314,8 @@
   {
     "id": 102053,
     "name": "Tye Cooper",
-    "status": "PARTIAL_FIX",
-    "evidence": "Paczka 4: \"He is immune to non-aggravated damage\" — incomingDamageReduction na skompilowanym handlerze (mapa incomingDamage w cards.ts), zwraca całą kwotę niezagrażającego pakietu; aggravated nadal trafia (tests/cards/tye-cooper-immunity.test.ts, z kontrolą: zwykły ally traci krew). Wcześniej: ikona klanu dla wampira zagrywającego (library-clan-icons.test.ts), spalenie wampira w torporze (grantedAction). Nadal brak: akcja \"burn a NON-READY minion\" (dziś grantedAction obejmuje tylko wampira w torporze) i rider \"jeśli sukces, przenieś kartę z ash heap do ręki, potem discard down\"."
+    "status": "FIXED_TARGETED",
+    "evidence": "Paczka 5: \"He is immune to non-aggravated damage\" — incomingDamage (cards.ts), zwraca całą kwotę niezagrażającego pakietu; aggravated trafia; ruling: immunity działa także poza combat i przy non-preventable (tests/cards/tye-cooper-immunity.test.ts). \"Burn a non-ready minion\": non-ready = torpor (isReady), więc to istniejący arm burnTorporVampire; zakres celu (cudzy Methuselah) przyjęty jak u sąsiednich kart — interpretacja, bez rulingu. Rider: po udanym burn (cel nadal w torporze) opcjonalny wybór karty bibliotecznej z własnego ash heap do ręki, potem discardDownToHandSize (ga.ashHeapToHand, grantedAshHeap:<index>; tests/cards/tye-cooper-ash-heap.test.ts: sukces, brak kryptu, brak wyboru bez burn). Nieprzetestowane: sam discard down w scenariuszu z przekroczonym limitem ręki."
   },
   {
     "id": 102054,

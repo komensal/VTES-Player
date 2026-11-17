@@ -4181,6 +4181,10 @@ export interface CardSpec {
       steal?: boolean;
       /** `burnTorporVampire`: life the actor gains on success. */
       gainLife?: number;
+      /** `burnTorporVampire`: "if that action is successful, you can move a
+       *  library card from your ash heap to your hand (discard down
+       *  afterward)" (Tye Cooper). Offered only after a burn that landed. */
+      ashHeapToHand?: boolean;
       /** `stealEquipment`: "…from a vampire IN TORPOR" (Tutu). Gates the
        *  option. docs/mummies-design.md §5 */
       fromTorporOnly?: boolean;

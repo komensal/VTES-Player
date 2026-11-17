@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **56 różnych kart**: CODE_DISCREPANCY 1, PARTIAL_FIX 55, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- Otwarte ustalenia dotyczą **55 różnych kart**: CODE_DISCREPANCY 1, PARTIAL_FIX 54, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
 - **29/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **81**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **82**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -56,7 +56,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | Sabbat V5 / Path of Cathari | pełna | 35 | 2 | [Anarch Troublemaker](#karta-100058), [Gostoso (G6)](#karta-201754) |
 | Sabbat V5 / Path of Death | pełna | 41 | 3 | [Obedience](#karta-101309), [Dance of the Dead](#karta-102314), [Eulogio Sánchez de los Reyes (G6)](#karta-201750) |
 | Sabbat V5 / Path of Power and the Inner Voice | pełna | 42 | 1 | [Věnceslava, The Implacable (G6)](#karta-201776) |
-| 🏆 Tournament Winners 2025 / 2025-10-19 — Shalmath Toolbox (EC Day 2, Aarhus — Nerijus Mikalajūnas, 50p) | pełna | 36 | 16 | [Big Game](#karta-100159), [Enkil Cog](#karta-100645), [Eye of Hazimel](#karta-100678), [Heart of Nizchetus](#karta-100903), [Hourglass of the Mind](#karta-100941), [Nephandus](#karta-101272), [Outside the Hourglass](#karta-101338), [Summon History](#karta-101897), [Talbot's Chainsaw](#karta-101931), [Tye Cooper](#karta-102053), [Alex Wilkins (G5)](#karta-200048), [Anarch Convert (ANY)](#karta-200076), [Donald Cargill (G5)](#karta-200365), [New Blood (ANY)](#karta-201052), [Shalmath (G6)](#karta-201274), [Walker Grimes (G5)](#karta-201462) |
+| 🏆 Tournament Winners 2025 / 2025-10-19 — Shalmath Toolbox (EC Day 2, Aarhus — Nerijus Mikalajūnas, 50p) | pełna | 36 | 15 | [Big Game](#karta-100159), [Enkil Cog](#karta-100645), [Eye of Hazimel](#karta-100678), [Heart of Nizchetus](#karta-100903), [Hourglass of the Mind](#karta-100941), [Nephandus](#karta-101272), [Outside the Hourglass](#karta-101338), [Summon History](#karta-101897), [Talbot's Chainsaw](#karta-101931), [Alex Wilkins (G5)](#karta-200048), [Anarch Convert (ANY)](#karta-200076), [Donald Cargill (G5)](#karta-200365), [New Blood (ANY)](#karta-201052), [Shalmath (G6)](#karta-201274), [Walker Grimes (G5)](#karta-201462) |
 | 🏆 Tournament Winners 2025 / 2025-06-21 — Gangrel Death Star (NAC 2025, Columbus — Martin Weinmayer, 62p, Wall) | pełna | 41 | 2 | [Heart of Nizchetus](#karta-100903), [André the Manipulator (G5)](#karta-200081) |
 | 🏆 Tournament Winners 2024 / 2024-06-22 — Govern Resistance (NAC 2024, Columbus — Bill Troxel, 54p, Tzimisce Toolbox) | pełna | 35 | 1 | [New Blood (ANY)](#karta-201052) |
 | 🏆 Tournament Winners 2024 / 2024-11-16 — Gangrel Swarm v3 (Slovak NC, Bratislava — Jakub Rypar, 22p, Wall/Swarm) | pełna | 38 | 0 | — |
@@ -190,11 +190,6 @@ Występuje w **1** taliach. Paczka 4: upkeep z karty — "If the bearer is ready
 ### Terror Frenzy (101960) — PARTIAL_FIX
 
 Występuje w **2** taliach. Basic działa przeciw minion, superior wyłącznie przeciw wampirowi; obsługiwane kierunki maneuver/press i zachowanie niezależnych ograniczeń po Tranquility Shield; tests/cards/frenzy-direction-audit.test.ts. Timing i inne źródła ograniczeń wymagają dalszej weryfikacji, jak również stare zapisy bez informacji o źródłach. Paczka 1: ANK 20180910-3 (koszt combat cards na końcu rundy) zweryfikowany testem batch1-frenzy-end-of-round.test.ts z kontrolą dodatnią (Telepathic Tracking superior, aus, bob z 1 blood nie płaci, z 5 płaci). Pozostaje: limit superior raz na walkę w starych zapisach i timing innych źródeł.
-
-<a id="karta-102053"></a>
-### Tye Cooper (102053) — PARTIAL_FIX
-
-Występuje w **1** taliach. Paczka 4: "He is immune to non-aggravated damage" — incomingDamageReduction na skompilowanym handlerze (mapa incomingDamage w cards.ts), zwraca całą kwotę niezagrażającego pakietu; aggravated nadal trafia (tests/cards/tye-cooper-immunity.test.ts, z kontrolą: zwykły ally traci krew). Wcześniej: ikona klanu dla wampira zagrywającego (library-clan-icons.test.ts), spalenie wampira w torporze (grantedAction). Nadal brak: akcja "burn a NON-READY minion" (dziś grantedAction obejmuje tylko wampira w torporze) i rider "jeśli sukces, przenieś kartę z ash heap do ręki, potem discard down".
 
 <a id="karta-102092"></a>
 ### Vast Wealth (102092) — PARTIAL_FIX
