@@ -1846,7 +1846,7 @@
 "101845","Spell of Life","library","true","PARTIAL_FIX",""
 "101846","Spike-Thrower","library","true","PARTIAL_FIX",""
 "101847","Spirit Claws","library","true","CODE_DISCREPANCY",""
-"101848","Spirit Marionette","library","true","PARTIAL_FIX",""
+"101848","Spirit Marionette","library","true","CODE_DISCREPANCY",""
 "101849","Spirit Summoning Chamber","library","true","PARTIAL_FIX","simple_gain_pool_text_mismatch_review"
 "101850","Spirit's Touch","library","true","REVIEWED_NO_ISSUE_FOUND",""
 "101851","Spiritual Guidance","library","true","PARTIAL_FIX",""
