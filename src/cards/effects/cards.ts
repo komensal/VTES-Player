@@ -39287,6 +39287,17 @@ const anarchTroublemaker: CardHandler = {
     // controlled and eligible, and locking a locked vampire is a legal
     // no-op. Contested vampires are stored separately and are out of play.
     const lockable = prey.minions.filter((m) => m.kind === "vampire");
+    // "…up to two" can be ZERO: the rulebook (Fifth Edition, Anarch
+    // Troublemaker) allows giving control of the card with no vampire
+    // locked, "if you have for instance an agreement with your prey". The
+    // zero option is offered with or without a target.
+    out.push({
+      id: `ability:${this.name}:${entry.card.id}:lock:none`,
+      kind: "useAbility",
+      label: `${this.name}: give it to ${prey.id} and lock no vampire`,
+      source: entry.card.id,
+      params: { act: "lock", targets: "" },
+    });
     for (const m of lockable) {
       out.push({
         id: `ability:${this.name}:${entry.card.id}:lock:${m.id}`,

@@ -344,8 +344,8 @@
   {
     "id": 100058,
     "name": "Anarch Troublemaker",
-    "status": "PARTIAL_FIX",
-    "evidence": "Naprawiono wybór vampire przeciwnika: karta nie wymaga ani ready, ani unlocked, więc uwzględnia vampire w torpor i już locked (bez fałszywego zdarzenia zmiany stanu). Wyklucza uncontrolled i allies. tests/cards/anarch-troublemaker-audit.test.ts; zasada celu w torpor: https://www.vekn.net/forum/rules-questions/81293-touch-of-valeren; wybór locked: https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=12. Nadal nierozstrzygnięte, czy aktualne „up to two” pozwala przekazać kartę bez żadnego celu; historyczny RTR 19950413 mówi o jednym lub dwóch."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wybór vampire przeciwnika: karta nie wymaga ani ready, ani unlocked, więc uwzględnia vampire w torpor i już locked; wyklucza uncontrolled i allies (tests/cards/anarch-troublemaker-audit.test.ts). Pytanie \"up to two\" rozstrzygnięte rulebookiem Fifth Edition: można przekazać kartę, blokując zero vampire (\"'up to two' can be zero\"). Dodano opcję lock:none (przekazanie bez blokowania), test w tym samym pliku (3 testy zielone). Historyczny RTR 19950413 mówił o jednym lub dwóch; obowiązuje aktualny tekst karty i rulebook. Nieweryfikowane: burn equipment bez blokowania w tej samej turze oraz zachowanie przy ousted kontrolera."
   },
   {
     "id": 100059,

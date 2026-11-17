@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **44 różnych kart**: CODE_DISCREPANCY 2, PARTIAL_FIX 42, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
-- **26/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **93**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- Otwarte ustalenia dotyczą **43 różnych kart**: CODE_DISCREPANCY 2, PARTIAL_FIX 41, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- **25/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **94**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -30,13 +30,13 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | Fifth Edition / Nosferatu | pełna | 35 | 0 | — |
 | Fifth Edition / Toreador | pełna | 29 | 0 | — |
 | Fifth Edition / Tremere | pełna | 33 | 0 | — |
-| Fifth Edition / Ventrue | pełna | 32 | 1 | [Anarch Troublemaker](#karta-100058) |
+| Fifth Edition / Ventrue | pełna | 32 | 0 | — |
 | Fifth Edition (Anarch) / Banu Haqim | pełna | 34 | 1 | [Rego Motum](#karta-101588) |
 | Fifth Edition (Anarch) / Brujah | pełna | 37 | 0 | — |
 | Fifth Edition (Anarch) / Gangrel | pełna | 38 | 0 | — |
 | Fifth Edition (Anarch) / Ministry | pełna | 36 | 3 | [Heart of Nizchetus](#karta-100903), [Revelation of the Serpent](#karta-102233), [Nonu Dis (G6)](#karta-201608) |
 | Fifth Edition (Companion) / Ravnos | pełna | 39 | 1 | [Shilmulo Tarot](#karta-101767) |
-| Fifth Edition (Companion) / Salubri | pełna | 43 | 4 | [Anarch Troublemaker](#karta-100058), [Rolling with the Punches](#karta-101649), [Touch of Valeren](#karta-102262), [Opikun (G7)](#karta-201680) |
+| Fifth Edition (Companion) / Salubri | pełna | 43 | 3 | [Rolling with the Punches](#karta-101649), [Touch of Valeren](#karta-102262), [Opikun (G7)](#karta-201680) |
 | Fifth Edition (Companion) / Tzimisce | pełna | 40 | 2 | [War Ghoul](#karta-102144), [Childe of the Revolution](#karta-102246) |
 | New Blood / Malkavian | half-deck | 30 | 0 | — |
 | New Blood / Nosferatu | half-deck | 32 | 0 | — |
@@ -53,7 +53,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | New Blood III / Salubri | half-deck | 27 | 3 | [Touch of Valeren](#karta-102262), [Tranquility Shield](#karta-102362), [Opikun (G7)](#karta-201680) |
 | New Blood III / Tzimisce | half-deck | 34 | 0 | — |
 | Sabbat V5 / Path of Caine | pełna | 36 | 4 | [Yawp Court](#karta-102199), [Augury of Doom](#karta-102310), [Dance with the Devil](#karta-102315), [Rage of Apedemak](#karta-102336) |
-| Sabbat V5 / Path of Cathari | pełna | 35 | 2 | [Anarch Troublemaker](#karta-100058), [Gostoso (G6)](#karta-201754) |
+| Sabbat V5 / Path of Cathari | pełna | 35 | 1 | [Gostoso (G6)](#karta-201754) |
 | Sabbat V5 / Path of Death | pełna | 41 | 3 | [Obedience](#karta-101309), [Dance of the Dead](#karta-102314), [Eulogio Sánchez de los Reyes (G6)](#karta-201750) |
 | Sabbat V5 / Path of Power and the Inner Voice | pełna | 42 | 1 | [Věnceslava, The Implacable (G6)](#karta-201776) |
 | 🏆 Tournament Winners 2025 / 2025-10-19 — Shalmath Toolbox (EC Day 2, Aarhus — Nerijus Mikalajūnas, 50p) | pełna | 36 | 15 | [Big Game](#karta-100159), [Enkil Cog](#karta-100645), [Eye of Hazimel](#karta-100678), [Heart of Nizchetus](#karta-100903), [Hourglass of the Mind](#karta-100941), [Nephandus](#karta-101272), [Outside the Hourglass](#karta-101338), [Summon History](#karta-101897), [Talbot's Chainsaw](#karta-101931), [Alex Wilkins (G5)](#karta-200048), [Anarch Convert (ANY)](#karta-200076), [Donald Cargill (G5)](#karta-200365), [New Blood (ANY)](#karta-201052), [Shalmath (G6)](#karta-201274), [Walker Grimes (G5)](#karta-201462) |
@@ -75,11 +75,6 @@ Poniższe opisy przytoczono z audytu. CODE_DISCREPANCY bywa oparte wyłącznie n
 ### AK-47 (100032) — PARTIAL_FIX
 
 Występuje w **1** taliach. Dodatkowy strike jest nadal przyznawany po strike'u z broni, ale jest OPCJONALNY: w dodatkowej sub-rundzie strzelec może wybrać 'strike:decline' (bez obrażeń, zwalnia zobowiązanie do broni). Flaga CombatFrame.optionalAdditionalStrike jest ustawiana tylko dla opcjonalnych przyznań (AK-47, Caseless Rounds); zwykłe dodatkowe strike'i jej nie mają. Testy: tests/cards/weapon-riders.test.ts + last-equipment-modifiers.test.ts: 57 testów łącznie, w tym 'the optional extra strike can be DECLINED'. Pełne tests/cards+tests/engine: 398 plików, exit 0. NIEZROBIONE: wybór innego limitowanego źródła zamiast grantu AK-47 (kolejność przed grantem), docs/additional-strike-followups.md.
-
-<a id="karta-100058"></a>
-### Anarch Troublemaker (100058) — PARTIAL_FIX
-
-Występuje w **3** taliach. Naprawiono wybór vampire przeciwnika: karta nie wymaga ani ready, ani unlocked, więc uwzględnia vampire w torpor i już locked (bez fałszywego zdarzenia zmiany stanu). Wyklucza uncontrolled i allies. tests/cards/anarch-troublemaker-audit.test.ts; zasada celu w torpor: https://www.vekn.net/forum/rules-questions/81293-touch-of-valeren; wybór locked: https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=12. Nadal nierozstrzygnięte, czy aktualne „up to two” pozwala przekazać kartę bez żadnego celu; historyczny RTR 19950413 mówi o jednym lub dwóch.
 
 <a id="karta-100159"></a>
 ### Big Game (100159) — PARTIAL_FIX
