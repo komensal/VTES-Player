@@ -94,7 +94,7 @@ Występuje w **1** taliach. Zweryfikowano: basic daje 1 dodatkowy strike, superi
 <a id="karta-100475"></a>
 ### Cry Wolf (100475) — PARTIAL_FIX
 
-Występuje w **1** taliach. Paczka 4: zablokowana zagrywka (recruit) wysyła działającego anarcha do torporu (hook onActionBlockedAsPlayed); werewolf pozostaje locked (bearerDoesNotUnlock), a jeśli jest locked w unlock phase, zostaje spalony. tests/cards/cry-wolf.test.ts z kontrolą bez bloku. Nadal brak obowiązkowego Ⓓ rush na minion innego Methuselah i pressa przy walce (press jest statycznie). LSJ 20090226 i LSJ 20031014 nieprzetestowane osobno.
+Występuje w **1** taliach. Zweryfikowane uruchomieniem: cry-wolf.test.ts (4 testy, zielone): zablokowany recruit wysyła anarcha do torpor i nie wprowadza wilkołaka; kontrola bez bloku; w unlock phase zablokowany wilkołak jest spalany, odblokowany przeżywa. Brakuje (błąd): wilkołak ma MUSI wejść w walkę z minionem innego Methuselah jako akcja Ⓓ. Obecnie rushGrant (who: bearer) daje rush anarchowi, a nie wilkołakowi, i jest nieobowiązkowy. Potrzebne: rush na samym allyu (ally.rush, targets minion, othersOnly) oraz obowiązkowość w minionPhaseOptions przed opcjami nieobowiązkowymi (wzór: hungry dla wampira). Rulings: LSJ 20090226 (po odblokowaniu po obowiązkowej akcji wolno wykonać dowolną akcję), LSJ 20100212 (zdolność działa także gdy nie jest wilkołakiem), LSJ 20031014 (odblokowanie w unlock phase nie wymaga spalenia).
 
 <a id="karta-100645"></a>
 ### Enkil Cog (100645) — PARTIAL_FIX
