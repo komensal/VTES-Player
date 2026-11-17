@@ -950,8 +950,8 @@
   {
     "id": 100159,
     "name": "Big Game",
-    "status": "PARTIAL_FIX",
-    "evidence": "Usunięto błędnie przyznawane każdemu celowi maneuver i press. tests/cards/rush-cards.test.ts potwierdza rush na zwykły cel bez obu bonusów i bez unlock. Red List nie jest jeszcze modelowana: prawidłowy opcjonalny maneuver albo press i unlock przy celu Red List pozostają do zrobienia; karta nie jest w pełni poprawna. Paczka 2: tekst (Ⓓ, Red List: optional maneuver lub press i unlock przy końcu akcji) pozostaje częściowo niezaimplementowany wg ustaleń paczki 1; status bez zmian."
+    "status": "FIXED_TARGETED",
+    "evidence": "Ⓓ: cel to gotowy minion innego Methuselah (othersOnly; własne miniony nie są oferowane). Rider Red List jest warunkowy na cel: tylko cel z flagą redList dostaje opcję 'maneuver' albo 'press' (dwie osobne opcje wybierane przy ogłoszeniu), a aktor odblokowuje się na koniec akcji, jeśli nadal jest ready (unlockActorIfReady, także po akcji zablokowanej). Cel nie-Red-List: zwykły rush bez riderów i bez unlock. Testy: tests/cards/big-game-red-list.test.ts (6/6) oraz rush-cards.test.ts (12/12). Sprawdzono mutacją: bez othersOnly test pada. NIEZROBIONE: karta Red List (101574) nadal nie ma efektu Ⓓ (wybór gotowego sojusznika/młodszego wampira na Red List i zakaz blokowania), więc w grze nie powstaje cel Red List. Jej rejestr błędnie oznacza ją jako pełną zgodność; to osobna pozycja. Nieweryfikowane: odblokowanie gdy aktor wpadł w torpor w trakcie akcji (oczekiwane: brak odblokowania)."
   },
   {
     "id": 100160,

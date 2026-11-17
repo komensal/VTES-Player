@@ -1220,6 +1220,8 @@ export interface CardActionParams {
   lockTarget?: boolean;
   /** "…with a LOCKED minion" — re-checked at resolution (Ambush). */
   requiresLockedTarget?: boolean;
+  /** Big Game: unlock the acting minion at the end of the action if still ready. */
+  unlockActorIfReady?: boolean;
   /** "Unlock a vampire" (Precognizant Mobility) — this action names a minion
    *  but prints NO Ⓓ, so naming another Methuselah's vampire must not make it
    *  directed at them (p. 25: the Ⓓ is what directs an action, not the

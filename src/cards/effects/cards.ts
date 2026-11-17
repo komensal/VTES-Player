@@ -26596,9 +26596,16 @@ export const cardSpecs: CardSpec[] = [
       {
         level: "basic",
         discipline: null,
-        // Red List is not yet modelled: do not grant its conditional rider to
-        // every target. The Red List maneuver-or-press and unlock remain open.
-        effects: [{ kind: "actionEnterCombat", targets: "minion" }],
+        // "Enter combat with a ready minion controlled by another Methuselah."
+        // The Red List rider is conditional on the target, not the card.
+        effects: [
+          {
+            kind: "actionEnterCombat",
+            targets: "minion",
+            othersOnly: true,
+            redListRider: { maneuverOrPress: true, unlockActor: true },
+          },
+        ],
       }
     ],
   },

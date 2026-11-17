@@ -670,6 +670,15 @@ export type EffectPrimitive =
       targets: "minion" | "vampire";
       /** Fleetness superior: "a locked minion". */
       lockedOnly?: boolean;
+      /** "Ⓓ Enter combat with a ready minion controlled by another
+       *  Methuselah" (Big Game). */
+      othersOnly?: boolean;
+      /** Big Game: "If that minion is a Red List minion, this minion gets an
+       *  optional maneuver or press in that combat and unlocks at the end of
+       *  the action if he or she is still ready." Only a Red List target
+       *  grants the rider; the choice of maneuver or press is made at
+       *  announcement, one option each. */
+      redListRider?: { maneuverOrPress: true; unlockActor: true };
       /** "Ⓓ Enter combat with AND LOCK a vampire" (Deep Song superior). */
       lockTarget?: boolean;
       /** "The target vampire is considered the ACTING MINION during that

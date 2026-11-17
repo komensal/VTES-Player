@@ -328,6 +328,9 @@ export interface MinionState {
   disciplines: Record<string, DisciplineLevel>;
   /** One bleed action per minion per turn (p. 20). */
   bledThisTurn: boolean;
+  /** "Red List minion" — the Red List action's chosen minion (Big Game's
+   *  rider). Set by the Red List payoff; absent otherwise. */
+  redList?: boolean;
   /** "None of your other minions attempted any actions this turn" (Loner).
    *  Set when an action is announced by this minion; reset at its turn start. */
   attemptedActionThisTurn?: boolean;
@@ -2783,6 +2786,10 @@ export interface ActionFrame {
    *  acting minion" (Warsaw Station) — conditional on SUCCESS, unlike
    *  `notBlockPenalties`, which runs either way. */
   unlockOnSuccess: MinionId[];
+  /** Big Game: "unlocks at the end of the action if he or she is still
+   *  ready" — on ANY end of the action (successful or blocked), but only if
+   *  the acting minion is still ready. Unlike `unlockOnSuccess`. */
+  unlockActorIfReady?: boolean;
   /** "\<This vampire\> can burn N blood to unlock \<self | the acting
    *  ally\> after action resolution" (Paths in Two Worlds superior, Gifts
    *  From Hereafter superior) — unlike `unlockOnSuccess`, it is an OFFER

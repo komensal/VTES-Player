@@ -1891,7 +1891,15 @@ function compileActionCard(spec: CardSpec): CardHandler {
           if (rider && rider.kind === "actionEnterCombat") {
             // Rush target fixed at announcement (p. 25).
             for (const t of enumerateRushTargets(ctx.state, m, rider)) {
-              push(mode, { target: t });
+              // Big Game: a Red List target carries the optional maneuver OR
+              // press, one option each, chosen now (p. 25). Any other target
+              // gets the plain rush.
+              if (rider.redListRider && getMinion(ctx.state, t).redList) {
+                push(mode, { target: t, rider: "maneuver" });
+                push(mode, { target: t, rider: "press" });
+              } else {
+                push(mode, { target: t });
+              }
             }
           } else if (mode.effects.some((e) => e.kind === "actionOnPermanent")) {
             // "Ⓓ Burn a location" — one option per legal card in play,
@@ -2008,6 +2016,14 @@ function compileActionCard(spec: CardSpec): CardHandler {
           if (!target) throw new Error(`${spec.name}: no rush target`);
           params.targetMinion = target;
           if (e.riders) addRiders(e.riders);
+          // Big Game: the Red List rider, chosen at announcement — only a Red
+          // List target offers a pick, so its absence means no rider at all.
+          if (e.redListRider) {
+            const pick = play.params["rider"];
+            if (pick === "maneuver") addRiders({ maneuver: 1 });
+            else if (pick === "press") addRiders({ press: 1 });
+            if (pick) params.unlockActorIfReady = true;
+          }
           // "…with a LOCKED minion" is a gate at announcement AND at
           // resolution; the target can unlock in between.
           if (e.lockedOnly) params.requiresLockedTarget = true;

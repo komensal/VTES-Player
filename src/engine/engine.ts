@@ -4538,6 +4538,7 @@ export class VtesEngine implements EngineOps {
       ...(params.invertCombatRoles ? { invertCombatRoles: true } : {}),
       ...(params.lockTarget ? { lockTargetOnSuccess: true } : {}),
       ...(params.requiresLockedTarget ? { rushRequiresLockedTarget: true } : {}),
+      ...(params.unlockActorIfReady ? { unlockActorIfReady: true } : {}),
       grantedEffect: null,
       grantedCost: null,
       // "…can use those counters to pay some or all of the cost" — the
@@ -11175,6 +11176,15 @@ export class VtesEngine implements EngineOps {
       for (const id of af.unlockOnSuccess) {
         const m = findMinion(this.state, id);
         if (m?.locked) this.emit({ type: "MinionUnlocked", minion: id });
+      }
+    }
+    // Big Game: "unlocks at the end of the action if he or she is still
+    // ready" — any end of the action, blocked or not, and only if the
+    // acting minion is still ready (a torpid vampire stays locked).
+    if (af.unlockActorIfReady && !af.noUnlock) {
+      const actor = findMinion(this.state, af.acting);
+      if (actor?.locked && isReady(actor)) {
+        this.emit({ type: "MinionUnlocked", minion: af.acting });
       }
     }
     // "This vampire takes N unpreventable environmental aggravated damage
