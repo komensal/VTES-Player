@@ -194,7 +194,7 @@ Występuje w **2** taliach. Basic działa przeciw minion, superior wyłącznie p
 <a id="karta-102053"></a>
 ### Tye Cooper (102053) — PARTIAL_FIX
 
-Występuje w **1** taliach. Spec ma unique wraith i podstawowe statystyki, ale grantedAction ogranicza burn do vampire w torpor zamiast dowolnego non-ready miniona; brak odzyskania library card i odporności na non-aggravated. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte.
+Występuje w **1** taliach. Paczka 4: "He is immune to non-aggravated damage" — incomingDamageReduction na skompilowanym handlerze (mapa incomingDamage w cards.ts), zwraca całą kwotę niezagrażającego pakietu; aggravated nadal trafia (tests/cards/tye-cooper-immunity.test.ts, z kontrolą: zwykły ally traci krew). Wcześniej: ikona klanu dla wampira zagrywającego (library-clan-icons.test.ts), spalenie wampira w torporze (grantedAction). Nadal brak: akcja "burn a NON-READY minion" (dziś grantedAction obejmuje tylko wampira w torporze) i rider "jeśli sukces, przenieś kartę z ash heap do ręki, potem discard down".
 
 <a id="karta-102092"></a>
 ### Vast Wealth (102092) — PARTIAL_FIX
