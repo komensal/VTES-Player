@@ -204,7 +204,7 @@ Występuje w **1** taliach. Overlay wymaga rekrutującego Tzimisce i uwzględnia
 <a id="karta-102159"></a>
 ### Waters of Duat (102159) — PARTIAL_FIX
 
-Występuje w **1** taliach. Osobny obowiązek hunt trwa do ogłoszenia hunt lub końca tury nawet po uzyskaniu blood; tests/cards/token-vampire.test.ts. Pozostałe interakcje i granice tury wymagają dalszej weryfikacji.
+Występuje w **1** taliach. Obowiązek hunt: token ma mustHuntThisTurn; blood go nie zdejmuje, ogłoszenie hunt zdejmuje, koniec tury zdejmuje (tests/cards/token-vampire.test.ts oraz waters-of-duat-boundary.test.ts, który sprawdza granicę tury i to, że pętla rzeczywiście zakończyła turę). Nadal nieweryfikowane: przeszukanie biblioteki, ręki i ash heap pod kątem Discipline master (searchDisciplineMaster) poza ścieżką "none"; wpływ innych kart na obowiązek.
 
 <a id="karta-102199"></a>
 ### Yawp Court (102199) — PARTIAL_FIX

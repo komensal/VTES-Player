@@ -12951,7 +12951,7 @@
     "id": 102159,
     "name": "Waters of Duat",
     "status": "PARTIAL_FIX",
-    "evidence": "Osobny obowiązek hunt trwa do ogłoszenia hunt lub końca tury nawet po uzyskaniu blood; tests/cards/token-vampire.test.ts. Pozostałe interakcje i granice tury wymagają dalszej weryfikacji."
+    "evidence": "Obowiązek hunt: token ma mustHuntThisTurn; blood go nie zdejmuje, ogłoszenie hunt zdejmuje, koniec tury zdejmuje (tests/cards/token-vampire.test.ts oraz waters-of-duat-boundary.test.ts, który sprawdza granicę tury i to, że pętla rzeczywiście zakończyła turę). Nadal nieweryfikowane: przeszukanie biblioteki, ręki i ash heap pod kątem Discipline master (searchDisciplineMaster) poza ścieżką \"none\"; wpływ innych kart na obowiązek."
   },
   {
     "id": 102160,
