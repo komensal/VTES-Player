@@ -12056,6 +12056,9 @@ export function compileSpec(spec: CardSpec): CardHandler {
       const fill = st.fillOnEntry;
       handler.onEnterPlay = (entry, owner, ops) => {
         if (fill.from === "libraryTop") {
+          // "Not equipped but merely put into play … does not get 2 cards"
+          // (LSJ 20090506). `owner.minion` is null off a minion.
+          if (fill.onlyWhenEquipped && owner.minion === null) return;
           for (let i = 0; i < (fill.count === "all" ? 0 : fill.count); i++) {
             ops.storeCard({ holder: entry.card.id, from: "library", faceUp: st.faceUp });
           }

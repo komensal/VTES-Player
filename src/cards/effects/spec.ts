@@ -3054,6 +3054,10 @@ export interface CardSpec {
          *  CARD AT A TIME rather than as a subset: a subset choice over a
          *  hand is a power set of it (docs/store-plays-design.md §4). */
         from: "search" | "libraryTop" | "hand";
+        /** Filled only when the card enters play EQUIPPED (on a minion). A
+         *  card merely put into play, not equipped, takes nothing — Shilmulo
+         *  Tarot: LSJ 20090506 (the Alastor example). */
+        onlyWhenEquipped?: boolean;
         /** "Up to four"; `"all"` is "any number" (Gift of Proteus). */
         count: number | "all";
         cardTypes?: PlayCostCardType[];

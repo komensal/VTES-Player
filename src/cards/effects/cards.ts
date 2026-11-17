@@ -17449,7 +17449,7 @@ export const cardSpecs: CardSpec[] = [
       tags: ["Shilmulo Tarot"],
       store: {
         faceUp: false,
-        fillOnEntry: { from: "libraryTop", count: 2 },
+        fillOnEntry: { from: "libraryTop", count: 2, onlyWhenEquipped: true },
         redirectsDraw: true,
         requiresReadyBearer: true,
         addTopInUnlockPhase: true,
