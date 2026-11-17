@@ -14057,10 +14057,14 @@ export class VtesEngine implements EngineOps {
     }
   }
 
-  private applyResolvedDamage(pd: PendingDamage): void {
+  private applyResolvedDamage(pdIn: PendingDamage): void {
     // A minion can leave play before its damage resolves.
-    const m = findMinion(this.state, pd.minion);
+    const m = findMinion(this.state, pdIn.minion);
     if (!m) return;
+    // A card on the victim may take some of each packet off (Nephandus).
+    const reduce = this.registry[m.name]?.incomingDamageReduction?.(m, pdIn, this.state) ?? 0;
+    const pd: PendingDamage = reduce > 0 ? { ...pdIn, amount: Math.max(0, pdIn.amount - reduce) } : pdIn;
+    if (pd.amount <= 0) return;
     if (m.kind === "ally") {
       // Allies treat aggravated as normal damage (p. 32).
       const burn = Math.min(m.blood, pd.amount);

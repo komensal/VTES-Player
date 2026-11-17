@@ -7629,7 +7629,7 @@
     "id": 101272,
     "name": "Nephandus",
     "status": "PARTIAL_FIX",
-    "evidence": "Spec ma statystyki, press i akcję burn vampire, ale brak ranged strike 1R i redukcji damage ze strike i damaging effects; nie znaleziono osobnego handlera tej nazwy. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "evidence": "Paczka 3: spec ma 2 life, press, akcję burn torpor vampire i teraz ally.strike 1R (ranged, z combat.chooseStrike jako ability:strike). Redukcja: incomingDamageReduction na handlerze Nephandus, wywoływana w applyResolvedDamage; każdy strike lub damaging effect przeciwnika w tym combat zadaje o 1 mniej; poza combat i bez źródła nie (tests/cards/nephandus.test.ts). Wymagania ikony klanu dla wampira zagrywającego (tests/cards/library-clan-icons.test.ts) były już wcześniej. Nadal nieweryfikowane end-to-end: wybór strike 1R w pełnym przebiegu combat (test sprawdza tylko, że handler ma opcje) oraz zachowanie przy wielu źródłach jednocześnie."
   },
   {
     "id": 101273,

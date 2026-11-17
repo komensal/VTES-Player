@@ -11,6 +11,7 @@ import type {
   ActionId,
   ActionKind,
   AfterCombatRider,
+  PendingDamage,
   AimRider,
   AmmoLoad,
   BlockAttemptFrame,
@@ -2146,6 +2147,15 @@ export interface CardHandler {
     owner: { seat: SeatId; minion: MinionId | null },
     ops: EngineOps,
   ): void;
+  /** "Each strike or damaging effect made by the opposing minion against this
+   *  minion in combat inflicts N less damage" (Nephandus). Returns how much
+   *  of an incoming damage packet this card takes off; 0 when it does not
+   *  apply. Asked once, in `applyResolvedDamage`, before the damage lands. */
+  incomingDamageReduction?(
+    victim: MinionState,
+    pd: PendingDamage,
+    state: GameState,
+  ): number;
   onLeavePlay?(
     entry: PermanentInPlay,
     owner: { seat: SeatId; minion: MinionId | null },

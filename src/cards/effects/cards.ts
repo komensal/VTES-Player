@@ -24079,7 +24079,7 @@ export const cardSpecs: CardSpec[] = [
     krcgId: 101272,
     name: "Nephandus",
     cardType: "ally",
-    ally: { life: 2, strength: 0, bleed: 1 },
+    ally: { life: 2, strength: 0, bleed: 1, strike: { damage: 1, ranged: true } },
     permanent: {
       where: "bearer",
       statics: { pressPerCombat: 1 },
@@ -48433,6 +48433,18 @@ export function buildHandlerRegistry(): HandlerRegistry {
   for (const spec of cryptSpecs) {
     registry[spec.name] = compileSpec(spec);
   }
+  // Nephandus (101272): "Each strike or damaging effect made by the opposing
+  // minion against Nephandus in combat inflicts 1 less damage." Added to the
+  // COMPILED handler, not as a bespoke overlay: an overlay rebuilt from the raw
+  // spec would drop the printed clan requirement. Only the combat's OPPOSING
+  // minion counts; damage from anywhere else is not reduced.
+  registry["Nephandus"]!.incomingDamageReduction = (victim, pd, state) => {
+    const cf = state.frames.find((f) => f.kind === "combat");
+    if (cf?.kind !== "combat" || pd.source === null || pd.amount <= 0) return 0;
+    const opposingId =
+      cf.acting === victim.id ? cf.opposing : cf.opposing === victim.id ? cf.acting : null;
+    return opposingId !== null && pd.source === opposingId ? 1 : 0;
+  };
   // Bespoke handlers and spec-plus-bespoke overlays override compiled specs.
   for (const bespoke of [
     hourglass,

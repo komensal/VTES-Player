@@ -139,7 +139,7 @@ Występuje w **2** taliach. Wąski zakres: wyszukanie/equip po sukcesie, koszt i
 <a id="karta-101272"></a>
 ### Nephandus (101272) — PARTIAL_FIX
 
-Występuje w **1** taliach. Spec ma statystyki, press i akcję burn vampire, ale brak ranged strike 1R i redukcji damage ze strike i damaging effects; nie znaleziono osobnego handlera tej nazwy. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte.
+Występuje w **1** taliach. Paczka 3: spec ma 2 life, press, akcję burn torpor vampire i teraz ally.strike 1R (ranged, z combat.chooseStrike jako ability:strike). Redukcja: incomingDamageReduction na handlerze Nephandus, wywoływana w applyResolvedDamage; każdy strike lub damaging effect przeciwnika w tym combat zadaje o 1 mniej; poza combat i bez źródła nie (tests/cards/nephandus.test.ts). Wymagania ikony klanu dla wampira zagrywającego (tests/cards/library-clan-icons.test.ts) były już wcześniej. Nadal nieweryfikowane end-to-end: wybór strike 1R w pełnym przebiegu combat (test sprawdza tylko, że handler ma opcje) oraz zachowanie przy wielu źródłach jednocześnie.
 
 <a id="karta-101309"></a>
 ### Obedience (101309) — PARTIAL_FIX
