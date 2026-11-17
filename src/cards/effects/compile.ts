@@ -15125,10 +15125,10 @@ function addCryptAbilities(
       if (unlockingSeat !== controller) return;
       const bearer = owner.minion === null ? null : findMinion(ops.state, owner.minion);
       if (!bearer || !isReady(bearer)) return;
-      const prey = preyOf(ops.state, controller);
-      if (!getSeat(ops.state, prey).minions.some((m) => isReady(m))) return;
+      const chooser = upd.chooser === "controller" ? controller : preyOf(ops.state, controller);
+      if (!getSeat(ops.state, chooser).minions.some((m) => isReady(m))) return;
       ops.raiseChoice({
-        seat: prey,
+        seat: chooser,
         cardName: spec.name,
         cardId: entry.card.id,
         key: "unlockPhaseDamage",

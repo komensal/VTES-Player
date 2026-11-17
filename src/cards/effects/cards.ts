@@ -25617,6 +25617,10 @@ export const cardSpecs: CardSpec[] = [
       statics: { pressPerCombat: 1, cannotHunt: true },
       rushGrant: { who: { scope: "bearer" }, target: { scope: "any" }, stealth: 1 },
       retainerAbilities: { preventPerCombat: 1 },
+      // "If the bearer is ready during your unlock phase, this weapon inflicts
+      // 3 unpreventable damage on a ready minion you control." The controller
+      // picks, not the prey.
+      unlockPhaseDamage: { amount: 3, chooser: "controller" },
       tags: ["weapon", "melee"],
     },
     usable: [],

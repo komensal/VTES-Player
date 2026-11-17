@@ -4284,7 +4284,15 @@ export interface CardSpec {
      *  which is what makes it a `ChoiceFrame` rather than an automatic
      *  effect — and it is MANDATORY, since the card says "chooses".
      *  docs/crypt-wave-5.md §5 */
-    unlockPhaseDamage?: { amount: number; aggravated?: boolean };
+    unlockPhaseDamage?: {
+      amount: number;
+      aggravated?: boolean;
+      /** Who chooses the minion. Default `prey` (Aemilius: "your prey
+       *  chooses"). `controller` is for a card whose own controller picks
+       *  (Talbot's Chainsaw: "inflicts 3 unpreventable damage on a ready
+       *  minion YOU control"). */
+      chooser?: "prey" | "controller";
+    };
     /** "If \<this vampire\> is ready at the start of your discard phase,
      *  you get +N discard phase actions" (Sreelekha). p. 37 grants one by
      *  default, and the hook fires after that default is set.

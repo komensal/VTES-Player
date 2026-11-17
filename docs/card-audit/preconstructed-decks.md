@@ -184,7 +184,7 @@ Występuje w **1** taliach. Stan: karta nadal jest atrapą (basic: tylko actionS
 <a id="karta-101931"></a>
 ### Talbot's Chainsaw (101931) — PARTIAL_FIX
 
-Występuje w **1** taliach. Dodano zakaz wszystkich akcji hunt dla nosiciela, w tym hunt z karty i granted hunt; wyjątek dla Howler, która nie może używać broni. Tests/cards/talbots-hunt.test.ts sprawdza m.in. stuck przy 0 blood. Nadal brak upkeep 3 unpreventable damage; jego źródłem jest broń, a nie environmental damage, i trzeba uwzględnić immunity. pressPerCombat nie deklaruje mandatory i ograniczenia do kontynuacji w pierwszej rundzie. Rush/prevent oraz inne interakcje wymagają dalszej weryfikacji.
+Występuje w **1** taliach. Paczka 4: upkeep z karty — "If the bearer is ready during your unlock phase, this weapon inflicts 3 unpreventable damage on a ready minion you control". Wybiera KONTROLER (nie prey): unlockPhaseDamage.chooser = "controller" (spec.ts, compile.ts), bez wyboru gdy nosiciel nie jest gotowy lub nie ma gotowego miniona; tests/cards/talbot-chainsaw-unlock.test.ts. Wcześniej: pressPerCombat, cannotHunt, rush z stealth 1, prevent 1 per combat, blokada hunt przy 0 blood (bots-hunt.test.ts). Nadal nieweryfikowane: press jest statyczny (nie obowiązkowy i bez ograniczenia do kontynuacji w pierwszej rundzie), a rush/prevent i ich interakcje z innymi kartami wymagają przeglądu.
 
 <a id="karta-101960"></a>
 ### Terror Frenzy (101960) — PARTIAL_FIX
