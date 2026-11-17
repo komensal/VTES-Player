@@ -13694,8 +13694,8 @@
   {
     "id": 102283,
     "name": "Touch of Oblivion",
-    "status": "PARTIAL_FIX",
-    "evidence": "Basic dołącza counters, superior wysyła wampira do torpor lub spala ally. Naprawiono równoczesny strike oraz okno odroczenia bezpośredniego strike: torpor; tests/cards/entombment-audit.test.ts i touch-of-oblivion.test.ts. Pozostałe interakcje wymagają weryfikacji."
+    "status": "FIXED_TARGETED",
+    "evidence": "Basic [obl]: karta przypięta do przeciwnego miniona z 2 żetonami; zamiast unlock palony jest 1 żeton, a bez żetonów karta się spala (counterSink instead unlock, burnWhenEmpty). Superior [OBL]: wampir do torpor albo spalenie przeciwnego ally. Wound z LSJ 20090622-2 (Undying Tenacity). Zweryfikowane uruchomieniem: touch-of-oblivion.test.ts (6 testów), entombment-audit.test.ts (33), stun.test.ts (3 przypadki unlock); razem 42 testy zielone, w tym opóźnienie torpor przez Undead Persistence i Undying Tenacity oraz tryb simultaneous strike."
   },
   {
     "id": 102284,

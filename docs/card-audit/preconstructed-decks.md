@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **52 różnych kart**: CODE_DISCREPANCY 2, PARTIAL_FIX 50, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- Otwarte ustalenia dotyczą **51 różnych kart**: CODE_DISCREPANCY 2, PARTIAL_FIX 49, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
 - **28/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **85**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **86**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -25,7 +25,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | Zestaw / talia | Typ | Różnych kart | Otwarte / bez wpisu | Karty z otwartym ustaleniem |
 |---|---|---:|---:|---|
 | Fifth Edition / Hecata | pełna | 39 | 1 | [Rolling with the Punches](#karta-101649) |
-| Fifth Edition / Lasombra | pełna | 36 | 2 | [The Sleeping Mind](#karta-101805), [Touch of Oblivion](#karta-102283) |
+| Fifth Edition / Lasombra | pełna | 36 | 1 | [The Sleeping Mind](#karta-101805) |
 | Fifth Edition / Malkavian | pełna | 30 | 0 | — |
 | Fifth Edition / Nosferatu | pełna | 35 | 0 | — |
 | Fifth Edition / Toreador | pełna | 29 | 0 | — |
@@ -215,11 +215,6 @@ Występuje w **2** taliach. Osobny obowiązek hunt trwa do ogłoszenia hunt lub 
 ### Touch of Valeren (102262) — PARTIAL_FIX
 
 Występuje w **2** taliach. Combat ograniczono do strike przeciwnika; prevention-provenance-audit.test.ts bada dostępność i źródła. Action dopuszcza pełnego aktora, jeśli koszt krwi zostawia miejsce, respektuje ochronę przed wyborem i limit starting life ally; minion-target-actions.test.ts. Stare pakiety bez strikePhase i pełne przejście superior oraz dalsze interakcje pozostają otwarte. Paczka 1: minion-target-actions.test.ts i prevention-provenance-audit.test.ts pokrywają akcję i combat. Nie zweryfikowano LSJ 20001114 dla tej ścieżki prevention oraz starych pakietów bez strikePhase. Status bez zmian.
-
-<a id="karta-102283"></a>
-### Touch of Oblivion (102283) — PARTIAL_FIX
-
-Występuje w **1** taliach. Basic dołącza counters, superior wysyła wampira do torpor lub spala ally. Naprawiono równoczesny strike oraz okno odroczenia bezpośredniego strike: torpor; tests/cards/entombment-audit.test.ts i touch-of-oblivion.test.ts. Pozostałe interakcje wymagają weryfikacji.
 
 <a id="karta-102303"></a>
 ### Raising the Portcullis (102303) — PARTIAL_FIX
