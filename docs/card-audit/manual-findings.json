@@ -951,7 +951,7 @@
     "id": 100159,
     "name": "Big Game",
     "status": "FIXED_TARGETED",
-    "evidence": "Ⓓ: cel to gotowy minion innego Methuselah (othersOnly; własne miniony nie są oferowane). Rider Red List jest warunkowy na cel: tylko cel z flagą redList dostaje opcję 'maneuver' albo 'press' (dwie osobne opcje wybierane przy ogłoszeniu), a aktor odblokowuje się na koniec akcji, jeśli nadal jest ready (unlockActorIfReady, także po akcji zablokowanej). Cel nie-Red-List: zwykły rush bez riderów i bez unlock. Testy: tests/cards/big-game-red-list.test.ts (6/6) oraz rush-cards.test.ts (12/12). Sprawdzono mutacją: bez othersOnly test pada. NIEZROBIONE: karta Red List (101574) nadal nie ma efektu Ⓓ (wybór gotowego sojusznika/młodszego wampira na Red List i zakaz blokowania), więc w grze nie powstaje cel Red List. Jej rejestr błędnie oznacza ją jako pełną zgodność; to osobna pozycja. Nieweryfikowane: odblokowanie gdy aktor wpadł w torpor w trakcie akcji (oczekiwane: brak odblokowania)."
+    "evidence": "Ⓓ: cel to gotowy minion innego Methuselah (othersOnly; własne miniony nie są oferowane). Rider Red List jest warunkowy na cel: tylko cel z flagą redList dostaje opcję 'maneuver' albo 'press' (dwie osobne opcje wybierane przy ogłoszeniu), a aktor odblokowuje się na koniec akcji, jeśli nadal jest ready (unlockActorIfReady, także po akcji zablokowanej). Cel nie-Red-List: zwykły rush bez riderów i bez unlock. Testy: tests/cards/big-game-red-list.test.ts (6/6) oraz rush-cards.test.ts (12/12). Sprawdzono mutacją: bez othersOnly test pada. Karta Red List (101574) zaimplementowana osobno: tests/cards/red-list.test.ts (7/7). Nieweryfikowane: odblokowanie gdy aktor wpadł w torpor w trakcie akcji (oczekiwane: brak odblokowania)."
   },
   {
     "id": 100160,

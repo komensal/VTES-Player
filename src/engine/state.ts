@@ -1993,6 +1993,8 @@ export type GameEvent =
    *  attempt again (Dawn Operation; p. 25 — only declining is final). */
   | { type: "BlockAttemptCancelled"; actionId: ActionId; blocker: MinionId }
   | { type: "MinionLocked"; minion: MinionId }
+  /** Red List action: the chosen minion becomes a Red List minion. */
+  | { type: "MinionRedListed"; minion: MinionId }
   | { type: "MinionUnlocked"; minion: MinionId }
   | { type: "MinionWoke"; minion: MinionId }
   /** `city` is the CITY THE TITLE IS TO ("Prince of Chicago"), and it is

@@ -703,6 +703,9 @@ export class VtesEngine implements EngineOps {
       case "MinionLocked":
         getMinion(this.state, ev.minion).locked = true;
         break;
+      case "MinionRedListed":
+        getMinion(this.state, ev.minion).redList = true;
+        break;
       case "ActionAnnounced": {
         // "None of your other minions attempted any actions this turn" (Loner).
         const acting = findMinion(this.state, ev.acting);

@@ -414,7 +414,9 @@ export type EffectPrimitive =
       /** "all" is "this action is UNBLOCKABLE" (Mantle of the Moon) — the
        *  union of the allies and vampires bars, not a new kind of state. */
       who: "allies" | "vampires" | "titled" | "chosen" | "all";
-      chosenScope?: "younger" | "locked" | "any";
+      /** Red List's pick: "a ready ally or a ready younger vampire" — any
+       *  seat, ready only. */
+      chosenScope?: "younger" | "locked" | "any" | "readyAllyOrYounger";
     }
   /** "Minions [without Oblivion] must burn 1 blood [or life] to attempt to
    *  block this action" (docs/block-tax-design.md) — a toll on the attempt
@@ -2375,6 +2377,10 @@ export type EffectPrimitive =
   /** "Ⓓ Lock a minion controlled by your predator or prey" (Distraction
    *  superior) — the mirror, with a RELATION filter rather than an age one. §3 */
   | { kind: "actionLockMinion"; scope: "predatorOrPrey"; directed: boolean }
+  /** Red List's Ⓓ payoff: "The chosen minion becomes Red List." The minion
+   *  is chosen at announcement by the paired `blockRestriction` (who
+   *  "chosen", chosenScope "readyAllyOrYounger"); this marks it on success. */
+  | { kind: "actionMarkRedList" }
   /** "Ⓓ Inflict N unpreventable damage on a READY minion" (Horseshoes) —
    *  environmental damage, so there is no prevention window to open and no
    *  combat. §4 */
@@ -4729,6 +4735,8 @@ export interface CardSpec {
    *  a different question from the named list above.
    *  docs/referendum-terms-design.md */
   requiresTitled?: boolean;
+  /** "Requires a ready, titled, non-Red List vampire" (Red List). */
+  requiresNotRedList?: boolean;
   /** "Requires a NON-STERILE \<x\>" (Waters of Duat, Childe of the
    *  Revolution). "Sterile vampires cannot perform actions to put new
    *  vampires in play" (glossary, p. 42) — a real rulebook trait that no

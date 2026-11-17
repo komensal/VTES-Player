@@ -30823,14 +30823,26 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Red List [101574] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // "Requires a ready, titled, non-Red List vampire. Ⓓ Choose a ready ally
+    //  or a ready younger vampire. The chosen minion becomes Red List. That
+    //  minion may not attempt to block this action."
     krcgId: 101574,
     name: "Red List",
     cardType: "action",
     bloodCost: 0,
+    requiresReady: true,
+    requiresTitled: true,
+    requiresNotRedList: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [
+          { kind: "blockRestriction", who: "chosen", chosenScope: "readyAllyOrYounger" },
+          { kind: "actionMarkRedList" },
+        ],
+      },
     ],
   },
   {

@@ -296,6 +296,7 @@ export function meetsRequirements(m: MinionState, spec: CardSpec): boolean {
   // eleven printed titles instead would be the Priority Contract trap in
   // reverse: a filter that silently narrows.
   if (spec.requiresTitled && m.title === null) return false;
+  if (spec.requiresNotRedList && m.redList === true) return false;
   // "Requires a NON-STERILE …" (p. 42): printed Sterile is imported
   // into the minion state. Cards without this requirement still need their
   // own implementation of the general vampire-creation restriction.
@@ -1305,6 +1306,7 @@ function targetRider(mode: CardMode): EffectPrimitive | null {
       e.kind === "actionUnlockMinion" ||
       e.kind === "actionLockMinion" ||
       e.kind === "actionDamageMinion" ||
+      e.kind === "actionMarkRedList" ||
       e.kind === "attachToOpponent" ||
       // "Ⓓ Choose a vampire and put this card in play" (Distant Friend).
       (e.kind === "putInPlayOnSuccess" && e.chooseVampire === true)
@@ -1488,6 +1490,22 @@ function enumerateActionTargets(
       if (s.ousted) continue;
       for (const m of s.minions) {
         if (m.kind !== "vampire") continue;
+        if (untargetableBy(m, seatId, actor)) continue;
+        targets.push(m.id);
+      }
+    }
+    return targets;
+  }
+  if (e.kind === "actionMarkRedList") {
+    // "Choose a ready ally or a ready younger vampire" (Red List) — any
+    // seat's, ready only. A torpid minion is not ready, and the acting
+    // vampire is never younger than itself.
+    for (const s of state.seats) {
+      if (s.ousted) continue;
+      for (const m of s.minions) {
+        if (m.id === actor.id || !isReady(m)) continue;
+        if (m.kind === "vampire" && capacityOf(m) >= capacityOf(actor)) continue;
+        if (m.kind !== "vampire" && m.kind !== "ally") continue;
         if (untargetableBy(m, seatId, actor)) continue;
         targets.push(m.id);
       }
@@ -2087,6 +2105,11 @@ function compileActionCard(spec: CardSpec): CardHandler {
           params.targetMinion = target;
           params.noCombat = true;
         }
+        if (e.kind === "actionMarkRedList") {
+          // Named for directedness and the block restriction, not a combat.
+          params.targetMinion = play.params["target"] ?? "";
+          params.noCombat = true;
+        }
         if (
           e.kind === "actionUnlockMinion" ||
           e.kind === "actionLockMinion" ||
@@ -2480,6 +2503,14 @@ function compileActionCard(spec: CardSpec): CardHandler {
             const who = af.targetMinion;
             const m2 = who ? findMinion(ops.state, who) : null;
             if (m2?.locked && !af.noUnlock) ops.emit({ type: "MinionUnlocked", minion: m2.id });
+            break;
+          }
+          case "actionMarkRedList": {
+            // "The chosen minion becomes Red List" — the pick rode on the
+            // frame; a minion that has left play since is simply not marked.
+            const who = af.targetMinion;
+            const m2 = who ? findMinion(ops.state, who) : null;
+            if (m2 && !m2.redList) ops.emit({ type: "MinionRedListed", minion: m2.id });
             break;
           }
           case "actionLockMinion": {
