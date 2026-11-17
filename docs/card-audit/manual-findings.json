@@ -6254,8 +6254,8 @@
   {
     "id": 101043,
     "name": "Khabar: Glory",
-    "status": "PARTIAL_FIX",
-    "evidence": "Dodano kontrolę poprzednich non-mandatory actions i liczenie akcji wbudowanych, z kart i przyznanych; mandatory hunt jest wyjątkiem. tests/cards/action-attachments.test.ts. Inne rodzaje obowiązkowych akcji i anulowanie wymagają dalszej weryfikacji. Aktualizacja: Ten sam warunkowy unlock on attach nie działa przy superior Sleeping Mind; wspólny kod testowany przez Abbot, sam scenariusz Khabar niezweryfikowany."
+    "status": "FIXED_TARGETED",
+    "evidence": "Kontrola poprzednich non-mandatory actions i liczenie akcji wbudowanych oraz z kart; tests/cards/action-attachments.test.ts. Mandatory hunt jest wyjątkiem (test). Superior The Sleeping Mind: tekst karty to \"During this action, minions cannot unlock\", więc unlock przy przypięciu jest zabroniony, a przypięcie i +1 bleed zostają; tests/cards/khabar-sleeping-mind.test.ts. Brak rulingu dla Khabar: Glory. Nieweryfikowane: pełne rozpatrzenie zwrotu 4 pool przy ousted oraz inne rodzaje obowiązkowych akcji i anulowanie."
   },
   {
     "id": 101044,
@@ -13809,7 +13809,7 @@
     "id": 102302,
     "name": "Psychophagia",
     "status": "FIXED_TARGETED",
-    "evidence": "Wąski zakres domknięty: hunt z ally z ash heap dowolnego Methuselah, gain 3 albo gain 2 + unlock (ash-heap-cards.test.ts). Połączenie z superior The Sleeping Mind end-to-end (tests/cards/psychophagia-sleeping-mind.test.ts): Sleeping Mind blokuje unlock po rozstrzygnięciu [PIB 20150703], ale 2 blood zostaje, a aktor pozostaje locked. Nieweryfikowane: pozostałe interakcje karty poza tym wariantem."
+    "evidence": "Wąski zakres domknięty: hunt z ally z ash heap dowolnego Methuselah, gain 3 albo gain 2 + unlock (ash-heap-cards.test.ts). Połączenie z superior The Sleeping Mind (tests/cards/psychophagia-sleeping-mind.test.ts): tekst karty to \"During this action, minions cannot unlock\", więc unlock przy Psychophagia jest zabroniony, a 2 blood zostaje; aktor pozostaje locked. Nieweryfikowane: pozostałe interakcje karty poza tym wariantem."
   },
   {
     "id": 102303,

@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **54 różnych kart**: CODE_DISCREPANCY 1, PARTIAL_FIX 53, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- Otwarte ustalenia dotyczą **53 różnych kart**: CODE_DISCREPANCY 1, PARTIAL_FIX 52, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
 - **28/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **83**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **84**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -43,7 +43,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | New Blood / Toreador | half-deck | 27 | 0 | — |
 | New Blood / Tremere | half-deck | 30 | 3 | [Fragment of the Book of Nod](#karta-100785), [Magic of the Smith](#karta-101143), [Rego Motum](#karta-101588) |
 | New Blood / Ventrue | half-deck | 28 | 0 | — |
-| New Blood II / Banu Haqim | half-deck | 32 | 2 | [Blur](#karta-100227), [Khabar: Glory](#karta-101043) |
+| New Blood II / Banu Haqim | half-deck | 32 | 1 | [Blur](#karta-100227) |
 | New Blood II / Brujah | half-deck | 30 | 1 | [Childe of the Revolution](#karta-102246) |
 | New Blood II / Gangrel | half-deck | 31 | 0 | — |
 | New Blood II / Ministry | half-deck | 33 | 2 | [Waters of Duat](#karta-102159), [Revelation of the Serpent](#karta-102233) |
@@ -125,11 +125,6 @@ Występuje w **4** taliach. Celowana naprawa: liczony draw Heart jest wznawiany 
 ### Hourglass of the Mind (100941) — PARTIAL_FIX
 
 Występuje w **1** taliach. Częściowo naprawiono: odrębne warianty [pot]/[tem]; [tem] dobiera cztery karty bez discard, następnie wybiera do czterech kart z ręki na wierzch w zadanej kolejności i unlockuje przed zakończeniem akcji. Uwzględniono przekierowanie draw, zapis/wznowienie oraz pustą bibliotekę (tests/cards/hourglass-audit.test.ts). Przy niepełnej ręce przyjęto wykonanie możliwej części efektu; interpretacja wymaga potwierdzenia. Usunięto nieuprawnione +1 hand size superior bez counterów, lecz [TEM] nadal nie obsługuje opłacania counterów ani ich wpływu na hand size. Logi wyboru są maskowane, ale identyfikatory zakrytych kart w projekcji stanu nadal mogą umożliwiać ich śledzenie (istniejący szerszy problem prywatności). Pozostaje PARTIAL_FIX.
-
-<a id="karta-101043"></a>
-### Khabar: Glory (101043) — PARTIAL_FIX
-
-Występuje w **1** taliach. Dodano kontrolę poprzednich non-mandatory actions i liczenie akcji wbudowanych, z kart i przyznanych; mandatory hunt jest wyjątkiem. tests/cards/action-attachments.test.ts. Inne rodzaje obowiązkowych akcji i anulowanie wymagają dalszej weryfikacji. Aktualizacja: Ten sam warunkowy unlock on attach nie działa przy superior Sleeping Mind; wspólny kod testowany przez Abbot, sam scenariusz Khabar niezweryfikowany.
 
 <a id="karta-101143"></a>
 ### Magic of the Smith (101143) — PARTIAL_FIX
