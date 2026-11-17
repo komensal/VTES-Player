@@ -13814,8 +13814,8 @@
   {
     "id": 102303,
     "name": "Raising the Portcullis",
-    "status": "PARTIAL_FIX",
-    "evidence": "Limit jednej kopii na kontrolera zamiast unique; test per-methuselah-audit.test.ts sprawdza dostępność i blokadę drugiej kopii. Pełna rezolucja dwóch kopii i interakcje contest wymagają dalszej weryfikacji."
+    "status": "FIXED_TARGETED",
+    "evidence": "Limit jednej kopii na Methuselah (onePerMethuselah) zamiast unique; druga własna kopia nie jest oferowana. Zgodne z grupą G00158 (polityczna akcja z niemożliwymi warunkami, w tym uniqueness, nie może być użyta; LSJ 20100129, ANK 20191228). Aura +1 bleed na wampiry kontrolera tylko, gdy prey ma wampira w torporze; spalenie przez referendum (+1 stealth). Zweryfikowane uruchomieniem: opposing-statics.test.ts (aura i spalenie) i per-methuselah-audit.test.ts (kopie innych kontrolerów bez contestu, zakaz drugiej własnej); 18 testów zielonych. Nieweryfikowane: pełna rezolucja contestu między kopiami różnych graczy w referendum (ogólna logika polityki, nie ta karta)."
   },
   {
     "id": 102304,
