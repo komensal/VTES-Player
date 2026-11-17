@@ -12548,8 +12548,8 @@
   {
     "id": 102092,
     "name": "Vast Wealth",
-    "status": "PARTIAL_FIX",
-    "evidence": "Wąski zakres: master na własnego ready miniona nadaje akcję equip pierwszego equipment z library; library-search.test.ts. Aktualizacja: sprawdzany jest pierwszy sprzęt, a przy niespełnionym wymogu klanu lub wymuszonym konflikcie Unique jest spalany bez kosztu zamiast przeszukania dalszych kart (library-search.test.ts; https://www.vekn.net/forum/rules-questions/79883-enkidu-vast-wealth). Wyposażenie z library nie emituje już błędnego CardPlayed, a koszt uwzględnia tagi broni; pozostaje brak wyboru nic nie znaleźć oraz niepełna obsługa innych ograniczeń i ceny. Zgodnie z https://www.vekn.net/forum/rules-questions/79511-vidal-jarbeaux ten sprzęt nie jest zagrywany."
+    "status": "FIXED_TARGETED",
+    "evidence": "Master na własnego ready miniona: akcja equip pierwszego equipment z library (+1 stealth), klan i koszt z tagami, unikatowość, spalenie przy niespełnionym wymogu bez przeszukania dalszych kart; library-search.test.ts (30 testów). Dwa rulingi dopięte w tests/cards/vast-wealth-rulings.test.ts: ability niedostępne, gdy wampir ma innego kontrolera niż Vast Wealth (RTR 19951017), z kontrolą dodatnią w tym samym oknie; brak przeszukania po nieudanej (zablokowanej) akcji equip (TOM 19951107), z asercją BlockSucceeded. Nieweryfikowane: obowiązkowe zapłacenie z możliwym oustem Methuselah (RTR 19941109, RTR 20010711) oraz zachowanie przy wielu kopiach równocześnie."
   },
   {
     "id": 102093,

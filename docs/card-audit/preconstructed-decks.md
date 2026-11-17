@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **50 różnych kart**: CODE_DISCREPANCY 2, PARTIAL_FIX 48, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- Otwarte ustalenia dotyczą **49 różnych kart**: CODE_DISCREPANCY 2, PARTIAL_FIX 47, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
 - **27/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **87**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **88**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -50,7 +50,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | New Blood III / Hecata | half-deck | 25 | 0 | — |
 | New Blood III / Lasombra | half-deck | 24 | 0 | — |
 | New Blood III / Ravnos | half-deck | 31 | 1 | [AK-47](#karta-100032) |
-| New Blood III / Salubri | half-deck | 27 | 4 | [Vast Wealth](#karta-102092), [Touch of Valeren](#karta-102262), [Tranquility Shield](#karta-102362), [Opikun (G7)](#karta-201680) |
+| New Blood III / Salubri | half-deck | 27 | 3 | [Touch of Valeren](#karta-102262), [Tranquility Shield](#karta-102362), [Opikun (G7)](#karta-201680) |
 | New Blood III / Tzimisce | half-deck | 34 | 0 | — |
 | Sabbat V5 / Path of Caine | pełna | 36 | 4 | [Yawp Court](#karta-102199), [Augury of Doom](#karta-102310), [Dance with the Devil](#karta-102315), [Rage of Apedemak](#karta-102336) |
 | Sabbat V5 / Path of Cathari | pełna | 35 | 2 | [Anarch Troublemaker](#karta-100058), [Gostoso (G6)](#karta-201754) |
@@ -180,11 +180,6 @@ Występuje w **1** taliach. Stan: karta nadal jest atrapą (basic: tylko actionS
 ### Talbot's Chainsaw (101931) — PARTIAL_FIX
 
 Występuje w **1** taliach. Paczka 4: upkeep z karty — "If the bearer is ready during your unlock phase, this weapon inflicts 3 unpreventable damage on a ready minion you control". Wybiera KONTROLER (nie prey): unlockPhaseDamage.chooser = "controller" (spec.ts, compile.ts), bez wyboru gdy nosiciel nie jest gotowy lub nie ma gotowego miniona; tests/cards/talbot-chainsaw-unlock.test.ts. Wcześniej: pressPerCombat, cannotHunt, rush z stealth 1, prevent 1 per combat, blokada hunt przy 0 blood (bots-hunt.test.ts). Nadal nieweryfikowane: press jest statyczny (nie obowiązkowy i bez ograniczenia do kontynuacji w pierwszej rundzie), a rush/prevent i ich interakcje z innymi kartami wymagają przeglądu.
-
-<a id="karta-102092"></a>
-### Vast Wealth (102092) — PARTIAL_FIX
-
-Występuje w **1** taliach. Wąski zakres: master na własnego ready miniona nadaje akcję equip pierwszego equipment z library; library-search.test.ts. Aktualizacja: sprawdzany jest pierwszy sprzęt, a przy niespełnionym wymogu klanu lub wymuszonym konflikcie Unique jest spalany bez kosztu zamiast przeszukania dalszych kart (library-search.test.ts; https://www.vekn.net/forum/rules-questions/79883-enkidu-vast-wealth). Wyposażenie z library nie emituje już błędnego CardPlayed, a koszt uwzględnia tagi broni; pozostaje brak wyboru nic nie znaleźć oraz niepełna obsługa innych ograniczeń i ceny. Zgodnie z https://www.vekn.net/forum/rules-questions/79511-vidal-jarbeaux ten sprzęt nie jest zagrywany.
 
 <a id="karta-102144"></a>
 ### War Ghoul (102144) — PARTIAL_FIX
