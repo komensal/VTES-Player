@@ -12073,6 +12073,21 @@ export class VtesEngine implements EngineOps {
       }
       if (options.length > 0) return options;
     }
+    // "This werewolf MUST enter combat with any minion controlled by another
+    // Methuselah as a Ⓓ action" (Cry Wolf). A compelled rush of an ally: it
+    // is mandatory, so it comes before every non-mandatory action, and the
+    // only options offered are the compelled ones. Once per turn (the rush
+    // is recorded in the copy's per-turn uses), and only while a target
+    // exists, so a werewolf with nobody to rush is simply not compelled.
+    // docs/card-audit/manual-findings.json (100475)
+    const compelledRush = this.entryActionOptionsFor(tf.seat).filter((o) => {
+      if (o.kind !== "useEntryAction" || o.entersCombat !== true || o.minion === undefined) return false;
+      const holder = findMinion(this.state, o.minion);
+      // Read, not `handler()`: a minion whose card has no handler is not compelled.
+      return holder != null && this.registry[holder.name]?.mandatoryRush === true;
+    });
+    if (compelledRush.length > 0) return compelledRush;
+
     // "If you control a LOCKED MINION, <this vampire> MUST bleed as a Ⓓ
     // action unless she must hunt" (Elen Kamjian) — the second instance of
     // p. 19's mandatory-action rule, and it sits below the hunt because

@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **45 różnych kart**: CODE_DISCREPANCY 2, PARTIAL_FIX 43, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- Otwarte ustalenia dotyczą **44 różnych kart**: CODE_DISCREPANCY 2, PARTIAL_FIX 42, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
 - **26/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **92**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **93**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -65,7 +65,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | 🏆 Tournament Winners 2026 / 2026-06-27 — Lasombra Potato Groove (Spanish NC, Leganés — Miquel Jorge, 158p, Vote/Bleed) | pełna | 35 | 1 | [Obedience](#karta-101309) |
 | 🏆 Tournament Winners 2024 / 2024-06-21 — The Unnamed Six Demon Bag (Origins Friday 2, Columbus — Darby Keeney, 44p, Baali Bleed) | pełna | 31 | 3 | [Anarch Convert (ANY)](#karta-200076), [Zubeida (G5)](#karta-201510), [Heart of Nizchetus](#karta-100903) |
 | 🏆 Tournament Winners 2023 / 2023-10-15 — Tupdog Brick Wall (EC 2023 Finalist — Rush Wall) | pełna | 34 | 3 | [Anarch Convert (ANY)](#karta-200076), [Hrothulf (G3)](#karta-200608), [Cedric (G4)](#karta-200257) |
-| 🏆 Tournament Winners 2024 / 2024-03-09 — Weenie Animalism (Oceania NC, Auckland — Rush/Bleed) | pełna | 27 | 2 | [Anarch Convert (ANY)](#karta-200076), [Cry Wolf](#karta-100475) |
+| 🏆 Tournament Winners 2024 / 2024-03-09 — Weenie Animalism (Oceania NC, Auckland — Rush/Bleed) | pełna | 27 | 1 | [Anarch Convert (ANY)](#karta-200076) |
 
 ## Otwarte ustalenia — karty
 
@@ -90,11 +90,6 @@ Występuje w **1** taliach. Usunięto błędnie przyznawane każdemu celowi mane
 ### Blur (100227) — PARTIAL_FIX
 
 Występuje w **1** taliach. Zweryfikowano: basic daje 1 dodatkowy strike, superior 2 (limited), grant po pierwszej parze; tests/cards/combat-strikes.test.ts (Blur superior: 3 uderzenia M, 2 dodatkowe sub-rundy) i Quickness współistniejący z Blur (Quickness nieograniczony nie zużywa źródła limitowanego); limit egzekwowany przez usedLimitedAddl (tests/cards/weapon-riders.test.ts: AK-47 i limitowany Blur). NIEZROBIONE, WSPÓLNE Z SILNIKIEM: kolejność okna kolejnych źródeł przy oczekujących strike'ach (LSJ 20001206, docs/additional-strike-followups.md) nie jest jeszcze przebudowana; dotyczy źródeł nieograniczonych, nie zmienia liczby strike'ów Blur. Nie jest błędem specyficznym dla Blur.
-
-<a id="karta-100475"></a>
-### Cry Wolf (100475) — PARTIAL_FIX
-
-Występuje w **1** taliach. Zweryfikowane uruchomieniem: cry-wolf.test.ts (4 testy, zielone): zablokowany recruit wysyła anarcha do torpor i nie wprowadza wilkołaka; kontrola bez bloku; w unlock phase zablokowany wilkołak jest spalany, odblokowany przeżywa. Brakuje (błąd): wilkołak ma MUSI wejść w walkę z minionem innego Methuselah jako akcja Ⓓ. Obecnie rushGrant (who: bearer) daje rush anarchowi, a nie wilkołakowi, i jest nieobowiązkowy. Potrzebne: rush na samym allyu (ally.rush, targets minion, othersOnly) oraz obowiązkowość w minionPhaseOptions przed opcjami nieobowiązkowymi (wzór: hungry dla wampira). Rulings: LSJ 20090226 (po odblokowaniu po obowiązkowej akcji wolno wykonać dowolną akcję), LSJ 20100212 (zdolność działa także gdy nie jest wilkołakiem), LSJ 20031014 (odblokowanie w unlock phase nie wymaga spalenia).
 
 <a id="karta-100645"></a>
 ### Enkil Cog (100645) — PARTIAL_FIX

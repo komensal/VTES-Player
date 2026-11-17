@@ -79,7 +79,7 @@ describe("Vast Wealth (102092): search only on success", () => {
       }
       engine.choose((dp.options.find((o) => o.id === "pass") ?? dp.options[0]!).id);
     }
-    for (let i = 0; i < 60 && engine.state.frames.some((f) => f.kind === "action" || f.kind === "combat" || f.kind === "block" || f.kind === "cardPlay"); i++) {
+    for (let i = 0; i < 60 && engine.state.frames.some((f) => f.kind === "action" || f.kind === "combat" || f.kind === "cardPlay"); i++) {
       const dp = engine.decision();
       if (!dp) break;
       engine.choose((dp.options.find((o) => o.id === "pass") ?? dp.options[0]!).id);

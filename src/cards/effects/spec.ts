@@ -4677,6 +4677,13 @@ export interface CardSpec {
      *  rush is unqualified and reaches its own controller's vampires;
      *  this one may not. docs/plain-allies-design.md §2 */
     othersOnly?: boolean;
+    /** "This werewolf MUST enter combat … as a Ⓓ action" (Cry Wolf). The
+     *  rush is compelled: in the minion phase it is offered before any
+     *  non-mandatory action, once per turn, while a target exists. Read as
+     *  a per-turn obligation (the same shape as the mandatory hunt), with
+     *  LSJ 20090226 as the anchor: the mandatory action is performed, and
+     *  only then is the werewolf free. docs/card-audit/manual-findings.json (100475) */
+    mandatory?: boolean;
   };
   /** "Requires a prince or justicar" — the acting vampire's title must be
    *  one of these (p. 28 titles). */

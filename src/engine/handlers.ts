@@ -1243,6 +1243,9 @@ export interface CardHandler {
    *  a vampire who must hunt may play it and Restricted Vitae's bar reaches
    *  it. docs/hunt-success-design.md §1 */
   huntAction?: boolean;
+  /** An ally whose own rush is compelled (Cry Wolf): offered first in the
+   *  minion phase, before non-mandatory actions. */
+  mandatoryRush?: boolean;
   /** A successful action calls a blood hunt before after-resolution effects. */
   bloodHuntAfterSuccess?: boolean;
   /** Whether this mode is an ACTION TO ENTER COMBAT — what Enrage

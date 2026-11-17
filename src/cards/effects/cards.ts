@@ -27504,10 +27504,13 @@ export const cardSpecs: CardSpec[] = [
     unique: true,
     requiresSect: ["anarch"],
     ally: { life: 3, strength: 2, bleed: 0 },
+    // "This werewolf MUST enter combat with any minion controlled by another
+    // Methuselah as a Ⓓ action" — the werewolf's own, compelled rush. It was
+    // a rushGrant to the bearer, which gave the anarch an optional rush.
+    rush: { targets: "minion", othersOnly: true, mandatory: true },
     permanent: {
       where: "bearer",
       statics: { pressPerCombat: 1, bearerDoesNotUnlock: true },
-      rushGrant: { who: { scope: "bearer" }, target: { scope: "any", othersOnly: true } },
       tags: ["werewolf"],
     },
     bloodCost: 0,

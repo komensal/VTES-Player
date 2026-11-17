@@ -11061,6 +11061,7 @@ export function compileSpec(spec: CardSpec): CardHandler {
   if (spec.delayedReplaceUntil) handler.delayedReplaceUntil = spec.delayedReplaceUntil;
   if (spec.successUnlocksActor) handler.successUnlocksActor = spec.successUnlocksActor;
   if (spec.huntAction) handler.huntAction = true;
+  if (spec.rush?.mandatory) handler.mandatoryRush = true;
   if (spec.bloodHuntAfterSuccess) handler.bloodHuntAfterSuccess = true;
   // The printed type line, for cancel-as-played effects that name a type.
   // A dual-typed Action Modifier/Reaction really is a reaction card, so it

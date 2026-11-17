@@ -2846,8 +2846,8 @@
   {
     "id": 100475,
     "name": "Cry Wolf",
-    "status": "PARTIAL_FIX",
-    "evidence": "Zweryfikowane uruchomieniem: cry-wolf.test.ts (4 testy, zielone): zablokowany recruit wysyła anarcha do torpor i nie wprowadza wilkołaka; kontrola bez bloku; w unlock phase zablokowany wilkołak jest spalany, odblokowany przeżywa. Brakuje (błąd): wilkołak ma MUSI wejść w walkę z minionem innego Methuselah jako akcja Ⓓ. Obecnie rushGrant (who: bearer) daje rush anarchowi, a nie wilkołakowi, i jest nieobowiązkowy. Potrzebne: rush na samym allyu (ally.rush, targets minion, othersOnly) oraz obowiązkowość w minionPhaseOptions przed opcjami nieobowiązkowymi (wzór: hungry dla wampira). Rulings: LSJ 20090226 (po odblokowaniu po obowiązkowej akcji wolno wykonać dowolną akcję), LSJ 20100212 (zdolność działa także gdy nie jest wilkołakiem), LSJ 20031014 (odblokowanie w unlock phase nie wymaga spalenia)."
+    "status": "FIXED_TARGETED",
+    "evidence": "Obowiązkowy rush wilkołaka: rush na samym allyu (spec.rush z mandatory, handler.mandatoryRush); w minion phase oferowany przed wszystkimi nieobowiązkowymi opcjami, tylko na cele kontrolowane przez innego Methuselah, raz na turę; bez celu nie jest wymuszany (tests/cards/cry-wolf-mandatory-rush.test.ts, 5 testów; bez wymuszenia spadają 3). Interpretacja: obowiązek na turę, ta sama postać co obowiązkowy hunt; kotwica LSJ 20090226 (po wykonaniu obowiązkowej akcji wolno dowolną). Brak rulingu wprost o powtarzaniu. Zablokowany recruit wysyła anarcha do torpor i nie wprowadza wilkołaka; w unlock phase zablokowany wilkołak się spala, odblokowany przeżywa (cry-wolf.test.ts, 4 testy). Nieweryfikowane: zachowanie bearerDoesNotUnlock dla anarcha oraz 'no burn when unlocked during unlock phase' poza tym testem (LSJ 20031014)."
   },
   {
     "id": 100476,
