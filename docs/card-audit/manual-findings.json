@@ -4065,7 +4065,7 @@
     "id": 100678,
     "name": "Eye of Hazimel",
     "status": "PARTIAL_FIX",
-    "evidence": "Naprawiono jednoczesne nadawanie superior Potence i Chimerstry; tests/cards/eye-hazimel-audit.test.ts sprawdza oba poziomy oraz usunięcie bonusów po utracie karty. Nadal brak zakazu przenoszenia/kradzieży, upkeep 1 pool i 5 unpreventable damage przy spaleniu; te istotne błędy pozostają otwarte. Paczka 2: dodano 5 unpreventable environmental damage na bearera przy spaleniu przez burnPermanent (onLeavePlay, eye-hazimel-audit.test.ts). Nadal brak: upkeep w unlock phase (1 pool albo spalenie karty), zakaz przenoszenia/kradzieży przy ready bearerze; spalenia poza burnPermanent nie wywołują hooka."
+    "evidence": "Naprawiono jednoczesne nadawanie superior Potence i Chimerstry; tests/cards/eye-hazimel-audit.test.ts sprawdza oba poziomy oraz usunięcie bonusów po utracie karty. Paczka 2: 5 unpreventable environmental damage na bearera przy spaleniu przez burnPermanent (onLeavePlay, eye-hazimel-audit.test.ts). Paczka 3: upkeep w unlock phase — \"burn 1 pool or burn this equipment\" przez hook onControllerUnlock i wybór permanentPoolOrBurn; bez puli karta spala się od razu (tests/cards/eye-hazimel-unlock.test.ts). Zakaz przenoszenia/kradzieży przy gotowym bearerze: statyka untouchableWhileBearerReady filtruje cele kradzieży (enumeratePermanentTargets) i blokuje ControlChanged w changePermanentControl; test w tym samym pliku. Nadal brak: spalenia poza burnPermanent (np. nosiciel spalony razem z kartą) nie wywołują hooka obrażeń; ogólny ruch sprzętu między wampirami nie jest modelowany, więc zakaz pokrywa kradzież i zmianę kontroli, nie każdy przepięcie."
   },
   {
     "id": 100679,

@@ -1243,6 +1243,10 @@ export interface PermanentStatics {
    *  action" (Legacy of Caine) — the bearer's steal hunt, without the
    *  Restricted Vitae condition. Once per turn, by `stealHuntTargets`. */
   legacyStealHunt?: boolean;
+  /** "While the bearer is ready, this equipment cannot be moved or stolen"
+   *  (Eye of Hazimel). Enforced where control changes and where the steal
+   *  targets are listed. */
+  untouchableWhileBearerReady?: boolean;
   /** "Other Methuselahs\' actions targeting this vampire cost an additional
    *  blood" (Chanjelin Ward). Carried by the TARGET and charged to the ACTOR
    *  when an action names this minion and its controller is another seat. */

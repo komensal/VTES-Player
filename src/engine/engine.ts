@@ -544,6 +544,10 @@ export class VtesEngine implements EngineOps {
   changePermanentControl(cardId: CardInstanceId, to: SeatId): void {
     const from = this.controllerOfEntry(cardId);
     if (from === null || from === to) return;
+    // "While the bearer is ready, this equipment cannot be moved or stolen"
+    // (Eye of Hazimel): nothing changes its control while its bearer is ready.
+    const bearer = this.state.seats.flatMap((s) => s.minions).find((m) => m.attached.some((p) => p.card.id === cardId));
+    if (bearer && !bearer.locked && bearer.attached.some((p) => p.card.id === cardId && p.statics.untouchableWhileBearerReady === true)) return;
     // The same p. 17 rule as for a stolen minion: a forced self-contest
     // burns the incoming copy rather than starting one.
     const moving = this.findEntry(cardId);

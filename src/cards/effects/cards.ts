@@ -22442,9 +22442,11 @@ export const cardSpecs: CardSpec[] = [
           { discipline: "chi", level: "superior" },
         ],
         playCostMod: { amount: -1, pays: "blood", cardTypes: ["combat"], minions: "bearer" },
+        untouchableWhileBearerReady: true,
       },
       rushGrant: { who: { scope: "bearer" }, target: { scope: "any" } },
       tags: ["equipment"],
+      unlockPoolOrBurn: { pool: 1 },
     },
     usable: [],
     modes: [

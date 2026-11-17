@@ -2828,6 +2828,10 @@ export interface CardSpec {
   permanent?: {
     where: "seat" | "bearer";
     requiresReady?: boolean;
+    /** "During your unlock phase, burn N pool or burn this card" (Eye of
+     *  Hazimel). A real choice only while the pool can pay N; otherwise the
+     *  card burns. */
+    unlockPoolOrBurn?: { pool: number };
     statics: PermanentStatics;
     tags?: string[];
     /** Clan/sect-locked location: "Lock to give a [clan/sect] minion you

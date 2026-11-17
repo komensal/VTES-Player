@@ -1721,6 +1721,8 @@ function enumeratePermanentTargets(
     } else {
       for (const m of s.minions) {
         for (const p of m.attached) {
+          // "While the bearer is ready, this equipment cannot be moved or stolen."
+          if (p.statics.untouchableWhileBearerReady === true && !m.locked) continue;
           if (p.tags.includes("equipment")) out.push(p.card.id);
         }
       }
@@ -13142,6 +13144,50 @@ export function compileSpec(spec: CardSpec): CardHandler {
           return;
         }
         if (minion && findMinion(ops.state, minion)) ops.burnMinion(minion);
+      },
+    };
+  }
+  // Eye of Hazimel: "During your unlock phase, burn 1 pool or burn this
+  // equipment." A choice only while the pool can pay; otherwise it burns.
+  const poolOrBurn = spec.permanent?.unlockPoolOrBurn;
+  if (poolOrBurn) {
+    const priorUnlock = handler.onControllerUnlock?.bind(handler);
+    handler.onControllerUnlock = (entry, owner, ops) => {
+      priorUnlock?.(entry, owner, ops);
+      if (getSeat(ops.state, owner.seat).pool >= poolOrBurn.pool) {
+        ops.raiseChoice({
+          seat: owner.seat,
+          cardName: spec.name,
+          cardId: entry.card.id,
+          key: "permanentPoolOrBurn",
+          params: {},
+          optional: false,
+        });
+        return;
+      }
+      ops.burnPermanent(entry.card.id);
+    };
+    choiceByKey["permanentPoolOrBurn"] = {
+      options: (frame) => [
+        {
+          id: `choice:${spec.name}:${frame.cardId}:permanentPoolOrBurn:pool`,
+          kind: "answerChoice" as const,
+          label: `Burn ${poolOrBurn.pool} pool to keep ${spec.name}`,
+          params: { pay: "pool" },
+        },
+        {
+          id: `choice:${spec.name}:${frame.cardId}:permanentPoolOrBurn:burn`,
+          kind: "answerChoice" as const,
+          label: `Burn ${spec.name}`,
+          params: { pay: "burn" },
+        },
+      ],
+      apply: (frame, choice, ops) => {
+        if (choice.params["pay"] === "pool") {
+          ops.emit({ type: "PoolBurned", seat: frame.seat, amount: poolOrBurn.pool });
+          return;
+        }
+        ops.burnPermanent(frame.cardId);
       },
     };
   }
