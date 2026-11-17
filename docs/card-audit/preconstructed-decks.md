@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **48 różnych kart**: CODE_DISCREPANCY 2, PARTIAL_FIX 46, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
-- **27/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **89**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- Otwarte ustalenia dotyczą **45 różnych kart**: CODE_DISCREPANCY 2, PARTIAL_FIX 43, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- **26/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **92**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -29,7 +29,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | Fifth Edition / Malkavian | pełna | 30 | 0 | — |
 | Fifth Edition / Nosferatu | pełna | 35 | 0 | — |
 | Fifth Edition / Toreador | pełna | 29 | 0 | — |
-| Fifth Edition / Tremere | pełna | 33 | 1 | [Magic of the Smith](#karta-101143) |
+| Fifth Edition / Tremere | pełna | 33 | 0 | — |
 | Fifth Edition / Ventrue | pełna | 32 | 1 | [Anarch Troublemaker](#karta-100058) |
 | Fifth Edition (Anarch) / Banu Haqim | pełna | 34 | 1 | [Rego Motum](#karta-101588) |
 | Fifth Edition (Anarch) / Brujah | pełna | 37 | 0 | — |
@@ -41,7 +41,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | New Blood / Malkavian | half-deck | 30 | 0 | — |
 | New Blood / Nosferatu | half-deck | 32 | 0 | — |
 | New Blood / Toreador | half-deck | 27 | 0 | — |
-| New Blood / Tremere | half-deck | 30 | 3 | [Fragment of the Book of Nod](#karta-100785), [Magic of the Smith](#karta-101143), [Rego Motum](#karta-101588) |
+| New Blood / Tremere | half-deck | 30 | 1 | [Rego Motum](#karta-101588) |
 | New Blood / Ventrue | half-deck | 28 | 0 | — |
 | New Blood II / Banu Haqim | half-deck | 32 | 1 | [Blur](#karta-100227) |
 | New Blood II / Brujah | half-deck | 30 | 1 | [Childe of the Revolution](#karta-102246) |
@@ -64,8 +64,8 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | 🏆 Tournament Winners 2024 / 2024-07-21 — Usurper High Council (Helsinki, Martin Weinmayer, 22p, Vote) | pełna | 25 | 0 | — |
 | 🏆 Tournament Winners 2026 / 2026-06-27 — Lasombra Potato Groove (Spanish NC, Leganés — Miquel Jorge, 158p, Vote/Bleed) | pełna | 35 | 1 | [Obedience](#karta-101309) |
 | 🏆 Tournament Winners 2024 / 2024-06-21 — The Unnamed Six Demon Bag (Origins Friday 2, Columbus — Darby Keeney, 44p, Baali Bleed) | pełna | 31 | 3 | [Anarch Convert (ANY)](#karta-200076), [Zubeida (G5)](#karta-201510), [Heart of Nizchetus](#karta-100903) |
-| 🏆 Tournament Winners 2023 / 2023-10-15 — Tupdog Brick Wall (EC 2023 Finalist — Rush Wall) | pełna | 34 | 4 | [Anarch Convert (ANY)](#karta-200076), [Hrothulf (G3)](#karta-200608), [Cedric (G4)](#karta-200257), [Drawing Out the Beast](#karta-100585) |
-| 🏆 Tournament Winners 2024 / 2024-03-09 — Weenie Animalism (Oceania NC, Auckland — Rush/Bleed) | pełna | 27 | 3 | [Anarch Convert (ANY)](#karta-200076), [Cry Wolf](#karta-100475), [Drawing Out the Beast](#karta-100585) |
+| 🏆 Tournament Winners 2023 / 2023-10-15 — Tupdog Brick Wall (EC 2023 Finalist — Rush Wall) | pełna | 34 | 3 | [Anarch Convert (ANY)](#karta-200076), [Hrothulf (G3)](#karta-200608), [Cedric (G4)](#karta-200257) |
+| 🏆 Tournament Winners 2024 / 2024-03-09 — Weenie Animalism (Oceania NC, Auckland — Rush/Bleed) | pełna | 27 | 2 | [Anarch Convert (ANY)](#karta-200076), [Cry Wolf](#karta-100475) |
 
 ## Otwarte ustalenia — karty
 
@@ -96,11 +96,6 @@ Występuje w **1** taliach. Zweryfikowano: basic daje 1 dodatkowy strike, superi
 
 Występuje w **1** taliach. Paczka 4: zablokowana zagrywka (recruit) wysyła działającego anarcha do torporu (hook onActionBlockedAsPlayed); werewolf pozostaje locked (bearerDoesNotUnlock), a jeśli jest locked w unlock phase, zostaje spalony. tests/cards/cry-wolf.test.ts z kontrolą bez bloku. Nadal brak obowiązkowego Ⓓ rush na minion innego Methuselah i pressa przy walce (press jest statycznie). LSJ 20090226 i LSJ 20031014 nieprzetestowane osobno.
 
-<a id="karta-100585"></a>
-### Drawing Out the Beast (100585) — PARTIAL_FIX
-
-Występuje w **2** taliach. Oba poziomy niedostępne przeciw ally [PIB 20121028]; superior zadaje unpreventable environmental damage w press step przed decyzjami o press, nie po wcześniejszym końcu walki. frenzy-direction-audit.test.ts: kolejność, torpor, dwie rundy, save/load na decyzji press, Flesh of Marble i Bloodform. Stare zapisy bez pochodzenia ograniczeń oraz inne interakcje nadal wymagają przeglądu. Paczka 1: ponownie sprawdzono rulings (PIB 20121028, RTR 19970630, LSJ 20010312); pokryte przez frenzy-direction-audit.test.ts (w tym przerwanie przez combat-ends). Status bez zmian: brak przeglądu starych zapisów.
-
 <a id="karta-100645"></a>
 ### Enkil Cog (100645) — PARTIAL_FIX
 
@@ -111,11 +106,6 @@ Występuje w **1** taliach. Po successful bleed przeciw prey karta jest teraz un
 
 Występuje w **1** taliach. Naprawiono jednoczesne nadawanie superior Potence i Chimerstry; tests/cards/eye-hazimel-audit.test.ts sprawdza oba poziomy oraz usunięcie bonusów po utracie karty. Paczka 2: 5 unpreventable environmental damage na bearera przy spaleniu przez burnPermanent (onLeavePlay, eye-hazimel-audit.test.ts). Paczka 3: upkeep w unlock phase — "burn 1 pool or burn this equipment" przez hook onControllerUnlock i wybór permanentPoolOrBurn; bez puli karta spala się od razu (tests/cards/eye-hazimel-unlock.test.ts). Zakaz przenoszenia/kradzieży przy gotowym bearerze: statyka untouchableWhileBearerReady filtruje cele kradzieży (enumeratePermanentTargets) i blokuje ControlChanged w changePermanentControl; test w tym samym pliku. Nadal brak: spalenia poza burnPermanent (np. nosiciel spalony razem z kartą) nie wywołują hooka obrażeń; ogólny ruch sprzętu między wampirami nie jest modelowany, więc zakaz pokrywa kradzież i zmianę kontroli, nie każdy przepięcie.
 
-<a id="karta-100785"></a>
-### Fragment of the Book of Nod (100785) — PARTIAL_FIX
-
-Występuje w **1** taliach. Fragment of the Book of Nod: osobny handler realizuje draw/discard i ogranicza ability do faz własnej tury; jego komentarz wskazuje możliwe szersze okno. Tekst nie określa timingu; potrzebne rozstrzygnięcie zasad oraz testy poza własną turą. Aktualizacja: Poszerzono dostępność o zwykłe impulsy w turze innych Methuselahów, akcjach i walce, z wyłączeniem as-played. Dwa dobierania są kontynuowane przed discard down także przy przekierowaniu i po save/load; tests/cards/fragment-impulse-audit.test.ts. Zakres innych specjalnych okien nadal wymaga sprawdzenia; ruling ANK 20200616 https://www.vekn.net/forum/rules-questions/78687-the-erciyes-fragments-fragment-of-the-book-of-nod-barrens-impulse#100110. Paczka 2: RTR 20040501 (nie można użyć, gdy karta jest zagrywana, by dobrać kartę anulującą 'as it is played') nieweryfikowane. Status bez zmian.
-
 <a id="karta-100903"></a>
 ### Heart of Nizchetus (100903) — PARTIAL_FIX
 
@@ -125,11 +115,6 @@ Występuje w **4** taliach. Celowana naprawa: liczony draw Heart jest wznawiany 
 ### Hourglass of the Mind (100941) — PARTIAL_FIX
 
 Występuje w **1** taliach. Częściowo naprawiono: odrębne warianty [pot]/[tem]; [tem] dobiera cztery karty bez discard, następnie wybiera do czterech kart z ręki na wierzch w zadanej kolejności i unlockuje przed zakończeniem akcji. Uwzględniono przekierowanie draw, zapis/wznowienie oraz pustą bibliotekę (tests/cards/hourglass-audit.test.ts). Przy niepełnej ręce przyjęto wykonanie możliwej części efektu; interpretacja wymaga potwierdzenia. Usunięto nieuprawnione +1 hand size superior bez counterów, lecz [TEM] nadal nie obsługuje opłacania counterów ani ich wpływu na hand size. Logi wyboru są maskowane, ale identyfikatory zakrytych kart w projekcji stanu nadal mogą umożliwiać ich śledzenie (istniejący szerszy problem prywatności). Pozostaje PARTIAL_FIX.
-
-<a id="karta-101143"></a>
-### Magic of the Smith (101143) — PARTIAL_FIX
-
-Występuje w **2** taliach. Wąski zakres: wyszukanie/equip po sukcesie, koszt i tasowanie; library-search.test.ts. Pozostałe interakcje nie są w pełni sprawdzone. Aktualizacja: koszt wyszukanego equipment uwzględnia wymagany klan, a własna kopia Unique nie jest oferowana; library-search.test.ts. Sprzęt z wyszukania nie generuje już CardPlayed, a koszty uwzględniają tagi, w tym podatek od broni; tests/cards/library-search.test.ts. Zgodność pozostałych skutków i anulowania nadal trzeba zweryfikować (https://www.vekn.net/forum/rules-questions/82962-meditative-grove-vs-rotschreck). Paczka 1: ruling 'equipment can be a location in play' (LSJ 19971001-2) i zniżki Equip/Employ (ANK 20180817) nie mają osobnego testu; library-search.test.ts pokrywa wybór przy rozwiązaniu, koszt i tasowanie. Status bez zmian.
 
 <a id="karta-101272"></a>
 ### Nephandus (101272) — PARTIAL_FIX
