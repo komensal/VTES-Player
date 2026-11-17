@@ -11756,8 +11756,8 @@
   {
     "id": 101960,
     "name": "Terror Frenzy",
-    "status": "PARTIAL_FIX",
-    "evidence": "Basic działa przeciw minion, superior wyłącznie przeciw wampirowi; obsługiwane kierunki maneuver/press i zachowanie niezależnych ograniczeń po Tranquility Shield; tests/cards/frenzy-direction-audit.test.ts. Timing i inne źródła ograniczeń wymagają dalszej weryfikacji, jak również stare zapisy bez informacji o źródłach. Paczka 1: ANK 20180910-3 (koszt combat cards na końcu rundy) zweryfikowany testem batch1-frenzy-end-of-round.test.ts z kontrolą dodatnią (Telepathic Tracking superior, aus, bob z 1 blood nie płaci, z 5 płaci). Pozostaje: limit superior raz na walkę w starych zapisach i timing innych źródeł."
+    "status": "FIXED_TARGETED",
+    "evidence": "Basic [ani] (onlyFirstRound): blokuje maneuver to close, press to continue i equipment przeciwnika; superior [ANI] (oncePerCombatAtSuperior, onlyAgainstVampire): +1 blood koszt combat cards przeciwnika. Zweryfikowane uruchomieniem: frenzy.test.ts, frenzy-direction-audit.test.ts (24), play-cost.test.ts (19), batch1-frenzy-end-of-round.test.ts (ANK 20180910-3: koszt kart combat na końcu rundy), partial-support.test.ts, round-recurring-combat.test.ts; razem 89 testów zielonych. Nieweryfikowane: zgodność starych zapisów gry bez informacji o źródle ograniczeń (to kwestia migracji, nie tej karty)."
   },
   {
     "id": 101961,

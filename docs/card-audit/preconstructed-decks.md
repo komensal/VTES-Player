@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **53 różnych kart**: CODE_DISCREPANCY 2, PARTIAL_FIX 51, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- Otwarte ustalenia dotyczą **52 różnych kart**: CODE_DISCREPANCY 2, PARTIAL_FIX 50, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
 - **28/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **84**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **85**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -49,7 +49,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | New Blood II / Ministry | half-deck | 33 | 2 | [Waters of Duat](#karta-102159), [Revelation of the Serpent](#karta-102233) |
 | New Blood III / Hecata | half-deck | 25 | 0 | — |
 | New Blood III / Lasombra | half-deck | 24 | 1 | [Raising the Portcullis](#karta-102303) |
-| New Blood III / Ravnos | half-deck | 31 | 2 | [AK-47](#karta-100032), [Terror Frenzy](#karta-101960) |
+| New Blood III / Ravnos | half-deck | 31 | 1 | [AK-47](#karta-100032) |
 | New Blood III / Salubri | half-deck | 27 | 4 | [Vast Wealth](#karta-102092), [Touch of Valeren](#karta-102262), [Tranquility Shield](#karta-102362), [Opikun (G7)](#karta-201680) |
 | New Blood III / Tzimisce | half-deck | 34 | 0 | — |
 | Sabbat V5 / Path of Caine | pełna | 36 | 4 | [Yawp Court](#karta-102199), [Augury of Doom](#karta-102310), [Dance with the Devil](#karta-102315), [Rage of Apedemak](#karta-102336) |
@@ -65,7 +65,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | 🏆 Tournament Winners 2026 / 2026-06-27 — Lasombra Potato Groove (Spanish NC, Leganés — Miquel Jorge, 158p, Vote/Bleed) | pełna | 35 | 1 | [Obedience](#karta-101309) |
 | 🏆 Tournament Winners 2024 / 2024-06-21 — The Unnamed Six Demon Bag (Origins Friday 2, Columbus — Darby Keeney, 44p, Baali Bleed) | pełna | 31 | 3 | [Anarch Convert (ANY)](#karta-200076), [Zubeida (G5)](#karta-201510), [Heart of Nizchetus](#karta-100903) |
 | 🏆 Tournament Winners 2023 / 2023-10-15 — Tupdog Brick Wall (EC 2023 Finalist — Rush Wall) | pełna | 34 | 4 | [Anarch Convert (ANY)](#karta-200076), [Hrothulf (G3)](#karta-200608), [Cedric (G4)](#karta-200257), [Drawing Out the Beast](#karta-100585) |
-| 🏆 Tournament Winners 2024 / 2024-03-09 — Weenie Animalism (Oceania NC, Auckland — Rush/Bleed) | pełna | 27 | 4 | [Anarch Convert (ANY)](#karta-200076), [Cry Wolf](#karta-100475), [Drawing Out the Beast](#karta-100585), [Terror Frenzy](#karta-101960) |
+| 🏆 Tournament Winners 2024 / 2024-03-09 — Weenie Animalism (Oceania NC, Auckland — Rush/Bleed) | pełna | 27 | 3 | [Anarch Convert (ANY)](#karta-200076), [Cry Wolf](#karta-100475), [Drawing Out the Beast](#karta-100585) |
 
 ## Otwarte ustalenia — karty
 
@@ -180,11 +180,6 @@ Występuje w **1** taliach. Stan: karta nadal jest atrapą (basic: tylko actionS
 ### Talbot's Chainsaw (101931) — PARTIAL_FIX
 
 Występuje w **1** taliach. Paczka 4: upkeep z karty — "If the bearer is ready during your unlock phase, this weapon inflicts 3 unpreventable damage on a ready minion you control". Wybiera KONTROLER (nie prey): unlockPhaseDamage.chooser = "controller" (spec.ts, compile.ts), bez wyboru gdy nosiciel nie jest gotowy lub nie ma gotowego miniona; tests/cards/talbot-chainsaw-unlock.test.ts. Wcześniej: pressPerCombat, cannotHunt, rush z stealth 1, prevent 1 per combat, blokada hunt przy 0 blood (bots-hunt.test.ts). Nadal nieweryfikowane: press jest statyczny (nie obowiązkowy i bez ograniczenia do kontynuacji w pierwszej rundzie), a rush/prevent i ich interakcje z innymi kartami wymagają przeglądu.
-
-<a id="karta-101960"></a>
-### Terror Frenzy (101960) — PARTIAL_FIX
-
-Występuje w **2** taliach. Basic działa przeciw minion, superior wyłącznie przeciw wampirowi; obsługiwane kierunki maneuver/press i zachowanie niezależnych ograniczeń po Tranquility Shield; tests/cards/frenzy-direction-audit.test.ts. Timing i inne źródła ograniczeń wymagają dalszej weryfikacji, jak również stare zapisy bez informacji o źródłach. Paczka 1: ANK 20180910-3 (koszt combat cards na końcu rundy) zweryfikowany testem batch1-frenzy-end-of-round.test.ts z kontrolą dodatnią (Telepathic Tracking superior, aus, bob z 1 blood nie płaci, z 5 płaci). Pozostaje: limit superior raz na walkę w starych zapisach i timing innych źródeł.
 
 <a id="karta-102092"></a>
 ### Vast Wealth (102092) — PARTIAL_FIX
