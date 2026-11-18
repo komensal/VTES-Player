@@ -13856,8 +13856,8 @@
   {
     "id": 102310,
     "name": "Augury of Doom",
-    "status": "PARTIAL_FIX",
-    "evidence": "Limit jednej kopii na kontrolera zamiast unique; test per-methuselah-audit.test.ts sprawdza dostępność i blokadę drugiej kopii. Pełna rezolucja dwóch kopii i interakcje contest wymagają dalszej weryfikacji."
+    "status": "FIXED_TARGETED",
+    "evidence": "Zweryfikowano: jedna kopia na Methuselah (onePerMethuselah; per-methuselah-audit.test.ts). Dwie kopie od różnych Methuselahów działają niezależnie: każda obciąża własnego prey, z własną liczbą vampire w torpor (tests/cards/augury-two-copies.test.ts, 2 testy). Karta nie jest unique, więc kontest nie dotyczy. Zniszczenie po ousted prey i podatek na pool opisane w pool-drain.test.ts (Augury of Doom). Brak otwartych punktów dla tej karty."
   },
   {
     "id": 102311,

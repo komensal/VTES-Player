@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **41 różnych kart**: CODE_DISCREPANCY 0, PARTIAL_FIX 41, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- Otwarte ustalenia dotyczą **40 różnych kart**: CODE_DISCREPANCY 0, PARTIAL_FIX 40, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
 - **25/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **96**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **97**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -52,7 +52,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | New Blood III / Ravnos | half-deck | 31 | 1 | [AK-47](#karta-100032) |
 | New Blood III / Salubri | half-deck | 27 | 3 | [Touch of Valeren](#karta-102262), [Tranquility Shield](#karta-102362), [Opikun (G7)](#karta-201680) |
 | New Blood III / Tzimisce | half-deck | 34 | 0 | — |
-| Sabbat V5 / Path of Caine | pełna | 36 | 4 | [Yawp Court](#karta-102199), [Augury of Doom](#karta-102310), [Dance with the Devil](#karta-102315), [Rage of Apedemak](#karta-102336) |
+| Sabbat V5 / Path of Caine | pełna | 36 | 3 | [Yawp Court](#karta-102199), [Dance with the Devil](#karta-102315), [Rage of Apedemak](#karta-102336) |
 | Sabbat V5 / Path of Cathari | pełna | 35 | 1 | [Gostoso (G6)](#karta-201754) |
 | Sabbat V5 / Path of Death | pełna | 41 | 3 | [Obedience](#karta-101309), [Dance of the Dead](#karta-102314), [Eulogio Sánchez de los Reyes (G6)](#karta-201750) |
 | Sabbat V5 / Path of Power and the Inner Voice | pełna | 42 | 1 | [Věnceslava, The Implacable (G6)](#karta-201776) |
@@ -170,11 +170,6 @@ Występuje w **2** taliach. Osobny obowiązek hunt trwa do ogłoszenia hunt lub 
 ### Touch of Valeren (102262) — PARTIAL_FIX
 
 Występuje w **2** taliach. Combat ograniczono do strike przeciwnika; prevention-provenance-audit.test.ts bada dostępność i źródła. Action dopuszcza pełnego aktora, jeśli koszt krwi zostawia miejsce, respektuje ochronę przed wyborem i limit starting life ally; minion-target-actions.test.ts. Stare pakiety bez strikePhase i pełne przejście superior oraz dalsze interakcje pozostają otwarte. Paczka 1: minion-target-actions.test.ts i prevention-provenance-audit.test.ts pokrywają akcję i combat. Nie zweryfikowano LSJ 20001114 dla tej ścieżki prevention oraz starych pakietów bez strikePhase. Status bez zmian.
-
-<a id="karta-102310"></a>
-### Augury of Doom (102310) — PARTIAL_FIX
-
-Występuje w **1** taliach. Limit jednej kopii na kontrolera zamiast unique; test per-methuselah-audit.test.ts sprawdza dostępność i blokadę drugiej kopii. Pełna rezolucja dwóch kopii i interakcje contest wymagają dalszej weryfikacji.
 
 <a id="karta-102314"></a>
 ### Dance of the Dead (102314) — PARTIAL_FIX
