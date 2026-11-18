@@ -9525,7 +9525,7 @@
     "id": 101588,
     "name": "Rego Motum",
     "status": "PARTIAL_FIX",
-    "evidence": "Oba tryby ograniczono do obrażeń ze strike przeciwnika, nie dowolnego damage. tests/cards/prevention-provenance-audit.test.ts. Nowe zapisy przechowują pochodzenie damage, stare pakiety bez strikePhase (np. bonus ammunition) nie pozwalają odtworzyć źródła i wymagają dalszego rozwiązania; inne interakcje nieweryfikowane. Paczka 1: prevention-provenance-audit.test.ts pokrywa ograniczenie do strike przeciwnika. Nie zweryfikowano RTR 20041202 (niewykorzystane punkty nie przechodzą dalej) dla obu trybów. Status bez zmian."
+    "evidence": "Oba tryby ograniczono do obrażeń ze strike przeciwnika, nie dowolnego damage. tests/cards/prevention-provenance-audit.test.ts. Nowe zapisy przechowują pochodzenie damage, stare pakiety bez strikePhase (np. bonus ammunition) nie pozwalają odtworzyć źródła i wymagają dalszego rozwiązania; inne interakcje nieweryfikowane. Paczka 1: prevention-provenance-audit.test.ts pokrywa ograniczenie do strike przeciwnika. Zweryfikowano RTR 20041202 dla obu trybów (tests/cards/rego-motum-ruling.test.ts, 3 testy: 1 punkt przy basic zapobiega 1 i nic nie przechodzi dalej; superior zapobiega 3 z 3; basic przy 3 zapobiega 2 i zostawia 1; mutacja nieograniczonego zapobiegania wykrywana). Status bez zmian."
   },
   {
     "id": 101589,
