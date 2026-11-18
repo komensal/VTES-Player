@@ -124,7 +124,7 @@ Występuje w **2** taliach. Oba tryby ograniczono do obrażeń ze strike przeciw
 <a id="karta-101649"></a>
 ### Rolling with the Punches (101649) — PARTIAL_FIX
 
-Występuje w **2** taliach. Superior działa tylko na strike przeciwnika, także na kolejne pakiety w rundzie, a nie na environmental lub unpreventable damage; respektuje zakaz prevention przez dyscyplinę. tests/cards/prevention-provenance-audit.test.ts. Stare zapisy z pakietem bez strikePhase mają niejednoznaczne pochodzenie; inne interakcje nieweryfikowane. Paczka 1: prevention-provenance-audit.test.ts pokrywa strike i brak wpływu na environmental/unpreventable. Nie zweryfikowano ANK 20210226 (burn blood nie zmniejszany przez redukcje kosztu) w kontekście kosztu karty. Status bez zmian.
+Występuje w **2** taliach. Superior działa tylko na strike przeciwnika, także na kolejne pakiety w rundzie, a nie na environmental lub unpreventable damage; respektuje zakaz prevention przez dyscyplinę. tests/cards/prevention-provenance-audit.test.ts. Stare zapisy z pakietem bez strikePhase mają niejednoznaczne pochodzenie; inne interakcje nieweryfikowane. Paczka 1: prevention-provenance-audit.test.ts pokrywa strike i brak wpływu na environmental/unpreventable. Zweryfikowano ANK 20210226 dla superior (tests/cards/rolling-punches-burn.test.ts: bramka wymaga 1 krwi na spalenie, a redukcja kosztu nie zmniejsza spalenia; mutacja bramki wykryta). Status bez zmian.
 
 <a id="karta-101767"></a>
 ### Shilmulo Tarot (101767) — PARTIAL_FIX
