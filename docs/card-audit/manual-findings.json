@@ -11583,7 +11583,7 @@
     "id": 101931,
     "name": "Talbot's Chainsaw",
     "status": "PARTIAL_FIX",
-    "evidence": "Paczka 4: upkeep z karty — \"If the bearer is ready during your unlock phase, this weapon inflicts 3 unpreventable damage on a ready minion you control\". Wybiera KONTROLER (nie prey): unlockPhaseDamage.chooser = \"controller\" (spec.ts, compile.ts), bez wyboru gdy nosiciel nie jest gotowy lub nie ma gotowego miniona; tests/cards/talbot-chainsaw-unlock.test.ts. Wcześniej: pressPerCombat, cannotHunt, rush z stealth 1, prevent 1 per combat, blokada hunt przy 0 blood (bots-hunt.test.ts). Nadal nieweryfikowane: press jest statyczny (nie obowiązkowy i bez ograniczenia do kontynuacji w pierwszej rundzie), a rush/prevent i ich interakcje z innymi kartami wymagają przeglądu."
+    "evidence": "Paczka 4: upkeep z karty — \"If the bearer is ready during your unlock phase, this weapon inflicts 3 unpreventable damage on a ready minion you control\". Wybiera KONTROLER (nie prey): unlockPhaseDamage.chooser = \"controller\" (spec.ts, compile.ts), bez wyboru gdy nosiciel nie jest gotowy lub nie ma gotowego miniona; tests/cards/talbot-chainsaw-unlock.test.ts. Press: \"1 press (mandatory), only usable to continue combat during the first round\" — nowa pula mandatoryFirstRoundContinuePress (state.ts, engine.ts): w rundzie 1 press jest obowiązkowy, a pula wygasa przy końcu rundy; tests/cards/talbot-chainsaw-press.test.ts (2 testy, mutacja wykryta). Wcześniej: cannotHunt, rush z stealth 1, prevent 1 per combat, blokada hunt przy 0 blood (bots-hunt.test.ts). Nadal nieweryfikowane: rush/prevent i ich interakcje z innymi kartami wymagają przeglądu."
   },
   {
     "id": 101932,

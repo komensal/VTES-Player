@@ -25614,7 +25614,7 @@ export const cardSpecs: CardSpec[] = [
     weapon: { damage: 3, ranged: false, aggravated: false },
     permanent: {
       where: "bearer",
-      statics: { pressPerCombat: 1, cannotHunt: true },
+      statics: { mandatoryFirstRoundContinuePress: 1, cannotHunt: true },
       rushGrant: { who: { scope: "bearer" }, target: { scope: "any" }, stealth: 1 },
       retainerAbilities: { preventPerCombat: 1 },
       // "If the bearer is ready during your unlock phase, this weapon inflicts

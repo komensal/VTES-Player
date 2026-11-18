@@ -3437,6 +3437,8 @@ export class VtesEngine implements EngineOps {
           }
           if (cf.willContinue && !cf.endedPrematurely) {
             cf.round += 1;
+            // First-round-only mandatory presses expire with the round.
+            cf.mandatoryFirstRoundPresses = { acting: 0, opposing: 0 };
             // "…that round is at close range (SKIP the determine range
             // step)" (Immortal Grapple superior). The boundary already
             // forces close range; the flag skips the step a maneuver
@@ -5645,6 +5647,13 @@ export class VtesEngine implements EngineOps {
     rushBy: MinionId | null = null,
   ): void {
     this.emit({ type: "CombatBegan", acting, opposing });
+    const firstRoundMandatory = (minionId: MinionId): number => {
+      const bearer = getMinion(this.state, minionId);
+      return bearer.attached.reduce((n, p) => {
+        if (cannotUseEquipmentEntry(bearer, p, this.registry[p.card.name]?.isEquipment === true)) return n;
+        return n + (p.statics.mandatoryFirstRoundContinuePress ?? 0);
+      }, 0);
+    };
     // "1 optional press each combat" statics (Dread Mastiff superior):
     // granted once, persisting across rounds until spent.
     const combatPresses = (minionId: MinionId): number => {
@@ -5743,6 +5752,12 @@ export class VtesEngine implements EngineOps {
       mandatoryContinuePresses: {
         acting: getMinion(this.state, acting).attached.reduce((n, p) => n + (p.statics.mandatoryContinuePressPerCombat ?? 0), 0),
         opposing: getMinion(this.state, opposing).attached.reduce((n, p) => n + (p.statics.mandatoryContinuePressPerCombat ?? 0), 0),
+      },
+      // Same equipment filter as `combatPresses`: a weapon that its bearer
+      // cannot use (Howler) grants no press.
+      mandatoryFirstRoundPresses: {
+        acting: firstRoundMandatory(acting),
+        opposing: firstRoundMandatory(opposing),
       },
       pressesEndOnly: {
         acting: endPresses(acting),
@@ -12643,7 +12658,7 @@ export class VtesEngine implements EngineOps {
         // "1 optional press, only usable to CONTINUE combat" (Righteous
         // Blade) — a restricted pool that can only ever buy the first of
         // the two options below (docs/weapon-riders-design.md §4).
-        const mandatory = cf.mandatoryContinuePresses?.[cf.awaiting] ?? 0;
+        const mandatory = (cf.mandatoryContinuePresses?.[cf.awaiting] ?? 0) + (cf.mandatoryFirstRoundPresses?.[cf.awaiting] ?? 0);
         const continueOnly = cf.pressesContinueOnly?.[cf.awaiting] ?? 0;
         // "…only usable to END combat" (Qetu): the mirror pool, which can
         // only ever buy the `press:end` option below.
@@ -13531,7 +13546,8 @@ export class VtesEngine implements EngineOps {
         // then per-combat ones (retainer statics).
         const restricted = top.pressesContinueOnly;
         const endOnly = top.pressesEndOnly;
-        if (option.toContinue && top.mandatoryContinuePresses && top.mandatoryContinuePresses[side] > 0) top.mandatoryContinuePresses[side] -= 1;
+        if (option.toContinue && top.mandatoryFirstRoundPresses && top.mandatoryFirstRoundPresses[side] > 0) top.mandatoryFirstRoundPresses[side] -= 1;
+        else if (option.toContinue && top.mandatoryContinuePresses && top.mandatoryContinuePresses[side] > 0) top.mandatoryContinuePresses[side] -= 1;
         else if (option.toContinue && restricted && restricted[side] > 0) restricted[side] -= 1;
         else if (!option.toContinue && endOnly && endOnly[side] > 0) endOnly[side] -= 1;
         else if (top.presses[side] > 0) top.presses[side] -= 1;

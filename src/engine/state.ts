@@ -1144,6 +1144,10 @@ export interface PermanentStatics {
   continuePressPerCombat?: number;
   /** Mandatory combat-long press, only to continue (Adrino). */
   mandatoryContinuePressPerCombat?: number;
+  /** "The bearer gets 1 press (mandatory), only usable to continue combat
+   *  during the first round" (Talbot's Chainsaw). Like the combat-long
+   *  mandatory press, but the credit expires when the first round ends. */
+  mandatoryFirstRoundContinuePress?: number;
   /** "1 optional press each combat, ONLY USABLE TO END COMBAT" (Qetu the
    *  Evil Doer) — the other restricted sibling. p. 32 gives a press two
    *  uses, continue or cancel a press to continue, so "to end" is exactly
@@ -3767,6 +3771,9 @@ export interface CombatFrame {
   pressesContinueOnly?: { acting: number; opposing: number };
   /** Unspent mandatory continue-only presses across this combat. */
   mandatoryContinuePresses?: { acting: number; opposing: number };
+  /** Unspent first-round-only mandatory continue presses. Zeroed when the
+   *  round ends (Talbot's Chainsaw). Absent in saves made before this. */
+  mandatoryFirstRoundPresses?: { acting: number; opposing: number };
   /** The mirror: "1 optional press each combat, ONLY USABLE TO END
    *  COMBAT" (Qetu) — offered only for `press:end` and spent first there,
    *  by the same "most restricted credit first" rule.
