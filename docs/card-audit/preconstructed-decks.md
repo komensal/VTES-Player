@@ -149,7 +149,7 @@ Występuje w **1** taliach. Overlay wymaga rekrutującego Tzimisce i uwzględnia
 <a id="karta-102199"></a>
 ### Yawp Court (102199) — PARTIAL_FIX
 
-Występuje w **1** taliach. Naprawiono kolejkę walk przed referendum i jego anulowanie po opuszczeniu ready przez działającego wampira. tests/cards/crypt-and-uncontrolled.test.ts: rzeczywisty torpor (także w drugiej walce Psyche!), torpor samego przeciwnika, symulowany powrót i save/load, damage między walkami. Faktyczne użycie Warsaw Station w środku akcji nie jest zaimplementowane; Rötschreck i pozostałe interakcje timingów/prevention niezweryfikowane. Rulings LSJ 20060902, LSJ 20090325-1, ANK 20180910-1.
+Występuje w **1** taliach. Naprawiono kolejkę walk przed referendum i jego anulowanie po opuszczeniu ready przez działającego wampira. tests/cards/crypt-and-uncontrolled.test.ts: rzeczywisty torpor (także w drugiej walce Psyche!), torpor samego przeciwnika, symulowany powrót i save/load, damage między walkami. Zweryfikowano RTR 19970630 (crypt-and-uncontrolled.test.ts: obrażenia ambush są zadawane po CombatEnded jako środowiskowe, bez DamageInflicted). Faktyczne użycie Warsaw Station w środku akcji nie jest zaimplementowane; Rötschreck i pozostałe interakcje timingów/prevention niezweryfikowane. Rulings LSJ 20060902, LSJ 20090325-1, ANK 20180910-1.
 
 <a id="karta-102233"></a>
 ### Revelation of the Serpent (102233) — PARTIAL_FIX
