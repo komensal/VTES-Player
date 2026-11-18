@@ -159,7 +159,7 @@ Występuje w **2** taliach. Superior oferuje wybór corruption tylko po rozstrzy
 <a id="karta-102246"></a>
 ### Childe of the Revolution (102246) — PARTIAL_FIX
 
-Występuje w **2** taliach. Osobny obowiązek hunt trwa do ogłoszenia hunt lub końca tury nawet po uzyskaniu blood; tests/cards/token-vampire.test.ts. Pozostałe interakcje i granice tury wymagają dalszej weryfikacji. Aktualizacja: obowiązek nie przechodzi na kolejną turę, jeżeli Childe został przeniesiony do uncontrolled (test emitujący zdarzenie Banishment i save/load w token-vampire.test.ts). Wybór źródeł wyszukania i pozostałe interakcje nadal wymagają audytu. Paczka 1: pokryte przez token-vampire.test.ts (obowiązek hunt, uncontrolled, Anarch). Nie zweryfikowano LSJ 20041201-2 (wejście do crypt = spalenie) dla tokena. Status bez zmian.
+Występuje w **2** taliach. Osobny obowiązek hunt trwa do ogłoszenia hunt lub końca tury nawet po uzyskaniu blood; tests/cards/token-vampire.test.ts. Pozostałe interakcje i granice tury wymagają dalszej weryfikacji. Aktualizacja: obowiązek nie przechodzi na kolejną turę, jeżeli Childe został przeniesiony do uncontrolled (test emitujący zdarzenie Banishment i save/load w token-vampire.test.ts). Wybór źródeł wyszukania i pozostałe interakcje nadal wymagają audytu. Paczka 1: pokryte przez token-vampire.test.ts (obowiązek hunt, uncontrolled, Anarch). Zweryfikowano LSJ 20041201-2 w zakresie osiągalnym w silniku (tests/cards/childe-token-burn.test.ts: spalony token trafia do ash heap, crypt bez zmian; silnik nie ma ścieżki wkładania tokena z biblioteki do crypt). Status bez zmian.
 
 <a id="karta-102262"></a>
 ### Touch of Valeren (102262) — PARTIAL_FIX
