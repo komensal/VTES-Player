@@ -2447,6 +2447,10 @@ export class VtesEngine implements EngineOps {
   private canAnnounceWithdrawal(seatId: SeatId): boolean {
     const seat = getSeat(this.state, seatId);
     if (seat.ousted || seat.withdrawing) return false;
+    // "Draw as much as you can" (G00160, LSJ 20060620): a store that can still
+    // supply a draw (Shilmulo Tarot holding cards) means the hand is not yet
+    // as full as it can be, so the library being empty is not the end.
+    if (this.drawRedirectSources(seatId).length > 0) return false;
     return seat.library.length === 0 && seat.hand.length < handSizeOf(this.state, seatId);
   }
 
