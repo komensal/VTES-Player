@@ -12861,7 +12861,7 @@
     "id": 102144,
     "name": "War Ghoul",
     "status": "PARTIAL_FIX",
-    "evidence": "Overlay wymaga rekrutującego Tzimisce i uwzględnia modyfikatory kosztu; testy rush-cards.test.ts i retainer-wave.test.ts. Pozostałe interakcje alternatywnych kosztów i rekrutacji wymagają dalszej weryfikacji."
+    "evidence": "Overlay wymaga rekrutującego Tzimisce i uwzględnia modyfikatory kosztu; testy rush-cards.test.ts i retainer-wave.test.ts. Zweryfikowano RTR 19961113 (Ghoul jako jedyny sojusznik musi spalić się sam) i ANK 20170309-2 (wejście każdą drogą): tests/cards/war-ghoul-burn-rule.test.ts, 3 testy; mutacja usuwająca opcję 'self' wykryta. Pozostałe interakcje alternatywnych kosztów i rekrutacji wymagają dalszej weryfikacji."
   },
   {
     "id": 102145,

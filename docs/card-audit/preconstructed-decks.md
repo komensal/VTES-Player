@@ -144,7 +144,7 @@ Występuje w **1** taliach. Paczka 4: upkeep z karty — "If the bearer is ready
 <a id="karta-102144"></a>
 ### War Ghoul (102144) — PARTIAL_FIX
 
-Występuje w **1** taliach. Overlay wymaga rekrutującego Tzimisce i uwzględnia modyfikatory kosztu; testy rush-cards.test.ts i retainer-wave.test.ts. Pozostałe interakcje alternatywnych kosztów i rekrutacji wymagają dalszej weryfikacji.
+Występuje w **1** taliach. Overlay wymaga rekrutującego Tzimisce i uwzględnia modyfikatory kosztu; testy rush-cards.test.ts i retainer-wave.test.ts. Zweryfikowano RTR 19961113 (Ghoul jako jedyny sojusznik musi spalić się sam) i ANK 20170309-2 (wejście każdą drogą): tests/cards/war-ghoul-burn-rule.test.ts, 3 testy; mutacja usuwająca opcję 'self' wykryta. Pozostałe interakcje alternatywnych kosztów i rekrutacji wymagają dalszej weryfikacji.
 
 <a id="karta-102199"></a>
 ### Yawp Court (102199) — PARTIAL_FIX
