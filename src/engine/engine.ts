@@ -14476,6 +14476,43 @@ export class VtesEngine implements EngineOps {
    * minion, which is the same wording the rulebook uses for diablerie's
    * Discipline gain (p. 34). docs/token-vampire-design.md §6
    */
+  /** Summon History: put an ally from the library or ash heap into play for
+   *  its searcher, with life equal to its starting life. Uses the basic
+   *  version: a card that requires a Discipline comes into play at the
+   *  inferior version (RBK recruit-ally; ruling G00110). */
+  putAllyFromZone(args: { seat: SeatId; cardId: CardInstanceId; zone: "library" | "ashHeap" }): void {
+    const seat = getSeat(this.state, args.seat);
+    const pile = args.zone === "library" ? seat.library : (seat.ashHeap ?? []);
+    const card = pile.find((c) => c.id === args.cardId);
+    if (!card) return;
+    const handler = this.registry[card.name];
+    const ally = handler?.allyEntry?.("basic");
+    if (!ally) return;
+    this.emit({ type: "CardLeftZone", seat: args.seat, cardId: card.id, name: card.name, zone: args.zone });
+    this.emit({
+      type: "AllyEnteredPlay",
+      seat: args.seat,
+      minion: card.id,
+      cardId: card.id,
+      name: card.name,
+      life: ally.life,
+      strength: ally.strength,
+      bleed: ally.bleed,
+      recruited: false,
+      cost: handler?.poolCost ?? 0,
+      ...(ally.disciplines ? { disciplines: ally.disciplines } : {}),
+    });
+    this.emit({
+      type: "PermanentEnteredPlay",
+      seat: args.seat,
+      cardId: card.id,
+      name: card.name,
+      attachedTo: card.id,
+      statics: ally.statics,
+      tags: ally.tags,
+    });
+  }
+
   attachFromZone(args: {
     seat: SeatId;
     cardId: CardInstanceId;

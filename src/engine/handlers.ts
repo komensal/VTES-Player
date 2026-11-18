@@ -999,6 +999,11 @@ export interface EngineOps {
    *  recruit, so the ally can act at once.
    *  docs/wraith-zombie-design.md §5 */
   returnAllyFromAshHeap(seat: SeatId, cardId: CardInstanceId): void;
+  /** "Search your library (shuffle afterward) and/or ash heap for an ally …
+   *  and put that card in play … with life equal to its starting life"
+   *  (Summon History, 101897). Not recruited, so it may act this turn
+   *  (LSJ 20100302-1). The ally is a minion of its own, not an attachment. */
+  putAllyFromZone(args: { seat: SeatId; cardId: CardInstanceId; zone: "library" | "ashHeap" }): void;
   /** Move a card OUT of an ash heap and into a hand (Garibaldi-Meucci
    *  Museum's exchange). */
   takeFromAshHeap(seat: SeatId, cardId: CardInstanceId): void;

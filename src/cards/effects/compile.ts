@@ -12571,9 +12571,10 @@ export function compileSpec(spec: CardSpec): CardHandler {
       },
     };
   }
-  // Summon History: retainers and equipment from the library or ash heap,
-  // costing X or fewer (blood or pool, printed cost, requirements ignored),
-  // put on this vampire. Allies are not offered (no ally-attach op yet).
+  // Summon History: allies, retainers and equipment from the library or ash
+  // heap, costing X or fewer (blood or pool, printed cost, requirements
+  // ignored). Retainers and equipment go on this vampire; an ally comes into
+  // play as a minion of its own with its starting life (no attachment).
   const costXSearch = spec.modes.flatMap((m) => m.effects).find(
     (e) => e.kind === "searchCostXOnVampire",
   ) as Extract<EffectPrimitive, { kind: "searchCostXOnVampire" }> | undefined;
@@ -12598,8 +12599,8 @@ export function compileSpec(spec: CardSpec): CardHandler {
               out.push({
                 id: `choice:${spec.name}:${frame.cardId}:searchCostX:${zone}:${c.id}`,
                 kind: "answerChoice" as const,
-                label: `Put ${c.name} (${zone === "library" ? "library" : "ash heap"}) on this vampire`,
-                params: { card: c.id, zone },
+                label: `Put ${c.name} (${zone === "library" ? "library" : "ash heap"}) ${h.isAlly === true ? "in play" : "on this vampire"}`,
+                params: { card: c.id, zone, ally: h.isAlly === true ? "1" : "0" },
               });
             }
           }
@@ -12618,7 +12619,8 @@ export function compileSpec(spec: CardSpec): CardHandler {
         const zone = choice.params["zone"] as "library" | "ashHeap" | undefined;
         const minion = frame.params["minion"];
         if (card && card !== "none" && zone && minion && findMinion(ops.state, minion)) {
-          ops.attachFromZone({ seat: frame.seat, cardId: card, zone, attachTo: minion });
+          if (choice.params["ally"] === "1") ops.putAllyFromZone({ seat: frame.seat, cardId: card, zone });
+          else ops.attachFromZone({ seat: frame.seat, cardId: card, zone, attachTo: minion });
         }
         // The library was searched, so it is shuffled either way (p. 14).
         ops.shuffleLibrary(frame.seat);
