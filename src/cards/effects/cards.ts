@@ -31752,9 +31752,20 @@ export const cardSpecs: CardSpec[] = [
         effects: [{ kind: "actionBleed", bonus: 1 }, { kind: "lockPreyMinion" }],
       },
       {
+        // "[OBE] +1 stealth action. Ⓓ Take control of a ready unlocked minion
+        //  until the end of the next action. That minion must bleed your prey
+        //  unless they must hunt."
         level: "superior",
         discipline: "obe",
-        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "actionBleed", bonus: 2 }],
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          {
+            kind: "takeControlOfMinion",
+            who: { ready: true, unlocked: true },
+            until: "endOfNextAction",
+            mustBleedPrey: true,
+          },
+        ],
       },
     ],
   },

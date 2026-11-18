@@ -611,7 +611,12 @@ export interface EngineOps {
   /** `until` defaults to `"endOfTurn"`, which is what every borrow in the pool
    *  meant before "…until your next unlock phase" arrived (Malkavian Dementia).
    *  docs/borrowed-minions-design.md §2 */
-  borrowMinion(minion: MinionId, to: SeatId, until?: "endOfTurn" | "borrowerUnlock"): void;
+  borrowMinion(
+    minion: MinionId,
+    to: SeatId,
+    until?: "endOfTurn" | "borrowerUnlock" | "endOfNextAction",
+    opts?: { mustBleedOnLoan?: boolean },
+  ): void;
   changePermanentControl(cardId: CardInstanceId, to: SeatId): void;
   /** The Methuselah controlling a card in play, or null if it has left. */
   controllerOfEntry(cardId: CardInstanceId): SeatId | null;

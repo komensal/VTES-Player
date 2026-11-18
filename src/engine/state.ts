@@ -454,7 +454,14 @@ export interface MinionState {
    *  the minion first and gives it back on the way into their following turn.
    *  A second field rather than a second mechanism: one return address, one
    *  sweep per moment. docs/borrowed-minions-design.md §2 */
-  controlRevertsAt?: "endOfTurn" | "borrowerUnlock";
+  controlRevertsAt?: "endOfTurn" | "borrowerUnlock" | "endOfNextAction";
+  /** For `endOfNextAction`: the action the loan was made in. Only a LATER
+   *  action ends it — the Marionette's own action does not (Spirit Marionette). */
+  controlRevertsAfterAction?: ActionId;
+  /** Spirit Marionette: the borrowed minion must bleed its controller's prey
+   *  (unless it must hunt) before any non-mandatory action. Cleared when the
+   *  loan ends. */
+  mustBleedOnLoan?: boolean;
   /** "The chosen minions cannot play reaction cards, block or cast votes
    *  or ballots this turn" (Expulsion). It does NOT stop them acting —
    *  `canAct` is a separate predicate and the card does not say so.

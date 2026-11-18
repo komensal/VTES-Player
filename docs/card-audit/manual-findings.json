@@ -11084,8 +11084,8 @@
   {
     "id": 101848,
     "name": "Spirit Marionette",
-    "status": "CODE_DISCREPANCY",
-    "evidence": "[dom] i [obe] rozdzielone; basic [obe] (Ⓓ bleed +1 i lock ready minion prey, wybór po bleed) działa: tests/cards/spirit-marionette-audit.test.ts. [OBE] superior jest BŁĘDNY w spec: daje stealth 1 i bleed +2, a tekst karty to +1 stealth i Ⓓ przejęcie gotowego, odblokowanego miniona na czas następnej akcji, który MUSI bleed prey, chyba że musi hunt. Brakuje: termin pożyczki \"do końca następnej akcji\" (silnik zna tylko endOfTurn i borrowerUnlock; finishAction to jedyne wyjście z akcji), wymuszony bleed jako pierwsza akcja (LSJ 20011216-2: przed nieobowiązkowymi), zwrot także gdy minion jest w torporze (LSJ 20010119) oraz usunięcie z gry gdy właściciel został ousted (ANK 20181110). Rulings: TOM 19960226-1, LSJ 20011216-2, LSJ 20021121-2, RTR 20020501, LSJ 20030219, ANK 20181110. Zakres do zaprojektowania osobno; brak zmian w kodzie w tej paczce."
+    "status": "FIXED_TARGETED",
+    "evidence": "Superior [OBE] naprawiony: Ⓓ bierze gotowego, odblokowanego miniona (nie zablokowanego i nie własnego) pod kontrolę do końca następnej akcji; zwrot następuje po zakończeniu tej akcji (engine.ts returnNextActionLoans), a w tej akcji minion musi bleed prey, chyba że musi hunt (mustBleedOnLoan). Gdy właściciel zostaje ousted w czasie pożyczki, minion jest usuwany z gry (ANK 20181110, G00001). Cel zablokowany = fizzle (G00081). Zwrot działa także dla miniona w torporze (LSJ 20010119). Testy: tests/cards/spirit-marionette-superior.test.ts (5 testów; wyłączenie zwrotu wykrywane). Basic [obe] bez zmian: tests/cards/spirit-marionette-audit.test.ts. Rulings: TOM 19960226-1, LSJ 20011216-2, LSJ 20021121-2, RTR 20020501, LSJ 20030219, ANK 20181110, LSJ 20010119."
   },
   {
     "id": 101849,

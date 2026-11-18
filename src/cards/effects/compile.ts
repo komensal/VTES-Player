@@ -1307,6 +1307,7 @@ function targetRider(mode: CardMode): EffectPrimitive | null {
       e.kind === "actionLockMinion" ||
       e.kind === "actionDamageMinion" ||
       e.kind === "actionMarkRedList" ||
+      e.kind === "takeControlOfMinion" ||
       e.kind === "attachToOpponent" ||
       // "Ⓓ Choose a vampire and put this card in play" (Distant Friend).
       (e.kind === "putInPlayOnSuccess" && e.chooseVampire === true)
@@ -1490,6 +1491,22 @@ function enumerateActionTargets(
       if (s.ousted) continue;
       for (const m of s.minions) {
         if (m.kind !== "vampire") continue;
+        if (untargetableBy(m, seatId, actor)) continue;
+        targets.push(m.id);
+      }
+    }
+    return targets;
+  }
+  if (e.kind === "takeControlOfMinion") {
+    // Spirit Marionette superior: "Ⓓ Take control of a ready unlocked minion"
+    // — another Methuselah's, the same filters the master family applies.
+    for (const s of state.seats) {
+      if (s.ousted || s.id === seatId) continue;
+      for (const m of s.minions) {
+        if (e.who.kind !== undefined && m.kind !== e.who.kind) continue;
+        if (e.who.clan !== undefined && m.clan !== e.who.clan) continue;
+        if (e.who.ready === true && !isReady(m)) continue;
+        if (e.who.unlocked === true && m.locked) continue;
         if (untargetableBy(m, seatId, actor)) continue;
         targets.push(m.id);
       }
@@ -2105,6 +2122,11 @@ function compileActionCard(spec: CardSpec): CardHandler {
           params.targetMinion = target;
           params.noCombat = true;
         }
+        if (e.kind === "takeControlOfMinion") {
+          // Ⓓ take control: named for directedness; no combat (it is a loan).
+          params.targetMinion = play.params["target"] ?? "";
+          params.noCombat = true;
+        }
         if (e.kind === "actionMarkRedList") {
           // Named for directedness and the block restriction, not a combat.
           params.targetMinion = play.params["target"] ?? "";
@@ -2503,6 +2525,20 @@ function compileActionCard(spec: CardSpec): CardHandler {
             const who = af.targetMinion;
             const m2 = who ? findMinion(ops.state, who) : null;
             if (m2?.locked && !af.noUnlock) ops.emit({ type: "MinionUnlocked", minion: m2.id });
+            break;
+          }
+          case "takeControlOfMinion": {
+            // "…until the end of the next action" — a loan, and the minion
+            // is locked against it: a locked minion fizzles the action
+            // (G00081, LSJ 20090514).
+            const who = af.targetMinion;
+            const m2 = who ? findMinion(ops.state, who) : null;
+            if (!m2 || m2.locked || m2.controller === af.actingSeat) break;
+            if (e.until === "endOfNextAction") {
+              ops.borrowMinion(m2.id, af.actingSeat, "endOfNextAction", {
+                mustBleedOnLoan: e.mustBleedPrey === true,
+              });
+            }
             break;
           }
           case "actionMarkRedList": {
@@ -7655,6 +7691,7 @@ function compileMasterCard(spec: CardSpec): CardHandler {
                 if (e.who.kind !== undefined && m.kind !== e.who.kind) continue;
                 if (e.who.clan !== undefined && m.clan !== e.who.clan) continue;
                 if (e.who.ready === true && !isReady(m)) continue;
+                if (e.who.unlocked === true && m.locked) continue;
                 // "Not usable to take control of a VAMPIRE with capacity 7 or
                 // more" — the cap is about vampires, and an ally's `capacity`
                 // is its life, so reading it for an ally would be a different

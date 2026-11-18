@@ -496,7 +496,12 @@ export class VtesEngine implements EngineOps {
    * is recorded on the minion and honoured in `endTurn`, beside where
    * "cannot act this turn" expires. docs/taking-actions-design.md §3
    */
-  borrowMinion(minionId: MinionId, to: SeatId, until: "endOfTurn" | "borrowerUnlock" = "endOfTurn"): void {
+  borrowMinion(
+    minionId: MinionId,
+    to: SeatId,
+    until: "endOfTurn" | "borrowerUnlock" | "endOfNextAction" = "endOfTurn",
+    opts: { mustBleedOnLoan?: boolean } = {},
+  ): void {
     const m = getMinion(this.state, minionId);
     if (m.controller === to) return;
     // Set BEFORE the move: `changeMinionControl` relocates the object
@@ -505,8 +510,45 @@ export class VtesEngine implements EngineOps {
     // Default `endOfTurn` so Puppet Master, which was here first and says
     // nothing about a duration, means exactly what it always meant.
     if (until === "borrowerUnlock") m.controlRevertsAt = "borrowerUnlock";
-    else delete m.controlRevertsAt;
+    else if (until === "endOfNextAction") {
+      m.controlRevertsAt = "endOfNextAction";
+      const act = this.action()?.actionId;
+      if (act !== undefined) m.controlRevertsAfterAction = act;
+    } else delete m.controlRevertsAt;
+    if (opts.mustBleedOnLoan) m.mustBleedOnLoan = true;
     this.changeMinionControl(minionId, to);
+  }
+
+  /** "Until the end of the next action" (Spirit Marionette): every loan made
+   *  in an EARLIER action than `actionId` ends now. A loan made in this very
+   *  action is not yet due. The ruling order holds: after-resolution effects
+   *  have run, and a cancelled bleed still returns the minion (RTR 20020501). */
+  private returnNextActionLoans(actionId: string): void {
+    for (const seat of [...this.state.seats]) {
+      for (const m of [...seat.minions]) {
+        if (m.controlRevertsTo === undefined) continue;
+        if (m.controlRevertsAt !== "endOfNextAction") continue;
+        if (m.controlRevertsAfterAction === actionId) continue;
+        this.endBorrow(m);
+      }
+    }
+  }
+
+  /** Hand a borrowed minion back to its owner's Methuselah and clear the loan. */
+  private endBorrow(m: MinionState): void {
+    const back = m.controlRevertsTo;
+    delete m.controlRevertsTo;
+    delete m.controlRevertsAt;
+    delete m.controlRevertsAfterAction;
+    delete m.mustBleedOnLoan;
+    if (back === undefined) return;
+    // Owner ousted during the loan: the minion is removed from the game
+    // (ANK 20181110, group G00001), not left with the borrower.
+    if (getSeat(this.state, back).ousted) {
+      this.removeMinionFromGame(m.id);
+      return;
+    }
+    if (back !== m.controller) this.changeMinionControl(m.id, back);
   }
 
   /**
@@ -529,12 +571,17 @@ export class VtesEngine implements EngineOps {
       for (const m of [...seat.minions]) {
         const back = m.controlRevertsTo;
         if (back === undefined) continue;
-        if ((m.controlRevertsAt ?? "endOfTurn") !== when) continue;
+        // A next-action loan still open at the turn boundary ends there too:
+        // no later action can be the "next" one of a turn that is over.
+        const due = m.controlRevertsAt ?? "endOfTurn";
+        if (due !== when && !(when === "endOfTurn" && due === "endOfNextAction")) continue;
         delete m.controlRevertsTo;
         delete m.controlRevertsAt;
-        // Their Methuselah may have been ousted while the loan ran; there
-        // is then nobody to give them back to and they stay put.
-        if (back !== seat.id && !getSeat(this.state, back).ousted) {
+        // Their Methuselah may have been ousted while the loan ran: the
+        // minion is then removed from the game (ANK 20181110, G00001).
+        if (getSeat(this.state, back).ousted) {
+          this.removeMinionFromGame(m.id);
+        } else if (back !== seat.id) {
           this.changeMinionControl(m.id, back);
         }
       }
@@ -11469,6 +11516,8 @@ export class VtesEngine implements EngineOps {
         });
       }
     }
+    // "Until the end of the next action" loans end with this action.
+    this.returnNextActionLoans(af.actionId);
   }
 
   // -- decision building ----------------------------------------------------
@@ -12123,8 +12172,14 @@ export class VtesEngine implements EngineOps {
         m.blood >= bleedAnnounceTax(m, preySeat) &&
         // …and a toll she cannot pay on top of it (Enrage superior).
         this.tollAffordable(m, "other", bleedAnnounceTax(m, preySeat)) &&
-        m.attached.some(
-          (p) => p.statics.mustBleed && (!p.statics.mustBleed.whileControlsLocked || controlsLocked),
+        // A borrowed minion on a Spirit Marionette loan must bleed its
+        // controller's prey — unless it must hunt, which is the mandatory
+        // action instead (Spirit Marionette ruling).
+        (
+          (m.mustBleedOnLoan === true && !mustHunt(m)) ||
+          m.attached.some(
+            (p) => p.statics.mustBleed && (!p.statics.mustBleed.whileControlsLocked || controlsLocked),
+          )
         ),
     );
     const bleedValue = (m: MinionState): number =>

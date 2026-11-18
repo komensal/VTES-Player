@@ -2041,14 +2041,20 @@ export type EffectPrimitive =
         kind?: "vampire" | "ally";
         clan?: string;
         ready?: boolean;
+        /** "…a ready UNLOCKED minion" (Spirit Marionette). */
+        unlocked?: boolean;
         /** "Not usable to take control of a vampire with capacity 7 or more". */
         maxCapacity?: number;
         /** "…controlled by a Methuselah with 3 or fewer pool". */
         controllerMaxPool?: number;
       };
       /** `"permanent"` is a theft; the other two are loans, and the moment
-       *  they end is the borrower's, never the owner's. */
-      until: "endOfTurn" | "borrowerUnlock" | "permanent";
+       *  they end is the borrower's, never the owner's. `"endOfNextAction"`
+       *  ends with the next action (Spirit Marionette superior). */
+      until: "endOfTurn" | "borrowerUnlock" | "endOfNextAction" | "permanent";
+      /** "That minion must bleed your prey unless they must hunt" (Spirit
+       *  Marionette superior) — a mandatory bleed on the loan. */
+      mustBleedPrey?: boolean;
     }
   /** "Choose a Methuselah OR a location — or BOTH if the acting vampire
    *  is one of \<titles\>" (Cold War). §2 */
