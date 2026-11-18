@@ -3652,7 +3652,10 @@ function compileCombatCard(spec: CardSpec): CardHandler {
           // but does not require it: the strike can also be chosen normally
           // after both combatants decline to maneuver.
           const strikeWithoutManeuver = ctx.window === "combat.chooseStrike" && strikeManeuverRider(mode) !== null;
-          if (window !== ctx.window && !strikeWithoutManeuver) continue;
+          // Psyche! superior (queued combat, only if combat would end) is
+          // offered in the press window once an end-of-combat press stands.
+          const queuedEndMode = ctx.window === "combat.press" && mode.effects.some((e) => e.kind === "queueCombat") && mode.usable?.includes("onlyIfCombatWouldEnd");
+          if (window !== ctx.window && !strikeWithoutManeuver && !queuedEndMode) continue;
         }
         // A before-range credit can also carry a limited additional strike
         // (Shadow of the Wolf). The limit belongs to the minion and round,
@@ -4031,9 +4034,25 @@ function compileCombatCard(spec: CardSpec): CardHandler {
           }
           case "combat.press": {
             if (cf.awaiting !== side) continue;
-            if (!canUseCombatPress(cf, side, !cf.willContinue)) continue;
             // "…or presses only if they require …" (Target Leg). §5
             if (!modeRequiresOneOf(mode, cf.moveDisciplines?.[side])) continue;
+            // Psyche! superior is a card play, not a press: the once-per-round
+            // press limit does not apply. It is queued-combat only (see below):
+            // after an end-of-combat press is played, the other side answers
+            // in this window, so the queued-combat mode is offered here too,
+            // not only in End of Round when nobody presses.
+            if (!modeRequiresOneOf(mode, cf.moveDisciplines?.[side])) continue;
+            if (mode.effects.some((e) => e.kind === "queueCombat") && mode.usable?.includes("onlyIfCombatWouldEnd")) {
+              const a = findMinion(ctx.state, cf.acting);
+              const o = findMinion(ctx.state, cf.opposing);
+              const queued = cf.queuedFollowupCombat || (ctx.action?.queuedCombats.length ?? 0) > 0;
+              if (cf.endPressPlayed && !cf.willContinue && a && o && isReady(a) && isReady(o) && !queued) {
+                options.push(makeOption(spec, card, m, mode, {}));
+                break;
+              }
+              continue;
+            }
+            if (!canUseCombatPress(cf, side, !cf.willContinue)) continue;
             const press = mode.effects.find((e) => e.kind === "press");
             if (!press || press.kind !== "press") continue;
             if (!cf.willContinue) {

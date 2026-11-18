@@ -3559,6 +3559,7 @@ export class VtesEngine implements EngineOps {
             // and strength overrides last the whole combat.
             cf.committedStrike = { acting: null, opposing: null };
             cf.willContinue = false;
+            cf.endPressPlayed = false;
             cf.cycle = newCycle(cf.cycle.order);
             // "…before range is determined EACH ROUND this combat"
             // (Weather Control) — the new round has just reached that
@@ -7065,6 +7066,7 @@ export class VtesEngine implements EngineOps {
     const cf = this.requireCombat();
     const side = this.sideOf(cf, play.minion);
     cf.willContinue = toContinue;
+    cf.endPressPlayed = !toContinue;
     cf.awaiting = side === "acting" ? "opposing" : "acting";
     cf.declines = 0;
     this.emit({
@@ -13562,6 +13564,7 @@ export class VtesEngine implements EngineOps {
         else if (top.presses[side] > 0) top.presses[side] -= 1;
         else top.pressesCombat[side] -= 1;
         top.willContinue = option.toContinue;
+        top.endPressPlayed = !option.toContinue;
         top.awaiting = side === "acting" ? "opposing" : "acting";
         top.declines = 0;
         this.emit({

@@ -9038,8 +9038,8 @@
   {
     "id": 101507,
     "name": "Psyche!",
-    "status": "UNRESOLVED",
-    "evidence": "Psyche!: spec ma basic press i superior queueCombat, ale kompilator umieszcza superior wyłącznie w combat.endOfRound i odrzuca endedPrematurely. Czy obsługuje przerwanie combat ends oraz zakaz dodatkowej kolejki, wymaga scenariusza; library-audit.test.ts tylko wymienia nazwę."
+    "status": "PARTIAL_FIX",
+    "evidence": "Psyche! superior (queueCombat, onlyIfCombatWouldEnd) jest oferowany także w combat.press, gdy zagrano press kończący walkę (anulowanie kontynuacji) i druga strona odpowiada; wcześniej tylko w combat.endOfRound, gdy nikt nie presuje. Działa limit: bez drugiej kolejki, przy obu gotowych wampirach. Test: tests/cards/psyche-end-press.test.ts (2 testy; mutacja wyłączająca gałąź press wykryta). Pełny zestaw 503 plików / 6120 testów zielony. Nie objęte testem: przerwanie walki strike'iem (endedPrematurely), choć ścieżka endOfRound jest dozwolona dla queueCombat."
   },
   {
     "id": 101508,

@@ -4136,6 +4136,8 @@ export interface CombatFrame {
   /** Damage awaiting prevention + mend, acting minion's first (p. 29). */
   pendingDamage: PendingDamage[];
   willContinue: boolean;
+  /** The most recent press played this round ended the combat (a cancel of a standing continue). Psyche! superior is offered then, while the other side still answers. */
+  endPressPlayed?: boolean;
   endedPrematurely: boolean;
   cycle: ImpulseCycle;
 }
