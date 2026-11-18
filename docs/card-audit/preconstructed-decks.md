@@ -169,7 +169,7 @@ Występuje w **2** taliach. Combat ograniczono do strike przeciwnika; prevention
 <a id="karta-102314"></a>
 ### Dance of the Dead (102314) — PARTIAL_FIX
 
-Występuje w **1** taliach. Zdolność można teraz aktywować w dalszych oknach walki, w tym w kroku press. wraith-zombie.test.ts sprawdza press, zużycie ostatniego countera i spalenie karty, limit na combat, kontrolę celu oraz maneuver zachowany do następnej rundy po save/restore. Pozostają do zbadania pozostałe okna (m.in. damage resolution) oraz interakcje z ograniczeniami ruchu i timingiem. Uwaga: ogólna legalność kart library wymagających Path nadal wymaga egzekwowania; samo pole Path przywrócono do registry.
+Występuje w **1** taliach. Zdolność można teraz aktywować w dalszych oknach walki, w tym w kroku press. wraith-zombie.test.ts sprawdza press, zużycie ostatniego countera i spalenie karty, limit na combat, kontrolę celu oraz maneuver zachowany do następnej rundy po save/restore. Dodano okno damage resolution (wraith-zombie.test.ts: opcja jest oferowana i zdejmuje licznik). Pozostają do zbadania pozostałe okna oraz interakcje z ograniczeniami ruchu i timingiem. Uwaga: ogólna legalność kart library wymagających Path nadal wymaga egzekwowania; samo pole Path przywrócono do registry.
 
 <a id="karta-102315"></a>
 ### Dance with the Devil (102315) — PARTIAL_FIX

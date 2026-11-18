@@ -13438,7 +13438,7 @@ export function compileSpec(spec: CardSpec): CardHandler {
 
       // "Once each combat, burn 1 counter to give a wraith or zombie ally
       // you control 1 maneuver or press."
-      if (cgc && ctx.combat && ["combat.beforeRange", "combat.range", "combat.beforeStrikes", "combat.chooseStrike", "combat.beforeResolution", "combat.endOfRound", "combat.press"].includes(ctx.window)) {
+      if (cgc && ctx.combat && ["combat.beforeRange", "combat.range", "combat.beforeStrikes", "combat.chooseStrike", "combat.beforeResolution", "combat.damageResolution", "combat.endOfRound", "combat.press"].includes(ctx.window)) {
         const cf = ctx.combat;
         if (!cf.usedThisCombat.includes(entry.card.id)) {
           for (const id of [cf.acting, cf.opposing]) {
