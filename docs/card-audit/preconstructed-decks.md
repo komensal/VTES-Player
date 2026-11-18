@@ -164,7 +164,7 @@ Występuje w **2** taliach. Osobny obowiązek hunt trwa do ogłoszenia hunt lub 
 <a id="karta-102262"></a>
 ### Touch of Valeren (102262) — PARTIAL_FIX
 
-Występuje w **2** taliach. Combat ograniczono do strike przeciwnika; prevention-provenance-audit.test.ts bada dostępność i źródła. Action dopuszcza pełnego aktora, jeśli koszt krwi zostawia miejsce, respektuje ochronę przed wyborem i limit starting life ally; minion-target-actions.test.ts. Stare pakiety bez strikePhase i pełne przejście superior oraz dalsze interakcje pozostają otwarte. Paczka 1: minion-target-actions.test.ts i prevention-provenance-audit.test.ts pokrywają akcję i combat. Nie zweryfikowano LSJ 20001114 dla tej ścieżki prevention oraz starych pakietów bez strikePhase. Status bez zmian.
+Występuje w **2** taliach. Combat ograniczono do strike przeciwnika; prevention-provenance-audit.test.ts bada dostępność i źródła. Action dopuszcza pełnego aktora, jeśli koszt krwi zostawia miejsce, respektuje ochronę przed wyborem i limit starting life ally; minion-target-actions.test.ts. Stare pakiety bez strikePhase i pełne przejście superior oraz dalsze interakcje pozostają otwarte. Paczka 1: minion-target-actions.test.ts i prevention-provenance-audit.test.ts pokrywają akcję i combat. Zweryfikowano LSJ 20001114 dla basic combat (tests/cards/touch-valeren-ruling.test.ts: opcja jest oferowana tylko przy obrażeniach do zapobieżenia, nie bez nich). Nadal nie zweryfikowano starych pakietów bez strikePhase. Status bez zmian.
 
 <a id="karta-102314"></a>
 ### Dance of the Dead (102314) — PARTIAL_FIX
