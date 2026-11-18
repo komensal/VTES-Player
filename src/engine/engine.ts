@@ -3211,6 +3211,15 @@ export class VtesEngine implements EngineOps {
       cf.step !== "endOfRound" &&
       (!this.combatantReady(cf.acting) || !this.combatantReady(cf.opposing))
     ) {
+      // Pre-range damage that is already pending is still inflicted when
+      // the combat ends prematurely (ANK 20180104, Outside the Hourglass):
+      // resolve it in damage resolution first, then end the round.
+      if (cf.pendingDamage.length > 0 && cf.step === "beforeRange") {
+        cf.endedPrematurely = true;
+        cf.step = "damageResolution";
+        cf.cycle = newCycle(cf.cycle.order);
+        return true;
+      }
       cf.endedPrematurely = true;
       cf.step = "endOfRound";
       cf.cycle = newCycle(cf.cycle.order);

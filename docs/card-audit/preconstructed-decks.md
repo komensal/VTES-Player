@@ -114,7 +114,7 @@ Występuje w **2** taliach. Dodano sprawdzanie młodszego działającego vampire
 <a id="karta-101338"></a>
 ### Outside the Hourglass (101338) — PARTIAL_FIX
 
-Występuje w **1** taliach. Dodano wariant basic tem maneuver i limit superior per vampire/runda. Superior jest jednorazowy i pochodzi od wampira, nie environmental, a pending damage rozstrzygane jest przed strike; tests/cards/outside-hourglass-audit.test.ts obejmuje oba wampiry, save/load i źródło. Otwarte: prevention ma być dostępny w tym samym oknie przed range co inne efekty, a także zachowanie gdy walka kończy się przedwcześnie [ANK 20180104].
+Występuje w **1** taliach. Dodano wariant basic tem maneuver i limit superior per vampire/runda. Superior jest jednorazowy i pochodzi od wampira, nie environmental, a pending damage rozstrzygane jest przed strike; tests/cards/outside-hourglass-audit.test.ts obejmuje oba wampiry, save/load i źródło. Zweryfikowano ANK 20180104 (tests/cards/outside-hourglass-premature.test.ts): obrażenia superior zostają zadane, gdy walka kończy się przedwcześnie w beforeRange; silnik naprawiony (engine.ts: oczekujące obrażenia przed range rozstrzygane przed zakończeniem). Otwarte: prevention ma być dostępny w tym samym oknie przed range co inne efekty.
 
 <a id="karta-101588"></a>
 ### Rego Motum (101588) — PARTIAL_FIX
