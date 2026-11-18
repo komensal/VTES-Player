@@ -6,7 +6,7 @@
 import { describe, expect, it } from "vitest";
 import type { CombatFrame, GameState, MinionState } from "../../src/engine/index.ts";
 import { VtesEngine } from "../../src/engine/index.ts";
-import { makeMinion, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
+import { makeMinion, runTrace, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
 
 function find(state: GameState, id: string): MinionState {
   const m = state.seats.flatMap((s) => s.minions).find((x) => x.id === id);
@@ -86,5 +86,47 @@ describe("Nephandus (101272)", () => {
     const { engine } = setup(true);
     hit(engine, null, 2);
     expect(find(engine.state, "NEPH").blood).toBe(3);
+  });
+});
+
+/** The whole combat, from the bleed to the strikes, with the ally's own
+ *  permanent attached to itself as `PermanentEnteredPlay` leaves it. */
+describe("Nephandus (101272): a full combat with its 1R strike", () => {
+  function fight(): { state: GameState; engine: VtesEngine } {
+    const state = threeSeatGame();
+    state.seats[0]!.minions[0]!.blood = 5;
+    const neph = makeMinion("NEPH", "Bob", { kind: "ally", name: "Nephandus", blood: 5 });
+    neph.attached.push({ card: { id: "NEPH", name: "Nephandus" }, locked: false, usedThisPhase: false, statics: {}, tags: ["mage"] } as unknown as MinionState["attached"][number]);
+    state.seats[1]!.minions.push(neph);
+    const engine = new VtesEngine(state, testRegistry);
+    runTrace(engine, [
+      ["Alice", "bleed:V1"], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"], ["Alice", "pass"],
+      ["Bob", "block:NEPH"], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"], ["Alice", "pass"], ["Bob", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+    ]);
+    return { state, engine };
+  }
+
+  it("is offered its 1R strike alongside hand strike when the strikes are chosen", () => {
+    const { engine } = fight();
+    expect(engine.decision()!.window).toBe("combat.chooseStrike");
+    expect(engine.decision()!.options.map((o) => o.id)).toContain("strike:hand");
+    engine.choose("strike:hand");
+    expect(engine.decision()!.options.map((o) => o.id)).toContain("ability:Nephandus:NEPH:strike");
+  });
+
+  it("its ranged strike costs the opposing vampire 1 blood, and its own life is untouched by its hand strike", () => {
+    const { state, engine } = fight();
+    engine.choose("strike:hand");
+    engine.choose("ability:Nephandus:NEPH:strike");
+    for (let i = 0; i < 30 && engine.decision(); i++) {
+      const dp = engine.decision()!;
+      engine.choose(dp.options.find((o) => o.id === "pass")?.id ?? dp.options[0]!.id);
+    }
+    // 1R from Nephandus lands on V1: one blood burned.
+    expect(find(state, "V1").blood).toBe(4);
+    // V1's hand strike (1) is reduced by 1 against Nephandus: no damage.
+    expect(find(state, "NEPH").blood).toBe(5);
   });
 });
