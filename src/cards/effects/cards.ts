@@ -34086,7 +34086,7 @@ export const cardSpecs: CardSpec[] = [
       {
         level: "superior",
         discipline: "tem",
-        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "attachSelf", statics: {} }],
+        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "attachSelf", statics: { handSizePerCounter: true } }],
       },
     ],
   },
@@ -44495,6 +44495,24 @@ const saulotsHealingTouch: CardHandler = {
 const hourglassBase = compileSpec(specByName("Hourglass of the Mind"));
 const hourglass: CardHandler = {
   ...hourglassBase,
+  onControllerUnlock(entry, owner, ops) {
+    // [TEM] superior: "During your unlock phase, this vampire CAN burn 2
+    // blood to add 1 counter to this card." Optional, costs 2 blood; the
+    // card stays in play if declined. "+1 hand size for each counter while
+    // this vampire is ready" is the handSizePerCounter static.
+    if (owner.minion === null) return;
+    const bearer = findMinion(ops.state, owner.minion);
+    if (!bearer || bearer.controller !== owner.seat) return;
+    if (bearer.blood < 2) return;
+    ops.raiseChoice({
+      seat: owner.seat,
+      cardName: "Hourglass of the Mind",
+      cardId: entry.card.id,
+      key: "hourglassUnlock",
+      params: { minion: owner.minion },
+      optional: true,
+    });
+  },
   resolveCardAction(af, ops) {
     if (af.card?.mode !== "basic" || af.card.params["variant"] !== "tem") {
       hourglassBase.resolveCardAction?.(af, ops);
@@ -44506,6 +44524,14 @@ const hourglass: CardHandler = {
       choiceParams: { acting: af.acting } });
   },
   choiceOptions(frame, state, registry) {
+    if (frame.key === "hourglassUnlock") {
+      const m = findMinion(state, frame.params["minion"] ?? "");
+      if (!m || m.blood < 2) return [];
+      return [{ id: `choice:Hourglass of the Mind:${frame.cardId}:hourglassUnlock:yes`,
+        kind: "answerChoice" as const,
+        label: "Hourglass: burn 2 blood to add 1 counter",
+        params: { pay: "yes" } }];
+    }
     if (frame.key !== "top") return hourglassBase.choiceOptions?.(frame, state, registry) ?? [];
     const hand = getSeat(state, frame.seat).hand;
     if (!hand.length) return [{ id: `choice:Hourglass of the Mind:${frame.cardId}:top:done`,
@@ -44514,6 +44540,14 @@ const hourglass: CardHandler = {
       kind: "answerChoice" as const, label: `Put ${c.name} on top of your library`, params: { pick: c.id } }));
   },
   applyChoice(frame, choice, ops) {
+    if (frame.key === "hourglassUnlock") {
+      const m = findMinion(ops.state, frame.params["minion"] ?? "");
+      if (m && m.blood >= 2) {
+        ops.emit({ type: "BloodBurned", minion: m.id, amount: 2 });
+        ops.addCounters(frame.cardId, 1);
+      }
+      return;
+    }
     if (frame.key !== "top") { hourglassBase.applyChoice?.(frame, choice, ops); return; }
     const pick = choice.params["pick"];
     if (pick) ops.moveHandCardToLibraryTop(frame.seat, pick);

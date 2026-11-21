@@ -484,6 +484,12 @@ export function handSizeOf(state: GameState, seatId: SeatId): number {
   for (const m of getSeat(state, seatId).minions) {
     if (!isReady(m)) continue;
     size += conditionalStaticNoAction(state, m, "handSize");
+    // "+1 hand size for each counter on this card, while this vampire is
+    // ready" (Hourglass of the Mind [TEM]) — attached to the minion, so it
+    // is not a seat permanent, and gated on the bearer being ready.
+    for (const p of m.attached) {
+      if (p.statics.handSizePerCounter) size += p.counters ?? 0;
+    }
   }
   // "While the employer is in combat, the opposing minion's controller
   // gets −1 hand size" (Raptor superior) — DERIVED from the live combat,
