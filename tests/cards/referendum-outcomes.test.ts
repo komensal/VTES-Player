@@ -779,4 +779,19 @@ describe("Donald Cargill", () => {
     expect(resolved(state).passed).toBe(true);
     expect(bearer.blood).toBe(4);
   });
+
+  it("nie reaguje na blood hunt (brak callingMinion, predatorAtCall nie dotyczy)", () => {
+    const state = threeSeatGame();
+    Object.assign(minion(state, "V1"), { sect: "anarch", capacity: 6, blood: 4 });
+    Object.assign(minion(state, "W"), { inTorpor: true, blood: 1, capacity: 3 });
+    minion(state, "N").title = "prince";
+    const bearer = minion(state, "N"); // N survives the blood hunt
+    bearer.blood = 4;
+    bearer.attached.push({ card: { id: bearer.id, name: "Donald Cargill (G5)" }, locked: false, usedThisPhase: false, statics: testRegistry["Donald Cargill (G5)"]!.cryptEntry!().statics, tags: [] });
+    const engine = new VtesEngine(state, testRegistry);
+    engine.choose("diablerize:V1:W");
+    drive(engine, state, []);
+    expect(state.eventLog.some((e) => e.type === "ReferendumResolved")).toBe(true);
+    expect(bearer.blood).toBe(4);
+  });
 });
