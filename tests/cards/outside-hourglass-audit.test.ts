@@ -62,3 +62,38 @@ describe("Outside the Hourglass", () => {
     expect(find(resumed,"play:Outside the Hourglass:superior:M")).toBeDefined();
   });
 });
+
+describe("Outside the Hourglass (101338): pre-range prevention [G00164, ANK 20170930]", () => {
+  /** Both minions may play prevention before the pre-range damage is mended. */
+  it("the victim can play prevention for the superior's pre-range damage", () => {
+    const state = threeSeatGame();
+    const alice = state.seats[0]!.minions[0]!;
+    Object.assign(alice, { disciplines: { tem: "superior" }, blood: 8, capacity: 10 });
+    const m = state.seats[1]!.minions.find((x) => x.id === "M")!;
+    Object.assign(m, { disciplines: { for: "superior" }, blood: 8, capacity: 10 });
+    state.seats[0]!.hand.push({ id: "oh", name: "Outside the Hourglass" });
+    state.seats[1]!.hand.push({ id: "res", name: "Resilience" });
+    const engine = new VtesEngine(state, testRegistry);
+    runTrace(engine, [["Alice","bleed:V1"],["Alice","pass"],["Bob","pass"],["Carol","pass"],["Alice","pass"],["Bob","block:M"],["Alice","pass"],["Bob","pass"],["Carol","pass"]]);
+    engine.choose(find(engine,"play:Outside the Hourglass:superior:V1")!.id);
+    // Walk to the point where Bob can answer the pending pre-range damage.
+    let preventionOffered: string | undefined;
+    for (let i = 0; i < 40; i++) {
+      const dp = engine.decision()!;
+      const prevent = dp.options.find((o) => o.id.startsWith("play:Resilience"));
+      if (prevent) { preventionOffered = prevent.id; break; }
+      if (dp.window === "combat.chooseStrike") break;
+      engine.choose((dp.options.find((o) => o.id === "pass") ?? dp.options[0]!).id);
+    }
+    expect(preventionOffered).toBeDefined();
+    engine.choose(preventionOffered!);
+    // Resolve the prevention's as-played window and the remaining damage.
+    for (let i = 0; i < 40; i++) {
+      const dp = engine.decision()!;
+      if (dp.window === "combat.chooseStrike" || dp.window === "combat.range") break;
+      engine.choose((dp.options.find((o) => o.id === "pass") ?? dp.options[0]!).id);
+    }
+    // Resilience basic prevents 1 of the 2 pre-range damage: 8 -> 7, not 6.
+    expect(m.blood).toBe(7);
+  });
+});
