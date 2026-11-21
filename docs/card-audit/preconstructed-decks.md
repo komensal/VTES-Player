@@ -74,7 +74,7 @@ Poniższe opisy przytoczono z audytu. CODE_DISCREPANCY bywa oparte wyłącznie n
 <a id="karta-100032"></a>
 ### AK-47 (100032) — PARTIAL_FIX
 
-Występuje w **1** taliach. Dodatkowy strike jest nadal przyznawany po strike'u z broni, ale jest OPCJONALNY: w dodatkowej sub-rundzie strzelec może wybrać 'strike:decline' (bez obrażeń, zwalnia zobowiązanie do broni). Flaga CombatFrame.optionalAdditionalStrike jest ustawiana tylko dla opcjonalnych przyznań (AK-47, Caseless Rounds); zwykłe dodatkowe strike'i jej nie mają. Testy: tests/cards/weapon-riders.test.ts + last-equipment-modifiers.test.ts: 57 testów łącznie, w tym 'the optional extra strike can be DECLINED'. Pełne tests/cards+tests/engine: 398 plików, exit 0. NIEZROBIONE: wybór innego limitowanego źródła zamiast grantu AK-47 (kolejność przed grantem), docs/additional-strike-followups.md.
+Występuje w **1** taliach. Dodatkowy strike jest nadal przyznawany po strike'u z broni, ale jest OPCJONALNY: w dodatkowej sub-rundzie strzelec może wybrać 'strike:decline' (bez obrażeń, zwalnia zobowiązanie do broni). Flaga CombatFrame.optionalAdditionalStrike jest ustawiana tylko dla opcjonalnych przyznań (AK-47, Caseless Rounds); zwykłe dodatkowe strike'i jej nie mają. Testy: tests/cards/weapon-riders.test.ts + last-equipment-modifiers.test.ts: 57 testów łącznie, w tym 'the optional extra strike can be DECLINED'. Pełne tests/cards+tests/engine: 398 plików, exit 0. Wybór limitowanego źródła w oknie grantAdditionalStrikes ZWERYFIKOWANY: tests/cards/additional-strike-limit.test.ts (AK-47 i Blur oferowane razem; wybór jednego blokuje drugie przez usedLimitedAddl). Nadal OTWARTE (wspólne z silnikiem): kolejność okna kolejnych źródeł przy oczekujących strike'ach — LSJ 20001206 wymaga rozstrzygnięcia pending strikes przed zdobyciem kolejnych i re-open grant window; złożona przebudowa pętli walki, docs/additional-strike-followups.md.
 
 <a id="karta-100227"></a>
 ### Blur (100227) — PARTIAL_FIX
@@ -99,7 +99,7 @@ Występuje w **4** taliach. Celowana naprawa: liczony draw Heart jest wznawiany 
 <a id="karta-100941"></a>
 ### Hourglass of the Mind (100941) — PARTIAL_FIX
 
-Występuje w **1** taliach. Częściowo naprawiono: odrębne warianty [pot]/[tem]; [tem] dobiera cztery karty bez discard, następnie wybiera do czterech kart z ręki na wierzch w zadanej kolejności i unlockuje przed zakończeniem akcji. Uwzględniono przekierowanie draw, zapis/wznowienie oraz pustą bibliotekę (tests/cards/hourglass-audit.test.ts). Przy niepełnej ręce przyjęto wykonanie możliwej części efektu (testy 'moves available cards even if fewer than four can be drawn' i 'unlocks even with an empty hand'); najbliższy analog to G00160 (LSJ 20060620: 'draw as much as you can'), ale brak rulingu dla przeniesienia, więc interpretacja wymaga potwierdzenia. Usunięto nieuprawnione +1 hand size superior bez counterów, lecz [TEM] nadal nie obsługuje opłacania counterów ani ich wpływu na hand size. Logi wyboru są maskowane, ale identyfikatory zakrytych kart w projekcji stanu nadal mogą umożliwiać ich śledzenie (istniejący szerszy problem prywatności). Pozostaje PARTIAL_FIX.
+Występuje w **1** taliach. Częściowo naprawiono: odrębne warianty [pot]/[tem]; [tem] dobiera cztery karty bez discard, następnie wybiera do czterech kart z ręki na wierzch w zadanej kolejności i unlockuje przed zakończeniem akcji. Uwzględniono przekierowanie draw, zapis/wznowienie oraz pustą bibliotekę (tests/cards/hourglass-audit.test.ts). Przy niepełnej ręce przyjęto wykonanie możliwej części efektu (testy 'moves available cards even if fewer than four can be drawn' i 'unlocks even with an empty hand'); najbliższy analog to G00160 (LSJ 20060620: 'draw as much as you can'), ale brak rulingu dla przeniesienia, więc interpretacja wymaga potwierdzenia. Usunięto nieuprawnione +1 hand size superior bez counterów. [TEM] superior teraz obsługuje opłacanie counterów: podczas unlock fazy wampir może spalić 2 krew aby dodać 1 counter (onControllerUnlock w cards.ts), a +1 hand size za każdy counter działa tylko gdy wampir jest ready (handSizePerCounter dla kart dołączonych w derived.ts). Testy w hourglass-audit.test.ts ('Hourglass [TEM] superior unlock-phase counters'), kontrola mutacyjna potwierdzona dla derived.ts. Logi wyboru są maskowane, ale identyfikatory zakrytych kart w projekcji stanu nadal mogą umożliwiać ich śledzenie (istniejący szerszy problem prywatności). Pozostaje PARTIAL_FIX ze względu na otwartą interpretację niepełnej ręki.
 
 <a id="karta-101272"></a>
 ### Nephandus (101272) — PARTIAL_FIX
@@ -114,7 +114,7 @@ Występuje w **2** taliach. Dodano sprawdzanie młodszego działającego vampire
 <a id="karta-101338"></a>
 ### Outside the Hourglass (101338) — PARTIAL_FIX
 
-Występuje w **1** taliach. Dodano wariant basic tem maneuver i limit superior per vampire/runda. Superior jest jednorazowy i pochodzi od wampira, nie environmental, a pending damage rozstrzygane jest przed strike; tests/cards/outside-hourglass-audit.test.ts obejmuje oba wampiry, save/load i źródło. Zweryfikowano ANK 20180104 (tests/cards/outside-hourglass-premature.test.ts): obrażenia superior zostają zadane, gdy walka kończy się przedwcześnie w beforeRange; silnik naprawiony (engine.ts: oczekujące obrażenia przed range rozstrzygane przed zakończeniem). Otwarte: prevention ma być dostępny w tym samym oknie przed range co inne efekty.
+Występuje w **1** taliach. Dodano wariant basic tem maneuver i limit superior per vampire/runda. Superior jest jednorazowy i pochodzi od wampira, nie environmental, a pending damage rozstrzygane jest przed strike; tests/cards/outside-hourglass-audit.test.ts obejmuje oba wampiry, save/load i źródło. Zweryfikowano ANK 20180104 (tests/cards/outside-hourglass-premature.test.ts): obrażenia superior zostają zadane, gdy walka kończy się przedwcześnie w beforeRange; silnik naprawiony (engine.ts: oczekujące obrażenia przed range rozstrzygane przed zakończeniem). Zweryfikowano G00164 / ANK 20170930 (tests/cards/outside-hourglass-audit.test.ts): generyczna prevention (Resilience [for] basic) jest oferowana dla obrażeń pre-range i redukuje je (2 -> 1). Otwarte pozostaje jedynie jednoczesne mendowanie wielu źródeł pre-range ('all damages prevented and mended together'), gdy obie strony zagrają superior.
 
 <a id="karta-101588"></a>
 ### Rego Motum (101588) — PARTIAL_FIX
@@ -214,7 +214,7 @@ Występuje w **1** taliach. Dodano możliwość zapłacenia 1 blood za unlock po
 <a id="karta-200365"></a>
 ### Donald Cargill (G5) (200365) — PARTIAL_FIX
 
-Występuje w **1** taliach. Po passed referendum wywołanym przez predatora spala 1 blood; test pass/fail i innego kontrolera w referendum-outcomes.test.ts. Predator odczytywany z chwili wezwania referendum (predatorAtCall): spalenie działa także, gdy predator zostaje usunięty przez to referendum [LSJ 20090115-2]; test w referendum-outcomes.test.ts (Treachery). Pozostają przypadki torpor i niestandardowych referendum do weryfikacji.
+Występuje w **1** taliach. Po passed referendum wywołanym przez predatora spala 1 blood; test pass/fail i innego kontrolera w referendum-outcomes.test.ts. Predator odczytywany z chwili wezwania referendum (predatorAtCall): spalenie działa także, gdy predator zostaje usunięty przez to referendum [LSJ 20090115-2]; test w referendum-outcomes.test.ts (Treachery). Torpor zweryfikowany (test: brak spalania gdy w torporze). Blood hunt (niestandardowe referendum, brak callingMinion) zweryfikowany - brak reakcji [patrz referendum-outcomes.test.ts]. Wszystkie elementy LSJ 20090115-2 pokryte testami.
 
 <a id="karta-200608"></a>
 ### Hrothulf (G3) (200608) — PARTIAL_FIX
@@ -244,7 +244,7 @@ Występuje w **1** taliach. Naprawiono warunkowe bleed i usunięto błędne stat
 <a id="karta-201608"></a>
 ### Nonu Dis (G6) (201608) — PARTIAL_FIX
 
-Występuje w **1** taliach. Poprawiono ofertę: opcjonalny wybór bezpośrednio po konkretnym zagraniu mastera (także po zagnieżdżonych wyborach), odmowa nie zużywa użycia; limit raz na fazę i jego reset. Regresje crypt-wave-7.test.ts obejmują Blood Doll, dwa mastery, legalność celu i save/restore. Wcześniejsze założenie o braku limitu było błędne: ruling Rules Directora potwierdza szablon „during X, do Y” (https://www.vekn.net/forum-es/rules-questions/79835-nonu-dis-and-during-x-do-y). Wpływ anulowania i nietypowych sposobów zagrania mastera wymaga dalszego ustalenia i testów; obecny hook przyjmuje również anulowane zagranie.
+Występuje w **1** taliach. Poprawiono ofertę: opcjonalny wybór bezpośrednio po konkretnym zagraniu mastera (także po zagnieżdżonych wyborach), odmowa nie zużywa użycia; limit raz na fazę i jego reset. Regresje crypt-wave-7.test.ts obejmują Blood Doll, dwa mastery, legalność celu i save/restore. Wcześniejsze założenie o braku limitu było błędne: ruling Rules Directora potwierdza szablon „during X, do Y” (https://www.vekn.net/forum-es/rules-questions/79835-nonu-dis-and-during-x-do-y). Wpływ anulowania i nietypowych sposobów zagrania mastera wymaga dalszych testów; hook teraz ignoruje anulowane zagrania (info.canceled).
 
 <a id="karta-201680"></a>
 ### Opikun (G7) (201680) — PARTIAL_FIX
@@ -264,5 +264,5 @@ Występuje w **1** taliach. Po successful bleed prey gracz wybiera gain blood lu
 <a id="karta-201776"></a>
 ### Věnceslava, The Implacable (G6) (201776) — PARTIAL_FIX
 
-Występuje w **1** taliach. Gain pool jest opcjonalny; odmowa nie zużywa once-per-turn i działa późniejsza kwalifikująca akcja, także po zapisie. crypt-wave-4.test.ts. Brak zysku, gdy kontroler został ousted (ANK 20220808; guard w compile.ts, test w crypt-wave-4.test.ts). Identyfikacja prey i kolejność przy zmianie/oust oraz wszystkich zagnieżdżonych zdarzeniach wymagają weryfikacji.
+Występuje w **1** taliach. Gain pool jest opcjonalny; odmowa nie zużywa once-per-turn i działa późniejsza kwalifikująca akcja, także po zapisie. crypt-wave-4.test.ts. Brak zysku, gdy kontroler został ousted (ANK 20220808; guard w compile.ts, test w crypt-wave-4.test.ts). Identyfikacja prey i kolejność przy zmianie/oust oraz zagnieżdżonych zdarzeniach - otwarte, wymaga scenariusza z oust w trakcie akcji. Pozostałe elementy (opcjonalny gain, once-per-turn, ousted guard, hunt) pokryte testami w crypt-wave-4.test.ts.
 
