@@ -15114,6 +15114,7 @@ function addCryptAbilities(
     const prior = handler.onMasterCardPlayed?.bind(handler);
     handler.onMasterCardPlayed = (entry, owner, info, ops) => {
       prior?.(entry, owner, info, ops);
+      if (info.canceled) return;
       const bearer = owner.minion === null ? null : findMinion(ops.state, owner.minion);
       if (entry.usedThisPhase || !bearer || bearer.controller !== info.seat || !isReady(bearer)) return;
       const candidates = getSeat(ops.state, info.seat).minions.filter(m => isReady(m) && m.clan === amp.clan && canGainBlood(m));
