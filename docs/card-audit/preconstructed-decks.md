@@ -174,12 +174,12 @@ Występuje w **1** taliach. Zdolność można teraz aktywować w dalszych oknach
 <a id="karta-102315"></a>
 ### Dance with the Devil (102315) — PARTIAL_FIX
 
-Występuje w **1** taliach. Superior nie pobiera blood automatycznie; w kroku range można opcjonalnie zapłacić za dodatkowy close maneuver, a bez blood nadal zagrać kartę. round-end.test.ts. Zakup jest obecnie dostępny tylko w range przy long, nie dowolnie w rundzie; wymagane są dalsze prace nad timingiem i ograniczeniami dyscyplin.
+Występuje w **1** taliach. Superior nie pobiera blood automatycznie; w kroku range można opcjonalnie zapłacić za dodatkowy close maneuver, a bez blood nadal zagrać kartę. round-end.test.ts. Zakup jest obecnie dostępny tylko w range przy long, nie dowolnie w rundzie; wymagane są dalsze prace nad timingiem i ograniczeniami dyscyplin. Brak wpisu w migawce dla kluczowej kwestii; wymaga potwierdzenia na VEKN (sprawdzono forum, brak konkretnego rulingu).
 
 <a id="karta-102336"></a>
 ### Rage of Apedemak (102336) — PARTIAL_FIX
 
-Występuje w **1** taliach. Bonus dotyczy hand strike, nie strength ani melee weapon; testy hand, Roundhouse i Femur oraz hand size. tests/cards/frenzy-direction-audit.test.ts i temporary-hand-size.test.ts. Wygaszanie wszystkich wcześniejszych efektów frenzy przez Shield wymaga dalszej weryfikacji.
+Występuje w **1** taliach. Bonus dotyczy hand strike, nie strength ani melee weapon; testy hand, Roundhouse i Femur oraz hand size. tests/cards/frenzy-direction-audit.test.ts i temporary-hand-size.test.ts. Wygaszanie wszystkich wcześniejszych efektów frenzy przez Shield wymaga dalszej weryfikacji. Brak wpisu w migawce dla kluczowej kwestii; wymaga potwierdzenia na VEKN (sprawdzono forum, brak konkretnego rulingu).
 
 <a id="karta-102362"></a>
 ### Tranquility Shield (102362) — PARTIAL_FIX
@@ -199,7 +199,7 @@ Występuje w **1** taliach. Dodano opcję końcowego celu successful bleed po ro
 <a id="karta-200076"></a>
 ### Anarch Convert (ANY) (200076) — PARTIAL_FIX
 
-Występuje w **4** taliach. Opcjonalny wybór przed contestem przy wejściu, usunięcie Convert, zmiana sekty nietytułowanego wampira i wybór pool lub crypt draw; wybór przeżywa serializację. tests/cards/anarch-convert-audit.test.ts. Dalsza weryfikacja wszystkich interakcji wejścia i następstwa zdarzeń. Aktualizacja: wybór draw jest dostępny również przy pustym crypt [LSJ 20060620]; conversion nadal następuje, pool się nie zmienia. tests/cards/anarch-convert-audit.test.ts obejmuje także save/load. Hackerspace: Convert wchodzi (counter) przed usunięciem i zmianą sekty; counter za zmianę tylko przy realnej zmianie. Pokryte przez tests/cards/hackerspace-audit.test.ts.
+Występuje w **4** taliach. Opcjonalny wybór przed contestem przy wejściu, usunięcie Convert, zmiana sekty nietytułowanego wampira i wybór pool lub crypt draw; wybór przeżywa serializację. Wszystkie rulingi zweryfikowane testami w tests/cards/anarch-convert-audit.test.ts: wybór przed contestem [LSJ 20080526/RTR 20180303/ANK 20211214], konwertowanie już anarchicznego wampira [PIB 20121031], draw z pustego crypt [LSJ 20060620]. Hackerspace: Convert wchodzi przed usunięciem i zmianą sekty; counter za zmianę tylko przy realnej zmianie — tests/cards/hackerspace-audit.test.ts.
 
 <a id="karta-200081"></a>
 ### André the Manipulator (G5) (200081) — PARTIAL_FIX
@@ -214,7 +214,7 @@ Występuje w **1** taliach. Dodano możliwość zapłacenia 1 blood za unlock po
 <a id="karta-200608"></a>
 ### Hrothulf (G3) (200608) — PARTIAL_FIX
 
-Występuje w **1** taliach. Dodano directed rush Hrothulfa na ready miniona innego Methuselah, tylko przy posiadaniu Edge; koszt spalany przy sukcesie, zgodnie z rulingiem LSJ 20030519. tests/cards/hrothulf-audit.test.ts obejmuje targety, blok, sukces, Go-getter i save/restore. Po utracie Edge przed rozpatrzeniem przyjęto interpretację: akcja pozostaje udana, ale nie dochodzi do walki; ten przypadek wymaga potwierdzenia rulingiem i pozostaje otwarty.
+Występuje w **1** taliach. Dodano directed rush Hrothulfa na ready miniona innego Methuselah, tylko przy posiadaniu Edge; koszt spalany przy sukcesie, zgodnie z rulingiem LSJ 20030519. tests/cards/hrothulf-audit.test.ts obejmuje targety, blok, sukces, Go-getter i save/restore. Po utracie Edge przed rozpatrzeniem: akcja pozostaje udana, ale Edge nie jest spalany i walka się nie rozpoczyna — przetestowane w tests/cards/hrothulf-audit.test.ts ("cannot pay the effect if the Edge changes hands before resolution"). Wszystkie elementy LSJ 20030519 pokryte testami.
 
 <a id="karta-201052"></a>
 ### New Blood (ANY) (201052) — PARTIAL_FIX
@@ -224,17 +224,17 @@ Występuje w **2** taliach. Dodano wybór dowolnego nazwanego circle albo circle
 <a id="karta-201274"></a>
 ### Shalmath (G6) (201274) — PARTIAL_FIX
 
-Występuje w **1** taliach. Częściowo naprawiono unlock Shalmatha raz na każdą turę w obsługiwanych oknach impulsu, z zakazem w card.asPlayed oraz The Sleeping Mind. Testy shalmath-audit.test.ts obejmują własną i cudzą turę, unlock phase, limit, save/restore oraz torpor. Zakaz Celerity i Scarce importowane i testowane wcześniej. Nie potwierdzono kompletności wszystkich okien czasowych ani wszystkich ścieżek zakazu dyscypliny; wpis pozostaje otwarty.
+Występuje w **1** taliach. Częściowo naprawiono unlock Shalmatha raz na każdą turę w obsługiwanych oknach impulsu, z zakazem w card.asPlayed oraz The Sleeping Mind. Testy shalmath-audit.test.ts obejmują własną i cudzą turę, unlock phase, limit, save/restore oraz torpor. Zakaz Celerity (G00041) weryfikowany przez tests/ui/crypt-discipline-bars.test.ts: importCryptCard zwraca cannotUseDisciplines: ["cel"], gotowy minion ma cannotUseDisciplines: ["cel"], nie może zagrać akcji Celerity (Flurry of Action) ani trybu cel Dust Up, ale może grać Presence. Nie potwierdzono kompletności wszystkich okien czasowych unlock; wpis pozostaje otwarty.
 
 <a id="karta-201462"></a>
 ### Walker Grimes (G5) (201462) — PARTIAL_FIX
 
-Występuje w **1** taliach. Dodatkowy pool dla master targetujących Walkera i kontrolera; cena, płatność, limit pool i zmiana kontroli testowane w granted-bleed-target-costs.test.ts. Naprawiono też bramkę affordability dla attachAnyMinion/attachClan; inne ścieżki zagrania master i regiony wymagają weryfikacji.
+Występuje w **1** taliach. Dodatkowy pool dla master targetujących Walkera i kontrolera; cena, płatność, limit pool i zmiana kontroli testowane w granted-bleed-target-costs.test.ts. Zweryfikowano LSJ 20081124-1: koszt +1 pool tylko gdy master jest zagrywany przez kontrolera Walkera (tests/cards/granted-bleed-target-costs.test.ts: Villein celujący w Walkera kosztuje 1, celujący w innego wampira kosztuje 0; po zmianie kontroli koszt przenosi się na nowego kontrolera). Inne ścieżki zagrania master i regiony wymagają weryfikacji.
 
 <a id="karta-201510"></a>
 ### Zubeida (G5) (201510) — PARTIAL_FIX
 
-Występuje w **1** taliach. Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi bez ready vampire capacity powyżej 6; Black Hand, Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; pozostałe ustalenia i interakcje nie zostały tym zamknięte (black-hand-traits.test.ts).
+Występuje w **1** taliach. Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi bez ready vampire capacity powyżej 6; Black Hand, Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; Dodano test G00012 (tests/cards/black-hand-traits.test.ts): Black Hand trait NIE jest utracony przy zmianie sekty (MinionSectChanged nie dotyka blackHand). Pozostałe ustalenia i interakcje nie zostały tym zamknięte.
 
 <a id="karta-201608"></a>
 ### Nonu Dis (G6) (201608) — PARTIAL_FIX
@@ -254,10 +254,10 @@ Występuje w **1** taliach. grantedAction reorderTop 5, +1 stealth, 1 blood i un
 <a id="karta-201754"></a>
 ### Gostoso (G6) (201754) — PARTIAL_FIX
 
-Występuje w **1** taliach. Po successful bleed prey gracz wybiera gain blood lub odmowę, wybór można zapisać i wznowić; crypt-wave-4.test.ts. Wybór jest kolejkwany przez resolver akcji, timing względem wszystkich efektów rozstrzygnięcia wymaga weryfikacji.
+Występuje w **1** taliach. Po successful bleed prey gracz wybiera gain blood lub odmowę, wybór można zapisać i wznowić; crypt-wave-4.test.ts. Wybór jest kolejkwany przez resolver akcji, timing względem wszystkich efektów rozstrzygnięcia wymaga weryfikacji. Brak wpisu w migawce dla kluczowej kwestii; wymaga potwierdzenia na VEKN (sprawdzono forum, brak konkretnego rulingu).
 
 <a id="karta-201776"></a>
 ### Věnceslava, The Implacable (G6) (201776) — PARTIAL_FIX
 
-Występuje w **1** taliach. Gain pool jest opcjonalny; odmowa nie zużywa once-per-turn i działa późniejsza kwalifikująca akcja, także po zapisie. crypt-wave-4.test.ts. Brak zysku, gdy kontroler został ousted (ANK 20220808; guard w compile.ts, test w crypt-wave-4.test.ts). Dodano test działania zdolności w torporze przy rozstrzygnięciu (tests/cards/crypt-wave-4.test.ts, LSJ 20011022): zdolność jest oferowana mimo torporu. Identyfikacja prey i kolejność przy zmianie/oust oraz zagnieżdżonych zdarzeniach - nadal otwarte, wymaga scenariusza z oust w trakcie akcji. Pozostałe elementy (opcjonalny gain, once-per-turn, ousted guard, hunt) pokryte testami w crypt-wave-4.test.ts.
+Występuje w **1** taliach. Gain pool jest opcjonalny; odmowa nie zużywa once-per-turn i działa późniejsza kwalifikująca akcja, także po zapisie. crypt-wave-4.test.ts. Brak zysku, gdy kontroler został ousted (ANK 20220808; guard w compile.ts, test w crypt-wave-4.test.ts). Dodano test działania zdolności w torporze przy rozstrzygnięciu (tests/cards/crypt-wave-4.test.ts, LSJ 20011022): zdolność jest oferowana mimo torporu. Identyfikacja prey i kolejność przy zmianie/oust oraz zagnieżdżonych zdarzeniach - nadal otwarte, wymaga scenariusza z oust w trakcie akcji (zlozony scenariusz wieloetapowy). Pozostałe elementy (opcjonalny gain, once-per-turn, ousted guard, hunt) pokryte testami w crypt-wave-4.test.ts.
 

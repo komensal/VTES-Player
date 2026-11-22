@@ -17829,7 +17829,7 @@
     "id": 200608,
     "name": "Hrothulf (G3)",
     "status": "PARTIAL_FIX",
-    "evidence": "Dodano directed rush Hrothulfa na ready miniona innego Methuselah, tylko przy posiadaniu Edge; koszt spalany przy sukcesie, zgodnie z rulingiem LSJ 20030519. tests/cards/hrothulf-audit.test.ts obejmuje targety, blok, sukces, Go-getter i save/restore. Po utracie Edge przed rozpatrzeniem: akcja pozostaje udana, ale Edge nie jest spalany i walka się nie rozpoczyna — przetestowane w tests/cards/hrothulf-audit.test.ts ("cannot pay the effect if the Edge changes hands before resolution"). Wszystkie elementy LSJ 20030519 pokryte testami."
+    "evidence": "Dodano directed rush Hrothulfa na ready miniona innego Methuselah, tylko przy posiadaniu Edge; koszt spalany przy sukcesie, zgodnie z rulingiem LSJ 20030519. tests/cards/hrothulf-audit.test.ts obejmuje targety, blok, sukces, Go-getter i save/restore. Po utracie Edge przed rozpatrzeniem: akcja pozostaje udana, ale Edge nie jest spalany i walka się nie rozpoczyna — przetestowane w tests/cards/hrothulf-audit.test.ts (\u0022cannot pay the effect if the Edge changes hands before resolution\u0022). Wszystkie elementy LSJ 20030519 pokryte testami."
   },
   {
     "id": 200609,
@@ -21825,7 +21825,7 @@
     "id": 201274,
     "name": "Shalmath (G6)",
     "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono unlock Shalmatha raz na każdą turę w obsługiwanych oknach impulsu, z zakazem w card.asPlayed oraz The Sleeping Mind. Testy shalmath-audit.test.ts obejmują własną i cudzą turę, unlock phase, limit, save/restore oraz torpor. Zakaz Celerity (G00041) weryfikowany przez tests/ui/crypt-discipline-bars.test.ts: importCryptCard zwraca cannotUseDisciplines: ["cel"], gotowy minion ma cannotUseDisciplines: ["cel"], nie może zagrać akcji Celerity (Flurry of Action) ani trybu cel Dust Up, ale może grać Presence. Nie potwierdzono kompletności wszystkich okien czasowych unlock; wpis pozostaje otwarty."
+    "evidence": "Częściowo naprawiono unlock Shalmatha raz na każdą turę w obsługiwanych oknach impulsu, z zakazem w card.asPlayed oraz The Sleeping Mind. Testy shalmath-audit.test.ts obejmują własną i cudzą turę, unlock phase, limit, save/restore oraz torpor. Zakaz Celerity (G00041) weryfikowany przez tests/ui/crypt-discipline-bars.test.ts: importCryptCard zwraca cannotUseDisciplines: [\u0022cel\u0022], gotowy minion ma cannotUseDisciplines: [\u0022cel\u0022], nie może zagrać akcji Celerity (Flurry of Action) ani trybu cel Dust Up, ale może grać Presence. Nie potwierdzono kompletności wszystkich okien czasowych unlock; wpis pozostaje otwarty."
   },
   {
     "id": 201275,
