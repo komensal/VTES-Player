@@ -102,6 +102,14 @@ describe("New Blood circle choice", () => {
     expect(vampireCircle(m, false)).toBe("individual:new");
     expect(vampireCircle(m, true)).toBe("named:Kiev");
   });
+  it("two uncontrolled New Bloods are in DIFFERENT circles of one [ANK 20211113]", () => {
+    const nb1 = makeMinion("nb1", "Alice", { name: "New Blood (ANY)", clan: "Blood Brother" });
+    const nb2 = makeMinion("nb2", "Alice", { name: "New Blood (ANY)", clan: "Blood Brother" });
+    // Each is in its own unique circle of one while uncontrolled.
+    expect(vampireCircle(nb1, false)).toBe("individual:nb1");
+    expect(vampireCircle(nb2, false)).toBe("individual:nb2");
+    expect(vampireCircle(nb1, false)).not.toBe(vampireCircle(nb2, false));
+  });
   it("forgets a chosen circle when returned to uncontrolled and chooses again on re-entry", () => {
     const { state, seat, engine } = setup();
     engine.choose("inf:out:new");
