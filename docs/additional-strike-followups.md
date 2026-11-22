@@ -4,13 +4,16 @@ The targeted limited-source fix prevents a second limited grant in the same
 round, separately for each combatant, and resets it for the next round. It
 is **not** a complete audit of the additional-strike timing model.
 
-- **Pending strikes and further sources:** the current grant window can
-  offer a non-limited source while that minion already has additional strikes
-  pending, then closes for the rest of the round. The VEKN ruling says to
-  resolve pending additional strikes before gaining more, when another source
-  is allowed ([LSJ 20001206](https://www.vekn.net/general-rulings)); handling
-  that correctly requires re-opening the appropriate window after the strikes
-  and respecting the initial opportunity and sequencing for both combatants.
+- **Pending strikes and further sources (FIXED):** the grant window no longer
+  opens while a minion has additional strikes pending. Pending additional
+  strikes resolve FIRST, and only then does the grant window open for another
+  source, per [LSJ 20001206](https://www.vekn.net/general-rulings) ("Resolve
+  the pending additional strikes before gaining any further additional
+  strikes"). Fixed by reordering the post-damage-resolution branch in
+  engine.ts; regression test tests/cards/ak47-quickness-order.test.ts (AK-47's
+  pending strike resolves before superior Quickness is offered). Still open:
+  re-opening the grant window after a completed series for BOTH combatants in
+  a multi-source sequence (initial opportunity and sequencing).
 - **Optional weapon grants:** AK-47 and Caseless Rounds grant their optional
   additional strike when the engine sees the gun strike. The striker can now
   DECLINE it in the additional sub-round (`strike:decline`: a no-damage

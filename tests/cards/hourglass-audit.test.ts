@@ -181,3 +181,66 @@ describe("Hourglass choice privacy and restrictions", () => {
     expect(redactFor(state, "Alice").eventLog.at(-1)).toEqual({ type: "CardPlacedOnLibraryTop", seat: "Alice", cardId: "secret" });
   });
 });
+
+describe("Hourglass [TEM] superior unlock-phase counters", () => {
+  const ADD = "choice:Hourglass of the Mind:hg:hourglassUnlock:yes";
+
+  /** Attach the [TEM] superior card directly and sit at Alice's unlock phase. */
+  function atUnlock(blood: number, counters = 0) {
+    const state = threeSeatGame();
+    const tf = state.frames[0]!;
+    if (tf.kind !== "turn") throw new Error("no turn frame");
+    tf.phase = "unlock";
+    tf.unlockDone = false;
+    const m = state.seats[0]!.minions[0]!;
+    m.blood = blood;
+    m.attached.push({
+      card: { id: "hg", name: "Hourglass of the Mind" },
+      locked: false,
+      usedThisPhase: false,
+      ...(counters > 0 ? { counters } : {}),
+      statics: { handSizePerCounter: true },
+      tags: [],
+    });
+    return { state, m, engine: new VtesEngine(state, testRegistry) };
+  }
+
+  it("offers burning 2 blood to add a counter at the bearer's unlock phase", () => {
+    const { engine } = atUnlock(5);
+    expect(ids(engine)).toContain(ADD);
+  });
+
+  it("paying 2 blood adds one counter and raises hand size while ready", () => {
+    const { state, m, engine } = atUnlock(5);
+    expect(handSizeOf(state, "Alice")).toBe(7);
+    engine.choose(ADD);
+    expect(m.blood).toBe(3);
+    const entry = m.attached.find(p => p.card.id === "hg");
+    expect(entry!.counters).toBe(1);
+    expect(handSizeOf(state, "Alice")).toBe(8);
+    // The card stays in play; declining later does not burn it.
+    expect(m.attached.some(p => p.card.id === "hg")).toBe(true);
+  });
+
+  it("no hand-size bonus while the bearer is not ready", () => {
+    const { state, m } = atUnlock(5, 2);
+    m.inTorpor = true;
+    expect(handSizeOf(state, "Alice")).toBe(7);
+    m.inTorpor = false;
+    expect(handSizeOf(state, "Alice")).toBe(9);
+  });
+
+  it("offers nothing when the bearer lacks 2 blood and keeps the card", () => {
+    const { m, engine } = atUnlock(1);
+    expect(ids(engine)).not.toContain(ADD);
+    expect(m.attached.some(p => p.card.id === "hg")).toBe(true);
+  });
+
+  it("declining leaves the counter count and the card untouched", () => {
+    const { m, engine } = atUnlock(5, 1);
+    engine.choose("pass");
+    const entry = m.attached.find(p => p.card.id === "hg");
+    expect(entry!.counters).toBe(1);
+    expect(m.blood).toBe(5);
+  });
+});

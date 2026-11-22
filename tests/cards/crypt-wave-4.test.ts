@@ -815,6 +815,26 @@ describe("Věnceslava", () => {
     expect(state.seats[0]!.pool).toBe(before + 1);
   });
 
+  it("her ability still applies when she is in torpor at resolution [LSJ 20011022]", () => {
+    const state = threeSeatGame();
+    const v = asVampire(find(state, "V1"), "Věnceslava, The Implacable (G6)");
+    const before = state.seats[0]!.pool;
+    const engine = new VtesEngine(state, testRegistry);
+    walkTo(engine, "bleed:V1");
+    runTrace(engine, [["Alice", "bleed:V1"]]);
+    for (let i = 0; i < 40; i++) {
+      const dp = engine.decision();
+      if (!dp) break;
+      if (state.eventLog.some((e) => e.type === "ActionResolved")) break;
+      runTrace(engine, [[dp.seat, dp.options.find((o) => o.id === "pass")?.id ?? dp.options[0]!.id]]);
+    }
+    // She is in torpor at resolution — the ability is still offered.
+    v.inTorpor = true;
+    expect(engine.decision()!.window).toBe("choice");
+    engine.choose("choice:Věnceslava, The Implacable (G6):V1:actionPoolGain:yes");
+    expect(state.seats[0]!.pool).toBe(before + 1);
+  });
+
   it("declining preserves the once-per-turn gain for a later qualifying action", () => {
     const state = threeSeatGame();
     const v = asVampire(find(state, "V1"), "Věnceslava, The Implacable (G6)");

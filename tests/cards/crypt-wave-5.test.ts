@@ -429,6 +429,30 @@ describe("Eulogio", () => {
     // Eulogio should STILL be locked because unlock was prevented
     expect(find(state, "V1").locked).toBe(true);
   });
+
+  // End-to-end: actually PLAY superior The Sleeping Mind on his action, rather
+  // than setting noUnlock by hand. [PIB 20150703]
+  it("end-to-end: superior The Sleeping Mind prevents his reorderTop unlock [PIB 20150703]", () => {
+    const { state, engine } = stacked();
+    const v1 = find(state, "V1");
+    v1.disciplines = { dom: "superior" };
+    v1.blood = 4;
+    state.seats[0]!.hand.push({ id: "sm", name: "The Sleeping Mind" });
+    expect(walkTo(engine, "act:Eulogio")).toBe(true);
+    runTrace(engine, [["Alice", optionIds(engine).find((o) => o.includes(":granted:"))!]]);
+    let smPlayed = false;
+    for (let i = 0; i < 50 && state.frames.some((f) => f.kind === "action" || f.kind === "cardPlay" || f.kind === "choice"); i++) {
+      const dp = engine.decision()!;
+      const sm = dp.options.find((o) => o.id.startsWith("play:The Sleeping Mind:superior"));
+      if (sm && !smPlayed) { smPlayed = true; engine.choose(sm.id); continue; }
+      const pick = dp.options.find((o) => o.id.startsWith("choice:")) ?? dp.options.find((o) => o.id === "pass") ?? dp.options[0]!;
+      engine.choose(pick.id);
+    }
+    expect(smPlayed).toBe(true);
+    // The reorder still happened, but the unlock is prohibited.
+    expect(v1.locked).toBe(true);
+    expect(state.eventLog.some((e) => e.type === "MinionUnlocked" && e.minion === "V1")).toBe(false);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -980,5 +1004,16 @@ describe("Alabástrom", () => {
       if (tf.kind === "turn" && situation === "turn") tf.seat = "Bob";
       expect(optionIds(new VtesEngine(state, testRegistry)).some(o => o.startsWith("ability:Alabástrom"))).toBe(false);
     }
+  });
+  it("offers the unlock in the master phase too, not only the minion phase", () => {
+    const state = threeSeatGame();
+    const a = asVampire(find(state, "V1"), "Alabástrom (G6)");
+    Object.assign(a, { clan: "Gargoyle", locked: true });
+    state.seats[0]!.minions.push(makeMinion("garg", "Alice", { clan: "Gargoyle", locked: true }));
+    const tf = state.frames[0]!;
+    if (tf.kind !== "turn") throw new Error("no turn");
+    tf.phase = "master";
+    const engine = new VtesEngine(state, testRegistry);
+    expect(optionIds(engine)).toContain("ability:Alabástrom (G6):V1:unlock:garg");
   });
 });

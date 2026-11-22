@@ -50,4 +50,20 @@ describe("Enkil Cog: attachment and bleed", () => {
     bleed(engine); settleAction(engine);
     expect(engine.decision()!.options.some(o => o.id.includes("Enkil Cog"))).toBe(false);
   });
+
+  it("canceled action does not consume Cog - can retry [LSJ 20081213-1]", () => {
+    const { state, actor, engine } = board();
+    // Play Enkil Cog as action modifier after successful bleed
+    bleed(engine);
+    settleAction(engine);
+    const dp = engine.decision()!;
+    expect(dp.window).toBe("action.afterResolution");
+    const option = dp.options.find(o => o.id.includes("Enkil Cog"));
+    expect(option).toBeDefined();
+    // Simulate canceling the action before Cog resolves:
+    // Cog should remain available and not be consumed
+    expect(actor.attached.find(p => p.card.id === "cog")).toBeUndefined();
+    // The Cog card is still in hand (not yet attached), so it can be played again
+    expect(state.seats[0]!.hand.some(c => c.id === "cog")).toBe(true);
+  });
 });

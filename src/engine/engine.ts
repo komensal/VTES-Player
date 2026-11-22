@@ -3365,7 +3365,17 @@ export class VtesEngine implements EngineOps {
               // during strike resolution. Only `addlLimited` matters here.
               if (h.addlLimited) cf.usedLimitedAddl[side] = true;
             }
-            if (
+            if (cf.additionalStrikes.acting > 0 || cf.additionalStrikes.opposing > 0) {
+            // "Resolve the pending additional strikes BEFORE gaining any
+            // further additional strikes" [LSJ 20001206]. A pending grant
+            // (e.g. the AK-47's optional strike) resolves first; the grant
+            // window (superior Quickness, Jacko) opens only once none are
+            // left. Additional strikes remain → an extra strike sub-round at
+            // the same range, only for minions with additional strikes (p. 32).
+            cf.strikeRound = "additional";
+            cf.strikes = { acting: null, opposing: null };
+            cf.step = "chooseStrike";
+            } else if (
               !cf.additionalStrikesGranted &&
               this.anyCanGrantAdditionalStrikes(cf)
             ) {
@@ -3376,13 +3386,7 @@ export class VtesEngine implements EngineOps {
               cf.awaiting = "acting";
               cf.declines = 0;
               return true;
-            } else if (cf.additionalStrikes.acting > 0 || cf.additionalStrikes.opposing > 0) {
-            // Additional strikes remain → an extra strike sub-round at the
-            // same range, only for minions with additional strikes (p. 32).
-            cf.strikeRound = "additional";
-            cf.strikes = { acting: null, opposing: null };
-            cf.step = "chooseStrike";
-          } else {
+            } else {
             // "If either minion inflicts MORE DAMAGE than the other this
             // round, that minion gets an optional press this round"
             // (Haymaker). Settled here, leaving damage resolution, which
