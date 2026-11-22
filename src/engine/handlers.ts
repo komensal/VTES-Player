@@ -744,6 +744,8 @@ export interface EngineOps {
    *  pending block attempt is CANCELLED, not failed, so the blocker is
    *  not locked for blocking (p. 47). docs/end-action-design.md §3 */
   endAction(args?: { unlockActor?: boolean; lockBlocker?: boolean }): void;
+  /** Cancel a queued follow-up combat (Obedience LSJ 19991025). */
+  cancelQueuedCombat(): void;
   /** "…cannot perform the same action again this turn" — for the acting
    *  minion, or for every minion of the acting Methuselah. */
   barRepeatAction(scope: "minion" | "seat"): void;
@@ -2216,6 +2218,12 @@ export interface CardHandler {
   /** Action cards only: the card's own resolution effect, run when the
    *  action succeeds (after generic effects like the bleed itself). */
   resolveCardAction?(af: ActionFrame, ops: EngineOps): void;
+  /** "Can be played by an unlocked older vampire to avoid a new combat
+   *  queued after a preceding combat" (Obedience, LSJ 19991025). */
+  hasEndActionBeforeCombatWithYoungerActor?(): boolean;
+  /** Discipline levels available for this effect, e.g. ["basic"] or
+   *  ["basic", "superior"]. Used to build the pre-combat choice. */
+  endActionBeforeCombatWithYoungerActorLevels?(): ("basic" | "superior")[];
 }
 
 export type HandlerRegistry = Record<string, CardHandler>;

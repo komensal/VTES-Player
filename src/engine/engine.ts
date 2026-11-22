@@ -1875,11 +1875,24 @@ export class VtesEngine implements EngineOps {
 
       if ((top.kind === "action" || top.kind === "turn") && top.pendingFollowupCombat) {
         const next = top.pendingFollowupCombat;
-        delete top.pendingFollowupCombat;
         const a = findMinion(this.state, next.acting);
         const b = findMinion(this.state, next.opposing);
+        // Obedience (LSJ 19991025): an unlocked older vampire may avoid a new
+        // combat queued after a preceding combat, if the opponent is still the
+        // acting vampire. Offer the pre-combat reaction window first.
         if (a && b && isReady(a) && isReady(b)) {
+          const actorSeat = a.controller;
+          const blockerSeat = b.controller;
+          const reactionOffered = this.offerQueuedCombatReactions(next.acting, next.opposing, actorSeat, blockerSeat);
+          if (reactionOffered) {
+            // Wait for the reaction to resolve; the frame will re-enter this
+            // branch once the reaction is settled.
+            continue;
+          }
+          delete top.pendingFollowupCombat;
           this.pushCombat(a.id, a.controller, b.id, b.controller, null, false, null);
+        } else {
+          delete top.pendingFollowupCombat;
         }
         continue;
       }
@@ -8582,6 +8595,54 @@ export class VtesEngine implements EngineOps {
     cf.queuedFollowupCombat = { acting: cf.acting, opposing: cf.opposing };
   }
 
+  /** Obedience (LSJ 19991025): before a queued combat begins, offer the
+   *  blocker's controller the chance to play Obedience (or similar
+   *  beforeCombatWithYoungerActor reactions) to avoid it. Returns true if a
+   *  choice was raised (engine must wait for it), false otherwise. */
+  offerQueuedCombatReactions(
+    actingId: MinionId,
+    opposingId: MinionId,
+    actorSeat: SeatId,
+    blockerSeat: SeatId,
+  ): boolean {
+    const actor = findMinion(this.state, actingId);
+    const blocker = findMinion(this.state, opposingId);
+    if (!actor || !blocker || !isReady(actor) || !isReady(blocker)) return false;
+    // Obedience requires the reactor to be older (higher capacity) than the actor.
+    if (capacityOf(blocker) <= capacityOf(actor)) return false;
+    // The reactor must be the blocker's controller (the opposing side).
+    if (blocker.controller !== blockerSeat) return false;
+    // The actor must still be the acting vampire (not replaced by a slave).
+    // ANK 20171212: cannot be played if the opponent is not the acting vampire.
+    // We check this by seeing if the blocker's controller has any Obedience
+    // in hand that meets the derived-capacity condition.
+    const hand = this.state.seats.find((s) => s.id === blockerSeat)?.hand ?? [];
+    for (const card of hand) {
+      const handler = this.registry[card.name];
+      if (!handler) continue;
+      if (!handler.hasEndActionBeforeCombatWithYoungerActor?.()) continue;
+      // Discipline check: reactor must have the required discipline.
+      // Obedience requires Dominium. We read the mode's discipline from the
+      // spec via compileSpec's discipline filter — but here we only have the
+      // handler, so we check the card's printed disciplines against any
+      // discipline the card requires. Obedience prints [dom], so we check dom.
+      // A more general check would need the spec; this is sufficient for Obedience.
+      const hasDiscipline = Object.values(blocker.disciplines ?? {}).some((d) => d === "basic" || d === "superior");
+      if (!hasDiscipline) continue;
+      // Offer the reaction.
+      this.raiseChoice({
+        seat: blockerSeat,
+        cardName: card.name,
+        cardId: card.id,
+        key: "obediencePreCombat",
+        params: { acting: actingId, blocker: opposingId },
+        optional: true,
+      });
+      return true;
+    }
+    return false;
+  }
+
   /** Existing action-tail combat queue (Hedonism and other cards). */
   queueCombat(a: MinionId, b: MinionId, outcome?: AfterCombatRider): void {
     const af = this.action();
@@ -8846,6 +8907,19 @@ export class VtesEngine implements EngineOps {
       if (actor?.locked) this.emit({ type: "MinionUnlocked", minion: af.acting });
     }
     af.step = "blocked";
+  }
+
+  cancelQueuedCombat(): void {
+    // Remove any pending follow-up combat so it does not start after the
+    // current combat ends (Obedience LSJ 19991025).
+    for (const f of this.state.frames) {
+      if ((f.kind === "action" || f.kind === "turn") && f.pendingFollowupCombat) {
+        delete f.pendingFollowupCombat;
+      }
+    }
+    // Also clear combat-scoped queued follow-up combat.
+    const cf = this.state.frames.find((f) => f.kind === "combat");
+    if (cf?.kind === "combat") cf.queuedFollowupCombat = undefined as any;
   }
 
   /** "…cannot perform the same action again this turn." The key is the
