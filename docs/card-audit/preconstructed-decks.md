@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **35 różnych kart**: CODE_DISCREPANCY 0, PARTIAL_FIX 35, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- Otwarte ustalenia dotyczą **33 różnych kart**: CODE_DISCREPANCY 0, PARTIAL_FIX 33, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
 - **22/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **102**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **104**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -34,7 +34,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | Fifth Edition (Anarch) / Banu Haqim | pełna | 34 | 1 | [Rego Motum](#karta-101588) |
 | Fifth Edition (Anarch) / Brujah | pełna | 37 | 0 | — |
 | Fifth Edition (Anarch) / Gangrel | pełna | 38 | 0 | — |
-| Fifth Edition (Anarch) / Ministry | pełna | 36 | 3 | [Heart of Nizchetus](#karta-100903), [Revelation of the Serpent](#karta-102233), [Nonu Dis (G6)](#karta-201608) |
+| Fifth Edition (Anarch) / Ministry | pełna | 36 | 2 | [Heart of Nizchetus](#karta-100903), [Revelation of the Serpent](#karta-102233) |
 | Fifth Edition (Companion) / Ravnos | pełna | 39 | 0 | — |
 | Fifth Edition (Companion) / Salubri | pełna | 43 | 3 | [Rolling with the Punches](#karta-101649), [Touch of Valeren](#karta-102262), [Opikun (G7)](#karta-201680) |
 | Fifth Edition (Companion) / Tzimisce | pełna | 40 | 2 | [War Ghoul](#karta-102144), [Childe of the Revolution](#karta-102246) |
@@ -54,7 +54,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | New Blood III / Tzimisce | half-deck | 34 | 0 | — |
 | Sabbat V5 / Path of Caine | pełna | 36 | 3 | [Yawp Court](#karta-102199), [Dance with the Devil](#karta-102315), [Rage of Apedemak](#karta-102336) |
 | Sabbat V5 / Path of Cathari | pełna | 35 | 1 | [Gostoso (G6)](#karta-201754) |
-| Sabbat V5 / Path of Death | pełna | 41 | 3 | [Obedience](#karta-101309), [Dance of the Dead](#karta-102314), [Eulogio Sánchez de los Reyes (G6)](#karta-201750) |
+| Sabbat V5 / Path of Death | pełna | 41 | 2 | [Obedience](#karta-101309), [Dance of the Dead](#karta-102314) |
 | Sabbat V5 / Path of Power and the Inner Voice | pełna | 42 | 1 | [Věnceslava, The Implacable (G6)](#karta-201776) |
 | 🏆 Tournament Winners 2025 / 2025-10-19 — Shalmath Toolbox (EC Day 2, Aarhus — Nerijus Mikalajūnas, 50p) | pełna | 36 | 12 | [Enkil Cog](#karta-100645), [Eye of Hazimel](#karta-100678), [Heart of Nizchetus](#karta-100903), [Hourglass of the Mind](#karta-100941), [Nephandus](#karta-101272), [Outside the Hourglass](#karta-101338), [Summon History](#karta-101897), [Talbot's Chainsaw](#karta-101931), [Alex Wilkins (G5)](#karta-200048), [New Blood (ANY)](#karta-201052), [Shalmath (G6)](#karta-201274), [Walker Grimes (G5)](#karta-201462) |
 | 🏆 Tournament Winners 2025 / 2025-06-21 — Gangrel Death Star (NAC 2025, Columbus — Martin Weinmayer, 62p, Wall) | pełna | 41 | 2 | [Heart of Nizchetus](#karta-100903), [André the Manipulator (G5)](#karta-200081) |
@@ -134,7 +134,7 @@ Występuje w **1** taliach. Basic [tem] i superior [TEM] wdrożone: X wybierane 
 <a id="karta-101931"></a>
 ### Talbot's Chainsaw (101931) — PARTIAL_FIX
 
-Występuje w **1** taliach. Paczka 4: upkeep z karty — "If the bearer is ready during your unlock phase, this weapon inflicts 3 unpreventable damage on a ready minion you control". Wybiera KONTROLER (nie prey): unlockPhaseDamage.chooser = "controller" (spec.ts, compile.ts), bez wyboru gdy nosiciel nie jest gotowy lub nie ma gotowego miniona; tests/cards/talbot-chainsaw-unlock.test.ts. Press: "1 press (mandatory), only usable to continue combat during the first round" — nowa pula mandatoryFirstRoundContinuePress (state.ts, engine.ts): w rundzie 1 press jest obowiązkowy, a pula wygasa przy końcu rundy; tests/cards/talbot-chainsaw-press.test.ts (2 testy, mutacja wykryta). Wcześniej: cannotHunt, rush z stealth 1, prevent 1 per combat, blokada hunt przy 0 blood (bots-hunt.test.ts). Nadal nieweryfikowane: rush/prevent i ich interakcje z innymi kartami wymagają przeglądu.
+Występuje w **1** taliach. Paczka 4: upkeep z karty — "If the bearer is ready during your unlock phase, this weapon inflicts 3 unpreventable damage on a ready minion you control". Wybiera KONTROLER (nie prey): unlockPhaseDamage.chooser = "controller" (spec.ts, compile.ts), bez wyboru gdy nosiciel nie jest gotowy lub nie ma gotowego miniona; tests/cards/talbot-chainsaw-unlock.test.ts. Press: "1 press (mandatory), only usable to continue combat during the first round" — nowa pula mandatoryFirstRoundContinuePress (state.ts, engine.ts): w rundzie 1 press jest obowiązkowy, a pula wygasa przy końcu rundy; tests/cards/talbot-chainsaw-press.test.ts (2 testy, mutacja wykryta). Wcześniej: cannotHunt, rush z stealth 1, prevent 1 per combat, blokada hunt przy 0 blood (bots-hunt.test.ts). Rush grant i prevent per combat przetestowane w tests/cards/talbot-chainsaw-press.test.ts (5 testów, w tym kontrola mutacyjna). Interakcje z innymi kartami wymagają dalszej weryfikacji.
 
 <a id="karta-102144"></a>
 ### War Ghoul (102144) — PARTIAL_FIX
@@ -221,20 +221,10 @@ Występuje w **1** taliach. Dodatkowy pool dla master targetujących Walkera i k
 
 Występuje w **1** taliach. Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi bez ready vampire capacity powyżej 6; Black Hand, Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; Dodano test G00012 (tests/cards/black-hand-traits.test.ts): Black Hand trait NIE jest utracony przy zmianie sekty (MinionSectChanged nie dotyka blackHand). Pozostałe ustalenia i interakcje nie zostały tym zamknięte.
 
-<a id="karta-201608"></a>
-### Nonu Dis (G6) (201608) — PARTIAL_FIX
-
-Występuje w **1** taliach. Poprawiono ofertę: opcjonalny wybór bezpośrednio po konkretnym zagraniu mastera (także po zagnieżdżonych wyborach), odmowa nie zużywa użycia; limit raz na fazę i jego reset. Regresje crypt-wave-7.test.ts obejmują Blood Doll, dwa mastery, legalność celu i save/restore. Wcześniejsze założenie o braku limitu było błędne: ruling Rules Directora potwierdza szablon „during X, do Y” (https://www.vekn.net/forum-es/rules-questions/79835-nonu-dis-and-during-x-do-y). Wpływ anulowania i nietypowych sposobów zagrania mastera wymaga dalszych testów; hook teraz ignoruje anulowane zagrania (info.canceled).
-
 <a id="karta-201680"></a>
 ### Opikun (G7) (201680) — PARTIAL_FIX
 
 Występuje w **2** taliach. Opikun może chronić siebie lub innego kontrolowanego vampire przed nieaggravated damage ze strike przeciwnika, bez zmiany wymogu another u Huldu. tests/cards/hecata-huldu-audit.test.ts. Stare zapisy z pakietem bez strikePhase mają niejednoznaczne pochodzenie; pozostałe interakcje nieweryfikowane. Aktualizacja: zapobieganie obejmuje wiele nieaggravated pakietów tego samego strike, z wyłączeniem unpreventable, innego strike i environmental; test z pakietami i starym zapisem w tests/cards/hecata-huldu-audit.test.ts. Nadal ograniczenia starszych zapisów oraz okna/właściwej kolejności obrażeń. Paczka 2: ponownie sprawdzono tekst (independent, do 2 nieaggravated z jednego strike). Wciąż otwarte: okno kolejności obrażeń i stare zapisy bez pochodzenia; status bez zmian. Model danych obrazen jest poprawny: nowe pakiety ze strike maja strikePhase i fromStrike (ammunition jest scalany do glownego pakietu, potwierdzone testem tests/cards/ammo-strike-provenance.test.ts); stare zapisy ze strikePhase maja fromStrike odtwarzane migracja (engine.ts:319); stare zapisy BEZ strikePhase pozostaja celowo niejednoznaczne i nie sa zgadywane jako strike (np. Outside the Hourglass ma source=przeciwnik ale nie jest strike) — to swiadoma decyzja, nie bug.
-
-<a id="karta-201750"></a>
-### Eulogio Sánchez de los Reyes (G6) (201750) — PARTIAL_FIX
-
-Występuje w **1** taliach. grantedAction reorderTop 5, +1 stealth, 1 blood i unlockActor; porównano spec i kompilator. Ograniczony zakres; bez nowego scenariusza. Unlock przy reorderTop pomijany przy superior Sleeping Mind (ga.unlockActor && !af.noUnlock w compile.ts). Dodano test end-to-end: rzeczywiste zagranie superior The Sleeping Mind na jego akcję blokuje unlock (tests/cards/crypt-wave-5.test.ts, 'end-to-end: superior The Sleeping Mind prevents his reorderTop unlock', PIB 20150703).
 
 <a id="karta-201754"></a>
 ### Gostoso (G6) (201754) — PARTIAL_FIX
