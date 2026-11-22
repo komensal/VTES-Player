@@ -1005,4 +1005,15 @@ describe("Alabástrom", () => {
       expect(optionIds(new VtesEngine(state, testRegistry)).some(o => o.startsWith("ability:Alabástrom"))).toBe(false);
     }
   });
+  it("offers the unlock in the master phase too, not only the minion phase", () => {
+    const state = threeSeatGame();
+    const a = asVampire(find(state, "V1"), "Alabástrom (G6)");
+    Object.assign(a, { clan: "Gargoyle", locked: true });
+    state.seats[0]!.minions.push(makeMinion("garg", "Alice", { clan: "Gargoyle", locked: true }));
+    const tf = state.frames[0]!;
+    if (tf.kind !== "turn") throw new Error("no turn");
+    tf.phase = "master";
+    const engine = new VtesEngine(state, testRegistry);
+    expect(optionIds(engine)).toContain("ability:Alabástrom (G6):V1:unlock:garg");
+  });
 });
