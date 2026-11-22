@@ -188,7 +188,7 @@
   {
     "id": 100032,
     "name": "AK-47",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Dodatkowy strike jest nadal przyznawany po strike'u z broni, ale jest OPCJONALNY: w dodatkowej sub-rundzie strzelec może wybrać 'strike:decline' (bez obrażeń, zwalnia zobowiązanie do broni). Flaga CombatFrame.optionalAdditionalStrike jest ustawiana tylko dla opcjonalnych przyznań (AK-47, Caseless Rounds); zwykłe dodatkowe strike'i jej nie mają. Testy: tests/cards/weapon-riders.test.ts + last-equipment-modifiers.test.ts: 57 testów łącznie, w tym 'the optional extra strike can be DECLINED'. Pełne tests/cards+tests/engine: 398 plików, exit 0. Wybór limitowanego źródła w oknie grantAdditionalStrikes ZWERYFIKOWANY: tests/cards/additional-strike-limit.test.ts (AK-47 i Blur oferowane razem; wybór jednego blokuje drugie przez usedLimitedAddl). NAPRAWIONO LSJ 20001206: silnik rozstrzyga pending additional strikes PRZED otwarciem grant window (zamiana kolejności warunków w engine.ts; test tests/cards/ak47-quickness-order.test.ts, kontrola mutacyjna OK). Pozostaje otwarte jedynie pełne ponowne otwarcie grant window po serii strike'ów dla obu walczących (sekwencja wieloźródłowa), docs/additional-strike-followups.md."
   },
   {
@@ -1358,7 +1358,7 @@
   {
     "id": 100227,
     "name": "Blur",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Zweryfikowano: basic daje 1 dodatkowy strike, superior 2 (limited), grant po pierwszej parze; tests/cards/combat-strikes.test.ts (Blur superior: 3 uderzenia M, 2 dodatkowe sub-rundy) i Quickness współistniejący z Blur (Quickness nieograniczony nie zużywa źródła limitowanego); limit egzekwowany przez usedLimitedAddl (tests/cards/weapon-riders.test.ts: AK-47 i limitowany Blur). NAPRAWIONO LSJ 20001206: silnik rozstrzyga pending additional strikes PRZED otwarciem grant window (zamiana kolejności warunków w engine.ts; test tests/cards/ak47-quickness-order.test.ts, kontrola mutacyjna OK). Pozostaje otwarte jedynie pełne ponowne otwarcie grant window po serii strike'ów dla obu walczących (sekwencja wieloźródłowa), docs/additional-strike-followups.md. Nie jest błędem specyficznym dla Blur."
   },
   {
@@ -3866,7 +3866,7 @@
   {
     "id": 100645,
     "name": "Enkil Cog",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Po successful bleed przeciw prey karta jest teraz unikalnym permanentem na aktorze capacity >=10 i daje mu stałe +1 bleed. tests/cards/enkil-cog-audit.test.ts. Wciąż brak dodatkowej akcji w dowolnej minion phase, a relacja prey po oust wymaga weryfikacji. Paczka 2: LSJ 20081213-1 (anulowana akcja przy zagraniu nie zużywa Cog) nie ma testu; dodatkowa akcja w minion phase nadal brakuje. Status bez zmian."
   },
   {
@@ -4064,7 +4064,7 @@
   {
     "id": 100678,
     "name": "Eye of Hazimel",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Paczka 2: 5 unpreventable environmental damage na bearera przy spaleniu przez burnPermanent (onLeavePlay, eye-hazimel-audit.test.ts). Paczka 3: upkeep w unlock phase — \"burn 1 pool or burn this equipment\" przez hook onControllerUnlock i wybór permanentPoolOrBurn; bez puli karta spala się od razu (tests/cards/eye-hazimel-unlock.test.ts). Zakaz przenoszenia/kradzieży przy gotowym bearerze: statyka untouchableWhileBearerReady filtruje cele kradzieży (enumeratePermanentTargets) i blokuje ControlChanged w changePermanentControl; test w tym samym pliku. Spalenie bearera razem z kartą (burnMinion emituje PermanentBurned dla dołączonych kart, bez burnPermanent): hook obrażeń nie działa, ale bearer jest już poza grą, więc obrażenia nie mają adresata i wynik jest ten sam. Nie jest to luka reguły; nie ma rulingu dla tego przypadku. Nadal otwarte: ogólny ruch sprzętu między wampirami nie jest modelowany, więc zakaz pokrywa tylko przypadki, które silnik zna."
   },
   {
@@ -7628,7 +7628,7 @@
   {
     "id": 101272,
     "name": "Nephandus",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Zweryfikowano end-to-end: pełna walka (bleed, blok przez Nephandus, strike wyboru) oferuje „Nephandus: strike (1R)” obok hand strike; wybór ranged strike zabiera 1 krew opozycji, a jego własne życie nie spada przy hand strike przeciwnika (redukcja 1, tests/cards/nephandus.test.ts, 7 testów). Wcześniej: redukcja tylko w combat i tylko od strike/damaging effect przeciwnika; negatywne przypadki poza walką i środowiskowe. Zweryfikowano LSJ 20091123-2 (tests/cards/nephandus.test.ts): obrażenia z Aim (Target Head +2) NIE są redukowane osobno — redukcja 1 stosowana raz na cały strike (1+2=3 -> 2), bo Aim jest scalany ze strike przed incomingDamageReduction. Dodano test redukcji broni przeciwnika (tests/cards/nephandus.test.ts, LSJ 20091123-2): strike z .44 Magnum (2R) redukowany o 1. Pozostaje nieweryfikowany pełny zakres efektow strike 1R poza tym przebiegiem."
   },
   {
@@ -7850,7 +7850,7 @@
   {
     "id": 101309,
     "name": "Obedience",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Dodano sprawdzanie młodszego działającego vampire z uwzględnieniem capacity, właściwego blockera i powodzenia próby bloku; dodano reakcję celu niezablokowanego rush w state C. tests/cards/end-action.test.ts. Reakcja na rush korzysta z istniejącego okna C, a nie odrębnego impulsu bezpośrednio przed rozpoczęciem combat po zakończeniu innych efektów resolution; pełny timing i pozostałe interakcje nadal wymagają pracy. Paczka 1: pokryte przez end-action.test.ts (tylko blocker, młodszy vampire, rush, basic/superior). Nieobjęte: ANK 20171212 (zastąpiony przez slave nie może grać) — w modelu nieosiągalne: silnik nigdy nie przypisuje ponownie af.acting, więc zastąpienie wampira nie zmienia przeciwnika w akcji. LSJ 19991025 (starszy unlocked vampire przed nową walką) — otwarte. Sonda: Psyche! superior jest oferowana w combat.endOfRound (gdy Bob nie kontynuuje) i tworzy drugą walkę; Obedience nie ma okna przed startem tej walki. Bramka beforeCombatWithYoungerActor (compile.ts ~5435) obejmuje tylko walkę z akcji (stan C, blok, rush), nie walkę kolejkowaną. Domknięcie wymaga nowego okna 'przed startem kolejkowanej walki' w silniku — zmiana w przepływie walki, do akceptacji. Status bez zmian."
   },
   {
@@ -8024,7 +8024,7 @@
   {
     "id": 101338,
     "name": "Outside the Hourglass",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Dodano wariant basic tem maneuver i limit superior per vampire/runda. Superior jest jednorazowy i pochodzi od wampira, nie environmental, a pending damage rozstrzygane jest przed strike; tests/cards/outside-hourglass-audit.test.ts obejmuje oba wampiry, save/load i źródło. Zweryfikowano ANK 20180104 (tests/cards/outside-hourglass-premature.test.ts): obrażenia superior zostają zadane, gdy walka kończy się przedwcześnie w beforeRange; silnik naprawiony (engine.ts: oczekujące obrażenia przed range rozstrzygane przed zakończeniem). Zweryfikowano G00164 / ANK 20170930 (tests/cards/outside-hourglass-audit.test.ts): generyczna prevention (Resilience [for] basic) jest oferowana dla obrażeń pre-range i redukuje je (2 -> 1). Otwarte pozostaje jedynie jednoczesne mendowanie wielu źródeł pre-range ('all damages prevented and mended together'), gdy obie strony zagrają superior."
   },
   {
@@ -9524,7 +9524,7 @@
   {
     "id": 101588,
     "name": "Rego Motum",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Oba tryby ograniczono do obrażeń ze strike przeciwnika, nie dowolnego damage. tests/cards/prevention-provenance-audit.test.ts. Nowe zapisy przechowują pochodzenie damage, stare pakiety bez strikePhase (np. bonus ammunition) nie pozwalają odtworzyć źródła i wymagają dalszego rozwiązania; inne interakcje nieweryfikowane. Paczka 1: prevention-provenance-audit.test.ts pokrywa ograniczenie do strike przeciwnika. Zweryfikowano RTR 20041202 dla obu trybów (tests/cards/rego-motum-ruling.test.ts, 3 testy: 1 punkt przy basic zapobiega 1 i nic nie przechodzi dalej; superior zapobiega 3 z 3; basic przy 3 zapobiega 2 i zostawia 1; mutacja nieograniczonego zapobiegania wykrywana). Status bez zmian. Model danych obrazen jest poprawny: nowe pakiety ze strike maja strikePhase i fromStrike (ammunition jest scalany do glownego pakietu, potwierdzone testem tests/cards/ammo-strike-provenance.test.ts); stare zapisy ze strikePhase maja fromStrike odtwarzane migracja (engine.ts:319); stare zapisy BEZ strikePhase pozostaja celowo niejednoznaczne i nie sa zgadywane jako strike (np. Outside the Hourglass ma source=przeciwnik ale nie jest strike) — to swiadoma decyzja, nie bug."
   },
   {
@@ -9890,7 +9890,7 @@
   {
     "id": 101649,
     "name": "Rolling with the Punches",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Superior działa tylko na strike przeciwnika, także na kolejne pakiety w rundzie, a nie na environmental lub unpreventable damage; respektuje zakaz prevention przez dyscyplinę. tests/cards/prevention-provenance-audit.test.ts. Stare zapisy z pakietem bez strikePhase mają niejednoznaczne pochodzenie; inne interakcje nieweryfikowane. Paczka 1: prevention-provenance-audit.test.ts pokrywa strike i brak wpływu na environmental/unpreventable. Zweryfikowano ANK 20210226 dla superior (tests/cards/rolling-punches-burn.test.ts: bramka wymaga 1 krwi na spalenie, a redukcja kosztu nie zmniejsza spalenia; mutacja bramki wykryta). Status bez zmian. Model danych obrazen jest poprawny: nowe pakiety ze strike maja strikePhase i fromStrike (ammunition jest scalany do glownego pakietu, potwierdzone testem tests/cards/ammo-strike-provenance.test.ts); stare zapisy ze strikePhase maja fromStrike odtwarzane migracja (engine.ts:319); stare zapisy BEZ strikePhase pozostaja celowo niejednoznaczne i nie sa zgadywane jako strike (np. Outside the Hourglass ma source=przeciwnik ale nie jest strike) — to swiadoma decyzja, nie bug."
   },
   {
@@ -11378,7 +11378,7 @@
   {
     "id": 101897,
     "name": "Summon History",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Basic [tem] i superior [TEM] wdrożone: X wybierane przy zagraniu i płacone wtedy (LSJ 20100314); szukanie w bibliotece i/lub stosie odrzuconych allies, retainers i equipment o koszcie <= X (krew albo pool), wejście na tego vampira z życiem startowym; ally wchodzi jako osobny minion (AllyEnteredPlay, nie recruited, więc może działać w tej turze, LSJ 20100302-1), bez zapłaty; superior: wybór non-scarce vampira z krypty lub stosu o capacity <= X, wejście bez krwi, krypta tasowana. Usunięto stub actionStealth 1, którego karta nie drukuje. beforeVampireEnteredPlay nie dotyczy tej karty: hook działa tylko przy przejściu z regionu niekontrolowanego w fazie influence (New Blood), a Summon History jest akcją. Otwarte: retainer i equipment wchodzą przez attachFromZone bez jawnego wyboru wersji inferior (RBK equip, G00110); equipment z dyscypliną ma w spec tylko wersję basic (brak zaimplementowanych wersji superior), więc wchodzi inferior zgodnie z G00110; nie ma equipment z dyscypliną i zaimplementowanymi wersjami superior do pełnego przetestowania. Ally na vampira: przyjęto odczyt, że ally jest osobnym minionem, a nie załącznikiem, bo silnik nie modeluje przypinania allies. Wampiry spalone przed zmianą nie mają migawki. Testy: tests/cards/summon-history.test.ts (17 testów)."
   },
   {
@@ -11582,7 +11582,7 @@
   {
     "id": 101931,
     "name": "Talbot's Chainsaw",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Paczka 4: upkeep z karty — \"If the bearer is ready during your unlock phase, this weapon inflicts 3 unpreventable damage on a ready minion you control\". Wybiera KONTROLER (nie prey): unlockPhaseDamage.chooser = \"controller\" (spec.ts, compile.ts), bez wyboru gdy nosiciel nie jest gotowy lub nie ma gotowego miniona; tests/cards/talbot-chainsaw-unlock.test.ts. Press: \"1 press (mandatory), only usable to continue combat during the first round\" — nowa pula mandatoryFirstRoundContinuePress (state.ts, engine.ts): w rundzie 1 press jest obowiązkowy, a pula wygasa przy końcu rundy; tests/cards/talbot-chainsaw-press.test.ts (2 testy, mutacja wykryta). Wcześniej: cannotHunt, rush z stealth 1, prevent 1 per combat, blokada hunt przy 0 blood (bots-hunt.test.ts). Rush grant i prevent per combat przetestowane w tests/cards/talbot-chainsaw-press.test.ts (5 testów, w tym kontrola mutacyjna). Interakcje z innymi kartami wymagają dalszej weryfikacji."
   },
   {
@@ -12860,7 +12860,7 @@
   {
     "id": 102144,
     "name": "War Ghoul",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Overlay wymaga rekrutującego Tzimisce i uwzględnia modyfikatory kosztu; testy rush-cards.test.ts i retainer-wave.test.ts. Zweryfikowano RTR 19961113 (Ghoul jako jedyny sojusznik musi spalić się sam) i ANK 20170309-2 (wejście każdą drogą): tests/cards/war-ghoul-burn-rule.test.ts, 3 testy; mutacja usuwająca opcję 'self' wykryta. Pozostałe interakcje alternatywnych kosztów i rekrutacji wymagają dalszej weryfikacji."
   },
   {
@@ -13394,7 +13394,7 @@
   {
     "id": 102233,
     "name": "Revelation of the Serpent",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Superior oferuje wybór corruption tylko po rozstrzygnięciu oust i okna Life Boon; po oust celu nie oferuje unlock [ANK 20220210], po uratowaniu celu umożliwia wybór również po save/load; Sleeping Mind blokuje unlock. Testy revelation-of-the-serpent.test.ts. Pozostałe efekty sukcesu, kolejność i interakcje wymagają weryfikacji. Paczka 1: ANK 20220210 (ousted przez bleed nie odblokowuje) pokryte przez revelation-of-the-serpent.test.ts; Glowne efekty sukcesu pokryte testami (tests/cards/revelation-of-the-serpent.test.ts): superior +1 bleed, burn 2 corruption -> unlock, odmowa, wybor miniona, Sleeping Mind blokuje unlock. Pozostaje kolejnosc wzgledem oust/Life Boon (zlozony scenariusz). Status bez zmian."
   },
   {
@@ -13568,7 +13568,7 @@
   {
     "id": 102262,
     "name": "Touch of Valeren",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Combat ograniczono do strike przeciwnika; prevention-provenance-audit.test.ts bada dostępność i źródła. Action dopuszcza pełnego aktora, jeśli koszt krwi zostawia miejsce, respektuje ochronę przed wyborem i limit starting life ally; minion-target-actions.test.ts. Stare pakiety bez strikePhase i pełne przejście superior oraz dalsze interakcje pozostają otwarte. Paczka 1: minion-target-actions.test.ts i prevention-provenance-audit.test.ts pokrywają akcję i combat. Zweryfikowano LSJ 20001114 dla basic combat (tests/cards/touch-valeren-ruling.test.ts: opcja jest oferowana tylko przy obrażeniach do zapobieżenia, nie bez nich). Nadal nie zweryfikowano starych pakietów bez strikePhase. Status bez zmian. Model danych obrazen jest poprawny: nowe pakiety ze strike maja strikePhase i fromStrike (ammunition jest scalany do glownego pakietu, potwierdzone testem tests/cards/ammo-strike-provenance.test.ts); stare zapisy ze strikePhase maja fromStrike odtwarzane migracja (engine.ts:319); stare zapisy BEZ strikePhase pozostaja celowo niejednoznaczne i nie sa zgadywane jako strike (np. Outside the Hourglass ma source=przeciwnik ale nie jest strike) — to swiadoma decyzja, nie bug."
   },
   {
@@ -13880,7 +13880,7 @@
   {
     "id": 102314,
     "name": "Dance of the Dead",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Zdolność można teraz aktywować w dalszych oknach walki, w tym w kroku press. wraith-zombie.test.ts sprawdza press, zużycie ostatniego countera i spalenie karty, limit na combat, kontrolę celu oraz maneuver zachowany do następnej rundy po save/restore. Dodano okno damage resolution (wraith-zombie.test.ts: opcja jest oferowana i zdejmuje licznik). Pozostają do zbadania pozostałe okna oraz interakcje z ograniczeniami ruchu i timingiem. Uwaga: ogólna legalność kart library wymagających Path nadal wymaga egzekwowania; samo pole Path przywrócono do registry."
   },
   {
@@ -14162,7 +14162,7 @@
   {
     "id": 102362,
     "name": "Tranquility Shield",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Zachowuje niezależne ograniczenia przy anulowaniu frenzy, zarówno nałożone przed nim, jak po nim, także po save/load; testy frenzy-direction-audit.test.ts. W starych zapisach brak wystarczającej informacji o pochodzeniu ograniczeń, dlatego zachowywane są niejednoznaczne flagi. Pełna zgodność wszystkich możliwych efektów frenzy wymaga dalszej weryfikacji; wcześniejsza ocena była tylko wąska."
   },
   {
@@ -14414,7 +14414,7 @@
   {
     "id": 200039,
     "name": "Alabástrom (G6)",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Dodano once-per-turn unlock innego własnego ready Gargoyle podczas własnej tury, wraz z ready/locked i negatywnymi testami (siebie, torpor, inny klan, cudza tura); crypt-wave-5.test.ts. Dodano test dostępności unlock w fazie master, nie tylko minion. Handler alabastrom zaimplementowany i zarejestrowany w buildHandlerRegistry (unlock innego gotowego Gargoyle'a raz na turę). Pozostałe okna (combat, referendum) i interakcje z noUnlock wymagają dalszej weryfikacji."
   },
   {
@@ -20492,7 +20492,7 @@
   {
     "id": 201052,
     "name": "New Blood (ANY)",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Dodano wybór dowolnego nazwanego circle albo circle jednego znanego wampira przed wejściem i contest, model identyfikacji circle oraz dobór crypt w swojej influence; wybór przeżywa save/load i jest usuwany po powrocie do uncontrolled. Wykorzystują go Unwholesome Bond i Camaraderie (także circle of one oraz save/load); pozostałe karty Sanguinus nie są jeszcze zintegrowane z modelem, a wszystkie sposoby wejścia i interakcje contest wymagają kontroli. tests/cards/new-blood-audit.test.ts, blood-brother-circle-audit.test.ts, unwholesome-bond-circle-audit.test.ts. Korekta poprzedniego ustalenia: późniejszy ruling Rules Director z 13.11.2021 pozwala New Blood dołączyć do circle of one innego wampira, wbrew starszej interpretacji z 2019: https://www.vekn.net/forum/rules-questions/79465-unwholesome-bond-angelo-circle-of-one-new-blood-and-circle. Paczka 2: ANK 20211113 (dwa uncontrolled New Blood w różnych kręgach) — dodano osobny test (tests/cards/new-blood-audit.test.ts, 'two uncontrolled New Bloods are in DIFFERENT circles of one'): każdy uncontrolled New Blood ma krąg individual:<id>, więc dwa egzemplarze są w różnych kręgach. Status bez zmian."
   },
   {
@@ -21824,7 +21824,7 @@
   {
     "id": 201274,
     "name": "Shalmath (G6)",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Częściowo naprawiono unlock Shalmatha raz na każdą turę w obsługiwanych oknach impulsu, z zakazem w card.asPlayed oraz The Sleeping Mind. Testy shalmath-audit.test.ts obejmują własną i cudzą turę, unlock phase, limit, save/restore oraz torpor. Zakaz Celerity (G00041) weryfikowany przez tests/ui/crypt-discipline-bars.test.ts: importCryptCard zwraca cannotUseDisciplines: [\u0022cel\u0022], gotowy minion ma cannotUseDisciplines: [\u0022cel\u0022], nie może zagrać akcji Celerity (Flurry of Action) ani trybu cel Dust Up, ale może grać Presence. Nie potwierdzono kompletności wszystkich okien czasowych unlock; wpis pozostaje otwarty."
   },
   {
@@ -22952,7 +22952,7 @@
   {
     "id": 201462,
     "name": "Walker Grimes (G5)",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Dodatkowy pool dla master targetujących Walkera i kontrolera; cena, płatność, limit pool i zmiana kontroli testowane w granted-bleed-target-costs.test.ts. Zweryfikowano LSJ 20081124-1: koszt +1 pool tylko gdy master jest zagrywany przez kontrolera Walkera (tests/cards/granted-bleed-target-costs.test.ts: Villein celujący w Walkera kosztuje 1, celujący w innego wampira kosztuje 0; po zmianie kontroli koszt przenosi się na nowego kontrolera). Inne ścieżki zagrania master i regiony wymagają weryfikacji."
   },
   {
@@ -23240,7 +23240,7 @@
   {
     "id": 201510,
     "name": "Zubeida (G5)",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi bez ready vampire capacity powyżej 6; Black Hand, Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; Dodano test G00012 (tests/cards/black-hand-traits.test.ts): Black Hand trait NIE jest utracony przy zmianie sekty (MinionSectChanged nie dotyka blackHand). Pozostałe ustalenia i interakcje nie zostały tym zamknięte."
   },
   {
@@ -24260,7 +24260,7 @@
   {
     "id": 201680,
     "name": "Opikun (G7)",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Opikun może chronić siebie lub innego kontrolowanego vampire przed nieaggravated damage ze strike przeciwnika, bez zmiany wymogu another u Huldu. tests/cards/hecata-huldu-audit.test.ts. Stare zapisy z pakietem bez strikePhase mają niejednoznaczne pochodzenie; pozostałe interakcje nieweryfikowane. Aktualizacja: zapobieganie obejmuje wiele nieaggravated pakietów tego samego strike, z wyłączeniem unpreventable, innego strike i environmental; test z pakietami i starym zapisem w tests/cards/hecata-huldu-audit.test.ts. Nadal ograniczenia starszych zapisów oraz okna/właściwej kolejności obrażeń. Paczka 2: ponownie sprawdzono tekst (independent, do 2 nieaggravated z jednego strike). Wciąż otwarte: okno kolejności obrażeń i stare zapisy bez pochodzenia; status bez zmian. Model danych obrazen jest poprawny: nowe pakiety ze strike maja strikePhase i fromStrike (ammunition jest scalany do glownego pakietu, potwierdzone testem tests/cards/ammo-strike-provenance.test.ts); stare zapisy ze strikePhase maja fromStrike odtwarzane migracja (engine.ts:319); stare zapisy BEZ strikePhase pozostaja celowo niejednoznaczne i nie sa zgadywane jako strike (np. Outside the Hourglass ma source=przeciwnik ale nie jest strike) — to swiadoma decyzja, nie bug."
   },
   {
@@ -24830,7 +24830,7 @@
   {
     "id": 201776,
     "name": "Věnceslava, The Implacable (G6)",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Gain pool jest opcjonalny; odmowa nie zużywa once-per-turn i działa późniejsza kwalifikująca akcja, także po zapisie. crypt-wave-4.test.ts. Brak zysku, gdy kontroler został ousted (ANK 20220808; guard w compile.ts, test w crypt-wave-4.test.ts). Dodano test działania zdolności w torporze przy rozstrzygnięciu (tests/cards/crypt-wave-4.test.ts, LSJ 20011022): zdolność jest oferowana mimo torporu. Identyfikacja prey i kolejność przy zmianie/oust oraz zagnieżdżonych zdarzeniach - nadal otwarte, wymaga scenariusza z oust w trakcie akcji (zlozony scenariusz wieloetapowy). Pozostałe elementy (opcjonalny gain, once-per-turn, ousted guard, hunt) pokryte testami w crypt-wave-4.test.ts."
   },
   {
