@@ -3602,6 +3602,7 @@ export interface CombatFrame {
   strengthBonus: { acting: number; opposing: number };
   /** Combat-long bonus to hand-strike damage, not to strength or weapons. */
   handStrikeDamageBonus?: { acting: number; opposing: number };
+  strikeDamageBonus?: { acting: number; opposing: number };
   frenzyHandStrikeDamage?: { acting: number; opposing: number };
   /** "THIS ROUND, this vampire gets +1 strength" (Obedient Flesh) — reset
    *  when a new round begins, unlike strengthBonus. */

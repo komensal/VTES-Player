@@ -187,6 +187,7 @@ export interface EngineOps {
   /** "Gets +N strength this combat" — additive, whole-combat. */
   addCombatStrength(play: CardPlayFrame, amount: number): void;
   addCombatHandStrikeDamage(play: CardPlayFrame, amount: number): void;
+  addCombatStrikeDamage(play: CardPlayFrame, amount: number): void;
   /** Add strength that grows by the given amount each later round, starting now. */
   addCombatStrengthPerRound(play: CardPlayFrame, amount: number): void;
   addPotenceStrikeDamageBonus(play: CardPlayFrame, amount: number): void;

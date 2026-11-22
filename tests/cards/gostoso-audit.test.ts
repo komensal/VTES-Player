@@ -56,7 +56,7 @@ describe("Gostoso (G6)", () => {
     const opt = dp.options.find((o: any) => o.id.includes("bleedSuccessBlood:yes"));
     expect(opt).toBeDefined();
     const before = gostoso.blood;
-    engine.choose(opt.id);
+    engine.choose(opt!.id);
     expect(gostoso.blood).toBe(before + 1);
   });
 

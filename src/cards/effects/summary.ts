@@ -221,6 +221,7 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   actorCombatRider: "combat",
   addStrength: "combat",
   handStrikeDamageBonus: "combat",
+  strikeDamageBonus: "combat",
   potenceStrikeDamageBonus: "damage",
   bloodToWater: "damage",
   aggravateNextHandOrMeleeStrike: "damage",

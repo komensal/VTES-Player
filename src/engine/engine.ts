@@ -6201,6 +6201,7 @@ export class VtesEngine implements EngineOps {
         if (cf.range !== "close" && !strike.ranged) return;
         amount = strengthOf(from) + strike.handBonus;
         if (strike.source === "hand" || strike.handStrike) amount += cf.handStrikeDamageBonus?.[from] ?? 0;
+        amount += cf.strikeDamageBonus?.[from] ?? 0;
         // "…will be strike: HAND STRIKE AT +N DAMAGE" (Haymaker) — the
         // bonus rides the round, not the Strike, because the card forces
         // the strike rather than declaring one.
@@ -9276,6 +9277,11 @@ export class VtesEngine implements EngineOps {
     const side = this.sideOf(cf, play.minion);
     (cf.handStrikeDamageBonus ??= { acting: 0, opposing: 0 })[side] += amount;
     if (play.isFrenzy) (cf.frenzyHandStrikeDamage ??= { acting: 0, opposing: 0 })[side] += amount;
+  }
+  addCombatStrikeDamage(play: CardPlayFrame, amount: number): void {
+    const cf = this.requireCombat();
+    const side = this.sideOf(cf, play.minion);
+    (cf.strikeDamageBonus ??= { acting: 0, opposing: 0 })[side] += amount;
   }
 
   addCombatStrength(play: CardPlayFrame, amount: number): void {
