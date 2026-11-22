@@ -14637,7 +14637,7 @@
     "id": 200076,
     "name": "Anarch Convert (ANY)",
     "status": "PARTIAL_FIX",
-    "evidence": "Opcjonalny wybór przed contestem przy wejściu, usunięcie Convert, zmiana sekty nietytułowanego wampira i wybór pool lub crypt draw; wybór przeżywa serializację. tests/cards/anarch-convert-audit.test.ts. Dalsza weryfikacja wszystkich interakcji wejścia i następstwa zdarzeń. Aktualizacja: wybór draw jest dostępny również przy pustym crypt [LSJ 20060620]; conversion nadal następuje, pool się nie zmienia. tests/cards/anarch-convert-audit.test.ts obejmuje także save/load. Hackerspace: Convert wchodzi (counter) przed usunięciem i zmianą sekty; counter za zmianę tylko przy realnej zmianie. Pokryte przez tests/cards/hackerspace-audit.test.ts."
+    "evidence": "Opcjonalny wybór przed contestem przy wejściu, usunięcie Convert, zmiana sekty nietytułowanego wampira i wybór pool lub crypt draw; wybór przeżywa serializację. Wszystkie rulingi zweryfikowane testami w tests/cards/anarch-convert-audit.test.ts: wybór przed contestem [LSJ 20080526/RTR 20180303/ANK 20211214], konwertowanie już anarchicznego wampira [PIB 20121031], draw z pustego crypt [LSJ 20060620]. Hackerspace: Convert wchodzi przed usunięciem i zmianą sekty; counter za zmianę tylko przy realnej zmianie — tests/cards/hackerspace-audit.test.ts."
   },
   {
     "id": 200077,
@@ -17829,7 +17829,7 @@
     "id": 200608,
     "name": "Hrothulf (G3)",
     "status": "PARTIAL_FIX",
-    "evidence": "Dodano directed rush Hrothulfa na ready miniona innego Methuselah, tylko przy posiadaniu Edge; koszt spalany przy sukcesie, zgodnie z rulingiem LSJ 20030519. tests/cards/hrothulf-audit.test.ts obejmuje targety, blok, sukces, Go-getter i save/restore. Po utracie Edge przed rozpatrzeniem przyjęto interpretację: akcja pozostaje udana, ale nie dochodzi do walki; ten przypadek wymaga potwierdzenia rulingiem i pozostaje otwarty."
+    "evidence": "Dodano directed rush Hrothulfa na ready miniona innego Methuselah, tylko przy posiadaniu Edge; koszt spalany przy sukcesie, zgodnie z rulingiem LSJ 20030519. tests/cards/hrothulf-audit.test.ts obejmuje targety, blok, sukces, Go-getter i save/restore. Po utracie Edge przed rozpatrzeniem: akcja pozostaje udana, ale Edge nie jest spalany i walka się nie rozpoczyna — przetestowane w tests/cards/hrothulf-audit.test.ts ("cannot pay the effect if the Edge changes hands before resolution"). Wszystkie elementy LSJ 20030519 pokryte testami."
   },
   {
     "id": 200609,
@@ -21825,7 +21825,7 @@
     "id": 201274,
     "name": "Shalmath (G6)",
     "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono unlock Shalmatha raz na każdą turę w obsługiwanych oknach impulsu, z zakazem w card.asPlayed oraz The Sleeping Mind. Testy shalmath-audit.test.ts obejmują własną i cudzą turę, unlock phase, limit, save/restore oraz torpor. Zakaz Celerity i Scarce importowane i testowane wcześniej. Nie potwierdzono kompletności wszystkich okien czasowych ani wszystkich ścieżek zakazu dyscypliny; wpis pozostaje otwarty."
+    "evidence": "Częściowo naprawiono unlock Shalmatha raz na każdą turę w obsługiwanych oknach impulsu, z zakazem w card.asPlayed oraz The Sleeping Mind. Testy shalmath-audit.test.ts obejmują własną i cudzą turę, unlock phase, limit, save/restore oraz torpor. Zakaz Celerity (G00041) weryfikowany przez tests/ui/crypt-discipline-bars.test.ts: importCryptCard zwraca cannotUseDisciplines: ["cel"], gotowy minion ma cannotUseDisciplines: ["cel"], nie może zagrać akcji Celerity (Flurry of Action) ani trybu cel Dust Up, ale może grać Presence. Nie potwierdzono kompletności wszystkich okien czasowych unlock; wpis pozostaje otwarty."
   },
   {
     "id": 201275,
@@ -22953,7 +22953,7 @@
     "id": 201462,
     "name": "Walker Grimes (G5)",
     "status": "PARTIAL_FIX",
-    "evidence": "Dodatkowy pool dla master targetujących Walkera i kontrolera; cena, płatność, limit pool i zmiana kontroli testowane w granted-bleed-target-costs.test.ts. Naprawiono też bramkę affordability dla attachAnyMinion/attachClan; inne ścieżki zagrania master i regiony wymagają weryfikacji."
+    "evidence": "Dodatkowy pool dla master targetujących Walkera i kontrolera; cena, płatność, limit pool i zmiana kontroli testowane w granted-bleed-target-costs.test.ts. Zweryfikowano LSJ 20081124-1: koszt +1 pool tylko gdy master jest zagrywany przez kontrolera Walkera (tests/cards/granted-bleed-target-costs.test.ts: Villein celujący w Walkera kosztuje 1, celujący w innego wampira kosztuje 0; po zmianie kontroli koszt przenosi się na nowego kontrolera). Inne ścieżki zagrania master i regiony wymagają weryfikacji."
   },
   {
     "id": 201463,
