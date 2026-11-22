@@ -129,4 +129,35 @@ describe("Nephandus (101272): a full combat with its 1R strike", () => {
     // V1's hand strike (1) is reduced by 1 against Nephandus: no damage.
     expect(find(state, "NEPH").blood).toBe(5);
   });
+
+  it("Aim bonus damage is reduced only ONCE with the strike, not separately [LSJ 20091123-2]", () => {
+    const state = threeSeatGame();
+    state.seats[0]!.minions[0]!.blood = 5;
+    state.seats[0]!.hand.push({ id: "th", name: "Target Head" });
+    const neph = makeMinion("NEPH", "Bob", { kind: "ally", name: "Nephandus", blood: 5 });
+    neph.attached.push({ card: { id: "NEPH", name: "Nephandus" }, locked: false, usedThisPhase: false, statics: {}, tags: ["mage"] } as unknown as MinionState["attached"][number]);
+    state.seats[1]!.minions.push(neph);
+    const engine = new VtesEngine(state, testRegistry);
+    runTrace(engine, [
+      ["Alice", "bleed:V1"], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"], ["Alice", "pass"],
+      ["Bob", "block:NEPH"], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"], ["Alice", "pass"], ["Bob", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+    ]);
+    // Play Target Head (strike +2) on V1's hand strike.
+    const aim = engine.decision()!.options.find((o) => o.id.startsWith("play:Target Head"));
+    expect(aim).toBeDefined();
+    engine.choose(aim!.id);
+    // Resolve the aim's as-played window, then choose the hand strike.
+    for (let i = 0; i < 10 && engine.decision()?.window === "card.asPlayed"; i++) engine.choose("pass");
+    engine.choose("strike:hand");
+    // Resolve the whole round.
+    for (let i = 0; i < 40 && state.frames.some((f) => f.kind === "combat"); i++) {
+      const dp = engine.decision()!;
+      engine.choose(dp.options.find((o) => o.id === "pass")?.id ?? dp.options[0]!.id);
+    }
+    // Hand strike 1 + Target Head +2 = 3, reduced ONCE by 1 = 2 damage: 5 -> 3.
+    // NOT reduced separately (which would give 1->0 and +2->1, i.e. 1 damage).
+    expect(find(state, "NEPH").blood).toBe(3);
+  });
 });

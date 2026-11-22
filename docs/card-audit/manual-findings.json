@@ -7629,7 +7629,7 @@
     "id": 101272,
     "name": "Nephandus",
     "status": "PARTIAL_FIX",
-    "evidence": "Zweryfikowano end-to-end: pełna walka (bleed, blok przez Nephandus, strike wyboru) oferuje „Nephandus: strike (1R)” obok hand strike; wybór ranged strike zabiera 1 krew opozycji, a jego własne życie nie spada przy hand strike przeciwnika (redukcja 1, tests/cards/nephandus.test.ts, 7 testów). Wcześniej: redukcja tylko w combat i tylko od strike/damaging effect przeciwnika; negatywne przypadki poza walką i środowiskowe. Nadal nieweryfikowane: zachowanie przy kilku źródłach obrażeń jednocześnie oraz pełny zakres efektów strike 1R poza tym przebiegiem."
+    "evidence": "Zweryfikowano end-to-end: pełna walka (bleed, blok przez Nephandus, strike wyboru) oferuje „Nephandus: strike (1R)” obok hand strike; wybór ranged strike zabiera 1 krew opozycji, a jego własne życie nie spada przy hand strike przeciwnika (redukcja 1, tests/cards/nephandus.test.ts, 7 testów). Wcześniej: redukcja tylko w combat i tylko od strike/damaging effect przeciwnika; negatywne przypadki poza walką i środowiskowe. Zweryfikowano LSJ 20091123-2 (tests/cards/nephandus.test.ts): obrażenia z Aim (Target Head +2) NIE są redukowane osobno — redukcja 1 stosowana raz na cały strike (1+2=3 -> 2), bo Aim jest scalany ze strike przed incomingDamageReduction. Pozostaje nieweryfikowany pełny zakres efektów strike 1R poza tym przebiegiem."
   },
   {
     "id": 101273,
