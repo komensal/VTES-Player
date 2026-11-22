@@ -24675,7 +24675,7 @@
     "id": 201750,
     "name": "Eulogio Sánchez de los Reyes (G6)",
     "status": "PARTIAL_FIX",
-    "evidence": "grantedAction reorderTop 5, +1 stealth, 1 blood i unlockActor; porównano spec i kompilator. Ograniczony zakres; bez nowego scenariusza. Aktualizacja: Unlock przy reorderTop pomijany przy superior Sleeping Mind; brak osobnego testu end-to-end tego połączenia."
+    "evidence": "grantedAction reorderTop 5, +1 stealth, 1 blood i unlockActor; porównano spec i kompilator. Ograniczony zakres; bez nowego scenariusza. Unlock przy reorderTop pomijany przy superior Sleeping Mind (ga.unlockActor && !af.noUnlock w compile.ts). Dodano test end-to-end: rzeczywiste zagranie superior The Sleeping Mind na jego akcję blokuje unlock (tests/cards/crypt-wave-5.test.ts, 'end-to-end: superior The Sleeping Mind prevents his reorderTop unlock', PIB 20150703)."
   },
   {
     "id": 201751,

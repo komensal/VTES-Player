@@ -429,6 +429,30 @@ describe("Eulogio", () => {
     // Eulogio should STILL be locked because unlock was prevented
     expect(find(state, "V1").locked).toBe(true);
   });
+
+  // End-to-end: actually PLAY superior The Sleeping Mind on his action, rather
+  // than setting noUnlock by hand. [PIB 20150703]
+  it("end-to-end: superior The Sleeping Mind prevents his reorderTop unlock [PIB 20150703]", () => {
+    const { state, engine } = stacked();
+    const v1 = find(state, "V1");
+    v1.disciplines = { dom: "superior" };
+    v1.blood = 4;
+    state.seats[0]!.hand.push({ id: "sm", name: "The Sleeping Mind" });
+    expect(walkTo(engine, "act:Eulogio")).toBe(true);
+    runTrace(engine, [["Alice", optionIds(engine).find((o) => o.includes(":granted:"))!]]);
+    let smPlayed = false;
+    for (let i = 0; i < 50 && state.frames.some((f) => f.kind === "action" || f.kind === "cardPlay" || f.kind === "choice"); i++) {
+      const dp = engine.decision()!;
+      const sm = dp.options.find((o) => o.id.startsWith("play:The Sleeping Mind:superior"));
+      if (sm && !smPlayed) { smPlayed = true; engine.choose(sm.id); continue; }
+      const pick = dp.options.find((o) => o.id.startsWith("choice:")) ?? dp.options.find((o) => o.id === "pass") ?? dp.options[0]!;
+      engine.choose(pick.id);
+    }
+    expect(smPlayed).toBe(true);
+    // The reorder still happened, but the unlock is prohibited.
+    expect(v1.locked).toBe(true);
+    expect(state.eventLog.some((e) => e.type === "MinionUnlocked" && e.minion === "V1")).toBe(false);
+  });
 });
 
 // ---------------------------------------------------------------------------
