@@ -289,7 +289,7 @@ describe("directional frenzy restrictions", () => {
     expect(engine.decision()!.options.some(o => o.id === "press:end")).toBe(false);
   });
 
-  it.each([["hand", 2], ["weapon", 1], ["card", 4]] as const)("Rage of Apedemak bonus distinguishes %s strike damage", (kind, expected) => {
+  it.each([["hand", 2], ["weapon", 1], ["card", 4]] as const)("Rage of Apedemak basic strike damage vs hand/weapon/card", (kind, expected) => {
     const { state, engine, cf } = setup("Rage of Apedemak", "superior");
     const actor = state.seats[0]!.minions[0]!;
     actor.disciplines.pot = "basic";
