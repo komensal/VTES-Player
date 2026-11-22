@@ -160,4 +160,36 @@ describe("Nephandus (101272): a full combat with its 1R strike", () => {
     // NOT reduced separately (which would give 1->0 and +2->1, i.e. 1 damage).
     expect(find(state, "NEPH").blood).toBe(3);
   });
+
+  it("a weapon strike from the opposing minion is also reduced [LSJ 20091123-2]", () => {
+    const state = threeSeatGame();
+    state.seats[0]!.minions[0]!.blood = 5;
+    // V1 wields a .44 Magnum (2R damage).
+    const h = testRegistry[".44 Magnum"];
+    state.seats[0]!.minions[0]!.attached.push({
+      card: { id: "gun", name: ".44 Magnum" }, locked: false, usedThisPhase: false,
+      statics: h?.permanentStatics ?? {}, tags: h?.permanentTags ?? [],
+    } as unknown as MinionState["attached"][number]);
+    const neph = makeMinion("NEPH", "Bob", { kind: "ally", name: "Nephandus", blood: 5 });
+    neph.attached.push({ card: { id: "NEPH", name: "Nephandus" }, locked: false, usedThisPhase: false, statics: {}, tags: ["mage"] } as unknown as MinionState["attached"][number]);
+    state.seats[1]!.minions.push(neph);
+    const engine = new VtesEngine(state, testRegistry);
+    runTrace(engine, [
+      ["Alice", "bleed:V1"], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"], ["Alice", "pass"],
+      ["Bob", "block:NEPH"], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"], ["Alice", "pass"], ["Bob", "pass"],
+      ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+    ]);
+    // Choose the gun strike for V1, Nephandus strikes back with its 1R.
+    const gun = engine.decision()!.options.find((o) => o.id.startsWith("ability:") && o.id.endsWith(":strike"));
+    expect(gun).toBeDefined();
+    engine.choose(gun!.id);
+    engine.choose("ability:Nephandus:NEPH:strike");
+    for (let i = 0; i < 40 && state.frames.some((f) => f.kind === "combat"); i++) {
+      const dp = engine.decision()!;
+      engine.choose(dp.options.find((o) => o.id === "pass")?.id ?? dp.options[0]!.id);
+    }
+    // .44 Magnum 2R reduced by 1 = 1 damage to Nephandus: 5 -> 4.
+    expect(find(state, "NEPH").blood).toBe(4);
+  });
 });

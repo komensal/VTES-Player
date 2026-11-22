@@ -7629,7 +7629,7 @@
     "id": 101272,
     "name": "Nephandus",
     "status": "PARTIAL_FIX",
-    "evidence": "Zweryfikowano end-to-end: pełna walka (bleed, blok przez Nephandus, strike wyboru) oferuje „Nephandus: strike (1R)” obok hand strike; wybór ranged strike zabiera 1 krew opozycji, a jego własne życie nie spada przy hand strike przeciwnika (redukcja 1, tests/cards/nephandus.test.ts, 7 testów). Wcześniej: redukcja tylko w combat i tylko od strike/damaging effect przeciwnika; negatywne przypadki poza walką i środowiskowe. Zweryfikowano LSJ 20091123-2 (tests/cards/nephandus.test.ts): obrażenia z Aim (Target Head +2) NIE są redukowane osobno — redukcja 1 stosowana raz na cały strike (1+2=3 -> 2), bo Aim jest scalany ze strike przed incomingDamageReduction. Pozostaje nieweryfikowany pełny zakres efektów strike 1R poza tym przebiegiem."
+    "evidence": "Zweryfikowano end-to-end: pełna walka (bleed, blok przez Nephandus, strike wyboru) oferuje „Nephandus: strike (1R)” obok hand strike; wybór ranged strike zabiera 1 krew opozycji, a jego własne życie nie spada przy hand strike przeciwnika (redukcja 1, tests/cards/nephandus.test.ts, 7 testów). Wcześniej: redukcja tylko w combat i tylko od strike/damaging effect przeciwnika; negatywne przypadki poza walką i środowiskowe. Zweryfikowano LSJ 20091123-2 (tests/cards/nephandus.test.ts): obrażenia z Aim (Target Head +2) NIE są redukowane osobno — redukcja 1 stosowana raz na cały strike (1+2=3 -> 2), bo Aim jest scalany ze strike przed incomingDamageReduction. Dodano test redukcji broni przeciwnika (tests/cards/nephandus.test.ts, LSJ 20091123-2): strike z .44 Magnum (2R) redukowany o 1. Pozostaje nieweryfikowany pełny zakres efektow strike 1R poza tym przebiegiem."
   },
   {
     "id": 101273,
@@ -10599,7 +10599,7 @@
     "id": 101767,
     "name": "Shilmulo Tarot",
     "status": "PARTIAL_FIX",
-    "evidence": "Naprawiono: napełnienie z biblioteki (2 karty) tylko gdy Tarot wchodzi do gry wyposażony na minionie (onlyWhenEquipped); samo put into play nie bierze kart (LSJ 20090506). Test: tests/cards/library-search.test.ts. Heart i Black Market Cache: wybór przy każdym przekierowanym dobraniu, refill do rozmiaru ręki wznawiany po wyborze Tarot (draw-up-redirect.test.ts, heart-draw-redirect.test.ts, multiple-draw-redirects.test.ts). Nowe: wycofanie (p. 38) nie jest dostępne, dopóki Tarot z kartami może jeszcze dobrać (G00160, LSJ 20060620: dobieraj tyle, ile się da) — tests/cards/shilmulo-withdrawal.test.ts (3 testy, mutacja wykryta). Interpretacja: przy pustej bibliotece nadal wolno wybrać 'dobierz z biblioteki' i zakończyć (test draw-up-redirect 'stops if the chosen library is empty'). Otwarte: w oknie unlock nie ma dobrania z Tarot, bo karta mówi o zastąpieniu dobrania, a unlock nim nie jest; dobór następuje przy najbliższym dobieraniu do rozmiaru ręki. Kolejki wielokrotnego dobierania nadal otwarte."
+    "evidence": "Naprawiono: napełnienie z biblioteki (2 karty) tylko gdy Tarot wchodzi do gry wyposażony na minionie (onlyWhenEquipped); samo put into play nie bierze kart (LSJ 20090506). Test: tests/cards/library-search.test.ts. Heart i Black Market Cache: wybór przy każdym przekierowanym dobraniu, refill do rozmiaru ręki wznawiany po wyborze Tarot (draw-up-redirect.test.ts, heart-draw-redirect.test.ts, multiple-draw-redirects.test.ts). Nowe: wycofanie (p. 38) nie jest dostępne, dopóki Tarot z kartami może jeszcze dobrać (G00160, LSJ 20060620: dobieraj tyle, ile się da) — tests/cards/shilmulo-withdrawal.test.ts (3 testy, mutacja wykryta). Interpretacja: przy pustej bibliotece nadal wolno wybrać 'dobierz z biblioteki' i zakończyć (test draw-up-redirect 'stops if the chosen library is empty'). Otwarte: w oknie unlock nie ma dobrania z Tarot, bo karta mówi o zastąpieniu dobrania, a unlock nim nie jest; dobór następuje przy najbliższym dobieraniu do rozmiaru ręki. Kolejki wielokrotnego dobierania pokryte testami: draw-up-redirect.test.ts (12 testow: kazde dobranie ma wybor zrodla, koniec przy pustej bibliotece, save/load, zmiana hand size), multiple-draw-redirects.test.ts (7 testow: wiele zrodel dla jednego dobrania), heart-draw-redirect.test.ts (8 testow). Wszystkie przechodza."
   },
   {
     "id": 101768,
@@ -13191,7 +13191,7 @@
     "id": 102199,
     "name": "Yawp Court",
     "status": "PARTIAL_FIX",
-    "evidence": "Naprawiono kolejkę walk przed referendum i jego anulowanie po opuszczeniu ready przez działającego wampira. tests/cards/crypt-and-uncontrolled.test.ts: rzeczywisty torpor (także w drugiej walce Psyche!), torpor samego przeciwnika, symulowany powrót i save/load, damage między walkami. Zweryfikowano RTR 19970630 (crypt-and-uncontrolled.test.ts: obrażenia ambush są zadawane po CombatEnded jako środowiskowe, bez DamageInflicted). Faktyczne użycie Warsaw Station w środku akcji nie jest zaimplementowane; Rötschreck i pozostałe interakcje timingów/prevention niezweryfikowane. Rulings LSJ 20060902, LSJ 20090325-1, ANK 20180910-1."
+    "evidence": "Naprawiono kolejkę walk przed referendum i jego anulowanie po opuszczeniu ready przez działającego wampira. tests/cards/crypt-and-uncontrolled.test.ts: rzeczywisty torpor (także w drugiej walce Psyche!), torpor samego przeciwnika, symulowany powrót i save/load, damage między walkami. Zweryfikowano RTR 19970630 (crypt-and-uncontrolled.test.ts: obrażenia ambush są zadawane po CombatEnded jako środowiskowe, bez DamageInflicted). Faktyczne użycie Warsaw Station w środku akcji nie jest zaimplementowane. Rötschreck nie ma pelnej implementacji (master: out-of-turn z warunkiem aggravated damage, nie tylko strikeCombatEnds) — wymaga osobnej implementacji, nie testu. Pozostałe interakcje timingow/prevention niezweryfikowane. Rulings LSJ 20060902, LSJ 20090325-1, ANK 20180910-1."
   },
   {
     "id": 102200,
@@ -13395,7 +13395,7 @@
     "id": 102233,
     "name": "Revelation of the Serpent",
     "status": "PARTIAL_FIX",
-    "evidence": "Superior oferuje wybór corruption tylko po rozstrzygnięciu oust i okna Life Boon; po oust celu nie oferuje unlock [ANK 20220210], po uratowaniu celu umożliwia wybór również po save/load; Sleeping Mind blokuje unlock. Testy revelation-of-the-serpent.test.ts. Pozostałe efekty sukcesu, kolejność i interakcje wymagają weryfikacji. Paczka 1: ANK 20220210 (ousted przez bleed nie odblokowuje) pokryte przez revelation-of-the-serpent.test.ts; nie sprawdzono pozostałych efektów sukcesu i kolejności. Status bez zmian."
+    "evidence": "Superior oferuje wybór corruption tylko po rozstrzygnięciu oust i okna Life Boon; po oust celu nie oferuje unlock [ANK 20220210], po uratowaniu celu umożliwia wybór również po save/load; Sleeping Mind blokuje unlock. Testy revelation-of-the-serpent.test.ts. Pozostałe efekty sukcesu, kolejność i interakcje wymagają weryfikacji. Paczka 1: ANK 20220210 (ousted przez bleed nie odblokowuje) pokryte przez revelation-of-the-serpent.test.ts; Glowne efekty sukcesu pokryte testami (tests/cards/revelation-of-the-serpent.test.ts): superior +1 bleed, burn 2 corruption -> unlock, odmowa, wybor miniona, Sleeping Mind blokuje unlock. Pozostaje kolejnosc wzgledem oust/Life Boon (zlozony scenariusz). Status bez zmian."
   },
   {
     "id": 102234,
@@ -14469,7 +14469,7 @@
     "id": 200048,
     "name": "Alex Wilkins (G5)",
     "status": "PARTIAL_FIX",
-    "evidence": "Dodano opcję końcowego celu successful bleed po rozstrzygnięciu: zapłata 1 pool i przejęcie Alexa albo odmowa. tests/cards/alex-wilkins-audit.test.ts obejmuje przekierowanie, zero bleed i save/load. Wymaga weryfikacji kolejności względem oust i innych efektów rozstrzygnięcia."
+    "evidence": "Dodano opcję końcowego celu successful bleed po rozstrzygnięciu: zapłata 1 pool i przejęcie Alexa albo odmowa. tests/cards/alex-wilkins-audit.test.ts obejmuje przekierowanie, zero bleed i save/load. Kolejnosc wzgledem oust i innych efektow rozstrzygniecia wymaga weryfikacji; brak wpisu w migawce dla Alex Wilkins, wymaga potwierdzenia na VEKN."
   },
   {
     "id": 200049,
@@ -24831,7 +24831,7 @@
     "id": 201776,
     "name": "Věnceslava, The Implacable (G6)",
     "status": "PARTIAL_FIX",
-    "evidence": "Gain pool jest opcjonalny; odmowa nie zużywa once-per-turn i działa późniejsza kwalifikująca akcja, także po zapisie. crypt-wave-4.test.ts. Brak zysku, gdy kontroler został ousted (ANK 20220808; guard w compile.ts, test w crypt-wave-4.test.ts). Dodano test działania zdolności w torporze przy rozstrzygnięciu (tests/cards/crypt-wave-4.test.ts, LSJ 20011022): zdolność jest oferowana mimo torporu. Identyfikacja prey i kolejność przy zmianie/oust oraz zagnieżdżonych zdarzeniach - nadal otwarte, wymaga scenariusza z oust w trakcie akcji. Pozostałe elementy (opcjonalny gain, once-per-turn, ousted guard, hunt) pokryte testami w crypt-wave-4.test.ts."
+    "evidence": "Gain pool jest opcjonalny; odmowa nie zużywa once-per-turn i działa późniejsza kwalifikująca akcja, także po zapisie. crypt-wave-4.test.ts. Brak zysku, gdy kontroler został ousted (ANK 20220808; guard w compile.ts, test w crypt-wave-4.test.ts). Dodano test działania zdolności w torporze przy rozstrzygnięciu (tests/cards/crypt-wave-4.test.ts, LSJ 20011022): zdolność jest oferowana mimo torporu. Identyfikacja prey i kolejność przy zmianie/oust oraz zagnieżdżonych zdarzeniach - nadal otwarte, wymaga scenariusza z oust w trakcie akcji (zlozony scenariusz wieloetapowy). Pozostałe elementy (opcjonalny gain, once-per-turn, ousted guard, hunt) pokryte testami w crypt-wave-4.test.ts."
   },
   {
     "id": 201777,
