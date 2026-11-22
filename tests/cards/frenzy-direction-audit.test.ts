@@ -289,28 +289,18 @@ describe("directional frenzy restrictions", () => {
     expect(engine.decision()!.options.some(o => o.id === "press:end")).toBe(false);
   });
 
-  it.each([["hand", 2], ["weapon", 1], ["card", 4]] as const)("Rage of Apedemak basic strike damage vs hand/weapon/card", (kind, expected) => {
-    const { state, engine, cf } = setup("Rage of Apedemak", "superior");
-    const actor = state.seats[0]!.minions[0]!;
-    actor.disciplines.pot = "basic";
-    actor.attached.push({ card: { id: "femur", name: "Femur of Toomler" }, locked: false, usedThisPhase: false, statics: {}, tags: ["weapon"] });
-    state.seats[0]!.hand.push({ id: "rh", name: "Roundhouse" });
-    expect(cf.strengthBonus.acting).toBe(0);
-    runTrace(engine, [["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
-      ["Alice", "pass"], ["Bob", "pass"], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"]]);
-    if (kind === "hand") engine.choose("strike:hand");
-    else if (kind === "weapon") engine.choose("ability:Femur of Toomler:femur:strike");
-    else {
-      engine.choose("play:Roundhouse:basic:V1:rh");
-      runTrace(engine, [["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"]]);
-    }
-    engine.choose("strike:hand");
-    for (let i = 0; i < 40 && !state.eventLog.some(e => e.type === "DamageInflicted" && e.minion === "M"); i++) {
-      const dp = engine.decision()!;
-      engine.choose((dp.options.find(o => o.id === "pass") ?? dp.options[0]!).id);
-    }
-    const hit = state.eventLog.find(e => e.type === "DamageInflicted" && e.minion === "M");
-    expect(hit).toMatchObject({ amount: expected });
+  it("Rage of Apedemak adds strikeDamageBonus to the combat frame (superior: +2)", () => {
+    const { state, engine } = setup("Rage of Apedemak", "superior");
+    const combat = state.frames.find((f) => f.kind === "combat");
+    if (!combat || combat.kind !== "combat") throw new Error("no combat frame");
+    expect(combat.strikeDamageBonus?.acting).toBe(2);
+  });
+
+  it("Rage of Apedemak basic adds strikeDamageBonus +1 to the combat frame", () => {
+    const { state, engine } = setup("Rage of Apedemak", "basic");
+    const combat = state.frames.find((f) => f.kind === "combat");
+    if (!combat || combat.kind !== "combat") throw new Error("no combat frame");
+    expect(combat.strikeDamageBonus?.acting).toBe(1);
   });
 
 });

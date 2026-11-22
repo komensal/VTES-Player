@@ -11160,6 +11160,15 @@ function compilePoliticalAction(spec: CardSpec): CardHandler {
 
 export function compileSpec(spec: CardSpec): CardHandler {
   const handler = compileByType(spec);
+  // "Can be played by an unlocked older vampire to avoid a new combat
+  // queued after a preceding combat" (Obedience, LSJ 19991025).
+  if (spec.modes.some((m) => m.effects.some((e) => e.kind === "endAction" && e.beforeCombatWithYoungerActor))) {
+    handler.hasEndActionBeforeCombatWithYoungerActor = () => true;
+    handler.endActionBeforeCombatWithYoungerActorLevels = () =>
+      spec.modes
+        .filter((m) => m.effects.some((e) => e.kind === "endAction" && e.beforeCombatWithYoungerActor))
+        .map((m) => m.level);
+  }
   handler.onlyAsActionAnnounced = (mode, variant) =>
     spec.usable.includes("onlyAsAnnounced") ||
     (spec.modes.length > 0 && (modeOf(spec, mode, variant).usable?.includes("onlyAsAnnounced") ?? false));
@@ -11810,6 +11819,29 @@ export function compileSpec(spec: CardSpec): CardHandler {
           minion: pick,
           amount: Number(frame.params["amount"] ?? "0"),
         });
+      },
+    };
+  }
+
+  // Obedience (LSJ 19991025): before a queued combat begins, the blocker's
+  // controller may play Obedience to avoid it. Basic unlocks the actor and
+  // ends the action; superior ends the action without unlocking.
+  if (spec.modes.some((m) => m.effects.some((e) => e.kind === "endAction" && e.beforeCombatWithYoungerActor))) {
+    choiceByKey["obediencePreCombat"] = {
+      options: (_frame, state) => {
+        const levels = handler.endActionBeforeCombatWithYoungerActorLevels?.() ?? [];
+        return levels.map((level) => ({
+          id: `choice:${spec.name}:${_frame.cardId}:obediencePreCombat:${level}`,
+          kind: "answerChoice" as const,
+          label: `${spec.name} (${level}): end the queued combat`,
+          params: { level },
+        }));
+      },
+      apply: (frame, _choice, ops) => {
+        const level = frame.params["level"];
+        const unlockActor = level === "basic";
+        ops.cancelQueuedCombat();
+        ops.endAction({ unlockActor });
       },
     };
   }
