@@ -51,6 +51,15 @@ describe("Black Hand and Seraph", () => {
     expect(handler.modesPlayableBy!(no)).toEqual([]);
     expect(handler.modesPlayableBy!(ally)).toEqual([]);
   });
+  it("the Black Hand trait is NOT lost when the vampire changes sect [G00012, LSJ 20070322]", () => {
+    const state = threeSeatGame();
+    const m = makeMinion("bh", "Alice", { blackHand: true, sect: "sabbat" });
+    state.seats[0]!.minions.push(m);
+    const engine = new VtesEngine(state, testRegistry);
+    engine.emit({ type: "MinionSectChanged", minion: "bh", sect: "anarch" });
+    expect(m.sect).toBe("anarch");
+    expect(m.blackHand).toBe(true);
+  });
   it.each(seraphCards)("%s requires a Seraph, not just Black Hand", (name) => {
     const spec = cardSpecs.find((s) => s.name === name)!;
     const handler = testRegistry[name]!;
