@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **38 różnych kart**: CODE_DISCREPANCY 0, PARTIAL_FIX 38, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
-- **24/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **99**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- Otwarte ustalenia dotyczą **35 różnych kart**: CODE_DISCREPANCY 0, PARTIAL_FIX 35, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- **22/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **102**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -35,7 +35,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | Fifth Edition (Anarch) / Brujah | pełna | 37 | 0 | — |
 | Fifth Edition (Anarch) / Gangrel | pełna | 38 | 0 | — |
 | Fifth Edition (Anarch) / Ministry | pełna | 36 | 3 | [Heart of Nizchetus](#karta-100903), [Revelation of the Serpent](#karta-102233), [Nonu Dis (G6)](#karta-201608) |
-| Fifth Edition (Companion) / Ravnos | pełna | 39 | 1 | [Shilmulo Tarot](#karta-101767) |
+| Fifth Edition (Companion) / Ravnos | pełna | 39 | 0 | — |
 | Fifth Edition (Companion) / Salubri | pełna | 43 | 3 | [Rolling with the Punches](#karta-101649), [Touch of Valeren](#karta-102262), [Opikun (G7)](#karta-201680) |
 | Fifth Edition (Companion) / Tzimisce | pełna | 40 | 2 | [War Ghoul](#karta-102144), [Childe of the Revolution](#karta-102246) |
 | New Blood / Malkavian | half-deck | 30 | 0 | — |
@@ -56,16 +56,16 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | Sabbat V5 / Path of Cathari | pełna | 35 | 1 | [Gostoso (G6)](#karta-201754) |
 | Sabbat V5 / Path of Death | pełna | 41 | 3 | [Obedience](#karta-101309), [Dance of the Dead](#karta-102314), [Eulogio Sánchez de los Reyes (G6)](#karta-201750) |
 | Sabbat V5 / Path of Power and the Inner Voice | pełna | 42 | 1 | [Věnceslava, The Implacable (G6)](#karta-201776) |
-| 🏆 Tournament Winners 2025 / 2025-10-19 — Shalmath Toolbox (EC Day 2, Aarhus — Nerijus Mikalajūnas, 50p) | pełna | 36 | 13 | [Enkil Cog](#karta-100645), [Eye of Hazimel](#karta-100678), [Heart of Nizchetus](#karta-100903), [Hourglass of the Mind](#karta-100941), [Nephandus](#karta-101272), [Outside the Hourglass](#karta-101338), [Summon History](#karta-101897), [Talbot's Chainsaw](#karta-101931), [Alex Wilkins (G5)](#karta-200048), [Anarch Convert (ANY)](#karta-200076), [New Blood (ANY)](#karta-201052), [Shalmath (G6)](#karta-201274), [Walker Grimes (G5)](#karta-201462) |
+| 🏆 Tournament Winners 2025 / 2025-10-19 — Shalmath Toolbox (EC Day 2, Aarhus — Nerijus Mikalajūnas, 50p) | pełna | 36 | 12 | [Enkil Cog](#karta-100645), [Eye of Hazimel](#karta-100678), [Heart of Nizchetus](#karta-100903), [Hourglass of the Mind](#karta-100941), [Nephandus](#karta-101272), [Outside the Hourglass](#karta-101338), [Summon History](#karta-101897), [Talbot's Chainsaw](#karta-101931), [Alex Wilkins (G5)](#karta-200048), [New Blood (ANY)](#karta-201052), [Shalmath (G6)](#karta-201274), [Walker Grimes (G5)](#karta-201462) |
 | 🏆 Tournament Winners 2025 / 2025-06-21 — Gangrel Death Star (NAC 2025, Columbus — Martin Weinmayer, 62p, Wall) | pełna | 41 | 2 | [Heart of Nizchetus](#karta-100903), [André the Manipulator (G5)](#karta-200081) |
 | 🏆 Tournament Winners 2024 / 2024-06-22 — Govern Resistance (NAC 2024, Columbus — Bill Troxel, 54p, Tzimisce Toolbox) | pełna | 35 | 1 | [New Blood (ANY)](#karta-201052) |
 | 🏆 Tournament Winners 2024 / 2024-11-16 — Gangrel Swarm v3 (Slovak NC, Bratislava — Jakub Rypar, 22p, Wall/Swarm) | pełna | 38 | 0 | — |
 | 🏆 Tournament Winners 2024 / 2024-02-10 — Malkavian 95 Bleed (Mexico NC — Melissa Avilés, 10p, Stealth & Bleed) | pełna | 28 | 1 | [Alabástrom (G6)](#karta-200039) |
 | 🏆 Tournament Winners 2024 / 2024-07-21 — Usurper High Council (Helsinki, Martin Weinmayer, 22p, Vote) | pełna | 25 | 0 | — |
 | 🏆 Tournament Winners 2026 / 2026-06-27 — Lasombra Potato Groove (Spanish NC, Leganés — Miquel Jorge, 158p, Vote/Bleed) | pełna | 35 | 1 | [Obedience](#karta-101309) |
-| 🏆 Tournament Winners 2024 / 2024-06-21 — The Unnamed Six Demon Bag (Origins Friday 2, Columbus — Darby Keeney, 44p, Baali Bleed) | pełna | 31 | 3 | [Anarch Convert (ANY)](#karta-200076), [Zubeida (G5)](#karta-201510), [Heart of Nizchetus](#karta-100903) |
-| 🏆 Tournament Winners 2023 / 2023-10-15 — Tupdog Brick Wall (EC 2023 Finalist — Rush Wall) | pełna | 34 | 3 | [Anarch Convert (ANY)](#karta-200076), [Hrothulf (G3)](#karta-200608), [Cedric (G4)](#karta-200257) |
-| 🏆 Tournament Winners 2024 / 2024-03-09 — Weenie Animalism (Oceania NC, Auckland — Rush/Bleed) | pełna | 27 | 1 | [Anarch Convert (ANY)](#karta-200076) |
+| 🏆 Tournament Winners 2024 / 2024-06-21 — The Unnamed Six Demon Bag (Origins Friday 2, Columbus — Darby Keeney, 44p, Baali Bleed) | pełna | 31 | 2 | [Zubeida (G5)](#karta-201510), [Heart of Nizchetus](#karta-100903) |
+| 🏆 Tournament Winners 2023 / 2023-10-15 — Tupdog Brick Wall (EC 2023 Finalist — Rush Wall) | pełna | 34 | 1 | [Cedric (G4)](#karta-200257) |
+| 🏆 Tournament Winners 2024 / 2024-03-09 — Weenie Animalism (Oceania NC, Auckland — Rush/Bleed) | pełna | 27 | 0 | — |
 
 ## Otwarte ustalenia — karty
 
@@ -125,11 +125,6 @@ Występuje w **2** taliach. Oba tryby ograniczono do obrażeń ze strike przeciw
 ### Rolling with the Punches (101649) — PARTIAL_FIX
 
 Występuje w **2** taliach. Superior działa tylko na strike przeciwnika, także na kolejne pakiety w rundzie, a nie na environmental lub unpreventable damage; respektuje zakaz prevention przez dyscyplinę. tests/cards/prevention-provenance-audit.test.ts. Stare zapisy z pakietem bez strikePhase mają niejednoznaczne pochodzenie; inne interakcje nieweryfikowane. Paczka 1: prevention-provenance-audit.test.ts pokrywa strike i brak wpływu na environmental/unpreventable. Zweryfikowano ANK 20210226 dla superior (tests/cards/rolling-punches-burn.test.ts: bramka wymaga 1 krwi na spalenie, a redukcja kosztu nie zmniejsza spalenia; mutacja bramki wykryta). Status bez zmian. Model danych obrazen jest poprawny: nowe pakiety ze strike maja strikePhase i fromStrike (ammunition jest scalany do glownego pakietu, potwierdzone testem tests/cards/ammo-strike-provenance.test.ts); stare zapisy ze strikePhase maja fromStrike odtwarzane migracja (engine.ts:319); stare zapisy BEZ strikePhase pozostaja celowo niejednoznaczne i nie sa zgadywane jako strike (np. Outside the Hourglass ma source=przeciwnik ale nie jest strike) — to swiadoma decyzja, nie bug.
-
-<a id="karta-101767"></a>
-### Shilmulo Tarot (101767) — PARTIAL_FIX
-
-Występuje w **1** taliach. Naprawiono: napełnienie z biblioteki (2 karty) tylko gdy Tarot wchodzi do gry wyposażony na minionie (onlyWhenEquipped); samo put into play nie bierze kart (LSJ 20090506). Test: tests/cards/library-search.test.ts. Heart i Black Market Cache: wybór przy każdym przekierowanym dobraniu, refill do rozmiaru ręki wznawiany po wyborze Tarot (draw-up-redirect.test.ts, heart-draw-redirect.test.ts, multiple-draw-redirects.test.ts). Nowe: wycofanie (p. 38) nie jest dostępne, dopóki Tarot z kartami może jeszcze dobrać (G00160, LSJ 20060620: dobieraj tyle, ile się da) — tests/cards/shilmulo-withdrawal.test.ts (3 testy, mutacja wykryta). Interpretacja: przy pustej bibliotece nadal wolno wybrać 'dobierz z biblioteki' i zakończyć (test draw-up-redirect 'stops if the chosen library is empty'). Otwarte: w oknie unlock nie ma dobrania z Tarot, bo karta mówi o zastąpieniu dobrania, a unlock nim nie jest; dobór następuje przy najbliższym dobieraniu do rozmiaru ręki. Kolejki wielokrotnego dobierania pokryte testami: draw-up-redirect.test.ts (12 testow: kazde dobranie ma wybor zrodla, koniec przy pustej bibliotece, save/load, zmiana hand size), multiple-draw-redirects.test.ts (7 testow: wiele zrodel dla jednego dobrania), heart-draw-redirect.test.ts (8 testow). Wszystkie przechodza.
 
 <a id="karta-101897"></a>
 ### Summon History (101897) — PARTIAL_FIX
@@ -196,11 +191,6 @@ Występuje w **1** taliach. Dodano once-per-turn unlock innego własnego ready G
 
 Występuje w **1** taliach. Dodano opcję końcowego celu successful bleed po rozstrzygnięciu: zapłata 1 pool i przejęcie Alexa albo odmowa. tests/cards/alex-wilkins-audit.test.ts obejmuje przekierowanie, zero bleed i save/load. Kolejnosc wzgledem oust i innych efektow rozstrzygniecia wymaga weryfikacji; brak wpisu w migawce dla Alex Wilkins, wymaga potwierdzenia na VEKN.
 
-<a id="karta-200076"></a>
-### Anarch Convert (ANY) (200076) — PARTIAL_FIX
-
-Występuje w **4** taliach. Opcjonalny wybór przed contestem przy wejściu, usunięcie Convert, zmiana sekty nietytułowanego wampira i wybór pool lub crypt draw; wybór przeżywa serializację. Wszystkie rulingi zweryfikowane testami w tests/cards/anarch-convert-audit.test.ts: wybór przed contestem [LSJ 20080526/RTR 20180303/ANK 20211214], konwertowanie już anarchicznego wampira [PIB 20121031], draw z pustego crypt [LSJ 20060620]. Hackerspace: Convert wchodzi przed usunięciem i zmianą sekty; counter za zmianę tylko przy realnej zmianie — tests/cards/hackerspace-audit.test.ts.
-
 <a id="karta-200081"></a>
 ### André the Manipulator (G5) (200081) — PARTIAL_FIX
 
@@ -210,11 +200,6 @@ Występuje w **1** taliach. +2 hand size wyliczane dla ready, także locked; tor
 ### Cedric (G4) (200257) — PARTIAL_FIX
 
 Występuje w **1** taliach. Dodano możliwość zapłacenia 1 blood za unlock po blokowaniu akcji directed, w oknie po rozstrzygnięciu i walce; tests/cards/cedric-audit.test.ts obejmuje brak celu przy akcji undirected, zapłatę, odmowę i save/load. Flight importowany i testowany. Nadal brak implementacji Tremere slave, a ścisły timing po natychmiastowym zakończeniu akcji i przy kontynuacji po bloku wymaga dalszego przeglądu. Źródła: https://www.vekn.net/179-rules/vtes-rulebook oraz https://www.vekn.net/forum/rules-questions/75320-rules-questions-for-someone-coming-back-in-to-v-tes.
-
-<a id="karta-200608"></a>
-### Hrothulf (G3) (200608) — PARTIAL_FIX
-
-Występuje w **1** taliach. Dodano directed rush Hrothulfa na ready miniona innego Methuselah, tylko przy posiadaniu Edge; koszt spalany przy sukcesie, zgodnie z rulingiem LSJ 20030519. tests/cards/hrothulf-audit.test.ts obejmuje targety, blok, sukces, Go-getter i save/restore. Po utracie Edge przed rozpatrzeniem: akcja pozostaje udana, ale Edge nie jest spalany i walka się nie rozpoczyna — przetestowane w tests/cards/hrothulf-audit.test.ts ("cannot pay the effect if the Edge changes hands before resolution"). Wszystkie elementy LSJ 20030519 pokryte testami.
 
 <a id="karta-201052"></a>
 ### New Blood (ANY) (201052) — PARTIAL_FIX

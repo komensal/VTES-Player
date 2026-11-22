@@ -10598,7 +10598,7 @@
   {
     "id": 101767,
     "name": "Shilmulo Tarot",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Naprawiono: napełnienie z biblioteki (2 karty) tylko gdy Tarot wchodzi do gry wyposażony na minionie (onlyWhenEquipped); samo put into play nie bierze kart (LSJ 20090506). Test: tests/cards/library-search.test.ts. Heart i Black Market Cache: wybór przy każdym przekierowanym dobraniu, refill do rozmiaru ręki wznawiany po wyborze Tarot (draw-up-redirect.test.ts, heart-draw-redirect.test.ts, multiple-draw-redirects.test.ts). Nowe: wycofanie (p. 38) nie jest dostępne, dopóki Tarot z kartami może jeszcze dobrać (G00160, LSJ 20060620: dobieraj tyle, ile się da) — tests/cards/shilmulo-withdrawal.test.ts (3 testy, mutacja wykryta). Interpretacja: przy pustej bibliotece nadal wolno wybrać 'dobierz z biblioteki' i zakończyć (test draw-up-redirect 'stops if the chosen library is empty'). Otwarte: w oknie unlock nie ma dobrania z Tarot, bo karta mówi o zastąpieniu dobrania, a unlock nim nie jest; dobór następuje przy najbliższym dobieraniu do rozmiaru ręki. Kolejki wielokrotnego dobierania pokryte testami: draw-up-redirect.test.ts (12 testow: kazde dobranie ma wybor zrodla, koniec przy pustej bibliotece, save/load, zmiana hand size), multiple-draw-redirects.test.ts (7 testow: wiele zrodel dla jednego dobrania), heart-draw-redirect.test.ts (8 testow). Wszystkie przechodza."
   },
   {
@@ -14636,7 +14636,7 @@
   {
     "id": 200076,
     "name": "Anarch Convert (ANY)",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Opcjonalny wybór przed contestem przy wejściu, usunięcie Convert, zmiana sekty nietytułowanego wampira i wybór pool lub crypt draw; wybór przeżywa serializację. Wszystkie rulingi zweryfikowane testami w tests/cards/anarch-convert-audit.test.ts: wybór przed contestem [LSJ 20080526/RTR 20180303/ANK 20211214], konwertowanie już anarchicznego wampira [PIB 20121031], draw z pustego crypt [LSJ 20060620]. Hackerspace: Convert wchodzi przed usunięciem i zmianą sekty; counter za zmianę tylko przy realnej zmianie — tests/cards/hackerspace-audit.test.ts."
   },
   {
@@ -17828,7 +17828,7 @@
   {
     "id": 200608,
     "name": "Hrothulf (G3)",
-    "status": "PARTIAL_FIX",
+    "status": "FIXED_TARGETED",
     "evidence": "Dodano directed rush Hrothulfa na ready miniona innego Methuselah, tylko przy posiadaniu Edge; koszt spalany przy sukcesie, zgodnie z rulingiem LSJ 20030519. tests/cards/hrothulf-audit.test.ts obejmuje targety, blok, sukces, Go-getter i save/restore. Po utracie Edge przed rozpatrzeniem: akcja pozostaje udana, ale Edge nie jest spalany i walka się nie rozpoczyna — przetestowane w tests/cards/hrothulf-audit.test.ts (\u0022cannot pay the effect if the Edge changes hands before resolution\u0022). Wszystkie elementy LSJ 20030519 pokryte testami."
   },
   {
