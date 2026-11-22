@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **39 różnych kart**: CODE_DISCREPANCY 0, PARTIAL_FIX 39, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- Otwarte ustalenia dotyczą **38 różnych kart**: CODE_DISCREPANCY 0, PARTIAL_FIX 38, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
 - **24/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **98**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **99**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -56,7 +56,7 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 | Sabbat V5 / Path of Cathari | pełna | 35 | 1 | [Gostoso (G6)](#karta-201754) |
 | Sabbat V5 / Path of Death | pełna | 41 | 3 | [Obedience](#karta-101309), [Dance of the Dead](#karta-102314), [Eulogio Sánchez de los Reyes (G6)](#karta-201750) |
 | Sabbat V5 / Path of Power and the Inner Voice | pełna | 42 | 1 | [Věnceslava, The Implacable (G6)](#karta-201776) |
-| 🏆 Tournament Winners 2025 / 2025-10-19 — Shalmath Toolbox (EC Day 2, Aarhus — Nerijus Mikalajūnas, 50p) | pełna | 36 | 14 | [Enkil Cog](#karta-100645), [Eye of Hazimel](#karta-100678), [Heart of Nizchetus](#karta-100903), [Hourglass of the Mind](#karta-100941), [Nephandus](#karta-101272), [Outside the Hourglass](#karta-101338), [Summon History](#karta-101897), [Talbot's Chainsaw](#karta-101931), [Alex Wilkins (G5)](#karta-200048), [Anarch Convert (ANY)](#karta-200076), [Donald Cargill (G5)](#karta-200365), [New Blood (ANY)](#karta-201052), [Shalmath (G6)](#karta-201274), [Walker Grimes (G5)](#karta-201462) |
+| 🏆 Tournament Winners 2025 / 2025-10-19 — Shalmath Toolbox (EC Day 2, Aarhus — Nerijus Mikalajūnas, 50p) | pełna | 36 | 13 | [Enkil Cog](#karta-100645), [Eye of Hazimel](#karta-100678), [Heart of Nizchetus](#karta-100903), [Hourglass of the Mind](#karta-100941), [Nephandus](#karta-101272), [Outside the Hourglass](#karta-101338), [Summon History](#karta-101897), [Talbot's Chainsaw](#karta-101931), [Alex Wilkins (G5)](#karta-200048), [Anarch Convert (ANY)](#karta-200076), [New Blood (ANY)](#karta-201052), [Shalmath (G6)](#karta-201274), [Walker Grimes (G5)](#karta-201462) |
 | 🏆 Tournament Winners 2025 / 2025-06-21 — Gangrel Death Star (NAC 2025, Columbus — Martin Weinmayer, 62p, Wall) | pełna | 41 | 2 | [Heart of Nizchetus](#karta-100903), [André the Manipulator (G5)](#karta-200081) |
 | 🏆 Tournament Winners 2024 / 2024-06-22 — Govern Resistance (NAC 2024, Columbus — Bill Troxel, 54p, Tzimisce Toolbox) | pełna | 35 | 1 | [New Blood (ANY)](#karta-201052) |
 | 🏆 Tournament Winners 2024 / 2024-11-16 — Gangrel Swarm v3 (Slovak NC, Bratislava — Jakub Rypar, 22p, Wall/Swarm) | pełna | 38 | 0 | — |
@@ -104,7 +104,7 @@ Występuje w **1** taliach. Częściowo naprawiono: odrębne warianty [pot]/[tem
 <a id="karta-101272"></a>
 ### Nephandus (101272) — PARTIAL_FIX
 
-Występuje w **1** taliach. Zweryfikowano end-to-end: pełna walka (bleed, blok przez Nephandus, strike wyboru) oferuje „Nephandus: strike (1R)” obok hand strike; wybór ranged strike zabiera 1 krew opozycji, a jego własne życie nie spada przy hand strike przeciwnika (redukcja 1, tests/cards/nephandus.test.ts, 7 testów). Wcześniej: redukcja tylko w combat i tylko od strike/damaging effect przeciwnika; negatywne przypadki poza walką i środowiskowe. Nadal nieweryfikowane: zachowanie przy kilku źródłach obrażeń jednocześnie oraz pełny zakres efektów strike 1R poza tym przebiegiem.
+Występuje w **1** taliach. Zweryfikowano end-to-end: pełna walka (bleed, blok przez Nephandus, strike wyboru) oferuje „Nephandus: strike (1R)” obok hand strike; wybór ranged strike zabiera 1 krew opozycji, a jego własne życie nie spada przy hand strike przeciwnika (redukcja 1, tests/cards/nephandus.test.ts, 7 testów). Wcześniej: redukcja tylko w combat i tylko od strike/damaging effect przeciwnika; negatywne przypadki poza walką i środowiskowe. Zweryfikowano LSJ 20091123-2 (tests/cards/nephandus.test.ts): obrażenia z Aim (Target Head +2) NIE są redukowane osobno — redukcja 1 stosowana raz na cały strike (1+2=3 -> 2), bo Aim jest scalany ze strike przed incomingDamageReduction. Pozostaje nieweryfikowany pełny zakres efektów strike 1R poza tym przebiegiem.
 
 <a id="karta-101309"></a>
 ### Obedience (101309) — PARTIAL_FIX
@@ -189,7 +189,7 @@ Występuje w **1** taliach. Zachowuje niezależne ograniczenia przy anulowaniu f
 <a id="karta-200039"></a>
 ### Alabástrom (G6) (200039) — PARTIAL_FIX
 
-Występuje w **1** taliach. Dodano once-per-turn unlock innego własnego ready Gargoyle podczas własnej tury, wraz z ready/locked i negatywnymi testami; crypt-wave-5.test.ts. Nie wszystkie okna i interakcje unlock zweryfikowane.
+Występuje w **1** taliach. Dodano once-per-turn unlock innego własnego ready Gargoyle podczas własnej tury, wraz z ready/locked i negatywnymi testami (siebie, torpor, inny klan, cudza tura); crypt-wave-5.test.ts. Dodano test dostępności unlock w fazie master, nie tylko minion. Pozostałe okna (combat, referendum) i interakcje z noUnlock wymagają dalszej weryfikacji.
 
 <a id="karta-200048"></a>
 ### Alex Wilkins (G5) (200048) — PARTIAL_FIX
@@ -211,11 +211,6 @@ Występuje w **1** taliach. +2 hand size wyliczane dla ready, także locked; tor
 
 Występuje w **1** taliach. Dodano możliwość zapłacenia 1 blood za unlock po blokowaniu akcji directed, w oknie po rozstrzygnięciu i walce; tests/cards/cedric-audit.test.ts obejmuje brak celu przy akcji undirected, zapłatę, odmowę i save/load. Flight importowany i testowany. Nadal brak implementacji Tremere slave, a ścisły timing po natychmiastowym zakończeniu akcji i przy kontynuacji po bloku wymaga dalszego przeglądu. Źródła: https://www.vekn.net/179-rules/vtes-rulebook oraz https://www.vekn.net/forum/rules-questions/75320-rules-questions-for-someone-coming-back-in-to-v-tes.
 
-<a id="karta-200365"></a>
-### Donald Cargill (G5) (200365) — PARTIAL_FIX
-
-Występuje w **1** taliach. Po passed referendum wywołanym przez predatora spala 1 blood; test pass/fail i innego kontrolera w referendum-outcomes.test.ts. Predator odczytywany z chwili wezwania referendum (predatorAtCall): spalenie działa także, gdy predator zostaje usunięty przez to referendum [LSJ 20090115-2]; test w referendum-outcomes.test.ts (Treachery). Torpor zweryfikowany (test: brak spalania gdy w torporze). Blood hunt (niestandardowe referendum, brak callingMinion) zweryfikowany - brak reakcji [patrz referendum-outcomes.test.ts]. Wszystkie elementy LSJ 20090115-2 pokryte testami.
-
 <a id="karta-200608"></a>
 ### Hrothulf (G3) (200608) — PARTIAL_FIX
 
@@ -224,7 +219,7 @@ Występuje w **1** taliach. Dodano directed rush Hrothulfa na ready miniona inne
 <a id="karta-201052"></a>
 ### New Blood (ANY) (201052) — PARTIAL_FIX
 
-Występuje w **2** taliach. Dodano wybór dowolnego nazwanego circle albo circle jednego znanego wampira przed wejściem i contest, model identyfikacji circle oraz dobór crypt w swojej influence; wybór przeżywa save/load i jest usuwany po powrocie do uncontrolled. Wykorzystują go Unwholesome Bond i Camaraderie (także circle of one oraz save/load); pozostałe karty Sanguinus nie są jeszcze zintegrowane z modelem, a wszystkie sposoby wejścia i interakcje contest wymagają kontroli. tests/cards/new-blood-audit.test.ts, blood-brother-circle-audit.test.ts, unwholesome-bond-circle-audit.test.ts. Korekta poprzedniego ustalenia: późniejszy ruling Rules Director z 13.11.2021 pozwala New Blood dołączyć do circle of one innego wampira, wbrew starszej interpretacji z 2019: https://www.vekn.net/forum/rules-questions/79465-unwholesome-bond-angelo-circle-of-one-new-blood-and-circle. Paczka 2: ANK 20211113 (dwa uncontrolled New Blood w różnych kręgach) nie ma osobnego testu w tej paczce. Status bez zmian.
+Występuje w **2** taliach. Dodano wybór dowolnego nazwanego circle albo circle jednego znanego wampira przed wejściem i contest, model identyfikacji circle oraz dobór crypt w swojej influence; wybór przeżywa save/load i jest usuwany po powrocie do uncontrolled. Wykorzystują go Unwholesome Bond i Camaraderie (także circle of one oraz save/load); pozostałe karty Sanguinus nie są jeszcze zintegrowane z modelem, a wszystkie sposoby wejścia i interakcje contest wymagają kontroli. tests/cards/new-blood-audit.test.ts, blood-brother-circle-audit.test.ts, unwholesome-bond-circle-audit.test.ts. Korekta poprzedniego ustalenia: późniejszy ruling Rules Director z 13.11.2021 pozwala New Blood dołączyć do circle of one innego wampira, wbrew starszej interpretacji z 2019: https://www.vekn.net/forum/rules-questions/79465-unwholesome-bond-angelo-circle-of-one-new-blood-and-circle. Paczka 2: ANK 20211113 (dwa uncontrolled New Blood w różnych kręgach) — dodano osobny test (tests/cards/new-blood-audit.test.ts, 'two uncontrolled New Bloods are in DIFFERENT circles of one'): każdy uncontrolled New Blood ma krąg individual:<id>, więc dwa egzemplarze są w różnych kręgach. Status bez zmian.
 
 <a id="karta-201274"></a>
 ### Shalmath (G6) (201274) — PARTIAL_FIX
@@ -254,7 +249,7 @@ Występuje w **2** taliach. Opikun może chronić siebie lub innego kontrolowane
 <a id="karta-201750"></a>
 ### Eulogio Sánchez de los Reyes (G6) (201750) — PARTIAL_FIX
 
-Występuje w **1** taliach. grantedAction reorderTop 5, +1 stealth, 1 blood i unlockActor; porównano spec i kompilator. Ograniczony zakres; bez nowego scenariusza. Aktualizacja: Unlock przy reorderTop pomijany przy superior Sleeping Mind; brak osobnego testu end-to-end tego połączenia.
+Występuje w **1** taliach. grantedAction reorderTop 5, +1 stealth, 1 blood i unlockActor; porównano spec i kompilator. Ograniczony zakres; bez nowego scenariusza. Unlock przy reorderTop pomijany przy superior Sleeping Mind (ga.unlockActor && !af.noUnlock w compile.ts). Dodano test end-to-end: rzeczywiste zagranie superior The Sleeping Mind na jego akcję blokuje unlock (tests/cards/crypt-wave-5.test.ts, 'end-to-end: superior The Sleeping Mind prevents his reorderTop unlock', PIB 20150703).
 
 <a id="karta-201754"></a>
 ### Gostoso (G6) (201754) — PARTIAL_FIX

@@ -16370,8 +16370,8 @@
   {
     "id": 200365,
     "name": "Donald Cargill (G5)",
-    "status": "PARTIAL_FIX",
-    "evidence": "Po passed referendum wywołanym przez predatora spala 1 blood; test pass/fail i innego kontrolera w referendum-outcomes.test.ts. Predator odczytywany z chwili wezwania referendum (predatorAtCall): spalenie działa także, gdy predator zostaje usunięty przez to referendum [LSJ 20090115-2]; test w referendum-outcomes.test.ts (Treachery). Torpor zweryfikowany (test: brak spalania gdy w torporze). Blood hunt (niestandardowe referendum, brak callingMinion) zweryfikowany - brak reakcji [patrz referendum-outcomes.test.ts]. Wszystkie elementy LSJ 20090115-2 pokryte testami."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wszystkie elementy LSJ 20090115-2 pokryte testami (tests/cards/referendum-outcomes.test.ts): zdolność stosowana PO efektach referendum, w tym oust i pool (test Treachery: predator usunięty przez referendum, spalenie nadal działa); zdolność działa nawet gdy predator zostaje usunięty przez to referendum (test Treachery). Dodatkowo: brak spalania w torporze (test) oraz brak reakcji na blood hunt (test, niestandardowe referendum bez callingMinion)."
   },
   {
     "id": 200366,
