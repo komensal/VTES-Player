@@ -192,4 +192,6 @@ describe("Nephandus (101272): a full combat with its 1R strike", () => {
     // .44 Magnum 2R reduced by 1 = 1 damage to Nephandus: 5 -> 4.
     expect(find(state, "NEPH").blood).toBe(4);
   });
+
+
 });
