@@ -1484,6 +1484,8 @@ export type EffectPrimitive =
   | { kind: "handStrikeDamageBonus"; amount: number }
   /** Add damage only to this minion's damaging strike cards requiring Potence. */
   | { kind: "potenceStrikeDamageBonus"; amount: number }
+  /** Add damage to this minion's damaging strikes this combat (Rage of Apedemak). */
+  | { kind: "strikeDamageBonus"; amount: number }
   /** Blood to Water: burn blood from the opposing vampire, or burn an opposing ally. */
   | { kind: "bloodToWater"; vampireBlood: number; burnAlly: boolean }
   /** Blood Agony basic: aggravate only the next hand or melee-weapon strike. */

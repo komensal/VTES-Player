@@ -6647,7 +6647,7 @@ export const cardSpecs: CardSpec[] = [
         level: "basic",
         discipline: ["ani", "pot"],
         effects: [
-          { kind: "handStrikeDamageBonus", amount: 1 },
+          { kind: "strikeDamageBonus", amount: 1 },
           { kind: "handSizeBonus", amount: 1 },
         ],
       },
@@ -6655,7 +6655,7 @@ export const cardSpecs: CardSpec[] = [
         level: "superior",
         discipline: ["ani", "pot"],
         effects: [
-          { kind: "handStrikeDamageBonus", amount: 2 },
+          { kind: "strikeDamageBonus", amount: 2 },
           { kind: "handSizeBonus", amount: 1 },
         ],
       },

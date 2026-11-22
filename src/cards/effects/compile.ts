@@ -3204,6 +3204,7 @@ function combatWindowFor(mode: CardMode): WindowId | null {
       case "addStrength":
       case "handStrikeDamageBonus":
       case "potenceStrikeDamageBonus":
+      case "strikeDamageBonus":
       // "The OPPOSING minion gets -N strength" — same window as its
       // self-facing siblings (§2).
       case "opposingStrength":
@@ -4953,6 +4954,9 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             break;
           case "handStrikeDamageBonus":
             ops.addCombatHandStrikeDamage(play, e.amount);
+            break;
+          case "strikeDamageBonus":
+            ops.addCombatStrikeDamage(play, e.amount);
             break;
           case "potenceStrikeDamageBonus":
             ops.addPotenceStrikeDamageBonus(play, e.amount);
