@@ -13887,7 +13887,7 @@
     "id": 102315,
     "name": "Dance with the Devil",
     "status": "PARTIAL_FIX",
-    "evidence": "Superior nie pobiera blood automatycznie; w kroku range można opcjonalnie zapłacić za dodatkowy close maneuver, a bez blood nadal zagrać kartę. round-end.test.ts. Zakup jest obecnie dostępny tylko w range przy long, nie dowolnie w rundzie; wymagane są dalsze prace nad timingiem i ograniczeniami dyscyplin."
+    "evidence": "Superior nie pobiera blood automatycznie; w kroku range można opcjonalnie zapłacić za dodatkowy close maneuver, a bez blood nadal zagrać kartę. round-end.test.ts. Zakup jest obecnie dostępny tylko w range przy long, nie dowolnie w rundzie; wymagane są dalsze prace nad timingiem i ograniczeniami dyscyplin. Brak wpisu w migawce dla kluczowej kwestii; wymaga potwierdzenia na VEKN (sprawdzono forum, brak konkretnego rulingu)."
   },
   {
     "id": 102316,
@@ -14013,7 +14013,7 @@
     "id": 102336,
     "name": "Rage of Apedemak",
     "status": "PARTIAL_FIX",
-    "evidence": "Bonus dotyczy hand strike, nie strength ani melee weapon; testy hand, Roundhouse i Femur oraz hand size. tests/cards/frenzy-direction-audit.test.ts i temporary-hand-size.test.ts. Wygaszanie wszystkich wcześniejszych efektów frenzy przez Shield wymaga dalszej weryfikacji."
+    "evidence": "Bonus dotyczy hand strike, nie strength ani melee weapon; testy hand, Roundhouse i Femur oraz hand size. tests/cards/frenzy-direction-audit.test.ts i temporary-hand-size.test.ts. Wygaszanie wszystkich wcześniejszych efektów frenzy przez Shield wymaga dalszej weryfikacji. Brak wpisu w migawce dla kluczowej kwestii; wymaga potwierdzenia na VEKN (sprawdzono forum, brak konkretnego rulingu)."
   },
   {
     "id": 102337,
@@ -24699,7 +24699,7 @@
     "id": 201754,
     "name": "Gostoso (G6)",
     "status": "PARTIAL_FIX",
-    "evidence": "Po successful bleed prey gracz wybiera gain blood lub odmowę, wybór można zapisać i wznowić; crypt-wave-4.test.ts. Wybór jest kolejkwany przez resolver akcji, timing względem wszystkich efektów rozstrzygnięcia wymaga weryfikacji."
+    "evidence": "Po successful bleed prey gracz wybiera gain blood lub odmowę, wybór można zapisać i wznowić; crypt-wave-4.test.ts. Wybór jest kolejkwany przez resolver akcji, timing względem wszystkich efektów rozstrzygnięcia wymaga weryfikacji. Brak wpisu w migawce dla kluczowej kwestii; wymaga potwierdzenia na VEKN (sprawdzono forum, brak konkretnego rulingu)."
   },
   {
     "id": 201755,
