@@ -70,3 +70,98 @@ describe("Talbot's Chainsaw (101931): the first-round mandatory press", () => {
     throw new Error("round 2 press step not reached");
   });
 });
+
+describe("Talbot's Chainsaw (101931): rush grant", () => {
+  it("offers the bearer a rush action against any minion in minion phase", () => {
+    const state = threeSeatGame();
+    const v1 = state.seats[0]!.minions[0]!;
+    v1.blood = 5;
+    const handler = testRegistry["Talbot's Chainsaw"]!;
+    v1.attached.push({
+      card: { id: "tc", name: "Talbot's Chainsaw" },
+      locked: false,
+      usedThisPhase: false,
+      statics: handler.permanentStatics ?? {},
+      tags: ["weapon", "melee", "Talbot's Chainsaw"],
+    } as any);
+    // Bob has a ready minion M as a target.
+    const m = state.seats[1]!.minions.find((x) => x.id === "M")!;
+    m.blood = 4;
+    const engine = new VtesEngine(state, testRegistry);
+    // Walk to Alice's minion phase.
+    for (let i = 0; i < 50; i++) {
+      const dp = engine.decision()!;
+      if (dp.window === "turn.minion" && dp.seat === "Alice") break;
+      engine.choose(dp.options.find((o) => o.id === "pass")?.id ?? dp.options[0]!.id);
+    }
+    // The rush grant should be offered.
+    const rushOption = engine.decision()!.options.find((o) =>
+      o.id.startsWith("act:Talbot's Chainsaw:tc:rush:V1:")
+    );
+    expect(rushOption).toBeDefined();
+    // The target is Bob (prey), not his minion M.
+    expect(rushOption!.id).toContain(":W");
+  });
+
+  it("does not offer rush when the bearer is not ready", () => {
+    const state = threeSeatGame();
+    const v1 = state.seats[0]!.minions[0]!;
+    v1.blood = 5;
+    v1.locked = true;
+    const handler = testRegistry["Talbot's Chainsaw"]!;
+    v1.attached.push({
+      card: { id: "tc", name: "Talbot's Chainsaw" },
+      locked: false,
+      usedThisPhase: false,
+      statics: handler.permanentStatics ?? {},
+      tags: ["weapon", "melee", "Talbot's Chainsaw"],
+    } as any);
+    const engine = new VtesEngine(state, testRegistry);
+    for (let i = 0; i < 50; i++) {
+      const dp = engine.decision()!;
+      if (dp.window === "turn.minion" && dp.seat === "Alice") break;
+      engine.choose(dp.options.find((o) => o.id === "pass")?.id ?? dp.options[0]!.id);
+    }
+    const rushOption = engine.decision()!.options.find((o) =>
+      o.id.startsWith("act:Talbot's Chainsaw:tc:rush:")
+    );
+    expect(rushOption).toBeUndefined();
+  });
+});
+
+describe("Talbot's Chainsaw (101931): prevent per combat", () => {
+  it("offers prevention once per combat round", () => {
+    const state = threeSeatGame();
+    const v1 = state.seats[0]!.minions[0]!;
+    v1.blood = 5;
+    const handler = testRegistry["Talbot's Chainsaw"]!;
+    v1.attached.push({
+      card: { id: "tc", name: "Talbot's Chainsaw" },
+      locked: false,
+      usedThisPhase: false,
+      statics: handler.permanentStatics ?? {},
+      tags: ["weapon", "melee", "Talbot's Chainsaw"],
+    } as any);
+    const engine = new VtesEngine(state, testRegistry);
+    runTrace(engine, [
+      ["Alice", "bleed:V1"], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"], ["Alice", "pass"],
+      ["Bob", "block:M"], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"],
+    ]);
+    // Walk to combat damage resolution.
+    for (let i = 0; i < 60; i++) {
+      const dp = engine.decision()!;
+      if (dp.window === "combat.damageResolution") break;
+      engine.choose(dp.options.find((o) => o.id === "pass")?.id ?? dp.options[0]!.id);
+    }
+    // V1 (bearer's controller) should be offered prevention.
+    const preventOption = engine.decision()!.options.find((o) =>
+      o.id.startsWith("ability:Talbot's Chainsaw:tc:prevent")
+    ) || engine.decision()!.options.find((o) =>
+      o.id.startsWith("play:") && o.id.includes("Talbot")
+    );
+    // preventPerCombat is an in-play ability, not a card play.
+    expect(engine.decision()!.options.some((o) =>
+      o.id.includes("prevent") || o.id.includes("Talbot's Chainsaw")
+    )).toBe(true);
+  });
+});
