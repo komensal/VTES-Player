@@ -44710,22 +44710,44 @@ const cedric: CardHandler = {
   ...compileSpec(cryptSpecs.find(s => s.name === "Cedric (G4)")!),
   abilityOptions(entry, owner, ctx) {
     const af = ctx.action;
-    if (ctx.window !== "action.afterResolution" || !af || !af.directed ||
-        af.blockedBy !== owner.minion || !owner.minion ||
-        (af.usedInPlayAbilities ?? []).includes(entry.card.id)) return [];
-    const m = findMinion(ctx.state, owner.minion);
-    if (!m || m.controller !== ctx.seat || !m.locked) return [];
-    return [{ id: `ability:Cedric (G4):${entry.card.id}:unlock`, kind: "useAbility",
-      label: "Cedric: burn 1 blood to unlock", source: entry.card.id, params: {} }];
+    const windows = ["turn.unlock", "turn.master", "turn.minion", "turn.influence", "turn.discard",
+      "action.announce", "action.effects", "action.afterResolution", "referendum.polling",
+      "referendum.afterResolution", "combat.beforeRange", "combat.beforeStrikes", "combat.endOfRound"];
+    if (!windows.includes(ctx.window) || !owner.minion || entry.usedThisTurn) return [];
+    const bearer = findMinion(ctx.state, owner.minion);
+    if (!bearer || bearer.controller !== ctx.seat || !bearer.locked) return [];
+    if (ctx.action?.noUnlock) return [];
+    const out: LegalOption[] = [{ id: `ability:Cedric (G4):${entry.card.id}:unlockSelf`, kind: "useAbility",
+      label: "Cedric: burn 1 blood to unlock self", source: entry.card.id, params: { act: "unlockSelf" } }];
+    // Tremere slave: unlock another ready Tremere you control
+    const tremereTargets = ctx.state.seats
+      .flatMap((s) => s.minions)
+      .filter((m) => m.id !== owner.minion && m.controller === ctx.seat && isReady(m) && m.locked &&
+        m.clan === "Tremere");
+    for (const t of tremereTargets) {
+      out.push({ id: `ability:Cedric (G4):${entry.card.id}:unlockTremere:${t.id}`, kind: "useAbility",
+        label: `Cedric: burn 1 blood to unlock ${t.name}`, source: entry.card.id,
+        params: { act: "unlockTremere", target: t.id } });
+    }
+    return out;
   },
-  useAbility(entry, owner, _choice, ops) {
+  useAbility(entry, owner, choice, ops) {
+    if (!owner.minion) return;
     const af = ops.action();
-    const m = owner.minion ? findMinion(ops.state, owner.minion) : null;
-    if (!af || !m || !af.directed || af.blockedBy !== m.id || !m.locked || m.blood < 1 ||
-        (af.usedInPlayAbilities ?? []).includes(entry.card.id)) return;
-    ops.markInPlayAbilityUsed(entry.card.id);
-    ops.emit({ type: "BloodBurned", minion: m.id, amount: 1 });
-    ops.emit({ type: "MinionUnlocked", minion: m.id });
+    const act = choice.params["act"];
+    if (act === "unlockSelf") {
+      entry.usedThisTurn = true;
+      ops.emit({ type: "BloodBurned", minion: owner.minion, amount: 1 });
+      ops.emit({ type: "MinionUnlocked", minion: owner.minion });
+    } else if (act === "unlockTremere") {
+      const targetId = choice.params["target"];
+      if (!targetId) return;
+      const target = findMinion(ops.state, targetId);
+      if (!target || !target.locked || target.clan !== "Tremere" || target.controller !== owner.seat) return;
+      entry.usedThisTurn = true;
+      ops.emit({ type: "BloodBurned", minion: owner.minion, amount: 1 });
+      ops.emit({ type: "MinionUnlocked", minion: targetId });
+    }
   },
 };
 
@@ -48555,6 +48577,7 @@ export function buildHandlerRegistry(): HandlerRegistry {
     nergalAdvanced,
     theUnnamed,
     shalmath,
+    cedric,
     gustavBreidenstein,
     horatioBallard,
     mithrasG3,
