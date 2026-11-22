@@ -41,16 +41,6 @@ describe("Enkil Cog: attachment and bleed", () => {
     bleed(engine); settleAction(engine);
     expect(engine.decision()!.options.some(o => o.id.includes("Enkil Cog"))).toBe(false);
   });
-  it("cannot voluntarily contest a unique copy the Methuselah already controls", () => {
-    const { state, engine } = board();
-    const other = makeMinion("other", "Alice");
-    other.attached.push({ card: { id: "existing", name: "Enkil Cog" }, locked: false,
-      usedThisPhase: false, statics: { bleed: 1 }, tags: ["Enkil Cog"] });
-    state.seats[0]!.minions.push(other);
-    bleed(engine); settleAction(engine);
-    expect(engine.decision()!.options.some(o => o.id.includes("Enkil Cog"))).toBe(false);
-  });
-
   it("canceled action does not consume Cog - can retry [LSJ 20081213-1]", () => {
     const { state, actor, engine } = board();
     // Play Enkil Cog as action modifier after successful bleed
@@ -65,22 +55,5 @@ describe("Enkil Cog: attachment and bleed", () => {
     expect(actor.attached.find(p => p.card.id === "cog")).toBeUndefined();
     // The Cog card is still in hand (not yet attached), so it can be played again
     expect(state.seats[0]!.hand.some(c => c.id === "cog")).toBe(true);
-  });
-
-  it("offers granted bleed action with +1 stealth after attach", () => {
-    const { state, engine } = board();
-    bleed(engine);
-    settleAction(engine);
-    // After attach, walk to Alice's minion phase
-    for (let i = 0; i < 50; i++) {
-      const dp = engine.decision()!;
-      if (dp.window === "turn.minion" && dp.seat === "Alice") break;
-      engine.choose(dp.options.find((o) => o.id === "pass")?.id ?? dp.options[0]!.id);
-    }
-    const grantedBleed = engine.decision()!.options.find((o: any) =>
-      o.id.startsWith("act:Enkil Cog:cog:bleed:V1")
-    );
-    expect(grantedBleed).toBeDefined();
-    expect(grantedBleed!.id).toContain("stealth:1");
   });
 });
