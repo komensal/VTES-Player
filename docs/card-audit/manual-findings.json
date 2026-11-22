@@ -14415,7 +14415,7 @@
     "id": 200039,
     "name": "Alabástrom (G6)",
     "status": "PARTIAL_FIX",
-    "evidence": "Dodano once-per-turn unlock innego własnego ready Gargoyle podczas własnej tury, wraz z ready/locked i negatywnymi testami (siebie, torpor, inny klan, cudza tura); crypt-wave-5.test.ts. Dodano test dostępności unlock w fazie master, nie tylko minion. Pozostałe okna (combat, referendum) i interakcje z noUnlock wymagają dalszej weryfikacji."
+    "evidence": "Dodano once-per-turn unlock innego własnego ready Gargoyle podczas własnej tury, wraz z ready/locked i negatywnymi testami (siebie, torpor, inny klan, cudza tura); crypt-wave-5.test.ts. Dodano test dostępności unlock w fazie master, nie tylko minion. Handler alabastrom zaimplementowany i zarejestrowany w buildHandlerRegistry (unlock innego gotowego Gargoyle'a raz na turę). Pozostałe okna (combat, referendum) i interakcje z noUnlock wymagają dalszej weryfikacji."
   },
   {
     "id": 200040,
