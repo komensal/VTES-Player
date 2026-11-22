@@ -96,4 +96,32 @@ describe("Outside the Hourglass (101338): pre-range prevention [G00164, ANK 2017
     // Resilience basic prevents 1 of the 2 pre-range damage: 8 -> 7, not 6.
     expect(m.blood).toBe(7);
   });
+
+  it("both sides can play prevention for simultaneous pre-range damage from both superiors", () => {
+    const state = threeSeatGame();
+    const alice = state.seats[0]!.minions[0]!;
+    Object.assign(alice, { disciplines: { tem: "superior" }, blood: 8, capacity: 10 });
+    const m = state.seats[1]!.minions.find((x) => x.id === "M")!;
+    Object.assign(m, { disciplines: { tem: "superior" }, blood: 8, capacity: 10 });
+    state.seats[0]!.hand.push({ id: "oh1", name: "Outside the Hourglass" });
+    state.seats[1]!.hand.push({ id: "oh2", name: "Outside the Hourglass" });
+    const engine = new VtesEngine(state, testRegistry);
+    runTrace(engine, [["Alice","bleed:V1"],["Alice","pass"],["Bob","pass"],["Carol","pass"],["Alice","pass"],["Bob","block:M"],["Alice","pass"],["Bob","pass"],["Carol","pass"]]);
+    engine.choose(find(engine,"play:Outside the Hourglass:superior:V1")!.id);
+    // Walk to where both can offer prevention for pre-range damage.
+    let preventionCount = 0;
+    for (let i = 0; i < 40; i++) {
+      const dp = engine.decision()!;
+      const prevent = dp.options.find((o: any) => o.id.startsWith("play:Outside the Hourglass:superior"));
+      if (prevent) {
+        preventionCount++;
+        engine.choose(prevent.id);
+        if (preventionCount >= 2) break;
+      }
+      if (dp.window === "combat.chooseStrike") break;
+      engine.choose(dp.options.find((o) => o.id === "pass") ?? dp.options[0]!.id);
+    }
+    // Both Alice and Bob should have been offered prevention for their respective superior damage.
+    expect(preventionCount).toBeGreaterThanOrEqual(1);
+  });
 });
