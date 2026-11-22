@@ -37741,7 +37741,7 @@ export const cryptSpecs: CardSpec[] = [
         flatCrypt(200078, "Anastasz di Zagreb (G3)", {}), // fala 46 wierna (300) dobrane vanilla
     cryptPerm(200079, "Anatole, Prophet of Gehenna (G2)", { statics: { intercept: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
     flatCrypt(200080, "Andre LeRoux (G5)", {}),
-        condCrypt(200081, "André the Manipulator (G5)", [{ handSize: 2 }]), // fala 46 wierna (300) dobrane vanilla
+        condCrypt(200081, "André the Manipulator (G5)", [{ handSize: 2 }], { discardPhaseDrawDiscard: { amount: 1 } }), // fala 46 wierna (300) dobrane vanilla
     cryptPerm(200082, "Andrea Giovanni (G2)", {}), // fala 46 wierna (300) cryptPerm Gehenna
     flatCrypt(200083, "Andreas, The Bard of Crete (G1)", { intercept: 1 }), // fala 46 wierna (300) statics
         cryptPerm(200086, "Andrew Stuart (G4)", { requiresReady: true }), // fala 46 wierna (300) cryptPerm
@@ -38933,6 +38933,7 @@ function condCrypt(
   name: string,
   conditional: ConditionalStatic[],
   flat: PermanentStatics = {},
+  extraPerm?: Partial<NonNullable<CardSpec["permanent"]>>,
 ): CardSpec {
   return {
     krcgId,
@@ -38940,7 +38941,7 @@ function condCrypt(
     cardType: "crypt",
     bloodCost: 0,
     poolCost: 0,
-    permanent: { where: "bearer", statics: { ...flat, conditional }, tags: [] },
+    permanent: { where: "bearer", statics: { ...flat, conditional }, tags: [], ...extraPerm },
     usable: [],
     modes: [],
   };

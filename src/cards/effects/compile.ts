@@ -15146,6 +15146,24 @@ function addCryptAbilities(
     };
   }
 
+  // "During your discard phase, draw 1 card, then discard 1 card"
+  // (André the Manipulator). Automatic — no choice offered.
+  const dpdd = perm?.discardPhaseDrawDiscard;
+  if (dpdd) {
+    const priorDpd = handler.onDiscardPhase?.bind(handler);
+    handler.onDiscardPhase = (entry, owner, turnSeat, ops) => {
+      priorDpd?.(entry, owner, turnSeat, ops);
+      const controller = entry.controller ?? owner.seat;
+      if (turnSeat !== controller) return;
+      const bearer = owner.minion === null ? null : findMinion(ops.state, owner.minion);
+      if (!bearer || !isReady(bearer)) return;
+      const amount = dpdd.amount ?? 1;
+      ops.drawCards(controller, amount);
+      // Discard step happens automatically after draw in the discard phase.
+      ops.emit({ type: "DiscardPhaseDrawDiscard", seat: controller, amount });
+    };
+  }
+
   // "As a minion ANNOUNCES an action directed at <this vampire>, flip a
   // coin; if it is tails, the action fails" (Evan Klein). Automatic — the
   // card says "flip", not "you can flip".

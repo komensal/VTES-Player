@@ -4282,6 +4282,9 @@ export interface CardSpec {
       /** The printed sub-type the retainer must carry. */
       tag?: string;
     };
+    /** "During your discard phase, draw 1 card, then discard 1 card"
+     *  (André the Manipulator). Automatic — no choice offered. */
+    discardPhaseDrawDiscard?: { amount?: number };
     /** "As a minion ANNOUNCES an action directed at \<this vampire\>,
      *  flip a coin; if it is tails, the action fails" (Evan Klein).
      *  Automatic — the card says "flip", not "you can flip".

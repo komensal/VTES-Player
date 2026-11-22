@@ -812,6 +812,9 @@ export interface ConditionalStatic {
 }
 
 export interface PermanentStatics {
+  /** "During your discard phase, draw 1 card, then discard 1 card"
+   *  (André the Manipulator). */
+  discardPhaseDrawDiscard?: { amount?: number };
   /** Other vampires contesting this bearer's title must yield at unlock. */
   forceTitleContestYield?: boolean;
   /** This permanent grants its bearer Flight; a retainer's own tags do not. */
@@ -1944,6 +1947,9 @@ export type GameEvent =
   /** A game-long exception to the Blood Curse's diablerie restriction. */
   | { type: "BloodCurseDiablerieBarLifted"; clan: string }
   | { type: "CardDrawn"; seat: SeatId; cardId: CardInstanceId }
+  /** "During your discard phase, draw 1 card, then discard 1 card"
+   *  (André the Manipulator). */
+  | { type: "DiscardPhaseDrawDiscard"; seat: SeatId; amount: number }
   /** "You must shuffle it afterwards" (p. 14) — emitted after EVERY
    *  search, including one that found nothing. */
   | { type: "LibraryShuffled"; seat: SeatId }
