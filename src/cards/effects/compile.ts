@@ -3298,7 +3298,10 @@ function combatWindowFor(mode: CardMode): WindowId | null {
       case "cancelCombatCard":
         return "card.asPlayed";
       case "maneuver":
+        return "combat.range";
       case "grantCloseManeuver":
+        // "once this round" — available in any combat window, not just range.
+        return null;
       case "extraManeuverForBlood":
         return "combat.range";
       case "burnHandForStrength":
@@ -14351,6 +14354,25 @@ function addCryptAbilities(
           }
           break;
         }
+        case "bleed": {
+          // "<this vampire> can bleed as a +1 stealth Ⓓ action"
+          // (Dance with the Devil superior). Target: the actor's prey.
+          if (!ga.directed) break;
+          const prey = preyOf(state, seat);
+          if (prey === null || prey === seat) break;
+          const targetSeat = getSeat(state, prey);
+          if (!targetSeat) break;
+          for (const m of targetSeat.minions) {
+            if (!isReady(m)) continue;
+            out.push({
+              key: `bleed:${m.id}`,
+              label: `bleed ${m.name} (${prey})`,
+              params: { target: m.id },
+              targetMinion: m.id,
+            });
+          }
+          break;
+        }
         case "burnTorporVampire": {
           // "…a vampire in torpor" (ECTU Operative) — another Methuselah's.
           for (const s of state.seats) {
@@ -14652,6 +14674,11 @@ function addCryptAbilities(
             const actor = findMinion(ops.state, af.acting);
             if (actor) ops.emit({ type: "BloodGained", minion: actor.id, amount });
           }
+          return;
+        }
+        case "bleed": {
+          // Bleed action with stealth grant.
+          if (ga.stealth) ops.emit({ type: "StealthModified", actionId: af.actionId, delta: ga.stealth, source: spec.name });
           return;
         }
         case "burnSelfAndBurnMinion": {

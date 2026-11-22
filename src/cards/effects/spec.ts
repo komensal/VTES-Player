@@ -4166,6 +4166,7 @@ export interface CardSpec {
         | "addBlood"
         | "stealEquipment"
         | "ashExchange"
+        | "bleed"
         | "reviveAlly"
         | "reorderTop"
         | "stripMinion"

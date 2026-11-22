@@ -7,9 +7,9 @@ To zestawienie aktualnych wpisów audytu, nie ponowna weryfikacja wszystkich kla
 ## Podsumowanie
 
 - Unikalne karty: **727**; z wpisem w audycie: **727**; bez wpisu: **0**. Brakujące ID w registry: **0**; karty bez flagi supported: **0**.
-- Otwarte ustalenia dotyczą **33 różnych kart**: CODE_DISCREPANCY 0, PARTIAL_FIX 33, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
-- **22/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
-- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **104**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
+- Otwarte ustalenia dotyczą **12 różnych kart**: CODE_DISCREPANCY 0, PARTIAL_FIX 12, CONFIRMED_BUG 0, UNRESOLVED 0. UNRESOLVED oznacza kwestię nierozstrzygniętą, nie potwierdzony błąd.
+- **13/42 talii** zawiera co najmniej jeden otwarty lub niezweryfikowany wpis. Pozostałe talie nie mają takich wpisów, ale to nadal nie dowód kompletnej poprawności.
+- REVIEWED_NO_ISSUE_FOUND: **590** kart; FIXED_TARGETED: **125**. Obie klasy oznaczają ograniczony zakres sprawdzenia/naprawy, a nie certyfikat wszystkich interakcji.
 
 ## Dodatkowe scenariusze odtworzone w silniku
 
@@ -24,72 +24,52 @@ Liczby to **różne ID kart**, a nie liczba kopii. Listy obejmują tylko otwarte
 
 | Zestaw / talia | Typ | Różnych kart | Otwarte / bez wpisu | Karty z otwartym ustaleniem |
 |---|---|---:|---:|---|
-| Fifth Edition / Hecata | pełna | 39 | 1 | [Rolling with the Punches](#karta-101649) |
+| Fifth Edition / Hecata | pełna | 39 | 0 | — |
 | Fifth Edition / Lasombra | pełna | 36 | 0 | — |
 | Fifth Edition / Malkavian | pełna | 30 | 0 | — |
 | Fifth Edition / Nosferatu | pełna | 35 | 0 | — |
 | Fifth Edition / Toreador | pełna | 29 | 0 | — |
 | Fifth Edition / Tremere | pełna | 33 | 0 | — |
 | Fifth Edition / Ventrue | pełna | 32 | 0 | — |
-| Fifth Edition (Anarch) / Banu Haqim | pełna | 34 | 1 | [Rego Motum](#karta-101588) |
+| Fifth Edition (Anarch) / Banu Haqim | pełna | 34 | 0 | — |
 | Fifth Edition (Anarch) / Brujah | pełna | 37 | 0 | — |
 | Fifth Edition (Anarch) / Gangrel | pełna | 38 | 0 | — |
-| Fifth Edition (Anarch) / Ministry | pełna | 36 | 2 | [Heart of Nizchetus](#karta-100903), [Revelation of the Serpent](#karta-102233) |
+| Fifth Edition (Anarch) / Ministry | pełna | 36 | 1 | [Heart of Nizchetus](#karta-100903) |
 | Fifth Edition (Companion) / Ravnos | pełna | 39 | 0 | — |
-| Fifth Edition (Companion) / Salubri | pełna | 43 | 3 | [Rolling with the Punches](#karta-101649), [Touch of Valeren](#karta-102262), [Opikun (G7)](#karta-201680) |
-| Fifth Edition (Companion) / Tzimisce | pełna | 40 | 2 | [War Ghoul](#karta-102144), [Childe of the Revolution](#karta-102246) |
+| Fifth Edition (Companion) / Salubri | pełna | 43 | 1 | [Touch of Valeren](#karta-102262) |
+| Fifth Edition (Companion) / Tzimisce | pełna | 40 | 1 | [Childe of the Revolution](#karta-102246) |
 | New Blood / Malkavian | half-deck | 30 | 0 | — |
 | New Blood / Nosferatu | half-deck | 32 | 0 | — |
 | New Blood / Toreador | half-deck | 27 | 0 | — |
-| New Blood / Tremere | half-deck | 30 | 1 | [Rego Motum](#karta-101588) |
+| New Blood / Tremere | half-deck | 30 | 0 | — |
 | New Blood / Ventrue | half-deck | 28 | 0 | — |
-| New Blood II / Banu Haqim | half-deck | 32 | 1 | [Blur](#karta-100227) |
+| New Blood II / Banu Haqim | half-deck | 32 | 0 | — |
 | New Blood II / Brujah | half-deck | 30 | 1 | [Childe of the Revolution](#karta-102246) |
 | New Blood II / Gangrel | half-deck | 31 | 0 | — |
-| New Blood II / Ministry | half-deck | 33 | 1 | [Revelation of the Serpent](#karta-102233) |
+| New Blood II / Ministry | half-deck | 33 | 0 | — |
 | New Blood III / Hecata | half-deck | 25 | 0 | — |
 | New Blood III / Lasombra | half-deck | 24 | 0 | — |
-| New Blood III / Ravnos | half-deck | 31 | 1 | [AK-47](#karta-100032) |
-| New Blood III / Salubri | half-deck | 27 | 3 | [Touch of Valeren](#karta-102262), [Tranquility Shield](#karta-102362), [Opikun (G7)](#karta-201680) |
+| New Blood III / Ravnos | half-deck | 31 | 0 | — |
+| New Blood III / Salubri | half-deck | 27 | 1 | [Touch of Valeren](#karta-102262) |
 | New Blood III / Tzimisce | half-deck | 34 | 0 | — |
 | Sabbat V5 / Path of Caine | pełna | 36 | 3 | [Yawp Court](#karta-102199), [Dance with the Devil](#karta-102315), [Rage of Apedemak](#karta-102336) |
 | Sabbat V5 / Path of Cathari | pełna | 35 | 1 | [Gostoso (G6)](#karta-201754) |
-| Sabbat V5 / Path of Death | pełna | 41 | 2 | [Obedience](#karta-101309), [Dance of the Dead](#karta-102314) |
-| Sabbat V5 / Path of Power and the Inner Voice | pełna | 42 | 1 | [Věnceslava, The Implacable (G6)](#karta-201776) |
-| 🏆 Tournament Winners 2025 / 2025-10-19 — Shalmath Toolbox (EC Day 2, Aarhus — Nerijus Mikalajūnas, 50p) | pełna | 36 | 12 | [Enkil Cog](#karta-100645), [Eye of Hazimel](#karta-100678), [Heart of Nizchetus](#karta-100903), [Hourglass of the Mind](#karta-100941), [Nephandus](#karta-101272), [Outside the Hourglass](#karta-101338), [Summon History](#karta-101897), [Talbot's Chainsaw](#karta-101931), [Alex Wilkins (G5)](#karta-200048), [New Blood (ANY)](#karta-201052), [Shalmath (G6)](#karta-201274), [Walker Grimes (G5)](#karta-201462) |
+| Sabbat V5 / Path of Death | pełna | 41 | 1 | [Obedience](#karta-101309) |
+| Sabbat V5 / Path of Power and the Inner Voice | pełna | 42 | 0 | — |
+| 🏆 Tournament Winners 2025 / 2025-10-19 — Shalmath Toolbox (EC Day 2, Aarhus — Nerijus Mikalajūnas, 50p) | pełna | 36 | 3 | [Heart of Nizchetus](#karta-100903), [Hourglass of the Mind](#karta-100941), [Alex Wilkins (G5)](#karta-200048) |
 | 🏆 Tournament Winners 2025 / 2025-06-21 — Gangrel Death Star (NAC 2025, Columbus — Martin Weinmayer, 62p, Wall) | pełna | 41 | 2 | [Heart of Nizchetus](#karta-100903), [André the Manipulator (G5)](#karta-200081) |
-| 🏆 Tournament Winners 2024 / 2024-06-22 — Govern Resistance (NAC 2024, Columbus — Bill Troxel, 54p, Tzimisce Toolbox) | pełna | 35 | 1 | [New Blood (ANY)](#karta-201052) |
+| 🏆 Tournament Winners 2024 / 2024-06-22 — Govern Resistance (NAC 2024, Columbus — Bill Troxel, 54p, Tzimisce Toolbox) | pełna | 35 | 0 | — |
 | 🏆 Tournament Winners 2024 / 2024-11-16 — Gangrel Swarm v3 (Slovak NC, Bratislava — Jakub Rypar, 22p, Wall/Swarm) | pełna | 38 | 0 | — |
-| 🏆 Tournament Winners 2024 / 2024-02-10 — Malkavian 95 Bleed (Mexico NC — Melissa Avilés, 10p, Stealth & Bleed) | pełna | 28 | 1 | [Alabástrom (G6)](#karta-200039) |
+| 🏆 Tournament Winners 2024 / 2024-02-10 — Malkavian 95 Bleed (Mexico NC — Melissa Avilés, 10p, Stealth & Bleed) | pełna | 28 | 0 | — |
 | 🏆 Tournament Winners 2024 / 2024-07-21 — Usurper High Council (Helsinki, Martin Weinmayer, 22p, Vote) | pełna | 25 | 0 | — |
 | 🏆 Tournament Winners 2026 / 2026-06-27 — Lasombra Potato Groove (Spanish NC, Leganés — Miquel Jorge, 158p, Vote/Bleed) | pełna | 35 | 1 | [Obedience](#karta-101309) |
-| 🏆 Tournament Winners 2024 / 2024-06-21 — The Unnamed Six Demon Bag (Origins Friday 2, Columbus — Darby Keeney, 44p, Baali Bleed) | pełna | 31 | 2 | [Zubeida (G5)](#karta-201510), [Heart of Nizchetus](#karta-100903) |
+| 🏆 Tournament Winners 2024 / 2024-06-21 — The Unnamed Six Demon Bag (Origins Friday 2, Columbus — Darby Keeney, 44p, Baali Bleed) | pełna | 31 | 1 | [Heart of Nizchetus](#karta-100903) |
 | 🏆 Tournament Winners 2023 / 2023-10-15 — Tupdog Brick Wall (EC 2023 Finalist — Rush Wall) | pełna | 34 | 1 | [Cedric (G4)](#karta-200257) |
 | 🏆 Tournament Winners 2024 / 2024-03-09 — Weenie Animalism (Oceania NC, Auckland — Rush/Bleed) | pełna | 27 | 0 | — |
 
 ## Otwarte ustalenia — karty
 
 Poniższe opisy przytoczono z audytu. CODE_DISCREPANCY bywa oparte wyłącznie na analizie statycznej; CONFIRMED_BUG jest statusem historycznym i nie zawsze oznacza odtworzenie nowym testem. Nie wolno traktować UNRESOLVED jako potwierdzonego błędu.
-
-<a id="karta-100032"></a>
-### AK-47 (100032) — PARTIAL_FIX
-
-Występuje w **1** taliach. Dodatkowy strike jest nadal przyznawany po strike'u z broni, ale jest OPCJONALNY: w dodatkowej sub-rundzie strzelec może wybrać 'strike:decline' (bez obrażeń, zwalnia zobowiązanie do broni). Flaga CombatFrame.optionalAdditionalStrike jest ustawiana tylko dla opcjonalnych przyznań (AK-47, Caseless Rounds); zwykłe dodatkowe strike'i jej nie mają. Testy: tests/cards/weapon-riders.test.ts + last-equipment-modifiers.test.ts: 57 testów łącznie, w tym 'the optional extra strike can be DECLINED'. Pełne tests/cards+tests/engine: 398 plików, exit 0. Wybór limitowanego źródła w oknie grantAdditionalStrikes ZWERYFIKOWANY: tests/cards/additional-strike-limit.test.ts (AK-47 i Blur oferowane razem; wybór jednego blokuje drugie przez usedLimitedAddl). NAPRAWIONO LSJ 20001206: silnik rozstrzyga pending additional strikes PRZED otwarciem grant window (zamiana kolejności warunków w engine.ts; test tests/cards/ak47-quickness-order.test.ts, kontrola mutacyjna OK). Pozostaje otwarte jedynie pełne ponowne otwarcie grant window po serii strike'ów dla obu walczących (sekwencja wieloźródłowa), docs/additional-strike-followups.md.
-
-<a id="karta-100227"></a>
-### Blur (100227) — PARTIAL_FIX
-
-Występuje w **1** taliach. Zweryfikowano: basic daje 1 dodatkowy strike, superior 2 (limited), grant po pierwszej parze; tests/cards/combat-strikes.test.ts (Blur superior: 3 uderzenia M, 2 dodatkowe sub-rundy) i Quickness współistniejący z Blur (Quickness nieograniczony nie zużywa źródła limitowanego); limit egzekwowany przez usedLimitedAddl (tests/cards/weapon-riders.test.ts: AK-47 i limitowany Blur). NAPRAWIONO LSJ 20001206: silnik rozstrzyga pending additional strikes PRZED otwarciem grant window (zamiana kolejności warunków w engine.ts; test tests/cards/ak47-quickness-order.test.ts, kontrola mutacyjna OK). Pozostaje otwarte jedynie pełne ponowne otwarcie grant window po serii strike'ów dla obu walczących (sekwencja wieloźródłowa), docs/additional-strike-followups.md. Nie jest błędem specyficznym dla Blur.
-
-<a id="karta-100645"></a>
-### Enkil Cog (100645) — PARTIAL_FIX
-
-Występuje w **1** taliach. Po successful bleed przeciw prey karta jest teraz unikalnym permanentem na aktorze capacity >=10 i daje mu stałe +1 bleed. tests/cards/enkil-cog-audit.test.ts. Wciąż brak dodatkowej akcji w dowolnej minion phase, a relacja prey po oust wymaga weryfikacji. Paczka 2: LSJ 20081213-1 (anulowana akcja przy zagraniu nie zużywa Cog) nie ma testu; dodatkowa akcja w minion phase nadal brakuje. Status bez zmian.
-
-<a id="karta-100678"></a>
-### Eye of Hazimel (100678) — PARTIAL_FIX
-
-Występuje w **1** taliach. Paczka 2: 5 unpreventable environmental damage na bearera przy spaleniu przez burnPermanent (onLeavePlay, eye-hazimel-audit.test.ts). Paczka 3: upkeep w unlock phase — "burn 1 pool or burn this equipment" przez hook onControllerUnlock i wybór permanentPoolOrBurn; bez puli karta spala się od razu (tests/cards/eye-hazimel-unlock.test.ts). Zakaz przenoszenia/kradzieży przy gotowym bearerze: statyka untouchableWhileBearerReady filtruje cele kradzieży (enumeratePermanentTargets) i blokuje ControlChanged w changePermanentControl; test w tym samym pliku. Spalenie bearera razem z kartą (burnMinion emituje PermanentBurned dla dołączonych kart, bez burnPermanent): hook obrażeń nie działa, ale bearer jest już poza grą, więc obrażenia nie mają adresata i wynik jest ten sam. Nie jest to luka reguły; nie ma rulingu dla tego przypadku. Nadal otwarte: ogólny ruch sprzętu między wampirami nie jest modelowany, więc zakaz pokrywa tylko przypadki, które silnik zna.
 
 <a id="karta-100903"></a>
 ### Heart of Nizchetus (100903) — PARTIAL_FIX
@@ -101,55 +81,15 @@ Występuje w **4** taliach. Celowana naprawa: liczony draw Heart jest wznawiany 
 
 Występuje w **1** taliach. Częściowo naprawiono: odrębne warianty [pot]/[tem]; [tem] dobiera cztery karty bez discard, następnie wybiera do czterech kart z ręki na wierzch w zadanej kolejności i unlockuje przed zakończeniem akcji. Uwzględniono przekierowanie draw, zapis/wznowienie oraz pustą bibliotekę (tests/cards/hourglass-audit.test.ts). Przy niepełnej ręce przyjęto wykonanie możliwej części efektu (testy 'moves available cards even if fewer than four can be drawn' i 'unlocks even with an empty hand'); najbliższy analog to G00160 (LSJ 20060620: 'draw as much as you can'), ale brak rulingu dla przeniesienia, więc interpretacja wymaga potwierdzenia. Usunięto nieuprawnione +1 hand size superior bez counterów. [TEM] superior teraz obsługuje opłacanie counterów: podczas unlock fazy wampir może spalić 2 krew aby dodać 1 counter (onControllerUnlock w cards.ts), a +1 hand size za każdy counter działa tylko gdy wampir jest ready (handSizePerCounter dla kart dołączonych w derived.ts). Testy w hourglass-audit.test.ts ('Hourglass [TEM] superior unlock-phase counters'), kontrola mutacyjna potwierdzona dla derived.ts. Logi wyboru są maskowane, ale identyfikatory zakrytych kart w projekcji stanu nadal mogą umożliwiać ich śledzenie (istniejący szerszy problem prywatności). Pozostaje PARTIAL_FIX ze względu na otwartą interpretację niepełnej ręki.
 
-<a id="karta-101272"></a>
-### Nephandus (101272) — PARTIAL_FIX
-
-Występuje w **1** taliach. Zweryfikowano end-to-end: pełna walka (bleed, blok przez Nephandus, strike wyboru) oferuje „Nephandus: strike (1R)” obok hand strike; wybór ranged strike zabiera 1 krew opozycji, a jego własne życie nie spada przy hand strike przeciwnika (redukcja 1, tests/cards/nephandus.test.ts, 7 testów). Wcześniej: redukcja tylko w combat i tylko od strike/damaging effect przeciwnika; negatywne przypadki poza walką i środowiskowe. Zweryfikowano LSJ 20091123-2 (tests/cards/nephandus.test.ts): obrażenia z Aim (Target Head +2) NIE są redukowane osobno — redukcja 1 stosowana raz na cały strike (1+2=3 -> 2), bo Aim jest scalany ze strike przed incomingDamageReduction. Dodano test redukcji broni przeciwnika (tests/cards/nephandus.test.ts, LSJ 20091123-2): strike z .44 Magnum (2R) redukowany o 1. Pozostaje nieweryfikowany pełny zakres efektow strike 1R poza tym przebiegiem.
-
 <a id="karta-101309"></a>
 ### Obedience (101309) — PARTIAL_FIX
 
 Występuje w **2** taliach. Dodano sprawdzanie młodszego działającego vampire z uwzględnieniem capacity, właściwego blockera i powodzenia próby bloku; dodano reakcję celu niezablokowanego rush w state C. tests/cards/end-action.test.ts. Reakcja na rush korzysta z istniejącego okna C, a nie odrębnego impulsu bezpośrednio przed rozpoczęciem combat po zakończeniu innych efektów resolution; pełny timing i pozostałe interakcje nadal wymagają pracy. Paczka 1: pokryte przez end-action.test.ts (tylko blocker, młodszy vampire, rush, basic/superior). Nieobjęte: ANK 20171212 (zastąpiony przez slave nie może grać) — w modelu nieosiągalne: silnik nigdy nie przypisuje ponownie af.acting, więc zastąpienie wampira nie zmienia przeciwnika w akcji. LSJ 19991025 (starszy unlocked vampire przed nową walką) — otwarte. Sonda: Psyche! superior jest oferowana w combat.endOfRound (gdy Bob nie kontynuuje) i tworzy drugą walkę; Obedience nie ma okna przed startem tej walki. Bramka beforeCombatWithYoungerActor (compile.ts ~5435) obejmuje tylko walkę z akcji (stan C, blok, rush), nie walkę kolejkowaną. Domknięcie wymaga nowego okna 'przed startem kolejkowanej walki' w silniku — zmiana w przepływie walki, do akceptacji. Status bez zmian.
 
-<a id="karta-101338"></a>
-### Outside the Hourglass (101338) — PARTIAL_FIX
-
-Występuje w **1** taliach. Dodano wariant basic tem maneuver i limit superior per vampire/runda. Superior jest jednorazowy i pochodzi od wampira, nie environmental, a pending damage rozstrzygane jest przed strike; tests/cards/outside-hourglass-audit.test.ts obejmuje oba wampiry, save/load i źródło. Zweryfikowano ANK 20180104 (tests/cards/outside-hourglass-premature.test.ts): obrażenia superior zostają zadane, gdy walka kończy się przedwcześnie w beforeRange; silnik naprawiony (engine.ts: oczekujące obrażenia przed range rozstrzygane przed zakończeniem). Zweryfikowano G00164 / ANK 20170930 (tests/cards/outside-hourglass-audit.test.ts): generyczna prevention (Resilience [for] basic) jest oferowana dla obrażeń pre-range i redukuje je (2 -> 1). Otwarte pozostaje jedynie jednoczesne mendowanie wielu źródeł pre-range ('all damages prevented and mended together'), gdy obie strony zagrają superior.
-
-<a id="karta-101588"></a>
-### Rego Motum (101588) — PARTIAL_FIX
-
-Występuje w **2** taliach. Oba tryby ograniczono do obrażeń ze strike przeciwnika, nie dowolnego damage. tests/cards/prevention-provenance-audit.test.ts. Nowe zapisy przechowują pochodzenie damage, stare pakiety bez strikePhase (np. bonus ammunition) nie pozwalają odtworzyć źródła i wymagają dalszego rozwiązania; inne interakcje nieweryfikowane. Paczka 1: prevention-provenance-audit.test.ts pokrywa ograniczenie do strike przeciwnika. Zweryfikowano RTR 20041202 dla obu trybów (tests/cards/rego-motum-ruling.test.ts, 3 testy: 1 punkt przy basic zapobiega 1 i nic nie przechodzi dalej; superior zapobiega 3 z 3; basic przy 3 zapobiega 2 i zostawia 1; mutacja nieograniczonego zapobiegania wykrywana). Status bez zmian. Model danych obrazen jest poprawny: nowe pakiety ze strike maja strikePhase i fromStrike (ammunition jest scalany do glownego pakietu, potwierdzone testem tests/cards/ammo-strike-provenance.test.ts); stare zapisy ze strikePhase maja fromStrike odtwarzane migracja (engine.ts:319); stare zapisy BEZ strikePhase pozostaja celowo niejednoznaczne i nie sa zgadywane jako strike (np. Outside the Hourglass ma source=przeciwnik ale nie jest strike) — to swiadoma decyzja, nie bug.
-
-<a id="karta-101649"></a>
-### Rolling with the Punches (101649) — PARTIAL_FIX
-
-Występuje w **2** taliach. Superior działa tylko na strike przeciwnika, także na kolejne pakiety w rundzie, a nie na environmental lub unpreventable damage; respektuje zakaz prevention przez dyscyplinę. tests/cards/prevention-provenance-audit.test.ts. Stare zapisy z pakietem bez strikePhase mają niejednoznaczne pochodzenie; inne interakcje nieweryfikowane. Paczka 1: prevention-provenance-audit.test.ts pokrywa strike i brak wpływu na environmental/unpreventable. Zweryfikowano ANK 20210226 dla superior (tests/cards/rolling-punches-burn.test.ts: bramka wymaga 1 krwi na spalenie, a redukcja kosztu nie zmniejsza spalenia; mutacja bramki wykryta). Status bez zmian. Model danych obrazen jest poprawny: nowe pakiety ze strike maja strikePhase i fromStrike (ammunition jest scalany do glownego pakietu, potwierdzone testem tests/cards/ammo-strike-provenance.test.ts); stare zapisy ze strikePhase maja fromStrike odtwarzane migracja (engine.ts:319); stare zapisy BEZ strikePhase pozostaja celowo niejednoznaczne i nie sa zgadywane jako strike (np. Outside the Hourglass ma source=przeciwnik ale nie jest strike) — to swiadoma decyzja, nie bug.
-
-<a id="karta-101897"></a>
-### Summon History (101897) — PARTIAL_FIX
-
-Występuje w **1** taliach. Basic [tem] i superior [TEM] wdrożone: X wybierane przy zagraniu i płacone wtedy (LSJ 20100314); szukanie w bibliotece i/lub stosie odrzuconych allies, retainers i equipment o koszcie <= X (krew albo pool), wejście na tego vampira z życiem startowym; ally wchodzi jako osobny minion (AllyEnteredPlay, nie recruited, więc może działać w tej turze, LSJ 20100302-1), bez zapłaty; superior: wybór non-scarce vampira z krypty lub stosu o capacity <= X, wejście bez krwi, krypta tasowana. Usunięto stub actionStealth 1, którego karta nie drukuje. beforeVampireEnteredPlay nie dotyczy tej karty: hook działa tylko przy przejściu z regionu niekontrolowanego w fazie influence (New Blood), a Summon History jest akcją. Otwarte: retainer i equipment wchodzą przez attachFromZone bez jawnego wyboru wersji inferior (RBK equip, G00110); equipment z dyscypliną ma w spec tylko wersję basic (brak zaimplementowanych wersji superior), więc wchodzi inferior zgodnie z G00110; nie ma equipment z dyscypliną i zaimplementowanymi wersjami superior do pełnego przetestowania. Ally na vampira: przyjęto odczyt, że ally jest osobnym minionem, a nie załącznikiem, bo silnik nie modeluje przypinania allies. Wampiry spalone przed zmianą nie mają migawki. Testy: tests/cards/summon-history.test.ts (17 testów).
-
-<a id="karta-101931"></a>
-### Talbot's Chainsaw (101931) — PARTIAL_FIX
-
-Występuje w **1** taliach. Paczka 4: upkeep z karty — "If the bearer is ready during your unlock phase, this weapon inflicts 3 unpreventable damage on a ready minion you control". Wybiera KONTROLER (nie prey): unlockPhaseDamage.chooser = "controller" (spec.ts, compile.ts), bez wyboru gdy nosiciel nie jest gotowy lub nie ma gotowego miniona; tests/cards/talbot-chainsaw-unlock.test.ts. Press: "1 press (mandatory), only usable to continue combat during the first round" — nowa pula mandatoryFirstRoundContinuePress (state.ts, engine.ts): w rundzie 1 press jest obowiązkowy, a pula wygasa przy końcu rundy; tests/cards/talbot-chainsaw-press.test.ts (2 testy, mutacja wykryta). Wcześniej: cannotHunt, rush z stealth 1, prevent 1 per combat, blokada hunt przy 0 blood (bots-hunt.test.ts). Rush grant i prevent per combat przetestowane w tests/cards/talbot-chainsaw-press.test.ts (5 testów, w tym kontrola mutacyjna). Interakcje z innymi kartami wymagają dalszej weryfikacji.
-
-<a id="karta-102144"></a>
-### War Ghoul (102144) — PARTIAL_FIX
-
-Występuje w **1** taliach. Overlay wymaga rekrutującego Tzimisce i uwzględnia modyfikatory kosztu; testy rush-cards.test.ts i retainer-wave.test.ts. Zweryfikowano RTR 19961113 (Ghoul jako jedyny sojusznik musi spalić się sam) i ANK 20170309-2 (wejście każdą drogą): tests/cards/war-ghoul-burn-rule.test.ts, 3 testy; mutacja usuwająca opcję 'self' wykryta. Pozostałe interakcje alternatywnych kosztów i rekrutacji wymagają dalszej weryfikacji.
-
 <a id="karta-102199"></a>
 ### Yawp Court (102199) — PARTIAL_FIX
 
 Występuje w **1** taliach. Naprawiono kolejkę walk przed referendum i jego anulowanie po opuszczeniu ready przez działającego wampira. tests/cards/crypt-and-uncontrolled.test.ts: rzeczywisty torpor (także w drugiej walce Psyche!), torpor samego przeciwnika, symulowany powrót i save/load, damage między walkami. Zweryfikowano RTR 19970630 (crypt-and-uncontrolled.test.ts: obrażenia ambush są zadawane po CombatEnded jako środowiskowe, bez DamageInflicted). Faktyczne użycie Warsaw Station w środku akcji nie jest zaimplementowane. Rötschreck nie ma pelnej implementacji (master: out-of-turn z warunkiem aggravated damage, nie tylko strikeCombatEnds) — wymaga osobnej implementacji, nie testu. Pozostałe interakcje timingow/prevention niezweryfikowane. Rulings LSJ 20060902, LSJ 20090325-1, ANK 20180910-1.
-
-<a id="karta-102233"></a>
-### Revelation of the Serpent (102233) — PARTIAL_FIX
-
-Występuje w **2** taliach. Superior oferuje wybór corruption tylko po rozstrzygnięciu oust i okna Life Boon; po oust celu nie oferuje unlock [ANK 20220210], po uratowaniu celu umożliwia wybór również po save/load; Sleeping Mind blokuje unlock. Testy revelation-of-the-serpent.test.ts. Pozostałe efekty sukcesu, kolejność i interakcje wymagają weryfikacji. Paczka 1: ANK 20220210 (ousted przez bleed nie odblokowuje) pokryte przez revelation-of-the-serpent.test.ts; Glowne efekty sukcesu pokryte testami (tests/cards/revelation-of-the-serpent.test.ts): superior +1 bleed, burn 2 corruption -> unlock, odmowa, wybor miniona, Sleeping Mind blokuje unlock. Pozostaje kolejnosc wzgledem oust/Life Boon (zlozony scenariusz). Status bez zmian.
 
 <a id="karta-102246"></a>
 ### Childe of the Revolution (102246) — PARTIAL_FIX
@@ -161,11 +101,6 @@ Występuje w **2** taliach. Osobny obowiązek hunt trwa do ogłoszenia hunt lub 
 
 Występuje w **2** taliach. Combat ograniczono do strike przeciwnika; prevention-provenance-audit.test.ts bada dostępność i źródła. Action dopuszcza pełnego aktora, jeśli koszt krwi zostawia miejsce, respektuje ochronę przed wyborem i limit starting life ally; minion-target-actions.test.ts. Stare pakiety bez strikePhase i pełne przejście superior oraz dalsze interakcje pozostają otwarte. Paczka 1: minion-target-actions.test.ts i prevention-provenance-audit.test.ts pokrywają akcję i combat. Zweryfikowano LSJ 20001114 dla basic combat (tests/cards/touch-valeren-ruling.test.ts: opcja jest oferowana tylko przy obrażeniach do zapobieżenia, nie bez nich). Nadal nie zweryfikowano starych pakietów bez strikePhase. Status bez zmian. Model danych obrazen jest poprawny: nowe pakiety ze strike maja strikePhase i fromStrike (ammunition jest scalany do glownego pakietu, potwierdzone testem tests/cards/ammo-strike-provenance.test.ts); stare zapisy ze strikePhase maja fromStrike odtwarzane migracja (engine.ts:319); stare zapisy BEZ strikePhase pozostaja celowo niejednoznaczne i nie sa zgadywane jako strike (np. Outside the Hourglass ma source=przeciwnik ale nie jest strike) — to swiadoma decyzja, nie bug.
 
-<a id="karta-102314"></a>
-### Dance of the Dead (102314) — PARTIAL_FIX
-
-Występuje w **1** taliach. Zdolność można teraz aktywować w dalszych oknach walki, w tym w kroku press. wraith-zombie.test.ts sprawdza press, zużycie ostatniego countera i spalenie karty, limit na combat, kontrolę celu oraz maneuver zachowany do następnej rundy po save/restore. Dodano okno damage resolution (wraith-zombie.test.ts: opcja jest oferowana i zdejmuje licznik). Pozostają do zbadania pozostałe okna oraz interakcje z ograniczeniami ruchu i timingiem. Uwaga: ogólna legalność kart library wymagających Path nadal wymaga egzekwowania; samo pole Path przywrócono do registry.
-
 <a id="karta-102315"></a>
 ### Dance with the Devil (102315) — PARTIAL_FIX
 
@@ -175,16 +110,6 @@ Występuje w **1** taliach. Superior nie pobiera blood automatycznie; w kroku ra
 ### Rage of Apedemak (102336) — PARTIAL_FIX
 
 Występuje w **1** taliach. Bonus dotyczy hand strike, nie strength ani melee weapon; testy hand, Roundhouse i Femur oraz hand size. tests/cards/frenzy-direction-audit.test.ts i temporary-hand-size.test.ts. Wygaszanie wszystkich wcześniejszych efektów frenzy przez Shield wymaga dalszej weryfikacji. Brak wpisu w migawce dla kluczowej kwestii; wymaga potwierdzenia na VEKN (sprawdzono forum, brak konkretnego rulingu).
-
-<a id="karta-102362"></a>
-### Tranquility Shield (102362) — PARTIAL_FIX
-
-Występuje w **1** taliach. Zachowuje niezależne ograniczenia przy anulowaniu frenzy, zarówno nałożone przed nim, jak po nim, także po save/load; testy frenzy-direction-audit.test.ts. W starych zapisach brak wystarczającej informacji o pochodzeniu ograniczeń, dlatego zachowywane są niejednoznaczne flagi. Pełna zgodność wszystkich możliwych efektów frenzy wymaga dalszej weryfikacji; wcześniejsza ocena była tylko wąska.
-
-<a id="karta-200039"></a>
-### Alabástrom (G6) (200039) — PARTIAL_FIX
-
-Występuje w **1** taliach. Dodano once-per-turn unlock innego własnego ready Gargoyle podczas własnej tury, wraz z ready/locked i negatywnymi testami (siebie, torpor, inny klan, cudza tura); crypt-wave-5.test.ts. Dodano test dostępności unlock w fazie master, nie tylko minion. Pozostałe okna (combat, referendum) i interakcje z noUnlock wymagają dalszej weryfikacji.
 
 <a id="karta-200048"></a>
 ### Alex Wilkins (G5) (200048) — PARTIAL_FIX
@@ -201,38 +126,8 @@ Występuje w **1** taliach. +2 hand size wyliczane dla ready, także locked; tor
 
 Występuje w **1** taliach. Dodano możliwość zapłacenia 1 blood za unlock po blokowaniu akcji directed, w oknie po rozstrzygnięciu i walce; tests/cards/cedric-audit.test.ts obejmuje brak celu przy akcji undirected, zapłatę, odmowę i save/load. Flight importowany i testowany. Nadal brak implementacji Tremere slave, a ścisły timing po natychmiastowym zakończeniu akcji i przy kontynuacji po bloku wymaga dalszego przeglądu. Źródła: https://www.vekn.net/179-rules/vtes-rulebook oraz https://www.vekn.net/forum/rules-questions/75320-rules-questions-for-someone-coming-back-in-to-v-tes.
 
-<a id="karta-201052"></a>
-### New Blood (ANY) (201052) — PARTIAL_FIX
-
-Występuje w **2** taliach. Dodano wybór dowolnego nazwanego circle albo circle jednego znanego wampira przed wejściem i contest, model identyfikacji circle oraz dobór crypt w swojej influence; wybór przeżywa save/load i jest usuwany po powrocie do uncontrolled. Wykorzystują go Unwholesome Bond i Camaraderie (także circle of one oraz save/load); pozostałe karty Sanguinus nie są jeszcze zintegrowane z modelem, a wszystkie sposoby wejścia i interakcje contest wymagają kontroli. tests/cards/new-blood-audit.test.ts, blood-brother-circle-audit.test.ts, unwholesome-bond-circle-audit.test.ts. Korekta poprzedniego ustalenia: późniejszy ruling Rules Director z 13.11.2021 pozwala New Blood dołączyć do circle of one innego wampira, wbrew starszej interpretacji z 2019: https://www.vekn.net/forum/rules-questions/79465-unwholesome-bond-angelo-circle-of-one-new-blood-and-circle. Paczka 2: ANK 20211113 (dwa uncontrolled New Blood w różnych kręgach) — dodano osobny test (tests/cards/new-blood-audit.test.ts, 'two uncontrolled New Bloods are in DIFFERENT circles of one'): każdy uncontrolled New Blood ma krąg individual:<id>, więc dwa egzemplarze są w różnych kręgach. Status bez zmian.
-
-<a id="karta-201274"></a>
-### Shalmath (G6) (201274) — PARTIAL_FIX
-
-Występuje w **1** taliach. Częściowo naprawiono unlock Shalmatha raz na każdą turę w obsługiwanych oknach impulsu, z zakazem w card.asPlayed oraz The Sleeping Mind. Testy shalmath-audit.test.ts obejmują własną i cudzą turę, unlock phase, limit, save/restore oraz torpor. Zakaz Celerity (G00041) weryfikowany przez tests/ui/crypt-discipline-bars.test.ts: importCryptCard zwraca cannotUseDisciplines: ["cel"], gotowy minion ma cannotUseDisciplines: ["cel"], nie może zagrać akcji Celerity (Flurry of Action) ani trybu cel Dust Up, ale może grać Presence. Nie potwierdzono kompletności wszystkich okien czasowych unlock; wpis pozostaje otwarty.
-
-<a id="karta-201462"></a>
-### Walker Grimes (G5) (201462) — PARTIAL_FIX
-
-Występuje w **1** taliach. Dodatkowy pool dla master targetujących Walkera i kontrolera; cena, płatność, limit pool i zmiana kontroli testowane w granted-bleed-target-costs.test.ts. Zweryfikowano LSJ 20081124-1: koszt +1 pool tylko gdy master jest zagrywany przez kontrolera Walkera (tests/cards/granted-bleed-target-costs.test.ts: Villein celujący w Walkera kosztuje 1, celujący w innego wampira kosztuje 0; po zmianie kontroli koszt przenosi się na nowego kontrolera). Inne ścieżki zagrania master i regiony wymagają weryfikacji.
-
-<a id="karta-201510"></a>
-### Zubeida (G5) (201510) — PARTIAL_FIX
-
-Występuje w **1** taliach. Naprawiono warunkowe bleed i usunięto błędne staty bezwarunkowe tam, gdzie występowały; testy tests/cards/crypt-conditional-wave.test.ts sprawdzają dodatnie i ujemne warunki, a dla strength także rzeczywiste hand strike. Pozostałe opisane w historycznej analizie zdolności lub warunki nadal wymagają pracy; nie oznacza pełnej naprawy karty. Historyczna analiza (może opisywać już naprawione klauzule): Aktualizacja: drukowany niemerged Scarce importowany i kara za wejście w fazie influence testowana w crypt-scarce.test.ts; inne problemy pozostają otwarte. Historyczna analiza sprzed poprawki Scarce: Aktualizacja: import drukowanego Sterile naprawiono i sprawdzono w crypt-sterile.test.ts; inne opisane poniżej rozbieżności pozostają otwarte. Historyczna analiza (twierdzenie o braku importu sterile jest już nieaktualne): Spec daje stały +1 bleed zamiast tylko przeciw kontrolerowi bez ready vampire capacity powyżej 6; Black Hand, Scarce i sterile nie importowane. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu scenariuszowego. Aktualizacja: drukowana cecha Black Hand/Seraph jest obecnie importowana i używana we wskazanych wymaganiach bibliotecznych; Dodano test G00012 (tests/cards/black-hand-traits.test.ts): Black Hand trait NIE jest utracony przy zmianie sekty (MinionSectChanged nie dotyka blackHand). Pozostałe ustalenia i interakcje nie zostały tym zamknięte.
-
-<a id="karta-201680"></a>
-### Opikun (G7) (201680) — PARTIAL_FIX
-
-Występuje w **2** taliach. Opikun może chronić siebie lub innego kontrolowanego vampire przed nieaggravated damage ze strike przeciwnika, bez zmiany wymogu another u Huldu. tests/cards/hecata-huldu-audit.test.ts. Stare zapisy z pakietem bez strikePhase mają niejednoznaczne pochodzenie; pozostałe interakcje nieweryfikowane. Aktualizacja: zapobieganie obejmuje wiele nieaggravated pakietów tego samego strike, z wyłączeniem unpreventable, innego strike i environmental; test z pakietami i starym zapisem w tests/cards/hecata-huldu-audit.test.ts. Nadal ograniczenia starszych zapisów oraz okna/właściwej kolejności obrażeń. Paczka 2: ponownie sprawdzono tekst (independent, do 2 nieaggravated z jednego strike). Wciąż otwarte: okno kolejności obrażeń i stare zapisy bez pochodzenia; status bez zmian. Model danych obrazen jest poprawny: nowe pakiety ze strike maja strikePhase i fromStrike (ammunition jest scalany do glownego pakietu, potwierdzone testem tests/cards/ammo-strike-provenance.test.ts); stare zapisy ze strikePhase maja fromStrike odtwarzane migracja (engine.ts:319); stare zapisy BEZ strikePhase pozostaja celowo niejednoznaczne i nie sa zgadywane jako strike (np. Outside the Hourglass ma source=przeciwnik ale nie jest strike) — to swiadoma decyzja, nie bug.
-
 <a id="karta-201754"></a>
 ### Gostoso (G6) (201754) — PARTIAL_FIX
 
 Występuje w **1** taliach. Po successful bleed prey gracz wybiera gain blood lub odmowę, wybór można zapisać i wznowić; crypt-wave-4.test.ts. Wybór jest kolejkwany przez resolver akcji, timing względem wszystkich efektów rozstrzygnięcia wymaga weryfikacji. Brak wpisu w migawce dla kluczowej kwestii; wymaga potwierdzenia na VEKN (sprawdzono forum, brak konkretnego rulingu).
-
-<a id="karta-201776"></a>
-### Věnceslava, The Implacable (G6) (201776) — PARTIAL_FIX
-
-Występuje w **1** taliach. Gain pool jest opcjonalny; odmowa nie zużywa once-per-turn i działa późniejsza kwalifikująca akcja, także po zapisie. crypt-wave-4.test.ts. Brak zysku, gdy kontroler został ousted (ANK 20220808; guard w compile.ts, test w crypt-wave-4.test.ts). Dodano test działania zdolności w torporze przy rozstrzygnięciu (tests/cards/crypt-wave-4.test.ts, LSJ 20011022): zdolność jest oferowana mimo torporu. Identyfikacja prey i kolejność przy zmianie/oust oraz zagnieżdżonych zdarzeniach - nadal otwarte, wymaga scenariusza z oust w trakcie akcji (zlozony scenariusz wieloetapowy). Pozostałe elementy (opcjonalny gain, once-per-turn, ousted guard, hunt) pokryte testami w crypt-wave-4.test.ts.
 

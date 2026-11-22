@@ -66,4 +66,21 @@ describe("Enkil Cog: attachment and bleed", () => {
     // The Cog card is still in hand (not yet attached), so it can be played again
     expect(state.seats[0]!.hand.some(c => c.id === "cog")).toBe(true);
   });
+
+  it("offers granted bleed action with +1 stealth after attach", () => {
+    const { state, engine } = board();
+    bleed(engine);
+    settleAction(engine);
+    // After attach, walk to Alice's minion phase
+    for (let i = 0; i < 50; i++) {
+      const dp = engine.decision()!;
+      if (dp.window === "turn.minion" && dp.seat === "Alice") break;
+      engine.choose(dp.options.find((o) => o.id === "pass")?.id ?? dp.options[0]!.id);
+    }
+    const grantedBleed = engine.decision()!.options.find((o: any) =>
+      o.id.startsWith("act:Enkil Cog:cog:bleed:V1")
+    );
+    expect(grantedBleed).toBeDefined();
+    expect(grantedBleed!.id).toContain("stealth:1");
+  });
 });

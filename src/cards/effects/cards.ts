@@ -22346,6 +22346,12 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     unique: true,
     requiresCapacity: 10,
+    permanent: {
+      where: "bearer",
+      statics: {},
+      tags: ["enkilCog"],
+      grantedAction: { do: "bleed", stealth: 1, directed: true, unlockActor: true },
+    },
     usable: ["afterResolutionByActor", "ifBleedSucceeded", "bleedTargetIsPrey"],
     modes: [
       { level: "basic", discipline: null, effects: [
