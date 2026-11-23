@@ -22591,14 +22591,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Eyes of the Beast [100683] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Eyes of the Beast [100683]
+    // [pro] +1 intercept, and put this card on this vampire. This vampire gets -1 stealth.
+    // [PRO] As above, with 1 optional maneuver during the first round of combat if this vampire blocks.
     krcgId: 100683,
     name: "Eyes of the Beast",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "press", continueOnly: false }] },
     ],
   },
   {
@@ -22613,14 +22616,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Eyes of the Night [100685] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Eyes of the Night [100685]
+    // [obt] +1 intercept.
+    // [OBT] As above, with 1 optional maneuver or press during the resulting combat if this vampire blocks.
     krcgId: 100685,
     name: "Eyes of the Night",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "modifyIntercept", amount: 1 }, { kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "press", continueOnly: false }] },
     ],
   },
   {
@@ -22636,7 +22642,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Falcon's Eye [100694] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Falcon's Eye [100694]
+    // [ani] This vampire burns 1 blood to get +1 intercept.
+    // [spi] +1 intercept.
+    // [SPI] This reacting vampire attempts to block the current action, ignoring the normal prey, predator or taunt restrictions.
     krcgId: 100694,
     name: "Falcon's Eye",
     cardType: "reaction",
@@ -22644,7 +22653,8 @@ export const cardSpecs: CardSpec[] = [
     usable: [],
     modes: [
       { level: "basic", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
     ],
   },
   {
@@ -28215,14 +28225,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Fanfare for Elysium [100700] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Fanfare for Elysium [100700]
+    // [mel] Choose up to five older vampires. Successful referendum means each chosen vampire gains 1 blood.
+    // [MEL] As above, and successful referendum means this card is put in play. Unique.
     krcgId: 100700,
     name: "Fanfare for Elysium",
     cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [] }
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
     ],
   },
   {
@@ -33848,15 +33861,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Feline Saboteur [100718] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    // Feline Saboteur [100718]
+    // [ani][obf] Choose any Methuselah. The chosen Methuselah discards 1 card at random from his or her hand.
+    // [ANI][OBF] As [ani][obf] above, and the chosen Methuselah burns the top 4 cards of his or her library.
     krcgId: 100718,
     name: "Feline Saboteur",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: { all: ["ani", "obf"] }, effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "superior", discipline: { all: ["ani", "obf"] }, effects: [{ kind: "actionStealth", amount: 1 }] },
     ],
   },
   {

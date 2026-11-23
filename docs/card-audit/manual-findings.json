@@ -4094,8 +4094,8 @@
   {
     "id": 100683,
     "name": "Eyes of the Beast",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec basic ma dwa modifyIntercept zamiast jednego oraz nie dołącza karty z -1 stealth; brak superior maneuver. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [pro] modifyIntericht 1 (naprawiono podwójny); superior [pro] modifyIntericht 1 + press. Brak: putInPlayOnSelf z -1 stealth (wymaga nowego typu efektu). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100684,
@@ -4106,8 +4106,8 @@
   {
     "id": 100685,
     "name": "Eyes of the Night",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec basic ma dwa modifyIntercept i press zamiast pojedynczego intercept; brak superior z opcjonalnym maneuver albo press po bloku. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [obt] modifyIntericht 1 (naprawiono podwójny + press); superior [obt] modifyIntericht 1 + press. Brak: manewr po bloku (wymaga nowego typu efektu). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100686,
@@ -4160,8 +4160,8 @@
   {
     "id": 100694,
     "name": "Falcon's Eye",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Ani nie płaci wymaganego blood; brak superior spi umożliwiającego blokowanie z pominięciem ograniczeń pozycji. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: dodano superior [spi] z modifyIntericht 1. Brak: burn 1 blood dla [ani], ignorowanie ograniczeń prey/predator/taunt przy bloku (wymaga nowych typów efektów). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100695,
@@ -4196,8 +4196,8 @@
   {
     "id": 100700,
     "name": "Fanfare for Elysium",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Political action nie wybiera starszych wampirów i nie daje im blood po referendum; brak superior permanent i jego efektu. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Political action nie wybiera starszych wampirów i nie daje im blood po referendum; brak superior permanent i jego efektu. Wymaga nowych typów efektów (gainBlood, putInPlay permanent). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100701,
@@ -4304,8 +4304,8 @@
   {
     "id": 100718,
     "name": "Feline Saboteur",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba tryby wymagają pojedynczej dyscypliny i oferują stealth zamiast wyboru Methuselah i losowego discard; brak superior z czterema kartami library. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Naprawiono dyscypliny na [ani][obf] kombinację (basic i superior). Brak: discard losowej karty z ręki wybranego Methuselah, burn 4 library cards (wymaga nowych typów efektów). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100719,
