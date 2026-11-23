@@ -296,7 +296,8 @@ function cleanTrainedMlModel(value: unknown): MlModel | null {
     Number.isFinite(n) ? Math.max(-10, Math.min(10, n)) : 0,
   );
   const training = input.training;
-  return {
+  const rms = input.rms;
+  const cleaned: MlModel = {
     format: "vtes-mlp-v1",
     featureSize: 96,
     hidden1: 256,
@@ -316,7 +317,21 @@ function cleanTrainedMlModel(value: unknown): MlModel | null {
         updatedAt: typeof training.updatedAt === "string" ? training.updatedAt.slice(0, 40) : "",
       },
     } : {}),
+    ...(input.valueHead ? {
+      valueHead: {
+        w: cleanArray(input.valueHead.w),
+        b: Number.isFinite(input.valueHead.b) ? Math.max(-10, Math.min(10, input.valueHead.b)) : 0,
+      },
+    } : {}),
+    ...(rms && Array.isArray(rms.mean) && Array.isArray(rms.var) ? {
+      rms: {
+        mean: cleanArray(rms.mean),
+        var: cleanArray(rms.var.map(v => Math.max(0, v))),
+        count: Number.isFinite(rms.count) ? Math.max(0, Math.floor(rms.count)) : 0,
+      },
+    } : {}),
   };
+  return cleaned;
 }
 
 export function loadSettings(): UiSettings {
@@ -374,6 +389,20 @@ export function loadSettings(): UiSettings {
  */
 export function botNameProblem(name: string): string | null {
   return name.trim() === "" ? null : nameProblem(name);
+}
+
+/**
+ * Persist a locally trained heuristic weight profile to localStorage so it
+ * survives a reload and is picked up by `botAgentFor` (style "trained").
+ */
+export function saveTrainedBotWeights(weights: Partial<Weights>): void {
+  try {
+    const current = loadSettings();
+    current.trainedBotWeights = cleanTrainedWeights(weights);
+    saveSettings(current);
+  } catch {
+    // Preferences are a convenience; failing to store one is not an error.
+  }
 }
 
 export function saveSettings(settings: UiSettings): void {

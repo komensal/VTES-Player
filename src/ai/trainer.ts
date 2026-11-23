@@ -95,6 +95,8 @@ export interface TrainingOptions {
   onProgress?: (p: TrainingProgress) => void;
   onGeneration?: (trend: GenerationTrend) => void;
   executeGames?: TrainingGameExecutor;
+  /** Stop early if the best candidate fails to beat the baseline for this many generations. */
+  earlyStoppingPatience?: number;
 }
 
 export interface GenerationTrend {
@@ -248,6 +250,7 @@ export async function trainHeuristic(
   const history: GenerationTrend[] = [];
   let generationsCompleted = 0;
   let cancelled = false;
+  let generationsSinceImprovement = 0;
   for (let generation = 0; generation < generations; generation++) {
     if (opts.shouldCancel?.()) { cancelled = true; break; }
     const population = generation === 0
@@ -326,6 +329,20 @@ export async function trainHeuristic(
         history.push(trend);
         opts.onGeneration?.(trend);
         if (!best || generationBest.meanVictoryPoints > best.meanVictoryPoints) best = generationBest;
+      }
+
+      // Early stopping: stop if the best candidate cannot beat the baseline.
+      if (opts.earlyStoppingPatience !== undefined) {
+        const baselineVp = baseline?.meanVictoryPoints ?? 0;
+        if (generationBest && generationBest.meanVictoryPoints > baselineVp) {
+          generationsSinceImprovement = 0;
+        } else {
+          generationsSinceImprovement++;
+          if (generationsSinceImprovement >= opts.earlyStoppingPatience) {
+            cancelled = true;
+            break;
+          }
+        }
       }
       if (!cancelled) generationsCompleted++;
     }

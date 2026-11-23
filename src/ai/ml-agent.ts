@@ -30,7 +30,10 @@ export interface MlModel {
   b2: number[];
   w3: number[];
   b3: number;
+  valueHead?: { w: number[]; b: number };
   expertScale: number;
+  /** Feature standardisation stats (mean/var) produced by the PyTorch trainer. */
+  rms?: { mean: number[]; var: number[]; count: number };
   training?: { rounds: number; games: number; device: string; updatedAt: string };
 }
 
@@ -203,6 +206,10 @@ export function createInitialMlModel(seed: number): MlModel {
     b2: Array(ML_HIDDEN_2).fill(0),
     w3: init(ML_HIDDEN_2, ML_HIDDEN_2, 1, 0.15),
     b3: 0,
+    valueHead: {
+      w: init(ML_HIDDEN_2, ML_HIDDEN_2, 1, 0.15),
+      b: 0,
+    },
     expertScale: 1.4,
   };
 }
@@ -217,15 +224,29 @@ export function isMlModel(value: unknown): value is MlModel {
     Array.isArray(m.w2) && m.w2.length === ML_HIDDEN_1 * ML_HIDDEN_2 &&
     Array.isArray(m.b2) && m.b2.length === ML_HIDDEN_2 &&
     Array.isArray(m.w3) && m.w3.length === ML_HIDDEN_2 &&
-    typeof m.b3 === "number" && typeof m.expertScale === "number";
+    typeof m.b3 === "number" && typeof m.expertScale === "number" &&
+    (!m.valueHead || (Array.isArray(m.valueHead.w) && m.valueHead.w.length === ML_HIDDEN_2 && typeof m.valueHead.b === "number")) &&
+    (!m.rms || (Array.isArray(m.rms.mean) && m.rms.mean.length === ML_FEATURE_SIZE && Array.isArray(m.rms.var) && m.rms.var.length === ML_FEATURE_SIZE && typeof m.rms.count === "number"));
 }
 
 function forward(model: MlModel, x: number[]): number {
+  // Feature standardisation: zero-mean, unit-variance using running stats
+  // produced by the PyTorch trainer. Without this, features on different
+  // scales (pool 0-50 vs binary flags) dominate the gradient unequally.
+  const xNorm = new Float32Array(ML_FEATURE_SIZE);
+  const mean = model.rms?.mean;
+  const variance = model.rms?.var;
+  for (let c = 0; c < ML_FEATURE_SIZE; c++) {
+    const m = mean?.[c] ?? 0;
+    const v = variance?.[c] ?? 1;
+    xNorm[c] = ((x[c] ?? 0) - m) / Math.sqrt(v + 1e-8);
+  }
+
   const h1 = new Float32Array(ML_HIDDEN_1);
   for (let r = 0; r < ML_HIDDEN_1; r++) {
     let sum = model.b1[r] ?? 0;
     const row = r * ML_FEATURE_SIZE;
-    for (let c = 0; c < ML_FEATURE_SIZE; c++) sum += (model.w1[row + c] ?? 0) * (x[c] ?? 0);
+    for (let c = 0; c < ML_FEATURE_SIZE; c++) sum += (model.w1[row + c] ?? 0) * xNorm[c]!;
     h1[r] = Math.max(0, sum);
   }
   const h2 = new Float32Array(ML_HIDDEN_2);
