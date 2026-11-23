@@ -5036,8 +5036,8 @@
   {
     "id": 100840,
     "name": "Go Anarch",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth zamiast wymogu non-titled, non-Anarch, dołączenia, zmiany sect i unlock. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast wymogu non-titled, non-Anarch, dołączenia, zmiany sect i unlock. Wymaga nowych typów efektów (requireNonTitledNonAnarch, putInPlayOnSelf, changeSectAnarch, unlockSelf). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100841,
@@ -5072,8 +5072,8 @@
   {
     "id": 100846,
     "name": "Gramle",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth; brak delayed replacement, nazwania karty i wyszukania kopii w library albo crypt. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak delayed replacement, nazwania karty i wyszukania kopii w library albo crypt. Wymaga nowych typów efektów (delayedReplacement, nameCard, searchLibraryOrCrypt). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100847,
@@ -5102,8 +5102,8 @@
   {
     "id": 100851,
     "name": "Grasp the Ghostly",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth; brak odzyskania equipment z cudzego ash heap, counterów pathos i superior umożliwiającego unique. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak odzyskania equipment z cudzego ash heap, counterów pathos i superior umożliwiającego unique. Wymaga nowych typów efektów (moveEquipmentFromAshHeap, addPathosCounters, makeUnique). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100852,
@@ -5210,8 +5210,8 @@
   {
     "id": 100869,
     "name": "Guide and Mentor",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master ma tylko actionStealth zamiast permanenta z akcją wyszukania archetype i umieszczenia blood. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master ma tylko actionStealth zamiast permanenta z akcją wyszukania archetype i umieszczenia blood. Wymaga nowych typów efektów (putInPlayMaster, searchLibraryArchetype, moveBloodAndCard). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100870,
@@ -5300,8 +5300,8 @@
   {
     "id": 100884,
     "name": "Haqim's Law: Judgment",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje modifyStealth zamiast trifle Contract, lock Assamite, wyboru młodszego vampire i rush uprawnionych Assamite. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje modifyStealth zamiast trifle Contract, lock Assamite, wyboru młodszego vampire i rush uprawnionych Assamite. Wymaga nowych typów efektów (putInPlayMasterContract, lockVampire, chooseYoungerVampire, grantRush). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100885,
