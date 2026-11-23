@@ -38,8 +38,8 @@
   {
     "id": 100007,
     "name": "Abjure",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Tekst Power [COMBAT] wymaga zakończenia walki monster z mortal przez lock imbued i opcjonalnego przeniesienia conviction; spec opisuje wyłącznie combat maneuver wymagający red. src/cards/effects/cards.ts: Abjure; src/cards/registry.json: 100007."
+    "status": "PARTIAL_FIX",
+    "evidence": "Tekst Power [COMBAT] wymaga zakończenia walki monster z mortal przez lock imbued i opcjonalnego przeniesienia conviction; spec opisuje wyłącznie combat maneuver wymagający red. Wymaga nowych typów efektów (lockImbued, moveConviction). src/cards/effects/cards.ts: Abjure; src/cards/registry.json: 100007."
   },
   {
     "id": 100008,
@@ -56,8 +56,8 @@
   {
     "id": 100010,
     "name": "Abomination",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec nie wymaga non-sterile vampire ani spalenia ready unlocked werewolf, nie tworzy unikalnego wampira, nie przenosi krwi i nie daje wskazanych stałych zdolności/akcji. src/cards/effects/cards.ts: Abomination; src/cards/registry.json: 100010."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec nie wymaga non-sterile vampire ani spalenia ready unlocked werewolf, nie tworzy unikalnego wampira, nie przenosi krwi i nie daje wskazanych stałych zdolności/akcji. Wymaga nowych typów efektów (requireNonSterileVampire, putInPlayAsAbomination, moveBlood, grantAbilities). src/cards/effects/cards.ts: Abomination; src/cards/registry.json: 100010."
   },
   {
     "id": 100011,
@@ -393,7 +393,7 @@
     "id": 100066,
     "name": "Anesthetic Touch",
     "status": "CONFIRMED_BUG",
-    "evidence": "Tryby basic aus/obe łączą dodge i combat ends, brak close-only, hand strike oraz superior first strike. Tekst: src/cards/registry.json, ID 100066; implementacja: src/cards/effects/cards.ts."
+    "evidence": "Tryby basic aus/obe łączą dodge i combat ends, brak close-only, hand strike oraz superior first strike. Wymaga nowych typów efektów (strikeDodgeCloseOnly, handStrike, strikeDodgeFirstStrike). Tekst: src/cards/registry.json, ID 100066; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100067,
@@ -405,7 +405,7 @@
     "id": 100068,
     "name": "Anima Gathering",
     "status": "CONFIRMED_BUG",
-    "evidence": "Action ma modifyBleed i stealth zamiast dołączenia, wybranego miniona, utrzymania lock oraz +2 intercept i superior +1 bleed. Tekst: src/cards/registry.json, ID 100068; implementacja: src/cards/effects/cards.ts."
+    "evidence": "Action ma modifyBleed i stealth zamiast dołączenia, wybranego miniona, utrzymania lock oraz +2 intercept i superior +1 bleed. Wymaga nowych typów efektów (putInPlayOnTarget, lockSelf, grantIntercept, bleedBonus). Tekst: src/cards/registry.json, ID 100068; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100069,
