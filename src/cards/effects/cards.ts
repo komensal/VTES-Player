@@ -22741,15 +22741,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Flames of the Netherworld [100741] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Flames of the Netherworld [100741]
+    // [tha] Only usable at long range. Burn 1 blood to strike: 1R aggravated damage.
+    // [dai] Strike: 1 aggravated damage.
+    // [DAI] Strike: 1R aggravated damage.
     krcgId: 100741,
     name: "Flames of the Netherworld",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "tha", usable: ["onlyAtLongRange"], effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }] },
+      { level: "basic", discipline: "dai", effects: [{ kind: "strikeDamage", amount: 1, ranged: false, aggravated: true }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }] },
     ],
   },
   {
@@ -22775,15 +22779,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Flow Within the Mountain [100751] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Flow Within the Mountain [100751]
+    // [tha] Press.
+    // [vis] Strike: combat ends.
+    // [VIS] Strike: combat ends. If this vampire was blocked while performing an action, the action continues as if unblocked.
     krcgId: 100751,
     name: "Flow Within the Mountain",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "press", continueOnly: false }, { kind: "strikeCombatEnds", unlockSelf: false }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }, { kind: "strikeCombatEnds", unlockSelf: false }] }
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "basic", discipline: "vis", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }, { kind: "continueAsUnblocked", bloodCost: 1 }] },
     ],
   },
   {

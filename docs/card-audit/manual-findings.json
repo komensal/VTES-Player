@@ -4442,8 +4442,8 @@
   {
     "id": 100741,
     "name": "Flames of the Netherworld",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba podstawowe tryby dają maneuver zamiast aggravated strikes; brak superior dai i kosztu/range dla tha. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [tha] strike 1R aggravated (onlyAtLongRange); basic [dai] strike 1 aggravated; superior [DAI] strike 1R aggravated. Brak: burn 1 blood cost (wymaga nowego typu efektu). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100742,
@@ -4496,14 +4496,14 @@
   {
     "id": 100750,
     "name": "Fleshcraft",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec ma wyłącznie actionStealth zamiast damage strike z dołączeniem -1/-2 stealth i akcji usunięcia; brak superior. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec ma wyłącznie actionStealth zamiast damage strike z dołączeniem -1 stealth i akcji usunięcia; brak superior [VIC]. Wymaga nowych typów efektów (putInPlayOnTarget, modifyStealth target). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100751,
     "name": "Flow Within the Mountain",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec łączy press i combat ends dla obu basic zamiast osobnych tha/vis; brak superior kontynuującego działanie po bloku. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [tha] press; basic [vis] strike combat ends; superior [VIS] strike combat ends + continueAsUnblocked. Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100752,
@@ -4550,8 +4550,8 @@
   {
     "id": 100759,
     "name": "Force of Will",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action nie wykonuje bleed przez locked vampire ani obowiązkowych aggravated damage po rozstrzygnięciu; brak superior. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action nie wykonuje bleed przez locked vampire ani obowiązkowych aggravated damage po rozstrzygnięciu; brak superior. Wymaga nowych typów efektów (unpreventableAggravatedDamage). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100760,
@@ -4766,8 +4766,8 @@
   {
     "id": 100795,
     "name": "Frozen Object",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba tryby dają prevent i stealth; brak discard equipment ser, dołączenia tem i wyzwalanych obrażeń, brak superior. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Oba tryby dają prevent i stealth; brak discard equipment ser, dołączenia tem i wyzwalanych obrażeń, brak superior. Wymaga nowych typów efektów (discardEquipment, putInPlayOnSelf). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100796,
