@@ -1646,8 +1646,8 @@
   {
     "id": 100275,
     "name": "Cadet",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast trifle na uncontrolled Sabbat i Black Hand. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast trifle na uncontrolled Sabbat i Black Hand. Wymaga nowych typów efektów (putInPlayTrifleUncontrolledSabbat, makeBlackHand). Źródła: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100276,
@@ -2522,8 +2522,8 @@
   {
     "id": 100421,
     "name": "Convergence",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast przeniesienia krwi od ready Pander do Pander w uncontrolled. Tekst: src/cards/registry.json, ID 100421; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast przeniesienia krwi od ready Pander do Pander w uncontrolled. Wymaga nowych typów efektów (moveBloodReadyPanderToUncontrolledPander). Źródła: src/cards/registry.json, ID 100421; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100422,
@@ -2942,8 +2942,8 @@
   {
     "id": 100491,
     "name": "Danse Macabre",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak wyboru ready Sabbat i jednorazowego płatnego unlock po successful action; zamiast tego gainPool. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak wyboru ready Sabbat i jednorazowego płatnego unlock po successful action; zamiast tego gainPool. Wymaga nowych typów efektów (chooseReadySabbat, burnBloodUnlockAfterSuccessfulAction). Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
     "id": 100492,
@@ -3206,8 +3206,8 @@
   {
     "id": 100535,
     "name": "Development",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool 1 zamiast opcjonalnego replacement z research area i trifle. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool 1 zamiast opcjonalnego replacement z research area i trifle. Wymaga nowych typów efektów (drawFromResearchAreaInsteadOfLibrary). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100536,
@@ -3254,8 +3254,8 @@
   {
     "id": 100543,
     "name": "The Diamond Thunderbolt",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool 1 zamiast out-of-turn zapobiegającego zmianie kontroli i dającego blood wampirowi. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool 1 zamiast out-of-turn zapobiegającego zmianie kontroli i dającego blood wampirowi. Wymaga nowych typów efektów (outOfTurnPreventControlChange, giveBloodToVampire). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100544,
