@@ -2324,8 +2324,8 @@
   {
     "id": 100388,
     "name": "Compel the Spirit",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth, brak odzyskania spalonego ally/retainer z ash heap oraz superior wejścia w grę. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth, brak odzyskania spalonego ally/retainer z ash heap oraz superior wejścia w grę. Wymaga nowych typów efektów (moveCardFromAshHeap, putInPlayOnSelf). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100389,
@@ -2372,20 +2372,20 @@
   {
     "id": 100396,
     "name": "Condemn the Sins of the Father",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth, nie wybiera klanu ani nie lockuje młodszych wampirów lub nie spala blood superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth, nie wybiera klanu ani nie lockuje młodszych wampirów lub nie spala blood superior. Wymaga nowych typów efektów (requireClan, lockYoungerVampires, burnBloodSuperior). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100397,
     "name": "Condemnation: Betrayed",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth w obu trybach; brak lock i dołączenia condemnation, podatku bleed i superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth w obu trybach; brak lock i dołączenia condemnation, podatku bleed i superior. Wymaga nowych typów efektów (lockVampire, putInPlayOnTarget condemnation, bleedTax). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100398,
     "name": "Condemnation: Doomed",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth; brak lock oraz przyłączonej condemnation z -1 stealth i superior burn pool. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth; brak lock oraz przyłączonej condemnation z -1 stealth i superior burn pool. Wymaga nowych typów efektów (lockVampire, putInPlayOnTarget condemnation, burnPoolSuperior). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100399,
@@ -2396,8 +2396,8 @@
   {
     "id": 100400,
     "name": "Condemnation: Mute",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth; brak lock oraz dołączonej condemnation z -3 votes i superior burn blood. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth; brak lock oraz dołączonej condemnation z -3 votes i superior burn blood. Wymaga nowych typów efektów (lockVampire, putInPlayOnTarget condemnation, burnBloodSuperior). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100401,
