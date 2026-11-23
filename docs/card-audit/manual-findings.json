@@ -26,8 +26,8 @@
   {
     "id": 100005,
     "name": "Abandoning the Flesh",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec modifier/reaction daje natychmiast +1 bleed zamiast zastąpienia spalenia wampira, usunięcia go z gry i lokowanej karty z warunkowym bonusem; brak limitu jednej kopii. src/cards/effects/cards.ts: Abandoning the Flesh; registry.json: 100005."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec modifier/reaction daje natychmiast +1 bleed zamiast zastąpienia spalenia wampira (replacement effect w oknie wouldGoTorpor), usunięcia go z gry i lokowanej karty z warunkowym bonusem; brak limitu jednej kopii. ModifyBleed 1 już zaimplementowane. src/cards/effects/cards.ts: Abandoning the Flesh; registry.json: 100005."
   },
   {
     "id": 100006,
@@ -158,8 +158,8 @@
   {
     "id": 100027,
     "name": "Ahriman's Demesne",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec daje wyłącznie maneuver, bez wymogu long range i późniejszej rundy, bez aggravated strike i superior burn. src/cards/effects/cards.ts: Ahriman's Demesne; src/cards/registry.json: 100027."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiona: basic [obt] strike: 1R aggravated damage, usable: onlyAtLongRange; superior [OBT] dodaje burnInsteadOfTorpor. Brak: "notFirstRound" (pole nie istnieje w strikeDamage — wymaga pracy w engine.ts). Kod: src/cards/effects/cards.ts:20789-20811."
   },
   {
     "id": 100028,
@@ -236,8 +236,8 @@
   {
     "id": 100040,
     "name": "Alpha Glint",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Dostępne są osobne basic ani i for zamiast kombinacji dyscyplin, brak ograniczenia przeciwnika i superior before-range. Tekst: src/cards/registry.json, ID 100040; implementacja: src/cards/effects/cards.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: [ani][for] kombinacja dyscyplin (basic i superior), onlyAgainstVampire (brak ally), superior [ANI][FOR] z combat ends. Ograniczenie 'not older vampire' oraz 'before range' do dopracowania jako custom condition. Kod: src/cards/effects/cards.ts:20800-20820."
   },
   {
     "id": 100041,
@@ -254,8 +254,8 @@
   {
     "id": 100043,
     "name": "Amaranth",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Karta ma jedynie maneuver zamiast diablerie przeciwnika w oknie wysłania do torpor. Tekst: src/cards/registry.json, ID 100043; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Effect type amaranthInsteadOfTorpor istnieje w spec.ts:1884. Brak usable flag (onlyIfOpponentWouldGoTorpor, onlyIfCanDiablerie — nie istnieją w spec.ts) i obsługi w engine.ts (okno wouldGoTorpor). Tekst: src/cards/registry.json, ID 100043; implementacja: src/cards/effects/cards.ts:20839-20854."
   },
   {
     "id": 100044,
@@ -278,8 +278,8 @@
   {
     "id": 100047,
     "name": "Amria",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Basic chi łączy strikeDodge, maneuver i press, zamiast podstawowego maneuver tylko na long oraz superior dodge z press tylko do zakończenia. Tekst: src/cards/registry.json, ID 100047; implementacja: src/cards/effects/cards.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic chi maneuver tylko do long range (usable: onlyAtLongRange); superior chi strike: dodge + 1 opcjonalny press tylko do zakończenia walki (endOnly: true, continueOnly: false). Zgodnie z tekstem karty i kodem w src/cards/effects/cards.ts:20823-20847. Testy do dodania."
   },
   {
     "id": 100048,
@@ -530,8 +530,8 @@
   {
     "id": 100089,
     "name": "Armor of Vitality",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Jest tylko basic prevent 3; brak superior niszczącego melee weapon po odpowiedniej prewencji. Tekst: src/cards/registry.json, ID 100089; implementacja: src/cards/effects/cards.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: dodano tryb superior [FOR] z prevent 3 damage + destroyMeleeWeaponUsed. Kod: src/cards/effects/cards.ts:20908-20927."
   },
   {
     "id": 100090,

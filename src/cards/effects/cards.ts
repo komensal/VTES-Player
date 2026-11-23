@@ -20786,37 +20786,72 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ahriman's Demesne [100027] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Ahriman's Demesne [100027]
+    // Only usable at long range. Not usable during the first round of combat.
+    // [obt] Strike: 1R aggravated damage.
+    // [OBT] As above, and if the opposing vampire would go to torpor during
+    // the resolution of this strike, instead they are burned.
     krcgId: 100027,
     name: "Ahriman's Demesne",
     cardType: "combat",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      {
+        level: "basic",
+        discipline: "obt",
+        usable: ["onlyAtLongRange"],
+        effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }],
+      },
+      {
+        level: "superior",
+        discipline: "obt",
+        usable: ["onlyAtLongRange"],
+        effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }, { kind: "burnInsteadOfTorpor" }],
+      },
     ],
   },
   {
-    // Alpha Glint [100040] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Alpha Glint [100040]
+    // [ani][for] Strike: combat ends. Only usable before range is determined.
+    // Not usable in combat with an ally or an older vampire.
     krcgId: 100040,
     name: "Alpha Glint",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] }
+      {
+        level: "basic",
+        discipline: { all: ["ani", "for"] },
+        usable: ["onlyAgainstVampire"],
+        effects: [{ kind: "strikeCombatEnds", unlockSelf: false }],
+      },
+      {
+        level: "superior",
+        discipline: { all: ["ani", "for"] },
+        usable: ["onlyAgainstVampire"],
+        effects: [{ kind: "strikeCombatEnds", unlockSelf: false }],
+      },
     ],
   },
   {
-    // Amaranth [100043] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Amaranth [100043]
+    // Only usable by a vampire who can commit diablerie. Only usable when the
+    // opposing vampire should go to torpor. Diablerize the opposing vampire
+    // instead. Not usable by a vampire being burned or going to torpor.
     krcgId: 100043,
     name: "Amaranth",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      {
+        level: "basic",
+        discipline: null,
+        usable: [],
+        effects: [{ kind: "amaranthInsteadOfTorpor" }],
+      },
     ],
   },
   {
@@ -20870,14 +20905,26 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Armor of Vitality [100089] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Armor of Vitality [100089]
+    // [for] Prevent 3 damage.
+    // [FOR] As above, and if any of the damage was from the opposing minion's melee weapon,
+    // that weapon is destroyed.
     krcgId: 100089,
     name: "Armor of Vitality",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 3, perBloodX: false }] }
+      {
+        level: "basic",
+        discipline: "for",
+        effects: [{ kind: "prevent", base: 3, perBloodX: false }],
+      },
+      {
+        level: "superior",
+        discipline: "for",
+        effects: [{ kind: "prevent", base: 3, perBloodX: false }, { kind: "destroyMeleeWeaponUsed" }],
+      },
     ],
   },
   {
