@@ -5042,8 +5042,8 @@
   {
     "id": 100841,
     "name": "Goblinism",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba basic mają tylko stealth zamiast spalenia location pot oraz wyszukania location myt; brak superior bezpośredniego wyposażenia haven. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Oba basic mają tylko stealth zamiast spalenia location pot oraz wyszukania location myt; brak superior. Wymaga nowych typów efektów (burnLocation, searchLibrary). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100842,
@@ -5264,14 +5264,14 @@
   {
     "id": 100878,
     "name": "Hall of Hades' Court",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba basic dają intercept zamiast głosów dom i anulowania reakcji tem; brak superior mnożącego głosy. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Oba basic dają intercept zamiast głosów dom i anulowania reakcji tem; brak superior. Wymaga nowych typów efektów (addVotes, cancelReaction). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100879,
     "name": "Hall of Mirrors",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Basic maneuver nie ma ograniczenia do pierwszej rundy; brak superior anulującego strike card za blood i limitu jego użycia. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: dodano superior [CHI] z maneuver. Brak: ograniczenie pierwszej rundy, cancel strike card za blood (wymaga nowego typu efektu). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100880,
@@ -5318,8 +5318,8 @@
   {
     "id": 100887,
     "name": "Hard Case",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Reaction daje intercept zamiast anulowania combat po bloku ally lub młodszego vampire; brak superior niszczącego weapon/vehicle. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: dodano superior [for] z modifyBleed -1 (jako placeholder dla cancel combat). Brak: cancel combat, destroy weapon/vehicle (wymaga nowych typów efektów). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100888,
@@ -5360,8 +5360,8 @@
   {
     "id": 100894,
     "name": "The Haunting",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth w basic zamiast dołączenia i drain blood/life, brak superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth w basic zamiast dołączenia i drain blood/life, brak superior. Wymaga nowych typów efektów (putInPlayOnTarget, drainBloodLife). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100895,

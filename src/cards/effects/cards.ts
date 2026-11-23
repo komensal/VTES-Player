@@ -23175,14 +23175,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hall of Mirrors [100879] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Hall of Mirrors [100879]
+    // Only usable during the first round of combat.
+    // [chi] Maneuver.
+    // [CHI] This vampire burns 1 blood to cancel the opposing minion's strike card as it is played, and its cost is not paid.
     krcgId: 100879,
     name: "Hall of Mirrors",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] },
     ],
   },
   {
@@ -23198,14 +23202,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hard Case [100887] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Hard Case [100887]
+    // Only usable when this vampire successfully blocks an ally or younger vampire.
+    // [for] Cancel the resulting combat.
+    // [FOR] As above, and destroy a weapon or vehicle on the acting minion.
     krcgId: 100887,
     name: "Hard Case",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
     ],
   },
   {
