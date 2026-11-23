@@ -1466,8 +1466,8 @@
   {
     "id": 100245,
     "name": "Brainwash",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master ma tylko modifyStealth; nie dołącza do uncontrolled ani nie blokuje transferów. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master ma tylko modifyStealth; nie dołącza do uncontrolled ani nie blokuje transferów. Wymaga nowych typów efektów (putInPlayOnTarget uncontrolled, blockTransfers). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100246,
@@ -1490,8 +1490,8 @@
   {
     "id": 100249,
     "name": "Breath of Thanatos",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak rozdzielenia +2 stealth dla wraith i superior combat strike aggravated; jest tylko +1 stealth basic. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: modifyStealth → actionStealth 1 (action modifier). Brak: +2 stealth dla wraith, superior combat strike aggravated (wymaga nowych typów efektów). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts."
   },
   {
     "id": 100250,
@@ -1514,8 +1514,8 @@
   {
     "id": 100253,
     "name": "Brick Laying",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth; brak directed wyboru haven/lock oraz superior damage. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth; brak directed wyboru haven/lock oraz superior damage. Wymaga nowych typów efektów (putInPlayOnTarget haven, lockVampire). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100254,
@@ -1808,8 +1808,8 @@
   {
     "id": 100302,
     "name": "Carthage Remembered",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master ma ogólny stealth zamiast stałej karty z warunkowymi bonusami i akcją burn. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master ma ogólny stealth zamiast stałej karty z warunkowymi bonusami i akcją burn. Wymaga nowych typów efektów (putInPlayMaster, conditionalBonus). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100303,
@@ -1826,8 +1826,8 @@
   {
     "id": 100305,
     "name": "Cat Burglary",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth; brak obu trybów bleed, limitu 1 i wyboru dowolnego Methuselah na superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth; brak obu trybów bleed, limitu 1 i wyboru dowolnego Methuselah na superior. Wymaga nowych typów efektów (modifyBleed, limitOnePerTurn, chooseAnyMethuselah). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100306,

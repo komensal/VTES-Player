@@ -27109,14 +27109,15 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Breath of Thanatos [100249] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Breath of Thanatos [100249]
+    // +1 stealth action modifier.
     krcgId: 100249,
     name: "Breath of Thanatos",
     cardType: "actionModifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
