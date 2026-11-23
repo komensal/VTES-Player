@@ -128,7 +128,7 @@
   {
     "id": 100022,
     "name": "Adhocracy",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Trzy tryby ani/chi/pot mają ten sam bleed + strength; brakuje głosów chi i właściwego ridera pot po bloku. Tekst: src/cards/registry.json, ID 100022; implementacja: src/cards/effects/cards.ts."
   },
   {
@@ -392,7 +392,7 @@
   {
     "id": 100066,
     "name": "Anesthetic Touch",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Tryby basic aus/obe łączą dodge i combat ends, brak close-only, hand strike oraz superior first strike. Wymaga nowych typów efektów (strikeDodgeCloseOnly, handStrike, strikeDodgeFirstStrike). Tekst: src/cards/registry.json, ID 100066; implementacja: src/cards/effects/cards.ts."
   },
   {
@@ -404,13 +404,13 @@
   {
     "id": 100068,
     "name": "Anima Gathering",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Action ma modifyBleed i stealth zamiast dołączenia, wybranego miniona, utrzymania lock oraz +2 intercept i superior +1 bleed. Wymaga nowych typów efektów (putInPlayOnTarget, lockSelf, grantIntercept, bleedBonus). Tekst: src/cards/registry.json, ID 100068; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100069,
     "name": "Animal Magnetism",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Występuje stealth na osobnych ani i obf zamiast głosów przy obu wymaganych dyscyplinach oraz wersji superior. Tekst: src/cards/registry.json, ID 100069; implementacja: src/cards/effects/cards.ts."
   },
   {
@@ -524,7 +524,7 @@
   {
     "id": 100088,
     "name": "Armor of Terra",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Action ma prevent i stealth zamiast dołączenia do Gargoyle, traktowania aggravated jako normal i superior prewencji. Tekst: src/cards/registry.json, ID 100088; implementacja: src/cards/effects/cards.ts."
   },
   {
@@ -548,7 +548,7 @@
   {
     "id": 100092,
     "name": "Army of Apparitions",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Reaction daje modifyIntercept zamiast głosów chi lub anulowania akcji w superior. Tekst: src/cards/registry.json, ID 100092; implementacja: src/cards/effects/cards.ts."
   },
   {
@@ -608,8 +608,8 @@
   {
     "id": 100102,
     "name": "As the Crow",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Modifier daje stealth zamiast unlock po udanej akcji i ograniczenia jednej kopii. Tekst: src/cards/registry.json, ID 100102; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier daje stealth zamiast unlock po udanej akcji i ograniczenia jednej kopii. Wymaga nowych typów efektów (unlockSelf, limitOneCopy). Tekst: src/cards/registry.json, ID 100102; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100103,
@@ -626,8 +626,8 @@
   {
     "id": 100105,
     "name": "Ashes to Ashes",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Dwa tryby prevent 2 zamiast zamiany burn na torpor, prevent all z unlock/torpor oraz superior gain 2 blood. Tekst: src/cards/registry.json, ID 100105; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dwa tryby prevent 2 zamiast zamiany burn na torpor, prevent all z unlock/torpor oraz superior gain 2 blood. Wymaga nowych typów efektów (burnToTorpor, preventAllUnlockTorpor, gainBlood2). Tekst: src/cards/registry.json, ID 100105; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100106,
@@ -662,7 +662,7 @@
   {
     "id": 100111,
     "name": "Aura Absorption",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Basic myt i aus łączą stealth z intercept; brak osobnego superior modifier i wymogu spalenia blood w aus. Tekst: src/cards/registry.json, ID 100111; implementacja: src/cards/effects/cards.ts."
   },
   {
@@ -674,7 +674,7 @@
   {
     "id": 100113,
     "name": "Aura Reading",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "W spec tylko maneuver, zamiast basic otwierającego rękę przeciwnika w combat i superior +2 hand size; brak limitu superior. Tekst: src/cards/registry.json, ID 100113; implementacja: src/cards/effects/cards.ts."
   },
   {
@@ -692,13 +692,13 @@
   {
     "id": 100116,
     "name": "Auto-da-fé",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak efektu referendum i wymaganego tytułu; political action ma pusty tryb, a compilePoliticalAction przy braku primitive zwraca puste terms. Brak bespoke handlera. Źródła: src/cards/registry.json ID 100116; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100117,
     "name": "Autonomic Mastery",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec ma dodge i combat ends w basic, zamiast spalenia non-wraith ally/retainer i superior hand strike z ograniczeniami. Tekst: src/cards/registry.json, ID 100117; implementacja: src/cards/effects/cards.ts."
   },
   {
@@ -710,7 +710,7 @@
   {
     "id": 100119,
     "name": "Awe",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec ma modifyStealth zamiast głosów X+1 i 2X+1 oraz obu poziomów. Tekst: src/cards/registry.json, ID 100119; implementacja: src/cards/effects/cards.ts."
   },
   {
@@ -722,7 +722,7 @@
   {
     "id": 100121,
     "name": "Baal's Bloody Talons",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat ma tylko maneuver zamiast nadania melee aggravated i spalenia broni oraz superior +1 obrażeń. Tekst: src/cards/registry.json, ID 100121; implementacja: src/cards/effects/cards.ts."
   },
   {
@@ -740,7 +740,7 @@
   {
     "id": 100124,
     "name": "Backstab",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat ma tylko limited additional strike w basic, brak first strike, ograniczenia do blokującego i pierwszej rundy oraz właściwego superior. Tekst: src/cards/registry.json, ID 100124; implementacja: src/cards/effects/cards.ts."
   },
   {
@@ -824,7 +824,7 @@
   {
     "id": 100138,
     "name": "Basilisk's Touch",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Oba basic mają addStrength, nie ma efektu myt wysyłającego do torpor/burn, ograniczenia przeciwnika ani superior. Tekst: src/cards/registry.json, ID 100138; implementacja: src/cards/effects/cards.ts."
   },
   {
@@ -842,7 +842,7 @@
   {
     "id": 100141,
     "name": "Battle Frenzy",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Master ma limited additionalStrike i press zamiast out-of-turn, wyboru Osebo, non-limited strike każdej rundy oraz kosztu blood. Tekst: src/cards/registry.json, ID 100141; implementacja: src/cards/effects/cards.ts."
   },
   {
@@ -860,7 +860,7 @@
   {
     "id": 100144,
     "name": "Bear-Baiting",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Modifier daje bleed i prevent zamiast porównania crypt, warunkowej szkody albo zakończenia combat i dołączenia karty. Tekst: src/cards/registry.json, ID 100144; implementacja: src/cards/effects/cards.ts."
   },
   {
@@ -962,7 +962,7 @@
   {
     "id": 100161,
     "name": "Bind the Night-Walker",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Reaction daje +1 intercept zamiast anulowania działania na nosiciela Kerrie; brak warunków celu/aktora i limitu per turn. Źródła: src/cards/registry.json ID 100161; src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1040,7 +1040,7 @@
   {
     "id": 100174,
     "name": "Blade Clot",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Modifier daje stealth zamiast warunku diablerie, clot counters i konsekwencji dla ofiar. Źródła: src/cards/registry.json ID 100174; src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1070,7 +1070,7 @@
   {
     "id": 100179,
     "name": "Blessed Audience",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Oba tryby action mają jedynie modifyStealth; brak lock X−1 celów i superior zwiększenia capacity/kosztu. Źródła: src/cards/registry.json ID 100179; src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1184,7 +1184,7 @@
   {
     "id": 100198,
     "name": "Blood Cult Awareness Network",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Event ma pustą specyfikację bez inquisition, wymogu imbued i modyfikatorów kosztu/stealth. Źródła: src/cards/registry.json ID 100198; src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1256,7 +1256,7 @@
   {
     "id": 100210,
     "name": "Blood Siege",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Political action ma pusty tryb; brak wyboru Sabbat i prince, title, blood-for-votes i zakazu modifierów; brak bespoke handlera. Źródła: src/cards/registry.json ID 100210; src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1274,7 +1274,7 @@
   {
     "id": 100213,
     "name": "Blood Tempering",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Action ma osobne basic for/qui z prevent i stealth zamiast obu dyscyplin, dołączenia do equipment i jego bonusów oraz superior unlock. Źródła: src/cards/registry.json ID 100213; src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1298,7 +1298,7 @@
   {
     "id": 100217,
     "name": "Blood Weakens",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Event ma pusty tryb; nie opóźnia replacement ani nie obsługuje wyjątków po diablerie. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1334,7 +1334,7 @@
   {
     "id": 100223,
     "name": "Bloodstone",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Equipment nie wybiera dowolnego miniona i nie tworzy relacji dającej +2 intercept przeciw nosicielowi. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1382,7 +1382,7 @@
   {
     "id": 100231,
     "name": "Body of Sun",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat ma tylko maneuver, bez drukowanych strike i obrażeń dla retainers oraz aktora. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1400,13 +1400,13 @@
   {
     "id": 100234,
     "name": "Bond",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Action ma jedynie stealth, bez ratowania incapacitated imbued i przywrócenia life. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100235,
     "name": "Bond with the Mountain",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Tryby basic vis i tha łączą dodge, press i combat ends; brak osobnego superior i wymaganych unlock. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1424,7 +1424,7 @@
   {
     "id": 100238,
     "name": "Bonecraft",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Nie ma strike 1 damage, dołączania ani ujemnego strength i akcji spalenia; spec ma actionStealth. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1442,7 +1442,7 @@
   {
     "id": 100241,
     "name": "Botched Move",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat daje prevent 2 zamiast reveal, warunkowego cancel i damage, bez limitu combat. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1484,7 +1484,7 @@
   {
     "id": 100248,
     "name": "Break the Code",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Event ma pusty tryb; brak -1 intercept dla imbued i przyznanego rush na imbued. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1496,7 +1496,7 @@
   {
     "id": 100250,
     "name": "Breath of the Dragon",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat ma maneuver zamiast obu ranged aggravated strikes i zwrotnych obrażeń. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1508,7 +1508,7 @@
   {
     "id": 100252,
     "name": "Brick by Brick",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Basic vis ma tylko maneuver; brak 2R strike, maneuver przy strike i superior ustawiania range. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1526,7 +1526,7 @@
   {
     "id": 100255,
     "name": "Brinksmanship",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Political action jest pusta: brak karty w grze, obowiązkowego withdraw i konsekwencji oust. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1538,7 +1538,7 @@
   {
     "id": 100257,
     "name": "Brother's Blood",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Jest zwykły prevent 2 zamiast płacenia blood innego członka circle i stałego superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1574,7 +1574,7 @@
   {
     "id": 100263,
     "name": "Brutal Influence",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Jest jeden basic pot z bleed i stealth; brak wyboru i X Orun i superior transferu krwi. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1616,7 +1616,7 @@
   {
     "id": 100270,
     "name": "Burning Touch",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak combat tha i ridera val; dwa podstawowe tryby dają modifyBleed zamiast drukowanych efektów. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1640,7 +1640,7 @@
   {
     "id": 100274,
     "name": "Business Pressure",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Modifier daje stealth zamiast burn pool za głosy dla Methuselahów i superior bonusu. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1664,13 +1664,13 @@
   {
     "id": 100278,
     "name": "The Call",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Oba podstawowe tryby mają jedynie stealth; brak kombinacji aus/dem, wyboru i blood w uncontrolled. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100279,
     "name": "Call of the Hungry Dead",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Modifier daje stealth zamiast -1 intercept oraz superior nieudanej próby bloku. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1682,7 +1682,7 @@
   {
     "id": 100281,
     "name": "Call the Lamprey",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat ma maneuver zamiast steal blood na ally/minion oraz superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1718,7 +1718,7 @@
   {
     "id": 100287,
     "name": "Camera Phone",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Equipment ma modifyBleed, nie przyznaną akcję bleed ani zakaz zwiększania innym equipment. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1742,7 +1742,7 @@
   {
     "id": 100291,
     "name": "Canopic Jar",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Equipment ma modifyIntercept bez wyboru celu i brak opcji spalenia/unlock oraz superior damage. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1754,7 +1754,7 @@
   {
     "id": 100293,
     "name": "Car Bomb",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Reaction daje intercept zamiast lock, efektu pojazdu i -1 stealth przy jego braku. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1766,13 +1766,13 @@
   {
     "id": 100295,
     "name": "Cardinal Sin: Failure of Mission",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Reaction daje intercept zamiast wymagania tytułu, przyłączenia do Sabbat i przyznanych akcji. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100296,
     "name": "Cardinal Sin: Insubordination",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Reaction daje intercept zamiast warunkowego wysłania przeciwnika do torpor po combat. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1820,7 +1820,7 @@
   {
     "id": 100304,
     "name": "Caseless Rounds",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Opcjonalny limited additional strike jest przyznawany automatycznie, co może zablokować inne źródło; docs/additional-strike-followups.md. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1922,13 +1922,13 @@
   {
     "id": 100321,
     "name": "Chameleon's Colors",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Basic spi w spec nie istnieje: press jest przypisany superior, brak maneuver+opcjonalny press; superior kończy combat i unlockuje aktora zamiast kontynuować kwalifikującą się akcję. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100322,
     "name": "Champion",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Reaction ma combat maneuver zamiast wydania 2 conviction, przerwania skierowanej akcji i combat z monster. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -1994,7 +1994,7 @@
   {
     "id": 100333,
     "name": "Charismatic Aura",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Limit combatLimit: round jest globalny dla obu trybów; tekst ogranicza tylko basic, więc po basic błędnie blokuje superior. Kod: cards.ts i compile.ts. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2012,7 +2012,7 @@
   {
     "id": 100336,
     "name": "Cheat the Fates",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Oba tryby podstawowe dają +2 bleed; brak ograniczenia block przy tem i superior unlock. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2054,7 +2054,7 @@
   {
     "id": 100343,
     "name": "Chiram's Hold",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat ma tylko maneuver; brak przekazania karty, wyboru combat z ash heap i podatku kosztowego. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2090,7 +2090,7 @@
   {
     "id": 100349,
     "name": "Circle",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec daje jednocześnie natychmiastowy maneuver i press, zamiast press i opcjonalnego maneuver dopiero w następnej rundzie. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2108,7 +2108,7 @@
   {
     "id": 100352,
     "name": "Claiming the Body",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Modifier daje stealth zamiast blokady blokującego, zakończenia akcji i superior unlock Blood Brother. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2144,7 +2144,7 @@
   {
     "id": 100358,
     "name": "Cleave",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat ma tylko maneuver zamiast wybrania/stworzenia melee weapon i jej modyfikatorów. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2174,7 +2174,7 @@
   {
     "id": 100363,
     "name": "Clockwerx",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat ma tylko maneuver zamiast przeniesienia equipment pomiędzy Blood Brothers i superior okna. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2204,19 +2204,19 @@
   {
     "id": 100368,
     "name": "Coagulate Blood",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat ma tylko maneuver zamiast 1R/2R damage i premii przeciw ally. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100369,
     "name": "Coagulated Entity",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Akcja ma tylko prevent 2, bez wyboru Blood Brothers, rush, przekazania blood i superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100370,
     "name": "Cobra Fangs",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat ma tylko maneuver zamiast hand strike i opóźnionego burn/torpor ofiary. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2252,7 +2252,7 @@
   {
     "id": 100376,
     "name": "Cold Aura",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat ma tylko ogólny press; brak ustawienia long range i odpowiedniego superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2264,7 +2264,7 @@
   {
     "id": 100378,
     "name": "Coma",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat ma tylko maneuver zamiast strike wysyłającego wampira do torpor i superior zakazu unlock. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2276,7 +2276,7 @@
   {
     "id": 100380,
     "name": "Command",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Modifier daje stealth zamiast anulowania bloku ally, lock i superior karty opóźniającej unlock. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2306,13 +2306,13 @@
   {
     "id": 100385,
     "name": "Communal Haven: Cathedral",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Efekt „and/or” wymaga możliwości wykonania obu części po jednym lock; kod wykonuje wyłącznie jedną opcję i blokuje dalsze użycie. Dodatkowo zawsze przenosi 1 blood i filtr sect nie wymaga kind vampire; tests/cards/blood-and-gear.test.ts utrwala rozłączną interpretację. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100386,
     "name": "Communal Haven: Temple",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Master daje ogólny modifyIntercept zamiast karty z warunkowym bonusem dla własnych Sabbat i limitem kopii. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2390,7 +2390,7 @@
   {
     "id": 100399,
     "name": "Condemnation: Languid",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Akcja daje press i stealth zamiast lock oraz dołączonej condemnation z -1 strength i zakazem press. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2432,7 +2432,7 @@
   {
     "id": 100406,
     "name": "Confusion of the Eye",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Reaction daje intercept zamiast redukcji bleed oraz superior wpływu na referendum. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2468,7 +2468,7 @@
   {
     "id": 100412,
     "name": "Conscripted Statue",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Modifier daje press zamiast damage co rundę lub utworzenia ally walczącego z blokującym. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
@@ -2528,7 +2528,7 @@
   {
     "id": 100422,
     "name": "Cooler",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Equipment nie tworzy czterech liczników ani nie przekazuje blood i nie spala się po wyczerpaniu. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
@@ -2540,13 +2540,13 @@
   {
     "id": 100424,
     "name": "Coroner's Contact",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Master daje pool zamiast wyszukania Samedi w crypt i dodania blood. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
     "id": 100425,
     "name": "Corporal Reservoir",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak trifle i dołączenia do Black Hand oraz zdolności lock/unlock; spec ma jedynie prevent. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
@@ -2588,7 +2588,7 @@
   {
     "id": 100432,
     "name": "Coterie Tactics",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak drugiego unlocked wampira, sumowania intercept i wyboru blokującego; zastąpiono +1 intercept. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
@@ -2612,7 +2612,7 @@
   {
     "id": 100436,
     "name": "Covenant of Blood",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak wymogów ready non-Camarilla i capacity, trwałej karty oraz przyznanych akcji walki i burn; błędny stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
@@ -2624,7 +2624,7 @@
   {
     "id": 100438,
     "name": "Cracking the Wall",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Master daje pool zamiast gry rock-paper-scissors, odrzucania kart i opóźnionego replacement. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
@@ -2654,7 +2654,7 @@
   {
     "id": 100443,
     "name": "Creeping Infection",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak strike, dołączenia, sterowania blokiem i limitu; +1 bleed występuje błędnie na basic. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
@@ -2672,7 +2672,7 @@
   {
     "id": 100446,
     "name": "CrimethInc.",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak warunku successful anarch action i trzech odrębnych efektów unlock/permanent; zamiast nich stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
@@ -2858,7 +2858,7 @@
   {
     "id": 100477,
     "name": "Cryptic Mission",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak directed celu i obrażeń/burn oraz superior gain blood; spec zawiera prevent i stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
@@ -2870,19 +2870,19 @@
   {
     "id": 100479,
     "name": "Cull the Herd",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak oglądania ręki przeciwnika, odrzucania ally/retainer i blood za odrzucone karty. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
     "id": 100480,
     "name": "Cultivated Blood Shortage",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak permanenta, podatku blood Ventrue, lock przy braku krwi i akcji burn. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
     "id": 100481,
     "name": "Cunctator Motion",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Pusta spec oferuje referendum bez warunku gry o ante ani wyboru i przestawienia kart ante; silnik nie implementuje ante. Tekst registry.json; kod src/cards/effects/cards.ts."
   },
   {
@@ -2912,7 +2912,7 @@
   {
     "id": 100486,
     "name": "Daemonic Possession",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak wyboru spalonego miniona i wskrzeszenia do ready z 1 blood/life oraz różnicy lock poziomów; błędny stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
@@ -2924,13 +2924,13 @@
   {
     "id": 100488,
     "name": "Dagon's Call",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak hand strike i powtarzanych niepreventowalnych obrażeń, limitu per combat oraz superior; spec daje press i prevent. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
     "id": 100489,
     "name": "Dam the Heart's River",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak frenzy, limitu, wzrostu damage i superior kosztu strikes; zamiast tego maneuver. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
@@ -2972,13 +2972,13 @@
   {
     "id": 100496,
     "name": "Darkling Trickery",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Basic obt nie ma prawa do maneuver; brak całego superior myt reagującego na ranged weapon. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
     "id": 100497,
     "name": "Darkness Within",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak permanentnego efektu pobierającego blood/life i zwrotu po walce; spec daje maneuver i combat ends. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
@@ -3026,7 +3026,7 @@
   {
     "id": 100505,
     "name": "The Deadliest Sin",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak okna diablerie, +2 intercept i warunkowego +2 strength; spec daje +1 intercept. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
@@ -3038,19 +3038,19 @@
   {
     "id": 100507,
     "name": "The Death of My Conscience",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Przy burnHandForStrength kompilator automatycznie odrzuca do czterech pierwszych kart zamiast pozwolić wybrać od zera do czterech; combatLimit również nie wynika z tekstu. Istniejący test next-batch-a może zakończyć się bez asercji. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
     "id": 100508,
     "name": "Death of the Drum",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak long-range strike 1R/2R, ograniczenia prevent i aggravated superior; spec daje maneuver. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
     "id": 100509,
     "name": "Death Pact",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak karty na celu, przekształcenia w wraith retainer po spaleniu oraz redukcji aggravated i superior life. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
@@ -3068,13 +3068,13 @@
   {
     "id": 100512,
     "name": "Decompose",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak dołączenia do celu, kar stealth, zakazu additional strikes i możliwości wykupienia; spec daje dodatkowy strike i press aktorowi. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
     "id": 100513,
     "name": "Deed the Heart's Desire",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak wyboru młodszego vampire i zakazu block/reakcji; spec daje stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
@@ -3140,13 +3140,13 @@
   {
     "id": 100524,
     "name": "Deny",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec łączy stealth i press w jednym basic actionModifier; tekst rozdziela combat [dem] press i superior action modifier stealth. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100525,
     "name": "Deploy the Hand",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Referendum powinno umieścić target counters i prowadzić do obrażeń lub spalenia Edge; spec zawiera prevent 2. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -3164,7 +3164,7 @@
   {
     "id": 100528,
     "name": "Descent into Darkness",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Poza stealth brak usunięcia wampira z gry, dodawania blood i powrotu w influence; brak poziomu superior. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -3200,7 +3200,7 @@
   {
     "id": 100534,
     "name": "Determine",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Reaction daje +1 intercept zamiast przekierowania bleed potwora predatora albo anulowania karty akcji po zablokowaniu imbued. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
   },
   {
@@ -3224,19 +3224,19 @@
   {
     "id": 100538,
     "name": "Devil-Channel: Feet",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Dodge i press występują w jednej wersji, ale brak warunku przeciw flight, reflex i superior Aye/unlock. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100539,
     "name": "Devil-Channel: Hands",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Zamiast aggravated hand damage przez combat i wariantów superior/reflex spec daje jedynie press. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100540,
     "name": "Devil-Channel: Throat",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec daje stealth zamiast anulowania frenzy lub przerwania bloku; brak ograniczeń celu i wariantu superior z lock. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -3302,7 +3302,7 @@
   {
     "id": 100551,
     "name": "Discern",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec traktuje Power jako combat wymagający jud; tekst wymaga reaction +1 intercept tylko przeciw działającemu monster. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
   },
   {
@@ -3332,7 +3332,7 @@
   {
     "id": 100556,
     "name": "Dismemberment of Osiris",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Poza błędnym stealth brak spalenia tytułowanego wampira w torpor, utraty blood przez klan i superior utraty pool. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -3362,13 +3362,13 @@
   {
     "id": 100561,
     "name": "Dive Bomb",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec nie daje wejścia w combat z wybranym minionem ani opcjonalnego maneuver aktora i press blokującego w pierwszej rundzie. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100562,
     "name": "Dive into Madness",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec daje bleed oraz stealth zamiast basic superior Dementation i unlock oraz permanenta z +1 bleed i zasadą usunięcia. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -3386,13 +3386,13 @@
   {
     "id": 100565,
     "name": "Divine Image",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec pomija -1 stealth, nie ogranicza zagrania do ogłoszenia i daje basic ograniczony bleed, którego tekst przyznaje dopiero superior bez limitu. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100566,
     "name": "Divine Sign",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Poza stealth brak wyboru miniona, dołączenia, unlock, zależnego intercept i efektu superior. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -3446,7 +3446,7 @@
   {
     "id": 100575,
     "name": "Donate",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Wszystkie trzy efekty różnych typów Power z kosztem conviction złączone w jeden combat; brak odbiorców i czasu opisanych w tekście. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
   },
   {
@@ -3494,7 +3494,7 @@
   {
     "id": 100583,
     "name": "Dramatic Upheaval",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Pusta spec referendum nie wybiera Methuselah ani nie zamienia miejsc po sukcesie; osobnego handlera po nazwie/ID nie znaleziono. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
   },
   {
@@ -3548,7 +3548,7 @@
   {
     "id": 100592,
     "name": "Dual Form",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Poza stealth brak odblokowań basic oraz klonowania wampira z powiązanym spaleniem superior. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -3590,7 +3590,7 @@
   {
     "id": 100599,
     "name": "Ears of the Hare",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak opłaty blood w trybie Protean oraz wariantu superior Spiritus +2 intercept; oba obecne tryby dają +1 bez kosztu. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
   },
   {
@@ -3644,7 +3644,7 @@
   {
     "id": 100608,
     "name": "Echo of Harmonies",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Oba warianty dają stealth zamiast głosów w referendum; brak trybu superior umożliwiającego odzyskanie karty politycznej. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
   },
   {
@@ -3656,13 +3656,13 @@
   {
     "id": 100610,
     "name": "Ecstasy",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Zamiast redukcji bleed o 1 i warunkowego spalenia blood/life na superior spec daje intercept. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100611,
     "name": "Ecstatic Agony",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec daje stealth i press zamiast permanenta ze strength zależnym od obrażeń w poprzedniej rundzie oraz superior warunkowego press. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
   },
   {
@@ -3680,7 +3680,7 @@
   {
     "id": 100614,
     "name": "Edge Vitiation",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Poza stealth brak basic spalenia Edge i pool oraz superior permanenta przechwytującego Edge. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -3722,7 +3722,7 @@
   {
     "id": 100621,
     "name": "Elder Michaelis's Hold",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec daje intercept zamiast przekazania permanenta z wybranym action modifier, podwyższenia jego kosztu i sposobu spalenia. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -3746,7 +3746,7 @@
   {
     "id": 100625,
     "name": "Elemental Stoicism",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Superior [FOR][obf] opisano jako all for/obf z level superior; disciplineOk w compile.ts wymaga superior obu dyscyplin, więc nielegalnie odmawia FOR z podstawowym obf. elemental-stoicism.test.ts bada spec, ale nie poziomy dyscyplin."
   },
   {
@@ -3830,7 +3830,7 @@
   {
     "id": 100639,
     "name": "Empowering the Puppet King",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Modifier zagrywa działający minion zamiast innego ready vampire; brak możliwości zagrania superior przez locked vampire. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
@@ -3926,7 +3926,7 @@
   {
     "id": 100655,
     "name": "Epiphany",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec daje +1 stealth zamiast +2 oraz nie implementuje unlock ani wyszukania i dołączenia wersji advanced. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -3950,7 +3950,7 @@
   {
     "id": 100659,
     "name": "Eruption of Vitae",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec daje maneuver zamiast 2R aggravated strike na long range po pierwszej rundzie i superior dodatkowych obrażeń. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -3986,7 +3986,7 @@
   {
     "id": 100665,
     "name": "The Eternal Mask",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak akcji bleed w basic oraz całego superior z odzyskaniem unique vampire z ash heap i ograniczeniami. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
@@ -3998,25 +3998,25 @@
   {
     "id": 100667,
     "name": "The Eternals of Sirius",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec daje gainPool 1 bez warunków; tekst daje wybór 5 pool przy ready Follower of Set albo 5 blood dla odpowiedniego uncontrolled Follower. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100668,
     "name": "Evil Eye",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec daje intercept zamiast anulowania strike albo action card; brak opóźnionego replacement. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100669,
     "name": "Ex Nihilo",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak dołączenia i trwałych efektów immunity, braku damage/gain blood, kosztu upkeep i wariantów usunięcia; spec ma jedynie stealth. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
     "id": 100670,
     "name": "Excellent Thirst",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec daje stealth zamiast +2 hunt z warunkiem bezkrwawego Laibon przy udanym polowaniu. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -4034,7 +4034,7 @@
   {
     "id": 100673,
     "name": "Exile",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Poza stealth brak basic lock i unlock aktora oraz superior wysłania celu do uncontrolled za Orun. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -4046,7 +4046,7 @@
   {
     "id": 100675,
     "name": "Extortion",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec daje intercept zamiast permanenta blokującego unlock albo powodującego utratę pool, oraz sposobu usunięcia przez Edge. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -4070,7 +4070,7 @@
   {
     "id": 100679,
     "name": "Eye of Unforgiving Heaven",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Zamiast strike 2R aggravated obejmującego wskazanych uczestników walki spec oferuje maneuver, bez superior i pool rider. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
@@ -4082,7 +4082,7 @@
   {
     "id": 100681,
     "name": "Eyes of Blades",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Nie zaimplementowano superior immunity i zakazu strike; basic poza dodge nie ogranicza prewencji do obrażeń retainera, brak delayed replacement. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
@@ -4100,7 +4100,7 @@
   {
     "id": 100684,
     "name": "Eyes of the Dead",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec daje tylko +1 intercept bez ograniczeń do bloku diablerie i bez superior +2. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -4112,7 +4112,7 @@
   {
     "id": 100686,
     "name": "Eyes of the Serpent",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Action modifier ma wyłącznie strike combat ends na basic, zamiast anty-ally block w basic i strike przeciw ally w superior. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
@@ -4130,13 +4130,13 @@
   {
     "id": 100689,
     "name": "Fae Contortion",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak reflex anulującego grapple i obu combat maneuvers; action modifier stealth jest dostępny na basic zamiast superior myt. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
     "id": 100690,
     "name": "Faerie Wards",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Brak ograniczeń celu i wieku oraz odpowiednich efektów: aus powinno dawać +2 intercept, myt powodować niepowodzenie akcji i lock, superior także opóźniać unlock. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
@@ -4166,19 +4166,19 @@
   {
     "id": 100695,
     "name": "Fall of the Camarilla",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Event nie wymaga trzech innych Gehenna, nie opóźnia replacement i nie zmienia Camarilla na Independent. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
     "id": 100696,
     "name": "Fall of the Sabbat",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Event nie wymaga trzech innych Gehenna ani braku ready Black Hand, nie opóźnia replacement i nie zmienia Sabbat na Independent. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
     "id": 100697,
     "name": "False Resonance",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec daje stealth bez anulowania reakcji basic i bez superior możliwości anulowania za blood. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -4208,7 +4208,7 @@
   {
     "id": 100702,
     "name": "Far Fatuus",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Zamiast long-range strike 2R spec oferuje prevent 2, bez superior prewencji strike do końca rundy. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
@@ -4226,13 +4226,13 @@
   {
     "id": 100705,
     "name": "Fast Reaction",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Reakcja zamiast nowego combat po bloku innego miniona oferuje sam press; brak lock, zakazu strike oraz superior. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
     "id": 100706,
     "name": "Fata Amria",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat/reaction opisany jako modifierOrReaction z dodge zamiast undodgeable strike dołączającego kartę i reakcji po successful action; brak ograniczeń superior i usunięcia. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
@@ -4244,7 +4244,7 @@
   {
     "id": 100708,
     "name": "Fatuus Mastery",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Poza stealth brak permanenta z licznikami opłacającymi karty Chimerstry i superior początkowego licznika. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
@@ -4262,7 +4262,7 @@
   {
     "id": 100711,
     "name": "Fear of the Void Below",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Dai nie ustawia long jako domyślnego range ani press end co rundę; brak limitu jednej kopii, superior discard i rozdziału trybów obf/dai. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
@@ -4388,7 +4388,7 @@
   {
     "id": 100732,
     "name": "Finding the Path",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Political action nie wybiera co najmniej połowy graczy i nie zmienia pool po referendum. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -4430,13 +4430,13 @@
   {
     "id": 100739,
     "name": "Flak Jacket",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Equipment nie opisuje zdolności nosiciela do zapobieżenia jednemu obrażeniu na combat; ma tylko efekt prevent w trybie zagrania. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100740,
     "name": "Flames of Insurrection",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Permanent posiada gate ready anarch, ale nie posiada opcji przeniesienia countera po opuszczeniu ready ani akcji referendum do spalenia. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -4526,7 +4526,7 @@
   {
     "id": 100755,
     "name": "Folderol",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Reaction daje intercept zamiast redukcji bleed; brak odrębnego kosztu aus i superior redukującego bleed dowolnego Methuselah. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -4538,13 +4538,13 @@
   {
     "id": 100757,
     "name": "Follow the Blood",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Reaction daje intercept i press zamiast wejścia do walki po udanym hunt, lock Black Hand i opcjonalnego maneuver lub press. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100758,
     "name": "Force of Personality",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Superior nie ma ograniczenia onlyAsAnnounced i blokuje wszystkich allies zamiast tylko nie-zombie; basic combat ends jest odrębny. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -4562,7 +4562,7 @@
   {
     "id": 100761,
     "name": "Forced March",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec oferuje stealth przy pojedynczym basic cel lub for zamiast wymogu obu dyscyplin; brak właściwych timing, unlock i limitu raz na turę. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -4580,7 +4580,7 @@
   {
     "id": 100764,
     "name": "Foresee",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Power błędnie reprezentowany przez combat maneuver wymagający viz; brak conviction, oglądania ręki, anulowania walki i kontynuacji akcji. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -4598,7 +4598,7 @@
   {
     "id": 100767,
     "name": "Forger's Hammer",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Modifier daje stealth zamiast dołączenia do non-unique melee weapon po udanym equip, +1 damage i rabatu superior. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -4634,7 +4634,7 @@
   {
     "id": 100773,
     "name": "Form of the Serpent",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Action modifier ma dwa stealth w basic zamiast jednego; brak combat superior maneuver. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -4682,7 +4682,7 @@
   {
     "id": 100781,
     "name": "The Fourth Cycle",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Event nie ma wymogu 2 Gehenna, spalenia wydarzeń i conviction, torpor dla capacity 3 lub mniej ani zakazu nowych Gehenna. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -4694,7 +4694,7 @@
   {
     "id": 100783,
     "name": "Fractura",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Tryby str i cel oba łączą dodge, additional strike i strength; brak X strikes każdej rundy, ograniczenia do hand i superior. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -4730,13 +4730,13 @@
   {
     "id": 100789,
     "name": "Free Fight",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat daje tylko press zamiast wyboru i wymiany combatantów z tego samego circle oraz superior press. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100790,
     "name": "Free States Rant",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Political action bez wymogów sect nie alokuje punktów ani nie rozstrzyga blood burn i modyfikatorów głosów. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -4916,7 +4916,7 @@
   {
     "id": 100820,
     "name": "Ghouled",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Modifier daje stealth zamiast dołączenia po rekrutacji mortal ally, dodatkowego life, zmiany subtype i możliwości użycia Potence strike. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -4970,7 +4970,7 @@
   {
     "id": 100829,
     "name": "Giovanni Acceptance",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Political action nie tworzy permanenta ani nie pozwala obecnym i przyszłym Giovanni zostać Camarilla. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -5006,7 +5006,7 @@
   {
     "id": 100835,
     "name": "Glare of Lies",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Reaction wymaga pojedynczej dyscypliny i daje intercept zamiast oglądania ręki; brak ograniczenia bleed i superior redukcji. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -5078,7 +5078,7 @@
   {
     "id": 100847,
     "name": "Gran Madre di Dio, Italy",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Equipment nie tworzy unique location i nie lockuje nowych minionów predator/prey ani nie spala blood młodszego vampire. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -5096,7 +5096,7 @@
   {
     "id": 100850,
     "name": "Grasp of the Python",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat daje press zamiast grapple, close-range hand strike z opcjonalnym press; brak ograniczeń następnej rundy superior. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -5114,7 +5114,7 @@
   {
     "id": 100853,
     "name": "Great Symposium",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Master daje gainPool zamiast wyszukania Kiasyd w crypt i podziału 3 blood; brak limitu raz na grę. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -5150,7 +5150,7 @@
   {
     "id": 100859,
     "name": "Groaning Corpse",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat oferuje tylko maneuver zamiast powtarzalnych environmental damage, kosztu X i superior 2 damage. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
@@ -5216,7 +5216,7 @@
   {
     "id": 100870,
     "name": "Guinea-Bissau Carnival",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Master daje gainPool zamiast permanenta z bonusami hunt zależnymi od Aye, wygaśnięcia i limitu raz na grę. Wymaga nowych typów efektów (putInPlayMaster, addStealthWhenHuntingBasedOnAye, gainBloodOnSuccessfulHunt, limitOncePerGame). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5276,13 +5276,13 @@
   {
     "id": 100880,
     "name": "Hand Contract",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Master daje modifyStealth zamiast trifle Contract, dołączenia do miniona, wyboru Black Hand i grantowanego rush. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100881,
     "name": "Hand Intervention",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Political action nie wymaga titled Sabbat i nie wybiera Methuselah ani nie tworzy permanenta zmniejszającego hand size. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5294,7 +5294,7 @@
   {
     "id": 100883,
     "name": "Hanging Fermata",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Master daje gainPool zamiast out-of-turn ochrony Choir w influence phase i ograniczenia kolejnych tur. Wymaga nowych typów efektów (outOfTurnProtectChoir, limitOncePerTurn). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5312,7 +5312,7 @@
   {
     "id": 100886,
     "name": "Harass",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Action ma tylko press; nie wybiera prawidłowego celu i nie inicjuje combat z press do kontynuowania. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5342,7 +5342,7 @@
   {
     "id": 100891,
     "name": "Hatch the Viper",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Retainer oferuje oddzielne pro i ser zamiast wymogu obu; brak obrażeń każdej rundy i superior 2 damage. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5390,7 +5390,7 @@
   {
     "id": 100899,
     "name": "Hay Ride",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Modifier daje stealth zamiast odtworzenia action card z ash heap przez wybranego Blood Brother; brak timing i superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5438,7 +5438,7 @@
   {
     "id": 100907,
     "name": "Heaven's Gate",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Oba tryby dają prevent 1; brak warunku innego unlocked vampire oraz ratowania ally przez obe i superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5492,7 +5492,7 @@
   {
     "id": 100916,
     "name": "Hidden Lurker",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Modifier ma tylko press zamiast nowego combat innego unlocked vampire po bloku; brak zakazu strike i superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5510,7 +5510,7 @@
   {
     "id": 100919,
     "name": "Hide",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Power opisano jako combat maneuver, brak obu trybów modifier/reaction z kosztem conviction i ograniczeniami. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5594,7 +5594,7 @@
   {
     "id": 100933,
     "name": "Honor the Elders",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Political action nie daje blood ready i uncontrolled vampires o capacity 8+. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5678,13 +5678,13 @@
   {
     "id": 100947,
     "name": "I am Legion",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Spec błędnie daje stealth z podstawowym obf i nie ma anulowania Auspex przy jednoczesnym dai/obf ani superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100948,
     "name": "Ignis Fatuus",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Reaction daje intercept zamiast -1 stealth aktora w basic i redukcji bleed superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5702,19 +5702,19 @@
   {
     "id": 100951,
     "name": "Illegal Search and Seizure",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Master daje gainPool zamiast wyboru i spalenia odpowiedniego weapon oraz 1 unpreventable damage nosiciela. Wymaga nowych typów efektów (chooseAndBurnWeaponCostMoreThan2, unpreventableDamageToBearer). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100952,
     "name": "Illegalism",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Action nie zawiera bleed, wymogu Anarch ani łączonych efektów cel/chi/pre; oferuje identyczne efekty dla każdego trybu. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100953,
     "name": "Illuminate",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Power nie dołącza się z globalnym intercept dla imbued i warunkami wygaśnięcia; spec opisuje combat z intercept. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5756,7 +5756,7 @@
   {
     "id": 100960,
     "name": "Imperator",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Political action nie wybiera Camarilla capacity 8+ i nie tworzy tytułu Imperator ani jego zdolności. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5768,13 +5768,13 @@
   {
     "id": 100962,
     "name": "Imposing Phantasm",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Basic nieprawidłowo łączy additional strike i combat ends ze strength; brak zwrotu utraconej blood/life oraz superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100963,
     "name": "Imprison",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat oferuje maneuver i press zamiast zakazu maneuver/press przeciwnika monster i dodatkowego kosztu strike. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5786,7 +5786,7 @@
   {
     "id": 100965,
     "name": "Improvised Tactics",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Aus daje hand size zamiast draw w każdej press step; pot daje pojedynczy strike zamiast trwającego combat, pro bezpłatny maneuver zamiast płatnego co rundę. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5828,7 +5828,7 @@
   {
     "id": 100972,
     "name": "Incriminating Videotape",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Equipment nie wybiera miniona prey ani nie zapobiega jego blokowaniu nosiciela. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5852,13 +5852,13 @@
   {
     "id": 100976,
     "name": "Infamous Warlock",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Master daje gainPool zamiast dołączenia do titled Tremere antitribu i zakazu głosów. Wymaga nowych typów efektów (putInPlayOnTitledTremereAntitribu, preventVoting). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100977,
     "name": "Infection",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "For nie ogranicza prewencji do strike i całej rundy; thn nie chroni wybranego ghoul z zewnątrz, superior daje roundDamage zamiast dołączenia. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5888,7 +5888,7 @@
   {
     "id": 100982,
     "name": "Inflict",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat oferuje prevent 2 zamiast odbijania obrażeń od hand/melee/retainer przez całą walkę. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5912,7 +5912,7 @@
   {
     "id": 100986,
     "name": "Inner Essence",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat oferuje maneuver zamiast ograniczonej obniżki kosztu combat card, brak limitu oraz superior gain blood. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5942,7 +5942,7 @@
   {
     "id": 100991,
     "name": "Inspire",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Power błędnie opisano jako combat ze stealth; brak action i kosztu conviction oraz dwóch opcji przeniesienia. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5978,7 +5978,7 @@
   {
     "id": 100997,
     "name": "Insurance Scam",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Master daje gainPool zamiast permanenta z lock i spalaniem X własnych locations za X pool. Wymaga nowych typów efektów (putInPlayMaster, lockSelf, burnLocationsGainPool). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -5996,7 +5996,7 @@
   {
     "id": 101000,
     "name": "Into the Fire",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Master daje gainPool zamiast trifle i zmiany wybranego ready non-Sabbat vampire na Sabbat. Wymaga nowych typów efektów (putInPlayTrifle, changeVampireSectSabbat). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -6020,19 +6020,19 @@
   {
     "id": 101004,
     "name": "Invitation Accepted",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Political action nie tworzy permanenta i nie daje Follower of Set opcji zostać Camarilla. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 101005,
     "name": "Invoke Poison Glands",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Combat daje maneuver zamiast reflex anulowania frenzy i hand strike +1; brak obu opcji superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 101006,
     "name": "Invoking the Beast",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Basic łączy press i strength mimo że press jest superior; brak reflex, limitu combat i superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -6068,7 +6068,7 @@
   {
     "id": 101012,
     "name": "Ishtarri Warlord",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Master daje gainPool i press zamiast dołączenia do Ishtarri z opcjonalnym maneuver albo press. Wymaga nowych typów efektów (putInPlayOnIshtarri, grantOptionalManeuverOrPress). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
@@ -11168,7 +11168,7 @@
   {
     "id": 101862,
     "name": "Static Virtue",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "Poza wymogiem Laibon spec daje tylko gainPool; tekst dotyczy wyszukiwania i umieszczania kart Aye/Orun. Wymaga nowych typów efektów (searchLibraryAyeOrun, placeOnVampire). src/cards/effects/cards.ts: Static Virtue; src/cards/registry.json: 101862."
   },
   {
@@ -15572,7 +15572,7 @@
   {
     "id": 200232,
     "name": "Cailean (G2)",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "flatCrypt z pustymi statystykami nie zapewnia zdolności ustawiania zasięgu przed każdą rundą. src/cards/effects/cards.ts: Cailean (G2); src/cards/registry.json: 200232."
   },
   {
@@ -15674,7 +15674,7 @@
   {
     "id": 200249,
     "name": "Carolina Vález (G5)",
-    "status": "CONFIRMED_BUG",
+    "status": "PARTIAL_FIX",
     "evidence": "flatCrypt z pustymi statystykami nie zawiera immunitetu na obrażenia od allies i retainers. src/cards/effects/cards.ts: Carolina Vález (G5); src/cards/registry.json: 200249."
   },
   {
