@@ -23637,14 +23637,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Jones [101023] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // The Jones [101023]
+    // Only usable in combat with an ally or younger vampire.
+    // [ser] Strike: dodge, with 1 optional press, only usable to end combat.
+    // [SER] Cancel the opposing minion's strike card as it is played, and its cost is not paid.
     krcgId: 101023,
     name: "The Jones",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "strikeDodge" }, { kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "ser", effects: [{ kind: "strikeDodge" }, { kind: "press", endOnly: true, continueOnly: false }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "strikeDodge" }, { kind: "press", endOnly: true, continueOnly: false }] },
     ],
   },
   {

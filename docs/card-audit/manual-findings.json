@@ -6134,8 +6134,8 @@
   {
     "id": 101023,
     "name": "The Jones",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Basic nie ogranicza użycia do walki z ally/młodszym vampire ani press do końca; brak superior cancel strike card. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [ser] strike dodge + press endOnly; superior [SER] strike dodge + press endOnly. Brak: ograniczenie do walki z ally/młodszym vampire, cancel strike card (wymaga nowego typu efektu). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 101024,
