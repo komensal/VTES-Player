@@ -23416,14 +23416,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Immense Size [100958] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Immense Size [100958]
+    // Only usable before range is determined. A vampire can play only one Immense Size each combat.
+    // [vic] The opposing minion cannot play grapple cards.
+    // [VIC] As above, and the opposing minion gets -1 strength this combat.
     krcgId: 100958,
     name: "Immense Size",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "modifyBleed", amount: -1, limited: false }, { kind: "addStrength", amount: -1 }] },
     ],
   },
   {
@@ -23497,14 +23501,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Infernal Pursuit [100980] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Infernal Pursuit [100980]
+    // [cel] Press.
+    // [CEL] For the remainder of the combat, each time you replace a card, draw an additional card and discard down to your hand size.
     krcgId: 100980,
     name: "Infernal Pursuit",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "press", continueOnly: false }] },
     ],
   },
   {
@@ -34245,14 +34252,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Illusions of the Kindred [100954] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    // Illusions of the Kindred [100954]
+    // Only usable before range is determined.
+    // [chi] Combat ends. Move the bottom card from your crypt to your ready region.
+    // [CHI] As above, and that minion does not contest any other minions or titles.
     krcgId: 100954,
     name: "Illusions of the Kindred",
     cardType: "combat",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
     ],
   },
   {

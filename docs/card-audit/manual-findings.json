@@ -5720,8 +5720,8 @@
   {
     "id": 100954,
     "name": "Illusions of the Kindred",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Combat oferuje strikeCombatEnds zamiast zakończenia przed range i zastępczego vampire z crypt; brak superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: dodano superior [CHI] z strikeCombatEnds. Brak: move bottom card from crypt to ready region, no contest (wymaga nowych typów efektów). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100955,
@@ -5738,14 +5738,14 @@
   {
     "id": 100957,
     "name": "Immaculate Vitae",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Reaction daje intercept zamiast dołączenia do udanie polującego vampire i blokady block; brak superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Reaction daje intercept zamiast dołączenia do udanie polującego vampire i blokady block; brak superior. Wymaga nowych typów efektów (putInPlayOnTarget, cannotBlock). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100958,
     "name": "Immense Size",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Combat daje press zamiast zakazu grapple przeciwnika; brak superior i limitu jednej kopii na combat. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [vic] modifyBleed -1; superior [VIC] modifyBleed -1 + addStrength -1. Brak: zakaz grapple cards (wymaga nowego typu efektu). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100959,
@@ -5876,8 +5876,8 @@
   {
     "id": 100980,
     "name": "Infernal Pursuit",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak superior zastępującego dobieranie kart w pozostałej części walki; basic press jest obecny. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: dodano superior [CEL] z press (jako placeholder dla draw additional card when replacing). Brak: draw additional card when replacing (wymaga nowego typu efektu). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100981,
@@ -5930,8 +5930,8 @@
   {
     "id": 100989,
     "name": "Inscription",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Equipment nie opisuje wyboru vampire i karty Blood Sorcery, kosztu ani użycia jej zdolności; brak superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Equipment nie opisuje wyboru vampire i karty Blood Sorcery, kosztu ani użycia jej zdolności; brak superior. Wymaga nowych typów efektów (putInPlayEquipment, putInPlayOnEquipment). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100990,
