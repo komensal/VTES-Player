@@ -1602,7 +1602,7 @@ export class VtesEngine implements EngineOps {
           ...(ev.mustHuntThisTurn ? { mustHuntThisTurn: true } : {}),
           playedSinceUnlock: [],
           attached: [],
-          crypt: true,
+          ...(ev.crypt ? { crypt: true } : {}),
         });
         break;
       }
@@ -1621,13 +1621,20 @@ export class VtesEngine implements EngineOps {
           const { attached: _attached, ...snapshot } = burnt;
           // A token vampire (Childe of the Revolution, Waters of Duat)
           // goes to CRYPT, not ash heap — it's a crypt card returning home.
-          const isTokenVampire = burnt.capacity === 1 && burnt.nonUnique === true;
+          const isTokenVampire = burnt.capacity === 1 && burnt.nonUnique === true && burnt.crypt === true;
           if (isTokenVampire) {
             const burntAsMinion: MinionState = { ...burnt, crypt: true, burntVampire: JSON.parse(JSON.stringify({ ...snapshot, attached: [] })) as MinionState };
             (getSeat(this.state, owner).crypt ??= []).push(burntAsMinion);
           } else {
-            // A normal vampire card goes to the ash heap.
-            (getSeat(this.state, owner).ashHeap ??= []).push({ id: burnt.id, name: burnt.name });
+            // A normal vampire card goes to the ash heap with its burntVampire
+            // snapshot for Summon History (p. 34).
+            (getSeat(this.state, owner).ashHeap ??= []).push({
+              id: burnt.id,
+              name: burnt.name,
+              crypt: true,
+              capacity: burnt.capacity,
+              burntVampire: JSON.parse(JSON.stringify({ ...snapshot, attached: [] })) as MinionState,
+            });
           }
         }
         for (const seat of this.state.seats) {
@@ -10682,6 +10689,7 @@ export class VtesEngine implements EngineOps {
           ...(token.disciplines ? { disciplines: token.disciplines } : {}),
           ...(token.cannotActThisTurn ? { cannotActThisTurn: true } : {}),
           ...(token.mustHuntThisTurn ? { mustHuntThisTurn: true } : {}),
+          ...(token.crypt ? { crypt: true } : {}),
         });
         this.emit({
           type: "PermanentEnteredPlay",

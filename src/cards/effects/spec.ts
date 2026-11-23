@@ -568,6 +568,10 @@ export type EffectPrimitive =
        *  vampire" — optional, and finding nothing is always legal
        *  (p. 14, p. 48). §6 */
       searchDisciplineMaster?: boolean;
+      /** When true, this token vampire returns to its owner's CRYPT when
+       *  burned (Childe of the Revolution). When false/absent, it goes to
+       *  ash heap like a normal library card (Waters of Duat). §7 */
+      crypt?: boolean;
     }
   /** "Put this card on this vampire; it gets +bleed/+strength" — a
    *  successful action attaches the played card to the acting vampire as a

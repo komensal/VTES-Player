@@ -19140,6 +19140,7 @@ export const cardSpecs: CardSpec[] = [
             sect: "anarch",
             mustHuntThisTurn: true,
             searchDisciplineMaster: true,
+            crypt: true,
           },
         ],
       },
@@ -20831,7 +20832,7 @@ export const cardSpecs: CardSpec[] = [
       {
         level: "basic",
         discipline: "chi",
-        usable: ["onlyToLongRange"],
+        usable: ["onlyAtLongRange"],
         effects: [{ kind: "maneuver" }],
       },
       {
@@ -20839,7 +20840,7 @@ export const cardSpecs: CardSpec[] = [
         discipline: "chi",
         effects: [
           { kind: "strikeDodge" },
-          { kind: "press", endOnly: true },
+          { kind: "press", endOnly: true, continueOnly: false },
         ],
       },
     ],

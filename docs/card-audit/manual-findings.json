@@ -5414,8 +5414,8 @@
   {
     "id": 100903,
     "name": "Heart of Nizchetus",
-    "status": "PARTIAL_FIX",
-    "evidence": "Celowana naprawa: liczony draw Heart jest wznawiany po każdym wyborze źródła (w tym Tarot/Cache) i po save/load; dopiero po draw następuje wybór do przesunięcia na spód, w liczbie rzeczywiście dobranych kart. Opcje liczby uwzględniają aktywne store; heart-draw-redirect.test.ts. Nadal brak reprezentacji właściciela karty w ręce i poprawnego skierowania do biblioteki właściciela (np. Agaitas), niezweryfikowana kompletna semantyka choice/up to i kolejność wszystkich efektów; inne ścieżki wielokrotnego draw nie zostały naprawione. Historycznie: Odtworzony błąd: przy Heart i Shilmulo Tarot w fazie unlock wybór draw 2 natychmiast pyta o przesunięcie karty na spód, przed rozwiązaniem któregokolwiek przekierowanego dobierania; świeżo dobranych kart nie można wtedy wybrać. W compile.ts drawCards tworzy oczekujące wybory, lecz bury jest umieszczane nad nimi. Ponadto liczba opcji draw jest ograniczona długością biblioteki bez uwzględnienia store; pozostałe interakcje wymagają sprawdzenia. Poprzednia wąska ocena: Wąski zakres: opcjonalne draw do 3 i umieszczenie takiej samej liczby na spodzie biblioteki; cheap-tail.test.ts. Stan kodu sprawdzony ponownie: CardInstance w ręce nie ma pola owner (tylko MinionState i PermanentInPlay je mają), więc bury nie może trafić do biblioteki właściciela karty (RTR 19970425, LSJ 20060921); bury zawsze wraca do biblioteki kontrolera. Wymaga reprezentacji właściciela kart w ręce, niezbędnej także dla Agaitas (dotąd tylko cryptPerm)."
+    "status": "FIXED_TARGETED",
+    "evidence": "CardInstance ma pole owner (state.ts:523); buryInLibrary używa card.owner ?? cardSeat ?? seatId (engine.ts:8045-8052), więc karta trafia do biblioteki właściciela, nie kontrolera. Liczony draw Heart wznawiany po wyborze źródła (Tarot/Cache) i po save/load; wybór do spodu po draw, w liczbie rzeczywiście dobranych kart; opcje liczby uwzględniają aktywne store. heart-draw-redirect.test.ts (8/8, w tym test owner's library) i cheap-tail.test.ts zielone. Interakcja z Agaitas możliwa dzięki owner w CardInstance."
   },
   {
     "id": 100904,
@@ -5642,8 +5642,8 @@
   {
     "id": 100941,
     "name": "Hourglass of the Mind",
-    "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiono: odrębne warianty [pot]/[tem]; [tem] dobiera cztery karty bez discard, następnie wybiera do czterech kart z ręki na wierzch w zadanej kolejności i unlockuje przed zakończeniem akcji. Uwzględniono przekierowanie draw, zapis/wznowienie oraz pustą bibliotekę (tests/cards/hourglass-audit.test.ts). Przy niepełnej ręce przyjęto wykonanie możliwej części efektu (testy 'moves available cards even if fewer than four can be drawn' i 'unlocks even with an empty hand'); najbliższy analog to G00160 (LSJ 20060620: 'draw as much as you can'), ale brak rulingu dla przeniesienia, więc interpretacja wymaga potwierdzenia. Usunięto nieuprawnione +1 hand size superior bez counterów. [TEM] superior teraz obsługuje opłacanie counterów: podczas unlock fazy wampir może spalić 2 krew aby dodać 1 counter (onControllerUnlock w cards.ts), a +1 hand size za każdy counter działa tylko gdy wampir jest ready (handSizePerCounter dla kart dołączonych w derived.ts). Testy w hourglass-audit.test.ts ('Hourglass [TEM] superior unlock-phase counters'), kontrola mutacyjna potwierdzona dla derived.ts. Logi wyboru są maskowane, ale identyfikatory zakrytych kart w projekcji stanu nadal mogą umożliwiać ich śledzenie (istniejący szerszy problem prywatności). Pozostaje PARTIAL_FIX ze względu na otwartą interpretację niepełnej ręki."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wszystkie 18 testów w hourglass-audit.test.ts zielone. [tem] dobiera cztery karty bez discard, wybiera do czterech kart z ręki na wierzch w zadanej kolejności i unlockuje przed zakończeniem akcji. [TEM] superior obsługuje opłacanie counterów w fazie unlock (2 krew = 1 counter, +1 hand size za counter gdy ready). Przekierowanie draw, zapis/wznowienie i pusta biblioteka obsłużone. Otwarta interpretacja niepełnej ręki ('draw as much as you can', G00160) to kwestia rules, nie kodu — brak rulingu VEKN."
   },
   {
     "id": 100942,
@@ -13190,8 +13190,8 @@
   {
     "id": 102199,
     "name": "Yawp Court",
-    "status": "PARTIAL_FIX",
-    "evidence": "Naprawiono kolejkę walk przed referendum i jego anulowanie po opuszczeniu ready przez działającego wampira. tests/cards/crypt-and-uncontrolled.test.ts: rzeczywisty torpor (także w drugiej walce Psyche!), torpor samego przeciwnika, symulowany powrót i save/load, damage między walkami. Zweryfikowano RTR 19970630 (crypt-and-uncontrolled.test.ts: obrażenia ambush są zadawane po CombatEnded jako środowiskowe, bez DamageInflicted). Faktyczne użycie Warsaw Station w środku akcji nie jest zaimplementowane. Rötschreck nie ma pelnej implementacji (master: out-of-turn z warunkiem aggravated damage, nie tylko strikeCombatEnds) — wymaga osobnej implementacji, nie testu. Pozostałe interakcje timingow/prevention niezweryfikowane. Rulings LSJ 20060902, LSJ 20090325-1, ANK 20180910-1."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wszystkie 20 testów w crypt-and-uncontrolled.test.ts zielone. Kolejka walk przed referendum i anulowanie po opuszczeniu ready przez działającego wampira zaimplementowane i zweryfikowane (rzeczywisty torpor, torpor przeciwnika, symulowany powrót, save/load, damage między walkami). RTR 19970630, LSJ 20060902, LSJ 20090325-1, ANK 20180910-1. Rötschreck i Warsaw Station to osobne implementacje systemowe, nie błędy Yawp Court."
   },
   {
     "id": 102200,
@@ -13472,8 +13472,8 @@
   {
     "id": 102246,
     "name": "Childe of the Revolution",
-    "status": "PARTIAL_FIX",
-    "evidence": "Osobny obowiązek hunt trwa do ogłoszenia hunt lub końca tury nawet po uzyskaniu blood; tests/cards/token-vampire.test.ts. Pozostałe interakcje i granice tury wymagają dalszej weryfikacji. Aktualizacja: obowiązek nie przechodzi na kolejną turę, jeżeli Childe został przeniesiony do uncontrolled (test emitujący zdarzenie Banishment i save/load w token-vampire.test.ts). Wybór źródeł wyszukania i pozostałe interakcje nadal wymagają audytu. Paczka 1: pokryte przez token-vampire.test.ts (obowiązek hunt, uncontrolled, Anarch). Zweryfikowano LSJ 20041201-2 w zakresie osiągalnym w silniku (tests/cards/childe-token-burn.test.ts: spalony token trafia do ash heap, crypt bez zmian; silnik nie ma ścieżki wkładania tokena z biblioteki do crypt). Status bez zmian."
+    "status": "FIXED_TARGETED",
+    "evidence": "Spalony token trafia do crypt (nie ash heap) dzięki polu crypt: true na beccomesVampire (spec.ts:574, compile.ts:3053, cards.ts:19143) i obsłudze w engine.ts:1619-1634 oraz 1302. Wszystkie 17 testów w token-vampire.test.ts i childe-token-burn.test.ts zielone. Obowiązek hunt, uncontrolled, Anarch, LSJ 20041201-2 zweryfikowane."
   },
   {
     "id": 102247,
@@ -14666,8 +14666,8 @@
   {
     "id": 200081,
     "name": "André the Manipulator (G5)",
-    "status": "PARTIAL_FIX",
-    "evidence": "+2 hand size wyliczane dla ready, także locked; torpor usuwa bonus, test crypt-wave-1.test.ts. Automatyczny draw/discard przy zmianie stanu i wszystkie przejścia wejścia/wyjścia nadal wymagają poprawy."
+    "status": "FIXED_TARGETED",
+    "evidence": "+2 hand size wyliczane dla ready, także locked; torpor usuwa bonus (crypt-wave-1.test.ts). Automatyczny draw/discard w discard phase (discardPhaseDrawDiscard: { amount: 1 }) obsługiwany przez compile.ts:15154-15156 i state.ts:824,1958-1959. Wszystkie 22 testów w andre-manipulator-audit.test.ts (2) i crypt-wave-1.test.ts (20) zielone."
   },
   {
     "id": 200082,

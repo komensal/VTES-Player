@@ -3050,6 +3050,7 @@ function compileActionCard(spec: CardSpec): CardHandler {
         // Token vampires (Childe of the Revolution, Waters of Duat) go to
         // crypt when burned, not ash heap.
         nonUnique: true,
+        ...(eff.crypt ? { crypt: true as const } : {}),
         ...(eff.disciplines ? { disciplines: eff.disciplines } : {}),
         ...(eff.cannotActThisTurn ? { cannotActThisTurn: true } : {}),
         ...(eff.mustHuntThisTurn ? { mustHuntThisTurn: true } : {}),

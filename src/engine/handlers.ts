@@ -1710,6 +1710,7 @@ export interface CardHandler {
     disciplines?: Record<string, "basic" | "superior">;
     cannotActThisTurn?: boolean;
     mustHuntThisTurn?: boolean;
+    crypt?: boolean;
   } | null;
   /** A vampire has entered play, after its entity is installed. */
   onVampireEnteredPlay?(entry: PermanentInPlay, owner: { seat: SeatId; minion: MinionId | null }, vampire: MinionState, ops: EngineOps): void;

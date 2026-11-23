@@ -2318,6 +2318,10 @@ export type GameEvent =
       /** "…and cannot perform actions this turn" (Creation Rites). §3 */
       cannotActThisTurn?: boolean;
       mustHuntThisTurn?: boolean;
+      /** When true, this token vampire returns to its owner's CRYPT when
+       *  burned (Childe of the Revolution). When absent, it goes to ash heap
+       *  like a normal library card (Waters of Duat). */
+      crypt?: boolean;
     }
   | { type: "MinionBurned"; minion: MinionId }
   /** "Remove a vampire from the game" (Golconda: Inner Peace) — p. 16
