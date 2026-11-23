@@ -1178,8 +1178,8 @@
   {
     "id": 100197,
     "name": "Blood Clots",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth; brak dołączenia, zakazu zysku blood/life, akcji burn i superior obrażeń. Źródła: src/cards/registry.json ID 100197; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak dołączenia, zakazu zysku blood/life, akcji burn i superior obrażeń. Wymaga nowych typów efektów (moveBloodBankToVampire). Źródła: src/cards/registry.json ID 100197; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100198,
@@ -1220,8 +1220,8 @@
   {
     "id": 100204,
     "name": "Blood of Sandman",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth bez spalenia ally i superior +6 stealth oraz dołączonego zakazu reakcji. Źródła: src/cards/registry.json ID 100204; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth bez spalenia ally i superior +6 stealth oraz dołączonego zakazu reakcji. Wymaga nowych typów efektów (putInPlayOnTarget, modifyStealth target). Źródła: src/cards/registry.json ID 100204; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100205,
@@ -1232,8 +1232,8 @@
   {
     "id": 100206,
     "name": "Blood of the Sabbat",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth; brak wymogu tytułu, dołączenia do innego Sabbat i efektu po directed action. Źródła: src/cards/registry.json ID 100206; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak wymogu tytułu, dołączenia do innego Sabbat i efektu po directed action. Wymaga nowych typów efektów (requireTitle, putInPlayOnTarget Sabbat, grantBleedAllSabbat). Źródła: src/cards/registry.json ID 100206; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100207,
@@ -1304,8 +1304,8 @@
   {
     "id": 100218,
     "name": "Bloodbath",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma wyłącznie stealth; brak wymogu tytułu, celu, blood i dołączenia z głosem. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma wyłącznie stealth; brak wymogu tytułu, celu, blood i dołączenia z głosem. Wymaga nowych typów efektów (requireTitle, burnPoolPrey, putInPlayWithVotes). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100219,
@@ -1346,8 +1346,8 @@
   {
     "id": 100225,
     "name": "Bloodwork",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma ogólne bleed/stealth bez wymogu Black Hand, limitu 2 bled i warunku Sabbat u celu. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma ogólne bleed/stealth bez wymogu Black Hand, limitu 2 bled i warunku Sabbat u celu. Wymaga nowych typów efektów (limitBleedPerTurn, requireTargetSabbat). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100226,
