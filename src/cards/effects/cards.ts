@@ -27316,14 +27316,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Charming Lobby [100334] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Charming Lobby [100334]
+    // [pot][pre] The acting ally or younger vampire gets +1 strength during this action.
+    // [POT][PRE] The acting ally or younger vampire gets +2 strength during this action.
     krcgId: 100334,
     name: "Charming Lobby",
-    cardType: "action",
+    cardType: "actionModifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: { all: ["pot", "pre"] }, effects: [{ kind: "addStrength", amount: 1 }] },
+      { level: "superior", discipline: { all: ["pot", "pre"] }, effects: [{ kind: "addStrength", amount: 2 }] },
     ],
   },
   {

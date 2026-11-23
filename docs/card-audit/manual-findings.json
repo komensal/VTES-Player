@@ -1874,8 +1874,8 @@
   {
     "id": 100313,
     "name": "Celestial Harmony",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth; brak ujawniania ręki, wyboru Methuselah i superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth; brak ujawniania ręki, wyboru Methuselah i superior. Wymaga nowych typów efektów (lookAtHand, chooseMethuselah). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100314,
@@ -1892,8 +1892,8 @@
   {
     "id": 100316,
     "name": "Chain of Command",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth; brak X młodszych uncontrolled w grze, wymuszenia bleed i odłożenia do crypt. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth; brak X młodszych uncontrolled w grze, wymuszenia bleed i odłożenia do crypt. Wymaga nowych typów efektów (countYoungerUncontrolled, forceBleed, moveToCrypt). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100317,
@@ -1904,8 +1904,8 @@
   {
     "id": 100318,
     "name": "Chair of Hades",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth; brak usuwania odpowiednich ally/retainer i superior małego wampira. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth; brak usuwania odpowiednich ally/retainer i superior małego wampira. Wymaga nowych typów efektów (removeAllyRetainer, putInPlayVampire). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100319,
@@ -1916,8 +1916,8 @@
   {
     "id": 100320,
     "name": "Chameleon",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec wymaga barona, lecz akcja ma tylko stealth i nie przejmuje młodszego wampira ani nie zmienia jego sekty. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec wymaga barona, lecz akcja ma tylko stealth i nie przejmuje młodszego wampira ani nie zmienia jego sekty. Wymaga nowych typów efektów (requireBaron, takeControlVampire, changeSect). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100321,
@@ -2000,8 +2000,8 @@
   {
     "id": 100334,
     "name": "Charming Lobby",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth; brak osobnego referendum, automatycznego przejścia następnego i superior votes. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: zmieniono z action/modifyStealth na actionModifier/addStrength [pot][pre] addStrength 1, superior [POT][PRE] addStrength 2. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts."
   },
   {
     "id": 100335,
