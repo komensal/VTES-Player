@@ -1118,8 +1118,8 @@
   {
     "id": 100187,
     "name": "Blight",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Superior zabrania wszystkich presses (restrictOpponent.press), również press do zakończenia; tekst zabrania jedynie press do kontynuowania. Test blight.test.ts utrwala zbyt szerokie ograniczenie. Źródła: src/cards/registry.json ID 100187; src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: restrictOpponent.press: true → pressToContinue: true (blokuje tylko press do kontynuowania, nie press do zakończenia). Źródła: src/cards/registry.json ID 100187; src/cards/effects/cards.ts."
   },
   {
     "id": 100188,
@@ -1130,8 +1130,8 @@
   {
     "id": 100189,
     "name": "Bliss",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec błędnie daje combat ends w osobnych basic dom/pre zamiast anulowania Frenzy z dom i pre, brak poprawnego superior. Źródła: src/cards/registry.json ID 100189; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec błędnie daje combat ends w osobnych basic dom/pre zamiast anulowania Frenzy z dom i pre, brak poprawnego superior. Wymaga nowego typu efektu (cancelFrenzyCard). Źródła: src/cards/registry.json ID 100189; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100190,
@@ -1142,8 +1142,8 @@
   {
     "id": 100191,
     "name": "Blithe Acceptance",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma jedynie modifyStealth zamiast dołączania, ograniczenia jednej kopii i warunkowego burn w combacie. Źródła: src/cards/registry.json ID 100191; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma jedynie modifyStealth zamiast dołączania, ograniczenia jednej kopii i warunkowego burn w combacie. Wymaga nowych typów efektów (putInPlayOnSelf, limitOneCopy). Źródła: src/cards/registry.json ID 100191; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100192,
