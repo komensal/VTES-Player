@@ -2150,8 +2150,8 @@
   {
     "id": 100359,
     "name": "Clio's Kiss",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba basic to tylko stealth; brak contest burn/yield, odzyskania karty z ash heap i superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Oba basic to tylko stealth; brak contest burn/yield, odzyskania karty z ash heap i superior. Wymaga nowych typów efektów (contestCard, moveCardFromAshHeap). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100360,
@@ -2186,8 +2186,8 @@
   {
     "id": 100365,
     "name": "Clotho's Gift",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth, brak crypt draw, blood w uncontrolled i superior dołączanego unlock. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth, brak crypt draw, blood w uncontrolled i superior dołączanego unlock. Wymaga nowych typów efektów (drawFromCrypt, moveBloodToUncontrolled, unlockTarget). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100366,
@@ -2246,8 +2246,8 @@
   {
     "id": 100375,
     "name": "Cold Amber's Hold",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth; brak przekazania karty, podatku action i liczników/spalenia. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth; brak przekazania karty, podatku action i liczników/spalenia. Wymaga nowych typów efektów (transferCard, actionTax, addCounters). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100376,
@@ -2300,8 +2300,8 @@
   {
     "id": 100384,
     "name": "Command the Legion",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth; brak lock X−1 minionów i wyjątku starszeństwa superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth; brak lock X−1 minionów i wyjątku starszeństwa superior. Wymaga nowych typów efektów (lockMinionsX, seniorityException). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100385,
@@ -2318,8 +2318,8 @@
   {
     "id": 100387,
     "name": "Community Justice",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth, bez wymogu sect i spalenia niedawnego diablerysty odpowiedniego klanu. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth, bez wymogu sect i spalenia niedawnego diablerysty odpowiedniego klanu. Wymaga nowych typów efektów (requireSect, burnRecentDiablerist). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100388,
