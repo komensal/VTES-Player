@@ -1160,8 +1160,8 @@
   {
     "id": 100194,
     "name": "Blood Bond",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth, bez dołączenia do wampira i zakazu blokowania aktora. Źródła: src/cards/registry.json ID 100194; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth, bez dołączenia do wampira i zakazu blokowania aktora. Wymaga nowych typów efektów (putInPlayOnTarget, restrictOpponent block). Źródła: src/cards/registry.json ID 100194; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100195,
@@ -1214,8 +1214,8 @@
   {
     "id": 100203,
     "name": "Blood of Acid",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Combat ma tylko maneuver zamiast odbijanych obrażeń, ograniczenia close/once per round i aggravated superior. Źródła: src/cards/registry.json ID 100203; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Combat ma tylko maneuver zamiast odbijanych obrażeń, ograniczenia close/once per round i aggravated superior. Wymaga nowych typów efektów (reflectDamage, oncePerRound). Źródła: src/cards/registry.json ID 100203; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100204,
@@ -1226,8 +1226,8 @@
   {
     "id": 100205,
     "name": "Blood of the Cobra",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Combat ma tylko maneuver zamiast basic ranged damage i superior użycia wybranego strike jako ranged. Źródła: src/cards/registry.json ID 100205; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Combat ma tylko maneuver zamiast basic ranged damage i superior użycia wybranego strike jako ranged. Wymaga nowych typów efektów (strikeDamage ranged, chooseStrikeAsRanged). Źródła: src/cards/registry.json ID 100205; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100206,
