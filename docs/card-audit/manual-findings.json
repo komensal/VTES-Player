@@ -3440,8 +3440,8 @@
   {
     "id": 100574,
     "name": "Dominion",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool 1 zamiast permanenta na Black Hand i kosztu 1 blood za próbę bloku. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool 1 zamiast permanenta na Black Hand i kosztu 1 blood za próbę bloku. Wymaga nowych typów efektów (putInPlayMasterBlackHand, chargeBloodPerBlockAttempt). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100575,
@@ -3632,8 +3632,8 @@
   {
     "id": 100606,
     "name": "Ebony Fox Hunt",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool 1 zamiast anulowania blood hunt na kontrolowanym Black Hand. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool 1 zamiast anulowania blood hunt na kontrolowanym Black Hand. Wymaga nowych typów efektów (cancelBloodHuntBlackHand). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100607,
