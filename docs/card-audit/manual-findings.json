@@ -3500,8 +3500,8 @@
   {
     "id": 100584,
     "name": "Draught of the Soul",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec daje bleed i intercept zamiast zysku blood po spaleniu wampira, permanenta oraz warunkowego bleed; brak wymogu obu dyscyplin. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec daje bleed i intercept zamiast zysku blood po spaleniu wampira, permanenta oraz warunkowego bleed; brak wymogu obu dyscyplin. Wymaga nowych typów efektów (requireBothDisciplines, gainBloodOnBurn, putInPlayOnSelf). Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100585,
@@ -3668,8 +3668,8 @@
   {
     "id": 100612,
     "name": "Edge Explosion",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Event zawiera pusty permanent bez wymogu innej Gehenna i efektów power/conviction imbued. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Event zawiera pusty permanent bez wymogu innej Gehenna i efektów power/conviction imbued. Wymaga nowych typów efektów (requireGehennaCard, grantPowerImbued, grantConvictionImbued). Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100613,
@@ -4040,8 +4040,8 @@
   {
     "id": 100674,
     "name": "Expiate",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Power błędnie opisany jako combat wymagający mart i dający press/strike combat ends; brak wymogu conviction i skutków dwóch rund close. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Power błędnie opisany jako combat wymagający mart i dający press/strike combat ends; brak wymogu conviction i skutków dwóch rund close. Wymaga nowych typów efektów (requireConviction5, closeRangeTwoRounds). Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
   },
   {
     "id": 100675,
@@ -4346,8 +4346,8 @@
   {
     "id": 100725,
     "name": "Field Training",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action zawiera jedynie stealth; brak wymogu Anarch, unlock, wyboru superior Discipline i dołączenia z konwersją sect oraz limitem. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action zawiera jedynie stealth; brak wymogu Anarch, unlock, wyboru superior Discipline i dołączenia z konwersją sect oraz limitem. Wymaga nowych typów efektów (requireAnarch, unlockSelf, chooseSuperiorDiscipline, putInPlayOnTargetConvertSect). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100726,
@@ -4376,8 +4376,8 @@
   {
     "id": 100730,
     "name": "Final Loosening",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Wszystkie trzy tryby dają intercept, brak wymogu Anarch i efektów aus, dem oraz for zgodnych z tekstem. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Wszystkie trzy tryby dają intercept, brak wymogu Anarch i efektów aus, dem oraz for zgodnych z tekstem. Wymaga nowych typów efektów (requireAnarch, gainBloodInsteadOfBlocking, gainBloodAusDem). Tekst: registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100731,
