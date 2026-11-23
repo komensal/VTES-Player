@@ -2036,14 +2036,14 @@
   {
     "id": 100340,
     "name": "Children of Stone",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko +1 stealth zamiast +2, equip lub wyszukania gargoyle i różnic superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko +1 stealth zamiast +2, equip lub wyszukania gargoyle i różnic superior. Wymaga nowych typów efektów (searchLibraryGargoyle, putInPlayOnTarget). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100341,
     "name": "Chill of Oblivion",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth; nie dołącza karty ani nie daje konwersji aggravated i superior unlock. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth; nie dołącza karty ani nie daje konwersji aggravated i superior unlock. Wymaga nowych typów efektów (putInPlayOnSelf, convertAggravatedToNormal). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100342,
@@ -2066,8 +2066,8 @@
   {
     "id": 100345,
     "name": "Choir",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth, brak karty z influence burn i superior obrażeń pool za kopie. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth, brak karty z influence burn i superior obrażeń pool za kopie. Wymaga nowych typów efektów (burnInfluence, damagePoolPerCopy). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100346,
@@ -2096,8 +2096,8 @@
   {
     "id": 100350,
     "name": "Circumspect Revelation",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Modifier daje stealth zamiast wymogu Black Hand i anulowania próby bloku Sabbat. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: modifyStealth → actionStealth 1 (action modifier). Brak: anulowanie próby bloku Sabbat (wymaga nowego typu efektu). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts."
   },
   {
     "id": 100351,
@@ -2138,8 +2138,8 @@
   {
     "id": 100357,
     "name": "Cleansing Ritual",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba basic to tylko stealth; brak dodania blood, spalania karty i superior unlock. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Oba basic to tylko stealth; brak dodania blood, spalania karty i superior unlock. Wymaga nowych typów efektów (gainBlood, burnCardFromHand, unlockSelf). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100358,
