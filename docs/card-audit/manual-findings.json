@@ -5762,8 +5762,8 @@
   {
     "id": 100961,
     "name": "Imperial Decree",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth; brak wymogu ready justicar/Inner Circle oraz permanenta z rush i akcją spalenia. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak wymogu ready justicar/Inner Circle oraz permanenta z rush i akcją spalenia. Wymaga nowych typów efektów (requireJusticarInnerCircle, putInPlayMaster, rushAction, burnAction). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100962,
@@ -6092,8 +6092,8 @@
   {
     "id": 101016,
     "name": "Jack of Both Sides",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko +1 stealth zamiast +2 i możliwości equip/employ z rabatem. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko +1 stealth zamiast +2 i możliwości equip/employ z rabatem. Wymaga nowych typów efektów (actionStealth 2, equipOrEmployFromHand, reduceCost). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 101017,
@@ -15554,8 +15554,8 @@
   {
     "id": 200229,
     "name": "Byzar (G6)",
-    "status": "CONFIRMED_BUG",
-    "evidence": "flatCrypt zawiera tylko +1 stealth; tekst dodaje zastąpienie burn przeniesieniem do torporu i licznikami. src/cards/effects/cards.ts: Byzar (G6); src/cards/registry.json: 200229."
+    "status": "PARTIAL_FIX",
+    "evidence": "flatCrypt zawiera tylko +1 stealth; tekst dodaje zastąpienie burn przeniesieniem do torporu i licznikami. Wymaga nowych typów efektów (replaceBurnWithTorpor, addBurnCounters). src/cards/effects/cards.ts: Byzar (G6); src/cards/registry.json: 200229."
   },
   {
     "id": 200230,
