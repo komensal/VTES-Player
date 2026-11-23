@@ -2474,8 +2474,8 @@
   {
     "id": 100413,
     "name": "Consecration Rites",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko stealth, bez tytułu, dołączenia do lokacji i spalania w obronie przed akcją. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko stealth, bez tytułu, dołączenia do lokacji i spalania w obronie przed akcją. Wymaga nowych typów efektów (requireTitle, putInPlayOnLocation, burnOnBlock). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100414,
@@ -2486,8 +2486,8 @@
   {
     "id": 100415,
     "name": "Consignment to Duat",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak basic steal i superior dołączenia oraz cyklicznej utraty blood/life; spec zawiera tylko stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak basic steal i superior dołączenia oraz cyklicznej utraty blood/life; spec zawiera tylko stealth. Wymaga nowych typów efektów (putInPlayOnTarget, drainBloodLifeEachTurn). Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
     "id": 100416,
@@ -2696,8 +2696,8 @@
   {
     "id": 100450,
     "name": "Crocodile's Tongue",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak warunkowego nieudanego bloku i prawa jego kontrolera do anulowania karty; tylko stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: modifyStealth → actionStealth 1 (action modifier). Brak: warunkowy nieudany blok i anulowanie karty (wymaga nowego typu efektu). Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
     "id": 100451,
@@ -3008,8 +3008,8 @@
   {
     "id": 100502,
     "name": "Day Operation",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak ograniczenia block vampire, torpor po akcji i osobnego timingu superior; tylko stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: modifyStealth → actionStealth 1 (action modifier). Brak: ograniczenia block vampire, torpor po akcji (wymaga nowych typów efektów). Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
     "id": 100503,
@@ -3272,8 +3272,8 @@
   {
     "id": 100546,
     "name": "Dirty Contract",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje stealth zamiast wskazania Samedi i celu, przyznania rush oraz wykluczenia Nosferatu i Giovanni. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje stealth zamiast wskazania Samedi i celu, przyznania rush oraz wykluczenia Nosferatu i Giovanni. Wymaga nowych typów efektów (chooseSamedi, putInPlayOnTarget, grantRush, excludeClan). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100547,

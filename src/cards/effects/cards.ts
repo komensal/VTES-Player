@@ -22104,14 +22104,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Crocodile's Tongue [100450] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Crocodile's Tongue [100450]
     krcgId: 100450,
     name: "Crocodile's Tongue",
     cardType: "actionModifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -22207,14 +22207,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Day Operation [100502] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Day Operation [100502]
     krcgId: 100502,
     name: "Day Operation",
     cardType: "actionModifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
