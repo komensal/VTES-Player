@@ -1436,8 +1436,8 @@
   {
     "id": 100240,
     "name": "Border Skirmish",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma jedynie stealth; brak wymogu anarch, losowego discard pozostałych i unlock na koniec tury. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma jedynie stealth; brak wymogu anarch, losowego discard pozostałych i unlock na koniec tury. Wymaga nowych typów efektów (requireAnarch, discardRandomCards, unlockAtEndTurn). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100241,
@@ -2534,8 +2534,8 @@
   {
     "id": 100423,
     "name": "Coordinate Attacks",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak wymogu drugiego Blood Brother, końca rundy i nowego combat z ograniczeniem strike; zamiast tego maneuver. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak wymogu drugiego Blood Brother, końca rundy i nowego combat z ograniczeniem strike; zamiast tego maneuver. Wymaga nowych typów efektów (requireBloodBrotherCircle, endRoundCombat, restrictStrike). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100424,
@@ -2594,8 +2594,8 @@
   {
     "id": 100433,
     "name": "Council of Seraphim",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak wymogu Seraph oraz specjalnego anulowania bloku Sabbat albo -1 intercept innego miniona; zamiast tego stealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak wymogu Seraph oraz specjalnego anulowania bloku Sabbat albo -1 intercept innego miniona; zamiast tego stealth. Wymaga nowych typów efektów (requireSeraph, cancelBlockSabbat, modifyInterceptOpponent). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100434,
@@ -3134,8 +3134,8 @@
   {
     "id": 100523,
     "name": "Denial of Aphrodite's Favor",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Zamiast anulowania kart Presence młodszego wampira przy obu poziomach są dwa warianty +1 intercept; brak wymogu obu dyscyplin. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Zamiast anulowania kart Presence młodszego wampira przy obu poziomach są dwa warianty +1 intercept; brak wymogu obu dyscyplin. Wymaga nowych typów efektów (cancelActionCardPresence, requireBothDisciplines). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100524,
@@ -3188,8 +3188,8 @@
   {
     "id": 100532,
     "name": "Detect Authority",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Tryb ani i tha błędnie dają intercept zamiast odpowiednio warunkowego przerwania akcji i redukcji bleed; brak wymogu Anarch. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Tryb ani i tha błędnie dają intercept zamiast odpowiednio warunkowego przerwania akcji i redukcji bleed; brak wymogu Anarch. Wymaga nowych typów efektów (failActionIfBurnBlood, reduceBleed, requireAnarch). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100533,
