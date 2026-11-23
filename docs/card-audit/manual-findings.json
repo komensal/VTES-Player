@@ -4256,8 +4256,8 @@
   {
     "id": 100710,
     "name": "Fear of Mekhet",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool 1 zamiast dołączenia do tytułowanego wampira, lock, cyklicznej utraty blood i przenoszenia. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool 1 zamiast dołączenia do tytułowanego wampira, lock, cyklicznej utraty blood i przenoszenia. Wymaga nowych typów efektów (putInPlayOnTitledVampire, lockTarget, burnBloodEachTurn, moveCard). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100711,
@@ -4322,8 +4322,8 @@
   {
     "id": 100721,
     "name": "Feral Spirit",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast konwersji kontrolowanego Gangrel na Ahrimane Sabbat z Spiritus i sterile. Tekst: src/cards/registry.json, ID 100721; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast konwersji kontrolowanego Gangrel na Ahrimane Sabbat z Spiritus i sterile. Wymaga nowych typów efektów (convertGangrelToAhrimaneSabbat, addSpiritus, makeSterile). Tekst: src/cards/registry.json, ID 100721; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100722,
@@ -4646,8 +4646,8 @@
   {
     "id": 100775,
     "name": "Fortschritt Library",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast wyszukiwania Gehenna i limitu raz na grę. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast wyszukiwania Gehenna i limitu raz na grę. Wymaga nowych typów efektów (searchLibraryGehennaEvent, limitOncePerGame). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100776,
@@ -4718,8 +4718,8 @@
   {
     "id": 100787,
     "name": "Framing an Ancient Grudge",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast wyboru tytułowanego vampire i usunięcia tytułu z dodatkowym kosztem justicar. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast wyboru tytułowanego vampire i usunięcia tytułu z dodatkowym kosztem justicar. Wymaga nowych typów efektów (choosePrincePrimogenJusticar, removeTitle, burnPoolIfJusticar). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100788,
@@ -4784,8 +4784,8 @@
   {
     "id": 100798,
     "name": "Galaric's Legacy",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast trifle dołączanego do nietytułowanego non-Anarch i zmiany sect. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast trifle dołączanego do nietytułowanego non-Anarch i zmiany sect. Wymaga nowych typów efektów (putInPlayTrifleOnNontitledNonAnarch, makeAnarch). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100799,
