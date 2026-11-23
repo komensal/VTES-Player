@@ -78,10 +78,11 @@ describe("Cedric (G4)", () => {
     expect(dp.options.some((o: any) => o.id.includes("unlockTremere"))).toBe(true);
     const opt = dp.options.find((o: any) => o.id.includes("unlockTremere"));
     expect(opt).toBeDefined();
+    const optId = opt!.id;
     const savedState = JSON.parse(JSON.stringify(state));
     const resumed = new VtesEngine(savedState, testRegistry);
-    resumed.choose(opt.id);
-    const m = savedState.seats[1]!.minions.find(m => m.id === "T1")!;
+    resumed.choose(optId);
+    const m = savedState.seats[1]!.minions.find((m: MinionState) => m.id === "T1")!;
     expect(m.locked).toBe(false);
     expect(cedric.blood).toBe(3); // spent 1 blood
   });

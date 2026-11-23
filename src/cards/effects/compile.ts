@@ -3047,6 +3047,9 @@ function compileActionCard(spec: CardSpec): CardHandler {
         // "…and SECT" (The Embrace, Tumnimos) — read once too.
         // docs/new-vampires-design.md §2
         sect: eff.sectFromActor ? (actor?.sect ?? null) : (eff.sect ?? null),
+        // Token vampires (Childe of the Revolution, Waters of Duat) go to
+        // crypt when burned, not ash heap.
+        nonUnique: true,
         ...(eff.disciplines ? { disciplines: eff.disciplines } : {}),
         ...(eff.cannotActThisTurn ? { cannotActThisTurn: true } : {}),
         ...(eff.mustHuntThisTurn ? { mustHuntThisTurn: true } : {}),

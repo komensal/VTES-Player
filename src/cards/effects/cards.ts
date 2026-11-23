@@ -20819,14 +20819,29 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Amria [100047] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Amria [100047]
+    // [chi] Maneuver, only usable to get to long range.
+    // [CHI] Strike: dodge, with 1 optional press, only usable to end combat.
     krcgId: 100047,
     name: "Amria",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }, { kind: "press", continueOnly: false }] }
+      {
+        level: "basic",
+        discipline: "chi",
+        usable: ["onlyToLongRange"],
+        effects: [{ kind: "maneuver" }],
+      },
+      {
+        level: "superior",
+        discipline: "chi",
+        effects: [
+          { kind: "strikeDodge" },
+          { kind: "press", endOnly: true },
+        ],
+      },
     ],
   },
   {

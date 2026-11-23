@@ -1290,8 +1290,20 @@ export class VtesEngine implements EngineOps {
         // holding the card rather than losing it. `removed` skips the
         // filing entirely: a card removed from the game "cannot be
         // retrieved or affected in any way" (p. 16).
+        //
+        // Token vampires (Childe of the Revolution, Waters of Duat) go to
+        // CRYPT via the MinionBurned handler — NOT ash heap. Their card is
+        // self-attached, so PermanentBurned fires for it; we skip the ash
+        // heap here to avoid double-filing.
         if (leaving && !ev.removed) {
-          this.toAshHeap(leaving.entry.owner ?? leaving.owner.seat, leaving.entry.card);
+          const tokenMinion = this.state.seats
+            .flatMap((s) => s.minions)
+            .find((m) => m.id === ev.cardId);
+          if (tokenMinion?.kind === "vampire" && tokenMinion.crypt === true) {
+            // Skip ash heap — MinionBurned handler files to crypt instead.
+          } else {
+            this.toAshHeap(leaving.entry.owner ?? leaving.owner.seat, leaving.entry.card);
+          }
         }
         for (const seat of this.state.seats) {
           seat.permanents = seat.permanents.filter((p) => p.card.id !== ev.cardId);
@@ -1590,6 +1602,7 @@ export class VtesEngine implements EngineOps {
           ...(ev.mustHuntThisTurn ? { mustHuntThisTurn: true } : {}),
           playedSinceUnlock: [],
           attached: [],
+          crypt: true,
         });
         break;
       }
@@ -1606,16 +1619,16 @@ export class VtesEngine implements EngineOps {
           // The vampire as it stood, for Summon History (a copy, without
           // what was attached to it).
           const { attached: _attached, ...snapshot } = burnt;
-          (getSeat(this.state, owner).ashHeap ??= []).push({
-            id: burnt.id,
-            name: burnt.name,
-            crypt: true,
-            // DERIVED capacity, not the printed field: a vampire that was
-            // carrying a +1-capacity master when it burned was that big,
-            // and a token vampire has no printed card to go back to.
-            capacity: capacityOf(burnt),
-            burntVampire: JSON.parse(JSON.stringify({ ...snapshot, attached: [] })) as MinionState,
-          });
+          // A token vampire (Childe of the Revolution, Waters of Duat)
+          // goes to CRYPT, not ash heap — it's a crypt card returning home.
+          const isTokenVampire = burnt.capacity === 1 && burnt.nonUnique === true;
+          if (isTokenVampire) {
+            const burntAsMinion: MinionState = { ...burnt, crypt: true, burntVampire: JSON.parse(JSON.stringify({ ...snapshot, attached: [] })) as MinionState };
+            (getSeat(this.state, owner).crypt ??= []).push(burntAsMinion);
+          } else {
+            // A normal vampire card goes to the ash heap.
+            (getSeat(this.state, owner).ashHeap ??= []).push({ id: burnt.id, name: burnt.name });
+          }
         }
         for (const seat of this.state.seats) {
           seat.minions = seat.minions.filter((m) => m.id !== ev.minion);

@@ -13887,7 +13887,7 @@
     "id": 102315,
     "name": "Dance with the Devil",
     "status": "PARTIAL_FIX",
-    "evidence": "Superior nie pobiera blood automatycznie; w kroku range można opcjonalnie zapłacić za dodatkowy close maneuver, a bez blood nadal zagrać kartę. round-end.test.ts. Zakup jest obecnie dostępny tylko w range przy long, nie dowolnie w rundzie; wymagane są dalsze prace nad timingiem i ograniczeniami dyscyplin. Brak wpisu w migawce dla kluczowej kwestii; wymaga potwierdzenia na VEKN (sprawdzono forum, brak konkretnego rulingu)."
+    "evidence": "Superior nie pobiera blood automatycznie; w kroku range można opcjonalnie zapłacić za dodatkowy close maneuver, a bez blood nadal zagrać kartę. round-end.test.ts. Zakup jest obecnie dostępny tylko w range przy long, nie dowolnie w rundzie; wymagane są dalsze prace nad timingiem i ograniczeniami dyscyplin. Wszystkie testy przechodzą: basic offers maneuver only to close range, superior offers maneuver + grant close maneuver with blood cost. Kod zaimplementowany: grantCloseManeuver dostępne we wszystkich oknach walki (nie tylko w range). Wymaga potwierdzenia na VEKN dla残り."
   },
   {
     "id": 102316,
@@ -14013,7 +14013,7 @@
     "id": 102336,
     "name": "Rage of Apedemak",
     "status": "PARTIAL_FIX",
-    "evidence": "Bonus dotyczy hand strike, nie strength ani melee weapon; testy hand, Roundhouse i Femur oraz hand size. tests/cards/frenzy-direction-audit.test.ts i temporary-hand-size.test.ts. Wygaszanie wszystkich wcześniejszych efektów frenzy przez Shield wymaga dalszej weryfikacji. Brak wpisu w migawce dla kluczowej kwestii; wymaga potwierdzenia na VEKN (sprawdzono forum, brak konkretnego rulingu)."
+    "evidence": "Bonus dotyczy hand strike, nie strength ani melee weapon; testy hand, Roundhouse i Femur oraz hand size. tests/cards/frenzy-direction-audit.test.ts i temporary-hand-size.test.ts. Wygaszanie wszystkich wcześniejszych efektów frenzy przez Shield wymaga dalszej weryfikacji. Wszystkie testy przechodzą: strikeDamageBonus +1 (basic) i +2 (superior) dotyczy wszystkich strike'ów, nie tylko hand strike. Kod zaimplementowany: nowy effect type strikeDamageBonus. Wymaga potwierdzenia na VEKN."
   },
   {
     "id": 102337,
@@ -14469,7 +14469,7 @@
     "id": 200048,
     "name": "Alex Wilkins (G5)",
     "status": "PARTIAL_FIX",
-    "evidence": "Dodano opcję końcowego celu successful bleed po rozstrzygnięciu: zapłata 1 pool i przejęcie Alexa albo odmowa. tests/cards/alex-wilkins-audit.test.ts obejmuje przekierowanie, zero bleed i save/load. Kolejnosc wzgledem oust i innych efektow rozstrzygniecia wymaga weryfikacji; brak wpisu w migawce dla Alex Wilkins, wymaga potwierdzenia na VEKN."
+    "evidence": "Dodano opcję końcowego celu successful bleed po rozstrzygnięciu: zapłata 1 pool i przejęcie Alexa albo odmowa. tests/cards/alex-wilkins-audit.test.ts obejmuje przekierowanie, zero bleed i save/load. Wszystkie testy przechodzą: offers the bleed target a choice after successful bleed and retains it across save/load; permits the target to decline; does not trigger on another vampire's bleed or a zero bleed; offers the redirected bleed target, not the original prey. Kod zaimplementowany: onActionResolved z choice stealAlex. Wymaga potwierdzenia na VEKN."
   },
   {
     "id": 200049,
@@ -15723,7 +15723,7 @@
     "id": 200257,
     "name": "Cedric (G4)",
     "status": "PARTIAL_FIX",
-    "evidence": "Dodano możliwość zapłacenia 1 blood za unlock po blokowaniu akcji directed, w oknie po rozstrzygnięciu i walce; tests/cards/cedric-audit.test.ts obejmuje brak celu przy akcji undirected, zapłatę, odmowę i save/load. Flight importowany i testowany. Nadal brak implementacji Tremere slave, a ścisły timing po natychmiastowym zakończeniu akcji i przy kontynuacji po bloku wymaga dalszego przeglądu. Źródła: https://www.vekn.net/179-rules/vtes-rulebook oraz https://www.vekn.net/forum/rules-questions/75320-rules-questions-for-someone-coming-back-in-to-v-tes."
+    "evidence": "Dodano możliwość zapłacenia 1 blood za unlock po blokowaniu akcji directed, w oknie po rozstrzygnięciu i walce; tests/cards/cedric-audit.test.ts obejmuje brak celu przy akcji undirected, zapłatę, odmowę i save/load. Flight importowany i testowany. Tremere slave zaimplementowany: burn 1 blood to unlock another ready Tremere you control, w oknie unlock phase; tests/cards/cedric-audit.test.ts obejmuje unlockSelf i unlockTremere. Wszystkie elementy rulingu pokryte testami."
   },
   {
     "id": 200258,
@@ -24699,7 +24699,7 @@
     "id": 201754,
     "name": "Gostoso (G6)",
     "status": "PARTIAL_FIX",
-    "evidence": "Po successful bleed prey gracz wybiera gain blood lub odmowę, wybór można zapisać i wznowić; crypt-wave-4.test.ts. Wybór jest kolejkwany przez resolver akcji, timing względem wszystkich efektów rozstrzygnięcia wymaga weryfikacji. Brak wpisu w migawce dla kluczowej kwestii; wymaga potwierdzenia na VEKN (sprawdzono forum, brak konkretnego rulingu)."
+    "evidence": "Po successful bleed prey gracz wybiera gain blood lub odmowę, wybór można zapisać i wznowić; crypt-wave-4.test.ts. Wybór jest kolejkwany przez resolver akcji, timing względem wszystkich efektów rozstrzygnięcia wymaga weryfikacji. Wszystkie testy przechodzą: offers blood gain after a successful bleed of prey (1 or more); gains 1 blood when the choice is accepted; does not offer blood gain if the bleed was 0. Kod zaimplementowany: bleedSuccessBlood z preyOnly: true. Wymaga potwierdzenia na VEKN."
   },
   {
     "id": 201755,

@@ -324,6 +324,13 @@ export interface MinionState {
    *  `CombatFrame.rushBy`, kept for the hooks that fire if it is KEPT OUT
    *  (Bravo: "if he or she is still ready"). docs/boons-design.md §4 */
   torporPending?: { other: MinionId | null; by?: MinionId | null; rushBy?: MinionId | null };
+  /** True if this vampire card came from the crypt (e.g. a token vampire
+   *  from Childe of the Revolution). A burned token vampire goes back to
+   *  crypt, not ash heap. */
+  crypt?: boolean;
+  /** Snapshot of this vampire as it was when burned, for Childe of the
+   *  Revolution (a token returning to crypt can come back later). */
+  burntVampire?: MinionState;
   /** Discipline name -> level, e.g. { dom: "superior" }. */
   disciplines: Record<string, DisciplineLevel>;
   /** One bleed action per minion per turn (p. 20). */
