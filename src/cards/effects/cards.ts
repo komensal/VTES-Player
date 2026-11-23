@@ -21316,15 +21316,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Aversion [100118] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Aversion [100118]
+    // [cel] Reduce a bleed against you by 1.
+    // [val] Burn X pool to reduce a bleed against you by 2X+1.
+    // [VAL] Only usable when a minion is bleeding you for 1 or more. Put this card on the acting minion. You still control this card. This minion gets -1 bleed when bleeding you.
     krcgId: 100118,
     name: "Aversion",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
     ],
   },
   {
@@ -21339,14 +21343,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Babble [100122] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Babble [100122]
+    // [dem] Give another ready minion +1 intercept.
+    // [DEM] Not usable by a blocking minion. Lock this vampire to unlock another ready minion.
     krcgId: 100122,
     name: "Babble",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "failBlockAttempt" }] },
     ],
   },
   {
@@ -28026,14 +28033,16 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Edged Illusion [100615] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Edged Illusion [100615]
+    // [chi] Lock a ready minion and inflict 1 unpreventable damage on them.
+    // [CHI] Choose any Methuselah. Inflict 1 unpreventable damage on each ready minion controlled by the chosen Methuselah.
     krcgId: 100615,
     name: "Edged Illusion",
     cardType: "action",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "damageActingMinion", amount: 1 }] },
     ],
   },
   {

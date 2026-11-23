@@ -704,8 +704,8 @@
   {
     "id": 100118,
     "name": "Aversion",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec ma modifyStealth w obu basic zamiast redukcji bleed cel/val; brak superior dołączanego efektu. Tekst: src/cards/registry.json, ID 100118; implementacja: src/cards/effects/cards.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [cel]/[val] modifyBleed -1; superior [val] modifyBleed -1. Brak: burn X pool, put on acting minion, -1 bleed when bleeding you (wymaga nowych typów efektów). Tekst: src/cards/registry.json, ID 100118; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100119,
@@ -728,8 +728,8 @@
   {
     "id": 100122,
     "name": "Babble",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Basic spec daje zwykły modifyIntercept zamiast przydzielenia innemu minionowi; brak superior z lock i unlock. Tekst: src/cards/registry.json, ID 100122; implementacja: src/cards/effects/cards.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: dodano superior [dem] z modifyIntericht 1 + failBlockAttempt. Brak: lock + unlock innego miniona (wymaga nowego typu efektu). Tekst: src/cards/registry.json, ID 100122; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100123,
@@ -3686,8 +3686,8 @@
   {
     "id": 100615,
     "name": "Edged Illusion",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action zamiast lock i 1 niepreventowalnych obrażeń wybranego miniona zawiera tylko prevent; brak superior obrażeń wszystkich ready minion wybranego Methuselah. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Częściowo naprawiona: basic [chi] damageActingMinion 1 (zamiast prevent). Brak: lock miniona, unpreventable damage, CHI tryb z damage all ready minion of chosen Methuselah (wymaga nowych typów efektów). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100616,
@@ -3854,8 +3854,8 @@
   {
     "id": 100643,
     "name": "Engling Fury",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action nie daje 2 blood ani odpowiednich unlock; spec zawiera tylko stealth dla for/spi i brak superior spi. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action zawiera tylko stealth dla for/spi; brak gainBlood 2, unlock, superior [SPI]. Wymaga nowego typu efektu gainBlood. Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100644,
@@ -3884,8 +3884,8 @@
   {
     "id": 100648,
     "name": "Ensconced",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Poza stealth brak dołączenia do location, unlock i zatrzymania skierowanej akcji z combat; brak superior reaction. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Poza stealth brak dołączenia do location, unlock i zatrzymania skierowanej akcji z combat; brak superior reaction. Wymaga nowych typów efektów (putInPlayOnLocation, unlockSelf). Tekst: registry.json; spec: effects/cards.ts."
   },
   {
     "id": 100649,
