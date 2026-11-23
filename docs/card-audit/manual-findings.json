@@ -5054,8 +5054,8 @@
   {
     "id": 100843,
     "name": "Goodnight, Sweet Prince",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast lock Ravnos, odrzucenia karty z crypt wybranego Methuselah i warunkowej nagrody za prince. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast lock Ravnos, odrzucenia karty z crypt wybranego Methuselah i warunkowej nagrody za prince. Wymaga nowych typów efektów (lockRavnos, moveCardFromCryptToMethuselah, rewardForPrince). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100844,
@@ -5217,7 +5217,7 @@
     "id": 100870,
     "name": "Guinea-Bissau Carnival",
     "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast permanenta z bonusami hunt zależnymi od Aye, wygaśnięcia i limitu raz na grę. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "evidence": "Master daje gainPool zamiast permanenta z bonusami hunt zależnymi od Aye, wygaśnięcia i limitu raz na grę. Wymaga nowych typów efektów (putInPlayMaster, addStealthWhenHuntingBasedOnAye, gainBloodOnSuccessfulHunt, limitOncePerGame). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100871,
@@ -5295,7 +5295,7 @@
     "id": 100883,
     "name": "Hanging Fermata",
     "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast out-of-turn ochrony Choir w influence phase i ograniczenia kolejnych tur. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "evidence": "Master daje gainPool zamiast out-of-turn ochrony Choir w influence phase i ograniczenia kolejnych tur. Wymaga nowych typów efektów (outOfTurnProtectChoir, limitOncePerTurn). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100884,
@@ -5703,7 +5703,7 @@
     "id": 100951,
     "name": "Illegal Search and Seizure",
     "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast wyboru i spalenia odpowiedniego weapon oraz 1 unpreventable damage nosiciela. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "evidence": "Master daje gainPool zamiast wyboru i spalenia odpowiedniego weapon oraz 1 unpreventable damage nosiciela. Wymaga nowych typów efektów (chooseAndBurnWeaponCostMoreThan2, unpreventableDamageToBearer). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100952,
