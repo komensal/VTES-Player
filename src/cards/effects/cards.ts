@@ -20893,15 +20893,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Armor of Caine's Fury [100087] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Armor of Caine's Fury [100087]
+    // [pre] Prevent 1 damage.
+    // [val] Only usable before range is determined. This vampire may prevent 1 damage from the opposing minion's strikes each round.
+    // [VAL] As [val], and frenzy cards cannot be played on this vampire this combat.
     krcgId: 100087,
     name: "Armor of Caine's Fury",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "prevent", base: 1, perBloodX: false }] },
       { level: "basic", discipline: "val", effects: [{ kind: "prevent", base: 1, perBloodX: false }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "prevent", base: 1, perBloodX: false }] }
+      { level: "superior", discipline: "val", effects: [{ kind: "prevent", base: 1, perBloodX: false }, { kind: "roundPrevent", amount: 1 }] },
     ],
   },
   {
@@ -21032,15 +21036,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blissful Agony [100190] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Blissful Agony [100190]
+    // [ani] Strike: hand strike at +1 damage.
+    // [val] Only usable at close range before strikes are chosen. Opposing minion takes 1 unpreventable damage during strike resolution each round this combat.
     krcgId: 100190,
     name: "Blissful Agony",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }, { kind: "prevent", base: 2, perBloodX: false }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }, { kind: "prevent", base: 2, perBloodX: false }] }
+      { level: "basic", discipline: "ani", effects: [{ kind: "strikeHandBonus", bonus: 1 }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "roundDamage", amount: 1, targets: "opposing", ranged: false, when: "strikeResolution" }] },
     ],
   },
   {
@@ -21438,25 +21444,32 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Black Sunrise [100171] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Black Sunrise [100171]
+    // Only usable by a locked vampire.
+    // [qui] Only usable during an action directed at you (or a card you control). This vampire unlocks and attempts to block.
+    // [QUI] This vampire unlocks and attempts to block.
     krcgId: 100171,
     name: "Black Sunrise",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] },
     ],
   },
   {
-    // Blanket of Night [100177] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Blanket of Night [100177]
+    // [obt] +1 stealth.
+    // [OBT] Only usable by a ready vampire other than the acting minion if a minion attempts to block. Lock this modifying vampire to have that attempt fail; the blocking minion cannot attempt to block this action again.
     krcgId: 100177,
     name: "Blanket of Night",
     cardType: "actionModifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "failBlockAttempt" }] },
     ],
   },
   {
@@ -21780,14 +21793,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Chiropteran Marauder [100344] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Chiropteran Marauder [100344]
+    // [vic] Maneuver.
+    // [VIC] Burn 1 blood to make the damage from this vampire's hand strikes aggravated this round.
     krcgId: 100344,
     name: "Chiropteran Marauder",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "handStrikesAggravatedCombat" }] },
     ],
   },
   {
@@ -21881,15 +21897,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Collapse the Arches [100377] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Collapse the Arches [100377]
+    // [tha] Strike: 2R damage, with an optional press.
+    // [vis] Strike: 4R damage.
+    // [VIS] Only usable before range is determined. Opposing minion takes 1R damage each round of combat during the press step.
     krcgId: 100377,
     name: "Collapse the Arches",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDodge" }, { kind: "press", continueOnly: false }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDodge" }, { kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false }, { kind: "press", continueOnly: false }] },
+      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDamage", amount: 4, ranged: true, aggravated: false }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "strikeDamage", amount: 4, ranged: true, aggravated: false }, { kind: "roundDamage", amount: 1, targets: "opposing", ranged: true, when: "strikeResolution" }] },
     ],
   },
   {
@@ -22023,15 +22043,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Crawling Chamber [100439] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Crawling Chamber [100439]
+    // [tha] Maneuver, only usable to go to long range.
+    // [vis] Maneuver or press.
+    // [VIS] Only usable before range is determined. Opposing minion takes 1R damage each round of combat during the press step.
     krcgId: 100439,
     name: "Crawling Chamber",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
+      { level: "basic", discipline: "tha", usable: ["onlyAtLongRange"], effects: [{ kind: "maneuver" }] },
       { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }, { kind: "press", continueOnly: false }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }, { kind: "press", continueOnly: false }] }
+      { level: "superior", discipline: "vis", effects: [{ kind: "maneuver" }, { kind: "press", continueOnly: false }, { kind: "roundDamage", amount: 1, targets: "opposing", ranged: true, when: "strikeResolution" }] },
     ],
   },
   {
@@ -26694,14 +26718,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Black Metamorphosis [100169] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Black Metamorphosis [100169]
+    // +1 stealth action.
+    // [obt] Put this card on this vampire. This vampire gets 1 optional additional strike (limited) each round.
+    // [OBT] As above, and this vampire gets 1 optional press each combat.
     krcgId: 100169,
     name: "Black Metamorphosis",
     cardType: "action",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "press", continueOnly: false }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "press", continueOnly: false }, { kind: "actionStealth", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "press", continueOnly: false }, { kind: "actionStealth", amount: 1 }, { kind: "grantPress", combat: true }] },
     ],
   },
   {
@@ -26805,14 +26833,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blood Awakening [100193] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Blood Awakening [100193]
+    // [qui] [REACTION] +1 intercept.
+    // [QUI] [ACTION MODIFIER] Only usable if a younger vampire attempts to block this vampire. That attempt fails and the blocking vampire cannot attempt to block this action again.
     krcgId: 100193,
     name: "Blood Awakening",
     cardType: "modifierOrReaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "failBlockAttempt" }] },
     ],
   },
   {

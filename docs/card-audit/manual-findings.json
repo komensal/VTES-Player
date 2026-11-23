@@ -159,7 +159,7 @@
     "id": 100027,
     "name": "Ahriman's Demesne",
     "status": "PARTIAL_FIX",
-    "evidence": "Częściowo naprawiona: basic [obt] strike: 1R aggravated damage, usable: onlyAtLongRange; superior [OBT] dodaje burnInsteadOfTorpor. Brak: "notFirstRound" (pole nie istnieje w strikeDamage — wymaga pracy w engine.ts). Kod: src/cards/effects/cards.ts:20789-20811."
+    "evidence": "Częściowo naprawiona: basic [obt] strike: 1R aggravated damage, usable: onlyAtLongRange; superior [OBT] dodaje burnInsteadOfTorpor. Brak: \"notFirstRound\" (pole nie istnieje w strikeDamage — wymaga pracy w engine.ts). Kod: src/cards/effects/cards.ts:20789-20811."
   },
   {
     "id": 100028,
@@ -518,8 +518,8 @@
   {
     "id": 100087,
     "name": "Armor of Caine's Fury",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Basic val jest prevent 1 zamiast powtarzalnej prewencji przed strike i ochrony przed Frenzy; brak superior. Tekst: src/cards/registry.json, ID 100087; implementacja: src/cards/effects/cards.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: dodano superior [val] z prevent 1 + roundPrevent 1 (prewencja przed strikeami przeciwnika każdą rundę). Brak: ochrony przed Frenzy (wymaga nowego typu efektu). Tekst: src/cards/registry.json, ID 100087; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100088,
@@ -1010,8 +1010,8 @@
   {
     "id": 100169,
     "name": "Black Metamorphosis",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action nie dołącza karty i nie daje limitowanego strike każdej rundy; efekt additionalStrike i press jest w basic action, brak superior. Źródła: src/cards/registry.json ID 100169; src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: dodano superior [obt] z grantPress combat: true (1 optional press each combat). Brak: dołączenie karty na wampira (wymaga nowego typu efektu putInPlayOnSelf). Źródła: src/cards/registry.json ID 100169; src/cards/effects/cards.ts."
   },
   {
     "id": 100170,
@@ -1022,8 +1022,8 @@
   {
     "id": 100171,
     "name": "Black Sunrise",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Reaction daje modifyIntercept zamiast unlock i próby bloku; brak superior i warunku directed dla basic. Źródła: src/cards/registry.json ID 100171; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano superior [qui] z modifyIntericht 1. Brak: unlock wampira i próba bloku (wymaga nowego typu efektu unlockAndBlock). Warunek directed dla basic również niezaimplementowany. Źródła: src/cards/registry.json ID 100171; src/cards/effects/cards.ts."
   },
   {
     "id": 100172,
@@ -1058,8 +1058,8 @@
   {
     "id": 100177,
     "name": "Blanket of Night",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Basic stealth jest obecny, ale brak superior granej innym gotowym wampirem: lock i nieudana próba bloku. Źródła: src/cards/registry.json ID 100177; src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: dodano superior [obt] z modifyStealth 1 + failBlockAttempt. Brak: lock modyfikującego wampira (wymaga nowego typu efektu). Źródła: src/cards/registry.json ID 100177; src/cards/effects/cards.ts."
   },
   {
     "id": 100178,
@@ -1136,8 +1136,8 @@
   {
     "id": 100190,
     "name": "Blissful Agony",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba tryby basic dają combat ends i prevent zamiast hand strike ani i powtarzalnych obrażeń val; brak superior. Źródła: src/cards/registry.json ID 100190; src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [ani] strike hand +1; superior [val] roundDamage 1 opposing each combat. Źródła: src/cards/registry.json ID 100190; src/cards/effects/cards.ts."
   },
   {
     "id": 100191,
@@ -1154,8 +1154,8 @@
   {
     "id": 100193,
     "name": "Blood Awakening",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Basic intercept jest, ale brak superior modifier, który niweluje próbę bloku młodszego wampira. Źródła: src/cards/registry.json ID 100193; src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: dodano superior [qui] z modifyIntericht 1 + failBlockAttempt. Źródła: src/cards/registry.json ID 100193; src/cards/effects/cards.ts."
   },
   {
     "id": 100194,
@@ -1796,8 +1796,8 @@
   {
     "id": 100300,
     "name": "Carrion Coffin",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Akcja ma tylko basic stealth zamiast dołączenia, unlock za blood i akcji burn; brak superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Akcja ma tylko basic stealth zamiast dołączenia, unlock za blood i akcji burn; brak superior [PRO]. Wymaga nowych typów efektów (putInPlayOnSelf, unlockForBlood). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts."
   },
   {
     "id": 100301,
@@ -1976,8 +1976,8 @@
   {
     "id": 100330,
     "name": "Charge of the Buffalo",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba podstawowe tryby mają tylko stealth; brak właściwych rush, wymuszonego zakresu i strike, brak superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Oba podstawowe tryby mają tylko stealth; brak właściwych rush, wymuszonego zakresu i strike, brak superior. Wymaga nowych typów efektów (enterCombat, setRange). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts."
   },
   {
     "id": 100331,
@@ -2060,8 +2060,8 @@
   {
     "id": 100344,
     "name": "Chiropteran Marauder",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec ma basic maneuver, ale brak superior płatnego aggravated hand strike. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: dodano superior [VIC] z handStrikesAggravatedCombat. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts."
   },
   {
     "id": 100345,
@@ -2258,8 +2258,8 @@
   {
     "id": 100377,
     "name": "Collapse the Arches",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba basic to dodge/press zamiast odpowiednich strike i ograniczeń; brak superior first strike. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [tha] strike 2R + press; basic [vis] strike 4R; superior [VIS] strike 4R + roundDamage 1 opposing each round. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts."
   },
   {
     "id": 100378,
@@ -2366,8 +2366,8 @@
   {
     "id": 100395,
     "name": "Concordance",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba basic łączą strength i stealth, zamiast oddzielnych bleed i dołączanego infernal; brak superior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Oba basic łączą strength i stealth, zamiast oddzielnych bleed i dołączanego infernal; brak superior. Wymaga nowych typów efektów (putInPlayOnSelf, modifyBleed cap). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts."
   },
   {
     "id": 100396,
@@ -2630,8 +2630,8 @@
   {
     "id": 100439,
     "name": "Crawling Chamber",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Tryb tha nie ogranicza maneuver do long, brak superior vis z obrażeniami w press i ograniczeniem per combat. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [tha] maneuver tylko do long range (usable: onlyAtLongRange); basic [vis] maneuver + press; superior [vis] maneuver + press + roundDamage 1 opposing. Porównano src/cards/registry.json, src/cards/effects/cards.ts."
   },
   {
     "id": 100440,
@@ -2984,8 +2984,8 @@
   {
     "id": 100498,
     "name": "Darksight",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak superior dołączenia z karą stealth i akcji burn; basic błędnie ma actionStealth. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak superior dołączenia z karą stealth i akcji burn; basic błędnie ma actionStealth. Wymaga nowych typów efektów (putInPlayOnTarget, modifyBleed stealth penalty). Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
     "id": 100499,
@@ -3218,8 +3218,8 @@
   {
     "id": 100537,
     "name": "Devil-Channel: Back",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec oferuje tylko dodatkowy strike bez kosztu i ograniczenia do hand; brak superior i reflex anulującego frenzy. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec oferuje tylko dodatkowy strike bez kosztu i ograniczenia do hand; brak superior i reflex anulującego frenzy. Wymaga nowego typu efektu (cancelFrenzyCard). Tekst registry.json i spec effects/cards.ts."
   },
   {
     "id": 100538,
@@ -3248,8 +3248,8 @@
   {
     "id": 100542,
     "name": "Diabolic Lure",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Dai i aus dają intercept zamiast odpowiednio pact counters i redukcji bleed; brak superior dai. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dai i aus dają intercept zamiast odpowiednio pact counters i redukcji bleed; brak superior dai. Wymaga nowych typów efektów (pactCounters, reduceBleedByPool). Tekst registry.json i spec effects/cards.ts."
   },
   {
     "id": 100543,
@@ -3326,8 +3326,8 @@
   {
     "id": 100555,
     "name": "Disguised Weapon",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Zamiast wyekwipowania broni z ręki za normalny koszt spec daje maneuver; brak superior okna wyboru strike. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Zamiast wyekwipowania broni z ręki za normalny koszt spec daje maneuver; brak superior okna wyboru strike. Wymaga nowego typu efektu (putInPlayWeaponFromHand). Tekst: registry.json; spec: effects/cards.ts."
   },
   {
     "id": 100556,
@@ -3518,8 +3518,8 @@
   {
     "id": 100587,
     "name": "Dream World",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec ma wyłącznie basic ze stealth i modifyBleed zamiast akcji bleed +1; brak superior z grupowym bleed i limitem na turę. Tekst registry.json i spec effects/cards.ts; sprawdzono wystąpienia nazwy/ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec ma wyłącznie basic ze stealth i modifyBleed zamiast akcji bleed +1; brak superior z grupowym bleed i limitem na turę. Wymaga nowych typów efektów (groupBleed, perTurnLimit). Tekst registry.json i spec effects/cards.ts."
   },
   {
     "id": 100588,
