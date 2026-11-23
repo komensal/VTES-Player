@@ -110,8 +110,8 @@
   {
     "id": 100019,
     "name": "Acquired Ventrue Assets",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Zamiast magazynu krwi dla Giovanni i akcji spalenia master daje tylko gainPool. Tekst: src/cards/registry.json, ID 100019; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Zamiast magazynu krwi dla Giovanni i akcji spalenia master daje tylko gainPool. Wymaga nowych typów efektów (putInPlayWithBloodCounters, moveBloodFromCardToVampire, burnCardIfNoBlood). Tekst: src/cards/registry.json, ID 100019; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100020,
@@ -152,8 +152,8 @@
   {
     "id": 100026,
     "name": "Aggressive Tactics",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Zamiast karty w grze z wyborem Methuselah, redukcją hand size i akcją spalenia master daje gainPool. Tekst: src/cards/registry.json, ID 100026; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Zamiast karty w grze z wyborem Methuselah, redukcją hand size i akcją spalenia master daje gainPool. Wymaga nowych typów efektów (putInPlayWithMethuselahChoice, reduceHandSize, burnAsDAction). Tekst: src/cards/registry.json, ID 100026; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100027,
@@ -398,8 +398,8 @@
   {
     "id": 100067,
     "name": "Angel of Berlin",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool, zamiast out-of-turn unlock imbued lub equip z ręki. Tekst: src/cards/registry.json, ID 100067; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool, zamiast out-of-turn unlock imbued lub equip z ręki. Wymaga nowych typów efektów (outOfTurnUnlockImbued, equipFromHand). Tekst: src/cards/registry.json, ID 100067; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100068,
@@ -854,8 +854,8 @@
   {
     "id": 100143,
     "name": "Bay and Howl",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast przenoszenia krwi ready Gangrel antitribu do uncontrolled. Tekst: src/cards/registry.json, ID 100143; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast przenoszenia krwi ready Gangrel antitribu do uncontrolled. Wymaga nowych typów efektów (moveBloodFromReadyGangrelToUncontrolled). Tekst: src/cards/registry.json, ID 100143; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100144,
@@ -932,8 +932,8 @@
   {
     "id": 100156,
     "name": "Betrayer",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast wybrania Methuselah, strat pool i zgadywania imienia. Tekst: src/cards/registry.json, ID 100156; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast wybrania Methuselah, strat pool i zgadywania imienia. Wymaga nowych typów efektów (chooseMethuselah, burnPoolFromSeat, guessName). Tekst: src/cards/registry.json, ID 100156; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100157,
