@@ -23549,15 +23549,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Inspire Greatness [100992] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Inspire Greatness [100992]
+    // Only usable by a ready vampire other than the acting minion.
+    // [pot][pre] The acting ally or younger vampire gets +1 strength during this action.
+    // [POT][PRE] The acting ally or younger vampire gets +2 strength during this action.
     krcgId: 100992,
     name: "Inspire Greatness",
     cardType: "actionModifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "addStrength", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "addStrength", amount: 1 }] }
+      { level: "basic", discipline: { all: ["pot", "pre"] }, effects: [{ kind: "addStrength", amount: 1 }] },
+      { level: "superior", discipline: { all: ["pot", "pre"] }, effects: [{ kind: "addStrength", amount: 2 }] },
     ],
   },
   {
@@ -23598,15 +23601,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Iron Heart [101009] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Iron Heart [101009]
+    // [pot][pre] Cancel an action modifier that requires Presence [pre] as it is played. That card has no effect. No cost is paid.
+    // [POT][PRE] As [pot][pre] above, but cancel an action modifier that requires ...
     krcgId: 101009,
     name: "Iron Heart",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: { all: ["pot", "pre"] }, effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "superior", discipline: { all: ["pot", "pre"] }, effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
     ],
   },
   {
@@ -29110,15 +29115,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Internal Recursion [100998] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Internal Recursion [100998]
+    // Only usable if this vampire blocks, before block resolution.
+    // [pre] During the resulting combat, this vampire can strike: combat ends. If they do so and the acting minion is an ally or younger vampire, ...
+    // [PRE] As above, and ...
     krcgId: 100998,
     name: "Internal Recursion",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] }
+      { level: "basic", discipline: "pre", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
+      { level: "superior", discipline: "pre", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
     ],
   },
   {
@@ -29201,14 +29209,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Jar the Soul [101021] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Jar the Soul [101021]
+    // +1 stealth action.
+    // [nec] Lock a ready minion.
+    // [NEC] As above, and burn 1 blood or life from the target minion.
     krcgId: 101021,
     name: "Jar the Soul",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
     ],
   },
   {

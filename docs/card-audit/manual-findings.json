@@ -5948,8 +5948,8 @@
   {
     "id": 100992,
     "name": "Inspire Greatness",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec oferuje jedną Discipline i działającego miniona zamiast innego ready vampire z pot/pre; brak superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [pot][pre] addStrength 1; superior [POT][PRE] addStrength 2. Brak: ograniczenie ready vampire other than acting (wymaga nowego typu efektu). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100993,
@@ -5960,8 +5960,8 @@
   {
     "id": 100994,
     "name": "Instantaneous Transformation",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec oferuje jedną z dwóch Discipline zamiast obu, brak superior po successful action i limitu. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec oferuje jedną z dwóch Discipline zamiast obu, brak superior po successful action i limitu. Wymaga nowych typów efektów (unlockAfterAction). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100995,
@@ -5984,8 +5984,8 @@
   {
     "id": 100998,
     "name": "Internal Recursion",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba basic dają combat ends zamiast odrębnych pre i tem skutków po bloku; brak superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [pre] strikeCombatEnds; superior [PRE] strikeCombatEnds. Brak: tylko po bloku, ally/younger vampire condition (wymaga nowego typu efektu). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100999,
@@ -6050,8 +6050,8 @@
   {
     "id": 101009,
     "name": "Iron Heart",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Reaction daje intercept zamiast anulowania Presence/Dominate modifier przy łącznych pot/pre, brak superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [pot][pre] modifyBleed -1; superior [POT][PRE] modifyBleed -1. Brak: cancel action modifier requiring Presence (wymaga nowego typu efektu). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 101010,
@@ -6122,8 +6122,8 @@
   {
     "id": 101021,
     "name": "Jar the Soul",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth zamiast lock ready minion, brak superior burn blood/life. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [nec] modifyBleed -1; superior [NEC] modifyBleed -1. Brak: lock ready minion, burn blood/life (wymaga nowych typów efektów). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 101022,
