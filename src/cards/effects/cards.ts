@@ -22960,14 +22960,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Gemini's Mirror [100814] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Gemini's Mirror [100814]
+    // [obf] Strike: dodge, with an optional maneuver.
+    // [OBF] Only usable before range is determined. For each strike made against this vampire, flip a coin. If it's tails, the strike has no effect.
     krcgId: 100814,
     name: "Gemini's Mirror",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }, { kind: "strikeCombatEnds", unlockSelf: false }] }
+      { level: "basic", discipline: "obf", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }] },
     ],
   },
   {

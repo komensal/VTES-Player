@@ -4778,8 +4778,8 @@
   {
     "id": 100797,
     "name": "Funeral Wake",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Reaction daje intercept zamiast unlock 1 lub do 2 określonych allies; brak superior i użycia przez locked vampire. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Reaction daje intercept zamiast unlock mummy/wraith/zombie ally; brak superior [NEC] unlock do 2 allies. Wymaga nowego typu efektu unlockAlly. Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100798,
@@ -4880,14 +4880,14 @@
   {
     "id": 100814,
     "name": "Gemini's Mirror",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Basic błędnie dodaje combat ends do dodge/maneuver; brak superior losowego ignorowania strike i limitu na combat. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [obf] strike dodge + maneuver (usunięto błędny combat ends); superior [OBF] strike dodge + maneuver. Brak: coin flip ignorujący strike (wymaga nowego typu efektu). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100815,
     "name": "Gestalt",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Reaction daje stale +1 intercept zamiast X za krew wybranych Blood Brothers z circle; brak superior z dostępem do ich Disciplines. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Reaction daje stale +1 intercept zamiast X za krew wybranych Blood Brothers z circle; brak superior. Wymaga nowych typów efektów (chooseXVampires, burnBloodEach). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100816,
@@ -4946,8 +4946,8 @@
   {
     "id": 100825,
     "name": "Gift of Bellona",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba basic dają stealth zamiast hand size podczas walki albo unlock po udanym equip; brak superior equip po bloku. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Oba basic dają stealth zamiast hand size podczas walki albo unlock po udanym equip; brak superior. Wymaga nowych typów efektów (handSizeBonus, unlockAfterEquip). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100826,
@@ -4964,8 +4964,8 @@
   {
     "id": 100828,
     "name": "Gift of Sleep",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Obe basic jest stealth zamiast lock ally i zakończenia akcji przed walką; brak superior obe. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Obe basic jest stealth zamiast lock ally i zakończenia akcji przed walką; brak superior [obe]. Wymaga nowych typów efektów (lockAlly, endAction). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100829,
