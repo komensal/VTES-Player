@@ -5120,8 +5120,8 @@
   {
     "id": 100854,
     "name": "Greater Curse",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba basic zawierają wyłącznie stealth zamiast bleed i gain pool dai albo curse mal; brak superior. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Oba basic zawierają wyłącznie stealth zamiast bleed i gain pool dai albo curse mal; brak superior. Wymaga nowych typów efektów (curseTarget, gainPoolTarget). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100855,
@@ -5132,8 +5132,8 @@
   {
     "id": 100856,
     "name": "Gremlins",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec ma ten sam modifyBleed i stealth dla basic myt/dom zamiast bleed dom i niszczenia equipment myt; brak superior bleed. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec ma ten sam modifyBleed i stealth dla basic myt/dom zamiast bleed dom i niszczenia equipment myt; brak superior bleed. Wymaga nowych typów efektów (burnEquipment). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100857,
@@ -5258,8 +5258,8 @@
   {
     "id": 100877,
     "name": "Hag's Wrinkles",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba basic dają +1 stealth zamiast +2 obf albo unlock po equip thn; brak superior i ograniczenia do equip. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [thn] modifyBleed -1; basic [obf] modifyBleed -1. Brak: unlock po equip thn, +2 obf (wymaga nowych typów efektów). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100878,

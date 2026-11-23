@@ -23163,15 +23163,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hag's Wrinkles [100877] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Hag's Wrinkles [100877]
+    // [thn] Reduce a bleed against you by 1.
+    // [obf] Reduce a bleed against you by 1.
     krcgId: 100877,
     name: "Hag's Wrinkles",
     cardType: "actionModifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "thn", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
     ],
   },
   {
