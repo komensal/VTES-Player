@@ -446,8 +446,8 @@
   {
     "id": 100075,
     "name": "Antithesis",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko +1 stealth; nie dołącza do uprawnionego wampira ani nie blokuje hunt i nie wywołuje torpor. Tekst: src/cards/registry.json, ID 100075; implementacja: src/cards/effects/cards.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: actionStealth 3 zamiast 1. Brak: dołączenie do non-Sabbat vampire <8 capacity, blokada hunt (wymaga nowych typów efektów). Tekst: src/cards/registry.json, ID 100075; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100076,
@@ -464,8 +464,8 @@
   {
     "id": 100078,
     "name": "Approximation of Loyalty",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Jest tylko basic pre stealth zamiast wyboru blokującego i superior anulowania reakcji; brak ograniczenia capacity. Tekst: src/cards/registry.json, ID 100078; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Jest tylko basic pre stealth zamiast wyboru blokującego i superior anulowania reakcji; brak ograniczenia capacity. Wymaga nowych typów efektów (restrictOpponent block). Tekst: src/cards/registry.json, ID 100078; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100079,
@@ -578,8 +578,8 @@
   {
     "id": 100097,
     "name": "The Art of Memory",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Modifier daje stealth zamiast usunięcia z gry i warunkowego odzyskania karty po udanej akcji. Tekst: src/cards/registry.json, ID 100097; implementacja: src/cards/effects/cards.ts. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Modifier daje stealth zamiast usunięcia z gry i warunkowego odzyskania karty po udanej akcji. Wymaga nowych typów efektów (removeFromGame, moveCardOnSuccess). Tekst: src/cards/registry.json, ID 100097; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100098,
@@ -596,8 +596,8 @@
   {
     "id": 100100,
     "name": "Art's Traumatic Essence",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba tryby action zawierają tylko stealth; brak lock celu, blood/life i superior dołączenia. Tekst: src/cards/registry.json, ID 100100; implementacja: src/cards/effects/cards.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: dodano superior [MEL] z actionStealth 1. Brak: lock miniona, burn blood/life, putInPlayOnTarget (wymaga nowych typów efektów). Tekst: src/cards/registry.json, ID 100100; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100101,
@@ -656,8 +656,8 @@
   {
     "id": 100110,
     "name": "Augur",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth; brak obejrzenia rąk i kart biblioteki oraz unlock imbued. Tekst: src/cards/registry.json, ID 100110; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak obejrzenia rąk i kart biblioteki oraz unlock imbued. Wymaga nowych typów efektów (lookAtHands, lookAtLibrary, unlockActor). Tekst: src/cards/registry.json, ID 100110; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100111,

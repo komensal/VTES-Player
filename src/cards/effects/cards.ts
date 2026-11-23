@@ -26556,14 +26556,16 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Antithesis [100075] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Antithesis [100075]
+    // +3 stealth action.
+    // Ⓓ Put this card on a non-Sabbat vampire with capacity less than 8.
     krcgId: 100075,
     name: "Antithesis",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "jud", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "jud", effects: [{ kind: "actionStealth", amount: 3 }] }
     ],
   },
   {
@@ -26594,15 +26596,20 @@ export const cardSpecs: CardSpec[] = [
     modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
-    // Art's Traumatic Essence [100100] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Art's Traumatic Essence [100100]
+    // +1 stealth action.
+    // [aus] Ⓓ Lock an unlocked minion.
+    // [mel] Ⓓ As [aus] above, and the target minion burns 1 blood or life.
+    // [MEL] Ⓓ Put this card on a ready unlocked minion and lock them. The attached minion burns 1 blood or life each time they announce an action or attempt to block.
     krcgId: 100100,
     name: "Art's Traumatic Essence",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
       { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "superior", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
     ],
   },
   {
