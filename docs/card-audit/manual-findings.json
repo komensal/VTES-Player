@@ -4394,8 +4394,8 @@
   {
     "id": 100733,
     "name": "Fire Dance",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak wymogu ready tytułu Sabbat, dołączenia do Sabbat i jednorazowej konwersji aggravated w każdym combat. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak wymogu ready tytułu Sabbat, dołączenia do Sabbat i jednorazowej konwersji aggravated w każdym combat. Wymaga nowych typów efektów (requireSabbatTitle, putInPlayOnTargetSabbat, convertAggravatedOnceCombat). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100734,
@@ -4418,8 +4418,8 @@
   {
     "id": 100737,
     "name": "First Tradition: The Masquerade",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak wymogu prince/justicar oraz permanenta z opłatą 2 pool, opcją skip turn i warunkami spalenia. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak wymogu prince/justicar oraz permanenta z opłatą 2 pool, opcją skip turn i warunkami spalenia. Wymaga nowych typów efektów (requirePrinceJusticar, putInPlayMasterBurnPool, skipTurnOption, burnCondition). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100738,
@@ -4664,8 +4664,8 @@
   {
     "id": 100778,
     "name": "Foul Blood",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Reaction daje prevent zamiast obniżenia hunt i unpreventable damage; brak wymogu udanego hunt, lock basic i superior. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Reaction daje prevent zamiast obniżenia hunt i unpreventable damage; brak wymogu udanego hunt, lock basic i superior. Wymaga nowych typów efektów (requireHuntSuccessful, reduceHunt, unpreventableEnvironmentalDamage, lockSelf). Tekst: registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100779,
@@ -4748,8 +4748,8 @@
   {
     "id": 100792,
     "name": "Friend of Mine",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Wszystkie trzy tryby reaction dają intercept; for powinno redukować bleed, obt spalać blood po successful bleed, brak wymogu Anarch. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Wszystkie trzy tryby reaction dają intercept; for powinno redukować bleed, obt spalać blood po successful bleed, brak wymogu Anarch. Wymaga nowych typów efektów (requireAnarch, reduceBleedAgainstYou, burnBloodAfterBleed). Tekst: registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100793,
@@ -4874,8 +4874,8 @@
   {
     "id": 100813,
     "name": "Gear Up",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Tryby nec/pre/vic są identyczne i nie unlockują Anarch; brak wymogu sect i rozdzielonych efektów. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Tryby nec/pre/vic są identyczne i nie unlockują Anarch; brak wymogu sect i rozdzielonych efektów. Wymaga nowych typów efektów (requireAnarch, unlockSelf, moveCardAshHeapToHand, addStealthUntilEndTurn). Tekst: registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100814,
