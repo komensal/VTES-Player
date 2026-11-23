@@ -3536,8 +3536,8 @@
   {
     "id": 100590,
     "name": "Drop Point Network",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool 1 zamiast usunięcia siedmiu kart z ash heap i wyszukania minion card; brak wymogu Black Hand. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool 1 zamiast usunięcia siedmiu kart z ash heap i wyszukania minion card; brak wymogu Black Hand. Wymaga nowych typów efektów (removeCardsFromAshHeap, searchLibraryMinionCard). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
   },
   {
     "id": 100591,
@@ -5204,8 +5204,8 @@
   {
     "id": 100868,
     "name": "Guardian Vigil",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Każdy tryb daje podwójny intercept; brak wymogu Anarch, próby bloku i odrębnych korzyści za cel/for oraz możliwości łączenia dyscyplin. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Każdy tryb daje podwójny intercept; brak wymogu Anarch, próby bloku i odrębnych korzyści za cel/for oraz możliwości łączenia dyscyplin. Wymaga nowych typów efektów (requireAnarch, attemptBlock, gainInterceptForDifferentDisciplines). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100869,
@@ -5426,8 +5426,8 @@
   {
     "id": 100905,
     "name": "Heart's Desire",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec oferuje pojedyncze aus lub chi, bez wymogu obu, blokowania młodszych/ally i superior +2 bleed. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec oferuje pojedyncze aus lub chi, bez wymogu obu, blokowania młodszych/ally i superior +2 bleed. Wymaga nowych typów efektów (requireBothDisciplines, blockAttemptFailsIfAllyYounger, bleedBonusSuperior). Tekst: registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100906,
@@ -5456,8 +5456,8 @@
   {
     "id": 100910,
     "name": "Hell-for-Leather",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak wymogu Anarch i limitu na Discipline; cel błędnie wymaga superior, obt daje maneuver zamiast burn 2 pool. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Brak wymogu Anarch i limitu na Discipline; cel błędnie wymaga superior, obt daje maneuver zamiast burn 2 pool. Wymaga nowych typów efektów (requireAnarch, limitOnePerDisciplinePerCombat, burnBloodAfterSuccessfulBleed). Tekst: registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100911,
@@ -5840,8 +5840,8 @@
   {
     "id": 100974,
     "name": "Inevitability of the Void",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec oferuje pojedyncze aus lub nec, brak wymogu obu, ograniczenia do bleed i superior zależnego od wielkości ash heap. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec oferuje pojedyncze aus lub nec, brak wymogu obu, ograniczenia do bleed i superior zależnego od wielkości ash heap. Wymaga nowych typów efektów (requireBothDisciplines, bleedLimited, bleedBonusPerAshHeapCardsSuperior). Tekst: registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100975,
