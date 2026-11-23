@@ -5408,8 +5408,8 @@
   {
     "id": 100902,
     "name": "Heart of Darkness",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma prevent zamiast dołączenia z traktowaniem aggravated jako normal; brak superior prevent per combat i akcji spalenia. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma prevent zamiast dołączenia z traktowaniem aggravated jako normal; brak superior prevent per combat i akcji spalenia. Wymaga nowych typów efektów (putInPlayOnSelf, treatAggravatedAsNormal). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100903,
@@ -5486,8 +5486,8 @@
   {
     "id": 100915,
     "name": "Hexe",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba tryby oferują maneuver zamiast dai 2R lub str 1R aggravated; brak superior unpreventable. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [dai] strike 2R damage; basic [str] strike 1R aggravated; superior [STR] strike 1R aggravated unpreventable. Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100916,
@@ -5516,8 +5516,8 @@
   {
     "id": 100920,
     "name": "Hide the Heart",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba basic dają intercept zamiast redukcji bleed aus i warunkowego niepowodzenia akcji val; brak superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [aus] modifyBleed -1; basic [val] modifyBleed -1; superior [VAL] modifyBleed -2. Brak: action fails unless burn 1 blood (wymaga nowego typu efektu). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100921,
@@ -5606,8 +5606,8 @@
   {
     "id": 100935,
     "name": "Horrid Reality",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Combat oferuje maneuver zamiast wyszukania, wyposażenia i późniejszego spalenia albo wtasowania weapon; brak superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Combat oferuje maneuver zamiast wyszukania, wyposażenia i późniejszego spalenia albo wtasowania weapon; brak superior. Wymaga nowych typów efektów (searchLibraryWeapon, putInPlayOnSelf). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100936,
@@ -5690,8 +5690,8 @@
   {
     "id": 100949,
     "name": "Ignore the Searing Flames",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba basic dają prevent 2 zamiast konwersji obrażeń ser i pełnego prevent aggravated dai; brak superior immunity. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [ser] prevent 2 nonAggravated; basic [dai] prevent 2; superior [DAI] prevent 2. Brak: tylko gegen aggravated damage (wymaga nowego typu efektu). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100950,

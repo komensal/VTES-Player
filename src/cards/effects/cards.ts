@@ -23290,15 +23290,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hexe [100915] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Hexe [100915]
+    // [dai] Strike: 2R damage.
+    // [str] Strike: 1R aggravated damage. [str] is not a Discipline.
+    // [STR] As [str] above, and the damage is unpreventable.
     krcgId: 100915,
     name: "Hexe",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "str", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "dai", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false }] },
+      { level: "basic", discipline: "str", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }] },
+      { level: "superior", discipline: "str", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true, unpreventable: true }] },
     ],
   },
   {
@@ -23313,15 +23317,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hide the Heart [100920] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Hide the Heart [100920]
+    // [aus] Reduce a bleed against you by 1.
+    // [val] The action fails, unless the acting minion burns 1 blood. Only one Hide the Heart can be played at [val] each action.
+    // [VAL] Reduce a bleed against you by 2.
     krcgId: 100920,
     name: "Hide the Heart",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "modifyBleed", amount: -2, limited: false }] },
     ],
   },
   {
@@ -23382,15 +23390,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ignore the Searing Flames [100949] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Ignore the Searing Flames [100949]
+    // [ser] Only usable if the opposing minion's strike inflicts aggravated damage on this vampire. This vampire treats all aggravated damage from that strike as normal damage.
+    // [dai] Prevent all aggravated damage from that strike.
     krcgId: 100949,
     name: "Ignore the Searing Flames",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 2, perBloodX: false, nonAggravated: true }] },
       { level: "basic", discipline: "dai", effects: [{ kind: "prevent", base: 2, perBloodX: false }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
+      { level: "superior", discipline: "dai", effects: [{ kind: "prevent", base: 2, perBloodX: false }] },
     ],
   },
   {
