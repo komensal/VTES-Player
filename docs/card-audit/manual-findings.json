@@ -11169,7 +11169,7 @@
     "id": 101862,
     "name": "Static Virtue",
     "status": "CONFIRMED_BUG",
-    "evidence": "Poza wymogiem Laibon spec daje tylko gainPool; tekst dotyczy wyszukiwania i umieszczania kart Aye/Orun. src/cards/effects/cards.ts: Static Virtue; src/cards/registry.json: 101862."
+    "evidence": "Poza wymogiem Laibon spec daje tylko gainPool; tekst dotyczy wyszukiwania i umieszczania kart Aye/Orun. Wymaga nowych typów efektów (searchLibraryAyeOrun, placeOnVampire). src/cards/effects/cards.ts: Static Virtue; src/cards/registry.json: 101862."
   },
   {
     "id": 101863,
