@@ -5354,8 +5354,8 @@
   {
     "id": 100893,
     "name": "Haunt",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth; brak ochronnej karty na location basic i spalenia location superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak ochronnej karty na location basic i spalenia location superior. Wymaga nowych typów efektów (putInPlayOnTarget location, burnLocationOnDirectedAction). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100894,
@@ -5372,8 +5372,8 @@
   {
     "id": 100896,
     "name": "Haven Hunting",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth; brak wymogu anarch, permanenta i opcji kolejnego combat. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak wymogu anarch, permanenta i opcji kolejnego combat. Wymaga nowych typów efektów (requireAnarch, putInPlayMaster, nextCombatOption). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100897,
@@ -5402,8 +5402,8 @@
   {
     "id": 100901,
     "name": "Healing Touch",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Oba tryby dają tylko stealth; brak unlock młodszego vampire cel, life dla ally obe i superior rescue. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Oba tryby dają tylko stealth; brak unlock młodszego vampire cel, life dla ally obe i superior rescue. Wymaga nowych typów efektów (unlockYoungerVampire, addLifeAlly, rescueFromTorpor). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100902,
@@ -5498,8 +5498,8 @@
   {
     "id": 100917,
     "name": "Hidden Pathways",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth w basic zamiast permanenta dającego stealth przy nie-bleed do prey; brak akcji spalenia i superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: modifyStealth 1 + actionStealth 1 → actionStealth 2. Brak: permanenta dającego stealth przy nie-bleed do prey, akcja spalenia, superior (wymaga nowych typów efektów). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100918,
@@ -5582,8 +5582,8 @@
   {
     "id": 100931,
     "name": "Hive Mind",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth; brak unlock dwóch Blood Brothers w basic, limitu oraz superior blood w uncontrolled. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak unlock dwóch Blood Brothers w basic, limitu oraz superior blood w uncontrolled. Wymaga nowych typów efektów (unlockBloodBrothers, limitOnePerTurn, addBloodUncontrolled). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100932,

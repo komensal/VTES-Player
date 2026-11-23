@@ -28911,14 +28911,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hidden Pathways [100917] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Hidden Pathways [100917]
     krcgId: 100917,
     name: "Hidden Pathways",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 2 }] }
     ],
   },
   {
