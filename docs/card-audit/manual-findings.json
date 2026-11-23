@@ -176,8 +176,8 @@
   {
     "id": 100030,
     "name": "The Ailing Spirit",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko modifyBleed i actionStealth w trybach podstawowych; brak nadrukowanych trybów bleed i superior przejęcia kontroli. Tekst: src/cards/registry.json, ID 100030; implementacja: src/cards/effects/cards.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [dom] modifyBleed 1; basic [obe] modifyBleed 1; superior [obe] actionStealth 1. Brak: take control of mortal/mage (wymaga nowego typu efektu). Tekst: src/cards/registry.json, ID 100030; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100031,
@@ -212,8 +212,8 @@
   {
     "id": 100036,
     "name": "Alacrity",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Jest tylko basic cel z dwoma modifyStealth; brak osobnego superior i opcjonalnego maneuver w pierwszej rundzie po bloku. Tekst: src/cards/registry.json, ID 100036; implementacja: src/cards/effects/cards.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: basic [cel] actionStealth 1; superior [CEL] actionStealth 1 + maneuverNextRound. Tekst: src/cards/registry.json, ID 100036; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100037,
@@ -224,8 +224,8 @@
   {
     "id": 100038,
     "name": "Alastor",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Political action ma tylko modifyStealth; nie wybiera celu ani nie realizuje nagrody referendum, ekwipunku i dołączanego Alastor. Tekst: src/cards/registry.json, ID 100038; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Political action ma tylko modifyStealth; nie wybiera celu ani nie realizuje nagrody referendum, ekwipunku i dołączanego Alastor. Wymaga nowych typów efektów (searchLibraryEquipment, putInPlayOnTarget). Tekst: src/cards/registry.json, ID 100038; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100039,
@@ -338,8 +338,8 @@
   {
     "id": 100057,
     "name": "Anarch Secession",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko +1 stealth, nie zmienia wampira na Anarch, nie obsługuje baron ani ograniczenia bloku. Tekst: src/cards/registry.json, ID 100057; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko +1 stealth, nie zmienia wampira na Anarch, nie obsługuje baron ani ograniczenia bloku. Wymaga nowych typów efektów (changeSectAnarch, putInPlayTitle). Tekst: src/cards/registry.json, ID 100057; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100058,
@@ -428,8 +428,8 @@
   {
     "id": 100072,
     "name": "Anonymous Freight",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Jest tylko +1 stealth; brak +3 stealth i właściwego equip z ręki. Tekst: src/cards/registry.json, ID 100072; implementacja: src/cards/effects/cards.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: actionStealth 3 zamiast 1. Brak: equip z ręki (wymaga nowego typu efektu). Tekst: src/cards/registry.json, ID 100072; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100073,

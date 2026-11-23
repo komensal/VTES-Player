@@ -21167,15 +21167,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Alacrity [100036] — [cel] +1 stealth. [CEL] As above, and if this action is blocked, this acting vampire gets an optional maneuver during the first round of the resulting combat.
+    // Alacrity [100036]
+    // [cel] +1 stealth action.
+    // [CEL] As above, and if this action is blocked, this acting vampire gets an optional maneuver during the first round of the resulting combat.
     krcgId: 100036,
     name: "Alacrity",
     cardType: "actionModifier",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuverNextRound", count: 1 }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuverNextRound", count: 1 }] }
     ],
   },
   {
@@ -26459,15 +26461,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Ailing Spirit [100030] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // The Ailing Spirit [100030]
+    // [dom] Ⓓ Bleed with +1 bleed.
+    // [obe] Ⓓ Bleed with +1 bleed. Vampires with Dementation [dem], mortals, and mages get -1 intercept during this action.
+    // [OBE] +1 stealth action. Ⓓ Take control of target mortal or mage for the remainder of the action.
     krcgId: 100030,
     name: "The Ailing Spirit",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
     ],
   },
   {
@@ -26526,14 +26532,16 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Anonymous Freight [100072] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Anonymous Freight [100072]
+    // +3 stealth equip action. Requires a vampire.
+    // Equip this vampire with a non-location equipment card from your hand (requirements and cost apply as normal).
     krcgId: 100072,
     name: "Anonymous Freight",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 3 }] }
     ],
   },
   {
