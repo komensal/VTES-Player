@@ -896,8 +896,8 @@
   {
     "id": 100150,
     "name": "Belonging Grants Protection",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth, brak wyboru unlock Laibon lub umieszczenia krwi na młodszym Laibon w uncontrolled. Tekst: src/cards/registry.json, ID 100150; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth, brak wyboru unlock Laibon lub umieszczenia krwi na młodszym Laibon w uncontrolled. Wymaga nowych typów efektów (unlockVampire, moveBloodToYoungerLaibon). Tekst: src/cards/registry.json, ID 100150; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100151,
@@ -926,8 +926,8 @@
   {
     "id": 100155,
     "name": "Bestow Vigor",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth, nie dołącza karty dającej Fortitude, nie unlockuje aktora i nie posiada superior. Tekst: src/cards/registry.json, ID 100155; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth, nie dołącza karty dającej Fortitude, nie unlockuje aktora i nie posiada superior. Wymaga nowych typów efektów (putInPlayOnTarget, unlockActor). Tekst: src/cards/registry.json, ID 100155; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100156,
@@ -1004,8 +1004,8 @@
   {
     "id": 100168,
     "name": "Black Hand Ritual",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action zawiera tylko stealth; brak wymogu Black Hand i wyboru unlock albo burn Gehenna z wymianą karty. Źródła: src/cards/registry.json ID 100168; src/cards/effects/cards.ts i compile.ts. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action zawiera tylko stealth; brak wymogu Black Hand i wyboru unlock albo burn Gehenna z wymianą karty. Wymaga nowych typów efektów (unlockYoungerVampire, burnGehennaCard). Tekst: src/cards/registry.json ID 100168; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100169,
@@ -1034,8 +1034,8 @@
   {
     "id": 100173,
     "name": "Blackmail",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth; brak lock gotowego wampira oraz superior dołączenia i możliwości spalenia za blood. Źródła: src/cards/registry.json ID 100173; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak lock gotowego wampira oraz superior dołączenia i możliwości spalenia za blood. Wymaga nowych typów efektów (lockVampire, putInPlayOnTarget). Tekst: src/cards/registry.json ID 100173; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100174,
@@ -1088,8 +1088,8 @@
   {
     "id": 100182,
     "name": "Blessing of Chaos",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth; brak dołączenia, zakazu kart wybranych dyscyplin i superior ograniczenia akcji. Źródła: src/cards/registry.json ID 100182; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak dołączenia, zakazu kart wybranych dyscyplin i superior ograniczenia akcji. Wymaga nowych typów efektów (putInPlayOnSelf, restrictOpponent disciplines). Tekst: src/cards/registry.json ID 100182; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100183,
