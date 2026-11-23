@@ -4796,8 +4796,8 @@
   {
     "id": 100800,
     "name": "Game of Malkav",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool 1 zamiast jednoczesnych tajnych wyborów i zależnych od nich zmian pool. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool 1 zamiast jednoczesnych tajnych wyborów i zależnych od nich zmian pool. Wymaga nowych typów efektów (secretChoices, changePoolBasedOnChoices). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100801,
@@ -4820,14 +4820,14 @@
   {
     "id": 100804,
     "name": "Gangrel Atavism",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast dołączenia do Gangrel z -1 bleed. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast dołączenia do Gangrel z -1 bleed. Wymaga nowych typów efektów (putInPlayOnGangrel, reduceBleed). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100805,
     "name": "Gangrel Conspiracy",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast anulowania blood hunt Gangrel antitribu w odpowiednim oknie. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast anulowania blood hunt Gangrel antitribu w odpowiednim oknie. Wymaga nowych typów efektów (cancelBloodHuntGangrelAntitribu). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100806,
@@ -4952,8 +4952,8 @@
   {
     "id": 100826,
     "name": "Gift of Experience",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast lock własnego wampira i wyszukania w crypt jego advancement lub base. Tekst: src/cards/registry.json, ID 100826; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast lock własnego wampira i wyszukania w crypt jego advancement lub base. Wymaga nowych typów efektów (lockOwnVampire, searchCryptAdvancementCard). Tekst: src/cards/registry.json, ID 100826; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100827,
@@ -4982,8 +4982,8 @@
   {
     "id": 100831,
     "name": "Gird Minions",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast przenoszenia wybranej liczby blood z pool do kontrolowanych vampires. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast przenoszenia wybranej liczby blood z pool do kontrolowanych vampires. Wymaga nowych typów efektów (moveBloodFromPoolToVampires). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100832,
