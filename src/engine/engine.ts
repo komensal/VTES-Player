@@ -14724,9 +14724,12 @@ export class VtesEngine implements EngineOps {
   private discardCard(seatId: SeatId, cardId: string, replace = true): void {
     const seat = getSeat(this.state, seatId);
     const idx = seat.hand.findIndex((c) => c.id === cardId);
-    if (idx < 0) throw new Error(`card not in hand: ${cardId}`);
+    // The card may have left the hand between announcement and resolution
+    // (e.g. Garibaldi-Meucci Museum / Lenelle ash-heap exchange). In that case
+    // there is nothing to discard — the exchange's other half still applies.
+    if (idx < 0) return;
     const [card] = seat.hand.splice(idx, 1);
-    if (!card) throw new Error("unreachable");
+    if (!card) return;
     this.emit({ type: "CardDiscarded", seat: seatId, cardId: card.id });
     this.toAshHeap(seatId, card);
     if (replace) {

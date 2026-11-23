@@ -13476,7 +13476,7 @@ export const cardSpecs: CardSpec[] = [
       {
         level: "superior",
         discipline: "nec",
-        effects: [{ kind: "restrictOpponent", strengthPenalty: 1, press: true, additionalStrikes: true }],
+        effects: [{ kind: "restrictOpponent", strengthPenalty: 1, pressToContinue: true, pressToEnd: false, additionalStrikes: true }],
       },
     ],
   },
