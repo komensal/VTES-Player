@@ -3464,8 +3464,8 @@
   {
     "id": 100578,
     "name": "Draba",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec zawiera wyłącznie actionStealth, brak dołączenia i zerowania stealth oraz superior reaction. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec zawiera wyłącznie actionStealth, brak dołączenia i zerowania stealth oraz superior reaction. Wymaga nowych typów efektów (putInPlayOnTarget, setStealthZero). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100579,
@@ -3944,8 +3944,8 @@
   {
     "id": 100658,
     "name": "Erosion",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Brak wyboru i dołączenia do cudzego miniona, ustawienia strength 0, zakazu melee i akcji usunięcia; spec ma tylko efekty stealth. Tekst registry.json i bieżący spec effects/cards.ts; wyszukano nazwę w src pod kątem osobnego handlera. Bez dedykowanego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiona: modifyStealth 1 + actionStealth 1 → actionStealth 2. Brak: wybór i dołączenie do cudzego miniona, strength 0, zakaz melee, akcja usunięcia (wymaga nowych typów efektów). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100659,
@@ -4202,8 +4202,8 @@
   {
     "id": 100701,
     "name": "Fantasy World",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Spec daje tylko stealth zamiast dołączenia, lock, ograniczeń działań i unlock oraz warunków spalenia. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "PARTIAL_FIX",
+    "evidence": "Spec daje tylko stealth zamiast dołączenia, lock, ograniczeń działań i unlock oraz warunków spalenia. Wymaga nowych typów efektów (putInPlayOnTarget, lockTarget, restrictAction, unlockSelf, burnCondition). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100702,
@@ -4616,8 +4616,8 @@
   {
     "id": 100770,
     "name": "Form of Corruption",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth zamiast permanenta z counterami za Edge, kradzieży vampire prey i superior pool burn. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth zamiast permanenta z counterami za Edge, kradzieży vampire prey i superior pool burn. Wymaga nowych typów efektów (putInPlayMaster, addCountersOnEdge, stealPreyVampire, burnPoolSuperior). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100771,
@@ -4712,8 +4712,8 @@
   {
     "id": 100786,
     "name": "The Framing",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth; brak wymogu Anarch, dołączenia i przekierowania walki na wybranego miniona. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; brak wymogu Anarch, dołączenia i przekierowania walki na wybranego miniona. Wymaga nowych typów efektów (requireAnarch, putInPlayOnTarget, redirectCombat). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100787,

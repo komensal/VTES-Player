@@ -28179,14 +28179,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Erosion [100658] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Erosion [100658]
     krcgId: 100658,
     name: "Erosion",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 2 }] }
     ],
   },
   {
