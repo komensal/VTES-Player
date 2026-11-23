@@ -1082,8 +1082,8 @@
   {
     "id": 100181,
     "name": "Blessed Resilience",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast przeniesienia właściwego spalonego wampira z ash heap do ready. Źródła: src/cards/registry.json ID 100181; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast przeniesienia właściwego spalonego wampira z ash heap do ready. Wymaga nowych typów efektów (moveFromAshHeapToReadyVampire). Źródła: src/cards/registry.json ID 100181; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100182,
@@ -1100,8 +1100,8 @@
   {
     "id": 100184,
     "name": "Blessing of the Beast",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast dołączenia do własnego Ahrimane i składowania / gry kartami Spiritus. Źródła: src/cards/registry.json ID 100184; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast dołączenia do własnego Ahrimane i składowania / gry kartami Spiritus. Wymaga nowych typów efektów (putInPlayOnTargetAhrimane, storeCardsSpirus). Źródła: src/cards/registry.json ID 100184; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100185,
@@ -1124,8 +1124,8 @@
   {
     "id": 100188,
     "name": "Blind Spot",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast wyboru dwóch minionów i czasowego zakazu bloku oraz reaction. Źródła: src/cards/registry.json ID 100188; src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast wyboru dwóch minionów i czasowego zakazu bloku oraz reaction. Wymaga nowych typów efektów (chooseTwoMinions, blockBanTemp, reactionCard). Źródła: src/cards/registry.json ID 100188; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100189,
@@ -1448,8 +1448,8 @@
   {
     "id": 100242,
     "name": "Bounty",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast dołączenia z licznikami i wypłat po torpor, burn albo diablerie; wcześniejszy wpis. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast dołączenia z licznikami i wypłat po torpor, burn albo diablerie; wcześniejszy wpis. Wymaga nowych typów efektów (putInPlayWithCounters, payCountersOnTorporBurnDiablerie). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100243,
@@ -1562,8 +1562,8 @@
   {
     "id": 100261,
     "name": "Brujah Frenzy",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Master daje gainPool zamiast out-of-turn anulowania niezablokowanej akcji i wymuszenia combat. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Master daje gainPool zamiast out-of-turn anulowania niezablokowanej akcji i wymuszenia combat. Wymaga nowych typów efektów (outOfTurnCancelUnblockedAction, forceCombat). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100262,
