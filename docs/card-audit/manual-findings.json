@@ -764,14 +764,14 @@
   {
     "id": 100128,
     "name": "Baltimore Purge",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma wyłącznie +1 stealth bez zależności od Ravnos; brak dołączenia karty i późniejszego wysyłania wampirów do torpor. Tekst: src/cards/registry.json, ID 100128; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma wyłącznie +1 stealth bez zależności od Ravnos; brak dołączenia karty i późniejszego wysyłania wampirów do torpor. Wymaga nowych typów efektów (requireClanRavnos, burnCard, moveToTorpor). Tekst: src/cards/registry.json, ID 100128; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100129,
     "name": "Bamba",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth, bez utworzenia Laibon ani opcji dyscypliny i krwi dla magaji. Tekst: src/cards/registry.json, ID 100129; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth, bez utworzenia Laibon ani opcji dyscypliny i krwi dla magaji. Wymaga nowych typów efektów (putInPlayOnSelf as vampire, searchLibraryDiscipline). Tekst: src/cards/registry.json, ID 100129; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100130,
@@ -800,8 +800,8 @@
   {
     "id": 100134,
     "name": "Barrenness",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth, brak dołączenia karty, sterile/capacity i superior spalenia wampira. Tekst: src/cards/registry.json, ID 100134; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth, brak dołączenia karty, sterile/capacity i superior spalenia wampira. Wymaga nowych typów efektów (putInPlayOnTarget, setSterile, reduceCapacity). Tekst: src/cards/registry.json, ID 100134; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100135,
@@ -848,8 +848,8 @@
   {
     "id": 100142,
     "name": "Bauble",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth; nie dołącza karty ani nie wyszukuje i łączy equipment, brak ograniczeń aktora i superior. Tekst: src/cards/registry.json, ID 100142; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth; nie dołącza karty ani nie wyszukuje i łączy equipment, brak ograniczeń aktora i superior. Wymaga nowych typów efektów (searchLibraryEquipment, putInPlayOnTarget). Tekst: src/cards/registry.json, ID 100142; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100143,
@@ -878,8 +878,8 @@
   {
     "id": 100147,
     "name": "The Becoming",
-    "status": "CONFIRMED_BUG",
-    "evidence": "Action ma tylko stealth, nie tworzy wampira i nie obsługuje dyscyplin, krwi ani ograniczeń. Tekst: src/cards/registry.json, ID 100147; implementacja: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Action ma tylko stealth, nie tworzy wampira i nie obsługuje dyscyplin, krwi ani ograniczeń. Wymaga nowych typów efektów (putInPlayOnSelf as vampire, copyClanSect). Tekst: src/cards/registry.json, ID 100147; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100148,
