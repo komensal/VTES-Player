@@ -1179,7 +1179,7 @@
     "id": 100197,
     "name": "Blood Clots",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth; brak dołączenia, zakazu zysku blood/life, akcji burn i superior obrażeń. Wymaga nowych typów efektów (moveBloodBankToVampire). Źródła: src/cards/registry.json ID 100197; src/cards/effects/cards.ts i compile.ts."
+    "evidence": "moveBloodBankToVampire zaimplementowane i podpięte do Blood Clots (100197). Nadal brakuje: dołączenia, zakazu zysku blood/life, akcji burn, superior obrażeń. Źródła: src/cards/registry.json ID 100197; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100198,

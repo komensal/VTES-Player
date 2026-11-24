@@ -6944,6 +6944,15 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             }
             break;
           }
+          case "moveBloodBankToVampire": {
+            // "Move N blood from the blood bank to a vampire" — target
+            // chosen at announcement rides in params.
+            const target = af.card?.params["target"];
+            if (target && findMinion(ops.state, target)) {
+              ops.emit({ type: "BloodGained", minion: target, amount: e.amount });
+            }
+            break;
+          }
           case "unlockActor": {
             // "Unlock this vampire" (Freak Drive) — in the after-resolution
             // window, where the actor may be in torpor (p. 48). Unlocking a
