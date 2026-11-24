@@ -10843,6 +10843,7 @@ const REFERENDUM_POLARITY: Record<ReferendumPrimitive["kind"], ReferendumEffectK
   refPerSeatCards: "other",
   refPutInPlay: "other",
   refRemoveChosenMinion: "other",
+  reflectDamage: "other",
   // Decided by its own `effect` field rather than by its kind — see below.
   refPerMinion: "other",
 };
