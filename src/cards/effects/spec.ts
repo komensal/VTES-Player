@@ -1300,6 +1300,10 @@ export type EffectPrimitive =
       kind: "unpreventableAggravatedDamage";
       amount: number;
     }
+  /** "Unlock this vampire AFTER ACTION RESOLUTION" (Bestow Vigor) —
+   *  unlocks the acting minion with no blood cost, unlike
+   *  unlockAfterResolution which requires blood payment. §4 */
+  | { kind: "unlockActor" }
   /** "Ⓓ Stun an unlocked vampire" (Mind Numb) — a directed action card
    *  that NAMES a minion without fighting it. The target is chosen at
    *  announcement (p. 25) and rides in the option id.

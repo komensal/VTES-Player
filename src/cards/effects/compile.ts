@@ -7130,6 +7130,13 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             ops.applyEnvironmentalDamage(play.minion, e.amount, true);
             break;
           }
+          case "unlockActor": {
+            // "Unlock this vampire AFTER ACTION RESOLUTION" — unlocks the
+            // acting minion with no blood cost.
+            if (!play.minion) throw new Error(`${spec.name}: no playing minion`);
+            ops.emit({ type: "MinionUnlocked", minion: play.minion });
+            break;
+          }
           case "unlockViaCorruption":
             if (play.minion) ops.registerCorruptionUnlock(play.minion, play.seat, play.card.id);
             break;

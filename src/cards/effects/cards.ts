@@ -26795,7 +26795,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "for",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Bestow Vigor"] },
+          { kind: "unlockActor" },
+        ],
+      },
     ],
   },
   {

@@ -927,7 +927,7 @@
     "id": 100155,
     "name": "Bestow Vigor",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth, nie dołącza karty dającej Fortitude, nie unlockuje aktora i nie posiada superior. Wymaga nowych typów efektów (putInPlayOnTarget, unlockActor). Tekst: src/cards/registry.json, ID 100155; implementacja: src/cards/effects/cards.ts."
+    "evidence": "putInPlayOnTarget i unlockActor zaimplementowane i podpięte do Bestow Vigor (100155). Nadal brakuje: wyboru superior Discipline, dołączenia z konwersją sect, limitu. Tekst: src/cards/registry.json, ID 100155; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100156,
