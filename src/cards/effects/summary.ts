@@ -269,6 +269,7 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   discardPhaseUnlockOnBleed: "unlock",
   lockCardToUnlockBearer: "unlock",
   unlockActor: "unlock",
+  unlockAfterAction: "unlock",
   unlockAfterResolution: "unlock",
   unlockMinion: "unlock",
   unlockSelf: "unlock",

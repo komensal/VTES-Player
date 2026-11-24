@@ -7137,6 +7137,13 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             ops.emit({ type: "MinionUnlocked", minion: play.minion });
             break;
           }
+          case "unlockAfterAction": {
+            // "Unlock this vampire AFTER ACTION" — registers an unlock to
+            // happen after the current action completes.
+            if (!play.minion) throw new Error(`${spec.name}: no playing minion`);
+            ops.registerUnlockOnSuccess(play.minion);
+            break;
+          }
           case "unlockViaCorruption":
             if (play.minion) ops.registerCorruptionUnlock(play.minion, play.seat, play.card.id);
             break;

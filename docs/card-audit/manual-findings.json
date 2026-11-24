@@ -5961,7 +5961,7 @@
     "id": 100994,
     "name": "Instantaneous Transformation",
     "status": "PARTIAL_FIX",
-    "evidence": "Spec oferuje jedną z dwóch Discipline zamiast obu, brak superior po successful action i limitu. Wymaga nowych typów efektów (unlockAfterAction). Tekst registry.json i bieżący spec effects/cards.ts."
+    "evidence": "unlockAfterAction zaimplementowane i podpięte do Instantaneous Transformation (100994) w obu trybach. Nadal brakuje: superior po successful action, limit. Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100995,
