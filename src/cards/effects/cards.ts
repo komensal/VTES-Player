@@ -21069,7 +21069,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }, { kind: "strikeDamage", amount: 1 }, { kind: "chooseStrikeAsRanged" }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }, { kind: "chooseStrikeAsRanged" }] }
     ],
   },
   {

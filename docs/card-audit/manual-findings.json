@@ -1227,7 +1227,7 @@
     "id": 100205,
     "name": "Blood of the Cobra",
     "status": "PARTIAL_FIX",
-    "evidence": "strikeDamage i chooseStrikeAsRanged zaimplementowane i podpięte do Blood of the Cobra (100205)."
+    "evidence": "chooseStrikeAsRanged zaimplementowane i podpięte do Blood of the Cobra (100205). Nadal brakuje: strikeDamage (wymaga więcej pól)."
   },
   {
     "id": 100206,
