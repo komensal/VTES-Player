@@ -1233,7 +1233,7 @@
     "id": 100206,
     "name": "Blood of the Sabbat",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth; brak wymogu tytułu, dołączenia do innego Sabbat i efektu po directed action. Wymaga nowych typów efektów (requireTitle, putInPlayOnTarget Sabbat, grantBleedAllSabbat). Źródła: src/cards/registry.json ID 100206; src/cards/effects/cards.ts i compile.ts."
+    "evidence": "requiresTitled: true dodane w cards.ts (title requirement zaimplementowane). Nadal brakuje: putInPlayOnTarget Sabbat, grantBleedAllSabbat. Źródła: src/cards/registry.json ID 100206; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100207,
@@ -1305,7 +1305,7 @@
     "id": 100218,
     "name": "Bloodbath",
     "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma wyłącznie stealth; brak wymogu tytułu, celu, blood i dołączenia z głosem. Wymaga nowych typów efektów (requireTitle, burnPoolPrey, putInPlayWithVotes). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "evidence": "requiresTitled: true dodane w cards.ts (title requirement zaimplementowane). Nadal brakuje: burnPoolPrey, putInPlayWithVotes. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100219,
@@ -2475,7 +2475,7 @@
     "id": 100413,
     "name": "Consecration Rites",
     "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma tylko stealth, bez tytułu, dołączenia do lokacji i spalania w obronie przed akcją. Wymaga nowych typów efektów (requireTitle, putInPlayOnLocation, burnOnBlock). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "evidence": "requiresTitled: true dodane w cards.ts (title requirement zaimplementowane). Nadal brakuje: putInPlayOnLocation, burnOnBlock. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100414,

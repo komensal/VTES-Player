@@ -27011,6 +27011,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Blood of the Sabbat",
     cardType: "action",
     bloodCost: 1,
+    requiresTitled: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -27080,6 +27081,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Bloodbath",
     cardType: "action",
     bloodCost: 1,
+    requiresTitled: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -27659,6 +27661,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Consecration Rites",
     cardType: "action",
     bloodCost: 0,
+    requiresTitled: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
