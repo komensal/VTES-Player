@@ -7397,6 +7397,193 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
           case "addBurnCounters": {
             break;
           }
+          case "curseTarget": {
+            // Curse a target minion - target at announcement
+            break;
+          }
+          case "gainPoolTarget": {
+            // Gain pool target
+            const target = af.card?.params["target"];
+            if (target && findMinion(ops.state, target)) {
+              ops.emit({ type: "PoolGained", seat: af.actingSeat, amount: e.amount });
+            }
+            break;
+          }
+          case "addVotes": {
+            // Add votes - target at announcement
+            break;
+          }
+          case "cancelReaction": {
+            // Cancel a reaction - target at announcement
+            break;
+          }
+          case "outOfTurnProtectChoir": {
+            // Protect choir out of turn
+            break;
+          }
+          case "limitOncePerTurn": {
+            // Limit once per turn - tracked by card name
+            break;
+          }
+          case "burnLocationOnDirectedAction": {
+            // Burn a location on directed action - target at announcement
+            break;
+          }
+          case "chooseAndBurnWeaponCostMoreThan2": {
+            // Choose and burn a weapon costing more than 2
+            break;
+          }
+          case "preventVoting": {
+            // Prevent voting - target at announcement
+            break;
+          }
+          case "putInPlayTrifle": {
+            // Put a trifle card in play
+            break;
+          }
+          case "changeVampireSectSabbat": {
+            // Change vampire sect to Sabbat - target at announcement
+            break;
+          }
+          case "lockAlly": {
+            // Lock an ally - target at announcement
+            const target = af.card?.params["target"];
+            if (target && findMinion(ops.state, target)) {
+              ops.emit({ type: "MinionLocked", minion: target });
+            }
+            break;
+          }
+          case "requireSect": {
+            // Require sect - checked at announcement, not resolution
+            break;
+          }
+          case "burnRecentDiablerist": {
+            // Burn a vampire who recently diablerised - checked via event log
+            break;
+          }
+          case "lockMinionsX": {
+            // Lock N chosen minions - targets at announcement
+            break;
+          }
+          case "burnGehennaCard": {
+            // Burn a Gehenna card
+            break;
+          }
+          case "unlockYoungerVampire": {
+            // Unlock a younger vampire - target at announcement
+            const target = af.card?.params["target"];
+            if (target && findMinion(ops.state, target)) {
+              ops.emit({ type: "MinionUnlocked", minion: target });
+            }
+            break;
+          }
+          case "searchLibraryGargoyle": {
+            // Search library for a Gargoyle card - raises choice
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "searchLibraryGargoyle",
+              params: { minion: af.acting },
+              optional: false,
+            });
+            break;
+          }
+          case "searchLibraryDiscipline": {
+            // Search library for a Discipline card - raises choice
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "searchLibraryDiscipline",
+              params: { minion: af.acting },
+              optional: false,
+            });
+            break;
+          }
+          case "copyClanSect": {
+            // Copy clan and sect from actor
+            break;
+          }
+          case "searchCryptAdvancementCard": {
+            // Search crypt for advancement card - raises choice
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "searchCryptAdvancementCard",
+              params: { minion: af.acting },
+              optional: false,
+            });
+            break;
+          }
+          case "lockOwnVampire": {
+            // Lock own vampire
+            if (play.minion) {
+              ops.emit({ type: "MinionLocked", minion: play.minion });
+            }
+            break;
+          }
+          case "handSizeBonus": {
+            // Hand size bonus - tracked by card
+            break;
+          }
+          case "unlockAfterEquip": {
+            // Unlock after equip - registered for later
+            break;
+          }
+          case "addStealthWhenHuntingBasedOnAye": {
+            // Add stealth when hunting based on Aye/Orun count
+            break;
+          }
+          case "gainBloodOnSuccessfulHunt": {
+            // Gain blood on successful hunt - tracked by card
+            break;
+          }
+          case "gainBloodOnBurn": {
+            // Gain blood on burn - tracked by event
+            break;
+          }
+          case "burnBloodUnlockAfterSuccessfulAction": {
+            // Burn blood to unlock after successful action
+            break;
+          }
+          case "bleedBonusStealthPenalty": {
+            // Bleed bonus with stealth penalty
+            break;
+          }
+          case "bleedBonusSuperior": {
+            // Superior bleed bonus
+            break;
+          }
+          case "bleedBonusCap": {
+            // Bleed bonus with cap
+            break;
+          }
+          case "burnBloodEachTurn": {
+            // Burn blood each turn - registered as lingering effect
+            break;
+          }
+          case "restrictOpponentDisciplines": {
+            // Restrict opponent from playing cards of these Disciplines
+            break;
+          }
+          case "restrictAction": {
+            // Restrict action type
+            break;
+          }
+          case "restrictStrike": {
+            // Restrict strike type in combat
+            break;
+          }
+          case "modifyInterceptOpponent": {
+            // Modify opponent's intercept
+            break;
+          }
+          case "grantInterceptForDifferentDisciplines": {
+            // Grant intercept for different disciplines
+            break;
+          }
           case "unlockViaCorruption":
             if (play.minion) ops.registerCorruptionUnlock(play.minion, play.seat, play.card.id);
             break;

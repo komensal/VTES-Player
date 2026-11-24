@@ -1471,6 +1471,79 @@ export type EffectPrimitive =
   | { kind: "replaceBurnWithTorpor" }
   /** "Add N burn counters" (Byzar) — add burn counters to a card. §4 */
   | { kind: "addBurnCounters"; amount: number }
+  /** "Curse a target minion" (Greater Curse) — curse a target minion. §4 */
+  | { kind: "curseTarget"; amount?: number }
+  /** "Gain pool target" (Greater Curse) — gain pool from target. §4 */
+  | { kind: "gainPoolTarget"; amount: number }
+  /** "Add votes" (Hall of Hades' Court) — add votes. §4 */
+  | { kind: "addVotes"; amount: number }
+  /** "Cancel a reaction" (Hall of Hades' Court) — cancel a reaction. §4 */
+  | { kind: "cancelReaction" }
+  /** "Protect choir out of turn" (Hanging Fermata) — protect choir out of turn. §4 */
+  | { kind: "outOfTurnProtectChoir" }
+  /** "Limit once per turn" (Fortschritt Library) — limit once per turn. §4 */
+  | { kind: "limitOncePerTurn" }
+  /** "Burn a location on directed action" (Haunt) — burn a location on directed action. §4 */
+  | { kind: "burnLocationOnDirectedAction" }
+  /** "Choose and burn a weapon costing more than 2" (Illegal Search and Seizure) — choose and burn a weapon. §4 */
+  | { kind: "chooseAndBurnWeaponCostMoreThan2" }
+  /** "Prevent voting" (Infamous Warlock) — prevent voting. §4 */
+  | { kind: "preventVoting" }
+  /** "Put a trifle in play" (Into the Fire) — put a trifle in play. §4 */
+  | { kind: "putInPlayTrifle" }
+  /** "Change vampire sect to Sabbat" (Into the Fire) — change vampire sect. §4 */
+  | { kind: "changeVampireSectSabbat" }
+  /** "Lock an ally" (Hall of Hades' Court) — lock an ally. §4 */
+  | { kind: "lockAlly" }
+  /** "Require sect" (Community Justice) — require sect. §4 */
+  | { kind: "requireSect"; sect: Sect }
+  /** "Burn a recent diablerist" (Community Justice) — burn a recent diablerist. §4 */
+  | { kind: "burnRecentDiablerist" }
+  /** "Lock N minions" (Command the Legion) — lock N chosen minions. §4 */
+  | { kind: "lockMinionsX"; amount: number }
+  /** "Burn a Gehenna card" (Black Hand Ritual) — burn a Gehenna card. §4 */
+  | { kind: "burnGehennaCard" }
+  /** "Unlock a younger vampire" (Haqim's Law: Judgment) — unlock a younger vampire. §4 */
+  | { kind: "unlockYoungerVampire" }
+  /** "Search library for a Gargoyle card" (Children of Stone) — search for Gargoyle. §4 */
+  | { kind: "searchLibraryGargoyle" }
+  /** "Search library for a Discipline card" (Static Virtue) — search for Discipline. §4 */
+  | { kind: "searchLibraryDiscipline" }
+  /** "Copy clan and sect" (The Becoming) — copy clan and sect. §4 */
+  | { kind: "copyClanSect" }
+  /** "Search crypt for advancement card" (Gift of Experience) — search crypt. §4 */
+  | { kind: "searchCryptAdvancementCard" }
+  /** "Lock own vampire" (Gift of Experience) — lock own vampire. §4 */
+  | { kind: "lockOwnVampire" }
+  /** "Hand size bonus" (Gift of Bellona) — hand size bonus. §4 */
+  /** "Unlock after equip" (Gift of Bellona) — unlock after equip. §4 */
+  | { kind: "unlockAfterEquip" }
+  /** "Add stealth when hunting based on Aye/Orun" (Guinea-Bissau Carnival) — add stealth. §4 */
+  | { kind: "addStealthWhenHuntingBasedOnAye" }
+  /** "Gain blood on successful hunt" (Guinea-Bissau Carnival) — gain blood on hunt. §4 */
+  | { kind: "gainBloodOnSuccessfulHunt" }
+  /** "Gain blood on burn" (Draba) — gain blood on burn. §4 */
+  | { kind: "gainBloodOnBurn" }
+  /** "Burn blood to unlock after successful action" (Carrion Coffin) — burn blood to unlock. §4 */
+  | { kind: "burnBloodUnlockAfterSuccessfulAction" }
+  /** "Bleed bonus with stealth penalty" (Darksight) — bleed bonus with stealth penalty. §4 */
+  | { kind: "bleedBonusStealthPenalty" }
+  /** "Bleed bonus superior" (Blight) — superior bleed bonus. §4 */
+  | { kind: "bleedBonusSuperior" }
+  /** "Bleed bonus cap" (Darkness) — bleed bonus with cap. §4 */
+  | { kind: "bleedBonusCap" }
+  /** "Burn blood each turn" (Daring the Dawn) — burn blood each turn. §4 */
+  | { kind: "burnBloodEachTurn" }
+  /** "Restrict opponent disciplines" (Approximation of Loyalty) — restrict opponent disciplines. §4 */
+  | { kind: "restrictOpponentDisciplines"; disciplines: string[] }
+  /** "Restrict action" (Sense the Savage Way) — restrict action. §4 */
+  | { kind: "restrictAction" }
+  /** "Restrict strike" (Silver Talisman) — restrict strike. §4 */
+  | { kind: "restrictStrike" }
+  /** "Modify opponent intercept" (Unthinkable Humiliation) — modify opponent intercept. §4 */
+  | { kind: "modifyInterceptOpponent"; amount: number }
+  /** "Grant intercept for different disciplines" (Guardian Vigil) — grant intercept. §4 */
+  | { kind: "grantInterceptForDifferentDisciplines"; amount: number }
   /** "Ⓓ Stun an unlocked vampire" (Mind Numb) — a directed action card
    *  that NAMES a minion without fighting it. The target is chosen at
    *  announcement (p. 25) and rides in the option id.
