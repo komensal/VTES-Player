@@ -21258,7 +21258,14 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "pre",
+        effects: [
+          { kind: "modifyStealth", amount: 1 },
+          { kind: "blockRestriction", who: "vampires" },
+        ],
+      },
     ],
   },
   {
@@ -26966,7 +26973,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "blockRestriction", who: "all" },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Blood Bond"] },
+        ],
+      },
     ],
   },
   {

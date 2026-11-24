@@ -465,7 +465,7 @@
     "id": 100078,
     "name": "Approximation of Loyalty",
     "status": "PARTIAL_FIX",
-    "evidence": "Jest tylko basic pre stealth zamiast wyboru blokującego i superior anulowania reakcji; brak ograniczenia capacity. Wymaga nowych typów efektów (restrictOpponent block). Tekst: src/cards/registry.json, ID 100078; implementacja: src/cards/effects/cards.ts."
+    "evidence": "blockRestriction (who: vampires) zaimplementowane i podpięte do Approximation of Loyalty (100078) — wampiry nie mogą blokować tej akcji. Nadal brakuje: superior anulowania reakcji, ograniczenie capacity. Tekst: src/cards/registry.json, ID 100078; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100079,
@@ -1161,7 +1161,7 @@
     "id": 100194,
     "name": "Blood Bond",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth, bez dołączenia do wampira i zakazu blokowania aktora. Wymaga nowych typów efektów (putInPlayOnTarget, restrictOpponent block). Źródła: src/cards/registry.json ID 100194; src/cards/effects/cards.ts i compile.ts."
+    "evidence": "blockRestriction (who: all) i putInPlayOnTarget zaimplementowane i podpięte do Blood Bond (100194) — nikt nie może blokować, karta dołącza do wybranego miniona. Źródła: src/cards/registry.json ID 100194; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100195,
