@@ -5133,7 +5133,7 @@
     "id": 100856,
     "name": "Gremlins",
     "status": "PARTIAL_FIX",
-    "evidence": "Spec ma ten sam modifyBleed i stealth dla basic myt/dom zamiast bleed dom i niszczenia equipment myt; brak superior bleed. Wymaga nowych typów efektów (burnEquipment). Tekst registry.json i bieżący spec effects/cards.ts."
+    "evidence": "burnEquipment wyrażone przez actionBurnAttachedCard, podpięte do Gremlins (100856) w obu trybach. Nadal brakuje: superior bleed, różnicowanie efektów myt/dom. Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100857,
