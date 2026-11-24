@@ -1308,6 +1308,12 @@ export type EffectPrimitive =
    *  registers an unlock to happen after the current action completes,
    *  unlike unlockActor which happens immediately after resolution. §4 */
   | { kind: "unlockAfterAction" }
+  /** "Drain N blood and N life from a vampire" (The Haunting) — burns
+   *  blood and inflicts unpreventable life loss on the target. §4 */
+  | {
+      kind: "drainBloodLife";
+      amount: number;
+    }
   /** "Ⓓ Stun an unlocked vampire" (Mind Numb) — a directed action card
    *  that NAMES a minion without fighting it. The target is chosen at
    *  announcement (p. 25) and rides in the option id.

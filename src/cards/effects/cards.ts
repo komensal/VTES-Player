@@ -29046,7 +29046,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "dem",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["The Haunting"] },
+          { kind: "drainBloodLife", amount: 1 },
+        ],
+      },
     ],
   },
   {

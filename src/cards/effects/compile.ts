@@ -7144,6 +7144,16 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             ops.registerUnlockOnSuccess(play.minion);
             break;
           }
+          case "drainBloodLife": {
+            // "Drain N blood and N life from a vampire" — burns blood and
+            // inflicts unpreventable aggravated damage (life loss).
+            const target = af.card?.params["target"];
+            if (target && findMinion(ops.state, target)) {
+              ops.emit({ type: "BloodBurned", minion: target, amount: e.amount });
+              ops.applyEnvironmentalDamage(target, e.amount, true);
+            }
+            break;
+          }
           case "unlockViaCorruption":
             if (play.minion) ops.registerCorruptionUnlock(play.minion, play.seat, play.card.id);
             break;

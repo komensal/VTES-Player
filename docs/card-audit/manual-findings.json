@@ -5361,7 +5361,7 @@
     "id": 100894,
     "name": "The Haunting",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth w basic zamiast dołączenia i drain blood/life, brak superior. Wymaga nowych typów efektów (putInPlayOnTarget, drainBloodLife). Tekst registry.json i bieżący spec effects/cards.ts."
+    "evidence": "putInPlayOnTarget i drainBloodLife zaimplementowane i podpięte do The Haunting (100894). Nadal brakuje: superior wariant. Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100895,

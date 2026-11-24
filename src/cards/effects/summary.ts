@@ -270,6 +270,7 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   lockCardToUnlockBearer: "unlock",
   unlockActor: "unlock",
   unlockAfterAction: "unlock",
+  drainBloodLife: "damage",
   unlockAfterResolution: "unlock",
   unlockMinion: "unlock",
   unlockSelf: "unlock",
