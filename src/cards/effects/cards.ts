@@ -23580,7 +23580,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [] }
+      {
+        level: "basic",
+        discipline: "tha",
+        effects: [{ kind: "putInPlayEquipment", tags: ["Inscription"] }]
+      },
     ],
   },
   {

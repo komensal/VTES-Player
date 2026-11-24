@@ -1262,6 +1262,24 @@ export type EffectPrimitive =
       statics?: PermanentStatics;
       locked?: boolean;
     }
+  /** "Put this equipment card in play" (Inscription) — equipment becomes
+   *  a seat-level permanent, not attached to any minion. §5 */
+  | {
+      kind: "putInPlayEquipment";
+      counters?: number;
+      tags?: string[];
+      statics?: PermanentStatics;
+      locked?: boolean;
+    }
+  /** "Put this equipment card on this equipment" (Inscription) — attaches
+   *  the played card to a chosen equipment already in play. §5 */
+  | {
+      kind: "putInPlayOnEquipment";
+      counters?: number;
+      tags?: string[];
+      statics?: PermanentStatics;
+      locked?: boolean;
+    }
   /** "Ⓓ Stun an unlocked vampire" (Mind Numb) — a directed action card
    *  that NAMES a minion without fighting it. The target is chosen at
    *  announcement (p. 25) and rides in the option id.

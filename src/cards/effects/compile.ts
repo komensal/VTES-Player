@@ -3131,7 +3131,8 @@ function compileActionCard(spec: CardSpec): CardHandler {
         (e) =>
           e.kind === "putInPlayOnSuccess" ||
           e.kind === "putInPlayOnSelf" ||
-          e.kind === "putInPlayOnTarget",
+          e.kind === "putInPlayOnTarget" ||
+          e.kind === "putInPlayEquipment",
       ),
     )
   ) {
@@ -3142,11 +3143,13 @@ function compileActionCard(spec: CardSpec): CardHandler {
           (e) =>
             e.kind === "putInPlayOnSuccess" ||
             e.kind === "putInPlayOnSelf" ||
-            e.kind === "putInPlayOnTarget",
+            e.kind === "putInPlayOnTarget" ||
+            e.kind === "putInPlayEquipment",
         ) as
           | Extract<EffectPrimitive, { kind: "putInPlayOnSuccess" }>
           | Extract<EffectPrimitive, { kind: "putInPlayOnSelf" }>
           | Extract<EffectPrimitive, { kind: "putInPlayOnTarget" }>
+          | Extract<EffectPrimitive, { kind: "putInPlayEquipment" }>
           | undefined;
       // THE MODE THAT WAS PLAYED DECIDES. The handler is registered when
       // ANY mode puts the card in play, so a card whose superior does and

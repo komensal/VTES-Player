@@ -5931,7 +5931,7 @@
     "id": 100989,
     "name": "Inscription",
     "status": "PARTIAL_FIX",
-    "evidence": "Equipment nie opisuje wyboru vampire i karty Blood Sorcery, kosztu ani użycia jej zdolności; brak superior. Wymaga nowych typów efektów (putInPlayEquipment, putInPlayOnEquipment). Tekst registry.json i bieżący spec effects/cards.ts."
+    "evidence": "putInPlayEquipment zaimplementowane i podpięte do Inscription (100989). Nadal brakuje: putInPlayOnEquipment (dołączenie do istniejącego equipment). Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100990,
