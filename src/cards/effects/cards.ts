@@ -34392,8 +34392,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "burnLocation" }, { kind: "searchLibraryGeneric", cardTypes: ["location"] }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "burnLocation" }, { kind: "searchLibraryGeneric", cardTypes: ["location"] }] }
+      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "burnLocation" }, { kind: "searchLibraryGeneric", cardTypes: ["equipment"] }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "burnLocation" }, { kind: "searchLibraryGeneric", cardTypes: ["equipment"] }] }
     ],
   },
   {
