@@ -1544,6 +1544,82 @@ export type EffectPrimitive =
   | { kind: "modifyInterceptOpponent"; amount: number }
   /** "Grant intercept for different disciplines" (Guardian Vigil) — grant intercept. §4 */
   | { kind: "grantInterceptForDifferentDisciplines"; amount: number }
+  /** "Lock an imbued" (Abjure) — lock an imbued. §4 */
+  | { kind: "lockImbued" }
+  /** "Move conviction" (Abjure) — move conviction counters. §4 */
+  | { kind: "moveConviction"; amount: number }
+  /** "Change sect to Anarch" (Anarch Secession) — change sect. §4 */
+  | { kind: "changeSectAnarch" }
+  /** "Put a title in play" (Anarch Secession) — put a title in play. §4 */
+  | { kind: "putInPlayTitle" }
+  /** "Out of turn unlock an imbued" (Angel of Berlin) — unlock an imbued out of turn. §4 */
+  | { kind: "outOfTurnUnlockImbued" }
+  /** "Equip from hand" (Angel of Berlin) — equip from hand. §4 */
+  | { kind: "equipFromHand" }
+  /** "Remove from game" (The Art of Memory) — remove from game. §4 */
+  | { kind: "removeFromGame" }
+  /** "Move a card on success" (The Art of Memory) — move a card on success. §4 */
+  | { kind: "moveCardOnSuccess" }
+  /** "Look at hands" (Augur) — look at hands. §4 */
+  | { kind: "lookAtHands" }
+  /** "Look at library" (Augur) — look at library. §4 */
+  | { kind: "lookAtLibrary" }
+  /** "Set sterile" (Barrenness) — set sterile. §4 */
+  | { kind: "setSterile" }
+  /** "Reduce capacity" (Barrenness) — reduce capacity. §4 */
+  | { kind: "reduceCapacity"; amount: number }
+  /** "Move blood to younger Laibon" (Belonging Grants Protection) — move blood. §4 */
+  | { kind: "moveBloodToYoungerLaibon" }
+  /** "Store cards in Spiritus" (Blessing of the Beast) — store cards. §4 */
+  | { kind: "storeCardsSpirus" }
+  /** "Reflect damage" (Blood of Acid) — reflect damage. §4 */
+  | { kind: "reflectDamage"; amount: number }
+  /** "Once per round" (Blood of the Cobra) — once per round. §4 */
+  | { kind: "oncePerRound" }
+  /** "Choose strike as ranged" (Blood of the Cobra) — choose strike as ranged. §4 */
+  | { kind: "chooseStrikeAsRanged" }
+  /** "Limit bleed per turn" (Bloodwork) — limit bleed per turn. §4 */
+  | { kind: "limitBleedPerTurn" }
+  /** "Require target Sabbat" (Bloodwork) — require target Sabbat. §4 */
+  | { kind: "requireTargetSabbat" }
+  /** "Put in play with counters" (Bounty) — put in play with counters. §4 */
+  | { kind: "putInPlayWithCounters"; counters: number }
+  /** "Pay counters on torpor burn diablerie" (Bounty) — pay counters. §4 */
+  | { kind: "payCountersOnTorporBurnDiablerie" }
+  /** "Block transfers" (Brainwash) — block transfers. §4 */
+  | { kind: "blockTransfers" }
+  /** "Out of turn cancel unblocked action" (Brujah Frenzy) — cancel unblocked action out of turn. §4 */
+  | { kind: "outOfTurnCancelUnblockedAction" }
+  /** "Make Black Hand" (Cadet) — make Black Hand. §4 */
+  | { kind: "makeBlackHand" }
+  /** "Limit one per turn" (Cat Burglary) — limit one per turn. §4 */
+  | { kind: "limitOnePerTurn" }
+  /** "Choose any Methuselah" (Cat Burglary) — choose any Methuselah. §4 */
+  | { kind: "chooseAnyMethuselah" }
+  /** "Burn location on directed action" (Haunt) — burn location on directed action. §4 */
+  | { kind: "burnLocationOnDirectedAction" }
+  /** "Change pool based on choices" (Game of Malkav) — change pool based on choices. §4 */
+  | { kind: "changePoolBasedOnChoices" }
+  /** "Secret choices" (Game of Malkav) — secret choices. §4 */
+  | { kind: "secretChoices" }
+  /** "Make Anarch" (Galaric's Legacy) — make Anarch. §4 */
+  | { kind: "makeAnarch" }
+  /** "Search library for Gehenna event" (Fortschritt Library) — search for Gehenna event. §4 */
+  | { kind: "searchLibraryGehennaEvent" }
+  /** "Limit once per game" (Fortschritt Library) — limit once per game. §4 */
+  | { kind: "limitOncePerGame" }
+  /** "Unpreventable damage to bearer" (Illegal Search and Seizure) — unpreventable damage to bearer. §4 */
+  | { kind: "unpreventableDamageToBearer"; amount: number }
+  /** "Put in play on Ishtarri" (Ishtarri Warlord) — put in play on Ishtarri. §4 */
+  | { kind: "putInPlayOnIshtarri" }
+  /** "Grant optional maneuver or press" (Ishtarri Warlord) — grant optional maneuver or press. §4 */
+  | { kind: "grantOptionalManeuverOrPress"; maneuver?: boolean; press?: boolean }
+  /** "Add life to ally" (Healing Touch) — add life to ally. §4 */
+  | { kind: "addLifeAlly"; amount: number }
+  /** "Rescue from torpor" (Healing Touch) — rescue from torpor. §4 */
+  | { kind: "rescueFromTorpor" }
+  /** "Block attempt fails if ally or younger" (Heart's Desire) — block attempt fails if ally or younger. §4 */
+  | { kind: "blockAttemptFailsIfAllyYounger" }
   /** "Move blood from ready Gangrel to uncontrolled" (Bay and Howl) — move blood. §4 */
   | { kind: "moveBloodFromReadyGangrelToUncontrolled" }
   /** "Move blood from ready Pander to uncontrolled Pander" (Convergence) — move blood. §4 */

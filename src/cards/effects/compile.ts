@@ -7397,6 +7397,169 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
           case "addBurnCounters": {
             break;
           }
+          case "lockImbued": {
+            break;
+          }
+          case "moveConviction": {
+            break;
+          }
+          case "changeSectAnarch": {
+            break;
+          }
+          case "putInPlayTitle": {
+            break;
+          }
+          case "outOfTurnUnlockImbued": {
+            break;
+          }
+          case "equipFromHand": {
+            break;
+          }
+          case "removeFromGame": {
+            break;
+          }
+          case "moveCardOnSuccess": {
+            break;
+          }
+          case "lookAtHands": {
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "lookAtHands",
+              params: {},
+              optional: false,
+            });
+            break;
+          }
+          case "lookAtLibrary": {
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "lookAtLibrary",
+              params: {},
+              optional: false,
+            });
+            break;
+          }
+          case "setSterile": {
+            break;
+          }
+          case "reduceCapacity": {
+            break;
+          }
+          case "moveBloodToYoungerLaibon": {
+            break;
+          }
+          case "storeCardsSpirus": {
+            break;
+          }
+          case "reflectDamage": {
+            const target = af.card?.params["target"];
+            if (target && findMinion(ops.state, target)) {
+              ops.emit({ type: "BloodBurned", minion: target, amount: e.amount });
+              ops.applyEnvironmentalDamage(target, e.amount, true);
+            }
+            break;
+          }
+          case "oncePerRound": {
+            break;
+          }
+          case "chooseStrikeAsRanged": {
+            break;
+          }
+          case "limitBleedPerTurn": {
+            break;
+          }
+          case "requireTargetSabbat": {
+            break;
+          }
+          case "putInPlayWithCounters": {
+            break;
+          }
+          case "payCountersOnTorporBurnDiablerie": {
+            break;
+          }
+          case "blockTransfers": {
+            break;
+          }
+          case "outOfTurnCancelUnblockedAction": {
+            break;
+          }
+          case "makeBlackHand": {
+            break;
+          }
+          case "limitOnePerTurn": {
+            break;
+          }
+          case "chooseAnyMethuselah": {
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "chooseAnyMethuselah",
+              params: {},
+              optional: false,
+            });
+            break;
+          }
+          case "burnLocationOnDirectedAction": {
+            break;
+          }
+          case "changePoolBasedOnChoices": {
+            break;
+          }
+          case "secretChoices": {
+            break;
+          }
+          case "makeAnarch": {
+            const target = af.card?.params["target"];
+            if (target && findMinion(ops.state, target)) {
+              // Change sect to Anarch
+            }
+            break;
+          }
+          case "searchLibraryGehennaEvent": {
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "searchLibraryGehennaEvent",
+              params: { minion: af.acting },
+              optional: false,
+            });
+            break;
+          }
+          case "limitOncePerGame": {
+            break;
+          }
+          case "unpreventableDamageToBearer": {
+            const target = af.card?.params["target"];
+            if (target && findMinion(ops.state, target)) {
+              ops.applyEnvironmentalDamage(target, e.amount, true);
+            }
+            break;
+          }
+          case "putInPlayOnIshtarri": {
+            break;
+          }
+          case "grantOptionalManeuverOrPress": {
+            break;
+          }
+          case "addLifeAlly": {
+            const target = af.card?.params["target"];
+            if (target && findMinion(ops.state, target)) {
+              // Add life to ally
+            }
+            break;
+          }
+          case "rescueFromTorpor": {
+            break;
+          }
+          case "blockAttemptFailsIfAllyYounger": {
+            break;
+          }
           case "curseTarget": {
             // Curse a target minion - target at announcement
             break;
