@@ -5739,7 +5739,7 @@
     "id": 100957,
     "name": "Immaculate Vitae",
     "status": "PARTIAL_FIX",
-    "evidence": "Reaction daje intercept zamiast dołączenia do udanie polującego vampire i blokady block; brak superior. Wymaga nowych typów efektów (putInPlayOnTarget, cannotBlock). Tekst registry.json i bieżący spec effects/cards.ts."
+    "evidence": "blockRestriction (who: all) i putInPlayOnTarget zaimplementowane i podpięte do Immaculate Vitae (100957). Nadal brakuje: superior wariant. Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100958,

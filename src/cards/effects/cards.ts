@@ -23447,7 +23447,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "qui",
+        effects: [
+          { kind: "modifyIntercept", amount: 1 },
+          { kind: "blockRestriction", who: "all" },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Immaculate Vitae"] },
+        ],
+      },
     ],
   },
   {
