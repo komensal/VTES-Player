@@ -3465,7 +3465,7 @@
     "id": 100578,
     "name": "Draba",
     "status": "PARTIAL_FIX",
-    "evidence": "Spec zawiera wyłącznie actionStealth, brak dołączenia i zerowania stealth oraz superior reaction. Wymaga nowych typów efektów (putInPlayOnTarget, setStealthZero). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "evidence": "setStealthZero i putInPlayOnTarget zaimplementowane i podpięte do Draba (100578). Nadal brakuje: superior reaction. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100579,

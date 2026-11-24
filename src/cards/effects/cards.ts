@@ -28144,7 +28144,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "chi",
+        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "setStealthZero" }, { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Draba"] }]
+      },
     ],
   },
   {
