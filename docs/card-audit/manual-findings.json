@@ -225,7 +225,7 @@
     "id": 100038,
     "name": "Alastor",
     "status": "PARTIAL_FIX",
-    "evidence": "Political action ma tylko modifyStealth; nie wybiera celu ani nie realizuje nagrody referendum, ekwipunku i dołączanego Alastor. Wymaga nowych typów efektów (searchLibraryEquipment, putInPlayOnTarget). Tekst: src/cards/registry.json, ID 100038; implementacja: src/cards/effects/cards.ts."
+    "evidence": "searchLibraryEquipment zaimplementowane i podpięte do Alastor (100038) — szuka equipment w bibliotece i dołącza do wybranego miniona. putInPlayOnTarget podpięte. Nadal brakuje: nagroda referendum. Tekst: src/cards/registry.json, ID 100038; implementacja: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100039,
@@ -849,7 +849,7 @@
     "id": 100142,
     "name": "Bauble",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth; nie dołącza karty ani nie wyszukuje i łączy equipment, brak ograniczeń aktora i superior. Wymaga nowych typów efektów (searchLibraryEquipment, putInPlayOnTarget). Tekst: src/cards/registry.json, ID 100142; implementacja: src/cards/effects/cards.ts."
+    "evidence": "searchLibraryEquipment zaimplementowane i podpięte do Bauble (100142) — szuka equipment w bibliotece i dołącza do wybranego miniona. putInPlayOnTarget podpięte. Nadal brakuje: ograniczenia aktora i superior. Tekst: src/cards/registry.json, ID 100142; implementacja: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100143,

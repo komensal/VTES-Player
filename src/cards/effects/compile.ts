@@ -2481,6 +2481,22 @@ function compileActionCard(spec: CardSpec): CardHandler {
             });
             break;
           }
+          case "searchLibraryEquipment": {
+            // "Search your library for an equipment card and put it in play
+            // on a minion" — chosen at resolution, attached to the acting
+            // minion (or a chosen target). The search itself is mandatory
+            // (no "find nothing" decline) but the attachment target is
+            // fixed at announcement via putInPlayOnTarget-style params.
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "searchLibraryEquipment",
+              params: { minion: af.acting },
+              optional: false,
+            });
+            break;
+          }
           case "actionStun": {
             // The target was fixed at announcement; it can have left play
             // or been sent to torpor in between.
@@ -11856,6 +11872,88 @@ export function compileSpec(spec: CardSpec): CardHandler {
       }
       // "…you still shuffle the library" (p. 48), found or not.
       ops.shuffleLibrary(frame.seat);
+      },
+    };
+  }
+  // "Search your library for an equipment card and put it in play on a
+  // minion" — choose from library, then attach to the target minion.
+  const searchLibraryMode = spec.modes.find((m) =>
+    m.effects.some((e) => e.kind === "searchLibraryEquipment"),
+  );
+  if (searchLibraryMode) {
+    const leff = searchLibraryMode.effects.find((e) => e.kind === "searchLibraryEquipment") as Extract<
+      EffectPrimitive,
+      { kind: "searchLibraryEquipment" }
+    >;
+    choiceByKey["searchLibraryEquipment"] = {
+      options: (frame, state, registry) => {
+        const seat = getSeat(state, frame.seat);
+        const bearer = findMinion(state, frame.params["minion"] ?? "");
+        const out: LegalOption[] = [];
+        if (!bearer) return out;
+        for (const c of seat.library) {
+          if (!searchMatches(c, registry, leff.cardTypes ?? ["equipment"], false)) continue;
+          const h = registry[c.name]!;
+          const modes = h.modesPlayableBy?.(bearer) ?? [];
+          if (modes.length === 0) continue;
+          if (h.isUnique && seatControlsCopy(state, frame.seat, c.name)) continue;
+          const mode = modes[0] ?? null;
+          const cost = playCostFor(
+            state,
+            {
+              name: h.name,
+              bloodCost: h.bloodCost,
+              poolCost: h.poolCost ?? 0,
+              types: h.costTypes?.(mode, undefined) ?? [],
+              requires: h.requiresDisciplines?.(mode, undefined) ?? [],
+              requiresClans: h.requiresClans?.() ?? [],
+              tags: h.permanentTags ?? [],
+            },
+            bearer,
+            null,
+            null,
+            bearer.id,
+            frame.seat,
+          );
+          if (bearer.blood < cost.blood) continue;
+          if (seat.pool <= cost.pool) continue;
+          out.push({
+            id: `choice:${spec.name}:${frame.cardId}:searchLibraryEquipment:${c.id}`,
+            kind: "answerChoice",
+            label: `Equip with ${c.name}`,
+            params: { pick: c.id },
+          });
+        }
+        out.push({
+          id: `choice:${spec.name}:${frame.cardId}:searchLibraryEquipment:none`,
+          kind: "answerChoice",
+          label: "Find nothing",
+          params: { pick: "none" },
+        });
+        return out;
+      },
+      apply: (frame, choice, ops) => {
+        const pick = choice.params["pick"] ?? "none";
+        if (pick !== "none") {
+          const card = getSeat(ops.state, frame.seat).library.find((c) => c.id === pick);
+          if (card) {
+            const bearer = leff.attachToActor !== false
+              ? findMinion(ops.state, frame.params["minion"] ?? "")
+              : null;
+            if (bearer && !cannotBeEquipped(bearer, "equipment")) {
+              const mode = (ops.registry[card.name]?.modesPlayableBy?.(bearer) ?? [null])[0] ?? null;
+              ops.playCardFromHand({
+                cardId: pick,
+                seat: frame.seat,
+                minion: bearer.id,
+                mode,
+                from: { zone: "library" },
+                asAction: true,
+              });
+            }
+          }
+        }
+        ops.shuffleLibrary(frame.seat);
       },
     };
   }

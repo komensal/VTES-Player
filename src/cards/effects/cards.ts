@@ -33194,7 +33194,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [
+          { kind: "modifyStealth", amount: 1 },
+          { kind: "searchLibraryEquipment", cardTypes: ["equipment"], attachToActor: false },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Alastor"] },
+        ],
+      },
     ],
   },
   {
@@ -33363,7 +33371,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "vic",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "searchLibraryEquipment", cardTypes: ["equipment"], attachToActor: false },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Bauble"] },
+        ],
+      },
     ],
   },
   {
