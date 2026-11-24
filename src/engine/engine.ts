@@ -4429,7 +4429,27 @@ export class VtesEngine implements EngineOps {
       // filed, when its action resolves (settleHeldAfterResolution).
       const heldForAction = this.action()?.heldAfterResolution?.some((h) => h.card.id === cp.card.id) ?? false;
       if (!cp.asAction && !removedDuringResolution && !heldForAction && !this.allEntries().some((e) => e.entry.card.id === cp.card.id)) {
-        this.toAshHeap(cp.seat, cp.card);
+        const masterEntry = handler.putsInPlayMaster?.(cp.mode, cp.params) ?? null;
+        if (masterEntry) {
+          // "Put this master card in play" — seat-level permanent instead
+          // of ash heap (Carthage Remembered, Form of Corruption, etc.).
+          this.emit({
+            type: "PermanentEnteredPlay",
+            seat: cp.seat,
+            cardId: cp.card.id,
+            name: cp.card.name,
+            attachedTo: null,
+            statics: masterEntry.statics ?? {},
+            tags: masterEntry.tags,
+            ...(masterEntry.counters !== undefined ? { counters: masterEntry.counters } : {}),
+          });
+          this.notifyEnterPlay(cp.card.id);
+          if (masterEntry.locked === true) {
+            this.emit({ type: "PermanentLocked", cardId: cp.card.id });
+          }
+        } else {
+          this.toAshHeap(cp.seat, cp.card);
+        }
       }
       // "Do not replace this card until AFTER you discard your hand" (Deal
       // with the Devil) — the replacement is owed once the card's own
@@ -4488,7 +4508,25 @@ export class VtesEngine implements EngineOps {
       // to exist. An action card too; "can play the same action card
       // again" means another copy. docs/out-of-turn-cancels-design.md §5
       if (!this.allEntries().some((e) => e.entry.card.id === cp.card.id)) {
-        this.toAshHeap(cp.seat, cp.card);
+        const masterEntry = handler.putsInPlayMaster?.(cp.mode, cp.params) ?? null;
+        if (masterEntry) {
+          this.emit({
+            type: "PermanentEnteredPlay",
+            seat: cp.seat,
+            cardId: cp.card.id,
+            name: cp.card.name,
+            attachedTo: null,
+            statics: masterEntry.statics ?? {},
+            tags: masterEntry.tags,
+            ...(masterEntry.counters !== undefined ? { counters: masterEntry.counters } : {}),
+          });
+          this.notifyEnterPlay(cp.card.id);
+          if (masterEntry.locked === true) {
+            this.emit({ type: "PermanentLocked", cardId: cp.card.id });
+          }
+        } else {
+          this.toAshHeap(cp.seat, cp.card);
+        }
       }
       // "If the canceled card had a 'do not replace until' clause, that
       // clause is canceled as well and the card is replaced normally"

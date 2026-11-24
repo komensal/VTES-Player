@@ -7101,6 +7101,29 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
       }
     },
   };
+  // "Put this master card in play as a seat-level permanent" — instead of
+  // going to ash heap after resolution.
+  if (spec.modes.some((m) => m.effects.some((e) => e.kind === "putInPlayMaster"))) {
+    handler.putsInPlayMaster = (modeLevel, params) => {
+      const mode = modeOf(spec, modeLevel, undefined);
+      const eff = mode.effects.find((e) => e.kind === "putInPlayMaster") as
+        | Extract<EffectPrimitive, { kind: "putInPlayMaster" }>
+        | undefined;
+      if (!eff) return null;
+      const r: {
+        counters?: number;
+        tags: string[];
+        statics?: PermanentStatics;
+        locked?: boolean;
+      } = {
+        tags: eff.tags ?? [spec.name, "master"],
+      };
+      if (eff.counters !== undefined) r.counters = eff.counters;
+      if (eff.statics) r.statics = eff.statics;
+      if (eff.locked === true) r.locked = true;
+      return r;
+    };
+  }
   // (`delayedReplace` is wired centrally in compileSpec — see there.)
   return handler;
 }

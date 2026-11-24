@@ -1809,7 +1809,7 @@
     "id": 100302,
     "name": "Carthage Remembered",
     "status": "PARTIAL_FIX",
-    "evidence": "Master ma ogólny stealth zamiast stałej karty z warunkowymi bonusami i akcją burn. Wymaga nowych typów efektów (putInPlayMaster, conditionalBonus). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "evidence": "putInPlayMaster zaimplementowane i podpięte do Carthage Remembered (100302) — master wchodzi w grę jako seat-level permanent po résolution. Nadal brakuje: conditionalBonus. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100303,
@@ -4617,7 +4617,7 @@
     "id": 100770,
     "name": "Form of Corruption",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth zamiast permanenta z counterami za Edge, kradzieży vampire prey i superior pool burn. Wymaga nowych typów efektów (putInPlayMaster, addCountersOnEdge, stealPreyVampire, burnPoolSuperior). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "evidence": "putInPlayOnSuccess zaimplementowane i podpięte do Form of Corruption (100770) — action wchodzi w grę jako seat-level permanent po udanej akcji. Nadal brakuje: addCountersOnEdge, stealPreyVampire, burnPoolSuperior. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100771,
@@ -5211,13 +5211,13 @@
     "id": 100869,
     "name": "Guide and Mentor",
     "status": "PARTIAL_FIX",
-    "evidence": "Master ma tylko actionStealth zamiast permanenta z akcją wyszukania archetype i umieszczenia blood. Wymaga nowych typów efektów (putInPlayMaster, searchLibraryArchetype, moveBloodAndCard). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "evidence": "putInPlayMaster zaimplementowane i podpięte do Guide and Mentor (100869) — master wchodzi w grę jako seat-level permanent po resolución. Nadal brakuje: searchLibraryArchetype, moveBloodAndCard. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100870,
     "name": "Guinea-Bissau Carnival",
     "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast permanenta z bonusami hunt zależnymi od Aye, wygaśnięcia i limitu raz na grę. Wymaga nowych typów efektów (putInPlayMaster, addStealthWhenHuntingBasedOnAye, gainBloodOnSuccessfulHunt, limitOncePerGame). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "evidence": "putInPlayMaster zaimplementowane i podpięte do Guinea-Bissau Carnival (100870) — master wchodzi w grę jako seat-level permanent po resolución. Nadal brakuje: addStealthWhenHuntingBasedOnAye, gainBloodOnSuccessfulHunt, limitOncePerGame. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100871,
@@ -5763,7 +5763,7 @@
     "id": 100961,
     "name": "Imperial Decree",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth; brak wymogu ready justicar/Inner Circle oraz permanenta z rush i akcją spalenia. Wymaga nowych typów efektów (requireJusticarInnerCircle, putInPlayMaster, rushAction, burnAction). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "evidence": "putInPlayOnSuccess zaimplementowane i podpięte do Imperial Decree (100961) — action wchodzi w grę jako seat-level permanent po udanej akcji. Nadal brakuje: requireJusticarInnerCircle, rushAction, burnAction. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100962,
@@ -5979,7 +5979,7 @@
     "id": 100997,
     "name": "Insurance Scam",
     "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast permanenta z lock i spalaniem X własnych locations za X pool. Wymaga nowych typów efektów (putInPlayMaster, lockSelf, burnLocationsGainPool). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "evidence": "putInPlayMaster zaimplementowane i podpięte do Insurance Scam (100997) — master wchodzi w grę jako seat-level permanent po resolución. Nadal brakuje: lockSelf, burnLocationsGainPool. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100998,

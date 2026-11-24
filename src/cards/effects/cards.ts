@@ -27331,7 +27331,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [{ kind: "putInPlayMaster", tags: ["Carthage Remembered"] }]
+      },
     ],
   },
   {
@@ -28840,7 +28844,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [{ kind: "putInPlayMaster", tags: ["Guinea-Bissau Carnival"] }]
+      },
     ],
   },
   {
@@ -29189,7 +29197,14 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnSuccess", tags: ["Imperial Decree"] },
+        ],
+      },
     ],
   },
   {
@@ -29269,7 +29284,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [{ kind: "putInPlayMaster", tags: ["Insurance Scam"] }]
+      },
     ],
   },
   {
@@ -34163,7 +34182,14 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "ser",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnSuccess", tags: ["Form of Corruption"] },
+        ],
+      },
     ],
   },
   {
@@ -34361,7 +34387,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [{ kind: "putInPlayMaster", tags: ["Guide and Mentor"] }]
+      },
     ],
   },
   {

@@ -1607,6 +1607,19 @@ export interface CardHandler {
      *  is paying for. docs/uncontrolled-graduation-design.md §3 */
     locked?: boolean;
   } | null;
+  /** "Put this master card in play as a seat-level permanent" (Carthage
+   *  Remembered, Form of Corruption, etc.) — instead of going to ash heap
+   *  after resolution. Returns null when this master does NOT put itself
+   *  in play. */
+  putsInPlayMaster?(
+    mode: DisciplineLevel | null,
+    params?: Record<string, string>,
+  ): {
+    counters?: number;
+    tags: string[];
+    statics?: PermanentStatics;
+    locked?: boolean;
+  } | null;
   /** Referendum step 1: the caller's term choices (p. 27). Empty/absent
    *  means the referendum has no terms and goes straight to polling. */
   referendumTerms?(frame: ReferendumFrame, state: GameState): LegalOption[];
