@@ -344,7 +344,6 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   grantInterceptForDifferentDisciplines: "intercept",
   moveBloodFromReadyGangrelToUncontrolled: "bloodGain",
   moveBloodReadyPanderToUncontrolledPander: "bloodGain",
-  placeOnVampire: "board",
   unlockAfterResolution: "unlock",
   unlockMinion: "unlock",
   unlockSelf: "unlock",
