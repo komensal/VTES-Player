@@ -1294,6 +1294,12 @@ export type EffectPrimitive =
       kind: "moveBloodBankToVampire";
       amount: number;
     }
+  /** "Inflict N unpreventable aggravated damage" (Force of Will) —
+   *  environmental damage, cannot be prevented. §4 */
+  | {
+      kind: "unpreventableAggravatedDamage";
+      amount: number;
+    }
   /** "Ⓓ Stun an unlocked vampire" (Mind Numb) — a directed action card
    *  that NAMES a minion without fighting it. The target is chosen at
    *  announcement (p. 25) and rides in the option id.

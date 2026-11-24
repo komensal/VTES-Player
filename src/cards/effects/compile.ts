@@ -7123,6 +7123,13 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             if (!play.minion) throw new Error(`${spec.name}: no playing minion`);
             ops.damageAfterAction(play.minion, e.amount, e.aggravated);
             break;
+          case "unpreventableAggravatedDamage": {
+            // "Inflict N unpreventable aggravated damage" — environmental
+            // damage, cannot be prevented by normal means.
+            if (!play.minion) throw new Error(`${spec.name}: no playing minion`);
+            ops.applyEnvironmentalDamage(play.minion, e.amount, true);
+            break;
+          }
           case "unlockViaCorruption":
             if (play.minion) ops.registerCorruptionUnlock(play.minion, play.seat, play.card.id);
             break;

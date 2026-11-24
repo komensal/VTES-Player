@@ -275,6 +275,7 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   unlockViaCorruption: "unlock",
   unlockForBlood: "unlock",
   moveBloodBankToVampire: "bloodGain",
+  unpreventableAggravatedDamage: "damage",
   wake: "wake",
   noLockForBlocking: "wake",
   bloodForVotes: "votes",

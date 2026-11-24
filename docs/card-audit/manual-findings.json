@@ -4551,7 +4551,7 @@
     "id": 100759,
     "name": "Force of Will",
     "status": "PARTIAL_FIX",
-    "evidence": "Action nie wykonuje bleed przez locked vampire ani obowiązkowych aggravated damage po rozstrzygnięciu; brak superior. Wymaga nowych typów efektów (unpreventableAggravatedDamage). Tekst registry.json i bieżący spec effects/cards.ts."
+    "evidence": "unpreventableAggravatedDamage zaimplementowane i podpięte do Force of Will (100759). Nadal brakuje: superior bleed, locked vampire bleed, obligatory aggravated damage after resolution. Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100760,

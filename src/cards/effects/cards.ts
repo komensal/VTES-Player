@@ -28602,7 +28602,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "prevent", base: 2, perBloodX: false }] }
+      {
+        level: "basic",
+        discipline: "for",
+        effects: [
+          { kind: "modifyBleed", amount: 1, limited: true },
+          { kind: "prevent", base: 2, perBloodX: false },
+          { kind: "unpreventableAggravatedDamage", amount: 1 },
+        ],
+      },
     ],
   },
   {
