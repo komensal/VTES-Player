@@ -26965,9 +26965,14 @@ export const cardSpecs: CardSpec[] = [
     name: "Blithe Acceptance",
     cardType: "action",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "obf",
+        effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["Blithe Acceptance"] }]
+      },
     ],
   },
   {

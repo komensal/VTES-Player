@@ -1143,7 +1143,7 @@
     "id": 100191,
     "name": "Blithe Acceptance",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma jedynie modifyStealth zamiast dołączania, ograniczenia jednej kopii i warunkowego burn w combacie. Wymaga nowych typów efektów (putInPlayOnSelf, limitOneCopy). Źródła: src/cards/registry.json ID 100191; src/cards/effects/cards.ts i compile.ts."
+    "evidence": "putInPlayOnSelf zaimplementowane i podpięte do Blithe Acceptance (100191). limitOneCopy wyrażone przez unique: true. Nadal brakuje: superior wariant, warunkowy burn w combacie. Źródła: src/cards/registry.json ID 100191; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100192,
