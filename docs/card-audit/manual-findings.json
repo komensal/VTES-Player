@@ -1083,7 +1083,7 @@
     "id": 100181,
     "name": "Blessed Resilience",
     "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast przeniesienia właściwego spalonego wampira z ash heap do ready. Wymaga nowych typów efektów (moveFromAshHeapToReadyVampire). Źródła: src/cards/registry.json ID 100181; src/cards/effects/cards.ts i compile.ts."
+    "evidence": "moveFromAshHeapToReadyVampire zaimplementowane i podpięte do Blessed Resilience (100181)."
   },
   {
     "id": 100182,
@@ -2325,7 +2325,7 @@
     "id": 100388,
     "name": "Compel the Spirit",
     "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma tylko stealth, brak odzyskania spalonego ally/retainer z ash heap oraz superior wejścia w grę. Wymaga nowych typów efektów (moveCardFromAshHeap, putInPlayOnSelf). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "evidence": "moveCardFromAshHeap zaimplementowane i podpięte do Compel the Spirit (100388)."
   },
   {
     "id": 100389,
@@ -3207,7 +3207,7 @@
     "id": 100535,
     "name": "Development",
     "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool 1 zamiast opcjonalnego replacement z research area i trifle. Wymaga nowych typów efektów (drawFromResearchAreaInsteadOfLibrary). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "evidence": "drawFromResearchAreaInsteadOfLibrary zaimplementowane i podpięte do Development (100535)."
   },
   {
     "id": 100536,
@@ -3537,7 +3537,7 @@
     "id": 100590,
     "name": "Drop Point Network",
     "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool 1 zamiast usunięcia siedmiu kart z ash heap i wyszukania minion card; brak wymogu Black Hand. Wymaga nowych typów efektów (removeCardsFromAshHeap, searchLibraryMinionCard). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts."
+    "evidence": "removeCardsFromAshHeap zaimplementowane i podpięte do Drop Point Network (100590)."
   },
   {
     "id": 100591,
