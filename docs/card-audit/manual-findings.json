@@ -4767,7 +4767,7 @@
     "id": 100795,
     "name": "Frozen Object",
     "status": "PARTIAL_FIX",
-    "evidence": "Oba tryby dają prevent i stealth; brak discard equipment ser, dołączenia tem i wyzwalanych obrażeń, brak superior. Wymaga nowych typów efektów (discardEquipment, putInPlayOnSelf). Tekst registry.json i bieżący spec effects/cards.ts."
+    "evidence": "putInPlayOnSelf i discardEquipment (actionBurnAttachedCard) zaimplementowane i podpięte do Frozen Object (100795) w obu trybach. Nadal brakuje: wyzwalane obrażenia, ograniczenia aktora, superior. Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100796,

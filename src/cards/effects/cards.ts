@@ -28689,8 +28689,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "tem", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["Frozen Object"] }, { kind: "actionBurnAttachedCard" }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["Frozen Object"] }, { kind: "actionBurnAttachedCard" }] }
     ],
   },
   {
