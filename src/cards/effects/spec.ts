@@ -1769,6 +1769,10 @@ export type EffectPrimitive =
    * docs/armour-design.md §3
    */
   | { kind: "treatAggravatedAsNormal"; scope?: "round" | "combat" }
+  /** "Treat aggravated damage as normal damage" (Chill of Oblivion) —
+   *  permanent conversion, unlike treatAggravatedAsNormal which is
+   *  round/combat scoped. §4 */
+  | { kind: "convertAggravatedToNormal" }
   | { kind: "flashGrenadeImmune"; scope?: "round" | "combat" }
   | { kind: "maneuverNextRound"; count?: number }
   | { kind: "grantManeuver" }

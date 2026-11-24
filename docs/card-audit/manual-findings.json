@@ -2043,7 +2043,7 @@
     "id": 100341,
     "name": "Chill of Oblivion",
     "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma tylko stealth; nie dołącza karty ani nie daje konwersji aggravated i superior unlock. Wymaga nowych typów efektów (putInPlayOnSelf, convertAggravatedToNormal). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "evidence": "putInPlayOnSelf i convertAggravatedToNormal zaimplementowane i podpięte do Chill of Oblivion (100341). Nadal brakuje: superior unlock. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100342,

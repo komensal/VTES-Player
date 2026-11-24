@@ -27457,7 +27457,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "nec",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnSelf", tags: ["Chill of Oblivion"] },
+          { kind: "convertAggravatedToNormal" },
+        ],
+      },
     ],
   },
   {

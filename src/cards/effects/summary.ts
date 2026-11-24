@@ -201,6 +201,7 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   deferTorporUntilCombatEnds: "prevent",
   preventEachRound: "prevent",
   treatAggravatedAsNormal: "prevent",
+  convertAggravatedToNormal: "prevent",
   flashGrenadeImmune: "prevent",
   maneuverNextRound: "combat",
   treatOpposingStrikeAsNormal: "prevent",

@@ -5273,6 +5273,11 @@ function compileCombatCard(spec: CardSpec): CardHandler {
           case "treatAggravatedAsNormal":
             ops.treatAggravatedAsNormal(play, (e as any).scope);
             break;
+          case "convertAggravatedToNormal":
+            // Permanent conversion of aggravated to normal damage (Chill of
+            // Oblivion) — combat-scoped, lasts for the whole combat.
+            ops.treatAggravatedAsNormal(play, "combat");
+            break;
           case "flashGrenadeImmune":
             ops.flashGrenadeImmune(play, (e as any).scope);
             break;
