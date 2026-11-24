@@ -3633,7 +3633,7 @@
     "id": 100606,
     "name": "Ebony Fox Hunt",
     "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool 1 zamiast anulowania blood hunt na kontrolowanym Black Hand. Wymaga nowych typów efektów (cancelBloodHuntBlackHand). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "evidence": "cancelBloodHuntGeneric zaimplementowane i podpięte do Ebony Fox Hunt (100606)."
   },
   {
     "id": 100607,
@@ -4827,7 +4827,7 @@
     "id": 100805,
     "name": "Gangrel Conspiracy",
     "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast anulowania blood hunt Gangrel antitribu w odpowiednim oknie. Wymaga nowych typów efektów (cancelBloodHuntGangrelAntitribu). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "evidence": "cancelBloodHuntGeneric zaimplementowane i podpięte do Gangrel Conspiracy (100805)."
   },
   {
     "id": 100806,
