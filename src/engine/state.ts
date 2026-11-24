@@ -2754,6 +2754,10 @@ export interface ActionFrame {
      *  can be voted out — so its handler needs to tell its own two
      *  referendums apart. */
     fromCardInPlay?: boolean;
+    /** Handler wrapper used when one political action delegates its terms and
+     *  outcome to another (Charming Lobby). Card identity stays cardName. */
+    handlerName?: string;
+    handlerMode?: DisciplineLevel | null;
   };
   /** Non-null for an action that targets a card in play ("Minions can burn
    *  this card as a Ⓓ action") — the action is directed at that card's
@@ -2915,6 +2919,13 @@ export interface ActionFrame {
       /** "…they can strike: combat ends during the first round"
        *  (Night Terrors). */
       combatEndsStrike?: boolean;
+      /** Internal Recursion [pre]: own combat-ends strike against an ally or
+       *  younger acting vampire unlocks this blocker before combat ends. */
+      unlockOnCombatEndsIfOpposingAllyOrYounger?: boolean;
+      /** Internal Recursion [tem]: set the first round's range at combat start. */
+      setRange?: "close" | "long";
+      /** Internal Recursion [TEM]: the acting minion skips its next unlock. */
+      opponentSkipNextUnlock?: boolean;
     }
   >;
   /** The mirror of `blockerCombatRiders`, for the ACTING minion: "if this
@@ -3768,6 +3779,9 @@ export interface CombatFrame {
   /** "…they can strike: combat ends during the first round" (Night
    *  Terrors) — a strike granted by a rider rather than by a card. */
   grantedCombatEnds: { acting: boolean; opposing: boolean };
+  /** Internal Recursion [pre]: set only for the rider-granted combat-ends
+   *  strike, never for another card's way of ending combat [RTR 20020501]. */
+  unlockCombatEndsIfOpposingAllyOrYounger?: { acting: boolean; opposing: boolean };
   /** SPECIFIED strikes a card has granted, offered in the `chooseStrike`
    *  step and SPENT when taken: "1 additional ranged strike: burn weapon"
    *  (Voracious Vermin), "once each combat, this Ravnos can strike:
@@ -4213,6 +4227,10 @@ export interface ReferendumFrame {
   /** Instance id of the calling card, kept so a title-granting referendum
    *  can attach it on a pass (or burn it on a fail). Null for blood hunts. */
   cardInstanceId?: CardInstanceId | null;
+  /** Optional handler wrapper (Charming Lobby) distinct from the political
+   *  action card whose terms and card identity the referendum uses. */
+  handlerName?: string;
+  handlerMode?: DisciplineLevel | null;
   /** "political": a political action's referendum (terms, calling-card
    *  vote). "bloodHunt": automatic after diablerie — no terms, no
    *  calling card, and on a pass the diablerist is burned. */
@@ -4713,6 +4731,9 @@ export interface GameState {
    *  cancelled referendum is never tallied and leaves none (owner ruling
    *  2026-10-24). docs/vampire-votes-design.md §4.6 */
   lastReferendum?: { turnNumber: number; votesByMinion: Record<MinionId, number> };
+  /** Charming Lobby: the next political referendum called by ANY vampire
+   *  passes automatically. Consumed when that referendum is created. */
+  autoPassNextReferendum?: boolean;
   /** A PASSED referendum whose effect is still being applied. Opened just
    *  before `applyReferendum`, closed by settle once the frame stack is back
    *  to `depth` — so it spans every choice the effect raises: Ancient

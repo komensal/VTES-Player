@@ -334,6 +334,8 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   burnAttachedToAttach: "board",
   cryptDrawOnBleedSuccess: "board",
   putInPlayOnSuccess: "board",
+  putInPlayOnSelf: "board",
+  putInPlayOnTarget: "board",
   refAttachToChosen: "board",
   refPutInPlay: "board",
   strikeAttachToVictim: "board",
@@ -350,6 +352,7 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   handSizeBonus: null,
   offerBlockerCancel: null,
   playCostMod: null,
+  actionBurnAttachedCard: "deny",
 };
 
 /**

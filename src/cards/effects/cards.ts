@@ -6,7 +6,7 @@
  * in config/supported.json (CLAUDE.md registry rules).
  */
 
-import type { ActionFrame, CardHandler, CardInstanceId, CardPlayFrame, ChoiceFrame, ConditionalStatic, MinionId, EngineOps, GameState, HandlerRegistry, LegalOption, MinionState, PermanentInPlay, PermanentStatics, PlayContext, PlayCostCardType, SeatId, VampireTitle } from "../../engine/index.ts";
+import type { ActionFrame, CardHandler, CardInstanceId, CardPlayFrame, ChoiceFrame, ConditionalStatic, MinionId, EngineOps, GameState, HandlerRegistry, LegalOption, MinionState, PermanentInPlay, PermanentStatics, PlayContext, PlayCostCardType, ReferendumFrame, SeatId, VampireTitle } from "../../engine/index.ts";
 import { BLOOD_BROTHER_CIRCLES, vampireCircle, auraBlocksPolitical, canRepeatAction, blockEligibleSeats, blockWouldSucceed, bleedAnnounceTax, bleedBarred, cannotAttemptBleed, canReact, mayAttemptBlock, canAct, canUseCombatManeuver, isMinionCardPlay, playCostFor, canGainBlood, capacityOf, CITY_TITLES, CLANS, disciplinesOf, DISCIPLINES, handSizeOf, minionHasTag, cannotBeEquipped, currentBleed, currentIntercept, currentStealth, findMinion, getMinion, getSeat, hasVoice, isReady, playOptionId, predatorOf, preyOf, referendumOpenToPlay, untargetableBy, vampireMayVote, vampireVotes } from "../../engine/index.ts";
 import {
   allocToParams,
@@ -21176,8 +21176,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "superior", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "maneuverNextRound", count: 1 }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuverNextRound", count: 1 }] }
     ],
   },
   {
@@ -21295,14 +21295,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // As the Crow [100102] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // As the Crow [100102]
+    // Only usable after resolution of a successful action.
+    // A minion can play only one As the Crow each turn.
+    // [FLIGHT] Unlock this minion.
     krcgId: 100102,
     name: "As the Crow",
     cardType: "actionModifier",
     bloodCost: 0,
-    usable: [],
+    usable: ["afterResolutionByActor", "ifActionSucceeded"],
+    oncePerTurnPerVampire: true,
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "flight", effects: [{ kind: "unlockActor" }] }
     ],
   },
   {
@@ -26528,7 +26532,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "aus",
+        effects: [
+          { kind: "modifyBleed", amount: 1, limited: true },
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Anima Gathering"] },
+        ],
+      },
     ],
   },
   {
@@ -26854,7 +26866,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        variant: "dem",
+        discipline: "dem",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnSelf", tags: ["Blessing of Chaos"] },
+        ],
+      },
     ],
   },
   {
@@ -27317,16 +27337,19 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Charming Lobby [100334]
-    // [pot][pre] The acting ally or younger vampire gets +1 strength during this action.
-    // [POT][PRE] The acting ally or younger vampire gets +2 strength during this action.
+    // +1 stealth political action.
+    // [pre] Call a referendum listed on a political action card in your hand
+    // (play that card) or allowed by an effect in play. If it passes, the next
+    // referendum called by any vampire thereafter passes automatically.
+    // [PRE] As above, and this vampire gains 2 votes in that first referendum.
     krcgId: 100334,
     name: "Charming Lobby",
-    cardType: "actionModifier",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: { all: ["pot", "pre"] }, effects: [{ kind: "addStrength", amount: 1 }] },
-      { level: "superior", discipline: { all: ["pot", "pre"] }, effects: [{ kind: "addStrength", amount: 2 }] },
+      { level: "basic", discipline: "pre", effects: [] },
+      { level: "superior", discipline: "pre", effects: [] },
     ],
   },
   {
@@ -27424,15 +27447,44 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Cleansing Ritual [100357] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Cleansing Ritual [100357]
+    // +1 stealth action.
+    // [dom] Add 1 blood to a vampire you control.
+    // [obe] Burn a card on an ally or younger vampire in your ready region.
+    // [OBE] As [obe], and unlock the target minion during the next discard phase.
     krcgId: 100357,
     name: "Cleansing Ritual",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        variant: "dom",
+        discipline: "dom",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "actionAddBloodToVampire", amount: 1, self: true, ownOnly: true },
+        ],
+      },
+      {
+        level: "basic",
+        variant: "obe",
+        discipline: "obe",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "actionBurnAttachedCard" },
+        ],
+      },
+      {
+        level: "superior",
+        variant: "obe",
+        discipline: "obe",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "actionBurnAttachedCard", unlockBearerAtNextDiscard: true },
+        ],
+      },
     ],
   },
   {
@@ -29142,16 +29194,45 @@ export const cardSpecs: CardSpec[] = [
   {
     // Internal Recursion [100998]
     // Only usable if this vampire blocks, before block resolution.
-    // [pre] During the resulting combat, this vampire can strike: combat ends. If they do so and the acting minion is an ally or younger vampire, ...
-    // [PRE] As above, and ...
+    // [pre] This vampire can strike: combat ends in the resulting combat.
+    // If they do so against an ally or younger acting vampire, unlock this
+    // blocking vampire before combat ends.
+    // [tem] This blocking vampire sets the first round's range.
+    // [TEM] The acting minion does not unlock during their next unlock phase.
     krcgId: 100998,
     name: "Internal Recursion",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
-      { level: "superior", discipline: "pre", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
+      {
+        level: "basic",
+        variant: "pre",
+        discipline: "pre",
+        effects: [{
+          kind: "blockerCombatRider",
+          combatEndsStrike: true,
+          unlockOnCombatEndsIfOpposingAllyOrYounger: true,
+        }],
+      },
+      {
+        level: "basic",
+        variant: "close",
+        discipline: "tem",
+        effects: [{ kind: "blockerCombatRider", setRange: "close" }],
+      },
+      {
+        level: "basic",
+        variant: "long",
+        discipline: "tem",
+        effects: [{ kind: "blockerCombatRider", setRange: "long" }],
+      },
+      {
+        level: "superior",
+        variant: "tem",
+        discipline: "tem",
+        effects: [{ kind: "blockerCombatRider", opponentSkipNextUnlock: true }],
+      },
     ],
   },
   {
@@ -48705,6 +48786,141 @@ function backfillCentralQueries(h: CardHandler): void {
   if (!h.modesPlayableBy) h.modesPlayableBy = () => [null];
 }
 
+const charmingLobbyBase = compileSpec(specByName("Charming Lobby"));
+
+/** Charming Lobby: the nested political action card is chosen at announcement,
+ *  before Lobby is replaced [RTR 19991001] [LSJ 20101210]. */
+function charmingLobbyOptions(card: Parameters<CardHandler["options"]>[0], ctx: PlayContext): LegalOption[] {
+  if (ctx.window !== "turn.minion") return [];
+  const seat = getSeat(ctx.state, ctx.seat);
+  const out: LegalOption[] = [];
+  for (const m of seat.minions) {
+    if (m.kind !== "vampire" || !canAct(m) || m.calledPoliticalThisTurn) continue;
+    if (auraBlocksPolitical(ctx.state, m) || m.playedSinceUnlock.includes(card.name)) continue;
+    if (!canRepeatAction(ctx.state, m, card.name)) continue;
+    const levels = charmingLobbyBase.modesPlayableBy?.(m) ?? [];
+    for (const chosen of seat.hand) {
+      if (chosen.id === card.id) continue;
+      const handler = ctx.registry[chosen.name];
+      if (!handler?.isPoliticalAction) continue;
+      const chosenSpec = cardSpecs.find((s) => s.name === chosen.name);
+      if (!chosenSpec || !meetsRequirements(m, chosenSpec)) continue;
+      if (!controllerMeetsRequirements(ctx.state, ctx.seat, chosenSpec)) continue;
+      if ((handler.modesPlayableBy?.(m) ?? []).length === 0) continue;
+      if (m.blood < handler.bloodCost || seat.pool < (handler.poolCost ?? 0)) continue;
+      for (const mode of (["basic", "superior"] as const)) {
+        if (!levels.includes(mode)) continue;
+        out.push({
+          id: playOptionId(card.name, mode, m.id, chosen.id, card.id),
+          kind: "playCard",
+          label: `${card.name} (${mode}) — ${m.name}: call ${chosen.name}'s referendum`,
+          card: card.id,
+          name: card.name,
+          minion: m.id,
+          mode,
+          params: { politicalCard: chosen.id },
+        });
+      }
+    }
+  }
+  return out;
+}
+
+/** At successful action resolution the nested card is played and its cost is
+ *  paid [ANK 20220704]. It stays set aside until the referendum resolves. */
+function resolveCharmingLobby(af: ActionFrame, ops: EngineOps): void {
+  const chosenId = af.card?.params["politicalCard"];
+  const seat = getSeat(ops.state, af.actingSeat);
+  const index = chosenId ? seat.hand.findIndex((c) => c.id === chosenId) : -1;
+  if (index < 0) {
+    // A hand-changing effect removed the announced card. Do not invent its
+    // referendum; the wrapper recognizes this as an empty Lobby call.
+    af.referendumSource = {
+      cardName: "Charming Lobby",
+      cardInstanceId: af.card?.instance.id ?? "",
+      handlerName: "Charming Lobby",
+      handlerMode: af.card?.mode ?? null,
+    };
+    return;
+  }
+  const [chosen] = seat.hand.splice(index, 1);
+  if (!chosen) return;
+  const handler = ops.registry[chosen.name];
+  if (!handler) return;
+  const actor = findMinion(ops.state, af.acting);
+  ops.emit({
+    type: "CardPlayed",
+    cardId: chosen.id,
+    name: chosen.name,
+    seat: af.actingSeat,
+    minion: af.acting,
+    mode: "basic",
+  });
+  const blood = Math.min(actor?.blood ?? 0, handler.bloodCost);
+  if (blood > 0) ops.emit({ type: "BloodBurned", minion: af.acting, amount: blood });
+  const pool = handler.poolCost ?? 0;
+  if (pool > 0) ops.emit({ type: "PoolBurned", seat: af.actingSeat, amount: pool });
+  af.referendumSource = {
+    cardName: chosen.name,
+    cardInstanceId: chosen.id,
+    handlerName: "Charming Lobby",
+    handlerMode: af.card?.mode ?? null,
+  };
+}
+
+function burnCharmingLobbyCard(frame: ReferendumFrame, ops: EngineOps): void {
+  const handler = ops.registry[frame.cardName];
+  if (!frame.cardInstanceId || handler?.holdsCardForReferendum) return;
+  ops.emit({
+    type: "CardBurned",
+    cardId: frame.cardInstanceId,
+    name: frame.cardName,
+    seat: frame.caller,
+  });
+}
+
+const charmingLobby: CardHandler = {
+  ...charmingLobbyBase,
+  options: charmingLobbyOptions,
+  resolveCardAction: resolveCharmingLobby,
+  referendumTerms(frame, state) {
+    if (frame.cardName === "Charming Lobby") return [];
+    return compileSpec(specByName(frame.cardName)).referendumTerms?.(frame, state) ?? [];
+  },
+  referendumSetup(frame, state) {
+    if (frame.cardName === "Charming Lobby") return;
+    compileSpec(specByName(frame.cardName)).referendumSetup?.(frame, state);
+    if (frame.handlerMode === "superior" && frame.callingMinion) {
+      const grants = (frame.minionVoteGrants ??= {});
+      const own = (grants[frame.callingMinion] ??= { any: 0, for: 0, against: 0 });
+      own.any += 2;
+    }
+  },
+  applyReferendum(frame, ops) {
+    if (frame.cardName === "Charming Lobby") return;
+    ops.registry[frame.cardName]?.applyReferendum?.(frame, ops);
+    burnCharmingLobbyCard(frame, ops);
+    // The NEXT referendum by any vampire, not necessarily this controller's.
+    ops.state.autoPassNextReferendum = true;
+  },
+  applyReferendumFailed(frame, ops) {
+    if (frame.cardName === "Charming Lobby") return;
+    ops.registry[frame.cardName]?.applyReferendumFailed?.(frame, ops);
+    burnCharmingLobbyCard(frame, ops);
+  },
+  applyReferendumCanceled(frame, ops) {
+    if (frame.cardName === "Charming Lobby" || !frame.cardInstanceId) return;
+    // The action was cancelled: the nested card was announced but never
+    // played, so it returns instead of going to the ash heap [ANK 20201029-2].
+    ops.emit({
+      type: "CardReturnedToHand",
+      cardId: frame.cardInstanceId,
+      name: frame.cardName,
+      seat: frame.caller,
+    });
+  },
+};
+
 export function buildHandlerRegistry(): HandlerRegistry {
   const registry: HandlerRegistry = {};
   for (const spec of cardSpecs) {
@@ -48768,6 +48984,7 @@ export function buildHandlerRegistry(): HandlerRegistry {
   }
   // Bespoke handlers and spec-plus-bespoke overlays override compiled specs.
   for (const bespoke of [
+    charmingLobby,
     hourglass,
     andreLeRoux,
     nergalAdvanced,

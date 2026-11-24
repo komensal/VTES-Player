@@ -213,7 +213,7 @@
     "id": 100036,
     "name": "Alacrity",
     "status": "FIXED_TARGETED",
-    "evidence": "Naprawiona: basic [cel] actionStealth 1; superior [CEL] actionStealth 1 + maneuverNextRound. Tekst: src/cards/registry.json, ID 100036; implementacja: src/cards/effects/cards.ts."
+    "evidence": "Naprawiono prymityw stealth: basic [cel] i superior [CEL] używają modifyStealth 1 (action modifier), superior zachowuje maneuverNextRound 1. Testy: tests/cards/alacrity-audit.test.ts (2/2). Tekst: src/cards/registry.json ID 100036; rules:lookup: brak wpisu bezpośredniego w migawce."
   },
   {
     "id": 100037,
@@ -405,7 +405,7 @@
     "id": 100068,
     "name": "Anima Gathering",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma modifyBleed i stealth zamiast dołączenia, wybranego miniona, utrzymania lock oraz +2 intercept i superior +1 bleed. Wymaga nowych typów efektów (putInPlayOnTarget, lockSelf, grantIntercept, bleedBonus). Tekst: src/cards/registry.json, ID 100068; implementacja: src/cards/effects/cards.ts."
+    "evidence": "putInPlayOnTarget zaimplementowane i przetestowane (tests/cards/anima-gathering-audit.test.ts): karta wchodzi w grę attached do wybranego miniona po udanej akcji. Nadal brakuje: lockSelf (utrzymanie blockera w locku), grantIntercept (+2 intercept), bleedBonus (superior +1 bleed). Tekst: src/cards/registry.json, ID 100068; implementacja: src/cards/effects/cards.ts."
   },
   {
     "id": 100069,
@@ -608,8 +608,8 @@
   {
     "id": 100102,
     "name": "As the Crow",
-    "status": "PARTIAL_FIX",
-    "evidence": "Modifier daje stealth zamiast unlock po udanej akcji i ograniczenia jednej kopii. Wymaga nowych typów efektów (unlockSelf, limitOneCopy). Tekst: src/cards/registry.json, ID 100102; implementacja: src/cards/effects/cards.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono okno afterResolutionByActor + ifActionSucceeded, unlockActor i oncePerTurnPerVampire; karta odblokowuje aktora dopiero po udanej akcji, a druga kopia tego miniona nie jest oferowana. Test: tests/cards/cleansing-ritual-audit.test.ts. Tekst: src/cards/registry.json ID 100102; rules:lookup: brak wpisu bezpośredniego, grupa G00006 (played after resolution), PIB 20150915 / LSJ 19981028 / ANK 20190425."
   },
   {
     "id": 100103,
@@ -1089,7 +1089,7 @@
     "id": 100182,
     "name": "Blessing of Chaos",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth; brak dołączenia, zakazu kart wybranych dyscyplin i superior ograniczenia akcji. Wymaga nowych typów efektów (putInPlayOnSelf, restrictOpponent disciplines). Tekst: src/cards/registry.json ID 100182; src/cards/effects/cards.ts i compile.ts."
+    "evidence": "putInPlayOnSelf zaimplementowane i przetestowane (tests/cards/blessing-of-chaos-audit.test.ts): karta wchodzi w grę attached do aktora po udanej akcji. Brakuje restrictOpponent disciplines (wampir nie może grać kart z wybranych dyscyplin) oraz ewentualnego superior wariantu. Tekst: src/cards/registry.json ID 100182; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100183,
@@ -2000,8 +2000,8 @@
   {
     "id": 100334,
     "name": "Charming Lobby",
-    "status": "FIXED_TARGETED",
-    "evidence": "Naprawiona: zmieniono z action/modifyStealth na actionModifier/addStrength [pot][pre] addStrength 1, superior [POT][PRE] addStrength 2. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts."
+    "status": "PARTIAL_FIX",
+    "evidence": "Usunięto błędną implementację [pot][pre]/strength. Naprawiono ścieżkę political action z ręki: wybór karty przed replacement, wymagania i koszt przy sukcesie, delegowane terms/efekt/failure/cancel, [PRE] +2 głosy, globalny auto-pass następnego referendum przez dowolnego wampira. Testy E2E: tests/cards/charming-lobby-audit.test.ts (4/4), w tym auto-pass u innego Methuselah i zablokowana akcja bez zagrania wybranej karty. Pozostałe ograniczenia: referendum allowed by an effect in play, wybór kosztu X przy resolution oraz ścieżka ally-as-vampire nie są jeszcze zaimplementowane. Źródła: registry ID 100334; RTR 19991001, LSJ 20101210, ANK 20220704, PIB 20110719, ANK 20201029-2, RTR 20020501."
   },
   {
     "id": 100335,
@@ -2138,8 +2138,8 @@
   {
     "id": 100357,
     "name": "Cleansing Ritual",
-    "status": "PARTIAL_FIX",
-    "evidence": "Oba basic to tylko stealth; brak dodania blood, spalania karty i superior unlock. Wymaga nowych typów efektów (gainBlood, burnCardFromHand, unlockSelf). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono wszystkie trzy tryby: [dom] actionAddBloodToVampire z ownOnly i self; [obe] actionBurnAttachedCard wybiera przy ogłoszeniu kartę na własnym ready ally lub młodszym wampirze, z pominięciem self-entry; [OBE] dodatkowo ustawia unlocksInDiscardPhase (automatycznie, bez kosztu). Warianty dom/obe zapobiegają mieszaniu trybów. Trzy testy E2E: tests/cards/cleansing-ritual-audit.test.ts. Tekst: src/cards/registry.json ID 100357; rules:lookup: brak wpisu bezpośredniego, grupa G00086 (multi-Discipline), LSJ 20011204-3 / PIB 20130704."
   },
   {
     "id": 100358,
@@ -5985,7 +5985,7 @@
     "id": 100998,
     "name": "Internal Recursion",
     "status": "FIXED_TARGETED",
-    "evidence": "Naprawiona: basic [pre] strikeCombatEnds; superior [PRE] strikeCombatEnds. Brak: tylko po bloku, ally/younger vampire condition (wymaga nowego typu efektu). Tekst registry.json i bieżący spec effects/cards.ts."
+    "evidence": "Naprawiono spec zgodnie z drukiem: [pre] blockerCombatRider z jednorazowym combat-ends strike i unlockiem blockera tylko przeciw ally/młodszemu aktorowi; [tem] wybór close/long ustawia range pierwszej rundy; [TEM] opponentSkipNextUnlock na aktorze. Usunięto nieistniejący superior [PRE]. Testy E2E: tests/cards/internal-recursion-audit.test.ts (5/5): close/long, unlock po własnym strike przeciw młodszemu, brak unlocku przeciw starszemu, rzeczywista pominięta unlock phase. supported.test.ts przechodzi. Źródła: registry ID 100998; LSJ 20020204, RTR 20020501, grupa G00127 (RTR 19970630, ANK 20180720, PIB 20120214)."
   },
   {
     "id": 100999,

@@ -1903,6 +1903,26 @@ function compileActionCard(spec: CardSpec): CardHandler {
             }
             continue;
           }
+          const putTarget = mode.effects.find(
+            (e) => e.kind === "putInPlayOnTarget",
+          ) as Extract<EffectPrimitive, { kind: "putInPlayOnTarget" }> | undefined;
+          if (putTarget && (putTarget.target === "ownMinion" || putTarget.target === "anyMinion")) {
+            // Target fixed at announcement (p. 25), one option each.
+            const pool =
+              putTarget.target === "ownMinion"
+                ? seat.minions
+                : ctx.state.seats.filter((s) => !s.ousted).flatMap((s) => s.minions);
+            const filter = putTarget.targetFilter;
+            for (const t of pool) {
+              if (filter?.kind !== undefined && t.kind !== filter.kind) continue;
+              if (filter !== undefined && filter.inTorporToo !== true && !isReady(t)) continue;
+              if (filter?.youngerThanActor === true && capacityOf(t) >= capacityOf(m)) continue;
+              if (filter?.notTitles !== undefined && t.title !== null && filter.notTitles.includes(t.title)) continue;
+              if (untargetableBy(t, ctx.seat, m)) continue;
+              push(mode, { target: t.id });
+            }
+            continue;
+          }
           if (mode.effects.some((e) => e.kind === "variableBloodX")) {
             // X is paid at play, so it cannot exceed the blood the vampire has.
             for (let x = 0; x <= m.blood; x++) push(mode, { xBlood: String(x) });
@@ -3057,12 +3077,29 @@ function compileActionCard(spec: CardSpec): CardHandler {
       };
     };
   }
-  if (spec.modes.some((m) => m.effects.some((e) => e.kind === "putInPlayOnSuccess"))) {
-    handler.putsInPlayOnSuccess = (modeLevel, playParams) => {
+  if (
+    spec.modes.some((m) =>
+      m.effects.some(
+        (e) =>
+          e.kind === "putInPlayOnSuccess" ||
+          e.kind === "putInPlayOnSelf" ||
+          e.kind === "putInPlayOnTarget",
+      ),
+    )
+  ) {
+    handler.putsInPlayOnSuccess = (modeLevel, playParams, actor) => {
       const mode = modeOf(spec, modeLevel, undefined);
-      const eff = mode.effects.find((e) => e.kind === "putInPlayOnSuccess") as
-        | Extract<EffectPrimitive, { kind: "putInPlayOnSuccess" }>
-        | undefined;
+      const eff =
+        mode.effects.find(
+          (e) =>
+            e.kind === "putInPlayOnSuccess" ||
+            e.kind === "putInPlayOnSelf" ||
+            e.kind === "putInPlayOnTarget",
+        ) as
+          | Extract<EffectPrimitive, { kind: "putInPlayOnSuccess" }>
+          | Extract<EffectPrimitive, { kind: "putInPlayOnSelf" }>
+          | Extract<EffectPrimitive, { kind: "putInPlayOnTarget" }>
+          | undefined;
       // THE MODE THAT WAS PLAYED DECIDES. The handler is registered when
       // ANY mode puts the card in play, so a card whose superior does and
       // whose basic does not was putting itself in play either way — this
@@ -3082,6 +3119,9 @@ function compileActionCard(spec: CardSpec): CardHandler {
         locked?: boolean;
         chosenMinion?: MinionId;
         chosenMinions?: MinionId[];
+        /** The minion this permanent attaches to (putInPlayOnSelf /
+         *  putInPlayOnTarget). Seat-level putInPlayOnSuccess leaves null. */
+        attachedTo?: MinionId;
       } = {
         tags: eff.tags ?? [spec.name, "location"],
       };
@@ -3089,10 +3129,14 @@ function compileActionCard(spec: CardSpec): CardHandler {
       // "Choose a vampire and put this card in play" (Distant Friend): the
       // vampire chosen at announcement goes onto the entry.
       const chosen = playParams?.["target"];
-      if (eff.chooseVampire === true && chosen !== undefined) r.chosenMinion = chosen;
+      if (eff.kind === "putInPlayOnSuccess" && eff.chooseVampire === true && chosen !== undefined) r.chosenMinion = chosen;
+      // "putInPlayOnSelf": attach to the acting minion.
+      if (eff.kind === "putInPlayOnSelf" && actor !== undefined) r.attachedTo = actor;
+      // "putInPlayOnTarget": attach to the target chosen at announcement.
+      if (eff.kind === "putInPlayOnTarget" && chosen !== undefined) r.attachedTo = chosen;
       // "Choose X minions and put this card in play" (Bloodlust): the
       // minions picked before announcement, as a list.
-      if (eff.chooseOwnMinions) {
+      if (eff.kind === "putInPlayOnSuccess" && eff.chooseOwnMinions) {
         r.chosenMinions = (playParams?.["chosen"] ?? "").split(",").filter(Boolean);
       }
       // "Put this card in play, LOCKED" (Gather) — the card pays a turn

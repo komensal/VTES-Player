@@ -155,6 +155,14 @@ export type EffectPrimitive =
       unlockForBlood?: number;
       /** "…can strike: combat ends during the first round". */
       combatEndsStrike?: boolean;
+      /** Internal Recursion [pre]: unlock this blocker before combat ends,
+       *  but only after their own combat-ends strike against an ally or a
+       *  younger acting vampire [RTR 20020501]. */
+      unlockOnCombatEndsIfOpposingAllyOrYounger?: boolean;
+      /** Internal Recursion [tem]: set the first round's range at combat start. */
+      setRange?: "close" | "long";
+      /** Internal Recursion [TEM]: the acting minion skips its next unlock. */
+      opponentSkipNextUnlock?: boolean;
     }
   /** The mirror, for the ACTING minion: "if this vampire is blocked, they
    *  can prevent 1 damage during the resulting combat" (Beast Meld);
@@ -486,6 +494,8 @@ export type EffectPrimitive =
       allies?: boolean;
       self?: boolean;
       capped?: boolean;
+      /** "…a vampire YOU CONTROL" (Cleansing Ritual [dom]). */
+      ownOnly?: boolean;
     }
   /** "+1 stealth action. Put this card in play with N counters" (Under
    *  Siege and many counter actions) — the card becomes a seat-level
@@ -508,6 +518,41 @@ export type EffectPrimitive =
        *  before announcement (`prePlayPicks`) and written on the entry as
        *  `chosenMinions`. docs/bearer-rush-grants-design.md §3 */
       chooseOwnMinions?: { extra: number };
+    }
+  /**
+   * "Put this card in play on this vampire" (Blessing of Chaos, Blithe
+   *  Acceptance) — a successful action attaches the played card to the
+   *  ACTING minion as a persistent static. Seat-level `putInPlayOnSuccess`
+   *  has `attachedTo: null`; this one attaches to the actor.
+   */
+  | { kind: "putInPlayOnSelf"; counters?: number; tags?: string[]; statics?: PermanentStatics; locked?: boolean }
+  /**
+   * "Put this card on a minion" (Anima Gathering, Antithesis, Blackmail) —
+   *  a successful action attaches the played card to a CHOSEN minion. The
+   *  target is fixed at announcement and rides in `params["target"]`;
+   *  `attachedTo` is that minion.
+   */
+  | {
+      kind: "putInPlayOnTarget";
+      counters?: number;
+      tags?: string[];
+      statics?: PermanentStatics;
+      locked?: boolean;
+      /** "Put this card on A MINION YOU CONTROL" rather than on the acting
+       *  vampire — the target is chosen at announcement (p. 25) and rides
+       *  in `params["target"]`. `anyMinion` offers any seat's minions. */
+      target?: "ownMinion" | "anyMinion";
+      /** Filters on the chosen target (Kaymakli Barrier-style). */
+      targetFilter?: {
+        kind?: "vampire" | "ally";
+        youngerThanActor?: boolean;
+        /** "…on a vampire who is not a prince, a justicar or an Inner
+         *  Circle member" (Blood Hunt) — the current title. */
+        notTitles?: VampireTitle[];
+        /** "…on A VAMPIRE", not "a ready vampire": a vampire in torpor is
+         *  eligible by default. Without it a filter means READY only. */
+        inTorporToo?: boolean;
+      };
     }
   /**
    * "Ⓓ Diablerize a vampire in torpor" (Cloak of Blood, Stealing Years) —
@@ -2429,6 +2474,14 @@ export type EffectPrimitive =
        *  INCLUSIVE, like the referendum primitives' `maxCapacity`.
        *  docs/taking-by-force-design.md §3 */
       maxCost?: number;
+    }
+  /** "Burn a card on an ally or younger vampire in your ready region"
+   *  (Cleansing Ritual [obe]). The attached card is fixed at announcement;
+   *  the minion's own self-entry is not a card ON that minion. Superior also
+   *  unlocks the bearer during the next discard phase, without a blood cost. */
+  | {
+      kind: "actionBurnAttachedCard";
+      unlockBearerAtNextDiscard?: boolean;
     }
   /** "Ⓓ Steal an ally controlled by another Methuselah" (Entrancement) —
    *  control moves on a successful action; the target is fixed at

@@ -2028,6 +2028,7 @@ export class VtesEngine implements EngineOps {
         // calling card was already handed back.
         if (top.cancelled) {
           this.pop();
+          this.registry[top.handlerName ?? top.cardName]?.applyReferendumCanceled?.(top, this);
           // "…is CANCELED or fails" (Cedrick) — fired after the pop, so a
           // ChoiceFrame a hook raises is not eaten by it.
           this.notifyReferendumLost(top, "cancelled");
@@ -2035,7 +2036,7 @@ export class VtesEngine implements EngineOps {
         }
         if (top.step === "terms") {
           const terms =
-            this.handler(top.cardName).referendumTerms?.(top, this.state) ?? [];
+            this.handler(top.handlerName ?? top.cardName).referendumTerms?.(top, this.state) ?? [];
           if (terms.length === 0) {
             // No terms to choose — straight to polling (p. 27).
             top.step = "polling";
@@ -3849,7 +3850,7 @@ export class VtesEngine implements EngineOps {
       // `handler()` throws on — the guard the line above spells as
       // `rf.cardInstanceId &&`. A registry read rather than `handler()`,
       // so a referendum with no card simply has no failure clause.
-      this.registry[rf.cardName]?.applyReferendumFailed?.(rf, this);
+      this.registry[rf.handlerName ?? rf.cardName]?.applyReferendumFailed?.(rf, this);
       // "…is canceled or FAILS" (Cedrick). The frame is already popped.
       this.notifyReferendumLost(rf, "failed");
       return;
@@ -3886,7 +3887,7 @@ export class VtesEngine implements EngineOps {
       riders: [...(rf.afterEffects ?? [])],
       predatorAtCall: Object.fromEntries(this.state.seats.map((s) => [s.id, predatorOf(this.state, s.id)])),
     };
-    this.handler(rf.cardName).applyReferendum?.(rf, this);
+    this.handler(rf.handlerName ?? rf.cardName).applyReferendum?.(rf, this);
   }
 
   /**
@@ -5635,6 +5636,14 @@ export class VtesEngine implements EngineOps {
           if (rider.noEquipment) this.setNonFrenzyRestriction(cf, "opposing", "equipment");
           if (rider.unlockForBlood) cf.unlockForBlood.opposing = rider.unlockForBlood;
           if (rider.combatEndsStrike) cf.grantedCombatEnds.opposing = true;
+          if (rider.unlockOnCombatEndsIfOpposingAllyOrYounger) {
+            (cf.unlockCombatEndsIfOpposingAllyOrYounger ??= { acting: false, opposing: false }).opposing = true;
+          }
+          if (rider.opponentSkipNextUnlock) {
+            const actingMinion = findMinion(this.state, cf.acting);
+            if (actingMinion) actingMinion.skipNextUnlock = true;
+          }
+          if (rider.setRange) this.setCombatRange(rider.setRange);
         }
       }
       // The mirror, for the acting minion: "if this vampire is blocked,
@@ -5976,6 +5985,16 @@ export class VtesEngine implements EngineOps {
       }
       if (unlockAllowed && so?.combatEnds && so.unlockSelf) {
         this.emit({ type: "MinionUnlocked", minion: cf.opposing });
+      }
+      // Internal Recursion [pre]: only the blocker's OWN combat-ends strike
+      // qualifies. Another card ending combat does not unlock them [RTR 20020501].
+      if (unlockAllowed && so?.combatEnds && cf.unlockCombatEndsIfOpposingAllyOrYounger?.opposing) {
+        const actingMinion = findMinion(this.state, cf.acting);
+        const blocker = findMinion(this.state, cf.opposing);
+        if (actingMinion && blocker &&
+            (actingMinion.kind === "ally" || capacityOf(actingMinion) < capacityOf(blocker))) {
+          this.emit({ type: "MinionUnlocked", minion: cf.opposing });
+        }
       }
       // Only the combat-ends strikes resolved; anything opposite them did
       // not (Creep Show: "ends combat as a strike").
@@ -7163,7 +7182,13 @@ export class VtesEngine implements EngineOps {
        *  at a card in play. docs/pool-drain-design.md §6 */
       political?: boolean;
       /** The card whose referendum a successful political action calls. */
-      referendumSource?: { cardName: string; cardInstanceId: CardInstanceId; fromCardInPlay?: boolean };
+      referendumSource?: {
+        cardName: string;
+        cardInstanceId: CardInstanceId;
+        fromCardInPlay?: boolean;
+        handlerName?: string;
+        handlerMode?: DisciplineLevel | null;
+      };
       requires?: { clans: string[] };
     },
   ): void {
@@ -8555,6 +8580,9 @@ export class VtesEngine implements EngineOps {
       noEquipment?: boolean;
       unlockForBlood?: number;
       combatEndsStrike?: boolean;
+      unlockOnCombatEndsIfOpposingAllyOrYounger?: boolean;
+      setRange?: "close" | "long";
+      opponentSkipNextUnlock?: boolean;
     },
   ): void {
     const af = this.action();
@@ -8567,6 +8595,11 @@ export class VtesEngine implements EngineOps {
     if (riders.noEquipment) cur.noEquipment = true;
     if (riders.unlockForBlood) cur.unlockForBlood = riders.unlockForBlood;
     if (riders.combatEndsStrike) cur.combatEndsStrike = true;
+    if (riders.unlockOnCombatEndsIfOpposingAllyOrYounger) {
+      cur.unlockOnCombatEndsIfOpposingAllyOrYounger = true;
+    }
+    if (riders.setRange) cur.setRange = riders.setRange;
+    if (riders.opponentSkipNextUnlock) cur.opponentSkipNextUnlock = true;
     if (riders.playCostMod) cur.playCostMod = riders.playCostMod;
     af.blockerCombatRiders[minion] = cur;
   }
@@ -10707,7 +10740,7 @@ export class VtesEngine implements EngineOps {
     // Null means THIS MODE does not put the card in play, even though
     // another mode of the same card does — so fall through to the
     // remaining clauses, and failing those the card burns as normal.
-    const inPlayEntry = handler.putsInPlayOnSuccess?.(af.card.mode, af.card.params) ?? null;
+    const inPlayEntry = handler.putsInPlayOnSuccess?.(af.card.mode, af.card.params, af.acting) ?? null;
     if (inPlayEntry) {
       // "Put this card in play with N counters" (Under Siege) — a seat-level
       // permanent, not attached, not burned.
@@ -10717,14 +10750,14 @@ export class VtesEngine implements EngineOps {
         seat: af.actingSeat,
         cardId: af.card.instance.id,
         name: af.card.instance.name,
-        attachedTo: null,
+        attachedTo: entry.attachedTo ?? null,
         statics: entry.statics ?? {},
         tags: entry.tags,
         // WHO put it there. "Choose a YOUNGER Gangrel" (Gather) is younger
         // than the acting vampire, and a seat-level card has no bearer to
         // ask — so the actor is recorded as the card arrives rather than
         // re-derived later, when the action frame is gone.
-        linkedMinion: af.acting,
+        linkedMinion: entry.attachedTo ?? af.acting,
       };
       if (entry.counters !== undefined) ev.counters = entry.counters;
       // "Choose a vampire and put this card in play" (Distant Friend): the
@@ -11565,6 +11598,8 @@ export class VtesEngine implements EngineOps {
         caller: af.actingSeat,
         cardName,
         cardInstanceId: refSource.cardInstanceId,
+        ...(refSource.handlerName ? { handlerName: refSource.handlerName } : {}),
+        ...(refSource.handlerMode !== undefined ? { handlerMode: refSource.handlerMode } : {}),
         variant: "political",
         ...(refSource.fromCardInPlay ? { fromCardInPlay: true } : {}),
         bloodHuntTarget: null,
@@ -11593,18 +11628,25 @@ export class VtesEngine implements EngineOps {
       // so a second referendum the same turn polls normally.
       const callerSeat = getSeat(this.state, af.actingSeat);
       const caller = findMinion(this.state, af.acting);
-      const grant = callerSeat.autoPassReferendum;
-      // The granting CARD's condition rides on the grant; the engine only
-      // asks whether it is met. Día de los Muertos names a sect, the two
-      // wave-21 cards do not.
-      if (grant && (grant.sect === undefined || caller?.sect === grant.sect)) {
-        delete callerSeat.autoPassReferendum;
+      // Charming Lobby applies to the next referendum by ANY vampire, not
+      // only the Lobby controller's next one [PIB 20110719].
+      if (this.state.autoPassNextReferendum) {
+        delete this.state.autoPassNextReferendum;
         refFrame.autoPass = true;
+      } else {
+        const grant = callerSeat.autoPassReferendum;
+        // The granting CARD's condition rides on the grant; the engine only
+        // asks whether it is met. Día de los Muertos names a sect, the two
+        // wave-21 cards do not.
+        if (grant && (grant.sect === undefined || caller?.sect === grant.sect)) {
+          delete callerSeat.autoPassReferendum;
+          refFrame.autoPass = true;
+        }
       }
       this.state.frames.push(refFrame);
       // A card may seed per-seat bonus votes for this referendum ("each
       // Malkavian gets +1 vote", p. 28) before polling begins.
-      this.handler(cardName).referendumSetup?.(refFrame, this.state);
+      this.handler(refFrame.handlerName ?? cardName).referendumSetup?.(refFrame, this.state);
     }
     // A successful diablerise commits the diablerie (blood + burn) and
     // conducts the blood-hunt referendum — after the frame pops so the
@@ -11749,7 +11791,7 @@ export class VtesEngine implements EngineOps {
         if (top.step === "terms") {
           // settle() guarantees at least one term option here.
           const terms =
-            this.handler(top.cardName).referendumTerms?.(top, this.state) ?? [];
+            this.handler(top.handlerName ?? top.cardName).referendumTerms?.(top, this.state) ?? [];
           // WHAT EACH CHOICE WOULD DO, backfilled centrally so no handler
           // has to remember. The caller used to answer this decision in
           // offered order — a bot that landed Parity Shift chose its

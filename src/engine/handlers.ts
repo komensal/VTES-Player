@@ -559,6 +559,9 @@ export interface EngineOps {
       noEquipment?: boolean;
       unlockForBlood?: number;
       combatEndsStrike?: boolean;
+      unlockOnCombatEndsIfOpposingAllyOrYounger?: boolean;
+      setRange?: "close" | "long";
+      opponentSkipNextUnlock?: boolean;
     },
   ): void;
   /** "This vampire unlocks and attempts to block" (Sense the Savage Way) —
@@ -1538,6 +1541,9 @@ export interface CardHandler {
   /** Seed per-seat bonus votes when the referendum is created, before
    *  polling ("each Malkavian gets +1 vote", p. 28). */
   referendumSetup?(frame: ReferendumFrame, state: GameState): void;
+  /** The referendum was cancelled without resolving. Charming Lobby uses this
+   *  to return its still-unplayed nested political action card to hand. */
+  applyReferendumCanceled?(frame: ReferendumFrame, ops: EngineOps): void;
   /** Votes granted to this in-play card's controller while a particular
    * referendum is being polled. Re-evaluated so control and leaving play
    * are reflected without undoing votes already cast. */
@@ -1579,6 +1585,8 @@ export interface CardHandler {
   putsInPlayOnSuccess?(
     mode: DisciplineLevel | null,
     params?: Record<string, string>,
+    /** The acting minion — only consulted by putInPlayOnSelf. */
+    actor?: MinionId,
   ): {
     counters?: number;
     /** "Choose a vampire and put this card in play" (Distant Friend) — the
@@ -1586,6 +1594,9 @@ export interface CardHandler {
     chosenMinion?: MinionId;
     /** "Choose X minions and put this card in play" (Bloodlust). */
     chosenMinions?: MinionId[];
+    /** The minion this permanent attaches to (putInPlayOnSelf /
+     *  putInPlayOnTarget). Seat-level putInPlayOnSuccess leaves null. */
+    attachedTo?: MinionId;
     tags: string[];
     /** Statics the card grants while it sits there ("your prey plays with
      *  an open hand", Revelations superior). Hard-coded empty until
