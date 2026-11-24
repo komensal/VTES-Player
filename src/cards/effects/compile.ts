@@ -2567,6 +2567,12 @@ function compileActionCard(spec: CardSpec): CardHandler {
             if (m2?.locked && !af.noUnlock) ops.emit({ type: "MinionUnlocked", minion: m2.id });
             break;
           }
+        case "unlockSelf": {
+          // "This vampire unlocks" — unlocks the acting minion itself.
+          const actor = findMinion(ops.state, af.acting);
+          if (actor?.locked) ops.emit({ type: "MinionUnlocked", minion: actor.id });
+          break;
+        }
           case "takeControlOfMinion": {
             // "…until the end of the next action" — a loan, and the minion
             // is locked against it: a locked minion fizzles the action

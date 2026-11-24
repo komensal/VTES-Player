@@ -2431,6 +2431,9 @@ export type EffectPrimitive =
       scope: "youngerOrAlly" | "anyVampire";
       directed: boolean;
     }
+  /** "This vampire unlocks" (Ensconced, Fantasy World, Field Training,
+   *  Gear Up, Go Anarch) — unlocks the ACTING minion, no target needed. §3 */
+  | { kind: "unlockSelf"; bloodCost?: number }
   /** "Ⓓ Lock a minion controlled by your predator or prey" (Distraction
    *  superior) — the mirror, with a RELATION filter rather than an age one. §3 */
   | { kind: "actionLockMinion"; scope: "predatorOrPrey"; directed: boolean }

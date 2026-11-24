@@ -3885,7 +3885,7 @@
     "id": 100648,
     "name": "Ensconced",
     "status": "PARTIAL_FIX",
-    "evidence": "Poza stealth brak dołączenia do location, unlock i zatrzymania skierowanej akcji z combat; brak superior reaction. Wymaga nowych typów efektów (putInPlayOnLocation, unlockSelf). Tekst: registry.json; spec: effects/cards.ts."
+    "evidence": "unlockSelf zaimplementowane i podpięte do Ensconced (100648). Nadal brakuje: putInPlayOnLocation. Tekst: registry.json; spec: effects/cards.ts."
   },
   {
     "id": 100649,
@@ -4203,7 +4203,7 @@
     "id": 100701,
     "name": "Fantasy World",
     "status": "PARTIAL_FIX",
-    "evidence": "Spec daje tylko stealth zamiast dołączenia, lock, ograniczeń działań i unlock oraz warunków spalenia. Wymaga nowych typów efektów (putInPlayOnTarget, lockTarget, restrictAction, unlockSelf, burnCondition). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "evidence": "unlockSelf zaimplementowane i podpięte do Fantasy World (100701). Nadal brakuje: putInPlayOnTarget, lockTarget, restrictAction, burnCondition. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100702,
@@ -4347,7 +4347,7 @@
     "id": 100725,
     "name": "Field Training",
     "status": "PARTIAL_FIX",
-    "evidence": "requireAnarch dodane (requiresSect: [\"anarch\"] w cards.ts). Nadal brakuje: unlockSelf, chooseSuperiorDiscipline, putInPlayOnTargetConvertSect. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy w src i tests; bez nowego osobnego testu scenariuszowego."
+    "evidence": "requireAnarch dodane (requiresSect: [\"anarch\"] w cards.ts). unlockSelf zaimplementowane i podpięte do Field Training (100725). Nadal brakuje: chooseSuperiorDiscipline, putInPlayOnTargetConvertSect. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100726,
@@ -4875,7 +4875,7 @@
     "id": 100813,
     "name": "Gear Up",
     "status": "PARTIAL_FIX",
-    "evidence": "requireAnarch dodane (requiresSect: [\"anarch\"] w cards.ts). Nadal brakuje: unlockSelf, moveCardAshHeapToHand, addStealthUntilEndTurn. Tekst: registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "evidence": "requireAnarch dodane (requiresSect: [\"anarch\"] w cards.ts). unlockSelf zaimplementowane i podpięte do Gear Up (100813). Nadal brakuje: moveCardAshHeapToHand, addStealthUntilEndTurn. Tekst: registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100814,
@@ -5037,7 +5037,7 @@
     "id": 100840,
     "name": "Go Anarch",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth zamiast wymogu non-titled, non-Anarch, dołączenia, zmiany sect i unlock. Wymaga nowych typów efektów (requireNonTitledNonAnarch, putInPlayOnSelf, changeSectAnarch, unlockSelf). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "evidence": "unlockSelf zaimplementowane i podpięte do Go Anarch (100840). Nadal brakuje: requireNonTitledNonAnarch, putInPlayOnSelf, changeSectAnarch. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100841,

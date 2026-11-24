@@ -28244,7 +28244,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "vis",
+        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "unlockSelf" }]
+      },
     ],
   },
   {
@@ -28382,7 +28386,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "chi",
+        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "unlockSelf" }]
+      },
     ],
   },
   {
@@ -28439,7 +28447,11 @@ export const cardSpecs: CardSpec[] = [
     requiresSect: ["anarch"],
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "unlockSelf" }]
+      },
     ],
   },
   {
@@ -28644,9 +28656,9 @@ export const cardSpecs: CardSpec[] = [
     requiresSect: ["anarch"],
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }, { kind: "unlockSelf" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }, { kind: "unlockSelf" }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }, { kind: "unlockSelf" }] }
     ],
   },
   {
@@ -28726,7 +28738,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "unlockSelf" }]
+      },
     ],
   },
   {
