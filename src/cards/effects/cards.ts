@@ -23398,7 +23398,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }, { kind: "searchLibraryWeapon", maxDamage: 2 }] }
     ],
   },
   {
@@ -27761,7 +27761,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Consignment to Duat"] }, { kind: "drainBloodLifeEachTurn", amount: 1 }] }
     ],
   },
   {
@@ -28817,7 +28817,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }, { kind: "moveBloodFromPoolToVampires", amount: 1 }] }
     ],
   },
   {
@@ -33587,8 +33587,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "vis", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "searchLibraryGeneric", cardTypes: ["equipment"], attachToActor: false }, { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Children of Stone"] }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "searchLibraryGeneric", cardTypes: ["equipment"], attachToActor: false }, { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Children of Stone"] }] }
     ],
   },
   {

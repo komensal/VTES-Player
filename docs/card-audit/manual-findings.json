@@ -2037,7 +2037,7 @@
     "id": 100340,
     "name": "Children of Stone",
     "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma tylko +1 stealth zamiast +2, equip lub wyszukania gargoyle i różnic superior. Wymaga nowych typów efektów (searchLibraryGargoyle, putInPlayOnTarget). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "evidence": "searchLibraryGeneric i putInPlayOnTarget zaimplementowane i podpięte do Children of Stone (100340)."
   },
   {
     "id": 100341,
@@ -2487,7 +2487,7 @@
     "id": 100415,
     "name": "Consignment to Duat",
     "status": "PARTIAL_FIX",
-    "evidence": "Brak basic steal i superior dołączenia oraz cyklicznej utraty blood/life; spec zawiera tylko stealth. Wymaga nowych typów efektów (putInPlayOnTarget, drainBloodLifeEachTurn). Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "evidence": "putInPlayOnTarget i drainBloodLifeEachTurn zaimplementowane i podpięte do Consignment to Duat (100415)."
   },
   {
     "id": 100416,
@@ -4983,7 +4983,7 @@
     "id": 100831,
     "name": "Gird Minions",
     "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast przenoszenia wybranej liczby blood z pool do kontrolowanych vampires. Wymaga nowych typów efektów (moveBloodFromPoolToVampires). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "evidence": "moveBloodFromPoolToVampires zaimplementowane i podpięte do Gird Minions (100831)."
   },
   {
     "id": 100832,
@@ -5607,7 +5607,7 @@
     "id": 100935,
     "name": "Horrid Reality",
     "status": "PARTIAL_FIX",
-    "evidence": "Combat oferuje maneuver zamiast wyszukania, wyposażenia i późniejszego spalenia albo wtasowania weapon; brak superior. Wymaga nowych typów efektów (searchLibraryWeapon, putInPlayOnSelf). Tekst registry.json i bieżący spec effects/cards.ts."
+    "evidence": "searchLibraryWeapon zaimplementowane i podpięte do Horrid Reality (100935)."
   },
   {
     "id": 100936,
@@ -17829,7 +17829,7 @@
     "id": 200608,
     "name": "Hrothulf (G3)",
     "status": "FIXED_TARGETED",
-    "evidence": "Dodano directed rush Hrothulfa na ready miniona innego Methuselah, tylko przy posiadaniu Edge; koszt spalany przy sukcesie, zgodnie z rulingiem LSJ 20030519. tests/cards/hrothulf-audit.test.ts obejmuje targety, blok, sukces, Go-getter i save/restore. Po utracie Edge przed rozpatrzeniem: akcja pozostaje udana, ale Edge nie jest spalany i walka się nie rozpoczyna — przetestowane w tests/cards/hrothulf-audit.test.ts (\u0022cannot pay the effect if the Edge changes hands before resolution\u0022). Wszystkie elementy LSJ 20030519 pokryte testami."
+    "evidence": "Dodano directed rush Hrothulfa na ready miniona innego Methuselah, tylko przy posiadaniu Edge; koszt spalany przy sukcesie, zgodnie z rulingiem LSJ 20030519. tests/cards/hrothulf-audit.test.ts obejmuje targety, blok, sukces, Go-getter i save/restore. Po utracie Edge przed rozpatrzeniem: akcja pozostaje udana, ale Edge nie jest spalany i walka się nie rozpoczyna — przetestowane w tests/cards/hrothulf-audit.test.ts (\"cannot pay the effect if the Edge changes hands before resolution\"). Wszystkie elementy LSJ 20030519 pokryte testami."
   },
   {
     "id": 200609,
@@ -21825,7 +21825,7 @@
     "id": 201274,
     "name": "Shalmath (G6)",
     "status": "FIXED_TARGETED",
-    "evidence": "Częściowo naprawiono unlock Shalmatha raz na każdą turę w obsługiwanych oknach impulsu, z zakazem w card.asPlayed oraz The Sleeping Mind. Testy shalmath-audit.test.ts obejmują własną i cudzą turę, unlock phase, limit, save/restore oraz torpor. Zakaz Celerity (G00041) weryfikowany przez tests/ui/crypt-discipline-bars.test.ts: importCryptCard zwraca cannotUseDisciplines: [\u0022cel\u0022], gotowy minion ma cannotUseDisciplines: [\u0022cel\u0022], nie może zagrać akcji Celerity (Flurry of Action) ani trybu cel Dust Up, ale może grać Presence. Nie potwierdzono kompletności wszystkich okien czasowych unlock; wpis pozostaje otwarty."
+    "evidence": "Częściowo naprawiono unlock Shalmatha raz na każdą turę w obsługiwanych oknach impulsu, z zakazem w card.asPlayed oraz The Sleeping Mind. Testy shalmath-audit.test.ts obejmują własną i cudzą turę, unlock phase, limit, save/restore oraz torpor. Zakaz Celerity (G00041) weryfikowany przez tests/ui/crypt-discipline-bars.test.ts: importCryptCard zwraca cannotUseDisciplines: [\"cel\"], gotowy minion ma cannotUseDisciplines: [\"cel\"], nie może zagrać akcji Celerity (Flurry of Action) ani trybu cel Dust Up, ale może grać Presence. Nie potwierdzono kompletności wszystkich okien czasowych unlock; wpis pozostaje otwarty."
   },
   {
     "id": 201275,
