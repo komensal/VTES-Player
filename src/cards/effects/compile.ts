@@ -7455,6 +7455,78 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
           case "storeCardsSpirus": {
             break;
           }
+          case "limitOnePerTurn": {
+            break;
+          }
+          case "changePoolBasedOnChoices": {
+            break;
+          }
+          case "secretChoices": {
+            break;
+          }
+          case "makeAnarch": {
+            const target = af.card?.params["target"];
+            if (target && findMinion(ops.state, target)) {
+              // Change sect to Anarch
+            }
+            break;
+          }
+          case "curseTarget": {
+          case "moveConviction": {
+            break;
+          }
+          case "changeSectAnarch": {
+            break;
+          }
+          case "putInPlayTitle": {
+            break;
+          }
+          case "outOfTurnUnlockImbued": {
+            break;
+          }
+          case "equipFromHand": {
+            break;
+          }
+          case "removeFromGame": {
+            break;
+          }
+          case "moveCardOnSuccess": {
+            break;
+          }
+          case "lookAtHands": {
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "lookAtHands",
+              params: {},
+              optional: false,
+            });
+            break;
+          }
+          case "lookAtLibrary": {
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "lookAtLibrary",
+              params: {},
+              optional: false,
+            });
+            break;
+          }
+          case "setSterile": {
+            break;
+          }
+          case "reduceCapacity": {
+            break;
+          }
+          case "moveBloodToYoungerLaibon": {
+            break;
+          }
+          case "storeCardsSpirus": {
+            break;
+          }
           case "reflectDamage": {
             const target = af.card?.params["target"];
             if (target && findMinion(ops.state, target)) {

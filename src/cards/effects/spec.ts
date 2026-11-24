@@ -1544,6 +1544,40 @@ export type EffectPrimitive =
   | { kind: "modifyInterceptOpponent"; amount: number }
   /** "Grant intercept for different disciplines" (Guardian Vigil) — grant intercept. §4 */
   | { kind: "grantInterceptForDifferentDisciplines"; amount: number }
+  /** "Lock an imbued" (Abjure) — lock an imbued minion. §4 */
+  | { kind: "lockImbued" }
+  /** "Move conviction counters" (Abjure) — move conviction counters. §4 */
+  | { kind: "moveConviction"; amount: number }
+  /** "Change sect to Anarch" (Anarch Secession) — change sect. §4 */
+  | { kind: "changeSectAnarch" }
+  /** "Put a title in play" (Anarch Secession) — put a title in play. §4 */
+  | { kind: "putInPlayTitle" }
+  /** "Out of turn unlock an imbued" (Angel of Berlin) — unlock an imbued out of turn. §4 */
+  | { kind: "outOfTurnUnlockImbued" }
+  /** "Equip from hand" (Angel of Berlin) — equip from hand. §4 */
+  | { kind: "equipFromHand" }
+  /** "Remove from game" (The Art of Memory) — remove from game. §4 */
+  | { kind: "removeFromGame" }
+  /** "Move a card on success" (The Art of Memory) — move a card on success. §4 */
+  | { kind: "moveCardOnSuccess" }
+  /** "Look at hands" (Augur) — look at hands. §4 */
+  | { kind: "lookAtHands" }
+  /** "Look at library" (Augur) — look at library. §4 */
+  | { kind: "lookAtLibrary" }
+  /** "Set sterile" (Barrenness) — set sterile. §4 */
+  | { kind: "setSterile" }
+  /** "Reduce capacity" (Barrenness) — reduce capacity. §4 */
+  | { kind: "reduceCapacity"; amount: number }
+  /** "Move blood to younger Laibon" (Belonging Grants Protection) — move blood. §4 */
+  | { kind: "moveBloodToYoungerLaibon" }
+  /** "Limit one per turn" (Cat Burglary) — limit one per turn. §4 */
+  | { kind: "limitOnePerTurn" }
+  /** "Change pool based on choices" (Game of Malkav) — change pool based on choices. §4 */
+  | { kind: "changePoolBasedOnChoices" }
+  /** "Secret choices" (Game of Malkav) — secret choices. §4 */
+  | { kind: "secretChoices" }
+  /** "Make Anarch" (Galaric's Legacy) — make Anarch. §4 */
+  | { kind: "makeAnarch" }
   /** "Lock an imbued" (Abjure) — lock an imbued. §4 */
   | { kind: "lockImbued" }
   /** "Move conviction" (Abjure) — move conviction counters. §4 */
