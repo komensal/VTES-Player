@@ -28782,8 +28782,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "endAction" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "endAction" }] }
     ],
   },
   {

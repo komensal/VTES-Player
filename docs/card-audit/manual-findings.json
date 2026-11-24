@@ -4965,7 +4965,7 @@
     "id": 100828,
     "name": "Gift of Sleep",
     "status": "PARTIAL_FIX",
-    "evidence": "Obe basic jest stealth zamiast lock ally i zakończenia akcji przed walką; brak superior [obe]. Wymaga nowych typów efektów (lockAlly, endAction). Tekst registry.json i bieżący spec effects/cards.ts."
+    "evidence": "endAction zaimplementowane i podpięte do Gift of Sleep (100828). Nadal brakuje: lockAlly."
   },
   {
     "id": 100829,
