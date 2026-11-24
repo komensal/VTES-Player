@@ -5703,7 +5703,7 @@
     "id": 100951,
     "name": "Illegal Search and Seizure",
     "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast wyboru i spalenia odpowiedniego weapon oraz 1 unpreventable damage nosiciela. Wymaga nowych typów efektów (chooseAndBurnWeaponCostMoreThan2, unpreventableDamageToBearer). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "evidence": "unpreventableDamageToBearer zaimplementowane i podpięte do Illegal Search and Seizure (100951)."
   },
   {
     "id": 100952,
