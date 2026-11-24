@@ -22191,7 +22191,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "obt",
+        effects: [
+          { kind: "modifyIntercept", amount: 1 },
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Darksight"] },
+        ],
+      },
     ],
   },
   {
@@ -22791,7 +22799,14 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "vic",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Fleshcraft"] },
+        ],
+      },
     ],
   },
   {
@@ -27017,7 +27032,14 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "tha",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Blood of Sandman"] },
+        ],
+      },
     ],
   },
   {
@@ -33524,8 +33546,24 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "dai",
+        effects: [
+          { kind: "addStrength", amount: 1 },
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnSelf", tags: ["Concordance"] },
+        ],
+      },
+      {
+        level: "basic",
+        discipline: "ser",
+        effects: [
+          { kind: "addStrength", amount: 1 },
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnSelf", tags: ["Concordance"] },
+        ],
+      },
     ],
   },
   {

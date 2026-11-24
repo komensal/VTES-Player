@@ -1241,6 +1241,27 @@ export type EffectPrimitive =
        *  the top" — named by position, so there is nothing to ask. */
       deterministic?: boolean;
     }
+  /** "Search your library for an equipment card and put it in play on a
+   *  minion" (Alastor, Bauble) — the card is chosen at resolution, then
+   *  attached to the acting minion or a chosen target. §4 */
+  | {
+      kind: "searchLibraryEquipment";
+      cardTypes?: PlayCostCardType[];
+      /** Attach to the acting minion (default). If false, the target is
+       *  chosen at announcement like putInPlayOnTarget. */
+      attachToActor?: boolean;
+    }
+  /** "Put this master card in play" (Carthage Remembered, Form of
+   *  Corruption, Guide and Mentor, Guinea-Bissau Carnival, Imperial
+   *  Decree, Insurance Scam) — a master becomes a seat-level permanent
+   *  instead of going to ash heap. §5 */
+  | {
+      kind: "putInPlayMaster";
+      counters?: number;
+      tags?: string[];
+      statics?: PermanentStatics;
+      locked?: boolean;
+    }
   /** "Ⓓ Stun an unlocked vampire" (Mind Numb) — a directed action card
    *  that NAMES a minion without fighting it. The target is chosen at
    *  announcement (p. 25) and rides in the option id.

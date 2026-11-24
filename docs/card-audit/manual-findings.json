@@ -1221,7 +1221,7 @@
     "id": 100204,
     "name": "Blood of Sandman",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth bez spalenia ally i superior +6 stealth oraz dołączonego zakazu reakcji. Wymaga nowych typów efektów (putInPlayOnTarget, modifyStealth target). Źródła: src/cards/registry.json ID 100204; src/cards/effects/cards.ts i compile.ts."
+    "evidence": "putInPlayOnTarget zaimplementowane i podpięte do Blood of Sandman (100204). Nadal brakuje: modifyStealth target. Źródła: src/cards/registry.json ID 100204; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100205,
@@ -2367,7 +2367,7 @@
     "id": 100395,
     "name": "Concordance",
     "status": "PARTIAL_FIX",
-    "evidence": "Oba basic łączą strength i stealth, zamiast oddzielnych bleed i dołączanego infernal; brak superior. Wymaga nowych typów efektów (putInPlayOnSelf, modifyBleed cap). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts."
+    "evidence": "putInPlayOnSelf zaimplementowane i podpięte do Concordance (100395). Nadal brakuje: modifyBleed cap. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts."
   },
   {
     "id": 100396,
@@ -2985,7 +2985,7 @@
     "id": 100498,
     "name": "Darksight",
     "status": "PARTIAL_FIX",
-    "evidence": "Brak superior dołączenia z karą stealth i akcji burn; basic błędnie ma actionStealth. Wymaga nowych typów efektów (putInPlayOnTarget, modifyBleed stealth penalty). Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
+    "evidence": "putInPlayOnTarget zaimplementowane i podpięte do Darksight (100498). Nadal brakuje: modifyBleed stealth penalty. Porównano src/cards/registry.json, src/cards/effects/cards.ts i odnośne handlery."
   },
   {
     "id": 100499,
@@ -4497,7 +4497,7 @@
     "id": 100750,
     "name": "Fleshcraft",
     "status": "PARTIAL_FIX",
-    "evidence": "Spec ma wyłącznie actionStealth zamiast damage strike z dołączeniem -1 stealth i akcji usunięcia; brak superior [VIC]. Wymaga nowych typów efektów (putInPlayOnTarget, modifyStealth target). Tekst registry.json i bieżący spec effects/cards.ts."
+    "evidence": "putInPlayOnTarget zaimplementowane i podpięte do Fleshcraft (100750). Nadal brakuje: modifyStealth target. Tekst registry.json i bieżący spec effects/cards.ts."
   },
   {
     "id": 100751,

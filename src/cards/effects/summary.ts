@@ -346,6 +346,8 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   playFromHand: "board",
 
   searchEquip: "search",
+  searchLibraryEquipment: "search",
+  putInPlayMaster: "board",
 
   // Real effects that a scoring policy has no way to weigh: they change
   // the price or the timing of something else rather than doing anything
