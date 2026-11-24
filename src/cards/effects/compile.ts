@@ -7584,6 +7584,18 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             // Grant intercept for different disciplines
             break;
           }
+          case "moveBloodFromReadyGangrelToUncontrolled": {
+            // Move blood from ready Gangrel to uncontrolled - target at announcement
+            break;
+          }
+          case "moveBloodReadyPanderToUncontrolledPander": {
+            // Move blood from ready Pander to uncontrolled Pander
+            break;
+          }
+          case "placeOnVampire": {
+            // Place this card on a vampire - target at announcement
+            break;
+          }
           case "unlockViaCorruption":
             if (play.minion) ops.registerCorruptionUnlock(play.minion, play.seat, play.card.id);
             break;

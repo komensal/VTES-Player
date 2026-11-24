@@ -26727,7 +26727,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }, { kind: "moveBloodFromReadyGangrelToUncontrolled" }] }
     ],
   },
   {
@@ -27772,7 +27772,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }, { kind: "moveBloodReadyPanderToUncontrolledPander" }] }
     ],
   },
   {
@@ -35887,7 +35887,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }, { kind: "placeOnVampire" }] }
     ],
   },
   {

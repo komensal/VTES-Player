@@ -1544,6 +1544,12 @@ export type EffectPrimitive =
   | { kind: "modifyInterceptOpponent"; amount: number }
   /** "Grant intercept for different disciplines" (Guardian Vigil) — grant intercept. §4 */
   | { kind: "grantInterceptForDifferentDisciplines"; amount: number }
+  /** "Move blood from ready Gangrel to uncontrolled" (Bay and Howl) — move blood. §4 */
+  | { kind: "moveBloodFromReadyGangrelToUncontrolled" }
+  /** "Move blood from ready Pander to uncontrolled Pander" (Convergence) — move blood. §4 */
+  | { kind: "moveBloodReadyPanderToUncontrolledPander" }
+  /** "Place this card on a vampire" (Static Virtue) — place card on vampire. §4 */
+  | { kind: "placeOnVampire" }
   /** "Ⓓ Stun an unlocked vampire" (Mind Numb) — a directed action card
    *  that NAMES a minion without fighting it. The target is chosen at
    *  announcement (p. 25) and rides in the option id.

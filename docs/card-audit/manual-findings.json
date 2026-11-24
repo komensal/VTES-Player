@@ -855,7 +855,7 @@
     "id": 100143,
     "name": "Bay and Howl",
     "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast przenoszenia krwi ready Gangrel antitribu do uncontrolled. Wymaga nowych typów efektów (moveBloodFromReadyGangrelToUncontrolled). Tekst: src/cards/registry.json, ID 100143; implementacja: src/cards/effects/cards.ts."
+    "evidence": "moveBloodFromReadyGangrelToUncontrolled zaimplementowane i podpięte do Bay and Howl (100143)."
   },
   {
     "id": 100144,
@@ -2523,7 +2523,7 @@
     "id": 100421,
     "name": "Convergence",
     "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast przeniesienia krwi od ready Pander do Pander w uncontrolled. Wymaga nowych typów efektów (moveBloodReadyPanderToUncontrolledPander). Źródła: src/cards/registry.json, ID 100421; implementacja: src/cards/effects/cards.ts."
+    "evidence": "moveBloodReadyPanderToUncontrolledPander zaimplementowane i podpięte do Convergence (100421)."
   },
   {
     "id": 100422,
@@ -11169,7 +11169,7 @@
     "id": 101862,
     "name": "Static Virtue",
     "status": "PARTIAL_FIX",
-    "evidence": "Poza wymogiem Laibon spec daje tylko gainPool; tekst dotyczy wyszukiwania i umieszczania kart Aye/Orun. Wymaga nowych typów efektów (searchLibraryAyeOrun, placeOnVampire). src/cards/effects/cards.ts: Static Virtue; src/cards/registry.json: 101862."
+    "evidence": "placeOnVampire zaimplementowane i podpięte do Static Virtue (101862)."
   },
   {
     "id": 101863,
