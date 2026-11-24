@@ -7154,6 +7154,249 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             }
             break;
           }
+          case "searchLibraryGeneric": {
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "searchLibraryGeneric",
+              params: {
+                minion: af.acting,
+                cardTypes: (e.cardTypes ?? []).join(","),
+                clan: String(e.clan ?? ""),
+                sect: String(e.sect ?? ""),
+                attachToActor: String(e.attachToActor !== false),
+              },
+              optional: false,
+            });
+            break;
+          }
+          case "cancelBloodHuntGeneric": {
+            const rf = ops.state.frames.find((f) => f.kind === "referendum");
+            if (rf?.kind === "referendum") {
+              ops.emit({
+                type: "ReferendumCancelled",
+                actionId: af.actionId,
+                cardName: spec.name,
+              });
+            }
+            break;
+          }
+          case "moveBloodFromPoolToVampires": {
+            const seat = ops.state.seats.find((s) => s.id === af.actingSeat);
+            if (!seat) break;
+            const readyVampires = seat.minions.filter(
+              (m) => m.kind === "vampire" && isReady(m),
+            );
+            const perVampire = Math.floor(e.amount / readyVampires.length);
+            if (perVampire > 0) {
+              ops.emit({
+                type: "PoolBurned",
+                seat: af.actingSeat,
+                amount: perVampire * readyVampires.length,
+              });
+              for (const m of readyVampires) {
+                ops.emit({ type: "BloodGained", minion: m.id, amount: perVampire });
+              }
+            }
+            break;
+          }
+          case "drainBloodLifeEachTurn": {
+            break;
+          }
+          case "drawFromResearchAreaInsteadOfLibrary": {
+            break;
+          }
+          case "moveFromAshHeapToReadyVampire": {
+            break;
+          }
+          case "moveCardFromAshHeap": {
+            break;
+          }
+          case "unlockVampire": {
+            const target = af.card?.params["target"];
+            if (target && findMinion(ops.state, target)) {
+              ops.emit({ type: "MinionUnlocked", minion: target });
+            }
+            break;
+          }
+          case "burnBloodAfterSuccessfulBleed": {
+            break;
+          }
+          case "burnPoolPrey": {
+            const prey = preyOf(ops.state, af.actingSeat);
+            if (prey) {
+              ops.emit({ type: "PoolBurned", seat: prey, amount: e.amount });
+            }
+            break;
+          }
+          case "putInPlayWithVotes": {
+            break;
+          }
+          case "restrictOpponentDisciplines": {
+            break;
+          }
+          case "grantIntercept": {
+            break;
+          }
+          case "bleedBonus": {
+            ops.emit({
+              type: "BleedAmountModified",
+              actionId: af.actionId,
+              delta: e.amount,
+              limited: false,
+              source: spec.name,
+            });
+            break;
+          }
+          case "lockSelf": {
+            if (play.minion) {
+              ops.emit({ type: "MinionLocked", minion: play.minion });
+            }
+            break;
+          }
+          case "putInPlayOnTitledVampire": {
+            break;
+          }
+          case "burnRecentDiablerist": {
+            break;
+          }
+          case "lockMinionsX": {
+            break;
+          }
+          case "seniorityException": {
+            break;
+          }
+          case "enterCombat": {
+            break;
+          }
+          case "setRange": {
+            break;
+          }
+          case "removeAllyRetainer": {
+            break;
+          }
+          case "putInPlayVampire": {
+            break;
+          }
+          case "lookAtHand": {
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "lookAtHand",
+              params: { count: String(e.count) },
+              optional: false,
+            });
+            break;
+          }
+          case "chooseMethuselah": {
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "chooseMethuselah",
+              params: {},
+              optional: false,
+            });
+            break;
+          }
+          case "contestCard": {
+            break;
+          }
+          case "burnInfluence": {
+            const seat = ops.state.seats.find((s) => s.id === af.actingSeat);
+            if (!seat) break;
+            let burned = 0;
+            for (const u of seat.uncontrolled) {
+              if (burned >= e.amount) break;
+              const toBurn = Math.min(u.counters, e.amount - burned);
+              ops.emit({
+                type: "UncontrolledBloodAdded",
+                seat: af.actingSeat,
+                minion: u.card.id,
+                amount: -toBurn,
+              });
+              burned += toBurn;
+            }
+            break;
+          }
+          case "damagePoolPerCopy": {
+            break;
+          }
+          case "removeCardsFromAshHeap": {
+            const seat = ops.state.seats.find((s) => s.id === af.actingSeat);
+            if (!seat) break;
+            const ashHeap = seat.ashHeap ?? [];
+            const toRemove = ashHeap.slice(0, e.count);
+            for (const c of toRemove) {
+              ops.emit({ type: "CardBurned", seat: af.actingSeat, cardId: c.id, name: c.name });
+            }
+            break;
+          }
+          case "searchLibraryMinionCard": {
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "searchLibraryMinionCard",
+              params: {
+                minion: af.acting,
+                cardTypes: (e.cardTypes ?? []).join(","),
+              },
+              optional: false,
+            });
+            break;
+          }
+          case "burnLocation": {
+            break;
+          }
+          case "searchLibraryWeapon": {
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "searchLibraryWeapon",
+              params: {
+                minion: af.acting,
+                maxDamage: String(e.maxDamage ?? 999),
+              },
+              optional: false,
+            });
+            break;
+          }
+          case "putInPlayOnIshtarri": {
+            break;
+          }
+          case "grantOptionalManeuverOrPress": {
+            break;
+          }
+          case "equipOrEmployFromHand": {
+            break;
+          }
+          case "reduceCost": {
+            break;
+          }
+          case "searchLibraryAyeOrun": {
+            ops.raiseChoice({
+              seat: af.actingSeat,
+              cardName: spec.name,
+              cardId: af.card?.instance.id ?? "",
+              key: "searchLibraryAyeOrun",
+              params: { minion: af.acting },
+              optional: false,
+            });
+            break;
+          }
+          case "placeOnVampire": {
+            break;
+          }
+          case "replaceBurnWithTorpor": {
+            break;
+          }
+          case "addBurnCounters": {
+            break;
+          }
           case "unlockViaCorruption":
             if (play.minion) ops.registerCorruptionUnlock(play.minion, play.seat, play.card.id);
             break;
@@ -12023,6 +12266,87 @@ export function compileSpec(spec: CardSpec): CardHandler {
           const card = getSeat(ops.state, frame.seat).library.find((c) => c.id === pick);
           if (card) {
             const bearer = leff.attachToActor !== false
+              ? findMinion(ops.state, frame.params["minion"] ?? "")
+              : null;
+            if (bearer && !cannotBeEquipped(bearer, "equipment")) {
+              const mode = (ops.registry[card.name]?.modesPlayableBy?.(bearer) ?? [null])[0] ?? null;
+              ops.playCardFromHand({
+                cardId: pick,
+                seat: frame.seat,
+                minion: bearer.id,
+                mode,
+                from: { zone: "library" },
+                asAction: true,
+              });
+            }
+          }
+        }
+        ops.shuffleLibrary(frame.seat);
+      },
+    };
+  }
+  // "Search your library for a card matching cardTypes" — choose from
+  // library at resolution. §4
+  const searchLibraryGenericMode = spec.modes.find((m) =>
+    m.effects.some((e) => e.kind === "searchLibraryGeneric"),
+  );
+  if (searchLibraryGenericMode) {
+    const sgeff = searchLibraryGenericMode.effects.find(
+      (e) => e.kind === "searchLibraryGeneric",
+    ) as Extract<EffectPrimitive, { kind: "searchLibraryGeneric" }>;
+    choiceByKey["searchLibraryGeneric"] = {
+      options: (frame, state, registry) => {
+        const seat = getSeat(state, frame.seat);
+        const bearer = findMinion(state, frame.params["minion"] ?? "");
+        const out: LegalOption[] = [];
+        if (!bearer) return out;
+        for (const c of seat.library) {
+          if (!searchMatches(c, registry, sgeff.cardTypes ?? ["equipment"], false))
+            continue;
+          const h = registry[c.name]!;
+          const modes = h.modesPlayableBy?.(bearer) ?? [];
+          if (modes.length === 0) continue;
+          if (h.isUnique && seatControlsCopy(state, frame.seat, c.name)) continue;
+          const mode = modes[0] ?? null;
+          const cost = playCostFor(
+            state,
+            {
+              name: h.name,
+              bloodCost: h.bloodCost,
+              poolCost: h.poolCost ?? 0,
+              types: h.costTypes?.(mode, undefined) ?? [],
+              requires: h.requiresDisciplines?.(mode, undefined) ?? [],
+              requiresClans: h.requiresClans?.() ?? [],
+              tags: h.permanentTags ?? [],
+            },
+            bearer,
+            null,
+            null,
+            bearer.id,
+            frame.seat,
+          );
+          if (bearer.blood < cost.blood || seat.pool <= cost.pool) continue;
+          out.push({
+            id: `choice:${spec.name}:${frame.cardId}:searchLibraryGeneric:${c.id}`,
+            kind: "answerChoice",
+            label: `Put ${c.name} in play`,
+            params: { pick: c.id },
+          });
+        }
+        out.push({
+          id: `choice:${spec.name}:${frame.cardId}:searchLibraryGeneric:none`,
+          kind: "answerChoice",
+          label: "Find nothing",
+          params: { pick: "none" },
+        });
+        return out;
+      },
+      apply: (frame, choice, ops) => {
+        const pick = choice.params["pick"] ?? "none";
+        if (pick !== "none") {
+          const card = getSeat(ops.state, frame.seat).library.find((c) => c.id === pick);
+          if (card) {
+            const bearer = sgeff.attachToActor !== false
               ? findMinion(ops.state, frame.params["minion"] ?? "")
               : null;
             if (bearer && !cannotBeEquipped(bearer, "equipment")) {

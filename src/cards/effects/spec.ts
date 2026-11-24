@@ -1314,6 +1314,163 @@ export type EffectPrimitive =
       kind: "drainBloodLife";
       amount: number;
     }
+  /** "Search your library for a card matching cardTypes" (Children of
+   *  Stone, Horrid Reality, etc.) — search at resolution, target minion
+   *  chosen at announcement. §4 */
+  | {
+      kind: "searchLibraryGeneric";
+      cardTypes?: PlayCostCardType[];
+      clan?: string;
+      sect?: Sect;
+      attachToActor?: boolean;
+    }
+  /** "Cancel a blood hunt" (Ebony Fox Hunt, Gangrel Conspiracy) — cancel
+   *  the blood hunt referendum for vampires of a given sect. §4 */
+  | {
+      kind: "cancelBloodHuntGeneric";
+      sect?: Sect;
+    }
+  /** "Move N blood from pool to N vampires" (Gird Minions) — move blood
+   *  from the controller's pool to ready vampires they control. §4 */
+  | {
+      kind: "moveBloodFromPoolToVampires";
+      amount: number;
+    }
+  /** "Burn N blood and inflict N life loss each turn" (Consignment to
+   *  Duat) — recurring drain each turn. §4 */
+  | {
+      kind: "drainBloodLifeEachTurn";
+      amount: number;
+    }
+  /** "Draw N cards from research area instead of library" (Development) —
+   *  draw from the research area rather than library. §4 */
+  | { kind: "drawFromResearchAreaInsteadOfLibrary"; count: number }
+  /** "Move a card from ash heap to ready region as a vampire" (Blessed
+   *  Resilience, Compel the Spirit) — put an ash heap card into play as a
+   *  ready vampire. §4 */
+  | { kind: "moveFromAshHeapToReadyVampire" }
+  /** "Move a card from ash heap to hand" (Gear Up, Clio's Kiss) — move an
+   *  ash heap card to the controller's hand. §4 */
+  | { kind: "moveCardFromAshHeap" }
+  /** "Unlock a vampire" (Belonging Grants Protection) — unlock a chosen
+   *  vampire (not necessarily the actor). §4 */
+  | { kind: "unlockVampire" }
+  /** "Burn N blood after successful bleed" (Blood of Sandman, etc.) —
+   *  burn blood from the acting minion after a successful bleed. §4 */
+  | {
+      kind: "burnBloodAfterSuccessfulBleed";
+      amount: number;
+    }
+  /** "Burn N pool from prey" (Bloodbath) — burn pool from the acting
+   *  minion's prey. §4 */
+  | { kind: "burnPoolPrey"; amount: number }
+  /** "Put N votes on this card" (Bloodbath, etc.) — put votes as counters
+   *  on the card. §4 */
+  | {
+      kind: "putInPlayWithVotes";
+      amount: number;
+    }
+  /** "Opponent cannot play cards of these Disciplines" (Approximation of
+   *  Loyalty) — restrict opponent from playing cards requiring these
+   *  Disciplines. §4 */
+  | {
+      kind: "restrictOpponentDisciplines";
+      disciplines: string[];
+    }
+  /** "Grant N intercept to a minion" (Guardian Vigil, etc.) — grant
+   *  intercept to a chosen minion. §4 */
+  | { kind: "grantIntercept"; amount: number }
+  /** "Bleed +N" (Darksight, etc.) — add bleed to the current action. §4 */
+  | { kind: "bleedBonus"; amount: number }
+  /** "Lock this vampire" (Go Anarch, etc.) — lock the acting minion. §4 */
+  | { kind: "lockSelf" }
+  /** "Put this card on a titled vampire" (Infamous Warlock, etc.) — put
+   *  the card on a vampire with a title. §4 */
+  | { kind: "putInPlayOnTitledVampire" }
+  /** "Burn a vampire who recently diablerized" (Community Justice) — burn
+   *  a vampire that committed diablerie recently. §4 */
+  | { kind: "burnRecentDiablerist" }
+  /** "Lock N minions" (Command the Legion) — lock N chosen minions. §4 */
+  | { kind: "lockMinionsX"; amount: number }
+  /** "Exception to seniority" (Command the Legion) — allow acting despite
+   *  seniority restrictions. §4 */
+  | { kind: "seniorityException" }
+  /** "Enter combat with a minion" (Charge of the Buffalo, etc.) — start a
+   *  combat with a chosen minion. §4 */
+  | {
+      kind: "enterCombat";
+      targetFilter?: { kind?: "vampire" | "ally" };
+    }
+  /** "Set range to close/long for N rounds" (Charge of the Buffalo, etc.)
+   *  — set combat range. §4 */
+  | {
+      kind: "setRange";
+      range: "close" | "long";
+      rounds?: number;
+    }
+  /** "Remove an ally or retainer" (Chair of Hades) — remove an ally or
+   *  retainer from play. §4 */
+  | { kind: "removeAllyRetainer" }
+  /** "Put a vampire into play" (Chair of Hades) — put a vampire card into
+   *  play. §4 */
+  | { kind: "putInPlayVampire" }
+  /** "Look at N cards from a Methuselah's hand" (Celestial Harmony) —
+   *  look at the prey's or another's hand. §4 */
+  | { kind: "lookAtHand"; count: number }
+  /** "Choose a Methuselah" (Celestial Harmony, etc.) — choose another
+   *  Methuselah as target. §4 */
+  | { kind: "chooseMethuselah" }
+  /** "Contest a card" (Clio's Kiss, etc.) — contest a card in play. §4 */
+  | { kind: "contestCard" }
+  /** "Burn N influence" (Choir) — burn N influence from uncontrolled
+   *  vampires. §4 */
+  | { kind: "burnInfluence"; amount: number }
+  /** "Damage pool per copy" (Choir, Inevitability of the Void) — damage
+   *  pool based on number of copies. §4 */
+  | { kind: "damagePoolPerCopy" }
+  /** "Remove N cards from ash heap" (Clio's Kiss, Drop Point Network) —
+   *  remove cards from ash heap from the game. §4 */
+  | { kind: "removeCardsFromAshHeap"; count: number }
+  /** "Search library for a minion card" (Drop Point Network, Static
+   *  Virtue) — search for an ally/retainer/equipment. §4 */
+  | {
+      kind: "searchLibraryMinionCard";
+      cardTypes?: PlayCostCardType[];
+    }
+  /** "Burn a location" (Goblinism, Haunt) — burn a location card. §4 */
+  | { kind: "burnLocation" }
+  /** "Search library for a weapon" (Horrid Reality, Illegal Search) —
+   *  search for a weapon card. §4 */
+  | {
+      kind: "searchLibraryWeapon";
+      maxDamage?: number;
+    }
+  /** "Put this card on an Ishtarri vampire" (Ishtarri Warlord) — put
+   *  the card on an Ishtarri vampire. §4 */
+  | { kind: "putInPlayOnIshtarri" }
+  /** "Grant optional maneuver or press" (Ishtarri Warlord, etc.) — grant
+   *  an optional maneuver or press in combat. §4 */
+  | {
+      kind: "grantOptionalManeuverOrPress";
+      maneuver?: boolean;
+      press?: boolean;
+    }
+  /** "Equip or employ from hand" (Jack of Both Sides) — equip or employ
+   *  a card from hand. §4 */
+  | { kind: "equipOrEmployFromHand" }
+  /** "Reduce cost by N" (Jack of Both Sides, etc.) — reduce the cost of
+   *  the next card played. §4 */
+  | { kind: "reduceCost"; amount: number }
+  /** "Search library for Aye/Orun cards" (Static Virtue) — search for
+   *  Aye/Orun cards. §4 */
+  | { kind: "searchLibraryAyeOrun" }
+  /** "Place this card on a vampire" (Static Virtue) — place the card on
+   *  a chosen vampire. §4 */
+  | { kind: "placeOnVampire" }
+  /** "Replace burn with torpor" (Byzar) — replace burning with torpor. §4 */
+  | { kind: "replaceBurnWithTorpor" }
+  /** "Add N burn counters" (Byzar) — add burn counters to a card. §4 */
+  | { kind: "addBurnCounters"; amount: number }
   /** "Ⓓ Stun an unlocked vampire" (Mind Numb) — a directed action card
    *  that NAMES a minion without fighting it. The target is chosen at
    *  announcement (p. 25) and rides in the option id.
