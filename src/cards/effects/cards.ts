@@ -27323,7 +27323,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "pro",
+        effects: [
+          { kind: "modifyStealth", amount: 1 },
+          { kind: "putInPlayOnSelf", tags: ["Carrion Coffin"] },
+          { kind: "unlockForBlood", blood: 1 },
+        ],
+      },
     ],
   },
   {

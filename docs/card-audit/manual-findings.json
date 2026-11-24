@@ -1797,7 +1797,7 @@
     "id": 100300,
     "name": "Carrion Coffin",
     "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma tylko basic stealth zamiast dołączenia, unlock za blood i akcji burn; brak superior [PRO]. Wymaga nowych typów efektów (putInPlayOnSelf, unlockForBlood). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts."
+    "evidence": "putInPlayOnSelf i unlockForBlood zaimplementowane i podpięte do Carrion Coffin (100300). Nadal brakuje: superior [PRO], akcja burn. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts."
   },
   {
     "id": 100301,

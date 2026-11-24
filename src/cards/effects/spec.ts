@@ -139,6 +139,14 @@ export type EffectPrimitive =
       target: "self" | "actingMinion";
       ifSuccessful?: boolean;
     }
+  /** "This vampire can burn N blood to unlock AFTER ACTION RESOLUTION"
+   *  (Carrion Coffin) — offered as an optional choice after the action
+   *  resolves, like unlockAfterResolution but with blood cost paid by the
+   *  actor. §4 */
+  | {
+      kind: "unlockForBlood";
+      blood: number;
+    }
   /** "If this vampire blocks, it gets N optional maneuvers/presses (and/or
    *  neither combatant strikes the first round) in the resulting combat"
    *  (Spirit's Touch, One With the Land) — a reaction rider. */

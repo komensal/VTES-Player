@@ -272,6 +272,7 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   unlockMinion: "unlock",
   unlockSelf: "unlock",
   unlockViaCorruption: "unlock",
+  unlockForBlood: "unlock",
   wake: "wake",
   noLockForBlocking: "wake",
   bloodForVotes: "votes",

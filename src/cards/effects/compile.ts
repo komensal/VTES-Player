@@ -6727,6 +6727,20 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             });
             break;
           }
+          case "unlockForBlood": {
+            // "This vampire can burn N blood to unlock AFTER ACTION
+            // RESOLUTION" — offered as an optional choice, like
+            // unlockAfterResolution but with blood cost paid by the actor.
+            if (!play.minion) throw new Error(`${spec.name}: no playing minion`);
+            ops.addAfterResolutionUnlock({
+              payer: play.minion,
+              target: play.minion,
+              blood: e.blood,
+              cardName: spec.name,
+              cardId: play.card.id,
+            });
+            break;
+          }
           case "blockerCombatRider": {
             if (!play.minion) throw new Error(`${spec.name}: no playing minion`);
             const riders: Parameters<EngineOps["grantBlockerCombatRider"]>[1] = {};
