@@ -20076,6 +20076,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Hell-for-Leather",
     cardType: "combat",
     bloodCost: 0,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: "ani", effects: [{ kind: "strikeDodge" }, { kind: "additionalStrike", count: 1, limited: true }] },
@@ -22273,6 +22274,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Detect Authority",
     cardType: "reaction",
     bloodCost: 0,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
@@ -22727,6 +22729,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Final Loosening",
     cardType: "reaction",
     bloodCost: 0,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
@@ -22911,6 +22914,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Friend of Mine",
     cardType: "reaction",
     bloodCost: 1,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] },
@@ -23150,6 +23154,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Guardian Vigil",
     cardType: "reaction",
     bloodCost: 0,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] },
@@ -26832,7 +26837,14 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "obf",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "lockVampire" },
+        ],
+      },
     ],
   },
   {
@@ -27123,6 +27135,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Border Skirmish",
     cardType: "action",
     bloodCost: 0,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -27148,7 +27161,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "pot",
+        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lockVampire" }]
+      },
     ],
   },
   {
@@ -28419,6 +28436,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Field Training",
     cardType: "action",
     bloodCost: 1,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -28541,6 +28559,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Framing",
     cardType: "action",
     bloodCost: 2,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -28622,6 +28641,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Gear Up",
     cardType: "action",
     bloodCost: 1,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
@@ -28835,7 +28855,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "lockVampire" }]
+      },
     ],
   },
   {
@@ -28922,6 +28946,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Haven Hunting",
     cardType: "action",
     bloodCost: 0,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -33477,8 +33502,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lockVampire" }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lockVampire" }] }
     ],
   },
   {
@@ -33489,8 +33514,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lockVampire" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lockVampire" }] }
     ],
   },
   {
@@ -33513,8 +33538,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lockVampire" }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lockVampire" }] }
     ],
   },
   {

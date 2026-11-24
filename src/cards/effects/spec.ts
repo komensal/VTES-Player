@@ -2434,6 +2434,24 @@ export type EffectPrimitive =
   /** "Ⓓ Lock a minion controlled by your predator or prey" (Distraction
    *  superior) — the mirror, with a RELATION filter rather than an age one. §3 */
   | { kind: "actionLockMinion"; scope: "predatorOrPrey"; directed: boolean }
+  /** "Lock a ready minion" (Blackmail, Brick Laying, Condemnation, Haqim's
+   *  Law: Judgment) — the target is fixed at announcement. §3 */
+  | {
+      kind: "lockVampire";
+      /** Filters on the chosen target (wzorzec po putInPlayOnTarget). */
+      targetFilter?: {
+        kind?: "vampire" | "ally";
+        readyOnly?: boolean;
+        unlockedOnly?: boolean;
+        youngerThanActor?: boolean;
+        /** "…on a vampire who is not a prince, a justicar or an Inner
+         *  Circle member" (Blood Hunt) — the current title. */
+        notTitles?: VampireTitle[];
+        /** "…on A VAMPIRE", not "a ready vampire": a vampire in torpor is
+         *  eligible by default. Without it a filter means READY only. */
+        inTorporToo?: boolean;
+      };
+    }
   /** Red List's Ⓓ payoff: "The chosen minion becomes Red List." The minion
    *  is chosen at announcement by the paired `blockRestriction` (who
    *  "chosen", chosenScope "readyAllyOrYounger"); this marks it on success. */

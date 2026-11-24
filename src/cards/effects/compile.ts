@@ -1309,6 +1309,7 @@ function targetRider(mode: CardMode): EffectPrimitive | null {
       e.kind === "actionMarkRedList" ||
       e.kind === "takeControlOfMinion" ||
       e.kind === "attachToOpponent" ||
+      e.kind === "lockVampire" ||
       // "Ⓓ Choose a vampire and put this card in play" (Distant Friend).
       (e.kind === "putInPlayOnSuccess" && e.chooseVampire === true)
     ) {
@@ -1551,6 +1552,25 @@ function enumerateActionTargets(
       if (!near.includes(s.id)) continue;
       for (const m of s.minions) {
         if (!isReady(m) || m.locked) continue; // already locked
+        targets.push(m.id);
+      }
+    }
+    return targets;
+  }
+  if (e.kind === "lockVampire") {
+    // "Lock a ready minion" — target fixed at announcement (p. 25).
+    const filter = e.targetFilter;
+    for (const s of state.seats) {
+      if (s.ousted) continue;
+      for (const m of s.minions) {
+        if (!isReady(m) || m.locked) continue; // nothing to lock
+        if (filter?.kind !== undefined && m.kind !== filter.kind) continue;
+        if (filter?.unlockedOnly === true && !m.locked) continue; // only locked ones
+        if (filter?.youngerThanActor === true &&
+            (!actor || capacityOf(m) >= capacityOf(actor))) continue;
+        if (filter?.notTitles !== undefined && m.title !== null &&
+            filter.notTitles.includes(m.title)) continue;
+        if (untargetableBy(m, seatId, actor)) continue;
         targets.push(m.id);
       }
     }
@@ -2575,6 +2595,12 @@ function compileActionCard(spec: CardSpec): CardHandler {
             if (m2 && !m2.locked) ops.emit({ type: "MinionLocked", minion: m2.id });
             break;
           }
+        case "lockVampire": {
+          const who = af.targetMinion;
+          const m2 = who ? findMinion(ops.state, who) : null;
+          if (m2 && !m2.locked) ops.emit({ type: "MinionLocked", minion: m2.id });
+          break;
+        }
           case "actionDamageMinion": {
             const who = af.targetMinion;
             if (!who || !findMinion(ops.state, who)) break;

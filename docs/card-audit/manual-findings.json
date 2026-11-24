@@ -1035,7 +1035,7 @@
     "id": 100173,
     "name": "Blackmail",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth; brak lock gotowego wampira oraz superior dołączenia i możliwości spalenia za blood. Wymaga nowych typów efektów (lockVampire, putInPlayOnTarget). Tekst: src/cards/registry.json ID 100173; src/cards/effects/cards.ts i compile.ts."
+    "evidence": "lockVampire zaimplementowane i podpięte do Blackmail (100173). Nadal brakuje: putInPlayOnTarget (superior dołączenia). Tekst: src/cards/registry.json ID 100173; src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100174,
@@ -1437,7 +1437,7 @@
     "id": 100240,
     "name": "Border Skirmish",
     "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma jedynie stealth; brak wymogu anarch, losowego discard pozostałych i unlock na koniec tury. Wymaga nowych typów efektów (requireAnarch, discardRandomCards, unlockAtEndTurn). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "evidence": "requireAnarch dodane (requiresSect: [\"anarch\"] w cards.ts). Nadal brakuje: discardRandomCards, unlockAtEndTurn. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100241,
@@ -1515,7 +1515,7 @@
     "id": 100253,
     "name": "Brick Laying",
     "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma tylko stealth; brak directed wyboru haven/lock oraz superior damage. Wymaga nowych typów efektów (putInPlayOnTarget haven, lockVampire). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "evidence": "lockVampire zaimplementowane i podpięte do Brick Laying (100253). Nadal brakuje: putInPlayOnTarget haven, superior damage. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100254,
@@ -2379,13 +2379,13 @@
     "id": 100397,
     "name": "Condemnation: Betrayed",
     "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma tylko stealth w obu trybach; brak lock i dołączenia condemnation, podatku bleed i superior. Wymaga nowych typów efektów (lockVampire, putInPlayOnTarget condemnation, bleedTax). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "evidence": "lockVampire zaimplementowane i podpięte do Condemnation: Betrayed (100397). Nadal brakuje: putInPlayOnTarget condemnation, bleedTax. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100398,
     "name": "Condemnation: Doomed",
     "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma tylko stealth; brak lock oraz przyłączonej condemnation z -1 stealth i superior burn pool. Wymaga nowych typów efektów (lockVampire, putInPlayOnTarget condemnation, burnPoolSuperior). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "evidence": "lockVampire zaimplementowane i podpięte do Condemnation: Doomed (100398). Nadal brakuje: putInPlayOnTarget condemnation, burnPoolSuperior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100399,
@@ -2397,7 +2397,7 @@
     "id": 100400,
     "name": "Condemnation: Mute",
     "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma tylko stealth; brak lock oraz dołączonej condemnation z -3 votes i superior burn blood. Wymaga nowych typów efektów (lockVampire, putInPlayOnTarget condemnation, burnBloodSuperior). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "evidence": "lockVampire zaimplementowane i podpięte do Condemnation: Mute (100400). Nadal brakuje: putInPlayOnTarget condemnation, burnBloodSuperior. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
   },
   {
     "id": 100401,
@@ -3189,7 +3189,7 @@
     "id": 100532,
     "name": "Detect Authority",
     "status": "PARTIAL_FIX",
-    "evidence": "Tryb ani i tha błędnie dają intercept zamiast odpowiednio warunkowego przerwania akcji i redukcji bleed; brak wymogu Anarch. Wymaga nowych typów efektów (failActionIfBurnBlood, reduceBleed, requireAnarch). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "evidence": "requireAnarch dodane (requiresSect: [\"anarch\"] w cards.ts). Nadal brakuje: failActionIfBurnBlood, reduceBleed. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100533,
@@ -4347,7 +4347,7 @@
     "id": 100725,
     "name": "Field Training",
     "status": "PARTIAL_FIX",
-    "evidence": "Action zawiera jedynie stealth; brak wymogu Anarch, unlock, wyboru superior Discipline i dołączenia z konwersją sect oraz limitem. Wymaga nowych typów efektów (requireAnarch, unlockSelf, chooseSuperiorDiscipline, putInPlayOnTargetConvertSect). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy w src i tests; bez nowego osobnego testu scenariuszowego."
+    "evidence": "requireAnarch dodane (requiresSect: [\"anarch\"] w cards.ts). Nadal brakuje: unlockSelf, chooseSuperiorDiscipline, putInPlayOnTargetConvertSect. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100726,
@@ -4377,7 +4377,7 @@
     "id": 100730,
     "name": "Final Loosening",
     "status": "PARTIAL_FIX",
-    "evidence": "Wszystkie trzy tryby dają intercept, brak wymogu Anarch i efektów aus, dem oraz for zgodnych z tekstem. Wymaga nowych typów efektów (requireAnarch, gainBloodInsteadOfBlocking, gainBloodAusDem). Tekst: registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "evidence": "requireAnarch dodane (requiresSect: [\"anarch\"] w cards.ts). Nadal brakuje: gainBloodInsteadOfBlocking, gainBloodAusDem. Tekst: registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100731,
@@ -4713,7 +4713,7 @@
     "id": 100786,
     "name": "The Framing",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth; brak wymogu Anarch, dołączenia i przekierowania walki na wybranego miniona. Wymaga nowych typów efektów (requireAnarch, putInPlayOnTarget, redirectCombat). Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "evidence": "requireAnarch dodane (requiresSect: [\"anarch\"] w cards.ts). Nadal brakuje: putInPlayOnTarget, redirectCombat. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100787,
@@ -4749,7 +4749,7 @@
     "id": 100792,
     "name": "Friend of Mine",
     "status": "PARTIAL_FIX",
-    "evidence": "Wszystkie trzy tryby reaction dają intercept; for powinno redukować bleed, obt spalać blood po successful bleed, brak wymogu Anarch. Wymaga nowych typów efektów (requireAnarch, reduceBleedAgainstYou, burnBloodAfterBleed). Tekst: registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "evidence": "requireAnarch dodane (requiresSect: [\"anarch\"] w cards.ts). Nadal brakuje: reduceBleedAgainstYou, burnBloodAfterBleed. Tekst: registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100793,
@@ -4875,7 +4875,7 @@
     "id": 100813,
     "name": "Gear Up",
     "status": "PARTIAL_FIX",
-    "evidence": "Tryby nec/pre/vic są identyczne i nie unlockują Anarch; brak wymogu sect i rozdzielonych efektów. Wymaga nowych typów efektów (requireAnarch, unlockSelf, moveCardAshHeapToHand, addStealthUntilEndTurn). Tekst: registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "evidence": "requireAnarch dodane (requiresSect: [\"anarch\"] w cards.ts). Nadal brakuje: unlockSelf, moveCardAshHeapToHand, addStealthUntilEndTurn. Tekst: registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
   },
   {
     "id": 100814,
@@ -5205,7 +5205,7 @@
     "id": 100868,
     "name": "Guardian Vigil",
     "status": "PARTIAL_FIX",
-    "evidence": "Każdy tryb daje podwójny intercept; brak wymogu Anarch, próby bloku i odrębnych korzyści za cel/for oraz możliwości łączenia dyscyplin. Wymaga nowych typów efektów (requireAnarch, attemptBlock, gainInterceptForDifferentDisciplines). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "evidence": "requireAnarch dodane (requiresSect: [\"anarch\"] w cards.ts). Nadal brakuje: attemptBlock, gainInterceptForDifferentDisciplines. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100869,
@@ -5301,7 +5301,7 @@
     "id": 100884,
     "name": "Haqim's Law: Judgment",
     "status": "PARTIAL_FIX",
-    "evidence": "Master daje modifyStealth zamiast trifle Contract, lock Assamite, wyboru młodszego vampire i rush uprawnionych Assamite. Wymaga nowych typów efektów (putInPlayMasterContract, lockVampire, chooseYoungerVampire, grantRush). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "evidence": "lockVampire zaimplementowane i podpięte do Haqim's Law: Judgment (100884). Nadal brakuje: putInPlayMasterContract, chooseYoungerVampire, grantRush. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100885,
@@ -5373,7 +5373,7 @@
     "id": 100896,
     "name": "Haven Hunting",
     "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth; brak wymogu anarch, permanenta i opcji kolejnego combat. Wymaga nowych typów efektów (requireAnarch, putInPlayMaster, nextCombatOption). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "evidence": "requireAnarch dodane (requiresSect: [\"anarch\"] w cards.ts). Nadal brakuje: putInPlayMaster, nextCombatOption. Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
   },
   {
     "id": 100897,
@@ -5457,7 +5457,7 @@
     "id": 100910,
     "name": "Hell-for-Leather",
     "status": "PARTIAL_FIX",
-    "evidence": "Brak wymogu Anarch i limitu na Discipline; cel błędnie wymaga superior, obt daje maneuver zamiast burn 2 pool. Wymaga nowych typów efektów (requireAnarch, limitOnePerDisciplinePerCombat, burnBloodAfterSuccessfulBleed). Tekst: registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "evidence": "requireAnarch dodane (requiresSect: [\"anarch\"] w cards.ts). Nadal brakuje: limitOnePerDisciplinePerCombat, burnBloodAfterSuccessfulBleed. Tekst: registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
   },
   {
     "id": 100911,

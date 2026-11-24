@@ -300,6 +300,7 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   interposeOnBlocker: "deny",
   lockFailedBlockers: "deny",
   lockMinion: "deny",
+  lockVampire: "deny",
   lockTargetMinionOnBleed: "deny",
   noReactionsFromChosen: "deny",
   peekAndDiscard: "deny",
