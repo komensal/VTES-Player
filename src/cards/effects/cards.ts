@@ -21058,7 +21058,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }, { kind: "reflectDamage", amount: 1 }, { kind: "oncePerRound" }] }
     ],
   },
   {
@@ -21069,7 +21069,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }, { kind: "strikeDamage", amount: 1 }, { kind: "chooseStrikeAsRanged" }] }
     ],
   },
   {
@@ -26760,7 +26760,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "unlockVampire" }, { kind: "moveBloodToYoungerLaibon" }] }
     ],
   },
   {
@@ -27194,7 +27194,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "modifyStealth", amount: 1 }, { kind: "limitBleedPerTurn" }, { kind: "requireTargetSabbat" }] }
     ],
   },
   {
@@ -27302,7 +27302,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }, { kind: "putInPlayTrifle" }, { kind: "makeBlackHand" }] }
     ],
   },
   {
@@ -29035,7 +29035,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Haunt"] }, { kind: "burnLocationOnDirectedAction" }] }
     ],
   },
   {
@@ -29089,8 +29089,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "addLifeAlly", amount: 1 }, { kind: "rescueFromTorpor" }] },
+      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "addLifeAlly", amount: 1 }, { kind: "rescueFromTorpor" }] }
     ],
   },
   {
@@ -29442,7 +29442,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }, { kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }, { kind: "putInPlayOnIshtarri" }, { kind: "grantOptionalManeuverOrPress", maneuver: true }] }
     ],
   },
   {
@@ -33433,7 +33433,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["Bamba"] }, { kind: "searchLibraryDiscipline" }] }
     ],
   },
   {
@@ -33476,7 +33476,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "unlockYoungerVampire" }, { kind: "burnGehennaCard" }] }
     ],
   },
   {
@@ -33510,7 +33510,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }, { kind: "putInPlayWithCounters", counters: 1 }, { kind: "payCountersOnTorporBurnDiablerie" }] }
     ],
   },
   {
@@ -33521,7 +33521,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Brainwash"] }, { kind: "blockTransfers" }] }
     ],
   },
   {
@@ -33532,7 +33532,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }, { kind: "outOfTurnCancelUnblockedAction" }, { kind: "enterCombat" }] }
     ],
   },
   {
@@ -34265,7 +34265,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }, { kind: "searchLibraryGehennaEvent" }, { kind: "limitOncePerGame" }] }
     ],
   },
   {
@@ -34392,8 +34392,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "burnLocation" }, { kind: "searchLibraryGeneric", cardTypes: ["location"] }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "burnLocation" }, { kind: "searchLibraryGeneric", cardTypes: ["location"] }] }
     ],
   },
   {
