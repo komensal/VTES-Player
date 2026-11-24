@@ -26749,7 +26749,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["The Becoming"] }, { kind: "copyClanSect" }] }
     ],
   },
   {
@@ -27394,7 +27394,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lookAtHand", count: 1 }, { kind: "chooseMethuselah" }] }
     ],
   },
   {
@@ -27428,8 +27428,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "enterCombat" }, { kind: "setRange", range: "close" }] },
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "enterCombat" }, { kind: "setRange", range: "close" }] }
     ],
   },
   {
@@ -27600,8 +27600,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "contestCard" }, { kind: "moveCardFromAshHeap" }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "contestCard" }, { kind: "moveCardFromAshHeap" }] }
     ],
   },
   {
@@ -27659,7 +27659,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "seniorityException" }] }
     ],
   },
   {
@@ -29301,7 +29301,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }, { kind: "putInPlayOnTitledVampire" }] }
     ],
   },
   {
@@ -33565,7 +33565,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "removeAllyRetainer" }, { kind: "putInPlayVampire" }] }
     ],
   },
   {
