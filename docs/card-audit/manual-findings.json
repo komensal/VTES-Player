@@ -1004,8 +1004,8 @@
   {
     "id": 100168,
     "name": "Black Hand Ritual",
-    "status": "PARTIAL_FIX",
-    "evidence": "unlockYoungerVampire i burnGehennaCard zaimplementowane i podpięte do Black Hand Ritual (100168)."
+    "status": "FIXED_TARGETED",
+    "evidence": "Oba warianty z requiresReady: [unlock] actionUnlockMinion z blackHand i youngerThanActor (nowe filtry) — tylko młodszy Black Hand vampire, nie starszy/nie-Black Hand. [burn] burnGehennaCard z targetRider: tylko seat permanents z tagiem gehenna; burnPermanent kończy też dyrektywę 'do not replace' (releaseDrawForLeavingCard), co jest drugim zdaniem karty. Usunięto martwe case'y w złym switchu. Testy E2E: tests/cards/black-hand-ritual-audit.test.ts (2/2). Tekst: registry ID 100168; rules:lookup: brak wpisu."
   },
   {
     "id": 100169,

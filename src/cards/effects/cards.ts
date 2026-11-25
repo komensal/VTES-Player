@@ -33487,11 +33487,13 @@ export const cardSpecs: CardSpec[] = [
     name: "Black Hand Ritual",
     requiresBlackHand: true,
     requiresVampire: true,
+    requiresReady: true,
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "unlockYoungerVampire" }, { kind: "burnGehennaCard" }] }
+      { level: "basic", variant: "unlock", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "actionUnlockMinion", scope: "anyVampire", directed: false, blackHand: true, youngerThanActor: true }] },
+      { level: "basic", variant: "burn", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "burnGehennaCard" }] }
     ],
   },
   {

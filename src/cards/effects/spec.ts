@@ -2786,6 +2786,11 @@ export type EffectPrimitive =
       sect?: Sect;
       /** "…ANOTHER …" — the acting minion is never its own target. */
       excludeActor?: boolean;
+      /** "Unlock a younger BLACK HAND vampire" (Black Hand Ritual) — only a
+       *  Black Hand vampire qualifies. */
+      blackHand?: boolean;
+      /** "…a YOUNGER … vampire" — younger than the acting vampire. */
+      youngerThanActor?: boolean;
     }
   /** "This vampire unlocks" (Ensconced, Fantasy World, Field Training,
    *  Gear Up, Go Anarch) — unlocks the ACTING minion, no target needed. §3 */

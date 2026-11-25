@@ -1325,6 +1325,7 @@ function targetRider(mode: CardMode): EffectPrimitive | null {
       e.kind === "addLifeAlly" ||
       e.kind === "rescueFromTorpor" ||
       e.kind === "removeFromGameTarget" ||
+      e.kind === "burnGehennaCard" ||
       e.kind === "stealMinionOnSuccess" ||
       e.kind === "actionStun" ||
       e.kind === "actionStealBlood" ||
@@ -1575,6 +1576,8 @@ function enumerateActionTargets(
         }
         if (e.sect !== undefined && m.sect !== e.sect) continue;
         if (e.excludeActor && actor && m.id === actor.id) continue;
+        if (e.blackHand === true && m.blackHand !== true) continue;
+        if (e.youngerThanActor === true && actor && capacityOf(m) >= capacityOf(actor)) continue;
         targets.push(m.id);
       }
     }
@@ -1589,6 +1592,17 @@ function enumerateActionTargets(
         if (m.kind !== "ally" || !isReady(m)) continue;
         if (m.blood >= m.capacity) continue;
         targets.push(m.id);
+      }
+    }
+    return targets;
+  }
+  if (e.kind === "burnGehennaCard") {
+    // "Ⓓ Burn any Gehenna card in play" — any seat's event permanent with
+    // the printed gehenna tag (Black Hand Ritual).
+    for (const s of state.seats) {
+      if (s.ousted) continue;
+      for (const p of s.permanents) {
+        if (p.tags.includes("gehenna")) targets.push(p.card.id);
       }
     }
     return targets;
@@ -2813,6 +2827,15 @@ function compileActionCard(spec: CardSpec): CardHandler {
               e.youngerThanActor === true,
               e.sect,
             );
+            break;
+          }
+          case "burnGehennaCard": {
+            // "Ⓓ Burn any Gehenna card in play. Any 'Do not replace until'
+            // directive on that card is ended" — burnPermanent already
+            // releases the delayed replacement draw, which is the second
+            // sentence (Black Hand Ritual).
+            const target = af.targetPermanent ?? af.card?.params["target"];
+            if (target) ops.burnPermanent(target);
             break;
           }
           case "actionUnlockMinion": {
@@ -7709,10 +7732,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             if (target && findMinion(ops.state, target)) {
               ops.emit({ type: "MinionLocked", minion: target });
             }
-            break;
-          }
-          case "burnGehennaCard": {
-            // Burn a Gehenna card
             break;
           }
           case "unlockYoungerVampire": {
