@@ -3873,7 +3873,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     requiresSect: ["anarch"],
     referendumFail: { callingVampireDamage: 2 },
-    usable: [],
+    usable: ["beforeVotesCast"],
     modes: [
       {
         level: "basic",
@@ -25541,11 +25541,15 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Spike-Thrower [101846] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // "Weapon. 1R damage each strike. Only usable at long range. Only usable once each round."
     krcgId: 101846,
     name: "Spike-Thrower",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    combatLimit: "round",
+    weapon: { damage: 1, ranged: true, aggravated: false },
+    permanent: { where: "bearer", statics: {}, tags: ["weapon"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -25564,10 +25568,12 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Spiritual Protector [101853] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // "Unique wraith with 1 life." — added unique: true per printed text.
     krcgId: 101853,
     name: "Spiritual Protector",
     cardType: "retainer",
     bloodCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, retainerLife: 1, effects: [] }
@@ -25587,11 +25593,15 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Starshell Grenade Launcher [101860] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // "Weapon. 1R aggravated damage each strike, only usable once per combat, and only usable at long range."
     krcgId: 101860,
     name: "Starshell Grenade Launcher",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
+    combatLimit: "combat",
+    weapon: { damage: 1, ranged: true, aggravated: true },
+    permanent: { where: "bearer", statics: {}, tags: ["weapon"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -32192,13 +32202,15 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Spell of Life [101845] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // "+1 stealth action. Only one Spell of Life can be played each turn. Put this card in play."
     krcgId: 101845,
     name: "Spell of Life",
     cardType: "action",
     bloodCost: 0,
+    oncePerTurnByName: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSuccess", tags: ["Spell of Life"] }] }
     ],
   },
   {
