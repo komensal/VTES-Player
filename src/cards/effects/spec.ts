@@ -4999,7 +4999,7 @@ export interface CardSpec {
      *  Disciplines go onto the ally's `MinionState.disciplines`, which is
      *  all the enumerators read — they ask `disciplinesOf`, never
      *  `m.kind`. */
-    playsAsVampire?: Record<string, DisciplineLevel>;
+    playsAsVampire?: { capacity?: number; disciplines: Record<string, DisciplineLevel> };
     /** The printed sub-type — "Wraith with 1 life", "Zombie with 2 life".
      *  Sugar that puts the word in `permanent.tags`, so a card cannot
      *  declare its sub-type in one place and be filtered in another. The

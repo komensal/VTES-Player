@@ -10614,7 +10614,10 @@ function allyEntryFor(spec: CardSpec): NonNullable<CardHandler["allyEntry"]> {
       bleed: m?.ally?.bleed ?? stats.bleed,
       statics: { ...(spec.permanent?.statics ?? {}), ...(m?.statics ?? {}) },
       tags: allyTags(spec),
-      ...(stats.playsAsVampire ? { disciplines: stats.playsAsVampire } : {}),
+      ...(stats.playsAsVampire ? {
+        disciplines: stats.playsAsVampire.disciplines,
+        ...(stats.playsAsVampire.capacity !== undefined ? { capacity: stats.playsAsVampire.capacity } : {}),
+      } : {}),
       ...(stats.actsWhenRecruited ? { actsWhenRecruited: true } : {}),
     };
   };

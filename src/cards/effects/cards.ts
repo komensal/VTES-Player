@@ -4056,7 +4056,7 @@ export const cardSpecs: CardSpec[] = [
       strength: 2,
       bleed: 0,
       strike: { damage: 2, ranged: true },
-      playsAsVampire: { pot: "basic" },
+      playsAsVampire: { disciplines: { pot: "basic" } },
     },
     permanent: { where: "bearer", statics: { burnAtCombatEnd: true }, tags: [] },
     usable: [],
@@ -4479,7 +4479,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "ally",
     bloodCost: 0,
     poolCost: 3,
-    ally: { life: 2, strength: 1, bleed: 1, subtype: "ghoul", playsAsVampire: { tha: "basic" } },
+    ally: { life: 2, strength: 1, bleed: 1, subtype: "ghoul", playsAsVampire: { capacity: 3, disciplines: { tha: "basic" } } },
     permanent: { where: "bearer", statics: {}, tags: [] },
     usable: [],
     modes: [{ level: "basic", discipline: null, effects: [] }],
@@ -4746,7 +4746,7 @@ export const cardSpecs: CardSpec[] = [
       strength: 2,
       bleed: 0,
       shuffleIntoLibraryOnBurn: true,
-      playsAsVampire: { nec: "basic" },
+      playsAsVampire: { disciplines: { nec: "basic" } },
     },
     rush: { targets: "minion" },
     permanent: {
@@ -4777,7 +4777,7 @@ export const cardSpecs: CardSpec[] = [
       strength: 3,
       bleed: 1,
       shuffleIntoLibraryOnBurn: true,
-      playsAsVampire: { nec: "basic" },
+      playsAsVampire: { disciplines: { nec: "basic" } },
     },
     permanent: {
       where: "bearer",
@@ -4811,7 +4811,7 @@ export const cardSpecs: CardSpec[] = [
       strength: 3,
       bleed: 2,
       shuffleIntoLibraryOnBurn: true,
-      playsAsVampire: { nec: "basic" },
+      playsAsVampire: { disciplines: { nec: "basic" } },
     },
     permanent: {
       where: "bearer",
@@ -11117,7 +11117,7 @@ export const cardSpecs: CardSpec[] = [
       strength: 4,
       bleed: 0,
       enterPlayBurn: { kinds: ["ally", "retainer"] },
-      playsAsVampire: { ani: "basic" },
+      playsAsVampire: { disciplines: { ani: "basic" } },
     },
     rush: { targets: "vampire" },
     permanent: {
@@ -19234,7 +19234,7 @@ export const cardSpecs: CardSpec[] = [
       subtype: "wraith",
       actsWhenRecruited: true,
       unlockRecruiterOnFirst: true,
-      playsAsVampire: { obl: "basic" },
+      playsAsVampire: { disciplines: { obl: "basic" } },
     },
     permanent: {
       where: "bearer",

@@ -9218,8 +9218,8 @@
   {
     "id": 101537,
     "name": "Rafastio Ghoul",
-    "status": "UNRESOLVED",
-    "evidence": "Rafastio Ghoul: ally w spec ma basic Thaumaturgy przez playsAsVampire, lecz brak jawnej capacity 3. Wymaga sprawdzenia, czy runtime w kontekście kart wymagających capacity traktuje ally jak vampire o capacity 3. Spec ma playsAsVampire: { tha: \"basic\" } ale brak capacity: 3. Wymaga dodania pola capacity do playsAsVampire w typach (engine). Spec ma playsAsVampire bez capacity: 3. Wymaga zmiany typów w engine. Spec ma playsAsVampire bez capacity: 3. Wymaga zmiany typów w engine."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano playsAsVampire: { capacity: 3, disciplines: { tha: \"basic\" } } zgodnie z tekstem karty. Zmieniono typ playsAsVampire w spec.ts na { capacity?: number; disciplines: Record<string, DisciplineLevel> } i zaktualizowano wszystkie 6 wystąpień w cards.ts."
   },
   {
     "id": 101538,
