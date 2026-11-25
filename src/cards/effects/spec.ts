@@ -1414,12 +1414,11 @@ export type EffectPrimitive =
   /** "Put a vampire into play" (Chair of Hades) — put a vampire card into
    *  play. §4 */
   | { kind: "putInPlayVampire" }
-  /** "Look at N cards from a Methuselah's hand" (Celestial Harmony) —
-   *  look at the prey's or another's hand. §4 */
-  | { kind: "lookAtHand"; count: number }
-  /** "Choose a Methuselah" (Celestial Harmony, etc.) — choose another
-   *  Methuselah as target. §4 */
-  | { kind: "chooseMethuselah" }
+  /** "Choose a Methuselah. That Methuselah selects all but one of the cards
+   *  in his or her hand and shows them to you" (Celestial Harmony [aus]);
+   *  `all` is the superior's "all Methuselahs are chosen". The look is
+   *  recorded as knowledge; which card stays hidden is the OWNER's pick. */
+  | { kind: "showHandAllButOne"; all: boolean }
   /** "Contest a card" (Clio's Kiss, etc.) — contest a card in play. §4 */
   | { kind: "contestCard" }
   /** "Burn N influence" (Choir) — burn N influence from uncontrolled

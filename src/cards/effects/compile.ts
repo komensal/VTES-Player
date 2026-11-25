@@ -2590,6 +2590,39 @@ function compileActionCard(spec: CardSpec): CardHandler {
             }
             break;
           }
+          case "showHandAllButOne": {
+            // "Choose a Methuselah. That Methuselah selects all but one of
+            // the cards in his or her hand and shows them to you" — the
+            // seat is chosen at resolution (basic), or every other
+            // Methuselah is queued (superior). The OWNER then picks which
+            // card stays hidden; the rest is recorded as seen.
+            if (!af.card) break;
+            if (e.all) {
+              const queue = ops.state.seats
+                .filter((s) => !s.ousted && s.id !== af.actingSeat)
+                .map((s) => s.id);
+              if (queue.length > 0) {
+                ops.raiseChoice({
+                  seat: queue[0]!,
+                  cardName: spec.name,
+                  cardId: af.card.instance.id,
+                  key: "showHandAllButOne",
+                  params: { viewer: af.actingSeat, stage: "hide", queue: queue.join(",") },
+                  optional: false,
+                });
+              }
+            } else {
+              ops.raiseChoice({
+                seat: af.actingSeat,
+                cardName: spec.name,
+                cardId: af.card.instance.id,
+                key: "showHandAllButOne",
+                params: { viewer: af.actingSeat, stage: "pickSeat" },
+                optional: false,
+              });
+            }
+            break;
+          }
           case "poolGainOnBleedSuccess":
             // "If the bleed is successful (for 1 or more)".
             if (bleedOk) {
@@ -7310,28 +7343,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             break;
           }
           case "putInPlayVampire": {
-            break;
-          }
-          case "lookAtHand": {
-            ops.raiseChoice({
-              seat: af.actingSeat,
-              cardName: spec.name,
-              cardId: af.card?.instance.id ?? "",
-              key: "lookAtHand",
-              params: { count: String(e.count) },
-              optional: false,
-            });
-            break;
-          }
-          case "chooseMethuselah": {
-            ops.raiseChoice({
-              seat: af.actingSeat,
-              cardName: spec.name,
-              cardId: af.card?.instance.id ?? "",
-              key: "chooseMethuselah",
-              params: {},
-              optional: false,
-            });
             break;
           }
           case "contestCard": {
@@ -12755,6 +12766,83 @@ export function compileSpec(spec: CardSpec): CardHandler {
           if (m.clan !== clan || !isReady(m) || m.blood <= 0) continue;
           ops.emit({ type: "BloodBurned", minion: m.id, amount: 1 });
           ops.emit({ type: "UncontrolledBloodAdded", seat: frame.seat, minion: target, amount: 1 });
+        }
+      },
+    };
+  }
+  // "Choose a Methuselah. That Methuselah selects all but one of the cards
+  // in his or her hand and shows them to you" (Celestial Harmony). Two
+  // stages: the actor picks the seat (basic only), then that seat's OWNER
+  // picks the single card that stays hidden. The look itself is the
+  // `CardsRevealed` event (docs/knowledge-design.md), so the actor remembers
+  // the shown cards after the frame is gone.
+  if (
+    spec.modes.some((m) =>
+      m.effects.some((e) => e.kind === "showHandAllButOne"),
+    )
+  ) {
+    choiceByKey["showHandAllButOne"] = {
+      options: (frame, state) => {
+        const viewer = frame.params["viewer"] ?? frame.seat;
+        if (frame.params["stage"] === "pickSeat") {
+          return state.seats
+            .filter((s) => !s.ousted && s.id !== viewer)
+            .map((s) => ({
+              id: `choice:${spec.name}:${frame.cardId}:showHandAllButOne:seat:${s.id}`,
+              kind: "answerChoice" as const,
+              label: `Choose ${s.id}`,
+              params: { pick: s.id },
+            }));
+        }
+        const hand = getSeat(state, frame.seat).hand;
+        if (hand.length <= 1) {
+          // All-but-one of a zero- or one-card hand is no cards at all.
+          return [{
+            id: `choice:${spec.name}:${frame.cardId}:showHandAllButOne:none`,
+            kind: "answerChoice" as const,
+            label: "Show nothing",
+            params: { pick: "none" },
+          }];
+        }
+        return hand.map((c) => ({
+          id: `choice:${spec.name}:${frame.cardId}:showHandAllButOne:hide:${c.id}`,
+          kind: "answerChoice" as const,
+          label: `Keep ${c.name} hidden`,
+          params: { pick: c.id },
+        }));
+      },
+      apply: (frame, choice, ops) => {
+        const viewer = (frame.params["viewer"] ?? frame.seat) as SeatId;
+        if (frame.params["stage"] === "pickSeat") {
+          const picked = choice.params["pick"] as SeatId | undefined;
+          if (picked) {
+            ops.raiseChoice({
+              seat: picked,
+              cardName: spec.name,
+              cardId: frame.cardId,
+              key: "showHandAllButOne",
+              params: { viewer, stage: "hide" },
+              optional: false,
+            });
+          }
+          return;
+        }
+        const hidden = choice.params["pick"];
+        const revealed = hidden === "none"
+          ? []
+          : getSeat(ops.state, frame.seat).hand.filter((c) => c.id !== hidden).map((c) => c.id);
+        if (revealed.length > 0) ops.emit({ type: "CardsRevealed", to: viewer, cards: revealed });
+        const queue = (frame.params["queue"] ?? "").split(",").filter(Boolean);
+        const next = queue[1] as SeatId | undefined;
+        if (next) {
+          ops.raiseChoice({
+            seat: next,
+            cardName: spec.name,
+            cardId: frame.cardId,
+            key: "showHandAllButOne",
+            params: { viewer, stage: "hide", queue: queue.slice(1).join(",") },
+            optional: false,
+          });
         }
       },
     };

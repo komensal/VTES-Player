@@ -1874,8 +1874,8 @@
   {
     "id": 100313,
     "name": "Celestial Harmony",
-    "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma tylko stealth; brak ujawniania ręki, wyboru Methuselah i superior. Wymaga nowych typów efektów (lookAtHand, chooseMethuselah). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Pełna klauzula obu trybów: showHandAllButOne zastępuje mylące lookAtHand/chooseMethuselah. [aus] wybór Methuselah przy rozstrzygnięciu, [AUS] kolejka wszystkich innych Methuselah (także pusta ręka). Właściciel ręki wybiera jedną ukrytą kartę; reszta jest emitowana jako CardsRevealed do aktora i zapisywana w knowledge (ręka nietknięta). Wymagało to przypadku w switchu resolveCardAction — bulk umieścił go błędnie w compileModifierOrReaction. Testy E2E: tests/cards/celestial-harmony-audit.test.ts (4/4: wybór seat, ukrycie jednej karty, pusta/jednokartowa ręka, superior). Tekst: registry ID 100313; rules:lookup: brak wpisu."
   },
   {
     "id": 100314,

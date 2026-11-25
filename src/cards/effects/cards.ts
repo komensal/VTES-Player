@@ -27394,7 +27394,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lookAtHand", count: 1 }, { kind: "chooseMethuselah" }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "showHandAllButOne", all: false }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "showHandAllButOne", all: true }] }
     ],
   },
   {
