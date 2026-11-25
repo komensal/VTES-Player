@@ -368,8 +368,8 @@
   {
     "id": 100062,
     "name": "Ancestor's Insight",
-    "status": "PARTIAL_FIX",
-    "evidence": "Jest jedynie basic aus modifyBleed; brak redukcji bleed jako reakcji i rozdzielenia od superior modifier. Tekst: src/cards/registry.json, ID 100062; implementacja: src/cards/effects/cards.ts. Aktualizacja: dodano wymaganie grającego Laibon (tests/cards/laibon-window-requirements.test.ts); wcześniejsza wzmianka o jego braku jest nieaktualna. Dla wymogu ready sprawdzany jest również torpor i torporPending. Pozostałe warunki, timing, tryby i efekty wymagają dalszej pracy."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: rozdzielono na dwa tryby — basic [aus] reaction: modifyBleed -1 (reduce a bleed against you by 1), superior [AUS] action modifier: modifyBleed +1 limited. Dodano role (reaction/modifier) i usable reguły (bleedTargetsYou, onlyDuringBleed). Testy: tests/cards/ancestors-insight-audit.test.ts (2 scenariusze: reaction i action modifier)."
   },
   {
     "id": 100063,

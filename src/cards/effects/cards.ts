@@ -33355,6 +33355,8 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Ancestor's Insight [100062] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // [aus] [REACTION] Reduce a bleed against you by 1.
+    // [AUS] [ACTION MODIFIER] Only usable during a bleed action. +1 bleed (limited).
     krcgId: 100062,
     name: "Ancestor's Insight",
     cardType: "modifierOrReaction",
@@ -33364,7 +33366,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
+      { level: "basic", discipline: "aus", role: "reaction", usable: ["bleedTargetsYou"], effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "superior", discipline: "aus", role: "modifier", usable: ["onlyDuringBleed"], effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
     ],
   },
   {
