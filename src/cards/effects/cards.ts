@@ -24198,11 +24198,13 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Monocle of Clarity [101240] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // "Unique equipment." — added unique: true per printed text.
     krcgId: 101240,
     name: "Monocle of Clarity",
     cardType: "equipment",
     bloodCost: 0,
     usable: [],
+    unique: true,
     modes: [
       { level: "basic", discipline: null, effects: [] }
     ],

@@ -7436,8 +7436,8 @@
   {
     "id": 101240,
     "name": "Monocle of Clarity",
-    "status": "UNRESOLVED",
-    "evidence": "Monocle of Clarity: spec nie deklaruje unique ani możliwości pytania innego gracza; efekt pytań wymagających prawdziwej odpowiedzi jest częściowo poza modelem gry. Wymaga ustalenia zakresu obsługi i zachowania unique. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: unique: true dodane bezpośrednio do spec (dodatkowo obsługiwane przez printedUniqueCards z drukowanego tekstu \"Unique equipment.\"). Efekt pytań (yes-or-no) pozostaje poza modelem gry — zgodnie z decyzją o zakresie. Test metadanych: tests/cards/printed-unique-cards.test.ts."
   },
   {
     "id": 101241,
