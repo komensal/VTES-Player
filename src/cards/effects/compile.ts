@@ -2195,6 +2195,8 @@ function compileActionCard(spec: CardSpec): CardHandler {
         if (r.press) riders.press = (riders.press ?? 0) + r.press;
         if (r.strength) riders.strength = (riders.strength ?? 0) + r.strength;
         if (r.noCombatEndsFirstRound) riders.noCombatEndsFirstRound = true;
+        if (r.setRange) riders.setRange = r.setRange;
+        if (r.forcedHandStrike) riders.forcedHandStrike = r.forcedHandStrike;
       };
       for (const e of mode.effects) {
         if (e.kind === "capBleed") {

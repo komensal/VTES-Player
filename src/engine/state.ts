@@ -3189,6 +3189,14 @@ export interface RushRiders {
    *  round" (Hunter's Mark superior) — the combat-scoped sibling of
    *  `PermanentStatics.opposingCannotCombatEnds`. */
   noCombatEndsFirstRound?: boolean;
+  /** "Set the range for the first round of that combat to close" (Charge
+   *  of the Buffalo [spi]) — the range is set, so the determine-range step
+   *  is skipped, exactly like a blocker's `setRange` rider. */
+  setRange?: "close" | "long";
+  /** "This acting vampire's initial strike during that round is strike:
+   *  hand strike at +N damage" (Charge of the Buffalo [spi]/[SPI]) — the
+   *  acting side's forced initial hand strike, `forcedHandStrike` below. */
+  forcedHandStrike?: number;
 }
 
 export type OutcomeCondition =

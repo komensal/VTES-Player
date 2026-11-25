@@ -27433,8 +27433,9 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "enterCombat" }, { kind: "setRange", range: "close" }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "enterCombat" }, { kind: "setRange", range: "close" }] }
+      { level: "basic", variant: "for", discipline: "for", effects: [{ kind: "actionEnterCombat", targets: "minion", lockedOnly: true }] },
+      { level: "basic", variant: "spi", discipline: "spi", effects: [{ kind: "actionEnterCombat", targets: "minion", riders: { setRange: "close", forcedHandStrike: 1 } }] },
+      { level: "superior", variant: "spi", discipline: "spi", effects: [{ kind: "actionEnterCombat", targets: "minion", riders: { setRange: "close", forcedHandStrike: 2 } }] }
     ],
   },
   {

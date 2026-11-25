@@ -4676,6 +4676,10 @@ export class VtesEngine implements EngineOps {
             ...(params.rushRiders.noCombatEndsFirstRound
               ? { noCombatEndsFirstRound: true }
               : {}),
+            ...(params.rushRiders.setRange ? { setRange: params.rushRiders.setRange } : {}),
+            ...(params.rushRiders.forcedHandStrike !== undefined
+              ? { forcedHandStrike: params.rushRiders.forcedHandStrike }
+              : {}),
           }
         : null,
       // "At the end of that combat, …" — fixed at announcement (p. 25)
@@ -5902,6 +5906,12 @@ export class VtesEngine implements EngineOps {
       playedThisRound: [],
       playedThisCombat: [],
       committedStrike: { acting: null, opposing: null },
+      // "Set the range for the first round of that combat" (Charge of the
+      // Buffalo) and the acting side's forced initial hand strike — both
+      // arrive on the rush's own riders, fixed at announcement (p. 25).
+      ...(riders?.forcedHandStrike !== undefined
+        ? { forcedHandStrike: { acting: riders.forcedHandStrike, opposing: null } }
+        : {}),
       usedWeaponManeuver: { acting: null, opposing: null },
       restrict: {
         acting: { maneuver: false, press: false, equipment: false },
@@ -5912,6 +5922,16 @@ export class VtesEngine implements EngineOps {
       endedPrematurely: false,
       cycle: newCycle(sequencingOrder(this.state, actingSeat, [opposingSeat])),
     });
+    // "Set the range for the first round of that combat" (Charge of the
+    // Buffalo): the range is already decided, so the determine-range step
+    // is skipped for that round.
+    if (riders?.setRange) {
+      const cf = this.combatFrame();
+      if (cf) {
+        cf.range = riders.setRange;
+        cf.skipRangeNextRound = true;
+      }
+    }
     this.spreadVampiricDisease(this.state.frames[this.state.frames.length - 1] as CombatFrame);
   }
 

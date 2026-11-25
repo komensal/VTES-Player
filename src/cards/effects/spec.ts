@@ -752,6 +752,12 @@ export type EffectPrimitive =
         /** "The opposing minion cannot strike: combat ends during the
          *  first round of that combat" (Hunter's Mark superior). */
         noCombatEndsFirstRound?: boolean;
+        /** "Set the range for the first round of that combat to close"
+         *  (Charge of the Buffalo [spi]). */
+        setRange?: "close" | "long";
+        /** "This acting vampire's initial strike during that round is
+         *  strike: hand strike at +N damage" (Charge of the Buffalo). */
+        forcedHandStrike?: number;
       };
       /** "At the end of that combat, if <who is standing>, <payoff>"
        *  (Abuse of Power, Pillars Fall, Hunting the Beast).

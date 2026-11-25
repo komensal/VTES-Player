@@ -1214,6 +1214,12 @@ export interface CardActionParams {
     press?: number;
     strength?: number;
     noCombatEndsFirstRound?: boolean;
+    /** "Set the range for the first round of that combat" (Charge of the
+     *  Buffalo [spi]). */
+    setRange?: "close" | "long";
+    /** "This acting vampire's initial strike during that round is strike:
+     *  hand strike at +N damage" (Charge of the Buffalo). */
+    forcedHandStrike?: number;
   };
   /** "At the end of that combat, if <who is standing>, <payoff>" — a
    *  rider installed on the rush's own combat (docs/rush-outcome-design.md

@@ -1976,8 +1976,8 @@
   {
     "id": 100330,
     "name": "Charge of the Buffalo",
-    "status": "PARTIAL_FIX",
-    "evidence": "Oba podstawowe tryby mają tylko stealth; brak właściwych rush, wymuszonego zakresu i strike, brak superior. Wymaga nowych typów efektów (enterCombat, setRange). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wszystkie trzy tryby jako actionEnterCombat z variant: [for] targets minion z lockedOnly (tylko zablokowane). [spi]/[SPI] riders z nowymi polami setRange close (cf.range + skipRangeNextRound) i forcedHandStrike 1/2 (istniejący mechanizm Haymaker: wymuszony initial hand strike z bonusem, oferowany samotnie, bonus przy obliczaniu hand damage). Wymagało to przeniesienia pól przez CardActionParams.rushRiders i kreator ramy akcji. Usunięto błędny actionStealth, którego karta nie ma. Testy E2E: tests/cards/charge-of-the-buffalo-audit.test.ts (3/3: tylko locked, range + wymuszony strike +1, superior +2 z pełną rundą damage). Tekst: registry ID 100330; rules:lookup: grupa G00127 (range)."
   },
   {
     "id": 100331,
