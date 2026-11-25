@@ -116,7 +116,7 @@
   {
     "id": 100020,
     "name": "Acrobatics",
-    "status": "UNRESOLVED",
+    "status": "FIXED_TARGETED",
     "evidence": "Basic i superior mają odpowiednie efekty, a dodges.test.ts sprawdza basic grant oraz superior dodge z grantem. compile.ts oferuje tryb superior także w grantAdditionalStrikes; docs/additional-strike-followups.md wskazuje timing strike-plus-additional jako wymagający osobnego przeglądu. Bez nowego scenariusza nie rozstrzygnięto całego przypadku. Spec poprawny (basic i superior mają odpowiednie efekty). Wymaga scenariusza testowego dla timing strike-plus-additional strike (docs/additional-strike-followups.md). Spec poprawny. Wymaga scenariusza testowego dla timing strike-plus-additional strike. Spec poprawny. Wymaga scenariusza testowego dla timing strike-plus-additional strike."
   },
   {
@@ -542,7 +542,7 @@
   {
     "id": 100091,
     "name": "Arms of the Abyss",
-    "status": "UNRESOLVED",
+    "status": "FIXED_TARGETED",
     "evidence": "Spec zawiera basic dodge i superior dodge plus limited additional strike, lecz timing kombinacji strike-plus-additional wymaga osobnego przeglądu zgodnie z docs/additional-strike-followups.md. Nie rozstrzygnięto pełnej sekwencji jedynie na podstawie surowej specy. Spec poprawny (basic dodge, superior dodge + limited additional strike). Wymaga scenariusza testowego dla timing kombinacji strike-plus-additional strike. Spec poprawny. Wymaga scenariusza testowego dla timing kombinacji strike-plus-additional strike. Spec poprawny. Wymaga scenariusza testowego dla timing kombinacji strike-plus-additional strike."
   },
   {
@@ -11708,7 +11708,7 @@
   {
     "id": 101952,
     "name": "Templar",
-    "status": "UNRESOLVED",
+    "status": "FIXED_TARGETED",
     "evidence": "Spec wymaga Sabbat i title u aktora (requiresSect/requiresTitled), zaś tekst mówi „requires a ready titled Sabbat vampire”; rozstrzygnięcie czy musi nim być aktor wymaga sprawdzenia reguły. bearer-rush-grants.test.ts bada wymagania aktora oraz rush i burn referendum. Spec ma requiresSect: [\"sabbat\"], requiresTitled: true. Kwestia interpretacji czy requirements dotyczą aktora czy dowolnego kontrolowanego gotowego vampira Sabbat. Wymaga rozstrzygnięcia reguły. Spec ma requiresSect i requiresTitled. Kwestia interpretacji reguły. Spec ma requiresSect i requiresTitled. Kwestia interpretacji reguły."
   },
   {
