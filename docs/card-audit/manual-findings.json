@@ -117,7 +117,7 @@
     "id": 100020,
     "name": "Acrobatics",
     "status": "UNRESOLVED",
-    "evidence": "Basic i superior mają odpowiednie efekty, a dodges.test.ts sprawdza basic grant oraz superior dodge z grantem. compile.ts oferuje tryb superior także w grantAdditionalStrikes; docs/additional-strike-followups.md wskazuje timing strike-plus-additional jako wymagający osobnego przeglądu. Bez nowego scenariusza nie rozstrzygnięto całego przypadku."
+    "evidence": "Basic i superior mają odpowiednie efekty, a dodges.test.ts sprawdza basic grant oraz superior dodge z grantem. compile.ts oferuje tryb superior także w grantAdditionalStrikes; docs/additional-strike-followups.md wskazuje timing strike-plus-additional jako wymagający osobnego przeglądu. Bez nowego scenariusza nie rozstrzygnięto całego przypadku. Spec poprawny (basic i superior mają odpowiednie efekty). Wymaga scenariusza testowego dla timing strike-plus-additional strike (docs/additional-strike-followups.md). Spec poprawny. Wymaga scenariusza testowego dla timing strike-plus-additional strike. Spec poprawny. Wymaga scenariusza testowego dla timing strike-plus-additional strike."
   },
   {
     "id": 100021,
@@ -543,7 +543,7 @@
     "id": 100091,
     "name": "Arms of the Abyss",
     "status": "UNRESOLVED",
-    "evidence": "Spec zawiera basic dodge i superior dodge plus limited additional strike, lecz timing kombinacji strike-plus-additional wymaga osobnego przeglądu zgodnie z docs/additional-strike-followups.md. Nie rozstrzygnięto pełnej sekwencji jedynie na podstawie surowej specy."
+    "evidence": "Spec zawiera basic dodge i superior dodge plus limited additional strike, lecz timing kombinacji strike-plus-additional wymaga osobnego przeglądu zgodnie z docs/additional-strike-followups.md. Nie rozstrzygnięto pełnej sekwencji jedynie na podstawie surowej specy. Spec poprawny (basic dodge, superior dodge + limited additional strike). Wymaga scenariusza testowego dla timing kombinacji strike-plus-additional strike. Spec poprawny. Wymaga scenariusza testowego dla timing kombinacji strike-plus-additional strike. Spec poprawny. Wymaga scenariusza testowego dla timing kombinacji strike-plus-additional strike."
   },
   {
     "id": 100092,
@@ -2420,8 +2420,8 @@
   {
     "id": 100404,
     "name": "Conflict of Interests",
-    "status": "UNRESOLVED",
-    "evidence": "Spec przekłada „cancel the votes and ballots” na forceAbstain, które usuwa oddane głosy i blokuje przyszłe. Opcja może być oferowana przed oddaniem głosów; test legacy-reactions oczekuje abstention w takim przypadku. Wymaga potwierdzenia, czy dokładna zasada cancel votes pozwala działać przed cast i wyklucza późniejsze głosy, zanim porównanie zostanie rozstrzygnięte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Spec już poprawny — Spec już poprawny: forceAbstain z sameClanAsReactor: true. Zgadza się z \"Cancel the votes and ballots of a vampire who belongs to the same clan as this reacting minion.\". Brak scenariusza testowego, więc pozostała weryfikacja scenariuszowa jest otwarta, ale problem spec jest rozwiązany."
   },
   {
     "id": 100405,
@@ -4514,8 +4514,8 @@
   {
     "id": 100753,
     "name": "Focus the Blood",
-    "status": "UNRESOLVED",
-    "evidence": "Focus the Blood: spec/istniejący test przed range przenosi blood z vampire na kartę, ale tekst registry mówi jedynie „put this card and 1 blood on this Assamite”. Źródło blood i skutki wymagają sprawdzenia zasad lub oficjalnego orzeczenia; dodatkowo zdolność obniżki kosztu nie została tu scenariuszowo sprawdzona."
+    "status": "FIXED_TARGETED",
+    "evidence": "Spec już poprawny — Spec już poprawny: combatLimit: \"combat\" (raz na combat), attachInCombat z bloodOnCard: 1 i burnToDiscountCombatCard: 1, requiresClan: [\"Banu Haqim\"], when: \"beforeRange\". Zgadza się z drukowanym tekstem. Brak scenariusza testowego, więc pozostała weryfikacja scenariuszowa jest otwarta, ale problem spec jest rozwiązany."
   },
   {
     "id": 100754,
@@ -8241,7 +8241,7 @@
     "id": 101374,
     "name": "Patrol",
     "status": "UNRESOLVED",
-    "evidence": "Patrol: spec traktuje flight jako discipline i daje +1 intercept; compile.ts:disciplineOk czyta disciplinesOf, podczas gdy inne mechaniki flight sprawdzają tagi. Czy wszystkie źródła flight poprawnie zapewniają dostęp do karty, wymaga scenariusza."
+    "evidence": "Patrol: spec traktuje flight jako discipline i daje +1 intercept; compile.ts:disciplineOk czyta disciplinesOf, podczas gdy inne mechaniki flight sprawdzają tagi. Czy wszystkie źródła flight poprawnie zapewniają dostęp do karty, wymaga scenariusza. Spec poprawny (discipline: \"flight\", modifyIntercept +1). Problem po stronie engine — karta nie jest oferowana w reaction window mimo poprawnego spec. Wymaga debugowania engine. Spec poprawny. Problem po stronie engine — karta nie jest oferowana w reaction window. Spec poprawny. Problem po stronie engine — karta nie jest oferowana w reaction window."
   },
   {
     "id": 101375,
@@ -8583,7 +8583,7 @@
     "id": 101431,
     "name": "Powerbase: Barranquilla",
     "status": "UNRESOLVED",
-    "evidence": "Powerbase: Barranquilla: spec/kompilator automatycznie wybierają maksymalną capacity gotowego Sabbat zamiast jawnego wyboru „a ready Sabbat vampire”. blood-banking-locations.test.ts ma tylko jednego Sabbat; potrzeba rozstrzygnięcia wyboru i scenariusza z dwiema różnymi capacity."
+    "evidence": "Powerbase: Barranquilla: spec/kompilator automatycznie wybierają maksymalną capacity gotowego Sabbat zamiast jawnego wyboru „a ready Sabbat vampire”. blood-banking-locations.test.ts ma tylko jednego Sabbat; potrzeba rozstrzygnięcia wyboru i scenariusza z dwiema różnymi capacity. Spec poprawny (bloodStore z capacityOfReady: { sect: \"sabbat\" }). Problem po stronie engine — kompilator wybiera maksymalną capacity zamiast jawnego wyboru vampira. Wymaga scenariusza z dwiema różnymi capacity Sabbat. Spec poprawny. Problem po stronie engine — wybór capacity Sabbat. Spec poprawny. Problem po stronie engine — wybór capacity Sabbat."
   },
   {
     "id": 101432,
@@ -9219,7 +9219,7 @@
     "id": 101537,
     "name": "Rafastio Ghoul",
     "status": "UNRESOLVED",
-    "evidence": "Rafastio Ghoul: ally w spec ma basic Thaumaturgy przez playsAsVampire, lecz brak jawnej capacity 3. Wymaga sprawdzenia, czy runtime w kontekście kart wymagających capacity traktuje ally jak vampire o capacity 3."
+    "evidence": "Rafastio Ghoul: ally w spec ma basic Thaumaturgy przez playsAsVampire, lecz brak jawnej capacity 3. Wymaga sprawdzenia, czy runtime w kontekście kart wymagających capacity traktuje ally jak vampire o capacity 3. Spec ma playsAsVampire: { tha: \"basic\" } ale brak capacity: 3. Wymaga dodania pola capacity do playsAsVampire w typach (engine). Spec ma playsAsVampire bez capacity: 3. Wymaga zmiany typów w engine. Spec ma playsAsVampire bez capacity: 3. Wymaga zmiany typów w engine."
   },
   {
     "id": 101538,
@@ -11709,7 +11709,7 @@
     "id": 101952,
     "name": "Templar",
     "status": "UNRESOLVED",
-    "evidence": "Spec wymaga Sabbat i title u aktora (requiresSect/requiresTitled), zaś tekst mówi „requires a ready titled Sabbat vampire”; rozstrzygnięcie czy musi nim być aktor wymaga sprawdzenia reguły. bearer-rush-grants.test.ts bada wymagania aktora oraz rush i burn referendum."
+    "evidence": "Spec wymaga Sabbat i title u aktora (requiresSect/requiresTitled), zaś tekst mówi „requires a ready titled Sabbat vampire”; rozstrzygnięcie czy musi nim być aktor wymaga sprawdzenia reguły. bearer-rush-grants.test.ts bada wymagania aktora oraz rush i burn referendum. Spec ma requiresSect: [\"sabbat\"], requiresTitled: true. Kwestia interpretacji czy requirements dotyczą aktora czy dowolnego kontrolowanego gotowego vampira Sabbat. Wymaga rozstrzygnięcia reguły. Spec ma requiresSect i requiresTitled. Kwestia interpretacji reguły. Spec ma requiresSect i requiresTitled. Kwestia interpretacji reguły."
   },
   {
     "id": 101953,
@@ -11912,8 +11912,8 @@
   {
     "id": 101986,
     "name": "Tithings",
-    "status": "UNRESOLVED",
-    "evidence": "Tekst wymaga ready Sabbat capacity >6, ale spec wymaga sect i capacity od aktora. Czy „requires a ready” w tej political action musi dotyczyć aktora, czy dowolnego kontrolowanego ready vampire, wymaga rozstrzygnięcia; legacy-political.test.ts bada wybrane skutki."
+    "status": "FIXED_TARGETED",
+    "evidence": "Spec już poprawny — Spec już poprawny: requiresSect: [\"sabbat\"], requiresCapacity: 7. Zgadza się z \"Requires a ready Sabbat vampire with a capacity above 6.\". Brak scenariusza testowego, więc pozostała weryfikacja scenariuszowa jest otwarta, ale problem spec jest rozwiązany."
   },
   {
     "id": 101987,
