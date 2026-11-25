@@ -20328,7 +20328,7 @@ export const cardSpecs: CardSpec[] = [
     requiresSect: ["anarch"],
     combatLimit: "combat",
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "handSizeBonus", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "pressStepDraw", count: 1 }] },
       { level: "basic", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false }] },
       { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] },
     ],

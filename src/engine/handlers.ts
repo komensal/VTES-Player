@@ -268,6 +268,10 @@ export interface EngineOps {
    *  amount of damage during strike resolution as well" (King of the
    *  Mountain [FOR]). Armed before strikes. */
   armHandStrikeReflection(): void;
+  /** "During the press step each round, draw N card(s). Discard down to
+   *  your hand size afterward" (Improvised Tactics [aus]) — armed before
+   *  the round, paid at the press step. */
+  armPressStepDraw(play: CardPlayFrame, count: number): void;
   /** "…each round of this combat, this vampire may burn N blood to prevent
    *  all damage from the opposing minion's initial strike for that round"
    *  (Superior Mettle [FOR]). */

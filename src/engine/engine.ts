@@ -3449,6 +3449,23 @@ export class VtesEngine implements EngineOps {
         // range/press); settle has nothing automatic to do here.
         return false;
       case "press":
+        // "During the press step each round, draw N card(s). Discard down
+        // to your hand size afterward" (Improvised Tactics [aus]) — paid
+        // once per round, before any press question or press-step damage.
+        if (!cf.pressStepDrawDone && !cf.endedPrematurely &&
+            ((cf.pressStepDraw?.acting ?? 0) > 0 || (cf.pressStepDraw?.opposing ?? 0) > 0)) {
+          cf.pressStepDrawDone = true;
+          for (const side of ["acting", "opposing"] as const) {
+            const count = cf.pressStepDraw?.[side] ?? 0;
+            if (count <= 0) continue;
+            const seat = side === "acting" ? cf.actingSeat : cf.opposingSeat;
+            // Draw directly from the library: drawToReplace would offer a
+            // redirect choice (drawRedirectSources), which cannot happen in
+            // the middle of a press step.
+            for (let i = 0; i < count; i++) this.drawFromLibrary(seat);
+            this.discardDownToHandSize(seat, "Improvised Tactics", "");
+          }
+        }
         // Automatic press-step damage must be inflicted before the end-of-
         // round window, and before a press can continue the fight. Reuse
         // damage resolution, remembering the step to resume after it; a
@@ -9840,6 +9857,15 @@ export class VtesEngine implements EngineOps {
     const side = this.combatSide();
     cf.reflectHandStrike ??= { acting: null, opposing: null };
     cf.reflectHandStrike[side] = 0;
+  }
+
+  /** "During the press step each round, draw N card(s). Discard down to
+   *  your hand size afterward" (Improvised Tactics [aus]) — armed on the
+   *  playing side, paid once per round at the press step. */
+  armPressStepDraw(play: CardPlayFrame, count: number): void {
+    const cf = this.requireCombat();
+    const side = this.combatSide();
+    (cf.pressStepDraw ??= { acting: 0, opposing: 0 })[side] += count;
   }
 
   /** "[FOR] …each round of this combat, this vampire may burn N blood to

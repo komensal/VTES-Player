@@ -3958,6 +3958,11 @@ export interface CombatFrame {
   pressStepDamageIfCloseStrike?: { acting: boolean; opposing: boolean };
   /** Fires once per round, even if the press step is re-entered. */
   pressStepDamageDone?: boolean;
+  /** "During the press step each round, draw N card(s). Discard down to
+   *  your hand size afterward" (Improvised Tactics [aus]) — armed once,
+   *  paid once per round at the press step. */
+  pressStepDraw?: { acting: number; opposing: number };
+  pressStepDrawDone?: boolean;
   /** Damage resolution was entered from the press step; resume it without
    * opening the additional-strike window again. Serializable for saves. */
   pressDamageResolving?: boolean;

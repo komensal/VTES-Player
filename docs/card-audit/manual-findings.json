@@ -5786,8 +5786,8 @@
   {
     "id": 100965,
     "name": "Improvised Tactics",
-    "status": "PARTIAL_FIX",
-    "evidence": "Aus daje hand size zamiast draw w każdej press step; pot daje pojedynczy strike zamiast trwającego combat, pro bezpłatny maneuver zamiast płatnego co rundę. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wszystkie trzy tryby zaimplementowane zgodnie z drukiem: [aus] pressStepDraw — draw 1 kartę w każdej press step (mechanizm uzbrajany przy graniu karty combat, płatny przy press step, z discard down do hand size); [pot] strikeDamage 2 ranged; [pro] maneuver 1. Wymagało to dodania nowego prymitywu pressStepDraw z effectWindow combat.beforeStrikes, pola pressStepDraw w CombatFrame, metody EngineOps.armPressStepDraw oraz obsługi w press step silnika (draw + discard down, reset na nową rundę). Testy E2E: tests/cards/improvised-tactics-audit.test.ts (1/1). Tekst: registry ID 100965."
   },
   {
     "id": 100966,

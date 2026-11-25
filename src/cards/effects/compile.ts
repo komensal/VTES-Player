@@ -3564,6 +3564,10 @@ function combatWindowFor(mode: CardMode): WindowId | null {
         return "combat.beforeStrikes";
       case "attachInCombat":
         return e.when === "endOfRound" ? "combat.endOfRound" : "combat.beforeRange";
+      case "pressStepDraw":
+        // "During the press step each round, draw N card(s)" — offered
+        // before strikes like other pre-strike combat cards.
+        return "combat.beforeStrikes";
       case "setStrength":
       case "addStrength":
       case "handStrikeDamageBonus":
@@ -5352,6 +5356,12 @@ function compileCombatCard(spec: CardSpec): CardHandler {
               cardId: play.card.id,
             });
             break;
+          case "pressStepDraw": {
+            // "During the press step each round, draw N card(s)" (Improvised
+            // Tactics [aus]) — armed at play, paid at the press step.
+            ops.armPressStepDraw(play, e.count);
+            break;
+          }
           case "restrictOpponent":
             ops.restrictCombatOpponent(play, {
               maneuver: e.maneuver ?? false,
@@ -7789,10 +7799,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             if (play.minion) {
               ops.emit({ type: "MinionLocked", minion: play.minion });
             }
-            break;
-          }
-          case "handSizeBonus": {
-            // Hand size bonus - tracked by card
             break;
           }
           case "unlockAfterEquip": {

@@ -325,6 +325,7 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   searchCryptAdvancementCard: "search",
   lockOwnVampire: "deny",
   handSizeBonus: null,
+  pressStepDraw: "board",
   unlockAfterEquip: "unlock",
   addStealthWhenHuntingBasedOnAye: "stealth",
   gainBloodOnSuccessfulHunt: "bloodGain",

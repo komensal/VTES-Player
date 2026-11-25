@@ -1915,6 +1915,10 @@ export type EffectPrimitive =
        *  "this combat" must be able to lift. */
       scope?: "round" | "combat";
     }
+  /** "During the press step each round, draw N card(s). Discard down to
+   *  your hand size afterward" (Improvised Tactics [aus]) — a press-step
+   *  draw, not a hand-size bonus. */
+  | { kind: "pressStepDraw"; count: number }
   /** `onlyToLong` is the mirror of `onlyToClose` — "Maneuver, only usable
    *  to go to LONG range" (High Ground, Backstep). Same reasoning: worth
    *  nothing once the range is already long.
