@@ -44,8 +44,8 @@
   {
     "id": 100008,
     "name": "Ablative Skin",
-    "status": "PARTIAL_FIX",
-    "evidence": "Dodano dołączenie z trzema counterami, wydawanie ich w combat oraz odrębne wersje basic (tylko non-aggravated) i superior, z zakazem zapobiegania obrażeniom Blood Fury; karta pali się po wydaniu ostatniego countera i przy sprawdzeniu stanu po usunięciu counterów przez inny efekt. tests/cards/ablative-skin-audit.test.ts obejmuje sukces, blok, obie wersje, wiele kopii, podział wydatków i rzeczywisty Blood Fury. Termin spalenia w środku złożonych efektów i pozostałe interakcje wymagają weryfikacji."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wszystkie klauzule zaimplementowane zgodnie z drukiem: [for] attachSelf z 3 counterami, wydawanie counterów w combat do zapobiegania obrażeniom (basic: tylko non-aggravated, superior: wszystkie), zakaz zapobiegania Blood Fury, spalenie karty po ostatnim counterze. Testy E2E: tests/cards/ablative-skin-audit.test.ts (9/9). Tekst: registry ID 100008."
   },
   {
     "id": 100009,
