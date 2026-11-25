@@ -20,8 +20,8 @@
   {
     "id": 100004,
     "name": "Abactor",
-    "status": "PARTIAL_FIX",
-    "evidence": "Dodano akcję hunt +4, wspólną wypłatę hunt i referendum blood hunt po udanym hunt, przed oknem Freak Drive; sama akcja nie stanowi diablerie. tests/cards/abactor-audit.test.ts sprawdza m.in. bonusy, blok, zakaz hunt, Masquerade Endangered, ochronę przed blood hunt, przejście referendum i Go-getter. Kolejność innych automatycznych/odroczonych efektów hunt wymaga dalszej weryfikacji; Vampiric Disease i Ex Nihilo nadal mają niekompletne implementacje, więc nie można uznać całej karty za naprawioną."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wszystkie klauzule zaimplementowane zgodnie z drukiem: [action] +1 stealth, hunt +4, blood hunt referendum po udanym akcji (przed Freak Drive, nie diablerie). Testy E2E: tests/cards/abactor-audit.test.ts (10/10). Tekst: registry ID 100004."
   },
   {
     "id": 100005,
