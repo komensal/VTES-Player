@@ -5402,8 +5402,8 @@
   {
     "id": 100901,
     "name": "Healing Touch",
-    "status": "PARTIAL_FIX",
-    "evidence": "addLifeAlly i rescueFromTorpor zaimplementowane i podpięte do Healing Touch (100901)."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wszystkie trzy tryby zaimplementowane zgodnie z drukiem i oznaczone variant (cel/obe), bo dwa basic bez variant rozstrzygały się do pierwszego. [cel] actionUnlockMinion ze scope youngerVampireOwn (tylko własny młodszy wampir, bez ally i cudzych). [obe] addLifeAlly amount 2 z upTo — osobna opcja dla każdej kwoty 1..2 przy ogłoszeniu, gain zawsze z cap do starting life; pełny ally nie jest oferowany. [OBE] rescueFromTorpor z bloodGain 1 (tylko własny wampir w torpor; LeftTorpor + BloodGained, bez kosztu rescue). Wcześniejsze evidence błędnie zgłaszało implementację pustych przypadków w złym switchu. Testy E2E: tests/cards/healing-touch-audit.test.ts (4/4). Tekst: registry ID 100901; rules:lookup: brak wpisu bezpośredniego."
   },
   {
     "id": 100902,

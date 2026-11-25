@@ -1297,6 +1297,8 @@ function targetRider(mode: CardMode): EffectPrimitive | null {
       e.kind === "actionEnterCombat" ||
       e.kind === "actionAddBloodToVampire" ||
       e.kind === "actionBurnAttachedCard" ||
+      e.kind === "addLifeAlly" ||
+      e.kind === "rescueFromTorpor" ||
       e.kind === "stealMinionOnSuccess" ||
       e.kind === "actionStun" ||
       e.kind === "actionStealBlood" ||
@@ -1533,15 +1535,40 @@ function enumerateActionTargets(
   }
   if (e.kind === "actionUnlockMinion") {
     for (const s of state.seats) {
+      if (e.scope === "youngerVampireOwn" && s.id !== seatId) continue;
       for (const m of s.minions) {
         if (!isReady(m) || !m.locked) continue; // nothing to unlock
-        if (e.scope === "anyVampire") {
+        if (e.scope === "youngerVampireOwn") {
+          // "Unlock a younger vampire YOU CONTROL" (Healing Touch [cel]).
+          if (m.kind !== "vampire") continue;
+          if (!actor || capacityOf(m) >= capacityOf(actor)) continue;
+        } else if (e.scope === "anyVampire") {
           if (m.kind !== "vampire") continue;
         } else if (!(m.kind === "ally" || younger(capacityOf(m), true))) {
           continue;
         }
         targets.push(m.id);
       }
+    }
+    return targets;
+  }
+  if (e.kind === "addLifeAlly") {
+    // "Add up to N life to an ally" — any ally in play whose life is below
+    // its starting life; a full ally has nothing to gain.
+    for (const s of state.seats) {
+      if (s.ousted) continue;
+      for (const m of s.minions) {
+        if (m.kind !== "ally" || !isReady(m)) continue;
+        if (m.blood >= m.capacity) continue;
+        targets.push(m.id);
+      }
+    }
+    return targets;
+  }
+  if (e.kind === "rescueFromTorpor") {
+    // "Rescue a vampire from torpor" — your own torpid vampires only.
+    for (const m of seat.minions) {
+      if (m.kind === "vampire" && m.inTorpor) targets.push(m.id);
     }
     return targets;
   }
@@ -2054,6 +2081,14 @@ function compileActionCard(spec: CardSpec): CardHandler {
                 push(mode, { target: t, ready: "0" });
                 if (m.blood >= rider.thenReady.bloodCost) {
                   push(mode, { target: t, ready: "1" });
+                }
+                continue;
+              }
+              // "Add UP TO N life" (Healing Touch [obe]) — the amount is a
+              // choice made at announcement, one option per value.
+              if (rider.kind === "addLifeAlly" && rider.upTo) {
+                for (let x = 1; x <= rider.amount; x++) {
+                  push(mode, { target: t, x: String(x) });
                 }
                 continue;
               }
@@ -2643,6 +2678,30 @@ function compileActionCard(spec: CardSpec): CardHandler {
               ops.discardDownToHandSize(af.actingSeat, spec.name, af.card?.instance.id ?? "");
             }
             break;
+          case "addLifeAlly": {
+            // "Add up to N life to an ally, not to exceed their starting
+            // life" — the amount was chosen at announcement (`upTo`), and
+            // the ally's capacity IS its starting life (p. 11).
+            const target = af.targetMinion ?? af.card?.params["target"];
+            const t = target ? findMinion(ops.state, target) : null;
+            if (!t || t.kind !== "ally") break;
+            const want = e.upTo
+              ? Number(af.card?.params["x"] ?? String(e.amount))
+              : e.amount;
+            const amount = Math.max(0, Math.min(want, t.capacity - t.blood));
+            if (amount > 0) ops.emit({ type: "BloodGained", minion: t.id, amount });
+            break;
+          }
+          case "rescueFromTorpor": {
+            // "Rescue a vampire from torpor. The rescued vampire gains N
+            // blood" — no rescue blood is owed beyond the card's own cost.
+            const target = af.targetMinion ?? af.card?.params["target"];
+            const t = target ? findMinion(ops.state, target) : null;
+            if (!t || !t.inTorpor) break;
+            ops.emit({ type: "LeftTorpor", minion: t.id });
+            if (e.bloodGain) ops.emit({ type: "BloodGained", minion: t.id, amount: e.bloodGain });
+            break;
+          }
           case "actionUnlockMinion": {
             // The target was chosen at announcement and rides on the frame. A
             // TOTAL read: it can have left play since (§2).
@@ -7512,16 +7571,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             if (target && findMinion(ops.state, target)) {
               ops.applyEnvironmentalDamage(target, e.amount, true);
             }
-            break;
-          }
-          case "addLifeAlly": {
-            const target = af.card?.params["target"];
-            if (target && findMinion(ops.state, target)) {
-              // Add life to ally
-            }
-            break;
-          }
-          case "rescueFromTorpor": {
             break;
           }
           case "blockAttemptFailsIfAllyYounger": {

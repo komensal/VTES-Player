@@ -1570,9 +1570,15 @@ export type EffectPrimitive =
   /** "Grant optional maneuver or press" (Ishtarri Warlord) — grant optional maneuver or press. §4 */
   | { kind: "grantOptionalManeuverOrPress"; maneuver?: boolean; press?: boolean }
   /** "Add life to ally" (Healing Touch) — add life to ally. §4 */
-  | { kind: "addLifeAlly"; amount: number }
-  /** "Rescue from torpor" (Healing Touch) — rescue from torpor. §4 */
-  | { kind: "rescueFromTorpor" }
+  /** "Add up to N life to an ally, not to exceed their starting life"
+   *  (Healing Touch [obe]) — `upTo` offers one play option per amount, so
+   *  the player chooses how much to add; the gain is always clamped to the
+   *  ally's starting life. */
+  | { kind: "addLifeAlly"; amount: number; upTo?: boolean }
+  /** "Rescue a vampire from torpor. The rescued vampire gains N blood"
+   *  (Healing Touch [OBE]) — your own torpid vampire, chosen at
+   *  announcement; no rescue blood is owed beyond the card's own cost. */
+  | { kind: "rescueFromTorpor"; bloodGain?: number }
   /** "Block attempt fails if ally or younger" (Heart's Desire) — block attempt fails if ally or younger. §4 */
   | { kind: "blockAttemptFailsIfAllyYounger" }
   /** "Move 1 blood from each ready \<clan\> you control to a \<clan\> in your
@@ -2772,7 +2778,7 @@ export type EffectPrimitive =
    */
   | {
       kind: "actionUnlockMinion";
-      scope: "youngerOrAlly" | "anyVampire";
+      scope: "youngerOrAlly" | "anyVampire" | "youngerVampireOwn";
       directed: boolean;
     }
   /** "This vampire unlocks" (Ensconced, Fantasy World, Field Training,

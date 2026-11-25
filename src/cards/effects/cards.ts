@@ -29091,8 +29091,9 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "addLifeAlly", amount: 1 }, { kind: "rescueFromTorpor" }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "addLifeAlly", amount: 1 }, { kind: "rescueFromTorpor" }] }
+      { level: "basic", variant: "cel", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "actionUnlockMinion", scope: "youngerVampireOwn", directed: false }] },
+      { level: "basic", variant: "obe", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "addLifeAlly", amount: 2, upTo: true }] },
+      { level: "superior", variant: "obe", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "rescueFromTorpor", bloodGain: 1 }] }
     ],
   },
   {
