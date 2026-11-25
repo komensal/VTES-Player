@@ -466,6 +466,10 @@ export interface EngineOps {
    *  remainder of this round" (Skin of Night). */
   /** "Unlock this vampire at the end of the turn" (Zephyr basic). */
   oweUnlockAtEndOfTurn(minion: MinionId): void;
+  /** "Unlock the target minion during the next discard phase" (Cleansing
+   *  Ritual [OBE]) — owed on the minion, paid once by the discard-phase
+   *  sweep, with no blood cost. */
+  oweUnlockAtNextDiscardPhase(minion: MinionId): void;
   /** "Remove the top card of that Methuselah's crypt from the game"
    *  (Innocent Bystander). */
   removeTopOfCryptFromGame(seat: SeatId): void;

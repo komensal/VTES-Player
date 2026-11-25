@@ -28697,8 +28697,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["Frozen Object"] }, { kind: "actionBurnAttachedCard" }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["Frozen Object"] }, { kind: "actionBurnAttachedCard" }] }
+      { level: "basic", discipline: "tem", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["Frozen Object"] }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["Frozen Object"] }] }
     ],
   },
   {
@@ -28889,8 +28889,9 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "actionStealth", amount: 1 }, { kind: "actionBurnAttachedCard" }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "actionStealth", amount: 1 }, { kind: "actionBurnAttachedCard" }] }
+      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "modifyBleed", amount: 1, limited: true }] }
     ],
   },
   {
@@ -34263,9 +34264,11 @@ export const cardSpecs: CardSpec[] = [
     name: "Fortschritt Library",
     cardType: "master",
     bloodCost: 0,
+    // "Only one Fortschritt Library may be played per game."
+    oncePerGameByName: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }, { kind: "searchLibraryGehennaEvent" }, { kind: "limitOncePerGame" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }, { kind: "searchLibraryGehennaEvent" }] }
     ],
   },
   {

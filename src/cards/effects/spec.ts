@@ -1481,8 +1481,6 @@ export type EffectPrimitive =
   | { kind: "cancelReaction" }
   /** "Protect choir out of turn" (Hanging Fermata) — protect choir out of turn. §4 */
   | { kind: "outOfTurnProtectChoir" }
-  /** "Limit once per turn" (Fortschritt Library) — limit once per turn. §4 */
-  | { kind: "limitOncePerTurn" }
   /** "Burn a location on directed action" (Haunt) — burn a location on directed action. §4 */
   | { kind: "burnLocationOnDirectedAction" }
   /** "Choose and burn a weapon costing more than 2" (Illegal Search and Seizure) — choose and burn a weapon. §4 */
@@ -1491,12 +1489,8 @@ export type EffectPrimitive =
   | { kind: "preventVoting" }
   /** "Put a trifle in play" (Into the Fire) — put a trifle in play. §4 */
   | { kind: "putInPlayTrifle" }
-  /** "Change vampire sect to Sabbat" (Into the Fire) — change vampire sect. §4 */
-  | { kind: "changeVampireSectSabbat" }
   /** "Lock an ally" (Hall of Hades' Court) — lock an ally. §4 */
   | { kind: "lockAlly" }
-  /** "Require sect" (Community Justice) — require sect. §4 */
-  | { kind: "requireSect"; sect: Sect }
   /** "Burn a recent diablerist" (Community Justice) — burn a recent diablerist. §4 */
   | { kind: "burnRecentDiablerist" }
   /** "Lock N minions" (Command the Legion) — lock N chosen minions. §4 */
@@ -1524,8 +1518,6 @@ export type EffectPrimitive =
   | { kind: "gainBloodOnSuccessfulHunt" }
   /** "Gain blood on burn" (Draba) — gain blood on burn. §4 */
   | { kind: "gainBloodOnBurn" }
-  /** "Burn blood to unlock after successful action" (Carrion Coffin) — burn blood to unlock. §4 */
-  | { kind: "burnBloodUnlockAfterSuccessfulAction" }
   /** "Bleed bonus with stealth penalty" (Darksight) — bleed bonus with stealth penalty. §4 */
   | { kind: "bleedBonusStealthPenalty" }
   /** "Bleed bonus superior" (Blight) — superior bleed bonus. §4 */
@@ -1544,68 +1536,8 @@ export type EffectPrimitive =
   | { kind: "modifyInterceptOpponent"; amount: number }
   /** "Grant intercept for different disciplines" (Guardian Vigil) — grant intercept. §4 */
   | { kind: "grantInterceptForDifferentDisciplines"; amount: number }
-  /** "Lock an imbued" (Abjure) — lock an imbued minion. §4 */
-  | { kind: "lockImbued" }
-  /** "Move conviction counters" (Abjure) — move conviction counters. §4 */
-  | { kind: "moveConviction"; amount: number }
-  /** "Change sect to Anarch" (Anarch Secession) — change sect. §4 */
-  | { kind: "changeSectAnarch" }
-  /** "Put a title in play" (Anarch Secession) — put a title in play. §4 */
-  | { kind: "putInPlayTitle" }
-  /** "Out of turn unlock an imbued" (Angel of Berlin) — unlock an imbued out of turn. §4 */
-  | { kind: "outOfTurnUnlockImbued" }
-  /** "Equip from hand" (Angel of Berlin) — equip from hand. §4 */
-  | { kind: "equipFromHand" }
-  /** "Remove from game" (The Art of Memory) — remove from game. §4 */
-  | { kind: "removeFromGame" }
-  /** "Move a card on success" (The Art of Memory) — move a card on success. §4 */
-  | { kind: "moveCardOnSuccess" }
-  /** "Look at hands" (Augur) — look at hands. §4 */
-  | { kind: "lookAtHands" }
-  /** "Look at library" (Augur) — look at library. §4 */
-  | { kind: "lookAtLibrary" }
-  /** "Set sterile" (Barrenness) — set sterile. §4 */
-  | { kind: "setSterile" }
-  /** "Reduce capacity" (Barrenness) — reduce capacity. §4 */
-  | { kind: "reduceCapacity"; amount: number }
   /** "Move blood to younger Laibon" (Belonging Grants Protection) — move blood. §4 */
   | { kind: "moveBloodToYoungerLaibon" }
-  /** "Limit one per turn" (Cat Burglary) — limit one per turn. §4 */
-  | { kind: "limitOnePerTurn" }
-  /** "Change pool based on choices" (Game of Malkav) — change pool based on choices. §4 */
-  | { kind: "changePoolBasedOnChoices" }
-  /** "Secret choices" (Game of Malkav) — secret choices. §4 */
-  | { kind: "secretChoices" }
-  /** "Make Anarch" (Galaric's Legacy) — make Anarch. §4 */
-  | { kind: "makeAnarch" }
-  /** "Lock an imbued" (Abjure) — lock an imbued. §4 */
-  | { kind: "lockImbued" }
-  /** "Move conviction" (Abjure) — move conviction counters. §4 */
-  | { kind: "moveConviction"; amount: number }
-  /** "Change sect to Anarch" (Anarch Secession) — change sect. §4 */
-  | { kind: "changeSectAnarch" }
-  /** "Put a title in play" (Anarch Secession) — put a title in play. §4 */
-  | { kind: "putInPlayTitle" }
-  /** "Out of turn unlock an imbued" (Angel of Berlin) — unlock an imbued out of turn. §4 */
-  | { kind: "outOfTurnUnlockImbued" }
-  /** "Equip from hand" (Angel of Berlin) — equip from hand. §4 */
-  | { kind: "equipFromHand" }
-  /** "Remove from game" (The Art of Memory) — remove from game. §4 */
-  | { kind: "removeFromGame" }
-  /** "Move a card on success" (The Art of Memory) — move a card on success. §4 */
-  | { kind: "moveCardOnSuccess" }
-  /** "Look at hands" (Augur) — look at hands. §4 */
-  | { kind: "lookAtHands" }
-  /** "Look at library" (Augur) — look at library. §4 */
-  | { kind: "lookAtLibrary" }
-  /** "Set sterile" (Barrenness) — set sterile. §4 */
-  | { kind: "setSterile" }
-  /** "Reduce capacity" (Barrenness) — reduce capacity. §4 */
-  | { kind: "reduceCapacity"; amount: number }
-  /** "Move blood to younger Laibon" (Belonging Grants Protection) — move blood. §4 */
-  | { kind: "moveBloodToYoungerLaibon" }
-  /** "Store cards in Spiritus" (Blessing of the Beast) — store cards. §4 */
-  | { kind: "storeCardsSpirus" }
   /** "Reflect damage" (Blood of Acid) — reflect damage. §4 */
   | { kind: "reflectDamage"; amount: number }
   /** "Once per round" (Blood of the Cobra) — once per round. §4 */
@@ -1626,22 +1558,12 @@ export type EffectPrimitive =
   | { kind: "outOfTurnCancelUnblockedAction" }
   /** "Make Black Hand" (Cadet) — make Black Hand. §4 */
   | { kind: "makeBlackHand" }
-  /** "Limit one per turn" (Cat Burglary) — limit one per turn. §4 */
-  | { kind: "limitOnePerTurn" }
   /** "Choose any Methuselah" (Cat Burglary) — choose any Methuselah. §4 */
   | { kind: "chooseAnyMethuselah" }
   /** "Burn location on directed action" (Haunt) — burn location on directed action. §4 */
   | { kind: "burnLocationOnDirectedAction" }
-  /** "Change pool based on choices" (Game of Malkav) — change pool based on choices. §4 */
-  | { kind: "changePoolBasedOnChoices" }
-  /** "Secret choices" (Game of Malkav) — secret choices. §4 */
-  | { kind: "secretChoices" }
-  /** "Make Anarch" (Galaric's Legacy) — make Anarch. §4 */
-  | { kind: "makeAnarch" }
   /** "Search library for Gehenna event" (Fortschritt Library) — search for Gehenna event. §4 */
   | { kind: "searchLibraryGehennaEvent" }
-  /** "Limit once per game" (Fortschritt Library) — limit once per game. §4 */
-  | { kind: "limitOncePerGame" }
   /** "Unpreventable damage to bearer" (Illegal Search and Seizure) — unpreventable damage to bearer. §4 */
   | { kind: "unpreventableDamageToBearer"; amount: number }
   /** "Put in play on Ishtarri" (Ishtarri Warlord) — put in play on Ishtarri. §4 */

@@ -1296,6 +1296,7 @@ function targetRider(mode: CardMode): EffectPrimitive | null {
       e.kind === "bloodOnBleedSuccess" ||
       e.kind === "actionEnterCombat" ||
       e.kind === "actionAddBloodToVampire" ||
+      e.kind === "actionBurnAttachedCard" ||
       e.kind === "stealMinionOnSuccess" ||
       e.kind === "actionStun" ||
       e.kind === "actionStealBlood" ||
@@ -1623,8 +1624,10 @@ function enumerateActionTargets(
   } else if (e.kind === "actionAddBloodToVampire") {
     // "Another vampire" — any vampire in play, any controller, not self.
     // With `allies`/`self` this becomes "a minion" (Touch of Valeren).
+    // `ownOnly` is "a vampire YOU CONTROL" (Cleansing Ritual [dom]).
     for (const s of state.seats) {
       if (s.ousted) continue;
+      if (e.ownOnly && s.id !== seatId) continue;
       for (const m of s.minions) {
         if (m.kind !== "vampire" && !e.allies) continue;
         if (m.id === actor.id && !e.self) continue;
@@ -1638,6 +1641,22 @@ function enumerateActionTargets(
         // `push` filters splits that leave a full actor full.
         if (full && !(e.self && m.id === actor.id)) continue;
         targets.push(m.id);
+      }
+    }
+  } else if (e.kind === "actionBurnAttachedCard") {
+    // "Burn a card on an ally or younger vampire in YOUR READY REGION"
+    // (Cleansing Ritual [obe]). Only the actor's own region qualifies;
+    // torpor is not the ready region; an ALLY is eligible at any capacity,
+    // a vampire must be younger than the actor. The bearer's self-entry is
+    // the minion itself, not a card ON it, so it is never offered.
+    for (const m of seat.minions) {
+      if (!isReady(m)) continue;
+      const eligible = m.kind === "ally" ||
+        (actor !== null && capacityOf(m) < capacityOf(actor));
+      if (!eligible) continue;
+      for (const p of m.attached) {
+        if (p.card.id === m.id) continue;
+        targets.push(p.card.id);
       }
     }
   } else if (e.kind === "actionStun") {
@@ -2552,6 +2571,22 @@ function compileActionCard(spec: CardSpec): CardHandler {
               : e.amount;
             if (amount > 0) {
               ops.emit({ type: "BloodGained", minion: target, amount });
+            }
+            break;
+          }
+          case "actionBurnAttachedCard": {
+            // "Burn a card on an ally or younger vampire in your ready
+            // region" — the attached card was fixed at announcement. The
+            // bearer is read before the burn so the superior's unlock is
+            // still owed to the right minion.
+            const target = af.card?.params["target"];
+            if (!target) throw new Error(`${spec.name}: no attached-card target`);
+            const bearer = ops.state.seats
+              .flatMap((s) => s.minions)
+              .find((m) => m.attached.some((p) => p.card.id === target));
+            ops.burnPermanent(target);
+            if (e.unlockBearerAtNextDiscard && bearer) {
+              ops.oweUnlockAtNextDiscardPhase(bearer.id);
             }
             break;
           }
@@ -6756,6 +6791,11 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             if (e.noEquipment) riders.noEquipment = true;
             if (e.unlockForBlood) riders.unlockForBlood = e.unlockForBlood;
             if (e.combatEndsStrike) riders.combatEndsStrike = true;
+            if (e.unlockOnCombatEndsIfOpposingAllyOrYounger) {
+              riders.unlockOnCombatEndsIfOpposingAllyOrYounger = true;
+            }
+            if (e.setRange) riders.setRange = e.setRange;
+            if (e.opponentSkipNextUnlock) riders.opponentSkipNextUnlock = true;
             ops.grantBlockerCombatRider(play.minion, riders);
             break;
           }
@@ -7130,13 +7170,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             ops.applyEnvironmentalDamage(play.minion, e.amount, true);
             break;
           }
-          case "unlockActor": {
-            // "Unlock this vampire AFTER ACTION RESOLUTION" — unlocks the
-            // acting minion with no blood cost.
-            if (!play.minion) throw new Error(`${spec.name}: no playing minion`);
-            ops.emit({ type: "MinionUnlocked", minion: play.minion });
-            break;
-          }
           case "unlockAfterAction": {
             // "Unlock this vampire AFTER ACTION" — registers an unlock to
             // happen after the current action completes.
@@ -7397,134 +7430,10 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
           case "addBurnCounters": {
             break;
           }
-          case "lockImbued": {
-            break;
-          }
-          case "moveConviction": {
-            break;
-          }
-          case "changeSectAnarch": {
-            break;
-          }
-          case "putInPlayTitle": {
-            break;
-          }
-          case "outOfTurnUnlockImbued": {
-            break;
-          }
-          case "equipFromHand": {
-            break;
-          }
-          case "removeFromGame": {
-            break;
-          }
-          case "moveCardOnSuccess": {
-            break;
-          }
-          case "lookAtHands": {
-            ops.raiseChoice({
-              seat: af.actingSeat,
-              cardName: spec.name,
-              cardId: af.card?.instance.id ?? "",
-              key: "lookAtHands",
-              params: {},
-              optional: false,
-            });
-            break;
-          }
-          case "lookAtLibrary": {
-            ops.raiseChoice({
-              seat: af.actingSeat,
-              cardName: spec.name,
-              cardId: af.card?.instance.id ?? "",
-              key: "lookAtLibrary",
-              params: {},
-              optional: false,
-            });
-            break;
-          }
-          case "setSterile": {
-            break;
-          }
-          case "reduceCapacity": {
-            break;
-          }
           case "moveBloodToYoungerLaibon": {
-            break;
-          }
-          case "storeCardsSpirus": {
-            break;
-          }
-          case "limitOnePerTurn": {
-            break;
-          }
-          case "changePoolBasedOnChoices": {
-            break;
-          }
-          case "secretChoices": {
-            break;
-          }
-          case "makeAnarch": {
-            const target = af.card?.params["target"];
-            if (target && findMinion(ops.state, target)) {
-              // Change sect to Anarch
-            }
             break;
           }
           case "curseTarget": {
-          case "moveConviction": {
-            break;
-          }
-          case "changeSectAnarch": {
-            break;
-          }
-          case "putInPlayTitle": {
-            break;
-          }
-          case "outOfTurnUnlockImbued": {
-            break;
-          }
-          case "equipFromHand": {
-            break;
-          }
-          case "removeFromGame": {
-            break;
-          }
-          case "moveCardOnSuccess": {
-            break;
-          }
-          case "lookAtHands": {
-            ops.raiseChoice({
-              seat: af.actingSeat,
-              cardName: spec.name,
-              cardId: af.card?.instance.id ?? "",
-              key: "lookAtHands",
-              params: {},
-              optional: false,
-            });
-            break;
-          }
-          case "lookAtLibrary": {
-            ops.raiseChoice({
-              seat: af.actingSeat,
-              cardName: spec.name,
-              cardId: af.card?.instance.id ?? "",
-              key: "lookAtLibrary",
-              params: {},
-              optional: false,
-            });
-            break;
-          }
-          case "setSterile": {
-            break;
-          }
-          case "reduceCapacity": {
-            break;
-          }
-          case "moveBloodToYoungerLaibon": {
-            break;
-          }
-          case "storeCardsSpirus": {
             break;
           }
           case "reflectDamage": {
@@ -7562,9 +7471,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
           case "makeBlackHand": {
             break;
           }
-          case "limitOnePerTurn": {
-            break;
-          }
           case "chooseAnyMethuselah": {
             ops.raiseChoice({
               seat: af.actingSeat,
@@ -7579,19 +7485,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
           case "burnLocationOnDirectedAction": {
             break;
           }
-          case "changePoolBasedOnChoices": {
-            break;
-          }
-          case "secretChoices": {
-            break;
-          }
-          case "makeAnarch": {
-            const target = af.card?.params["target"];
-            if (target && findMinion(ops.state, target)) {
-              // Change sect to Anarch
-            }
-            break;
-          }
           case "searchLibraryGehennaEvent": {
             ops.raiseChoice({
               seat: af.actingSeat,
@@ -7603,20 +7496,11 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             });
             break;
           }
-          case "limitOncePerGame": {
-            break;
-          }
           case "unpreventableDamageToBearer": {
             const target = af.card?.params["target"];
             if (target && findMinion(ops.state, target)) {
               ops.applyEnvironmentalDamage(target, e.amount, true);
             }
-            break;
-          }
-          case "putInPlayOnIshtarri": {
-            break;
-          }
-          case "grantOptionalManeuverOrPress": {
             break;
           }
           case "addLifeAlly": {
@@ -7630,10 +7514,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             break;
           }
           case "blockAttemptFailsIfAllyYounger": {
-            break;
-          }
-          case "curseTarget": {
-            // Curse a target minion - target at announcement
             break;
           }
           case "gainPoolTarget": {
@@ -7656,14 +7536,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             // Protect choir out of turn
             break;
           }
-          case "limitOncePerTurn": {
-            // Limit once per turn - tracked by card name
-            break;
-          }
-          case "burnLocationOnDirectedAction": {
-            // Burn a location on directed action - target at announcement
-            break;
-          }
           case "chooseAndBurnWeaponCostMoreThan2": {
             // Choose and burn a weapon costing more than 2
             break;
@@ -7676,28 +7548,12 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             // Put a trifle card in play
             break;
           }
-          case "changeVampireSectSabbat": {
-            // Change vampire sect to Sabbat - target at announcement
-            break;
-          }
           case "lockAlly": {
             // Lock an ally - target at announcement
             const target = af.card?.params["target"];
             if (target && findMinion(ops.state, target)) {
               ops.emit({ type: "MinionLocked", minion: target });
             }
-            break;
-          }
-          case "requireSect": {
-            // Require sect - checked at announcement, not resolution
-            break;
-          }
-          case "burnRecentDiablerist": {
-            // Burn a vampire who recently diablerised - checked via event log
-            break;
-          }
-          case "lockMinionsX": {
-            // Lock N chosen minions - targets at announcement
             break;
           }
           case "burnGehennaCard": {
@@ -7779,10 +7635,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             // Gain blood on burn - tracked by event
             break;
           }
-          case "burnBloodUnlockAfterSuccessfulAction": {
-            // Burn blood to unlock after successful action
-            break;
-          }
           case "bleedBonusStealthPenalty": {
             // Bleed bonus with stealth penalty
             break;
@@ -7797,10 +7649,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
           }
           case "burnBloodEachTurn": {
             // Burn blood each turn - registered as lingering effect
-            break;
-          }
-          case "restrictOpponentDisciplines": {
-            // Restrict opponent from playing cards of these Disciplines
             break;
           }
           case "restrictAction": {
@@ -7825,10 +7673,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
           }
           case "moveBloodReadyPanderToUncontrolledPander": {
             // Move blood from ready Pander to uncontrolled Pander
-            break;
-          }
-          case "placeOnVampire": {
-            // Place this card on a vampire - target at announcement
             break;
           }
           case "unlockViaCorruption":

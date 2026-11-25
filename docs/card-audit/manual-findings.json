@@ -4767,7 +4767,7 @@
     "id": 100795,
     "name": "Frozen Object",
     "status": "PARTIAL_FIX",
-    "evidence": "putInPlayOnSelf i discardEquipment (actionBurnAttachedCard) zaimplementowane i podpięte do Frozen Object (100795) w obu trybach. Nadal brakuje: wyzwalane obrażenia, ograniczenia aktora, superior. Tekst registry.json i bieżący spec effects/cards.ts."
+    "evidence": "Poprawka częściowa: odpięto actionBurnAttachedCard — żadna klauzula Frozen Object nie wypala karty na ally/młodszym wampirze we własnym ready region (wcześniejsze evidence błędnie utożsamiało go z [ser] discardEquipment). [ser] to look at hand + discard wszystkich equipment z ręki; [tem]/[TEM] to wyzwalane 2 unpreventable environmental damage. Pozostaje putInPlayOnSelf dla [tem]. Nadal brakuje: [ser] look/discard, wyzwalane obrażenia, superior [TEM] (karta w play, nie na wampirze), limit jednej kopii na Methuselah. Tekst: registry.json ID 100795; rules:lookup: brak wpisu bezpośredniego, grupy G00086 i G00116."
   },
   {
     "id": 100796,
@@ -5133,7 +5133,7 @@
     "id": 100856,
     "name": "Gremlins",
     "status": "PARTIAL_FIX",
-    "evidence": "burnEquipment wyrażone przez actionBurnAttachedCard, podpięte do Gremlins (100856) w obu trybach. Nadal brakuje: superior bleed, różnicowanie efektów myt/dom. Tekst registry.json i bieżący spec effects/cards.ts."
+    "evidence": "Poprawka częściowa: odpięto actionBurnAttachedCard (on wypala kartę na własnym ally/młodszym wampirze, a [myt] Gremlins wypala dowolny nie-melee equipment u dowolnego Methuselah). Rozróżniono tryby zgodnie z drukiem: [dom] Ⓓ bleed +1 (bez stealth), [myt] +1 stealth action (burn equipment nadal niezaimplementowane), dodany superior [MYT] +1 stealth Ⓓ bleed +1. Potwierdzony brak: burn equipment z wykluczeniem melee. Tekst: registry.json ID 100856; rules:lookup LSJ 20090324 (akcja [myt] jest wymierzona w Methuselah kontrolującego equipment, nie w miniona)."
   },
   {
     "id": 100857,

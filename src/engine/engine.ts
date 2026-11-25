@@ -10328,6 +10328,15 @@ export class VtesEngine implements EngineOps {
     if (tf?.kind === "turn") (tf.unlockAfterTurn ??= []).push(minion);
   }
 
+  /** "Unlock the target minion during the next discard phase" (Cleansing
+   *  Ritual [OBE]) — the minion carries the promise, and the discard-phase
+   *  sweep spends it once. Not an immediate unlock: the bearer stays locked
+   *  until then, and no blood is paid. */
+  oweUnlockAtNextDiscardPhase(minion: MinionId): void {
+    const m = findMinion(this.state, minion);
+    if (m) m.unlocksInDiscardPhase = true;
+  }
+
   /**
    * "Remove the top card of that Methuselah's CRYPT from the game"
    * (Innocent Bystander). The crypt is face down, so the card is named in the
