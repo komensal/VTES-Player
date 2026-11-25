@@ -26727,7 +26727,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "moveBloodFromReadyGangrelToUncontrolled" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "moveBloodFromReadyClanToUncontrolled", clan: "Gangrel antitribu" }] }
     ],
   },
   {
@@ -27772,7 +27772,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "moveBloodReadyPanderToUncontrolledPander" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "moveBloodFromReadyClanToUncontrolled", clan: "Pander" }] }
     ],
   },
   {

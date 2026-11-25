@@ -854,8 +854,8 @@
   {
     "id": 100143,
     "name": "Bay and Howl",
-    "status": "PARTIAL_FIX",
-    "evidence": "moveBloodFromReadyGangrelToUncontrolled zaimplementowane i podpięte do Bay and Howl (100143)."
+    "status": "FIXED_TARGETED",
+    "evidence": "Pełna klauzula: moveBloodFromReadyClanToUncontrolled (clan: Gangrel antitribu) — wybór uncontrolled przy rozstrzygnięciu, każdy ready dawca oddaje dokładnie 1 krew, pusty/torpor/inny klan pomijani, brak pytania gdy nie ma dawców. Usunięto błędny gainPool 1 i pusty poprzedni prymityw (wcześniejsze evidence błędnie zgłaszało implementację). Testy E2E: tests/cards/clan-blood-transfer-audit.test.ts. Tekst: registry ID 100143."
   },
   {
     "id": 100144,
@@ -2522,8 +2522,8 @@
   {
     "id": 100421,
     "name": "Convergence",
-    "status": "PARTIAL_FIX",
-    "evidence": "moveBloodReadyPanderToUncontrolledPander zaimplementowane i podpięte do Convergence (100421)."
+    "status": "FIXED_TARGETED",
+    "evidence": "Pełna klauzula: moveBloodFromReadyClanToUncontrolled (clan: Pander) — wybór odbiorcy przy rozstrzygnięciu (test z dwoma Panderami), każdy ready dawca oddaje dokładnie 1 krew, pusty/torpor/inny klan pomijani, brak pytania gdy nie ma dawców. Usunięto błędny gainPool 1 i pusty poprzedni prymityw. Testy E2E: tests/cards/clan-blood-transfer-audit.test.ts. Tekst: registry ID 100421."
   },
   {
     "id": 100422,
@@ -4646,8 +4646,8 @@
   {
     "id": 100775,
     "name": "Fortschritt Library",
-    "status": "PARTIAL_FIX",
-    "evidence": "searchLibraryGehennaEvent i limitOncePerGame zaimplementowane i podpięte do Fortschritt Library (100775)."
+    "status": "FIXED_TARGETED",
+    "evidence": "Pełna klauzula: searchLibraryGehennaEvent (wybór przy rozstrzygnięciu, tylko karty z tagiem gehenna, opcja find-nothing, CardSearchedToHand, discard down do 7 kart z tasowaniem) oraz oncePerGameByName zamiast martwego limitOncePerGame; usunięto błędny gainPool 1. Wymagało to obsługi w ścieżce MASTER resolve (osobny switch niż akcje) — wcześniejsze evidence błędnie zgłaszało implementację. Testy E2E: tests/cards/fortschritt-library-audit.test.ts (5/5). Tekst: registry ID 100775."
   },
   {
     "id": 100776,

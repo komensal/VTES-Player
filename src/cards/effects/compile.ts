@@ -7667,14 +7667,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             // Grant intercept for different disciplines
             break;
           }
-          case "moveBloodFromReadyGangrelToUncontrolled": {
-            // Move blood from ready Gangrel to uncontrolled - target at announcement
-            break;
-          }
-          case "moveBloodReadyPanderToUncontrolledPander": {
-            // Move blood from ready Pander to uncontrolled Pander
-            break;
-          }
           case "unlockViaCorruption":
             if (play.minion) ops.registerCorruptionUnlock(play.minion, play.seat, play.card.id);
             break;
@@ -8726,6 +8718,41 @@ function compileMasterCard(spec: CardSpec): CardHandler {
           case "gainPool":
             ops.emit({ type: "PoolGained", seat: play.seat, amount: e.amount });
             break;
+          case "searchLibraryGehennaEvent": {
+            // "Search your library for a Gehenna event card … add it to
+            // your hand" (Fortschritt Library) — a RESOLUTION choice, so
+            // nothing is named at play (p. 48).
+            ops.raiseChoice({
+              seat: play.seat,
+              cardName: spec.name,
+              cardId: play.card.id,
+              key: "searchLibraryGehennaEvent",
+              params: {},
+              optional: false,
+            });
+            break;
+          }
+          case "moveBloodFromReadyClanToUncontrolled": {
+            // "Move 1 blood from each ready <clan> you control to a <clan>
+            // in your uncontrolled region" (Bay and Howl, Convergence).
+            // Asked only when there is both a donor and a legal recipient.
+            const seat = getSeat(ops.state, play.seat);
+            const donors = seat.minions.some(
+              (m) => m.clan === e.clan && isReady(m) && m.blood > 0,
+            );
+            const recipients = seat.uncontrolled.some((u) => u.card.clan === e.clan);
+            if (donors && recipients) {
+              ops.raiseChoice({
+                seat: play.seat,
+                cardName: spec.name,
+                cardId: play.card.id,
+                key: "moveBloodFromReadyClanToUncontrolled",
+                params: { clan: e.clan },
+                optional: false,
+              });
+            }
+            break;
+          }
           case "liftBloodCurseDiablerieBar":
             ops.emit({ type: "BloodCurseDiablerieBarLifted", clan: e.clan });
             break;
@@ -12642,6 +12669,93 @@ export function compileSpec(spec: CardSpec): CardHandler {
           }
         }
         ops.shuffleLibrary(frame.seat);
+      },
+    };
+  }
+  // "Search your library for a Gehenna event card. Show it to all players
+  // and add it to your hand. Discard down to your hand size afterward"
+  // (Fortschritt Library) — an event is recognised by its printed tags, not
+  // by name, and the search shuffles whether or not anything is taken
+  // (p. 48), with the discard-down replacing the hand afterwards.
+  if (
+    spec.modes.some((m) =>
+      m.effects.some((e) => e.kind === "searchLibraryGehennaEvent"),
+    )
+  ) {
+    choiceByKey["searchLibraryGehennaEvent"] = {
+      options: (frame, state, registry) => {
+        const out: LegalOption[] = [];
+        for (const c of getSeat(state, frame.seat).library) {
+          if (!(registry[c.name]?.permanentTags ?? []).includes("gehenna")) continue;
+          out.push({
+            id: `choice:${spec.name}:${frame.cardId}:searchLibraryGehennaEvent:${c.id}`,
+            kind: "answerChoice" as const,
+            label: `Take ${c.name}`,
+            params: { pick: c.id },
+          });
+        }
+        out.push({
+          id: `choice:${spec.name}:${frame.cardId}:searchLibraryGehennaEvent:none`,
+          kind: "answerChoice" as const,
+          label: "Find nothing",
+          params: { pick: "none" },
+        });
+        return out;
+      },
+      apply: (frame, choice, ops) => {
+        const pick = choice.params["pick"];
+        if (pick && pick !== "none") {
+          const card = getSeat(ops.state, frame.seat).library.find((c) => c.id === pick);
+          if (card) {
+            ops.emit({
+              type: "CardSearchedToHand",
+              seat: frame.seat,
+              cardId: card.id,
+              name: card.name,
+            });
+          }
+        }
+        // "Discard down to your hand size afterward" — the helper also
+        // shuffles, which every library search requires anyway (p. 14).
+        ops.discardDownToHandSize(frame.seat, spec.name, frame.cardId, true);
+      },
+    };
+  }
+  // "Move 1 blood from EACH ready <clan> you control to a <clan> in your
+  // uncontrolled region" (Bay and Howl, Convergence) — the recipient is one
+  // uncontrolled vampire; every ready donor gives exactly one blood, and a
+  // donor with nothing to give is simply skipped.
+  if (
+    spec.modes.some((m) =>
+      m.effects.some((e) => e.kind === "moveBloodFromReadyClanToUncontrolled"),
+    )
+  ) {
+    choiceByKey["moveBloodFromReadyClanToUncontrolled"] = {
+      options: (frame, state) => {
+        const clan = frame.params["clan"] ?? "";
+        return getSeat(state, frame.seat).uncontrolled
+          .filter((u) => u.card.clan === clan)
+          .map((u) => ({
+            id: `choice:${spec.name}:${frame.cardId}:moveBloodFromReadyClanToUncontrolled:${u.card.id}`,
+            kind: "answerChoice" as const,
+            label: `Move blood to ${u.card.name}`,
+            params: { pick: u.card.id },
+          }));
+      },
+      apply: (frame, choice, ops) => {
+        const clan = frame.params["clan"] ?? "";
+        const target = choice.params["pick"];
+        if (!target) return;
+        const seat = getSeat(ops.state, frame.seat);
+        const recipient = seat.uncontrolled.find(
+          (u) => u.card.id === target && u.card.clan === clan,
+        );
+        if (!recipient) return;
+        for (const m of seat.minions) {
+          if (m.clan !== clan || !isReady(m) || m.blood <= 0) continue;
+          ops.emit({ type: "BloodBurned", minion: m.id, amount: 1 });
+          ops.emit({ type: "UncontrolledBloodAdded", seat: frame.seat, minion: target, amount: 1 });
+        }
       },
     };
   }

@@ -1576,10 +1576,10 @@ export type EffectPrimitive =
   | { kind: "rescueFromTorpor" }
   /** "Block attempt fails if ally or younger" (Heart's Desire) — block attempt fails if ally or younger. §4 */
   | { kind: "blockAttemptFailsIfAllyYounger" }
-  /** "Move blood from ready Gangrel to uncontrolled" (Bay and Howl) — move blood. §4 */
-  | { kind: "moveBloodFromReadyGangrelToUncontrolled" }
-  /** "Move blood from ready Pander to uncontrolled Pander" (Convergence) — move blood. §4 */
-  | { kind: "moveBloodReadyPanderToUncontrolledPander" }
+  /** "Move 1 blood from each ready \<clan\> you control to a \<clan\> in your
+   *  uncontrolled region" (Bay and Howl, Convergence) — every ready donor
+   *  gives exactly one, and the recipient is chosen at resolution. */
+  | { kind: "moveBloodFromReadyClanToUncontrolled"; clan: string }
   /** "Place this card on a vampire" (Static Virtue) — place card on vampire. §4 */
   | { kind: "placeOnVampire" }
   /** "Ⓓ Stun an unlocked vampire" (Mind Numb) — a directed action card
