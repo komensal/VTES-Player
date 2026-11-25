@@ -337,7 +337,6 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   restrictAction: "deny",
   restrictStrike: "deny",
   grantInterceptForDifferentDisciplines: "intercept",
-  moveBloodToYoungerLaibon: "bloodGain",
   reflectDamage: "damage",
   oncePerRound: "combat",
   chooseStrikeAsRanged: "combat",

@@ -288,6 +288,7 @@ export interface EngineOps {
     play: CardPlayFrame,
     amount: number,
     youngerThanActor?: boolean,
+    sect?: Sect,
   ): void;
   /** "[ani] The diablerie is canceled and the diablerist burns 1 blood"
    *  (Crimson Fury basic) — the victim plays it from the

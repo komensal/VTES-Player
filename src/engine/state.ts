@@ -109,6 +109,8 @@ export type VampireTitle =
   | "priscus"
   | "cardinal"
   | "regent"
+  // Laibon title (p. 42): magaji is not unique and cannot be contested.
+  | "magaji"
   // Personal titles are not sect-bound or contestable. The number is the
   // title's votes, not a vote bonus; gaining another title replaces it.
   | "personal1"
@@ -145,6 +147,8 @@ export const TITLE_SECT: Partial<Record<VampireTitle, Sect>> = {
   priscus: "sabbat",
   cardinal: "sabbat",
   regent: "sabbat",
+  // Laibon title (p. 42): magaji is held only by Laibon.
+  magaji: "laibon",
 };
 
 /**
@@ -274,6 +278,8 @@ export const TITLE_VOTES: Record<VampireTitle, number> = {
   personal1: 1,
   personal2: 2,
   personal3: 3,
+  // Laibon title (p. 42): magaji carries two votes.
+  magaji: 2,
 };
 
 /** V5 sects (p. 39). A minion's sect and clan are static facts, set by

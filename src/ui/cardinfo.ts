@@ -89,6 +89,8 @@ const TITLES: Record<string, VampireTitle> = {
   priscus: "priscus",
   cardinal: "cardinal",
   regent: "regent",
+  // Laibon title (p. 42): magaji, two votes.
+  magaji: "magaji",
 };
 
 export interface CryptImport {

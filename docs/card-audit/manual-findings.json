@@ -896,8 +896,8 @@
   {
     "id": 100150,
     "name": "Belonging Grants Protection",
-    "status": "PARTIAL_FIX",
-    "evidence": "unlockVampire i moveBloodToYoungerLaibon zaimplementowane i podpięte do Belonging Grants Protection (100150)."
+    "status": "FIXED_TARGETED",
+    "evidence": "Oba warianty zaimplementowane z requiresTitle magaji (dodany do VampireTitle/TITLE_SECT/TITLE_VOTES: Laibon, 2 głosy). [unlock] actionUnlockMinion z sect laibon i excludeActor — dowolny inny ready Laibon, bez aktora i odblokowanych. [blood] bloodBankToUncontrolled amount 2 z youngerThanActor i nowym filtrem sect (engine + choice options); jeden kandydat -> automatyczny transfer, wielu -> wybór. Wymagało to adaptera actionPlayFrame, bo ops przyjmuje CardPlayFrame. Usunięto martwy moveBloodToYoungerLaibon. Testy E2E: tests/cards/belonging-grants-protection-audit.test.ts (4/4: wymóg magaji, filtry unlock, transfer z jednym i wieloma kandydatami). Tekst: registry ID 100150; rules:lookup: brak wpisu."
   },
   {
     "id": 100151,

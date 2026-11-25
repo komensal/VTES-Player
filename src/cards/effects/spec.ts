@@ -1029,6 +1029,9 @@ export type EffectPrimitive =
       /** "…to a YOUNGER vampire in your uncontrolled region" — younger than
        *  the vampire playing the card. */
       youngerThanActor?: boolean;
+      /** "…to a younger LAIBON in your uncontrolled region" (Belonging
+       *  Grants Protection) — the same blood-bank transfer, sect-filtered. */
+      sect?: Sect;
     }
   | { kind: "cancelDiablerie"; burnDiablerist: number }
   | { kind: "burnBothDiablerie" }
@@ -1534,8 +1537,6 @@ export type EffectPrimitive =
   | { kind: "modifyInterceptOpponent"; amount: number }
   /** "Grant intercept for different disciplines" (Guardian Vigil) — grant intercept. §4 */
   | { kind: "grantInterceptForDifferentDisciplines"; amount: number }
-  /** "Move blood to younger Laibon" (Belonging Grants Protection) — move blood. §4 */
-  | { kind: "moveBloodToYoungerLaibon" }
   /** "Reflect damage" (Blood of Acid) — reflect damage. §4 */
   | { kind: "reflectDamage"; amount: number }
   /** "Once per round" (Blood of the Cobra) — once per round. §4 */
@@ -2779,6 +2780,11 @@ export type EffectPrimitive =
       kind: "actionUnlockMinion";
       scope: "youngerOrAlly" | "anyVampire" | "youngerVampireOwn";
       directed: boolean;
+      /** "…another ready LAIBON" (Belonging Grants Protection) — only this
+       *  sect qualifies. */
+      sect?: Sect;
+      /** "…ANOTHER …" — the acting minion is never its own target. */
+      excludeActor?: boolean;
     }
   /** "This vampire unlocks" (Ensconced, Fantasy World, Field Training,
    *  Gear Up, Go Anarch) — unlocks the ACTING minion, no target needed. §3 */

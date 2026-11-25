@@ -26756,11 +26756,14 @@ export const cardSpecs: CardSpec[] = [
     // Belonging Grants Protection [100150] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100150,
     name: "Belonging Grants Protection",
+    requiresReady: true,
+    requiresTitle: ["magaji"],
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "unlockVampire" }, { kind: "moveBloodToYoungerLaibon" }] }
+      { level: "basic", variant: "unlock", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "actionUnlockMinion", scope: "anyVampire", directed: false, sect: "laibon", excludeActor: true }] },
+      { level: "basic", variant: "blood", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "bloodBankToUncontrolled", amount: 2, youngerThanActor: true, sect: "laibon" }] }
     ],
   },
   {

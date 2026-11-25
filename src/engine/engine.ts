@@ -9859,6 +9859,7 @@ export class VtesEngine implements EngineOps {
     play: CardPlayFrame,
     amount: number,
     youngerThanActor = false,
+    sect?: import("./state.ts").Sect,
   ): void {
     if (amount <= 0) return;
     // "…to a YOUNGER vampire in your uncontrolled region" — the actor's
@@ -9868,7 +9869,8 @@ export class VtesEngine implements EngineOps {
     const actor = play.minion ? findMinion(this.state, play.minion) : null;
     const cap = youngerThanActor && actor ? capacityOf(actor) : null;
     const targets = getSeat(this.state, play.seat).uncontrolled.filter(
-      (u) => cap === null || u.card.capacity < cap,
+      (u) => (cap === null || u.card.capacity < cap) &&
+        (sect === undefined || u.card.sect === sect),
     );
     if (targets.length === 0) return;
     if (targets.length === 1) {
@@ -9888,6 +9890,7 @@ export class VtesEngine implements EngineOps {
       params: {
         amount: String(amount),
         ...(cap !== null ? { maxCapacity: String(cap) } : {}),
+        ...(sect !== undefined ? { sect } : {}),
       },
       optional: false,
     });

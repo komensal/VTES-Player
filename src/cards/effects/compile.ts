@@ -89,6 +89,7 @@ import {
   predatorOf,
   preyOf,
   playOptionId,
+  newCycle,
 } from "../../engine/index.ts";
 import type {
   CardMode,
@@ -1285,6 +1286,30 @@ function chooseOwnMinionsOf(mode: CardMode): { extra: number } | null {
   return null;
 }
 
+/** The play an action card's own frame describes, for ops that take a
+ *  CardPlayFrame (bloodBankToUncontrolled). Action resolution keeps an
+ *  ActionFrame, so this is the single place that adapts it. */
+function actionPlayFrame(af: ActionFrame): CardPlayFrame {
+  if (!af.card) throw new Error("actionPlayFrame: action without a card");
+  return {
+    kind: "cardPlay",
+    card: af.card.instance,
+    seat: af.actingSeat,
+    minion: af.acting,
+    mode: af.card.mode,
+    params: af.card.params,
+    asAction: true,
+    isMaster: false,
+    isCombat: false,
+    isReaction: false,
+    isFrenzy: false,
+    requires: [],
+    paid: { blood: 0, pool: 0 },
+    canceled: false,
+    cycle: newCycle([af.actingSeat]),
+  };
+}
+
 /** The one effect in a mode that needs an announced target, if any. */
 function targetRider(mode: CardMode): EffectPrimitive | null {
   for (const e of mode.effects) {
@@ -1548,6 +1573,8 @@ function enumerateActionTargets(
         } else if (!(m.kind === "ally" || younger(capacityOf(m), true))) {
           continue;
         }
+        if (e.sect !== undefined && m.sect !== e.sect) continue;
+        if (e.excludeActor && actor && m.id === actor.id) continue;
         targets.push(m.id);
       }
     }
@@ -2756,6 +2783,20 @@ function compileActionCard(spec: CardSpec): CardHandler {
                 });
               }
             }
+            break;
+          }
+          case "bloodBankToUncontrolled": {
+            // "Move N blood from the blood bank to a younger Laibon in your
+            // uncontrolled region" (Belonging Grants Protection). The engine
+            // op owns the one-candidate shortcut and the choice otherwise;
+            // an action's frame has to be adapted to the play it describes.
+            if (!af.card) break;
+            ops.bloodBankToUncontrolled(
+              actionPlayFrame(af),
+              e.amount,
+              e.youngerThanActor === true,
+              e.sect,
+            );
             break;
           }
           case "actionUnlockMinion": {
@@ -5512,7 +5553,7 @@ function compileCombatCard(spec: CardSpec): CardHandler {
             ops.burnOpposingRetainer(play, play.params["retainer"] ?? null, e.bloodCost);
             break;
           case "bloodBankToUncontrolled": {
-            ops.bloodBankToUncontrolled(play, e.amount, e.youngerThanActor === true);
+            ops.bloodBankToUncontrolled(play, e.amount, e.youngerThanActor === true, e.sect);
             break;
           }
           case "cancelDiablerie":
@@ -7548,9 +7589,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             break;
           }
           case "addBurnCounters": {
-            break;
-          }
-          case "moveBloodToYoungerLaibon": {
             break;
           }
           case "curseTarget": {
@@ -12972,7 +13010,8 @@ export function compileSpec(spec: CardSpec): CardHandler {
           // Younger than the vampire that played the card; `capacityOf` is a
           // MINION reader, and an uncontrolled card is not one yet, so its
           // printed capacity is the number (nothing is attached to it).
-          .uncontrolled.filter((u) => cap === undefined || u.card.capacity < cap)
+          .uncontrolled.filter((u) => (cap === undefined || u.card.capacity < cap) &&
+            (frame.params["sect"] === undefined || u.card.sect === frame.params["sect"]))
           .map((u) => ({
             id: `choice:${spec.name}:${frame.cardId}:bloodFromBankToUncontrolled:${u.card.id}`,
             kind: "answerChoice" as const,
