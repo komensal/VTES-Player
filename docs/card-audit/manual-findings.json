@@ -8,8 +8,8 @@
   {
     "id": 100002,
     "name": "419 Operation",
-    "status": "PARTIAL_FIX",
-    "evidence": "Dodano pozostawienie karty w grze po niezablokowanej akcji, przelewy pool w unlock kontrolera oraz możliwość spalenia Edge przez aktualną prey, także przy zerowych counterach. tests/cards/operation-419-audit.test.ts sprawdza wymaganie Osebo, stealth, blok, oba przelewy, limit użycia, pustą kartę i zmianę prey. Spalenie Edge jest dostępne w istniejących oknach decyzji, nie we wszystkich momentach dowolnej fazy; kolejność z innymi efektami Edge oraz implikacje The Rising pozostają do zbadania."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wszystkie klauzule zaimplementowane zgodnie z drukiem: [action] +1 stealth, put in play on success; unlock-phase collect 1 pool from prey to card (once per phase); cash all counters to controller's pool; prey burns the Edge to recover counters and burn the card. Testy E2E: tests/cards/operation-419-audit.test.ts (7/7). Tekst: registry ID 100002."
   },
   {
     "id": 100003,
