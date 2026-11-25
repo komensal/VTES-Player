@@ -6836,8 +6836,8 @@
   {
     "id": 101140,
     "name": "Madness of the Bard",
-    "status": "UNRESOLVED",
-    "evidence": "Madness of the Bard: spec daje gainPool zamiast unikalnego permanenta i akcji spalenia, ale wymóg rymowania dotyczy mowy graczy poza modelem gry. Potrzebne rozstrzygnięcie zakresu platformy i zachowania dla niewykonalnej klauzuli. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Madness of the Bard: spec daje gainPool zamiast unikalnego permanenta i akcji spalenia, ale wymóg rymowania dotyczy mowy graczy poza modelem gry. Potrzebne rozstrzygnięcie zakresu platformy i zachowania dla niewykonalnej klauzuli. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique Master.\""
   },
   {
     "id": 101141,
@@ -8414,8 +8414,8 @@
   {
     "id": 101403,
     "name": "Playing for Keeps",
-    "status": "UNRESOLVED",
-    "evidence": "Playing for Keeps: spec daje gainPool zamiast unikalnego efektu ante i nie deklaruje kosztu X. Gra o ante może być poza zakresem platformy; potrzebna decyzja zakresowa, nie zakładać obsługi tej reguły. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Playing for Keeps: spec daje gainPool zamiast unikalnego efektu ante i nie deklaruje kosztu X. Gra o ante może być poza zakresem platformy; potrzebna decyzja zakresowa, nie zakładać obsługi tej reguły. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique Master.\""
   },
   {
     "id": 101404,

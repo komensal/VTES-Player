@@ -29854,11 +29854,13 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Madness of the Bard [101140] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // "Unique Master." — added unique: true per printed text.
     krcgId: 101140,
     name: "Madness of the Bard",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -30790,10 +30792,12 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Playing for Keeps [101403] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // "Unique Master." — added unique: true per printed text.
     krcgId: 101403,
     name: "Playing for Keeps",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
