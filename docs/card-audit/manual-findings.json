@@ -8,8 +8,8 @@
   {
     "id": 100002,
     "name": "419 Operation",
-    "status": "FIXED_TARGETED",
-    "evidence": "Wszystkie klauzule zaimplementowane zgodnie z drukiem: [action] +1 stealth, put in play on success; unlock-phase collect 1 pool from prey to card (once per phase); cash all counters to controller's pool; prey burns the Edge to recover counters and burn the card. Testy E2E: tests/cards/operation-419-audit.test.ts (7/7). Tekst: registry ID 100002."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano pozostawienie karty w grze po niezablokowanej akcji, przelewy pool w unlock kontrolera oraz możliwość spalenia Edge przez aktualną prey, także przy zerowych counterach. tests/cards/operation-419-audit.test.ts sprawdza wymaganie Osebo, stealth, blok, oba przelewy, limit użycia, pustą kartę i zmianę prey. Spalenie Edge jest dostępne w istniejących oknach decyzji, nie we wszystkich momentach dowolnej fazy; kolejność z innymi efektami Edge oraz implikacje The Rising pozostają do zbadania."
   },
   {
     "id": 100003,
@@ -20,8 +20,8 @@
   {
     "id": 100004,
     "name": "Abactor",
-    "status": "FIXED_TARGETED",
-    "evidence": "Wszystkie klauzule zaimplementowane zgodnie z drukiem: [action] +1 stealth, hunt +4, blood hunt referendum po udanym akcji (przed Freak Drive, nie diablerie). Testy E2E: tests/cards/abactor-audit.test.ts (10/10). Tekst: registry ID 100004."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano akcję hunt +4, wspólną wypłatę hunt i referendum blood hunt po udanym hunt, przed oknem Freak Drive; sama akcja nie stanowi diablerie. tests/cards/abactor-audit.test.ts sprawdza m.in. bonusy, blok, zakaz hunt, Masquerade Endangered, ochronę przed blood hunt, przejście referendum i Go-getter. Kolejność innych automatycznych/odroczonych efektów hunt wymaga dalszej weryfikacji; Vampiric Disease i Ex Nihilo nadal mają niekompletne implementacje, więc nie można uznać całej karty za naprawioną."
   },
   {
     "id": 100005,
@@ -44,8 +44,8 @@
   {
     "id": 100008,
     "name": "Ablative Skin",
-    "status": "FIXED_TARGETED",
-    "evidence": "Wszystkie klauzule zaimplementowane zgodnie z drukiem: [for] attachSelf z 3 counterami, wydawanie counterów w combat do zapobiegania obrażeniom (basic: tylko non-aggravated, superior: wszystkie), zakaz zapobiegania Blood Fury, spalenie karty po ostatnim counterze. Testy E2E: tests/cards/ablative-skin-audit.test.ts (9/9). Tekst: registry ID 100008."
+    "status": "PARTIAL_FIX",
+    "evidence": "Dodano dołączenie z trzema counterami, wydawanie ich w combat oraz odrębne wersje basic (tylko non-aggravated) i superior, z zakazem zapobiegania obrażeniom Blood Fury; karta pali się po wydaniu ostatniego countera i przy sprawdzeniu stanu po usunięciu counterów przez inny efekt. tests/cards/ablative-skin-audit.test.ts obejmuje sukces, blok, obie wersje, wiele kopii, podział wydatków i rzeczywisty Blood Fury. Termin spalenia w środku złożonych efektów i pozostałe interakcje wymagają weryfikacji."
   },
   {
     "id": 100009,
@@ -6752,8 +6752,8 @@
   {
     "id": 101126,
     "name": "Lost in Translation",
-    "status": "UNRESOLVED",
-    "evidence": "Lost in Translation: lock i przekierowanie do trzeciego gracza bada lock-as-currency.test.ts. W tekście registry jest limit jednej karty na akcję, którego nie widać w spec; wymaga sprawdzenia wspólnej obsługi przekierowań i testu dwóch kopii."
+    "status": "FIXED_TARGETED",
+    "evidence": "Dodano oncePerAction do usable (limit jednej kopii na akcję zgodnie z drukiem). Testy scenariuszowe: tests/cards/lost-in-translation-audit.test.ts (3/3) sprawdzają ofertę w oknie reakcji, limit jednej kopii na akcję oraz przekierowanie bleed do trzeciego Methuselah (nie reaktora, nie kontrolera aktora)."
   },
   {
     "id": 101127,

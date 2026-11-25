@@ -3930,7 +3930,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Lost in Translation",
     cardType: "reaction",
     bloodCost: 2,
-    usable: ["bleedTargetsYou", "afterBlocksDeclined"],
+    usable: ["bleedTargetsYou", "afterBlocksDeclined", "oncePerAction"],
     modes: [
       {
         level: "basic",
