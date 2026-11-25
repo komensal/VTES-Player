@@ -2183,6 +2183,22 @@ function compileActionCard(spec: CardSpec): CardHandler {
         if (r.noCombatEndsFirstRound) riders.noCombatEndsFirstRound = true;
       };
       for (const e of mode.effects) {
+        if (e.kind === "capBleed") {
+          // "If more than N pool is bled with this action, ignore the
+          // excess" — recorded at announcement, so the cap covers every
+          // later modifier too (Bloodwork).
+          params.bleedPoolCap = e.amount;
+        }
+        if (e.kind === "conditionalStealthIfTargetSect") {
+          // "If the Methuselah you are bleeding controls a ready <sect>
+          // vampire, this action is at +N stealth" — the bleed's actual
+          // target decides, read at announcement (Bloodwork).
+          const targetSeat = params.targetSeat ?? preyOf(ops.state, play.seat);
+          const ready = getSeat(ops.state, targetSeat).minions.some(
+            (m) => m.kind === "vampire" && m.sect === e.sect && isReady(m),
+          );
+          if (ready) params.inherentStealth = (params.inherentStealth ?? 0) + e.amount;
+        }
         if (e.kind === "actionBleed") {
           params.actionKind = "bleed";
           params.bleedBonus = e.bonus;
@@ -7606,12 +7622,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             break;
           }
           case "chooseStrikeAsRanged": {
-            break;
-          }
-          case "limitBleedPerTurn": {
-            break;
-          }
-          case "requireTargetSabbat": {
             break;
           }
           case "putInPlayWithCounters": {

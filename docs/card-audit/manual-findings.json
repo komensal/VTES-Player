@@ -1346,8 +1346,8 @@
   {
     "id": 100225,
     "name": "Bloodwork",
-    "status": "PARTIAL_FIX",
-    "evidence": "limitBleedPerTurn i requireTargetSabbat zaimplementowane i podpięte do Bloodwork (100225)."
+    "status": "FIXED_TARGETED",
+    "evidence": "Wszystkie trzy klauzule: actionBleed bonus 1 (zamiast modifyBleed limited, które nie czyni akcji akcją bleed), capBleed amount 2 przez istniejące af.bleedPoolCap (params na ramę akcji przy ogłoszeniu), conditionalStealthIfTargetSect sect sabbat amount 1 (oceniane przy ogłoszeniu względem faktycznego targetu bleed). requiresReady dodane do requiresBlackHand/requiresVampire. Usunięto martwe limitBleedPerTurn/requireTargetSabbat i bezwarunkowy modifyStealth. Testy E2E: tests/cards/bloodwork-audit.test.ts (4/4: wymóg Black Hand, +1 bleed, cap przy dużym bleed, stealth tylko z ready Sabbat u prey). Tekst: registry ID 100225; rules:lookup: brak wpisu."
   },
   {
     "id": 100226,

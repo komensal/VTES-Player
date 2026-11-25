@@ -27193,11 +27193,12 @@ export const cardSpecs: CardSpec[] = [
     name: "Bloodwork",
     requiresBlackHand: true,
     requiresVampire: true,
+    requiresReady: true,
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "modifyStealth", amount: 1 }, { kind: "limitBleedPerTurn" }, { kind: "requireTargetSabbat" }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionBleed", bonus: 1 }, { kind: "capBleed", amount: 2 }, { kind: "conditionalStealthIfTargetSect", sect: "sabbat", amount: 1 }] }
     ],
   },
   {

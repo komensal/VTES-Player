@@ -4682,6 +4682,7 @@ export class VtesEngine implements EngineOps {
       // like every other action detail (docs/rush-outcome-design.md §2).
       combatOutcome: params.combatOutcome ?? null,
       targetPermanent: params.targetPermanent ?? null,
+      ...(params.bleedPoolCap !== undefined ? { bleedPoolCap: params.bleedPoolCap } : {}),
       ...(params.noCombat ? { noCombatOnSuccess: true } : {}),
       ...(params.invertCombatRoles ? { invertCombatRoles: true } : {}),
       ...(params.lockTarget ? { lockTargetOnSuccess: true } : {}),

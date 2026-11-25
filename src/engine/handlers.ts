@@ -1200,6 +1200,9 @@ export interface CardActionParams {
   bleedBonus?: number;
   /** "+1 stealth action" — inherent stealth of the card's action. */
   inherentStealth?: number;
+  /** "If more than N pool is bled with this action, ignore the excess"
+   *  (Bloodwork) — a cap on the action's final bleed amount. */
+  bleedPoolCap?: number;
   /** Rush: the minion this action enters combat with. Directedness
    *  derives from its controller (rush design §2.1). */
   targetMinion?: MinionId;

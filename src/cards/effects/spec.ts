@@ -1543,10 +1543,14 @@ export type EffectPrimitive =
   | { kind: "oncePerRound" }
   /** "Choose strike as ranged" (Blood of the Cobra) — choose strike as ranged. §4 */
   | { kind: "chooseStrikeAsRanged" }
-  /** "Limit bleed per turn" (Bloodwork) — limit bleed per turn. §4 */
-  | { kind: "limitBleedPerTurn" }
-  /** "Require target Sabbat" (Bloodwork) — require target Sabbat. §4 */
-  | { kind: "requireTargetSabbat" }
+  /** "If more than N pool is bled with this action, ignore the excess"
+   *  (Bloodwork) — a cap on the action's final bleed amount, set at
+   *  announcement so every later modifier is capped too. */
+  | { kind: "capBleed"; amount: number }
+  /** "If the Methuselah you are bleeding controls a ready \<sect\> vampire,
+   *  this action is at +N stealth" (Bloodwork) — evaluated at announcement
+   *  against the bleed's actual target, not a blanket bonus. */
+  | { kind: "conditionalStealthIfTargetSect"; sect: Sect; amount: number }
   /** "Put in play with counters" (Bounty) — put in play with counters. §4 */
   | { kind: "putInPlayWithCounters"; counters: number }
   /** "Pay counters on torpor burn diablerie" (Bounty) — pay counters. §4 */
