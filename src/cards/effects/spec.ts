@@ -1387,9 +1387,6 @@ export type EffectPrimitive =
   | { kind: "bleedBonus"; amount: number }
   /** "Lock this vampire" (Go Anarch, etc.) — lock the acting minion. §4 */
   | { kind: "lockSelf" }
-  /** "Put this card on a titled vampire" (Infamous Warlock, etc.) — put
-   *  the card on a vampire with a title. §4 */
-  | { kind: "putInPlayOnTitledVampire" }
   /** "Burn a vampire who recently diablerized" (Community Justice) — burn
    *  a vampire that committed diablerie recently. §4 */
   | { kind: "burnRecentDiablerist" }
@@ -3474,6 +3471,9 @@ export interface CardSpec {
       minCapacity?: number;
       /** "…a vampire with capacity below 5" (The Damned) is `maxCapacity: 4`. */
       maxCapacity?: number;
+      /** "…a Tremere antitribu WITH A TITLE" (Infamous Warlock) — only a
+       *  titled vampire may bear the card. */
+      titled?: boolean;
       /** "Cannot be put on a vampire with superior Celerity [CEL]" — the
        *  Discipline master cards have nothing to give a vampire already at
        *  superior in that Discipline. */

@@ -286,7 +286,6 @@ export const EFFECT_TAGS: Record<EffectPrimitive["kind"], PlayEffectTag | null> 
   grantIntercept: "intercept",
   bleedBonus: "bleed",
   lockSelf: "deny",
-  putInPlayOnTitledVampire: "board",
   burnRecentDiablerist: "deny",
   seniorityException: "combat",
   enterCombat: "combat",

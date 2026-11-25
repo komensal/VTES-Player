@@ -7493,9 +7493,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             }
             break;
           }
-          case "putInPlayOnTitledVampire": {
-            break;
-          }
           case "burnRecentDiablerist": {
             break;
           }
@@ -7918,6 +7915,7 @@ export function attachTargets(
         continue;
       }
       if (a.clan !== undefined && m.clan !== a.clan) continue;
+      if (a.titled === true && m.title === null) continue;
       if (a.sect !== undefined && m.sect !== a.sect) continue;
       if (a.sectOrDiscipline && m.sect !== a.sectOrDiscipline.sect &&
           disciplinesOf(m)[a.sectOrDiscipline.discipline] === undefined) continue;

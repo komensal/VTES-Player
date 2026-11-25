@@ -29301,14 +29301,22 @@ export const cardSpecs: CardSpec[] = [
     modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
-    // Infamous Warlock [100976] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Infamous Warlock [100976]
+    // Put this card on a Tremere antitribu with a title. The vampire with
+    // this card cannot cast votes or ballots.
     krcgId: 100976,
     name: "Infamous Warlock",
     cardType: "master",
     bloodCost: 0,
+    permanent: {
+      where: "bearer",
+      statics: { cannotCastVotes: true },
+      tags: ["Infamous Warlock"],
+      attach: { scope: "any", kind: "vampire", clan: "Tremere antitribu", titled: true },
+    },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "putInPlayOnTitledVampire" }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {

@@ -5852,8 +5852,8 @@
   {
     "id": 100976,
     "name": "Infamous Warlock",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast dołączenia do titled Tremere antitribu i zakazu głosów. Wymaga nowych typów efektów (putInPlayOnTitledTremereAntitribu, preventVoting). Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Pełna klauzula: permanent.attach z nowym filtrem titled (scope any, kind vampire, clan Tremere antitribu, titled true) oraz statics.cannotCastVotes — istniejący mechanizm blokady w vampireMayVote (głosy i ballots). Usunięto martwy putInPlayOnTitledVampire i błędny gainPool z bulk. Testy E2E: tests/cards/infamous-warlock-audit.test.ts (2/2: oferta tylko dla titled Tremere antitribu, blokada głosów po dołączeniu z kontrolą innego wampira). Tekst: registry ID 100976; rules:lookup: brak wpisu."
   },
   {
     "id": 100977,
