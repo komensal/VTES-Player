@@ -33568,7 +33568,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "removeAllyRetainer" }, { kind: "putInPlayVampire" }] }
+      { level: "basic", variant: "nec", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "removeFromGameTarget", scope: "mortalOrGhoul" }] },
+      { level: "superior", variant: "nec", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "removeFromGameTarget", scope: "nonWraithOrSmallVampire" }] }
     ],
   },
   {

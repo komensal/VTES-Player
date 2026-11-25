@@ -1904,8 +1904,8 @@
   {
     "id": 100318,
     "name": "Chair of Hades",
-    "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma tylko stealth; brak usuwania odpowiednich ally/retainer i superior małego wampira. Wymaga nowych typów efektów (removeAllyRetainer, putInPlayVampire). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Oba tryby zaimplementowane jako removeFromGameTarget z variant nec: [nec] zakres mortalOrGhoul (ally z self-entry mortal/ghoul i retainers z life i tymi tagami), [NEC] nonWraithOrSmallVampire (ally/retainer nie-wraith lub wampir z capacity <= 2). Usunięto mylący putInPlayVampire, którego tekst karty nie zawiera. Rozstrzyganie: minion -> removeMinionFromGame; retainer -> PermanentBurned z removed: true, więc nic nie trafia do ash heap (p. 16). Testy E2E: tests/cards/chair-of-hades-audit.test.ts (5/5: filtry obu trybów, usunięcie ally i małego wampira, retainer bez ash heap). Tekst: registry ID 100318; rules:lookup: brak wpisu."
   },
   {
     "id": 100319,

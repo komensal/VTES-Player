@@ -1299,6 +1299,7 @@ function targetRider(mode: CardMode): EffectPrimitive | null {
       e.kind === "actionBurnAttachedCard" ||
       e.kind === "addLifeAlly" ||
       e.kind === "rescueFromTorpor" ||
+      e.kind === "removeFromGameTarget" ||
       e.kind === "stealMinionOnSuccess" ||
       e.kind === "actionStun" ||
       e.kind === "actionStealBlood" ||
@@ -1561,6 +1562,36 @@ function enumerateActionTargets(
         if (m.kind !== "ally" || !isReady(m)) continue;
         if (m.blood >= m.capacity) continue;
         targets.push(m.id);
+      }
+    }
+    return targets;
+  }
+  if (e.kind === "removeFromGameTarget") {
+    // "Remove a mortal or ghoul (ally or retainer) from the game" and the
+    // superior's wider set. Allies are minions; retainers are the attached
+    // cards WITH a life total, never the bearer's self-entry. Any
+    // Methuselah's cards can be named (a Ⓓ action).
+    for (const s of state.seats) {
+      if (s.ousted) continue;
+      for (const m of s.minions) {
+        if (m.kind === "ally") {
+          if (e.scope === "mortalOrGhoul") {
+            if (minionHasTag(m, "mortal", "ghoul")) targets.push(m.id);
+          } else if (!minionHasTag(m, "wraith")) {
+            targets.push(m.id);
+          }
+        }
+        if (e.scope === "nonWraithOrSmallVampire" && m.kind === "vampire" && capacityOf(m) <= 2) {
+          targets.push(m.id);
+        }
+        for (const p of m.attached) {
+          if (p.card.id === m.id || p.life === undefined) continue;
+          if (e.scope === "mortalOrGhoul") {
+            if (p.tags.includes("mortal") || p.tags.includes("ghoul")) targets.push(p.card.id);
+          } else if (!p.tags.includes("wraith")) {
+            targets.push(p.card.id);
+          }
+        }
       }
     }
     return targets;
@@ -2700,6 +2731,31 @@ function compileActionCard(spec: CardSpec): CardHandler {
             if (!t || !t.inTorpor) break;
             ops.emit({ type: "LeftTorpor", minion: t.id });
             if (e.bloodGain) ops.emit({ type: "BloodGained", minion: t.id, amount: e.bloodGain });
+            break;
+          }
+          case "removeFromGameTarget": {
+            // "Remove … from the game" is NOT a burn: the card cannot be
+            // retrieved or affected in any way (p. 16). A minion goes
+            // through removeMinionFromGame; a retainer is filed with
+            // `removed`, which skips the ash heap entirely.
+            const target = af.targetMinion ?? af.card?.params["target"];
+            if (!target) break;
+            const m = findMinion(ops.state, target);
+            if (m) {
+              ops.removeMinionFromGame(target);
+            } else {
+              const entry = ops.state.seats
+                .flatMap((s) => s.minions.flatMap((x) => x.attached))
+                .find((p) => p.card.id === target);
+              if (entry) {
+                ops.emit({
+                  type: "PermanentBurned",
+                  cardId: target,
+                  name: entry.card.name,
+                  removed: true,
+                });
+              }
+            }
             break;
           }
           case "actionUnlockMinion": {
@@ -7396,12 +7452,6 @@ function compileModifierOrReaction(spec: CardSpec): CardHandler {
             break;
           }
           case "setRange": {
-            break;
-          }
-          case "removeAllyRetainer": {
-            break;
-          }
-          case "putInPlayVampire": {
             break;
           }
           case "contestCard": {

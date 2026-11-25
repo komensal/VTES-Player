@@ -1408,12 +1408,11 @@ export type EffectPrimitive =
       range: "close" | "long";
       rounds?: number;
     }
-  /** "Remove an ally or retainer" (Chair of Hades) — remove an ally or
-   *  retainer from play. §4 */
-  | { kind: "removeAllyRetainer" }
-  /** "Put a vampire into play" (Chair of Hades) — put a vampire card into
-   *  play. §4 */
-  | { kind: "putInPlayVampire" }
+  /** "Remove a mortal or ghoul (ally or retainer) from the game" /
+   *  "Remove a non-wraith ally or retainer or a vampire with capacity 2 or
+   *  less from the game" (Chair of Hades [nec]/[NEC]) — the target is fixed
+   *  at announcement and removed, NOT burned to the ash heap (p. 16). */
+  | { kind: "removeFromGameTarget"; scope: "mortalOrGhoul" | "nonWraithOrSmallVampire" }
   /** "Choose a Methuselah. That Methuselah selects all but one of the cards
    *  in his or her hand and shows them to you" (Celestial Harmony [aus]);
    *  `all` is the superior's "all Methuselahs are chosen". The look is
