@@ -23544,6 +23544,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "ally",
     ally: { life: 1, strength: 1, bleed: 0 },
     bloodCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
@@ -23672,6 +23673,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Inveraray, Scotland",
     cardType: "equipment",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -23734,6 +23736,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Joumlon's Axe",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -23746,6 +23749,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -29416,6 +29420,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -29428,6 +29433,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -29533,6 +29539,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Ishtarri Kholo",
     cardType: "modifierOrReaction",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -29557,6 +29564,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -29579,6 +29587,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Jake Washington",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -29605,6 +29614,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Joseph Pander",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -29628,6 +29638,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -34765,6 +34776,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Imperator",
     cardType: "politicalAction",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -34776,6 +34788,7 @@ export const cardSpecs: CardSpec[] = [
     name: "In Memory of the Two Lands",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "addStrength", amount: 1 }] }
@@ -34787,6 +34800,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Infamous Insurgent",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -34811,6 +34825,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 1, bleed: 3 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "dai", effects: [] }
@@ -34866,6 +34881,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Journal of Hrorsh",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -34877,6 +34893,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Kaymakli Fragment",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -34891,6 +34908,7 @@ export const cardSpecs: CardSpec[] = [
     requiresVampire: true,
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -34916,6 +34934,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Khazar's Diary (Endless Night)",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
@@ -34928,6 +34947,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
