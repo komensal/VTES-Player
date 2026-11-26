@@ -24920,6 +24920,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 5, strength: 1, bleed: 0 },
     bloodCost: 0,
     poolCost: 6,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "addStrength", amount: 1 }] }
@@ -25001,6 +25002,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Ritual Scalpel",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -25059,6 +25061,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Ruins of Ceoris",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "press", continueOnly: false }] }
@@ -25070,6 +25073,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Ruins of Villers Abbey, Belgium",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -25104,6 +25108,7 @@ export const cardSpecs: CardSpec[] = [
     name: "San Lorenzo de El Escorial, Spain",
     cardType: "equipment",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -25128,6 +25133,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -25152,6 +25158,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 3, strength: 0, bleed: 1 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
@@ -25210,6 +25217,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -31401,6 +31409,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Realm of the Black Sun",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
@@ -31491,6 +31500,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -31753,6 +31763,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 4, strength: 3, bleed: 0 },
     bloodCost: 0,
     poolCost: 5,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "modifyStealth", amount: 1 }] }
@@ -31775,6 +31786,7 @@ export const cardSpecs: CardSpec[] = [
     name: "SchreckNET",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -31786,6 +31798,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Seattle Committee",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -31798,6 +31811,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -35718,6 +35732,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -35818,6 +35833,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Rise of the Fallen",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -35830,6 +35846,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -35853,6 +35870,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -35864,6 +35882,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Ruins of Charizel",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -35897,6 +35916,7 @@ export const cardSpecs: CardSpec[] = [
     name: "San Nicolás de los Servitas",
     cardType: "equipment",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
