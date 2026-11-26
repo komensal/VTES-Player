@@ -476,8 +476,8 @@
   {
     "id": 100080,
     "name": "Arcane Appraiser",
-    "status": "PARTIAL_FIX",
-    "evidence": "Ally zawiera podstawowe statystyki i modifyStealth, lecz bez unique, subtype ghoul, akcji przenoszenia equipment i zapobiegania drugiej kopii unique equipment; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100081,
@@ -512,8 +512,8 @@
   {
     "id": 100086,
     "name": "Argent Baton",
-    "status": "PARTIAL_FIX",
-    "evidence": "Equipment nie ma weapon profile ani strike strength+1 i opcjonalnego ranged efektu przeciw werewolf. Tekst: src/cards/registry.json, ID 100086; implementacja: src/cards/effects/cards.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100087,
@@ -758,8 +758,8 @@
   {
     "id": 100127,
     "name": "Baleful Doll",
-    "status": "PARTIAL_FIX",
-    "evidence": "Equipment nie ma unikalności, wyboru celu ani zdolności lock i burn 3 blood; jedyny basic nec z pustym efektem. Źródła: src/cards/registry.json ID 100127; src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100128,
@@ -794,8 +794,8 @@
   {
     "id": 100133,
     "name": "Banshee Ironwail",
-    "status": "PARTIAL_FIX",
-    "evidence": "Equipment nie ma weapon profile, unikalności, -1 stealth ani efektu na blok; zamiast strength+2 i warunkowego aggravated pusty tryb. Źródła: src/cards/registry.json ID 100133; src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100134,
@@ -992,8 +992,8 @@
   {
     "id": 100166,
     "name": "Black Gloves",
-    "status": "PARTIAL_FIX",
-    "evidence": "Equipment bez weapon profile i bez unique; brak strength+1 aggravated oraz obrażeń nosiciela raz na combat. Źródła: src/cards/registry.json ID 100166; src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100167,
@@ -1250,8 +1250,8 @@
   {
     "id": 100209,
     "name": "Blood Shield",
-    "status": "PARTIAL_FIX",
-    "evidence": "Equipment ma prevent w trybie zagrania, nie ma stałej zdolności prewencji ani reakcyjnego burn blood, brak unique. Źródła: src/cards/registry.json ID 100209; src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100210,
@@ -1520,8 +1520,8 @@
   {
     "id": 100254,
     "name": "Brigitte Gebauer",
-    "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, ale brak zdolności lock przy ogłoszeniu bleed i kosztu life po bloku. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100255,
@@ -1652,8 +1652,8 @@
   {
     "id": 100276,
     "name": "Caiaphas Smith",
-    "status": "PARTIAL_FIX",
-    "evidence": "Ally ma bazowe statystyki, lecz bez ranged strike, maneuver, spalenia blokującego i zmiany kontroli. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100277,
@@ -1784,8 +1784,8 @@
   {
     "id": 100298,
     "name": "Carlton Van Wyk",
-    "status": "PARTIAL_FIX",
-    "evidence": "Ally ma bazowe statystyki i ogólny intercept/dodge, brak ranged strike i discard-phase diablerist burn. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100299,
@@ -1832,8 +1832,8 @@
   {
     "id": 100306,
     "name": "Catacombs",
-    "status": "PARTIAL_FIX",
-    "evidence": "Equipment ma jedynie modifyStealth, brak unique location i warunkowego zmniejszenia kosztu rescue. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100307,

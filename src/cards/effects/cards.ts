@@ -21278,6 +21278,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "ally",
     ally: { life: 1, strength: 0, bleed: 1 },
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -21289,6 +21290,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Argent Baton",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -21379,6 +21381,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Baleful Doll",
     cardType: "equipment",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "nec", effects: [] }
@@ -21391,6 +21394,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -21449,6 +21453,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -21503,6 +21508,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1, perBloodX: false }] }
@@ -21594,6 +21600,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 3, strength: 1, bleed: 2 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -21641,6 +21648,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 1, bleed: 0 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -21754,6 +21762,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 0, bleed: 0 },
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "strikeDodge" }] }
@@ -21765,6 +21774,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Catacombs",
     cardType: "equipment",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
