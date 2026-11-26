@@ -26465,6 +26465,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Achilles' Heel",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -26487,6 +26488,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Admonitions",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -26510,6 +26512,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Ahrimane Protectorate",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
@@ -26537,6 +26540,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Akunanse Kholo",
     cardType: "modifierOrReaction",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -33288,6 +33292,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
@@ -33299,6 +33304,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Al's Army Apparatus",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -33330,6 +33336,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "ally",
     ally: { life: 2, strength: 1, bleed: 0 },
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -33341,6 +33348,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Alvusia",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "addStrength", amount: 1 }] }
@@ -33354,6 +33362,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 1, bleed: 0 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }

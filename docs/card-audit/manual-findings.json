@@ -56,8 +56,8 @@
   {
     "id": 100010,
     "name": "Abomination",
-    "status": "PARTIAL_FIX",
-    "evidence": "Spec nie wymaga non-sterile vampire ani spalenia ready unlocked werewolf, nie tworzy unikalnego wampira, nie przenosi krwi i nie daje wskazanych stałych zdolności/akcji. Wymaga nowych typów efektów (requireNonSterileVampire, putInPlayAsAbomination, moveBlood, grantAbilities). src/cards/effects/cards.ts: Abomination; src/cards/registry.json: 100010."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100011,
@@ -98,8 +98,8 @@
   {
     "id": 100017,
     "name": "Achilles' Heel",
-    "status": "PARTIAL_FIX",
-    "evidence": "Zamiast dołączenia do cudzego wampira, wyboru circle, warunkowego bonusu i możliwości spalenia karta ma tylko modifyBleed. Tekst: src/cards/registry.json, ID 100017; implementacja: src/cards/effects/cards.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100018,
@@ -134,8 +134,8 @@
   {
     "id": 100023,
     "name": "The Admonitions",
-    "status": "PARTIAL_FIX",
-    "evidence": "Zamiast unikalnego mastera i zdolności dobrania/odrzucenia oraz przekazania w discard karta daje gainPool. Tekst: src/cards/registry.json, ID 100023; implementacja: src/cards/effects/cards.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100024,
@@ -164,8 +164,8 @@
   {
     "id": 100028,
     "name": "Ahrimane Protectorate",
-    "status": "PARTIAL_FIX",
-    "evidence": "Action ma modifyIntercept i actionStealth, lecz bez wymagania Ahrimane, unique permanent, zapłaty blood za unlock oraz obydwu opcji burn protectorate. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100029,
@@ -200,14 +200,14 @@
   {
     "id": 100034,
     "name": "Akunanse Kholo",
-    "status": "PARTIAL_FIX",
-    "evidence": "Zamiast tytułu, 2 głosów, ograniczeń starszeństwa i przenoszenia tytułu karta daje modifyIntercept. Tekst: src/cards/registry.json, ID 100034; implementacja: src/cards/effects/cards.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100035,
     "name": "Al's Army Apparatus",
-    "status": "PARTIAL_FIX",
-    "evidence": "Zamiast unikalnej lokacji, lock i wyszukania broni karta daje gainPool. Tekst: src/cards/registry.json, ID 100035; implementacja: src/cards/effects/cards.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100036,
@@ -230,8 +230,8 @@
   {
     "id": 100039,
     "name": "Alia, God's Messenger",
-    "status": "PARTIAL_FIX",
-    "evidence": "Spec zawiera tylko ogólne statystyki ally i actionStealth, brak unique, wymogu dwóch Gehenna events, gry kart aus/obe jak vampire, rescue action, kosztu directed action przeciw niej i subtype dhampir. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100040,
@@ -242,8 +242,8 @@
   {
     "id": 100041,
     "name": "Alvusia",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master ma modifyBleed i addStrength zamiast unikalnej karty z licznikami, ich wydawaniem i odnawianiem. Tekst: src/cards/registry.json, ID 100041; implementacja: src/cards/effects/cards.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100042,
@@ -260,8 +260,8 @@
   {
     "id": 100044,
     "name": "Ambrosius, The Ferryman",
-    "status": "PARTIAL_FIX",
-    "evidence": "Spec ma tylko statystyki ally, bez unique, wymogu Giovanni, subtype wraith, przenoszenia retainer z pathos oraz odporności na non-aggravated damage. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100045,
