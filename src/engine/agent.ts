@@ -6,7 +6,7 @@
  */
 
 import type { DecisionPoint, LegalOption } from "./options.ts";
-import type { ActionKind, CardInstance, CombatStep, GameState, MinionId, MinionState, PermanentInPlay, Range, SeatId } from "./state.ts";
+import type { ActionKind, CardInstance, CardInstanceId, CombatStep, GameState, MinionId, MinionState, PermanentInPlay, Range, SeatId } from "./state.ts";
 import { currentBleed, currentIntercept, currentStealth, openHandsFor } from "./derived.ts";
 import { resolvePerSeat } from "./state.ts";
 
@@ -277,6 +277,14 @@ export interface PlayerView {
      */
     perSeat?: Record<SeatId, number>;
   };
+  /**
+   * Card instances this seat has looked at (e.g. Revelations' peek of the
+   * prey's hand). Keyed by card instance ID; never expires while the card
+   * stays where it was. A hotseat human simply remembers; without this the
+   * AI seat forgets between turns.
+   * docs/knowledge-design.md
+   */
+  knowledge?: CardInstanceId[];
 }
 
 /**
@@ -590,6 +598,11 @@ export function viewFor(state: GameState, seat: SeatId): PlayerView {
     ...(combat ? { combat } : {}),
     ...(pendingCard ? { pendingCard } : {}),
     ...(referendum ? { referendum } : {}),
+    // What this seat has LOOKED AT (Revelations peek etc.) — only its own
+    // knowledge, never another seat's. `redactFor` already uses `knowledge`
+    // to unmask cards in other hands; here we expose the raw list so the
+    // AI can remember what it saw between turns.
+    ...(state.knowledge?.[seat] ? { knowledge: [...state.knowledge[seat]] } : {}),
   };
 }
 

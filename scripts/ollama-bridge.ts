@@ -6,7 +6,6 @@ const SYSTEM_PROMPT = "You are playing Vampire: The Eternal Struggle as the spec
 export function ollamaBridge(): Plugin {
   return {
     name: "vtes-local-ollama",
-    apply: "serve",
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         const path = (req.url ?? "").split("?", 1)[0];
@@ -43,7 +42,7 @@ export function ollamaBridge(): Plugin {
             try { body = JSON.parse(Buffer.concat(chunks).toString("utf8")); }
             catch { reply(400, { error: "Invalid JSON." }); return; }
             if (typeof body?.model !== "string" || !/^[a-zA-Z0-9_.:/-]{1,120}$/.test(body.model)) { reply(400, { error: "Invalid Ollama model name." }); return; }
-            if (path === "/__vtes_ollama/decide" && (typeof body.prompt !== "string" || body.prompt.length > 400_000)) { reply(400, { error: "Invalid decision prompt." }); return; }
+            if (path === "/__vtes_ollama/decide" && (typeof body.prompt !== "string" || body.prompt.length > 2_000_000)) { reply(400, { error: "Invalid decision prompt." }); return; }
             const ids = body.optionIds;
             if (ids !== undefined && (!Array.isArray(ids) || ids.length < 1 || ids.length > 2048 || ids.some((id) => typeof id !== "string" || id.length < 1 || id.length > 512))) {
               reply(400, { error: "Invalid option IDs." }); return;

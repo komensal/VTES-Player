@@ -268,6 +268,10 @@ export interface EngineOps {
    *  amount of damage during strike resolution as well" (King of the
    *  Mountain [FOR]). Armed before strikes. */
   armHandStrikeReflection(): void;
+  /** "During the press step each round, draw N card(s). Discard down to
+   *  your hand size afterward" (Improvised Tactics [aus]) — armed before
+   *  the round, paid at the press step. */
+  armPressStepDraw(play: CardPlayFrame, count: number): void;
   /** "…each round of this combat, this vampire may burn N blood to prevent
    *  all damage from the opposing minion's initial strike for that round"
    *  (Superior Mettle [FOR]). */
@@ -288,6 +292,7 @@ export interface EngineOps {
     play: CardPlayFrame,
     amount: number,
     youngerThanActor?: boolean,
+    sect?: Sect,
   ): void;
   /** "[ani] The diablerie is canceled and the diablerist burns 1 blood"
    *  (Crimson Fury basic) — the victim plays it from the
@@ -466,6 +471,10 @@ export interface EngineOps {
    *  remainder of this round" (Skin of Night). */
   /** "Unlock this vampire at the end of the turn" (Zephyr basic). */
   oweUnlockAtEndOfTurn(minion: MinionId): void;
+  /** "Unlock the target minion during the next discard phase" (Cleansing
+   *  Ritual [OBE]) — owed on the minion, paid once by the discard-phase
+   *  sweep, with no blood cost. */
+  oweUnlockAtNextDiscardPhase(minion: MinionId): void;
   /** "Remove the top card of that Methuselah's crypt from the game"
    *  (Innocent Bystander). */
   removeTopOfCryptFromGame(seat: SeatId): void;
@@ -559,6 +568,9 @@ export interface EngineOps {
       noEquipment?: boolean;
       unlockForBlood?: number;
       combatEndsStrike?: boolean;
+      unlockOnCombatEndsIfOpposingAllyOrYounger?: boolean;
+      setRange?: "close" | "long";
+      opponentSkipNextUnlock?: boolean;
     },
   ): void;
   /** "This vampire unlocks and attempts to block" (Sense the Savage Way) —
@@ -1192,6 +1204,9 @@ export interface CardActionParams {
   bleedBonus?: number;
   /** "+1 stealth action" — inherent stealth of the card's action. */
   inherentStealth?: number;
+  /** "If more than N pool is bled with this action, ignore the excess"
+   *  (Bloodwork) — a cap on the action's final bleed amount. */
+  bleedPoolCap?: number;
   /** Rush: the minion this action enters combat with. Directedness
    *  derives from its controller (rush design §2.1). */
   targetMinion?: MinionId;
@@ -1203,6 +1218,12 @@ export interface CardActionParams {
     press?: number;
     strength?: number;
     noCombatEndsFirstRound?: boolean;
+    /** "Set the range for the first round of that combat" (Charge of the
+     *  Buffalo [spi]). */
+    setRange?: "close" | "long";
+    /** "This acting vampire's initial strike during that round is strike:
+     *  hand strike at +N damage" (Charge of the Buffalo). */
+    forcedHandStrike?: number;
   };
   /** "At the end of that combat, if <who is standing>, <payoff>" — a
    *  rider installed on the rush's own combat (docs/rush-outcome-design.md
@@ -1538,6 +1559,9 @@ export interface CardHandler {
   /** Seed per-seat bonus votes when the referendum is created, before
    *  polling ("each Malkavian gets +1 vote", p. 28). */
   referendumSetup?(frame: ReferendumFrame, state: GameState): void;
+  /** The referendum was cancelled without resolving. Charming Lobby uses this
+   *  to return its still-unplayed nested political action card to hand. */
+  applyReferendumCanceled?(frame: ReferendumFrame, ops: EngineOps): void;
   /** Votes granted to this in-play card's controller while a particular
    * referendum is being polled. Re-evaluated so control and leaving play
    * are reflected without undoing votes already cast. */
@@ -1579,6 +1603,8 @@ export interface CardHandler {
   putsInPlayOnSuccess?(
     mode: DisciplineLevel | null,
     params?: Record<string, string>,
+    /** The acting minion — only consulted by putInPlayOnSelf. */
+    actor?: MinionId,
   ): {
     counters?: number;
     /** "Choose a vampire and put this card in play" (Distant Friend) — the
@@ -1586,6 +1612,9 @@ export interface CardHandler {
     chosenMinion?: MinionId;
     /** "Choose X minions and put this card in play" (Bloodlust). */
     chosenMinions?: MinionId[];
+    /** The minion this permanent attaches to (putInPlayOnSelf /
+     *  putInPlayOnTarget). Seat-level putInPlayOnSuccess leaves null. */
+    attachedTo?: MinionId;
     tags: string[];
     /** Statics the card grants while it sits there ("your prey plays with
      *  an open hand", Revelations superior). Hard-coded empty until
@@ -1594,6 +1623,19 @@ export interface CardHandler {
     /** "Put this card in play, LOCKED" (Gather) — so its own ability
      *  cannot be used until it unlocks, which is the turn's delay the card
      *  is paying for. docs/uncontrolled-graduation-design.md §3 */
+    locked?: boolean;
+  } | null;
+  /** "Put this master card in play as a seat-level permanent" (Carthage
+   *  Remembered, Form of Corruption, etc.) — instead of going to ash heap
+   *  after resolution. Returns null when this master does NOT put itself
+   *  in play. */
+  putsInPlayMaster?(
+    mode: DisciplineLevel | null,
+    params?: Record<string, string>,
+  ): {
+    counters?: number;
+    tags: string[];
+    statics?: PermanentStatics;
     locked?: boolean;
   } | null;
   /** Referendum step 1: the caller's term choices (p. 27). Empty/absent
@@ -1710,6 +1752,7 @@ export interface CardHandler {
     disciplines?: Record<string, "basic" | "superior">;
     cannotActThisTurn?: boolean;
     mustHuntThisTurn?: boolean;
+    crypt?: boolean;
   } | null;
   /** A vampire has entered play, after its entity is installed. */
   onVampireEnteredPlay?(entry: PermanentInPlay, owner: { seat: SeatId; minion: MinionId | null }, vampire: MinionState, ops: EngineOps): void;

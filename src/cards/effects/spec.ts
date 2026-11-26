@@ -139,6 +139,14 @@ export type EffectPrimitive =
       target: "self" | "actingMinion";
       ifSuccessful?: boolean;
     }
+  /** "This vampire can burn N blood to unlock AFTER ACTION RESOLUTION"
+   *  (Carrion Coffin) — offered as an optional choice after the action
+   *  resolves, like unlockAfterResolution but with blood cost paid by the
+   *  actor. §4 */
+  | {
+      kind: "unlockForBlood";
+      blood: number;
+    }
   /** "If this vampire blocks, it gets N optional maneuvers/presses (and/or
    *  neither combatant strikes the first round) in the resulting combat"
    *  (Spirit's Touch, One With the Land) — a reaction rider. */
@@ -155,6 +163,14 @@ export type EffectPrimitive =
       unlockForBlood?: number;
       /** "…can strike: combat ends during the first round". */
       combatEndsStrike?: boolean;
+      /** Internal Recursion [pre]: unlock this blocker before combat ends,
+       *  but only after their own combat-ends strike against an ally or a
+       *  younger acting vampire [RTR 20020501]. */
+      unlockOnCombatEndsIfOpposingAllyOrYounger?: boolean;
+      /** Internal Recursion [tem]: set the first round's range at combat start. */
+      setRange?: "close" | "long";
+      /** Internal Recursion [TEM]: the acting minion skips its next unlock. */
+      opponentSkipNextUnlock?: boolean;
     }
   /** The mirror, for the ACTING minion: "if this vampire is blocked, they
    *  can prevent 1 damage during the resulting combat" (Beast Meld);
@@ -486,6 +502,8 @@ export type EffectPrimitive =
       allies?: boolean;
       self?: boolean;
       capped?: boolean;
+      /** "…a vampire YOU CONTROL" (Cleansing Ritual [dom]). */
+      ownOnly?: boolean;
     }
   /** "+1 stealth action. Put this card in play with N counters" (Under
    *  Siege and many counter actions) — the card becomes a seat-level
@@ -508,6 +526,41 @@ export type EffectPrimitive =
        *  before announcement (`prePlayPicks`) and written on the entry as
        *  `chosenMinions`. docs/bearer-rush-grants-design.md §3 */
       chooseOwnMinions?: { extra: number };
+    }
+  /**
+   * "Put this card in play on this vampire" (Blessing of Chaos, Blithe
+   *  Acceptance) — a successful action attaches the played card to the
+   *  ACTING minion as a persistent static. Seat-level `putInPlayOnSuccess`
+   *  has `attachedTo: null`; this one attaches to the actor.
+   */
+  | { kind: "putInPlayOnSelf"; counters?: number; tags?: string[]; statics?: PermanentStatics; locked?: boolean }
+  /**
+   * "Put this card on a minion" (Anima Gathering, Antithesis, Blackmail) —
+   *  a successful action attaches the played card to a CHOSEN minion. The
+   *  target is fixed at announcement and rides in `params["target"]`;
+   *  `attachedTo` is that minion.
+   */
+  | {
+      kind: "putInPlayOnTarget";
+      counters?: number;
+      tags?: string[];
+      statics?: PermanentStatics;
+      locked?: boolean;
+      /** "Put this card on A MINION YOU CONTROL" rather than on the acting
+       *  vampire — the target is chosen at announcement (p. 25) and rides
+       *  in `params["target"]`. `anyMinion` offers any seat's minions. */
+      target?: "ownMinion" | "anyMinion";
+      /** Filters on the chosen target (Kaymakli Barrier-style). */
+      targetFilter?: {
+        kind?: "vampire" | "ally";
+        youngerThanActor?: boolean;
+        /** "…on a vampire who is not a prince, a justicar or an Inner
+         *  Circle member" (Blood Hunt) — the current title. */
+        notTitles?: VampireTitle[];
+        /** "…on A VAMPIRE", not "a ready vampire": a vampire in torpor is
+         *  eligible by default. Without it a filter means READY only. */
+        inTorporToo?: boolean;
+      };
     }
   /**
    * "Ⓓ Diablerize a vampire in torpor" (Cloak of Blood, Stealing Years) —
@@ -568,6 +621,10 @@ export type EffectPrimitive =
        *  vampire" — optional, and finding nothing is always legal
        *  (p. 14, p. 48). §6 */
       searchDisciplineMaster?: boolean;
+      /** When true, this token vampire returns to its owner's CRYPT when
+       *  burned (Childe of the Revolution). When false/absent, it goes to
+       *  ash heap like a normal library card (Waters of Duat). §7 */
+      crypt?: boolean;
     }
   /** "Put this card on this vampire; it gets +bleed/+strength" — a
    *  successful action attaches the played card to the acting vampire as a
@@ -695,6 +752,12 @@ export type EffectPrimitive =
         /** "The opposing minion cannot strike: combat ends during the
          *  first round of that combat" (Hunter's Mark superior). */
         noCombatEndsFirstRound?: boolean;
+        /** "Set the range for the first round of that combat to close"
+         *  (Charge of the Buffalo [spi]). */
+        setRange?: "close" | "long";
+        /** "This acting vampire's initial strike during that round is
+         *  strike: hand strike at +N damage" (Charge of the Buffalo). */
+        forcedHandStrike?: number;
       };
       /** "At the end of that combat, if <who is standing>, <payoff>"
        *  (Abuse of Power, Pillars Fall, Hunting the Beast).
@@ -972,6 +1035,9 @@ export type EffectPrimitive =
       /** "…to a YOUNGER vampire in your uncontrolled region" — younger than
        *  the vampire playing the card. */
       youngerThanActor?: boolean;
+      /** "…to a younger LAIBON in your uncontrolled region" (Belonging
+       *  Grants Protection) — the same blood-bank transfer, sect-filtered. */
+      sect?: Sect;
     }
   | { kind: "cancelDiablerie"; burnDiablerist: number }
   | { kind: "burnBothDiablerie" }
@@ -1192,6 +1258,342 @@ export type EffectPrimitive =
        *  the top" — named by position, so there is nothing to ask. */
       deterministic?: boolean;
     }
+  /** "Search your library for an equipment card and put it in play on a
+   *  minion" (Alastor, Bauble) — the card is chosen at resolution, then
+   *  attached to the acting minion or a chosen target. §4 */
+  | {
+      kind: "searchLibraryEquipment";
+      cardTypes?: PlayCostCardType[];
+      /** Attach to the acting minion (default). If false, the target is
+       *  chosen at announcement like putInPlayOnTarget. */
+      attachToActor?: boolean;
+    }
+  /** "Put this master card in play" (Carthage Remembered, Form of
+   *  Corruption, Guide and Mentor, Guinea-Bissau Carnival, Imperial
+   *  Decree, Insurance Scam) — a master becomes a seat-level permanent
+   *  instead of going to ash heap. §5 */
+  | {
+      kind: "putInPlayMaster";
+      counters?: number;
+      tags?: string[];
+      statics?: PermanentStatics;
+      locked?: boolean;
+    }
+  /** "Put this equipment card in play" (Inscription) — equipment becomes
+   *  a seat-level permanent, not attached to any minion. §5 */
+  | {
+      kind: "putInPlayEquipment";
+      counters?: number;
+      tags?: string[];
+      statics?: PermanentStatics;
+      locked?: boolean;
+    }
+  /** "Put this equipment card on this equipment" (Inscription) — attaches
+   *  the played card to a chosen equipment already in play. §5 */
+  | {
+      kind: "putInPlayOnEquipment";
+      counters?: number;
+      tags?: string[];
+      statics?: PermanentStatics;
+      locked?: boolean;
+    }
+  /** "Move N blood from the blood bank to a vampire" (Blood Clots) —
+   *  gained by the chosen vampire after successful action. §4 */
+  | {
+      kind: "moveBloodBankToVampire";
+      amount: number;
+    }
+  /** "Inflict N unpreventable aggravated damage" (Force of Will) —
+   *  environmental damage, cannot be prevented. §4 */
+  | {
+      kind: "unpreventableAggravatedDamage";
+      amount: number;
+    }
+  /** "Unlock this vampire AFTER ACTION RESOLUTION" (Bestow Vigor) —
+   *  unlocks the acting minion with no blood cost, unlike
+   *  unlockAfterResolution which requires blood payment. §4 */
+  | { kind: "unlockActor" }
+  /** "Unlock this vampire AFTER ACTION" (Instantaneous Transformation) —
+   *  registers an unlock to happen after the current action completes,
+   *  unlike unlockActor which happens immediately after resolution. §4 */
+  | { kind: "unlockAfterAction" }
+  /** "Drain N blood and N life from a vampire" (The Haunting) — burns
+   *  blood and inflicts unpreventable life loss on the target. §4 */
+  | {
+      kind: "drainBloodLife";
+      amount: number;
+    }
+  /** "Search your library for a card matching cardTypes" (Children of
+   *  Stone, Horrid Reality, etc.) — search at resolution, target minion
+   *  chosen at announcement. §4 */
+  | {
+      kind: "searchLibraryGeneric";
+      cardTypes?: PlayCostCardType[];
+      clan?: string;
+      sect?: Sect;
+      attachToActor?: boolean;
+    }
+  /** "Cancel a blood hunt" (Ebony Fox Hunt, Gangrel Conspiracy) — cancel
+   *  the blood hunt referendum for vampires of a given sect. §4 */
+  | {
+      kind: "cancelBloodHuntGeneric";
+      sect?: Sect;
+    }
+  /** "Move N blood from pool to N vampires" (Gird Minions) — move blood
+   *  from the controller's pool to ready vampires they control. §4 */
+  | {
+      kind: "moveBloodFromPoolToVampires";
+      amount: number;
+    }
+  /** "Burn N blood and inflict N life loss each turn" (Consignment to
+   *  Duat) — recurring drain each turn. §4 */
+  | {
+      kind: "drainBloodLifeEachTurn";
+      amount: number;
+    }
+  /** "Draw N cards from research area instead of library" (Development) —
+   *  draw from the research area rather than library. §4 */
+  | { kind: "drawFromResearchAreaInsteadOfLibrary"; count: number }
+  /** "Move a card from ash heap to ready region as a vampire" (Blessed
+   *  Resilience, Compel the Spirit) — put an ash heap card into play as a
+   *  ready vampire. §4 */
+  | { kind: "moveFromAshHeapToReadyVampire" }
+  /** "Move a card from ash heap to hand" (Gear Up, Clio's Kiss) — move an
+   *  ash heap card to the controller's hand. §4 */
+  | { kind: "moveCardFromAshHeap" }
+  /** "Unlock a vampire" (Belonging Grants Protection) — unlock a chosen
+   *  vampire (not necessarily the actor). §4 */
+  | { kind: "unlockVampire" }
+  /** "Burn N blood after successful bleed" (Blood of Sandman, etc.) —
+   *  burn blood from the acting minion after a successful bleed. §4 */
+  | {
+      kind: "burnBloodAfterSuccessfulBleed";
+      amount: number;
+    }
+  /** "Burn N pool from prey" (Bloodbath) — burn pool from the acting
+   *  minion's prey. §4 */
+  | { kind: "burnPoolPrey"; amount: number }
+  /** "Put N votes on this card" (Bloodbath, etc.) — put votes as counters
+   *  on the card. §4 */
+  | {
+      kind: "putInPlayWithVotes";
+      amount: number;
+    }
+  /** "Opponent cannot play cards of these Disciplines" (Approximation of
+   *  Loyalty) — restrict opponent from playing cards requiring these
+   *  Disciplines. §4 */
+  | {
+      kind: "restrictOpponentDisciplines";
+      disciplines: string[];
+    }
+  /** "Grant N intercept to a minion" (Guardian Vigil, etc.) — grant
+   *  intercept to a chosen minion. §4 */
+  | { kind: "grantIntercept"; amount: number }
+  /** "Bleed +N" (Darksight, etc.) — add bleed to the current action. §4 */
+  | { kind: "bleedBonus"; amount: number }
+  /** "Lock this vampire" (Go Anarch, etc.) — lock the acting minion. §4 */
+  | { kind: "lockSelf" }
+  /** "Burn a vampire who recently diablerized" (Community Justice) — burn
+   *  a vampire that committed diablerie recently. §4 */
+  | { kind: "burnRecentDiablerist" }
+  /** "Lock N minions" (Command the Legion) — lock N chosen minions. §4 */
+  | { kind: "lockMinionsX"; amount: number }
+  /** "Exception to seniority" (Command the Legion) — allow acting despite
+   *  seniority restrictions. §4 */
+  | { kind: "seniorityException" }
+  /** "Enter combat with a minion" (Charge of the Buffalo, etc.) — start a
+   *  combat with a chosen minion. §4 */
+  | {
+      kind: "enterCombat";
+      targetFilter?: { kind?: "vampire" | "ally" };
+    }
+  /** "Set range to close/long for N rounds" (Charge of the Buffalo, etc.)
+   *  — set combat range. §4 */
+  | {
+      kind: "setRange";
+      range: "close" | "long";
+      rounds?: number;
+    }
+  /** "Remove a mortal or ghoul (ally or retainer) from the game" /
+   *  "Remove a non-wraith ally or retainer or a vampire with capacity 2 or
+   *  less from the game" (Chair of Hades [nec]/[NEC]) — the target is fixed
+   *  at announcement and removed, NOT burned to the ash heap (p. 16). */
+  | { kind: "removeFromGameTarget"; scope: "mortalOrGhoul" | "nonWraithOrSmallVampire" }
+  /** "Choose a Methuselah. That Methuselah selects all but one of the cards
+   *  in his or her hand and shows them to you" (Celestial Harmony [aus]);
+   *  `all` is the superior's "all Methuselahs are chosen". The look is
+   *  recorded as knowledge; which card stays hidden is the OWNER's pick. */
+  | { kind: "showHandAllButOne"; all: boolean }
+  /** "Contest a card" (Clio's Kiss, etc.) — contest a card in play. §4 */
+  | { kind: "contestCard" }
+  /** "Burn N influence" (Choir) — burn N influence from uncontrolled
+   *  vampires. §4 */
+  | { kind: "burnInfluence"; amount: number }
+  /** "Damage pool per copy" (Choir, Inevitability of the Void) — damage
+   *  pool based on number of copies. §4 */
+  | { kind: "damagePoolPerCopy" }
+  /** "Remove N cards from ash heap" (Clio's Kiss, Drop Point Network) —
+   *  remove cards from ash heap from the game. §4 */
+  | { kind: "removeCardsFromAshHeap"; count: number }
+  /** "Search library for a minion card" (Drop Point Network, Static
+   *  Virtue) — search for an ally/retainer/equipment. §4 */
+  | {
+      kind: "searchLibraryMinionCard";
+      cardTypes?: PlayCostCardType[];
+    }
+  /** "Burn a location" (Goblinism, Haunt) — burn a location card. §4 */
+  | { kind: "burnLocation" }
+  /** "Search library for a weapon" (Horrid Reality, Illegal Search) —
+   *  search for a weapon card. §4 */
+  | {
+      kind: "searchLibraryWeapon";
+      maxDamage?: number;
+    }
+  /** "Put this card on an Ishtarri vampire" (Ishtarri Warlord) — put
+   *  the card on an Ishtarri vampire. §4 */
+  | { kind: "putInPlayOnIshtarri" }
+  /** "Grant optional maneuver or press" (Ishtarri Warlord, etc.) — grant
+   *  an optional maneuver or press in combat. §4 */
+  | {
+      kind: "grantOptionalManeuverOrPress";
+      maneuver?: boolean;
+      press?: boolean;
+    }
+  /** "Equip or employ from hand" (Jack of Both Sides) — equip or employ
+   *  a card from hand. §4 */
+  | { kind: "equipOrEmployFromHand" }
+  /** "Reduce cost by N" (Jack of Both Sides, etc.) — reduce the cost of
+   *  the next card played. §4 */
+  | { kind: "reduceCost"; amount: number }
+  /** "Search library for Aye/Orun cards" (Static Virtue) — search for
+   *  Aye/Orun cards. §4 */
+  | { kind: "searchLibraryAyeOrun" }
+  /** "Place this card on a vampire" (Static Virtue) — place the card on
+   *  a chosen vampire. §4 */
+  | { kind: "placeOnVampire" }
+  /** "Replace burn with torpor" (Byzar) — replace burning with torpor. §4 */
+  | { kind: "replaceBurnWithTorpor" }
+  /** "Add N burn counters" (Byzar) — add burn counters to a card. §4 */
+  | { kind: "addBurnCounters"; amount: number }
+  /** "Curse a target minion" (Greater Curse) — curse a target minion. §4 */
+  | { kind: "curseTarget"; amount?: number }
+  /** "Gain pool target" (Greater Curse) — gain pool from target. §4 */
+  | { kind: "gainPoolTarget"; amount: number }
+  /** "Add votes" (Hall of Hades' Court) — add votes. §4 */
+  | { kind: "addVotes"; amount: number }
+  /** "Cancel a reaction" (Hall of Hades' Court) — cancel a reaction. §4 */
+  | { kind: "cancelReaction" }
+  /** "Protect choir out of turn" (Hanging Fermata) — protect choir out of turn. §4 */
+  | { kind: "outOfTurnProtectChoir" }
+  /** "Burn a location on directed action" (Haunt) — burn a location on directed action. §4 */
+  | { kind: "burnLocationOnDirectedAction" }
+  /** "Choose and burn a weapon costing more than 2" (Illegal Search and Seizure) — choose and burn a weapon. §4 */
+  | { kind: "chooseAndBurnWeaponCostMoreThan2" }
+  /** "Prevent voting" (Infamous Warlock) — prevent voting. §4 */
+  | { kind: "preventVoting" }
+  /** "Put a trifle in play" (Into the Fire) — put a trifle in play. §4 */
+  | { kind: "putInPlayTrifle" }
+  /** "Lock an ally" (Hall of Hades' Court) — lock an ally. §4 */
+  | { kind: "lockAlly" }
+  /** "Burn a recent diablerist" (Community Justice) — burn a recent diablerist. §4 */
+  | { kind: "burnRecentDiablerist" }
+  /** "Lock N minions" (Command the Legion) — lock N chosen minions. §4 */
+  | { kind: "lockMinionsX"; amount: number }
+  /** "Burn a Gehenna card" (Black Hand Ritual) — burn a Gehenna card. §4 */
+  | { kind: "burnGehennaCard" }
+  /** "Unlock a younger vampire" (Haqim's Law: Judgment) — unlock a younger vampire. §4 */
+  | { kind: "unlockYoungerVampire" }
+  /** "Search library for a Gargoyle card" (Children of Stone) — search for Gargoyle. §4 */
+  | { kind: "searchLibraryGargoyle" }
+  /** "Search library for a Discipline card" (Static Virtue) — search for Discipline. §4 */
+  | { kind: "searchLibraryDiscipline" }
+  /** "Copy clan and sect" (The Becoming) — copy clan and sect. §4 */
+  | { kind: "copyClanSect" }
+  /** "Search crypt for advancement card" (Gift of Experience) — search crypt. §4 */
+  | { kind: "searchCryptAdvancementCard" }
+  /** "Lock own vampire" (Gift of Experience) — lock own vampire. §4 */
+  | { kind: "lockOwnVampire" }
+  /** "Hand size bonus" (Gift of Bellona) — hand size bonus. §4 */
+  /** "Unlock after equip" (Gift of Bellona) — unlock after equip. §4 */
+  | { kind: "unlockAfterEquip" }
+  /** "Add stealth when hunting based on Aye/Orun" (Guinea-Bissau Carnival) — add stealth. §4 */
+  | { kind: "addStealthWhenHuntingBasedOnAye" }
+  /** "Gain blood on successful hunt" (Guinea-Bissau Carnival) — gain blood on hunt. §4 */
+  | { kind: "gainBloodOnSuccessfulHunt" }
+  /** "Gain blood on burn" (Draba) — gain blood on burn. §4 */
+  | { kind: "gainBloodOnBurn" }
+  /** "Bleed bonus with stealth penalty" (Darksight) — bleed bonus with stealth penalty. §4 */
+  | { kind: "bleedBonusStealthPenalty" }
+  /** "Bleed bonus superior" (Blight) — superior bleed bonus. §4 */
+  | { kind: "bleedBonusSuperior" }
+  /** "Bleed bonus cap" (Darkness) — bleed bonus with cap. §4 */
+  | { kind: "bleedBonusCap" }
+  /** "Burn blood each turn" (Daring the Dawn) — burn blood each turn. §4 */
+  | { kind: "burnBloodEachTurn" }
+  /** "Restrict opponent disciplines" (Approximation of Loyalty) — restrict opponent disciplines. §4 */
+  | { kind: "restrictOpponentDisciplines"; disciplines: string[] }
+  /** "Restrict action" (Sense the Savage Way) — restrict action. §4 */
+  | { kind: "restrictAction" }
+  /** "Restrict strike" (Silver Talisman) — restrict strike. §4 */
+  | { kind: "restrictStrike" }
+  /** "Modify opponent intercept" (Unthinkable Humiliation) — modify opponent intercept. §4 */
+  | { kind: "modifyInterceptOpponent"; amount: number }
+  /** "Grant intercept for different disciplines" (Guardian Vigil) — grant intercept. §4 */
+  | { kind: "grantInterceptForDifferentDisciplines"; amount: number }
+  /** "Reflect damage" (Blood of Acid) — reflect damage. §4 */
+  | { kind: "reflectDamage"; amount: number }
+  /** "Once per round" (Blood of the Cobra) — once per round. §4 */
+  | { kind: "oncePerRound" }
+  /** "Choose strike as ranged" (Blood of the Cobra) — choose strike as ranged. §4 */
+  | { kind: "chooseStrikeAsRanged" }
+  /** "If more than N pool is bled with this action, ignore the excess"
+   *  (Bloodwork) — a cap on the action's final bleed amount, set at
+   *  announcement so every later modifier is capped too. */
+  | { kind: "capBleed"; amount: number }
+  /** "If the Methuselah you are bleeding controls a ready \<sect\> vampire,
+   *  this action is at +N stealth" (Bloodwork) — evaluated at announcement
+   *  against the bleed's actual target, not a blanket bonus. */
+  | { kind: "conditionalStealthIfTargetSect"; sect: Sect; amount: number }
+  /** "Put in play with counters" (Bounty) — put in play with counters. §4 */
+  | { kind: "putInPlayWithCounters"; counters: number }
+  /** "Pay counters on torpor burn diablerie" (Bounty) — pay counters. §4 */
+  | { kind: "payCountersOnTorporBurnDiablerie" }
+  /** "Block transfers" (Brainwash) — block transfers. §4 */
+  | { kind: "blockTransfers" }
+  /** "Out of turn cancel unblocked action" (Brujah Frenzy) — cancel unblocked action out of turn. §4 */
+  | { kind: "outOfTurnCancelUnblockedAction" }
+  /** "Make Black Hand" (Cadet) — make Black Hand. §4 */
+  | { kind: "makeBlackHand" }
+  /** "Choose any Methuselah" (Cat Burglary) — choose any Methuselah. §4 */
+  | { kind: "chooseAnyMethuselah" }
+  /** "Burn location on directed action" (Haunt) — burn location on directed action. §4 */
+  | { kind: "burnLocationOnDirectedAction" }
+  /** "Search library for Gehenna event" (Fortschritt Library) — search for Gehenna event. §4 */
+  | { kind: "searchLibraryGehennaEvent" }
+  /** "Unpreventable damage to bearer" (Illegal Search and Seizure) — unpreventable damage to bearer. §4 */
+  | { kind: "unpreventableDamageToBearer"; amount: number }
+  /** "Put in play on Ishtarri" (Ishtarri Warlord) — put in play on Ishtarri. §4 */
+  | { kind: "putInPlayOnIshtarri" }
+  /** "Grant optional maneuver or press" (Ishtarri Warlord) — grant optional maneuver or press. §4 */
+  | { kind: "grantOptionalManeuverOrPress"; maneuver?: boolean; press?: boolean }
+  /** "Add life to ally" (Healing Touch) — add life to ally. §4 */
+  /** "Add up to N life to an ally, not to exceed their starting life"
+   *  (Healing Touch [obe]) — `upTo` offers one play option per amount, so
+   *  the player chooses how much to add; the gain is always clamped to the
+   *  ally's starting life. */
+  | { kind: "addLifeAlly"; amount: number; upTo?: boolean }
+  /** "Rescue a vampire from torpor. The rescued vampire gains N blood"
+   *  (Healing Touch [OBE]) — your own torpid vampire, chosen at
+   *  announcement; no rescue blood is owed beyond the card's own cost. */
+  | { kind: "rescueFromTorpor"; bloodGain?: number }
+  /** "Block attempt fails if ally or younger" (Heart's Desire) — block attempt fails if ally or younger. §4 */
+  | { kind: "blockAttemptFailsIfAllyYounger" }
+  /** "Move 1 blood from each ready \<clan\> you control to a \<clan\> in your
+   *  uncontrolled region" (Bay and Howl, Convergence) — every ready donor
+   *  gives exactly one, and the recipient is chosen at resolution. */
+  | { kind: "moveBloodFromReadyClanToUncontrolled"; clan: string }
+  /** "Place this card on a vampire" (Static Virtue) — place card on vampire. §4 */
+  | { kind: "placeOnVampire" }
   /** "Ⓓ Stun an unlocked vampire" (Mind Numb) — a directed action card
    *  that NAMES a minion without fighting it. The target is chosen at
    *  announcement (p. 25) and rides in the option id.
@@ -1513,6 +1915,10 @@ export type EffectPrimitive =
        *  "this combat" must be able to lift. */
       scope?: "round" | "combat";
     }
+  /** "During the press step each round, draw N card(s). Discard down to
+   *  your hand size afterward" (Improvised Tactics [aus]) — a press-step
+   *  draw, not a hand-size bonus. */
+  | { kind: "pressStepDraw"; count: number }
   /** `onlyToLong` is the mirror of `onlyToClose` — "Maneuver, only usable
    *  to go to LONG range" (High Ground, Backstep). Same reasoning: worth
    *  nothing once the range is already long.
@@ -1673,6 +2079,10 @@ export type EffectPrimitive =
    * docs/armour-design.md §3
    */
   | { kind: "treatAggravatedAsNormal"; scope?: "round" | "combat" }
+  /** "Treat aggravated damage as normal damage" (Chill of Oblivion) —
+   *  permanent conversion, unlike treatAggravatedAsNormal which is
+   *  round/combat scoped. §4 */
+  | { kind: "convertAggravatedToNormal" }
   | { kind: "flashGrenadeImmune"; scope?: "round" | "combat" }
   | { kind: "maneuverNextRound"; count?: number }
   | { kind: "grantManeuver" }
@@ -2379,12 +2789,43 @@ export type EffectPrimitive =
    */
   | {
       kind: "actionUnlockMinion";
-      scope: "youngerOrAlly" | "anyVampire";
+      scope: "youngerOrAlly" | "anyVampire" | "youngerVampireOwn";
       directed: boolean;
+      /** "…another ready LAIBON" (Belonging Grants Protection) — only this
+       *  sect qualifies. */
+      sect?: Sect;
+      /** "…ANOTHER …" — the acting minion is never its own target. */
+      excludeActor?: boolean;
+      /** "Unlock a younger BLACK HAND vampire" (Black Hand Ritual) — only a
+       *  Black Hand vampire qualifies. */
+      blackHand?: boolean;
+      /** "…a YOUNGER … vampire" — younger than the acting vampire. */
+      youngerThanActor?: boolean;
     }
+  /** "This vampire unlocks" (Ensconced, Fantasy World, Field Training,
+   *  Gear Up, Go Anarch) — unlocks the ACTING minion, no target needed. §3 */
+  | { kind: "unlockSelf"; bloodCost?: number }
   /** "Ⓓ Lock a minion controlled by your predator or prey" (Distraction
    *  superior) — the mirror, with a RELATION filter rather than an age one. §3 */
   | { kind: "actionLockMinion"; scope: "predatorOrPrey"; directed: boolean }
+  /** "Lock a ready minion" (Blackmail, Brick Laying, Condemnation, Haqim's
+   *  Law: Judgment) — the target is fixed at announcement. §3 */
+  | {
+      kind: "lockVampire";
+      /** Filters on the chosen target (wzorzec po putInPlayOnTarget). */
+      targetFilter?: {
+        kind?: "vampire" | "ally";
+        readyOnly?: boolean;
+        unlockedOnly?: boolean;
+        youngerThanActor?: boolean;
+        /** "…on a vampire who is not a prince, a justicar or an Inner
+         *  Circle member" (Blood Hunt) — the current title. */
+        notTitles?: VampireTitle[];
+        /** "…on A VAMPIRE", not "a ready vampire": a vampire in torpor is
+         *  eligible by default. Without it a filter means READY only. */
+        inTorporToo?: boolean;
+      };
+    }
   /** Red List's Ⓓ payoff: "The chosen minion becomes Red List." The minion
    *  is chosen at announcement by the paired `blockRestriction` (who
    *  "chosen", chosenScope "readyAllyOrYounger"); this marks it on success. */
@@ -2425,6 +2866,14 @@ export type EffectPrimitive =
        *  INCLUSIVE, like the referendum primitives' `maxCapacity`.
        *  docs/taking-by-force-design.md §3 */
       maxCost?: number;
+    }
+  /** "Burn a card on an ally or younger vampire in your ready region"
+   *  (Cleansing Ritual [obe]). The attached card is fixed at announcement;
+   *  the minion's own self-entry is not a card ON that minion. Superior also
+   *  unlocks the bearer during the next discard phase, without a blood cost. */
+  | {
+      kind: "actionBurnAttachedCard";
+      unlockBearerAtNextDiscard?: boolean;
     }
   /** "Ⓓ Steal an ally controlled by another Methuselah" (Entrancement) —
    *  control moves on a successful action; the target is fixed at
@@ -3037,6 +3486,9 @@ export interface CardSpec {
       minCapacity?: number;
       /** "…a vampire with capacity below 5" (The Damned) is `maxCapacity: 4`. */
       maxCapacity?: number;
+      /** "…a Tremere antitribu WITH A TITLE" (Infamous Warlock) — only a
+       *  titled vampire may bear the card. */
+      titled?: boolean;
       /** "Cannot be put on a vampire with superior Celerity [CEL]" — the
        *  Discipline master cards have nothing to give a vampire already at
        *  superior in that Discipline. */
@@ -4282,6 +4734,9 @@ export interface CardSpec {
       /** The printed sub-type the retainer must carry. */
       tag?: string;
     };
+    /** "During your discard phase, draw 1 card, then discard 1 card"
+     *  (André the Manipulator). Automatic — no choice offered. */
+    discardPhaseDrawDiscard?: { amount?: number };
     /** "As a minion ANNOUNCES an action directed at \<this vampire\>,
      *  flip a coin; if it is tails, the action fails" (Evan Klein).
      *  Automatic — the card says "flip", not "you can flip".
@@ -4544,7 +4999,7 @@ export interface CardSpec {
      *  Disciplines go onto the ally's `MinionState.disciplines`, which is
      *  all the enumerators read — they ask `disciplinesOf`, never
      *  `m.kind`. */
-    playsAsVampire?: Record<string, DisciplineLevel>;
+    playsAsVampire?: { capacity?: number; disciplines: Record<string, DisciplineLevel> };
     /** The printed sub-type — "Wraith with 1 life", "Zombie with 2 life".
      *  Sugar that puts the word in `permanent.tags`, so a card cannot
      *  declare its sub-type in one place and be filtered in another. The

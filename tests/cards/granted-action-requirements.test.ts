@@ -290,6 +290,8 @@ describe("a card requiring a title requires that title's sect (pp. 39–40)", ()
       priscus: "sabbat",
       cardinal: "sabbat",
       regent: "sabbat",
+      // Laibon title (p. 42): magaji is held only by Laibon.
+      magaji: "laibon",
     });
   });
 

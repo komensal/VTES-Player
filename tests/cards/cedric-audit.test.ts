@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { VtesEngine, type GameState } from "../../src/engine/index.ts";
+import { VtesEngine, type GameState, type MinionState, findMinion } from "../../src/engine/index.ts";
 import { runTrace, testRegistry, threeSeatGame } from "../engine/fixtures.ts";
 
-const ability = "ability:Cedric (G4):cedric:unlock";
+const abilitySelf = "ability:Cedric (G4):cedric:unlockSelf";
 function setup(action: "bleed" | "hunt" = "bleed") {
   const state = threeSeatGame();
   const cedric = state.seats[1]!.minions.find(m => m.id === "W")!;
@@ -34,18 +34,18 @@ function bobImpulse(e: VtesEngine) {
 describe("Cedric (G4)", () => {
   it("can spend blood to unlock after a directed action he blocked and its combat", () => {
     const { state, cedric, engine } = setup();
-    expect(engine.decision()!.options.some(o => o.id === ability)).toBe(false);
+    expect(engine.decision()!.options.some(o => o.id === abilitySelf)).toBe(false);
     expect(finishCombat(engine).window).toBe("action.afterResolution");
     expect(cedric.locked).toBe(true);
-    expect(bobImpulse(engine).options.some(o => o.id === ability)).toBe(true);
+    expect(bobImpulse(engine).options.some(o => o.id === abilitySelf)).toBe(true);
     const saved = JSON.parse(JSON.stringify(state)) as GameState;
     const resumed = new VtesEngine(saved, testRegistry);
     const before = saved.seats[1]!.minions.find(m => m.id === "W")!.blood;
-    resumed.choose(ability);
+    resumed.choose(abilitySelf);
     const m = saved.seats[1]!.minions.find(m => m.id === "W")!;
     expect(m.blood).toBe(before - 1);
     expect(m.locked).toBe(false);
-    expect(resumed.decision()!.options.some(o => o.id === ability)).toBe(false);
+    expect(resumed.decision()!.options.some(o => o.id === abilitySelf)).toBe(false);
   });
   it("does not trigger on an undirected action", () => {
     const { engine } = setup("hunt");
@@ -55,16 +55,35 @@ describe("Cedric (G4)", () => {
     const { engine, cedric } = setup();
     cedric.blood = 0;
     finishCombat(engine);
-    expect(engine.decision()!.options.some(o => o.id === ability)).toBe(false);
+    expect(engine.decision()!.options.some(o => o.id === abilitySelf)).toBe(false);
   });
   it("allows declining without paying or unlocking", () => {
     const { engine, cedric } = setup();
     finishCombat(engine);
     const dp = bobImpulse(engine);
-    expect(dp.options.some(o => o.id === ability)).toBe(true);
+    expect(dp.options.some(o => o.id === abilitySelf)).toBe(true);
     const blood = cedric.blood;
     for (let i = 0; i < 5 && engine.decision()?.window === "action.afterResolution"; i++) engine.choose("pass");
     expect(cedric.locked).toBe(true);
     expect(cedric.blood).toBe(blood);
+  });
+  it("Tremere slave: unlock another ready Tremere you control", () => {
+    const { state, cedric, engine } = setup();
+    // Add a locked Tremere under Alice's control
+    const tremere = { ...findMinion(state, "W")!, id: "T1", name: "Tremere", locked: true, clan: "Tremere", blood: 3 };
+    state.seats[1]!.minions.push(tremere);
+    finishCombat(engine);
+    const dp = bobImpulse(engine);
+    // Should offer unlockTremere option
+    expect(dp.options.some((o: any) => o.id.includes("unlockTremere"))).toBe(true);
+    const opt = dp.options.find((o: any) => o.id.includes("unlockTremere"));
+    expect(opt).toBeDefined();
+    const optId = opt!.id;
+    const savedState = JSON.parse(JSON.stringify(state));
+    const resumed = new VtesEngine(savedState, testRegistry);
+    resumed.choose(optId);
+    const m = savedState.seats[1]!.minions.find((m: MinionState) => m.id === "T1")!;
+    expect(m.locked).toBe(false);
+    expect(cedric.blood).toBe(3); // spent 1 blood
   });
 });

@@ -44,7 +44,7 @@ describe("AI Training Lab UI", () => {
     expect(shell).toContain("meanVp - opponentVp");
     expect(mlScript).toContain("torch.cuda.is_available()");
     expect(mlScript).toContain("clip_epsilon = 0.2");
-    expect(mlScript).toContain("mask[j, :len(options)] = torch.tensor(allowed, dtype=torch.bool)");
+    expect(mlScript).toContain("mask[j, : len(opts_rows)] = torch.tensor(allowed, dtype=torch.bool)");
   });
 
   it("uses a seeded local search rather than Math.random", () => {

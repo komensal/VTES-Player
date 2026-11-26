@@ -109,6 +109,8 @@ export type VampireTitle =
   | "priscus"
   | "cardinal"
   | "regent"
+  // Laibon title (p. 42): magaji is not unique and cannot be contested.
+  | "magaji"
   // Personal titles are not sect-bound or contestable. The number is the
   // title's votes, not a vote bonus; gaining another title replaces it.
   | "personal1"
@@ -145,6 +147,8 @@ export const TITLE_SECT: Partial<Record<VampireTitle, Sect>> = {
   priscus: "sabbat",
   cardinal: "sabbat",
   regent: "sabbat",
+  // Laibon title (p. 42): magaji is held only by Laibon.
+  magaji: "laibon",
 };
 
 /**
@@ -274,6 +278,8 @@ export const TITLE_VOTES: Record<VampireTitle, number> = {
   personal1: 1,
   personal2: 2,
   personal3: 3,
+  // Laibon title (p. 42): magaji carries two votes.
+  magaji: 2,
 };
 
 /** V5 sects (p. 39). A minion's sect and clan are static facts, set by
@@ -324,6 +330,13 @@ export interface MinionState {
    *  `CombatFrame.rushBy`, kept for the hooks that fire if it is KEPT OUT
    *  (Bravo: "if he or she is still ready"). docs/boons-design.md §4 */
   torporPending?: { other: MinionId | null; by?: MinionId | null; rushBy?: MinionId | null };
+  /** True if this vampire card came from the crypt (e.g. a token vampire
+   *  from Childe of the Revolution). A burned token vampire goes back to
+   *  crypt, not ash heap. */
+  crypt?: boolean;
+  /** Snapshot of this vampire as it was when burned, for Childe of the
+   *  Revolution (a token returning to crypt can come back later). */
+  burntVampire?: MinionState;
   /** Discipline name -> level, e.g. { dom: "superior" }. */
   disciplines: Record<string, DisciplineLevel>;
   /** One bleed action per minion per turn (p. 20). */
@@ -812,6 +825,9 @@ export interface ConditionalStatic {
 }
 
 export interface PermanentStatics {
+  /** "During your discard phase, draw 1 card, then discard 1 card"
+   *  (André the Manipulator). */
+  discardPhaseDrawDiscard?: { amount?: number };
   /** Other vampires contesting this bearer's title must yield at unlock. */
   forceTitleContestYield?: boolean;
   /** This permanent grants its bearer Flight; a retainer's own tags do not. */
@@ -1944,6 +1960,9 @@ export type GameEvent =
   /** A game-long exception to the Blood Curse's diablerie restriction. */
   | { type: "BloodCurseDiablerieBarLifted"; clan: string }
   | { type: "CardDrawn"; seat: SeatId; cardId: CardInstanceId }
+  /** "During your discard phase, draw 1 card, then discard 1 card"
+   *  (André the Manipulator). */
+  | { type: "DiscardPhaseDrawDiscard"; seat: SeatId; amount: number }
   /** "You must shuffle it afterwards" (p. 14) — emitted after EVERY
    *  search, including one that found nothing. */
   | { type: "LibraryShuffled"; seat: SeatId }
@@ -2305,6 +2324,10 @@ export type GameEvent =
       /** "…and cannot perform actions this turn" (Creation Rites). §3 */
       cannotActThisTurn?: boolean;
       mustHuntThisTurn?: boolean;
+      /** When true, this token vampire returns to its owner's CRYPT when
+       *  burned (Childe of the Revolution). When absent, it goes to ash heap
+       *  like a normal library card (Waters of Duat). */
+      crypt?: boolean;
     }
   | { type: "MinionBurned"; minion: MinionId }
   /** "Remove a vampire from the game" (Golconda: Inner Peace) — p. 16
@@ -2737,6 +2760,10 @@ export interface ActionFrame {
      *  can be voted out — so its handler needs to tell its own two
      *  referendums apart. */
     fromCardInPlay?: boolean;
+    /** Handler wrapper used when one political action delegates its terms and
+     *  outcome to another (Charming Lobby). Card identity stays cardName. */
+    handlerName?: string;
+    handlerMode?: DisciplineLevel | null;
   };
   /** Non-null for an action that targets a card in play ("Minions can burn
    *  this card as a Ⓓ action") — the action is directed at that card's
@@ -2898,6 +2925,13 @@ export interface ActionFrame {
       /** "…they can strike: combat ends during the first round"
        *  (Night Terrors). */
       combatEndsStrike?: boolean;
+      /** Internal Recursion [pre]: own combat-ends strike against an ally or
+       *  younger acting vampire unlocks this blocker before combat ends. */
+      unlockOnCombatEndsIfOpposingAllyOrYounger?: boolean;
+      /** Internal Recursion [tem]: set the first round's range at combat start. */
+      setRange?: "close" | "long";
+      /** Internal Recursion [TEM]: the acting minion skips its next unlock. */
+      opponentSkipNextUnlock?: boolean;
     }
   >;
   /** The mirror of `blockerCombatRiders`, for the ACTING minion: "if this
@@ -3155,6 +3189,14 @@ export interface RushRiders {
    *  round" (Hunter's Mark superior) — the combat-scoped sibling of
    *  `PermanentStatics.opposingCannotCombatEnds`. */
   noCombatEndsFirstRound?: boolean;
+  /** "Set the range for the first round of that combat to close" (Charge
+   *  of the Buffalo [spi]) — the range is set, so the determine-range step
+   *  is skipped, exactly like a blocker's `setRange` rider. */
+  setRange?: "close" | "long";
+  /** "This acting vampire's initial strike during that round is strike:
+   *  hand strike at +N damage" (Charge of the Buffalo [spi]/[SPI]) — the
+   *  acting side's forced initial hand strike, `forcedHandStrike` below. */
+  forcedHandStrike?: number;
 }
 
 export type OutcomeCondition =
@@ -3751,6 +3793,9 @@ export interface CombatFrame {
   /** "…they can strike: combat ends during the first round" (Night
    *  Terrors) — a strike granted by a rider rather than by a card. */
   grantedCombatEnds: { acting: boolean; opposing: boolean };
+  /** Internal Recursion [pre]: set only for the rider-granted combat-ends
+   *  strike, never for another card's way of ending combat [RTR 20020501]. */
+  unlockCombatEndsIfOpposingAllyOrYounger?: { acting: boolean; opposing: boolean };
   /** SPECIFIED strikes a card has granted, offered in the `chooseStrike`
    *  step and SPENT when taken: "1 additional ranged strike: burn weapon"
    *  (Voracious Vermin), "once each combat, this Ravnos can strike:
@@ -3913,6 +3958,11 @@ export interface CombatFrame {
   pressStepDamageIfCloseStrike?: { acting: boolean; opposing: boolean };
   /** Fires once per round, even if the press step is re-entered. */
   pressStepDamageDone?: boolean;
+  /** "During the press step each round, draw N card(s). Discard down to
+   *  your hand size afterward" (Improvised Tactics [aus]) — armed once,
+   *  paid once per round at the press step. */
+  pressStepDraw?: { acting: number; opposing: number };
+  pressStepDrawDone?: boolean;
   /** Damage resolution was entered from the press step; resume it without
    * opening the additional-strike window again. Serializable for saves. */
   pressDamageResolving?: boolean;
@@ -4196,6 +4246,10 @@ export interface ReferendumFrame {
   /** Instance id of the calling card, kept so a title-granting referendum
    *  can attach it on a pass (or burn it on a fail). Null for blood hunts. */
   cardInstanceId?: CardInstanceId | null;
+  /** Optional handler wrapper (Charming Lobby) distinct from the political
+   *  action card whose terms and card identity the referendum uses. */
+  handlerName?: string;
+  handlerMode?: DisciplineLevel | null;
   /** "political": a political action's referendum (terms, calling-card
    *  vote). "bloodHunt": automatic after diablerie — no terms, no
    *  calling card, and on a pass the diablerist is burned. */
@@ -4696,6 +4750,9 @@ export interface GameState {
    *  cancelled referendum is never tallied and leaves none (owner ruling
    *  2026-10-24). docs/vampire-votes-design.md §4.6 */
   lastReferendum?: { turnNumber: number; votesByMinion: Record<MinionId, number> };
+  /** Charming Lobby: the next political referendum called by ANY vampire
+   *  passes automatically. Consumed when that referendum is created. */
+  autoPassNextReferendum?: boolean;
   /** A PASSED referendum whose effect is still being applied. Opened just
    *  before `applyReferendum`, closed by settle once the frame stack is back
    *  to `depth` — so it spans every choice the effect raises: Ancient

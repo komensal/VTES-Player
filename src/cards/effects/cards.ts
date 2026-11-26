@@ -6,7 +6,7 @@
  * in config/supported.json (CLAUDE.md registry rules).
  */
 
-import type { ActionFrame, CardHandler, CardInstanceId, CardPlayFrame, ChoiceFrame, ConditionalStatic, MinionId, EngineOps, GameState, HandlerRegistry, LegalOption, MinionState, PermanentInPlay, PermanentStatics, PlayContext, PlayCostCardType, SeatId, VampireTitle } from "../../engine/index.ts";
+import type { ActionFrame, CardHandler, CardInstanceId, CardPlayFrame, ChoiceFrame, ConditionalStatic, MinionId, EngineOps, GameState, HandlerRegistry, LegalOption, MinionState, PermanentInPlay, PermanentStatics, PlayContext, PlayCostCardType, ReferendumFrame, SeatId, VampireTitle } from "../../engine/index.ts";
 import { BLOOD_BROTHER_CIRCLES, vampireCircle, auraBlocksPolitical, canRepeatAction, blockEligibleSeats, blockWouldSucceed, bleedAnnounceTax, bleedBarred, cannotAttemptBleed, canReact, mayAttemptBlock, canAct, canUseCombatManeuver, isMinionCardPlay, playCostFor, canGainBlood, capacityOf, CITY_TITLES, CLANS, disciplinesOf, DISCIPLINES, handSizeOf, minionHasTag, cannotBeEquipped, currentBleed, currentIntercept, currentStealth, findMinion, getMinion, getSeat, hasVoice, isReady, playOptionId, predatorOf, preyOf, referendumOpenToPlay, untargetableBy, vampireMayVote, vampireVotes } from "../../engine/index.ts";
 import {
   allocToParams,
@@ -3873,7 +3873,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     requiresSect: ["anarch"],
     referendumFail: { callingVampireDamage: 2 },
-    usable: [],
+    usable: ["beforeVotesCast"],
     modes: [
       {
         level: "basic",
@@ -3930,7 +3930,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Lost in Translation",
     cardType: "reaction",
     bloodCost: 2,
-    usable: ["bleedTargetsYou", "afterBlocksDeclined"],
+    usable: ["bleedTargetsYou", "afterBlocksDeclined", "oncePerAction"],
     modes: [
       {
         level: "basic",
@@ -4056,7 +4056,7 @@ export const cardSpecs: CardSpec[] = [
       strength: 2,
       bleed: 0,
       strike: { damage: 2, ranged: true },
-      playsAsVampire: { pot: "basic" },
+      playsAsVampire: { disciplines: { pot: "basic" } },
     },
     permanent: { where: "bearer", statics: { burnAtCombatEnd: true }, tags: [] },
     usable: [],
@@ -4479,7 +4479,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "ally",
     bloodCost: 0,
     poolCost: 3,
-    ally: { life: 2, strength: 1, bleed: 1, subtype: "ghoul", playsAsVampire: { tha: "basic" } },
+    ally: { life: 2, strength: 1, bleed: 1, subtype: "ghoul", playsAsVampire: { capacity: 3, disciplines: { tha: "basic" } } },
     permanent: { where: "bearer", statics: {}, tags: [] },
     usable: [],
     modes: [{ level: "basic", discipline: null, effects: [] }],
@@ -4746,7 +4746,7 @@ export const cardSpecs: CardSpec[] = [
       strength: 2,
       bleed: 0,
       shuffleIntoLibraryOnBurn: true,
-      playsAsVampire: { nec: "basic" },
+      playsAsVampire: { disciplines: { nec: "basic" } },
     },
     rush: { targets: "minion" },
     permanent: {
@@ -4777,7 +4777,7 @@ export const cardSpecs: CardSpec[] = [
       strength: 3,
       bleed: 1,
       shuffleIntoLibraryOnBurn: true,
-      playsAsVampire: { nec: "basic" },
+      playsAsVampire: { disciplines: { nec: "basic" } },
     },
     permanent: {
       where: "bearer",
@@ -4811,7 +4811,7 @@ export const cardSpecs: CardSpec[] = [
       strength: 3,
       bleed: 2,
       shuffleIntoLibraryOnBurn: true,
-      playsAsVampire: { nec: "basic" },
+      playsAsVampire: { disciplines: { nec: "basic" } },
     },
     permanent: {
       where: "bearer",
@@ -11117,7 +11117,7 @@ export const cardSpecs: CardSpec[] = [
       strength: 4,
       bleed: 0,
       enterPlayBurn: { kinds: ["ally", "retainer"] },
-      playsAsVampire: { ani: "basic" },
+      playsAsVampire: { disciplines: { ani: "basic" } },
     },
     rush: { targets: "vampire" },
     permanent: {
@@ -13476,7 +13476,7 @@ export const cardSpecs: CardSpec[] = [
       {
         level: "superior",
         discipline: "nec",
-        effects: [{ kind: "restrictOpponent", strengthPenalty: 1, press: true, additionalStrikes: true }],
+        effects: [{ kind: "restrictOpponent", strengthPenalty: 1, pressToContinue: true, pressToEnd: false, additionalStrikes: true }],
       },
     ],
   },
@@ -19140,6 +19140,7 @@ export const cardSpecs: CardSpec[] = [
             sect: "anarch",
             mustHuntThisTurn: true,
             searchDisciplineMaster: true,
+            crypt: true,
           },
         ],
       },
@@ -19233,7 +19234,7 @@ export const cardSpecs: CardSpec[] = [
       subtype: "wraith",
       actsWhenRecruited: true,
       unlockRecruiterOnFirst: true,
-      playsAsVampire: { obl: "basic" },
+      playsAsVampire: { disciplines: { obl: "basic" } },
     },
     permanent: {
       where: "bearer",
@@ -20075,6 +20076,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Hell-for-Leather",
     cardType: "combat",
     bloodCost: 0,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: "ani", effects: [{ kind: "strikeDodge" }, { kind: "additionalStrike", count: 1, limited: true }] },
@@ -20326,7 +20328,7 @@ export const cardSpecs: CardSpec[] = [
     requiresSect: ["anarch"],
     combatLimit: "combat",
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "handSizeBonus", amount: 1 }] },
+      { level: "basic", discipline: "aus", effects: [{ kind: "pressStepDraw", count: 1 }] },
       { level: "basic", discipline: "pot", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false }] },
       { level: "basic", discipline: "pro", effects: [{ kind: "maneuver" }] },
     ],
@@ -20785,48 +20787,98 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ahriman's Demesne [100027] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Ahriman's Demesne [100027]
+    // Only usable at long range. Not usable during the first round of combat.
+    // [obt] Strike: 1R aggravated damage.
+    // [OBT] As above, and if the opposing vampire would go to torpor during
+    // the resolution of this strike, instead they are burned.
     krcgId: 100027,
     name: "Ahriman's Demesne",
     cardType: "combat",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "maneuver" }] }
+      {
+        level: "basic",
+        discipline: "obt",
+        usable: ["onlyAtLongRange"],
+        effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }],
+      },
+      {
+        level: "superior",
+        discipline: "obt",
+        usable: ["onlyAtLongRange"],
+        effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }, { kind: "burnInsteadOfTorpor" }],
+      },
     ],
   },
   {
-    // Alpha Glint [100040] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Alpha Glint [100040]
+    // [ani][for] Strike: combat ends. Only usable before range is determined.
+    // Not usable in combat with an ally or an older vampire.
     krcgId: 100040,
     name: "Alpha Glint",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] }
+      {
+        level: "basic",
+        discipline: { all: ["ani", "for"] },
+        usable: ["onlyAgainstVampire"],
+        effects: [{ kind: "strikeCombatEnds", unlockSelf: false }],
+      },
+      {
+        level: "superior",
+        discipline: { all: ["ani", "for"] },
+        usable: ["onlyAgainstVampire"],
+        effects: [{ kind: "strikeCombatEnds", unlockSelf: false }],
+      },
     ],
   },
   {
-    // Amaranth [100043] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Amaranth [100043]
+    // Only usable by a vampire who can commit diablerie. Only usable when the
+    // opposing vampire should go to torpor. Diablerize the opposing vampire
+    // instead. Not usable by a vampire being burned or going to torpor.
     krcgId: 100043,
     name: "Amaranth",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "maneuver" }] }
+      {
+        level: "basic",
+        discipline: null,
+        usable: [],
+        effects: [{ kind: "amaranthInsteadOfTorpor" }],
+      },
     ],
   },
   {
-    // Amria [100047] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Amria [100047]
+    // [chi] Maneuver, only usable to get to long range.
+    // [CHI] Strike: dodge, with 1 optional press, only usable to end combat.
     krcgId: 100047,
     name: "Amria",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }, { kind: "press", continueOnly: false }] }
+      {
+        level: "basic",
+        discipline: "chi",
+        usable: ["onlyAtLongRange"],
+        effects: [{ kind: "maneuver" }],
+      },
+      {
+        level: "superior",
+        discipline: "chi",
+        effects: [
+          { kind: "strikeDodge" },
+          { kind: "press", endOnly: true, continueOnly: false },
+        ],
+      },
     ],
   },
   {
@@ -20842,26 +20894,42 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Armor of Caine's Fury [100087] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Armor of Caine's Fury [100087]
+    // [pre] Prevent 1 damage.
+    // [val] Only usable before range is determined. This vampire may prevent 1 damage from the opposing minion's strikes each round.
+    // [VAL] As [val], and frenzy cards cannot be played on this vampire this combat.
     krcgId: 100087,
     name: "Armor of Caine's Fury",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
+      { level: "basic", discipline: "pre", effects: [{ kind: "prevent", base: 1, perBloodX: false }] },
       { level: "basic", discipline: "val", effects: [{ kind: "prevent", base: 1, perBloodX: false }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "prevent", base: 1, perBloodX: false }] }
+      { level: "superior", discipline: "val", effects: [{ kind: "prevent", base: 1, perBloodX: false }, { kind: "roundPrevent", amount: 1 }] },
     ],
   },
   {
-    // Armor of Vitality [100089] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Armor of Vitality [100089]
+    // [for] Prevent 3 damage.
+    // [FOR] As above, and if any of the damage was from the opposing minion's melee weapon,
+    // that weapon is destroyed.
     krcgId: 100089,
     name: "Armor of Vitality",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "prevent", base: 3, perBloodX: false }] }
+      {
+        level: "basic",
+        discipline: "for",
+        effects: [{ kind: "prevent", base: 3, perBloodX: false }],
+      },
+      {
+        level: "superior",
+        discipline: "for",
+        effects: [{ kind: "prevent", base: 3, perBloodX: false }, { kind: "destroyMeleeWeaponUsed" }],
+      },
     ],
   },
   {
@@ -20969,15 +21037,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Blissful Agony [100190] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Blissful Agony [100190]
+    // [ani] Strike: hand strike at +1 damage.
+    // [val] Only usable at close range before strikes are chosen. Opposing minion takes 1 unpreventable damage during strike resolution each round this combat.
     krcgId: 100190,
     name: "Blissful Agony",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }, { kind: "prevent", base: 2, perBloodX: false }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }, { kind: "prevent", base: 2, perBloodX: false }] }
+      { level: "basic", discipline: "ani", effects: [{ kind: "strikeHandBonus", bonus: 1 }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "roundDamage", amount: 1, targets: "opposing", ranged: false, when: "strikeResolution" }] },
     ],
   },
   {
@@ -20988,7 +21058,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }, { kind: "reflectDamage", amount: 1 }, { kind: "oncePerRound" }] }
     ],
   },
   {
@@ -20999,7 +21069,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "maneuver" }, { kind: "chooseStrikeAsRanged" }] }
     ],
   },
   {
@@ -21098,7 +21168,9 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Alacrity [100036] — [cel] +1 stealth. [CEL] As above, and if this action is blocked, this acting vampire gets an optional maneuver during the first round of the resulting combat.
+    // Alacrity [100036]
+    // [cel] +1 stealth action.
+    // [CEL] As above, and if this action is blocked, this acting vampire gets an optional maneuver during the first round of the resulting combat.
     krcgId: 100036,
     name: "Alacrity",
     cardType: "actionModifier",
@@ -21115,6 +21187,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Amulet of Temporal Perception",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -21150,6 +21223,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Ancestor's Talisman",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -21173,6 +21247,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Ankara Citadel, Turkey",
     cardType: "equipment",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -21186,7 +21261,14 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "pre",
+        effects: [
+          { kind: "modifyStealth", amount: 1 },
+          { kind: "blockRestriction", who: "vampires" },
+        ],
+      },
     ],
   },
   {
@@ -21196,6 +21278,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "ally",
     ally: { life: 1, strength: 0, bleed: 1 },
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -21207,6 +21290,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Argent Baton",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -21224,14 +21308,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // As the Crow [100102] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // As the Crow [100102]
+    // Only usable after resolution of a successful action.
+    // A minion can play only one As the Crow each turn.
+    // [FLIGHT] Unlock this minion.
     krcgId: 100102,
     name: "As the Crow",
     cardType: "actionModifier",
     bloodCost: 0,
-    usable: [],
+    usable: ["afterResolutionByActor", "ifActionSucceeded"],
+    oncePerTurnPerVampire: true,
     modes: [
-      { level: "basic", discipline: "flight", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "flight", effects: [{ kind: "unlockActor" }] }
     ],
   },
   {
@@ -21247,15 +21335,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Aversion [100118] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Aversion [100118]
+    // [cel] Reduce a bleed against you by 1.
+    // [val] Burn X pool to reduce a bleed against you by 2X+1.
+    // [VAL] Only usable when a minion is bleeding you for 1 or more. Put this card on the acting minion. You still control this card. This minion gets -1 bleed when bleeding you.
     krcgId: 100118,
     name: "Aversion",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
     ],
   },
   {
@@ -21270,14 +21362,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Babble [100122] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Babble [100122]
+    // [dem] Give another ready minion +1 intercept.
+    // [DEM] Not usable by a blocking minion. Lock this vampire to unlock another ready minion.
     krcgId: 100122,
     name: "Babble",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "dem", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "failBlockAttempt" }] },
     ],
   },
   {
@@ -21286,6 +21381,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Baleful Doll",
     cardType: "equipment",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "nec", effects: [] }
@@ -21298,6 +21394,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -21356,6 +21453,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -21375,25 +21473,32 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Black Sunrise [100171] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Black Sunrise [100171]
+    // Only usable by a locked vampire.
+    // [qui] Only usable during an action directed at you (or a card you control). This vampire unlocks and attempts to block.
+    // [QUI] This vampire unlocks and attempts to block.
     krcgId: 100171,
     name: "Black Sunrise",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] },
     ],
   },
   {
-    // Blanket of Night [100177] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Blanket of Night [100177]
+    // [obt] +1 stealth.
+    // [OBT] Only usable by a ready vampire other than the acting minion if a minion attempts to block. Lock this modifying vampire to have that attempt fail; the blocking minion cannot attempt to block this action again.
     krcgId: 100177,
     name: "Blanket of Night",
     cardType: "actionModifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "failBlockAttempt" }] },
     ],
   },
   {
@@ -21403,6 +21508,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1, perBloodX: false }] }
@@ -21494,6 +21600,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 3, strength: 1, bleed: 2 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -21541,6 +21648,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 1, bleed: 0 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -21654,6 +21762,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 0, bleed: 0 },
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "strikeDodge" }] }
@@ -21665,6 +21774,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Catacombs",
     cardType: "equipment",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -21677,6 +21787,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -21700,6 +21811,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Charnas the Imp",
     cardType: "retainer",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, retainerLife: 1, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -21717,14 +21829,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Chiropteran Marauder [100344] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Chiropteran Marauder [100344]
+    // [vic] Maneuver.
+    // [VIC] Burn 1 blood to make the damage from this vampire's hand strikes aggravated this round.
     krcgId: 100344,
     name: "Chiropteran Marauder",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "vic", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "handStrikesAggravatedCombat" }] },
     ],
   },
   {
@@ -21748,7 +21863,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -21801,6 +21916,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Codex of the Damned",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -21818,15 +21934,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Collapse the Arches [100377] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Collapse the Arches [100377]
+    // [tha] Strike: 2R damage, with an optional press.
+    // [vis] Strike: 4R damage.
+    // [VIS] Only usable before range is determined. Opposing minion takes 1R damage each round of combat during the press step.
     krcgId: 100377,
     name: "Collapse the Arches",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDodge" }, { kind: "press", continueOnly: false }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDodge" }, { kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "tha", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false }, { kind: "press", continueOnly: false }] },
+      { level: "basic", discipline: "vis", effects: [{ kind: "strikeDamage", amount: 4, ranged: true, aggravated: false }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "strikeDamage", amount: 4, ranged: true, aggravated: false }, { kind: "roundDamage", amount: 1, targets: "opposing", ranged: true, when: "strikeResolution" }] },
     ],
   },
   {
@@ -21870,6 +21990,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -21960,15 +22081,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Crawling Chamber [100439] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Crawling Chamber [100439]
+    // [tha] Maneuver, only usable to go to long range.
+    // [vis] Maneuver or press.
+    // [VIS] Only usable before range is determined. Opposing minion takes 1R damage each round of combat during the press step.
     krcgId: 100439,
     name: "Crawling Chamber",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
+      { level: "basic", discipline: "tha", usable: ["onlyAtLongRange"], effects: [{ kind: "maneuver" }] },
       { level: "basic", discipline: "vis", effects: [{ kind: "maneuver" }, { kind: "press", continueOnly: false }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }, { kind: "press", continueOnly: false }] }
+      { level: "superior", discipline: "vis", effects: [{ kind: "maneuver" }, { kind: "press", continueOnly: false }, { kind: "roundDamage", amount: 1, targets: "opposing", ranged: true, when: "strikeResolution" }] },
     ],
   },
   {
@@ -22002,20 +22127,21 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Crocodile's Tongue [100450] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Crocodile's Tongue [100450]
     krcgId: 100450,
     name: "Crocodile's Tongue",
     cardType: "actionModifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -22083,7 +22209,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "obt",
+        effects: [
+          { kind: "modifyIntercept", amount: 1 },
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Darksight"] },
+        ],
+      },
     ],
   },
   {
@@ -22092,6 +22226,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Dartmoor, England",
     cardType: "equipment",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -22111,14 +22246,14 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Day Operation [100502] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Day Operation [100502]
     krcgId: 100502,
     name: "Day Operation",
     cardType: "actionModifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -22173,6 +22308,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Detect Authority",
     cardType: "reaction",
     bloodCost: 0,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
@@ -22239,6 +22375,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "ally",
     ally: { life: 1, strength: 1, bleed: 0 },
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1, perBloodX: false }] }
@@ -22390,6 +22527,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -22497,14 +22635,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Eyes of the Beast [100683] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Eyes of the Beast [100683]
+    // [pro] +1 intercept, and put this card on this vampire. This vampire gets -1 stealth.
+    // [PRO] As above, with 1 optional maneuver during the first round of combat if this vampire blocks.
     krcgId: 100683,
     name: "Eyes of the Beast",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "pro", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "press", continueOnly: false }] },
     ],
   },
   {
@@ -22519,14 +22660,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Eyes of the Night [100685] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Eyes of the Night [100685]
+    // [obt] +1 intercept.
+    // [OBT] As above, with 1 optional maneuver or press during the resulting combat if this vampire blocks.
     krcgId: 100685,
     name: "Eyes of the Night",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "modifyIntercept", amount: 1 }, { kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "press", continueOnly: false }] },
     ],
   },
   {
@@ -22542,7 +22686,10 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Falcon's Eye [100694] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Falcon's Eye [100694]
+    // [ani] This vampire burns 1 blood to get +1 intercept.
+    // [spi] +1 intercept.
+    // [SPI] This reacting vampire attempts to block the current action, ignoring the normal prey, predator or taunt restrictions.
     krcgId: 100694,
     name: "Falcon's Eye",
     cardType: "reaction",
@@ -22550,7 +22697,8 @@ export const cardSpecs: CardSpec[] = [
     usable: [],
     modes: [
       { level: "basic", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "ani", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "spi", effects: [{ kind: "modifyIntercept", amount: 1 }] },
     ],
   },
   {
@@ -22617,6 +22765,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Final Loosening",
     cardType: "reaction",
     bloodCost: 0,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] },
@@ -22637,15 +22786,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Flames of the Netherworld [100741] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Flames of the Netherworld [100741]
+    // [tha] Only usable at long range. Burn 1 blood to strike: 1R aggravated damage.
+    // [dai] Strike: 1 aggravated damage.
+    // [DAI] Strike: 1R aggravated damage.
     krcgId: 100741,
     name: "Flames of the Netherworld",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "tha", usable: ["onlyAtLongRange"], effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }] },
+      { level: "basic", discipline: "dai", effects: [{ kind: "strikeDamage", amount: 1, ranged: false, aggravated: true }] },
+      { level: "superior", discipline: "dai", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }] },
     ],
   },
   {
@@ -22667,19 +22820,30 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "vic",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Fleshcraft"] },
+        ],
+      },
     ],
   },
   {
-    // Flow Within the Mountain [100751] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Flow Within the Mountain [100751]
+    // [tha] Press.
+    // [vis] Strike: combat ends.
+    // [VIS] Strike: combat ends. If this vampire was blocked while performing an action, the action continues as if unblocked.
     krcgId: 100751,
     name: "Flow Within the Mountain",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "press", continueOnly: false }, { kind: "strikeCombatEnds", unlockSelf: false }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }, { kind: "strikeCombatEnds", unlockSelf: false }] }
+      { level: "basic", discipline: "tha", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "basic", discipline: "vis", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
+      { level: "superior", discipline: "vis", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }, { kind: "continueAsUnblocked", bloodCost: 1 }] },
     ],
   },
   {
@@ -22748,6 +22912,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Forger's Hammer",
     cardType: "actionModifier",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "pot", effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -22793,6 +22958,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Friend of Mine",
     cardType: "reaction",
     bloodCost: 1,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] },
@@ -22848,14 +23014,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Gemini's Mirror [100814] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Gemini's Mirror [100814]
+    // [obf] Strike: dodge, with an optional maneuver.
+    // [OBF] Only usable before range is determined. For each strike made against this vampire, flip a coin. If it's tails, the strike has no effect.
     krcgId: 100814,
     name: "Gemini's Mirror",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }, { kind: "strikeCombatEnds", unlockSelf: false }] }
+      { level: "basic", discipline: "obf", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }] },
+      { level: "superior", discipline: "obf", effects: [{ kind: "strikeDodge" }, { kind: "maneuver" }] },
     ],
   },
   {
@@ -22913,6 +23082,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 1, bleed: 1 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -22925,6 +23095,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "ally",
     ally: { life: 1, strength: 0, bleed: 0 },
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -22936,6 +23107,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Giuseppe, Gravedigger",
     cardType: "retainer",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, retainerLife: 1, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -22962,6 +23134,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 1, bleed: 0 },
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [{ level: "basic", discipline: null, effects: [] }],
   },
@@ -22971,6 +23144,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Gran Madre di Dio, Italy",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -22994,6 +23168,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "ally",
     ally: { life: 2, strength: 1, bleed: 1 },
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -23029,6 +23204,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Guardian Vigil",
     cardType: "reaction",
     bloodCost: 0,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] },
@@ -23048,26 +23224,32 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hag's Wrinkles [100877] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Hag's Wrinkles [100877]
+    // [thn] Reduce a bleed against you by 1.
+    // [obf] Reduce a bleed against you by 1.
     krcgId: 100877,
     name: "Hag's Wrinkles",
     cardType: "actionModifier",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "thn", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "thn", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
     ],
   },
   {
-    // Hall of Mirrors [100879] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Hall of Mirrors [100879]
+    // Only usable during the first round of combat.
+    // [chi] Maneuver.
+    // [CHI] This vampire burns 1 blood to cancel the opposing minion's strike card as it is played, and its cost is not paid.
     krcgId: 100879,
     name: "Hall of Mirrors",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "maneuver" }] },
     ],
   },
   {
@@ -23077,20 +23259,25 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hard Case [100887] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Hard Case [100887]
+    // Only usable when this vampire successfully blocks an ally or younger vampire.
+    // [for] Cancel the resulting combat.
+    // [FOR] As above, and destroy a weapon or vehicle on the acting minion.
     krcgId: 100887,
     name: "Hard Case",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "for", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "superior", discipline: "for", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
     ],
   },
   {
@@ -23101,6 +23288,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 4, strength: 2, bleed: 0 },
     bloodCost: 0,
     poolCost: 5,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "maneuver" }] }
@@ -23167,15 +23355,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hexe [100915] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Hexe [100915]
+    // [dai] Strike: 2R damage.
+    // [str] Strike: 1R aggravated damage. [str] is not a Discipline.
+    // [STR] As [str] above, and the damage is unpreventable.
     krcgId: 100915,
     name: "Hexe",
     cardType: "combat",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "str", effects: [{ kind: "maneuver" }] },
-      { level: "basic", discipline: "dai", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "dai", effects: [{ kind: "strikeDamage", amount: 2, ranged: true, aggravated: false }] },
+      { level: "basic", discipline: "str", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true }] },
+      { level: "superior", discipline: "str", effects: [{ kind: "strikeDamage", amount: 1, ranged: true, aggravated: true, unpreventable: true }] },
     ],
   },
   {
@@ -23190,15 +23382,19 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Hide the Heart [100920] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Hide the Heart [100920]
+    // [aus] Reduce a bleed against you by 1.
+    // [val] The action fails, unless the acting minion burns 1 blood. Only one Hide the Heart can be played at [val] each action.
+    // [VAL] Reduce a bleed against you by 2.
     krcgId: 100920,
     name: "Hide the Heart",
     cardType: "reaction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "val", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "basic", discipline: "val", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "superior", discipline: "val", effects: [{ kind: "modifyBleed", amount: -2, limited: false }] },
     ],
   },
   {
@@ -23232,7 +23428,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "maneuver" }, { kind: "searchLibraryWeapon", maxDamage: 2 }] }
     ],
   },
   {
@@ -23259,15 +23455,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Ignore the Searing Flames [100949] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Ignore the Searing Flames [100949]
+    // [ser] Only usable if the opposing minion's strike inflicts aggravated damage on this vampire. This vampire treats all aggravated damage from that strike as normal damage.
+    // [dai] Prevent all aggravated damage from that strike.
     krcgId: 100949,
     name: "Ignore the Searing Flames",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 2, perBloodX: false, nonAggravated: true }] },
       { level: "basic", discipline: "dai", effects: [{ kind: "prevent", base: 2, perBloodX: false }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
+      { level: "superior", discipline: "dai", effects: [{ kind: "prevent", base: 2, perBloodX: false }] },
     ],
   },
   {
@@ -23278,18 +23477,30 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "qui",
+        effects: [
+          { kind: "modifyIntercept", amount: 1 },
+          { kind: "blockRestriction", who: "all" },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Immaculate Vitae"] },
+        ],
+      },
     ],
   },
   {
-    // Immense Size [100958] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Immense Size [100958]
+    // Only usable before range is determined. A vampire can play only one Immense Size each combat.
+    // [vic] The opposing minion cannot play grapple cards.
+    // [VIC] As above, and the opposing minion gets -1 strength this combat.
     krcgId: 100958,
     name: "Immense Size",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "superior", discipline: "vic", effects: [{ kind: "modifyBleed", amount: -1, limited: false }, { kind: "addStrength", amount: -1 }] },
     ],
   },
   {
@@ -23333,6 +23544,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "ally",
     ally: { life: 1, strength: 1, bleed: 0 },
     bloodCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
@@ -23363,14 +23575,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Infernal Pursuit [100980] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Infernal Pursuit [100980]
+    // [cel] Press.
+    // [CEL] For the remainder of the combat, each time you replace a card, draw an additional card and discard down to your hand size.
     krcgId: 100980,
     name: "Infernal Pursuit",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "press", continueOnly: false }] },
+      { level: "superior", discipline: "cel", effects: [{ kind: "press", continueOnly: false }] },
     ],
   },
   {
@@ -23404,19 +23619,26 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [] }
+      {
+        level: "basic",
+        discipline: "tha",
+        effects: [{ kind: "putInPlayEquipment", tags: ["Inscription"] }]
+      },
     ],
   },
   {
-    // Inspire Greatness [100992] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Inspire Greatness [100992]
+    // Only usable by a ready vampire other than the acting minion.
+    // [pot][pre] The acting ally or younger vampire gets +1 strength during this action.
+    // [POT][PRE] The acting ally or younger vampire gets +2 strength during this action.
     krcgId: 100992,
     name: "Inspire Greatness",
     cardType: "actionModifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "addStrength", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "addStrength", amount: 1 }] }
+      { level: "basic", discipline: { all: ["pot", "pre"] }, effects: [{ kind: "addStrength", amount: 1 }] },
+      { level: "superior", discipline: { all: ["pot", "pre"] }, effects: [{ kind: "addStrength", amount: 2 }] },
     ],
   },
   {
@@ -23427,8 +23649,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "cel", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "unlockAfterAction" }] },
+      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "unlockAfterAction" }] }
     ],
   },
   {
@@ -23451,21 +23673,24 @@ export const cardSpecs: CardSpec[] = [
     name: "Inveraray, Scotland",
     cardType: "equipment",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Iron Heart [101009] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Iron Heart [101009]
+    // [pot][pre] Cancel an action modifier that requires Presence [pre] as it is played. That card has no effect. No cost is paid.
+    // [POT][PRE] As [pot][pre] above, but cancel an action modifier that requires ...
     krcgId: 101009,
     name: "Iron Heart",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "modifyIntercept", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: { all: ["pot", "pre"] }, effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "superior", discipline: { all: ["pot", "pre"] }, effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
     ],
   },
   {
@@ -23491,14 +23716,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // The Jones [101023] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // The Jones [101023]
+    // Only usable in combat with an ally or younger vampire.
+    // [ser] Strike: dodge, with 1 optional press, only usable to end combat.
+    // [SER] Cancel the opposing minion's strike card as it is played, and its cost is not paid.
     krcgId: 101023,
     name: "The Jones",
     cardType: "combat",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "strikeDodge" }, { kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: "ser", effects: [{ kind: "strikeDodge" }, { kind: "press", endOnly: true, continueOnly: false }] },
+      { level: "superior", discipline: "ser", effects: [{ kind: "strikeDodge" }, { kind: "press", endOnly: true, continueOnly: false }] },
     ],
   },
   {
@@ -23507,6 +23736,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Joumlon's Axe",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -23519,6 +23749,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -23635,6 +23866,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 1, bleed: 0 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -23668,6 +23900,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Local 1111",
     cardType: "equipment",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -23690,6 +23923,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Lyndhurst Estate, New York",
     cardType: "equipment",
     bloodCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -23760,6 +23994,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Martinelli's Ring",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -23830,6 +24065,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 0, bleed: 0 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -24001,11 +24237,13 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Monocle of Clarity [101240] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // "Unique equipment." — added unique: true per printed text.
     krcgId: 101240,
     name: "Monocle of Clarity",
     cardType: "equipment",
     bloodCost: 0,
     usable: [],
+    unique: true,
     modes: [
       { level: "basic", discipline: null, effects: [] }
     ],
@@ -24052,6 +24290,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 1, strength: 0, bleed: 1 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "strikeDodge" }, { kind: "actionStealth", amount: 1 }] }
@@ -24064,6 +24303,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "retainer",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, retainerLife: 1, effects: [] }
@@ -24191,6 +24431,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 3, strength: 3, bleed: 0 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -24236,6 +24477,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Orb of Ulain",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -24249,6 +24491,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 0, bleed: 1 },
     bloodCost: 0,
     poolCost: 4,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -24301,6 +24544,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Palatial Estate",
     cardType: "equipment",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -24356,6 +24600,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Pier 13, Port of Baltimore",
     cardType: "equipment",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -24405,6 +24650,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 1, strength: 0, bleed: 0 },
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -24674,6 +24920,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 5, strength: 1, bleed: 0 },
     bloodCost: 0,
     poolCost: 6,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "addStrength", amount: 1 }] }
@@ -24755,6 +25002,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Ritual Scalpel",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -24813,6 +25061,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Ruins of Ceoris",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "press", continueOnly: false }] }
@@ -24824,6 +25073,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Ruins of Villers Abbey, Belgium",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -24858,6 +25108,7 @@ export const cardSpecs: CardSpec[] = [
     name: "San Lorenzo de El Escorial, Spain",
     cardType: "equipment",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -24882,6 +25133,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -24906,6 +25158,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 3, strength: 0, bleed: 1 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
@@ -24964,6 +25217,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -25013,6 +25267,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Shaal Fragment",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -25025,6 +25280,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] }
@@ -25323,6 +25579,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Soul Gem of Etrius",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -25342,11 +25599,15 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Spike-Thrower [101846] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // "Weapon. 1R damage each strike. Only usable at long range. Only usable once each round."
     krcgId: 101846,
     name: "Spike-Thrower",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    combatLimit: "round",
+    weapon: { damage: 1, ranged: true, aggravated: false },
+    permanent: { where: "bearer", statics: {}, tags: ["weapon"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -25365,10 +25626,12 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Spiritual Protector [101853] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // "Unique wraith with 1 life." — added unique: true per printed text.
     krcgId: 101853,
     name: "Spiritual Protector",
     cardType: "retainer",
     bloodCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, retainerLife: 1, effects: [] }
@@ -25388,11 +25651,15 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Starshell Grenade Launcher [101860] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // "Weapon. 1R aggravated damage each strike, only usable once per combat, and only usable at long range."
     krcgId: 101860,
     name: "Starshell Grenade Launcher",
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
+    combatLimit: "combat",
+    weapon: { damage: 1, ranged: true, aggravated: true },
+    permanent: { where: "bearer", statics: {}, tags: ["weapon"] },
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -25557,6 +25824,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }] }
@@ -25569,6 +25837,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -25581,6 +25850,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -25666,6 +25936,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 0, bleed: 0 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -26010,6 +26281,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 2, bleed: 1 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -26057,6 +26329,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 4, strength: 3, bleed: 0 },
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -26117,6 +26390,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 3, strength: 0, bleed: 0 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "prevent", base: 2, perBloodX: false }] }
@@ -26130,6 +26404,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 3, strength: 3, bleed: 0 },
     bloodCost: 0,
     poolCost: 4,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -26152,6 +26427,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Winchester Mansion",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -26196,6 +26472,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Zaire River Ferry",
     cardType: "equipment",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -26220,6 +26497,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -26233,6 +26511,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 3, strength: 1, bleed: 1 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -26256,6 +26535,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Achilles' Heel",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -26269,7 +26549,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -26278,9 +26558,10 @@ export const cardSpecs: CardSpec[] = [
     name: "The Admonitions",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -26292,7 +26573,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -26301,21 +26582,26 @@ export const cardSpecs: CardSpec[] = [
     name: "Ahrimane Protectorate",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // The Ailing Spirit [100030] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // The Ailing Spirit [100030]
+    // [dom] Ⓓ Bleed with +1 bleed.
+    // [obe] Ⓓ Bleed with +1 bleed. Vampires with Dementation [dem], mortals, and mages get -1 intercept during this action.
+    // [OBE] +1 stealth action. Ⓓ Take control of target mortal or mage for the remainder of the action.
     krcgId: 100030,
     name: "The Ailing Spirit",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
+      { level: "superior", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
     ],
   },
   {
@@ -26324,6 +26610,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Akunanse Kholo",
     cardType: "modifierOrReaction",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -26357,6 +26644,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Ancestor Spirit",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -26370,18 +26658,28 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "aus",
+        effects: [
+          { kind: "modifyBleed", amount: 1, limited: true },
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Anima Gathering"] },
+        ],
+      },
     ],
   },
   {
-    // Anonymous Freight [100072] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Anonymous Freight [100072]
+    // +3 stealth equip action. Requires a vampire.
+    // Equip this vampire with a non-location equipment card from your hand (requirements and cost apply as normal).
     krcgId: 100072,
     name: "Anonymous Freight",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 3 }] }
     ],
   },
   {
@@ -26390,20 +26688,23 @@ export const cardSpecs: CardSpec[] = [
     name: "Antediluvian Awakening",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Antithesis [100075] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Antithesis [100075]
+    // +3 stealth action.
+    // Ⓓ Put this card on a non-Sabbat vampire with capacity less than 8.
     krcgId: 100075,
     name: "Antithesis",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "jud", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "jud", effects: [{ kind: "actionStealth", amount: 3 }] }
     ],
   },
   {
@@ -26434,15 +26735,20 @@ export const cardSpecs: CardSpec[] = [
     modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
-    // Art's Traumatic Essence [100100] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Art's Traumatic Essence [100100]
+    // +1 stealth action.
+    // [aus] Ⓓ Lock an unlocked minion.
+    // [mel] Ⓓ As [aus] above, and the target minion burns 1 blood or life.
+    // [MEL] Ⓓ Put this card on a ready unlocked minion and lock them. The attached minion burns 1 blood or life each time they announce an action or attempt to block.
     krcgId: 100100,
     name: "Art's Traumatic Essence",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] },
       { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "superior", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
     ],
   },
   {
@@ -26496,9 +26802,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Bastille Opera House",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -26509,7 +26816,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "moveBloodFromReadyClanToUncontrolled", clan: "Gangrel antitribu" }] }
     ],
   },
   {
@@ -26529,20 +26836,24 @@ export const cardSpecs: CardSpec[] = [
     name: "The Becoming",
     cardType: "action",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["The Becoming"] }, { kind: "copyClanSect" }] }
     ],
   },
   {
     // Belonging Grants Protection [100150] — fala 49 wierna (300) pełna zgodność bez wydmuszek
     krcgId: 100150,
     name: "Belonging Grants Protection",
+    requiresReady: true,
+    requiresTitle: ["magaji"],
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", variant: "unlock", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "actionUnlockMinion", scope: "anyVampire", directed: false, sect: "laibon", excludeActor: true }] },
+      { level: "basic", variant: "blood", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "bloodBankToUncontrolled", amount: 2, youngerThanActor: true, sect: "laibon" }] }
     ],
   },
   {
@@ -26577,7 +26888,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "for",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Bestow Vigor"] },
+          { kind: "unlockActor" },
+        ],
+      },
     ],
   },
   {
@@ -26588,7 +26907,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -26625,20 +26944,25 @@ export const cardSpecs: CardSpec[] = [
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Black Metamorphosis [100169] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Black Metamorphosis [100169]
+    // +1 stealth action.
+    // [obt] Put this card on this vampire. This vampire gets 1 optional additional strike (limited) each round.
+    // [OBT] As above, and this vampire gets 1 optional press each combat.
     krcgId: 100169,
     name: "Black Metamorphosis",
     cardType: "action",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obt", effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "press", continueOnly: false }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "obt", effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "press", continueOnly: false }, { kind: "actionStealth", amount: 1 }] },
+      { level: "superior", discipline: "obt", effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "press", continueOnly: false }, { kind: "actionStealth", amount: 1 }, { kind: "grantPress", combat: true }] },
     ],
   },
   {
@@ -26649,7 +26973,14 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "obf",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "lockVampire" },
+        ],
+      },
     ],
   },
   {
@@ -26672,7 +27003,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "moveFromAshHeapToReadyVampire" }] }
     ],
   },
   {
@@ -26683,7 +27014,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        variant: "dem",
+        discipline: "dem",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnSelf", tags: ["Blessing of Chaos"] },
+        ],
+      },
     ],
   },
   {
@@ -26694,7 +27033,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -26714,6 +27053,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Blessings of the Loa",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -26727,7 +27067,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -26736,20 +27076,28 @@ export const cardSpecs: CardSpec[] = [
     name: "Blithe Acceptance",
     cardType: "action",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "obf",
+        effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["Blithe Acceptance"] }]
+      },
     ],
   },
   {
-    // Blood Awakening [100193] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Blood Awakening [100193]
+    // [qui] [REACTION] +1 intercept.
+    // [QUI] [ACTION MODIFIER] Only usable if a younger vampire attempts to block this vampire. That attempt fails and the blocking vampire cannot attempt to block this action again.
     krcgId: 100193,
     name: "Blood Awakening",
     cardType: "modifierOrReaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }] },
+      { level: "superior", discipline: "qui", effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "failBlockAttempt" }] },
     ],
   },
   {
@@ -26760,7 +27108,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "blockRestriction", who: "all" },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Blood Bond"] },
+        ],
+      },
     ],
   },
   {
@@ -26785,7 +27141,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "qui",
+        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "moveBloodBankToVampire", amount: 1 }]
+      },
     ],
   },
   {
@@ -26796,7 +27156,14 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "tha",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Blood of Sandman"] },
+        ],
+      },
     ],
   },
   {
@@ -26805,6 +27172,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Blood of the Sabbat",
     cardType: "action",
     bloodCost: 1,
+    requiresTitled: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -26839,6 +27207,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Blood Siege",
     cardType: "politicalAction",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -26863,9 +27232,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     requiresControlledSect: ["anarch"],
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -26874,6 +27244,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Bloodbath",
     cardType: "action",
     bloodCost: 1,
+    requiresTitled: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -26916,11 +27287,12 @@ export const cardSpecs: CardSpec[] = [
     name: "Bloodwork",
     requiresBlackHand: true,
     requiresVampire: true,
+    requiresReady: true,
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionBleed", bonus: 1 }, { kind: "capBleed", amount: 2 }, { kind: "conditionalStealthIfTargetSect", sect: "sabbat", amount: 1 }] }
     ],
   },
   {
@@ -26929,20 +27301,22 @@ export const cardSpecs: CardSpec[] = [
     name: "Border Skirmish",
     cardType: "action",
     bloodCost: 0,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
-    // Breath of Thanatos [100249] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Breath of Thanatos [100249]
+    // +1 stealth action modifier.
     krcgId: 100249,
     name: "Breath of Thanatos",
     cardType: "actionModifier",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
     ],
   },
   {
@@ -26953,7 +27327,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "pot",
+        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lockVampire" }]
+      },
     ],
   },
   {
@@ -26975,6 +27353,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -26986,9 +27365,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Brothers Grimm",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -27022,7 +27402,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "putInPlayTrifle" }, { kind: "makeBlackHand" }] }
     ],
   },
   {
@@ -27032,9 +27412,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -27055,6 +27436,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Carnivale",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -27068,7 +27450,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pro", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "pro",
+        effects: [
+          { kind: "modifyStealth", amount: 1 },
+          { kind: "putInPlayOnSelf", tags: ["Carrion Coffin"] },
+          { kind: "unlockForBlood", blood: 1 },
+        ],
+      },
     ],
   },
   {
@@ -27080,7 +27470,11 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [{ kind: "putInPlayMaster", tags: ["Carthage Remembered"] }]
+      },
     ],
   },
   {
@@ -27102,7 +27496,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "showHandAllButOne", all: false }] },
+      { level: "superior", discipline: "aus", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "showHandAllButOne", all: true }] }
     ],
   },
   {
@@ -27112,6 +27507,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "modifyIntercept", amount: 1 }] }
@@ -27123,6 +27519,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Chain of Command",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -27136,19 +27533,26 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "spi", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "for", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", variant: "for", discipline: "for", effects: [{ kind: "actionEnterCombat", targets: "minion", lockedOnly: true }] },
+      { level: "basic", variant: "spi", discipline: "spi", effects: [{ kind: "actionEnterCombat", targets: "minion", riders: { setRange: "close", forcedHandStrike: 1 } }] },
+      { level: "superior", variant: "spi", discipline: "spi", effects: [{ kind: "actionEnterCombat", targets: "minion", riders: { setRange: "close", forcedHandStrike: 2 } }] }
     ],
   },
   {
-    // Charming Lobby [100334] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Charming Lobby [100334]
+    // +1 stealth political action.
+    // [pre] Call a referendum listed on a political action card in your hand
+    // (play that card) or allowed by an effect in play. If it passes, the next
+    // referendum called by any vampire thereafter passes automatically.
+    // [PRE] As above, and this vampire gains 2 votes in that first referendum.
     krcgId: 100334,
     name: "Charming Lobby",
-    cardType: "action",
+    cardType: "politicalAction",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "pre", effects: [] },
+      { level: "superior", discipline: "pre", effects: [] },
     ],
   },
   {
@@ -27171,7 +27575,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "nec",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnSelf", tags: ["Chill of Oblivion"] },
+          { kind: "convertAggravatedToNormal" },
+        ],
+      },
     ],
   },
   {
@@ -27193,6 +27605,7 @@ export const cardSpecs: CardSpec[] = [
     requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -27205,9 +27618,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     requiresControlledSect: ["sabbat"],
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -27216,9 +27630,10 @@ export const cardSpecs: CardSpec[] = [
     name: "City Gangrel Connections",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -27246,15 +27661,44 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Cleansing Ritual [100357] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Cleansing Ritual [100357]
+    // +1 stealth action.
+    // [dom] Add 1 blood to a vampire you control.
+    // [obe] Burn a card on an ally or younger vampire in your ready region.
+    // [OBE] As [obe], and unlock the target minion during the next discard phase.
     krcgId: 100357,
     name: "Cleansing Ritual",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        variant: "dom",
+        discipline: "dom",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "actionAddBloodToVampire", amount: 1, self: true, ownOnly: true },
+        ],
+      },
+      {
+        level: "basic",
+        variant: "obe",
+        discipline: "obe",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "actionBurnAttachedCard" },
+        ],
+      },
+      {
+        level: "superior",
+        variant: "obe",
+        discipline: "obe",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "actionBurnAttachedCard", unlockBearerAtNextDiscard: true },
+        ],
+      },
     ],
   },
   {
@@ -27263,10 +27707,11 @@ export const cardSpecs: CardSpec[] = [
     name: "Clio's Kiss",
     cardType: "action",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "contestCard" }, { kind: "moveCardFromAshHeap" }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "contestCard" }, { kind: "moveCardFromAshHeap" }] }
     ],
   },
   {
@@ -27299,9 +27744,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -27311,6 +27757,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -27324,7 +27771,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "seniorityException" }] }
     ],
   },
   {
@@ -27358,7 +27805,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "moveCardFromAshHeap" }] }
     ],
   },
   {
@@ -27390,9 +27837,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -27412,6 +27860,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Consecration Rites",
     cardType: "action",
     bloodCost: 0,
+    requiresTitled: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -27425,7 +27874,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Consignment to Duat"] }, { kind: "drainBloodLifeEachTurn", amount: 1 }] }
     ],
   },
   {
@@ -27436,7 +27885,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "moveBloodFromReadyClanToUncontrolled", clan: "Pander" }] }
     ],
   },
   {
@@ -27470,7 +27919,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -27491,9 +27940,10 @@ export const cardSpecs: CardSpec[] = [
     name: "The Crocodile Temple",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -27637,7 +28087,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -27670,6 +28120,7 @@ export const cardSpecs: CardSpec[] = [
     requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -27693,9 +28144,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -27761,7 +28213,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "drawFromResearchAreaInsteadOfLibrary", count: 1 }] }
     ],
   },
   {
@@ -27772,7 +28224,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -27838,7 +28290,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -27849,7 +28301,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "chi",
+        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "setStealthZero" }, { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Draba"] }]
+      },
     ],
   },
   {
@@ -27903,6 +28359,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Dual Form",
     cardType: "action",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -27932,14 +28389,16 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Edged Illusion [100615] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // Edged Illusion [100615]
+    // [chi] Lock a ready minion and inflict 1 unpreventable damage on them.
+    // [CHI] Choose any Methuselah. Inflict 1 unpreventable damage on each ready minion controlled by the chosen Methuselah.
     krcgId: 100615,
     name: "Edged Illusion",
     cardType: "action",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "damageActingMinion", amount: 1 }] },
     ],
   },
   {
@@ -27995,18 +28454,22 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "vis",
+        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "unlockSelf" }]
+      },
     ],
   },
   {
-    // Erosion [100658] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Erosion [100658]
     krcgId: 100658,
     name: "Erosion",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "qui", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "qui", effects: [{ kind: "actionStealth", amount: 2 }] }
     ],
   },
   {
@@ -28015,9 +28478,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Esgrima",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28026,6 +28490,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Esprit de Corps",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "pot", effects: [{ kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
@@ -28038,6 +28503,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Eternal Mask",
     cardType: "action",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "actionStealth", amount: 1 }] }
@@ -28052,7 +28518,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 4,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 5 }] }
     ],
   },
   {
@@ -28106,20 +28572,25 @@ export const cardSpecs: CardSpec[] = [
     name: "Failsafe",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
     ],
   },
   {
-    // Fanfare for Elysium [100700] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Fanfare for Elysium [100700]
+    // [mel] Choose up to five older vampires. Successful referendum means each chosen vampire gains 1 blood.
+    // [MEL] As above, and successful referendum means this card is put in play. Unique.
     krcgId: 100700,
     name: "Fanfare for Elysium",
     cardType: "politicalAction",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "mel", effects: [] }
+      { level: "basic", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "superior", discipline: "mel", effects: [{ kind: "actionStealth", amount: 1 }] },
     ],
   },
   {
@@ -28130,7 +28601,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "chi",
+        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "unlockSelf" }]
+      },
     ],
   },
   {
@@ -28164,7 +28639,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28175,7 +28650,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28184,9 +28659,14 @@ export const cardSpecs: CardSpec[] = [
     name: "Field Training",
     cardType: "action",
     bloodCost: 1,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "unlockSelf" }]
+      },
     ],
   },
   {
@@ -28195,6 +28675,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Filchware's Pawn Shop",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -28252,7 +28733,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "for", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "prevent", base: 2, perBloodX: false }] }
+      {
+        level: "basic",
+        discipline: "for",
+        effects: [
+          { kind: "modifyBleed", amount: 1, limited: true },
+          { kind: "prevent", base: 2, perBloodX: false },
+          { kind: "unpreventableAggravatedDamage", amount: 1 },
+        ],
+      },
     ],
   },
   {
@@ -28262,9 +28751,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28284,9 +28774,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Foundation Exhibit",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28306,6 +28797,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Framing",
     cardType: "action",
     bloodCost: 2,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -28319,7 +28811,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28330,8 +28822,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "tem", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["Frozen Object"] }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["Frozen Object"] }] }
     ],
   },
   {
@@ -28342,7 +28834,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28365,9 +28857,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28378,7 +28871,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28387,11 +28880,12 @@ export const cardSpecs: CardSpec[] = [
     name: "Gear Up",
     cardType: "action",
     bloodCost: 1,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }, { kind: "unlockSelf" }] },
+      { level: "basic", discipline: "pre", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }, { kind: "unlockSelf" }] },
+      { level: "basic", discipline: "vic", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }, { kind: "unlockSelf" }] }
     ],
   },
   {
@@ -28414,8 +28908,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: "obe", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "endAction" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "endAction" }] }
     ],
   },
   {
@@ -28436,9 +28930,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28449,7 +28944,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "moveBloodFromPoolToVampires", amount: 1 }] }
     ],
   },
   {
@@ -28458,9 +28953,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Glutton",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28471,7 +28967,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [{ kind: "actionStealth", amount: 1 }, { kind: "unlockSelf" }]
+      },
     ],
   },
   {
@@ -28483,7 +28983,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28517,8 +29017,9 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "basic", discipline: "dom", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
+      { level: "superior", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "modifyBleed", amount: 1, limited: true }] }
     ],
   },
   {
@@ -28529,7 +29030,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [{ kind: "putInPlayMaster", tags: ["Guinea-Bissau Carnival"] }]
+      },
     ],
   },
   {
@@ -28538,6 +29043,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Guruhi Kholo",
     cardType: "modifierOrReaction",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -28589,7 +29095,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28600,7 +29106,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "lockVampire" }]
+      },
     ],
   },
   {
@@ -28655,7 +29165,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Haunt"] }, { kind: "burnLocationOnDirectedAction" }] }
     ],
   },
   {
@@ -28666,7 +29176,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dem", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "dem",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["The Haunting"] },
+          { kind: "drainBloodLife", amount: 1 },
+        ],
+      },
     ],
   },
   {
@@ -28676,9 +29194,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28687,6 +29206,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Haven Hunting",
     cardType: "action",
     bloodCost: 0,
+    requiresSect: ["anarch"],
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -28700,8 +29220,9 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", variant: "cel", discipline: "cel", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "actionUnlockMinion", scope: "youngerVampireOwn", directed: false }] },
+      { level: "basic", variant: "obe", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "addLifeAlly", amount: 2, upTo: true }] },
+      { level: "superior", variant: "obe", discipline: "obe", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "rescueFromTorpor", bloodGain: 1 }] }
     ],
   },
   {
@@ -28722,20 +29243,21 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Hidden Pathways [100917] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Hidden Pathways [100917]
     krcgId: 100917,
     name: "Hidden Pathways",
     cardType: "action",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "obf", effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 2 }] }
     ],
   },
   {
@@ -28768,6 +29290,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 3, strength: 1, bleed: 0 },
     bloodCost: 0,
     poolCost: 4,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }, { kind: "additionalStrike", count: 1, limited: true }, { kind: "maneuver" }] }
@@ -28802,6 +29325,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -28814,9 +29338,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28825,6 +29350,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Humanitas",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -28849,7 +29375,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "unpreventableDamageToBearer", amount: 1 }] }
     ],
   },
   {
@@ -28873,7 +29399,14 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnSuccess", tags: ["Imperial Decree"] },
+        ],
+      },
     ],
   },
   {
@@ -28898,14 +29431,22 @@ export const cardSpecs: CardSpec[] = [
     modes: [{ level: "basic", discipline: null, effects: [] }],
   },
   {
-    // Infamous Warlock [100976] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Infamous Warlock [100976]
+    // Put this card on a Tremere antitribu with a title. The vampire with
+    // this card cannot cast votes or ballots.
     krcgId: 100976,
     name: "Infamous Warlock",
     cardType: "master",
     bloodCost: 0,
+    permanent: {
+      where: "bearer",
+      statics: { cannotCastVotes: true },
+      tags: ["Infamous Warlock"],
+      attach: { scope: "any", kind: "vampire", clan: "Tremere antitribu", titled: true },
+    },
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28915,9 +29456,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28927,6 +29469,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -28953,19 +29496,55 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [{ kind: "putInPlayMaster", tags: ["Insurance Scam"] }]
+      },
     ],
   },
   {
-    // Internal Recursion [100998] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Internal Recursion [100998]
+    // Only usable if this vampire blocks, before block resolution.
+    // [pre] This vampire can strike: combat ends in the resulting combat.
+    // If they do so against an ally or younger acting vampire, unlock this
+    // blocking vampire before combat ends.
+    // [tem] This blocking vampire sets the first round's range.
+    // [TEM] The acting minion does not unlock during their next unlock phase.
     krcgId: 100998,
     name: "Internal Recursion",
     cardType: "reaction",
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "tem", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
-      { level: "basic", discipline: "pre", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] }
+      {
+        level: "basic",
+        variant: "pre",
+        discipline: "pre",
+        effects: [{
+          kind: "blockerCombatRider",
+          combatEndsStrike: true,
+          unlockOnCombatEndsIfOpposingAllyOrYounger: true,
+        }],
+      },
+      {
+        level: "basic",
+        variant: "close",
+        discipline: "tem",
+        effects: [{ kind: "blockerCombatRider", setRange: "close" }],
+      },
+      {
+        level: "basic",
+        variant: "long",
+        discipline: "tem",
+        effects: [{ kind: "blockerCombatRider", setRange: "long" }],
+      },
+      {
+        level: "superior",
+        variant: "tem",
+        discipline: "tem",
+        effects: [{ kind: "blockerCombatRider", opponentSkipNextUnlock: true }],
+      },
     ],
   },
   {
@@ -28976,7 +29555,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -28996,6 +29575,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Ishtarri Kholo",
     cardType: "modifierOrReaction",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -29010,7 +29590,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }, { kind: "press", continueOnly: false }] }
+      { level: "basic", discipline: null, effects: [{ kind: "putInPlayOnIshtarri" }, { kind: "grantOptionalManeuverOrPress", maneuver: true }] }
     ],
   },
   {
@@ -29020,9 +29600,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29042,20 +29623,25 @@ export const cardSpecs: CardSpec[] = [
     name: "Jake Washington",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
-    // Jar the Soul [101021] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // Jar the Soul [101021]
+    // +1 stealth action.
+    // [nec] Lock a ready minion.
+    // [NEC] As above, and burn 1 blood or life from the target minion.
     krcgId: 101021,
     name: "Jar the Soul",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "nec", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "superior", discipline: "nec", effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
     ],
   },
   {
@@ -29064,9 +29650,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Joseph Pander",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29087,9 +29674,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29111,7 +29699,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29146,7 +29734,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29188,9 +29776,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 6,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29199,6 +29788,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Lazarene Inquisitor",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -29246,6 +29836,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 2, limited: true }, { kind: "modifyStealth", amount: 1 }] }
@@ -29395,19 +29986,21 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
     // Madness of the Bard [101140] — fala 50 wierna (300) pełna zgodność bez wydmuszek
+    // "Unique Master." — added unique: true per printed text.
     krcgId: 101140,
     name: "Madness of the Bard",
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29431,7 +30024,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29442,7 +30035,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29453,7 +30046,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29464,7 +30057,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29476,7 +30069,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29576,9 +30169,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29620,9 +30214,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Metro Underground",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29642,9 +30237,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Millicent Smith, Puritan Vampire Hunter",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29723,7 +30319,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29756,9 +30352,10 @@ export const cardSpecs: CardSpec[] = [
     name: "New in Town",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29825,9 +30422,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29838,7 +30436,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29860,6 +30458,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -29874,7 +30473,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29884,9 +30483,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29919,7 +30519,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29931,7 +30531,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -29989,6 +30589,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Osebo Kholo",
     cardType: "modifierOrReaction",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -30002,6 +30603,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 4, strength: 2, bleed: 0 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }] }
@@ -30016,7 +30618,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -30027,7 +30629,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -30037,9 +30639,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -30071,9 +30674,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Paragon",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -30083,6 +30687,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -30095,9 +30700,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -30129,6 +30735,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -30141,6 +30748,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -30153,6 +30761,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -30165,6 +30774,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -30177,6 +30787,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -30201,6 +30812,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -30213,6 +30825,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -30260,6 +30873,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -30272,9 +30886,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -30336,13 +30951,15 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Playing for Keeps [101403] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // "Unique Master." — added unique: true per printed text.
     krcgId: 101403,
     name: "Playing for Keeps",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -30362,6 +30979,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Police Department",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
@@ -30387,7 +31005,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -30429,6 +31047,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Powerbase: Berlin",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
@@ -30440,6 +31059,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Powerbase: Cape Verde",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -30454,6 +31074,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -30558,7 +31179,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -30580,7 +31201,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -30644,6 +31265,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Purchase Pact",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -30748,7 +31370,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -30802,6 +31424,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Realm of the Black Sun",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
@@ -30892,9 +31515,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -31154,6 +31778,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 4, strength: 3, bleed: 0 },
     bloodCost: 0,
     poolCost: 5,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "modifyStealth", amount: 1 }] }
@@ -31176,6 +31801,7 @@ export const cardSpecs: CardSpec[] = [
     name: "SchreckNET",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -31187,9 +31813,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Seattle Committee",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -31199,9 +31826,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -31212,7 +31840,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -31258,7 +31886,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -31316,7 +31944,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -31396,7 +32024,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -31405,6 +32033,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Shakar: the Hunt",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -31463,6 +32092,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Shell Break",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "modifyIntercept", amount: 1 }] }
@@ -31487,7 +32117,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -31519,6 +32149,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Skaald",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
@@ -31591,9 +32222,10 @@ export const cardSpecs: CardSpec[] = [
     requiresControlledSect: ["anarch"],
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -31614,6 +32246,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }] }
@@ -31734,13 +32367,15 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Spell of Life [101845] — fala 51 wierna (300) pełna zgodność bez wydmuszek
+    // "+1 stealth action. Only one Spell of Life can be played each turn. Put this card in play."
     krcgId: 101845,
     name: "Spell of Life",
     cardType: "action",
     bloodCost: 0,
+    oncePerTurnByName: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSuccess", tags: ["Spell of Life"] }] }
     ],
   },
   {
@@ -31782,6 +32417,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Status Perfectus",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -31805,9 +32441,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Storm Sewers",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -31827,9 +32464,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Succubus Club",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -31863,6 +32501,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -31887,7 +32526,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -31956,9 +32595,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -31994,7 +32634,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32037,6 +32677,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
@@ -32070,9 +32711,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Transcendent Laibon",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32128,9 +32770,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Treaty of Laibach",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32139,6 +32782,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Tremere Convocation",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -32174,7 +32818,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32185,7 +32829,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32196,7 +32840,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32218,7 +32862,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32229,7 +32873,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32240,7 +32884,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32262,7 +32906,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32296,7 +32940,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32306,6 +32950,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -32319,7 +32964,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32434,7 +33079,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32443,6 +33088,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Vigil: The Thin Line",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -32476,9 +33122,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Vox Senis",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32502,7 +33149,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32515,7 +33162,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32550,9 +33197,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32667,7 +33315,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 5,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32688,6 +33336,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -32700,9 +33349,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32723,6 +33373,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -32818,6 +33469,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "additionalStrike", count: 1, limited: true }, { kind: "modifyStealth", amount: 1 }, { kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
@@ -32829,9 +33481,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Al's Army Apparatus",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32842,7 +33495,15 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [
+          { kind: "modifyStealth", amount: 1 },
+          { kind: "searchLibraryEquipment", cardTypes: ["equipment"], attachToActor: false },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Alastor"] },
+        ],
+      },
     ],
   },
   {
@@ -32852,6 +33513,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "ally",
     ally: { life: 2, strength: 1, bleed: 0 },
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -32863,6 +33525,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Alvusia",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "addStrength", amount: 1 }] }
@@ -32876,6 +33539,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 1, bleed: 0 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -32895,6 +33559,8 @@ export const cardSpecs: CardSpec[] = [
   },
   {
     // Ancestor's Insight [100062] — fala 49 wierna (300) pełna zgodność bez wydmuszek
+    // [aus] [REACTION] Reduce a bleed against you by 1.
+    // [AUS] [ACTION MODIFIER] Only usable during a bleed action. +1 bleed (limited).
     krcgId: 100062,
     name: "Ancestor's Insight",
     cardType: "modifierOrReaction",
@@ -32904,7 +33570,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "aus", effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
+      { level: "basic", discipline: "aus", role: "reaction", usable: ["bleedTargetsYou"], effects: [{ kind: "modifyBleed", amount: -1, limited: false }] },
+      { level: "superior", discipline: "aus", role: "modifier", usable: ["onlyDuringBleed"], effects: [{ kind: "modifyBleed", amount: 1, limited: true }] },
     ],
   },
   {
@@ -32915,7 +33582,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -32987,9 +33654,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Bamba",
     cardType: "action",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["Bamba"] }, { kind: "searchLibraryDiscipline" }] }
     ],
   },
   {
@@ -33009,9 +33677,18 @@ export const cardSpecs: CardSpec[] = [
     name: "Bauble",
     cardType: "action",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vic", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "vic",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "searchLibraryEquipment", cardTypes: ["equipment"], attachToActor: false },
+          { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Bauble"] },
+        ],
+      },
     ],
   },
   {
@@ -33020,11 +33697,13 @@ export const cardSpecs: CardSpec[] = [
     name: "Black Hand Ritual",
     requiresBlackHand: true,
     requiresVampire: true,
+    requiresReady: true,
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", variant: "unlock", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "actionUnlockMinion", scope: "anyVampire", directed: false, blackHand: true, youngerThanActor: true }] },
+      { level: "basic", variant: "burn", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "burnGehennaCard" }] }
     ],
   },
   {
@@ -33034,6 +33713,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -33058,7 +33738,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "putInPlayWithCounters", counters: 1 }, { kind: "payCountersOnTorporBurnDiablerie" }] }
     ],
   },
   {
@@ -33069,7 +33749,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Brainwash"] }, { kind: "blockTransfers" }] }
     ],
   },
   {
@@ -33080,7 +33760,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "outOfTurnCancelUnblockedAction" }, { kind: "enterCombat" }] }
     ],
   },
   {
@@ -33100,6 +33780,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Call the Great Beast",
     cardType: "action",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1, perBloodX: false }, { kind: "actionStealth", amount: 1 }] }
@@ -33113,7 +33794,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", variant: "nec", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "removeFromGameTarget", scope: "mortalOrGhoul" }] },
+      { level: "superior", variant: "nec", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "removeFromGameTarget", scope: "nonWraithOrSmallVampire" }] }
     ],
   },
   {
@@ -33122,6 +33804,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Charigger, The Axe",
     cardType: "retainer",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, retainerLife: 1, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "modifyStealth", amount: 1 }] }
@@ -33135,8 +33818,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "vis", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "vis", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "searchLibraryGeneric", cardTypes: ["equipment"], attachToActor: false }, { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Children of Stone"] }] },
+      { level: "basic", discipline: "tha", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "searchLibraryGeneric", cardTypes: ["equipment"], attachToActor: false }, { kind: "putInPlayOnTarget", target: "anyMinion", tags: ["Children of Stone"] }] }
     ],
   },
   {
@@ -33146,9 +33829,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -33194,8 +33878,24 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "dai",
+        effects: [
+          { kind: "addStrength", amount: 1 },
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnSelf", tags: ["Concordance"] },
+        ],
+      },
+      {
+        level: "basic",
+        discipline: "ser",
+        effects: [
+          { kind: "addStrength", amount: 1 },
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnSelf", tags: ["Concordance"] },
+        ],
+      },
     ],
   },
   {
@@ -33206,8 +33906,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lockVampire" }] },
+      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lockVampire" }] }
     ],
   },
   {
@@ -33218,8 +33918,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lockVampire" }] },
+      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lockVampire" }] }
     ],
   },
   {
@@ -33242,8 +33942,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lockVampire" }] },
+      { level: "basic", discipline: "chi", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "lockVampire" }] }
     ],
   },
   {
@@ -33263,6 +33963,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Contagion",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -33289,7 +33990,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -33342,6 +34043,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -33353,9 +34055,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Curse of Nitocris",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -33398,6 +34101,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "ally",
     ally: { life: 2, strength: 1, bleed: 0 },
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -33487,6 +34191,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Dis Pater",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -33524,7 +34229,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "removeCardsFromAshHeap", count: 1 }] }
     ],
   },
   {
@@ -33563,7 +34268,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "cancelBloodHuntGeneric" }] }
     ],
   },
   {
@@ -33622,6 +34327,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 2, bleed: 1 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -33635,6 +34341,7 @@ export const cardSpecs: CardSpec[] = [
     requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -33671,6 +34378,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
@@ -33745,15 +34453,17 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Feline Saboteur [100718] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    // Feline Saboteur [100718]
+    // [ani][obf] Choose any Methuselah. The chosen Methuselah discards 1 card at random from his or her hand.
+    // [ANI][OBF] As [ani][obf] above, and the chosen Methuselah burns the top 4 cards of his or her library.
     krcgId: 100718,
     name: "Feline Saboteur",
     cardType: "action",
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ani", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "obf", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: { all: ["ani", "obf"] }, effects: [{ kind: "actionStealth", amount: 1 }] },
+      { level: "superior", discipline: { all: ["ani", "obf"] }, effects: [{ kind: "actionStealth", amount: 1 }] },
     ],
   },
   {
@@ -33777,7 +34487,14 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "ser", effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: "ser",
+        effects: [
+          { kind: "actionStealth", amount: 1 },
+          { kind: "putInPlayOnSuccess", tags: ["Form of Corruption"] },
+        ],
+      },
     ],
   },
   {
@@ -33786,9 +34503,11 @@ export const cardSpecs: CardSpec[] = [
     name: "Fortschritt Library",
     cardType: "master",
     bloodCost: 0,
+    // "Only one Fortschritt Library may be played per game."
+    oncePerGameByName: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "searchLibraryGehennaEvent" }] }
     ],
   },
   {
@@ -33832,7 +34551,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "cancelBloodHuntGeneric" }] }
     ],
   },
   {
@@ -33879,6 +34598,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 1, bleed: 0 },
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "maneuver" }, { kind: "actionStealth", amount: 1 }] }
@@ -33892,7 +34612,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -33902,9 +34622,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -33915,8 +34636,8 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }] },
-      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }] }
+      { level: "basic", discipline: "myt", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "burnLocation" }, { kind: "searchLibraryGeneric", cardTypes: ["equipment"] }] },
+      { level: "basic", discipline: "pot", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "burnLocation" }, { kind: "searchLibraryGeneric", cardTypes: ["equipment"] }] }
     ],
   },
   {
@@ -33937,6 +34658,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Grasp the Ghostly",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "nec", effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -33950,7 +34672,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -33962,6 +34684,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 2, limited: true }] }
@@ -33975,7 +34698,11 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
+      {
+        level: "basic",
+        discipline: null,
+        effects: [{ kind: "putInPlayMaster", tags: ["Guide and Mentor"] }]
+      },
     ],
   },
   {
@@ -34048,9 +34775,10 @@ export const cardSpecs: CardSpec[] = [
     name: "High Museum of Art, Atlanta",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 4 }] }
     ],
   },
   {
@@ -34097,14 +34825,18 @@ export const cardSpecs: CardSpec[] = [
     ],
   },
   {
-    // Illusions of the Kindred [100954] — fala 45 wierna (300) pełna zgodność bez wydmuszek
+    // Illusions of the Kindred [100954]
+    // Only usable before range is determined.
+    // [chi] Combat ends. Move the bottom card from your crypt to your ready region.
+    // [CHI] As above, and that minion does not contest any other minions or titles.
     krcgId: 100954,
     name: "Illusions of the Kindred",
     cardType: "combat",
     bloodCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: "chi", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] }
+      { level: "basic", discipline: "chi", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
+      { level: "superior", discipline: "chi", effects: [{ kind: "strikeCombatEnds", unlockSelf: false }] },
     ],
   },
   {
@@ -34137,6 +34869,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Imperator",
     cardType: "politicalAction",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -34148,6 +34881,7 @@ export const cardSpecs: CardSpec[] = [
     name: "In Memory of the Two Lands",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "addStrength", amount: 1 }] }
@@ -34159,9 +34893,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Infamous Insurgent",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -34183,6 +34918,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 1, bleed: 3 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "dai", effects: [] }
@@ -34238,6 +34974,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Journal of Hrorsh",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -34249,6 +34986,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Kaymakli Fragment",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -34263,6 +35001,7 @@ export const cardSpecs: CardSpec[] = [
     requiresVampire: true,
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -34288,6 +35027,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Khazar's Diary (Endless Night)",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
@@ -34300,6 +35040,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
@@ -34346,9 +35087,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Leadership Vacuum",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -34428,6 +35170,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Living Wood Staff",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -34441,7 +35184,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -34450,9 +35193,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Mapatano Utando",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -34461,9 +35205,10 @@ export const cardSpecs: CardSpec[] = [
     name: "The Marrakesh Codex",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -34474,6 +35219,7 @@ export const cardSpecs: CardSpec[] = [
     requiresSect: ["laibon"],
     requiresVampire: true,
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
@@ -34499,7 +35245,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -34510,6 +35256,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 1, strength: 0, bleed: 0 },
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -34522,6 +35269,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -34608,6 +35356,7 @@ export const cardSpecs: CardSpec[] = [
     requiresSect: ["laibon"],
     requiresVampire: true,
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -34658,6 +35407,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Palla Grande",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -34681,9 +35431,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Path of Death and the Soul",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -34692,6 +35443,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Path of Evil Revelations",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -34703,9 +35455,10 @@ export const cardSpecs: CardSpec[] = [
     name: "The Path of Lilith",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -34792,6 +35545,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     requiresControlledSect: ["laibon"],
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -34803,6 +35557,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Powerbase: Rome",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -34815,9 +35570,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     requiresControlledSect: ["laibon"],
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -34826,6 +35582,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Powerbase: Zürich",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -34881,9 +35638,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Prophecies of Gehenna",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -34940,7 +35698,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -34989,7 +35747,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 2,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35010,6 +35768,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -35045,7 +35804,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
 
@@ -35110,6 +35869,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Rise of the Fallen",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -35122,9 +35882,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35145,6 +35906,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -35156,9 +35918,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Ruins of Charizel",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35189,6 +35952,7 @@ export const cardSpecs: CardSpec[] = [
     name: "San Nicolás de los Servitas",
     cardType: "equipment",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -35262,6 +36026,7 @@ export const cardSpecs: CardSpec[] = [
     requiresSect: ["laibon"],
     requiresVampire: true,
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, retainerLife: 2, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
@@ -35329,6 +36094,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Sire's Index Finger",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -35356,7 +36122,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35377,9 +36143,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35402,7 +36169,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [{ kind: "placeOnVampire" }] }
     ],
   },
   {
@@ -35411,9 +36178,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Steam Tunnels",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35438,7 +36206,7 @@ export const cardSpecs: CardSpec[] = [
     poolCost: 1,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35449,7 +36217,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35460,7 +36228,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35596,6 +36364,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Tapestry of Blood",
     cardType: "equipment",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -35620,7 +36389,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35644,6 +36413,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -35704,7 +36474,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35749,7 +36519,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35760,7 +36530,7 @@ export const cardSpecs: CardSpec[] = [
     bloodCost: 0,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35812,9 +36582,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35837,9 +36608,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Unity",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -35849,6 +36621,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "action",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "dai", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }] }
@@ -35920,6 +36693,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 1, bleed: 2 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -35953,9 +36727,10 @@ export const cardSpecs: CardSpec[] = [
     name: "Virolax Facility",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -36001,6 +36776,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -36060,6 +36836,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 1, strength: 1, bleed: 1 },
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -36073,6 +36850,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 3, strength: 1, bleed: 1 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -36085,9 +36863,10 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
-      { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
+      { level: "basic", discipline: null, effects: [] }
     ],
   },
   {
@@ -36097,6 +36876,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -36108,6 +36888,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Camarilla Conclave",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -37741,7 +38522,7 @@ export const cryptSpecs: CardSpec[] = [
         flatCrypt(200078, "Anastasz di Zagreb (G3)", {}), // fala 46 wierna (300) dobrane vanilla
     cryptPerm(200079, "Anatole, Prophet of Gehenna (G2)", { statics: { intercept: 1 } }), // fala 46 wierna (300) cryptPerm Gehenna
     flatCrypt(200080, "Andre LeRoux (G5)", {}),
-        condCrypt(200081, "André the Manipulator (G5)", [{ handSize: 2 }]), // fala 46 wierna (300) dobrane vanilla
+        condCrypt(200081, "André the Manipulator (G5)", [{ handSize: 2 }], { discardPhaseDrawDiscard: { amount: 1 } }), // fala 46 wierna (300) dobrane vanilla
     cryptPerm(200082, "Andrea Giovanni (G2)", {}), // fala 46 wierna (300) cryptPerm Gehenna
     flatCrypt(200083, "Andreas, The Bard of Crete (G1)", { intercept: 1 }), // fala 46 wierna (300) statics
         cryptPerm(200086, "Andrew Stuart (G4)", { requiresReady: true }), // fala 46 wierna (300) cryptPerm
@@ -38933,6 +39714,7 @@ function condCrypt(
   name: string,
   conditional: ConditionalStatic[],
   flat: PermanentStatics = {},
+  extraPerm?: Partial<NonNullable<CardSpec["permanent"]>>,
 ): CardSpec {
   return {
     krcgId,
@@ -38940,7 +39722,7 @@ function condCrypt(
     cardType: "crypt",
     bloodCost: 0,
     poolCost: 0,
-    permanent: { where: "bearer", statics: { ...flat, conditional }, tags: [] },
+    permanent: { where: "bearer", statics: { ...flat, conditional }, tags: [], ...extraPerm },
     usable: [],
     modes: [],
   };
@@ -44709,22 +45491,44 @@ const cedric: CardHandler = {
   ...compileSpec(cryptSpecs.find(s => s.name === "Cedric (G4)")!),
   abilityOptions(entry, owner, ctx) {
     const af = ctx.action;
-    if (ctx.window !== "action.afterResolution" || !af || !af.directed ||
-        af.blockedBy !== owner.minion || !owner.minion ||
-        (af.usedInPlayAbilities ?? []).includes(entry.card.id)) return [];
-    const m = findMinion(ctx.state, owner.minion);
-    if (!m || m.controller !== ctx.seat || !m.locked) return [];
-    return [{ id: `ability:Cedric (G4):${entry.card.id}:unlock`, kind: "useAbility",
-      label: "Cedric: burn 1 blood to unlock", source: entry.card.id, params: {} }];
+    const windows = ["turn.unlock", "turn.master", "turn.minion", "turn.influence", "turn.discard",
+      "action.announce", "action.effects", "action.afterResolution", "referendum.polling",
+      "referendum.afterResolution", "combat.beforeRange", "combat.beforeStrikes", "combat.endOfRound"];
+    if (!windows.includes(ctx.window) || !owner.minion || entry.usedThisTurn) return [];
+    const bearer = findMinion(ctx.state, owner.minion);
+    if (!bearer || bearer.controller !== ctx.seat || !bearer.locked) return [];
+    if (ctx.action?.noUnlock) return [];
+    const out: LegalOption[] = [{ id: `ability:Cedric (G4):${entry.card.id}:unlockSelf`, kind: "useAbility",
+      label: "Cedric: burn 1 blood to unlock self", source: entry.card.id, params: { act: "unlockSelf" } }];
+    // Tremere slave: unlock another ready Tremere you control
+    const tremereTargets = ctx.state.seats
+      .flatMap((s) => s.minions)
+      .filter((m) => m.id !== owner.minion && m.controller === ctx.seat && isReady(m) && m.locked &&
+        m.clan === "Tremere");
+    for (const t of tremereTargets) {
+      out.push({ id: `ability:Cedric (G4):${entry.card.id}:unlockTremere:${t.id}`, kind: "useAbility",
+        label: `Cedric: burn 1 blood to unlock ${t.name}`, source: entry.card.id,
+        params: { act: "unlockTremere", target: t.id } });
+    }
+    return out;
   },
-  useAbility(entry, owner, _choice, ops) {
+  useAbility(entry, owner, choice, ops) {
+    if (!owner.minion) return;
     const af = ops.action();
-    const m = owner.minion ? findMinion(ops.state, owner.minion) : null;
-    if (!af || !m || !af.directed || af.blockedBy !== m.id || !m.locked || m.blood < 1 ||
-        (af.usedInPlayAbilities ?? []).includes(entry.card.id)) return;
-    ops.markInPlayAbilityUsed(entry.card.id);
-    ops.emit({ type: "BloodBurned", minion: m.id, amount: 1 });
-    ops.emit({ type: "MinionUnlocked", minion: m.id });
+    const act = choice.params["act"];
+    if (act === "unlockSelf") {
+      entry.usedThisTurn = true;
+      ops.emit({ type: "BloodBurned", minion: owner.minion, amount: 1 });
+      ops.emit({ type: "MinionUnlocked", minion: owner.minion });
+    } else if (act === "unlockTremere") {
+      const targetId = choice.params["target"];
+      if (!targetId) return;
+      const target = findMinion(ops.state, targetId);
+      if (!target || !target.locked || target.clan !== "Tremere" || target.controller !== owner.seat) return;
+      entry.usedThisTurn = true;
+      ops.emit({ type: "BloodBurned", minion: owner.minion, amount: 1 });
+      ops.emit({ type: "MinionUnlocked", minion: targetId });
+    }
   },
 };
 
@@ -48486,6 +49290,141 @@ function backfillCentralQueries(h: CardHandler): void {
   if (!h.modesPlayableBy) h.modesPlayableBy = () => [null];
 }
 
+const charmingLobbyBase = compileSpec(specByName("Charming Lobby"));
+
+/** Charming Lobby: the nested political action card is chosen at announcement,
+ *  before Lobby is replaced [RTR 19991001] [LSJ 20101210]. */
+function charmingLobbyOptions(card: Parameters<CardHandler["options"]>[0], ctx: PlayContext): LegalOption[] {
+  if (ctx.window !== "turn.minion") return [];
+  const seat = getSeat(ctx.state, ctx.seat);
+  const out: LegalOption[] = [];
+  for (const m of seat.minions) {
+    if (m.kind !== "vampire" || !canAct(m) || m.calledPoliticalThisTurn) continue;
+    if (auraBlocksPolitical(ctx.state, m) || m.playedSinceUnlock.includes(card.name)) continue;
+    if (!canRepeatAction(ctx.state, m, card.name)) continue;
+    const levels = charmingLobbyBase.modesPlayableBy?.(m) ?? [];
+    for (const chosen of seat.hand) {
+      if (chosen.id === card.id) continue;
+      const handler = ctx.registry[chosen.name];
+      if (!handler?.isPoliticalAction) continue;
+      const chosenSpec = cardSpecs.find((s) => s.name === chosen.name);
+      if (!chosenSpec || !meetsRequirements(m, chosenSpec)) continue;
+      if (!controllerMeetsRequirements(ctx.state, ctx.seat, chosenSpec)) continue;
+      if ((handler.modesPlayableBy?.(m) ?? []).length === 0) continue;
+      if (m.blood < handler.bloodCost || seat.pool < (handler.poolCost ?? 0)) continue;
+      for (const mode of (["basic", "superior"] as const)) {
+        if (!levels.includes(mode)) continue;
+        out.push({
+          id: playOptionId(card.name, mode, m.id, chosen.id, card.id),
+          kind: "playCard",
+          label: `${card.name} (${mode}) — ${m.name}: call ${chosen.name}'s referendum`,
+          card: card.id,
+          name: card.name,
+          minion: m.id,
+          mode,
+          params: { politicalCard: chosen.id },
+        });
+      }
+    }
+  }
+  return out;
+}
+
+/** At successful action resolution the nested card is played and its cost is
+ *  paid [ANK 20220704]. It stays set aside until the referendum resolves. */
+function resolveCharmingLobby(af: ActionFrame, ops: EngineOps): void {
+  const chosenId = af.card?.params["politicalCard"];
+  const seat = getSeat(ops.state, af.actingSeat);
+  const index = chosenId ? seat.hand.findIndex((c) => c.id === chosenId) : -1;
+  if (index < 0) {
+    // A hand-changing effect removed the announced card. Do not invent its
+    // referendum; the wrapper recognizes this as an empty Lobby call.
+    af.referendumSource = {
+      cardName: "Charming Lobby",
+      cardInstanceId: af.card?.instance.id ?? "",
+      handlerName: "Charming Lobby",
+      handlerMode: af.card?.mode ?? null,
+    };
+    return;
+  }
+  const [chosen] = seat.hand.splice(index, 1);
+  if (!chosen) return;
+  const handler = ops.registry[chosen.name];
+  if (!handler) return;
+  const actor = findMinion(ops.state, af.acting);
+  ops.emit({
+    type: "CardPlayed",
+    cardId: chosen.id,
+    name: chosen.name,
+    seat: af.actingSeat,
+    minion: af.acting,
+    mode: "basic",
+  });
+  const blood = Math.min(actor?.blood ?? 0, handler.bloodCost);
+  if (blood > 0) ops.emit({ type: "BloodBurned", minion: af.acting, amount: blood });
+  const pool = handler.poolCost ?? 0;
+  if (pool > 0) ops.emit({ type: "PoolBurned", seat: af.actingSeat, amount: pool });
+  af.referendumSource = {
+    cardName: chosen.name,
+    cardInstanceId: chosen.id,
+    handlerName: "Charming Lobby",
+    handlerMode: af.card?.mode ?? null,
+  };
+}
+
+function burnCharmingLobbyCard(frame: ReferendumFrame, ops: EngineOps): void {
+  const handler = ops.registry[frame.cardName];
+  if (!frame.cardInstanceId || handler?.holdsCardForReferendum) return;
+  ops.emit({
+    type: "CardBurned",
+    cardId: frame.cardInstanceId,
+    name: frame.cardName,
+    seat: frame.caller,
+  });
+}
+
+const charmingLobby: CardHandler = {
+  ...charmingLobbyBase,
+  options: charmingLobbyOptions,
+  resolveCardAction: resolveCharmingLobby,
+  referendumTerms(frame, state) {
+    if (frame.cardName === "Charming Lobby") return [];
+    return compileSpec(specByName(frame.cardName)).referendumTerms?.(frame, state) ?? [];
+  },
+  referendumSetup(frame, state) {
+    if (frame.cardName === "Charming Lobby") return;
+    compileSpec(specByName(frame.cardName)).referendumSetup?.(frame, state);
+    if (frame.handlerMode === "superior" && frame.callingMinion) {
+      const grants = (frame.minionVoteGrants ??= {});
+      const own = (grants[frame.callingMinion] ??= { any: 0, for: 0, against: 0 });
+      own.any += 2;
+    }
+  },
+  applyReferendum(frame, ops) {
+    if (frame.cardName === "Charming Lobby") return;
+    ops.registry[frame.cardName]?.applyReferendum?.(frame, ops);
+    burnCharmingLobbyCard(frame, ops);
+    // The NEXT referendum by any vampire, not necessarily this controller's.
+    ops.state.autoPassNextReferendum = true;
+  },
+  applyReferendumFailed(frame, ops) {
+    if (frame.cardName === "Charming Lobby") return;
+    ops.registry[frame.cardName]?.applyReferendumFailed?.(frame, ops);
+    burnCharmingLobbyCard(frame, ops);
+  },
+  applyReferendumCanceled(frame, ops) {
+    if (frame.cardName === "Charming Lobby" || !frame.cardInstanceId) return;
+    // The action was cancelled: the nested card was announced but never
+    // played, so it returns instead of going to the ash heap [ANK 20201029-2].
+    ops.emit({
+      type: "CardReturnedToHand",
+      cardId: frame.cardInstanceId,
+      name: frame.cardName,
+      seat: frame.caller,
+    });
+  },
+};
+
 export function buildHandlerRegistry(): HandlerRegistry {
   const registry: HandlerRegistry = {};
   for (const spec of cardSpecs) {
@@ -48549,11 +49488,13 @@ export function buildHandlerRegistry(): HandlerRegistry {
   }
   // Bespoke handlers and spec-plus-bespoke overlays override compiled specs.
   for (const bespoke of [
+    charmingLobby,
     hourglass,
     andreLeRoux,
     nergalAdvanced,
     theUnnamed,
     shalmath,
+    cedric,
     gustavBreidenstein,
     horatioBallard,
     mithrasG3,

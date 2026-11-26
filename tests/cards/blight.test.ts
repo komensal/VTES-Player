@@ -54,7 +54,9 @@ describe("Blight (100187)", () => {
     const frame = state.frames.find((f) => f.kind === "combat");
     if (frame?.kind !== "combat") throw new Error("no combat frame");
     expect(frame.strengthBonus.opposing).toBe(-1);
-    expect(frame.restrict.opposing.press).toBe(true);
+    expect(frame.restrict.opposing.press).toBe(false);
+    expect(frame.frenzyDirection?.opposing?.continue).toBe(true);
+    expect(frame.frenzyDirection?.opposing?.end).toBeUndefined();
     expect(frame.noAdditionalStrikes?.opposing).toBe(true);
   });
 });

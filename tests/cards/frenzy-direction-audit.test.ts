@@ -206,13 +206,14 @@ describe("directional frenzy restrictions", () => {
     state.seats[0]!.hand.push({ id: "blight", name: "Blight" });
     state.seats[1]!.hand.push({ id: "shield", name: "Tranquility Shield" });
     runTrace(engine, [["Alice", "play:Blight:superior:V1:blight"], ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"]]);
-    expect(cf.restrict.opposing).toEqual({ maneuver: false, press: true, equipment: true });
+    expect(cf.restrict.opposing).toEqual({ maneuver: false, press: false, equipment: true });
+    expect(cf.frenzyDirection?.opposing?.continue).toBe(true);
     const saved = JSON.parse(JSON.stringify(state));
     const resumed = new VtesEngine(saved, testRegistry);
     runTrace(resumed, [["Alice", "pass"], ["Bob", "play:Tranquility Shield:basic:M:shield"],
       ["Alice", "pass"], ["Bob", "pass"], ["Carol", "pass"]]);
     const after = saved.frames.find((f: { kind: string }) => f.kind === "combat");
-    expect(after.restrict.opposing).toEqual({ maneuver: false, press: true, equipment: false });
+    expect(after.restrict.opposing).toEqual({ maneuver: false, press: false, equipment: false });
     expect(after.frenzyDirection.opposing).toEqual({});
   });
 
