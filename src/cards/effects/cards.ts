@@ -24600,6 +24600,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Pier 13, Port of Baltimore",
     cardType: "equipment",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -24649,6 +24650,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 1, strength: 0, bleed: 0 },
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -30736,6 +30738,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -30748,6 +30751,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -30760,6 +30764,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -30784,6 +30789,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 2, perBloodX: false }] }
@@ -30796,6 +30802,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -30843,6 +30850,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -30855,6 +30863,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -30947,6 +30956,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Police Department",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "press", continueOnly: false }] }
@@ -31014,6 +31024,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Powerbase: Berlin",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
@@ -31025,6 +31036,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Powerbase: Cape Verde",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -31039,6 +31051,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -31229,6 +31242,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Purchase Pact",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -35391,6 +35405,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Path of Lilith",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -35480,6 +35495,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     requiresControlledSect: ["laibon"],
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -35491,6 +35507,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Powerbase: Rome",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -35503,6 +35520,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     requiresControlledSect: ["laibon"],
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -35514,6 +35532,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Powerbase: Zürich",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -35569,6 +35588,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Prophecies of Gehenna",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
