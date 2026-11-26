@@ -284,8 +284,8 @@
   {
     "id": 100048,
     "name": "Amulet of Temporal Perception",
-    "status": "PARTIAL_FIX",
-    "evidence": "Pusty equipment nie ma unique ani once-per-turn opcji burn blood za grę kart wymagających basic Temporis. Statyczne porównanie tekstu, spec i wyszukanych handlerów, bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100049,
@@ -362,8 +362,8 @@
   {
     "id": 100061,
     "name": "Ancestor Spirit",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master ma jedynie modifyBleed, nie dołącza unikalnej karty na uprawnionym Laibon i nie dodaje głosu. Tekst: src/cards/registry.json, ID 100061; implementacja: src/cards/effects/cards.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100062,
@@ -374,8 +374,8 @@
   {
     "id": 100063,
     "name": "The Ancestor's Talisman",
-    "status": "PARTIAL_FIX",
-    "evidence": "Spec equipment ma jedynie modifyIntercept w modes, bez unique permanent i warunku actions requiring dom lub pre; brak znalezionego nazwanego handlera. Wymagania klanowe equipment oraz inne interakcje nie zostały osobno odtworzone. Statyczna analiza bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100064,
@@ -422,8 +422,8 @@
   {
     "id": 100071,
     "name": "The Ankara Citadel, Turkey",
-    "status": "PARTIAL_FIX",
-    "evidence": "Pusta spec equipment nie zawiera unique, reprezentowania location zamiast equipment ani obniżenia kosztu non-action modifier cards; wyszukiwanie nazwy nie znalazło bespoke handlera. Statyczna analiza bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100072,
@@ -434,8 +434,8 @@
   {
     "id": 100073,
     "name": "Antediluvian Awakening",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unikalnej karty ze stratą pool i opcją poświęcenia wampira w unlock. Tekst: src/cards/registry.json, ID 100073; implementacja: src/cards/effects/cards.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100074,

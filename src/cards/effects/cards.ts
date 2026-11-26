@@ -21187,6 +21187,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Amulet of Temporal Perception",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -21222,6 +21223,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Ancestor's Talisman",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -21245,6 +21247,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Ankara Citadel, Turkey",
     cardType: "equipment",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -26574,6 +26577,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Ancestor Spirit",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -26617,6 +26621,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Antediluvian Awakening",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
