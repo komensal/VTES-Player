@@ -25936,6 +25936,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 0, bleed: 0 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -26280,6 +26281,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 2, bleed: 1 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -26327,6 +26329,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 4, strength: 3, bleed: 0 },
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -26387,6 +26390,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 3, strength: 0, bleed: 0 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "maneuver" }, { kind: "prevent", base: 2, perBloodX: false }] }
@@ -32668,6 +32672,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "gainPool", amount: 1 }] }
@@ -32701,6 +32706,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Transcendent Laibon",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -32759,6 +32765,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Treaty of Laibach",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -32770,6 +32777,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Tremere Convocation",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -32937,6 +32945,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -33074,6 +33083,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Vigil: The Thin Line",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyIntercept", amount: 1 }] }
@@ -33107,6 +33117,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Vox Senis",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -33181,6 +33192,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -36344,6 +36356,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Tapestry of Blood",
     cardType: "equipment",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -36392,6 +36405,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -36560,6 +36574,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -36585,6 +36600,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Unity",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -36597,6 +36613,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "action",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "dai", effects: [{ kind: "prevent", base: 2, perBloodX: false }, { kind: "actionStealth", amount: 1 }] }
@@ -36668,6 +36685,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 1, bleed: 2 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -36701,6 +36719,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Virolax Facility",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -36749,6 +36768,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }

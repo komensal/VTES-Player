@@ -11612,14 +11612,14 @@
   {
     "id": 101936,
     "name": "Tapestry of Blood",
-    "status": "PARTIAL_FIX",
-    "evidence": "Equipment daje stealth zamiast unique sprzętu z płatną akcją podglądu/burn, delayed unlock i blood po Gehenna. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 101937,
     "name": "Tara, The Hollow One",
-    "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, lecz brak unique, ranged strike 1 i akcji burn equipment na Ravnos z gain blood. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 101938,
@@ -11768,8 +11768,8 @@
   {
     "id": 101962,
     "name": "The Textbook Damnation",
-    "status": "PARTIAL_FIX",
-    "evidence": "Pusty equipment bez unique, superior Daimoinon, infernal, zniżki i warunkowego burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 101963,
@@ -12002,8 +12002,8 @@
   {
     "id": 102001,
     "name": "Tower of London",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unique location lock po udanej akcji wymagającej Necromancy. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102002,
@@ -12050,8 +12050,8 @@
   {
     "id": 102009,
     "name": "Transcendent Laibon",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unique attach na Laibon z 3 Aye i Orun, gain blood, toll oraz warunkowego burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102010,
@@ -12104,8 +12104,8 @@
   {
     "id": 102018,
     "name": "Treaty of Laibach",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unique permanenta z dwustronną wymianą poziomów tha/ser między Follower of Set i Tremere; brak wymogów klanów. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102019,
@@ -12116,8 +12116,8 @@
   {
     "id": 102020,
     "name": "Tremere Convocation",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje stealth zamiast unique permanenta z warunkowym stealth Tremere, superior tha combat i akcją burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102021,
@@ -12236,8 +12236,8 @@
   {
     "id": 102040,
     "name": "True Faith",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unique attach na non-infernal z ochroną, aggravated damage i warunkowym burn. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102041,
@@ -12296,8 +12296,8 @@
   {
     "id": 102050,
     "name": "Twisted Forest",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje stealth zamiast unique location lock za stealth kontrolowanemu Gangrel antitribu. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102051,
@@ -12440,8 +12440,8 @@
   {
     "id": 102074,
     "name": "Unity",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unique hunter-list, lock i zapłaty pool za odzyskanie dwóch kart do library. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102075,
@@ -12452,8 +12452,8 @@
   {
     "id": 102076,
     "name": "Unleash Hell's Fury",
-    "status": "PARTIAL_FIX",
-    "evidence": "Basic ma prevent i stealth zamiast unique permanenta blokującego jako infernal vampire z damage i burn; brak wymogu infernal i superior unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102077,
@@ -12614,8 +12614,8 @@
   {
     "id": 102103,
     "name": "Veneficti",
-    "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki i jednorazowy stealth, ale brak unique, statycznego stealth, wymogu infernal, akcji demon oraz ochrony przed directed actions. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102104,
@@ -12710,8 +12710,8 @@
   {
     "id": 102119,
     "name": "Vigil: The Thin Line",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje intercept jako efekt zagrania zamiast unique hunter-list lock za intercept Defendera przeciw monster. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102120,
@@ -12734,8 +12734,8 @@
   {
     "id": 102123,
     "name": "Virolax Facility",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unique location z burn i wyszukaniem vampire o capacity poniżej 5 po burn własnego vampire capacity >7. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102124,
@@ -12764,8 +12764,8 @@
   {
     "id": 102128,
     "name": "Vivienne Géroux",
-    "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, ale brak unique, wymogu Anarch, dostępu cel/for, kary stealth political i akcji przekazania/steal. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102129,
@@ -12794,8 +12794,8 @@
   {
     "id": 102133,
     "name": "Vox Senis",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unique permanenta z głosami dla wszystkich albo alternatywnego out-of-turn za 3 votes. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102134,
@@ -12842,8 +12842,8 @@
   {
     "id": 102141,
     "name": "Walks-With-Might",
-    "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki i jednorazowy intercept zamiast unique, intercept przeciw Followers of Set, podatku master cards i redukcji każdego damage. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102142,
@@ -12986,8 +12986,8 @@
   {
     "id": 102165,
     "name": "Web of Knives Recruit",
-    "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth zamiast karty w uncontrolled z training counters, ograniczeniem spalania oraz przekształceniem w vampire po trzech unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102166,
@@ -12998,8 +12998,8 @@
   {
     "id": 102167,
     "name": "Weeping Stone",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unique location z hand size, blood Black Hand i akcją burn dla Assamite. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102168,
@@ -13034,8 +13034,8 @@
   {
     "id": 102173,
     "name": "Wendell Delburton",
-    "status": "PARTIAL_FIX",
-    "evidence": "Ally ma podstawowe statystyki i jednorazowy maneuver/prevent zamiast unique, strike 2R, melee bonus, maneuver, rush i skutków w unlock. Porównano tekst i spec oraz wyszukano osobne implementacje; bez nowego testu odtwarzającego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 102174,
