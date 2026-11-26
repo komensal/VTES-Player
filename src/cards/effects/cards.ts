@@ -21811,6 +21811,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Charnas the Imp",
     cardType: "retainer",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, retainerLife: 1, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -21915,6 +21916,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Codex of the Damned",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -21988,6 +21990,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -27549,6 +27552,7 @@ export const cardSpecs: CardSpec[] = [
     requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -27561,6 +27565,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     requiresControlledSect: ["sabbat"],
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -27572,6 +27577,7 @@ export const cardSpecs: CardSpec[] = [
     name: "City Gangrel Connections",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -27648,6 +27654,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Clio's Kiss",
     cardType: "action",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "tem", effects: [{ kind: "actionStealth", amount: 1 }, { kind: "contestCard" }, { kind: "moveCardFromAshHeap" }] },
@@ -27684,6 +27691,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -27696,6 +27704,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -33680,6 +33689,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
