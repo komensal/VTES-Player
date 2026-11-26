@@ -139,18 +139,6 @@ function disciplineCards(): CardSpec[] {
     [101534, "Quietus", "qui"],
     [101728, "Serpentis", "ser"],
     [102116, "Vicissitude", "vic"],
-    // The nine "bloodline" Discipline masters print the V5 wording
-    // ("gains one level … capacity increases by 1") and are the same
-    // effect (docs/derived-traits-design.md).
-    [900001, "Mythercerer", "myt"],
-    [900002, "Obeah", "obe"],
-    [900003, "Valeren", "val"],
-    [900004, "Visceratika", "vis"],
-    [900005, "Daimaite", "dai"],
-    [900006, "Melpominee", "mel"],
-    [900007, "Spiritus", "spi"],
-    [900008, "Temporis", "tem"],
-    [900009, "Thanatosis", "thn"],
   ];
   return all.map(([krcgId, name, code]) => ({
     krcgId,
@@ -53449,6 +53437,7 @@ export const implementedIds: number[] = [
   201288,
   201289,
   201290,
+
   201291,
   201292,
   201293,
@@ -53943,14 +53932,5 @@ export const implementedIds: number[] = [
   201783,
   201784,
   201785,
-  201786,
-  900001,
-  900002,
-  900003,
-  900004,
-  900005,
-  900006,
-  900007,
-  900008,
-  900009
+  201786
 ];

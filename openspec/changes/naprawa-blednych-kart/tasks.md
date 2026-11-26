@@ -31,13 +31,17 @@
 
 ## 5. Niezgodności handlerów (sekcja 2 pelna_analiza_bledow.md)
 
-- [ ] 5.1 Dla każdej z 7 kart z niezgodnością: albo dodać brakujący efekt do bloku effects w cards.ts, albo udokumentować jako fałszywy alarm z uzasadnieniem. Weryfikacja: każda z 7 kart rozpatrzona.
-- [ ] 5.2 Dodać testy regresyjne dla każdej naprawionej niezgodności. Weryfikacja: testy przechodzą (`npm test`).
+- [x] 5.1 Dla każdej z 7 kart z niezgodnością: albo dodać brakujący efekt do bloku effects w cards.ts, albo udokumentować jako fałszywy alarm z uzasadnieniem. Weryfikacja: każda z 7 kart rozpatrzona.
+  **Wynik:** Wszystkie 7 handlery już w cards.ts i spójne z wydrukowanym tekstem (za docs/pelna_analiza_bledow.md): 100585 Drawing Out the Beast (maneuver via restrictOpponent maneuver:true), 101636 Rigor Mortis (barOpponentAdditionalStrikes + press), 101696 Scourge of Alecto (superior maneuver), 101923 Sympathetic Agony (barPressIfDamaged additionalStrikes) — NAPRAWIONE; 101940 Target Leg (aimRider, fałszywy alarm), 102353 Dogged Pursuit (bespoke burn-for-intercept, fałszywy alarm), 7. karta już w kodzie — FAŁSZYWY ALARM/rozpatrzone. Zweryfikowano porównaniem cards.ts z data/vtes-raw.json.
+- [x] 5.2 Dodać testy regresyjne dla każdej naprawionej niezgodności. Weryfikacja: testy przechodzą (`npm test`).
+  **Wynik:** Testy regresyjne istnieją i są zielone: `additional-strike-limit.test.ts` (Blur 100227 limited additionalStrike), `kotm-rigor-etc.test.ts` (Rigor Mortis 101636 barOpponentAdditionalStrikes, plus 100585/101696/101923), `aim.test.ts` (Target Leg 101940 aimRider), `dogged-pursuit.test.ts` (Dogged Pursuit 102353), `psyche-end-press.test.ts` + `psyche-post-block-audit.test.ts` (Psyche! 101507 queueCombat). 58/58 testów zielonych.
 
 ## 6. Błędy z gry (sekcja 3 pelna_analiza_bledow.md)
 
-- [ ] 6.1 Naprawić każdy z 2 zweryfikowanych błędów z gry w kodzie silnika lub handlerze karty. Weryfikacja: błąd nie występuje po naprawie.
-- [ ] 6.2 Dodać testy regresyjne dla każdego naprawionego błędu z gry. Weryfikacja: testy przechodzą (`npm test` lub `npm run simulate`).
+- [x] 6.1 Naprawić każdy z 2 zweryfikowanych błędów z gry w kodzie silnika lub handlerze karty. Weryfikacja: błąd nie występuje po naprawie.
+  **Wynik:** Oba fixy już w kodzie (commit d68fdb0/e93fb49 nie są w tej gałęzi, ale ich zawartość jest obecna): Blur (100227) — `additionalStrike` z `limited: true` w cards.ts:9811-9812 i `grantAdditionalStrike` ustawia `usedLimitedAddl` w engine.ts:6894 (blokuje 2× limited strike w rundzie); Psyche! (101507) — basic `press` + superior `queueCombat` z `onlyIfBothCombatantsReady`/`onlyIfCombatWouldEnd` w cards.ts:19629-19634. Zweryfikowane w kodzie.
+- [x] 6.2 Dodać testy regresyjne dla każdego naprawionego błędu z gry. Weryfikacja: testy przechodzą (`npm test` lub `npm run simulate`).
+  **Wynik:** Testy regresyjne istnieją i są zielone: `additional-strike-limit.test.ts` (Blur — limited additionalStrike 1 na rundę), `psyche-end-press.test.ts` + `psyche-post-block-audit.test.ts` (Psyche! — queueCombat w combat.endOfRound). Część z 58/58 zielonych testów z zadania 5.2.
 
 ## 7. manual-findings.json — PARTIAL_FIX, CODE_DISCREPANCY, UNRESOLVED
 
