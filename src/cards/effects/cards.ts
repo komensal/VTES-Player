@@ -21787,6 +21787,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -27175,6 +27176,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     requiresControlledSect: ["anarch"],
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -27295,6 +27297,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -27306,6 +27309,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Brothers Grimm",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -27352,6 +27356,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -27375,6 +27380,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Carnivale",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -27445,6 +27451,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "modifyIntercept", amount: 1 }] }
@@ -27456,6 +27463,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Chain of Command",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "dom", effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -33623,6 +33631,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Call the Great Beast",
     cardType: "action",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1, perBloodX: false }, { kind: "actionStealth", amount: 1 }] }
@@ -33646,6 +33655,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Charigger, The Axe",
     cardType: "retainer",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, retainerLife: 1, effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "modifyStealth", amount: 1 }] }

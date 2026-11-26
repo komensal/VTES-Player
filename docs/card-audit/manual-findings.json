@@ -1292,8 +1292,8 @@
   {
     "id": 100216,
     "name": "Blood Turnip",
-    "status": "PARTIAL_FIX",
-    "evidence": "Poza wymogiem Anarch spec daje tylko gainPool; tekst opisuje unikalny master na minionie, przenoszony z krwią/life po rozpoczęciu combatu. src/cards/effects/cards.ts: Blood Turnip; src/cards/registry.json: 100216. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100217,
@@ -1532,8 +1532,8 @@
   {
     "id": 100256,
     "name": "Brother in Arms",
-    "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma tylko stealth; nie tworzy 2-capacity Salubri ani nie obsługuje transferu i limitu. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100257,
@@ -1544,8 +1544,8 @@
   {
     "id": 100258,
     "name": "Brothers Grimm",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unique karty z licznikami i przejmowaniem kontroli. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100259,
@@ -1658,8 +1658,8 @@
   {
     "id": 100277,
     "name": "Cairo Int'l Airport",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unikalnej lokacji i akcji palącej blood w uncontrolled prey. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100278,
@@ -1676,8 +1676,8 @@
   {
     "id": 100280,
     "name": "Call the Great Beast",
-    "status": "PARTIAL_FIX",
-    "evidence": "Spec nie tworzy Great Beast; jedynie prevent i stealth zamiast ritual counters i transformacji. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100281,
@@ -1790,8 +1790,8 @@
   {
     "id": 100299,
     "name": "Carnivale",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master ma tylko modifyStealth; brak unique i dołączenia do ready Toreador ze spalaniem. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100300,
@@ -1880,8 +1880,8 @@
   {
     "id": 100314,
     "name": "Census Taker",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master ma bleed/intercept zamiast unique karty na Black Hand z aktywacją lock i głosami. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100315,
@@ -1892,8 +1892,8 @@
   {
     "id": 100316,
     "name": "Chain of Command",
-    "status": "PARTIAL_FIX",
-    "evidence": "Akcja ma tylko stealth; brak X młodszych uncontrolled w grze, wymuszenia bleed i odłożenia do crypt. Wymaga nowych typów efektów (countYoungerUncontrolled, forceBleed, moveToCrypt). Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100317,
@@ -1910,8 +1910,8 @@
   {
     "id": 100319,
     "name": "Chalice of Kinship",
-    "status": "PARTIAL_FIX",
-    "evidence": "Equipment nie ma unique ani wymogu tytułu i przyznanej akcji blood dla pozostałych Sabbat. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100320,
@@ -1982,8 +1982,8 @@
   {
     "id": 100331,
     "name": "Charigger, The Axe",
-    "status": "PARTIAL_FIX",
-    "evidence": "Retainer ma ogólne bleed/stealth zamiast warunkowego hunt, usuwania minionów i liczenia soul counters. Tekst: src/cards/registry.json; kod: src/cards/effects/cards.ts i compile.ts. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100332,
