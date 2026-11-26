@@ -4988,14 +4988,14 @@
   {
     "id": 100832,
     "name": "Giulia Giovanni Abruzzina",
-    "status": "PARTIAL_FIX",
-    "evidence": "Ally nie ma unique ani zdolności lock do ustalenia close range przy walce kontrolowanego Giovanni. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100833,
     "name": "Giuseppe, Gravedigger",
-    "status": "PARTIAL_FIX",
-    "evidence": "Retainer nie opisuje unique ani stałego stealth w akcjach wymagających Necromancy; zawiera tylko modifyStealth w trybie. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100834,
@@ -5018,8 +5018,8 @@
   {
     "id": 100837,
     "name": "Glass Walker Pact",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unique location z blood transfer, kosztem karty library i warunkami spalenia. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100838,
@@ -5030,8 +5030,8 @@
   {
     "id": 100839,
     "name": "Glutton",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unique permanenta z kosztem zależnym od ash heap, unlock Ishtarri i akcją spalenia. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100840,
@@ -5060,8 +5060,8 @@
   {
     "id": 100844,
     "name": "Goth Band",
-    "status": "PARTIAL_FIX",
-    "evidence": "Dodano skierowaną akcję +1 stealth przenoszącą ogólne countery między master cards, w tym Dreams; zachowano unique, mortal i wymóg klanu. tests/cards/goth-band-dreams-audit.test.ts sprawdza właściciela źródła, pusty counter, zniknięcie celu oraz oba kierunki z Dreams. Pozostaje PARTIAL_FIX: nie wszystkie karty używające counterów ujawniają pole counters przy wartości zero; niezweryfikowane są inne reprezentacje counterów oraz skutki źródła po zabraniu ostatniego countera."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100845,
@@ -5078,8 +5078,8 @@
   {
     "id": 100847,
     "name": "Gran Madre di Dio, Italy",
-    "status": "PARTIAL_FIX",
-    "evidence": "Equipment nie tworzy unique location i nie lockuje nowych minionów predator/prey ani nie spala blood młodszego vampire. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100848,
@@ -5102,8 +5102,8 @@
   {
     "id": 100851,
     "name": "Grasp the Ghostly",
-    "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth; brak odzyskania equipment z cudzego ash heap, counterów pathos i superior umożliwiającego unique. Wymaga nowych typów efektów (moveEquipmentFromAshHeap, addPathosCounters, makeUnique). Tekst: registry.json; spec: effects/cards.ts. Sprawdzono wystąpienia nazwy i ID w src pod kątem osobnego handlera."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100852,
@@ -5144,8 +5144,8 @@
   {
     "id": 100858,
     "name": "Grey Thorne",
-    "status": "PARTIAL_FIX",
-    "evidence": "Ally nie ma unique, wymogu Anarch, zdolności zagrywania Celerity/Potence i uzupełniania life. Porównano registry.json z bieżącym effects/cards.ts, wyszukano nazwę w src i tests; bez nowego osobnego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100859,
@@ -5186,8 +5186,8 @@
   {
     "id": 100865,
     "name": "Guarded Rubrics",
-    "status": "PARTIAL_FIX",
-    "evidence": "Equipment nie wymaga Black Hand ani nie ma unique, zdolności bleed za blood i podwyższonego kosztu Gehenna; ma tylko modifyBleed. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100866,
@@ -5240,8 +5240,8 @@
   {
     "id": 100874,
     "name": "Guruhi Kholo",
-    "status": "PARTIAL_FIX",
-    "evidence": "Zamiast tytułu Laibon Kholo z warunkami starszeństwa i przenoszenia modifier/reaction daje intercept. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100875,
@@ -5288,8 +5288,8 @@
   {
     "id": 100882,
     "name": "Hand of Conrad",
-    "status": "PARTIAL_FIX",
-    "evidence": "Equipment bez unique nie daje superior Potence ani akcji przeniesienia vampire z ash heap do uncontrolled. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100883,
@@ -5336,8 +5336,8 @@
   {
     "id": 100890,
     "name": "Harzomatuili",
-    "status": "PARTIAL_FIX",
-    "evidence": "Ally ma podstawowe statystyki, lecz brak unique, wymogu tytułu, aggravated hand strike, płatnego intercept i odzyskania life. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100891,
@@ -5366,8 +5366,8 @@
   {
     "id": 100895,
     "name": "Haven Affinity",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unique karty na Tzimisce z superior Disciplines dla combat po bloku. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100896,
@@ -5444,8 +5444,8 @@
   {
     "id": 100908,
     "name": "Heidelberg Castle, Germany",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unique location przenoszącej blood, equipment i retainers między własnymi ready vampires. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100909,
@@ -5552,8 +5552,8 @@
   {
     "id": 100926,
     "name": "High Museum of Art, Atlanta",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool 1 zamiast unique location z zyskiem/utratą 4 pool i akcją kradzieży. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100927,
@@ -5570,8 +5570,8 @@
   {
     "id": 100929,
     "name": "High Top",
-    "status": "PARTIAL_FIX",
-    "evidence": "Ally ma statystyki, lecz brak unique, trwałego intercept, rush, dodatkowych strike, Disciplines i odzyskania life. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: naprawiono wymaganie nadrukowanej ikony klanu dla wampira zagrywającego kartę (tests/cards/library-clan-icons.test.ts); wcześniejsze wzmianki o jego braku są już nieaktualne. Inne ustalenia powyżej i nieweryfikowane interakcje pozostają otwarte. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100930,
@@ -5636,8 +5636,8 @@
   {
     "id": 100940,
     "name": "Houngan",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master ma tylko stealth zamiast unique karty na Samedi z blood w unlock i akcją przeniesienia. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100941,
@@ -5648,14 +5648,14 @@
   {
     "id": 100942,
     "name": "House of Sorrow",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unikalnej lokacji z lock/unlock karty i opóźnieniem odblokowania. Tekst: src/cards/registry.json, ID 100942; implementacja: src/cards/effects/cards.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100943,
     "name": "Humanitas",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master ma tylko modifyStealth zamiast unique karty z bonusem i rabatem rescue oraz zakazem diablerie. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100944,
@@ -5726,8 +5726,8 @@
   {
     "id": 100955,
     "name": "Illusory Resources",
-    "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth; brak unique permanenta, counterów, ich uzupełniania i redukcji bleed, brak superior. Porównano registry.json i bieżący effects/cards.ts, wyszukano nazwę w kodzie; bez nowego testu scenariuszowego. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100956,
