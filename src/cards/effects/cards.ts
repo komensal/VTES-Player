@@ -22375,6 +22375,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "ally",
     ally: { life: 1, strength: 1, bleed: 0 },
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "prevent", base: 1, perBloodX: false }] }
@@ -22526,6 +22527,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -28308,6 +28310,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Dual Form",
     cardType: "action",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "pro", effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -28426,6 +28429,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Esgrima",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -28437,6 +28441,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Esprit de Corps",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "pot", effects: [{ kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] },
@@ -28449,6 +28454,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Eternal Mask",
     cardType: "action",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "ser", effects: [{ kind: "modifyBleed", amount: 1, limited: true }, { kind: "actionStealth", amount: 1 }] }
@@ -34057,6 +34063,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Dis Pater",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -34192,6 +34199,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 2, bleed: 1 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -34205,6 +34213,7 @@ export const cardSpecs: CardSpec[] = [
     requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -34241,6 +34250,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "modifyIntercept", amount: 1 }] }
