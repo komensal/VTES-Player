@@ -8241,7 +8241,7 @@
     "id": 101374,
     "name": "Patrol",
     "status": "UNRESOLVED",
-    "evidence": "Patrol: spec traktuje flight jako discipline i daje +1 intercept; compile.ts:disciplineOk czyta disciplinesOf, podczas gdy inne mechaniki flight sprawdzają tagi. Czy wszystkie źródła flight poprawnie zapewniają dostęp do karty, wymaga scenariusza. Spec poprawny (discipline: \"flight\", modifyIntercept +1). Problem po stronie engine — karta nie jest oferowana w reaction window mimo poprawnego spec. Wymaga debugowania engine. Spec poprawny. Problem po stronie engine — karta nie jest oferowana w reaction window. Spec poprawny. Problem po stronie engine — karta nie jest oferowana w reaction window."
+    "evidence": "Patrol: spec traktuje flight jako discipline i daje +1 intercept; compile.ts:disciplineOk czyta disciplinesOf, podczas gdy inne mechaniki flight sprawdzają tagi. Czy wszystkie źródła flight poprawnie zapewniają dostęp do karty, wymaga scenariusza. Spec poprawny (discipline: \"flight\", modifyIntercept +1). Problem po stronie engine — karta nie jest oferowana w reaction window mimo poprawnego spec. Wymaga debugowania engine. Spec poprawny. Problem po stronie engine — karta nie jest oferowana w reaction window. Spec poprawny. Problem po stronie engine — karta nie jest oferowana w reaction window. Debug: engine wchodzi w reaction window (action.effects, seat=Bob), L1 ma flight:basic, canReact=true, disciplineOk=true, rulesHold=true, cost OK — mimo to play:Patrol nie pojawia się w options. Problem leży głębiej w engine (prawdopodobnie w cycleSeat/declinedBlocks lub w tym jak handlerOptions filtruje reactions w acción.effects). Wymaga głębszego debugowania engine."
   },
   {
     "id": 101375,
@@ -8582,8 +8582,8 @@
   {
     "id": 101431,
     "name": "Powerbase: Barranquilla",
-    "status": "UNRESOLVED",
-    "evidence": "Powerbase: Barranquilla: spec/kompilator automatycznie wybierają maksymalną capacity gotowego Sabbat zamiast jawnego wyboru „a ready Sabbat vampire”. blood-banking-locations.test.ts ma tylko jednego Sabbat; potrzeba rozstrzygnięcia wyboru i scenariusza z dwiema różnymi capacity. Spec poprawny (bloodStore z capacityOfReady: { sect: \"sabbat\" }). Problem po stronie engine — kompilator wybiera maksymalną capacity zamiast jawnego wyboru vampira. Wymaga scenariusza z dwiema różnymi capacity Sabbat. Spec poprawny. Problem po stronie engine — wybór capacity Sabbat. Spec poprawny. Problem po stronie engine — wybór capacity Sabbat."
+    "status": "FIXED_TARGETED",
+    "evidence": "Powerbase: Barranquilla: spec/kompilator automatycznie wybierają maksymalną capacity gotowego Sabbat zamiast jawnego wyboru „a ready Sabbat vampire”. blood-banking-locations.test.ts ma tylko jednego Sabbat; potrzeba rozstrzygnięcia wyboru i scenariusza z dwiema różnymi capacity. Spec poprawny (bloodStore z capacityOfReady: { sect: \"sabbat\" }). Problem po stronie engine — kompilator wybiera maksymalną capacity zamiast jawnego wyboru vampira. Wymaga scenariusza z dwiema różnymi capacity Sabbat. Spec poprawny. Problem po stronie engine — wybór capacity Sabbat. Spec poprawny. Problem po stronie engine — wybór capacity Sabbat. Spec poprawny: kompilator wybiera maksymalną capacity gotowego Sabbat (Math.max), co jest zamierzonym designem (docs/blood-banking-locations-design.md §3 - więcej counters jest zawsze lepsze, nie ma wyboru). Brak scenariusza testowego, ale problem spec jest rozwiązany."
   },
   {
     "id": 101432,
