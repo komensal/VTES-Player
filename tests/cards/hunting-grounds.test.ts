@@ -38,7 +38,7 @@ describe("Hunting grounds", () => {
     state.seats[0]!.permanents.push(hg("hg1", "Academic Hunting Ground"));
     const engine = new VtesEngine(state, testRegistry);
 
-    runTrace(engine, [["Alice", "ability:Academic Hunting Ground:hg1:V1"]]);
+    runTrace(engine, [["Alice", "ability:Academic Hunting Ground:hg1:gain:V1"]]);
 
     const v1 = state.seats[0]!.minions[0]!;
     expect(v1.blood).toBe(3);
@@ -52,12 +52,12 @@ describe("Hunting grounds", () => {
     state.seats[0]!.permanents.push(hg("hg2", "Park Hunting Ground"));
     const engine = new VtesEngine(state, testRegistry);
 
-    runTrace(engine, [["Alice", "ability:Academic Hunting Ground:hg1:V1"]]);
+    runTrace(engine, [["Alice", "ability:Academic Hunting Ground:hg1:gain:V1"]]);
 
     // The second hunting ground offers V1 nothing now (already fed).
     const dp = engine.decision()!;
     const v1Options = dp.seat === "Alice" ? dp.options : [];
-    expect(v1Options.some((o) => o.id.startsWith("ability:Park Hunting Ground:hg2:V1"))).toBe(false);
+    expect(v1Options.some((o) => o.id.startsWith("ability:Park Hunting Ground:hg2:gain:V1"))).toBe(false);
     expect(state.seats[0]!.minions[0]!.blood).toBe(3); // only one gain
   });
 
@@ -69,10 +69,10 @@ describe("Hunting grounds", () => {
 
     // First V1 uses it; the location is now spent for the turn, so V2 gets
     // no option from the same location.
-    runTrace(engine, [["Alice", "ability:Academic Hunting Ground:hg1:V1"]]);
+    runTrace(engine, [["Alice", "ability:Academic Hunting Ground:hg1:gain:V1"]]);
     const dp = engine.decision()!;
     const opts = dp.seat === "Alice" ? dp.options : [];
-    expect(opts.some((o) => o.id.startsWith("ability:Academic Hunting Ground:hg1:V2"))).toBe(false);
+    expect(opts.some((o) => o.id.startsWith("ability:Academic Hunting Ground:hg1:gain:V2"))).toBe(false);
     expect(state.seats[0]!.minions.find((m) => m.id === "V2")!.blood).toBe(1);
   });
 });

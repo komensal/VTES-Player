@@ -728,6 +728,8 @@ export class VtesEngine implements EngineOps {
           if (seat.autoPassReferendum?.thisTurnOnly) delete seat.autoPassReferendum;
           // "…this turn" (Expulsion).
           for (const m of seat.minions) m.expelledThisTurn = false;
+          // "…each turn" (Hunting Ground): one HG blood gain per vampire per turn.
+          for (const m of seat.minions) m.usedHuntingGroundThisTurn = false;
           // "…cannot perform the same action again THIS TURN" (Change of
           // Target, Obedience, Delaying Tactics).
           seat.cannotRepeat = [];

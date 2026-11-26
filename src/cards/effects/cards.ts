@@ -49425,6 +49425,96 @@ const charmingLobby: CardHandler = {
   },
 };
 
+/** Hunting Ground handlers (21 cards) — shared unlock-phase blood gain.
+ *  Each: "During your unlock phase, a ready vampire you control can gain 1 blood.
+ *  A vampire can gain blood from only one hunting ground each turn."
+ *
+ *  The "one hunting ground per vampire per turn" rule is enforced by
+ *  `huntingGroundUsedThisTurn` on the minion state, set when any HG ability
+ *  resolves and cleared at end of turn. */
+const HUNTING_GROUND_IDS = new Set([
+  100015, 100049, 100108, 100136, 100288, 100426, 100724, 100996, 101102,
+  101354, 101415, 101421, 101753, 101808, 101821, 101953, 102066, 102075,
+  102084, 102212, 102287,
+]);
+
+function huntingGroundHandler(cardName: string): CardHandler {
+  return {
+    name: cardName,
+    bloodCost: 0,
+    poolCost: 2,
+    isMasterCard: true,
+    options(card, ctx) {
+      if (ctx.window !== "turn.master") return [];
+      if (seatControlsCopy(ctx.state, ctx.seat, cardName)) return [];
+      return [
+        {
+          id: playOptionId(cardName, null, card.id),
+          kind: "playCard",
+          label: `${cardName} — put in play`,
+          card: card.id,
+          name: cardName,
+          minion: null,
+          mode: null,
+          params: {},
+        },
+      ];
+    },
+    resolve(play, ops) {
+      ops.putPermanentInPlay({
+        card: play.card,
+        seat: play.seat,
+        attachTo: null,
+        statics: {},
+        tags: ["location"],
+        counters: 0,
+      });
+    },
+    abilityOptions(entry, owner, ctx) {
+      if (ctx.window !== "turn.unlock") return [];
+      // "During YOUR unlock phase": the card's controller, in their own turn.
+      if (ctx.seat !== owner.seat || ctx.turnSeat !== owner.seat) return [];
+      // "Once per location per turn" — the location is spent after one use.
+      if (entry.usedThisPhase) return [];
+      const seat = getSeat(ctx.state, owner.seat);
+      const opts: LegalOption[] = [];
+      for (const m of seat.minions) {
+        if (m.kind !== "vampire") continue;
+        if (m.usedHuntingGroundThisTurn) continue;
+        if (seat.pool < 1) continue;
+        opts.push({
+          id: `ability:${cardName}:${entry.card.id}:gain:${m.id}`,
+          kind: "useAbility",
+          label: `${cardName}: ${m.name} gains 1 blood`,
+          source: entry.card.id,
+          params: { minion: m.id },
+        });
+      }
+      return opts;
+    },
+    useAbility(entry, owner, choice, ops) {
+      const minionId = choice.params["minion"];
+      if (!minionId) return;
+      const bearer = findMinion(ops.state, minionId);
+      if (!bearer || bearer.kind !== "vampire") return;
+      if (bearer.usedHuntingGroundThisTurn) return;
+      const seat = getSeat(ops.state, bearer.controller);
+      if (seat.pool < 1) return;
+      ops.emit({ type: "PoolBurned", seat: bearer.controller, amount: 1 });
+      ops.emit({ type: "BloodGained", minion: bearer.id, amount: 1 });
+      bearer.usedHuntingGroundThisTurn = true;
+      entry.usedThisPhase = true;
+    },
+  };
+}
+
+const huntingGroundHandlers: CardHandler[] = Array.from(HUNTING_GROUND_IDS).map((id) => {
+  const entry = (cardRegistry as unknown as CardRegistry).entries[id];
+  const name = entry?.card.name;
+  if (!name) throw new Error(`Hunting Ground ${id} not in registry`);
+  return huntingGroundHandler(name);
+});
+
 export function buildHandlerRegistry(): HandlerRegistry {
   const registry: HandlerRegistry = {};
   for (const spec of cardSpecs) {
@@ -49656,6 +49746,7 @@ export function buildHandlerRegistry(): HandlerRegistry {
     distantFriend,
     voxDomini,
     auraOfInvincibility,
+    ...huntingGroundHandlers,
   ]) {
     registry[bespoke.name] = bespoke;
   }

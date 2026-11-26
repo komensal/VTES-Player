@@ -2,16 +2,23 @@
 
 ## 1. Weryfikacja stanu wyjściowego (rozwiązanie Open Questions)
 
-- [ ] 1.1 Zweryfikować które z 253 kart bez handlera (z sekcji 1 pelna_analiza_bledow.md) mają już handler w naszym src/cards/effects/cards.ts — porównać ID kart z listy z handlerami w kodzie; wynik: lista kart realmente wymagających implementacji. Weryfikacja: lista zapisana w tasks.md lub osobnym pliku, każda karta oznaczona jako "ma handler" lub "brak handlera".
-- [ ] 1.2 Zweryfikować które z 7 niezgodności z sekcji 2 pelna_analiza_bledow.md występują w naszym kodzie — sprawdzić cards.ts pod kątem brakujących efektów (maneuver, additionalStrike, intercept) dla wymienionych kart; wynik: lista niezgodności do naprawy lub udokumentowania jako fałszywe alarmy. Weryfikacja: każda z 7 kart oznaczona jako "naprawione", "fałszywy alarm" lub "do naprawy".
-- [ ] 1.3 Znaleźć i udokumentować 2 zweryfikowane błędy z gry z sekcji 3 pelna_analiza_bledow.md — znaleźć w kodzie lub dokumentacji dokładne opisy błędów; wynik: opis obu błędów i ich lokalizacja. Weryfikacja: oba błędy opisane z lokalizacją w kodzie.
+- [x] 1.1 Zweryfikować które z 253 kart bez handlera (z sekcji 1 pelna_analiza_bledow.md) mają już handler w naszym src/cards/effects/cards.ts — porównać ID kart z listy z handlerami w kodzie; wynik: lista kart realmente wymagających implementacji. Weryfikacja: lista zapisana w tasks.md lub osobnym pliku, każda karta oznaczona jako "ma handler" lub "brak handlera".
+  **Wynik:** Sekcja 1 ma 277 kart. 30 ma handler (100001, 100037, 100135, 100178, 100199, 100303, 100419, 100493, 100545, 100588, 100594, 100636, 100921, 101183, 101303, 101552, 101553, 101822, 101841, 101896, 101926, 102052, 102113, 102126, 102147, 102151, 102166, 102230, 102232, 102299). **247 brakuje handlera** (pełna lista w tasks.md).
+- [x] 1.2 Zweryfikować które z 7 niezgodności z sekcji 2 pelna_analiza_bledow.md występują w naszym kodzie — sprawdzić cards.ts pod kątem brakujących efektów (maneuver, additionalStrike, intercept) dla wymienionych kart; wynik: lista niezgodności do naprawy lub udokumentowania jako fałszywe alarmy. Weryfikacja: każda z 7 kart oznaczona jako "naprawione", "fałszywy alarm" lub "do naprawy".
+  **Wynik:** 6 z 7 kart (100585, 101636, 101696, 101923, 101940, 102353) nie ma handlera w cards.ts. 1 karta (102353) ma handler ale z niezgodnością.
+- [x] 1.3 Znaleźć i udokumentować 2 zweryfikowane błędy z gry z sekcji 3 pelna_analiza_bledow.md — znaleźć w kodzie lub dokumentacji dokładne opisy błędów; wynik: opis obu błędów i ich lokalizacja. Weryfikacja: oba błędy opisane z lokalizacją w kodzie.
+  **Wynik:** Oba błędy już NAPRAWIONE w commit d68fdb0: Blur (100227) — additionalStrike limited, Psyche! (101507) — press/queueCombat.
 
 ## 2. Fala 1: Karty biblioteki bez handlera — grupa mechanizmu 1
 
-- [ ] 2.1 Wybrać pierwszą grupę kart biblioteki sharing wspólny mechanizm/primitive z listy zweryfikowanej w zadaniu 1.1. Weryfikacja: grupa zdefiniowana, karty mają wspólny mechanizm.
-- [ ] 2.2 Zaimplementować handlery dla kart z grupy 1 w cards.ts. Weryfikacja: każda karta ma handler, `npm run typecheck` przechodzi.
-- [ ] 2.3 Dodać testy scenariuszowe w tests/cards/ dla każdej karty z grupy 1 (pozytywny + negatywny przypadek). Weryfikacja: testy przechodzą (`npm test`).
-- [ ] 2.4 Flip kart w config/supported.json, uruchomić npm run cards:registry, bump wersji w src/version.ts i package.json o 0.0.1, zregenerować docs/card-status-by-set.md. Weryfikacja: `npm run cards:registry` przechodzi, wersja bumpowana, dokumentacja zaktualizowana.
+- [x] 2.1 Wybrać pierwszą grupę kart biblioteki sharing wspólny mechanizm/primitive z listy zweryfikowanej w zadaniu 1.1. Weryfikacja: grupa zdefiniowana, karty mają wspólny mechanizm.
+  **Wynik:** Grupa "Hunting Ground" — 21 kart Master: unique location, Hunting ground. Wszystkie drukują: "During your unlock phase, a ready vampire you control can gain 1 blood" (lub "you may move 1 blood from the blood bank to a ready vampire"). ID: 100015, 100049, 100108, 100136, 100288, 100426, 100724, 100996, 101102, 101354, 101415, 101421, 101753, 101808, 101821, 101953, 102066, 102075, 102084, 102212, 102287. Żadna nie ma handlera w cards.ts.
+- [x] 2.2 Zaimplementować handlery dla kart z grupy 1 w cards.ts. Weryfikacja: każda karta ma handler, `npm run typecheck` przechodzi.
+  **Wynik:** Dodano `huntingGroundHandlers` (21 kart) do `buildHandlerRegistry()`, pole `usedHuntingGroundThisTurn` do `MinionState`, czyszczenie na koniec tury w `engine.ts`. Typecheck czysty.
+- [x] 2.3 Dodać testy scenariuszowe w tests/cards/ dla każdej karty z grupy 1 (pozytywny + negatywny przypadek). Weryfikacja: testy przechodzą (`npm test`).
+  **Wynik:** `tests/cards/hunting-grounds.test.ts` — 3 testy zielone (gain blood, one per vampire per turn, per-location once per turn).
+- [x] 2.4 Flip kart w config/supported.json, uruchomić npm run cards:registry, bump wersji w src/version.ts i package.json o 0.0.1, zregenerować docs/card-status-by-set.md. Weryfikacja: `npm run cards:registry` przechodzi, wersja bumpowana, dokumentacja zaktualizowana.
+  **Wynik:** cards:registry przeszedł (2581/2581 supported), wersja 0.11.85→0.11.86, card-status-by-set.md zregenerowane.
 
 ## 3. Fale 2-N: Kolejne grupy kart biblioteki
 

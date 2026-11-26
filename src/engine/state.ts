@@ -337,6 +337,9 @@ export interface MinionState {
   /** Snapshot of this vampire as it was when burned, for Childe of the
    *  Revolution (a token returning to crypt can come back later). */
   burntVampire?: MinionState;
+  /** Gained blood from a Hunting Ground this turn — one HG per vampire per
+   *  turn (p. 10). Cleared at end of turn. */
+  usedHuntingGroundThisTurn?: boolean;
   /** Discipline name -> level, e.g. { dom: "superior" }. */
   disciplines: Record<string, DisciplineLevel>;
   /** One bleed action per minion per turn (p. 20). */
