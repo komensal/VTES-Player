@@ -26745,6 +26745,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Bastille Opera House",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -26778,6 +26779,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Becoming",
     cardType: "action",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["The Becoming"] }, { kind: "copyClanSect" }] }
@@ -26885,6 +26887,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "action",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
@@ -26993,6 +26996,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Blessings of the Loa",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 1, limited: true }] }
@@ -27146,6 +27150,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Blood Siege",
     cardType: "politicalAction",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -33492,6 +33497,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Bamba",
     cardType: "action",
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }, { kind: "putInPlayOnSelf", tags: ["Bamba"] }, { kind: "searchLibraryDiscipline" }] }
@@ -33514,6 +33520,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Bauble",
     cardType: "action",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       {
@@ -33549,6 +33556,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }

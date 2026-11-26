@@ -770,8 +770,8 @@
   {
     "id": 100129,
     "name": "Bamba",
-    "status": "PARTIAL_FIX",
-    "evidence": "putInPlayOnSelf i searchLibraryDiscipline zaimplementowane i podpięte do Bamba (100129)."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100130,
@@ -836,8 +836,8 @@
   {
     "id": 100140,
     "name": "Bastille Opera House",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master daje gainPool zamiast unikalnej lokacji, lock i głosów zależnych od Daughter of Cacophony. Tekst: src/cards/registry.json, ID 100140; implementacja: src/cards/effects/cards.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100141,
@@ -848,8 +848,8 @@
   {
     "id": 100142,
     "name": "Bauble",
-    "status": "PARTIAL_FIX",
-    "evidence": "searchLibraryEquipment zaimplementowane i podpięte do Bauble (100142) — szuka equipment w bibliotece i dołącza do wybranego miniona. putInPlayOnTarget podpięte. Nadal brakuje: ograniczenia aktora i superior. Tekst: src/cards/registry.json, ID 100142; implementacja: src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100143,
@@ -878,8 +878,8 @@
   {
     "id": 100147,
     "name": "The Becoming",
-    "status": "PARTIAL_FIX",
-    "evidence": "Action ma tylko stealth, nie tworzy wampira i nie obsługuje dyscyplin, krwi ani ograniczeń. Wymaga nowych typów efektów (putInPlayOnSelf as vampire, copyClanSect). Tekst: src/cards/registry.json, ID 100147; implementacja: src/cards/effects/cards.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100148,
@@ -998,8 +998,8 @@
   {
     "id": 100167,
     "name": "Black Hand Emissary",
-    "status": "PARTIAL_FIX",
-    "evidence": "Action zawiera jedynie modifyStealth i actionStealth; brak celu, unique, skalowanych głosów Black Hand i przeniesienia przez Seraph. Źródła: src/cards/registry.json ID 100167; src/cards/effects/cards.ts i compile.ts. Aktualizacja: sam wymóg Black Hand/Seraph jest teraz sprawdzany dla aktora lub kontrolowanego ready vampire (master); pozostałe wskazane efekty i inne ograniczenia pozostają otwarte. Testy black-hand-traits.test.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100168,
@@ -1052,8 +1052,8 @@
   {
     "id": 100176,
     "name": "Blade of Enoch",
-    "status": "PARTIAL_FIX",
-    "evidence": "Equipment bez unique, weapon profile, ograniczenia capacity, aggravated przeciw Brujah i ochrony przed Frenzy. Źródła: src/cards/registry.json ID 100176; src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte. Aktualizacja: poprawiono drukowany podtyp w metadanych i karcie wchodzącej do gry (tests/cards/printed-subtypes.test.ts); wcześniejsze wzmianki o braku tego podtypu są już nieaktualne. Pozostałe wskazane błędy i niezweryfikowane interakcje pozostają otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100177,
@@ -1112,8 +1112,8 @@
   {
     "id": 100186,
     "name": "Blessings of the Loa",
-    "status": "PARTIAL_FIX",
-    "evidence": "Master ma modifyBleed zamiast unikalnej karty ze skalowanym bonusem dla Samedi. Źródła: src/cards/registry.json ID 100186; src/cards/effects/cards.ts i compile.ts. Aktualizacja: przekazano drukowaną cechę Unique do efektywnego handlera i wspólnej obsługi duplikatów/kontestowania (tests/cards/printed-unique-cards.test.ts). Wcześniejsze twierdzenie o braku tej cechy jest nieaktualne; test indywidualny sprawdza metadane, nie komplet efektów karty. Pozostałe wcześniej opisane problemy lub nierozstrzygnięcia nadal są otwarte."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100187,
@@ -1256,8 +1256,8 @@
   {
     "id": 100210,
     "name": "Blood Siege",
-    "status": "PARTIAL_FIX",
-    "evidence": "Political action ma pusty tryb; brak wyboru Sabbat i prince, title, blood-for-votes i zakazu modifierów; brak bespoke handlera. Źródła: src/cards/registry.json ID 100210; src/cards/effects/cards.ts i compile.ts."
+    "status": "FIXED_TARGETED",
+    "evidence": "Naprawiono: dodano unique: true do spec zgodnie z drukowanym \"Unique\" w tekście karty."
   },
   {
     "id": 100211,
