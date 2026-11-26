@@ -22127,6 +22127,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -22225,6 +22226,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Dartmoor, England",
     cardType: "equipment",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -27784,6 +27786,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -27886,6 +27889,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Crocodile Temple",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -28065,6 +28069,7 @@ export const cardSpecs: CardSpec[] = [
     requiresVampire: true,
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -28088,6 +28093,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -33823,6 +33829,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Contagion",
     cardType: "action",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: "dai", effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -33902,6 +33909,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -33913,6 +33921,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Curse of Nitocris",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -33958,6 +33967,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "ally",
     ally: { life: 2, strength: 1, bleed: 0 },
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
