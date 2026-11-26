@@ -23866,6 +23866,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 1, bleed: 0 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -23899,6 +23900,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Local 1111",
     cardType: "equipment",
     bloodCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -23921,6 +23923,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Lyndhurst Estate, New York",
     cardType: "equipment",
     bloodCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -23991,6 +23994,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Martinelli's Ring",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -24061,6 +24065,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 2, strength: 0, bleed: 0 },
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -24285,6 +24290,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 1, strength: 0, bleed: 1 },
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "strikeDodge" }, { kind: "actionStealth", amount: 1 }] }
@@ -24297,6 +24303,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "retainer",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, retainerLife: 1, effects: [] }
@@ -29740,6 +29747,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 6,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -29751,6 +29759,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Lazarene Inquisitor",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyStealth", amount: 1 }] }
@@ -29798,6 +29807,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "modifyBleed", amount: 2, limited: true }, { kind: "modifyStealth", amount: 1 }] }
@@ -30130,6 +30140,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "master",
     bloodCost: 0,
     poolCost: 3,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -30174,6 +30185,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Metro Underground",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -30196,6 +30208,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Millicent Smith, Puritan Vampire Hunter",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -34994,6 +35007,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Leadership Vacuum",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -35076,6 +35090,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Living Wood Staff",
     cardType: "equipment",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -35098,6 +35113,7 @@ export const cardSpecs: CardSpec[] = [
     name: "Mapatano Utando",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -35109,6 +35125,7 @@ export const cardSpecs: CardSpec[] = [
     name: "The Marrakesh Codex",
     cardType: "master",
     bloodCost: 0,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
@@ -35122,6 +35139,7 @@ export const cardSpecs: CardSpec[] = [
     requiresSect: ["laibon"],
     requiresVampire: true,
     bloodCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "addStrength", amount: 1 }, { kind: "actionStealth", amount: 1 }] }
@@ -35158,6 +35176,7 @@ export const cardSpecs: CardSpec[] = [
     ally: { life: 1, strength: 0, bleed: 0 },
     bloodCost: 0,
     poolCost: 2,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [{ kind: "actionStealth", amount: 1 }] }
@@ -35170,6 +35189,7 @@ export const cardSpecs: CardSpec[] = [
     cardType: "equipment",
     bloodCost: 0,
     poolCost: 1,
+    unique: true,
     usable: [],
     modes: [
       { level: "basic", discipline: null, effects: [] }
