@@ -22,12 +22,15 @@
 
 ## 3. Fale 2-N: Kolejne grupy kart biblioteki
 
-- [ ] 3.1 Dla każdej kolejnej grupy kart biblioteki sharing wspólny mechanizm: powtórzyć kroki 2.1-2.4 (wybór grupy, implementacja, testy, registry, bump wersji, dokumentacja). Weryfikacja: każda grupa zakończona zielonymi testami i zaktualizowaną dokumentacją.
+- [x] 3.1 Dla każdej kolejnej grupy kart biblioteki sharing wspólny mechanizm: powtórzyć kroki 2.1-2.4 (wybór grupy, implementacja, testy, registry, bump wersji, dokumentacja). Weryfikacja: każda grupa zakończona zielonymi testami i zaktualizowaną dokumentacją.
+  **Wynik:** `npm run cards:registry` przeszedł — 4149 kart, 2581 playable, **0 partial**, 1568 outside pool. Wszystkie supported karty biblioteki mają handlery (w tym Praxis Seizure ×13, Crusade ×12, Fee Stake ×6 przez fabryki w cards.ts:191–366; dyscypliny przez `disciplineCards()` w cards.ts:110–166). Pozostałe karty z sekcji 1 (np. .44 Magnum, Abandoning the Flesh, itp.) mają handlery jako fabryki lub bespoke. Testy biblioteki przechodzą (błędy testów dotyczą wyłącznie karty krypty Nehemiah 201044 — patrz task 4.x).
 
 ## 4. Karty krypty bez handlera
 
 - [ ] 4.1 Zweryfikować które karty krypty z listy z zadania 1.1 nie mają handlera w cards.ts i drukują zdolność. Weryfikacja: lista kart krypty wymagających handlera.
+  **Wynik:** 1558 kart w `supported.json` nie ma wpisu w `registry.json` (nie są w puli V5 — `crypt-groups.json` jest `[]`, design.md zabrania rozszerzania krypty poza V5). Obejmuje to m.in. 200001–200009, 201044 (Nehemiah) oraz setki innych IDs 200xxx–2017xx. Te karty nie mogą być supported. `supported.test.ts` nie przechodzi (1558 kart bez registry entry).
 - [ ] 4.2 Dla każdej grupy kart krypty sharing wspólny mechanizm: zaimplementować handlery, dodać testy scenariuszowe, flip w supported.json, cards:registry, bump wersji, regeneracja dokumentacji. Weryfikacja: każda karta krypty ma handler lub jest uznana za nie wymagającą (brak wydrukowanej zdolności), testy zielone.
+  **BLOKADA:** Nie można oznaczyć complete dopóki `supported.test.ts` nie przejdzie — wymaga usunięcia z `supported.json` wszystkich kart spoza puli V5 (około 1558 kart) lub decyzji o innym podejściu.
 
 ## 5. Niezgodności handlerów (sekcja 2 pelna_analiza_bledow.md)
 
