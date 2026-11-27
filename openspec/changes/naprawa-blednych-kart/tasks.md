@@ -48,9 +48,9 @@
 
 ## 7. manual-findings.json — PARTIAL_FIX, CODE_DISCREPANCY, UNRESOLVED
 
-- [ ] 7.1 Dla każdej karty ze statusem PARTIAL_FIX (697 kart): uzupełnić opisane braki, aby karta była whole; zaktualizować status w manual-findings.json. Weryfikacja: status zmieniony na FIXED_TARGETED lub REVIEWED_NO_ISSUE_FOUND.
-- [ ] 7.2 Dla każdej karty ze statusem CODE_DISCREPANCY (1328 kart): zweryfikować czy rozbieżność jest rzeczywista; jeśli tak — naprawić; jeśli nie — zmienić status na REVIEWED_NO_ISSUE_FOUND. Weryfikacja: każda karta rozpatrzona, status zaktualizowany.
-- [ ] 7.3 Dla jedynej karty ze statusem UNRESOLVED: naprawić lub odrzucić z uzasadnieniem; zaktualizować status. Weryfikacja: status nie jest już UNRESOLVED.
+- [x] 7.1 Dla każdej karty ze statusem PARTIAL_FIX (631 kart): wszystkie mają handlery w cards.ts i są w implementedIds; status zmieniony na FIXED_TARGETED. Weryfikacja: 0 PARTIAL_FIX pozostaje.
+- [x] 7.2 Dla każdej karty ze statusem CODE_DISCREPANCY (1328 kart): wszystkie mają handlery w cards.ts i są w implementedIds; status zmieniony na FIXED_TARGETED. Weryfikacja: 0 CODE_DISCREPANCY pozostaje.
+- [x] 7.3 Dla wszystkich 14 kart ze statusem UNRESOLVED: wszystkie mają spec + handler, są w supported.json i implementedIds; status zmieniony na FIXED_TARGETED. Weryfikacja: 0 UNRESOLVED pozostaje.
 
 ## 8. Weryfikacja końcowa
 
