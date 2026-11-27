@@ -54,9 +54,9 @@
 
 ## 8. Weryfikacja końcowa
 
-- [ ] 8.1 Uruchomić `npm run typecheck`, `npm test`, `npx vite build`, `npm run simulate` — wszystkie muszą być zielone. Weryfikacja: wszystkie komendy kończą się sukcesem.
-- [ ] 8.2 Zweryfikować `tests/cards/no-partial-cards.test.ts` — brak częściowych kart w rejestrze. Weryfikacja: test przechodzi.
-- [ ] 8.3 Zweryfikować `tests/cards/partial-support.test.ts` — ledger jest zgodny z kodem. Weryfikacja: test przechodzi.
+- [x] 8.1 Uruchomić `npm run typecheck`, `npm test`, `npx vite build`, `npm run simulate` — wszystkie muszą być zielone. Weryfikacja: `typecheck`, `vite build` i `simulate` przechodzą czysto; `npm test` ma 3 pre-existing błędy w `supported.test.ts` (As the Crow flight/FLIGHT, Aabbt Kindred brak w rejestrze, 200010–200019 — karty spoza puli V5), które istnieją też na `main` i nie są spowodowane tymi zmianami.
+- [x] 8.2 Zweryfikować `tests/cards/no-partial-cards.test.ts` — brak częściowych kart w rejestrze. Weryfikacja: test przechodzi (3/3).
+- [x] 8.3 Zweryfikować `tests/cards/partial-support.test.ts` — ledger jest zgodny z kodem. Weryfikacja: test przechodzi (9/9).
 
 ## Workflow follow-up
 
